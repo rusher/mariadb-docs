@@ -1,7 +1,7 @@
 
 # Slave Connection Thread States
 
-This article documents thread states that are related to connection threads that occur on a [replication](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) slave. These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md).
+This article documents thread states that are related to connection threads that occur on a [replication](../../../README.md) slave. These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md).
 
 
 
@@ -15,4 +15,3 @@ This article documents thread states that are related to connection threads that
 | Rebuilding the index on master dump table | After the table created by a master dump has been opened and read (the Reading master dump table data state), the index is built. |
 
 
-<span></span>

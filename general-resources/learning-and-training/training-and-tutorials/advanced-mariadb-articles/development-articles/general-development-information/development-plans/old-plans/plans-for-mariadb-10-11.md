@@ -2,7 +2,7 @@
 # Plans for MariaDB 10.11
 
 
-[MariaDB 10.11](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) is stable, so no new features will be added. See [Plans for MariaDB 11.1](plans-for-mariadb-11-1.md) instead.
+[MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) is stable, so no new features will be added. See [Plans for MariaDB 11.1](plans-for-mariadb-11-1.md) instead.
 
 
 ## JIRA
@@ -23,8 +23,8 @@ to [JIRA](../../../tools/jira.md).
 
 * [Current tasks for 10.11](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.11)%20ORDER%20BY%20priority%20DESC)
 * [10.11 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.11)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 10.11?](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
-* [What is MariaDB 10.10?](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
-* [What is MariaDB 10.9?](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
-* [What is MariaDB 10.8?](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
+* [What is MariaDB 10.11?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
+* [What is MariaDB 10.10?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
+* [What is MariaDB 10.9?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+* [What is MariaDB 10.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 

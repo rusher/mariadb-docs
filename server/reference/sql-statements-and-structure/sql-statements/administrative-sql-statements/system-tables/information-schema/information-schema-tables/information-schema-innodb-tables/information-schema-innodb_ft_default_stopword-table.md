@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_FT_DEFAULT_STOPWORD Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_FT_DEFAULT_STOPWORD` table contains a list of default [stopwords](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) used when creating an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md).
+The [Information Schema](../../README.md) `INNODB_FT_DEFAULT_STOPWORD` table contains a list of default [stopwords](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) used when creating an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md).
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.

@@ -17,7 +17,7 @@ CREATE TABLE student_tests (
 );
 ```
 
-See [CREATE TABLE](../../../../server/reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) for more.
+See [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) for more.
 
 
 ## Inserting Records
@@ -39,7 +39,7 @@ INSERT INTO student_tests
  ('Tatiana', 'Tuning', 83, '2013-09-30');
 ```
 
-See [INSERT](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) for more.
+See [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) for more.
 
 
 ## Using AUTO_INCREMENT
@@ -76,7 +76,7 @@ SELECT * FROM student_details;
 +----+---------+---------------+
 ```
 
-See [AUTO_INCREMENT](../../../../server/reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) for more.
+See [AUTO_INCREMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment) for more.
 
 
 ## Querying from two tables on a common value
@@ -86,7 +86,7 @@ See [AUTO_INCREMENT](../../../../server/reference/storage-engines/innodb/auto_in
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
-This kind of query is called a join - see [JOINS](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/README.md) for more.
+This kind of query is called a join - see [JOINS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/) for more.
 
 
 ## Finding the Maximum Value
@@ -101,7 +101,7 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) for more, as well as [Finding the maximum value and grouping the results](#finding-the-maximum-value-and-grouping-the-results) below for a more practical example.
+See the [MAX() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max) for more, as well as [Finding the maximum value and grouping the results](#finding-the-maximum-value-and-grouping-the-results) below for a more practical example.
 
 
 ## Finding the Minimum Value
@@ -116,7 +116,7 @@ SELECT MIN(a) FROM t1;
 +--------+
 ```
 
-See the [MIN() function](../../../../server/reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) for more.
+See the [MIN() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min) for more.
 
 
 ## Finding the Average Value
@@ -131,7 +131,7 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) for more.
+See the [AVG() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg) for more.
 
 
 ## Finding the Maximum Value and Grouping the Results
@@ -149,7 +149,7 @@ SELECT name, MAX(score) FROM student_tests GROUP BY name;
 +---------+------------+
 ```
 
-See the [MAX() function](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) for more.
+See the [MAX() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max) for more.
 
 
 ## Ordering Results
@@ -171,7 +171,7 @@ SELECT name, test, score FROM student_tests ORDER BY score DESC;
 +---------+--------+-------+
 ```
 
-See [ORDER BY](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
+See [ORDER BY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by) for more.
 
 
 ## Finding the Row with the Minimum of a Particular Column
@@ -212,7 +212,7 @@ SELECT name, test, score FROM student_tests st1 WHERE score = (
 ## Calculating Age
 
 
-The [TIMESTAMPDIFF](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
+The [TIMESTAMPDIFF](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff) function can be used to calculate someone's age:
 
 
 ```
@@ -235,13 +235,13 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 +---------+---------------+------+
 ```
 
-See [TIMESTAMPDIFF()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) for more.
+See [TIMESTAMPDIFF()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff) for more.
 
 
 ## Using User-defined Variables
 
 
-This example sets a [user-defined variable](../../../../server/reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
+This example sets a [user-defined variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-language-structure/user-defined-variables) with the average test score, and then uses it in a later query to return all results above the average.
 
 
 ```
@@ -281,7 +281,7 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 +---------+---------+---------------+
 ```
 
-See [User-defined Variables](../../../../server/reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) for more.
+See [User-defined Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-language-structure/user-defined-variables) for more.
 
 
 ## View Tables in Order of Size

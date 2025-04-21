@@ -2,17 +2,17 @@
 # Compression Plugins
 
 
-##### MariaDB starting with [10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
-Compressions plugins were added in a [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md) preview release. 
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+Compressions plugins were added in a [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes) preview release. 
 
 
-The various MariaDB storage engines, such as [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [RocksDB](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md), [Mroonga](../../../../reference/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md), can use different compression libraries.
+The various MariaDB storage engines, such as [InnoDB](../../../../reference/storage-engines/innodb/README.md), [RocksDB](../../../../reference/storage-engines/myrocks/README.md), [Mroonga](../../../../reference/storage-engines/mroonga/README.md), can use different compression libraries.
 
 
-Before [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md), each separate library would have to be compiled in in order to be available for use, resulting in numerous runtime/rpm/deb dependencies, most of which would never be used by users.
+Before [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes), each separate library would have to be compiled in in order to be available for use, resulting in numerous runtime/rpm/deb dependencies, most of which would never be used by users.
 
 
-From [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md), five additional MariaDB compression libraries (besides the default zlib) are available as plugins (note that these affect InnoDB and Mroonga only; RocksDB still uses the compression algorithms from its own library):
+From [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes), five additional MariaDB compression libraries (besides the default zlib) are available as plugins (note that these affect InnoDB and Mroonga only; RocksDB still uses the compression algorithms from its own library):
 
 
 * bzip2
@@ -79,4 +79,3 @@ In this case, the appropriate compression plugin should be installed, and the se
 * [10.7 preview feature: Compression Provider Plugins](https://mariadb.org/10-7-preview-feature-provider-plugins/) (mariadb.org blog)
 * Add zstd as a compression plugin - [MDEV-34290](https://jira.mariadb.org/browse/MDEV-34290)
 
-<span></span>

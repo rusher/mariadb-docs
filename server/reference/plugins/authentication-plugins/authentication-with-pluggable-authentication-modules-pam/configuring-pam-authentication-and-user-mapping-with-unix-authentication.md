@@ -66,7 +66,7 @@ On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](.
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md), we need to install `gcc` and `libpam0g-dev`:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md), we need to install `gcc` and `libpam0g-dev`:
 
 
 ```
@@ -191,7 +191,7 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 ## Testing our Configuration
 
 
-Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `[USER()](../../other-plugins/user-variables-plugin.md)`, which is the original user name and the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`, which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `[USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md)`, which is the original user name and the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`, which is the authenticated user name.
 
 
 First, let's test out our `foo` user:

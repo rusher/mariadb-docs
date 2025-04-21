@@ -22,7 +22,7 @@ apt install -y build-essential bison libgnutls28-dev
 apt build-dep mariadb-server
 ```
 
-## [Set Up git](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git.md)
+## [Set Up git](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git)
 
 
 Fetch and checkout the MariaDB source to a subdirectory of the current directory
@@ -44,14 +44,14 @@ The following command builds a server the same way that is used for building rel
 cmake . -DBUILD_CONFIG=mysql_release && cmake --build . --parallel=8
 ```
 
-## [Check the Server (If You Want To)](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md)
+## [Check the Server (If You Want To)](../../../clients-and-utilities/mariadb-test/README.md)
 
 
 ```
 mysql-test/mtr --parallel=8 --force
 ```
 
-## [Install the Default Databases](../mariadb-install-db-exe.md)
+## [Install the Default Databases](../../../clients-and-utilities/mariadb-install-db.md)
 
 
 ```
@@ -80,4 +80,3 @@ Start the server in it's own terminal window for testing. Note that the director
 ```
 /usr/sbin/mariadbd
 ```
-<span></span>

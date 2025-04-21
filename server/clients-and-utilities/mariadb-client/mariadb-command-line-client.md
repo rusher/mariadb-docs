@@ -4,7 +4,7 @@
 **mariadb** is a simple SQL shell (with GNU readline capabilities).
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `mysql`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysql`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 
@@ -116,7 +116,7 @@ Print results using tab as the column separator, with each row on a new line. Wi
 #### `--binary-mode`
 
 
-By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) that may contain blobs.
+By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../mariadb-binlog/README.md) that may contain blobs.
 
 
 #### `--character-sets-dir=name`
@@ -152,7 +152,7 @@ Compress all information sent between the client and the server if both support 
 #### `--connect-expired-password`
 
 
-Notify the server that this client is prepared to handle [expired password sandbox mode](../../security/user-account-management/user-password-expiry.md) even if `--batch` was specified. From [MariaDB 10.4.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md).
+Notify the server that this client is prepared to handle [expired password sandbox mode](../../security/user-account-management/user-password-expiry.md) even if `--batch` was specified. From [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes).
 
 
 #### `--connect-timeout=num`
@@ -226,7 +226,7 @@ Delimiter to be used. The default is the semicolon character (“;”).
 #### `--enable-cleartext-plugin`
 
 
-Obsolete option. Exists only for MySQL compatibility. From [MariaDB 10.3.36](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10336-release-notes.md).
+Obsolete option. Exists only for MySQL compatibility. From [MariaDB 10.3.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10336-release-notes).
 
 
 #### `-e, --execute=name`
@@ -322,7 +322,7 @@ Don't read default options from any option file. Must be given as the first opti
 #### `-o, --one-database`
 
 
-Ignore statements except those those that occur while the default database is the one named on the command line. This filtering is limited, and based only on [USE](../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statements. This is useful for skipping updates to other databases in the binary log.
+Ignore statements except those those that occur while the default database is the one named on the command line. This filtering is limited, and based only on [USE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statements. This is useful for skipping updates to other databases in the binary log.
 
 
 #### `--pager[=name]`
@@ -358,7 +358,7 @@ Print the program argument list and exit. Must be given as the first option.
 #### `--progress-reports`
 
 
-Get [progress reports](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for long running commands (such as [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
+Get [progress reports](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for long running commands (such as [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
 
 
 #### `--prompt=name`
@@ -382,13 +382,13 @@ Don't cache result, print it row by row. This may slow down the server if the ou
 #### `--quick-max-column-width=N`
 
 
-Maximal field length limit in case of --quick (since [MariaDB 10.5.27](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-27-release-notes.md), [MariaDB 10.6.20](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes.md), [MariaDB 10.11.10](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes.md), [MariaDB 11.4.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes.md), [MariaDB 11.6.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md) and [MariaDB 11.7.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md))
+Maximal field length limit in case of --quick (since [MariaDB 10.5.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-27-release-notes), [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes) and [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes))
 
 
 #### `-r, --raw`
 
 
-For tabular output, the “boxing” around columns enables one column value to be distinguished from another. For nontabular output (such as is produced in batch mode or when the `--batch` or `--silent` option is given), special characters are escaped in the output so they can be identified easily. Newline, tab, NUL, and backslash are written as `\n`, `\t`, `\0`, and `<br/>`. The `--raw` option disables this character escaping.
+For tabular output, the “boxing” around columns enables one column value to be distinguished from another. For nontabular output (such as is produced in batch mode or when the `--batch` or `--silent` option is given), special characters are escaped in the output so they can be identified easily. Newline, tab, NUL, and backslash are written as `\n`, `\t`, `\0`, and ``. The `--raw` option disables this character escaping.
 
 
 #### `--reconnect`
@@ -400,19 +400,19 @@ Reconnect if the connection is lost. This option is enabled by default. Disable 
 #### `-U, --safe-updates`
 
 
-Allow only those [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](#using-the-safe-updates-option) for more.
+Allow only those [UPDATE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements that specify which rows to modify by using key values. If you have set this option in an option file, you can override it by using `--safe-updates` on the command line. See [using the --safe-updates option](#using-the-safe-updates-option) for more.
 
 
 #### `--sandbox`
 
 
-Disallow commands that access the file system (except `\P` without an argument and `\e`). Disabled commands include system (`\!`), tee (`\T`), pager with an argument(`\P foo`), source (`\.`). Using a disabled command is an error, which can be ignored with [--force](#-f-force). A sandbox command (`\-`) enables the sandbox mode until EOF (current file or the session, if interactive). From [MariaDB 10.5.25](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes.md), [MariaDB 10.6.18](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md), [MariaDB 10.11.8](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), [MariaDB 11.4.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md).
+Disallow commands that access the file system (except `\P` without an argument and `\e`). Disabled commands include system (`\!`), tee (`\T`), pager with an argument(`\P foo`), source (`\.`). Using a disabled command is an error, which can be ignored with [--force](#-f-force). A sandbox command (`\-`) enables the sandbox mode until EOF (current file or the session, if interactive). From [MariaDB 10.5.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes), [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes).
 
 
 #### `--script-dir`
 
 
-Sets an alternative directory path for searching scripts invoked via the source command. From [MariaDB 12.0](../../../release-notes/mariadb-community-server/what-is-mariadb-120.md).
+Sets an alternative directory path for searching scripts invoked via the source command. From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120).
 
 
 #### `--secure-auth`
@@ -508,7 +508,7 @@ For connections to localhost, the Unix socket file to use, or, on Windows, the n
 #### `--ssl`
 
 
-Enables [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). TLS is also enabled even without setting this option when certain other TLS options are set. The `--ssl` option does not enable [verifying the server certificate](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option. Set by default from [MariaDB 10.10](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md).
+Enables [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). TLS is also enabled even without setting this option when certain other TLS options are set. The `--ssl` option does not enable [verifying the server certificate](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option. Set by default from [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010).
 
 
 #### `--ssl-ca=name`
@@ -556,7 +556,7 @@ Defines a path to a private key file to use for [TLS](../../security/securing-ma
 #### `--ssl-verify-server-cert`
 
 
-Enables [server certificate verification](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). Prior to [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), this option is disabled by default, otherwise enabled. Use `--disable-ssl` or `--disable-ssl-verify-server-cert` to revert to the pre-11.4 behavior.
+Enables [server certificate verification](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). Prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), this option is disabled by default, otherwise enabled. Use `--disable-ssl` or `--disable-ssl-verify-server-cert` to revert to the pre-11.4 behavior.
 
 
 #### `-t, --table`
@@ -574,19 +574,19 @@ Append everything into outfile. See interactive help (\h) also. Does not work in
 #### `--tls-version=name`
 
 
-This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information. This option was added in [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md).
+This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information. This option was added in [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes).
 
 
 #### `--ssl-fp=name`
 
 
-Server certificate fingerprint (implies --ssl). Added in [MariaDB 11.3.0](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md).
+Server certificate fingerprint (implies --ssl). Added in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes).
 
 
 #### `--ssl-fplist=name`
 
 
-File with accepted server certificate fingerprints, one per line (implies --ssl). Added in [MariaDB 11.3.0](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md).
+File with accepted server certificate fingerprints, one per line (implies --ssl). Added in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes).
 
 
 #### `-n, --unbuffered`
@@ -652,7 +652,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`mariadb` is linked with [MariaDB Connector/C](../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
@@ -666,7 +666,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --- | --- |
 | Group | Description |
 | [mysql] | Options read by mysql, which includes both MariaDB Server and MySQL Server. |
-| [mariadb-client] | Options read by mariadb. Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-client] | Options read by mariadb. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 | [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
@@ -679,10 +679,10 @@ The following options relate to how MariaDB command-line tools handles option fi
 You can force which protocol to be used to connect to the `mariadbd` server by giving the `protocol` option one of the following values: `tcp`, `socket`, `pipe` or `memory`.
 
 
-If `protocol` is not specified, before [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), command line connection properties that do not force protocol are ignored.
+If `protocol` is not specified, before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), command line connection properties that do not force protocol are ignored.
 
 
-From [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), a connection property specified via the command line (e.g. `--port=3306`) will force its type. The protocol that matches the respective connection property is used, e.g. a TCP/IP connection is created when `--port` is specified.
+From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), a connection property specified via the command line (e.g. `--port=3306`) will force its type. The protocol that matches the respective connection property is used, e.g. a TCP/IP connection is created when `--port` is specified.
 
 
 If multiple or no connection properties are specified via the command-line, then the following happens:
@@ -747,7 +747,7 @@ There are also a number of commands that can be run inside the client. Note that
 | Command | Description |
 | --- | --- |
 | Command | Description |
-| \- | Enables [sandbox](#-sandbox) mode until EOF (current file or the session, if interactive). From [MariaDB 10.5.25](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes.md), [MariaDB 10.6.18](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md), [MariaDB 10.11.8](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), [MariaDB 11.4.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md). |
+| \- | Enables [sandbox](#-sandbox) mode until EOF (current file or the session, if interactive). From [MariaDB 10.5.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes), [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes). |
 | ?, \? | Synonym for `help'. |
 | clear, \c | Clear the current input statement. |
 | connect, \r | Reconnect to the server. Optional arguments are db and host. |
@@ -764,7 +764,7 @@ There are also a number of commands that can be run inside the client. Note that
 | prompt, \R | Change your mariadb prompt. See [prompt command](#prompt-command) for options. |
 | quit, \q | Quit mariadb. |
 | rehash, \# | Rebuild completion hash. |
-| source, \. | Execute an SQL script file. Takes a file name as an argument. Usually looks in the working directory, unless, from [MariaDB 12.0](../../../release-notes/mariadb-community-server/what-is-mariadb-120.md), a path is given with [--script-dir](#-script-dir). |
+| source, \. | Execute an SQL script file. Takes a file name as an argument. Usually looks in the working directory, unless, from [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120), a path is given with [--script-dir](#-script-dir). |
 | status, \s | Get status information from the server. |
 | system, \! | Execute a system shell command. Only works in Unix-like systems. |
 | tee, \T | Set outfile [to_outfile]. Append everything into given outfile. |
@@ -851,7 +851,7 @@ The prompt command reconfigures the default prompt `\N [\d]>`. The string for de
 
 
 This section describes some techniques that can help you use
-`<strong>mariadb</strong>` more effectively.
+`mariadb` more effectively.
 
 
 ### Displaying Query Results Vertically
@@ -907,10 +907,10 @@ following statement when it connects to the MariaDB server:
 SET sql_safe_updates=1, sql_select_limit=1000, sql_max_join_size=1000000;
 ```
 
-The [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement has the following effects:
+The [SET](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) statement has the following effects:
 
 
-* You are not allowed to execute an [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement unless you
+* You are not allowed to execute an [UPDATE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement unless you
  specify a key constraint in the WHERE clause or provide a LIMIT clause (or
  both). For example:
 
@@ -974,7 +974,6 @@ the `--skip-reconnect` option.
 ## See Also
 
 
-* [Troubleshooting Connection Issues](../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues.md)
+* [Troubleshooting Connection Issues](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
 * [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
 
-<span></span>

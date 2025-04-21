@@ -2,7 +2,7 @@
 # InnoDB Row Formats Overview
 
 
-The [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine supports four different row formats:
+The [InnoDB](../README.md) storage engine supports four different row formats:
 
 
 * [REDUNDANT](#redundant-row-format)
@@ -11,8 +11,8 @@ The [InnoDB](../../../../../general-resources/learning-and-training/training-and
 * [COMPRESSED](#compressed-row-format)
 
 
-In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the latter two row formats are only supported if the [InnoDB file format](../innodb-file-format.md) is `Barracuda`. Therefore, the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable must be set to `Barracuda` to use these row formats in those versions.
-In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, the latter two row formats are also only supported if the table is in a [file per-table](../innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace. Therefore, the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable must be set to `ON` to use these row formats in those versions.
+In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, the latter two row formats are only supported if the [InnoDB file format](../innodb-file-format.md) is `Barracuda`. Therefore, the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable must be set to `Barracuda` to use these row formats in those versions.
+In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, the latter two row formats are also only supported if the table is in a [file per-table](../innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace. Therefore, the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable must be set to `ON` to use these row formats in those versions.
 
 
 ## Default Row Format
@@ -49,7 +49,7 @@ CREATE TABLE tab (
 ## Setting a Table's Row Format
 
 
-One way to specify an InnoDB table's row format is by setting the [ROW_FORMAT](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. For example:
+One way to specify an InnoDB table's row format is by setting the [ROW_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. For example:
 
 
 ```
@@ -65,7 +65,7 @@ CREATE TABLE tab (
 ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
 ```
 
-In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, InnoDB can silently ignore and override some row format choices if you do not  have the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable set to `Barracuda` and the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable set to `ON`.
+In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, InnoDB can silently ignore and override some row format choices if you do not  have the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable set to `Barracuda` and the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable set to `ON`.
 
 
 ## Checking a Table's Row Format
@@ -135,7 +135,7 @@ See [InnoDB REDUNDANT Row Format](innodb-redundant-row-format.md) for more infor
 ### COMPACT Row Format
 
 
-Default row format in [MariaDB 10.2.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and earlier `COMPACT`.
+Default row format in [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and earlier `COMPACT`.
 
 
 The `COMPACT` row format is similar to the `REDUNDANT` row format, but it stores data in a more compact manner that requires about 20% less storage.
@@ -230,8 +230,8 @@ TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored i
 These messages are raised in the following cases:
 
 
-* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), then InnoDB will raise an error with this message
-* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md)` or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`, then InnoDB will raise a warning with this message.
+* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise an error with this message
+* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)`or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`, then InnoDB will raise a warning with this message.
 * Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements-and-structure/sql-statements/data-manipulation/README.md) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
 
 
@@ -244,7 +244,7 @@ For information on how to solve the problem, see [Troubleshooting Row Size Too L
 ### Upgrading Causes Row Size Too Large Errors
 
 
-Prior to [MariaDB 10.2.26](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), and [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md), MariaDB doesn't properly calculate the row sizes while executing DDL. In these versions, *unsafe* tables can be created, even if [InnoDB strict mode](../innodb-strict-mode.md) is enabled. The calculations were fixed by [MDEV-19292](https://jira.mariadb.org/browse/MDEV-19292) in [MariaDB 10.2.26](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), and [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md).
+Prior to [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), and [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes), MariaDB doesn't properly calculate the row sizes while executing DDL. In these versions, *unsafe* tables can be created, even if [InnoDB strict mode](../innodb-strict-mode.md) is enabled. The calculations were fixed by [MDEV-19292](https://jira.mariadb.org/browse/MDEV-19292) in [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), and [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes).
 
 
 As a side effect, some tables that could be created or altered in previous versions may get rejected with the following error in these releases and any later releases.

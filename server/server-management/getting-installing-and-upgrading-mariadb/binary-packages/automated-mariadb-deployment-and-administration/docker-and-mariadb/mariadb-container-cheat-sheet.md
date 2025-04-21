@@ -23,7 +23,7 @@ $ docker network create mynetwork
 It is good practice to create the container network and attach the container to the network.
 
 
-` Start the container with server options`
+`Start the container with server options`
 
 
 To start the container in the background with the MariaDB server image run:

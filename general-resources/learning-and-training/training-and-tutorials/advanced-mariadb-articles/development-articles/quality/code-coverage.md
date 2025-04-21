@@ -20,7 +20,7 @@ The goals are:
  tool and those code lines marked with /* purecov: tested */.
 
   * In this case the tool used for testing should be documented in the
- [worklog](worklog-quality-checklist-template.md) entry for the code or in the commit message.
+ [worklog](../tools/worklog.md) entry for the code or in the commit message.
 1. Code that can't reasonably be tested (such as error conditions) should be
  marked with '/* purecov: inspected */' so that a reviewer of the code can
  easily spot this code.
@@ -40,16 +40,14 @@ tool we originally used for code coverage in the early years of MySQL.
 The recommended markers are:
 
 
-`<span class="cm">/* purecov: tested */</span>
-`
+`/* purecov: tested */`
 
 
 * For code lines that are tested by something other than
  mysql-test-run:
 
 
-`<span class="cm">/* purecov: inspected */</span>
-`
+`/* purecov: inspected */`
 
 
 * For code lines that are hard to test but for which one has read the line
@@ -57,8 +55,7 @@ The recommended markers are:
  inspect these lines with care as they have not been properly tested.
 
 
-`<span class="cm">/* purecov: deadcode */</span>
-`
+`/* purecov: deadcode */`
 
 
 * For code lines that one suspects will never be called. Having this marker
@@ -99,10 +96,9 @@ following:
 
 
 1. In the mysql-test directory, run this
- command: `./mysql-test-run -gcov
-`
+ command: `./mysql-test-run -gcov`
 1. To see which lines are not yet covered, look at `source_file_name.gcov` in
- the source tree. In [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) or below it's in the CMakeFiles directory where the object files are stored. In [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) it's stored together with the source files.
+ the source tree. In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) or below it's in the CMakeFiles directory where the object files are stored. In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) it's stored together with the source files.
 1. Think hard about a test case which will cover those lines that are not tested, and write one.
 
 
@@ -116,5 +112,5 @@ following:
 ## Code coverage in buildbot
 
 
-[buildbot](../tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md), the MariaDB build system, is doing [automatic coverage testing for each push](https://buildbot.askmonty.org/buildbot/builders/kvm-dgcov-jaunty-i386).
+[buildbot](../tools/buildbot/README.md), the MariaDB build system, is doing [automatic coverage testing for each push](https://buildbot.askmonty.org/buildbot/builders/kvm-dgcov-jaunty-i386).
 

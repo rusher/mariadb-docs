@@ -28,7 +28,7 @@ See [Storage Engine Development](../storage-engines/storage-engines-storage-engi
 ## Information Schema Plugins
 
 
-Information Schema plugins can have their own [FLUSH](../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) and [SHOW](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-code.md) statements. See 
+Information Schema plugins can have their own [FLUSH](../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) and [SHOW](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/README.md) statements. See 
 [FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
 
 
@@ -41,7 +41,7 @@ Information Schema plugins can have their own [FLUSH](../sql-statements-and-stru
 ## Function Plugins
 
 
-Function plugins add new SQL functions to MariaDB. Unlike the old [UDF](../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) API, function plugins can do almost anything that a built-function can.
+Function plugins add new SQL functions to MariaDB. Unlike the old [UDF](../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) API, function plugins can do almost anything that a built-function can.
 
 
 ## Plugin Declaration Structure

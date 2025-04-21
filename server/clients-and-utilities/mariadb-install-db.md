@@ -11,10 +11,10 @@ The Windows version shares the common theme (creating system tables), yet has a 
 [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database, if they do not exist.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-MariaDB uses these tables to manage [privileges](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/roles_overview.md), and [plugins](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). It also uses them to provide the data for the [help](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
+MariaDB uses these tables to manage [privileges](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/README.md), and [plugins](../reference/plugins/README.md). It also uses them to provide the data for the [help](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
 
 
 `mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) and their content.
@@ -60,13 +60,13 @@ $ scripts/mariadb-install-db --user=mysql \
 | --auth-root-socket-user=USER | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user. |
 | --basedir=path | The path to the MariaDB installation directory. |
 | --builddir=path | If using --srcdir with out-of-directory builds, you will need to set this to the location of the build directory where built files reside. |
-| --catalogs=["list"] | Initialize MariaDB for [catalogs](../security/user-account-management/catalogs/catalogs-overview.md). Argument is a list, separated with space or ',', of the catalogs to create. The def catalog is created automatically. Likely added in [MariaDB 11.7](../../release-notes/mariadb-community-server/what-is-mariadb-117.md). |
-| --catalog-user=user | User when adding [catalogs](../security/user-account-management/catalogs/catalogs-overview.md) to running server. Likely added in [MariaDB 11.7](../../release-notes/mariadb-community-server/what-is-mariadb-117.md). |
-| --catalog-password[=password] | Password for [catalog-user](../security/user-account-management/catalogs/catalogs-overview.md). Likely added in [MariaDB 11.7](../../release-notes/mariadb-community-server/what-is-mariadb-117.md). |
-| --catalog-client-arg=arg | Other arguments to 'mariadb' when adding new [catalogs](../security/user-account-management/catalogs/catalogs-overview.md). Likely added in [MariaDB 11.7](../../release-notes/mariadb-community-server/what-is-mariadb-117.md). |
+| --catalogs=["list"] | Initialize MariaDB for [catalogs](../security/user-account-management/catalogs/README.md). Argument is a list, separated with space or ',', of the catalogs to create. The def catalog is created automatically. Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117). |
+| --catalog-user=user | User when adding [catalogs](../security/user-account-management/catalogs/README.md) to running server. Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117). |
+| --catalog-password[=password] | Password for [catalog-user](../security/user-account-management/catalogs/README.md). Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117). |
+| --catalog-client-arg=arg | Other arguments to 'mariadb' when adding new [catalogs](../security/user-account-management/catalogs/README.md). Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117). |
 | --cross-bootstrap | For internal use. Used when building the MariaDB system tables on a different host than the target. |
 | --datadir=path, --ldata=path | The path to the MariaDB data directory. |
-| --client-debug | Write commands to-be executed in '/tmp/mariadb_install_db.log'. Added in [MariaDB 11.6](../../release-notes/mariadb-community-server/what-is-mariadb-116.md). |
+| --client-debug | Write commands to-be executed in '/tmp/mariadb_install_db.log'. Added in [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
 | --server-debug | Start mariadbd (server) with --debug. |
 | --defaults-extra-file=name | Read this file after the global files are read. Must be given as the first option. |
 | --defaults-file=name | Only read default options from the given file name Must be given as the first option. |
@@ -142,7 +142,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 ### Installing System Tables From a Source Tree
 
 
-If you have just [compiled MariaDB from source](../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), and if you want to use `mariadb-install-db` from your source tree, then that can be done without having to actually install MariaDB. This is very useful if you want to test your changes to MariaDB without disturbing any existing installations of MariaDB.
+If you have just [compiled MariaDB from source](../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md), and if you want to use `mariadb-install-db` from your source tree, then that can be done without having to actually install MariaDB. This is very useful if you want to test your changes to MariaDB without disturbing any existing installations of MariaDB.
 
 
 To do so, you would have to provide the `--srcdir` option. For example:
@@ -281,7 +281,7 @@ When calling the `mariadb-install-db` script, a new folder called `test` is crea
 It only has the single `db.opt` file, which sets the client options `default-character-set` and `default-collation` only.
 
 
-If you run `mysql` as an anonymous user, ` mysql -u''@localhost`, and look for the grants and databases you are able to work with, you will get the following:
+If you run `mysql` as an anonymous user, `mysql -u''@localhost`, and look for the grants and databases you are able to work with, you will get the following:
 
 
 ```
@@ -512,4 +512,3 @@ SELECT user,host FROM mysql.user;
 * [Installing system tables (mariadb-install-db)](../server-management/getting-installing-and-upgrading-mariadb/installing-system-tables-mariadb-install-db.md)
 * The Windows version of `mariadb-install-db`: `[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)`
 
-<span></span>

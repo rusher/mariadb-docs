@@ -17,7 +17,7 @@ the MaxScale REST API and MaxCtrl.
 
 
 For more information about the MaxScale REST API, refer to the
-[REST API documentation](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-rest-api-tutorial.md) and the
+[REST API documentation](../mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md) and the
 [Configuration Guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md).
 
 

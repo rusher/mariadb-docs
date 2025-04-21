@@ -4,9 +4,9 @@
 ## Instructions on compiling MariaDB on musl-based operating systems (Alpine)
 
 
-The instructions on this page will help you compile [MariaDB](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) from source.
+The instructions on this page will help you compile [MariaDB](/kb/en/mariadb/) from source.
 Links to more complete instructions for specific platforms can be found on the
-[source](source-building-mariadb-on-centos.md) page.
+[source](README.md) page.
 
 
 * First, [get a copy of the MariaDB source](../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md).
@@ -16,7 +16,7 @@ Links to more complete instructions for specific platforms can be found on the
 ## Using cmake
 
 
-[MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and above is compiled using *cmake*. You can configure your
+[MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and above is compiled using *cmake*. You can configure your
 build simply by running *cmake* using special option, i.e.
 
 

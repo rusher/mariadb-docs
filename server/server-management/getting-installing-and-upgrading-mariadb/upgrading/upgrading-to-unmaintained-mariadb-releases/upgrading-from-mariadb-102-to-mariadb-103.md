@@ -11,16 +11,16 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](https://mariadb.com/kb/en/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster) instead.
 
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 
 The suggested upgrade procedure is:
 
 
-1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md). For example,
+1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). For example,
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/installing-mariadb-deb-files.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md). The server should be cleanly shut down, with no incomplete transactions remaining. [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) must be set to `0` or `1` and [innodb_force_recovery](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 `sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
 1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
@@ -88,7 +88,7 @@ The following options should be removed or renamed if you use them in your [opti
 | [innodb_foreground_preflush](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_foreground_preflush) | Used in XtraDB-only |
 | [innodb_instrument_semaphores](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores) |  |
 | [innodb_kill_idle_transaction](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_kill_idle_transaction) | Used in XtraDB-only |
-| [innodb_large_prefix](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix) | Large index key prefixes were made default from [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), and limiting tables to small prefixes is no longer permitted in [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md). |
+| [innodb_large_prefix](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_large_prefix) | Large index key prefixes were made default from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), and limiting tables to small prefixes is no longer permitted in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). |
 | [innodb_locking_fake_changes](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locking_fake_changes) | Used in XtraDB-only |
 | [innodb_log_arch_dir](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_dir) | Used in XtraDB-only |
 | [innodb_log_arch_expire_sec](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_arch_expire_sec) | Used in XtraDB-only |
@@ -117,7 +117,7 @@ The following options should be removed or renamed if you use them in your [opti
 #### SQL_MODE=ORACLE
 
 
-* [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) has introduced major new Oracle compatibility features. If you upgrade and are using this setting, please check the [changes carefully](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md).
+* [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) has introduced major new Oracle compatibility features. If you upgrade and are using this setting, please check the [changes carefully](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).
 
 
 #### Functions
@@ -130,13 +130,13 @@ The following options should be removed or renamed if you use them in your [opti
 #### mysqldump
 
 
-* [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) in [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) includes logic to cater for the [mysql.transaction_registry table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and beyond.
+* [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) includes logic to cater for the [mysql.transaction_registry table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and beyond.
 
 
 #### MariaDB Backup and Percona XtraBackup
 
 
-* [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is not compatible with [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md). Installations currently using XtraBackup should upgrade to [MariaDB Backup](../../migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md) before upgrading to [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md).
+* [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is not compatible with [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). Installations currently using XtraBackup should upgrade to [MariaDB Backup](../../../backing-up-and-restoring-databases/mariabackup/README.md) before upgrading to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).
 
 
 #### Privileges
@@ -148,7 +148,7 @@ The following options should be removed or renamed if you use them in your [opti
 ### Major New Features To Consider
 
 
-You might consider using the following major new features in [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md):
+You might consider using the following major new features in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
 
 
 * [System-versioned tables](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md)
@@ -159,9 +159,8 @@ You might consider using the following major new features in [MariaDB 10.3](../.
 ### See Also
 
 
-* [The features in MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)
+* [The features in MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
 * [Upgrading from MariaDB 10.0 to MariaDB 10.1](upgrading-from-mariadb-100-to-mariadb-101.md)
 
-<span></span>

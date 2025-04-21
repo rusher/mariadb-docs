@@ -5,7 +5,7 @@
 ## Background
 
 
-Before [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md), the MariaDB Query optimizer used a 'basic cost' of 1 for:
+Before [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110), the MariaDB Query optimizer used a 'basic cost' of 1 for:
 
 
 * One disk access
@@ -31,7 +31,7 @@ not properly calibrated.
 ## New Cost Model
 
 
-In [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) we have fixed the above shortcomings by changing the
+In [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) we have fixed the above shortcomings by changing the
 basic cost for 'storage engine operations' to be 1 millisecond. This
 means that for most queries the query cost (`LAST_QUERY_COST`) should be
 close (or at least proportional) to the time the server is spending in
@@ -77,11 +77,11 @@ OPTIMIZER_INDEX_BLOCK_COPY_COST: 0.035600
       OPTIMIZER_ROWID_COPY_COST: 0.002653
 ```
 
-The above costs are the default (base) for all engines and should be reasonable for engines that does not have a clustered index (like [MyISAM](../../storage-engines/myisam-storage-engine/myisam-system-variables.md), [Aria](../../storage-engines/s3-storage-engine/aria_s3_copy.md) etc). The default costs can be changed by specifying just the cost as an argument, like `mariadbd --optimizer-disk-read-cost=20` or from SQL: `set global optimizer_disk_read_cost=20`. An engine specific cost can be tuned by prefixing the cost with the engine name, like `set global innodb.optimizer_disk_read_cost=20`.
+The above costs are the default (base) for all engines and should be reasonable for engines that does not have a clustered index (like [MyISAM](../../storage-engines/myisam-storage-engine/README.md), [Aria](../../storage-engines/aria/README.md) etc). The default costs can be changed by specifying just the cost as an argument, like `mariadbd --optimizer-disk-read-cost=20` or from SQL: `set global optimizer_disk_read_cost=20`. An engine specific cost can be tuned by prefixing the cost with the engine name, like `set global innodb.optimizer_disk_read_cost=20`.
 
 
 An engine can tune some or all of the above cost in the storage engine interface.
-Here follows the cost for the [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md).
+Here follows the cost for the [InnoDB storage engine](../../storage-engines/innodb/README.md).
 
 
 ```
@@ -189,8 +189,7 @@ A lot of rule-based cost has been changed to be cost-based:
 * Derived tables and queries with `UNION` can now create a distinct key (instead of a key with duplicates) to speed up key accesses.
 * Indexes with more used key parts are preferred if the number of resulting rows is the same:
 
-  * `<span class="k">WHERE</span> <span class="n">key_part_1</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">and</span> <span class="n">key_part_2</span> <span class="o"><</span> <span class="mi">10</span>
-`
+  * `WHERE key_part_1 = 1 and key_part_2 < 10`
   * This will now use a `RANGE` over both key parts instead of using lookups on key_part_1.
 * For very small tables, index lookup is preferred over table scan.
 * `EXPLAIN` does not report "Using index" for scans using a clustered primary key as technically this a table scan.
@@ -206,8 +205,7 @@ The new, improved optimizer should be able to find a better plan
 * If you have indexes with a lot of identical values.
 * If you are using ranges that cover more than 10% of a table.
 
-  * `<span class="k">WHERE</span> <span class="k">key</span> <span class="k">between</span> <span class="mi">1</span> <span class="k">and</span> <span class="mi">1000</span> <span class="c1">-- Table has values 1-2000 </span>
-`
+  * `WHERE key between 1 and 1000 -- Table has values 1-2000`
 * If you have complex queries when not all used columns are or can be indexed.
 
   * In which case you may need to depend on selectivity to get the right plan.
@@ -249,7 +247,7 @@ SET GLOBAL innodb.OPTIMIZER_DISK_READ_RATIO=0.20;
 ```
 
 * Note engine costs are `GLOBAL` while other costs can also be `SESSION`.
-* To keep things fast, engine-specific costs are stored in the table definition (TABLE_SHARE). One effect of this is that if one changes the cost for an engine, it will only take effect when new, not previously cached tables are accessed. You can use [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to force the table to use the new costs at next access.
+* To keep things fast, engine-specific costs are stored in the table definition (TABLE_SHARE). One effect of this is that if one changes the cost for an engine, it will only take effect when new, not previously cached tables are accessed. You can use [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) to force the table to use the new costs at next access.
 
 
 ### Examples of Changing Costs
@@ -269,10 +267,10 @@ The costs for an engine are set the following way when the engine plugin is load
 
 * Copy the "default" storage engine costs to the plugin engine costs.
 
-  * #handlerton->costs` points to the engine specific cost data.`
+  * #handlerton->costs`points to the engine specific cost data.`
 * Call `handlerton->update_optimizer_costs()` to let the storage engine update the costs.
 * Apply all user specific engine costs (from configuration files/startup) to the engine costs structure.
 * When a TABLE_SHARE is created, the costs are copied from `handlerton->costs` to `TABLE_SHARE.optimizer_costs` . `handler::update_optimizer_costs()` is called to allow the engine to tune the cost for this specific table instance. This is done to avoid having to take any "cost" mutex while running queries.
-* User changes to engine costs are stored in the data pointed to by `handlerton->costs`. This is why [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is needed to activate new engine costs.
+* User changes to engine costs are stored in the data pointed to by `handlerton->costs`. This is why [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) is needed to activate new engine costs.
 * To speed up cost access for the optimizer, `handler::set_optimizer_costs()` is called for each query to copy `OPTIMIZER_WHERE_COST` and `OPTIMIZER_SCAN_SETUP_COST` to the engine cost structure.
 

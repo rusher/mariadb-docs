@@ -65,7 +65,7 @@ VALUES (10, 20), (30, 40), (50, 60), (70, 80)
 ORDER BY val1 DESC;
 ```
 
-Using TVC with `[LIMIT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)` clause:
+Using TVC with `[LIMIT](../sql-statements/data-manipulation/selecting-data/limit.md)` clause:
 
 
 ```

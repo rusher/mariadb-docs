@@ -12,7 +12,7 @@ SHOW PLUGINS;
 ## Description
 
 
-`SHOW PLUGINS` displays information about installed [plugins](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). The `Library` column indicates the plugin library - if it is `NULL`, the plugin is built-in and cannot be uninstalled.
+`SHOW PLUGINS` displays information about installed [plugins](../../../../plugins/README.md). The `Library` column indicates the plugin library - if it is `NULL`, the plugin is built-in and cannot be uninstalled.
 
 
 The `[PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)` table in the `information_schema` database contains more detailed information.

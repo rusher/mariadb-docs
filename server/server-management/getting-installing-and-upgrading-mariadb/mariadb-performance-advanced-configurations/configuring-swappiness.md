@@ -13,7 +13,7 @@ Obviously, accessing swap memory from disk is far slower than accessing RAM dire
 * Database locks are particularly inefficient in swap. They are designed to be obtained and released often and quickly, and pausing to perform disk IO will have a serious impact on their usability.
 
 
-The main way to avoid swapping is to make sure you have enough RAM for all processes that need to run on the machine. Setting the [system variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-11-1.md) too high can mean that under load the server runs short of memory, and needs to use swap. So understanding what settings to use and how these impact your server's memory usage is critical.
+The main way to avoid swapping is to make sure you have enough RAM for all processes that need to run on the machine. Setting the [system variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/README.md) too high can mean that under load the server runs short of memory, and needs to use swap. So understanding what settings to use and how these impact your server's memory usage is critical.
 
 
 ## Setting Swappiness on Linux

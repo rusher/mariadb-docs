@@ -26,10 +26,10 @@ First one needs to take down the original primary in such a way that the replica
 has all information on the primary.
 
 
-If you are using [Semisynchronous Replication](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) you can just stop the server with the [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command as the replicas should be automatically up to date.
+If you are using [Semisynchronous Replication](semisynchronous-replication.md) you can just stop the server with the [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) command as the replicas should be automatically up to date.
 
 
-If you are using [MariaDB MaxScale proxy](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the primary and replacing it with one of the replicas.
+If you are using [MariaDB MaxScale proxy](/kb/en/maxscale/), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the primary and replacing it with one of the replicas.
 
 
 If neither of the above is true, you have to do this step manually:
@@ -92,7 +92,7 @@ primaries. What is important is that all the sequences that are on the
 primary is also on the replica.
 
 
-When replica is up to date, you can then take the **PRIMARY** down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+When replica is up to date, you can then take the **PRIMARY** down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 
 
 ```
@@ -169,7 +169,7 @@ START SLAVE;
 
 
 You should now point your applications to use the new primary.
-If you are using the [MariaDB MaxScale proxy](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), then you don't
+If you are using the [MariaDB MaxScale proxy](/kb/en/maxscale/), then you don't
 have to do this step as MaxScale will take care of sending write request
 to the new primary.
 
@@ -181,4 +181,3 @@ to the new primary.
 * [MaxScale Blog about using Switchover to swap a primary and replica](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin)
 * [Percona blog about how to upgrade replica to primary](https://www.percona.com/blog/2015/12/01/upgrade-master-server-minimal-downtime)
 
-<span></span>

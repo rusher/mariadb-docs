@@ -11,7 +11,7 @@ MultiPolygon(poly1,poly2,...)
 ## Description
 
 
-Constructs a [WKB](../wkb/wkb-polyfromwkb.md) MultiPolygon value from a set of WKB [Polygon](polygon.md) arguments. If any argument is not a WKB Polygon, the return value is `NULL`.
+Constructs a [WKB](../wkb/README.md) MultiPolygon value from a set of WKB [Polygon](polygon.md) arguments. If any argument is not a WKB Polygon, the return value is `NULL`.
 
 
 ## Example

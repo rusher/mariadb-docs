@@ -2,14 +2,14 @@
 # schema_auto_increment_columns Sys Schema View
 
 
-##### MariaDB starting with [10.6](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
-The [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) was introduced in [MariaDB 10.6](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+The [Sys Schema](../README.md) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
 
 ## Description
 
 
-Information about [AUTO_INCREMENT](../../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) columns, sorted by descending usage ratio and maximum column value. Does not include columns in the mysql, sys, information_schema and performance_schema schemas.
+Information about [AUTO_INCREMENT](../../../../../../data-types/auto_increment.md) columns, sorted by descending usage ratio and maximum column value. Does not include columns in the mysql, sys, information_schema and performance_schema schemas.
 
 
 Contains the following columns:
@@ -22,8 +22,8 @@ Contains the following columns:
 | table_schema | Schema name containing the table with the auto_increment attribute. |
 | table_name | Table containing the auto_increment attribute. |
 | column_name | Name of the column containing the auto_increment attribute. |
-| data_type | [Data type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md) of the auto_increment column, for example [tinyint](../../../../../../data-types/data-types-numeric-data-types/tinyint.md). |
-| column_type | [Data type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md) of the auto_increment column, plus additional information for example tinyint(3) unsigned. |
+| data_type | [Data type](../../../../../../data-types/README.md) of the auto_increment column, for example [tinyint](../../../../../../data-types/data-types-numeric-data-types/tinyint.md). |
+| column_type | [Data type](../../../../../../data-types/README.md) of the auto_increment column, plus additional information for example tinyint(3) unsigned. |
 | is_signed | 1 if the column is [signed](../../../../../../data-types/data-types-numeric-data-types/numeric-data-type-overview.md#signed-unsigned-and-zerofill),0 if not. |
 | is_unsigned | 1 if the column is unsigned,0 if it is. |
 | max_value | Maximum possible value for the column, for example 255 for an unsigned tinyint. |

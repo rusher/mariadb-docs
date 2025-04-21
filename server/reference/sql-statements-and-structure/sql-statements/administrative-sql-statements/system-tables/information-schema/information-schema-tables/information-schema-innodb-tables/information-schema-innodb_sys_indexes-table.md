@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_SYS_INDEXES Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_INDEXES` table contains information about InnoDB indexes.
+The [Information Schema](../../README.md) `INNODB_SYS_INDEXES` table contains information about InnoDB indexes.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.

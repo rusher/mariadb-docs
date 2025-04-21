@@ -107,7 +107,7 @@ The new key file would look something like the following after this step:
 100;8db1ee74580e7e93ab8cf157f02656d356c2f437d548d5bf16bf2a56932954a3
 ```
 
-The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id)` table option or with system variables such as `[innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)`. You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
+The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id)` table option or with system variables such as `[innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)`. You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
 
 
 ### Configuring the Path to an Unencrypted Key File
@@ -268,10 +268,10 @@ For more information on how to use encryption, see [Data at Rest Encryption](../
 The File Key Management Plugin supports [using multiple encryption keys](encryption-key-management.md#using-multiple-encryption-keys). Each encryption key can be defined with a different 32-bit integer as a key identifier.
 
 
-When [encrypting InnoDB tables](../innodb-encryption/innodb-encryption-troubleshooting.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
+When [encrypting InnoDB tables](../innodb-encryption/README.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
 
 
-When [encrypting Aria tables](../aria-encryption/aria-encryption-overview.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
+When [encrypting Aria tables](../aria-encryption/README.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
 
 
 ## Key Rotation
@@ -287,9 +287,9 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.18](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.1.13](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 10.1.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Alpha | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 
 
@@ -361,4 +361,3 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
-<span></span>

@@ -11,12 +11,12 @@ A view cannot be used for updating if it uses any of the following:
 
 
 * ALGORITHM=TEMPTABLE (see [View Algorithms](view-algorithms.md))
-* [HAVING](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
-* [GROUP BY](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by)
-* [DISTINCT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#distinct)
+* [HAVING](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)
+* [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#group-by)
+* [DISTINCT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#distinct)
 * [UNION](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
 * [UNION ALL](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
-* An aggregate function, such as [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), [MIN()](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md), [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
+* An aggregate function, such as [MAX()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md), [MIN()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md), [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
 * subquery in the SELECT list
 * subquery in the WHERE clause referring to a table in the FROM clause
 * if it has no underlying table because it refers only to literal values
@@ -130,4 +130,3 @@ This insert fails, as `view_check3` checks the insert against both `view_check3`
 INSERT INTO view_check3 VALUES (150);
 ERROR 1369 (HY000): CHECK OPTION failed 'test.view_check3'
 ```
-<span></span>

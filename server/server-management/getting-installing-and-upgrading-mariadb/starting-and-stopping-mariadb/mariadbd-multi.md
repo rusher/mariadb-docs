@@ -8,7 +8,7 @@ Before using mariadbd-multi be sure that you understand the meanings of the opti
 The `mariadbd-multi` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that is designed to manage several `mariadbd` processes running on the same host.
 
 
-Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqld_multi`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqld_multi`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 In order for multiple `mariadbd` processes to work on the same host, these processes must:
@@ -81,7 +81,7 @@ mariadbd-multi stop 8,10-13
 | --user=username | The user name of the MariaDB account to use when invoking [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md). |
 | --verbose | Be more verbose. |
 | --version | Display version information and exit. |
-| --wsrep-new-cluster | Bootstrap a cluster. Added in [MariaDB 10.1.15](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes.md). |
+| --wsrep-new-cluster | Bootstrap a cluster. Added in [MariaDB 10.1.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes). |
 
 
 

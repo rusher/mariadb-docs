@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2025
 
-This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). We, joined with the [MariaDB Foundation](https://www.mariadb.org), believe we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md), [C++](https://mariadb.com/kb/en/mariadb-connector-c%2B%2B), [ODBC](../../../../connectors/mariadb-connector-odbc/README.md), [Java](../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md), [Node.js](/kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). We, joined with the [MariaDB Foundation](https://www.mariadb.org), believe we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), [C++](https://mariadb.com/kb/en/mariadb-connector-c%2B%2B), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/), [Node.js](/kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](/kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 
 
@@ -94,7 +94,7 @@ extend mysqltest language to support bash-like substitutions:
 * `${parameter:offset:length}`
 * `${#parameter}`
 * `${parameter/pattern/string/flags}`
-* may be `${parameterˆ}`, `${parameterˆˆ}`, `${parameter,}`, `${parameter<sub>}</sub>`
+* may be `${parameterˆ}`, `${parameterˆˆ}`, `${parameter,}`, `${parameter}`
 * may be `${parameter@function}` with functions like `u`, `U`, `Q`, etc
 
 
@@ -179,7 +179,7 @@ MariaDB Columnstore lacks recursive CTE handling, so as of now Columnstore hands
 
 
 Here is the info about the feature: 
-[recursive-common-table-expressions-overview.md](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview.md)
+[recursive-common-table-expressions-overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview)
 
 
 **Skills needed:** modern C++
@@ -197,8 +197,8 @@ MariaDB Columnstore lacks UNION EXCEPT INTERSECT handling, so as of now Columnst
 
 
 Here is the info about the feature: 
-[except.md](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/except.md) 
-[intersects.md](../../../../server/reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/intersects.md)
+[except](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/except) 
+[intersect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/intersect)
 
 
 **Skills needed:** modern C++

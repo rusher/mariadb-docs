@@ -2,8 +2,8 @@
 # ADD_MONTHS
 
 
-##### MariaDB starting with [10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-The ADD_MONTHS function was introduced in [MariaDB 10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) to enhance Oracle compatibility. Similar functionality can be achieved with the [DATE_ADD](date_add.md) function.
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+The ADD_MONTHS function was introduced in [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) to enhance Oracle compatibility. Similar functionality can be achieved with the [DATE_ADD](date_add.md) function.
 
 
 ## Syntax
@@ -17,7 +17,7 @@ ADD_MONTHS(date, months)
 ## Description
 
 
-`ADD_MONTHS` adds an integer *months* to a given *date* ([DATE](../../../sql-language-structure/date-and-time-literals.md), [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md) or [TIMESTAMP](timestamp-function.md)), returning the resulting date.
+`ADD_MONTHS` adds an integer *months* to a given *date* ([DATE](../../../../data-types/date-and-time-data-types/date.md), [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md) or [TIMESTAMP](../../../../data-types/date-and-time-data-types/timestamp.md)), returning the resulting date.
 
 
 *months* can be positive or negative. If months is not a whole number, then it will be rounded to the nearest whole number (not truncated).
@@ -103,5 +103,5 @@ SELECT ADD_MONTHS('2011-01-15', 2.1);
 ## See Also
 
 
-* [SQL_MODE=ORACLE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [SQL_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

@@ -11,7 +11,7 @@ UNHEX(str)
 ## Description
 
 
-Performs the inverse operation of [HEX](../../../sql-language-structure/hexadecimal-literals.md)(str). That is, it interprets
+Performs the inverse operation of [HEX](hex.md)(str). That is, it interprets
 each pair of hexadecimal digits in the argument as a number and
 converts it to the character represented by the number. The resulting
 characters are returned as a binary string.
@@ -64,6 +64,6 @@ SELECT HEX(UNHEX('1267'));
 
 
 * [Hexadecimal literals](../../../sql-language-structure/hexadecimal-literals.md)
-* [HEX()](../../../sql-language-structure/hexadecimal-literals.md)
-* [CONV()](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)
+* [HEX()](hex.md)
+* [CONV()](../numeric-functions/conv.md)
 

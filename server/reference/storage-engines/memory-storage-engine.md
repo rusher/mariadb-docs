@@ -22,7 +22,7 @@ The maximum total size of MEMORY tables cannot exceed the [max_heap_table_size](
 The `MAX_ROWS` table option provides a hint about the number of rows you plan to store in them. This is not a hard limit that cannot be exceeded, and does not allow to exceed `max_heap_table_size`. The storage engine uses max_heap_table_size and MAX_ROWS to calculate the maximum memory that could be allocated for the table.
 
 
-Memory allocated to a MEMORY table is freed by running [DROP TABLE](../sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) or [TRUNCATE TABLE](../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl_name ENGINE = MEMORY](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). When rows are deleted, space is not automatically freed.
+Memory allocated to a MEMORY table is freed by running [DROP TABLE](../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) or [TRUNCATE TABLE](../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl_name ENGINE = MEMORY](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md). When rows are deleted, space is not automatically freed.
 
 
 ## Index Type
@@ -57,5 +57,5 @@ SET max_heap_table_size = @@max_heap_table_size;
 ## See Also
 
 
-* [Performance of MEMORY tables](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/performance-of-memory-tables.md)
+* [Performance of MEMORY tables](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/performance-of-memory-tables)
 

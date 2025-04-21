@@ -24,7 +24,7 @@ The `TEXT` types are
 * [TEXT](text.md),
 * [MEDIUMTEXT](mediumtext.md), and
 * [LONGTEXT](longtext.md).
-* [JSON](../../storage-engines/connect/json-sample-files.md) (alias for LONGTEXT)
+* [JSON](json.md) (alias for LONGTEXT)
 
 
 These correspond to the four `BLOB` types and have the same
@@ -43,5 +43,5 @@ It is possible to set a unique index on columns that use the BLOB or TEXT data t
 ## See Also
 
 
-* [Store a column as compressed](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#compressed)
+* [Store a column as compressed](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#compressed)
 

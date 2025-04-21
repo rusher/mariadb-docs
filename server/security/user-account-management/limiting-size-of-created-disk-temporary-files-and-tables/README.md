@@ -2,6 +2,6 @@
 # Limiting Size of Created Disk Temporary Files and Tables
 
 
-##### MariaDB starting with [11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-The ability to limit the size of created disk temporary files and tables was introduced in [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md).
+##### MariaDB starting with [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+The ability to limit the size of created disk temporary files and tables was introduced in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
 

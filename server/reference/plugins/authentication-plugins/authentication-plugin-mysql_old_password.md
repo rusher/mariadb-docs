@@ -1,7 +1,7 @@
 
 # Authentication Plugin - mysql_old_password
 
-The `mysql_old_password` authentication plugin is the default authentication plugin that will be used for an account created when no authentication plugin is explicitly mentioned and `[old_passwords=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords)` is set. It uses the pre-MySQL 4.1 password hashing algorithm, which is also used by the `[OLD_PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md)` function and by the `[PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md)` function when `[old_passwords=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords)` is set.
+The `mysql_old_password` authentication plugin is the default authentication plugin that will be used for an account created when no authentication plugin is explicitly mentioned and `[old_passwords=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords)` is set. It uses the pre-MySQL 4.1 password hashing algorithm, which is also used by the `[OLD_PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md)` function and by the `[PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)` function when `[old_passwords=1](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords)` is set.
 
 
 It is not recommended to use the `mysql_old_password` authentication plugin for new installations. The password hashing algorithm is no longer as secure as it used to be, and the plugin is primarily provided for backward-compatibility. The `[ed25519](authentication-plugin-ed25519.md)` authentication plugin is a more modern authentication plugin that provides simple password authentication.
@@ -63,7 +63,7 @@ Query OK, 0 rows affected (0.000 sec)
 ## Changing User Passwords
 
 
-You can change a user account's password with the `[SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)` statement while providing the plain-text password as an argument to the `[PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md)` function. For example:
+You can change a user account's password with the `[SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)` statement while providing the plain-text password as an argument to the `[PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)` function. For example:
 
 
 ```
@@ -81,7 +81,7 @@ ALTER USER username@hostname IDENTIFIED BY 'new_secret';
 ## Client Authentication Plugins
 
 
-For clients that use the `libmysqlclient` or [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) libraries, MariaDB provides one client authentication plugin that is compatible with the `mysql_old_password` authentication plugin:
+For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) libraries, MariaDB provides one client authentication plugin that is compatible with the `mysql_old_password` authentication plugin:
 
 
 * `mysql_old_password`
@@ -94,7 +94,7 @@ When connecting with a [client or utility](/kb/en/clients-utilities/) to a serve
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
 ```
 
-However, the `mysql_old_password` client authentication plugin is generally statically linked into client libraries like `libmysqlclient` or [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md), so this is not usually necessary.
+However, the `mysql_old_password` client authentication plugin is generally statically linked into client libraries like `libmysqlclient` or [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), so this is not usually necessary.
 
 
 ### `mysql_old_password`

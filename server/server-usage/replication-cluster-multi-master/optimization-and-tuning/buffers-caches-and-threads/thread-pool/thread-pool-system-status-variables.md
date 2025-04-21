@@ -2,7 +2,7 @@
 # Thread Pool System and Status Variables
 
 
-This article describes the system and status variables used by the MariaDB thread pool. For a full description, see [Thread Pool in MariaDB](thread-pool-in-mariadb-51-53.md).
+This article describes the system and status variables used by the MariaDB thread pool. For a full description, see [Thread Pool in MariaDB](thread-pool-in-mariadb.md).
 
 
 ## System variables
@@ -13,7 +13,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: The number of connections on the `[extra_port](#extra_port)`.
 
-  * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb-51-53.md#configuring-the-extra-port) for more information.
+  * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb.md#configuring-the-extra-port) for more information.
 * Commandline: `--extra-max-connections=#`
 * Scope: Global
 * Dynamic: Yes
@@ -28,7 +28,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: Extra port number to use for TCP connections in a `one-thread-per-connection` manner. If set to `0`, then no extra port is used.
 
-  * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb-51-53.md#configuring-the-extra-port) for more information.
+  * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb.md#configuring-the-extra-port) for more information.
 * Commandline: `--extra-port=#`
 * Scope: Global
 * Dynamic: No
@@ -43,7 +43,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Description: Determines how the server handles threads for client connections. In addition to threads for client connections, this also applies to certain internal server threads, such as [Galera slave threads](../../../galera-cluster/about-galera-replication.md#galera-slave-threads). On Windows, if you would like to use the thread pool, then you do not need to do anything, because the default for the thread_handling system variable is already preset to `pool-of-threads`. 
 
   * When the default `one-thread-per-connection` mode is enabled, the server uses one thread to handle each client connection.
-  * When the `pool-of-threads` mode is enabled, the server uses the [thread pool](thread-pool-in-mariadb-51-53.md) for client connections.
+  * When the `pool-of-threads` mode is enabled, the server uses the [thread pool](thread-pool-in-mariadb.md) for client connections.
   * When the `no-threads` mode is enabled, the server uses a single thread for all client connections, which is really only usable for debugging.
 * Commandline: `--thread-handling=name`
 * Scope: Global
@@ -51,7 +51,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Data Type: `enumeration`
 * Default Value: `one-thread-per-connection` (non-Windows), `pool-of-threads` (Windows)
 * Valid Values: `no-threads`, `one-thread-per-connection`, `pool-of-threads`.
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 * Notes: In MySQL, the thread pool is only available in MySQL Enterprise. In MariaDB it's available in all versions.
 
 
@@ -68,7 +68,7 @@ IO requests are immediately dequeued from poll, without delay.
 * Dynamic:
 * Data Type: `boolean`
 * Default Value: `0`
-* Introduced: [MariaDB 10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -84,7 +84,7 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](.
 * Dynamic:
 * Data Type: `boolean`
 * Default Value: `0`
-* Introduced: [MariaDB 10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -100,14 +100,14 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `60`
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
 #### `thread_pool_max_threads`
 
 
-* Description: The maximum number of threads in the [thread pool](thread-pool-in-mariadb-51-53.md). Once this limit is reached, no new threads will be created in most cases.
+* Description: The maximum number of threads in the [thread pool](thread-pool-in-mariadb.md). Once this limit is reached, no new threads will be created in most cases.
 
   * On Unix, in rare cases, the actual number of threads can slightly exceed this, because each [thread group](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
 * Scope:
@@ -117,25 +117,25 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](.
 * Data Type: `numeric`
 * Default Value:
 
-  * `65536` (>= [MariaDB 10.2.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md))
-  * `1000` (<= [MariaDB 10.2.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), >= [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
-  * `500` (<= [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md))
+  * `65536` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
+  * `1000` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), >= [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1))
+  * `500` (<= [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0))
 * Range: `1` to `65536`
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
 #### `thread_pool_min_threads`
 
 
-* Description: Minimum number of threads in the [thread pool](thread-pool-in-mariadb-51-53.md). In bursty environments, after a period of inactivity, threads would normally be retired. When the next burst arrives, it would take time to reach the optimal level. Setting this value higher than the default would prevent thread retirement even if inactive.
+* Description: Minimum number of threads in the [thread pool](thread-pool-in-mariadb.md). In bursty environments, after a period of inactivity, threads would normally be retired. When the next burst arrives, it would take time to reach the optimal level. Setting this value higher than the default would prevent thread retirement even if inactive.
 
   * This system variable is only meaningful on Windows.
   * The `[thread_pool_idle_timeout](#thread_pool_idle_timeout)` system variable is comparable for Unix.
 * Commandline: `thread-pool-min-threads=#`
 * Data Type: `numeric`
 * Default Value: `1`
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
@@ -152,7 +152,7 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](.
 * Data Type: `numeric`
 * Default Value: `3`
 * Range: `1` to `65536`
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
@@ -168,30 +168,30 @@ calculate the queuing time shown in the [Information Schema Threadpool_Queues](.
 * Data Type: `numeric`
 * Default Value: `1000`
 * Range: `0` to `4294967295`
-* Introduced: [MariaDB 10.2.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Introduced: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
 #### `thread_pool_priority`
 
 
-* Description: [Thread pool](thread-pool-in-mariadb-51-53.md) priority. High-priority connections usually start executing earlier than low-priority.
+* Description: [Thread pool](thread-pool-in-mariadb.md) priority. High-priority connections usually start executing earlier than low-priority.
 If set to 'auto' (the default), the actual priority (low or high) is determined by whether or not the connection is inside a transaction.
 * Commandline: `--thread-pool-priority=#`
 * Scope: Global,Connection
 * Data Type: `enum`
 * Default Value: `auto`
 * Valid Values: `high`, `low`, `auto`.
-* Introduced: [MariaDB 10.2.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Introduced: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
 #### `thread_pool_size`
 
 
-* Description: The number of [thread groups](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) in the [thread pool](thread-pool-in-mariadb-51-53.md), which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher.
+* Description: The number of [thread groups](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) in the [thread pool](thread-pool-in-mariadb.md), which determines how many statements can execute simultaneously. The default value is the number of CPUs on the system. When setting this system variable's value at system startup, the max value is 100000. However, it is not a good idea to set it that high. When setting this system variable's value dynamically, the max value is either 128 or the value that was set at system startup--whichever value is higher.
 
   * See [Thread Groups in the Unix Implementation of the Thread Pool](thread-groups-in-the-unix-implementation-of-the-thread-pool.md) for more information.
   * This system variable is only meaningful on Unix.
@@ -200,8 +200,8 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: Based on the number of processors (but see [MDEV-7806](https://jira.mariadb.org/browse/MDEV-7806)).
-* Range: `1` to `128` (< [MariaDB 5.5.37](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes.md), [MariaDB 10.0.11](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes.md)), `1` to `100000` (>= [MariaDB 5.5.37](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes.md), [MariaDB 10.0.11](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes.md))
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Range: `1` to `128` (< [MariaDB 5.5.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes), [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes)), `1` to `100000` (>= [MariaDB 5.5.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes), [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes))
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
@@ -218,8 +218,8 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `500`
-* Range: `10` to `4294967295` (< [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), `1` to `4294967295` (>= [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md))
-* Documentation: [Using the thread pool](thread-pool-in-mariadb-51-53.md).
+* Range: `10` to `4294967295` (< [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)), `1` to `4294967295` (>= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105))
+* Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 
 
@@ -229,7 +229,7 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 #### `Threadpool_idle_threads`
 
 
-* Description: Number of inactive threads in the [thread pool](thread-pool-in-mariadb-51-53.md). Threads become inactive for various reasons, such as by waiting for new work. However, an inactive thread is not necessarily one that has not been assigned work. Threads are also considered inactive if they are being blocked while waiting on disk I/O, or while waiting on a lock, etc.
+* Description: Number of inactive threads in the [thread pool](thread-pool-in-mariadb.md). Threads become inactive for various reasons, such as by waiting for new work. However, an inactive thread is not necessarily one that has not been assigned work. Threads are also considered inactive if they are being blocked while waiting on disk I/O, or while waiting on a lock, etc.
 
   * This status variable is only meaningful on Unix.
 * Scope: Global, Session
@@ -240,7 +240,7 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 #### `Threadpool_threads`
 
 
-* Description: Number of threads in the [thread pool](thread-pool-in-mariadb-51-53.md). In rare cases, this can be slightly higher than `[thread_pool_max_threads](#thread_pool_max_threads)`, because each thread group needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
+* Description: Number of threads in the [thread pool](thread-pool-in-mariadb.md). In rare cases, this can be slightly higher than `[thread_pool_max_threads](#thread_pool_max_threads)`, because each thread group needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -249,6 +249,5 @@ If set to 'auto' (the default), the actual priority (low or high) is determined 
 ## See Also
 
 
-* [Thread Pool in MariaDB](thread-pool-in-mariadb-51-53.md)
+* [Thread Pool in MariaDB](thread-pool-in-mariadb.md)
 
-<span></span>

@@ -26,7 +26,7 @@ Use the [SHOW STATUS](../../../../reference/sql-statements-and-structure/sql-sta
 information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL_STATUS and SESSION_STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
 
 
-Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) will reset many status variables to zero.
+Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) will reset many status variables to zero.
 
 
 ## List of Server Status Variables
@@ -35,7 +35,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Aborted_clients`
 
 
-* Description: Number of aborted client connections. This can be due to the client not calling mysql_close() before exiting, the client sleeping without issuing a request to the server for more seconds than specified by [wait_timeout](server-system-variables.md#wait_timeout) or [interactive_timeout](server-system-variables.md#interactive_timeout), or by the client program ending in the midst of transferring data. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of aborted client connections. This can be due to the client not calling mysql_close() before exiting, the client sleeping without issuing a request to the server for more seconds than specified by [wait_timeout](server-system-variables.md#wait_timeout) or [interactive_timeout](server-system-variables.md#interactive_timeout), or by the client program ending in the midst of transferring data. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -44,7 +44,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Aborted_connects`
 
 
-* Description: Number of failed server connection attempts. This can be due to a client using an incorrect password, a client not having privileges to connect to a database, a connection packet not containing the correct information, or if it takes more than [connect_timeout](server-system-variables.md#connect_timeout) seconds to get a connect packet. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of failed server connection attempts. This can be due to a client using an incorrect password, a client not having privileges to connect to a database, a connection packet not containing the correct information, or if it takes more than [connect_timeout](server-system-variables.md#connect_timeout) seconds to get a connect packet. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -269,7 +269,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_alter_table`
 
 
-* Description: Number of [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands executed.
+* Description: Number of [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -281,7 +281,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description: Number of [ALTER TABLESPACE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands executed (unsupported by MariaDB).
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.7.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+* Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 
 
@@ -318,7 +318,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.4.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md)
+* Removed: [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes)
 
 
 
@@ -328,17 +328,17 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.4.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
+* Removed: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
 
 
 
 #### `Com_backup_table`
 
 
-* Description: Removed in [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). In older versions, Com_backup_table contains the number of [BACKUP TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md) commands executed.
+* Description: Removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). In older versions, Com_backup_table contains the number of [BACKUP TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -354,7 +354,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_binlog`
 
 
-* Description: Number of [BINLOG](../../../../../maxscale/mariadb-maxscale-14/maxscale-14-routers/binlogrouter.md) commands executed.
+* Description: Number of [BINLOG](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/binlog.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -372,7 +372,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_change_db`
 
 
-* Description: Number of [USE](../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) database_name commands executed.
+* Description: Number of [USE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) database_name commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -408,7 +408,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_compound_sql`
 
 
-* Description: Number of [compund](../../../programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/README.md) sql statements.
+* Description: Number of [compund](../../../programming-customizing-mariadb/programmatic-compound-statements/README.md) sql statements.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -507,7 +507,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_create_table`
 
 
-* Description: Number of [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) commands executed.
+* Description: Number of [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -516,7 +516,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_create_temporary_table`
 
 
-* Description: Number of [CREATE TEMPORARY TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) commands executed.
+* Description: Number of [CREATE TEMPORARY TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -588,7 +588,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_do`
 
 
-* Description: Number of [DO](../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md) commands executed.
+* Description: Number of [DO](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/do.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -687,7 +687,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_drop_table`
 
 
-* Description: Number of [DROP TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) commands executed.
+* Description: Number of [DROP TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -696,7 +696,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_drop_temporary_table`
 
 
-* Description: Number of [DROP TEMPORARY TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) commands executed.
+* Description: Number of [DROP TEMPORARY TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -732,7 +732,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_empty_query`
 
 
-* Description: Number of queries to the server that do not produce SQL queries. An SQL query simply returning no results does not increment `Com_empty_query` - see [Empty_queries](#empty_queries) instead. An example of an empty query sent to the server is `mariadb --comments -e '-- sql comment' `
+* Description: Number of queries to the server that do not produce SQL queries. An SQL query simply returning no results does not increment `Com_empty_query` - see [Empty_queries](#empty_queries) instead. An example of an empty query sent to the server is `mariadb --comments -e '-- sql comment'`
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -759,7 +759,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_flush`
 
 
-* Description: Number of [FLUSH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) commands executed. This differs from [Flush_commands](#flush_commands), which also counts internal server flush requests.
+* Description: Number of [FLUSH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) commands executed. This differs from [Flush_commands](#flush_commands), which also counts internal server flush requests.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -831,7 +831,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_insert`
 
 
-* Description: Number of [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) commands executed.
+* Description: Number of [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -879,7 +879,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -889,7 +889,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -995,7 +995,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_replace`
 
 
-* Description: Number of [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) commands executed.
+* Description: Number of [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1004,7 +1004,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_replace_select`
 
 
-* Description: Number of [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) ... [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) commands executed.
+* Description: Number of [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) ... [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1013,7 +1013,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_reset`
 
 
-* Description: Number of [RESET](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) commands executed.
+* Description: Number of [RESET](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/reset.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1031,10 +1031,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_restore_table`
 
 
-* Description: Removed in [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). In older versions, Com_restore_table contains the number of [RESTORE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md) commands executed.
+* Description: Removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). In older versions, Com_restore_table contains the number of [RESTORE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -1095,7 +1095,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_select`
 
 
-* Description: Number of [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) commands executed. Also includes queries that make use of the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md).
+* Description: Number of [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) commands executed. Also includes queries that make use of the [query cache](../buffers-caches-and-threads/query-cache.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1104,7 +1104,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_set_option`
 
 
-* Description: Number of [SET OPTION](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) commands executed.
+* Description: Number of [SET OPTION](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1158,10 +1158,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_client_statistics`
 
 
-* Description: Number of [SHOW CLIENT STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW CLIENT STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -1180,7 +1180,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -1286,7 +1286,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_engine_logs`
 
 
-* Description: Number of [SHOW ENGINE LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) commands executed.
+* Description: Number of [SHOW ENGINE LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1295,7 +1295,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_engine_mutex`
 
 
-* Description: Number of [SHOW ENGINE MUTEX](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) commands executed.
+* Description: Number of [SHOW ENGINE MUTEX](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1304,7 +1304,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_engine_status`
 
 
-* Description: Number of [SHOW ENGINE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) commands executed.
+* Description: Number of [SHOW ENGINE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1358,7 +1358,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_generic`
 
 
-* Description: Number of generic [SHOW](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-code.md) commands executed, such as [SHOW INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md) and [SHOW TABLE_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md)
+* Description: Number of generic [SHOW](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/README.md) commands executed, such as [SHOW INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md) and [SHOW TABLE_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md)
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1385,10 +1385,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_index_statistics`
 
 
-* Description: Number of [SHOW INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -1422,7 +1422,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_plugins`
 
 
-* Description: Number of [SHOW PLUGINS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) commands executed.
+* Description: Number of [SHOW PLUGINS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1503,10 +1503,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_table_statistics`
 
 
-* Description: Number of [SHOW TABLE STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW TABLE STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -1540,10 +1540,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_show_user_statistics`
 
 
-* Description: Number of [SHOW USER STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW USER STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information_schema_table](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -1640,7 +1640,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_truncate`
 
 
-* Description: Number of [TRUNCATE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) commands executed.
+* Description: Number of [TRUNCATE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1667,7 +1667,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_update`
 
 
-* Description: Number of [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) commands executed.
+* Description: Number of [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1676,7 +1676,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Com_update_multi`
 
 
-* Description: Number of multi-table [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) commands executed.
+* Description: Number of multi-table [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1748,7 +1748,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Connection_errors_accept`
 
 
-* Description: Number of errors that occurred during calls to accept() on the listening port. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of errors that occurred during calls to accept() on the listening port. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1757,7 +1757,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Connection_errors_internal`
 
 
-* Description: Number of refused connections due to internal server errors, for example out of memory errors, or failed thread starts. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of refused connections due to internal server errors, for example out of memory errors, or failed thread starts. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1766,7 +1766,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Connection_errors_max_connections`
 
 
-* Description: Number of refused connections due to the [max_connections](server-system-variables.md#max_connections) limit being reached. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of refused connections due to the [max_connections](server-system-variables.md#max_connections) limit being reached. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1775,7 +1775,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Connection_errors_peer_address`
 
 
-* Description: Number of errors while searching for the connecting client IP address. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of errors while searching for the connecting client IP address. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1784,7 +1784,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Connection_errors_select`
 
 
-* Description: Number of errors during calls to select() or poll() on the listening port. The client would not necessarily have been rejected in these cases. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of errors during calls to select() or poll() on the listening port. The client would not necessarily have been rejected in these cases. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1793,7 +1793,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Connection_errors_tcpwrap`
 
 
-* Description: Number of connections the libwrap library refused. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of connections the libwrap library refused. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1829,7 +1829,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Created_tmp_files`
 
 
-* Description: Number of temporary files created. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of temporary files created. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1847,7 +1847,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Delayed_errors`
 
 
-* Description: Number of errors which occurred while doing [INSERT DELAYED](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of errors which occurred while doing [INSERT DELAYED](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1865,7 +1865,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Delayed_writes`
 
 
-* Description: Number of [INSERT DELAYED](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows written. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of [INSERT DELAYED](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows written. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1910,7 +1910,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Feature_application_time_periods`
 
 
-* Description: Number of times a table created with [periods](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#periods) has been opened.
+* Description: Number of times a table created with [periods](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#periods) has been opened.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1919,7 +1919,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Feature_check_constraint`
 
 
-* Description: Number of times [constraints](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md) were checked. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of times [constraints](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md) were checked. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1928,7 +1928,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Feature_custom_aggregate_functions`
 
 
-* Description: Number of queries which make use of [custom aggregate functions](../../../programming-customizing-mariadb/stored-routines/stored-functions/stored-aggregate-functions.md).
+* Description: Number of queries which make use of [custom aggregate functions](https://mariadb.com/kb/en/stored-aggregate-function).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1937,7 +1937,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Feature_delay_key_write`
 
 
-* Description: Number of tables opened that are using [delay_key_write](server-system-variables.md#delay_key_write). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of tables opened that are using [delay_key_write](server-system-variables.md#delay_key_write). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1976,7 +1976,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -2045,7 +2045,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Feature_window_functions`
 
 
-* Description: Number of times [window functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md) were used.
+* Description: Number of times [window functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md) were used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2063,10 +2063,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Flush_commands`
 
 
-* Description: Number of [FLUSH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statements executed, as well as due to internal server flush requests. This differs from [Com_flush](#com_flush), which simply counts FLUSH statements, not internal server flush operations.
+* Description: Number of [FLUSH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements executed, as well as due to internal server flush requests. This differs from [Com_flush](#com_flush), which simply counts FLUSH statements, not internal server flush operations.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
+* Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
 
 
 
@@ -2199,7 +2199,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Handler_read_prev`
 
 
-* Description: Number of requests to read the previous row from an index (in order). Mostly used with [ORDER BY DESC](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#order-by).
+* Description: Number of requests to read the previous row from an index (in order). Mostly used with [ORDER BY DESC](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#order-by).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2298,7 +2298,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Handler_update`
 
 
-* Description: Number of requests to update a row in a table. Since [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), this no longer counts temporary tables - see [Handler_tmp_update](#handler_tmp_update).
+* Description: Number of requests to update a row in a table. Since [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), this no longer counts temporary tables - see [Handler_tmp_update](#handler_tmp_update).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2307,7 +2307,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Handler_write`
 
 
-* Description: Number of requests to write a row to a table. Since [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), this no longer counts temporary tables - see [Handler_tmp_write](#handler_tmp_write).
+* Description: Number of requests to write a row to a table. Since [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), this no longer counts temporary tables - see [Handler_tmp_write](#handler_tmp_write).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2407,7 +2407,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description: The maximum memory allocation used by the current connection.
 * Scope: Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.6.21](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md)
+* Introduced: [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes)
 
 
 #### `Max_statement_time_exceeded`
@@ -2424,14 +2424,14 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description: Maximum temporary space used. See [Limiting Size of Created Disk Temporary Files and Tables Overview](../../../../security/user-account-management/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview.md)
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
 #### `Max_used_connections`
 
 
-* Description: Max number of connections ever open at the same time. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+* Description: Max number of connections ever open at the same time. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2440,10 +2440,10 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Max_used_connections_time`
 
 
-* Description: The time at which the last change of [max_used_connections](#max_used_connections) occured. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+* Description: The time at which the last change of [max_used_connections](#max_used_connections) occured. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `datetime`
-* Introduced: [MariaDB 11.0.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes.md), [MariaDB 11.1.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-1-release-notes.md)
+* Introduced: [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes), [MariaDB 11.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-1-release-notes)
 
 
 
@@ -2522,7 +2522,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Opened_plugin_libraries`
 
 
-* Description: Number of shared libraries that the server has opened to load [plugins](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md).
+* Description: Number of shared libraries that the server has opened to load [plugins](../../../../reference/plugins/README.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2567,7 +2567,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_free_blocks`
 
 
-* Description: Number of free [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md) memory blocks.
+* Description: Number of free [query cache](../buffers-caches-and-threads/query-cache.md) memory blocks.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2576,7 +2576,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_free_memory`
 
 
-* Description: Amount of free [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md) memory.
+* Description: Amount of free [query cache](../buffers-caches-and-threads/query-cache.md) memory.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2585,7 +2585,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_hits`
 
 
-* Description: Number of requests served by the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of requests served by the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2594,7 +2594,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_inserts`
 
 
-* Description: Number of queries ever cached in the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of queries ever cached in the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2603,7 +2603,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_lowmem_prunes`
 
 
-* Description: Number of pruning operations performed to remove old results to make space for new results in the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of pruning operations performed to remove old results to make space for new results in the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2612,7 +2612,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_not_cached`
 
 
-* Description: Number of queries that are uncacheable by the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md), or use SQL_NO_CACHE. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of queries that are uncacheable by the [query cache](../buffers-caches-and-threads/query-cache.md), or use SQL_NO_CACHE. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2621,7 +2621,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_queries_in_cache`
 
 
-* Description: Number of queries currently cached by the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md).
+* Description: Number of queries currently cached by the [query cache](../buffers-caches-and-threads/query-cache.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2630,7 +2630,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Qcache_total_blocks`
 
 
-* Description: Number of blocks used by the [query cache](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md).
+* Description: Number of blocks used by the [query cache](../buffers-caches-and-threads/query-cache.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2651,7 +2651,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description: Cumulative time in seconds, with microsecond precision, of running queries.
 * Scope: Global,Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
+* Introduced: [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 
 
 #### `Questions`
@@ -2669,7 +2669,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 * Description: Number of times sending the metadata has been skipped. Metadata is not resent if metadata does not change between prepare and execute of prepared statement, or between executes.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -2748,7 +2748,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Slow_launch_threads`
 
 
-* Description: Number of threads which took longer than [slow_launch_time](server-system-variables.md#slow_launch_time) to create. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of threads which took longer than [slow_launch_time](server-system-variables.md#slow_launch_time) to create. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2757,7 +2757,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Slow_queries`
 
 
-* Description: Number of queries which took longer than [long_query_time](server-system-variables.md#long_query_time) to run. The [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) does not need to be active for this to be recorded.
+* Description: Number of queries which took longer than [long_query_time](server-system-variables.md#long_query_time) to run. The [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/README.md) does not need to be active for this to be recorded.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2811,7 +2811,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Subquery_cache_hit`
 
 
-* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) hits. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) hits. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2820,7 +2820,7 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Subquery_cache_miss`
 
 
-* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) misses. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) misses. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2829,9 +2829,9 @@ Issuing a [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-
 #### `Syncs`
 
 
-* Description: Number of times my_sync() has been called, or the number of times the server has had to force data to disk. Covers the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), .frm creation (if these
+* Description: Number of times my_sync() has been called, or the number of times the server has had to force data to disk. Covers the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md), .frm creation (if these
 operations are configured to sync) and some storage engines ([Archive](../../../../reference/storage-engines/archive/README.md),
-[CSV](../../../../reference/storage-engines/csv/csv-overview.md), [Aria](../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md)), but not [XtraDB/InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)).
+[CSV](../../../../reference/storage-engines/csv/README.md), [Aria](../../../../reference/storage-engines/aria/README.md)), but not [XtraDB/InnoDB](../../../../reference/storage-engines/innodb/README.md)).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -2840,7 +2840,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Table_locks_immediate`
 
 
-* Description: Number of table locks which were completed immediately. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of table locks which were completed immediately. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2849,7 +2849,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Table_locks_waited`
 
 
-* Description: Number of table locks which had to wait. Indicates table lock contention. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of table locks which had to wait. Indicates table lock contention. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2894,7 +2894,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Tc_log_max_pages_used`
 
 
-* Description: Max number of pages used by the memory-mapped file-based [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Max number of pages used by the memory-mapped file-based [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/README.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2903,7 +2903,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Tc_log_page_size`
 
 
-* Description: Page size of the memory-mapped file-based [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md).
+* Description: Page size of the memory-mapped file-based [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/README.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2912,7 +2912,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Tc_log_page_waits`
 
 
-* Description: Number of times a two-phase commit was forced to wait for a free memory-mapped file-based [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md) page. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)`.
+* Description: Number of times a two-phase commit was forced to wait for a free memory-mapped file-based [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/README.md) page. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2921,7 +2921,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Threads_cached`
 
 
-* Description: Number of threads cached in the thread cache. This value will be zero if the [thread pool](../buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) is in use.
+* Description: Number of threads cached in the thread cache. This value will be zero if the [thread pool](../buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) is in use.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2930,7 +2930,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Threads_connected`
 
 
-* Description: Number of clients connected to the server. See [Handling Too Many Connections](handling-too-many-connections.md). The `Threads_connected` name is inaccurate when the [thread pool](../buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) is in use, since each client connection does not correspond to a dedicated thread in that case.
+* Description: Number of clients connected to the server. See [Handling Too Many Connections](handling-too-many-connections.md). The `Threads_connected` name is inaccurate when the [thread pool](../buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) is in use, since each client connection does not correspond to a dedicated thread in that case.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2950,8 +2950,8 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 
 * Description: Number of client connections that are actively running a command, and not just sleeping while waiting to receive the next command to execute. Some internal system threads also count towards this status variable if they would show up in the output of the `[SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` statement.
 
-  * In [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md) and before, a global counter was updated each time a client connection dispatched a command. In these versions, the global and session status variable are always the same value.
-  * In [MariaDB 10.3.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md) and later, the global counter has been removed as a performance improvement. Instead, when the global status variable is queried, it is calculated dynamically by essentially adding up all the running client connections as they would appear in `[SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` output. A client connection is only considered to be running if its thread `[COMMAND](../buffers-caches-and-threads/thread-command-values.md)` value is not equal to `Sleep`. When the session status variable is queried, it always returns `1`.
+  * In [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes) and before, a global counter was updated each time a client connection dispatched a command. In these versions, the global and session status variable are always the same value.
+  * In [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) and later, the global counter has been removed as a performance improvement. Instead, when the global status variable is queried, it is calculated dynamically by essentially adding up all the running client connections as they would appear in `[SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` output. A client connection is only considered to be running if its thread `[COMMAND](../buffers-caches-and-threads/thread-command-values.md)` value is not equal to `Sleep`. When the session status variable is queried, it always returns `1`.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2963,7 +2963,7 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 * Description: Temporary space used. See [Limiting Size of Created Disk Temporary Files and Tables Overview](../../../../security/user-account-management/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview.md)
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -2988,9 +2988,8 @@ operations are configured to sync) and some storage engines ([Archive](../../../
 #### `Uptime_since_flush_status`
 
 
-* Description: Number of seconds since the last [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+* Description: Number of seconds since the last [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 
-<span></span>

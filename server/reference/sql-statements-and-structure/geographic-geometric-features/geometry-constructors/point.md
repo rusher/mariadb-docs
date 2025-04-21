@@ -11,7 +11,7 @@ Point(x,y)
 ## Description
 
 
-Constructs a [WKB](../wkb/wkb-polyfromwkb.md) Point using the given coordinates.
+Constructs a [WKB](../wkb/README.md) Point using the given coordinates.
 
 
 ## Examples

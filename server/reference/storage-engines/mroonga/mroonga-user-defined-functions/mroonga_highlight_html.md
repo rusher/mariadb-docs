@@ -14,7 +14,7 @@ mroonga_highlight_html(text[[, keyword1, ..., keywordN]])
 ## Description
 
 
-`mroonga_highlight_html` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) (UDF) included with the [Mroonga storage engine](mroonga_snippet_html.md). It highlights the specified keywords in the target text. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
+`mroonga_highlight_html` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDF) included with the [Mroonga storage engine](../README.md). It highlights the specified keywords in the target text. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
 
 
 The optional parameter can either be one or more *keywords*, or a Groonga *query*.

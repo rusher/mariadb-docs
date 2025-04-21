@@ -2,8 +2,8 @@
 # Information Schema KEY_PERIOD_USAGE Table
 
 
-##### MariaDB starting with [11.4.1](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md)
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `KEY_PERIOD_USAGE` table shows information about [Application-Time Periods](../../../../../temporal-tables/application-time-periods.md).
+##### MariaDB starting with [11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes)
+The [Information Schema](../README.md) `KEY_PERIOD_USAGE` table shows information about [Application-Time Periods](../../../../../temporal-tables/application-time-periods.md).
 
 
 It contains the following columns:

@@ -156,9 +156,9 @@ See the [File Key Management Plugin](../../security/securing-mariadb/securing-ma
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.18](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.1.13](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 10.1.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Alpha | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 
 
@@ -168,7 +168,7 @@ See the [File Key Management Plugin](../../security/securing-mariadb/securing-ma
 The AWS Key Management plugin uses the [Amazon Web Services (AWS) Key Management Service (KMS)](https://aws.amazon.com/kms/) to generate and store AES keys on disk, in encrypted form, using the Customer Master Key (CMK) kept in AWS KMS. When MariaDB Server starts, the plugin will decrypt the encrypted keys, using the AWS KMS "Decrypt" API function. MariaDB data will then be encrypted and decrypted using the AES key. It supports multiple encryption keys. It supports key rotation.
 
 
-See the [AWS Key Management Plugin](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md) article for more details.
+See the [AWS Key Management Plugin](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md) article for more details.
 
 
 #### Versions
@@ -178,9 +178,9 @@ See the [AWS Key Management Plugin](../../security/securing-mariadb/securing-mar
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.2.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md), [MariaDB 10.1.24](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes.md) |
-| 1.0 | Beta | [MariaDB 10.1.18](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
-| 1.0 | Experimental | [MariaDB 10.1.13](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes) |
+| 1.0 | Beta | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 1.0 | Experimental | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
 
 
 
@@ -197,7 +197,7 @@ Uses random time-based generated keys, ignores key identifiers, supports key ver
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Experimental | [MariaDB 10.1.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md) |
+| 1.0 | Experimental | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 
 
@@ -214,7 +214,7 @@ Key is generated from the version, user manually controls key rotation. Only sup
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Experimental | [MariaDB 10.1.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md) |
+| 1.0 | Experimental | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 
 

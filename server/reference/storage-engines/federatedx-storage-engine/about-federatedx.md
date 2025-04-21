@@ -4,7 +4,7 @@
 The FederatedX storage engine is a fork of MySQL's [Federated storage engine](https://dev.mysql.com/doc/refman/5.5/en/federated-storage-engine.html), which is no longer being developed by Oracle. The original purpose of FederatedX was to keep this storage engine's development progressing-- to both add new features as well as fix old bugs.
 
 
-Since [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), the [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine also allows access to a remote database via MySQL or ODBC connection (table types: [MYSQL](../connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md), [ODBC](../connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)). However, in the current implementation there are several limitations.
+Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), the [CONNECT](../connect/README.md) storage engine also allows access to a remote database via MySQL or ODBC connection (table types: [MYSQL](../connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md), [ODBC](../connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)). However, in the current implementation there are several limitations.
 
 
 
@@ -29,7 +29,7 @@ When MySQL 5.1 became the production release of MySQL, Federated had more featur
 * Plugin capability
 
 
-In [MariaDB 10.0.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes.md) FederatedX got support for assisted [table discovery](../storage-engines-storage-engine-development/table-discovery.md).
+In [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) FederatedX got support for assisted [table discovery](../storage-engines-storage-engine-development/table-discovery.md).
 
 
 ## Installing the Plugin
@@ -88,9 +88,7 @@ for each table's data (such as .MYD). A foreign database will store
 the data that would normally be in this file. This will necessitate
 the use of MySQL client API to read, delete, update, insert this
 data. The data will have to be retrieve via an SQL call 
-"`<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">users</span>
-`". Then, to read this data, it will have to be retrieved via `<span class="n">mysql_fetch_row</span>
-` one row at a time, then converted from the
+"`SELECT * FROM users`". Then, to read this data, it will have to be retrieved via `mysql_fetch_row` one row at a time, then converted from the
 column in this select into the format that the handler expects.
 
 
@@ -110,8 +108,7 @@ The basic functionality of how FederatedX works is:
 
 
 The create table will simply create the .frm file, and within the
-`<span class="k">CREATE</span> <span class="k">TABLE</span>
-` SQL statement, there SHALL be any of the following :
+`CREATE TABLE` SQL statement, there SHALL be any of the following :
 
 
 ```
@@ -205,8 +202,7 @@ One way to see how the FederatedX storage engine works is to compile a debug bui
 #### SELECT
 
 
-If the query is for instance "`<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">foo</span>
-`", then the primary methods you would see with debug turned on would be first:
+If the query is for instance "`SELECT * FROM foo`", then the primary methods you would see with debug turned on would be first:
 
 
 ```
@@ -237,8 +233,7 @@ ha_federatedx::reset
 #### INSERT
 
 
-If the query was "`<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">foo</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span> <span class="k">VALUES</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">now</span><span class="p">());</span>
-`", the trace would be:
+If the query was "`INSERT INTO foo (id, ts) VALUES (2, now());`", the trace would be:
 
 
 ```
@@ -249,8 +244,7 @@ ha_federatedx::reset
 #### UPDATE
 
 
-If the query was "`<span class="k">UPDATE</span> <span class="n">foo</span> <span class="k">SET</span> <span class="n">ts</span> <span class="o">=</span> <span class="n">now</span><span class="p">()</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-`", the resultant trace would be:
+If the query was "`UPDATE foo SET ts = now() WHERE id = 1;`", the resultant trace would be:
 
 
 ```
@@ -278,7 +272,7 @@ ha_federatedx::reset
 * Prepared statements will not be used in the first implementation, it remains to to be seen whether the limited subset of the client API for the server supports this.
 * This uses SELECT, INSERT, UPDATE, DELETE and not HANDLER for its implementation.
 * This will not work with the query cache.
-* FederatedX does not support [GEOMETRY](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/geometrycollection.md) types. Such tables cannot be created explicitly, nor discovered.
+* FederatedX does not support [GEOMETRY](../../sql-statements-and-structure/geographic-geometric-features/geometry-types.md) types. Such tables cannot be created explicitly, nor discovered.
 
 
 ## How do you use FederatedX?
@@ -466,7 +460,7 @@ FederatedX from a user point of view is the same for the most part. What is diff
 ## Where can I get FederatedX
 
 
-FederatedX is part of [MariaDB 5.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md) and later. MariaDB merged with the latest FederatedX when there is a need to get a bug fixed. You can get the latest code/follow/participate in the project from the [FederatedX home page](https://launchpad.net/federatedx).
+FederatedX is part of [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and later. MariaDB merged with the latest FederatedX when there is a need to get a bug fixed. You can get the latest code/follow/participate in the project from the [FederatedX home page](https://launchpad.net/federatedx).
 
 
 ### What are the plans for FederatedX?

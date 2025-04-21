@@ -18,13 +18,13 @@ The data in transit are encrypted (by default or if enabled manually) using the 
 
 
 
-##### MariaDB starting with [11.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 Starting from 11.4, MariaDB enables TLS automatically. Certificates are generated on startup and only stored in memory. Certificate verification is enabled by default on the client side and certificates are verified if the authentication plugin itself is MitM safe (mysql_native_password, ed25519, parsec).
 If you want to use externally generated certificates as with older MariaDB versions, see below.
 
 
 
-##### MariaDB until [11.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md)
+##### MariaDB until [11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
 In order to enable TLS in a MariaDB server, you need to generate TLS certificates and configure the server to use them.
 
 
@@ -70,7 +70,7 @@ SHOW VARIABLES LIKE 'have_ssl';
 The `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](README.md) context.
 
 
-See [FLUSH SSL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#flush-ssl) for more information.
+See [FLUSH SSL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-ssl) for more information.
 
 
 ### Enabling TLS for MariaDB Clients
@@ -86,8 +86,8 @@ One-way TLS means that only the server provides a private key and an X509 certif
 
 
 
-##### MariaDB starting with [11.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
-Starting from [MariaDB 11.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) (Connector/C version 3.4) this mode is enabled by default. Connector/C will enable TLS automatically on all non-local connections and will require a verified server certificate to prevent man-in-the-middle attacks.
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+Starting from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) (Connector/C version 3.4) this mode is enabled by default. Connector/C will enable TLS automatically on all non-local connections and will require a verified server certificate to prevent man-in-the-middle attacks.
 
 
 To enable one-way TLS manually (for older clients or if you want verification with CA certificate) you can specify these options in a a relevant client [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
@@ -155,19 +155,19 @@ Two-way SSL is required for an account if the `REQUIRE X509`, `REQUIRE SUBJECT`,
 ### Enabling TLS for MariaDB Connector/C Clients
 
 
-See the documentation on MariaDB Connector/C's [TLS Options](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md#tlsssl-options) for information on how to enable TLS for clients that use MariaDB Connector/C.
+See the documentation on MariaDB Connector/C's [TLS Options](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv#tlsssl-options) for information on how to enable TLS for clients that use MariaDB Connector/C.
 
 
 ### Enabling TLS for MariaDB Connector/ODBC Clients
 
 
-See the documentation on MariaDB Connector/ODBC's [TLS-Related Connection Parameters](../../../../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md#tls-related-connection-parameters) for information on how to enable TLS for clients that use MariaDB Connector/ODBC.
+See the documentation on MariaDB Connector/ODBC's [TLS-Related Connection Parameters](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc#tls-related-connection-parameters) for information on how to enable TLS for clients that use MariaDB Connector/ODBC.
 
 
 ### Enabling TLS for MariaDB Connector/J Clients
 
 
-See the documentation on [Using TLS/SSL with MariaDB Connector/J](../../../../../connectors/mariadb-connector-j/using-tls-ssl-with-mariadb-java-connector.md) for information on how to enable TLS for clients that use MariaDB Connector/J.
+See the documentation on [Using TLS/SSL with MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/using-tls-ssl-with-mariadb-java-connector) for information on how to enable TLS for clients that use MariaDB Connector/J.
 
 
 ## Verifying that a Connection is Using TLS
@@ -189,7 +189,7 @@ SHOW SESSION STATUS LIKE 'Ssl_version';
 ## Requiring TLS
 
 
-From [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [require_secure_transport](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) system variable is available. When set (by default it is off), connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets or named pipes. Note that requirements set for specific user accounts will take precedence over this setting.
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [require_secure_transport](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) system variable is available. When set (by default it is off), connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets or named pipes. Note that requirements set for specific user accounts will take precedence over this setting.
 
 
 ### Requiring TLS for Specific User Accounts
@@ -257,4 +257,3 @@ CREATE USER 'alice'@'%'
 
 In the above example, the `alice` user account does not require TLS when logging in from localhost. However, when the `alice` user account logs in from any other host, they must use TLS with the given cipher, and they must provide a valid client certificate with the given subject that must have been signed by the given issuer.
 
-<span></span>

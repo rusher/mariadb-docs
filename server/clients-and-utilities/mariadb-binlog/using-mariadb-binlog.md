@@ -1,13 +1,13 @@
 
 # Using mariadb-binlog
 
-The MariaDB server's [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is a set of files containing "events" which represent modifications to the contents of a MariaDB database.
+The MariaDB server's [binary log](../../server-management/server-monitoring-logs/binary-log/README.md) is a set of files containing "events" which represent modifications to the contents of a MariaDB database.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.These events are written in a binary (i.e. non-human-readable) format. The *mariadb-binlog* utility is used to view these events in plain text.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.These events are written in a binary (i.e. non-human-readable) format. The *mariadb-binlog* utility is used to view these events in plain text.
 
 
-Run [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) from a command-line like this:
+Run [mariadb-binlog](README.md) from a command-line like this:
 
 
 ```
@@ -17,10 +17,10 @@ shell> mariadb-binlog [options] log_file ...
 See [mariadb-binlog Options](mariadb-binlog-options.md) for details on the available options.
 
 
-Prior to [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-As an example, here is how you could display the contents of a [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file
+As an example, here is how you could display the contents of a [binary log](../../server-management/server-monitoring-logs/binary-log/README.md) file
 named "mariadb-bin.000152":
 
 
@@ -33,7 +33,7 @@ and how much time the statement took to execute. If you are using row-based logg
 
 
 The output from mariadb-binlog can be used as input to the mariadb client to redo
-the statements contained in a [binary log](../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). This is useful for recovering after a server crash. Here is an example:
+the statements contained in a [binary log](../../server-management/server-monitoring-logs/binary-log/README.md). This is useful for recovering after a server crash. Here is an example:
 
 
 ```
@@ -87,7 +87,6 @@ shell> mariadb -u root -p -e "source /tmp/mariadb-bin.sql"
 ## See Also
 
 
-* [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md)
+* [mariadb-binlog](README.md)
 * [mariadb-binlog Options](mariadb-binlog-options.md)
 
-<span></span>

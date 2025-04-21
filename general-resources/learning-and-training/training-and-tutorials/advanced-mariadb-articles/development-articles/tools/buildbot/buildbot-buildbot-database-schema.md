@@ -75,8 +75,7 @@ CREATE TABLE test_failure(
 * test_name: The name of the test that failed, eg. `main.information_schema`.
 * test_variant: Some tests are run multiple times in different variants. Ie. many replication tests are run under both statement-based, mixed-mode, and row-based replication. The variant will be 'stmt', 'mix', or 'row' accordingly. For tests that do not have multiple variants, the value will be the empty string (ie. not a NULL value).
 * info_text: This is a short description that mysql-test-run.pl sometimes gives for some kinds of test failures (for example "timeout").
-* failure_text: This is the entire output from mysql-test-run.pl concerning this test failure. It usually contains the diff against the result file, a stacktrace for a crash, etc. This is useful to run `<span class="k">LIKE</span>
-` queries against when searching for test failures similar to one being investigated.
+* failure_text: This is the entire output from mysql-test-run.pl concerning this test failure. It usually contains the diff against the result file, a stacktrace for a crash, etc. This is useful to run `LIKE` queries against when searching for test failures similar to one being investigated.
 
 
 ### The `test_warnings` table

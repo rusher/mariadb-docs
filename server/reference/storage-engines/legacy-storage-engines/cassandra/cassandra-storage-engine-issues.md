@@ -1,11 +1,11 @@
 
 # Cassandra Storage Engine Issues
 
-CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
+CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
 
 
-This page lists difficulties and peculiarities of [Cassandra Storage Engine](cassandra-storage-engine-issues.md). I'm not putting them into bug tracker because it is not clear whether these properties should be considered bugs.
+This page lists difficulties and peculiarities of [Cassandra Storage Engine](cassandra-storage-engine-overview.md). I'm not putting them into bug tracker because it is not clear whether these properties should be considered bugs.
 
 
 ## No way to get E(#rows in column family)

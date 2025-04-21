@@ -2,14 +2,14 @@
 # Information Schema SQL_FUNCTIONS Table
 
 
-##### MariaDB starting with [10.5.12](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes.md)
-The `SQL_FUNCTIONS` table was added in [MariaDB 10.2.40](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10240-release-notes.md), [MariaDB 10.3.31](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10331-release-notes.md), [MariaDB 10.4.21](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10421-release-notes.md), [MariaDB 10.5.12](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes.md) and [MariaDB 10.6.3](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md).
+##### MariaDB starting with [10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes)
+The `SQL_FUNCTIONS` table was added in [MariaDB 10.2.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10240-release-notes), [MariaDB 10.3.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10331-release-notes), [MariaDB 10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes), [MariaDB 10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10512-release-notes) and [MariaDB 10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes).
 
 
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SQL_FUNCTIONS` table contains the list of [MariaDB functions](../../../../built-in-functions/README.md).
+The [Information Schema](../README.md) `SQL_FUNCTIONS` table contains the list of [MariaDB functions](../../../../built-in-functions/README.md).
 
 
 It contains a single column:

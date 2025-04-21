@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_FT_INDEX_TABLE Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_FT_INDEX_TABLE` table contains information about InnoDB [fulltext indexes](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is run. See the [INNODB_FT_INDEX_CACHE](information-schema-innodb_ft_index_cache-table.md) table.
+The [Information Schema](../../README.md) `INNODB_FT_INDEX_TABLE` table contains information about InnoDB [fulltext indexes](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is run. See the [INNODB_FT_INDEX_CACHE](information-schema-innodb_ft_index_cache-table.md) table.
 
 
 The `SUPER` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.

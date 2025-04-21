@@ -2,14 +2,14 @@
 # Sys Schema sys_config Table
 
 
-##### MariaDB starting with [10.6.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-The Sys Schema *sys_config* table was added in [MariaDB 10.6.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md).  The *sys_config* table is also backported to [MariaDB-10.5-enterprise](https://mariadb.com/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/).
+##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+The Sys Schema *sys_config* table was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).  The *sys_config* table is also backported to [MariaDB-10.5-enterprise](https://mariadb.com/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/).
 
 
-The *sys.sys_config* table holds configuration options for the [Sys Schema](sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+The *sys.sys_config* table holds configuration options for the [Sys Schema](README.md).
 
 
-This is a persistent table (using the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine), with the configuration persisting across upgrades (new options are added with [INSERT IGNORE](../../../data-manipulation/inserting-loading-data/insert-ignore.md).
+This is a persistent table (using the [Aria](../../../../../storage-engines/aria/README.md) storage engine), with the configuration persisting across upgrades (new options are added with [INSERT IGNORE](../../../data-manipulation/inserting-loading-data/insert-ignore.md).
 
 
 The table also has two related triggers, which maintain the user that INSERTs or UPDATEs the configuration - sys_config_insert_set_user and sys_config_update_set_user respectively.
@@ -51,5 +51,5 @@ Note, when functions check for configuration options, they first check whether a
 ### Notes
 
 
-Some early versions of *sys_config* were stored in [InnoDB](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) format.
+Some early versions of *sys_config* were stored in [InnoDB](../../../../../storage-engines/innodb/README.md) format.
 

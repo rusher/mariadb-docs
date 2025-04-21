@@ -12,7 +12,7 @@ SHOW CREATE PACKAGE BODY  [ db_name . ] package_name
 ## Description
 
 
-The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (i.e. the implementation of the package). `CREATE PACKAGE BODY` can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (i.e. the implementation of the package). `CREATE PACKAGE BODY` can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set, or from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114).
 
 
 `SHOW CREATE PACKAGE BODY` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
@@ -74,10 +74,10 @@ collation_connection: utf8_general_ci
 ## See Also
 
 
-* [CREATE PACKAGE](../../data-definition/create/create-package-body.md)
+* [CREATE PACKAGE](../../data-definition/create/create-package.md)
 * [SHOW CREATE PACKAGE](show-create-package.md)
-* [DROP PACKAGE](../../data-definition/drop/drop-package-body.md)
+* [DROP PACKAGE](../../data-definition/drop/drop-package.md)
 * [CREATE PACKAGE BODY](../../data-definition/create/create-package-body.md)
 * [DROP PACKAGE BODY](../../data-definition/drop/drop-package-body.md)
-* [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

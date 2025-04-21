@@ -2,12 +2,12 @@
 # Connecting to a Server Configured for Catalogs
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
 
-When connecting to a MariaDB server configured for [catalogs](catalogs-overview.md), one has to provide the catalog to connect to. There are several ways to do this:
+When connecting to a MariaDB server configured for [catalogs](README.md), one has to provide the catalog to connect to. There are several ways to do this:
 
 
 All new native MariaDB clients will support the `--catalog` option:

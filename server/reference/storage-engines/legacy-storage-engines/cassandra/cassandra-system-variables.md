@@ -1,11 +1,11 @@
 
 # Cassandra System Variables
 
-CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
+CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
 
 
-This page documents system variables related to the [Cassandra storage engine](cassandra-storage-engine-issues.md). See [Server System Variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [Cassandra storage engine](README.md). See [Server System Variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
 
 #### `cassandra_default_thrift_host`
@@ -60,8 +60,7 @@ This page documents system variables related to the [Cassandra storage engine](c
 * Description: Consistency to use for reading. See [Datastax's documentation](https://www.datastax.com/documentation/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html) for details.
 * Scope: Global, Session
 * Default Value: `ONE`
-* Valid Values: `ONE`, `TWO`, `THREE`, `ANY`, `ALL`, `QUORUM`, `EACH_QUORUM`, `LOCAL_QUORUM`, `
-`
+* Valid Values: `ONE`, `TWO`, `THREE`, `ANY`, `ALL`, `QUORUM`, `EACH_QUORUM`, `LOCAL_QUORUM`, ``
 
 
 
@@ -81,7 +80,6 @@ This page documents system variables related to the [Cassandra storage engine](c
 * Description: Consistency to use for writing. See [Datastax's documentation](https://www.datastax.com/documentation/cassandra/2.0/cassandra/dml/dml_config_consistency_c.html) for details.
 * Scope: Global, Session
 * Default Value: `ONE`
-* Valid Values: `ONE`, `TWO`, `THREE`, `ANY`, `ALL`, `QUORUM`, `EACH_QUORUM`, `LOCAL_QUORUM`, `
-`
+* Valid Values: `ONE`, `TWO`, `THREE`, `ANY`, `ALL`, `QUORUM`, `EACH_QUORUM`, `LOCAL_QUORUM`, ``
 
 

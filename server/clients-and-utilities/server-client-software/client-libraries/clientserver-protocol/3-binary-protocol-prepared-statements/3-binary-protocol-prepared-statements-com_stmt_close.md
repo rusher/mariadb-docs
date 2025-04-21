@@ -13,8 +13,8 @@ Client to server.
 ### Implemented by
 
 
-* [mysql_stmt_close()](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_close.md)
-* [mysql_stmt_prepare()](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare.md)
+* [mysql_stmt_close()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_close)
+* [mysql_stmt_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare)
 
 
 ### Fields

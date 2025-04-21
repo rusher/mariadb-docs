@@ -2,8 +2,8 @@
 # KDF
 
 
-##### MariaDB starting with [11.3](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md)
-KDF() is a key derivation function introduced in [MariaDB 11.3.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md).
+##### MariaDB starting with [11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
+KDF() is a key derivation function introduced in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes).
 
 
 ## Syntax

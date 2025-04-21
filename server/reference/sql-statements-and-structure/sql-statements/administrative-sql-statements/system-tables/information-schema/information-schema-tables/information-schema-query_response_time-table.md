@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `QUERY_RESPONSE_TIME` table contains information about queries that take a long time to execute . It is only available if the [QUERY_RESPONSE_TIME](../../../../../../plugins/other-plugins/query-response-time-plugin.md) plugin has been installed.
+The [Information Schema](../README.md) `QUERY_RESPONSE_TIME` table contains information about queries that take a long time to execute . It is only available if the [QUERY_RESPONSE_TIME](../../../../../../plugins/other-plugins/query-response-time-plugin.md) plugin has been installed.
 
 
 It contains the following columns:

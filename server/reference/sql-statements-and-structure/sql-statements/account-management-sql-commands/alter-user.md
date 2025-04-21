@@ -85,10 +85,10 @@ ALTER USER CURRENT_USER() IDENTIFIED BY 'mariadb';
 ## Authentication Options
 
 
-From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), it is possible to use more than one authentication plugin for each user account. For example, this can be useful to slowly migrate users to the more secure ed25519 authentication plugin over time, while allowing the old mysql_native_password authentication plugin as an alternative for the transitional period. See [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md) for more.
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), it is possible to use more than one authentication plugin for each user account. For example, this can be useful to slowly migrate users to the more secure ed25519 authentication plugin over time, while allowing the old mysql_native_password authentication plugin as an alternative for the transitional period. See [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md) for more.
 
 
-When running `ALTER USER`, not specifying an authentication option in the IDENTIFIED VIA clause will remove that authentication method. (However this was not the case before [MariaDB 10.4.13](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), see [MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
+When running `ALTER USER`, not specifying an authentication option in the IDENTIFIED VIA clause will remove that authentication method. (However this was not the case before [MariaDB 10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes), see [MDEV-21928](https://jira.mariadb.org/browse/MDEV-21928))
 
 
 For example, a user is created with the ability to authenticate via both a password and unix_socket:
@@ -123,7 +123,7 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
 ### IDENTIFIED BY 'password'
 
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 
 For example, if our password is `mariadb`, then we can set the account's password with:
@@ -145,7 +145,7 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)#function. It will be stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)#function. It will be stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table as-is.
 
 
 For example, if our password is `mariadb`, then we can find the hash with:
@@ -180,7 +180,7 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED {VIA|WITH} authentication_plugin
 
 
-The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
+The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
 
 
 For example, this could be used with the [PAM authentication plugin](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
@@ -200,7 +200,7 @@ ALTER USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 The exact meaning of the additional argument would depend on the specific authentication plugin.
 
 
-From [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
 
 ```
@@ -287,7 +287,7 @@ ALTER USER 'someone'@'localhost' WITH
 The resources are tracked per account, which means `'user'@'server'`; not per user name or per connection.
 
 
-The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md) or [mysqladmin reload](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md).
+The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mysqladmin reload](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md).
 
 
 Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
@@ -321,7 +321,7 @@ ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
 See [Account Locking](../../../../security/user-account-management/account-locking.md) for more details.
 
 
-From [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md) and [MariaDB 10.5.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes.md), the *lock_option* and *password_option* clauses can occur in either order.
+From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes), the *lock_option* and *password_option* clauses can occur in either order.
 
 
 ## See Also

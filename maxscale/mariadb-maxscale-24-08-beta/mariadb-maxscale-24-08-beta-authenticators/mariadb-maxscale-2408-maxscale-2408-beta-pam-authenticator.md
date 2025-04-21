@@ -81,7 +81,7 @@ account         required        pam_unix.so
 
 Boolean, default value is "false". If enabled, MaxScale communicates with the
 client as if using
-[mysql_clear_password](../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#mysql_clear_password-plugin).
+[mysql_clear_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#mysql_clear_password-plugin).
 This setting has no effect on MaxScale-to-backend communication, which adapts to
 either "dialog" or "mysql_clear_password", depending on which one the backend
 suggests. This setting is meant to be used with the similarly named MariaDB
@@ -176,7 +176,7 @@ To map usernames, the PAM service needs to use a module such as
 *pam_user_map.so*. This module is not a standard Linux component and needs to be
 installed separately. It is included in recent MariaDB Server packages and can
 also be compiled from source. See
-[user mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md)
+[user mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam)
 for more information on how to configure the module. If the goal is to only map
 users from PAM to MariaDB in MaxScale, then configuring user mapping
 on just the machine running MaxScale is enough.
@@ -243,7 +243,7 @@ An example file is below.
 When backend authenticator mapping is not in use
 (`authenticator_options=pam_backend_mapping=none`), the PAM authenticator
 supports a limited version of
-[user mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md).
+[user mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).
 It requires less configuration but is also less accurate than proper mapping.
 Anonymous mapping is enabled in MaxScale if the following user exists:
 - Empty username (e.g. `''@'%'` or `''@'myhost.com'`)
@@ -280,7 +280,7 @@ outcome.
 Setting up PAM group mapping for the MariaDB server is a more involved process
 as the server requires details on which Unix user or group is mapped to which
 MariaDB user. See
-[this guide](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication.md)
+[this guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication)
 for more details. Performing all the steps in the guide also on the MaxScale
 machine is not required, as the MaxScale PAM plugin only checks that the client
 host matches an anonymous user and that the client (with the username and

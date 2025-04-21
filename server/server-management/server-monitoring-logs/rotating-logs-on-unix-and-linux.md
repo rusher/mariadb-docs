@@ -2,7 +2,7 @@
 # Rotating Logs on Unix and Linux
 
 
-Unix and Linux distributions offer the `[logrotate](https://linux.die.net/man/8/logrotate)` utility, which makes it very easy to rotate log files. This page will describe how to configure log rotation for the [error log](error-log.md), [general query log](general-query-log.md), and the [slow query log](slow-query-log/slow-query-log-overview.md).
+Unix and Linux distributions offer the `[logrotate](https://linux.die.net/man/8/logrotate)` utility, which makes it very easy to rotate log files. This page will describe how to configure log rotation for the [error log](error-log.md), [general query log](general-query-log.md), and the [slow query log](slow-query-log/README.md).
 
 
 ## Configuring Locations and File Names of Logs
@@ -16,14 +16,14 @@ We will need to configure the following:
 
 * The [error log](error-log.md) location and file name is configured with the `[log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variable.
 * The [general query log](general-query-log.md) location and file name is configured with the `[general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file)` system variable.
-* The [slow query log](slow-query-log/slow-query-log-overview.md) location and file name is configured with the `[slow_query_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)` system variable.
+* The [slow query log](slow-query-log/README.md) location and file name is configured with the `[slow_query_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)` system variable.
 
 
-If you want to enable the [general query log](general-query-log.md) and [slow query log](slow-query-log/slow-query-log-overview.md) immediately, then you will also have to configure the following:
+If you want to enable the [general query log](general-query-log.md) and [slow query log](slow-query-log/README.md) immediately, then you will also have to configure the following:
 
 
 * The [general query log](general-query-log.md) is enabled with the `[general_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log)` system variable.
-* The [slow query log](slow-query-log/slow-query-log-overview.md) is enabled with the `[slow_query_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log)` system variable.
+* The [slow query log](slow-query-log/README.md) is enabled with the `[slow_query_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log)` system variable.
 
 
 These options can be set in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, if we wanted to put our log files in `/var/log/mysql/`, then we could configure the following:
@@ -157,7 +157,7 @@ Each specific configuration directive does the following:
 * `olddir archive/`: This directive configures it to archive the rotated log files in `/var/log/mysql/archive/`.
 * `createolddir 770 mysql mysql`: This directive configures it to create the directory specified by the `olddir` directive with the specified permissions and owner, if the directory does not already exist. This directive is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.8.9 and later.
 * `sharedscripts`: This directive configures it to run the `postrotate` script just once, rather than once for each rotated log file.
-* `postrotate`: This directive configures it to execute a script after log rotation. This particular script executes the [mariadb-admin](../../clients-and-utilities/mariadb-admin.md) utility, which executes the [FLUSH](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement, which tells the MariaDB server to flush its various log files. When MariaDB server flushes a log file, it closes its existing file handle and reopens a new one. This ensure that MariaDB server does not continue writing to a log file after it has been rotated. This is an important component of the log rotation process.
+* `postrotate`: This directive configures it to execute a script after log rotation. This particular script executes the [mariadb-admin](../../clients-and-utilities/mariadb-admin.md) utility, which executes the [FLUSH](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement, which tells the MariaDB server to flush its various log files. When MariaDB server flushes a log file, it closes its existing file handle and reopens a new one. This ensure that MariaDB server does not continue writing to a log file after it has been rotated. This is an important component of the log rotation process.
 
 
 If our system does not have `[logrotate](https://linux.die.net/man/8/logrotate)` 3.8.9 or later, which is needed to support the `createolddir` directive, then we will also need to create the relevant directory specified by the `olddir` directive:
@@ -297,4 +297,3 @@ After setting up logrotate in Ansible, you may want to deploy it to a non-produc
 
 For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](../getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/README.md).
 
-<span></span>

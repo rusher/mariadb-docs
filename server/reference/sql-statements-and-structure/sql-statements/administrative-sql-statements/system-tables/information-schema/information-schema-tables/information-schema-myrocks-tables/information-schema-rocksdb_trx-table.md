@@ -1,7 +1,7 @@
 
 # Information Schema ROCKSDB_TRX Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ROCKSDB_TRX` table is included as part of the [MyRocks](../../../../../../../storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) storage engine.
+The [Information Schema](../../README.md) `ROCKSDB_TRX` table is included as part of the [MyRocks](../../../../../../../storage-engines/myrocks/README.md) storage engine.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.

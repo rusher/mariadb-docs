@@ -5,8 +5,8 @@
 
 
 MariaDB supports the following `JOIN` syntaxes for
-the `table_references` part of `[SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)` statements and
-multiple-table `[DELETE](../../../changing-deleting-data/delete.md)` and `[UPDATE](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)` statements:
+the `table_references` part of `[SELECT](../../select.md)` statements and
+multiple-table `[DELETE](../../../changing-deleting-data/delete.md)` and `[UPDATE](../../../changing-deleting-data/update.md)` statements:
 
 
 ```
@@ -112,7 +112,7 @@ inner join operations. MariaDB also supports nested joins (see
 
 
 A table subquery is specified as a parenthesized query and must contain a following derived table name (specified as *alias* in the above syntax specification).
-From [MariaDB 11.7](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) onwards, we can optionally specify a list of column names in parenthesis.
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) onwards, we can optionally specify a list of column names in parenthesis.
 
 
 ```

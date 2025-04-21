@@ -22,7 +22,7 @@ Bit values can be inserted with `b'value'` notation, where `value` is the bit va
 Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a BIT(4) field, '10' is equivalent to '0010'.
 
 
-Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](../../sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md), [OCT](../../sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/oct.md) or [BIN](../../../../maxscale/mariadb-maxscale-14/maxscale-14-routers/binlogrouter.md) to convert them.
+Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/hex.md), [OCT](../../sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/oct.md) or [BIN](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/bin.md) to convert them.
 
 
 ## Examples

@@ -25,7 +25,7 @@ and CREATE VIEW privileges on this table.
 
 
 First, we need some data we can perform our optimizations on, so we'll recreate
-the tables from the [More Advanced Joins](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial, to
+the tables from the [More Advanced Joins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins) tutorial, to
 provide us with a starting point. If you have already completed that tutorial
 and have this database already, you can skip ahead.
 
@@ -339,7 +339,7 @@ ensure that they won't cause a significant performance hit unnecessarily.
 
 When we re-engineer our application, we sometimes need to change the database
 to optimize or accommodate new or removed features. We may, for example, want
-to [normalize](../intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) our tables when they start getting too large and queries start
+to [normalize](../intermediate-mariadb-articles/database-theory/database-normalization/README.md) our tables when they start getting too large and queries start
 taking too long. Alternately, we may be installing a new application with
 different requirements alongside a legacy application. Unfortunately, database
 redesign will tend to break backwards-compatibility with previous applications,

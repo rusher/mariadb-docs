@@ -32,7 +32,7 @@ A value of "system" indicates the system default, which is normally malloc. If a
 #### Building MariaDB with an alternative to malloc
 
 
-To build [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with `TCMalloc`, you need to use the following command
+To build [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) with `TCMalloc`, you need to use the following command
 
 
 ```
@@ -188,7 +188,6 @@ jeprof --show_bytes --pdf path-to-mariadbd  jeprof.19678.0.f.heap > /tmp/mariadb
 
 
 * [Profiling memory usage](../../../../reference/bug-tracking/profiling-memory-usage.md)
-* [Debugging a running server on Linux](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux.md)
+* [Debugging a running server on Linux](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux)
 * [Jemalloc leak checking](https://github.com/jemalloc/jemalloc/wiki/Use-Case:-Leak-Checking)
 
-<span></span>

@@ -5,13 +5,13 @@
 ## Overview
 
 
-When rows are deleted from an [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table, the rows are simply marked as deleted and not physically deleted. The free space is not returned to the operating system for re-use.
+When rows are deleted from an [InnoDB](../../../../reference/storage-engines/innodb/README.md) table, the rows are simply marked as deleted and not physically deleted. The free space is not returned to the operating system for re-use.
 
 
 The purge thread will physically delete index keys and rows, but the free space introduced is still not returned to operating system. This can lead to gaps in the pages. If you have variable length rows, new rows may be larger than old rows and cannot make use of the available space.
 
 
-You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE <table> ENGINE=InnoDB](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
+You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE <table> ENGINE=InnoDB](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
 
 
 * Makes the table’s data and indexes contiguous inside `ibdata1`.
@@ -21,10 +21,10 @@ You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE <table> ENGINE=I
 ## InnoDB Defragmentation
 
 
-The feature described below has been deprecated in [MariaDB 11.0](../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) and was removed in [MariaDB 11.1.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md). See [MDEV-30544](https://jira.mariadb.org/browse/MDEV-30544) and [MDEV-30545](https://jira.mariadb.org/browse/MDEV-30545).
+The feature described below has been deprecated in [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) and was removed in [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes). See [MDEV-30544](https://jira.mariadb.org/browse/MDEV-30544) and [MDEV-30545](https://jira.mariadb.org/browse/MDEV-30545).
 
 
-[MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) merged Facebook's defragmentation code prepared for MariaDB by Matt, Seong Uck Lee from Kakao. The only major difference to Facebook's code and Matt’s patch is that MariaDB does not introduce new literals to SQL and makes no changes to the server code. Instead, [OPTIMIZE TABLE](optimize-table.md) is used and all code changes are inside the InnoDB/XtraDB storage engines.
+[MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) merged Facebook's defragmentation code prepared for MariaDB by Matt, Seong Uck Lee from Kakao. The only major difference to Facebook's code and Matt’s patch is that MariaDB does not introduce new literals to SQL and makes no changes to the server code. Instead, [OPTIMIZE TABLE](optimize-table.md) is used and all code changes are inside the InnoDB/XtraDB storage engines.
 
 
 The behaviour of `OPTIMIZE TABLE` is unchanged by default, and to enable this new feature, you need to set the [innodb_defragment](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) system variable to `1`.
@@ -212,4 +212,3 @@ table_name index_name sum(number_records) sum(data_size)
 
 See [Defragmenting unused space on InnoDB tablespace](https://blog.mariadb.org/defragmenting-unused-space-on-innodb-tablespace/) on the Mariadb.org blog for more details.
 
-<span></span>

@@ -287,7 +287,7 @@ For more information, refer to the [monitor documentation](../../mariadb-maxscal
 
 The Avrorouter now supports the `deflate` compression method. This allows the
 stored Avro format files to be compressed on disk. For more information, refer
-to the [Avrorouter](../maxscale-22-tutorials/mariadb-maxscale-22-avrorouter-tutorial.md) documentation.
+to the [Avrorouter](../maxscale-22-routers/mariadb-maxscale-22-avrorouter.md) documentation.
 
 
 ### Preliminary proxy protocol support

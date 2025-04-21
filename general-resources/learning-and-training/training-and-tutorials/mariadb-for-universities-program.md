@@ -25,7 +25,7 @@ The MariaDB for Universities Program offers benefits to participating universiti
 * Select employees can, on request, visit your institution to lecture.
 * We review your contributions to MariaDB in the form of code, documentation, and lecture material.
 * Looking for ideas on code contributions? See [](https://jira.mariadb.org/).
-* We offer the [MariaDB Jupyter Kernel](../../../connectors/other-connectors/mariadb-jupyter-kernel/about-the-mariadb-jupyter-kernel.md) to learn and test MariaDB.
+* We offer the [MariaDB Jupyter Kernel](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/other-connectors/mariadb-jupyter-kernel/about-the-mariadb-jupyter-kernel) to learn and test MariaDB.
 
 
 ## References

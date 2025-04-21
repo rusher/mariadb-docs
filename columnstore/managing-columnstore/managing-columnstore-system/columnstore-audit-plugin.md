@@ -11,7 +11,7 @@
 # Introduction
 
 
-MariaDB server includes an optional [Audit Plugin](../../../server/reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) that enables logging and tracking of all user access and statements. This is included and can be enabled for ColumnStore
+MariaDB server includes an optional [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/) that enables logging and tracking of all user access and statements. This is included and can be enabled for ColumnStore
 
 
 # Installation
@@ -37,7 +37,7 @@ plugin_load=server_audit=server_audit.so
 ```
 
 
-For more details see the [audit plugin installation guide](../../../server/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation.md)
+For more details see the [audit plugin installation guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-installation)
 
 
 # Enabling the audit plugin
@@ -78,5 +78,5 @@ Sep 14 17:46:51 centos mysql-server_auditing: columnstore-1 centos,root,localhos
 ```
 
 
-For additional configuration and customization options see the [Audit Plugin](../../../server/reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) documentation.
+For additional configuration and customization options see the [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/) documentation.
 

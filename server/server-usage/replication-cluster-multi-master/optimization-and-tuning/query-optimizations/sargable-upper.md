@@ -1,7 +1,7 @@
 
 # Sargable UPPER
 
-Starting from [MariaDB 11.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), expressions in the form
+Starting from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), expressions in the form
 
 
 ```
@@ -87,4 +87,3 @@ The optimization is implemented as a rewrite for a query's WHERE/ON conditions. 
 * [MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496): Make optimizer handle UCASE(varchar_col)=...
 * An analog for [LCASE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/lcase.md) is not possible. See [MDEV-31955](https://jira.mariadb.org/browse/MDEV-31955): Make optimizer handle LCASE(varchar_col)=... for details.
 
-<span></span>

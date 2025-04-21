@@ -20,7 +20,7 @@ HANDLER tbl_name CLOSE
 
 
 The `HANDLER` statement provides direct access to table
-storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [Memory](../../../storage-engines/memory-storage-engine.md), [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) and [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../storage-engines/merge.md) or [views](../../../../server-usage/programming-customizing-mariadb/views/README.md)).
+storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../storage-engines/aria/README.md), [Memory](../../../storage-engines/memory-storage-engine.md), [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) and [InnoDB](../../../storage-engines/innodb/README.md) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../storage-engines/merge.md) or [views](../../../../server-usage/programming-customizing-mariadb/views/README.md)).
 
 
 `HANDLER ... OPEN` opens a table, allowing it to be accessible to subsequent `HANDLER ... READ` statements. The table can either be opened using an alias, or a table name. If opened with an alias, references to this table by further HANDLER statements must use this alias, and not the table name. If opened with a table name qualified by database name, further references to this table must use the unqualified table name. For example, if a table is opened with `db1.t1`, further references must use `t1`.
@@ -126,11 +126,11 @@ You may also find rows committed since the scan originally started.
 ### Other Limitations
 
 
-* If you do an [ALTER TABLE](../../sql-statements/data-definition/alter/alter-tablespace.md), all your HANDLERs for that table are automatically closed.
+* If you do an [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md), all your HANDLERs for that table are automatically closed.
 * If you do an ALTER TABLE for a table that is used by some other connection with HANDLER, the ALTER TABLE will wait for the HANDLER to be closed.
 * For HASH keys, you must use all key parts when searching for a row.
 * For HASH keys, you can't do a key scan of all values. You can only find all rows with the same key value.
-* While each HANDLER READ command is atomic, if you do a scan in many steps, then some engines may give you [error 1020](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1020.md) if the table changed between the commands. Please refer to the [specific engine handler page](handler-commands.md) if this happens.
+* While each HANDLER READ command is atomic, if you do a scan in many steps, then some engines may give you [error 1020](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1000-to-1099/e1020.md) if the table changed between the commands. Please refer to the [specific engine handler page](README.md) if this happens.
 
 
 ## Error Codes
@@ -198,5 +198,5 @@ HANDLER db_new_t1 READ NEXT LIMIT 3;
 ## See Also
 
 
-* [What is MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

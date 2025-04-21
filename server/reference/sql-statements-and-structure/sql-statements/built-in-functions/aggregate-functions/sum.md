@@ -17,7 +17,7 @@ Returns the sum of *`expr`*. If the return set has no rows, `SUM()` returns
 of `expr`.
 
 
-SUM() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md), although not with the DISTINCT specifier.
+SUM() can be used as a [window function](../special-functions/window-functions/README.md), although not with the DISTINCT specifier.
 
 
 ## Examples
@@ -42,7 +42,7 @@ SELECT SUM(DISTINCT(sales_value)) FROM sales;
 +----------------------------+
 ```
 
-Commonly, SUM is used with a [GROUP BY](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by) clause:
+Commonly, SUM is used with a [GROUP BY](../../data-manipulation/selecting-data/select.md#group-by) clause:
 
 
 ```
@@ -65,7 +65,7 @@ SELECT name, SUM(units) FROM sales GROUP BY name;
 +---------+------------+
 ```
 
-The [GROUP BY](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by) clause is required when using an aggregate function along with regular column data, otherwise the result will be a mismatch, as in the following common type of mistake:
+The [GROUP BY](../../data-manipulation/selecting-data/select.md#group-by) clause is required when using an aggregate function along with regular column data, otherwise the result will be a mismatch, as in the following common type of mistake:
 
 
 ```
@@ -77,7 +77,7 @@ SELECT name,SUM(units) FROM sales
 +------+------------+
 ```
 
-As a [window function](../special-functions/window-functions/window-functions-overview.md):
+As a [window function](../special-functions/window-functions/README.md):
 
 
 ```
@@ -106,6 +106,6 @@ SELECT name, test, score, SUM(score) OVER (PARTITION BY name) AS total_score FRO
 
 
 * [AVG](avg.md) (average)
-* [MAX](../../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) (maximum)
-* [MIN](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) (minimum)
+* [MAX](max.md) (maximum)
+* [MIN](min.md) (minimum)
 

@@ -2,7 +2,7 @@
 # Stored Aggregate Functions
 
 
-[Aggregate functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
+[Aggregate functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/README.md) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
 
 
 Creating a custom aggregate function is done using the [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) statement with two main differences:
@@ -28,7 +28,7 @@ BEGIN
 END
 ```
 
-Stored aggregate functions were a [2016 Google Summer of Code](../../../../../general-resources/company-and-community/contributing-participating/google-summers-of-code/google-summer-of-code-2016.md) project by Varun Gupta.
+Stored aggregate functions were a [2016 Google Summer of Code](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/contributing-participating/google-summers-of-code/google-summer-of-code-2016) project by Varun Gupta.
 
 
 ### Using SQL/PL
@@ -159,4 +159,3 @@ SELECT aggregate_count(stud_id) FROM marks;
 * [SHOW FUNCTION STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-<span></span>

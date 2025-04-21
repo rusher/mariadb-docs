@@ -7,7 +7,7 @@
 This document describes general MySQL protocol authentication in MaxScale. For
 REST-api authentication, see the
 [configuration guide](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md) and the
-[REST-api guide](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-rest-api-tutorial.md).
+[REST-api guide](../mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md).
 
 
 Similar to the MariaDB Server, MaxScale uses authentication plugins to implement
@@ -225,7 +225,7 @@ authenticator_options=match_host=false
 Controls database name matching for authentication
 when an incoming client logs in to a non-empty database. The setting functions
 similar to the MariaDB Server setting
-[lower_case_table_names](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md)
+[lower_case_table_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables)
 and should be set to the value used by the backends.
 
 

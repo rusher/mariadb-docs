@@ -1,7 +1,7 @@
 
 # Locales Plugin
 
-The `LOCALES` plugin creates the [LOCALES](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table in the [INFORMATION_SCHEMA](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. The plugin also adds the [SHOW LOCALES](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-locales.md) statement.The table and statement can be queried to see all [locales](server-locale.md) that are compiled into the server.
+The `LOCALES` plugin creates the [LOCALES](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table in the [INFORMATION_SCHEMA](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. The plugin also adds the [SHOW LOCALES](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-locales.md) statement.The table and statement can be queried to see all [locales](server-locale.md) that are compiled into the server.
 
 
 
@@ -75,9 +75,9 @@ SELECT * FROM INFORMATION_SCHEMA.LOCALES;
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.13](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.0.10](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 10.0.4](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
+| 1.0 | Alpha | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 
 
 

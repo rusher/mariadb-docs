@@ -11,7 +11,7 @@ sys.list_drop(list,value)
 ## Description
 
 
-`list_drop` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`list_drop` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
 
 
 It takes a *list* to be be modified and a *value* to be dropped from the list, returning the resulting value. This can be used, for example, to remove a value from a system variable taking a comma-delimited list of options, such as [sql_mode](../../../../../../../server-management/variables-and-modes/sql-mode.md).

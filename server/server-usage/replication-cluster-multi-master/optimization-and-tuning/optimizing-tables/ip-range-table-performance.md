@@ -105,7 +105,7 @@ The Ips table's size is proportional to the number of blocks. A million 'owned' 
 
 * number of 'free' gaps (between zero and the number of owned blocks)
 * datatypes used for `ip` and `owner`
-* [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) overhead
+* [InnoDB](../../../../reference/storage-engines/innodb/README.md) overhead
 Even 100M blocks is quite manageable in today's hardware. Once things are cached, most operations would take only a few milliseconds. A trillion blocks would work, but most operations would hit the disk a few times -- only a few times.
 
 
@@ -153,7 +153,7 @@ Notes on the [reference implementation for IPv6](https://mysql.rjweb.org/doc.php
 See the comments in the code for more details.
 
 
-The INET6* functions were first available in MySQL 5.6.3 and [MariaDB 10.0.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1003-release-notes.md)
+The INET6* functions were first available in MySQL 5.6.3 and [MariaDB 10.0.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1003-release-notes)
 
 
 Adapting to a different non-IP 'address range' data
@@ -199,4 +199,3 @@ optimizations, and debugging tips.
 
 Original source: [ipranges](https://mysql.rjweb.org/doc.php/ipranges)
 
-<span></span>

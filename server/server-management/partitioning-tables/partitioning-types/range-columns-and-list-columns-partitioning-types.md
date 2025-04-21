@@ -5,7 +5,7 @@ RANGE COLUMNS and LIST COLUMNS are variants of, respectively, [RANGE](range-part
 
 
 * The list can contain one or more columns.
-* Columns can be of any [integer](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), [string](../../../reference/data-types/string-data-types/README.md), [DATE](../../../reference/sql-statements-and-structure/sql-language-structure/date-and-time-literals.md), and [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) types.
+* Columns can be of any [integer](../../../reference/data-types/data-types-numeric-data-types/int.md), [string](../../../reference/data-types/string-data-types/README.md), [DATE](../../../reference/data-types/date-and-time-data-types/date.md), and [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) types.
 * Only bare columns are permitted; no expressions.
 
 
@@ -15,7 +15,7 @@ All the specified columns are compared to the specified values to determine whic
 ## Syntax
 
 
-The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement can be definition of the new table's partitions. In the case of RANGE COLUMNS partitioning, the syntax is the following:
+The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement can be definition of the new table's partitions. In the case of RANGE COLUMNS partitioning, the syntax is the following:
 
 
 ```
@@ -89,4 +89,3 @@ CREATE OR REPLACE TABLE t1 (
     PARTITION p2 DEFAULT
   );
 ```
-<span></span>

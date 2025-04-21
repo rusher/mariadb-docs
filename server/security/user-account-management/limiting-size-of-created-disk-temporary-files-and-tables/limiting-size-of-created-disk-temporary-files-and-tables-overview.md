@@ -2,8 +2,8 @@
 # Limiting Size of Created Disk Temporary Files and Tables Overview
 
 
-##### MariaDB starting with [11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), it's possible to limit the size of created disk temporary files and tables. 
+##### MariaDB starting with [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), it's possible to limit the size of created disk temporary files and tables. 
 When the internal in-memory temporary table is oversize and converting to MyISAM/Aria table to store on disk, this option will limit the max space of tmp_dir. If a new disk temporary table will cause tmp_dir over the limitation, then this query will return an error.
 
 
@@ -49,7 +49,7 @@ There are two system variables used for controlling this feature:
 ## Noteworthy issue
 
 
-* One has to be careful when using small values for max_tmp_space limit together with [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and with non transactional tables.
+* One has to be careful when using small values for max_tmp_space limit together with [binary logging](../../../server-management/server-monitoring-logs/binary-log/README.md) and with non transactional tables.
 * If a binary log entry for the query is larger than [binlog_stmt_cache_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size) and one hits the limit of max_tmp_space when flushing the entry to disk, the query will abort and the binary log will not contain the last changes to the table. This will also stop the replica!
 * This is also true for all Aria tables as Aria cannot do rollback (except in case of crashes)!
 * One way to avoid it is to use [@@binlog_format=statement](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) for queries that update many lot of rows.
@@ -76,4 +76,3 @@ There are two system variables used for controlling this feature:
 
 * [MDEV-9101](https://jira.mariadb.org/browse/MDEV-9101) - Limit size of created disk temporary files and tables
 
-<span></span>

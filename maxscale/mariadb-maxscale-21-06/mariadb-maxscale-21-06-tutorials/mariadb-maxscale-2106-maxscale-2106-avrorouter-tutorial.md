@@ -39,7 +39,7 @@ binlog_row_image=full
 
 
 *You can find out more about replication formats from the
-[MariaDB Knowledge Base](../../../server/server-management/server-monitoring-logs/binary-log/binary-log-formats.md)*
+[MariaDB Knowledge Base](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats)*
 
 
 ## Configuring MaxScale
@@ -167,7 +167,7 @@ starting file in the avrorouter.
 
 
 For more details about the SQL commands, refer to the
-[Binlogrouter](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter-24.md) documentation.
+[Binlogrouter](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter.md) documentation.
 
 
 After the binary log streaming has started, the avrorouter will automatically

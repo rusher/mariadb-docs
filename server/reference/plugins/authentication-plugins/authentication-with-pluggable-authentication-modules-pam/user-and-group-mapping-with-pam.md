@@ -32,10 +32,10 @@ Since MariaDB's user and group mapping is performed by an external PAM module, M
 ## Installing the pam_user_map PAM Module
 
 
-The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
+The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
 
 
-Some Linux distributions have not picked up this change in their own packages yet, so when e.g. installing MariaDB server from stock Ubuntu packages on Ubuntu 20.04LTS you still won't have the `pam_user_map` module installed even though the MariaDB server installed is more recent than [MariaDB 10.3.22](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10322-release-notes.md).
+Some Linux distributions have not picked up this change in their own packages yet, so when e.g. installing MariaDB server from stock Ubuntu packages on Ubuntu 20.04LTS you still won't have the `pam_user_map` module installed even though the MariaDB server installed is more recent than [MariaDB 10.3.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10322-release-notes).
 
 
 When using such an installation, and not being able to switch to our own MariaDB package repositories, it may be necessary to compile the PAM module from source as described in the next section, or to manually extract it from one of our server packages and copy it to the target system.
@@ -57,7 +57,7 @@ On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](.
 sudo yum install gcc pam-devel MariaDB-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md), you need to install `gcc`, `libpam0g-dev`. For example:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`. For example:
 
 
 ```
@@ -167,7 +167,7 @@ Also note that you might not be able to create the `''@'%'` anonymous account by
 ## Verifying that Mapping is Occurring
 
 
-In case any user mapping is performed, the original user name is returned by the SQL function `[USER()](../../other-plugins/user-variables-plugin.md)`, while the authenticated user name is returned by the SQL function `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`. The latter actually defines what privileges are available to a connected user.
+In case any user mapping is performed, the original user name is returned by the SQL function `[USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md)`, while the authenticated user name is returned by the SQL function `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`. The latter actually defines what privileges are available to a connected user.
 
 
 For example, if we have the following configured:

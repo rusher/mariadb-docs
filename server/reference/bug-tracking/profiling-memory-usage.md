@@ -46,7 +46,7 @@ This shows the current memory used per connection and the maximum memory they ha
 used since the user connected.
 
 
-The [Performance Schema](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) can also be used to find out who is allocated memory and for what.
+The [Performance Schema](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/README.md) can also be used to find out who is allocated memory and for what.
 
 
 Note that one can also set the [max_session_mem_used](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_session_mem_used) variable to restrict a user's memory usage.

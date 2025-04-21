@@ -942,7 +942,7 @@ MaxScale server. This driver is often available in the package manager of your
 operating system but it can also be downloaded from the MariaDB
 website. Installation instructions for installing the driver manually can be
 found
-[here](../../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md#installing-mariadb-connectorodbc-on-linux).
+[here](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc#installing-mariadb-connectorodbc-on-linux).
 
 
 The request body must be a JSON object consisting of the following fields:
@@ -1002,7 +1002,7 @@ An array of objects, each of which must define a `table` and a `schema`
 Extra connection string that is appended to the destination server's
  connection string. This connection will always use the MariaDB ODBC
  driver. The list of supported options can be found
- [here](../../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md#parameters).
+ [here](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc#parameters).
 
 
 * `threads`

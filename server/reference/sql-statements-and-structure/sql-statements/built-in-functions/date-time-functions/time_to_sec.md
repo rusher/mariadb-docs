@@ -14,7 +14,7 @@ TIME_TO_SEC(time)
 Returns the time argument, converted to seconds.
 
 
-The value returned by `TIME_TO_SEC` is of type `[DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)`. Before [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) (and MySQL 5.6), the type was `[INT](../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)`. The returned value preserves microseconds of the argument. See also [Microseconds in MariaDB](microseconds-in-mariadb.md).
+The value returned by `TIME_TO_SEC` is of type `[DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)`. Before [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) (and MySQL 5.6), the type was `[INT](../../../../data-types/data-types-numeric-data-types/int.md)`. The returned value preserves microseconds of the argument. See also [Microseconds in MariaDB](microseconds-in-mariadb.md).
 
 
 ## Examples

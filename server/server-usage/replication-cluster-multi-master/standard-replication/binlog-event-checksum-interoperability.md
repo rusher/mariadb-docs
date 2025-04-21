@@ -5,7 +5,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 The introduction of [checksums on binlog events](binlog-event-checksums.md) changes the format that events
-are stored in [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files and sent over the network to replicas. This raises the question on what happens when replicating between different versions of the
+are stored in [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) files and sent over the network to replicas. This raises the question on what happens when replicating between different versions of the
 server, where one server is a newer version that has the binlog checksum
 feature implemented, while the other server is an older version that does not
 know about binlog checksums.
@@ -73,7 +73,7 @@ combination of primary and replica servers and checksum enabled/disabled:
 ## Checksums and mariadb-binlog
 
 
-When using the [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) client program, there are similar issues.
+When using the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md) client program, there are similar issues.
 
 
 A version of `mariadb-binlog` which understands checksums can read binlog files
@@ -101,4 +101,3 @@ produced by either MySQL or MariaDB just fine.
 
 * [Binlog Event Checksums](binlog-event-checksums.md)
 
-<span></span>

@@ -5,11 +5,11 @@
 InnoDB tables support online DDL, which permits concurrent DML and uses optimizations to avoid unnecessary table copying.
 
 
-The [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement supports two clauses that are used to implement online DDL:
+The [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement supports two clauses that are used to implement online DDL:
 
 
-* [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) - This clause controls how the DDL operation is performed.
-* [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#lock) - This clause controls how much concurrency is allowed while the DDL operation is being performed.
+* [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) - This clause controls how the DDL operation is performed.
+* [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) - This clause controls how much concurrency is allowed while the DDL operation is being performed.
 
 
 ## Alter Algorithms
@@ -21,8 +21,8 @@ InnoDB supports multiple algorithms for performing DDL operations. This offers a
 * `DEFAULT` - This implies the default behavior for the specific operation.
 * `COPY`
 * `INPLACE`
-* `NOCOPY` - This was added in [MariaDB 10.3.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md).
-* `INSTANT` - This was added in [MariaDB 10.3.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md).
+* `NOCOPY` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
+* `INSTANT` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
 
 
 ## Specifying an Alter Algorithm
@@ -53,10 +53,10 @@ There is also a special value that can be specified:
 ### Specifying an Alter Algorithm Using the ALGORITHM Clause
 
 
-InnoDB supports the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause.
+InnoDB supports the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause.
 
 
-The [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause can be used to specify the *least efficient* algorithm that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statements.
+The [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause can be used to specify the *least efficient* algorithm that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statements.
 
 
 For example, if a user wanted to add a column to a table, but only if the operation used an algorithm that is at least as efficient as the `INPLACE`, then they could execute the following:
@@ -115,7 +115,7 @@ This means that, if an operation supports the `INSTANT` algorithm, then it will 
 ### COPY Algorithm
 
 
-The `COPY` algorithm refers to the original [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) algorithm.
+The `COPY` algorithm refers to the original [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) algorithm.
 
 
 When the `COPY` algorithm is used, MariaDB essentially does the following operations:
@@ -141,19 +141,19 @@ RENAME TABLE tmp_tab TO original_tab;
 This algorithm is very inefficient, but it is generic, so it works for all storage engines.
 
 
-If the `COPY` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable, then the `COPY` algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement, so that the table is only rebuilt once.
+If the `COPY` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable, then the `COPY` algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, so that the table is only rebuilt once.
 
 
 #### Using the COPY Algorithm with InnoDB
 
 
-If the `COPY` algorithm is used with an [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table, then the following statements apply:
+If the `COPY` algorithm is used with an [InnoDB](../README.md) table, then the following statements apply:
 
 
 * The table will be rebuilt using the current values of the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table), [innodb_file_format](../innodb-system-variables.md#innodb_file_format), and [innodb_default_row_format](../innodb-system-variables.md#innodb_default_row_format) system variables.
 
 
-* The operation will have to create a temporary table to perform the the table copy. This temporary table will be in the same directory as the original table, and it's file name will be in the format `<code>#</code>sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `<code>#</code>sql1234_12_1.ibd`.
+* The operation will have to create a temporary table to perform the the table copy. This temporary table will be in the same directory as the original table, and it's file name will be in the format `#sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql1234_12_1.ibd`.
 
 
 * The operation inserts one record at a time into each index, which is very inefficient.
@@ -177,13 +177,13 @@ The `COPY` algorithm can be incredibly slow, because the whole table has to be c
 When the `INPLACE` algorithm is used, the underlying storage engine uses optimizations to perform the operation while avoiding the table copy and rebuild. However, `INPLACE` is a bit of a misnomer, since some operations may still require the table to be rebuilt for some storage engines. Regardless, several operations can be performed without a full copy of the table for some storage engines.
 
 
-A more accurate name for the algorithm would have been the `ENGINE` algorithm, since the [storage engine](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) decides how to implement the algorithm.
+A more accurate name for the algorithm would have been the `ENGINE` algorithm, since the [storage engine](../../README.md) decides how to implement the algorithm.
 
 
-If an [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation supports the `INPLACE` algorithm, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
+If an [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation supports the `INPLACE` algorithm, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
 
 
-If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation does not support the `INPLACE` algorithm, then an error will be raised. For example:
+If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation does not support the `INPLACE` algorithm, then an error will be raised. For example:
 
 
 ```
@@ -199,7 +199,7 @@ In this case, raising an error is preferable, if the alternative is for the oper
 #### Using the INPLACE Algorithm with InnoDB
 
 
-If the `INPLACE` algorithm is used with an [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table, then the following statements apply:
+If the `INPLACE` algorithm is used with an [InnoDB](../README.md) table, then the following statements apply:
 
 
 * The operation might have to write sort files in the directory defined by the [innodb_tmpdir](../innodb-system-variables.md#innodb_tmpdir) system variable.
@@ -215,16 +215,16 @@ If the `INPLACE` algorithm is used with an [InnoDB](../../../../../general-resou
 
   * It may have to create a temporary intermediate table for the actual table rebuild operation.
 
-    * This temporary table will be in the same directory as the original table, and it's file name will be in the format `<code>#</code>sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `<code>#</code>sql1234_12_1.ibd`.
+    * This temporary table will be in the same directory as the original table, and it's file name will be in the format `#sql${PID}_${THREAD_ID}_${TMP_TABLE_COUNT}`, where `${PID}` is the process ID of `mysqld`, `${THREAD_ID}` is the connection ID, and `${TMP_TABLE_COUNT}` is the number of temporary tables that the connection has open. Therefore, the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql1234_12_1.ibd`.
   * When it replaces the original table with the rebuilt table, it may also have to rename the original table using a temporary table name.
 
-    * The [innodb_safe_truncate](../innodb-system-variables.md#innodb_safe_truncate) system variable is set to `OFF`, then the format will actually be `<code>#</code>sql-ib${TABLESPACE_ID}-${RAND}`, where `${TABLESPACE_ID}` is the table's tablespace ID within InnoDB and `${RAND}` is a randomly initialized number. Therefore, the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `<code>#</code>sql-ib230291-1363966925.ibd`.
+    * The [innodb_safe_truncate](../innodb-system-variables.md#innodb_safe_truncate) system variable is set to `OFF`, then the format will actually be `#sql-ib${TABLESPACE_ID}-${RAND}`, where `${TABLESPACE_ID}` is the table's tablespace ID within InnoDB and `${RAND}` is a randomly initialized number. Therefore, the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) may contain files with file names like `#sql-ib230291-1363966925.ibd`.
 
 
 * The storage needed for the above items can add up to the size of the original table, or more in some cases.
 
 
-* Some operations are instantaneous, if they only require the table's metadata to be changed. This includes operations such as renaming a column, changing a column's [DEFAULT](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default-column-option) value, etc.
+* Some operations are instantaneous, if they only require the table's metadata to be changed. This includes operations such as renaming a column, changing a column's [DEFAULT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default-column-option) value, etc.
 
 
 #### Operations Supported by InnoDB with the `INPLACE` Algorithm
@@ -242,10 +242,10 @@ See [InnoDB Online DDL Operations with ALGORITHM=INPLACE](innodb-online-ddl-oper
 The `NOCOPY` algorithm is supported. The `INPLACE` algorithm can sometimes be surprisingly slow in instances where it has to rebuild the clustered index, because when the clustered index has to be rebuilt, the whole table has to be rebuilt. The `NOCOPY` algorithm was introduced as a way to avoid this.
 
 
-If an [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation supports the `NOCOPY` algorithm, then it can be performed without rebuilding the clustered index.
+If an [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation supports the `NOCOPY` algorithm, then it can be performed without rebuilding the clustered index.
 
 
-If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation does not support the `NOCOPY` algorithm, then an error will be raised. For example:
+If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation does not support the `NOCOPY` algorithm, then an error will be raised. For example:
 
 
 ```
@@ -273,10 +273,10 @@ See [InnoDB Online DDL Operations with ALGORITHM=NOCOPY](innodb-online-ddl-opera
 The `INSTANT` algorithm is supported. The `INPLACE` algorithm can sometimes be surprisingly slow in instances where it has to modify data files. The `INSTANT` algorithm was introduced as a way to avoid this.
 
 
-If an [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation supports the `INSTANT` algorithm, then it can be performed without modifying any data files.
+If an [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation supports the `INSTANT` algorithm, then it can be performed without modifying any data files.
 
 
-If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation does not support the `INSTANT` algorithm, then an error will be raised. For example:
+If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter_algorithm](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation does not support the `INSTANT` algorithm, then an error will be raised. For example:
 
 
 ```
@@ -310,7 +310,7 @@ InnoDB supports multiple locking strategies for performing DDL operations. This 
 * `EXCLUSIVE`
 
 
-Regardless of which locking strategy is used to perform a DDL operation, InnoDB will have to exclusively lock the table for a short time at the start and end of the operation's execution. This means that any active transactions that may have accessed the table must be committed or aborted for the operation to continue. This applies to most DDL statements, such as [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md), [DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md), [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md), [RENAME TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/rename-table.md), etc.
+Regardless of which locking strategy is used to perform a DDL operation, InnoDB will have to exclusively lock the table for a short time at the start and end of the operation's execution. This means that any active transactions that may have accessed the table must be committed or aborted for the operation to continue. This applies to most DDL statements, such as [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md), [DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md), [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md), [RENAME TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/rename-table.md), etc.
 
 
 ## Specifying an Alter Locking Strategy
@@ -319,10 +319,10 @@ Regardless of which locking strategy is used to perform a DDL operation, InnoDB 
 ### Specifying an Alter Locking Strategy Using the `LOCK` Clause
 
 
-The [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement supports the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#lock) clause.
+The [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement supports the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause.
 
 
-The [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#lock) clause can be used to specify the locking strategy that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statements.
+The [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause can be used to specify the locking strategy that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statements.
 
 
 For example, if a user wanted to add a column to a table, but only if the operation is non-locking, then they could execute the following:
@@ -337,13 +337,13 @@ CREATE OR REPLACE TABLE tab (
 ALTER TABLE tab ADD COLUMN c varchar(50), ALGORITHM=INPLACE, LOCK=NONE;
 ```
 
-If the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#lock) clause is not explicitly set, then the operation uses `LOCK=DEFAULT`.
+If the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is not explicitly set, then the operation uses `LOCK=DEFAULT`.
 
 
 ### Specifying an Alter Locking Strategy Using `ALTER ONLINE TABLE`
 
 
-[ALTER ONLINE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](alter-online-table) statement can be used to ensure that your [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operation allows all concurrent DML.
+[ALTER ONLINE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](alter-online-table) statement can be used to ensure that your [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operation allows all concurrent DML.
 
 
 ## Supported Alter Locking Strategies

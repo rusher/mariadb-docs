@@ -18,7 +18,7 @@ Returns the default (current) database name as a string in the utf8 [character s
 SCHEMA() is a synonym for DATABASE().
 
 
-To select a default database, the [USE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statement can be run. Another way to set the default database is specifying its name at [mariadb](../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command line client startup.
+To select a default database, the [USE](../../../administrative-sql-statements/use-database.md) statement can be run. Another way to set the default database is specifying its name at [mariadb](../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command line client startup.
 
 
 ## Examples

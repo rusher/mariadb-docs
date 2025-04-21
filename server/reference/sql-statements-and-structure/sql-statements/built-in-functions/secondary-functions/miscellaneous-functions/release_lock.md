@@ -22,7 +22,7 @@ released), and `NULL` if the named lock did not exist. The lock does not exist i
 Statements using the `RELEASE_LOCK` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 
-The [DO statement](../../../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md) is convenient to use with `RELEASE_LOCK()`.
+The [DO statement](../../../stored-routine-statements/do.md) is convenient to use with `RELEASE_LOCK()`.
 
 
 ## Examples

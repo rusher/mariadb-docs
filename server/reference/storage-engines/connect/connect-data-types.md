@@ -2,7 +2,7 @@
 # CONNECT Data Types
 
 Many data types make no or little sense when applied to plain files. This why
-[CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) supports only a restricted set of data types. However, ODBC, JDBC
+[CONNECT](README.md) supports only a restricted set of data types. However, ODBC, JDBC
 or MYSQL source tables may contain data types not supported by CONNECT. In this
 case, CONNECT makes an automatic conversion to a similar supported type when it
 is possible.
@@ -15,21 +15,21 @@ The data types currently supported by CONNECT are:
 | Type name | Description | Used for |
 | --- | --- | --- |
 | Type name | Description | Used for |
-| TYPE_STRING | Zero ended string | [char](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md), [varchar](../../data-types/string-data-types/varchar.md), [text](../../data-types/string-data-types/text.md) |
-| TYPE_INT | 4 bytes integer | [int](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), [mediumint](../../data-types/data-types-numeric-data-types/mediumint.md), [integer](../../data-types/data-types-numeric-data-types/integer.md) |
+| TYPE_STRING | Zero ended string | [char](../../data-types/string-data-types/char.md), [varchar](../../data-types/string-data-types/varchar.md), [text](../../data-types/string-data-types/text.md) |
+| TYPE_INT | 4 bytes integer | [int](../../data-types/data-types-numeric-data-types/int.md), [mediumint](../../data-types/data-types-numeric-data-types/mediumint.md), [integer](../../data-types/data-types-numeric-data-types/integer.md) |
 | TYPE_SHORT | 2 bytes integer | [smallint](../../data-types/data-types-numeric-data-types/smallint.md) |
 | TYPE_TINY | 1 byte integer | [tinyint](../../data-types/data-types-numeric-data-types/tinyint.md) |
 | TYPE_BIGINT | 8 bytes integer | [bigint](../../data-types/data-types-numeric-data-types/bigint.md), longlong |
 | TYPE_DOUBLE | 8 bytes floating point | [double](../../data-types/data-types-numeric-data-types/double.md), [float](../../data-types/data-types-numeric-data-types/float.md), real |
 | TYPE_DECIM | Numeric value | [decimal](../../data-types/data-types-numeric-data-types/decimal.md), numeric, number |
-| TYPE_DATE | 4 bytes integer | [date](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md), [datetime](../../data-types/date-and-time-data-types/datetime.md), [time](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md), [timestamp](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md), [year](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md) |
+| TYPE_DATE | 4 bytes integer | [date](../../data-types/date-and-time-data-types/date.md), [datetime](../../data-types/date-and-time-data-types/datetime.md), [time](../../data-types/date-and-time-data-types/time.md), [timestamp](../../data-types/date-and-time-data-types/timestamp.md), [year](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md) |
 
 
 
 ## TYPE_STRING
 
 
-This type corresponds to what is generally known as [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) or [VARCHAR](../../data-types/string-data-types/varchar.md) by
+This type corresponds to what is generally known as [CHAR](../../data-types/string-data-types/char.md) or [VARCHAR](../../data-types/string-data-types/varchar.md) by
 database users, or as strings by programmers. Columns containing characters
 have a maximum length but the character string is of fixed or variable length
 depending on the file format.
@@ -279,7 +279,7 @@ can make no sense. The same for character columns; is a blank field a valid valu
 A special case is DATE columns with a DATE_FORMAT specified. Any value not matching the format can be regarded as NULL.
 
 
-CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md)
+CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)
 statement, if it is declared NOT NULL, blank or zero values will be considered
 as valid values. Otherwise they will be considered as NULL values. In all
 cases, nulls are replaced on insert or update by pseudo null values, a zero-length character string for text types or a zero value for numeric types. Once
@@ -388,10 +388,10 @@ When converted, MariaDB types are converted as:
 | [integer](../../data-types/data-types-numeric-data-types/integer.md), [medium integer](../../data-types/data-types-numeric-data-types/mediumint.md) | TYPE_INT | 4 byte integer |
 | [small integer](../../data-types/data-types-numeric-data-types/smallint.md) | TYPE_SHORT | 2 byte integer |
 | [tiny integer](../../data-types/data-types-numeric-data-types/tinyint.md) | TYPE_TINY | 1 byte integer |
-| [char](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md), [varchar](../../data-types/string-data-types/varchar.md) | TYPE_STRING | Same length |
+| [char](../../data-types/string-data-types/char.md), [varchar](../../data-types/string-data-types/varchar.md) | TYPE_STRING | Same length |
 | [double](../../data-types/data-types-numeric-data-types/double.md), [float](../../data-types/data-types-numeric-data-types/float.md), real | TYPE_DOUBLE | 8 byte floating point |
 | [decimal](../../data-types/data-types-numeric-data-types/decimal.md), numeric | TYPE_DECIM | Length depends on precision and scale |
-| all [date](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md) related types | TYPE_DATE | Date format can be set accordingly |
+| all [date](../../data-types/date-and-time-data-types/date.md) related types | TYPE_DATE | Date format can be set accordingly |
 | [bigint](../../data-types/data-types-numeric-data-types/bigint.md), longlong | TYPE_BIGINT | 8 byte integer |
 | [enum](../../data-types/string-data-types/enum.md), [set](../../data-types/string-data-types/set-data-type.md) | TYPE_STRING | Numeric value not accessible |
 | All text types | TYPE_STRING TYPE_ERROR | Depending on the value of the [connect_type_conv](connect-system-variables.md#connect_type_conv) system variable value. |
@@ -463,6 +463,6 @@ Note: The [connect_type_conv](connect-system-variables.md#connect_type_conv) SKI
 1. [↑](#_ref-0) Here input and output are
  used to specify respectively decoding the date to get its numeric value from
  the data file and encoding a date to write it in the table file. Input is
- performed within [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) queries; output is performed in [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md)
+ performed within [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) queries; output is performed in [UPDATE](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md)
  queries.
 

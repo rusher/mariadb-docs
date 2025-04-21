@@ -14,7 +14,7 @@ MD5(str)
 Calculates an MD5 128-bit checksum for the string.
 
 
-The return value is a 32-hex digit string, and as of [MariaDB 5.5](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), is a nonbinary string in the connection [character set and collation](../../../../../data-types/string-data-types/character-sets/README.md), determined by the values of the [character_set_connection](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) and [collation_connection](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variables. Before 5.5, the return value was a binary string.
+The return value is a 32-hex digit string, and as of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), is a nonbinary string in the connection [character set and collation](../../../../../data-types/string-data-types/character-sets/README.md), determined by the values of the [character_set_connection](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) and [collation_connection](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variables. Before 5.5, the return value was a binary string.
 
 
 NULL is returned if the argument was NULL.

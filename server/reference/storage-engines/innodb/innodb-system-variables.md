@@ -1,7 +1,7 @@
 
 # InnoDB System Variables
 
-This page documents system variables related to the [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). For options that are not system variables, see [InnoDB Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to the [InnoDB storage engine](README.md). For options that are not system variables, see [InnoDB Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 
 See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
@@ -13,17 +13,17 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `have_innodb`
 
 
-* Description: If the server supports [InnoDB tables](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), use the [Information Schema PLUGINS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table or [SHOW ENGINES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) instead.
+* Description: If the server supports [InnoDB tables](README.md), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), use the [Information Schema PLUGINS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table or [SHOW ENGINES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) instead.
 * Scope: Global
 * Dynamic: No
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `ignore_builtin_innodb`
 
 
-* Description: Setting this to `1` results in the built-in InnoDB storage engine being ignored. In some versions of MariaDB, XtraDB is the default and is always present, so this variable is ignored and setting it results in a warning. From [MariaDB 10.0.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes.md) to [MariaDB 10.0.8](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1008-release-notes.md), when InnoDB was the default instead of XtraDB, this variable needed to be set. Usually used in conjunction with the [plugin-load=innodb=ha_innodb](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option to use the InnoDB plugin.
+* Description: Setting this to `1` results in the built-in InnoDB storage engine being ignored. In some versions of MariaDB, XtraDB is the default and is always present, so this variable is ignored and setting it results in a warning. From [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes) to [MariaDB 10.0.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1008-release-notes), when InnoDB was the default instead of XtraDB, this variable needed to be set. Usually used in conjunction with the [plugin-load=innodb=ha_innodb](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option to use the InnoDB plugin.
 * Commandline: `--ignore-builtin-innodb`
 * Scope: Global
 * Dynamic: No
@@ -78,33 +78,33 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_adaptive_flushing_method`
 
 
-* Description: Determines the method of flushing dirty blocks from the InnoDB [buffer pool](innodb-buffer-pool.md). If set to `native` or `0`, the original InnoDB method is used. The maximum checkpoint age is determined by the total length of all transaction log files. When the checkpoint age reaches the maximum checkpoint age, blocks are flushed. This can cause lag if there are many updates per second and many blocks with an almost identical age need to be flushed. If set to `estimate` or `1`, the default, the oldest modified age will be compared with the maximum age capacity. If it's more than 1/4 of this age, blocks are flushed every second. The number of blocks flushed is determined by the number of modified blocks, the LSN progress speed and the average age of all modified blocks. It's therefore independent of the [innodb_io_capacity](#innodb_io_capacity) for the 1-second loop, but not entirely so for the 10-second loop. If set to `keep_average` or `2`, designed specifically for SSD cards, a shorter loop cycle is used in an attempt to keep the I/O rate constant. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 and replaced with InnoDB flushing method from MySQL 5.6.
+* Description: Determines the method of flushing dirty blocks from the InnoDB [buffer pool](innodb-buffer-pool.md). If set to `native` or `0`, the original InnoDB method is used. The maximum checkpoint age is determined by the total length of all transaction log files. When the checkpoint age reaches the maximum checkpoint age, blocks are flushed. This can cause lag if there are many updates per second and many blocks with an almost identical age need to be flushed. If set to `estimate` or `1`, the default, the oldest modified age will be compared with the maximum age capacity. If it's more than 1/4 of this age, blocks are flushed every second. The number of blocks flushed is determined by the number of modified blocks, the LSN progress speed and the average age of all modified blocks. It's therefore independent of the [innodb_io_capacity](#innodb_io_capacity) for the 1-second loop, but not entirely so for the 10-second loop. If set to `keep_average` or `2`, designed specifically for SSD cards, a shorter loop cycle is used in an attempt to keep the I/O rate constant. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 and replaced with InnoDB flushing method from MySQL 5.6.
 * Commandline: `innodb-adaptive-flushing-method=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
 * Default Value: `estimate`
 * Valid Values: `native` or `0`, `estimate` or `1`, `keep_average` or `2`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced with InnoDB flushing method from MySQL 5.6
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced with InnoDB flushing method from MySQL 5.6
 
 
 
 #### `innodb_adaptive_hash_index`
 
 
-* Description: If set to `1`, the default until [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) hash index is enabled. Based on performance testing ([MDEV-17492](https://jira.mariadb.org/browse/MDEV-17492)), the InnoDB adaptive hash index helps performance in mostly read-only workloads, and could slow down performance in other environments, especially [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md), [TRUNCATE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md), [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), or [DROP INDEX](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) operations.
+* Description: If set to `1`, the default until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the [InnoDB](README.md) hash index is enabled. Based on performance testing ([MDEV-17492](https://jira.mariadb.org/browse/MDEV-17492)), the InnoDB adaptive hash index helps performance in mostly read-only workloads, and could slow down performance in other environments, especially [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md), [TRUNCATE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md), [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), or [DROP INDEX](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) operations.
 * Commandline: `--innodb-adaptive-hash-index={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
-* Default Value: `OFF` (>= [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), `ON` (<= [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md))
+* Default Value: `OFF` (>= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)), `ON` (<= [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104))
 
 
 
 #### `innodb_adaptive_hash_index_partitions`
 
 
-* Description: Specifies the number of partitions for use in adaptive searching. If set to `1`, no extra partitions are created. XtraDB-only. From [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB), this is an alias for [innodb_adaptive_hash_index_parts](#innodb_adaptive_hash_index_parts) to allow for easier upgrades.
+* Description: Specifies the number of partitions for use in adaptive searching. If set to `1`, no extra partitions are created. XtraDB-only. From [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB), this is an alias for [innodb_adaptive_hash_index_parts](#innodb_adaptive_hash_index_parts) to allow for easier upgrades.
 * Commandline: `innodb-adaptive-hash-index-partitions=#`
 * Scope: Global
 * Dynamic: No
@@ -130,34 +130,34 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_adaptive_max_sleep_delay`
 
 
-* Description: Maximum time in microseconds to automatically adjust the [innodb_thread_sleep_delay](#innodb_thread_sleep_delay) value to, based on the workload. Useful in extremely busy systems with hundreds of thousands of simultaneous connections. `0` disables any limit. Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* Description: Maximum time in microseconds to automatically adjust the [innodb_thread_sleep_delay](#innodb_thread_sleep_delay) value to, based on the workload. Useful in extremely busy systems with hundreds of thousands of simultaneous connections. `0` disables any limit. Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes).
 * Commandline: `--innodb-adaptive-max-sleep-delay=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value:
 
-  * `0` (>= [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md))
-  * `150000` (<= [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md))
+  * `0` (>= [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes))
+  * `150000` (<= [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes))
 * Range: `0` to `1000000`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Deprecated: [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Deprecated: [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_additional_mem_pool_size`
 
 
-* Description: Size in bytes of the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) memory pool used for storing information about internal data structures. Defaults to 8MB, if your application has many tables and a large structure, and this is exceeded, operating system memory will be allocated and warning messages written to the error log, in which case you should increase this value. Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and removed in [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) along with InnoDB's internal memory allocator.
+* Description: Size in bytes of the [InnoDB](README.md) memory pool used for storing information about internal data structures. Defaults to 8MB, if your application has many tables and a large structure, and this is exceeded, operating system memory will be allocated and warning messages written to the error log, in which case you should increase this value. Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and removed in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) along with InnoDB's internal memory allocator.
 * Commandline: `--innodb-additional-mem-pool-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `8388608`
 * Range: `2097152` to `4294967295`
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)
 
 
 
@@ -169,7 +169,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Introduced: [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md), [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), [MariaDB 11.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes.md)
+* Introduced: [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes), [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)
 
 
 
@@ -183,8 +183,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `5`
 * Range: `1` to `1073741824`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -197,8 +197,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -211,8 +211,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -225,8 +225,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -239,15 +239,15 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
 #### `innodb_auto_lru_dump`
 
 
-* Description: Renamed [innodb_buffer_pool_restore_at_startup](#innodb_buffer_pool_restore_at_startup) since XtraDB 5.5.10-20.1, which was in turn replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
+* Description: Renamed [innodb_buffer_pool_restore_at_startup](#innodb_buffer_pool_restore_at_startup) since XtraDB 5.5.10-20.1, which was in turn replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 * Commandline: `--innodb-auto-lru-dump=#`
 * Removed: XtraDB 5.5.10-20.1
 
@@ -261,7 +261,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `64` (from [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)) `8` (before [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)),
+* Default Value: `64` (from [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)) `8` (before [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)),
 * Range: `1` to `1000`
 
 
@@ -269,14 +269,14 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_autoinc_lock_mode`
 
 
-* Description: The lock mode that is used when generating `[AUTO_INCREMENT](auto_increment-handling-in-innodb.md)` values for InnoDB tables. 
+* Description: The lock mode that is used when generating `[AUTO_INCREMENT](../../data-types/auto_increment.md)` values for InnoDB tables. 
 
   * Valid values are:
 
     * `0` is the traditional lock mode.
     * `1` is the consecutive lock mode.
     * `2` is the interleaved lock mode.
-  * In order to use [Galera Cluster](../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), the lock mode needs to be set to `2`.
+  * In order to use [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), the lock mode needs to be set to `2`.
   * See [AUTO_INCREMENT Handling in InnoDB: AUTO_INCREMENT Lock Modes](auto_increment-handling-in-innodb.md) for more information.
 * Commandline: `--innodb-autoinc-lock-mode=#`
 * Scope: Global
@@ -290,58 +290,58 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_background_scrub_data_check_interval`
 
 
-* Description: Check if spaces needs scrubbing every [innodb_background_scrub_data_check_interval](#innodb_background_scrub_data_check_interval) seconds. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+* Description: Check if spaces needs scrubbing every [innodb_background_scrub_data_check_interval](#innodb_background_scrub_data_check_interval) seconds. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 * Commandline: `--innodb-background-scrub-data-check-interval=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `3600`
 * Range: `1` to `4294967295`
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_background_scrub_data_compressed`
 
 
-* Description: Enable scrubbing of compressed data by background threads (same as encryption_threads). See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+* Description: Enable scrubbing of compressed data by background threads (same as encryption_threads). See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 * Commandline: `--innodb-background-scrub-data-compressed={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `0`
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_background_scrub_data_interval`
 
 
-* Description: Scrub spaces that were last scrubbed longer than this number of seconds ago. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+* Description: Scrub spaces that were last scrubbed longer than this number of seconds ago. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 * Commandline: `--innodb-background-scrub-data-interval=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `604800`
 * Range: `1` to `4294967295`
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_background_scrub_data_uncompressed`
 
 
-* Description: Enable scrubbing of uncompressed data by background threads (same as encryption_threads). See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+* Description: Enable scrubbing of uncompressed data by background threads (same as encryption_threads). See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 * Commandline: `--innodb-background-scrub-data-uncompressed={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `0`
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -354,7 +354,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.0.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
@@ -374,19 +374,19 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_buffer_pool_chunk_size`
 
 
-* Description: Chunk size used for dynamically resizing the [buffer pool](innodb-buffer-pool.md). Note that changing this setting can change the size of the buffer pool. When [large-pages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) is used this value is effectively rounded up to the next multiple of [large-page-size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_page_size). See [Setting Innodb Buffer Pool Size Dynamically](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md). From [MariaDB 10.8.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md), the variable is autosized based on the [buffer pool size](innodb-buffer-pool.md).
+* Description: Chunk size used for dynamically resizing the [buffer pool](innodb-buffer-pool.md). Note that changing this setting can change the size of the buffer pool. When [large-pages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) is used this value is effectively rounded up to the next multiple of [large-page-size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_page_size). See [Setting Innodb Buffer Pool Size Dynamically](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md). From [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes), the variable is autosized based on the [buffer pool size](innodb-buffer-pool.md).
 * Commandline: `--innodb-buffer-pool-chunk-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value:
 
-  * `autosize (0)`, resulting in [innodb_buffer_pool_size](#innodb_buffer_pool_size)/64, if [large_pages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) round down to multiple of largest page size, with 1MiB minimum (>= [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md))
-  * `134217728` (<= [MariaDB 10.8.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md))
+  * `autosize (0)`, resulting in [innodb_buffer_pool_size](#innodb_buffer_pool_size)/64, if [large_pages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) round down to multiple of largest page size, with 1MiB minimum (>= [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes))
+  * `134217728` (<= [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes))
 * Range:
 
-  * `0`, as autosize, and then `1048576` to `18446744073709551615` (>= [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md))
-  * `1048576` to [innodb_buffer_pool_size](#innodb_buffer_pool_size)/[innodb_buffer_pool_instances](#innodb_buffer_pool_instances) (<= [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md))
+  * `0`, as autosize, and then `1048576` to `18446744073709551615` (>= [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108))
+  * `1048576` to [innodb_buffer_pool_size](#innodb_buffer_pool_size)/[innodb_buffer_pool_instances](#innodb_buffer_pool_instances) (<= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
 * Block size: `1048576`
 
 
@@ -412,7 +412,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -453,22 +453,22 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: `ib_buffer_pool`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_buffer_pool_instances`
 
 
-* Description: If [innodb_buffer_pool_size](#innodb_buffer_pool_size) is set to more than 1GB, innodb_buffer_pool_instances divides the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) buffer pool into the specified number of instances. The default was 1 in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), but for large systems with buffer pools of many gigabytes, many instances could help reduce contention concurrency through [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md). The default is 8 in MariaDB 10 (except on Windows 32-bit, where it varies according to [innodb_buffer_pool_size](#innodb_buffer_pool_size), or from [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), where it is set to 1 if [innodb_buffer_pool_size](#innodb_buffer_pool_size) < 1GB). Each instance manages its own data structures and takes an equal portion of the total buffer pool size, so for example if innodb_buffer_pool_size is 4GB and innodb_buffer_pool_instances is set to 4, each instance will be 1GB. Each instance should ideally be at least 1GB in size. 
-Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), performance improvements intended to reduce the overhead of context-switching between buffer pools changed the recommended number of innodb_buffer_pool_instances to one for every 128GB of buffer pool size. Based on these changes, the variable is deprecated and ignored from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), where the buffer pool runs in a single instance regardless of size.
+* Description: If [innodb_buffer_pool_size](#innodb_buffer_pool_size) is set to more than 1GB, innodb_buffer_pool_instances divides the [InnoDB](README.md) buffer pool into the specified number of instances. The default was 1 in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), but for large systems with buffer pools of many gigabytes, many instances could help reduce contention concurrency through [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102). The default is 8 in MariaDB 10 (except on Windows 32-bit, where it varies according to [innodb_buffer_pool_size](#innodb_buffer_pool_size), or from [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), where it is set to 1 if [innodb_buffer_pool_size](#innodb_buffer_pool_size) < 1GB). Each instance manages its own data structures and takes an equal portion of the total buffer pool size, so for example if innodb_buffer_pool_size is 4GB and innodb_buffer_pool_instances is set to 4, each instance will be 1GB. Each instance should ideally be at least 1GB in size. 
+Starting with [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), performance improvements intended to reduce the overhead of context-switching between buffer pools changed the recommended number of innodb_buffer_pool_instances to one for every 128GB of buffer pool size. Based on these changes, the variable is deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), where the buffer pool runs in a single instance regardless of size.
 * Commandline: `--innodb-buffer-pool-instances=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: >= [MariaDB 10.0.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes.md): `8`, `1` (>= [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) if [innodb_buffer_pool_size](#innodb_buffer_pool_size) < 1GB), or dependent on [innodb_buffer_pool_size](#innodb_buffer_pool_size) (Windows 32-bit)
-* Deprecated: [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Default Value: >= [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes): `8`, `1` (>= [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) if [innodb_buffer_pool_size](#innodb_buffer_pool_size) < 1GB), or dependent on [innodb_buffer_pool_size](#innodb_buffer_pool_size) (Windows 32-bit)
+* Deprecated: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -524,21 +524,21 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 #### `innodb_buffer_pool_populate`
 
 
-* Description: When set to `1` (`0` is default), XtraDB will preallocate pages in the buffer pool on starting up so that NUMA allocation decisions are made while the buffer cache is still clean. XtraDB only. This option was made ineffective in [MariaDB 10.0.23](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md). Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: When set to `1` (`0` is default), XtraDB will preallocate pages in the buffer pool on starting up so that NUMA allocation decisions are made while the buffer cache is still clean. XtraDB only. This option was made ineffective in [MariaDB 10.0.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes). Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-buffer-pool-populate={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.0.23](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.0.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_buffer_pool_restore_at_startup`
 
 
-* Description: Time in seconds between automatic buffer pool dumps. If set to a non-zero value, XtraDB will also perform an automatic restore of the [buffer pool](innodb-buffer-pool.md) at startup. If set to `0`, automatic dumps are not performed, nor automatic restores on startup. Replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
+* Description: Time in seconds between automatic buffer pool dumps. If set to a non-zero value, XtraDB will also perform an automatic restore of the [buffer pool](innodb-buffer-pool.md) at startup. If set to `0`, automatic dumps are not performed, nor automatic restores on startup. Replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 * Commandline: `innodb-buffer-pool-restore-at-startup`
 * Scope: Global
 * Dynamic: Yes
@@ -546,7 +546,7 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 * Default Value: `0`
 * Range - 32 bit: `0` to `4294967295`
 * Range - 64 bit: `0` to `18446744073709547520`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced by [innodb_buffer_pool_load_at_startup](#innodb_buffer_pool_load_at_startup)
 
 
 
@@ -559,7 +559,7 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -572,14 +572,14 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `0`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_buffer_pool_size`
 
 
-* Description: InnoDB buffer pool size in bytes. The primary value to adjust on a database server with entirely/primarily [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables, can be set up to 80% of the total memory in these environments. See the [InnoDB Buffer Pool](innodb-buffer-pool.md) for more on setting this variable, and also [Setting InnoDB Buffer Pool Size Dynamically](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md) if doing so dynamically.
+* Description: InnoDB buffer pool size in bytes. The primary value to adjust on a database server with entirely/primarily [InnoDB](README.md) tables, can be set up to 80% of the total memory in these environments. See the [InnoDB Buffer Pool](innodb-buffer-pool.md) for more on setting this variable, and also [Setting InnoDB Buffer Pool Size Dynamically](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md) if doing so dynamically.
 * Commandline: `--innodb-buffer-pool-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -588,8 +588,8 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 * Range:
 
   * Minimum: `5242880` (5MiB ) for [InnoDB Page Size](#innodb_page_size) <= 16k otherwise `25165824` (24MiB) for [InnoDB Page Size](#innodb_page_size) > 16k (for versions less than next line)
-  * Minimium: `2MiB` [InnoDB Page Size](#innodb_page_size) = 4k, `3MiB` [InnoDB Page Size](#innodb_page_size) = 8k, `5MiB` [InnoDB Page Size](#innodb_page_size) = 16k, `10MiB` [InnoDB Page Size](#innodb_page_size) = 32k, `20MiB` [InnoDB Page Size](#innodb_page_size) = 64k, (>= [MariaDB 10.2.42](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10242-release-notes.md), >= [MariaDB 10.3.33](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10333-release-notes.md), >= [MariaDB 10.4.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10423-release-notes.md), >= [MariaDB 10.5.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), >= [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), >= [MariaDB 10.7.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md))
-  * Minimum: 1GiB for [innodb_buffer_pool_instances](#innodb_buffer_pool_instances) > 1 (<= [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md))
+  * Minimium: `2MiB` [InnoDB Page Size](#innodb_page_size) = 4k, `3MiB` [InnoDB Page Size](#innodb_page_size) = 8k, `5MiB` [InnoDB Page Size](#innodb_page_size) = 16k, `10MiB` [InnoDB Page Size](#innodb_page_size) = 32k, `20MiB` [InnoDB Page Size](#innodb_page_size) = 64k, (>= [MariaDB 10.2.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10242-release-notes), >= [MariaDB 10.3.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10333-release-notes), >= [MariaDB 10.4.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10423-release-notes), >= [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes), >= [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes), >= [MariaDB 10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1072-release-notes))
+  * Minimum: 1GiB for [innodb_buffer_pool_instances](#innodb_buffer_pool_instances) > 1 (<= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
   * Maximium: `9223372036854775807` (8192PB) (all versions)
 * Block size: `1048576`
 
@@ -603,7 +603,7 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.2.28](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10228-release-notes.md), [MariaDB 10.3.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), [MariaDB 10.4.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1049-release-notes.md)
+* Introduced: [MariaDB 10.2.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10228-release-notes), [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), [MariaDB 10.4.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1049-release-notes)
 
 
 
@@ -617,27 +617,27 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 * Data Type: `numeric`
 * Default Value: `25`
 * Range: `0` to `50`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Deprecated: [MariaDB 10.9.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1090-release-notes.md)
-* Removed: [MariaDB 11.0.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Deprecated: [MariaDB 10.9.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1090-release-notes)
+* Removed: [MariaDB 11.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes)
 
 
 
 #### `innodb_change_buffering`
 
 
-* Description: Sets how [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) change buffering is performed. See [InnoDB Change Buffering](innodb-change-buffering.md) for details on the settings. Deprecated and ignored from [MariaDB 10.9.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1090-release-notes.md).
+* Description: Sets how [InnoDB](README.md) change buffering is performed. See [InnoDB Change Buffering](innodb-change-buffering.md) for details on the settings. Deprecated and ignored from [MariaDB 10.9.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1090-release-notes).
 * Commandline: `--innodb-change-buffering=#`
 * Scope: Global
 * Dynamic: Yes
-* Data Type: `enumeration` (>= [MariaDB 10.3.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md)), `string` (<= [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md))
+* Data Type: `enumeration` (>= [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes)), `string` (<= [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes))
 * Default Value:
 
-  * >= [MariaDB 10.5.15](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10515-release-notes.md), [MariaDB 10.6.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1067-release-notes.md), [MariaDB 10.7.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1073-release-notes.md), [MariaDB 10.8.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1082-release-notes.md): `none`
-  * <= [MariaDB 10.5.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.7.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md), [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md):`all`
+  * >= [MariaDB 10.5.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10515-release-notes), [MariaDB 10.6.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1067-release-notes), [MariaDB 10.7.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1073-release-notes), [MariaDB 10.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1082-release-notes): `none`
+  * <= [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes), [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes), [MariaDB 10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1072-release-notes), [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes):`all`
 * Valid Values: `inserts`, `none`, `deletes`, `purges`, `changes`, `all`
-* Deprecated: [MariaDB 10.9.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1090-release-notes.md)
-* Removed: [MariaDB 11.0.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes.md)
+* Deprecated: [MariaDB 10.9.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1090-release-notes)
+* Removed: [MariaDB 11.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes)
 
 
 
@@ -657,14 +657,14 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 #### `innodb_checkpoint_age_target`
 
 
-* Description: The maximum value of the checkpoint age. If set to `0`, has no effect. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 and replaced with InnoDB flushing method from MySQL 5.6.
+* Description: The maximum value of the checkpoint age. If set to `0`, has no effect. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 and replaced with InnoDB flushing method from MySQL 5.6.
 * Commandline: `innodb-checkpoint-age-target=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` upwards
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced with InnoDB flushing method from MySQL 5.6.
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced with InnoDB flushing method from MySQL 5.6.
 
 
 
@@ -673,11 +673,11 @@ Starting with [MariaDB 10.3](../../../../release-notes/mariadb-community-server/
 
 * Description: Specifies how the InnoDB tablespace checksum is generated and verified.
 
-  * `innodb`: Backwards compatible with earlier versions (<= [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)). Deprecated in [MariaDB 10.3.29](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10329-release-notes.md), [MariaDB 10.4.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10419-release-notes.md), [MariaDB 10.5.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md) and removed in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md). If really needed, data files can still be converted with [innochecksum](../../../clients-and-utilities/innochecksum.md).
+  * `innodb`: Backwards compatible with earlier versions (<= [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)). Deprecated in [MariaDB 10.3.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10329-release-notes), [MariaDB 10.4.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10419-release-notes), [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106). If really needed, data files can still be converted with [innochecksum](../../../clients-and-utilities/innochecksum.md).
   * `crc32`: A newer, faster algorithm, but incompatible with earlier versions. Tablespace blocks will be converted to the new format over time, meaning that a mix of checksums may be present.
-  * `full_crc32` and `strict_full_crc32`: From [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md). Permits encryption to be supported over a [SPATIAL INDEX](../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md), which `crc32` does not support. Newly-created data files will carry a flag that indicates that all pages of the file will use a full CRC-32C checksum over the entire page contents (excluding the bytes where the checksum is stored, at the very end of the page). Such files will always use that checksum, no matter what parameter `innodb_checksum_algorithm` is assigned to. Even if `innodb_checksum_algorithm` is modified later, the same checksum will continue to be used. A special flag will be set in the FSP_SPACE_FLAGS in the first data page to indicate the new format of checksum and encryption/page_compressed. ROW_FORMAT=COMPRESSED tables will only use the old format.
+  * `full_crc32` and `strict_full_crc32`: From [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes). Permits encryption to be supported over a [SPATIAL INDEX](../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md), which `crc32` does not support. Newly-created data files will carry a flag that indicates that all pages of the file will use a full CRC-32C checksum over the entire page contents (excluding the bytes where the checksum is stored, at the very end of the page). Such files will always use that checksum, no matter what parameter `innodb_checksum_algorithm` is assigned to. Even if `innodb_checksum_algorithm` is modified later, the same checksum will continue to be used. A special flag will be set in the FSP_SPACE_FLAGS in the first data page to indicate the new format of checksum and encryption/page_compressed. ROW_FORMAT=COMPRESSED tables will only use the old format.
 These tables do not support new features, such as larger innodb_page_size or instant ADD/DROP COLUMN. Also cleans up the MariaDB tablespace flags - flags are reserved to store the page_compressed compression algorithm, and to store the compressed payload length, so that checksum can be computed over the compressed (and possibly encrypted) stream and can be validated without decrypting or decompressing the page. In the full_crc32 format, there no longer are separate before-encryption and after-encryption checksums for pages. The single checksum is computed on the page contents that is written to the file.See [MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026) for details.
-  * `none`: Writes a constant rather than calculate a checksum. Deprecated in [MariaDB 10.3.29](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10329-release-notes.md), [MariaDB 10.4.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10419-release-notes.md), [MariaDB 10.5.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md) and removed in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) as was mostly used to disable the original, slow, page checksum for benchmarking purposes.
+  * `none`: Writes a constant rather than calculate a checksum. Deprecated in [MariaDB 10.3.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10329-release-notes), [MariaDB 10.4.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10419-release-notes), [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) as was mostly used to disable the original, slow, page checksum for benchmarking purposes.
   * `strict_crc32`, `strict_innodb` and `strict_none`: The options are the same as the regular options, but InnoDB will halt if it comes across a mix of checksum values. These are faster, as both new and old checksum values are not required, but can only be used when setting up tablespaces for the first time.
 * Commandline: `--innodb-checksum-algorithm=#`
 * Scope: Global
@@ -685,35 +685,35 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `enumeration`
 * Default Value:
 
-  * `full_crc32` (>= [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md))
-  * `crc32` (>= [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) to <= [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md))
-  * `innodb` (<= [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md))
+  * `full_crc32` (>= [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes))
+  * `crc32` (>= [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) to <= [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104))
+  * `innodb` (<= [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes))
 * Valid Values:
 
-  * >= [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md): `crc32`, `full_crc32`, `strict_crc32`, `strict_full_crc32`
-  * [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), >= [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md): `innodb`, `crc32`, `full_crc32`, `none`, `strict_innodb`, `strict_crc32`, `strict_none`, `strict_full_crc32`
-  * <= [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md): `innodb`, `crc32`, `none`, `strict_innodb`, `strict_crc32`, `strict_none`
+  * >= [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes): `crc32`, `full_crc32`, `strict_crc32`, `strict_full_crc32`
+  * [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), >= [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes): `innodb`, `crc32`, `full_crc32`, `none`, `strict_innodb`, `strict_crc32`, `strict_none`, `strict_full_crc32`
+  * <= [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes): `innodb`, `crc32`, `none`, `strict_innodb`, `strict_crc32`, `strict_none`
 
 
 
 #### `innodb_checksums`
 
 
-* Description: By default, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) performs checksum validation on all pages read from disk, which provides extra fault tolerance. You would usually want this set to `1` in production environments, although setting it to `0` can provide marginal performance improvements. Deprecated and functionality replaced by [innodb_checksum_algorithm](#innodb_checksum_algorithm) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), and should be removed to avoid conflicts. `ON` is equivalent to `--innodb_checksum_algorithm=innodb` and `OFF` to `--innodb_checksum_algorithm=none`.
+* Description: By default, [InnoDB](README.md) performs checksum validation on all pages read from disk, which provides extra fault tolerance. You would usually want this set to `1` in production environments, although setting it to `0` can provide marginal performance improvements. Deprecated and functionality replaced by [innodb_checksum_algorithm](#innodb_checksum_algorithm) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), and should be removed to avoid conflicts. `ON` is equivalent to `--innodb_checksum_algorithm=innodb` and `OFF` to `--innodb_checksum_algorithm=none`.
 * Commandline: `--innodb-checksums`, `--skip-innodb-checksums`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
 #### `innodb_cleaner_lsn_age_factor`
 
 
-* Description: XtraDB has enhanced page cleaner heuristics, and with these in place, the default InnoDB adaptive flushing may be too aggressive. As a result, a new LSN age factor formula has been introduced, controlled by this variable. The default setting, `high_checkpoint`, uses the new formula, while the alternative, `legacy`, uses the original algorithm. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: XtraDB has enhanced page cleaner heuristics, and with these in place, the default InnoDB adaptive flushing may be too aggressive. As a result, a new LSN age factor formula has been introduced, controlled by this variable. The default setting, `high_checkpoint`, uses the new formula, while the alternative, `legacy`, uses the original algorithm. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `--innodb-cleaner-lsn-age-factor=value`
 * Scope: Global
 * Dynamic: Yes
@@ -724,8 +724,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Valid Values:
 
   * `deprecated`, `high_checkpoint`, `legacy`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -738,22 +738,22 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_commit_concurrency`
 
 
-* Description: Limit to the number of transaction threads that can can commit simultaneously. 0, the default, imposes no limit. While you can change from one positive limit to another at runtime, you cannot set this variable to 0, or change it from 0, while the server is running. Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* Description: Limit to the number of transaction threads that can can commit simultaneously. 0, the default, imposes no limit. While you can change from one positive limit to another at runtime, you cannot set this variable to 0, or change it from 0, while the server is running. Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes).
 * Commandline: `--innodb-commit-concurrency=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `1000`
-* Deprecated: [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -769,7 +769,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
   * `lzma`: Pages are compressed using the `[lzma](https://tukaani.org/xz/)` compression algorithm.
   * `bzip2`: Pages are compressed using the `[bzip2](https://www.bzip.org/)` compression algorithm.
   * `snappy`: Pages are compressed using the `[snappy](https://google.github.io/snappy/)` algorithm.
-  * On many distributions, MariaDB may not support all page compression algorithms by default. From [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), libraries can be installed as a plugin. See [Compression Plugins](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md).
+  * On many distributions, MariaDB may not support all page compression algorithms by default. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), libraries can be installed as a plugin. See [Compression Plugins](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md).
   * See [InnoDB Page Compression: Configuring the InnoDB Page Compression Algorithm](innodb-page-compression.md#configuring-the-innodb-page-compression-algorithm) for more information.
 * Commandline: `--innodb-compression-algorithm=value`
 * Scope: Global
@@ -807,7 +807,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `5`
 * Range: `0` to `100`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -825,7 +825,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `6`
 * Range: `1` to `9`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -841,25 +841,25 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `50`
 * Range: `0` to `75`
-* Introduced: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_concurrency_tickets`
 
 
-* Description: Number of times a newly-entered thread can enter and leave [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) until it is again subject to the limitations of [innodb_thread_concurrency](#innodb_thread_concurrency) and may possibly be queued. Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* Description: Number of times a newly-entered thread can enter and leave [InnoDB](README.md) until it is again subject to the limitations of [innodb_thread_concurrency](#innodb_thread_concurrency) and may possibly be queued. Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes).
 * Commandline: `--innodb-concurrency-tickets=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value:
 
-  * `0` (>= [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md))
-  * `5000` (<= [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md))
+  * `0` (>= [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes))
+  * `5000` (<= [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes))
 * Range: `1` to `18446744073709551615`
-* Deprecated: [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -871,20 +871,20 @@ These tables do not support new features, such as larger innodb_page_size or ins
   * When set to `assert`, the default, XtraDB will intentionally crash the server when it detects corrupted data in a single-table tablespace, with an assertion failure.
   * When set to `warn`, it will pass corruption as corrupt table instead of crashing, and disable all further I/O (except for deletion) on the table file.
   * If set to `salvage`, read access is permitted, but corrupted pages are ignored. [innodb_file_per_table](#innodb_file_per_table) must be enabled for this option. Previously named `innodb_pass_corrupt_table`.
-  * Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+  * Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-corrupt-table-action=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
 * Default Value:
 
-  * `assert` (<= [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
-  * `deprecated` (<= [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md))
+  * `assert` (<= [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1))
+  * `deprecated` (<= [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes))
 * Valid Values:
 
   * `deprecated`, `assert`, `warn`, `salvage`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -897,19 +897,19 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 11.0.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes.md)
+* Introduced: [MariaDB 11.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes)
 
 
 
 #### `innodb_data_file_path`
 
 
-* Description: Individual [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) data files, paths and sizes. The value of [innodb_data_home_dir](#innodb_data_home_dir) is joined to each path specified by innodb_data_file_path to get the full directory path. If innodb_data_home_dir is an empty string, absolute paths can be specified here. A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, and whether or not to `[autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size)` on startup may also be specified.
+* Description: Individual [InnoDB](README.md) data files, paths and sizes. The value of [innodb_data_home_dir](#innodb_data_home_dir) is joined to each path specified by innodb_data_file_path to get the full directory path. If innodb_data_home_dir is an empty string, absolute paths can be specified here. A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, and whether or not to `[autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size)` on startup may also be specified.
 * Commandline: `--innodb-data-file-path=name`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `ibdata1:12M:autoextend` (from [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)), `ibdata1:10M:autoextend` (before [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md))
+* Default Value: `ibdata1:12M:autoextend` (from [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)), `ibdata1:10M:autoextend` (before [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0))
 
 
 
@@ -922,14 +922,14 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 11.0.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes.md)
+* Introduced: [MariaDB 11.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes)
 
 
 
 #### `innodb_data_home_dir`
 
 
-* Description: Directory path for all [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) data files in the shared tablespace (assuming [innodb_file_per_table](#innodb_file_per_table) is not enabled). File-specific information can be added in [innodb_data_file_path](#innodb_data_file_path), as well as absolute paths if innodb_data_home_dir is set to an empty string.
+* Description: Directory path for all [InnoDB](README.md) data files in the shared tablespace (assuming [innodb_file_per_table](#innodb_file_per_table) is not enabled). File-specific information can be added in [innodb_data_file_path](#innodb_data_file_path), as well as absolute paths if innodb_data_home_dir is set to an empty string.
 * Commandline: `--innodb-data-home-dir=path`
 * Scope: Global
 * Dynamic: No
@@ -964,7 +964,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `enum`
 * Default Value: `full`
 * Valid Values: `off`, `basic`, `full`
-* Introduced: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -980,8 +980,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `1`
 * Range: `1` to `255`
-* Introduced: [MariaDB 10.1.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 10.1.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes)
 
 
 
@@ -1024,8 +1024,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-* Removed: [MariaDB 11.1.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
+* Removed: [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes)
 
 
 
@@ -1039,8 +1039,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `double`
 * Default Value: `0.9`
 * Range: `0.7` to `1`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-* Removed: [MariaDB 11.1.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
+* Removed: [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes)
 
 
 
@@ -1054,8 +1054,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `20`
 * Range: `1` to `100`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-* Removed: [MariaDB 11.1.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
+* Removed: [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes)
 
 
 
@@ -1069,8 +1069,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `integer`
 * Default Value: `40`
 * Range: `1` to `1000`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-* Removed: [MariaDB 11.1.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
+* Removed: [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes)
 
 
 
@@ -1084,8 +1084,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `7`
 * Range: `2` to `32`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-* Removed: [MariaDB 11.1.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
+* Removed: [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes)
 
 
 
@@ -1099,15 +1099,15 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `4294967295`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
-* Removed: [MariaDB 11.1.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
+* Removed: [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes)
 
 
 
 #### `innodb_dict_size_limit`
 
 
-* Description: Size in bytes of a soft limit the memory used by tables in the data dictionary. Once this limit is reached, XtraDB will attempt to remove unused entries. If set to `0`, the default and standard InnoDB behavior, there is no limit to memory usage. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 and replaced by MySQL 5.6's new [table_definition_cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache) implementation.
+* Description: Size in bytes of a soft limit the memory used by tables in the data dictionary. Once this limit is reached, XtraDB will attempt to remove unused entries. If set to `0`, the default and standard InnoDB behavior, there is no limit to memory usage. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 and replaced by MySQL 5.6's new [table_definition_cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache) implementation.
 * Commandline: `innodb-dict-size-limit=#`
 * Scope: Global
 * Dynamic: Yes
@@ -1115,7 +1115,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Default Value: `0`
 * Default Value - 32 bit: `2147483648`
 * Default Value - 64 bit: `9223372036854775807`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced by MySQL 5.6's [table_definition_cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache) implementation.
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced by MySQL 5.6's [table_definition_cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache) implementation.
 
 
 
@@ -1140,14 +1140,14 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.3.35](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10335-release-notes.md), [MariaDB 10.4.25](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10425-release-notes.md), [MariaDB 10.5.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes.md), [MariaDB 10.6.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes.md), [MariaDB 10.7.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md)
+* Removed: [MariaDB 10.3.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10335-release-notes), [MariaDB 10.4.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10425-release-notes), [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes), [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes)
 
 
 
 #### `innodb_doublewrite`
 
 
-* Description: If set to `1`, the default, to improve fault tolerance [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal peformance improvement.
+* Description: If set to `1`, the default, to improve fault tolerance [InnoDB](README.md) first stores data to a [doublewrite buffer](innodb-doublewrite-buffer.md) before writing it to data file. Disabling will provide a marginal peformance improvement.
 * Commandline: `--innodb-doublewrite`, `--skip-innodb-doublewrite`
 * Scope: Global
 * Dynamic: No
@@ -1165,14 +1165,14 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Dynamic: No
 * Data Type: `filename`
 * Default Value: `NULL`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_empty_free_list_algorithm`
 
 
-* Description: XtraDB 5.6.13-61 introduced an algorithm to assist with reducing mutex contention when the buffer pool free list is empty, controlled by this variable. If set to `backoff`, the default until [MariaDB 10.1.24](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes.md), the new algorithm will be used. If set to `legacy`, the original InnoDB algorithm will be used. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades. See [#1651657](https://bugs.launchpad.net/percona-server/+bug/1651657) for the reasons this was changed back to `legacy` in XtraDB 5.6.36-82.0. When upgrading from 10.0 to 10.1 (>= 10.1.24), for large buffer pools the default will remain `backoff`, while for small ones it will be changed to `legacy`.
+* Description: XtraDB 5.6.13-61 introduced an algorithm to assist with reducing mutex contention when the buffer pool free list is empty, controlled by this variable. If set to `backoff`, the default until [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes), the new algorithm will be used. If set to `legacy`, the original InnoDB algorithm will be used. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades. See [#1651657](https://bugs.launchpad.net/percona-server/+bug/1651657) for the reasons this was changed back to `legacy` in XtraDB 5.6.36-82.0. When upgrading from 10.0 to 10.1 (>= 10.1.24), for large buffer pools the default will remain `backoff`, while for small ones it will be changed to `legacy`.
 * Commandline: `innodb-empty-free-list-algorithm=value`
 * Scope: Global
 * Dynamic: Yes
@@ -1183,15 +1183,15 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Valid Values:
 
   * `deprecated`, `backoff`, `legacy`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_enable_unsafe_group_commit`
 
 
-* Description: Unneeded after XtraDB 1.0.5. If set to `0`, the default, InnoDB will keep transactions between the transaction log and [binary log](binary-log-group-commit-and-innodb-flushing-performance.md)s in the same order. Safer, but slower. If set to `1`, transactions can be group-committed, but there is no guarantee of the order being kept, and a small risk of the two logs getting out of sync. In write-intensive environments, can lead to a significant improvement in performance.
+* Description: Unneeded after XtraDB 1.0.5. If set to `0`, the default, InnoDB will keep transactions between the transaction log and [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md)s in the same order. Safer, but slower. If set to `1`, transactions can be group-committed, but there is no guarantee of the order being kept, and a small risk of the two logs getting out of sync. In write-intensive environments, can lead to a significant improvement in performance.
 * Commandline: `--innodb-enable-unsafe-group-commit`
 * Scope: Global
 * Dynamic: Yes
@@ -1221,9 +1221,9 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 * Description: Enables automatic encryption of all InnoDB tablespaces.
 
-  * `OFF` - Disables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted)` table option set to `DEFAULT`.
-  * `ON` - Enables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted)` table option set to `DEFAULT`, but allows unencrypted tables to be created.
-  * `FORCE` - Enables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted)` table option set to `DEFAULT`, and doesn't allow unencrypted tables to be created (CREATE TABLE ... ENCRYPTED=NO will fail).
+  * `OFF` - Disables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option set to `DEFAULT`.
+  * `ON` - Enables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option set to `DEFAULT`, but allows unencrypted tables to be created.
+  * `FORCE` - Enables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option set to `DEFAULT`, and doesn't allow unencrypted tables to be created (CREATE TABLE ... ENCRYPTED=NO will fail).
   * See [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling InnoDB Encryption: Enabling Encryption for Automatically Encrypted Tablespaces](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-enabling-encryption.md#enabling-encryption-for-automatically-encrypted-tablespaces) for more information.
 * Commandline: `--innodb-encrypt-tables={0|1}`
 * Scope: Global
@@ -1246,7 +1246,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `boolean`
 * Default Value: `OFF`
 * Valid Values: `ON`, `OFF`
-* Introduced: [MariaDB 10.2.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), [MariaDB 10.4.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md)
+* Introduced: [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes)
 
 
 
@@ -1293,8 +1293,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Default Value: `0`
 * Range:
 
-  * `0` to `4294967295` (<= [MariaDB 10.1.45](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes.md), [MariaDB 10.2.32](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.3.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), [MariaDB 10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md))
-  * `0` to `255` (>= [MariaDB 10.1.46](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10146-release-notes.md), [MariaDB 10.2.33](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10233-release-notes.md), [MariaDB 10.3.24](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10324-release-notes.md), [MariaDB 10.4.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10414-release-notes.md), [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md))
+  * `0` to `4294967295` (<= [MariaDB 10.1.45](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes), [MariaDB 10.2.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10232-release-notes), [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes), [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes))
+  * `0` to `255` (>= [MariaDB 10.1.46](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10146-release-notes), [MariaDB 10.2.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10233-release-notes), [MariaDB 10.3.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10324-release-notes), [MariaDB 10.4.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10414-release-notes), [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes))
 
 
 
@@ -1328,27 +1328,27 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_fake_changes`
 
 
-* Description: From [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) until [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), XtraDB-only option that enables the fake changes feature. In [replication](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), setting up or restarting a replica can cause a replication reads to perform more slowly, as MariaDB is single-threaded and needs to read the data before it can execute the queries. This can be speeded up by prefetching threads to warm the server, replaying the statements and then rolling back at commit. This however has an overhead from locking rows only then to undo changes at rollback. Fake changes attempts to reduce this overhead by reading the rows for INSERT, UPDATE and DELETE statements but not updating them. The rollback is then very fast with little or nothing to do. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades. Not present in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and beyond.
+* Description: From [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) until [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), XtraDB-only option that enables the fake changes feature. In [replication](../../../server-usage/replication-cluster-multi-master/README.md), setting up or restarting a replica can cause a replication reads to perform more slowly, as MariaDB is single-threaded and needs to read the data before it can execute the queries. This can be speeded up by prefetching threads to warm the server, replaying the statements and then rolling back at commit. This however has an overhead from locking rows only then to undo changes at rollback. Fake changes attempts to reduce this overhead by reading the rows for INSERT, UPDATE and DELETE statements but not updating them. The rollback is then very fast with little or nothing to do. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades. Not present in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and beyond.
 * Commandline: `--innodb-fake-changes={0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_fast_checksum`
 
 
-* Description: Implements a more CPU efficient XtraDB checksum algorithm, useful for write-heavy loads with high I/O. If set to `1` on a server with tables that have been created with it set to `0`, reads will be slower, so tables should be recreated (dumped and reloaded). XtraDB will fail to start if set to `0` and there are tables created while set to `1`. Replaced with [innodb_checksum_algorithm](#innodb_checksum_algorithm) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6.
+* Description: Implements a more CPU efficient XtraDB checksum algorithm, useful for write-heavy loads with high I/O. If set to `1` on a server with tables that have been created with it set to `0`, reads will be slower, so tables should be recreated (dumped and reloaded). XtraDB will fail to start if set to `0` and there are tables created while set to `1`. Replaced with [innodb_checksum_algorithm](#innodb_checksum_algorithm) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6.
 * Commandline: `--innodb-fast-checksum={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 - replaced with [innodb_checksum_algorithm](#innodb_checksum_algorithm)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 - replaced with [innodb_checksum_algorithm](#innodb_checksum_algorithm)
 
 
 
@@ -1357,16 +1357,16 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
 * Description: The shutdown mode. 
 
-  * `0` - InnoDB performs a slow shutdown, including full purge (before [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md), not always, due to [MDEV-13603](https://jira.mariadb.org/browse/MDEV-13603)) and change buffer merge. Can be very slow, even taking hours in extreme cases.
-  * `1` - the default, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) performs a fast shutdown, not performing a full purge or an insert buffer merge.
+  * `0` - InnoDB performs a slow shutdown, including full purge (before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), not always, due to [MDEV-13603](https://jira.mariadb.org/browse/MDEV-13603)) and change buffer merge. Can be very slow, even taking hours in extreme cases.
+  * `1` - the default, [InnoDB](README.md) performs a fast shutdown, not performing a full purge or an insert buffer merge.
   * `2`, the [InnoDB redo log](innodb-redo-log.md) is flushed and a cold shutdown takes place, similar to a crash. The resulting startup then performs crash recovery. Extremely fast, in cases of emergency, but risks corruption. Not suitable for upgrades between major versions!
-  * `3` (from [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md)) - active transactions will not be rolled back, but all changed pages will be written to data files. The active transactions will be rolled back by a background thread on a subsequent startup. The fastest option that will not involve [InnoDB redo log](innodb-redo-log.md) apply on subsequent startup. See [MDEV-15832](https://jira.mariadb.org/browse/MDEV-15832).
+  * `3` (from [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes)) - active transactions will not be rolled back, but all changed pages will be written to data files. The active transactions will be rolled back by a background thread on a subsequent startup. The fastest option that will not involve [InnoDB redo log](innodb-redo-log.md) apply on subsequent startup. See [MDEV-15832](https://jira.mariadb.org/browse/MDEV-15832).
 * Commandline: `--innodb-fast-shutdown[=#]`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1`
-* Range: `0` to `3` (>= [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md)), `0` to `2` (<= [MariaDB 10.3.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md))
+* Range: `0` to `3` (>= [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes)), `0` to `2` (<= [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes))
 
 
 
@@ -1386,7 +1386,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_file_format`
 
 
-* Description: File format for new [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables. Can either be `Antelope`, the default and the original format, or `Barracuda`, which supports [compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md). Note that this value is also used when a table is re-created with an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) which requires a table copy. See [XtraDB/InnoDB File Format](innodb-file-format.md) for more on the file formats. Removed in 10.3.1 and restored as a deprecated and unused variable in 10.4.3 for compatibility purposes.
+* Description: File format for new [InnoDB](README.md) tables. Can either be `Antelope`, the default and the original format, or `Barracuda`, which supports [compression](innodb-page-compression.md). Note that this value is also used when a table is re-created with an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) which requires a table copy. See [XtraDB/InnoDB File Format](innodb-file-format.md) for more on the file formats. Removed in 10.3.1 and restored as a deprecated and unused variable in 10.4.3 for compatibility purposes.
 * Commandline: `--innodb-file-format=value`
 * Scope: Global
 * Dynamic: Yes
@@ -1395,52 +1395,52 @@ These tables do not support new features, such as larger innodb_page_size or ins
 
   * `Barracuda`
 * Valid Values: `Antelope`, `Barracuda`
-* Deprecated: [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
-* Removed: [MariaDB 10.3.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md)
-* Re-introduced: [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) (for compatibility purposes)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* Removed: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
+* Re-introduced: [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) (for compatibility purposes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_file_format_check`
 
 
-* Description: If set to `1`, the default, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) checks the shared tablespace file format tag. If this is higher than the current version supported by XtraDB/InnoDB (for example Barracuda when only Antelope is supported), XtraDB/InnoDB will will not start. If it the value is not higher, XtraDB/InnoDB starts correctly and the [innodb_file_format_max](#innodb_file_format_max) value is set to this value. If innodb_file_format_check is set to `0`, no checking is performed. See [XtraDB/InnoDB File Format](innodb-file-format.md) for more on the file formats.
+* Description: If set to `1`, the default, [InnoDB](README.md) checks the shared tablespace file format tag. If this is higher than the current version supported by XtraDB/InnoDB (for example Barracuda when only Antelope is supported), XtraDB/InnoDB will will not start. If it the value is not higher, XtraDB/InnoDB starts correctly and the [innodb_file_format_max](#innodb_file_format_max) value is set to this value. If innodb_file_format_check is set to `0`, no checking is performed. See [XtraDB/InnoDB File Format](innodb-file-format.md) for more on the file formats.
 * Commandline: `--innodb-file-format-check={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
-* Removed: [MariaDB 10.3.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md)
+* Deprecated: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* Removed: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
 
 
 
 #### `innodb_file_format_max`
 
 
-* Description: The highest [XtraDB/InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) file format. This is set to the value of the file format tag in the shared tablespace on startup (see [innodb_file_format_check](#innodb_file_format_check)). If the server later creates a higher table format, innodb_file_format_max is set to that value. See [XtraDB/InnoDB File Format](innodb-file-format.md) for more on the file formats.
+* Description: The highest [XtraDB/InnoDB](README.md) file format. This is set to the value of the file format tag in the shared tablespace on startup (see [innodb_file_format_check](#innodb_file_format_check)). If the server later creates a higher table format, innodb_file_format_max is set to that value. See [XtraDB/InnoDB File Format](innodb-file-format.md) for more on the file formats.
 * Commandline: `--innodb-file-format-max=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: `Antelope`
 * Valid Values: `Antelope`, `Barracuda`
-* Deprecated: [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
-* Removed: [MariaDB 10.3.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md)
+* Deprecated: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* Removed: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
 
 
 
 #### `innodb_file_per_table`
 
 
-* Description: If set to `ON`, then new [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables are created with their own [InnoDB file-per-table tablespaces](innodb-tablespaces/innodb-file-per-table-tablespaces.md). If set to `OFF`, then new tables are created in the [InnoDB system tablespace](innodb-tablespaces/innodb-system-tablespaces.md) instead. [Page compression](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md) is only available with file-per-table tablespaces. Note that this value is also used when a table is re-created with an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) which requires a table copy. Deprecated in [MariaDB 11.0](/kb/en/what-is-mariadb-11-0/) as there's no benefit to setting to `OFF`, the original InnoDB default.
+* Description: If set to `ON`, then new [InnoDB](README.md) tables are created with their own [InnoDB file-per-table tablespaces](innodb-tablespaces/innodb-file-per-table-tablespaces.md). If set to `OFF`, then new tables are created in the [InnoDB system tablespace](innodb-tablespaces/innodb-system-tablespaces.md) instead. [Page compression](innodb-page-compression.md) is only available with file-per-table tablespaces. Note that this value is also used when a table is re-created with an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) which requires a table copy. Deprecated in [MariaDB 11.0](/kb/en/what-is-mariadb-11-0/) as there's no benefit to setting to `OFF`, the original InnoDB default.
 * Commandline: `--innodb-file-per-table`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 11.0.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes.md)
+* Deprecated: [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
 
 
 
@@ -1477,7 +1477,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
   * `1` The default, the log buffer is written to the [InnoDB redo log](innodb-redo-log.md) file and a flush to disk performed after each transaction. This is required for full ACID compliance.
   * `0` Nothing is done on commit; rather the log buffer is written and flushed to the [InnoDB redo log](innodb-redo-log.md) once a second. This gives better performance, but a server crash can erase the last second of transactions.
   * `2` The log buffer is written to the [InnoDB redo log](innodb-redo-log.md) after each commit, but flushing takes place every [innodb_flush_log_at_timeout](#innodb_flush_log_at_timeout) seconds (by default once a second). Performance is slightly better, but a OS or power outage can cause the last second's transactions to be lost.
-  * `3` Emulates [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) (3 syncs per group commit). See [Binlog group commit and innodb_flush_log_at_trx_commit](binary-log-group-commit-and-innodb-flushing-performance.md). This option has not been working correctly since 10.2 and may be removed in future, see [1873](https://github.com/MariaDB/server/pull/1873)
+  * `3` Emulates [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) (3 syncs per group commit). See [Binlog group commit and innodb_flush_log_at_trx_commit](binary-log-group-commit-and-innodb-flushing-performance.md). This option has not been working correctly since 10.2 and may be removed in future, see [1873](https://github.com/MariaDB/server/pull/1873)
 * Commandline: `--innodb-flush-log-at-trx-commit[=#]`
 * Scope: Global
 * Dynamic: Yes
@@ -1490,19 +1490,19 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_flush_method`
 
 
-* Description: [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) flushing method. Windows always uses async_unbuffered and this variable then has no effect. On Unix, before [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), by default fsync() is used to flush data and logs. Adjusting this variable can give performance improvements, but behavior differs widely on different filesystems, and changing from the default has caused problems in some situations, so test and benchmark carefully before adjusting. In MariaDB, Windows recognises and correctly handles the Unix methods, but if none are specified it uses own default - unbuffered write (analog of O_DIRECT) + syncs (e.g FileFlushBuffers()) for all files.
+* Description: [InnoDB](README.md) flushing method. Windows always uses async_unbuffered and this variable then has no effect. On Unix, before [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes), by default fsync() is used to flush data and logs. Adjusting this variable can give performance improvements, but behavior differs widely on different filesystems, and changing from the default has caused problems in some situations, so test and benchmark carefully before adjusting. In MariaDB, Windows recognises and correctly handles the Unix methods, but if none are specified it uses own default - unbuffered write (analog of O_DIRECT) + syncs (e.g FileFlushBuffers()) for all files.
 
   * `O_DSYNC` - O_DSYNC is used to open and flush logs, and fsync() to flush the data files.
-  * `O_DIRECT` - O_DIRECT or directio(), is used to open data files, and fsync() to flush data and logs. Default on Unix from [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md).
-  * `fsync` - Default on Unix until [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md). Can be specified directly, but if the variable is unset on Unix, fsync() will be used by default.
-  * `O_DIRECT_NO_FSYNC` - introduced in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Uses O_DIRECT during flushing I/O, but skips fsync() afterwards. Not suitable for XFS filesystems. Generally not recommended over O_DIRECT, as does not get the benefit of [innodb_use_native_aio=ON](#innodb_use_native_aio).
-  * `ALL_O_DIRECT` - introduced in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and available with XtraDB only. Uses O_DIRECT for opening both data and logs and fsync() to flush data but not logs. Use with large InnoDB files only, otherwise may cause a performance degradation. Set [innodb_log_block_size](#innodb_log_block_size) to 4096 on ext4 filesystems. This is the default log block size on ext4 and will avoid unaligned AIO/DIO warnings.
+  * `O_DIRECT` - O_DIRECT or directio(), is used to open data files, and fsync() to flush data and logs. Default on Unix from [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
+  * `fsync` - Default on Unix until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105). Can be specified directly, but if the variable is unset on Unix, fsync() will be used by default.
+  * `O_DIRECT_NO_FSYNC` - introduced in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). Uses O_DIRECT during flushing I/O, but skips fsync() afterwards. Not suitable for XFS filesystems. Generally not recommended over O_DIRECT, as does not get the benefit of [innodb_use_native_aio=ON](#innodb_use_native_aio).
+  * `ALL_O_DIRECT` - introduced in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and available with XtraDB only. Uses O_DIRECT for opening both data and logs and fsync() to flush data but not logs. Use with large InnoDB files only, otherwise may cause a performance degradation. Set [innodb_log_block_size](#innodb_log_block_size) to 4096 on ext4 filesystems. This is the default log block size on ext4 and will avoid unaligned AIO/DIO warnings.
   * `unbuffered` - Windows-only default
   * `async_unbuffered` - Windows-only, alias for `unbuffered`
   * `normal` - Windows-only, alias for `fsync`
   * `littlesync` - for internal testing only
   * `nosync` - for internal testing only
-* Deprecated in [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) and replaced by four boolean dynamic variables that can be changed while the server is running: [innodb_log_file_buffering](#innodb_log_file_buffering) (disable O_DIRECT, added by [MDEV-28766](https://jira.mariadb.org/browse/MDEV-28766) in 10.8.4, 10.9.2), [innodb_data_file_buffering](#innodb_data_file_buffering) (disable O_DIRECT on data files), [innodb_log_file_write_through](#innodb_log_file_write_through) (enable O_DSYNC on the log), [innodb_data_file_write_through](#innodb_data_file_write_through) (enable O_DSYNC on persistent data files)From [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md), if set to one of the following values, then the values of the four boolean flags will be set as follows:
+* Deprecated in [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) and replaced by four boolean dynamic variables that can be changed while the server is running: [innodb_log_file_buffering](#innodb_log_file_buffering) (disable O_DIRECT, added by [MDEV-28766](https://jira.mariadb.org/browse/MDEV-28766) in 10.8.4, 10.9.2), [innodb_data_file_buffering](#innodb_data_file_buffering) (disable O_DIRECT on data files), [innodb_log_file_write_through](#innodb_log_file_write_through) (enable O_DSYNC on the log), [innodb_data_file_write_through](#innodb_data_file_write_through) (enable O_DSYNC on persistent data files)From [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110), if set to one of the following values, then the values of the four boolean flags will be set as follows:
 
   * `O_DSYNC`: [innodb_log_file_write_through=ON](#innodb_log_file_write_through), [innodb_data_file_write_through=ON](#innodb_data_file_write_through),
 [innodb_data_file_buffering=OFF](#innodb_data_file_buffering), and (if supported) [innodb_log_file_buffering=OFF](#innodb_log_file_buffering).
@@ -1510,38 +1510,38 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Commandline: `--innodb-flush-method=name`
 * Scope: Global
 * Dynamic: No
-* Data Type: `enumeration` (>= [MariaDB 10.3.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md)), `string` (<= [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md))
+* Data Type: `enumeration` (>= [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes)), `string` (<= [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes))
 * Default Value:
 
-  * `O_DIRECT` (Unix, >= [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md))
-  * `fsync` (Unix, >= [MariaDB 10.3.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md), <= [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md))
-  * Not set (<= [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md))
+  * `O_DIRECT` (Unix, >= [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes))
+  * `fsync` (Unix, >= [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes), <= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105))
+  * Not set (<= [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes))
 * Valid Values:
 
   * Unix: `fsync`, `O_DSYNC`, `littlesync`, `nosync`. `O_DIRECT`, `O_DIRECT_NO_FSYNC`
   * Windows: `unbuffered`, `async_unbuffered`, `normal`
-* Deprecated: [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md)
+* Deprecated: [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110)
 
 
 
 #### `innodb_flush_neighbor_pages`
 
 
-* Description: Determines whether, when dirty pages are flushed to the data file, neighboring pages in the data file are flushed at the same time. If set to `none`, the feature is disabled. If set to `area`, the default, the standard InnoDB behavior is used. For each page to be flushed, dirty neighboring pages are flushed too. If there's little head seek delay, such as SSD or large enough write buffer, one of the other two options may be more efficient. If set to `cont`, for each page to be flushed, neighboring contiguous blocks are flushed at the same time. Being contiguous, a sequential I/O is used, unlike the random I/O used in `area`. Replaced by [innodb_flush_neighbors](#innodb_flush_neighbors) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6.
+* Description: Determines whether, when dirty pages are flushed to the data file, neighboring pages in the data file are flushed at the same time. If set to `none`, the feature is disabled. If set to `area`, the default, the standard InnoDB behavior is used. For each page to be flushed, dirty neighboring pages are flushed too. If there's little head seek delay, such as SSD or large enough write buffer, one of the other two options may be more efficient. If set to `cont`, for each page to be flushed, neighboring contiguous blocks are flushed at the same time. Being contiguous, a sequential I/O is used, unlike the random I/O used in `area`. Replaced by [innodb_flush_neighbors](#innodb_flush_neighbors) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6.
 * Commandline: `innodb-flush-neighbor-pages=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
 * Default Value: `area`
 * Valid Values: `none` or `0`, `area` or `1`, `cont` or `2`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 - replaced by [innodb_flush_neighbors](#innodb_flush_neighbors)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 - replaced by [innodb_flush_neighbors](#innodb_flush_neighbors)
 
 
 
 #### `innodb_flush_neighbors`
 
 
-* Description: Determines whether flushing a page from the [buffer pool](innodb-buffer-pool.md) will flush other dirty pages in the same group of pages (extent). In high write environments, if flushing is not aggressive enough, it can fall behind resulting in higher memory usage, or if flushing is too aggressive, cause excess I/O activity. SSD devices, with low seek times, would be less likely to require dirty neighbor flushing to be set. Since [MariaDB 10.4.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md) an attempt is made under Windows and Linux to determine SSD status which was exposed in [information_schema.innodb_tablespaces_scrubbing_table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_scrubbing-table.md). This variable is ignored for table spaces that are detected as stored on SSD (and the `0` behavior applies).
+* Description: Determines whether flushing a page from the [buffer pool](innodb-buffer-pool.md) will flush other dirty pages in the same group of pages (extent). In high write environments, if flushing is not aggressive enough, it can fall behind resulting in higher memory usage, or if flushing is too aggressive, cause excess I/O activity. SSD devices, with low seek times, would be less likely to require dirty neighbor flushing to be set. Since [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes) an attempt is made under Windows and Linux to determine SSD status which was exposed in [information_schema.innodb_tablespaces_scrubbing_table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_scrubbing-table.md). This variable is ignored for table spaces that are detected as stored on SSD (and the `0` behavior applies).
 
   * `1`: The default, flushes contiguous dirty pages in the same extent from the buffer pool.
   * `0`: No other dirty pages are flushed.
@@ -1583,13 +1583,13 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_force_load_corrupted`
 
 
-* Description: Set to `0` by default, if set to `1`, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) will be permitted to load tables marked as corrupt. Only use this to recover data you can't recover any other way, or in troubleshooting. Always restore to `0` when the returning to regular use. Given that [MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412) in [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md) aims to allow any metadata for a missing or corrupted table to be dropped, and given that [MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567) and [MDEV-25506](https://jira.mariadb.org/browse/MDEV-25506) and related tasks made DDL operations crash-safe, the parameter no longer serves any purpose and was removed in [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md).
+* Description: Set to `0` by default, if set to `1`, [InnoDB](README.md) will be permitted to load tables marked as corrupt. Only use this to recover data you can't recover any other way, or in troubleshooting. Always restore to `0` when the returning to regular use. Given that [MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412) in [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes) aims to allow any metadata for a missing or corrupted table to be dropped, and given that [MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567) and [MDEV-25506](https://jira.mariadb.org/browse/MDEV-25506) and related tasks made DDL operations crash-safe, the parameter no longer serves any purpose and was removed in [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes).
 * Commandline: `--innodb-force-load-corrupted`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md)
+* Removed: [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes)
 
 
 
@@ -1608,7 +1608,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_force_recovery`
 
 
-* Description: [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) crash recovery mode. `0` is the default. The other modes are for recovery purposes only, and no data can be changed while another mode is active. Some queries relying on indexes are also blocked. See [InnoDB Recovery Modes](innodb-troubleshooting/innodb-recovery-modes.md) for more on mode specifics.
+* Description: [InnoDB](README.md) crash recovery mode. `0` is the default. The other modes are for recovery purposes only, and no data can be changed while another mode is active. Some queries relying on indexes are also blocked. See [InnoDB Recovery Modes](innodb-troubleshooting/innodb-recovery-modes.md) for more on mode specifics.
 * Commandline: `--innodb-force-recovery=#`
 * Scope: Global
 * Dynamic: No
@@ -1621,7 +1621,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_foreground_preflush`
 
 
-* Description: Before XtraDB 5.6.13-61.0, if the checkpoint age is in the sync preflush zone while a thread is writing to the [XtraDB redo log](innodb-redo-log.md), it will try to advance the checkpoint by issuing a flush list flush batch if this is not already being done. XtraDB has enhanced page cleaner tuning, and may already be performing furious flushing, resulting in the flush simply adding unneeded mutex pressure. Instead, the thread now waits for the flushes to finish, and then has two options, controlled by this variable. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Before XtraDB 5.6.13-61.0, if the checkpoint age is in the sync preflush zone while a thread is writing to the [XtraDB redo log](innodb-redo-log.md), it will try to advance the checkpoint by issuing a flush list flush batch if this is not already being done. XtraDB has enhanced page cleaner tuning, and may already be performing furious flushing, resulting in the flush simply adding unneeded mutex pressure. Instead, the thread now waits for the flushes to finish, and then has two options, controlled by this variable. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 
   * `exponential_backoff` - thread sleeps while it waits for the flush list flush to occur. The sleep time randomly progressively increases, periodically reset to avoid runaway sleeps.
   * `sync_preflush` - thread issues a flush list batch, and waits for it to complete. This is the same as is used when the page cleaner thread is not running.
@@ -1635,8 +1635,8 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Valid Values:
 
   * `deprecated`, `exponential_backoff`, `sync_preflush`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -1774,7 +1774,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `640000000`
 * Range: `32000000` to `1600000000`
-* Introduced: [MariaDB 10.0.9](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md)
+* Introduced: [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes)
 
 
 
@@ -1800,7 +1800,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `100`
 * Range: `100` to `999999999`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1814,7 +1814,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: `1`
 * Range: `0` to `1`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1828,22 +1828,22 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Data Type: `numeric`
 * Default Value: 1/2 the size of the InnoDB buffer pool
 * Range: `0` to 1/2 the size of the InnoDB buffer pool
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_idle_flush_pct`
 
 
-* Description: Up to what percentage of dirty pages should be flushed when innodb finds it has spare resources to do so. Has had no effect since merging InnoDB 5.7 from mysql-5.7.9 ([MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)). Deprecated in [MariaDB 10.2.37](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10237-release-notes.md), [MariaDB 10.3.28](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10328-release-notes.md), [MariaDB 10.4.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10418-release-notes.md) and removed in [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md).
+* Description: Up to what percentage of dirty pages should be flushed when innodb finds it has spare resources to do so. Has had no effect since merging InnoDB 5.7 from mysql-5.7.9 ([MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)). Deprecated in [MariaDB 10.2.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10237-release-notes), [MariaDB 10.3.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10328-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes) and removed in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes).
 * Commandline: `--innodb-idle-flush-pct=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `100`
 * Range: `0` to `100`
-* Deprecated: [MariaDB 10.2.37](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10237-release-notes.md), [MariaDB 10.3.28](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10328-release-notes.md), [MariaDB 10.4.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10418-release-notes.md)
-* Removed: [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md)
+* Deprecated: [MariaDB 10.2.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10237-release-notes), [MariaDB 10.3.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10328-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
+* Removed: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes)
 
 
 
@@ -1862,14 +1862,14 @@ These tables do not support new features, such as larger innodb_page_size or ins
 #### `innodb_import_table_from_xtrabackup`
 
 
-* Description: If set to `1`, permits importing of .ibd files exported with the [XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) --export option. Previously named `innodb_expand_import`. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 and replaced with MySQL 5.6's transportable tablespaces.
+* Description: If set to `1`, permits importing of .ibd files exported with the [XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) --export option. Previously named `innodb_expand_import`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 and replaced with MySQL 5.6's transportable tablespaces.
 * Commandline: `innodb-import-table-from-xtrabackup=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `1`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1879,7 +1879,7 @@ These tables do not support new features, such as larger innodb_page_size or ins
 * Description:
 
   * If a table is altered using ALGORITHM=INSTANT, it can force the table to use a non-canonical
-format: A hidden metadata record at the start of the clustered index is used to store each column's DEFAULT value. This makes it possible to add new columns that have default values without rebuilding the table. Starting with [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), a BLOB in the hidden metadata record is used to store column mappings. This makes
+format: A hidden metadata record at the start of the clustered index is used to store each column's DEFAULT value. This makes it possible to add new columns that have default values without rebuilding the table. Starting with [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), a BLOB in the hidden metadata record is used to store column mappings. This makes
 it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table. If a column is dropped without rebuilding the table, old records will contain garbage in that column's former position, and new records
 will be written with NULL values, empty strings, or dummy values.
   * This is generally not a problem. However, there may be cases where
@@ -1901,7 +1901,7 @@ allows columns to be appended to the table instantly ([MDEV-11369](https://jira.
 In 10.4 or later, if the table (or partition) is not in this format,
 then any ALTER TABLE (even one that does not involve column changes)
 will force a table rebuild.
-  * `add_drop_reorder` (2, default): From [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) only. Like 'add_last', but allow the
+  * `add_drop_reorder` (2, default): From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) only. Like 'add_last', but allow the
 metadata record to store a column map, to support instant
 add/drop/reorder of columns.
 * Commandline: `--innodb-instant-alter-column-allowed=value`
@@ -1910,13 +1910,13 @@ add/drop/reorder of columns.
 * Data Type: `enum`
 * Valid Values:
 
-  * <= [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md): `never`, `add_last`
-  * >= [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md): `never`, `add_last`, `add_drop_reorder`
+  * <= [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103): `never`, `add_last`
+  * >= [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104): `never`, `add_last`, `add_drop_reorder`
 * Default Value:
 
-  * <= [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md): `add_last`
-  * >= [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md): `add_drop_reorder`
-* Introduced: [MariaDB 10.3.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.4.13](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), [MariaDB 10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md)
+  * <= [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103): `add_last`
+  * >= [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104): `add_drop_reorder`
+* Introduced: [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes), [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
 
 
 
@@ -1929,8 +1929,8 @@ add/drop/reorder of columns.
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md) (treated as if `OFF`)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) (treated as if `OFF`)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -1965,14 +1965,14 @@ add/drop/reorder of columns.
 #### `innodb_kill_idle_transaction`
 
 
-* Description: Time in seconds before killing an idle XtraDB transaction. If set to `0` (the default), the feature is disabled. Used to prevent accidental user locks. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Time in seconds before killing an idle XtraDB transaction. If set to `0` (the default), the feature is disabled. Used to prevent accidental user locks. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `9223372036854775807`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -1990,139 +1990,139 @@ add/drop/reorder of columns.
 * Default Value:
 
   * `ON`
-* Deprecated: [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
-* Removed: [MariaDB 10.3.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md)
-* Re-introduced: [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) (for compatibility purposes)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* Removed: [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes)
+* Re-introduced: [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) (for compatibility purposes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_lazy_drop_table`
 
 
-* Description: Deprecated and removed in XtraDB 5.6. [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) processing can take a long time when [innodb_file_per_table](#innodb_file_per_table) is set to 1 and there's a large [buffer pool](innodb-buffer-pool.md). If `innodb_lazy_drop_table` is set to `1` (`0` is default), XtraDB attempts to optimize [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) processing by deferring the dropping of related pages from the [buffer pool](innodb-buffer-pool.md) until there is time, only initially marking them.
+* Description: Deprecated and removed in XtraDB 5.6. [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) processing can take a long time when [innodb_file_per_table](#innodb_file_per_table) is set to 1 and there's a large [buffer pool](innodb-buffer-pool.md). If `innodb_lazy_drop_table` is set to `1` (`0` is default), XtraDB attempts to optimize [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) processing by deferring the dropping of related pages from the [buffer pool](innodb-buffer-pool.md) until there is time, only initially marking them.
 * Commandline: `innodb-lazy-drop-table={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `0`
 * Deprecated: XtraDB 5.5.30-30.2
-* Removed: [MariaDB 10.0.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
 #### `innodb_lock_schedule_algorithm`
 
 
-* Description: Removed in [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) due to problems with the VATS implementation ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). Specifies the algorithm that InnoDB uses to decide which of the waiting transactions should be granted the lock once it has been released. The possible values are: `FCFS` (First-Come-First-Served) where locks are granted in the order they appear in the lock queue and `VATS` (Variance-Aware-Transaction-Scheduling) where locks are granted based on the Eldest-Transaction-First heuristic. Note that `VATS` should not be used with [Galera](../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), and InnoDB will refuse to start if `VATS` is used with Galera. It is also not recommended to set to `VATS` even in the general case ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). From [MariaDB 10.2.12](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10212-release-notes.md), the value was changed to `FCFS` and a warning produced when using Galera.
+* Description: Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) due to problems with the VATS implementation ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). Specifies the algorithm that InnoDB uses to decide which of the waiting transactions should be granted the lock once it has been released. The possible values are: `FCFS` (First-Come-First-Served) where locks are granted in the order they appear in the lock queue and `VATS` (Variance-Aware-Transaction-Scheduling) where locks are granted based on the Eldest-Transaction-First heuristic. Note that `VATS` should not be used with [Galera](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), and InnoDB will refuse to start if `VATS` is used with Galera. It is also not recommended to set to `VATS` even in the general case ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). From [MariaDB 10.2.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10212-release-notes), the value was changed to `FCFS` and a warning produced when using Galera.
 * Commandline: `--innodb-lock-schedule-algorithm=#`
 * Scope: Global
-* Dynamic: No (>= [MariaDB 10.2.12](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10212-release-notes.md), [MariaDB 10.1.30](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10130-release-notes.md)), Yes (<= [MariaDB 10.2.11](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md), [MariaDB 10.1.29](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md))
+* Dynamic: No (>= [MariaDB 10.2.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10212-release-notes), [MariaDB 10.1.30](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10130-release-notes)), Yes (<= [MariaDB 10.2.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10211-release-notes), [MariaDB 10.1.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes))
 * Data Type: `enum`
 * Valid Values: `FCFS`, `VATS`
-* Default Value: `FCFS` ([MariaDB 10.3.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1039-release-notes.md), [MariaDB 10.2.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10217-release-notes.md)), `VATS` ([MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)), `FCFS` ([MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
-* Deprecated: [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md), [MariaDB 10.3.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10326-release-notes.md), [MariaDB 10.2.35](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10235-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Default Value: `FCFS` ([MariaDB 10.3.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1039-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes)), `VATS` ([MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), `FCFS` ([MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1))
+* Deprecated: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes), [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_lock_wait_timeout`
 
 
-* Description: Time in seconds that an InnoDB transaction waits for an InnoDB record lock (or table lock) before giving up with the error `ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction`. When this occurs, the statement (not transaction) is rolled back. The whole transaction can be rolled back if the [innodb_rollback_on_timeout](#innodb_rollback_on_timeout) option is used. Increase this for data warehousing applications or where other long-running operations are common, or decrease for OLTP and other highly interactive applications. This setting does not apply to deadlocks, which InnoDB detects immediately, rolling back a deadlocked transaction. `0` means no wait. See [WAIT and NOWAIT](../../sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md). Setting to `100000000` or more (from [MariaDB 10.6.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md), `100000000` is the maximum) means the timeout is infinite.
+* Description: Time in seconds that an InnoDB transaction waits for an InnoDB record lock (or table lock) before giving up with the error `ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction`. When this occurs, the statement (not transaction) is rolled back. The whole transaction can be rolled back if the [innodb_rollback_on_timeout](#innodb_rollback_on_timeout) option is used. Increase this for data warehousing applications or where other long-running operations are common, or decrease for OLTP and other highly interactive applications. This setting does not apply to deadlocks, which InnoDB detects immediately, rolling back a deadlocked transaction. `0` means no wait. See [WAIT and NOWAIT](../../sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md). Setting to `100000000` or more (from [MariaDB 10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes), `100000000` is the maximum) means the timeout is infinite.
 * Commandline: `--innodb-lock-wait-timeout=#`
 * Scope: Global, Session
 * Dynamic: Yes
-* Data Type: `INT UNSIGNED` (>= [MariaDB 10.6.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md)), `BIGINT UNSIGNED` (<= [MariaDB 10.6.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes.md))
+* Data Type: `INT UNSIGNED` (>= [MariaDB 10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes)), `BIGINT UNSIGNED` (<= [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes))
 * Default Value: `50`
 * Range:
 
-  * `0` to `100000000` (>= [MariaDB 10.6.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md))
-  * `0` to `1073741824` (>= [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) to <= [MariaDB 10.6.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes.md))
+  * `0` to `100000000` (>= [MariaDB 10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes))
+  * `0` to `1073741824` (>= [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) to <= [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes))
 
 
 
 #### `innodb_locking_fake_changes`
 
 
-* Description: From [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) to [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), XtraDB-only option that if set to `OFF`, fake transactions (see [innodb_fake_changes](#innodb_fake_changes)) don't take row locks. This is an experimental feature to attempt to deal with drawbacks in fake changes blocking real locks. It is not safe for use in all environments. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: From [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) to [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), XtraDB-only option that if set to `OFF`, fake transactions (see [innodb_fake_changes](#innodb_fake_changes)) don't take row locks. This is an experimental feature to attempt to deal with drawbacks in fake changes blocking real locks. It is not safe for use in all environments. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `--innodb-locking-fake-changes`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_locks_unsafe_for_binlog`
 
 
-* Description: Set to `0` by default, in which case XtraDB/InnoDB uses [gap locking](innodb-lock-modes.md). If set to `1`, gap locking is disabled for searches and index scans. Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), and removed in [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), use [READ COMMITTED transaction isolation level](../../sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) instead.
+* Description: Set to `0` by default, in which case XtraDB/InnoDB uses [gap locking](innodb-lock-modes.md). If set to `1`, gap locking is disabled for searches and index scans. Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), and removed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), use [READ COMMITTED transaction isolation level](../../sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) instead.
 * Commandline: `--innodb-locks-unsafe-for-binlog`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
 #### `innodb_log_arch_dir`
 
 
-* Description: The directory for [XtraDB redo log](innodb-redo-log.md) archiving. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: The directory for [XtraDB redo log](innodb-redo-log.md) archiving. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `--innodb-log-arch-dir=name`
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
 * Default Value: `./`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_log_arch_expire_sec`
 
 
-* Description: Time in seconds since the last change after which the archived [XtraDB redo log](innodb-redo-log.md) should be deleted. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Time in seconds since the last change after which the archived [XtraDB redo log](innodb-redo-log.md) should be deleted. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `--innodb-log-arch-expire-sec=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_log_archive`
 
 
-* Description: Whether or not [XtraDB redo log](innodb-redo-log.md) archiving is enabled. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Whether or not [XtraDB redo log](innodb-redo-log.md) archiving is enabled. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `--innodb-log-archive={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_log_block_size`
 
 
-* Description: Size in bytes of the [XtraDB redo log](innodb-redo-log.md) records. Generally `512`, the default, or `4096`, are the only two useful values. If the server is restarted and this value is changed, all old log files need to be removed. Should be set to `4096` for SSD cards or if [innodb_flush_method](#innodb_flush_method) is set to `ALL_O_DIRECT` on ext4 filesystems. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Size in bytes of the [XtraDB redo log](innodb-redo-log.md) records. Generally `512`, the default, or `4096`, are the only two useful values. If the server is restarted and this value is changed, all old log files need to be removed. Should be set to `4096` for SSD cards or if [innodb_flush_method](#innodb_flush_method) is set to `ALL_O_DIRECT` on ext4 filesystems. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-log-block-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `512`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -2135,8 +2135,8 @@ add/drop/reorder of columns.
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `16777216` (16MB)
-* Range: `262144` to `2147479552` (256KB to 2GB - 4K) (>= [MariaDB 10.11.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md))
-* Range: `262144` to `18446744073709551615` (<= [MariaDB 10.11.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md)) - limit to the above maximium because this is an operating system limit.
+* Range: `262144` to `2147479552` (256KB to 2GB - 4K) (>= [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes))
+* Range: `262144` to `18446744073709551615` (<= [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes)) - limit to the above maximium because this is an operating system limit.
 * Block size: `4096`
 
 
@@ -2144,7 +2144,7 @@ add/drop/reorder of columns.
 #### `innodb_log_checksum_algorithm`
 
 
-* Description: Experimental feature (as of [MariaDB 10.0.9](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md)), this variable specifies how to generate and verify [XtraDB redo log](innodb-redo-log.md) checksums. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Experimental feature (as of [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes)), this variable specifies how to generate and verify [XtraDB redo log](innodb-redo-log.md) checksums. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 
   * `none` - No checksum. A constant value is instead written to logs, and no checksum validation is performed.
   * `innodb` - The default, and the original InnoDB algorithm. This is inefficient, but compatible with all MySQL, MariaDB and Percona versions that don't support other checksum algorithms.
@@ -2156,35 +2156,35 @@ add/drop/reorder of columns.
 * Data Type: `enum`
 * Default Value:
 
-  * `deprecated` (>= [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md))
-  * `innodb` (<= [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
+  * `deprecated` (>= [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes))
+  * `innodb` (<= [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1))
 * Valid Values:
 
-  * `deprecated`, `innodb`, `none`, `crc32`, `strict_none`, `strict_innodb`, `strict_crc32` (>= [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md))
-  * `innodb`, `none`, `crc32`, `strict_none`, `strict_innodb`, `strict_crc32` (<= [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+  * `deprecated`, `innodb`, `none`, `crc32`, `strict_none`, `strict_innodb`, `strict_crc32` (>= [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes))
+  * `innodb`, `none`, `crc32`, `strict_none`, `strict_innodb`, `strict_crc32` (<= [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1))
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_log_checksums`
 
 
-* Description: If set to `1`, the CRC32C for Innodb or `innodb_log_checksum_algorithm` for XtraDB algorithm is used for [InnoDB redo log](innodb-redo-log.md) pages. If disabled, the checksum field contents are ignored. From [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), the variable is deprecated, and checksums are always calculated, as previously, the InnoDB redo log used the slow innodb algorithm, but with hardware or SIMD assisted CRC-32C computation being available, there is no reason to allow checksums to be disabled on the redo log.
+* Description: If set to `1`, the CRC32C for Innodb or `innodb_log_checksum_algorithm` for XtraDB algorithm is used for [InnoDB redo log](innodb-redo-log.md) pages. If disabled, the checksum field contents are ignored. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), the variable is deprecated, and checksums are always calculated, as previously, the InnoDB redo log used the slow innodb algorithm, but with hardware or SIMD assisted CRC-32C computation being available, there is no reason to allow checksums to be disabled on the redo log.
 * Commandline: `innodb-log-checksums={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_log_compressed_pages`
 
 
-* Description: Whether or not images of recompressed pages are stored in the [InnoDB redo log](innodb-redo-log.md). Deprecated and ignored from [MariaDB 10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md).
+* Description: Whether or not images of recompressed pages are stored in the [InnoDB redo log](innodb-redo-log.md). Deprecated and ignored from [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes).
 * Commandline: `--innodb-log-compressed-pages={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -2192,21 +2192,21 @@ add/drop/reorder of columns.
 * Default Value:
 
   * `ON`
-* Deprecated: [MariaDB 10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_log_file_buffering`
 
 
-* Description: Whether the file system cache for ib_logfile0 is enabled. In [MariaDB 10.8.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1083-release-notes.md), MariaDB disabled the file system cache on the InnoDB write-ahead log file (ib_logfile0) by default on Linux. With [innodb_flush_trx_log_at_commit=2](#innodb_flush_log_at_trx_commit) in particular, writing to the log via the file system cache typically improves throughput, especially on slow storage or at a small number of concurrent transactions. For other values of innodb_flush_log_at_trx_commit, direct writes were observed to be mostly but not always faster. Whether it pays off to disable the file system cache on the log may depend on the type of storage, the workload, and the operating system kernel version. If the server is started up with [innodb_flush_log_at_trx_commit=2](#innodb_flush_log_at_trx_commit), the value will be changed to `ON`. Will be set to `OFF` if [innodb_flush_method](#innodb_flush_method) is set to `O_DSYNC`. On Linux, when the physical block size cannot be determined to be a power of 2 between 64 and 4096 bytes, the file system cache cannot be disabled, and innodb_log_file_buffering=ON cannot be changed. Linux and Windows only.
+* Description: Whether the file system cache for ib_logfile0 is enabled. In [MariaDB 10.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1083-release-notes), MariaDB disabled the file system cache on the InnoDB write-ahead log file (ib_logfile0) by default on Linux. With [innodb_flush_trx_log_at_commit=2](#innodb_flush_log_at_trx_commit) in particular, writing to the log via the file system cache typically improves throughput, especially on slow storage or at a small number of concurrent transactions. For other values of innodb_flush_log_at_trx_commit, direct writes were observed to be mostly but not always faster. Whether it pays off to disable the file system cache on the log may depend on the type of storage, the workload, and the operating system kernel version. If the server is started up with [innodb_flush_log_at_trx_commit=2](#innodb_flush_log_at_trx_commit), the value will be changed to `ON`. Will be set to `OFF` if [innodb_flush_method](#innodb_flush_method) is set to `O_DSYNC`. On Linux, when the physical block size cannot be determined to be a power of 2 between 64 and 4096 bytes, the file system cache cannot be disabled, and innodb_log_file_buffering=ON cannot be changed. Linux and Windows only.
 * Commandline: `--innodb-log-file-buffering={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.8.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1084-release-notes.md), [MariaDB 10.9.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1092-release-notes.md)
+* Introduced: [MariaDB 10.8.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1084-release-notes), [MariaDB 10.9.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1092-release-notes)
 
 
 
@@ -2220,23 +2220,23 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON` (Linux, FreeBSD), `OFF` (Other platforms)
-* Introduced: [MariaDB 10.11.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes.md), [MariaDB 11.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes.md), [MariaDB 11.4.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes.md), [MariaDB 11.6.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md), [MariaDB 11.7.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md)
+* Introduced: [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes), [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 
 
 #### `innodb_log_file_size`
 
 
-* Description: Size in bytes of each [InnoDB redo log](innodb-redo-log.md) file in the log group. The combined size can be no more than 512GB. Larger values mean less disk I/O due to less flushing checkpoint activity, but also slower recovery from a crash. In [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), crash recovery has been improved and shouldn't run out of memory, so the default has been increased. It can safely be set higher to reduce checkpoint flushing, even larger than [innodb_buffer_pool_size](#innodb_buffer_pool_size).From [MariaDB 10.9](../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md) the variable is dynamic, and the server no longer needs to be restarted for the resizing to take place. Unless the log is located in a persistent memory file system (PMEM), an attempt to [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) innodb_log_file_size to less than [innodb_log_buffer_size](#innodb_log_buffer_size) will be refused. Log resizing can be aborted by killing the connection that is executing the SET GLOBAL statement.
+* Description: Size in bytes of each [InnoDB redo log](innodb-redo-log.md) file in the log group. The combined size can be no more than 512GB. Larger values mean less disk I/O due to less flushing checkpoint activity, but also slower recovery from a crash. In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), crash recovery has been improved and shouldn't run out of memory, so the default has been increased. It can safely be set higher to reduce checkpoint flushing, even larger than [innodb_buffer_pool_size](#innodb_buffer_pool_size).From [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) the variable is dynamic, and the server no longer needs to be restarted for the resizing to take place. Unless the log is located in a persistent memory file system (PMEM), an attempt to [SET GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) innodb_log_file_size to less than [innodb_log_buffer_size](#innodb_log_buffer_size) will be refused. Log resizing can be aborted by killing the connection that is executing the SET GLOBAL statement.
 * Commandline: `--innodb-log-file-size=#`
 * Scope: Global
-* Dynamic: Yes (>= [MariaDB 10.9](../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)), No (<= [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md))
+* Dynamic: Yes (>= [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)), No (<= [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108))
 * Data Type: `numeric`
-* Default Value: `100663296` (96MB) (>= [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), `50331648` (48MB) (<= [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md))
+* Default Value: `100663296` (96MB) (>= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)), `50331648` (48MB) (<= [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104))
 * Range:
 
-  * >= [MariaDB 10.8.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1083-release-notes.md): `4194304` to `512GB` (4MB to 512GB)
-  * <= [MariaDB 10.8.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1082-release-notes.md): `1048576` to `512GB` (1MB to 512GB)
+  * >= [MariaDB 10.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1083-release-notes): `4194304` to `512GB` (4MB to 512GB)
+  * <= [MariaDB 10.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1082-release-notes): `1048576` to `512GB` (1MB to 512GB)
 * Block size: `4096`
 
 
@@ -2250,22 +2250,22 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 11.0.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes.md)
+* Introduced: [MariaDB 11.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-0-release-notes)
 
 
 
 #### `innodb_log_files_in_group`
 
 
-* Description: Number of physical files in the [InnoDB redo log](innodb-redo-log.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Description: Number of physical files in the [InnoDB redo log](innodb-redo-log.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 * Commandline: `--innodb-log-files-in-group=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `1` (>= [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), `2` (<= [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md))
-* Range: `1` to `100` (>= [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md))
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Default Value: `1` (>= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)), `2` (<= [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104))
+* Range: `1` to `100` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -2283,18 +2283,18 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_log_optimize_ddl`
 
 
-* Description: Whether [InnoDB redo log](innodb-redo-log.md) activity should be reduced when natively creating indexes or rebuilding tables. Reduced logging requires additional page flushing and interferes with [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). Enabling this may slow down backup and cause delay due to page flushing. Deprecated and ignored from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md). Deprecated (but not ignored) from [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md), [MariaDB 10.3.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10326-release-notes.md) and [MariaDB 10.2.35](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10235-release-notes.md).
+* Description: Whether [InnoDB redo log](innodb-redo-log.md) activity should be reduced when natively creating indexes or rebuilding tables. Reduced logging requires additional page flushing and interferes with [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md). Enabling this may slow down backup and cause delay due to page flushing. Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes). Deprecated (but not ignored) from [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes) and [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes).
 * Commandline: `--innodb-log-optimize-ddl={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value:
 
-  * `OFF` (>= [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md), [MariaDB 10.3.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10326-release-notes.md), [MariaDB 10.2.35](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10235-release-notes.md))
-  * `ON` (<= [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), [MariaDB 10.4.15](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10415-release-notes.md), [MariaDB 10.3.25](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10325-release-notes.md), [MariaDB 10.2.34](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10234-release-notes.md))
-* Introduced: [MariaDB 10.2.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10217-release-notes.md), [MariaDB 10.3.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1039-release-notes.md)
-* Deprecated: [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md), [MariaDB 10.3.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10326-release-notes.md), [MariaDB 10.2.35](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10235-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+  * `OFF` (>= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes), [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes))
+  * `ON` (<= [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), [MariaDB 10.4.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10415-release-notes), [MariaDB 10.3.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10325-release-notes), [MariaDB 10.2.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10234-release-notes))
+* Introduced: [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes), [MariaDB 10.3.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1039-release-notes)
+* Deprecated: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes), [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -2308,40 +2308,40 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `6000`
-* Introduced: [MariaDB 10.11.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), [MariaDB 11.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md), [MariaDB 11.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes.md)
+* Introduced: [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes), [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes)
 
 
 
 #### `innodb_log_write_ahead_size`
 
 
-* Description: [InnoDB redo log](innodb-redo-log.md) write ahead unit size to avoid read-on-write. Should match the OS cache block IO size. Removed in [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md), and instead on Linux and Windows, the physical block size of the underlying storage is detected and used. Reintroduced in [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md) and later versions. On Linux and Windows, the default or the specified innodb_log_write_ahead_size will be automatically adjusted to not be less than the physical block size (if it can be determined).
+* Description: [InnoDB redo log](innodb-redo-log.md) write ahead unit size to avoid read-on-write. Should match the OS cache block IO size. Removed in [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), and instead on Linux and Windows, the physical block size of the underlying storage is detected and used. Reintroduced in [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes) and later versions. On Linux and Windows, the default or the specified innodb_log_write_ahead_size will be automatically adjusted to not be less than the physical block size (if it can be determined).
 * Commandline: `--innodb-log-write-ahead-size=#`
 * Scope: Global
-* Dynamic: No (>= [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md)), Yes (<= [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md))
+* Dynamic: No (>= [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes)), Yes (<= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
 * Data Type: `numeric`
-* Default Value: `512` (>= [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md)), `8192` (<= [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md))
+* Default Value: `512` (>= [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes)), `8192` (<= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
 * Range:
 
-  * `512` to `4096` (>= [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md))
-  * `512` to [innodb_page_size](#innodb_page_size) (<= [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md))
-* Removed: [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
-* Re-introduced: [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md), [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md)
+  * `512` to `4096` (>= [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes))
+  * `512` to [innodb_page_size](#innodb_page_size) (<= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))
+* Removed: [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
+* Re-introduced: [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes), [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes)
 
 
 
 #### `innodb_lru_flush_size`
 
 
-* Description: Number of pages to flush on LRU eviction. Changes in [MariaDB 10.6.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md), [MariaDB 10.11.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md) and [MariaDB 11.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md) made this setting superfluous, and it is no longer used.
+* Description: Number of pages to flush on LRU eviction. Changes in [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes) and [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes) made this setting superfluous, and it is no longer used.
 * Commandline: `--innodb-lru-flush-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `32`
 * Range: `1` to `18446744073709551615`
-* Introduced: [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md)
-* Deprecated: [MariaDB 10.6.20](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes.md), [MariaDB 10.11.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes.md), [MariaDB 11.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes.md) and [MariaDB 11.4.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes.md). [MariaDB 11.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes.md), [MariaDB 11.7.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md)
+* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes)
+* Deprecated: [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes) and [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes). [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes), [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 
 
@@ -2357,10 +2357,10 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value:
 
-  * `1536` (>= [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md))
-  * `1024` (<= [MariaDB 10.5.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes.md))
-* Range - 32bit: `100` to `2<sup>32</sup>-1`
-* Range - 64bit: `100` to `2<sup>64</sup>-1`
+  * `1536` (>= [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes))
+  * `1024` (<= [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes))
+* Range - 32bit: `100` to `232-1`
+* Range - 64bit: `100` to `264-1`
 
 
 
@@ -2369,14 +2369,14 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 
 * Description: Limit in bytes of the changed page bitmap files. For faster incremental backup with [Xtrabackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md), XtraDB tracks pages with changes written to them according to the [XtraDB redo log](innodb-redo-log.md) and writes the information to special changed page bitmap files. These files are rotated when the server restarts or when this limit is reached. XtraDB only. See also [innodb_track_changed_pages](#innodb_track_changed_pages) and [innodb_max_changed_pages](#innodb_max_changed_pages). 
 
-  * Deprecated and ignored in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+  * Deprecated and ignored in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-max-bitmap-file-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `4096` (4KB)
 * Range: `4096` (4KB) to `18446744073709551615` (16EB)
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
 
 
 
@@ -2385,14 +2385,14 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 
 * Description: Limit to the number of changed page bitmap files (stored in the [Information Schema INNODB_CHANGED_PAGES table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_changed_pages-table.md)). Zero is unlimited. See [innodb_max_bitmap_file_size](#innodb_max_bitmap_file_size) and [innodb_track_changed_pages](#innodb_track_changed_pages). Previously named `innodb_changed_pages_limit`. XtraDB only.
 
-  * Deprecated and ignored in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+  * Deprecated and ignored in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-max-changed-pages=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1000000`
 * Range: `0` to `18446744073709551615`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
 
 
 
@@ -2408,8 +2408,8 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value:
 
-  * `90.000000` (>= [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md))
-  * `75.000000` (<= [MariaDB 10.5.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes.md))
+  * `90.000000` (>= [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes))
+  * `75.000000` (<= [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes))
 * Range: `0` to `99.999`
 
 
@@ -2426,8 +2426,8 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value:
 
-  * `0` (>= [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md))
-  * `0.001` (<= [MariaDB 10.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md))
+  * `0` (>= [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes))
+  * `0.001` (<= [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes))
 * Range: `0` to `99.999`
 
 
@@ -2467,7 +2467,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value: `4294967295`
 * Range: `0` to `4294967295`
-* Introduced: [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md), [MariaDB 10.3.26](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10326-release-notes.md), [MariaDB 10.2.35](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10235-release-notes.md)
+* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes), [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes)
 
 
 
@@ -2489,23 +2489,23 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_merge_sort_block_size`
 
 
-* Description: Size in bytes of the block used for merge sorting in fast index creation. Replaced in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 by [innodb_sort_buffer_size](#innodb_sort_buffer_size).
+* Description: Size in bytes of the block used for merge sorting in fast index creation. Replaced in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 by [innodb_sort_buffer_size](#innodb_sort_buffer_size).
 * Commandline: `innodb-merge-sort-block-size=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1048576` (1M)
 * Range: `1048576` (1M) to `1073741824` (1G)
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced by [innodb_sort_buffer_size](#innodb_sort_buffer_size)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced by [innodb_sort_buffer_size](#innodb_sort_buffer_size)
 
 
 
 #### `innodb_mirrored_log_groups`
 
 
-* Description: Unused. Restored as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) - [MariaDB 10.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md)
+* Description: Unused. Restored as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) - [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes)
 
 
 
@@ -2514,7 +2514,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 
 * Description: Sets the number of threads to use in Multi-Threaded Flush operations. For more information, see [Fusion-io Multi-threaded Flush](innodb-page-flushing.md).
 
-  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md) and removed from [MariaDB 10.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md). In later versions of MariaDB, use `[innodb_page_cleaners](#innodb_page_cleaners)` system variable instead.
+  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and removed from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes). In later versions of MariaDB, use `[innodb_page_cleaners](#innodb_page_cleaners)` system variable instead.
   * See [InnoDB Page Flushing: Page Flushing with Multi-threaded Flush Threads](innodb-page-flushing.md#page-flushing-with-multi-threaded-flush-threads) for more information.
 * Commandline: `--innodb-mtflush-threads=#`
 * Scope: Global
@@ -2522,8 +2522,8 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value: `8`
 * Range: `1` to `64`
-* Deprecated: [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md)
-* Removed: [MariaDB 10.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Deprecated: [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)
+* Removed: [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
@@ -2574,13 +2574,13 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_numa_interleave`
 
 
-* Description: Whether or not to use the NUMA interleave memory policy to allocate the [InnoDB buffer pool](innodb-buffer-pool.md). Before [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md), required that MariaDB be compiled on a NUMA-enabled Linux system.
+* Description: Whether or not to use the NUMA interleave memory policy to allocate the [InnoDB buffer pool](innodb-buffer-pool.md). Before [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes), required that MariaDB be compiled on a NUMA-enabled Linux system.
 * Commandline: `innodb-numa-interleave={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.2.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10223-release-notes.md), [MariaDB 10.3.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10314-release-notes.md), [MariaDB 10.4.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md)
+* Removed: [MariaDB 10.2.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes), [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes), [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes)
 
 
 
@@ -2606,7 +2606,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1000`
-* Range: `0` to `2<sup>32</sup>-1`
+* Range: `0` to `232-1`
 
 
 
@@ -2619,7 +2619,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `134217728`
-* Range: `65536` to `2<sup>64</sup>-1`
+* Range: `65536` to `264-1`
 
 
 
@@ -2651,17 +2651,17 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_page_cleaners`
 
 
-* Description: Number of page cleaner threads. The default is `4`, but the value will be set to the number of [innodb_buffer_pool_instances](#innodb_buffer_pool_instances) if this is lower. If set to `1`, only a single cleaner thread is used, as was the case until [MariaDB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md). Cleaner threads flush dirty pages from the [buffer pool](innodb-buffer-pool.md), performing flush list and least-recently used (LRU) flushing. Deprecated and ignored from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), as the original reasons for for splitting the buffer pool have mostly gone away.
+* Description: Number of page cleaner threads. The default is `4`, but the value will be set to the number of [innodb_buffer_pool_instances](#innodb_buffer_pool_instances) if this is lower. If set to `1`, only a single cleaner thread is used, as was the case until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes). Cleaner threads flush dirty pages from the [buffer pool](innodb-buffer-pool.md), performing flush list and least-recently used (LRU) flushing. Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), as the original reasons for for splitting the buffer pool have mostly gone away.
 
   * See [InnoDB Page Flushing: Page Flushing with Multiple InnoDB Page Cleaner Threads](innodb-page-flushing.md#page-flushing-with-multiple-innodb-page-cleaner-threads) for more information.
 * Commandline: `--innodb-page-cleaners=#`
 * Scope: Global
-* Dynamic: Yes (>= [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)), No (<= [MariaDB 10.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md))
+* Dynamic: Yes (>= [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)), No (<= [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes))
 * Data Type: `numeric`
 * Default Value: `4` (or set to [innodb_buffer_pool_instances](#innodb_buffer_pool_instances) if lower)
 * Range: `1` to `64`
-* Deprecated: [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -2694,13 +2694,13 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_prefix_index_cluster_optimization`
 
 
-* Description: Enable prefix optimization to sometimes avoid cluster index lookups. Deprecated and ignored from [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), as the optimization is now always enabled.
+* Description: Enable prefix optimization to sometimes avoid cluster index lookups. Deprecated and ignored from [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), as the optimization is now always enabled.
 * Commandline: `--innodb-prefix-index-cluster-optimization={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.10.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10101-release-notes.md)
+* Deprecated: [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes)
 
 
 
@@ -2726,9 +2726,9 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value:
 
-  * `127` (>= [MariaDB 10.6.20](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes.md), [MariaDB 10.11.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes.md), [MariaDB 11.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes.md), [MariaDB 11.4.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes.md), [MariaDB 11.6.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md))
-  * `1000` (>= [MariaDB 10.6.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md), [MariaDB 10.10.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes.md), [MariaDB 10.11.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes.md), [MariaDB 11.0.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes.md), [MariaDB 11.1.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes.md) [MariaDB 11.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md))
-  * `300` (<= [MariaDB 10.6.15](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md), [MariaDB 10.10.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-6-release-notes.md), [MariaDB 10.11.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes.md), [MariaDB 11.0.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-3-release-notes.md), [MariaDB 11.1.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes.md) [MariaDB 11.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes.md))
+  * `127` (>= [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes))
+  * `1000` (>= [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes), [MariaDB 10.10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes), [MariaDB 10.11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes), [MariaDB 11.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes), [MariaDB 11.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes) [MariaDB 11.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes))
+  * `300` (<= [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes), [MariaDB 10.10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-6-release-notes), [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes), [MariaDB 11.0.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-3-release-notes), [MariaDB 11.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes) [MariaDB 11.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes))
 * Range: `1` to `5000`
 
 
@@ -2736,14 +2736,14 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_purge_rseg_truncate_frequency`
 
 
-* Description: Frequency with which undo records are purged. Set by default to every 128 times, reducing this increases the frequency at which rollback segments are freed. See also [innodb_undo_log_truncate](#innodb_undo_log_truncate). The motivation for introducing this in MySQL seems to have been to avoid stalls due to freeing undo log pages or truncating undo log tablespaces. In MariaDB, [innodb_undo_log_truncate=ON](#innodb_undo_log_truncate) should be a much lighter operation because it will not involve any log checkpoint, hence this is deprecated and ignored from [MariaDB 10.6.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md), [MariaDB 10.10.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes.md), [MariaDB 10.11.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes.md), [MariaDB 11.0.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes.md), [MariaDB 11.1.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes.md) and [MariaDB 11.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md). ([MDEV-32050](https://jira.mariadb.org/browse/MDEV-32050))
+* Description: Frequency with which undo records are purged. Set by default to every 128 times, reducing this increases the frequency at which rollback segments are freed. See also [innodb_undo_log_truncate](#innodb_undo_log_truncate). The motivation for introducing this in MySQL seems to have been to avoid stalls due to freeing undo log pages or truncating undo log tablespaces. In MariaDB, [innodb_undo_log_truncate=ON](#innodb_undo_log_truncate) should be a much lighter operation because it will not involve any log checkpoint, hence this is deprecated and ignored from [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes), [MariaDB 10.10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes), [MariaDB 10.11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes), [MariaDB 11.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes), [MariaDB 11.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes) and [MariaDB 11.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes). ([MDEV-32050](https://jira.mariadb.org/browse/MDEV-32050))
 * Commandline: `-- innodb-purge-rseg-truncate-frequency=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `128`
 * Range: `1` to `128`
-* Deprecated: [MariaDB 10.6.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md), [MariaDB 10.10.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes.md), [MariaDB 10.11.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes.md), [MariaDB 11.0.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes.md), [MariaDB 11.1.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes.md), [MariaDB 11.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes.md)
+* Deprecated: [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes), [MariaDB 10.10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes), [MariaDB 10.11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes), [MariaDB 11.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes), [MariaDB 11.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes), [MariaDB 11.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes)
 
 
 
@@ -2763,7 +2763,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_random_read_ahead`
 
 
-* Description: Originally, random read-ahead was always set as an optimization technique, but was removed in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). `innodb_random_read_ahead` permits it to be re-instated if set to `1` (`0`) is default.
+* Description: Originally, random read-ahead was always set as an optimization technique, but was removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). `innodb_random_read_ahead` permits it to be re-instated if set to `1` (`0`) is default.
 * Commandline: `--innodb-random-read-ahead={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -2775,14 +2775,14 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_read_ahead`
 
 
-* Description: If set to `linear`, the default, XtraDB/InnoDB will automatically fetch remaining pages if there are enough within the same extent that can be accessed sequentially. If set to `none`, read-ahead is disabled. `random` has been removed and is now ignored, while `both` sets to both `linear` and `random`. Also see [innodb_read_ahead_threshold](#innodb_read_ahead_threshold) for more control on read-aheads. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 and replaced by MySQL 5.6's [innodb_random_read_ahead](#innodb_random_read_ahead).
+* Description: If set to `linear`, the default, XtraDB/InnoDB will automatically fetch remaining pages if there are enough within the same extent that can be accessed sequentially. If set to `none`, read-ahead is disabled. `random` has been removed and is now ignored, while `both` sets to both `linear` and `random`. Also see [innodb_read_ahead_threshold](#innodb_read_ahead_threshold) for more control on read-aheads. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 and replaced by MySQL 5.6's [innodb_random_read_ahead](#innodb_random_read_ahead).
 * Commandline: `innodb-read-ahead=value`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
 * Default Value: `linear`
 * Valid Values: `none`, `random`, `linear`, `both`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 - replaced by MySQL 5.6's [innodb_random_read_ahead](#innodb_random_read_ahead)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 - replaced by MySQL 5.6's [innodb_random_read_ahead](#innodb_random_read_ahead)
 
 
 
@@ -2802,10 +2802,10 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_read_io_threads`
 
 
-* Description: Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this was simply the number of I/O threads for InnoDB reads. From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), asynchronous I/O functionality in the InnoDB Background Thread Pool replaces the old InnoDB I/O Threads. This variable is now multipled by 256 to determine the maximum number of concurrent asynchronous I/O read requests that can be completed by the Background Thread Pool. The default is therefore 4*256 = 1024 conccurrent asynchronous read requests. You may on rare occasions need to reduce this default on Linux systems running multiple MariaDB servers to avoid exceeding system limits, or increase if spending too much time waiting on I/O requests.
+* Description: Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this was simply the number of I/O threads for InnoDB reads. From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), asynchronous I/O functionality in the InnoDB Background Thread Pool replaces the old InnoDB I/O Threads. This variable is now multipled by 256 to determine the maximum number of concurrent asynchronous I/O read requests that can be completed by the Background Thread Pool. The default is therefore 4*256 = 1024 conccurrent asynchronous read requests. You may on rare occasions need to reduce this default on Linux systems running multiple MariaDB servers to avoid exceeding system limits, or increase if spending too much time waiting on I/O requests.
 * Commandline: `--innodb-read-io-threads=#`
 * Scope: Global
-* Dynamic: Yes (>= [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)), No (<= [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
+* Dynamic: Yes (>= [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)), No (<= [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010))
 * Data Type: `numeric`
 * Default Value: `4`
 * Range: `1` to `64`
@@ -2827,13 +2827,13 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_read_only_compressed`
 
 
-* Description: If set (the default before [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md)), [ROW_FORMAT=COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) tables will be read-only. This was intended to be the first step towards removing write support and deprecating the feature, but this plan has been abandoned.
+* Description: If set (the default before [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes)), [ROW_FORMAT=COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) tables will be read-only. This was intended to be the first step towards removing write support and deprecating the feature, but this plan has been abandoned.
 * Commandline: `--innodb-read-only-compressed`, `--skip-innodb-read-only-compressed`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
-* Default Value: `OFF` (>= [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md)), `ON` (<= [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md))
-* Introduced: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Default Value: `OFF` (>= [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes)), `ON` (<= [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes))
+* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -2846,42 +2846,42 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `innodb_recovery_update_relay_log`
 
 
-* Description: If set to `1` (`0` is default), the relay log info file will be overwritten on crash recovery if the information differs from the InnoDB record. Should not be used if multiple storage engine types are being replicated. Previously named `innodb_overwrite_relay_log_info`. Removed in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6 and replaced by MySQL 5.6's `relay-log-recovery`
+* Description: If set to `1` (`0` is default), the relay log info file will be overwritten on crash recovery if the information differs from the InnoDB record. Should not be used if multiple storage engine types are being replicated. Previously named `innodb_overwrite_relay_log_info`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6 and replaced by MySQL 5.6's `relay-log-recovery`
 * Commandline: `innodb-recovery-update-relay-log={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced by MySQL 5.6's `relay-log-recovery`
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced by MySQL 5.6's `relay-log-recovery`
 
 
 
 #### `innodb_replication_delay`
 
 
-* Description: Time in milliseconds for the replica server to delay the replication thread if [innodb_thread_concurrency](#innodb_thread_concurrency) is reached. Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* Description: Time in milliseconds for the replica server to delay the replication thread if [innodb_thread_concurrency](#innodb_thread_concurrency) is reached. Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes).
 * Commandline: `--innodb-replication-delay=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `4294967295`
-* Deprecated: [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_rollback_on_timeout`
 
 
-* Description: InnoDB usually rolls back the last statement of a transaction that's been timed out (see [innodb_lock_wait_timeout](#innodb_lock_wait_timeout)). If innodb_rollback_on_timeout is set to 1 (0 is default), InnoDB will roll back the entire transaction. Before [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), rolling back the entire transaction was the default behavior.
+* Description: InnoDB usually rolls back the last statement of a transaction that's been timed out (see [innodb_lock_wait_timeout](#innodb_lock_wait_timeout)). If innodb_rollback_on_timeout is set to 1 (0 is default), InnoDB will roll back the entire transaction. Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), rolling back the entire transaction was the default behavior.
 * Commandline: `--innodb-rollback-on-timeout`
 * Scope: Global
 * Dynamic: No
@@ -2893,15 +2893,15 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_rollback_segments`
 
 
-* Description: Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (see [undo log](innodb-undo-log.md)). Deprecated and replaced by [innodb_undo_logs](#innodb_undo_logs) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Removed in [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) as part of an InnoDB cleanup, as it makes sense to always create and use the maximum number of rollback segments. |
+* Description: Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (see [undo log](innodb-undo-log.md)). Deprecated and replaced by [innodb_undo_logs](#innodb_undo_logs) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). Removed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) as part of an InnoDB cleanup, as it makes sense to always create and use the maximum number of rollback segments. |
 * Commandline: `--innodb-rollback-segments=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `128`
 * Range: `1` to `128`
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -2914,22 +2914,22 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Introduced: [MariaDB 10.2.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10219-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Introduced: [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_scrub_log`
 
 
-* Description: Enable [InnoDB redo log](innodb-redo-log.md) scrubbing. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), as never really worked ([MDEV-13019](https://jira.mariadb.org/browse/MDEV-13019) and [MDEV-18370](https://jira.mariadb.org/browse/MDEV-18370)). If old log contents should be kept secret, then enabling [innodb_encrypt_log](innodb-system-variables.md#innodb_encrypt_log) or setting a smaller [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) could help.
+* Description: Enable [InnoDB redo log](innodb-redo-log.md) scrubbing. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), as never really worked ([MDEV-13019](https://jira.mariadb.org/browse/MDEV-13019) and [MDEV-18370](https://jira.mariadb.org/browse/MDEV-18370)). If old log contents should be kept secret, then enabling [innodb_encrypt_log](innodb-system-variables.md#innodb_encrypt_log) or setting a smaller [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) could help.
 * Commandline: `--innodb-scrub-log`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -2943,68 +2943,68 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value: `56`
 * Range: `0` to `50000`
-* Introduced: [MariaDB 10.1.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 10.1.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes)
 
 
 
 #### `innodb_scrub_log_speed`
 
 
-* Description: [InnoDB redo log](innodb-redo-log.md) scrubbing speed in bytes/sec. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+* Description: [InnoDB redo log](innodb-redo-log.md) scrubbing speed in bytes/sec. See [Data Scrubbing](innodb-data-scrubbing.md). Deprecated and ignored from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 * Commandline: `--innodb-scrub-log-speed=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `256`
 * Range: `1` to `50000`
-* Deprecated: [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_sched_priority_cleaner`
 
 
-* Description: Set a thread scheduling priority for cleaner and least-recently used (LRU) manager threads. The range from `0` to `39` corresponds in reverse order to Linux nice values of `-20` to `19`. So `0` is the lowest priority (Linux nice value `19`) and `39` is the highest priority (Linux nice value `-20`). XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Set a thread scheduling priority for cleaner and least-recently used (LRU) manager threads. The range from `0` to `39` corresponds in reverse order to Linux nice values of `-20` to `19`. So `0` is the lowest priority (Linux nice value `19`) and `39` is the highest priority (Linux nice value `-20`). XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-sched-priority-cleaner=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `19`
 * Range: `0` to `39`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_show_locks_held`
 
 
-* Description: Specifies the number of locks held for each InnoDB transaction to be displayed in [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Specifies the number of locks held for each InnoDB transaction to be displayed in [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) output. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-show-locks-held=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `10`
 * Range: `0` to `1000`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_show_verbose_locks`
 
 
-* Description: If set to `1`, and [innodb_status_output_locks](#innodb_status_output_locks) is also ON, the traditional InnoDB behavior is followed and locked records will be shown in [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. If set to `0`, the default, only high-level information about the lock is shown. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: If set to `1`, and [innodb_status_output_locks](#innodb_status_output_locks) is also ON, the traditional InnoDB behavior is followed and locked records will be shown in [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. If set to `0`, the default, only high-level information about the lock is shown. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-show-verbose-locks=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `1`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -3024,20 +3024,20 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_snapshot_isolation`
 
 
-* Description: Use snapshot isolation (write-write conflict detection). If set, if an attempt to acquire a lock on a record that does not exist in the current read view is made, an error DB_RECORD_CHANGED (HA_ERR_RECORD_CHANGED, ER_CHECKREAD) will be raised. This error will be treated in the same way as a deadlock and the transaction will be rolled back. When set, the default isolation level, [REPEATABLE READ](../../sql-statements-and-structure/sql-statements/transactions/set-transaction.md#repeatable-read) will become Snapshot Isolation. Prior to [MariaDB 11.6.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md), the default is OFF for backwards compatibility.
+* Description: Use snapshot isolation (write-write conflict detection). If set, if an attempt to acquire a lock on a record that does not exist in the current read view is made, an error DB_RECORD_CHANGED (HA_ERR_RECORD_CHANGED, ER_CHECKREAD) will be raised. This error will be treated in the same way as a deadlock and the transaction will be rolled back. When set, the default isolation level, [REPEATABLE READ](../../sql-statements-and-structure/sql-statements/transactions/set-transaction.md#repeatable-read) will become Snapshot Isolation. Prior to [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes), the default is OFF for backwards compatibility.
 * Commandline: `--innodb-snapshot-isolation={0|1}`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
-* Default Value: `ON` (>= [MariaDB 11.6.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md)), `OFF` (<= [MariaDB 11.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes.md))
-* Introduced: [MariaDB 10.6.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes.md), [MariaDB 10.11.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md), [MariaDB 11.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md), [MariaDB 11.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes.md)
+* Default Value: `ON` (>= [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes)), `OFF` (<= [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes))
+* Introduced: [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-2-release-notes)
 
 
 
 #### `innodb_sort_buffer_size`
 
 
-* Description: Size of the sort buffers used for sorting data when an InnoDB index is created, as well as the amount by which the temporary log file is extended during online DDL operations to record concurrent writes. The larger the setting, the fewer merge phases are required between buffers while sorting. When a [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) creates a new index, three buffers of this size are allocated, as well as pointers for the rows in the buffer.
+* Description: Size of the sort buffers used for sorting data when an InnoDB index is created, as well as the amount by which the temporary log file is extended during online DDL operations to record concurrent writes. The larger the setting, the fewer merge phases are required between buffers while sorting. When a [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) creates a new index, three buffers of this size are allocated, as well as pointers for the rows in the buffer.
 * Commandline: `--innodb-sort-buffer-size=#`
 * Scope: Global
 * Dynamic: No
@@ -3050,12 +3050,12 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_log_spin_wait_delay`
 
 
-* Description: Maximum delay (not strictly corresponding to a time unit) between spin lock polls. Default changed from `6` to `4` in [MariaDB 10.3.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md), as this was verified to give the best throughput by OLTP update index and read-write benchmarks on Intel Broadwell (2/20/40) and ARM (1/46/46).
+* Description: Maximum delay (not strictly corresponding to a time unit) between spin lock polls. Default changed from `6` to `4` in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes), as this was verified to give the best throughput by OLTP update index and read-write benchmarks on Intel Broadwell (2/20/40) and ARM (1/46/46).
 * Commandline: `--innodb-log-spin-wait-delay=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `4` (>= [MariaDB 10.3.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md)), `6` (<= [MariaDB 10.3.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1034-release-notes.md))
+* Default Value: `4` (>= [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes)), `6` (<= [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes))
 * Range: `0` to `4294967295`
 
 
@@ -3063,7 +3063,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_stats_auto_recalc`
 
 
-* Description: If set to `1` (the default), persistent statistics are automatically recalculated when the table changes significantly (more than 10% of the rows). Affects tables created or altered with STATS_PERSISTENT=1 (see [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md)), or when [innodb_stats_persistent](#innodb_stats_persistent) is enabled. [innodb_stats_persistent_sample_pages](#innodb_stats_persistent_sample_pages) determines how much data to sample when recalculating. See [InnoDB Persistent Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
+* Description: If set to `1` (the default), persistent statistics are automatically recalculated when the table changes significantly (more than 10% of the rows). Affects tables created or altered with STATS_PERSISTENT=1 (see [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)), or when [innodb_stats_persistent](#innodb_stats_persistent) is enabled. [innodb_stats_persistent_sample_pages](#innodb_stats_persistent_sample_pages) determines how much data to sample when recalculating. See [InnoDB Persistent Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
 * Commandline: `--innodb-stats-auto-recalc={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -3075,12 +3075,12 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_stats_auto_update`
 
 
-* Description: If set to `0` (`1` is default), index statistics will not be automatically calculated except when an [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) is run, or the table is first opened. Replaced by [innodb_stats_auto_recalc](#innodb_stats_auto_recalc) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6.
+* Description: If set to `0` (`1` is default), index statistics will not be automatically calculated except when an [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) is run, or the table is first opened. Replaced by [innodb_stats_auto_recalc](#innodb_stats_auto_recalc) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `1`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) - replaced by [innodb_stats_auto_recalc](#innodb_stats_auto_recalc).
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - replaced by [innodb_stats_auto_recalc](#innodb_stats_auto_recalc).
 
 
 
@@ -3141,7 +3141,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_stats_persistent`
 
 
-* Description: [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) produces index statistics, and this setting determines whether they will be stored on disk, or be required to be recalculated more frequently, such as when the server restarts. This information is stored for each table, and can be set with the STATS_PERSISTENT clause when creating or altering tables (see [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md)). See [InnoDB Persistent Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
+* Description: [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) produces index statistics, and this setting determines whether they will be stored on disk, or be required to be recalculated more frequently, such as when the server restarts. This information is stored for each table, and can be set with the STATS_PERSISTENT clause when creating or altering tables (see [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)). See [InnoDB Persistent Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
 * Commandline: `--innodb-stats-persistent={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -3176,9 +3176,9 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `8`
-* Range: `1` to `2<sup>64</sup>-1`
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Range: `1` to `264-1`
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -3211,7 +3211,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `8`
-* Range: `1` to `2<sup>64</sup>-1`
+* Range: `1` to `264-1`
 
 
 
@@ -3223,7 +3223,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `1`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6
 
 
 
@@ -3266,14 +3266,14 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_support_xa`
 
 
-* Description: If set to `1`, the default, [XA transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md) are supported. XA support ensures data is written to the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md) in the same order to the actual database, which is critical for [replication](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and disaster recovery, but comes at a small performance cost. If your database is set up to only permit one thread to change data (for example, on a replication replica with only the replication thread writing), it is safe to turn this option off. Removed in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), XA transactions are always supported.
+* Description: If set to `1`, the default, [XA transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md) are supported. XA support ensures data is written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) in the same order to the actual database, which is critical for [replication](../../../server-usage/replication-cluster-multi-master/README.md) and disaster recovery, but comes at a small performance cost. If your database is set up to only permit one thread to change data (for example, on a replication replica with only the replication thread writing), it is safe to turn this option off. Removed in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), XA transactions are always supported.
 * Commandline: `--innodb-support-xa`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -3287,7 +3287,7 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Data Type: `numeric`
 * Default Value: `1`
 * Range: `1` to `1024`
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -3319,15 +3319,15 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 #### `innodb_thread_concurrency`
 
 
-* Description: Once this number of threads is reached (excluding threads waiting for locks), XtraDB/InnoDB will place new threads in a wait state in a first-in, first-out queue for execution, in order to limit the number of threads running concurrently. A setting of `0`, the default, permits as many threads as necessary. A suggested setting is twice the number of CPU's plus the number of disks. Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).
+* Description: Once this number of threads is reached (excluding threads waiting for locks), XtraDB/InnoDB will place new threads in a wait state in a first-in, first-out queue for execution, in order to limit the number of threads running concurrently. A setting of `0`, the default, permits as many threads as necessary. A suggested setting is twice the number of CPU's plus the number of disks. Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes).
 * Commandline: `--innodb-thread-concurrency=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `1000`
-* Deprecated: [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -3340,32 +3340,32 @@ both during --backup and --prepare. OFF by default on most platforms, to avoid a
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6
 
 
 
 #### `innodb_thread_sleep_delay`
 
 
-* Description: Time in microseconds that InnoDB threads sleep before joining the queue. Setting to `0` disables sleep. Deprecated and ignored from [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
+* Description: Time in microseconds that InnoDB threads sleep before joining the queue. Setting to `0` disables sleep. Deprecated and ignored from [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
 * Commandline: `--innodb-thread-sleep-delay=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value:
 
-  * `0` (>= [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md).)
-  * `10000` (<= [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md))
+  * `0` (>= [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes).)
+  * `10000` (<= [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes))
 * Range: `0` to `1000000`
-* Deprecated: [MariaDB 10.5.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1055-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_temp_data_file_path`
 
 
-* Description: Path where to store data for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) temporary tables. Argument is `filename:size` followed by options separated by ':' Multiple paths can be given separated by ';' A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, `max` size and whether or not to `[autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size)` on startup may also be specified.
+* Description: Path where to store data for [InnoDB](README.md) temporary tables. Argument is `filename:size` followed by options separated by ':' Multiple paths can be given separated by ';' A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, `max` size and whether or not to `[autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size)` on startup may also be specified.
 * Commandline: `--innodb-temp-data-file-path=path`
 * Scope: Global
 * Dynamic: No
@@ -3391,26 +3391,26 @@ Alternate location must be outside of `datadir`
 #### `innodb_track_changed_pages`
 
 
-* Description: For faster incremental backup with [Xtrabackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md), XtraDB tracks pages with changes written to them according to the [XtraDB redo log](innodb-redo-log.md) and writes the information to special changed page bitmap files. This read-only variable is used for controlling this feature. See also [innodb_max_changed_pages](#innodb_max_changed_pages) and [innodb_max_bitmap_file_size](#innodb_max_bitmap_file_size). XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: For faster incremental backup with [Xtrabackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md), XtraDB tracks pages with changes written to them according to the [XtraDB redo log](innodb-redo-log.md) and writes the information to special changed page bitmap files. This read-only variable is used for controlling this feature. See also [innodb_max_changed_pages](#innodb_max_changed_pages) and [innodb_max_bitmap_file_size](#innodb_max_bitmap_file_size). XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-track-changed-pages={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
 
 
 
 #### `innodb_track_redo_log_now`
 
 
-* Description: Available on debug builds only. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Available on debug builds only. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-track-redo-log-now={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
 
 
 
@@ -3423,14 +3423,14 @@ Alternate location must be outside of `datadir`
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
+* Introduced: [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)
 
 
 
 #### `innodb_undo_directory`
 
 
-* Description: Path to the directory (relative or absolute) that InnoDB uses to create separate tablespaces for the [undo logs](innodb-undo-log.md). `.` (the default value before 10.2.2) leaves the undo logs in the same directory as the other log files. From [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), the default value is NULL, and if no path is specified, undo tablespaces will be created in the directory defined by [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). Use together with [innodb_undo_logs](#innodb_undo_logs) and [innodb_undo_tablespaces](#innodb_undo_tablespaces). Undo logs are most usefully placed on a separate storage device.
+* Description: Path to the directory (relative or absolute) that InnoDB uses to create separate tablespaces for the [undo logs](innodb-undo-log.md). `.` (the default value before 10.2.2) leaves the undo logs in the same directory as the other log files. From [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), the default value is NULL, and if no path is specified, undo tablespaces will be created in the directory defined by [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). Use together with [innodb_undo_logs](#innodb_undo_logs) and [innodb_undo_tablespaces](#innodb_undo_tablespaces). Undo logs are most usefully placed on a separate storage device.
 * Commandline: `--innodb-undo-directory=name`
 * Scope: Global
 * Dynamic: No
@@ -3454,27 +3454,27 @@ Alternate location must be outside of `datadir`
 #### `innodb_undo_logs`
 
 
-* Description: Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (or the number of active [undo logs](innodb-undo-log.md)). By default set to the maximum, `128`, it can be reduced to avoid allocating unneeded rollback segments. See the [Innodb_available_undo_logs](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md) status variable for the number of undo logs available. See also [innodb_undo_directory](#innodb_undo_directory) and [innodb_undo_tablespaces](#innodb_undo_tablespaces). Replaced [innodb_rollback_segments](#innodb_rollback_segments) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). The [Information Schema XTRADB_RSEG Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table.md) contains information about the XtraDB rollback segments. Deprecated and ignored in [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), as it always makes sense to use the maximum number of rollback segments.
+* Description: Specifies the number of rollback segments that XtraDB/InnoDB will use within a transaction (or the number of active [undo logs](innodb-undo-log.md)). By default set to the maximum, `128`, it can be reduced to avoid allocating unneeded rollback segments. See the [Innodb_available_undo_logs](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md) status variable for the number of undo logs available. See also [innodb_undo_directory](#innodb_undo_directory) and [innodb_undo_tablespaces](#innodb_undo_tablespaces). Replaced [innodb_rollback_segments](#innodb_rollback_segments) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). The [Information Schema XTRADB_RSEG Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-xtradb-tables/information-schema-xtradb_rseg-table.md) contains information about the XtraDB rollback segments. Deprecated and ignored in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), as it always makes sense to use the maximum number of rollback segments.
 * Commandline: `--innodb-undo-logs=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `128`
 * Range: `0` to `128`
-* Deprecated: [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-* Removed: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Deprecated: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+* Removed: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
 #### `innodb_undo_tablespaces`
 
 
-* Description: Number of tablespaces files used for dividing up the [undo logs](innodb-undo-log.md). Zero (the default before [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md)) means that undo logs are all part of the system tablespace, which contains one undo tablespace more than the `innodb_undo_tablespaces` setting. A value of 1 is reset to 0 as 2 or more are needed for separate tablespaces. When the undo logs can grow large, splitting them over multiple tablespaces will reduce the size of any single tablespace. Until [MariaDB 10.11.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-1-release-notes.md), must be set before InnoDB is initialized, or else MariaDB will fail to start, with an error saying that `InnoDB did not find the expected number of undo tablespaces`. The files are created in the directory specified by [innodb_undo_directory](#innodb_undo_directory), and are named `undoN`, N being an integer. The default size of an undo tablespace is 10MB.From [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md), multiple undo tablespaces are enabled by default, and the default is changed to 3 so that the space occupied by possible bursts of undo log records can be reclaimed after [innodb_undo_log_truncate](#innodb_undo_log_truncate) is set. Before [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), [innodb_undo_logs](#innodb_undo_logs) must have a non-zero setting for `innodb_undo_tablespaces` to take effect.
+* Description: Number of tablespaces files used for dividing up the [undo logs](innodb-undo-log.md). Zero (the default before [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110)) means that undo logs are all part of the system tablespace, which contains one undo tablespace more than the `innodb_undo_tablespaces` setting. A value of 1 is reset to 0 as 2 or more are needed for separate tablespaces. When the undo logs can grow large, splitting them over multiple tablespaces will reduce the size of any single tablespace. Until [MariaDB 10.11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-1-release-notes), must be set before InnoDB is initialized, or else MariaDB will fail to start, with an error saying that `InnoDB did not find the expected number of undo tablespaces`. The files are created in the directory specified by [innodb_undo_directory](#innodb_undo_directory), and are named `undoN`, N being an integer. The default size of an undo tablespace is 10MB.From [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110), multiple undo tablespaces are enabled by default, and the default is changed to 3 so that the space occupied by possible bursts of undo log records can be reclaimed after [innodb_undo_log_truncate](#innodb_undo_log_truncate) is set. Before [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), [innodb_undo_logs](#innodb_undo_logs) must have a non-zero setting for `innodb_undo_tablespaces` to take effect.
 * Commandline: `--innodb-undo-tablespaces=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `3` (>= [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md)), `0` (<= [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md))
+* Default Value: `3` (>= [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110)), `0` (<= [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011))
 * Range: `0`, or `2` to `95`
 
 
@@ -3503,22 +3503,22 @@ Alternate location must be outside of `datadir`
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md) (treated as if `ON`)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) (treated as if `ON`)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_use_global_flush_log_at_trx_commit`
 
 
-* Description: Determines whether a user can set the variable [innodb_flush_log_at_trx_commit](#innodb_flush_log_at_trx_commit). If set to `1`, a user cannot reset the value with a SET command, while if set to `1`, a user can reset the value of `innodb_flush_log_at_trx_commit`. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: Determines whether a user can set the variable [innodb_flush_log_at_trx_commit](#innodb_flush_log_at_trx_commit). If set to `1`, a user cannot reset the value with a SET command, while if set to `1`, a user can reset the value of `innodb_flush_log_at_trx_commit`. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `innodb-use-global-flush-log-at-trx_commit={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
@@ -3528,22 +3528,22 @@ Alternate location must be outside of `datadir`
 * Description: Whether to enable Multi-Threaded Flush operations.
 For more information, see Fusion. 
 
-  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md) and removed from [MariaDB 10.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md). In later versions of MariaDB, use `[innodb_page_cleaners](#innodb_page_cleaners)` system variable instead.
+  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and removed from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes). In later versions of MariaDB, use `[innodb_page_cleaners](#innodb_page_cleaners)` system variable instead.
   * See [InnoDB Page Flushing: Page Flushing with Multi-threaded Flush Threads](innodb-page-flushing.md#page-flushing-with-multi-threaded-flush-threads) for more information.
 * Commandline: `--innodb-use-mtflush={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md)
-* Removed: [MariaDB 10.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Deprecated: [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)
+* Removed: [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
 #### `innodb_use_native_aio`
 
 
-* Description: For Linux systems only, specified whether to use Linux's asynchronous I/O subsystem. Set to `ON` by default, it may be changed to `0` at startup if InnoDB detects a problem, or from [MariaDB 10.6.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes.md)/[MariaDB 10.7.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1071-release-notes.md), if a 5.11 - 5.15 Linux kernel is detected, to avoid an io-uring bug/incompatibility ([MDEV-26674](https://jira.mariadb.org/browse/MDEV-26674)). MariaDB-10.6.6/MariaDB-10.7.2 and later also consider 5.15.3+ as a fixed kernel and default to `ON`. To really benefit from the setting, the files should be opened in O_DIRECT mode ([innodb_flush_method=O_DIRECT](#innodb_flush_method), default from [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)), to bypass the file system cache. In this way, the reads and writes can be submitted with DMA, using the InnoDB buffer pool directly, and no processor cycles need to be used for copying data.
+* Description: For Linux systems only, specified whether to use Linux's asynchronous I/O subsystem. Set to `ON` by default, it may be changed to `0` at startup if InnoDB detects a problem, or from [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1065-release-notes)/[MariaDB 10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes), if a 5.11 - 5.15 Linux kernel is detected, to avoid an io-uring bug/incompatibility ([MDEV-26674](https://jira.mariadb.org/browse/MDEV-26674)). MariaDB-10.6.6/MariaDB-10.7.2 and later also consider 5.15.3+ as a fixed kernel and default to `ON`. To really benefit from the setting, the files should be opened in O_DIRECT mode ([innodb_flush_method=O_DIRECT](#innodb_flush_method), default from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)), to bypass the file system cache. In this way, the reads and writes can be submitted with DMA, using the InnoDB buffer pool directly, and no processor cycles need to be used for copying data.
 * Commandline: `--innodb-use-native-aio={0|1}`
 * Scope: Global
 * Dynamic: No
@@ -3569,28 +3569,28 @@ For more information, see Fusion.
 #### `innodb_use_stacktrace`
 
 
-* Description: If set to `ON` (`OFF` is default), a signal handler for SIGUSR2 is installed when the InnoDB server starts. When a long semaphore wait is detected at sync/sync0array.c, a SIGUSR2 signal is sent to the waiting thread and thread that has acquired the RW-latch. For both threads a full stacktrace is produced as well as if possible. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
+* Description: If set to `ON` (`OFF` is default), a signal handler for SIGUSR2 is installed when the InnoDB server starts. When a long semaphore wait is detected at sync/sync0array.c, a SIGUSR2 signal is sent to the waiting thread and thread that has acquired the RW-latch. For both threads a full stacktrace is produced as well as if possible. XtraDB only. Added as a deprecated and ignored option in [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) (which uses InnoDB as default instead of XtraDB) to allow for easier upgrades.
 * Commandline: `--innodb-use-stacktrace={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_use_sys_malloc`
 
 
-* Description: If set the `1`, the default, XtraDB/InnoDB will use the operating system's memory allocator. If set to `0` it will use its own. Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and removed in [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) along with InnoDB's internal memory allocator.
+* Description: If set the `1`, the default, XtraDB/InnoDB will use the operating system's memory allocator. If set to `0` it will use its own. Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and removed in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) along with InnoDB's internal memory allocator.
 * Commandline: `--innodb-use-sys-malloc={0|1}`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
-* Removed: [MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)
+* Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* Removed: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)
 
 
 
@@ -3603,7 +3603,7 @@ For more information, see Fusion.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `0`
-* Removed: [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)/XtraDB 5.6
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)/XtraDB 5.6
 
 
 
@@ -3618,29 +3618,29 @@ For more information, see Fusion.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Deprecated: [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
-* Removed: [MariaDB 10.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+* Deprecated: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
+* Removed: [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 
 #### `innodb_version`
 
 
-* Description: InnoDB version number. From [MariaDB 10.3.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md), as the InnoDB implementation in MariaDB has diverged from MySQL, the MariaDB version is instead reported. For example, the InnoDB version reported in [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) (which is based on MySQL 5.6) included encryption and variable-size page compression before MySQL 5.7 introduced them. [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) (based on MySQL 5.7) introduced persistent AUTO_INCREMENT ([MDEV-6076](https://jira.mariadb.org/browse/MDEV-6076)) in a GA release before MySQL 8.0. [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) (based on MySQL 5.7) introduced instant ADD COLUMN ([MDEV-11369](https://jira.mariadb.org/browse/MDEV-11369)) before MySQL.
+* Description: InnoDB version number. From [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes), as the InnoDB implementation in MariaDB has diverged from MySQL, the MariaDB version is instead reported. For example, the InnoDB version reported in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) (which is based on MySQL 5.6) included encryption and variable-size page compression before MySQL 5.7 introduced them. [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) (based on MySQL 5.7) introduced persistent AUTO_INCREMENT ([MDEV-6076](https://jira.mariadb.org/browse/MDEV-6076)) in a GA release before MySQL 8.0. [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) (based on MySQL 5.7) introduced instant ADD COLUMN ([MDEV-11369](https://jira.mariadb.org/browse/MDEV-11369)) before MySQL.
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
-* Removed: [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
 #### `innodb_write_io_threads`
 
 
-* Description: Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this was simply the number of I/O threads for InnoDB writes. From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), asynchronous I/O functionality in the InnoDB Background Thread Pool replaces the old InnoDB I/O Threads. This variable is now multipled by 256 to determine the maximum number of concurrent asynchronous I/O write requests that can be completed by the Background Thread Pool. The default is therefore 4*256 = 1024 conccurrent asynchronous write requests. You may on rare occasions need to reduce this default on Linux systems running multiple MariaDB servers to avoid exceeding system limits, or increase if spending too much time waiting on I/O requests.
+* Description: Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this was simply the number of I/O threads for InnoDB writes. From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), asynchronous I/O functionality in the InnoDB Background Thread Pool replaces the old InnoDB I/O Threads. This variable is now multipled by 256 to determine the maximum number of concurrent asynchronous I/O write requests that can be completed by the Background Thread Pool. The default is therefore 4*256 = 1024 conccurrent asynchronous write requests. You may on rare occasions need to reduce this default on Linux systems running multiple MariaDB servers to avoid exceeding system limits, or increase if spending too much time waiting on I/O requests.
 * Commandline: `--innodb-write-io-threads=#`
 * Scope: Global
-* Dynamic: Yes (>= [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)), No (<= [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md))
+* Dynamic: Yes (>= [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)), No (<= [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010))
 * Data Type: `numeric`
 * Default Value: `4`
 * Range: `1` to `64`

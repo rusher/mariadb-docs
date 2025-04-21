@@ -1,7 +1,7 @@
 
 # mariadb-install-db.exe
 
-The `mariadb-install-db.exe` utility is the Windows equivalent of [mariadb-install-db](mariadb-install-db-exe.md).
+The `mariadb-install-db.exe` utility is the Windows equivalent of [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md).
 
 
 ## Functionality
@@ -17,7 +17,7 @@ file in the data directory and adds most important parameters to it (e.g port).
 
 `mariadb-install-db.exe` is used by the MariaDB installer for Windows if the
 "Database instance" feature is selected. It obsoletes similar utilities and
-scripts that were used in the past such as `mysqld.exe` `<code>--</code>install`,
+scripts that were used in the past such as `mysqld.exe` `--install`,
 `mysql_install_db.pl`, and `mysql_secure_installation.pl`.
 
 
@@ -34,11 +34,11 @@ scripts that were used in the past such as `mysqld.exe` `<code>--</code>install`
 | -D, --default-user | Create default user |
 | -R, --allow-remote-root-access | Allow remote access from network for user root |
 | -N, --skip-networking | Do not use TCP connections, use pipe instead |
-| -i, --innodb-page-size | Innodb page size, since [MariaDB 10.2.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md) |
+| -i, --innodb-page-size | Innodb page size, since [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) |
 | -s,--silent | Print less information |
 | -o,--verbose-bootstrap | Include mysqld bootstrap output |
-| -l,--large-pages | Use large pages, since [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) |
-| -c,--config | my.ini config template file, since [MariaDB 10.6.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) |
+| -l,--large-pages | Use large pages, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) |
+| -c,--config | my.ini config template file, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) |
 
 
 

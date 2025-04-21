@@ -1,8 +1,8 @@
 
 # Microseconds in MariaDB
 
-The [TIME](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md), [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md), and [TIMESTAMP](timestamp-function.md) types, along with
-the temporal functions, [CAST](../string-functions/cast.md) and [dynamic columns](../../../nosql/dynamic-columns-api.md), support microseconds. The datetime precision of a column can be specified when creating the table with [CREATE TABLE](../../../vectors/create-table-with-vectors.md), for example:
+The [TIME](../../../../data-types/date-and-time-data-types/time.md), [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md), and [TIMESTAMP](../../../../data-types/date-and-time-data-types/timestamp.md) types, along with
+the temporal functions, [CAST](../string-functions/cast.md) and [dynamic columns](../../../nosql/dynamic-columns.md), support microseconds. The datetime precision of a column can be specified when creating the table with [CREATE TABLE](../../data-definition/create/create-table.md), for example:
 
 
 ```
@@ -46,14 +46,14 @@ SELECT STR_TO_DATE('20200809 020917076','%Y%m%d %H%i%s%f');
 ## Additional Information
 
 
-* when comparing anything to a temporal value (`DATETIME`, `TIME`, `[DATE](../../../sql-language-structure/date-and-time-literals.md)`, or `TIMESTAMP`), both values are compared as temporal values, not as strings.
+* when comparing anything to a temporal value (`DATETIME`, `TIME`, `[DATE](../../../../data-types/date-and-time-data-types/date.md)`, or `TIMESTAMP`), both values are compared as temporal values, not as strings.
 * The [INFORMATION_SCHEMA.COLUMNS table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) has a new column `DATETIME_PRECISION`
-* [NOW()](now.md), [CURTIME()](curtime.md), [UTC_TIMESTAMP()](utc_timestamp.md), [UTC_TIME()](utc_time.md), [CURRENT_TIME()](current_time.md), [CURRENT_TIMESTAMP()](current_timestamp.md), [LOCALTIME()](localtimestamp.md) and [LOCALTIMESTAMP()](localtimestamp.md) now accept datetime precision as an optional argument. For example:
+* [NOW()](now.md), [CURTIME()](curtime.md), [UTC_TIMESTAMP()](utc_timestamp.md), [UTC_TIME()](utc_time.md), [CURRENT_TIME()](current_time.md), [CURRENT_TIMESTAMP()](current_timestamp.md), [LOCALTIME()](localtime.md) and [LOCALTIMESTAMP()](localtimestamp.md) now accept datetime precision as an optional argument. For example:
 ```
 SELECT CURTIME(4);
 --> 10:11:12.3456
 ```
-* [TIME_TO_SEC()](time_to_sec.md) and [UNIX_TIMESTAMP()](unix_timestamp.md) preserve microseconds of the argument. These functions will return a [decimal](../../../../data-types/data-types-numeric-data-types/decimal.md) number if the result non-zero datetime precision and an [integer](../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) otherwise (for backward compatibility).
+* [TIME_TO_SEC()](time_to_sec.md) and [UNIX_TIMESTAMP()](unix_timestamp.md) preserve microseconds of the argument. These functions will return a [decimal](../../../../data-types/data-types-numeric-data-types/decimal.md) number if the result non-zero datetime precision and an [integer](../../../../data-types/data-types-numeric-data-types/int.md) otherwise (for backward compatibility).
 ```
 SELECT TIME_TO_SEC('10:10:10.12345');
 --> 36610.12345
@@ -92,7 +92,7 @@ SELECT CAST('2009-12-31 23:59:59.998877' as DATETIME(3));
 ## MySQL 5.6 Microseconds
 
 
-MySQL 5.6 introduced microseconds using a slightly different implementation to [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). Since [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), MariaDB has defaulted to the MySQL format, by means of the [--mysql56-temporal-format](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable. The MySQL version requires slightly [more storage](../../../../data-types/data-type-storage-requirements.md) but has some advantages in permitting the eventual support of negative dates, and in replication.
+MySQL 5.6 introduced microseconds using a slightly different implementation to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). Since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB has defaulted to the MySQL format, by means of the [--mysql56-temporal-format](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable. The MySQL version requires slightly [more storage](../../../../data-types/data-type-storage-requirements.md) but has some advantages in permitting the eventual support of negative dates, and in replication.
 
 
 ## See Also

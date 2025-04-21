@@ -10,7 +10,7 @@ patch "row_based_replication_without_primary_key.patch", with some additional
 fixes and enhancements.
 
 
-When row-based replication is used with [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md),
+When row-based replication is used with [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md),
 the slave needs to locate each replicated row based on the value in columns. If
 the table contains at least one index, an index lookup will be used (otherwise
 a table scan is needed for each row, which is extremely inefficient for all but
@@ -38,15 +38,14 @@ not be available. In the absence of index cardinality, the first unique index
 will be chosen, if any, else the first non-unique index.
 
 
-Prior to [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), the slave would always choose the first index without
+Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the slave would always choose the first index without
 considering cardinality. The slave could even choose an unusable index (like
 FULLTEXT) if no other index was available ([MySQL Bug #58997](https://bugs.mysql.com/bug.php?id=58997)), causing row-based
-replication to break in this case; this was also fixed in [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).
+replication to break in this case; this was also fixed in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
 
 
 ## See Also
 
 
-* [What is MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
-<span></span>

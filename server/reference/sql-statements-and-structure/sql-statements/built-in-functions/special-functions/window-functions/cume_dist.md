@@ -15,7 +15,7 @@ CUME_DIST() OVER (
 ## Description
 
 
-CUME_DIST() is a [window function](window-functions-overview.md) that returns the cumulative distribution of a given row. The following formula is used to calculate the value:
+CUME_DIST() is a [window function](README.md) that returns the cumulative distribution of a given row. The following formula is used to calculate the value:
 
 
 ```

@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2014
 
-We participated in Google Summer of Code 2014. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes.
+We participated in Google Summer of Code 2014. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes.
 
 
 
@@ -20,7 +20,7 @@ Please keep in mind that in April we travel a lot (conferences, busy time), so i
 We would like the authentication system to be able to authenticate against a LDAP Directory Server.
 
 
-See [pluggable authentication](../../../../server/reference/plugins/authentication-plugins/pluggable-authentication-overview.md).
+See [pluggable authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview).
 
 
 Skills: C, working knowledge of LDAP
@@ -71,7 +71,7 @@ Mentor: Colin Charles
 ## GIS enhancements to MariaDB
 
 
-[GIS](../../../../server/reference/sql-statements-and-structure/geographic-geometric-features/README.md) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), as well as making sure we are fully OpenGIS compliant. [MDEV-5813](https://jira.mariadb.org/browse/MDEV-5813)
+[GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/geographic-geometric-features/) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), as well as making sure we are fully OpenGIS compliant. [MDEV-5813](https://jira.mariadb.org/browse/MDEV-5813)
 
 
 Skills: C

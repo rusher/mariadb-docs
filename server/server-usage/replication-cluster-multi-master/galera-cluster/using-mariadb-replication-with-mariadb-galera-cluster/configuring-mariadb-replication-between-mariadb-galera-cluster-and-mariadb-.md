@@ -2,7 +2,7 @@
 # Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server
 
 
-[MariaDB replication](../../standard-replication/README.md) can be used to replicate between [MariaDB Galera Cluster](../galera-cluster-status-variables.md) and MariaDB Server. This article will discuss how to do that.
+[MariaDB replication](../../standard-replication/README.md) can be used to replicate between [MariaDB Galera Cluster](../README.md) and MariaDB Server. This article will discuss how to do that.
 
 
 ## Configuring the Cluster
@@ -145,7 +145,7 @@ At this point, you need to get the replication coordinates of the primary from t
 The coordinates will be in the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file.
 
 
-Mariabackup dumps replication coordinates in two forms: [GTID strings](../../standard-replication/gtid.md) and [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. In this case, it is probably better to use the [GTID](../../standard-replication/gtid.md) coordinates.
+Mariabackup dumps replication coordinates in two forms: [GTID strings](../../standard-replication/gtid.md) and [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. In this case, it is probably better to use the [GTID](../../standard-replication/gtid.md) coordinates.
 
 
 For example:
@@ -178,7 +178,7 @@ START SLAVE;
 #### File and Position
 
 
-If you want to use the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file. For example:
+If you want to use the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled the [xtrabackup_binlog_info](../../../../server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup.md#xtrabackup_binlog_info) file. For example:
 
 
 ```
@@ -225,7 +225,7 @@ GRANT REPLICATION SLAVE ON *.*  TO 'repl'@'c1dbserver1';
 ### Start Circular Replication on the Cluster
 
 
-How this is done would depend on whether you want to use the [GTID](../../standard-replication/gtid.md) coordinates or the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates.
+How this is done would depend on whether you want to use the [GTID](../../standard-replication/gtid.md) coordinates or the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) file and position coordinates.
 
 
 Regardless, you need to ensure that the second cluster is not accepting any writes other than those that it replicates from the cluster at this stage.
@@ -258,7 +258,7 @@ START SLAVE;
 #### File and Position
 
 
-To get the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position coordinates on the MariaDB Server, you can execute [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
+To get the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) file and position coordinates on the MariaDB Server, you can execute [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
 
 
 ```
@@ -288,4 +288,3 @@ You should be done setting up the circular replication on the node in the first 
 ```
 SHOW SLAVE STATUS\G
 ```
-<span></span>

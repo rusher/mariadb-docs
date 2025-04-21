@@ -1,7 +1,7 @@
 
 # Condition Pushdown into Derived Table Optimization
 
-If a query uses a derived table (or a view), the first action that the query optimizer will attempt is to apply the [derived-table-merge-optimization](derived-table-merge-optimization.md) and merge the derived table into its parent select. However, that optimization is only applicable when the select inside the derived table has a join as the top-level operation. If it has a [GROUP-BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md), [DISTINCT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#distinct), or uses [window functions](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md), then [derived-table-merge-optimization](derived-table-merge-optimization.md) is not applicable.
+If a query uses a derived table (or a view), the first action that the query optimizer will attempt is to apply the [derived-table-merge-optimization](derived-table-merge-optimization.md) and merge the derived table into its parent select. However, that optimization is only applicable when the select inside the derived table has a join as the top-level operation. If it has a [GROUP-BY](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md), [DISTINCT](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#distinct), or uses [window functions](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md), then [derived-table-merge-optimization](derived-table-merge-optimization.md) is not applicable.
 
 
 In that case, the Condition Pushdown optimization is applicable.
@@ -44,7 +44,7 @@ However, the optimizer can take the condition `customer_id=1` and push it down i
 ## Condition Pushdown Properties
 
 
-* Condition Pushdown has been available since [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md).
+* Condition Pushdown has been available since [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102).
 * The Jira task for it was [MDEV-9197](https://jira.mariadb.org/browse/MDEV-9197).
 * The optimization is enabled by default. One can disable it by setting `@@optimizer_switch` flag `condition_pushdown_for_derived` to OFF.
 
@@ -52,7 +52,6 @@ However, the optimizer can take the condition `customer_id=1` and push it down i
 ## See Also
 
 
-* Condition Pushdown through Window Functions (since [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md))
-* [Condition Pushdown into IN Subqueries](../subquery-optimizations/condition-pushdown-into-in-subqueries.md) (since [MariaDB 10.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md))
+* Condition Pushdown through Window Functions (since [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
+* [Condition Pushdown into IN Subqueries](../subquery-optimizations/condition-pushdown-into-in-subqueries.md) (since [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104))
 
-<span></span>

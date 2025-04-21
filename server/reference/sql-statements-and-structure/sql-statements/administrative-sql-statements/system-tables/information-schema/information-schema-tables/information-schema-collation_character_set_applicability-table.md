@@ -1,7 +1,7 @@
 
 # Information Schema COLLATION_CHARACTER_SET_APPLICABILITY Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `COLLATION_CHARACTER_SET_APPLICABILITY` table shows which [character sets](../../../../../../data-types/string-data-types/character-sets/README.md) are associated with which collations.
+The [Information Schema](../README.md) `COLLATION_CHARACTER_SET_APPLICABILITY` table shows which [character sets](../../../../../../data-types/string-data-types/character-sets/README.md) are associated with which collations.
 
 
 It contains the following columns:
@@ -13,9 +13,9 @@ It contains the following columns:
 | Column | Description |
 | COLLATION_NAME | Collation name. |
 | CHARACTER_SET_NAME | Name of the associated character set. |
-| FULL_COLLATION_NAME | Name of the associated character set/collation combination. Added in [MariaDB 10.10.1](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10101-release-notes.md). |
-| ID | The unique identifier of this character set/collation combination. Added in [MariaDB 10.10.1](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10101-release-notes.md). |
-| IS_DEFAULT | If the collation is the default for this character set. Added in [MariaDB 10.10.1](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10101-release-notes.md). |
+| FULL_COLLATION_NAME | Name of the associated character set/collation combination. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
+| ID | The unique identifier of this character set/collation combination. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
+| IS_DEFAULT | If the collation is the default for this character set. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
 
 
 

@@ -207,7 +207,7 @@ authenticator_options=match_host=false
 Integer, default value is 0. Controls database name matching for authentication
 when an incoming client logs in to a non-empty database. The setting functions
 similar to the MariaDB Server setting
-[lower_case_table_names](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md)
+[lower_case_table_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables)
 and should be set to the value used by the backends.
 
 

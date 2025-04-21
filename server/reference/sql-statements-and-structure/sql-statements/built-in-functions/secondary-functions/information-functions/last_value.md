@@ -22,10 +22,10 @@ LAST_VALUE(expr) OVER (
 `LAST_VALUE()` evaluates all expressions and returns the last.
 
 
-This is useful together with [setting user variables to a value with @var:=expr](../../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md), for example when you want to get data of rows updated/deleted without having to do two queries against the table.
+This is useful together with [setting user variables to a value with @var:=expr](../../../administrative-sql-statements/set-commands/set.md), for example when you want to get data of rows updated/deleted without having to do two queries against the table.
 
 
-LAST_VALUE can be used as a [window function](../../special-functions/window-functions/window-functions-overview.md).
+LAST_VALUE can be used as a [window function](../../special-functions/window-functions/README.md).
 
 
 Returns NULL if no last value exists.
@@ -46,7 +46,7 @@ SELECT @a,@b;
 +------+------+
 ```
 
-As a [window function](../../special-functions/window-functions/window-functions-overview.md):
+As a [window function](../../special-functions/window-functions/README.md):
 
 
 ```
@@ -130,5 +130,5 @@ FROM t1;
 ## See Also
 
 
-* [Setting a variable to a value](../../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md)
+* [Setting a variable to a value](../../../administrative-sql-statements/set-commands/set.md)
 

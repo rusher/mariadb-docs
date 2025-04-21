@@ -11,7 +11,7 @@ ps_trace_thread(thread_id, outfile, max_runtime, interval, start_fresh, auto_set
 ## Description
 
 
-`ps_trace_thread` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`ps_trace_thread` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../README.md).
 
 
 Parameters:
@@ -29,7 +29,7 @@ Parameters:
 Dumps all Performance Schema data for an instrumented thread to a .dot formatted graph file (for use with the [DOT graph description language](https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29)). All returned result sets should be used for a complete graph.
 
 
-Session [binary logging](../../../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is disabled during execution, by adjusting the [sql_log_bin](../../../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#sql_log_bin) session value (note the permissions required).
+Session [binary logging](../../../../../../../server-management/server-monitoring-logs/binary-log/README.md) is disabled during execution, by adjusting the [sql_log_bin](../../../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#sql_log_bin) session value (note the permissions required).
 
 
 ## Examples

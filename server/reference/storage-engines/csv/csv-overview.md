@@ -4,7 +4,7 @@
 The CSV Storage Engine can read and append to files stored in CSV (comma-separated-values) format.
 
 
-However, since [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), a better storage engine is able to read and write such files: [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md).
+However, since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), a better storage engine is able to read and write such files: [CONNECT](../connect/README.md).
 
 
 ## The CSV storage engine and logging to tables
@@ -43,8 +43,8 @@ The `.CSM` file stores metadata about the table such as the state and the number
 * CSV tables do not support indexing.
 * CSV tables cannot be partitioned.
 * Columns in CSV tables must be declared as NOT NULL.
-* No [transactions](../../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md).
-* The original CSV-format does not enable IETF-compatible parsing of embedded quote and comma characters. From [MariaDB 10.1.8](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes.md), it is possible to do so by setting the [IETF_QUOTES](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#ietf_quotes) option when creating a table.
+* No [transactions](../../sql-statements-and-structure/sql-statements/transactions/README.md).
+* The original CSV-format does not enable IETF-compatible parsing of embedded quote and comma characters. From [MariaDB 10.1.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes), it is possible to do so by setting the [IETF_QUOTES](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#ietf_quotes) option when creating a table.
 
 
 ## Examples

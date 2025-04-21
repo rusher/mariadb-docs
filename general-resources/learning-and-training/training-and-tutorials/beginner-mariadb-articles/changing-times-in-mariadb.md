@@ -28,7 +28,7 @@ CURDATE(), CURTIME(),
 SEC_TO_TIME(TIME_TO_SEC(CURTIME()) + 7200));
 ```
 
-If you're unfamiliar with [INSERT](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements and the use of script variables (e.g., $client_id), you may want to go back and read an earlier article ([MariaDB Basics](mariadb-basics.md)) in this series which explains both. For the purposes of this article, however, let's focus on the minor formula in the SQL statement above for calculating the promised time, the last line. The [TIME_TO_SEC( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/time_to_sec.md) function converts a time to seconds so that a calculation may be performed. In this case, the current time is converted to seconds. The formula above then adds 7200 seconds (which is two hours) to that. In order to insert the seconds sum into a time column (i.e., promised), it needs to be converted to a time format. Hence, the calculation is wrapped up in the [SEC_TO_TIME( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sec_to_time.md) function.
+If you're unfamiliar with [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statements and the use of script variables (e.g., $client_id), you may want to go back and read an earlier article ([MariaDB Basics](mariadb-basics.md)) in this series which explains both. For the purposes of this article, however, let's focus on the minor formula in the SQL statement above for calculating the promised time, the last line. The [TIME_TO_SEC( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/time_to_sec) function converts a time to seconds so that a calculation may be performed. In this case, the current time is converted to seconds. The formula above then adds 7200 seconds (which is two hours) to that. In order to insert the seconds sum into a time column (i.e., promised), it needs to be converted to a time format. Hence, the calculation is wrapped up in the [SEC_TO_TIME( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sec_to_time) function.
 
 
 As nice as the SQL statement above is, a problem arises when a customer runs it at 11:00 p.m (or 23:00 in MariaDB time) and the promised time is to be two hours later. The SQL statement above will calculate a promised time of 25:00. What time is that in human or computer terms? As humans, we know that it's meant to be 1:00 a.m., but MariaDB will need this clarified. One solution would be to place the time formula above inside of an IF clause in MariaDB. To do this, the last line of the SQL statement would be replaced with these lines:
@@ -78,10 +78,10 @@ DROP COLUMN promised_old,
 DROP COLUMN ticket_date;
 ```
 
-The first SQL statement above alters the table to change the names of the time columns temporarily and to add the new columns with datetime types. If we were instead just to change the existing time columns to datetime types without this two step process, the data would be clobbered and reset to all zeros. The next SQL statement copies the values of the ticket_date column and pastes it together with the value of one of the old time columns to come up with the new date and time value for the entered and promised dates and times. The flaw in this statement, of course, is that it doesn't deal with the problems with some promised times that the previous layout caused. In fact, it reinforces it by giving a 1:00 a.m. promised time the date of the entered time. This will either have to be fixed manually if it's important to the developer, or with a script that will compare the two time columns. Either way, it's a little out of the scope of this article, so we'll move on. The last SQL statement above deletes the old time columns and the old date column now that the data has been migrated. By the way, it's a good practice to backup the data before altering a table. Also, you probably would run a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement before the last SQL statement above to check the migrated data before dropping the old columns.
+The first SQL statement above alters the table to change the names of the time columns temporarily and to add the new columns with datetime types. If we were instead just to change the existing time columns to datetime types without this two step process, the data would be clobbered and reset to all zeros. The next SQL statement copies the values of the ticket_date column and pastes it together with the value of one of the old time columns to come up with the new date and time value for the entered and promised dates and times. The flaw in this statement, of course, is that it doesn't deal with the problems with some promised times that the previous layout caused. In fact, it reinforces it by giving a 1:00 a.m. promised time the date of the entered time. This will either have to be fixed manually if it's important to the developer, or with a script that will compare the two time columns. Either way, it's a little out of the scope of this article, so we'll move on. The last SQL statement above deletes the old time columns and the old date column now that the data has been migrated. By the way, it's a good practice to backup the data before altering a table. Also, you probably would run a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement before the last SQL statement above to check the migrated data before dropping the old columns.
 
 
-Having changed the column types, we can now use the function [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md), which can deal with times that exceed twenty-four hours so that the problem with times straddling the midnight hour won't reoccur. Therefore, our on-going SQL statement becomes this:
+Having changed the column types, we can now use the function [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add), which can deal with times that exceed twenty-four hours so that the problem with times straddling the midnight hour won't reoccur. Therefore, our on-going SQL statement becomes this:
 
 
 ```
@@ -93,10 +93,10 @@ NOW(),
 DATE_ADD(NOW(), INTERVAL 2 HOUR));
 ```
 
-First notice that the field ticket_date was eliminated and [CURTIME()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curtime.md) was replaced with [NOW( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md), which provides the date and time in one. In the last line we see [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md): an interval of two hours is added to the date and time now (or rather when the record is created). If the time rolls into the next day, then the date is advanced by one and the correct hour is set accordingly.
+First notice that the field ticket_date was eliminated and [CURTIME()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curtime) was replaced with [NOW( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now), which provides the date and time in one. In the last line we see [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add): an interval of two hours is added to the date and time now (or rather when the record is created). If the time rolls into the next day, then the date is advanced by one and the correct hour is set accordingly.
 
 
-The [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md) function will also allow for the addition of minutes. The directive `HOUR` would be replaced with `MINUTE`. To add both hours and minutes (e.g., two hours and thirty minutes), the last line of the SQL statement above could read like this:
+The [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add) function will also allow for the addition of minutes. The directive `HOUR` would be replaced with `MINUTE`. To add both hours and minutes (e.g., two hours and thirty minutes), the last line of the SQL statement above could read like this:
 
 
 ```
@@ -113,7 +113,7 @@ If the time in which the statement is run is 11:00 p.m., the result would be 1:3
 The dilemma that can occur with calculations involving hours that wrap around the clock, can similarly occur with calculations involving days that roll into a new month. This problem was fairly easy to resolve with an arithmetic operator when dealing with a constant like the number of seconds in a day. However, a formula to deal with the various number of days in each month would be very lengthy. For instance, if we were simply to add five days to the date February 27, we would get February 32. Imagine trying to create an SQL statement to figure out whether that's supposed to be March 1, 2, 3, or 4--depending on whether the previous month is a regular month with 30 or 31 days, or the one irregular month with 28 or 29 days, depending on the year.
 
 
-Fortunately (as you probably have already guessed), [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md) will solve the month dilemma, as well. If instead of promising that tickets will be resolved within a couple hours of the time they are entered, we promise resolution within five days, the SQL statement would look like this:
+Fortunately (as you probably have already guessed), [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add) will solve the month dilemma, as well. If instead of promising that tickets will be resolved within a couple hours of the time they are entered, we promise resolution within five days, the SQL statement would look like this:
 
 
 ```
@@ -125,10 +125,10 @@ NOW(),
 DATE_ADD(NOW(), INTERVAL 5 DAY));
 ```
 
-If this statement is run on February 27, then the value of promised would be March 3 or 4, depending on whether it is a leap year. Which one will be determined by the [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md) function, requiring no fancy formula.
+If this statement is run on February 27, then the value of promised would be March 3 or 4, depending on whether it is a leap year. Which one will be determined by the [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add) function, requiring no fancy formula.
 
 
-Just as hours and minutes can be mixed with [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md), days and hours can be mixed, as well. To make the value of promised two days and six hours from now, the last line of the SQL statement above would read like this:
+Just as hours and minutes can be mixed with [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add), days and hours can be mixed, as well. To make the value of promised two days and six hours from now, the last line of the SQL statement above would read like this:
 
 
 ```
@@ -136,7 +136,7 @@ Just as hours and minutes can be mixed with [DATE_ADD( )](../../../../server/ref
 DATE_ADD(NOW(), INTERVAL '2 6' DAY_HOUR));
 ```
 
-The function [DATE_ADD( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add.md) will also allow the addition of months and of years. For instance, to increase the date by one year and two months, the SQL statement would be adjusted to look like this:
+The function [DATE_ADD( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_add) will also allow the addition of months and of years. For instance, to increase the date by one year and two months, the SQL statement would be adjusted to look like this:
 
 
 ```
@@ -144,7 +144,7 @@ The function [DATE_ADD( )](../../../../server/reference/sql-statements-and-struc
 DATE_ADD(NOW(), INTERVAL '1 2' YEAR_MONTH));
 ```
 
-This increases the year by one and the month by two. These intervals have no effect on time or day values, though. So, if the value of [NOW( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) is `2017-09-15 23:00`, then the value of promised would become 2018-11-15 23:00, regardless of whether next year is a leap year and regardless of the number of days in each intervening month.
+This increases the year by one and the month by two. These intervals have no effect on time or day values, though. So, if the value of [NOW( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now) is `2017-09-15 23:00`, then the value of promised would become 2018-11-15 23:00, regardless of whether next year is a leap year and regardless of the number of days in each intervening month.
 
 
 ##### Stepping Back
@@ -158,7 +158,7 @@ It stands to reason that if one wants to add days to the current date, then one 
 DATE_ADD(NOW(), INTERVAL -5 DAY));
 ```
 
-This will give a value five days before the current date. An alternative would be to use the [DATE_SUB( )](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_sub.md) function which subtracts from the date given. The above amendment (subtracting five days from the current date) could be entered like so:
+This will give a value five days before the current date. An alternative would be to use the [DATE_SUB( )](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/date_sub) function which subtracts from the date given. The above amendment (subtracting five days from the current date) could be entered like so:
 
 
 ```

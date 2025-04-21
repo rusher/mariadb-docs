@@ -20,7 +20,7 @@ Going from one configuration to another will require a re-installation of the Ma
 The following is a transcript of a typical runs of the MariaDB ColumnStore configuration/install scripts. Plain-text formatting indicates output from the script and bold text indicates responses to questions. After each question there is a short discussion of what the question is asking and what some typical answers might be. You will not see these discussions the running the actual configuration script.
 
 
-NOTE: You can install MariaDB ColumnStore as a root user or non-root user. This is based on how you setup the servers based on "Preparing for Installation Document". If installing as root, you need to be logged in as root user in a root login shell. If you are installing as non-root, you need to be logged in as a non-root user that was setup in the ["Preparing for Installation Document"](../preparing-and-installing-mariadb-columnstore-11x/preparing-for-columnstore-installation-11x.md)
+NOTE: You can install MariaDB ColumnStore as a root user or non-root user. This is based on how you setup the servers based on "Preparing for Installation Document". If installing as root, you need to be logged in as root user in a root login shell. If you are installing as non-root, you need to be logged in as a non-root user that was setup in the ["Preparing for Installation Document"](preparing-for-columnstore-installation-10x.md)
 
 
  

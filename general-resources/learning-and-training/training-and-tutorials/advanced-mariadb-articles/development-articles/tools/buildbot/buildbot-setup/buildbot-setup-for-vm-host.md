@@ -3,7 +3,7 @@
 
 This page documents the general setup process for a server that is acting as
 virtual machine host, like those documented in the
-[Buildbot Setup for Virtual Machines](buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md)
+[Buildbot Setup for Virtual Machines](buildbot-setup-for-virtual-machines/README.md)
 section.
 
 

@@ -1,7 +1,7 @@
 
 # Building MyRocks in MariaDB
 
-This page describes how to get [MyRocks in MariaDB](myrocks-in-mariadb-102-vs-mariadb-103.md) when compiling MariaDB from source.
+This page describes how to get [MyRocks in MariaDB](README.md) when compiling MariaDB from source.
 
 
 (See [Build-Steps](https://github.com/facebook/mysql-5.6/wiki/Build-Steps) for instructions how to build the upstream)
@@ -10,7 +10,7 @@ This page describes how to get [MyRocks in MariaDB](myrocks-in-mariadb-102-vs-ma
 ## Build Process and Requirements
 
 
-MariaDB compile process will compile [MyRocks](myrocks-in-mariadb-102-vs-mariadb-103.md) into `ha_rocksdb.so` by default if the platform supports it (That is, no WITH_ROCKSDB switch is necessary).
+MariaDB compile process will compile [MyRocks](README.md) into `ha_rocksdb.so` by default if the platform supports it (That is, no WITH_ROCKSDB switch is necessary).
 
 
 Platform requirements:

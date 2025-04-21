@@ -2,7 +2,7 @@
 # SHOW CATALOGS
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
@@ -19,7 +19,7 @@ SHOW CATALOGS
 ## Description
 
 
-`SHOW CATALOGS` lists the [catalogs](catalogs-overview.md) on the MariaDB server host.
+`SHOW CATALOGS` lists the [catalogs](README.md) on the MariaDB server host.
 The `LIKE` clause, if present on its own, indicates which catalog names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/extended-show.md).
 
 
@@ -65,4 +65,3 @@ SHOW CATALOGS LIKE 'c%';
 * [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Information Schema CATALOG Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-catalog-table.md)
 
-<span></span>

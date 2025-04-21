@@ -150,7 +150,7 @@ CAVEAT UTILITOR. Check the manual before running!
 * `bzr revert` is `git reset --hard`
 * `bzr revert filename` is `git checkout filename`
 * `bzr parent` is `git remote -v` (but there are more detailed commands)
-* `bzr parent to-default-mariadb-repo ` git remote set-url origin git@github.com:MariaDB/server.git
+* `bzr parent to-default-mariadb-repo` git remote set-url origin git@github.com:MariaDB/server.git
 * `bzr push` is `git push REMOTENAME BRANCHNAME`. REMOTENAME is typically "origin", for example: `git push origin HEAD:10.3-new-feature`. The HEAD: stands for "from current branch".
 * `bzr clean-tree --ignored` is `git clean -Xdf` (note the capital X!)
 * `bzr root` is `git rev-parse --show-toplevel`

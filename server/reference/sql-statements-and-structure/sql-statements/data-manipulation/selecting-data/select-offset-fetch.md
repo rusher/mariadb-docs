@@ -2,8 +2,8 @@
 # SELECT ... OFFSET ... FETCH
 
 
-##### MariaDB starting with [10.6.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-`SELECT ... OFFSET ... FETCH` was introduced in [MariaDB 10.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md).
+##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+`SELECT ... OFFSET ... FETCH` was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 ## Syntax
@@ -85,7 +85,7 @@ SELECT i FROM t1 ORDER BY i ASC OFFSET 1 ROWS FETCH FIRST 3 ROWS ONLY;
 +------+
 ```
 
-The same outcome can also be achieved with the [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause:
+The same outcome can also be achieved with the [LIMIT](limit.md) clause:
 
 
 ```
@@ -117,7 +117,7 @@ SELECT i FROM t1 ORDER BY i ASC OFFSET 1 ROWS FETCH FIRST 3 ROWS WITH TIES;
 ## See Also
 
 
-* [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](select.md)
 

@@ -12,7 +12,7 @@ DROP ROLE [IF EXISTS] role_name [,role_name ...]
 ## Description
 
 
-The `DROP ROLE` statement removes one or more MariaDB [roles](../../../../security/user-account-management/roles/roles_overview.md). To use this
+The `DROP ROLE` statement removes one or more MariaDB [roles](../../../../security/user-account-management/roles/README.md). To use this
 statement, you must have the global [CREATE USER](grant.md#create-user) privilege or
 the [DELETE](grant.md#table-privileges) privilege for the mysql database.
 

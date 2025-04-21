@@ -82,13 +82,13 @@ contains all module specific configuration options and detailed explanations
 of their use.
 
 
-* [Avrorouter](maxscale-tutorials/mariadb-maxscale-23-avrorouter-tutorial.md)
+* [Avrorouter](maxscale-23-routers/mariadb-maxscale-23-avrorouter.md)
 * [Binlogrouter](maxscale-23-routers/mariadb-maxscale-23-binlogrouter.md)
 * [HintRouter](maxscale-23-routers/mariadb-maxscale-23-hintrouter.md)
 * [Read Connection Router](maxscale-23-routers/mariadb-maxscale-23-readconnroute.md)
 * [Read Write Split](maxscale-23-routers/mariadb-maxscale-23-readwritesplit.md)
 * [Schemarouter](maxscale-23-routers/mariadb-maxscale-23-schemarouter-router.md)
-* [Cat](../../server/security/user-account-management/catalogs/catalog-specific-functions-and-variables.md)
+* [Cat](../mariadb-maxscale-21-06/README.md)
 
 
 There are also two diagnostic routing modules. The CLI is for MaxAdmin and

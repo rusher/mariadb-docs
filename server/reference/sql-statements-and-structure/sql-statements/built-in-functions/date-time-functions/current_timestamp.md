@@ -19,5 +19,5 @@ CURRENT_TIMESTAMP([precision])
 
 
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
-* The [TIMESTAMP](timestamp-function.md) data type
+* The [TIMESTAMP](../../../../data-types/date-and-time-data-types/timestamp.md) data type
 

@@ -1,7 +1,7 @@
 
 # LevelDB Storage Engine Development
 
-Items that are considered for development of [LevelDB Storage Engine](leveldb-storage-engine-ms2.md) after [Milestone #1](leveldb-storage-engine-ms1.md) is complete.
+Items that are considered for development of [LevelDB Storage Engine](leveldb.md) after [Milestone #1](leveldb-storage-engine-ms1.md) is complete.
 
 
 
@@ -31,7 +31,7 @@ With this:
 
 
 * Renaming a table is very slow. This is a problem, because ALTER TABLE assumes table rename is a fast, O(1) operation.
-* DROP TABLE needs to delete every row, it is not possible to do the deletions later in the background. If one wants to run ` DROP TABLE t; CREATE TABLE t; ...` then CREATE TABLE will have to wait until DROP has truly finished.
+* DROP TABLE needs to delete every row, it is not possible to do the deletions later in the background. If one wants to run `DROP TABLE t; CREATE TABLE t; ...` then CREATE TABLE will have to wait until DROP has truly finished.
 * Dropping a table and creating another table with a different DDL causes deleted records of the first table to be compared with DDL of the second. This particular issue (but not others) can be avoided if we switch to keys that are compared with memcmp().
 
 

@@ -65,7 +65,7 @@ I do understand, sysbench it does not resemble anything that real-life load, and
 What do I refer to as durability cheating:
 
 
-1. using [innodb_flush_log_at_trx_commit=0](../../../../../../../../server/reference/storage-engines/innodb/innodb-system-variables.md) , which, for me , is ok for many scenarios
+1. using [innodb_flush_log_at_trx_commit=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) , which, for me , is ok for many scenarios
 1. "Switch off Windows disk flushing" setting, which has the effect of not flushing data in the disk controller (file system caching is not used here anyway). This setting is only recommended for battery backed disks, my own desktop does not have it, of course.
 
 

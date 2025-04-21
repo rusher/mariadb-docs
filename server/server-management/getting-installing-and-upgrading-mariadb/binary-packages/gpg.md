@@ -76,7 +76,7 @@ sudo rpmkeys --import https://supplychain.mariadb.com/MariaDB-Server-GPG-KEY
 ## Configuring Repositories
 
 
-See the [this page](../../../../connectors/mariadb-connector-r2dbc/using-the-spring-data-framework-with-mariadb-connector-r2dbc/repositories-with-mariadb-connector-r2dbc-spring-data.md#configure-mariadb-repository) for details on using the `mariadb_repo_setup` script to configure repositories that use these keys.
+See the [this page](https://mariadb.com/kb/en/repo/#configure-mariadb-repository) for details on using the `mariadb_repo_setup` script to configure repositories that use these keys.
 
 
 See the [this page](https://downloads.mariadb.org/mariadb/repositories/) for details on configuring MariaDB Foundation repositories that use these keys.

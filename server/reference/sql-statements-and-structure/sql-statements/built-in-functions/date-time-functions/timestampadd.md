@@ -21,7 +21,7 @@ with a prefix of SQL_TSI_. For example, DAY and SQL_TSI_DAY both are
 legal.
 
 
-Before [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), FRAC_SECOND was permitted as a synonym for MICROSECOND.
+Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), FRAC_SECOND was permitted as a synonym for MICROSECOND.
 
 
 ## Examples

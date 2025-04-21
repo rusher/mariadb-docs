@@ -5,10 +5,10 @@
 Normally, adding a column to a table requires the full table to be rebuilt. The complexity of the operation is proportional to the size of the table, or O(n·m) where n is the number of rows in the table and m is the number of indexes.
 
 
-In [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and later, the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement supports [online DDL](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#online-ddl) for storage engines that have implemented the relevant online DDL [algorithms](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) and [locking strategies](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#lock).
+In [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and later, the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement supports [online DDL](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#online-ddl) for storage engines that have implemented the relevant online DDL [algorithms](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) and [locking strategies](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock).
 
 
-The [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine has implemented online DDL for many operations. These online DDL optimizations allow concurrent DML to the table in many cases, even if the table needs to be rebuilt.
+The [InnoDB](../README.md) storage engine has implemented online DDL for many operations. These online DDL optimizations allow concurrent DML to the table in many cases, even if the table needs to be rebuilt.
 
 
 See [InnoDB Online DDL Overview](innodb-online-ddl-overview.md) for more information about online DDL with InnoDB.
@@ -17,10 +17,10 @@ See [InnoDB Online DDL Overview](innodb-online-ddl-overview.md) for more informa
 Allowing concurrent DML during the operation does not solve all problems. When a column was added to a table with the older in-place optimization, the resulting table rebuild could still significantly increase the I/O and memory consumption and cause replication lag.
 
 
-In contrast, with the new instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column), all that is needed is an O(1) operation to insert a special hidden record into the table, and an update of the data dictionary. For a large table, instead of taking several hours, the operation would be completed in the blink of an eye. The [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column) operation is only slightly more expensive than a regular [INSERT](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), due to locking constraints.
+In contrast, with the new instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column), all that is needed is an O(1) operation to insert a special hidden record into the table, and an update of the data dictionary. For a large table, instead of taking several hours, the operation would be completed in the blink of an eye. The [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) operation is only slightly more expensive than a regular [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md), due to locking constraints.
 
 
-In the past, some developers may have implemented a kind of "instant add column" in the application by encoding multiple columns in a single [TEXT](../../../data-types/string-data-types/text.md) or [BLOB](../../../data-types/string-data-types/blob.md) column. MariaDB [Dynamic Columns](../../../sql-statements-and-structure/nosql/dynamic-columns-api.md) was an early example of that. A more recent example is [JSON](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md) and related string manipulation functions.
+In the past, some developers may have implemented a kind of "instant add column" in the application by encoding multiple columns in a single [TEXT](../../../data-types/string-data-types/text.md) or [BLOB](../../../data-types/string-data-types/blob.md) column. MariaDB [Dynamic Columns](../../../sql-statements-and-structure/nosql/dynamic-columns.md) was an early example of that. A more recent example is [JSON](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md) and related string manipulation functions.
 
 
 Adding real columns has the following advantages over encoding columns into a single "expandable" column:
@@ -34,37 +34,37 @@ Adding real columns has the following advantages over encoding columns into a si
 * Triggers can be written more easily
 
 
-With instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column), you can enjoy all the benefits of structured storage without the drawback of having to rebuild the table.
+With instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column), you can enjoy all the benefits of structured storage without the drawback of having to rebuild the table.
 
 
-Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column) is available for both old and new InnoDB tables. Basically you can just upgrade from MySQL 5.x or MariaDB and start adding columns instantly.
+Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) is available for both old and new InnoDB tables. Basically you can just upgrade from MySQL 5.x or MariaDB and start adding columns instantly.
 
 
-Columns instantly added to a table exist in a separate data structure from the main table definition, similar to how InnoDB separates `BLOB` columns. If the table ever becomes empty, (such as from [TRUNCATE](../../../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) or [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements), InnoDB incorporates the instantly added columns into the main table definition. See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Non-canonical Storage Format Caused by Some Operations](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more information.
+Columns instantly added to a table exist in a separate data structure from the main table definition, similar to how InnoDB separates `BLOB` columns. If the table ever becomes empty, (such as from [TRUNCATE](../../../sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate.md) or [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements), InnoDB incorporates the instantly added columns into the main table definition. See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Non-canonical Storage Format Caused by Some Operations](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more information.
 
 
-The operation is also crash safe. If the server is killed while executing an instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column), when the table is restored InnoDB integrates the new column, flattening the table definition.
+The operation is also crash safe. If the server is killed while executing an instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column), when the table is restored InnoDB integrates the new column, flattening the table definition.
 
 
 ## Limitations
 
 
-* In [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column) only applies when the added columns appear last in the table. The place specifier `LAST` is the default. If `AFTER` col is specified, then col must be the last column, or the operation will require the table to be rebuilt. In [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this restriction was lifted.
+* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) only applies when the added columns appear last in the table. The place specifier `LAST` is the default. If `AFTER` col is specified, then col must be the last column, or the operation will require the table to be rebuilt. In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this restriction was lifted.
 
 
-* If the table contains a hidden `FTS_DOC_ID` column due to a [FULLTEXT INDEX](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md), then instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column) will not be possible.
+* If the table contains a hidden `FTS_DOC_ID` column due to a [FULLTEXT INDEX](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md), then instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) will not be possible.
 
 
-* InnoDB data files after instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column) cannot be imported to older versions of MariaDB or MySQL without first being rebuilt.
+* InnoDB data files after instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) cannot be imported to older versions of MariaDB or MySQL without first being rebuilt.
 
 
-* After using Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column), any table-rebuilding operation such as [ALTER TABLE … FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#force) will incorporate instantaneously added columns into the main table body.
+* After using Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column), any table-rebuilding operation such as [ALTER TABLE … FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#force) will incorporate instantaneously added columns into the main table body.
 
 
-* Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#add-column) is not available for [ROW_FORMAT=COMPRESSED](../innodb-row-formats/innodb-row-formats-overview.md).
+* Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) is not available for [ROW_FORMAT=COMPRESSED](../innodb-row-formats/innodb-row-formats-overview.md).
 
 
-* In [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), [ALTER TABLE … DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#drop-column) requires the table to be rebuilt. In [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this restriction was lifted.
+* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), [ALTER TABLE … DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) requires the table to be rebuilt. In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this restriction was lifted.
 
 
 ## Example

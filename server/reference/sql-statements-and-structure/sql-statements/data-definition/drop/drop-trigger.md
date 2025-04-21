@@ -12,7 +12,7 @@ DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name
 ## Description
 
 
-This statement drops a [trigger](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md). The schema (database) name is optional. If the
+This statement drops a [trigger](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md). The schema (database) name is optional. If the
 schema is omitted, the trigger is dropped from the default schema.
 Its use requires the `TRIGGER` privilege for the table associated with the trigger.
 
@@ -29,8 +29,8 @@ when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/
 
 
 
-##### MariaDB starting with [10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-[MariaDB 10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../atomic-ddl.md) and `DROP TRIGGER` is atomic.
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../atomic-ddl.md) and `DROP TRIGGER` is atomic.
 
 
 ## Examples

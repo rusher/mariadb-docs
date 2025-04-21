@@ -412,7 +412,7 @@ added back to all the services where it was removed from.
 A new experimental router module, `cat`, was added to the
 `maxscale-experimental` package. The `cat` router is a special router that
 concatenates result sets. For more information and an explanation on how the
-router works, read the [cat documentation](../../../server/security/user-account-management/catalogs/catalog-specific-functions-and-variables.md).
+router works, read the [cat documentation](../../mariadb-maxscale-21-06/README.md).
 
 
 ### REST API Additions

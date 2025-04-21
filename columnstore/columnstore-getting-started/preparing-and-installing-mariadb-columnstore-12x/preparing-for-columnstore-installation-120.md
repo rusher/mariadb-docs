@@ -729,10 +729,10 @@ account just as you would in MariaDB.
 1. Download the package mariadb-columnstore-release#.amd64.deb.tar.gz 
 (DEB 64- BIT) into the /root directory of the server where you are installing MariaDB ColumnStore.
 1. Unpack the tarball, which will generate DEBs. 
-` tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz`
+`tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz`
 1. Install the MariaDB ColumnStore DEBs. The MariaDB ColumnStore software will be installed in /usr/
 local/. 
-` dpkg -i mariadb-columnstore*release#*.deb`
+`dpkg -i mariadb-columnstore*release#*.deb`
 
 
 ### Non-root user installs
@@ -1026,7 +1026,7 @@ This tool is always run on the Performance Module #1.
 Example uses of this script are shown in the Single and Multi Server Installations Guides.
 
 
-`<<<span class="macro_name">code</span><span class="macro_arg_string"></span>>>`
+`<<code>>`
 
 
 1. /usr/local/mariadb/columnstore/bin/postConfigure -h

@@ -32,9 +32,8 @@ See [Delimiters](../../../clients-and-utilities/mariadb-client/delimiters.md) in
 ## See Also
 
 
-* [LOOP in Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [LOOP in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 * [ITERATE](iterate.md)
 * [LEAVE](leave.md)
-* [FOR Loops](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md)
+* [FOR Loops](for.md)
 
-<span></span>

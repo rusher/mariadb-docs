@@ -151,7 +151,7 @@ Copy the Columnstore.xml file from
 
 
 Configure MaxScale according to the
-[CDC tutorial](../../maxscale/mariadb-maxscale-21-06/README.md).
+[CDC tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/).
 
 
 Create a CDC user by executing the following MaxAdmin command on the MaxScale server. Replace the `<service>` with the name of the avrorouter service and `<user>` and `<password>` with the credentials that are to be created.

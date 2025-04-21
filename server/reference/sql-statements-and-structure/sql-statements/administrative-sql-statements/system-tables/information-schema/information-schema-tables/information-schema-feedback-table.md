@@ -1,7 +1,7 @@
 
 # Information Schema FEEDBACK Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `FEEDBACK` table is created when the [Feedback Plugin](../../../../../../plugins/other-plugins/feedback-plugin.md) is enabled, and contains the complete contents submitted by the plugin.
+The [Information Schema](../README.md) `FEEDBACK` table is created when the [Feedback Plugin](../../../../../../plugins/other-plugins/feedback-plugin.md) is enabled, and contains the complete contents submitted by the plugin.
 
 
 It contains two columns:

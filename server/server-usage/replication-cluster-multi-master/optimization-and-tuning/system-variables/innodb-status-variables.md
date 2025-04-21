@@ -5,7 +5,7 @@
 See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md).
 
 
-Much of the [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) information here can also be seen with a [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) statement.
+Much of the [InnoDB](../../../../reference/storage-engines/innodb/README.md) information here can also be seen with a [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) statement.
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -16,12 +16,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
@@ -30,10 +30,10 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * Before the variable was introduced in [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), use the `adaptive_hash_searches` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
+  * Before the variable was introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), use the `adaptive_hash_searches` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -42,26 +42,26 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
 #### `Innodb_adaptive_hash_non_hash_searches`
 
 
-* Description: Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. From [MariaDB 10.6.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes.md), not updated if [innodb_adaptive_hash_index](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is not enabled (the default).
+* Description: Non-hash searches as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. From [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes), not updated if [innodb_adaptive_hash_index](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is not enabled (the default).
 
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present. Use the `adaptive_hash_searches_btree` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
-  * From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable is present.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present. Use the `adaptive_hash_searches_btree` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
+  * From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable is present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-* Removed: [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+* Removed: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
@@ -71,7 +71,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of async read I/O operations currently in progress (from SUBMITTED to COMPLETED). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -81,7 +81,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Current size of the async I/O read queue. See [InnoDB Asynchronous I/O Queuing Mechanism](#queuing-mechanism).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -91,7 +91,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of async read I/O operations currently in the EXECUTING_COMPLETION_TASK state. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -101,7 +101,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Total number of async read completion tasks that have finished execution. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -111,7 +111,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Total number of async read operations that were queued. Includes those still waiting and making up [innodb_async_reads_queue_size](#innodb_async_reads_queue_size). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -121,7 +121,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Total wait time for a free I/O slot (see Waiting for IO Slots). See [InnoDB Asynchronous I/O Waiting for IO Slots](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md#waiting-for-io-slots).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -131,7 +131,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of async write I/O operations currently in progress (from SUBMITTED to COMPLETED). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -141,7 +141,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Current size of the async I/O write queue. See [InnoDB Asynchronous I/O Queuing Mechanism](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md#queuing-mechanism).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -151,7 +151,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of async write I/O operations currently in the EXECUTING_COMPLETION_TASK state. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -161,7 +161,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Total number of async write completion tasks that have finished execution. See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -171,7 +171,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Total number of async write operations that were queued. Includes those still waiting and making up [innodb_async_writes_queue_size](#innodb_async_writes_queue_size). See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -181,7 +181,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [InnoDB Asynchronous I/O](../../../../reference/storage-engines/innodb/innodb-asynchronous-io.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -199,12 +199,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -232,7 +232,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: A text description of the progress or final status of the last Innodb buffer pool dump.
 * Scope: Global
 * Data Type: `string`
-* Introduced: [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Introduced: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
@@ -242,7 +242,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Whether or not the loaded buffer pool is incomplete, for example after a shutdown or abort during innodb buffer pool load from file caused an incomplete save.
 * Scope: Global
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.3.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md)
+* Introduced: [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes)
 
 
 
@@ -252,7 +252,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: A text description of the progress or final status of the last Innodb buffer pool load.
 * Scope: Global
 * Data Type: `string`
-* Introduced: [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md)
+* Introduced: [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes)
 
 
 
@@ -288,12 +288,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Flush list as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -303,7 +303,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Monitor the number of pages that were freed by a buffer pool LRU eviction scan, without flushing.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -321,12 +321,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Pages not young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -335,12 +335,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Pages made young as shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -358,12 +358,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Old database page, as shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present for XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present for XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -427,7 +427,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Progress of the dynamic [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](setting-innodb-buffer-pool-size-dynamically.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)
+* Introduced: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)
 
 
 
@@ -455,7 +455,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -465,7 +465,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of bulk insert operations to InnoDB tables.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.6.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md)
+* Introduced: [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes)
 
 
 
@@ -474,12 +474,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: The amount of data written to the InnoDB redo log since the last checkpoint, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. (This is equivalent to subtracting "Last checkpoint at" from "Log sequence number", cf the [RedoLog details](../../../../reference/storage-engines/innodb/innodb-redo-log.md#determining-the-checkpoint-age)). Despite the name ("age"), the value is not a duration, but really an amount of data (in bytes) !
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -488,23 +488,23 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Max checkpoint age, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
 #### `Innodb_checkpoint_target_age`
 
 
-* Description: Checkpoint age target, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only. Removed in [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and replaced with MySQL 5.6's flushing implementation.
+* Description: Checkpoint age target, as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and replaced with MySQL 5.6's flushing implementation.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -514,7 +514,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Renamed from [InnoDB_row_lock_numbers](#innodb_row_lock_numbers) in XtraDB 5.5.8-20.1.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -584,7 +584,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_data_written`
 
 
-* Description: Number of InnoDB bytes written since server startup. From [MariaDB 10.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), no longer includes writes to the redo log file `ib_logfile0`, which continue to be counted by [Innodb_os_log_written](#innodb_os_log_written). An error in counting was introduced in [MariaDB 10.5.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md) until [MariaDB 10.5.20](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-20-release-notes.md), [MariaDB 10.6.13](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-13-release-notes.md), [MariaDB 10.8.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes.md), [MariaDB 10.9.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-10-9-6-release-notes.md), [MariaDB 10.10.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-4-release-notes.md) and [MariaDB 10.11.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes.md) ([MDEV-31124](https://jira.mariadb.org/browse/MDEV-31124)) in which writes via the doublewrite buffer started to be counted incorrectly, without multiplying them by innodb_page_size. A workaround for the error could be the following formulae: real_data_written = Innodb_data_written + (innodb_page_size - 1) * Innodb_dblwr_pages_writteninnodb_written = real_data_written + Innodb_os_log_written
+* Description: Number of InnoDB bytes written since server startup. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), no longer includes writes to the redo log file `ib_logfile0`, which continue to be counted by [Innodb_os_log_written](#innodb_os_log_written). An error in counting was introduced in [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes) until [MariaDB 10.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-20-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-13-release-notes), [MariaDB 10.8.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes), [MariaDB 10.9.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-6-release-notes), [MariaDB 10.10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-4-release-notes) and [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes) ([MDEV-31124](https://jira.mariadb.org/browse/MDEV-31124)) in which writes via the doublewrite buffer started to be counted incorrectly, without multiplying them by innodb_page_size. A workaround for the error could be the following formulae: real_data_written = Innodb_data_written + (innodb_page_size - 1) * Innodb_dblwr_pages_writteninnodb_written = real_data_written + Innodb_os_log_written
 * Scope: Global
 * Data Type: `numeric`
 
@@ -613,12 +613,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Total number of InnoDB deadlocks. Deadlocks occur when at least two transactions are waiting for the other to finish, creating a circular dependency. InnoDB usually detects these quickly, returning an error.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -628,7 +628,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of defragment re-compression failures. See [Defragmenting InnoDB Tablespaces](../optimizing-tables/defragmenting-innodb-tablespaces.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -638,7 +638,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of defragment operations. See [Defragmenting InnoDB Tablespaces](../optimizing-tables/defragmenting-innodb-tablespaces.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -648,7 +648,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of defragment failures. See [Defragmenting InnoDB Tablespaces](../optimizing-tables/defragmenting-innodb-tablespaces.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)
+* Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 
 
@@ -659,7 +659,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: XtraDB 5.0.77-b13
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -669,7 +669,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.28](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes.md), [MariaDB 10.2.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md), [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Introduced: [MariaDB 10.1.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes), [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
@@ -679,7 +679,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.28](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes.md), [MariaDB 10.2.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md), [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Introduced: [MariaDB 10.1.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes), [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
@@ -689,7 +689,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.28](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes.md), [MariaDB 10.2.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md), [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Introduced: [MariaDB 10.1.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes), [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
@@ -699,7 +699,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.28](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes.md), [MariaDB 10.2.9](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md), [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Introduced: [MariaDB 10.1.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10128-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes), [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
@@ -709,7 +709,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.26](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md)
+* Introduced: [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes)
 
 
 
@@ -719,17 +719,17 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.26](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10226-release-notes.md), [MariaDB 10.3.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10317-release-notes.md), [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md)
+* Introduced: [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes)
 
 
 
 #### `Innodb_encryption_num_key_requests`
 
 
-* Description: Was not present in [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+* Description: Was not present in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -739,7 +739,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
+* Removed: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 
 
@@ -749,7 +749,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
+* Removed: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 
 
@@ -759,7 +759,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
+* Removed: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 
 
@@ -769,7 +769,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
+* Removed: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 
 
@@ -779,7 +779,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
+* Removed: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 
 
@@ -798,7 +798,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Whether the server has the bzip2 compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes)
 
 
 
@@ -808,7 +808,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Whether the server has the lz4 compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes)
 
 
 
@@ -818,7 +818,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Whether the server has the lzma compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes)
 
 
 
@@ -828,7 +828,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Whether the server has the lzo compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes)
 
 
 
@@ -838,7 +838,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -848,17 +848,17 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Whether the server has the snappy compression method available. See [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md).
 * Scope: Global
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 
 
 
 #### `Innodb_history_list_length`
 
 
-* Description: History list length as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only until introduced in [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+* Description: History list length as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only until introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -867,12 +867,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -881,12 +881,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -895,12 +895,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -909,12 +909,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -923,12 +923,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -937,12 +937,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -951,12 +951,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -965,12 +965,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -979,12 +979,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -993,12 +993,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the INSERT BUFFER AND ADAPTIVE HASH INDEX section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1008,7 +1008,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Instant ADD COLUMN for InnoDB](../../../../reference/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.3.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)
+* Introduced: [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)
 
 
 
@@ -1044,12 +1044,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1058,12 +1058,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Flushed up to log sequence number as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1072,12 +1072,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Log sequence number last checkpoint as shown in the LOG section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1086,12 +1086,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. 
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1100,12 +1100,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, this status variable is not present
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1114,12 +1114,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.0.9](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md):
+* Introduced: [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
 
 
 
@@ -1128,12 +1128,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, this status variable is not present
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1142,12 +1142,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.0.9](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md):
+* Introduced: [MariaDB 10.0.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1009-release-notes) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
 
 
 
@@ -1156,27 +1156,27 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, this status variable is not present
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, this status variable is not present
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
 #### `Innodb_master_thread_sleeps`
 
 
-* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. XtraDB only.
+* Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) output. XtraDB only.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present. Use the `innodb_master_thread_sleeps` counter in the `[information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md)` table instead.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present. Use the `innodb_master_thread_sleeps` counter in the `[information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md)` table instead.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 
@@ -1185,12 +1185,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1199,12 +1199,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1213,12 +1213,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), and [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), this status variable is not present.
-  * In [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), this status variable was reintroduced.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this status variable is not present.
+  * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (XtraDB-only), [MariaDB 10.5.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (XtraDB-only), [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 
@@ -1227,11 +1227,11 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -1240,11 +1240,11 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Mutex OS waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -1253,11 +1253,11 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Mutex spin rounds as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -1266,11 +1266,11 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Mutex spin waits as shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 
@@ -1280,7 +1280,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes)
 
 
 
@@ -1290,7 +1290,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes)
 
 
 
@@ -1372,8 +1372,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of page encryption errors. See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 10.1.4](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes)
 
 
 
@@ -1382,12 +1382,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1424,7 +1424,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of InnoDB log fsync (sync-to-disk) requests.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
+* Removed: [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 
 
 
@@ -1434,7 +1434,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of pending InnoDB log fsync (sync-to-disk) requests.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
+* Removed: [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 
 
 
@@ -1444,7 +1444,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of pending InnoDB log writes.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
+* Removed: [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 
 
 
@@ -1472,8 +1472,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 512 byte block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1483,8 +1483,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 1K block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1494,8 +1494,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 2K block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1505,8 +1505,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 4K block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-0-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1516,8 +1516,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 8K block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1527,8 +1527,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 16K block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1538,8 +1538,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of TRIM operations performed for the page-compression/NVM Compression workload for the 32K block-size.
 * Scope:
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md), [MariaDB 10.0.15](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) Fusion-io
-* Removed: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
+* Introduced: [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes), [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) Fusion-io
+* Removed: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
 
 
 
@@ -1573,11 +1573,11 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Innodb_pages0_read`
 
 
-* Description: Counter for keeping track of reads of the first page of InnoDB data files, because the original implementation of data-at-rest-encryption for InnoDB introduced new code paths for reading the pages. Removed in [MariaDB 10.4.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md) as the extra reads of the first page were removed, and the encryption subsystem will be initialized whenever we first read the first page of each data file, in fil_node_open_file().
+* Description: Counter for keeping track of reads of the first page of InnoDB data files, because the original implementation of data-at-rest-encryption for InnoDB introduced new code paths for reading the pages. Removed in [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1040-release-notes) as the extra reads of the first page were removed, and the encryption subsystem will be initialized whenever we first read the first page of each data file, in fil_node_open_file().
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md), [MariaDB 10.1.21](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes.md)
-* Removed: [MariaDB 10.4.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md)
+* Introduced: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes), [MariaDB 10.1.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes)
+* Removed: [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1040-release-notes)
 
 
 
@@ -1595,12 +1595,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Purge transaction id as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1609,12 +1609,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1623,12 +1623,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the BUFFER POOL AND MEMORY section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Shows the total of memory in bytes allocated for the InnoDB read view.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5.32](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1647,8 +1647,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of current row locks on InnoDB tables as shown in the TRANSACTIONS section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output. Renamed to [InnoDB_current_row_locks](#innodb_current_row_locks) in XtraDB 5.5.10-20.1.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) / XtraDB 5.5.8-20
-* Removed: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) / XtraDB 5.5.10-20.1
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) / XtraDB 5.5.8-20
+* Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) / XtraDB 5.5.10-20.1
 
 
 
@@ -1694,7 +1694,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows deleted from InnoDB tables that where not system tables. Almost equivalent to [Handler_delete](server-status-variables.md#handler_delete) which does include system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1704,7 +1704,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows inserted into InnoDB tables that where not system tables. No direct equivalent in [Handler](server-status-variables.md#handler_commit) status variables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1714,7 +1714,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows read from InnoDB tables that where not system tables. Almost equivalent to the sum of [Handler_read*](server-status-variables.md#handler_read_first) status variables which do include system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1724,7 +1724,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows updated in InnoDB tables that where not system tables. Almost equivalent to [Handler_update](server-status-variables.md#handler_update) which does include system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1733,12 +1733,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1747,12 +1747,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1761,12 +1761,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1776,8 +1776,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -1787,8 +1787,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -1798,8 +1798,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.1.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -1809,7 +1809,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -1819,7 +1819,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -1829,7 +1829,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: See [Table and Tablespace Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -1839,28 +1839,28 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.2.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)
-* Removed: [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)
+* Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
 #### `Innodb_secondary_index_triggered_cluster_reads`
 
 
-* Description: Used to track the effectiveness of the Prefix Index Queries Optimization ([MDEV-6929](https://jira.mariadb.org/browse/MDEV-6929)). Removed in [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) as the optimization is now always enabled.
+* Description: Used to track the effectiveness of the Prefix Index Queries Optimization ([MDEV-6929](https://jira.mariadb.org/browse/MDEV-6929)). Removed in [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010) as the optimization is now always enabled.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
 #### `Innodb_secondary_index_triggered_cluster_reads_avoided`
 
 
-* Description: Used to track the effectiveness of the Prefix Index Queries Optimization ([MDEV-6929](https://jira.mariadb.org/browse/MDEV-6929)). Removed in [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) as the optimization is now always enabled.
+* Description: Used to track the effectiveness of the Prefix Index Queries Optimization ([MDEV-6929](https://jira.mariadb.org/browse/MDEV-6929)). Removed in [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010) as the optimization is now always enabled.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1870,7 +1870,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows deleted on system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1880,7 +1880,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows inserted on system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
@@ -1890,7 +1890,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows read on system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10100-release-notes.md)
+* Removed: [MariaDB 10.10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-release-notes)
 
 
 
@@ -1900,7 +1900,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of rows updated on system tables.
 * Scope: Global
 * Data Type: `numeric`
-* Removed: [MariaDB 10.10.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10100-release-notes.md)
+* Removed: [MariaDB 10.10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-release-notes)
 
 
 
@@ -1919,7 +1919,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description: Number of undo tablespace truncation operations.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.3.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10310-release-notes.md)
+* Introduced: [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes)
 
 
 
@@ -1928,12 +1928,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1942,12 +1942,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 
@@ -1956,12 +1956,11 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: As shown in the SEMAPHORES section of the [SHOW ENGINE INNODB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) output.
 
-  * In [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this status variable is present in XtraDB.
-  * In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, this status variable is not present.
+  * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this status variable is present in XtraDB.
+  * In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, this status variable is not present.
 * Scope: Global
 * Data Type: `numeric`
-* Introduced: [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
-* Removed: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+* Introduced: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+* Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
-<span></span>

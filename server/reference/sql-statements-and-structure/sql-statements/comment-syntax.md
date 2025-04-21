@@ -11,7 +11,7 @@ SELECT * FROM users;
 # This is a comment
 
 ```
-1. From a '`-- `' to the end of a line. The space after the two dashes is required (as in MySQL).
+1. From a '`--`' to the end of a line. The space after the two dashes is required (as in MySQL).
 ```
 SELECT * FROM users; -- This is a comment
 ```
@@ -72,7 +72,7 @@ For example, if you want to embed some code that should only execute on MySQL or
 /*!50100 MySQL and MariaDB 5.1.0 (and above) code goes here. */
 ```
 
-MariaDB-only executable comment syntax (starting from [MariaDB 5.3.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes.md)):
+MariaDB-only executable comment syntax (starting from [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)):
 
 
 ```

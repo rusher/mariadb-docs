@@ -21,11 +21,11 @@ The `SET PASSWORD` statement assigns a password to an existing MariaDB user
 account.
 
 
-If the password is specified using the `[PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)` or `[OLD_PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md)`
+If the password is specified using the `[PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)` or `[OLD_PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md)`
 function, the literal text of the password should be given. If the
 password is specified without using either function, the password
 should be the already-encrypted password value as returned by
-`[PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)`.
+`[PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)`.
 
 
 `[OLD_PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md)` should only be used if your MariaDB/MySQL clients are very old (< 4.0.0).
@@ -44,7 +44,7 @@ exactly as they are listed in the User and Host columns of the
 `[mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)` table (or view in current versions) entry.
 
 
-The argument to `[PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md)` and the password given to MariaDB clients can be of arbitrary length.
+The argument to `[PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)` and the password given to MariaDB clients can be of arbitrary length.
 
 
 ## Authentication Plugin Support

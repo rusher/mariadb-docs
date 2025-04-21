@@ -1,7 +1,7 @@
 
 # Information Schema ENABLED_ROLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ENABLED_ROLES` table shows the enabled [roles](../../../../../../../security/user-account-management/roles/roles_overview.md) for the current session.
+The [Information Schema](../README.md) `ENABLED_ROLES` table shows the enabled [roles](../../../../../../../security/user-account-management/roles/README.md) for the current session.
 
 
 It contains the following column:

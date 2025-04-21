@@ -10,7 +10,7 @@ It is populated when the [ANALYZE TABLE](../../../table-statements/analyze-table
 It is possible to manually update the table and, unlike most system tables, there are some scenarios where this could be useful. See [Manual updates to statistics tables](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#manual-updates-to-statistics-tables) for details.
 
 
-This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/README.md) storage engine.
 
 
 The `mysql.index_stats` table contains the following fields:

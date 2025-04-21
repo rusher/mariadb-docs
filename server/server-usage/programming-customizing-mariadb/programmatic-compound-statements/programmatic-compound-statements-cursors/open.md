@@ -4,14 +4,14 @@
 ## Syntax
 
 
-<= [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)
+<= [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
 ```
 OPEN cursor_name
 ```
 
-From [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 
 ```
@@ -41,5 +41,5 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [DECLARE CURSOR](declare-cursor.md)
 * [FETCH cursor_name](fetch.md)
 * [CLOSE cursor_name](close.md)
-* [Cursors in Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

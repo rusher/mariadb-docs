@@ -12,7 +12,7 @@ Caching SHA256 authentication possible exchanges:
 * server result in either [OK_Packet](../4-server-response-packets/ok_packet.md) , [ERR_Packet](../4-server-response-packets/err_packet.md) or ["fast" authentication result](#fast-authentication-result)
 * if fast authentication result
 
-  * if connection use SSL ([SSLRequest](../../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#sslrequest-packet) Packet sent)
+  * if connection use SSL ([SSLRequest](connection.md#sslrequest-packet) Packet sent)
 
     * client send a [clear password answer](#client-clear-password-answer)
   * else

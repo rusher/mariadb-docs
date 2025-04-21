@@ -2,8 +2,8 @@
 # Testing the Connections to S3
 
 
-##### MariaDB starting with [10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-The [S3 storage engine](s3-storage-engine-status-variables.md) has been available since [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md).
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+The [S3 storage engine](README.md) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
 
 
 
@@ -34,7 +34,7 @@ There are several ways to ensure you get them right:
 ### Using aria_s3_copy to Test the Connection
 
 
-[aria_s3_copy](aria_s3_copy.md) is a tool that allows you to copy [aria](aria_s3_copy.md) tables to and from S3. It's useful for testing the connection as it allows you to specify all s3 options on the command line.
+[aria_s3_copy](aria_s3_copy.md) is a tool that allows you to copy [aria](../aria/README.md) tables to and from S3. It's useful for testing the connection as it allows you to specify all s3 options on the command line.
 
 
 Execute the following sql commands to create a trivial sql table:
@@ -72,7 +72,7 @@ some typing.
 ### Using mariadb-test-run to Test the Connection and the S3 Storage Engine
 
 
-One can use the [MariaDB test system](../../mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) to run all default S3 test against your S3 storage.
+One can use the [MariaDB test system](../../../clients-and-utilities/mariadb-test/README.md) to run all default S3 test against your S3 storage.
 
 
 To do that you have to locate the `mysql-test` directory in your system and

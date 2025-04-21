@@ -2,8 +2,8 @@
 # Ignored Indexes
 
 
-##### MariaDB starting with [10.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-Ignored indexes were added in [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md).
+##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+Ignored indexes were added in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 Ignored indexes are indexes that are visible and maintained, but which are not used by the optimizer. MySQL 8 has a similar feature which they call "invisible indexes".
@@ -12,14 +12,14 @@ Ignored indexes are indexes that are visible and maintained, but which are not u
 ## Syntax
 
 
-By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement:
+By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement:
 
 
 ```
 ALTER TABLE table_name ALTER {KEY|INDEX} [IF EXISTS] key_name [NOT] IGNORED;
 ```
 
-It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md), or [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statement:
+It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md), or [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statement:
 
 
 ```
@@ -149,7 +149,7 @@ Index_comment:
       Ignored: YES
 ```
 
-The optimizer does not make use of an index when it is ignored, while if the index is not ignored (the default), the optimizer will consider it in the optimizer plan, as shown in the [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) output.
+The optimizer does not make use of an index when it is ignored, while if the index is not ignored (the default), the optimizer will consider it in the optimizer plan, as shown in the [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output.
 
 
 ```
@@ -171,4 +171,3 @@ EXPLAIN SELECT * FROM t1 ORDER BY b;
 |    1 | SIMPLE      | t1    | index | NULL          | k1   | 5       | NULL | 1    | Using index |
 +------+-------------+-------+-------+---------------+------+---------+------+------+-------------+
 ```
-<span></span>

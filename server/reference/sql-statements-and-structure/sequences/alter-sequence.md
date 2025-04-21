@@ -110,7 +110,7 @@ higher value than current, then you should use [SETVAL()](sequence-functions/set
 instead, as this is not blocking.
 
 
-If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) for this.
+If you want to change storage engine, sequence comment or rename the sequence, you can use [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) for this.
 
 
 ## See Also
@@ -122,7 +122,7 @@ If you want to change storage engine, sequence comment or rename the sequence, y
 * [NEXT VALUE FOR](sequence-functions/next-value-for-sequence_name.md)
 * [PREVIOUS VALUE FOR](sequence-functions/previous-value-for-sequence_name.md)
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
-* [AUTO INCREMENT](../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
-* [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md)
+* [AUTO INCREMENT](../../data-types/auto_increment.md)
+* [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md)
 * [Information Schema SEQUENCES Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 

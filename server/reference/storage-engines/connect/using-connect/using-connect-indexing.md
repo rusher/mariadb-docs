@@ -8,7 +8,7 @@ should be done for columns that have only few distinct values? If they are
 randomly placed in the table they should not be indexed because reading many
 rows in random order can be slower than reading the entire table sequentially.
 However, if the values are sorted or clustered, indexing can be acceptable
-because [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) indexes store the values in the order they appear into the
+because [CONNECT](../README.md) indexes store the values in the order they appear into the
 table and this will make retrieving them almost as fast as reading them
 sequentially.
 
@@ -30,10 +30,10 @@ have a specific internal format. The CONNECT handler supports the use of standar
 of the file based table types.
 
 
-You can define them in the [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement, or either using the CREATE
-INDEX statement or the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. In all cases, the index files are
+You can define them in the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement, or either using the CREATE
+INDEX statement or the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. In all cases, the index files are
 automatically made. They can be dropped either using the [DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) statement
-or the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement, and this erases the index files.
+or the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, and this erases the index files.
 
 
 Indexes are automatically reconstructed when the table is created, modified by
@@ -178,7 +178,7 @@ However this will also apply to all other clauses, this column being now case se
 
 Remote indexing is specific to the [MYSQL](../connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md) table type. It is equivalent to what the [FEDERATED](../../federatedx-storage-engine/README.md)
 storage does. A MYSQL table does not support indexes per se. Because access to the table is handled
-remotely, it is the remote table that supports the indexes. What the MYSQL table does is just to add a WHERE clause to the [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) command sent to the remote server allowing the remote server to use
+remotely, it is the remote table that supports the indexes. What the MYSQL table does is just to add a WHERE clause to the [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) command sent to the remote server allowing the remote server to use
 indexing when applicable.
 Note however that because CONNECT adds when possible all or part of the where clause of the
 original query, this happens often even if the remote indexed column is not declared locally indexed.

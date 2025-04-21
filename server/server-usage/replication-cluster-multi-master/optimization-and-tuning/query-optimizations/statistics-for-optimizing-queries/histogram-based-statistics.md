@@ -8,7 +8,7 @@ Histogram-based statistics are a mechanism to improve the query plan chosen by t
 Histogram statistics are stored in the [mysql.column_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) table, which stores data for [engine-independent table statistics](engine-independent-table-statistics.md), and so are essentially a subset of engine-independent table statistics.
 
 
-Histograms are used by default from [MariaDB 10.4.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md) if they are available. However, histogram statistics are not automatically collected, as collection is expensive, requiring a full table scan. See [Collecting Statistics with the ANALYZE TABLE Statement](engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for details.
+Histograms are used by default from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) if they are available. However, histogram statistics are not automatically collected, as collection is expensive, requiring a full table scan. See [Collecting Statistics with the ANALYZE TABLE Statement](engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for details.
 
 
 Consider this example, using the following query:
@@ -60,16 +60,16 @@ There are a number of system variables that affect histograms.
 ### histogram_size
 
 
-The [histogram_size](../../system-variables/server-system-variables.md#histogram_size) variable determines the size, in bytes, from 0 to 255, used for a histogram. This is effectively the number of bins for `histogram_type=SINGLE_PREC_HB` or number of bins/2 for `histogram_type=DOUBLE_PREC_HB`. If it is set to 0 (the default for [MariaDB 10.4.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md) and below), no histograms are created when running an [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md).
+The [histogram_size](../../system-variables/server-system-variables.md#histogram_size) variable determines the size, in bytes, from 0 to 255, used for a histogram. This is effectively the number of bins for `histogram_type=SINGLE_PREC_HB` or number of bins/2 for `histogram_type=DOUBLE_PREC_HB`. If it is set to 0 (the default for [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes) and below), no histograms are created when running an [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md).
 
 
 ### histogram_type
 
 
-The [histogram_type](../../system-variables/server-system-variables.md#histogram_type) variable determines whether single precision (`SINGLE_PREC_HB`) or double precision (`DOUBLE_PREC_HB`) height-balanced histograms are created. From [MariaDB 10.4.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md), double precision is the default. For [MariaDB 10.4.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md) and below, single precision is the default.
+The [histogram_type](../../system-variables/server-system-variables.md#histogram_type) variable determines whether single precision (`SINGLE_PREC_HB`) or double precision (`DOUBLE_PREC_HB`) height-balanced histograms are created. From [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), double precision is the default. For [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes) and below, single precision is the default.
 
 
-From [MariaDB 10.8](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md), `JSON_HB`, JSON-format histograms, are accepted.
+From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), `JSON_HB`, JSON-format histograms, are accepted.
 
 
 ### optimizer_use_condition_selectivity
@@ -78,20 +78,20 @@ From [MariaDB 10.8](../../../../../../release-notes/mariadb-community-server/wha
 The [optimizer_use_condition_selectivity](../../system-variables/server-system-variables.md#optimizer_use_condition_selectivity) controls which statistics can be used by the optimizer when looking for the best query execution plan.
 
 
-* `1` Use selectivity of predicates as in [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).
+* `1` Use selectivity of predicates as in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 * `2` Use selectivity of all range predicates supported by indexes.
 * `3` Use selectivity of all range predicates estimated without histogram.
 * `4` Use selectivity of all range predicates estimated with histogram.
 * `5` Additionally use selectivity of certain non-range predicates calculated on record sample.
 
 
-From [MariaDB 10.4.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md), the default is `4`. Until [MariaDB 10.4.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md), the default is `1`.
+From [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes), the default is `4`. Until [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1040-release-notes), the default is `1`.
 
 
 
 ## Example
 
-Here is an example of the dramatic impact histogram-based statistics can make. The query is based on [DBT3 Benchmark Q20](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/dbt3-benchmark-queries.md#q20) with 60 millions records in the `lineitem` table.
+Here is an example of the dramatic impact histogram-based statistics can make. The query is based on [DBT3 Benchmark Q20](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/dbt3-benchmark-queries#q20) with 60 millions records in the `lineitem` table.
 
 ```
 select sql_calc_found_rows s_name, s_address from 
@@ -257,4 +257,3 @@ set join_buffer_space_limit=1024*1024*32;
 * [Improved histograms in MariaDB 10.8 - Sergei Petrunia - FOSDEM 2022](https://youtu.be/uz3rr3WnQOs) (video)
 * [Improving MariaDB’s optimizer with better selectivity estimates - Sergey Petrunia - Server Fest 2021](https://www.youtube.com/watch?v=bsl7Fis0onE) (video)
 
-<span></span>

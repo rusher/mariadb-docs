@@ -1,10 +1,10 @@
 
 # Query Response Time Plugin
 
-The `query_response_time` plugin creates the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. The plugin also adds the [SHOW QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-query_response_time.md) and [FLUSH QUERY_RESPONSE_TIME*](#flushing-plugin-data) statements.
+The `query_response_time` plugin creates the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. The plugin also adds the [SHOW QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-query_response_time.md) and [FLUSH QUERY_RESPONSE_TIME*](#flushing-plugin-data) statements.
 
 
-The [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) provides exact information about queries that take a long time to execute. However, sometimes there are a large number of queries that each take a very short amount of time to execute. This feature provides a tool for analyzing that information by counting and displaying the number of queries according to the the length of time they took to execute.
+The [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/README.md) provides exact information about queries that take a long time to execute. However, sometimes there are a large number of queries that each take a very short amount of time to execute. This feature provides a tool for analyzing that information by counting and displaying the number of queries according to the the length of time they took to execute.
 
 
 This feature is based on Percona's [Response Time Distribution](https://www.percona.com/doc/percona-server/5.5/diagnostics/response_time_distribution.html).
@@ -14,7 +14,7 @@ This feature is based on Percona's [Response Time Distribution](https://www.perc
 ## Installing the Plugin
 
 
-This shared library actually consists of a number of different plugins. Prior to [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md):
+This shared library actually consists of a number of different plugins. Prior to [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115):
 
 
 * `QUERY_RESPONSE_TIME` - An INFORMATION_SCHEMA plugin that exposes statistics.
@@ -24,7 +24,7 @@ This shared library actually consists of a number of different plugins. Prior to
 Both plugins need to be installed to get meaningful statistics.
 
 
-From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), there are the following additional plugins:
+From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), there are the following additional plugins:
 
 
 * `QUERY_RESPONSE_TIME_READ`
@@ -186,7 +186,7 @@ This means there were:
 ### Using the Information Schema Table
 
 
-You can get the distribution by querying the the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. For example:
+You can get the distribution by querying the the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. For example:
 
 
 ```
@@ -213,7 +213,7 @@ Note: If [query_response_time_stats](#query_response_time_stats) is set to `ON`,
 ### Using the SHOW Statement
 
 
-As an alternative to the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database, you can also use the [SHOW QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-query_response_time.md) statement. For example:
+As an alternative to the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database, you can also use the [SHOW QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-query_response_time.md) statement. For example:
 
 
 ```
@@ -226,11 +226,11 @@ SHOW QUERY_RESPONSE_TIME;
 Flushing the plugin data does two things:
 
 
-* Clears the collected times from the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database.
+* Clears the collected times from the [QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_response_time-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database.
 * Reads the value of [query_response_time_range_base](#query_response_time_range_base) and uses it to set the range base for the table.
 
 
-Plugin data can be flushed with the [FLUSH QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement. For example:
+Plugin data can be flushed with the [FLUSH QUERY_RESPONSE_TIME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement. For example:
 
 
 ```
@@ -244,7 +244,7 @@ Setting the [query_response_time_flush](#query_response_time_flush) system varia
 SET GLOBAL query_response_time_flush=1;
 ```
 
-From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), it is possible to specify flushing read and/or write statements with the `FLUSH QUERY_RESPONSE_TIME_READ`, `FLUSH QUERY_RESPONSE_TIME_WRITE` and `FLUSH QUERY_RESPONSE_TIME_READ_WRITE` statements.
+From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), it is possible to specify flushing read and/or write statements with the `FLUSH QUERY_RESPONSE_TIME_READ`, `FLUSH QUERY_RESPONSE_TIME_WRITE` and `FLUSH QUERY_RESPONSE_TIME_READ_WRITE` statements.
 
 
 ## Versions
@@ -254,9 +254,9 @@ From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-m
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.13](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.0.10](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 10.0.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
+| 1.0 | Alpha | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 
 
 
@@ -293,7 +293,7 @@ From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-m
 
 * Description: Pretend queries take this many microseconds. When 0 (the default) use the actual execution time. 
 
-  * This system variable is only available when the plugin is a [debug build](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md).
+  * This system variable is only available when the plugin is a [debug build](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging).
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -312,7 +312,7 @@ From [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-m
 * Data Type: `enum`
 * Default Value: `GLOBAL`
 * Valid Values: `GLOBAL`, `ON`, `OFF`
-* Introduced: [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 

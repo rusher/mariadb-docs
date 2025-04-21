@@ -5,7 +5,7 @@
 
 
 This tutorial is a short introduction to the
-[Avrorouter](avrorouter-tutorial.md), how to set it up and how it interacts
+[Avrorouter](../maxscale-14-routers/avrorouter.md), how to set it up and how it interacts
 with the binlogrouter.
 
 
@@ -43,7 +43,7 @@ binlog_row_image=full
 
 
 
-*You can find out more about replication formats from the [MariaDB Knowledge Base](../../../server/server-management/server-monitoring-logs/binary-log/binary-log-formats.md)*
+*You can find out more about replication formats from the [MariaDB Knowledge Base](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats)*
 
 
 ## Configuring MaxScale
@@ -97,7 +97,7 @@ You can see that the `source` parameter in the *avro-service* points to the
 *replication-service* we defined before. This service will be the data source
 for the avrorouter. The *filestem* is the prefix in the binlog files and the
 additional *avrodir* router_option is where the converted Avro files are stored.
-For more information on the avrorouter options, read the [Avrorouter Documentation](avrorouter-tutorial.md).
+For more information on the avrorouter options, read the [Avrorouter Documentation](../maxscale-14-routers/avrorouter.md).
 
 
 After the services were defined, we added the listeners for the
@@ -121,7 +121,7 @@ created. There are two ways to do this:
 
 
 * Manually create the schema
-* Use the [cdc_schema Go utilty](avrorouter-tutorial.md#avro-schema-generator)
+* Use the [cdc_schema Go utilty](../maxscale-14-routers/avrorouter.md#avro-schema-generator)
 
 
 All Avro file schemas follow the same general idea. They are in JSON and follow

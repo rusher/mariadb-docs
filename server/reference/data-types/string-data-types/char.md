@@ -20,11 +20,11 @@ length when stored. `M` represents the column length in characters. The range
 of `M` is `0` to `255`. If `M` is omitted, the length is `1`.
 
 
-CHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine does not support CHAR(0).
+CHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../storage-engines/connect/README.md) storage engine does not support CHAR(0).
 
 
 **Note:** Trailing spaces are removed when `CHAR` values are retrieved
-unless the `PAD_CHAR_TO_FULL_LENGTH` [SQL mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled.
+unless the `PAD_CHAR_TO_FULL_LENGTH` [SQL mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled.
 
 
 If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error.
@@ -129,6 +129,6 @@ SELECT collation_name FROM information_schema.collations
 
 * [CHAR Function](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/char-function.md)
 * [VARCHAR](varchar.md)
-* [BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
+* [BINARY](binary.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 

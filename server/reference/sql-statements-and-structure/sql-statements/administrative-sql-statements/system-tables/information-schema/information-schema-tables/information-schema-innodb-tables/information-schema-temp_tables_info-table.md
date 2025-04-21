@@ -4,7 +4,7 @@
 The `TEMP_TABLES_INFO` table was removed and is no longer a part of MariaDB. See [MDEV-12459](https://jira.mariadb.org/browse/MDEV-12459) progress on an alternative.
 
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `TEMP_TABLES_INFO` table contains information about active InnoDB temporary tables. All user and system-created temporary tables are reported when querying this table, with the exception of optimized internal temporary tables. The data is stored in memory.
+The [Information Schema](../../README.md) `TEMP_TABLES_INFO` table contains information about active InnoDB temporary tables. All user and system-created temporary tables are reported when querying this table, with the exception of optimized internal temporary tables. The data is stored in memory.
 
 
 Previously, InnoDB temp table metadata was rather stored in InnoDB system tables.

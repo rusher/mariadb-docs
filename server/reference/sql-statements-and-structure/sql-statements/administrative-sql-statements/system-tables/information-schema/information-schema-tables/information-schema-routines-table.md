@@ -1,7 +1,7 @@
 
 # Information Schema ROUTINES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ROUTINES` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
+The [Information Schema](../README.md) `ROUTINES` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
 
 
 It contains the following columns:
@@ -16,7 +16,7 @@ It contains the following columns:
 | ROUTINE_SCHEMA | Database name associated with the routine. |
 | ROUTINE_NAME | Name of the routine. |
 | ROUTINE_TYPE | Whether the routine is a PROCEDURE or a FUNCTION. |
-| DATA_TYPE | The return value's [data type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md) (for stored functions). |
+| DATA_TYPE | The return value's [data type](../../../../../../data-types/README.md) (for stored functions). |
 | CHARACTER_MAXIMUM_LENGTH | Maximum length. |
 | CHARACTER_OCTET_LENGTH | Same as the CHARACTER_MAXIMUM_LENGTH except for multi-byte [character sets](../../../../../../data-types/string-data-types/character-sets/README.md). |
 | NUMERIC_PRECISION | For numeric types, the precision (number of significant digits) for the column. NULL if not a numeric field. |
@@ -24,7 +24,7 @@ It contains the following columns:
 | DATETIME_PRECISION | Fractional-seconds precision, or NULL if not a [time data type](../../../../../../data-types/date-and-time-data-types/README.md). |
 | CHARACTER_SET_NAME | [Character set](../../../../../../data-types/string-data-types/character-sets/README.md) if a non-binary [string data type](../../../../../../data-types/string-data-types/README.md), otherwise NULL. |
 | COLLATION_NAME | [Collation](../../../../../../data-types/string-data-types/character-sets/README.md) if a non-binary [string data type](../../../../../../data-types/string-data-types/README.md), otherwise NULL. |
-| DATA_TYPE | The column's [data type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md). |
+| DATA_TYPE | The column's [data type](../../../../../../data-types/README.md). |
 | ROUTINE_BODY | Always SQL. |
 | ROUTINE_DEFINITION | Definition of the routine. |
 | EXTERNAL_NAME | Always NULL. |

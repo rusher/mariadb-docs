@@ -16,7 +16,7 @@ MariaDB replication in general works as follows (see
 [Replication overview](replication-overview.md) for more information):
 
 
-On a master server, all updates to the database (DML and DDL) are written into the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) as binlog events. A replica server connects to the primary and reads the binlog
+On a master server, all updates to the database (DML and DDL) are written into the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) as binlog events. A replica server connects to the primary and reads the binlog
 events, then applies the events locally to replicate the same changes as done
 on the primary. A server can be both a primary and a replica at the same time, and
 it is thus possible for binlog events to be replicated through multiple levels of
@@ -70,7 +70,7 @@ The replica keeps track of its current position (the global transaction ID of th
 
 
 Because of these two benefits, it is generally recommended to use global
-transaction ID for any replication setups based on [MariaDB 10.0.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes.md) or later.
+transaction ID for any replication setups based on [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) or later.
 However, old-style replication continues to work as always, so there is no
 pressing need to change existing setups. Global transaction ID integrates
 smoothly with old-style replication, and the two can be used freely together
@@ -167,7 +167,7 @@ default of 0 on all servers.
 
 Global transaction ID is enabled automatically. Each event
 group logged to the binlog receives a GTID event, as can be seen with
-[mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) or [SHOW BINLOG EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
+[mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md) or [SHOW BINLOG EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
 
 
 The replica automatically keeps track of the GTID of the last applied event
@@ -272,8 +272,8 @@ In order to be crash-safe, this table must use a transactional storage engine
 such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the
 table is created using the default storage engine - which itself defaults to
 InnoDB. If there is a need to change the storage engine for this table (to
-make it transactional on a system configured with [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) as the default
-storage engine, for example), use [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md):
+make it transactional on a system configured with [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) as the default
+storage engine, for example), use [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md):
 
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
@@ -287,7 +287,7 @@ idea of the current GTID position; instead use
 `SET GLOBAL gtid_slave_pos = '0-1-1'`
 
 
-Starting from [MariaDB 10.3.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), the server variable [gtid_pos_auto_engines](#gtid_pos_auto_engines) can
+Starting from [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), the server variable [gtid_pos_auto_engines](#gtid_pos_auto_engines) can
 preferably be set to make the server handle this automatically. See the
 description of the [mysql.gtid_slave_pos table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) for details.
 
@@ -301,7 +301,7 @@ When setting the [MASTER_USE_GTID](../../../reference/sql-statements-and-structu
 Using the value `current_pos` causes the replica to set its position based on the [gtid_current_pos](#gtid_current_pos) system variable, which is a union of [gtid_binlog_pos](#gtid_binlog_pos) and [gtid_slave_pos](#gtid_slave_pos). Using the value `slave_pos` causes the replica to instead set its position based on the [gtid_slave_pos](#gtid_slave_pos) system variable.
 
 
-You may run into issues when you use the value `current_pos` if you write any local transactions on the replica. For instance, if you issue an [INSERT](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statement or otherwise write to a table while the [replica threads](replication-threads.md#threads-on-the-slave) are stopped, then new local GTIDs may be generated in [gtid_binlog_pos](#gtid_binlog_pos), which will affect the replica's value of [gtid_current_pos](#gtid_current_pos). This may cause errors when the [replica threads](replication-threads.md#threads-on-the-slave) are restarted, since the local GTIDs will be absent from the primary.
+You may run into issues when you use the value `current_pos` if you write any local transactions on the replica. For instance, if you issue an [INSERT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement or otherwise write to a table while the [replica threads](replication-threads.md#threads-on-the-slave) are stopped, then new local GTIDs may be generated in [gtid_binlog_pos](#gtid_binlog_pos), which will affect the replica's value of [gtid_current_pos](#gtid_current_pos). This may cause errors when the [replica threads](replication-threads.md#threads-on-the-slave) are restarted, since the local GTIDs will be absent from the primary.
 
 
 You can correct this issue by setting the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) replication parameter to `slave_pos` instead of `current_pos`. For example:
@@ -321,7 +321,7 @@ If [parallel replication](parallel-replication.md) is in use, then events that w
 ### Using GTIDs with MariaDB Galera Cluster
 
 
-Starting with [MariaDB 10.1.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes.md), MariaDB Galera Cluster has limited support for GTIDs. See [Using MariaDB GTIDs with MariaDB Galera Cluster](../galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md) for more information.
+Starting with [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), MariaDB Galera Cluster has limited support for GTIDs. See [Using MariaDB GTIDs with MariaDB Galera Cluster](../galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md) for more information.
 
 
 ## Setting up a New Replica Server with Global Transaction ID
@@ -412,7 +412,7 @@ correct GTID position stored in the [mysql.gtid_slave_pos](../../../reference/sq
 #### Setting up a New Replica with Mariabackup
 
 
-A new replica can easily be set up with [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md), which is a fork of [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/README.md). See [Setting up a Replica with Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
+A new replica can easily be set up with [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md), which is a fork of [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/README.md). See [Setting up a Replica with Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
 
 
 #### Setting up a New Replica with mariadb-dump
@@ -436,7 +436,7 @@ setup new replica using old-style binlog positions.
 
 
 When a replica connects to a primary using old-style binlog positions, and the
-primary supports GTID (i.e. is [MariaDB 10.0.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes.md) or later), then the replica
+primary supports GTID (i.e. is [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes) or later), then the replica
 automatically downloads the GTID position at connect and updates it during
 replication. Thus, once a replica has connected to the GTID-aware primary at
 least once, it can be switched to using GTID without any other actions needed;
@@ -625,7 +625,7 @@ When --gtid-ignore-duplicates is enabled, the connection will be allowed, and S1
 ### Deleting Unused Domains
 
 
-[FLUSH BINARY LOGS DELETE_DOMAIN_ID=(list-of-domains)](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) can be used to discard obsolete GTID domains from the server's binary log state. In order for this to be successful, no event group from the listed GTID domains can be present in existing binary log files. If some still exist, then they must be purged prior to executing this command.
+[FLUSH BINARY LOGS DELETE_DOMAIN_ID=(list-of-domains)](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) can be used to discard obsolete GTID domains from the server's binary log state. In order for this to be successful, no event group from the listed GTID domains can be present in existing binary log files. If some still exist, then they must be purged prior to executing this command.
 
 
 If the command completes successfully, then it also rotates the binary log.
@@ -671,7 +671,7 @@ position is reached, the replica will stop.
 The syntax for this is:
 
 
-` START SLAVE UNTIL master_gtid_pos = <GTID position>`
+`START SLAVE UNTIL master_gtid_pos = <GTID position>`
 
 
 The replica will start replication from the current GTID position, run up to
@@ -685,7 +685,7 @@ If multiple GTIDs are specified, then they must be with distinct replication
 domain ID, for example:
 
 
-` START SLAVE UNTIL master_gtid_pos = "1-11-100,2-21-50"`
+`START SLAVE UNTIL master_gtid_pos = "1-11-100,2-21-50"`
 
 
 With multiple domains in the UNTIL condition, each domain runs only up to and
@@ -738,7 +738,7 @@ set to replicate from it.
 
 #### SQL_BEFORE_GTIDS|SQL_AFTER_GTIDS
 
-[MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md) extended the START SLAVE UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its
+[MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) extended the START SLAVE UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its
 syntax is:
 
 ```
@@ -766,7 +766,7 @@ However, if a replica is started with `SQL_AFTER_GTIDS`, i.e. `START SLAVE UNTIL
 ### BINLOG_GTID_POS().
 
 
-The [BINLOG_GTID_POS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/binlog_gtid_pos.md) function takes as input an old-style [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position in the form of a file name and a file offset. It looks up the position in the current binlog, and returns a string representation of the corresponding GTID
+The [BINLOG_GTID_POS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/binlog_gtid_pos.md) function takes as input an old-style [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) position in the form of a file name and a file offset. It looks up the position in the current binlog, and returns a string representation of the corresponding GTID
 position. If the position is not found in the current binlog, NULL is returned.
 
 
@@ -780,9 +780,9 @@ The [MASTER_GTID_WAIT](../../../reference/sql-statements-and-structure/sql-state
 
 
 
-##### MariaDB starting with [11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
-Prior to [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), when a replica connects, MariaDB needs to scan [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files from the beginning in order to find the place to start replicating. If replica reconnects are frequent, this can be slow.
-[MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) introduces indexing on the binlog files, allowing GTIDs to be quickly found. This also detects if old-style replication tries to connect at an incorrect file offset (eg. in the middle of an event), avoiding sending potentially corrupted events.
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+Prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), when a replica connects, MariaDB needs to scan [binlog](../../../server-management/server-monitoring-logs/binary-log/README.md) files from the beginning in order to find the place to start replicating. If replica reconnects are frequent, this can be slow.
+[MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) introduces indexing on the binlog files, allowing GTIDs to be quickly found. This also detects if old-style replication tries to connect at an incorrect file offset (eg. in the middle of an event), avoiding sending potentially corrupted events.
 The feature is enabled by default. The size of the binlog index file (`.idx`) is generally less than 1% the size of the binlog, so should not have any negative impacts and should not normally need tuning. However, the feature can be disabled or managed with the following system variables:
 
 * [binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index) - enable/disable the feature
@@ -826,7 +826,7 @@ This system variable contains the GTID of the last transaction applied to the da
 When using [multi-source replication](multi-source-replication.md), the same GTID position is shared by all replica connections. In this case, different primaries should use different replication domains by configuring different [gtid_domain_id](#gtid_domain_id) values. If one primary was using a [gtid_domain_id](#gtid_domain_id) value of `1`, and if another primary was using a [gtid_domain_id](#gtid_domain_id) value of `2`, then any replicas replicating from both primaries would have GTIDs with both [gtid_domain_id](#gtid_domain_id) values in `gtid_slave_pos`.
 
 
-This system variable's value can be manually changed by executing [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session), but all replica threads to be stopped with [STOP SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) first. For example:
+This system variable's value can be manually changed by executing [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), but all replica threads to be stopped with [STOP SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) first. For example:
 
 
 ```
@@ -870,7 +870,7 @@ for each replication domain.
 
 
 Note that when the binlog is empty (such as on a fresh install
-with [--skip-test-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md#not-creating-the-test-database-and-anonymous-user),
+with [--skip-test-db](../../../clients-and-utilities/mariadb-install-db.md#not-creating-the-test-database-and-anonymous-user),
 or after [RESET MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md)), there are no event groups written in any replication domain, so in
 this case the value of `gtid_binlog_pos` will be the empty string.
 
@@ -1029,7 +1029,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 #### `gtid_domain_id`
 
 
-* Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) to preserve the domain ID of GTID events.
+* Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md) to preserve the domain ID of GTID events.
 * Commandline: `--gtid-domain-id=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1042,7 +1042,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 #### `last_gtid`
 
 
-* Description: Holds the GTID that was assigned to the last transaction, or statement that was logged to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). If the binary log is disabled, or if no transaction or statement was executed in the session yet, then the value is an empty string.
+* Description: Holds the GTID that was assigned to the last transaction, or statement that was logged to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md). If the binary log is disabled, or if no transaction or statement was executed in the session yet, then the value is an empty string.
 * Scope: Session
 * Dynamic: Read-only
 * Data Type: `string`
@@ -1062,7 +1062,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 #### `gtid_seq_no`
 
 
-* Description: gtid_seq_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid_domain_id](#gtid_domain_id) and [@@server_id](#server_id), is typically used by [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) to set up the gtid value of the transaction being decoded into the output.
+* Description: gtid_seq_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid_domain_id](#gtid_domain_id) and [@@server_id](#server_id), is typically used by [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md) to set up the gtid value of the transaction being decoded into the output.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
@@ -1094,7 +1094,7 @@ The value is a list of engine names, separated by commas (','). Replication
 of transactions using these engines will automatically create new versions
 of the mysql.gtid_slave_pos table in the same engine and use that for future
 transactions (table creation takes place in a background thread). This avoids introducing a cross-engine transaction to update the GTID position. Only transactional storage engines are supported for
-gtid_pos_auto_engines (this currently means [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [TokuDB](../../../reference/storage-engines/tokudb/tokudb-resources.md), or [MyRocks](../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md)).
+gtid_pos_auto_engines (this currently means [InnoDB](../../../reference/storage-engines/innodb/README.md), [TokuDB](../../../reference/storage-engines/tokudb/README.md), or [MyRocks](../../../reference/storage-engines/myrocks/README.md)).
 
 
 The variable can be changed dynamically, but replica SQL threads should be stopped when changing it, and it will take effect when the replicas are running again.
@@ -1125,13 +1125,12 @@ Removing a storage engine from the variable will have no effect once the new tab
 * Data Type: `numeric`
 * Default: `64`
 * Range: `0` to `2147483647`
-* Introduced: [MariaDB 10.4.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md)
+* Introduced: [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes)
 
 
 
 ## See Also
 
 
-* [FLUSH](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) binary logs
+* [FLUSH](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) binary logs
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # ANALYZE FORMAT=JSON
 
-`ANALYZE FORMAT=JSON` is a mix of the [EXPLAIN FORMAT=JSON](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) and [ANALYZE](analyze-statement.md) statement features. The `ANALYZE FORMAT=JSON $statement` will execute `$statement`, and then print the output of `EXPLAIN FORMAT=JSON`, amended with data from the query execution.
+`ANALYZE FORMAT=JSON` is a mix of the [EXPLAIN FORMAT=JSON](explain-format-json.md) and [ANALYZE](analyze-statement.md) statement features. The `ANALYZE FORMAT=JSON $statement` will execute `$statement`, and then print the output of `EXPLAIN FORMAT=JSON`, amended with data from the query execution.
 
 
 ## Basic Execution Data
@@ -30,7 +30,7 @@ The most important data not available in the regular tabular `ANALYZE` statement
 ### InnoDB engine statistics
 
 
-Starting from [MariaDB 10.6.15](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes.md), [MariaDB 10.8.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes.md), [MariaDB 10.9.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-10-9-8-release-notes.md), [MariaDB 10.10.6](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-6-release-notes.md), [MariaDB 10.11.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes.md), [MariaDB 11.0.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-3-release-notes.md), [MariaDB 11.1.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes.md) and [MariaDB 11.2.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes.md) ([MDEV-31577](https://jira.mariadb.org/browse/MDEV-31577)), the following statistics are reported for InnoDB tables:
+Starting from [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes), [MariaDB 10.8.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes), [MariaDB 10.9.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-8-release-notes), [MariaDB 10.10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-6-release-notes), [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes), [MariaDB 11.0.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-3-release-notes), [MariaDB 11.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes) and [MariaDB 11.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes) ([MDEV-31577](https://jira.mariadb.org/browse/MDEV-31577)), the following statistics are reported for InnoDB tables:
 
 
 ```
@@ -59,9 +59,9 @@ Only non-zero members are printed.
 
 
 
-##### MariaDB starting with [10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
-`SHOW ANALYZE FORMAT=JSON for &lt;connection_id&gt;`
-extends `ANALYZE [FORMAT=JSON] &lt;select&gt;` to allow one to analyze a query currently running in another connection.
+##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+`SHOW ANALYZE FORMAT=JSON for <connection_id>`
+extends `ANALYZE [FORMAT=JSON] <select>` to allow one to analyze a query currently running in another connection.
 
 
 ## Data About Individual Query Plan Nodes

@@ -27,8 +27,7 @@ For example, to poll every 10 seconds:
 xtstat -D10
 ```
 
-Note that statistic counters are never reset, even if a rollback occurs. For example, if an `<span class="k">UPDATE</span>
-` statement is rolled back, `xtstat` will still indicate that one write statement (see stat-write below) was executed.
+Note that statistic counters are never reset, even if a rollback occurs. For example, if an `UPDATE` statement is rolled back, `xtstat` will still indicate that one write statement (see stat-write below) was executed.
 
 
 If MariaDB shuts down or crashes, `xtstat` will attempt to reconnect. `xtstat` can be terminated any time using the `CTRL-C` key cimbination.

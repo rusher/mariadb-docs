@@ -7,7 +7,7 @@ This article is relevant if the problem is on a replication slave.
 ***Note: this text has been extracted into a separate article from [Reporting bugs](reporting-bugs.md), see its full history there.***
 
 
-Sometimes a [binary log](../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) event causes an error of some sort. A whole binary log file is sometimes impractical due to size or sensitivity reasons.
+Sometimes a [binary log](../../server-management/server-monitoring-logs/binary-log/README.md) event causes an error of some sort. A whole binary log file is sometimes impractical due to size or sensitivity reasons.
 
 
 **Step 1: Copy the binary log locally**
@@ -24,7 +24,7 @@ sudo chown $USER: ~/mysql-bin.000687
 **Step 2: Create an extract header**
 
 
-Binary logs have a header portion. Without the header [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) won't be able to read it. The header also contains valuable session information
+Binary logs have a header portion. Without the header [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/README.md) won't be able to read it. The header also contains valuable session information
 
 
 We look at the binary log to see how big the header and session information is:

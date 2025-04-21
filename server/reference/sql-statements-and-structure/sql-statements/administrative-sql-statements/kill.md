@@ -30,7 +30,7 @@ If a connection is terminated that has an active transaction, the transaction wi
 
 
 If you have the [PROCESS](../account-management-sql-commands/grant.md#process) privilege, you can see all threads. If
-you have the [SUPER](../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [CONNECTION ADMIN](../account-management-sql-commands/grant.md#connection-admin) privilege, you can kill all threads and
+you have the [SUPER](../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-commands/grant.md#connection-admin) privilege, you can kill all threads and
 statements. Otherwise, you can see and kill only your own threads and
 statements.
 
@@ -40,7 +40,7 @@ Killing queries that repair or create indexes on MyISAM and Aria tables may resu
 
 The `HARD` option (default) kills a command as soon as possible. If you use
 `SOFT`, then critical operations that may leave a table in an
-inconsistent state will not be interrupted. Such operations include `REPAIR` and `INDEX` creation for [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) and [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) tables ([REPAIR TABLE](../table-statements/repair-table.md), [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md)).
+inconsistent state will not be interrupted. Such operations include `REPAIR` and `INDEX` creation for [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) and [Aria](../../../storage-engines/aria/README.md) tables ([REPAIR TABLE](../table-statements/repair-table.md), [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md)).
 
 
 `KILL ... USER username` will kill all connections/queries for a
@@ -76,7 +76,7 @@ A client whose connection is killed receives the following error:
 ERROR 1317 (70100): Query execution was interrupted
 ```
 
-To obtain a list of existing sessions, use the [SHOW PROCESSLIST](show/show-processlist.md) statement or query the [Information Schema](../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [PROCESSLIST](system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
+To obtain a list of existing sessions, use the [SHOW PROCESSLIST](show/show-processlist.md) statement or query the [Information Schema](system-tables/information-schema/README.md) [PROCESSLIST](system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
 
 **Note:** You cannot use `KILL` with the Embedded MariaDB Server

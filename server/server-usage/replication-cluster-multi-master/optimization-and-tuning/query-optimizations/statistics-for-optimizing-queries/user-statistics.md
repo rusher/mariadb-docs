@@ -1,13 +1,13 @@
 
 # User Statistics
 
-The User Statistics (userstat) plugin creates the [USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md), [CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md), the [INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md), and the [TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_statistics-table.md) tables in the [INFORMATION_SCHEMA](../../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. As an alternative to these tables, the plugin also adds the [SHOW USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md), the [SHOW CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md), the [SHOW INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md), and the [SHOW TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) statements.
+The User Statistics (userstat) plugin creates the [USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md), [CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md), the [INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md), and the [TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_statistics-table.md) tables in the [INFORMATION_SCHEMA](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. As an alternative to these tables, the plugin also adds the [SHOW USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md), the [SHOW CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md), the [SHOW INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md), and the [SHOW TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) statements.
 
 
 These tables and commands can be used to understand the server activity better and to identify the sources of your database's load.
 
 
-The plugin also adds the [FLUSH USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), and [FLUSH TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statements.
+The plugin also adds the [FLUSH USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md), [FLUSH CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md), [FLUSH INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md), and [FLUSH TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
 
 
 The MariaDB implementation of this plugin is based on the [userstatv2 patch](https://www.percona.com/docs/wiki/patches:userstatv2) from Percona and Ourdelta. The original code comes from Google (Mark Callaghan's team) with additional work from Percona, Ourdelta, and Weldon Whipple. The MariaDB implementation provides the same functionality as the userstatv2 patch but a lot of changes have been made to make it faster and to better fit the MariaDB infrastructure.
@@ -48,7 +48,7 @@ SET GLOBAL userstat=1;
 ### Using the Information Schema Table
 
 
-The `userstat` plugin creates the [USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md), [CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md), the [INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md), and the [TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_statistics-table.md) tables in the [INFORMATION_SCHEMA](../../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database.
+The `userstat` plugin creates the [USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md), [CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md), the [INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md), and the [TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_statistics-table.md) tables in the [INFORMATION_SCHEMA](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database.
 
 
 ```
@@ -129,7 +129,7 @@ SELECT * FROM INFORMATION_SCHEMA.TABLE_STATISTICS WHERE TABLE_NAME='user';
 ### Using the SHOW Statements
 
 
-As an alternative to the [INFORMATION_SCHEMA](../../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) tables, the `userstat` plugin also adds the [SHOW USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md), the [SHOW CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md), the [SHOW INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md), and the [SHOW TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) statements.
+As an alternative to the [INFORMATION_SCHEMA](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) tables, the `userstat` plugin also adds the [SHOW USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md), the [SHOW CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md), the [SHOW INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md), and the [SHOW TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) statements.
 
 
 These commands are another way to display the information stored in the information schema tables. WHERE clauses are accepted. LIKE clauses are accepted but ignored.
@@ -145,7 +145,7 @@ SHOW TABLE_STATISTICS
 ### Flushing Plugin Data
 
 
-The `userstat` plugin also adds the [FLUSH USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md), and [FLUSH TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statements, which discard the information stored in the specified information schema table.
+The `userstat` plugin also adds the [FLUSH USER_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md), [FLUSH CLIENT_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md), [FLUSH INDEX_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md), and [FLUSH TABLE_STATISTICS](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements, which discard the information stored in the specified information schema table.
 
 
 ```
@@ -165,8 +165,8 @@ FLUSH TABLE_STATISTICS
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 2.0 | Stable | [MariaDB 10.1.18](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
-| 2.0 | Gamma | [MariaDB 10.1.1](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) |
+| 2.0 | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 2.0 | Gamma | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 
 
@@ -177,8 +177,8 @@ FLUSH TABLE_STATISTICS
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 2.0 | Stable | [MariaDB 10.1.13](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 2.0 | Gamma | [MariaDB 10.1.1](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) |
+| 2.0 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 2.0 | Gamma | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 
 
@@ -189,8 +189,8 @@ FLUSH TABLE_STATISTICS
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 2.0 | Stable | [MariaDB 10.1.13](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 2.0 | Gamma | [MariaDB 10.1.1](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) |
+| 2.0 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 2.0 | Gamma | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 
 
@@ -201,8 +201,8 @@ FLUSH TABLE_STATISTICS
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 2.0 | Stable | [MariaDB 10.1.18](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
-| 2.0 | Gamma | [MariaDB 10.1.1](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md) |
+| 2.0 | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 2.0 | Gamma | [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) |
 
 
 
@@ -235,4 +235,3 @@ User Statistics introduced a number of new status variables:
 * [rows_read](../../system-variables/server-status-variables.md#rows_read)
 * [rows_sent](../../system-variables/server-status-variables.md#rows_sent)
 
-<span></span>

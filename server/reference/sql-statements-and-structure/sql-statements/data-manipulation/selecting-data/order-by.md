@@ -5,7 +5,7 @@
 ## Description
 
 
-Use the `ORDER BY` clause to order a resultset, such as that are returned from a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+Use the `ORDER BY` clause to order a resultset, such as that are returned from a [SELECT](select.md)
 statement. You can specify just a column or use any expression with functions. If you are
 using the `GROUP BY` clause, you can use grouping functions in `ORDER BY`.
 Ordering is done after grouping.
@@ -33,15 +33,15 @@ characters and ignore case, depending on the [collation](../../../../data-types/
 Duplicated entries in the `ORDER BY` clause are removed.
 
 
-`ORDER BY` can also be used to order the activities of a [DELETE](../changing-deleting-data/delete.md) or [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement (usually with the [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause).
+`ORDER BY` can also be used to order the activities of a [DELETE](../changing-deleting-data/delete.md) or [UPDATE](../changing-deleting-data/update.md) statement (usually with the [LIMIT](limit.md) clause).
 
 
-Until [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), it was not possible to use `ORDER BY` (or [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)) in a multi-table [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement. This restriction was lifted in [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md).
+Until [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), it was not possible to use `ORDER BY` (or [LIMIT](limit.md)) in a multi-table [UPDATE](../changing-deleting-data/update.md) statement. This restriction was lifted in [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes).
 
 
 
-##### MariaDB starting with [10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-From [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), MariaDB allows packed sort keys and values of non-sorted fields in the sort buffer. This can make filesort temporary files much smaller when VARCHAR, CHAR or BLOBs are used, notably speeding up some ORDER BY sorts.
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), MariaDB allows packed sort keys and values of non-sorted fields in the sort buffer. This can make filesort temporary files much smaller when VARCHAR, CHAR or BLOBs are used, notably speeding up some ORDER BY sorts.
 
 
 ## Examples
@@ -85,7 +85,7 @@ SELECT * FROM seq ORDER BY x,i;
 +------+------+
 ```
 
-ORDER BY in an [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement, in conjunction with [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md):
+ORDER BY in an [UPDATE](../changing-deleting-data/update.md) statement, in conjunction with [LIMIT](limit.md):
 
 
 ```
@@ -103,7 +103,7 @@ SELECT * FROM seq;
 +------+------+
 ```
 
-From [MariaDB 10.3.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), `ORDER BY` can be used in a multi-table update:
+From [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), `ORDER BY` can be used in a multi-table update:
 
 
 ```
@@ -142,12 +142,12 @@ SELECT * FROM store;
 
 
 * [Why is ORDER BY in a FROM subquery ignored?](../../../../faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
-* [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
+* [SELECT](select.md)
+* [UPDATE](../changing-deleting-data/update.md)
 * [DELETE](../changing-deleting-data/delete.md)
 * [Improvements to ORDER BY Optimization](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimization-strategies/improvements-to-order-by.md)
 * [Joins and Subqueries](joins-subqueries/README.md)
-* [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT](limit.md)
 * [GROUP BY](group-by.md)
 * [Common Table Expressions](common-table-expressions/README.md)
 * [SELECT WITH ROLLUP](select-with-rollup.md)

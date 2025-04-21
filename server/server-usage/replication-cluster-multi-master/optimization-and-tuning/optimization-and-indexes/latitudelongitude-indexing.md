@@ -45,7 +45,7 @@ How many PARTITIONs? It does not matter a lot. Some thoughts:
 * Don't have more than 100 partitions, there are inefficiencies in the partition implementation.
 
 
-How to PARTITION? Well, MariaDB and MySQL are very picky. So [FLOAT](../../../../reference/data-types/data-types-numeric-data-types/float.md)/[DOUBLE](../../../../reference/data-types/data-types-numeric-data-types/double.md) are out. [DECIMAL](../../../../reference/data-types/data-types-numeric-data-types/decimal.md) is out. So, we are stuck with some kludge. Essentially, we need to convert Lat/Lng to some size of [INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) and use PARTITION BY RANGE.
+How to PARTITION? Well, MariaDB and MySQL are very picky. So [FLOAT](../../../../reference/data-types/data-types-numeric-data-types/float.md)/[DOUBLE](../../../../reference/data-types/data-types-numeric-data-types/double.md) are out. [DECIMAL](../../../../reference/data-types/data-types-numeric-data-types/decimal.md) is out. So, we are stuck with some kludge. Essentially, we need to convert Lat/Lng to some size of [INT](../../../../reference/data-types/data-types-numeric-data-types/int.md) and use PARTITION BY RANGE.
 
 
 ## Representation choices
@@ -136,8 +136,8 @@ Fields and indexes
 * lon -- scaled longitude
 * PRIMARY KEY(lon, lat, ...) -- lon must be first; something must be added to make it UNIQUE
 * id -- (optional) you may need to identify the rows for your purposes; AUTO_INCREMENT if you like
-* INDEX(id) -- if `id` is [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
-* ENGINE=[InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) -- so the PRIMARY KEY will be "clustered"
+* INDEX(id) -- if `id` is [AUTO_INCREMENT](../../../../reference/data-types/auto_increment.md), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
+* ENGINE=[InnoDB](../../../../reference/storage-engines/innodb/README.md) -- so the PRIMARY KEY will be "clustered"
 * Other indexes -- keep to a minimum (this is a general performance rule for large tables)
 
 
@@ -545,4 +545,3 @@ optimizations, and debugging tips.
 
 Original source: [latlng](https://mysql.rjweb.org/doc.php/latlng)
 
-<span></span>

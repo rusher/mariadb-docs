@@ -18,7 +18,7 @@ Returns a count of the number of different non-NULL values.
 COUNT(DISTINCT) returns 0 if there were no matching rows.
 
 
-Although, from [MariaDB 10.2.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/window-functions-overview.md), COUNT DISTINCT cannot be.
+Although, from [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/README.md), COUNT DISTINCT cannot be.
 
 
 ## Examples
@@ -51,6 +51,6 @@ SELECT COUNT(DISTINCT (name)) FROM student;
 ## See Also
 
 
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../../data-manipulation/selecting-data/select.md)
 * [COUNT](count.md)
 

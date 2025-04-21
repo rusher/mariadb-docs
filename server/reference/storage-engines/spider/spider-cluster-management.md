@@ -63,11 +63,11 @@ SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM
 
 
 
-##### MariaDB starting with [10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md)
+##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 The Spider Handler Socket support has been removed, see [MDEV-26858](https://jira.mariadb.org/browse/MDEV-26858).
 
 
-Check that [Handler Socket](../../sql-statements-and-structure/nosql/handlersocket/handlersocket-external-resources.md) is running on the backend nodes
+Check that [Handler Socket](../../sql-statements-and-structure/nosql/handlersocket/README.md) is running on the backend nodes
 
 
 ```
@@ -111,8 +111,8 @@ SELECT spider_direct_sql('1\t=\t1\t2\t100000\t0','res', 'host "192.168.0.202", t
 
 
 
-##### MariaDB starting with [10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md)
-The UDF spider_copy_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md).
+##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
+The UDF spider_copy_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md).
 
 
 The UDF function [spider_copy_tables](spider-functions/spider_copy_tables.md) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
@@ -151,7 +151,7 @@ SET GLOBAL spider_log_result_error_with_sql=3;
 ## Compiling in Debug Mode
 
 
-See [Compiling MariaDB for Debugging](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md) and [Creating a Trace File](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file.md).
+See [Compiling MariaDB for Debugging](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) and [Creating a Trace File](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file).
 
 
 Report the issue in [MariaDB JIRA](https://jira.mariadb.org) (see [Reporting Bugs](../../bug-tracking/reporting-bugs.md)) or to the MariaDB Corporation support center.
@@ -178,7 +178,7 @@ A number of new [status variables](../../../server-usage/replication-cluster-mul
 ## Information Schema Tables
 
 
-* A new [Information Schema](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) table is installed - [SPIDER_ALLOC_MEM](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
+* A new [Information Schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) table is installed - [SPIDER_ALLOC_MEM](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
 
 
 ```
@@ -196,13 +196,13 @@ A number of new [status variables](../../../server-usage/replication-cluster-mul
 +-------------------+---------------------+------+-----+---------+-------+
 ```
 
-From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), Spider installs another Information Schema table, [SPIDER_WRAPPER_PROTOCOLS](information-schema-spider_wrapper_protocols-table.md).
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), Spider installs another Information Schema table, [SPIDER_WRAPPER_PROTOCOLS](information-schema-spider_wrapper_protocols-table.md).
 
 
 ## Performance Schema
 
 
-The [Performance schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
+The [Performance schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/README.md) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
 
 
 To activate the performance schema, use the [performance_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md).

@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `LOCALES` table contains a list of all compiled-in locales. It is only available if the [LOCALES plugin](../../../../../../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md) has been installed.
+The [Information Schema](../README.md) `LOCALES` table contains a list of all compiled-in locales. It is only available if the [LOCALES plugin](../../../../../../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md) has been installed.
 
 
 It contains the following columns:

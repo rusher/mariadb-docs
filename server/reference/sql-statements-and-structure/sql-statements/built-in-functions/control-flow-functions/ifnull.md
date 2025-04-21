@@ -18,7 +18,7 @@ If *`expr1`* is not NULL, IFNULL() returns *`expr1`*; otherwise it returns
 context in which it is used.
 
 
-From [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), NVL() is an alias for IFNULL().
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), NVL() is an alias for IFNULL().
 
 
 ## Examples

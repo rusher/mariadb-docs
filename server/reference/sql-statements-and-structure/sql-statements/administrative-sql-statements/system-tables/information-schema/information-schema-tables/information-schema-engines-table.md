@@ -1,7 +1,7 @@
 
 # Information Schema ENGINES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ENGINES` table displays status information about the server's [storage engines](../../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md).
+The [Information Schema](../README.md) `ENGINES` table displays status information about the server's [storage engines](../../../../../../storage-engines/README.md).
 
 
 It contains the following columns:
@@ -14,19 +14,19 @@ It contains the following columns:
 | ENGINE | Name of the storage engine. |
 | SUPPORT | Whether the engine is the default, or is supported or not. |
 | COMMENT | Storage engine comments. |
-| TRANSACTIONS | Whether or not the engine supports [transactions](../../../../../../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md). |
+| TRANSACTIONS | Whether or not the engine supports [transactions](../../../../transactions/README.md). |
 | XA | Whether or not the engine supports [XA transactions](../../../../transactions/xa-transactions.md). |
 | SAVEPOINTS | Whether or not [savepoints](../../../../transactions/savepoint.md) are supported. |
 
 
 
-It provides identical information to the `[SHOW ENGINES](../../../show/show-engines.md)` statement. Since storage engines are plugins, different information about them is also shown in the `[information_schema.PLUGINS](plugins-table-information-schema.md)` table and by the `[SHOW PLUGINS](../../../show/show-plugins-soname.md)` statement.
+It provides identical information to the `[SHOW ENGINES](../../../show/show-engines.md)` statement. Since storage engines are plugins, different information about them is also shown in the `[information_schema.PLUGINS](plugins-table-information-schema.md)` table and by the `[SHOW PLUGINS](../../../show/show-plugins.md)` statement.
 
 
 The table is not a standard Information Schema table, and is a MySQL and MariaDB extension.
 
 
-Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). The same applies to [FederatedX](../../../../../../storage-engines/federatedx-storage-engine/README.md).
+Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../../../storage-engines/innodb/README.md). The same applies to [FederatedX](../../../../../../storage-engines/federatedx-storage-engine/README.md).
 
 
 ## Example

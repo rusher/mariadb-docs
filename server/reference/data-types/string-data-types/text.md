@@ -12,7 +12,7 @@ TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
 ## Description
 
 
-A `TEXT` column with a maximum length of `65,535` (`2<sup>16</sup> - 1`)
+A `TEXT` column with a maximum length of `65,535` (`216 - 1`)
 characters. The effective maximum length is less if the value contains
 multi-byte characters. Each `TEXT` value is stored using a two-byte length
 prefix that indicates the number of bytes in the value. If you need a bigger storage, consider using [MEDIUMTEXT](mediumtext.md) instead.
@@ -23,7 +23,7 @@ creates the column as the smallest `TEXT` type large enough to hold values
 `M` characters long.
 
 
-`BLOB` and `TEXT` columns can be assigned a [DEFAULT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) value.
+`BLOB` and `TEXT` columns can be assigned a [DEFAULT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) value.
 
 
 ## Examples
@@ -110,7 +110,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## Indexing
 
 
-A [unique index](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)
+A [unique index](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 
 Internally, this uses hash indexing to quickly check the values and if a hash collision is found, the actual stored values are compared in order to retain the uniqueness.
@@ -120,7 +120,7 @@ Internally, this uses hash indexing to quickly check the values and if a hash co
 
 
 * [VARCHAR](varchar.md) columns can be fully indexed. `TEXT` columns can only be indexed over a specified length.
-* Using TEXT or [BLOB](blob.md) in a [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria_pagecache_buffer_size](../../storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
+* Using TEXT or [BLOB](blob.md) in a [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria_pagecache_buffer_size](../../storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
 
 
 ### For Storage Engine Developers

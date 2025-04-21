@@ -17,12 +17,12 @@ The table contains the following columns:
 | Column | Description |
 | VARIABLE_NAME | Variable name. |
 | VARIABLE_VALUE | Variable value. |
-| VARIABLE_TYPE | Variable [type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md). |
+| VARIABLE_TYPE | Variable [type](../../../../../../data-types/README.md). |
 | CHARACTER_SET_NAME | [Character set](../../../../../../data-types/string-data-types/character-sets/README.md). |
 
 
 
-User variables are reset and the table emptied with the [FLUSH USER_VARIABLES](../../../flush-commands/flush-tables-for-export.md) statement. `SHOW USER_VARIABLES` displays a subset of the data.
+User variables are reset and the table emptied with the [FLUSH USER_VARIABLES](../../../flush-commands/flush.md) statement. `SHOW USER_VARIABLES` displays a subset of the data.
 
 
 ## Example

@@ -38,7 +38,7 @@ SELECT HOUR('272:59:59');
 +-------------------+
 ```
 
-Difference between `[EXTRACT (HOUR FROM ...)](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md)` (>= [MariaDB 10.0.7](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) and [MariaDB 5.5.35](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md)) and `HOUR`:
+Difference between `[EXTRACT (HOUR FROM ...)](extract.md)` (>= [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) and [MariaDB 5.5.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes)) and `HOUR`:
 
 
 ```
@@ -55,5 +55,5 @@ SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');
 
 * [Date and Time Units](date-and-time-units.md)
 * [Date and Time Literals](../../../sql-language-structure/date-and-time-literals.md)
-* [EXTRACT()](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md)
+* [EXTRACT()](extract.md)
 

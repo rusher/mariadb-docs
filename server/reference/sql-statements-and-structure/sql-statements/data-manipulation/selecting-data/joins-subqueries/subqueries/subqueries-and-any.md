@@ -1,7 +1,7 @@
 
 # Subqueries and ANY
 
-[Subqueries](subqueries-and-all.md) using the ANY keyword will return `true` if the comparison returns `true` for at least one row returned by the subquery.
+[Subqueries](README.md) using the ANY keyword will return `true` if the comparison returns `true` for at least one row returned by the subquery.
 
 
 ## Syntax

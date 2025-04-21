@@ -8,7 +8,7 @@
 This page shows the results for benchmarking the following configuration:
 
 
-* [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) + MyISAM
+* [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) + MyISAM
 * [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + MyISAM
 * MySQL 5.5.19 + MyISAM
 * MySQL 5.6.4 + MyISAM
@@ -79,7 +79,7 @@ perl launcher.pl \
 The following configurations have been compared in this test:
 
 
-#### Case 1: [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) + MyISAM
+#### Case 1: [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) + MyISAM
 
 
 Here are the common options that the mysqld server was started with:
@@ -143,7 +143,7 @@ max_heap_table_size = 96M
 #### Case 2: [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + MyISAM
 
 
-Uses the same configuration file as [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) in Case 1.
+Uses the same configuration file as [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) in Case 1.
 
 
 #### Case 3: MySQL 5.5.19 + MyISAM
@@ -236,7 +236,7 @@ Here are the actual results in seconds (smaller is better):
 
 | Configuration | 1.sql | 2.sql | 2-opt.sql | 3.sql | 4.sql | 5.sql | 6.sql | 7.sql | 8.sql | 9.sql | 10.sql | 11.sql | 12.sql | 13.sql | 14.sql | 15.sql | 16.sql | 17.sql | 17-opt1.sql | 17-opt2.sql | 18.sql | 18-opt.sql | 19.sql | 19-opt1.sql | 19-opt2.sql | 20.sql | 21.sql | 22.sql | Version | Query and explain details |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Configuration | [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) + MyISAM | Ratio | [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + MyISAM | Ratio | MySQL 5.5.19 + MyISAM | Ratio | MySQL 5.6.4 + MyISAM | Ratio |
+| Configuration | [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) + MyISAM | Ratio | [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + MyISAM | Ratio | MySQL 5.5.19 + MyISAM | Ratio | MySQL 5.6.4 + MyISAM | Ratio |
 | 1.sql | 261 | 1.00 | 308 | 1.18 | 259 | 0.99 | 277 | 1.06 |
 | 2.sql | 47 | 1.00 | 48 | 1.02 | 499 | 10.62 | 49 | 1.04 |
 | 2-opt.sql | 46 | 1.00 | 48 | 1.04 | - | - | - | - |
@@ -273,7 +273,7 @@ Here are the actual results in seconds (smaller is better):
 **NOTE:** The columns named "*Ratio*" are calculated values of the ratio between the
 current value compared to the value in the first test configuration. The
 formula for it is `(current_value/value_in_first_row)`. For example if [MariaDB
-5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) (the first column) handles a query for 100 seconds and MySQL 5.6.4 (the last
+5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) (the first column) handles a query for 100 seconds and MySQL 5.6.4 (the last
 configuration) handles the same query for 120 seconds, the ratio will be
 `120/100 = 1.20`. This means that it takes MySQL 5.6.4 20% more time to handle
 the same query.
@@ -287,7 +287,7 @@ downloaded from here:
 ### Notes
 
 
-Queries 2-opt.sql and 18-opt.sql are tested only for [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) and [MariaDB
+Queries 2-opt.sql and 18-opt.sql are tested only for [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) and [MariaDB
 5.5.18](/en/mariadb-5518-release-notes/)
 
 
@@ -447,7 +447,7 @@ Here are the actual results in seconds (smaller is better):
 | Configuration | 20.sql | 20-opt0.sql | 20-opt1.sql | 20-opt2.sql | Version | Query and explain details |
 | --- | --- | --- | --- | --- | --- | --- |
 | Configuration | 20.sql | 20-opt0.sql | 20-opt1.sql | 20-opt2.sql | Version | Query and explain details |
-| [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) + MyISAM | 20070 | - | 5560 | 5615 | 5.3.2-MariaDB-beta | [Explain details](https://askmonty.org/w/images/9/9a/DBT3_MyISAM_HDD_s30_q20_mariadb_5_3_2.txt) |
+| [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) + MyISAM | 20070 | - | 5560 | 5615 | 5.3.2-MariaDB-beta | [Explain details](https://askmonty.org/w/images/9/9a/DBT3_MyISAM_HDD_s30_q20_mariadb_5_3_2.txt) |
 | [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + MyISAM | 19922 | - | 5529 | 5572 | 5.5.18-MariaDB | [Explain details](https://askmonty.org/w/images/e/e8/DBT3_MyISAM_HDD_s30_q20_mariadb_5_5_18.txt) |
 | MySQL 5.5.19 + MyISAM | 17832 | >30000 | - | - | 5.5.19 | [Explain details](https://askmonty.org/w/images/a/ae/DBT3_MyISAM_HDD_s30_q20_mysql_5_5_19.txt) |
 | MYSQL 5.6.4 + MyISAM | 19845 | >30000 | - | - | 5.6.4-m7 | [Explain details](https://askmonty.org/w/images/c/cc/DBT3_MyISAM_HDD_s30_q20_mysql_5_6_4.txt) |

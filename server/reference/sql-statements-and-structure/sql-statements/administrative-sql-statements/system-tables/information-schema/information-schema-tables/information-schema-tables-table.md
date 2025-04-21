@@ -1,7 +1,7 @@
 
 # Information Schema TABLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) table shows information about the various tables (until [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only non-`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md) on the server.
+The [Information Schema](../README.md) table shows information about the various tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md) on the server.
 
 
 It contains the following columns:
@@ -14,26 +14,26 @@ It contains the following columns:
 | TABLE_CATALOG | Always def. |
 | TABLE_SCHEMA | Database name. |
 | TABLE_NAME | Table name. |
-| TABLE_TYPE | One of BASE TABLE for a regular table, VIEW for a [view](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md), SYSTEM VIEW for [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) tables, SYSTEM VERSIONED for [system-versioned tables](../../../../../temporal-tables/system-versioned-tables.md), SEQUENCE for [sequences](../../../../../sequences/README.md) or, from [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), TEMPORARY for local temporary tables. |
-| ENGINE | [Storage Engine](../../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md). |
+| TABLE_TYPE | One of BASE TABLE for a regular table, VIEW for a [view](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md), SYSTEM VIEW for [Information Schema](../README.md) tables, SYSTEM VERSIONED for [system-versioned tables](../../../../../temporal-tables/system-versioned-tables.md), SEQUENCE for [sequences](../../../../../sequences/README.md) or, from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), TEMPORARY for local temporary tables. |
+| ENGINE | [Storage Engine](../../../../../../storage-engines/README.md). |
 | VERSION | Version number from the table's .frm file |
 | ROW_FORMAT | Row format (see [InnoDB](../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), [Aria](../../../../../../storage-engines/aria/aria-storage-formats.md) and [MyISAM](../../../../../../storage-engines/myisam-storage-engine/myisam-storage-formats.md) row formats). |
-| TABLE_ROWS | Number of rows in the table. Some engines, such as [XtraDB and InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) may store an estimate. |
+| TABLE_ROWS | Number of rows in the table. Some engines, such as [XtraDB and InnoDB](../../../../../../storage-engines/innodb/README.md) may store an estimate. |
 | AVG_ROW_LENGTH | Average row length in the table. |
-| DATA_LENGTH | For [InnoDB/XtraDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), the index size, in pages, multiplied by the page size. For [Aria](../../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) and [MyISAM](../../../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md), length of the data file, in bytes. For [MEMORY](../../../../../../storage-engines/memory-storage-engine.md), the approximate allocated memory. |
-| MAX_DATA_LENGTH | Maximum length of the data file, ie the total number of bytes that could be stored in the table. Not used in [XtraDB and InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). |
+| DATA_LENGTH | For [InnoDB/XtraDB](../../../../../../storage-engines/innodb/README.md), the index size, in pages, multiplied by the page size. For [Aria](../../../../../../storage-engines/aria/README.md) and [MyISAM](../../../../../../storage-engines/myisam-storage-engine/README.md), length of the data file, in bytes. For [MEMORY](../../../../../../storage-engines/memory-storage-engine.md), the approximate allocated memory. |
+| MAX_DATA_LENGTH | Maximum length of the data file, ie the total number of bytes that could be stored in the table. Not used in [XtraDB and InnoDB](../../../../../../storage-engines/innodb/README.md). |
 | INDEX_LENGTH | Length of the index file. |
-| DATA_FREE | Bytes allocated but unused. For [InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables in a shared tablespace, the free space of the shared tablespace with small safety margin. An estimate in the case of partitioned tables - see the [PARTITIONS](information-schema-partitions-table.md) table. |
-| AUTO_INCREMENT | Next [AUTO_INCREMENT](../../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) value. |
+| DATA_FREE | Bytes allocated but unused. For [InnoDB](../../../../../../storage-engines/innodb/README.md) tables in a shared tablespace, the free space of the shared tablespace with small safety margin. An estimate in the case of partitioned tables - see the [PARTITIONS](information-schema-partitions-table.md) table. |
+| AUTO_INCREMENT | Next [AUTO_INCREMENT](../../../../../../data-types/auto_increment.md) value. |
 | CREATE_TIME | Time the table was created. Some engines just return the ctime information from the file system layer here, in that case the value is not necessarily the table creation time but rather the time the file system metadata for it had last changed. |
-| UPDATE_TIME | Time the table was last updated. On Windows, the timestamp is not updated on update, so MyISAM values will be inaccurate. In [InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), if shared tablespaces are used, will be NULL, while buffering can also delay the update, so the value will differ from the actual time of the last UPDATE, INSERT or DELETE. |
+| UPDATE_TIME | Time the table was last updated. On Windows, the timestamp is not updated on update, so MyISAM values will be inaccurate. In [InnoDB](../../../../../../storage-engines/innodb/README.md), if shared tablespaces are used, will be NULL, while buffering can also delay the update, so the value will differ from the actual time of the last UPDATE, INSERT or DELETE. |
 | CHECK_TIME | Time the table was last checked. Not kept by all storage engines, in which case will be NULL. |
 | TABLE_COLLATION | [Character set and collation](../../../../../../data-types/string-data-types/character-sets/README.md). |
 | CHECKSUM | Live checksum value, if any. |
-| CREATE_OPTIONS | Extra [CREATE TABLE](../../../../../vectors/create-table-with-vectors.md) options. |
+| CREATE_OPTIONS | Extra [CREATE TABLE](../../../../data-definition/create/create-table.md) options. |
 | TABLE_COMMENT | Table comment provided when MariaDB created the table. |
-| MAX_INDEX_LENGTH | Maximum index length (supported by MyISAM and Aria tables). Added in [MariaDB 10.3.5](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md). |
-| TEMPORARY | Until [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), placeholder to signal that a table is a temporary table and always "N", except "Y" for generated information_schema tables and NULL for [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md). From [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), will also be set to "Y" for local temporary tables. Added in [MariaDB 10.3.5](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md). |
+| MAX_INDEX_LENGTH | Maximum index length (supported by MyISAM and Aria tables). Added in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes). |
+| TEMPORARY | Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), placeholder to signal that a table is a temporary table and always "N", except "Y" for generated information_schema tables and NULL for [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md). From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), will also be set to "Y" for local temporary tables. Added in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes). |
 
 
 
@@ -46,7 +46,7 @@ Although the table is standard in the Information Schema, all but `TABLE_CATALOG
 ## Examples
 
 
-From [MariaDB 10.3.5](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md):
+From [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
 
 ```
@@ -102,7 +102,7 @@ MAX_INDEX_LENGTH: 17179868160
 ...
 ```
 
-Example with temporary = 'y', from [MariaDB 10.3.5](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md):
+Example with temporary = 'y', from [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
 
 ```
@@ -158,7 +158,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
 ...
 ```
 
-From [MariaDB 11.2.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md)
+From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes)
 
 
 ```

@@ -28,7 +28,7 @@ Toad Edge™ allows you to:
 * Obtain detailed information about your databases.
 
 
-In TOAD Edge 1.2, support for [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) has been added.
+In TOAD Edge 1.2, support for [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) has been added.
 
 
 #### Product Information

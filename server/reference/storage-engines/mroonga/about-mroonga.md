@@ -6,18 +6,18 @@
 | Mroonga Version | Introduced | Maturity |
 | --- | --- | --- |
 | Mroonga Version | Introduced | Maturity |
-| 7.07 | [MariaDB 10.2.11](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md), [MariaDB 10.1.29](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md) | Stable |
-| 5.04 | [MariaDB 10.1.6](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md) | Stable |
-| 5.02 | [MariaDB 10.0.18](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes.md), [MariaDB 10.1.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md) | Stable |
-| 5.0 | [MariaDB 10.0.17](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes.md) | Stable |
-| 4.06 | [MariaDB 10.0.15](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) | Stable |
+| 7.07 | [MariaDB 10.2.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10211-release-notes), [MariaDB 10.1.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes) | Stable |
+| 5.04 | [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes) | Stable |
+| 5.02 | [MariaDB 10.0.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes), [MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes) | Stable |
+| 5.0 | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes) | Stable |
+| 4.06 | [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) | Stable |
 
 
 
 Mroonga is a full text search storage engine based on Groonga, which is an open-source CJK-ready (Chinese, Japanese, and Korean) fulltext search engine using column base. See [groonga.org](https://groonga.org) for more.
 
 
-With Mroonga, you can have a CJK-ready full text search feature, and it is faster than the [MyISAM](../myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) [full text search](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) for both updating and searching.
+With Mroonga, you can have a CJK-ready full text search feature, and it is faster than the [MyISAM](../myisam-storage-engine/README.md) and [InnoDB](../innodb/README.md) [full text search](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) for both updating and searching.
 
 
 Mroonga also supports Groonga's fast geolocation search by using MariaDB's geolocation SQL syntax.
@@ -108,4 +108,3 @@ Mroonga supports a limited number of [character sets](../../data-types/string-da
 
 Further documentation for Mroonga can be found at [](https://mroonga.org/docs/)
 
-<span></span>

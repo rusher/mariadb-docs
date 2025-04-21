@@ -46,10 +46,10 @@ It goes by various names
 Decide which columns need to be searched/sorted by SQL queries. No, you don't need all the columns to be searchable or sortable. Certain columns are frequently used for selection; identify these. You probably won't use all of them in all queries, but you will use some of them in every query.
 
 
-The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one [BLOB](../../../../reference/data-types/string-data-types/blob.md). Searchable fields are declared appropriately ([INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md), etc). The BLOB contains JSON-encoding of all the extra fields.
+The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one [BLOB](../../../../reference/data-types/string-data-types/blob.md). Searchable fields are declared appropriately ([INT](../../../../reference/data-types/data-types-numeric-data-types/int.md), [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md), etc). The BLOB contains JSON-encoding of all the extra fields.
 
 
-The table should be [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), hence it should have a PRIMARY KEY. The entitity_id is the 'natural' PK. Add a small number of other indexes (often 'composite') on the searchable fields. [PARTITIONing](../../../../server-management/partitioning-tables/README.md) is unlikely to be of any use, unless the Entities should purged after some time. (Example: News Articles)
+The table should be [InnoDB](../../../../reference/storage-engines/innodb/README.md), hence it should have a PRIMARY KEY. The entitity_id is the 'natural' PK. Add a small number of other indexes (often 'composite') on the searchable fields. [PARTITIONing](../../../../server-management/partitioning-tables/README.md) is unlikely to be of any use, unless the Entities should purged after some time. (Example: News Articles)
 
 
 ## But what about the ad hoc queries?
@@ -89,7 +89,7 @@ You have included the most important fields to search on -- date, category, etc.
 * Queries are fast (since you have picked 'good' indexes)
 * Expandable (JSON is happy to have new fields)
 * Compatible (No 3rd party products, just supported products)
-* Range tests work (unlike storing [INTs](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) in [VARCHARs](../../../../reference/data-types/string-data-types/varchar.md))
+* Range tests work (unlike storing [INTs](../../../../reference/data-types/data-types-numeric-data-types/int.md) in [VARCHARs](../../../../reference/data-types/string-data-types/varchar.md))
 * (Drawback) Cannot use the non-indexed attributes in WHERE or ORDER BY clauses, must deal with that in the app. (MySQL 5.7 partially alleviates this.)
 
 
@@ -99,7 +99,7 @@ You have included the most important fields to search on -- date, category, etc.
 Posted Jan, 2014; Refreshed Feb, 2016.
 
 
-* MariaDB's [Dynamic Columns](../../../../reference/sql-statements-and-structure/nosql/dynamic-columns-api.md)
+* MariaDB's [Dynamic Columns](../../../../reference/sql-statements-and-structure/nosql/dynamic-columns.md)
 * [MySQL 5.7's JSON](https://dev.mysql.com/doc/refman/5.7/en/json.html)
 
 
@@ -122,4 +122,3 @@ optimizations, and debugging tips.
 
 Original source: [eav](https://mysql.rjweb.org/doc.php/eav)
 
-<span></span>

@@ -13,7 +13,7 @@ Each concurrent session accessing the same table does so independently. This imp
 However, note that this is not a hard limit. When the server needs to open a table, it evicts the least recently used closed table from the cache, and adds the new table. If all tables are used, the server adds the new table and does not evict any table. As soon as a table is not used anymore, it will be evicted from the list even if no table needs to be open, until the number of open tables will be equal to *table_open_cache*
 
 
-*table_open_cache* has defaulted to 2000 since [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md). Before that, the default was 400.
+*table_open_cache* has defaulted to 2000 since [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes). Before that, the default was 400.
 
 
 You can view the current setting in the my.cnf file, or by running:
@@ -61,7 +61,7 @@ show global status like 'open_tables';
 +---------------+-------+
 ```
 
-The open table cache can be emptied with [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) or with the `flush-tables` or `refresh` [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) commands.
+The open table cache can be emptied with [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) or with the `flush-tables` or `refresh` [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) commands.
 
 
 ## Automatic Creation of New Table Open Cache Instances
@@ -86,4 +86,3 @@ Depending on the ratio of actual available file handles, and [table_open_cache](
 
 The implementation and behavior of this feature is different than the same feature in MySQL 5.6.
 
-<span></span>

@@ -7,7 +7,7 @@ Basic information about the existing spatial features can be found in the
 also applies to MariaDB.
 
 
-The [MariaDB 5.3.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes.md) release , contains code improving
+The [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) release , contains code improving
 the spatial functionality in MariaDB.
 
 
@@ -22,7 +22,7 @@ the SQL environment was extended with a set of geometry types.
 
 
 MariaDB supports spatial extensions to operate on spatial features.
-These features are available for [Aria](../../storage-engines/s3-storage-engine/aria_s3_copy.md), [MyISAM](../../storage-engines/myisam-storage-engine/myisam-system-variables.md), [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), NDB, and [ARCHIVE](../../storage-engines/archive/README.md) tables.
+These features are available for [Aria](../../storage-engines/aria/README.md), [MyISAM](../../storage-engines/myisam-storage-engine/README.md), [InnoDB](../../storage-engines/innodb/README.md), NDB, and [ARCHIVE](../../storage-engines/archive/README.md) tables.
 
 
 For spatial columns, Aria and MyISAM supports both [SPATIAL](spatial-index.md) and non-SPATIAL

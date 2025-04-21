@@ -18,26 +18,26 @@ The	`CONVERT()` and [CAST()](cast.md) functions take a value of one type and pro
 The type can be one of the following values:
 
 
-* [BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
-* [CHAR](../secondary-functions/information-functions/charset.md)
-* [DATE](../../../sql-language-structure/date-and-time-literals.md)
+* [BINARY](../../../../data-types/string-data-types/binary.md)
+* [CHAR](../../../../data-types/string-data-types/char.md)
+* [DATE](../../../../data-types/date-and-time-data-types/date.md)
 * [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md)
 * [DECIMAL[(M[,D])](../../../../data-types/data-types-numeric-data-types/decimal.md)]
 * [DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)
-* [FLOAT](../../../../data-types/data-types-numeric-data-types/float.md) (from [MariaDB 10.4.5](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1045-release-notes.md))
-* [INTEGER](../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)
+* [FLOAT](../../../../data-types/data-types-numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
+* [INTEGER](../../../../data-types/data-types-numeric-data-types/int.md)
 
   * Short for `SIGNED INTEGER`
 * SIGNED [INTEGER]
 * UNSIGNED [INTEGER]
-* [TIME](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md)
-* [VARCHAR](../../../../data-types/string-data-types/varchar.md) (in [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), from [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md))
+* [TIME](../../../../data-types/date-and-time-data-types/time.md)
+* [VARCHAR](../../../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
 
 
 Note that in MariaDB, `INT` and `INTEGER` are the same thing.
 
 
-`BINARY` produces a string with the [BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) data type. If the optional length is given, `BINARY(N)` causes the cast to use no more than `N` bytes of the argument. Values shorter than the given number in bytes are padded with 0x00 bytes to make them equal the length value.
+`BINARY` produces a string with the [BINARY](../../../../data-types/string-data-types/binary.md) data type. If the optional length is given, `BINARY(N)` causes the cast to use no more than `N` bytes of the argument. Values shorter than the given number in bytes are padded with 0x00 bytes to make them equal the length value.
 
 
 `CHAR(N)` causes the cast to use no more than the number of characters given in the argument.
@@ -64,7 +64,7 @@ SELECT enum_col FROM tbl_name
 ORDER BY CAST(enum_col AS CHAR);
 ```
 
-Converting a [BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to string to permit the [LOWER](lower.md) function to work:
+Converting a [BINARY](../../../../data-types/string-data-types/binary.md) to string to permit the [LOWER](lower.md) function to work:
 
 
 ```

@@ -1231,7 +1231,7 @@ Read/Write aware statement based router:
 
 
 Simple sharding on database level:
-* [SchemaRouter](../../mariadb-maxscale-14/maxscale-design-documents/schemarouter-router-technical-overview.md)
+* [SchemaRouter](../../mariadb-maxscale-21-06/README.md)
 
 
 Binary log server:

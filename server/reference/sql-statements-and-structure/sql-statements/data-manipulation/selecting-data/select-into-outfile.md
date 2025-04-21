@@ -76,7 +76,7 @@ SELECT  * INTO OUTFILE "/tmp/skr3" FROM (SELECT * FROM t1 UNION SELECT * FROM t1
 ## See Also
 
 
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](select.md)
 * [LOAD_DATA()](../../built-in-functions/string-functions/load_file.md) function
 * [LOAD DATA INFILE](../inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
 * [SELECT INTO Variable](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/selectinto.md)

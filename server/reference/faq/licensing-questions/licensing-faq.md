@@ -17,11 +17,11 @@ MariaDB is distributed under the [GPL license](mariadb-licenses.md),
 version 2.
 
 
-The [MariaDB client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md) for [C](../../../../release-notes/connectors/c/changelogs/mariadb-client-library-for-c-200-changelog.md), [Java](../../../../release-notes/connectors/java/mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes.md) and [ODBC](../../../../release-notes/connectors/odbc/mariadb-connector-odbc-10-release-notes/mariadb-odbc-driver-09-beta.md) are distributed under the LGPL license, version 2.1 or later. The LGPL license allows you to distribute these MariaDB client libraries freely with any application.
+The [MariaDB client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md) for [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/) and [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/) are distributed under the LGPL license, version 2.1 or later. The LGPL license allows you to distribute these MariaDB client libraries freely with any application.
 
 
 The MariaDB client library included with the MariaDB server is also GPL version 2,
-but has a [FLOSS exception](mariadb-licenses.md#mariadb-client-license) that allows
+but has a [FLOSS exception](mariadb-licenses.md) that allows
 you to combine it with most other open source software, without
 conflicting with their license, even if that license is incompatible
 with the GPL. We do however recommend you to use the new [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md) for any non-GPL application.
@@ -71,7 +71,7 @@ library code, but not the server, with their applications.
 
 If your application is Free software/open source and uses one of the
 licenses listed in the
-[FLOSS exception](mariadb-licenses.md#mariadb-client-license), the GPL
+[FLOSS exception](mariadb-licenses.md), the GPL
 in the client library does not affect your application.
 
 
@@ -130,8 +130,8 @@ driver for anything.
 
 
 If your application is using a license that is not covered by the 
-[FLOSS exception](mariadb-licenses.md#mariadb-client-license), then you
-should use the new [LGPL client libraries or C](../../../../release-notes/connectors/c/changelogs/mariadb-client-library-for-c-200-changelog.md).
+[FLOSS exception](mariadb-licenses.md), then you
+should use the new [LGPL client libraries or C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/).
 
 
 The LGPL license allows you to distribute these MariaDB client library freely with any application. If you modify the client library, you need to publish the new source code.

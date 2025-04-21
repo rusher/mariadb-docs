@@ -1,7 +1,7 @@
 
 # Performance Schema events_waits_summary_by_account_by_event_name Table
 
-The [Performance Schema](performance-schema-table_handles-table.md) `events_waits_summary_by_account_by_event_name` table contains wait events summarized by account and event name. It contains the following columns:
+The [Performance Schema](../README.md) `events_waits_summary_by_account_by_event_name` table contains wait events summarized by account and event name. It contains the following columns:
 
 
 

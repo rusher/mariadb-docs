@@ -17,10 +17,10 @@ Returns the population standard deviation of *`expr`* (the square root of
 `[STDDEV()](stddev.md)`, which are equivalent but not standard SQL.
 
 
-It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+It is an [aggregate function](README.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
-STDDEV_POP() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
+STDDEV_POP() can be used as a [window function](../special-functions/window-functions/README.md).
 
 
 STDDEV_POP() returns `NULL` if there were no matching rows.
@@ -29,7 +29,7 @@ STDDEV_POP() returns `NULL` if there were no matching rows.
 ## Examples
 
 
-As an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md):
+As an [aggregate function](README.md):
 
 
 ```
@@ -49,7 +49,7 @@ SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x)
 +----------+---------------+----------------+------------+
 ```
 
-As a [window function](../special-functions/window-functions/window-functions-overview.md):
+As a [window function](../special-functions/window-functions/README.md):
 
 
 ```

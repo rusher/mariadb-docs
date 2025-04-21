@@ -234,7 +234,7 @@ aws s3 cp --quiet s3://my-s3-bucket/flights.csv - | mariadb -e "LOAD DATA LOCAL 
 ## Bulk loading output of SELECT FROM Table(s)
 
 
-Standard in can also be used to directly pipe the output from an arbitrary SELECT statement into cpimport. The select statement may select from non-columnstore tables such as [MyISAM](../../server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) or [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). In the example below, the db2.source_table is selected from, using the -N flag to remove non-data formatting. The -q flag tells the mysql client to not cache results which will avoid possible timeouts causing the load to fail.
+Standard in can also be used to directly pipe the output from an arbitrary SELECT statement into cpimport. The select statement may select from non-columnstore tables such as [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine/) or [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/). In the example below, the db2.source_table is selected from, using the -N flag to remove non-data formatting. The -q flag tells the mysql client to not cache results which will avoid possible timeouts causing the load to fail.
 
 
 Example:

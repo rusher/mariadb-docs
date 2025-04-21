@@ -5,28 +5,28 @@
 
 
 
-See the [Summary page](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md), Release Notes and Changelog pages for details of what is in each 5.2 release:
+See the [Summary page](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2), Release Notes and Changelog pages for details of what is in each 5.2 release:
 
 
-### [MariaDB 5.2 Release Notes](../../../../../../../../server/reference/plugins/mariadb-audit-plugin/release-notes-mariadb-audit-plugin/README.md)
+### [MariaDB 5.2 Release Notes](/kb/en/release-notes/)
 
 
-This section includes a summary of all important features in [MariaDB 5.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md).
+This section includes a summary of all important features in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2).
 
 
-* [MariaDB 5.2.0-beta Release Notes](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes.md) (5.2.0-beta released 10 Apr 2010)
-* [MariaDB 5.2.1-beta Release Notes](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-521-release-notes.md) (5.2.1-beta released 18 Jun 2010)
-* [MariaDB 5.2.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes.md) Release Notes (in development)
+* [MariaDB 5.2.0-beta Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes) (5.2.0-beta released 10 Apr 2010)
+* [MariaDB 5.2.1-beta Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-521-release-notes) (5.2.1-beta released 18 Jun 2010)
+* [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes) Release Notes (in development)
 
 
-### [MariaDB 5.2 Changelogs](../../../../../../../../release-notes/connectors/odbc/changelogs/README.md)
+### [MariaDB 5.2 Changelogs](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/)
 
 
-* [MariaDB 5.2.0-beta Changelog](../../../../../../../../release-notes/changelogs/changelogs-mariadb-52-series/mariadb-520-changelog.md) (5.2.0-beta released 10 Apr 2010)
-* [MariaDB 5.2.1-beta Changelog](../../../../../../../../release-notes/changelogs/changelogs-mariadb-52-series/mariadb-521-changelog.md) (5.2.1-beta released 18 Jun 2010)
-* [MariaDB 5.2.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes.md) Changelog (in development)
+* [MariaDB 5.2.0-beta Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/changelogs/changelogs-mariadb-52-series/mariadb-520-changelog) (5.2.0-beta released 10 Apr 2010)
+* [MariaDB 5.2.1-beta Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/changelogs/changelogs-mariadb-52-series/mariadb-521-changelog) (5.2.1-beta released 18 Jun 2010)
+* [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes) Changelog (in development)
 
 
-As stated above, all non-completed todo items have been moved to [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md),
-see [MariaDB 5.3 TODO](mariadb-53-todo-not.md).
+As stated above, all non-completed todo items have been moved to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3),
+see [MariaDB 5.3 TODO](mariadb-53-todo.md).
 

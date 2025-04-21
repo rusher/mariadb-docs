@@ -21,12 +21,12 @@ User-variables names are case insensitive, though they were case sensitive in My
 User-defined variables cannot be declared. They can be read even if no value has been set yet; in that case, they are NULL. To set a value for a user-defined variable you can use:
 
 
-* [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement;
-* [:=](../operators/assignment-operators/assignment-operators-assignment-operator.md) operator within a SQL statement;
-* [SELECT ... INTO](../sql-statements/data-manipulation/selecting-data/select-into-outfile.md).
+* [SET](../sql-statements/administrative-sql-statements/set-commands/set.md) statement;
+* [:=](../operators/assignment-operators/assignment-operator.md) operator within a SQL statement;
+* [SELECT ... INTO](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/selectinto.md).
 
 
-Since user-defined variables type cannot be declared, the only way to force their type is using [CAST()](../sql-statements/built-in-functions/string-functions/cast.md) or [CONVERT()](../../storage-engines/converting-tables-from-myisam-to-innodb.md):
+Since user-defined variables type cannot be declared, the only way to force their type is using [CAST()](../sql-statements/built-in-functions/string-functions/cast.md) or [CONVERT()](../sql-statements/built-in-functions/string-functions/convert.md):
 
 
 ```
@@ -48,7 +48,7 @@ SELECT @x IS NULL;
 It is unsafe to read a user-defined variable and set its value in the same statement (unless the command is SET), because the order of these actions is undefined.
 
 
-User-defined variables can be used in most MariaDB's statements and clauses which accept an SQL expression. However there are some exceptions, like the [LIMIT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit) clause.
+User-defined variables can be used in most MariaDB's statements and clauses which accept an SQL expression. However there are some exceptions, like the [LIMIT](../sql-statements/data-manipulation/selecting-data/select.md#limit) clause.
 
 
 They must be used to [PREPARE](../sql-statements/prepared-statements/prepare-statement.md) a prepared statement:
@@ -78,7 +78,7 @@ User-defined variables can be viewed by either querying the [USER_VARIABLES](../
 ## Flushing User-Defined Variables
 
 
-User-defined variables are reset and the [Information Schema table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) emptied with the [FLUSH USER_VARIABLES](../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement.
+User-defined variables are reset and the [Information Schema table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) emptied with the [FLUSH USER_VARIABLES](../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement.
 
 
 ## Examples

@@ -332,4 +332,3 @@ Next Pos in FDE is 00 01 00 00 = >256 = 4 + FDE size (252)
 
 7) QUERY_EVENT packet: 4c 00 00 07 ... 6e c8 89 60
 
-<span></span>

@@ -12,15 +12,15 @@ There are a number of numeric data types:
 * [INT2](int2.md) - Synonym for SMALLINT
 * [MEDIUMINT](mediumint.md)
 * [INT3](int3.md) - Synonym for MEDIUMINT
-* [INT](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md), INTEGER
+* [INT](int.md), INTEGER
 * [INT4](int4.md) - Synonym for INT
 * [BIGINT](bigint.md)
 * [INT8](int8.md) - Synonym for BIGINT
 * [DECIMAL](decimal.md), DEC, NUMERIC, FIXED
 * [FLOAT](float.md)
 * [DOUBLE](double.md), DOUBLE PRECISION, REAL
-* [BIT](../../sql-statements-and-structure/temporal-tables/bitemporal-tables.md)
-* [VECTOR](../../sql-statements-and-structure/vectors/vector-functions/vector-functions-vec_distance.md)
+* [BIT](bit.md)
+* [VECTOR](vector.md)
 
 
 See the specific articles for detailed information on each.
@@ -48,14 +48,14 @@ If `ZEROFILL` is specified, the column will be set to UNSIGNED and the spaces us
 Note that although the preferred syntax indicates that the attributes are exclusive, more than one attribute can be specified.
 
 
-Until [MariaDB 10.2.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1027-release-notes.md) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)), any combination of the attributes could be used in any order, with duplicates. In this case:
+Until [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)), any combination of the attributes could be used in any order, with duplicates. In this case:
 
 
 * the presence of `ZEROFILL` makes the column `UNSIGNED ZEROFILL`.
 * the presence of `UNSIGNED` makes the column `UNSIGNED`.
 
 
-From [MariaDB 10.2.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1028-release-notes.md), only the following combinations are supported:
+From [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes), only the following combinations are supported:
 
 
 * `SIGNED`
@@ -94,10 +94,10 @@ SELECT * FROM zf;
 When attempting to add a value that is out of the valid range for the numeric type, MariaDB will react depending on the [strict SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) setting.
 
 
-If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default from [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)), MariaDB will return an error.
+If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)), MariaDB will return an error.
 
 
-If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set (the default until [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)), MariaDB will adjust the number to fit in the field, returning a warning.
+If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set (the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), MariaDB will adjust the number to fit in the field, returning a warning.
 
 
 ### Examples
@@ -159,5 +159,5 @@ SELECT * FROM ranges;
 ## Auto_increment
 
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](../../storage-engines/innodb/auto_increment-handling-in-innodb.md).
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](../auto_increment.md).
 

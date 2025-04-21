@@ -1,7 +1,7 @@
 
 # Information Schema CLIENT_STATISTICS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `CLIENT_STATISTICS` table holds statistics about client connections. This is part of the [User Statistics](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
+The [Information Schema](../README.md) `CLIENT_STATISTICS` table holds statistics about client connections. This is part of the [User Statistics](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
 
 
 It contains the following columns:
@@ -19,16 +19,16 @@ It contains the following columns:
 | CPU_TIME | DOUBLE | The cumulative CPU time elapsed while servicing this client's connections. Note that this number may be wrong on SMP system if there was a CPU migration for the thread during the execution of the query. |
 | BYTES_RECEIVED | BIGINT(21) | The number of bytes received from this client's connections. |
 | BYTES_SENT | BIGINT(21) | The number of bytes sent to this client's connections. |
-| BINLOG_BYTES_WRITTEN | BIGINT(21) | The number of bytes written to the [binary log](../../../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) from this client's connections. |
+| BINLOG_BYTES_WRITTEN | BIGINT(21) | The number of bytes written to the [binary log](../../../../../../../server-management/server-monitoring-logs/binary-log/README.md) from this client's connections. |
 | ROWS_READ | BIGINT(21) | The number of rows read by this client's connections. |
 | ROWS_SENT | BIGINT(21) | The number of rows sent by this client's connections. |
 | ROWS_DELETED | BIGINT(21) | The number of rows deleted by this client's connections. |
 | ROWS_INSERTED | BIGINT(21) | The number of rows inserted by this client's connections. |
 | ROWS_UPDATED | BIGINT(21) | The number of rows updated by this client's connections. |
-| KEY_READ_HITS | BIGINT(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
-| KEY_READ_MISSES | BIGINT(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
-| SELECT_COMMANDS | BIGINT(21) | The number of [SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) commands executed from this client's connections. |
-| UPDATE_COMMANDS | BIGINT(21) | The number of [UPDATE](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) commands executed from this client's connections. |
+| KEY_READ_HITS | BIGINT(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY_READ_MISSES | BIGINT(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| SELECT_COMMANDS | BIGINT(21) | The number of [SELECT](../../../../data-manipulation/selecting-data/select.md) commands executed from this client's connections. |
+| UPDATE_COMMANDS | BIGINT(21) | The number of [UPDATE](../../../../data-manipulation/changing-deleting-data/update.md) commands executed from this client's connections. |
 | OTHER_COMMANDS | BIGINT(21) | The number of other commands executed from this client's connections. |
 | COMMIT_TRANSACTIONS | BIGINT(21) | The number of [COMMIT](../../../../transactions/commit.md) commands issued by this client's connections. |
 | ROLLBACK_TRANSACTIONS | BIGINT(21) | The number of [ROLLBACK](../../../../transactions/rollback.md) commands issued by this client's connections. |
@@ -36,8 +36,8 @@ It contains the following columns:
 | LOST_CONNECTIONS | BIGINT(21) | The number of this client's connections that were terminated uncleanly. |
 | ACCESS_DENIED | BIGINT(21) | The number of times this client's connections issued commands that were denied. |
 | EMPTY_QUERIES | BIGINT(21) | The number of times this client's connections sent queries that returned no results to the server. |
-| TOTAL_SSL_CONNECTIONS | BIGINT(21) | The number of [TLS connections](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) created for this client. (>= [MariaDB 10.1.1](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)) |
-| MAX_STATEMENT_TIME_EXCEEDED | BIGINT(21) | The number of times a statement was aborted, because it was executed longer than its [MAX_STATEMENT_TIME](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md) threshold. (>= [MariaDB 10.1.1](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md)) |
+| TOTAL_SSL_CONNECTIONS | BIGINT(21) | The number of [TLS connections](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) created for this client. (>= [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)) |
+| MAX_STATEMENT_TIME_EXCEEDED | BIGINT(21) | The number of times a statement was aborted, because it was executed longer than its [MAX_STATEMENT_TIME](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md) threshold. (>= [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)) |
 
 
 

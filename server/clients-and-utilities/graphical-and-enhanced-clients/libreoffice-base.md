@@ -7,7 +7,7 @@
 ## Preparing the ODBC Connection
 
 
-First, make sure to prepare MariaDB Connector/ODBC as explained in [MariaDB Connector/ODBC](../../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md).
+First, make sure to prepare MariaDB Connector/ODBC as explained in [MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc).
 
 
 That includes:
@@ -16,7 +16,7 @@ That includes:
 * Download [the latest MariaDB Connector/ODBC](https://mariadb.com/downloads/#connectors)
 * Copy the shared library libmaodbc.so to /usr/lib/[multi-arch]
 * Install the unixodbc, unixodbc-dev, openssh-client, odbcinst packages
-* Create a template file for the [ODBC driver](../../../connectors/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc.md#configuring-mariadb-connectorodbc-as-a-unixodbc-driver-on-linux). A sample “MariaDB_odbc_driver_template.ini” could be:
+* Create a template file for the [ODBC driver](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#configuring-mariadb-connectorodbc-as-a-unixodbc-driver-on-linux). A sample “MariaDB_odbc_driver_template.ini” could be:
 
 
 
@@ -58,7 +58,7 @@ Driver=/usr/lib/x86_64-linux-gnu/libmaodbc.so
 UsageCount=1
 ```
 
-* Create a template file for the [Data Source Name (DSN)](../../../connectors/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc.md#configuring-a-dsn-with-unixodbc-on-linux). A sample “MariaDB_odbc_data_source_template.ini” could be:
+* Create a template file for the [Data Source Name (DSN)](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#configuring-a-dsn-with-unixodbc-on-linux). A sample “MariaDB_odbc_data_source_template.ini” could be:
 
 
 
@@ -97,7 +97,7 @@ DATABASE=test
 PORT=3306
 ```
 
-* Verify successful installation also using the [isql](../../../connectors/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc.md#verifying-a-dsn-configuration-with-unixodbc-on-linux) utility, for example:
+* Verify successful installation also using the [isql](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc#verifying-a-dsn-configuration-with-unixodbc-on-linux) utility, for example:
 
 
 ```
@@ -219,4 +219,3 @@ One can fill the data in the existing table, or create and define the new table 
 
 Other modules can use the registered database, for example, open *"LibreOffice Calc"* and go to *"Tools"*, *"Options"* and you will see the *"odb"* file we registered when starting *"LibreOffice Base"*.
 
-<span></span>

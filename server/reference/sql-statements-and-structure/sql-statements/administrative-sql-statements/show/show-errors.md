@@ -19,7 +19,7 @@ displaying errors, warnings, and notes, it displays only errors.
 
 
 The `LIMIT` clause has the same syntax as for the
-[SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement.
+[SELECT](../../data-manipulation/selecting-data/select.md) statement.
 
 
 The `SHOW COUNT(*) ERRORS` statement displays the number of
@@ -34,7 +34,7 @@ SELECT @@error_count;
 The value of [error_count](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#error_count) might be greater than the number of messages displayed by [SHOW WARNINGS](show-warnings.md) if the [max_error_count](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) system variable is set so low that not all messages are stored.
 
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+For a list of MariaDB error codes, see [MariaDB Error Codes](../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
 
 ## Examples

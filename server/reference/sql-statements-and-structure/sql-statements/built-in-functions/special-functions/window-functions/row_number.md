@@ -15,7 +15,7 @@ ROW_NUMBER() OVER (
 ## Description
 
 
-ROW_NUMBER() is a [window function](window-functions-overview.md) that displays the number of a given row, starting at one and following the [ORDER BY](../../../data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving different row numbers. It is similar to the [RANK()](rank.md) and [DENSE_RANK()](dense_rank.md) functions except that in that function, identical values will receive the same rank for each result.
+ROW_NUMBER() is a [window function](README.md) that displays the number of a given row, starting at one and following the [ORDER BY](../../../data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving different row numbers. It is similar to the [RANK()](rank.md) and [DENSE_RANK()](dense_rank.md) functions except that in that function, identical values will receive the same rank for each result.
 
 
 ## Examples

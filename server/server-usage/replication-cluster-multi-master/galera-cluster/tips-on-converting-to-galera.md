@@ -36,7 +36,7 @@ Dear DBA:
 Galera's High Availability replication is available via:
 
 
-* [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later
+* [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later
 * Percona XtraDB Cluster
 * Codership's Galera Cluster for MySQL
 
@@ -224,7 +224,7 @@ Fast DDL operations can usually be executed in TOI mode:
 * DDL operations that only support the `COPY` algorithm are usually very slow.
 
 
-For a list of which operations support which algorithms, see [InnoDB Online DDL](../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md).
+For a list of which operations support which algorithms, see [InnoDB Online DDL](../../../reference/storage-engines/innodb/innodb-online-ddl/README.md).
 
 
 If you need to use RSU mode, then do the following separately for each node:
@@ -356,4 +356,3 @@ optimizations, and debugging tips.
 
 Original source: [galera](https://mysql.rjweb.org/doc.php/galera)
 
-<span></span>

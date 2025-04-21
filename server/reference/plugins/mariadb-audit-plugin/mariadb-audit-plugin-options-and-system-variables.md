@@ -2,7 +2,7 @@
 # MariaDB Audit Plugin Options and System Variables
 
 
-There are a several options and system variables related to the [MariaDB Audit Plugin](release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md), once it has been [installed](mariadb-audit-plugin-installation.md). System variables can be displayed using the [SHOW VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement like so:
+There are a several options and system variables related to the [MariaDB Audit Plugin](README.md), once it has been [installed](mariadb-audit-plugin-installation.md). System variables can be displayed using the [SHOW VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement like so:
 
 
 ```
@@ -152,8 +152,8 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 * Dynamic: No
 * Data Type: `string`
 * Default Value: Empty string
-* Introduced: [MariaDB 10.1.12](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes.md), [MariaDB 10.0.24](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10024-release-notes.md), [MariaDB 5.5.48](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5548-release-notes.md)
-* Hidden: [MariaDB 10.1.18](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md), [MariaDB 10.0.28](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10028-release-notes.md), [MariaDB 5.5.53](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5553-release-notes.md)
+* Introduced: [MariaDB 10.1.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes), [MariaDB 10.0.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10024-release-notes), [MariaDB 5.5.48](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5548-release-notes)
+* Hidden: [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes), [MariaDB 10.0.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10028-release-notes), [MariaDB 5.5.53](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5553-release-notes)
 
 
 

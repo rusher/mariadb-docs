@@ -1,7 +1,7 @@
 
 # InnoDB Monitors
 
-The [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) Monitor refers to particular kinds of monitors included in MariaDB and since the early versions of MySQL.
+The [InnoDB](README.md) Monitor refers to particular kinds of monitors included in MariaDB and since the early versions of MySQL.
 
 
 There are four types: the standard InnoDB monitor, the InnoDB Lock Monitor, InnoDB Tablespace Monitor and the InnoDB Table Monitor.
@@ -13,14 +13,14 @@ There are four types: the standard InnoDB monitor, the InnoDB Lock Monitor, Inno
 The standard InnoDB Monitor returns extensive InnoDB information, particularly lock, semaphore, I/O and buffer activity:
 
 
-To enable the standard InnoDB Monitor, from [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md), set the [innodb_status_output](innodb-system-variables.md) system variable to 1. Before [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md), running the following statement was the method used:
+To enable the standard InnoDB Monitor, from [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), set the [innodb_status_output](innodb-system-variables.md) system variable to 1. Before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), running the following statement was the method used:
 
 
 ```
 CREATE TABLE innodb_monitor (a INT) ENGINE=INNODB;
 ```
 
-To disable the standard InnoDB monitor, either set the system variable to zero, or, before [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md), drop the table
+To disable the standard InnoDB monitor, either set the system variable to zero, or, before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), drop the table
 
 
 ```
@@ -39,15 +39,15 @@ For a description of the output, see [SHOW ENGINE INNODB STATUS](../../sql-state
 The InnoDB Lock Monitor displays additional lock information.
 
 
-To enable the InnoDB Lock Monitor, the standard InnoDB monitor must be enabled. Then, from [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md), set the [innodb_status_output_locks](innodb-system-variables.md) system variable to 1. 
-Before [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md), running the following statement was the method used:
+To enable the InnoDB Lock Monitor, the standard InnoDB monitor must be enabled. Then, from [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), set the [innodb_status_output_locks](innodb-system-variables.md) system variable to 1. 
+Before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), running the following statement was the method used:
 
 
 ```
 CREATE TABLE innodb_lock_monitor (a INT) ENGINE=INNODB;
 ```
 
-To disable the standard InnoDB monitor, either set the system variable to zero, or, before [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md), drop the table
+To disable the standard InnoDB monitor, either set the system variable to zero, or, before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), drop the table
 
 
 ```

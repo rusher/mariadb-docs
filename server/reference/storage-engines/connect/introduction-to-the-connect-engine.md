@@ -30,7 +30,7 @@ by defining foreign tables for which an external FDW (Foreign Data Wrapper) has
 been developed in C.
 
 
-However, since this was written, a new source of data was developed as the “cloud”. Data are existing worldwide and, in particular, can be obtained in JSON or XML format in answer to REST queries. From [Connect 1.06.0010](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md), it is possible to create JSON, XML or CSV tables based on data retrieved from such REST queries.
+However, since this was written, a new source of data was developed as the “cloud”. Data are existing worldwide and, in particular, can be obtained in JSON or XML format in answer to REST queries. From [Connect 1.06.0010](README.md), it is possible to create JSON, XML or CSV tables based on data retrieved from such REST queries.
 
 
 MED as described above is a rather complex way to achieve this goal and MariaDB does not support

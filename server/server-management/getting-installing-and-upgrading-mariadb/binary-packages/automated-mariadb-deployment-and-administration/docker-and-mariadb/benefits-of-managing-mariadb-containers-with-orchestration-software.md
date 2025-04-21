@@ -87,7 +87,7 @@ With all this in mind, let's see some examples of cases when managing containers
 
 
 * We use Ansible or Puppet in production, and we try to keep development environments as similar as possible to production. By using Ansible/Puppet in development too, we can reuse part of the code.
-* We make changes to the containers often, and recreating containers is not as fast as it should be (for example because a MariaDB [dump](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) needs to be restored).
+* We make changes to the containers often, and recreating containers is not as fast as it should be (for example because a MariaDB [dump](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) needs to be restored).
 * Creating a container implies some complex logic that does not easily fit a Dockerfile or Docker Compose (including, but not limited to, running multiple processes per container).
 
 

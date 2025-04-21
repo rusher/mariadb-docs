@@ -12,7 +12,7 @@ SET ROLE { role | NONE }
 ## Description
 
 
-The `SET ROLE` statement enables a [role](../../../../security/user-account-management/roles/roles_overview.md), along with all of its associated permissions, for the current session. To unset a role, use `NONE` .
+The `SET ROLE` statement enables a [role](../../../../security/user-account-management/roles/README.md), along with all of its associated permissions, for the current session. To unset a role, use `NONE` .
 
 
 If a role that doesn't exist, or to which the user has not been assigned, is specified, an `ERROR 1959 (OP000): Invalid role specification` error occurs.

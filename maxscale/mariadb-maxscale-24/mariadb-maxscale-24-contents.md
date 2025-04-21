@@ -88,7 +88,7 @@ of their use.
 * [HintRouter](maxscale-24-routers/mariadb-maxscale-24-hintrouter.md)
 * [Read Connection Router](maxscale-24-routers/mariadb-maxscale-24-readconnroute.md)
 * [Read Write Split](maxscale-24-routers/mariadb-maxscale-24-readwritesplit.md)
-* [Schemarouter](../mariadb-maxscale-14/maxscale-design-documents/schemarouter-router-technical-overview.md)
+* [Schemarouter](maxscale-24-routers/mariadb-maxscale-24-schemarouter.md)
 * [SmartRouter](maxscale-24-routers/mariadb-maxscale-24-smartrouter.md)
 
 

@@ -1,14 +1,14 @@
 
 # GROUP BY
 
-Use the `GROUP BY` clause in a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any
+Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any
 [functions and operators](../../built-in-functions/README.md) except
-[grouping functions](../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md). When you
+[grouping functions](../../built-in-functions/aggregate-functions/README.md). When you
 use a `GROUP BY` clause, you will get a single result row for each group of rows
 that have the same value for the expression given in `GROUP BY`.
 
 
-When grouping rows, grouping values are compared as if by the `[=](../../../geographic-geometric-features/geometry-relations/equals.md)` operator.
+When grouping rows, grouping values are compared as if by the `[=](../../../operators/comparison-operators/equal.md)` operator.
 For string values, the `=` operator ignores trailing whitespace and may normalize
 characters and ignore case, depending on the [collation](../../../../data-types/string-data-types/character-sets/README.md) in use.
 
@@ -93,7 +93,7 @@ SELECT (wins / plays) AS winavg, COUNT(*) FROM plays GROUP BY winavg;
 3 rows in set (0.00 sec)
 ```
 
-You can use any [grouping function](../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md)
+You can use any [grouping function](../../built-in-functions/aggregate-functions/README.md)
 in the select expression. For each win average as above, get a list of the average play
 count taken to get that average:
 
@@ -132,9 +132,9 @@ SELECT (wins / plays) AS winavg, AVG(plays) FROM plays
 ### See Also
 
 
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](select.md)
 * [Joins and Subqueries](joins-subqueries/README.md)
-* [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
 * [Common Table Expressions](common-table-expressions/README.md)
 * [SELECT WITH ROLLUP](select-with-rollup.md)

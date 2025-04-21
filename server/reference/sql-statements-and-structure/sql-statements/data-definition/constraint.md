@@ -1,7 +1,7 @@
 
 # CONSTRAINT
 
-MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](../../vectors/create-table-with-vectors.md) or [ALTER TABLE](alter/alter-tablespace.md) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
+MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table.md) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
 
 
 ## Syntax
@@ -64,7 +64,7 @@ The [Information Schema TABLE_CONSTRAINTS Table](../administrative-sql-statement
 ### FOREIGN KEY Constraints
 
 
-[InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) supports [foreign key](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key
+[InnoDB](../../../storage-engines/innodb/README.md) supports [foreign key](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key
 constraint definition in InnoDB looks like this:
 
 
@@ -85,7 +85,7 @@ The [Information Schema REFERENTIAL_CONSTRAINTS](../administrative-sql-statement
 ### CHECK Constraints
 
 
-Constraints are enforced. Before [MariaDB 10.2.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) constraint expressions were accepted in the syntax but ignored.
+Constraints are enforced. Before [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) constraint expressions were accepted in the syntax but ignored.
 
 
 You can define constraints in 2 different ways:
@@ -96,14 +96,14 @@ You can define constraints in 2 different ways:
 
 
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row will not be inserted or updated.
-One can use most deterministic functions in a constraint, including [UDFs](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md).
+One can use most deterministic functions in a constraint, including [UDFs](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md).
 
 
 ```
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
-If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint_name](alter/alter-tablespace.md).
+If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint_name](alter/alter-table.md).
 
 
 One can disable all constraint expression checks by setting the [check_constraint_checks](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
@@ -112,13 +112,13 @@ One can disable all constraint expression checks by setting the [check_constrain
 ### Replication
 
 
-In [row-based](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../administrative-sql-statements/replication-statements/README.md), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
+In [row-based](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](../../../../server-usage/replication-cluster-multi-master/README.md), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
 
 
 ### Auto_increment
 
 
-[auto_increment](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) columns are not permitted in check constraints. Before [MariaDB 10.2.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md), they were permitted, but would not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+[auto_increment](../../../data-types/auto_increment.md) columns are not permitted in check constraints. Before [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), they were permitted, but would not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
 
 
 ## Examples
@@ -144,7 +144,7 @@ CREATE TABLE product_order (no INT NOT NULL AUTO_INCREMENT,
                               REFERENCES customer(id)) ENGINE=INNODB;
 ```
 
-The following examples will work from [MariaDB 10.2.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) onwards.
+The following examples will work from [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) onwards.
 
 
 Numeric constraints and comparisons:

@@ -1,7 +1,7 @@
 
 # myisamchk
 
-myisamchk is a commandline tool for checking, repairing and optimizing non-partitioned [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables.
+myisamchk is a commandline tool for checking, repairing and optimizing non-partitioned [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) tables.
 
 
 myisamchk is run from the commandline as follows:
@@ -78,7 +78,7 @@ The following variables can also be set by using *--var_name=value*, for example
 ## Checking Tables
 
 
-If no option is provided, myisamchk will perform a check table. It is possible to check [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables without shutting down or restricting access to the server by using [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) instead.
+If no option is provided, myisamchk will perform a check table. It is possible to check [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) tables without shutting down or restricting access to the server by using [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) instead.
 
 
 The following check options are available:
@@ -103,7 +103,7 @@ The following check options are available:
 ## Repairing Tables
 
 
-It is also possible to repair [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables by using [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md).
+It is also possible to repair [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) tables by using [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md).
 
 
 The following repair options are available, and are applicable when using '-r' or '-o':
@@ -198,4 +198,3 @@ myisamchk --silent --force --fast --update-state \
 
 * [Memory and Disk Use With myisamchk](memory-and-disk-use-with-myisamchk.md)
 
-<span></span>

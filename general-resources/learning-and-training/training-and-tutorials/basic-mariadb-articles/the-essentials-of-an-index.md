@@ -1,7 +1,7 @@
 
 # The Essentials of an Index
 
-Imagine you've created a table with the following rows (this is the same table as used in the [More Advanced Joins](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial).
+Imagine you've created a table with the following rows (this is the same table as used in the [More Advanced Joins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins) tutorial).
 
 
 ```
@@ -61,5 +61,5 @@ would allow you to quickly find the phone numbers of all the cashiers, or the ph
 Where possible, you should create an index for each column that you search for records by, to avoid having the server read every row of a table.
 
 
-See [CREATE INDEX](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) and [Getting Started with Indexes](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md) for more information.
+See [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index) and [Getting Started with Indexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes) for more information.
 

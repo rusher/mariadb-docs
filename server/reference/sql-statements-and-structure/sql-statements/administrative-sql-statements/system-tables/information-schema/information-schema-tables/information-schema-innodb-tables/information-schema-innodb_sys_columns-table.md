@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_SYS_COLUMNS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_COLUMNS` table contains information about InnoDB fields.
+The [Information Schema](../../README.md) `INNODB_SYS_COLUMNS` table contains information about InnoDB fields.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
@@ -31,11 +31,11 @@ The column `MTYPE` uses a numeric column type identifier, which has the followin
 | --- | --- |
 | Column Type Identifier | Description |
 | 1 | [VARCHAR](../../../../../../../data-types/string-data-types/varchar.md) |
-| 2 | [CHAR](../../../../../built-in-functions/secondary-functions/information-functions/charset.md) |
+| 2 | [CHAR](../../../../../../../data-types/string-data-types/char.md) |
 | 3 | FIXBINARY |
-| 4 | [BINARY](../../../../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) |
+| 4 | [BINARY](../../../../../../../data-types/string-data-types/binary.md) |
 | 5 | [BLOB](../../../../../../../data-types/string-data-types/blob.md) |
-| 6 | [INT](../../../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) |
+| 6 | [INT](../../../../../../../data-types/data-types-numeric-data-types/int.md) |
 | 7 | SYS_CHILD |
 | 8 | SYS |
 | 9 | [FLOAT](../../../../../../../data-types/data-types-numeric-data-types/float.md) |

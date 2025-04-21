@@ -5,7 +5,7 @@
 Storage-engine independent column compression enables [TINYBLOB](../../../../reference/data-types/string-data-types/tinyblob.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md), [MEDIUMBLOB](../../../../reference/data-types/string-data-types/mediumblob.md), [LONGBLOB](../../../../reference/data-types/string-data-types/longblob.md), [TINYTEXT](../../../../reference/data-types/string-data-types/tinytext.md), [TEXT](../../../../reference/data-types/string-data-types/text.md), [MEDIUMTEXT](../../../../reference/data-types/string-data-types/mediumtext.md), [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) and [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) columns to be compressed.
 
 
-This is performed by means of a new COMPRESSED [column attribute](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#column-and-index-definitions):
+This is performed by means of a new COMPRESSED [column attribute](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#column-and-index-definitions):
 `COMPRESSED[=<compression_method>]`
 
 
@@ -97,7 +97,7 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 
 
 * The only supported method currently is zlib.
-* The [CSV](../../../../reference/storage-engines/csv/csv-overview.md) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
+* The [CSV](../../../../reference/storage-engines/csv/README.md) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
 * It is not possible to create indexes over compressed columns.
 
 
@@ -130,4 +130,3 @@ CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);
 * [InnoDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md)
 * [InnoDB Compressed Row Format](../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
 
-<span></span>

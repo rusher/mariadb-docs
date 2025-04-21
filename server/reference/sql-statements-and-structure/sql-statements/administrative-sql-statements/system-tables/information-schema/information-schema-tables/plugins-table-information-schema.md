@@ -1,7 +1,7 @@
 
 # Information Schema PLUGINS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PLUGINS` table contains information about [server plugins](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md).
+The [Information Schema](../README.md) `PLUGINS` table contains information about [server plugins](../../../../../../plugins/README.md).
 
 
 It contains the following columns:
@@ -27,7 +27,7 @@ It contains the following columns:
 
 
 
-It provides a superset of the information shown by the [SHOW PLUGINS](../../../show/show-plugins-soname.md) statement. For specific information about storage engines (a particular type of plugins), see the [information_schema.ENGINES](information-schema-engines-table.md) table and the [SHOW ENGINES](../../../show/show-engines.md) statement.
+It provides a superset of the information shown by the [SHOW PLUGINS](../../../show/show-plugins.md) statement. For specific information about storage engines (a particular type of plugins), see the [information_schema.ENGINES](information-schema-engines-table.md) table and the [SHOW ENGINES](../../../show/show-engines.md) statement.
 
 
 This table provides a subset of the Information Schema [information_schema.ALL_PLUGINS](all-plugins-table-information-schema.md) table, which contains all available plugins, installed or not.
@@ -40,7 +40,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 
 The easiest way to get basic information on plugins is with
-[SHOW PLUGINS](../../../show/show-plugins-soname.md):
+[SHOW PLUGINS](../../../show/show-plugins.md):
 
 
 ```
@@ -101,7 +101,7 @@ WHERE PLUGIN_NAME LIKE 'tokudb';
 Empty set
 ```
 
-The equivalent [SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query would be:
+The equivalent [SELECT](../../../../data-manipulation/selecting-data/select.md) query would be:
 
 
 ```
@@ -110,7 +110,7 @@ PLUGIN_TYPE, PLUGIN_LIBRARY, PLUGIN_LICENSE
 FROM INFORMATION_SCHEMA.PLUGINS;
 ```
 
-Other [SELECT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) queries can be used to see additional information. For example:
+Other [SELECT](../../../../data-manipulation/selecting-data/select.md) queries can be used to see additional information. For example:
 
 
 ```
@@ -213,7 +213,7 @@ LOAD_OPTION: FORCE
 
 * [List of Plugins](../../../../../../plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../../../../../../plugins/plugin-overview.md)
-* [SHOW PLUGINS](../../../show/show-plugins-soname.md)
+* [SHOW PLUGINS](../../../show/show-plugins.md)
 * [INSTALL PLUGIN](../../../plugin-sql-statements/install-plugin.md)
 * [INSTALL SONAME](../../../plugin-sql-statements/install-soname.md)
 * [UNINSTALL PLUGIN](../../../plugin-sql-statements/uninstall-plugin.md)

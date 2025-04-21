@@ -34,7 +34,7 @@ DROP SEQUENCE requires the [DROP privilege](../sql-statements/account-management
 ## Notes
 
 
-DROP SEQUENCE only removes sequences, not tables. However, [DROP TABLE](../sql-statements/data-definition/drop/drop-tablespace.md) can remove both sequences and tables.
+DROP SEQUENCE only removes sequences, not tables. However, [DROP TABLE](../sql-statements/data-definition/drop/drop-table.md) can remove both sequences and tables.
 
 
 ## See Also
@@ -43,6 +43,6 @@ DROP SEQUENCE only removes sequences, not tables. However, [DROP TABLE](../sql-s
 * [Sequence Overview](sequence-overview.md)
 * [CREATE SEQUENCE](create-sequence.md)
 * [ALTER SEQUENCE](alter-sequence.md)
-* [DROP TABLE](../sql-statements/data-definition/drop/drop-tablespace.md)
+* [DROP TABLE](../sql-statements/data-definition/drop/drop-table.md)
 * [Information Schema SEQUENCES Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 

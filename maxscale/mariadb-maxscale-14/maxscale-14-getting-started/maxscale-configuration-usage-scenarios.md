@@ -1086,7 +1086,7 @@ Binary log server:
 These modules are used for diagnostic purposes and can tell about the status of MaxScale and the cluster it is monitoring.
 
 
-* [MaxAdmin Module](../../../server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/README.md)
+* [MaxAdmin Module](../../maxscale-troubleshooting.md)
 * [Telnet Module](../maxscale-14-routers/debug-cli.md)
 
 

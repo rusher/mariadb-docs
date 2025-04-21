@@ -27,14 +27,13 @@ SELECT @@SQL_MODE, @@GLOBAL.SQL_MODE;
 | From version | Default sql_mode setting |
 | --- | --- |
 | From version | Default sql_mode setting |
-| [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md) | STRICT_TRANS_TABLES, ERROR_FOR_DIVISION_BY_ZERO , NO_AUTO_CREATE_USER, NO_ENGINE_SUBSTITUTION |
-| [MariaDB 10.1.7](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md) | NO_ENGINE_SUBSTITUTION, NO_AUTO_CREATE_USER |
-| <= [MariaDB 10.1.6](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md) | No value |
+| [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) | STRICT_TRANS_TABLES, ERROR_FOR_DIVISION_BY_ZERO , NO_AUTO_CREATE_USER, NO_ENGINE_SUBSTITUTION |
+| [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes) | NO_ENGINE_SUBSTITUTION, NO_AUTO_CREATE_USER |
+| <= [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes) | No value |
 
 
 
-You can set the `<span class="n">SQL_MODE</span>
-` either from the
+You can set the `SQL_MODE` either from the
 [command line](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql_mode](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
 
 
@@ -67,7 +66,7 @@ Changes the SQL syntax to be closer to ANSI SQL.
 Sets: [REAL_AS_FLOAT](#real_as_float), [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space).
 
 
-It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) with a reference to a column from an outer query in a way that cannot be resolved.
+It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/README.md) with a reference to a column from an outer query in a way that cannot be resolved.
 
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
@@ -91,13 +90,13 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 #### EMPTY_STRING_IS_NULL
 
 
-Oracle-compatibility option that translates Item_string created in the parser to Item_null, and translates binding an empty string as prepared statement parameters to binding NULL. For example, `SELECT '' IS NULL` returns TRUE, `INSERT INTO t1 VALUES ('')` inserts NULL. Since [MariaDB 10.3.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
+Oracle-compatibility option that translates Item_string created in the parser to Item_null, and translates binding an empty string as prepared statement parameters to binding NULL. For example, `SELECT '' IS NULL` returns TRUE, `INSERT INTO t1 VALUES ('')` inserts NULL. Since [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 
 #### ERROR_FOR_DIVISION_BY_ZERO
 
 
-If not set, division by zero returns NULL. If set returns an error if one tries to update a column with 1/0 and returns a warning as well. Also see [MDEV-8319](https://jira.mariadb.org/browse/MDEV-8319). Default since [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md).
+If not set, division by zero returns NULL. If set returns an error if one tries to update a column with 1/0 and returns a warning as well. Also see [MDEV-8319](https://jira.mariadb.org/browse/MDEV-8319). Default since [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes).
 
 
 #### HIGH_NOT_PRECEDENCE
@@ -124,7 +123,7 @@ Allow one to have spaces (including tab characters and new line characters) betw
 Same as: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [MAXDB](#maxdb), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options), [NO_AUTO_CREATE_USER](#no_auto_create_user).
 
 
-Also has the effect of silently converting [TIMESTAMP](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) fields into [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md) fields when created or modified.
+Also has the effect of silently converting [TIMESTAMP](../../reference/data-types/date-and-time-data-types/timestamp.md) fields into [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md) fields when created or modified.
 
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
@@ -136,7 +135,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 Additionally implies the following: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options).
 
 
-Additionally from [MariaDB 10.4.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1045-release-notes.md), implements a limited subset of Microsoft SQL Server's language. See [SQL_MODE=MSSQL](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) for more.
+Additionally from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), implements a limited subset of Microsoft SQL Server's language. See [SQL_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql) for more.
 
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
@@ -157,13 +156,13 @@ Same as: [NO_FIELD_OPTIONS](#no_field_options), [HIGH_NOT_PRECEDENCE](#high_not_
 #### NO_AUTO_CREATE_USER
 
 
-Don't automatically create users with `GRANT` unless authentication information is specified. If none is provided, will produce a 1133 error: "Can't find any matching row in the user table". Default since [MariaDB 10.1.7](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md).
+Don't automatically create users with `GRANT` unless authentication information is specified. If none is provided, will produce a 1133 error: "Can't find any matching row in the user table". Default since [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes).
 
 
 #### NO_AUTO_VALUE_ON_ZERO
 
 
-If set, don't generate an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) on [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
+If set, don't generate an [AUTO_INCREMENT](../../reference/data-types/auto_increment.md) on [INSERT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) of zero in an `AUTO_INCREMENT` column, or when adding an [AUTO_INCREMENT](../../reference/data-types/auto_increment.md) attribute with the [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. Normally both `zero` and `NULL` generate new `AUTO_INCREMENT` values.
 
 
 #### NO_BACKSLASH_ESCAPES
@@ -175,13 +174,13 @@ Disables using the backslash character `\` as an escape character within strings
 #### NO_DIR_IN_CREATE
 
 
-Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on slave [replication](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) servers.
+Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on slave [replication](../../server-usage/replication-cluster-multi-master/README.md) servers.
 
 
 #### NO_ENGINE_SUBSTITUTION
 
 
-If not set, if the available storage engine specified by a CREATE TABLE or ALTER TABLE is not available, a warning is given and the default storage engine is used instead. If set, generate a 1286 error when creating a table if the specified [storage engine](../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) is not available. See also [enforce_storage_engine](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#enforce_storage_engine). Default since [MariaDB 10.1.7](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md).
+If not set, if the available storage engine specified by a CREATE TABLE or ALTER TABLE is not available, a warning is given and the default storage engine is used instead. If set, generate a 1286 error when creating a table if the specified [storage engine](../../reference/storage-engines/README.md) is not available. See also [enforce_storage_engine](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#enforce_storage_engine). Default since [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes).
 
 
 #### NO_FIELD_OPTIONS
@@ -223,16 +222,16 @@ Don't allow dates where the year is not zero but the month or day parts of the d
 #### ONLY_FULL_GROUP_BY
 
 
-For [SELECT ... GROUP BY](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by) queries, disallow [SELECTing](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) columns which are not referred to in the GROUP BY clause, unless they are passed to an aggregate function like [COUNT()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) or [MAX()](../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md). Produce a 1055 error.
+For [SELECT ... GROUP BY](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#group-by) queries, disallow [SELECTing](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) columns which are not referred to in the GROUP BY clause, unless they are passed to an aggregate function like [COUNT()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) or [MAX()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md). Produce a 1055 error.
 
 
 #### ORACLE
 
 
-In all versions of MariaDB up to [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), this sets `sql_mode` that is equivalent to: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options), [NO_AUTO_CREATE_USER](#no_auto_create_user)
+In all versions of MariaDB up to [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), this sets `sql_mode` that is equivalent to: [PIPES_AS_CONCAT](#pipes_as_concat), [ANSI_QUOTES](#ansi_quotes), [IGNORE_SPACE](#ignore_space), [NO_KEY_OPTIONS](#no_key_options), [NO_TABLE_OPTIONS](#no_table_options), [NO_FIELD_OPTIONS](#no_field_options), [NO_AUTO_CREATE_USER](#no_auto_create_user)
 
 
-From [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), this mode also sets [SIMULTANEOUS_ASSIGNMENT](#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL_MODE=ORACLE From MariaDB 10.3](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), this mode also sets [SIMULTANEOUS_ASSIGNMENT](#simultaneous_assignment) and configures the server to understand a large subset of Oracle's PL/SQL language instead of MariaDB's traditional syntax for stored routines. See [SQL_MODE=ORACLE From MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
@@ -241,7 +240,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 #### PAD_CHAR_TO_FULL_LENGTH
 
 
-Trailing spaces in [CHAR](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) columns are by default trimmed upon retrieval. With PAD_CHAR_TO_FULL_LENGTH enabled, no trimming occurs. Does not apply to [VARCHARs](../../reference/data-types/string-data-types/varchar.md).
+Trailing spaces in [CHAR](../../reference/data-types/string-data-types/char.md) columns are by default trimmed upon retrieval. With PAD_CHAR_TO_FULL_LENGTH enabled, no trimming occurs. Does not apply to [VARCHARs](../../reference/data-types/string-data-types/varchar.md).
 
 
 #### PIPES_AS_CONCAT
@@ -268,7 +267,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements-and-structure/sql-sta
 #### SIMULTANEOUS_ASSIGNMENT
 
 
-Setting this makes the SET part of the [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement evaluate all assignments simultaneously, not left-to-right. From [MariaDB 10.3.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md).
+Setting this makes the SET part of the [UPDATE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement evaluate all assignments simultaneously, not left-to-right. From [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes).
 
 
 #### STRICT_ALL_TABLES
@@ -280,13 +279,13 @@ Strict mode. Statements with invalid or missing data are aborted and rolled back
 #### STRICT_TRANS_TABLES
 
 
-Strict mode. Statements with invalid or missing data are aborted and rolled back, except that for non-transactional storage engines and statements affecting multiple rows where the invalid or missing data is not the first row, MariaDB will convert the invalid value to the closest valid value, or, if a value is missing, insert the column default value. Default since [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md).
+Strict mode. Statements with invalid or missing data are aborted and rolled back, except that for non-transactional storage engines and statements affecting multiple rows where the invalid or missing data is not the first row, MariaDB will convert the invalid value to the closest valid value, or, if a value is missing, insert the column default value. Default since [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes).
 
 
 #### TIME_ROUND_FRACTIONAL
 
 
-With this mode unset, MariaDB truncates fractional seconds when changing precision to smaller. When set, MariaDB will round when converting to TIME, DATETIME and TIMESTAMP, and truncate when converting to DATE. Since [MariaDB 10.4.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md)
+With this mode unset, MariaDB truncates fractional seconds when changing precision to smaller. When set, MariaDB will round when converting to TIME, DATETIME and TIMESTAMP, and truncate when converting to DATE. Since [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes)
 
 
 #### TRADITIONAL
@@ -301,10 +300,10 @@ Makes MariaDB work like a traditional SQL server. Same as: [STRICT_TRANS_TABLES]
 A mode where at least one of `STRICT_TRANS_TABLES` or `STRICT_ALL_TABLES` is enabled is called *strict mode*.
 
 
-With strict mode set (default from [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md)), statements that modify tables (either transactional for `STRICT_TRANS_TABLES` or all for `STRICT_ALL_TABLES`) will fail, and an error will be returned instead. The IGNORE keyword can be used when strict mode is set to convert the error to a warning.
+With strict mode set (default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)), statements that modify tables (either transactional for `STRICT_TRANS_TABLES` or all for `STRICT_ALL_TABLES`) will fail, and an error will be returned instead. The IGNORE keyword can be used when strict mode is set to convert the error to a warning.
 
 
-With strict mode not set (default in version <= [MariaDB 10.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)), MariaDB will automatically adjust invalid values, for example, truncating strings that are too long, or adjusting numeric values that are out of range, and produce a warning.
+With strict mode not set (default in version <= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), MariaDB will automatically adjust invalid values, for example, truncating strings that are too long, or adjusting numeric values that are out of range, and produce a warning.
 
 
 Statements that don't modify data will return a warning when adjusted regardless of mode.
@@ -411,7 +410,6 @@ Query OK, 1 row affected, 2 warnings (0.15 sec)
 ## See Also
 
 
-* [SQL_MODE=MSSQL](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md)
-* [SQL_MODE=ORACLE](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [SQL_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql)
+* [SQL_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
-<span></span>

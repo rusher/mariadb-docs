@@ -1361,7 +1361,7 @@ apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 28C12247
 Additional information on setting to Maxscale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 With the repo file in place you can now install MariaDB MaxScale like so:
@@ -1470,13 +1470,13 @@ sudo apt-get install maxscale maxscale-cdc-connector
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 ## Java Connector
@@ -1485,13 +1485,13 @@ How to Install the ODBC Connector:
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 # MariaDB ColumnStore Data Adapters Packages

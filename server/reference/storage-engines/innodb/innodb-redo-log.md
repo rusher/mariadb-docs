@@ -8,7 +8,7 @@ Directly editing or moving the redo logs can cause corruption, and should never 
 ## Overview
 
 
-The redo log is used by [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) during crash recovery and background flushing of transactions to the tablespaces. The redo log files have names like `ib_logfileN`, where `N` is an integer. From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), there is only one redo log, so the file will always be named `ib_logfile0`. If the [innodb_log_group_home_dir](innodb-system-variables.md#innodb_log_group_home_dir) system variable is configured, then the redo log files will be created in that directory. Otherwise, they will be created in the directory defined by the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
+The redo log is used by [InnoDB](README.md) during crash recovery and background flushing of transactions to the tablespaces. The redo log files have names like `ib_logfileN`, where `N` is an integer. From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), there is only one redo log, so the file will always be named `ib_logfile0`. If the [innodb_log_group_home_dir](innodb-system-variables.md#innodb_log_group_home_dir) system variable is configured, then the redo log files will be created in that directory. Otherwise, they will be created in the directory defined by the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
 
 ## Flushing Effects on Performance and Consistency
@@ -20,7 +20,7 @@ The [innodb_flush_log_at_trx_commit](innodb-system-variables.md#innodb_flush_log
 ### Binary Log Group Commit and Redo Log Flushing
 
 
-When both [innodb_flush_log_at_trx_commit=1](innodb-system-variables.md#innodb_flush_log_at_trx_commit) (the default) is set and the [binary log](binary-log-group-commit-and-innodb-flushing-performance.md) is enabled, there is one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3). See [Binary Log Group Commit and InnoDB Flushing Performance](binary-log-group-commit-and-innodb-flushing-performance.md) for more information.
+When both [innodb_flush_log_at_trx_commit=1](innodb-system-variables.md#innodb_flush_log_at_trx_commit) (the default) is set and the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) is enabled, there is one less sync to disk inside InnoDB during commit (2 syncs shared between a group of transactions instead of 3). See [Binary Log Group Commit and InnoDB Flushing Performance](binary-log-group-commit-and-innodb-flushing-performance.md) for more information.
 
 
 ## Redo Log Group Capacity
@@ -29,8 +29,8 @@ When both [innodb_flush_log_at_trx_commit=1](innodb-system-variables.md#innodb_f
 The redo log group capacity is the total combined size of all InnoDB redo logs. The relevant factors are:
 
 
-* From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), there is 1 redo log.
-* The size of each redo log file is configured by the [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) system variable. This can safely be set to a much higher value from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md). Before [MariaDB 10.9](../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md), resizing required the server to be restarted. From [MariaDB 10.9](../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md) the variable can be set dynamically.
+* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), there is 1 redo log.
+* The size of each redo log file is configured by the [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) system variable. This can safely be set to a much higher value from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105). Before [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109), resizing required the server to be restarted. From [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) the variable can be set dynamically.
 
 
 The redo log group capacity is determined by the following calculation:
@@ -51,7 +51,7 @@ For example, if [innodb_log_file_size](innodb-system-variables.md#innodb_log_fil
 
 
 
-##### MariaDB starting with [10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 The number of redo log files is fixed.
 
 
@@ -91,8 +91,8 @@ The checkpoint age is the amount of data written to the InnoDB redo log since th
 
 
 
-##### MariaDB starting with [10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-[MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) reintroduced the [Innodb_checkpoint_age](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age) status variable for determining the checkpoint age.
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) reintroduced the [Innodb_checkpoint_age](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age) status variable for determining the checkpoint age.
 
 
 The checkpoint age can also be determined by the process shown below.
@@ -153,10 +153,10 @@ For example, if `[innodb_checkpoint_age](#determining-the-checkpoint-age)` is `1
 If the calculated value for redo log occupancy is too close to `1.0`, then the InnoDB redo log capacity may be too small for the current workload.
 
 
-## [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md) Updates
+## [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) Updates
 
 
-A number of redo log improvements were made in [MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md):
+A number of redo log improvements were made in [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
 
 
 * Autosize innodb_buffer_pool_chunk_size ([MDEV-25342](https://jira.mariadb.org/browse/MDEV-25342)).
@@ -164,10 +164,10 @@ A number of redo log improvements were made in [MariaDB 10.8](../../../../releas
 * Remove FIL_PAGE_FILE_FLUSH_LSN ([MDEV-27199](https://jira.mariadb.org/browse/MDEV-27199)).
 
 
-Before [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md), [mariadb-backup --prepare](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md#-prepare) created a zero-length ib_logfile0 as a dummy placeholder. From [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md) ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425)), the size of that dummy file was increased to 12304 (0x3010) bytes, and all updates of FIL_PAGE_FILE_FLUSH_LSN in the first page of the system tablespace are removed.
+Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), [mariadb-backup --prepare](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md#-prepare) created a zero-length ib_logfile0 as a dummy placeholder. From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes) ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425)), the size of that dummy file was increased to 12304 (0x3010) bytes, and all updates of FIL_PAGE_FILE_FLUSH_LSN in the first page of the system tablespace are removed.
 
 
-From [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md), if the server is started up with a zero-sized ib_logfile0, it is assumed that an upgrade is being performed after a backup had been prepared. The start LSN will then be read from FIL_PAGE_FILE_FLUSH_LSN, and a new log file will be created starting from exactly that LSN.
+From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), if the server is started up with a zero-sized ib_logfile0, it is assumed that an upgrade is being performed after a backup had been prepared. The start LSN will then be read from FIL_PAGE_FILE_FLUSH_LSN, and a new log file will be created starting from exactly that LSN.
 
 
 Manually creating a zero-sized ib_logfile0 without manually updating the FIL_PAGE_FILE_FLUSH_LSN in the system tablespace to a recent enough LSN may result in error messages such as "page LSN is in the future". If a log was discarded while some changes had already been written to data pages, all sort of corruption may occur.

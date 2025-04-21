@@ -35,7 +35,7 @@ Generate next value for a `SEQUENCE`.
 * You can greatly speed up `NEXT VALUE` by creating the sequence with the `CACHE` option. If not, every `NEXT VALUE` usage will cause changes in the stored `SEQUENCE` table.
 * When using `NEXT VALUE` the value will be reserved at once and will not be reused, except if the `SEQUENCE` was created with `CYCLE`. This means that when you are using `SEQUENCE`s you have to expect gaps in the generated sequence numbers.
 * If one updates the `SEQUENCE` with [SETVAL()](setval.md) or [ALTER SEQUENCE ... RESTART](../alter-sequence.md), `NEXT VALUE FOR` will notice this and start from the next requested value.
-* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) will close the sequence and the next sequence number generated will be according to what's stored in the `SEQUENCE` object. In effect, this will discard the cached values.
+* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) will close the sequence and the next sequence number generated will be according to what's stored in the `SEQUENCE` object. In effect, this will discard the cached values.
 * A server restart (or closing the current connection) also causes a drop of all cached values. The cached sequence numbers are reserved only for the current connection.
 * `NEXT VALUE` requires the `INSERT` [privilege](../../sql-statements/account-management-sql-commands/grant.md).
 * You can also use `NEXT VALUE FOR sequence` for column `DEFAULT`.
@@ -85,6 +85,6 @@ SELECT NEXTVAL(s);
 * [ALTER SEQUENCE](../alter-sequence.md)
 * [PREVIOUS VALUE FOR](previous-value-for-sequence_name.md)
 * [SETVAL()](setval.md). Set next value for the sequence.
-* [AUTO_INCREMENT](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [AUTO_INCREMENT](../../../data-types/auto_increment.md)
 * [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 

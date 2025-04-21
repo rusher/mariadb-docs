@@ -2,8 +2,8 @@
 # INET6
 
 
-##### MariaDB starting with [10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-The INET6 data type was added in [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+The INET6 data type was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 ## Syntax
@@ -49,9 +49,9 @@ Besides creating one's own [stored function](../../../server-usage/programming-c
 * [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) from a character string to INET6 understands addresses in short or long text notation (including IPv4 mapped and compatible addresses). NULL is returned if the format is not understood.
 * CAST from a binary string to INET6 requires a 16-byte string as an argument. NULL is returned if the argument length is not equal to 16.
 * CAST from other data types to INET6 first converts data to a character string, then CAST from character string to INET6 is applied.
-* CAST from INET6 to [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) returns short text address notation.
-* CAST from INET6 to [BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) returns its 16-byte binary string representation.
-* CAST from INET6 to data types other than [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) (e.g. SIGNED, UNSIGNED, TIME, etc) returns an error.
+* CAST from INET6 to [CHAR](char.md) returns short text address notation.
+* CAST from INET6 to [BINARY](binary.md) returns its 16-byte binary string representation.
+* CAST from INET6 to data types other than [CHAR](char.md) (e.g. SIGNED, UNSIGNED, TIME, etc) returns an error.
 
 
 ### Comparisons
@@ -71,7 +71,7 @@ Attempting to compare INET6 to an expression of any other data type returns an e
 ### Mixing INET6 Values for Result
 
 
-An INET6 expression can be mixed for result (i.e. [UNION](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md), [CASE..THEN](../../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md), [COALESCE](../../sql-statements-and-structure/operators/comparison-operators/coalesce.md) etc) with:
+An INET6 expression can be mixed for result (i.e. [UNION](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md), [CASE..THEN](https://mariadb.com/kb/en/case), [COALESCE](../../sql-statements-and-structure/operators/comparison-operators/coalesce.md) etc) with:
 
 
 * another INET6 expression. The resulting data type is INET6.
@@ -88,26 +88,26 @@ Mixing INET6 with other data types for [LEAST](../../sql-statements-and-structur
 ### Functions and Operators
 
 
-* [HEX()](../../sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md) with an INET6 argument returns a hexadecimal representation of the underlying 16-byte binary string
+* [HEX()](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/hex.md) with an INET6 argument returns a hexadecimal representation of the underlying 16-byte binary string
 * Arithmetic operators (+,-,*,/,MOD,DIV) are not supported for INET6. This may change in the future.
 * The [INET6_ATON](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) function now understands INET6 values as an argument
 * The prototypes of the [IS_IPV4_COMPAT](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_compat.md) and I[S_IPV4_MAPPED](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_ipv4_mapped.md) functions have changed from `a BINARY(16)` to `a INET6`,
-* When the argument for these two functions is not INET6, automatic implicit CAST to INET6 is applied. As a consequence, both functions now understand arguments in both text representation and binary(16) representation. Before [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), these functions understood only binary(16) representation.
+* When the argument for these two functions is not INET6, automatic implicit CAST to INET6 is applied. As a consequence, both functions now understand arguments in both text representation and binary(16) representation. Before [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), these functions understood only binary(16) representation.
 
 
 ### Prepared Statement Parameters
 
 
-INET6 understands both [text](text.md) and [binary(16)](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) address representation in [prepared statement](../../sql-statements-and-structure/sql-statements/prepared-statements/README.md) parameters ([PREPARE](../../sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md)..[EXECUTE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) and [EXECUTE IMMEDIATE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md) statements).
+INET6 understands both [text](text.md) and [binary(16)](binary.md) address representation in [prepared statement](../../sql-statements-and-structure/sql-statements/prepared-statements/README.md) parameters ([PREPARE](../../sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md)..[EXECUTE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) and [EXECUTE IMMEDIATE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md) statements).
 
 
 ### Migration between BINARY(16) and INET6
 
 
-Before [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), you may have used [BINARY(16)](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) as a storage for IPv6 internet addresses, in combination with [INET6_ATON](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) and [INET6_NTOA](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa.md) to respectively insert and retrieve data.
+Before [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), you may have used [BINARY(16)](binary.md) as a storage for IPv6 internet addresses, in combination with [INET6_ATON](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) and [INET6_NTOA](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa.md) to respectively insert and retrieve data.
 
 
-From 10.5, you can [ALTER](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) BINARY(16) columns storing IPv6 addresses to INET6. After such an alter, there is no a need to use INET6_ATON() and INET6_NTOA(). Addresses can be inserted and retrieved directly.
+From 10.5, you can [ALTER](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) BINARY(16) columns storing IPv6 addresses to INET6. After such an alter, there is no a need to use INET6_ATON() and INET6_NTOA(). Addresses can be inserted and retrieved directly.
 
 
 It is also possible to convert INET6 columns to BINARY(16) and continue using the data in combination with INET6_NTOA() and INET6_ATON().
@@ -187,7 +187,7 @@ SELECT HEX(a) FROM t1;
 +----------------------------------+
 ```
 
-Casting from INET6 to anything other than [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) returns an error:
+Casting from INET6 to anything other than [CHAR](char.md) returns an error:
 
 
 ```
@@ -349,7 +349,7 @@ ERROR 4078 (HY000): Illegal parameter data types inet6 and int for operation 'UN
 ### Functions and Operators Examples
 
 
-[HEX](../../sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md) with an INET6 argument returning a hexadecimal representation:
+[HEX](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/hex.md) with an INET6 argument returning a hexadecimal representation:
 
 
 ```
@@ -467,7 +467,7 @@ EXECUTE IMMEDIATE 'SELECT * FROM t1 WHERE a=?' USING X'FFFF000000000000000000000
 ### Migration between BINARY(16) and INET6 Examples
 
 
-Before [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md):
+Before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105):
 
 
 ```
@@ -483,7 +483,7 @@ SELECT INET6_NTOA(a) FROM t1;
 +---------------+
 ```
 
-Migrating to INET6, from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md):
+Migrating to INET6, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105):
 
 
 ```
@@ -525,10 +525,10 @@ SELECT INET6_NTOA(a) FROM t1;
 ### Casting from INET4 to INET6
 
 
-From [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md), casting from [INET4](inet4.md) data types to INET6 is permitted, allowing INET4 values to be inserted into INET6 columns.
+From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes), casting from [INET4](inet4.md) data types to INET6 is permitted, allowing INET4 values to be inserted into INET6 columns.
 
 
-Before [MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md):
+Before [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113):
 
 
 ```
@@ -538,7 +538,7 @@ INSERT INTO t1 VALUES('0.0.0.0'), ('255.10.0.0'), ('255.255.255.255');
 ERROR 1292 (22007): Incorrect inet6 value: '0.0.0.0' for column `test`.`t1`.`a` at row 1
 ```
 
-From [MariaDB 11.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md):
+From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113):
 
 
 ```

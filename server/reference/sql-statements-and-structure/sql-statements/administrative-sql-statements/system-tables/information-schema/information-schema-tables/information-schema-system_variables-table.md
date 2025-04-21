@@ -1,7 +1,7 @@
 
 # Information Schema SYSTEM_VARIABLES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SYSTEM_VARIABLES` table shows current values and various metadata of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md).
+The [Information Schema](../README.md) `SYSTEM_VARIABLES` table shows current values and various metadata of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md).
 
 
 It contains the following columns:
@@ -25,7 +25,7 @@ It contains the following columns:
 | ENUM_VALUE_LIST | For ENUM, SET, and FLAGSET variables — the list of recognized values. |
 | READ_ONLY | Whether a variable can be set with the SQL statement. Note that many "read only" variables can still be set on the command line. |
 | COMMAND_LINE_ARGUMENT | Whether an argument is required when setting the variable on the command line. NULL when a variable can not be set on the command line. |
-| GLOBAL_VALUE_PATH | Which config file the variable got its value from. NULL if not set in any config file. Added in [MariaDB 10.5.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). |
+| GLOBAL_VALUE_PATH | Which config file the variable got its value from. NULL if not set in any config file. Added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). |
 
 
 

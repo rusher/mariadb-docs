@@ -39,10 +39,10 @@ block, except those blocks that declare a variable with the same name.
 Anchored data types allow a data type to be defined based on another object, such as a table row, rather than specifically set in the declaration. If the anchor object changes, so will the anchored data type. This can lead to routines being easier to maintain, so that if the data type in the table is changed, it will automatically be changed in the routine as well.
 
 
-Variables declared with `ROW TYPE OF` will have the same features as implicit [ROW](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md) variables. It is not possible to use `ROW TYPE OF` variables in a [LIMIT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause.
+Variables declared with `ROW TYPE OF` will have the same features as implicit [ROW](../../../reference/data-types/string-data-types/row.md) variables. It is not possible to use `ROW TYPE OF` variables in a [LIMIT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/limit.md) clause.
 
 
-The real data type of `TYPE OF` and `ROW TYPE OF table_name` will become known at the very beginning of the stored routine call. [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) statements performed inside the current routine on the tables that appear in anchors won't affect the data type of the anchored variables, even if the variable is declared after an [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) statement.
+The real data type of `TYPE OF` and `ROW TYPE OF table_name` will become known at the very beginning of the stored routine call. [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) or [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) statements performed inside the current routine on the tables that appear in anchors won't affect the data type of the anchored variables, even if the variable is declared after an [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) or [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) statement.
 
 
 The real data type of a `ROW TYPE OF cursor_name` variable will become known when execution enters into the block where the variable is declared. Data type instantiation will happen only once. In a cursor `ROW TYPE OF` variable that is declared inside a loop, its data type will become known on the very first iteration and won't change on further loop iterations.
@@ -60,7 +60,7 @@ DECLARE name VARCHAR(5) DEFAULT 'monty';
   DECLARE Y SMALLINT;
 ```
 
-`TYPE OF` and `ROW TYPE OF` from [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md):
+`TYPE OF` and `ROW TYPE OF` from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
 
 
 ```
@@ -76,4 +76,3 @@ DECLARE rec2 ROW TYPE OF cur1; -- Get the row data type from the cursor {{cur1}}
 
 * [User-Defined variables](../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md)
 
-<span></span>

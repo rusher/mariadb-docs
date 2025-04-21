@@ -1,7 +1,7 @@
 
 # EXPLAIN FORMAT=JSON Differences From MySQL
 
-[EXPLAIN FORMAT=JSON](explain-formatjson-in-mysql.md) output in MySQL and MariaDB.
+[EXPLAIN FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-format-json) output in MySQL and MariaDB.
 
 
 MariaDB's EXPLAIN JSON output is different from MySQL's. Here's a list of differences. (Currently they come in no particular order).

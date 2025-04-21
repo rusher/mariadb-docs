@@ -11,7 +11,7 @@ When using Mariabackup, you don't necessarily need to restore every table and/or
 Before you can restore from a backup, you first need to **prepare** it to make the data files consistent. You can do so with the `[--prepare](mariabackup-options.md#-prepare)` command option.
 
 
-The ability to restore individual tables and partitions relies on [InnoDB's transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). For MariaDB to import tablespaces like these, [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) looks for a file with a `.cfg` extension. For Mariabackup to create these files, you also need to add the `[--export](mariabackup-options.md#-export)` option during the prepare step.
+The ability to restore individual tables and partitions relies on [InnoDB's transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). For MariaDB to import tablespaces like these, [InnoDB](../../../reference/storage-engines/innodb/README.md) looks for a file with a `.cfg` extension. For Mariabackup to create these files, you also need to add the `[--export](mariabackup-options.md#-export)` option during the prepare step.
 
 
 For example, you might execute the following command:
@@ -52,4 +52,3 @@ To restore individual non-partitioned tables from a backup, find the `.ibd` and 
 
 To restore individual partitions or partitioned tables from a backup, find the `.ibd` and `.cfg` files for the partition(s) in the backup, and then import them using the [Importing Transportable Tablespaces for Partitioned Tables](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#importing-transportable-tablespaces-for-partitioned-tables) process.
 
-<span></span>

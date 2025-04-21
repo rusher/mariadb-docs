@@ -5,7 +5,7 @@
 
 
 [Worklog](https://askmonty.org/worklog/index.pl) is the tool used to track all
-development of [MariaDB](../../../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md).
+development of [MariaDB](/kb/en/mariadb/).
 
 
 The MariaDB Worklog is open to everyone at [index.pl](https://askmonty.org/worklog/index.pl)

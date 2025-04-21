@@ -44,7 +44,7 @@ The Linux kernel uses ACPI tables from BIOS to detect if the hardware is NUMA. O
 * if a task running on a certain NUMA node allocates memory, the kernel tries hard to map physical memory from the same NUMA node
 
 
-This results in all kinds of weird behavior when you run one big process (mysqld) that consumes most of the memory. In such cases it is recommended to either turn off NUMA (BIOS or kernel command line) or prefix such problem processes with *numactl --interleave all*. You can enable this by running [mysqld_safe](../../../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) with the `--numa-interleave` option.
+This results in all kinds of weird behavior when you run one big process (mysqld) that consumes most of the memory. In such cases it is recommended to either turn off NUMA (BIOS or kernel command line) or prefix such problem processes with *numactl --interleave all*. You can enable this by running [mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) with the `--numa-interleave` option.
 
 
 [More details can be found here](https://blog.jcole.us/2010/09/28/mysql-swap-insanity-and-the-numa-architecture/).
@@ -53,16 +53,16 @@ This results in all kinds of weird behavior when you run one big process (mysqld
 ## Linux Kernel Settings
 
 
-See [configuring Linux for MariaDB](../../../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md).
+See [configuring Linux for MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb).
 
 
 ## InnoDB Settings
 
 
-[innodb_buffer_pool_size](../../../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#innodb_buffer_pool_size) to about 80% of RAM or leaving <5G RAM free (on large RAM systems). Less if lots of connections are used.
+[innodb_buffer_pool_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#innodb_buffer_pool_size) to about 80% of RAM or leaving <5G RAM free (on large RAM systems). Less if lots of connections are used.
 
 
-[innodb_log_file_size](../../../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#innodb_log_file_size) to be larger than the amount of writes in the test run or sufficient to cover several minutes of the test run at least.
+[innodb_log_file_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#innodb_log_file_size) to be larger than the amount of writes in the test run or sufficient to cover several minutes of the test run at least.
 
 
 ## MyISAM Settings
@@ -71,5 +71,5 @@ See [configuring Linux for MariaDB](../../../../../../../../server/server-manage
 ## General Settings
 
 
-[threads_cache_size](../../../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#threads_cache_size) should be the same as [max_connections](../../../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_connections) (unless using thread pools).
+[threads_cache_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#threads_cache_size) should be the same as [max_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#max_connections) (unless using thread pools).
 

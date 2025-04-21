@@ -5,13 +5,13 @@
 ### SQL Syntax
 
 
-* With `SpiderForMySQL`, the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement uses `CONNECTION` to define spider table variables whereas MariaDB uses `COMMENT`.
+* With `SpiderForMySQL`, the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement uses `CONNECTION` to define spider table variables whereas MariaDB uses `COMMENT`.
 
 
 ### Features
 
 
-* `[HANDLER](../../sql-statements-and-structure/nosql/handler/handler-commands.md)` can not be translated to SQL in MariaDB
+* `[HANDLER](../../sql-statements-and-structure/nosql/handler/README.md)` can not be translated to SQL in MariaDB
 * Concurrent background search is not yet implemented in MariaDB
 * Vertical partitioning storage engine VP is not implemented in MariaDB
 * `CREATE TABLE` can use [table discovery](../storage-engines-storage-engine-development/table-discovery.md) in MariaDB

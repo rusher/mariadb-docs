@@ -25,6 +25,6 @@ Source: [MDEV-3926, Comment by Sergei Golubchik](https://jira.mariadb.org/browse
 
 
 * [MDEV-3926](https://jira.mariadb.org/browse/MDEV-3926), [MDEV-5007](https://jira.mariadb.org/browse/MDEV-5007), [MDEV-3795](https://jira.mariadb.org/browse/MDEV-3795).
-* [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)
 * [ORDER BY](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md)
 

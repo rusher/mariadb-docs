@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_SYS_SEMAPHORE_WAITS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) INNODB_SYS_SEMAPHORE_WAITS table is meant to contain information about current semaphore waits. At present it is not correctly populated. See [MDEV-21330](https://jira.mariadb.org/browse/MDEV-21330).
+The [Information Schema](../../README.md) INNODB_SYS_SEMAPHORE_WAITS table is meant to contain information about current semaphore waits. At present it is not correctly populated. See [MDEV-21330](https://jira.mariadb.org/browse/MDEV-21330).
 
 
 The [PROCESS privilege](../../../../../account-management-sql-commands/grant.md#process) is required to view the table.

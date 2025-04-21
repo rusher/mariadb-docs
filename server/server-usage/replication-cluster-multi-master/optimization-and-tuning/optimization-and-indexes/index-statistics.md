@@ -38,7 +38,7 @@ The default approaches can be changed by setting the [aria_stats_method](../../.
 ## Null-Safe and Regular Comparisons
 
 
-The comparison operator used plays an important role. If two values are compared with <=> (see the [null-safe-equal](../../../../reference/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/equals.md) comparison operator) null is returned. For example:
+The comparison operator used plays an important role. If two values are compared with <=> (see the [null-safe-equal](../../../../reference/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](../../../../reference/sql-statements-and-structure/operators/comparison-operators/equal.md) comparison operator) null is returned. For example:
 
 
 ```
@@ -63,7 +63,7 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 ## Engine-Independent Statistics
 
 
-[MariaDB 10.0.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes.md) introduced a way to gather statistics independently of the storage engine. See [Engine-independent table statistics](../query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md).
+[MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes) introduced a way to gather statistics independently of the storage engine. See [Engine-independent table statistics](../query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md).
 
 
 
@@ -72,7 +72,7 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 ## Histogram-Based Statistics
 
 
-[Histogram-Based Statistics](../query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md) were introduced in [MariaDB 10.0.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes.md), and are collected by default from [MariaDB 10.4.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md).
+[Histogram-Based Statistics](../query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md) were introduced in [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1002-release-notes), and are collected by default from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes).
 
 
 ## See Also
@@ -84,4 +84,3 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 * [Histogram-based Statistics](../query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md)
 * [Ignored Indexes](ignored-indexes.md)
 
-<span></span>

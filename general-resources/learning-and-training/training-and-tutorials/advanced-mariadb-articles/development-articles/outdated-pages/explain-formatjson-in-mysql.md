@@ -5,7 +5,7 @@
 There are some things that we in MariaDB are not happy with in MySQL/Oracle's implementation of EXPLAIN FORMAT=JSON.
 
 
-The most important issues are already fixed in MariaDB's [EXPLAIN FORMAT=JSON](explain-format-json-differences.md) implementation. See [EXPLAIN FORMAT=JSON Differences From MySQL](explain-format-json-differences.md) for details.
+The most important issues are already fixed in MariaDB's [EXPLAIN FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-format-json) implementation. See [EXPLAIN FORMAT=JSON Differences From MySQL](explain-format-json-differences.md) for details.
 
 
 This page lists things are are not fixed yet.

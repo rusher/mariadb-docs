@@ -1,7 +1,7 @@
 
 # Information Schema plugins: SHOW and FLUSH statements
 
-Information Schema plugins can support [SHOW](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-code.md) and [FLUSH](../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statements.
+Information Schema plugins can support [SHOW](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/README.md) and [FLUSH](../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
 
 
 ## SHOW

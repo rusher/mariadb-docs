@@ -1,9 +1,9 @@
 
 # Generic Build Instructions
 
-The instructions on this page will help you compile [MariaDB](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) from source.
+The instructions on this page will help you compile [MariaDB](/kb/en/mariadb/) from source.
 Links to more complete instructions for specific platforms can be found on the
-[source](source-building-mariadb-on-centos.md) page.
+[source](README.md) page.
 
 
 First, [get a copy of the MariaDB source](../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md).
@@ -19,7 +19,7 @@ If you don't want to run MariaDB as yourself, then you should create a
 ## Using cmake
 
 
-[MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and above is compiled using *cmake*.
+[MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and above is compiled using *cmake*.
 
 
 It is recommended to create a build directory **beside** your source directory
@@ -135,7 +135,7 @@ Some common suffixes used for the scripts:
 | -gprof | binary is compiled with profiling (gcc --pg) |
 | -gcov | binary is compiled with code coverage (gcc -fprofile-arcs -ftest-coverage) |
 | -valgrind | The binary is compiled for debugging and optimized to be used with [valgrind](https://www.valgrind.org/). |
-| -debug | The binary is compiled with all symbols (gcc -g) and the [DBUG](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file.md) log system is enabled. |
+| -debug | The binary is compiled with all symbols (gcc -g) and the [DBUG](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file) log system is enabled. |
 
 
 
@@ -183,7 +183,7 @@ After installing MariaDB (using `sudo make install`), but prior to starting Mari
 datadir=/usr/local/mariadb/data/
 ```
 
-1. run the [mariadb-install-db](../mariadb-install-db-exe.md) script to generate the needed system tables
+1. run the [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) script to generate the needed system tables
 
 
 Here is an example:

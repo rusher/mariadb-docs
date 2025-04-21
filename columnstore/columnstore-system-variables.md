@@ -41,7 +41,7 @@
 
 
 
-`<<<span class="macro_name">toc</span><span class="macro_arg_string"></span>>>`
+`<<toc>>`
 
 
 ## Compression mode
@@ -67,7 +67,7 @@ where n is:
 ## ColumnStore decimal to double math
 
 
-`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
+`<<toc title='' layout=standalone>>`
 MariaDB ColumnStore has the ability to change intermediate decimal mathematical results from decimal type to double. The decimal type has approximately 17-18 digits of precision, but a smaller maximum range. Whereas the double type has approximately 15-16 digits of precision, but a much larger maximum range. 
 In typical mathematical and scientific applications, the ability to avoid overflow in intermediate results with double math is likely more beneficial than the additional two digits of precisions. In banking applications, however, it may be more appropriate to leave in the default decimal setting to ensure accuracy to the least significant digit.
 
@@ -127,7 +127,7 @@ where *n* is the amount of precision desired for calculations.
 ## Disk-based joins
 
 
-`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
+`<<toc title='' layout=standalone>>`
 
 
 ### Introduction
@@ -180,13 +180,13 @@ set infinidb_um_mem_limit = value
 ## Batch insert mode for INSERTS
 
 
-`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
+`<<toc title='' layout=standalone>>`
 
 
 ### Introduction
 
 
-MariaDB ColumnStore has the ability to utilize the cpimport fast data import tool for non-transactional [LOAD DATA INFILE](../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [INSERT INTO SELECT FROM](../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) SQL statements. Using this method results in a significant increase in performance in loading data through these two SQL statements. This optimization is independent of the storage engine used for the tables in the select statement.
+MariaDB ColumnStore has the ability to utilize the cpimport fast data import tool for non-transactional [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) and [INSERT INTO SELECT FROM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) SQL statements. Using this method results in a significant increase in performance in loading data through these two SQL statements. This optimization is independent of the storage engine used for the tables in the select statement.
 
 
 ### Enable/disable using cpimport for batch insert
@@ -241,7 +241,7 @@ The VersionBufferFileSize setting is updated in the ColumnStore.xml typically lo
 MariaDB ColumnStore has the ability to query data from just a single [PM](columnstore-architecture/columnstore-performance-module.md) instead of the whole database through the [UM](columnstore-architecture/columnstore-user-module.md). In order to accomplish this, the infinidb_local_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 
-`<<<span class="macro_name">toc</span><span class="macro_arg_string"> title='' layout=standalone</span>>>`
+`<<toc title='' layout=standalone>>`
 
 
 ### Enable local PM query during installation

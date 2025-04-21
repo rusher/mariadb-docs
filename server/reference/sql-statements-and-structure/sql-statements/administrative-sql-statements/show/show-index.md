@@ -61,7 +61,7 @@ The following fields are returned by `SHOW INDEX`.
 | Index_type | The index type, which can be BTREE, FULLTEXT, HASH or RTREE. See [Storage Engine Index Types](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md). |
 | Comment | Other information, such as whether the index is disabled. |
 | Index_comment | Contents of the COMMENT attribute when the index was created. |
-| Ignored | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md). |
+| Ignored | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
 
 
 

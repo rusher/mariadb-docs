@@ -1,10 +1,10 @@
 
 # mysql.func Table
 
-The `mysql.func` table stores information about [user-defined functions](../../../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) (UDFs) created with the [CREATE FUNCTION UDF](../../../../../../server-usage/programming-customizing-mariadb/user-defined-functions/create-function-udf.md) statement.
+The `mysql.func` table stores information about [user-defined functions](../../../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDFs) created with the [CREATE FUNCTION UDF](../../../../../../server-usage/programming-customizing-mariadb/user-defined-functions/create-function-udf.md) statement.
 
 
-This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/README.md) storage engine.
 
 
 The `mysql.func` table contains the following fields:

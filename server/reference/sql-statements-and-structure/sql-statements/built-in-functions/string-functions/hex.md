@@ -12,7 +12,7 @@ HEX(N_or_S)
 
 
 If `N_or_S` is a number, returns a string representation of the hexadecimal
-value of `N`, where `N` is a `longlong` (`[BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)`) number. This is equivalent to `[CONV](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)(N,10,16)`.
+value of `N`, where `N` is a `longlong` (`[BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)`) number. This is equivalent to `[CONV](../numeric-functions/conv.md)(N,10,16)`.
 
 
 If `N_or_S` is a string, returns a hexadecimal string representation of
@@ -25,8 +25,8 @@ function.
 
 
 
-##### MariaDB starting with [10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-HEX() with an [INET6](../secondary-functions/miscellaneous-functions/inet6_aton.md) argument returns a hexadecimal representation of the underlying 16-byte binary string.
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+HEX() with an [INET6](../../../../data-types/string-data-types/inet6.md) argument returns a hexadecimal representation of the underlying 16-byte binary string.
 
 
 ## Examples
@@ -55,7 +55,7 @@ SELECT HEX('MariaDB');
 +----------------+
 ```
 
-From [MariaDB 10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md):
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
 
 
 ```
@@ -72,7 +72,7 @@ SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));
 
 * [Hexadecimal literals](../../../sql-language-structure/hexadecimal-literals.md)
 * [UNHEX()](unhex.md)
-* [CONV()](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)
-* [BIN()](../../../../../../maxscale/mariadb-maxscale-14/maxscale-14-routers/binlogrouter.md)
+* [CONV()](../numeric-functions/conv.md)
+* [BIN()](bin.md)
 * [OCT()](../numeric-functions/oct.md)
 

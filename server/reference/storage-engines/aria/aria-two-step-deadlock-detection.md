@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine can automatically detect and deal with deadlocks (see the [Wikipedia deadlocks article](https://en.wikipedia.org/wiki/Deadlock)).
+The [Aria](README.md) storage engine can automatically detect and deal with deadlocks (see the [Wikipedia deadlocks article](https://en.wikipedia.org/wiki/Deadlock)).
 
 
 This feature is controlled by four configuration variables, two that control the search depth and two that control the timeout.

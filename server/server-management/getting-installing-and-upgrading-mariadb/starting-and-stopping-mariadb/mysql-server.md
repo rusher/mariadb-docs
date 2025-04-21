@@ -2,7 +2,7 @@
 # mysql.server
 
 
-The [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `sh` script. The script starts the `[mariadbd](mariadbd-options.md)` server process by first changing its current working directory to the MariaDB install directory and then starting `[mariadbd-safe](mariadbd-safe.md)`. The script requires the standard [sysVinit](sysvinit.md) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
+The [mysql.server](mysql-server.md) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `sh` script. The script starts the `[mariadbd](mariadbd-options.md)` server process by first changing its current working directory to the MariaDB install directory and then starting `[mariadbd-safe](mariadbd-safe.md)`. The script requires the standard [sysVinit](sysvinit.md) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
 
 
 ```
@@ -134,7 +134,7 @@ If you installed MariaDB on Linux using [RPMs](../binary-packages/rpm/README.md)
 #### Manually Installing with SysVinit
 
 
-If you install MariaDB from [source](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md) or from a [binary tarball](../binary-packages/installing-mariadb-binary-tarballs.md) that does not install `[mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)`
+If you install MariaDB from [source](../compiling-mariadb-from-source/README.md) or from a [binary tarball](../binary-packages/installing-mariadb-binary-tarballs.md) that does not install `[mysql.server](mysql-server.md)`
 automatically, and if you are on a system that uses [sysVinit](sysvinit.md), then you can manually install `mysql.server` with [sysVinit](sysvinit.md). This is usually done by copying it to `/etc/init.d/` and then creating specially named symlinks in the appropriate `/etc/rcX.d/` directories (where 'X' is a number between 0 and 6).
 
 
@@ -184,4 +184,3 @@ As stated above, consult your distribution's documentation for more information 
 
 See [mariadbd startup options](https://mariadb.com/kb/en/mariadbd-startup-options) for information on configuration options for `mariadbd`.
 
-<span></span>

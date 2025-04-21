@@ -1,10 +1,10 @@
 
 # MyISAM Storage Formats
 
-The [MyISAM](myisam-system-variables.md) storage engine supports three different table storage formats.
+The [MyISAM](README.md) storage engine supports three different table storage formats.
 
 
-These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
+These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
 
 
 The [SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
@@ -23,7 +23,7 @@ Fixed-length tables have a number of characteristics
 
 
 * fast, since MariaDB will always know where a record begins
-* easy to repair: [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) is always able to recover all rows, except for the last one if it is not entirely written
+* easy to repair: [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is always able to recover all rows, except for the last one if it is not entirely written
 * easy to cache
 * take up more space than dynamic or compressed tables, as the maximum amount of storage space will be allocated to each record.
 * reconstructing after a crash is uncomplicated due to the fixed positions
@@ -52,13 +52,13 @@ If a DYNAMIC table has some frequently-accessed fixed-length columns, it could b
 ## Compressed
 
 
-Compressed tables are a read-only format, created with the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool. This can be done while the server is running, but external lock must not be disabled. [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) is used to uncompress them.
+Compressed tables are a read-only format, created with the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool. This can be done while the server is running, but external lock must not be disabled. [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is used to uncompress them.
 
 
 Compressed tables have a number of characteristics:
 
 
-* while the data is read-only, DDL statements such as [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) and [TRUNCATE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) will still function.
+* while the data is read-only, DDL statements such as [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) and [TRUNCATE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) will still function.
 * take much less space than fixed or dynamic tables. Each data has usually a 40-70% compression ratio
 * rows are compressed separately, reducing access overhead.
 * row headers will be from one to three bytes.

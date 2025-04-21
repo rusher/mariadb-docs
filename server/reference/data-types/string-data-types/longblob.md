@@ -22,7 +22,7 @@ length prefix that indicates the number of bytes in the value.
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `BLOB` is a synonym for `LONGBLOB`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `BLOB` is a synonym for `LONGBLOB`.
 
 
 ## EXAMPLES
@@ -83,5 +83,5 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [BLOB](blob.md)
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

@@ -7,7 +7,7 @@ This article briefly discusses the main ways to backup MariaDB. For detailed des
 ## Logical vs Physical Backups
 
 
-Logical backups consist of the SQL statements necessary to restore the data, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [CREATE TABLE](../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) and [INSERT](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md).
+Logical backups consist of the SQL statements necessary to restore the data, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [INSERT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md).
 
 
 Physical backups are performed by copying the individual data files or directories.
@@ -17,7 +17,7 @@ The main differences are as follows:
 
 
 * logical backups are more flexible, as the data can be restored on other hardware configurations, MariaDB versions or even on another DBMS, while physical backups cannot be imported on significantly different hardware, a different DBMS, or potentially even a different MariaDB version.
-* logical backups can be performed at the level of database and table, while physical databases are the level of directories and files. In the [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engines, each table has an equivalent set of files. (In versions prior to [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), by default a number of InnoDB tables are stored in the same file, in which case it is not possible to backup by table. See [innodb_file_per_table](../../reference/storage-engines/innodb/innodb-system-variables.md).)
+* logical backups can be performed at the level of database and table, while physical databases are the level of directories and files. In the [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) and [InnoDB](../../reference/storage-engines/innodb/README.md) storage engines, each table has an equivalent set of files. (In versions prior to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), by default a number of InnoDB tables are stored in the same file, in which case it is not possible to backup by table. See [innodb_file_per_table](../../reference/storage-engines/innodb/innodb-system-variables.md).)
 * logical backups are larger in size than the equivalent physical backup.
 * logical backups takes more time to both backup and restore than the equivalent physical backup.
 * log files and configuration files are not part of a logical backup
@@ -29,7 +29,7 @@ The main differences are as follows:
 ### Mariadb-backup
 
 
-[Mariadb-backup](../getting-installing-and-upgrading-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md) is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) [compression](https://mariadb.com/kb/en/InnoDB_compression) and [data-at-rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). It is included with [MariaDB 10.1.23](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10123-release-notes.md) and later.
+[Mariadb-backup](mariabackup/README.md) is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) with added support for [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) [compression](https://mariadb.com/kb/en/InnoDB_compression) and [data-at-rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). It is included with [MariaDB 10.1.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10123-release-notes) and later.
 
 
 ### mariadb-dump
@@ -82,7 +82,7 @@ See the [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-cli
 ### mariadb-hotcopy
 
 
-[mariadb-hotcopy](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) performs a physical backup, and works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../reference/storage-engines/archive/README.md) tables. It can only be run on the same machine as the location of the database directories.
+[mariadb-hotcopy](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-hotcopy.md) performs a physical backup, and works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) and [ARCHIVE](../../reference/storage-engines/archive/README.md) tables. It can only be run on the same machine as the location of the database directories.
 
 
 #### Examples
@@ -96,10 +96,10 @@ shell> mariadb-hotcopy db_name_1 ... db_name_n /path/to/new_directory
 ### Percona XtraBackup
 
 
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](mariabackup/mariabackup-and-backup-stage-commands.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](mariabackup/README.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 
 
-[Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is a tool for performing fast, hot backups. It was designed specifically for [XtraDB/InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) databases, but can be used with any storage engine (although not with [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) [encryption](../../reference/mariadb-internals/encryption-plugin-api.md) and [compression](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)). It is not included by default with MariaDB.
+[Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is a tool for performing fast, hot backups. It was designed specifically for [XtraDB/InnoDB](../../reference/storage-engines/innodb/README.md) databases, but can be used with any storage engine (although not with [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) [encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/README.md) and [compression](../../reference/storage-engines/innodb/innodb-page-compression.md)). It is not included by default with MariaDB.
 
 
 ### Filesystem Snapshots
@@ -108,7 +108,7 @@ Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](mariabackup/ma
 Some filesystems, like Veritas, support snapshots. During the snapshot, the table must be locked. The proper steps to obtain a snapshot are:
 
 
-* From the mariadb client, execute [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). The client must remain open.
+* From the mariadb client, execute [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md). The client must remain open.
 * From a shell, execute `mount vxfs snapshot`
 * The client can execute [UNLOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
 * Copy the snapshot files.
@@ -149,4 +149,3 @@ These operations are wizard-aided allowing users to set up all tasks in a visual
 
 * [Streaming MariaDB backups in the cloud](https://mariadb.com/blog/streaming-mariadb-backups-cloud) (mariadb.com blog)
 
-<span></span>

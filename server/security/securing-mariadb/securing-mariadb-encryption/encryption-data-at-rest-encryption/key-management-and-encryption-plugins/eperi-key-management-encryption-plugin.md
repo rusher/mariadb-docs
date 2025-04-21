@@ -103,10 +103,10 @@ For more information on how to use encryption, see [Data at Rest Encryption](../
 The Eperi Key Management Plugin supports [using multiple encryption keys](encryption-key-management.md#using-multiple-encryption-keys). Each encryption key can be defined with a different 32-bit integer as a key identifier.
 
 
-When [encrypting InnoDB tables](../innodb-encryption/innodb-encryption-troubleshooting.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
+When [encrypting InnoDB tables](../innodb-encryption/README.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
 
 
-When [encrypting Aria tables](../aria-encryption/aria-encryption-overview.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
+When [encrypting Aria tables](../aria-encryption/README.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
 
 
 ## Key Rotation
@@ -246,4 +246,3 @@ The Eperi Key Management plugin supports [key rotation](encryption-key-managemen
 * [eperi Gateway for Databases version 3.4 offers native MariaDB support](https://eperi.com/eperi-gateway-for-databases-version-3-4-offers-native-mariadb-support/)
 * [eperi Customer Portal](https://customer.eperi.de/index.jsp)
 
-<span></span>

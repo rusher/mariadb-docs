@@ -14,7 +14,7 @@ CPU stands for *"Critical Patch Update"*. Oracle publishes Critical Patch Update
 four times a year, [on the Tuesday closest to the 17th day of January, April, July and October](https://www.oracle.com/technetwork/topics/security/alerts-086861.html#CriticalPatchUpdates). MySQL vulnerabilities are included in these CPU Advisories.
 
 
-Some vulnerabilities found in MySQL apply to MariaDB as well, they are listed on the [Security](security-vulnerabilities-in-oracle-mysql-that-did-not-exist-in-mariadb.md) page.
+Some vulnerabilities found in MySQL apply to MariaDB as well, they are listed on the [Security](security.md) page.
 
 
 Other vulnerabilities found in MySQL do not apply to MariaDB.

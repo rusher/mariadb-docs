@@ -2,8 +2,8 @@
 # SHOW ANALYZE
 
 
-##### MariaDB starting with [10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
-SHOW ANALYZE was added in [MariaDB 10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md).
+##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+SHOW ANALYZE was added in [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109).
 
 
 

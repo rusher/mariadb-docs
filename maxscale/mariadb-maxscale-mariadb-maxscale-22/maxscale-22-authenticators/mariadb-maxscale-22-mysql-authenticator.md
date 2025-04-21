@@ -105,7 +105,7 @@ is disabled by default.
 
 
 The parameter functions exactly as the MariaDB Server system variable
-[lower_case_table_names](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md).
+[lower_case_table_names](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables).
 This makes the matching done by the authenticator on database names to be
 case-insensitive by converting all names into their lowercase form.
 

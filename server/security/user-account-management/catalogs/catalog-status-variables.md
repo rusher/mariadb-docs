@@ -2,12 +2,12 @@
 # Catalog Status Variables
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
 
-When using a MariaDB Server with [catalogs](catalogs-overview.md) support, all status information is collected for the whole server, per catalog and per session.
+When using a MariaDB Server with [catalogs](README.md) support, all status information is collected for the whole server, per catalog and per session.
 
 
 ```
@@ -52,4 +52,3 @@ SHOW CATALOG STATUS
 
 * [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)
 
-<span></span>

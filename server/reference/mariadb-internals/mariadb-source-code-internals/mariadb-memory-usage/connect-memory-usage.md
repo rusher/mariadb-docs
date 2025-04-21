@@ -8,14 +8,13 @@ all connection information and also caches to speed up queries and avoid frequen
 When creating a new connection, the following malloc() calls are done for the THD:
 
 
-The following information is the state in [MariaDB 10.6.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) when compiled without debugging.
+The following information is the state in [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) when compiled without debugging.
 
 
 ## Local Thread Memory
 
 
-This is part of `<span class="k">select</span> <span class="n">memory_used</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">processlist</span>
-`.
+This is part of `select memory_used from information_schema.processlist`.
 
 
 

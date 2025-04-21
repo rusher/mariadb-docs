@@ -850,8 +850,8 @@ The current auto tunable parameters are:
 | MaxScale Parameter | Server Variable Dependency |
 | --- | --- |
 | MaxScale Parameter | Server Variable Dependency |
-| [connection_keepalive](#connection_keepalive) | 80% of the smallest [wait_timeout](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) value of the servers used by the service |
-| [wait_timeout](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) | The smallest [wait_timeout](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) value of the servers used by the service |
+| [connection_keepalive](#connection_keepalive) | 80% of the smallest [wait_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
+| [wait_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) | The smallest [wait_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
 
 
 The values of the server variables are collected by monitors, which means that
@@ -2345,7 +2345,7 @@ authentication. This is not a secure method of authentication without HTTPS but
 it does add a small layer of security.
 
 
-For more information, read the [REST API documentation](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-rest-api-tutorial.md).
+For more information, read the [REST API documentation](../mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md).
 
 
 ### `admin_ssl_key`
@@ -2557,7 +2557,7 @@ Tokens.
 
 
 For more information about the tokens and how they work, refer to [the REST API
-documentation](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-rest-api-tutorial.md).
+documentation](../mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md).
 
 
 If a symmetric algorithm is used (i.e. `HS256`, `HS384` or `HS512`), MaxScale
@@ -4319,8 +4319,8 @@ the port is not open on the server, normal port is used.
 
 
 For more information, see
-[extra_port](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)
-and [extra_max_connections](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections).
+[extra_port](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+and [extra_max_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables#extra_max_connections).
 
 
 ### `persistpoolmax`
@@ -4823,7 +4823,7 @@ backends will know where the client originally came from.
 
 
 The `proxy_protocol_networks`-setting works similarly to the equivalent setting
-in [MariaDB Server](../../../server/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support.md).
+in [MariaDB Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/proxy-protocol-support).
 The value can be a single IP or subnetwork, or a comma-separated list of them.
 Subnetworks are given in CIDR-format, e.g. "192.168.0.0/16". "*" is a valid
 value, allowing anyone to send the header. "localhost" allows proxy headers
@@ -4909,7 +4909,7 @@ backends and map them to backend users.
 
 
 This file functions very similar to
-[PAM-based mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md).
+[PAM-based mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).
 Both user-to-user and group-to-user mappings can be defined. Also, the password
 and authentication plugin for the mapped users can be added. The file is only
 read during listener creation (typically MaxScale start) or when a listener is
@@ -5214,7 +5214,7 @@ from the previous releases where the newer versions were automatically enabled,
 the protocol versions must be explicitly listed, for example
 `admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the
 `ssl_version` behave identically to how the MariaDB
-[tls_version](../../../server/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version)
+[tls_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)
 parameter works.
 
 
@@ -5371,7 +5371,7 @@ Simple sharding on database level:
 
 
 Binary log server:
-* [Binlogrouter](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter-24.md)
+* [Binlogrouter](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter.md)
 
 
 ## Monitor Modules
@@ -5491,7 +5491,7 @@ configuration at runtime.
 * [add](../mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#add)
 * [remove](../mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#remove)
 * [alter](../mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#alter)
-* [REST API](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-rest-api-tutorial.md) documentation
+* [REST API](../mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md) documentation
 
 
 All changes to the configuration done via MaxCtrl are persisted as individual
@@ -5736,10 +5736,10 @@ The encryption keys are stored in a text file stored on a local filesystem.
 
 
 The file uses the same format as the MariaDB server [File Key Management
-Encryption Plugin](../../../server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md): a file
+Encryption Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin): a file
 consisting of an encryption key ID number and the hex-encoded encryption key
 separated by a semicolon. Read [Creating the Key
-File](../../../server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#creating-the-key-file)
+File](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin#creating-the-key-file)
 for more details on how to create the file.
 
 
@@ -5881,7 +5881,7 @@ version 2 key-value stores are supported.
 
 
 The encryption keys use the same format as the MariaDB [HashiCorp Vault Key
-Management Plugin](../../../server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md):
+Management Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin):
 The key-value secret for each encryption key ID must contain the field `data`
 which must contain a hex-encoded string that is either 32, 48 or 64 characters
 long.

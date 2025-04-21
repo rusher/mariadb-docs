@@ -1,7 +1,7 @@
 
 # Understanding Denormalization
 
-*Denormalization* is the process of reversing the transformations made during [normalization](database-normalization-2nd-normal-form.md) for performance reasons. It's a topic that stirs controversy among database experts; there are those who claim the cost is too high and never denormalize, and there are those that tout its benefits and routinely denormalize.
+*Denormalization* is the process of reversing the transformations made during [normalization](README.md) for performance reasons. It's a topic that stirs controversy among database experts; there are those who claim the cost is too high and never denormalize, and there are those that tout its benefits and routinely denormalize.
 
 
 For proponents of denormalization, the thinking is as follows: normalization creates more tables as you proceed towards higher normal forms, but more tables mean there are more joins to be made when data is retrieved, which in turn slows down your queries. For that reason, to improve the performance of certain queries, you can override the advantages to data integrity and return the data structure to a lower normal form.

@@ -49,7 +49,7 @@ event due to MASTER_DELAY, this fields displays: "Waiting until MASTER_DELAY
 seconds after master executed event".
 
 
-When using older versions prior to [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), a 3rd party tool called [pt-slave-delay](https://www.percona.com/doc/percona-toolkit/LATEST/pt-slave-delay.html) can be used. It is part of the Percona Toolkit. Note that pt-slave-delay does not support MariaDB multi-channel replication syntax.
+When using older versions prior to [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), a 3rd party tool called [pt-slave-delay](https://www.percona.com/doc/percona-toolkit/LATEST/pt-slave-delay.html) can be used. It is part of the Percona Toolkit. Note that pt-slave-delay does not support MariaDB multi-channel replication syntax.
 
 
 ## clock_difference_between_master_and_slave
@@ -62,4 +62,3 @@ configuration. In almost all unix systems the internal clock is in UTC by defaul
 In addition to being in UTC, one should ensure that the clocks are synchronized. If not
 properly synchronized, there is a gap between the values of the clocks between different machines. MariaDB replication takes this into account by comparing the master and slave clocks when the slave connects to the master. The difference is `clock_difference_between_master_and_slave`.
 
-<span></span>

@@ -22,10 +22,10 @@ Any suggestions on how to speed this up?
 ## Why it is a problem
 
 
-* [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) will lock the table during the entire operation, thereby nothing else can be done with the table.
-* [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
+* [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md) will lock the table during the entire operation, thereby nothing else can be done with the table.
+* [InnoDB](../../../../reference/storage-engines/innodb/README.md) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
 * InnoDB has to write the undo information to its transaction logs; this significantly increases the I/O required.
-* [Replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
+* [Replication](../../README.md), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
 
 
 ## InnoDB and undo
@@ -54,7 +54,7 @@ Solutions
 ## PARTITION
 
 
-The idea here is to have a sliding window of [partitions](../../../../server-management/partitioning-tables/README.md). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](../../../../reference/data-types/date-and-time-data-types/datetime.md) (or [timestamp](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
+The idea here is to have a sliding window of [partitions](../../../../server-management/partitioning-tables/README.md). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](../../../../reference/data-types/date-and-time-data-types/datetime.md) (or [timestamp](../../../../reference/data-types/date-and-time-data-types/timestamp.md)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
 
 
 Dropping a partition is essentially instantaneous, much faster than deleting that many rows. However, you must design the table so that the entire partition can be dropped. That is, you cannot have some items living longer than others.
@@ -360,4 +360,3 @@ optimizations, and debugging tips.
 
 Original source: [deletebig](https://mysql.rjweb.org/doc.php/deletebig)
 
-<span></span>

@@ -6,7 +6,7 @@
 
 ```
 SELECT
-    [/*+ hints */]  /*From [MariaDB 11.8](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md)*/
+    [/*+ hints */]  /*From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118)*/
     [ALL | DISTINCT | DISTINCTROW]
     [HIGH_PRIORITY]
     [STRAIGHT_JOIN]
@@ -44,7 +44,7 @@ lock_option:
 
 
 `SELECT` is used to retrieve rows selected from one or more
-tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/subqueries-and-all.md).
+tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/README.md).
 
 
 * Each select_expr expression indicates a column or data that you want to retrieve. You
@@ -52,7 +52,7 @@ must have at least one select expression. See [Select Expressions](#select-expre
 
 
 * The `FROM` clause indicates the table or tables from which to retrieve rows.
-Use either a single table name or a `JOIN` expression. See [JOIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md)
+Use either a single table name or a `JOIN` expression. See [JOIN](joins-subqueries/joins/join-syntax.md)
 for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
 
 
@@ -66,13 +66,13 @@ for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
  clause.
 
   * In the `WHERE` clause, you can use any of the functions and
- operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../built-in-functions/README.md) and [Functions and Modifiers for use with GROUP BY](../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md) (aggregate).
+ operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../built-in-functions/README.md) and [Functions and Modifiers for use with GROUP BY](../../built-in-functions/aggregate-functions/README.md) (aggregate).
 
 
 * Use the [ORDER BY](order-by.md) clause to order the results.
 
 
-* Use the [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause allows you to restrict the results to only
+* Use the [LIMIT](limit.md) clause allows you to restrict the results to only
 a certain number of rows, optionally with an offset.
 
 
@@ -108,7 +108,7 @@ You can quote column names using backticks. If you are qualifying column names
 with table names, quote each part separately as ``tbl_name`.`col_name``.
 
 
-If you use any [grouping functions](../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md)
+If you use any [grouping functions](../../built-in-functions/aggregate-functions/README.md)
 in any of the select expressions, all rows in your results will be implicitly grouped, as if
 you had used `GROUP BY NULL`. `GROUP BY NULL` being an expression behaves specially
 such that the entire result set is treated as a group.
@@ -117,7 +117,7 @@ such that the entire result set is treated as a group.
 ### DISTINCT
 
 
-A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../built-in-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
+A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../built-in-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
 
 ### INTO
@@ -137,7 +137,7 @@ The reverse of `SELECT INTO OUTFILE` is [LOAD DATA](../inserting-loading-data/lo
 ### LIMIT
 
 
-Restricts the number of returned rows. See [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) and [LIMIT ROWS EXAMINED](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/limit-rows-examined.md) for details.
+Restricts the number of returned rows. See [LIMIT](limit.md) and [LIMIT ROWS EXAMINED](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/limit-rows-examined.md) for details.
 
 
 ### LOCK IN SHARE MODE/FOR UPDATE
@@ -150,7 +150,7 @@ See [LOCK IN SHARE MODE](lock-in-share-mode.md) and [FOR UPDATE](for-update.md) 
 
 
 
-##### MariaDB starting with [10.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 See [SELECT ... OFFSET ... FETCH](select-offset-fetch.md).
 
 
@@ -169,16 +169,16 @@ Specifies to the optimizer which partitions are relevant for the query. Other pa
 ### PROCEDURE
 
 
-Passes the whole result set to a C Procedure. See [PROCEDURE](../../built-in-functions/secondary-functions/information-functions/procedure-analyse.md) and [PROCEDURE ANALYSE](../../built-in-functions/secondary-functions/information-functions/procedure-analyse.md) (the only built-in procedure not requiring the server to be recompiled).
+Passes the whole result set to a C Procedure. See [PROCEDURE](procedure.md) and [PROCEDURE ANALYSE](../../built-in-functions/secondary-functions/information-functions/procedure-analyse.md) (the only built-in procedure not requiring the server to be recompiled).
 
 
 ### SKIP LOCKED
 
 
 
-##### MariaDB starting with [10.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
-The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md).
-This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables and ignored otherwise.
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
+This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../../storage-engines/innodb/README.md) tables and ignored otherwise.
 
 
 ### Optimizer Hints
@@ -214,15 +214,15 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 SELECT f1,f2 FROM t1 WHERE (f3<=10) AND (f4='y');
 ```
 
-See [Getting Data from MariaDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/getting-data-from-mariadb.md) (Beginner tutorial), or the various sub-articles, for more examples.
+See [Getting Data from MariaDB](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/beginner-mariadb-articles/getting-data-from-mariadb) (Beginner tutorial), or the various sub-articles, for more examples.
 
 
 ## See Also
 
 
-* [Getting Data from MariaDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/getting-data-from-mariadb.md) (Beginner tutorial)
+* [Getting Data from MariaDB](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/beginner-mariadb-articles/getting-data-from-mariadb) (Beginner tutorial)
 * [Joins and Subqueries](joins-subqueries/README.md)
-* [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
 * [GROUP BY](group-by.md)
 * [Common Table Expressions](common-table-expressions/README.md)
@@ -232,5 +232,5 @@ See [Getting Data from MariaDB](../../../../../../general-resources/learning-and
 * [FOR UPDATE](for-update.md)
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
 * [Optimizer Hints](optimizer-hints.md)
-* [Oracle mode from MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

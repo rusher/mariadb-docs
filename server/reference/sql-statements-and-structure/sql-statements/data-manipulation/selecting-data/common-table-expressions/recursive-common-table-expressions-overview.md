@@ -23,7 +23,7 @@ CTEs permit a query to reference itself. A recursive CTE will repeatedly execute
 ### Syntax example
 
 
-[WITH RECURSIVE](../../../../geographic-geometric-features/geometry-relations/within.md) signifies a recursive CTE. It is given a name, followed by a body (the main query) as follows:
+[WITH RECURSIVE](with.md) signifies a recursive CTE. It is given a name, followed by a body (the main query) as follows:
 
 
 ![rcte_syntax](../../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_syntax.png "rcte_syntax")

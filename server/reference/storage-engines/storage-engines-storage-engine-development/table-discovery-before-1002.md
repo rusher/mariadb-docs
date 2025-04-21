@@ -26,8 +26,7 @@ int table_exists_in_engine(handlerton *hton, THD* thd,
                            const char *db, const char *name);
 ```
 
-and it returns one of the `HA_ERR_` codes, typically `HA_ERR_NO_SUCH_TABLE` or `
-HA_ERR_TABLE_EXIST`.
+and it returns one of the `HA_ERR_` codes, typically `HA_ERR_NO_SUCH_TABLE` or `HA_ERR_TABLE_EXIST`.
 
 
 Third, there can be a situation when the server thinks that the table exists (it found and successfully read the `.frm` file), but from the engine point of view the `.frm` file is incorrect. For example, the table was already deleted from the engine, or its definition was modified (again, modified only in the engine). In this case the `.frm` file is outdated, and the server needs to re-discover the table. The engine conveys this to the server by returning `HA_ERR_TABLE_DEF_CHANGED` error code from the handler's **open()** method. On receiving this error the server will use the `discover()` method to get the new `.frm` image. This also means that *after* the table is opened, the server does not expect its metadata to change. The engine thus should ensure (with some kind of locking, perhaps) that a table metadata cannot be modified, as long as the table stays opened.

@@ -54,7 +54,7 @@ lock_option:
 ## Description
 
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (until [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) this is a table, from [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) it's a view) or [mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) (from [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)) that has no privileges.
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (until [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) this is a table, from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) it's a view) or [mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) (from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)) that has no privileges.
 
 
 If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
@@ -129,7 +129,7 @@ If more than one authentication mechanism is declared using the `OR` keyword, th
 ### IDENTIFIED BY 'password'
 
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
 
 
 For example, if our password is `mariadb`, then we can create the user with:
@@ -151,7 +151,7 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED BY PASSWORD 'password_hash'
 
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table as-is.
 
 
 For example, if our password is `mariadb`, then we can find the hash with:
@@ -186,7 +186,7 @@ The only [authentication plugins](../../../plugins/authentication-plugins/README
 ### IDENTIFIED {VIA|WITH} authentication_plugin
 
 
-The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins-soname.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
+The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that the account should be authenticated by a specific [authentication plugin](../../../plugins/authentication-plugins/README.md). The plugin name must be an active authentication plugin as per [SHOW PLUGINS](../administrative-sql-statements/show/show-plugins.md). If it doesn't show up in that output, then you will need to install it with [INSTALL PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [INSTALL SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md).
 
 
 `VIA` and `WITH` are synonyms.
@@ -209,7 +209,7 @@ CREATE USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 The exact meaning of the additional argument would depend on the specific authentication plugin.
 
 
-The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../../plugins/authentication-plugins/README.md) that have implemented a hook for the [PASSWORD()](../built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
 
 ```
@@ -229,7 +229,7 @@ By default, when you create a user without specifying an authentication plugin, 
 ## TLS Options
 
 
-By default, prior to [MariaDB 11.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), MariaDB transmits data between the server and clients without encrypting it. This is generally acceptable when the server and client run on the same host or in networks where security is guaranteed through other means. However, in cases where the server and client exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
+By default, prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), MariaDB transmits data between the server and clients without encrypting it. This is generally acceptable when the server and client run on the same host or in networks where security is guaranteed through other means. However, in cases where the server and client exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
 
 
 To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix ssl_, but internally, MariaDB only supports its secure successors.
@@ -306,7 +306,7 @@ CREATE USER 'someone'@'localhost' WITH
 The resources are tracked per account, which means `'user'@'server'`; not per user name or per connection.
 
 
-The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md) or [mariadb-admin reload](../../../../clients-and-utilities/mariadb-admin.md).
+The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin reload](../../../../clients-and-utilities/mariadb-admin.md).
 
 
 Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
@@ -365,7 +365,7 @@ Using `255.255.255.255` is equivalent to not using a netmask at all. Netmasks ca
 Note that the credentials added when creating a user with the `'%'` wildcard host will not grant access in all cases. For example, some systems come with an anonymous localhost user, and when connecting from localhost this will take precedence.
 
 
-Before [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the host name component could be up to 60 characters in length. Starting from [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), it can be up to 255 characters.
+Before [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), the host name component could be up to 60 characters in length. Starting from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), it can be up to 255 characters.
 
 
 ### User Name Component
@@ -441,7 +441,7 @@ CREATE USER ''@'192.168.0.3';
 #### Fixing a Legacy Default Anonymous Account
 
 
-On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
+On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../../clients-and-utilities/mariadb-install-db.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
 
 
 This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
@@ -452,7 +452,7 @@ CREATE USER ''@'%';
 ERROR 1396 (HY000): Operation CREATE USER failed for ''@'%'
 ```
 
-The fix is to [DELETE](../data-manipulation/changing-deleting-data/delete.md) the row in the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table and then execute [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush-tables-for-export.md):
+The fix is to [DELETE](../data-manipulation/changing-deleting-data/delete.md) the row in the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table and then execute [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md):
 
 
 ```
@@ -491,7 +491,7 @@ See [User Password Expiry](../../../../security/user-account-management/user-pas
 
 
 Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected). For example:
-`<<<span class="macro_name">sql</span><span class="macro_arg_string"></span>>>`
+`<<sql>>`
 CREATE USER 'marijn'@'localhost' ACCOUNT LOCK;
 
 
@@ -499,7 +499,7 @@ See [Account Locking](../../../../security/user-account-management/account-locki
 <</product>>
 
 
-From [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md) and [MariaDB 10.5.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes.md), the *lock_option* and *password_option* clauses can occur in either order.
+From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes), the *lock_option* and *password_option* clauses can occur in either order.
 
 
 ## See Also
@@ -512,7 +512,7 @@ From [MariaDB 10.4.7](../../../../../release-notes/mariadb-community-server/rele
 * [CREATE ROLE](create-role.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [Troubleshooting Connection Issues](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues.md)
+* [Troubleshooting Connection Issues](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
 * [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Identifier Names](../../sql-language-structure/identifier-names.md)
 * [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)

@@ -4,7 +4,7 @@
 
 
 
-This page documents status variables related to the [Performance Schema](performance-schema-tables/performance-schema-table_handles-table.md). See [Server Status Variables](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../show/show-status.md).
+This page documents status variables related to the [Performance Schema](README.md). See [Server Status Variables](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../show/show-status.md).
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -13,7 +13,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_accounts_lost`
 
 
-* Description: Number of times a row could not be added to the performance schema accounts table due to it being full. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of times a row could not be added to the performance schema accounts table due to it being full. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -31,7 +31,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_cond_instances_lost`
 
 
-* Description: Number of instances a condition object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a condition object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -40,7 +40,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_digest_lost`
 
 
-* Description: The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -58,7 +58,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_file_handles_lost`
 
 
-* Description: Number of instances a file object could not be opened. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a file object could not be opened. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -67,7 +67,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_file_instances_lost`
 
 
-* Description: Number of instances a file object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a file object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -76,7 +76,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_hosts_lost`
 
 
-* Description: Number of times a row could not be added to the performance schema hosts table due to it being full. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of times a row could not be added to the performance schema hosts table due to it being full. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -88,14 +88,14 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
 #### `Performance_schema_locker_lost`
 
 
-* Description: Number of events not recorded, due to either being recursive, or having a deeper nested events stack than the implementation limit. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of events not recorded, due to either being recursive, or having a deeper nested events stack than the implementation limit. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -107,7 +107,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -117,7 +117,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -133,7 +133,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_mutex_instances_lost`
 
 
-* Description: Number of instances a mutual exclusion object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a mutual exclusion object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -145,7 +145,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -155,7 +155,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -165,7 +165,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -181,7 +181,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_rwlock_instances_lost`
 
 
-* Description: Number of instances a read/write lock object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a read/write lock object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -190,7 +190,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_session_connect_attrs_lost`
 
 
-* Description: Number of connections for which connection attribute truncation has occurred. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of connections for which connection attribute truncation has occurred. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -208,7 +208,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_socket_instances_lost`
 
 
-* Description: Number of instances a socket object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a socket object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -217,7 +217,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_stage_classes_lost`
 
 
-* Description: Number of stage event instruments that could not be loaded. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of stage event instruments that could not be loaded. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -226,7 +226,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_statement_classes_lost`
 
 
-* Description: Number of statement instruments that could not be loaded. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of statement instruments that could not be loaded. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -235,7 +235,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_table_handles_lost`
 
 
-* Description: Number of instances a table object could not be opened. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a table object could not be opened. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -244,7 +244,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_table_instances_lost`
 
 
-* Description: Number of instances a table object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances a table object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -256,7 +256,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -272,7 +272,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_thread_instances_lost`
 
 
-* Description: Number of instances thread object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of instances thread object could not be created. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -281,7 +281,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `Performance_schema_users_lost`
 
 
-* Description: Number of times a row could not be added to the performance schema users table due to it being full. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush-tables-for-export.md).
+* Description: Number of times a row could not be added to the performance schema users table due to it being full. The global value can be flushed by [FLUSH STATUS](../../flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 

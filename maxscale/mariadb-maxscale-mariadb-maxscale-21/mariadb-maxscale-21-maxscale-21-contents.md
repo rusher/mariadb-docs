@@ -80,7 +80,7 @@ contains all module specific configuration options and detailed explanations
 of their use.
 
 
-* [Avrorouter](maxscale-21-tutorials/mariadb-maxscale-21-avrorouter-tutorial.md)
+* [Avrorouter](maxscale-21-routers/mariadb-maxscale-21-avrorouter.md)
 * [Binlogrouter](maxscale-21-routers/mariadb-maxscale-21-binlogrouter.md)
 * [Read Connection Router](maxscale-21-routers/mariadb-maxscale-21-readconnroute.md)
 * [Read Write Split](maxscale-21-routers/mariadb-maxscale-21-readwritesplit.md)

@@ -16,7 +16,7 @@ There are three important standard classes. They all indicate in which logical g
 The subclass, if it is set, indicates a particular condition, or a particular group of conditions within the class. However the '000' sequence means 'no subclass'.
 
 
-For example, if you try to [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) from a table which does not exist, a 1109 error is produced, with a '42S02' SQLSTATE. '42' is the class and 'S02' is the subclass. This value matches to the SQLEXCEPTION keyword. When FETCH is called for a [cursor](../programmatic-compound-statements-cursors/README.md) which has already reached the end, a 1329 error is produced, with a '02000' SQLSTATE. The class is '02' and there is no subclass (because '000' means 'no subclass'). It can be handled by a NOT FOUND handlers.
+For example, if you try to [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) from a table which does not exist, a 1109 error is produced, with a '42S02' SQLSTATE. '42' is the class and 'S02' is the subclass. This value matches to the SQLEXCEPTION keyword. When FETCH is called for a [cursor](../programmatic-compound-statements-cursors/README.md) which has already reached the end, a 1329 error is produced, with a '02000' SQLSTATE. The class is '02' and there is no subclass (because '000' means 'no subclass'). It can be handled by a NOT FOUND handlers.
 
 
 The standard SQL specification says that classes beginning with 0, 1, 2, 3, 4, A, B, C, D, E, F and G are reserved for standard-defined classes, while other classes are vendor-specific. It also says that, when the class is standard-defined, subclasses starting with those characters (except for '000') are standard-defined subclasses, while other subclasses are vendor-defined. However, MariaDB and MySQL do not strictly obey this rule.
@@ -31,6 +31,5 @@ For user-defined conditions, MariaDB and MySQL recommend the '45000' SQLSTATE cl
 'HY000' is called the "general error": it is the class used for builtin conditions which do not have a specific SQLSTATE class.
 
 
-A partial list of error codes and matching SQLSTATE values can be found in the page [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+A partial list of error codes and matching SQLSTATE values can be found in the page [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
-<span></span>

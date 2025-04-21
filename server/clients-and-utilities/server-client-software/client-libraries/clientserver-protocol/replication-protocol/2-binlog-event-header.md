@@ -1,7 +1,7 @@
 
 # 2-Binlog Event Header
 
-All the [binlog events](1-binlog-events.md) stored in a [binary log file](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) have a common structure:
+All the [binlog events](1-binlog-events.md) stored in a [binary log file](../../../../../server-management/server-monitoring-logs/binary-log/README.md) have a common structure:
 
 
 * an event header
@@ -139,4 +139,3 @@ a4 85 9e 59 0f 8c 27 00  00 f5 00 00 00 f9 00 00  ...Y..'.........
 * f9 00 00 00 [4] Next Event pos => 00 00 00 f9 => 249 (pos 4 + event size)
 * 00 00 [2] Event flags = 0
 
-<span></span>

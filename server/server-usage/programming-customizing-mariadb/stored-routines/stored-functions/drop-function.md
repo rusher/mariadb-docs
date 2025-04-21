@@ -23,7 +23,7 @@ prevents an error from occurring if the function does not exist. A
 `NOTE` is produced that can be viewed with [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md).
 
 
-For dropping a [user-defined functions](../../user-defined-functions/user-defined-functions-security.md) (UDF), see [DROP FUNCTION UDF](../../user-defined-functions/drop-function-udf.md).
+For dropping a [user-defined functions](../../user-defined-functions/README.md) (UDF), see [DROP FUNCTION UDF](../../user-defined-functions/drop-function-udf.md).
 
 
 ## Examples
@@ -60,4 +60,3 @@ SHOW WARNINGS;
 * [Stored Routine Privileges](stored-routine-privileges.md)
 * [INFORMATION_SCHEMA ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-<span></span>

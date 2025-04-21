@@ -4,7 +4,7 @@
 **Release date:** 7 Nov 2013
 
 
-This is a ***[Stable](../../../../../release-notes/mariadb-release-criteria.md) (GA)*** release. In general this means that there are no known serious bugs, except for those marked as feature requests, that no bugs were fixed since last release that caused a notable code changes, and that we believe the code is ready for general usage (based on bug inflow).
+This is a ***[Stable](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) (GA)*** release. In general this means that there are no known serious bugs, except for those marked as feature requests, that no bugs were fixed since last release that caused a notable code changes, and that we believe the code is ready for general usage (based on bug inflow).
 
 
 ## Bug Fixes

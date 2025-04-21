@@ -1,16 +1,16 @@
 
 # Installing MariaDB .deb Files with Ansible
 
-This page refers to the operations described in [Installing MariaDB .deb Files](installing-mariadb-deb-files-with-ansible.md). Refer to that page for a complete list and explanation of the tasks that should be performed.
+This page refers to the operations described in [Installing MariaDB .deb Files](../../installing-mariadb-deb-files.md). Refer to that page for a complete list and explanation of the tasks that should be performed.
 
 
-Here we discuss how to automate such tasks using Ansible. For example, here we show how to install a package or how to import a GPG key; but for an updated list of the necessary packages and for the keyserver to use, you should refer to [Installing MariaDB .deb Files](installing-mariadb-deb-files-with-ansible.md).
+Here we discuss how to automate such tasks using Ansible. For example, here we show how to install a package or how to import a GPG key; but for an updated list of the necessary packages and for the keyserver to use, you should refer to [Installing MariaDB .deb Files](../../installing-mariadb-deb-files.md).
 
 
 ## Adding apt Repositories
 
 
-To [add a repository](installing-mariadb-deb-files-with-ansible.md#executing-add-apt-repository):
+To [add a repository](../../installing-mariadb-deb-files.md#executing-add-apt-repository):
 
 
 ```
@@ -20,7 +20,7 @@ To [add a repository](installing-mariadb-deb-files-with-ansible.md#executing-add
     state: present
 ```
 
-If you prefer to keep the repository information in a [source list file](installing-mariadb-deb-files-with-ansible.md#creating-a-source-list-file) in the Ansible repository, you can upload that file to the target hosts in this way:
+If you prefer to keep the repository information in a [source list file](../../installing-mariadb-deb-files.md#creating-a-source-list-file) in the Ansible repository, you can upload that file to the target hosts in this way:
 
 
 ```
@@ -65,7 +65,7 @@ But if you run certain tasks conditionally, this option may not be very convenie
 ## Importing MariaDB GPG Key
 
 
-To [import the GPG key](installing-mariadb-deb-files-with-ansible.md#importing-the-mariadb-gpg-public-key) for MariaDB we can use the [ansible.builtin.apt_key](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html) Ansible module. For example:
+To [import the GPG key](../../installing-mariadb-deb-files.md#importing-the-mariadb-gpg-public-key) for MariaDB we can use the [ansible.builtin.apt_key](https://docs.ansible.com/ansible/latest/collections/ansible/builtin/apt_key_module.html) Ansible module. For example:
 
 
 ```
@@ -133,7 +133,7 @@ There is also a system-independent [package module](https://docs.ansible.com/ans
 ## See Also
 
 
-* [Installing MariaDB .deb Files](installing-mariadb-deb-files-with-ansible.md)
+* [Installing MariaDB .deb Files](../../installing-mariadb-deb-files.md)
 
 
 

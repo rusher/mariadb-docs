@@ -23,7 +23,7 @@ use tables and do not generate messages have no effect on the message
 list.
 
 
-A note is different to a warning in that it only appears if the [sql_notes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) variable is set to 1 (the default), and is not converted to an error if [strict mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled.
+A note is different to a warning in that it only appears if the [sql_notes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) variable is set to 1 (the default), and is not converted to an error if [strict mode](../../../../../server-management/variables-and-modes/sql-mode.md) is enabled.
 
 
 A related statement, `[SHOW ERRORS](show-errors.md)`, shows only the errors.
@@ -43,10 +43,10 @@ The value of [warning_count](../../../../../server-usage/replication-cluster-mul
 
 
 The `LIMIT` clause has the same syntax as for the
- `[SELECT statement](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)`.
+ `[SELECT statement](../../data-manipulation/selecting-data/select.md)`.
 
 
-`SHOW WARNINGS` can be used after [EXPLAIN EXTENDED](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) to see how a query is internally rewritten by MariaDB.
+`SHOW WARNINGS` can be used after [EXPLAIN EXTENDED](../analyze-and-explain-statements/explain.md) to see how a query is internally rewritten by MariaDB.
 
 
 If the [sql_notes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) server variable is set to 1, Notes are included in the output of `SHOW WARNINGS`; if it is set to 0, this statement will not show (or count) Notes.
@@ -55,7 +55,7 @@ If the [sql_notes](../../../../../server-usage/replication-cluster-multi-master/
 The results of `SHOW WARNINGS` and `SHOW COUNT(*) WARNINGS` are directly sent to the client. If you need to access those information in a stored program, you can use the [GET DIAGNOSTICS](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) statement instead.
 
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md).
+For a list of MariaDB error codes, see [MariaDB Error Codes](../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
 
 The [mariadb](../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client also has a number of options related to warnings. The `\W` command will show warnings after every statement, while `\w` will disable this. Starting the client with the `--show-warnings` option will show warnings after every statement.

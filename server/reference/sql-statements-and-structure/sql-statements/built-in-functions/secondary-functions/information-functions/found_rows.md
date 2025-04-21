@@ -11,7 +11,7 @@ FOUND_ROWS()
 ## Description
 
 
-A [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement may include a [LIMIT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit) clause to restrict the number
+A [SELECT](../../../data-manipulation/selecting-data/select.md) statement may include a [LIMIT](../../../data-manipulation/selecting-data/select.md#limit) clause to restrict the number
 of rows the server returns to the client. In some cases, it is
 desirable to know how many rows the statement would have returned
 without the LIMIT, but without running the statement again. To obtain
@@ -19,10 +19,10 @@ this row count, include a [SQL_CALC_FOUND_ROWS](../../../data-manipulation/selec
 statement, and then invoke FOUND_ROWS() afterwards.
 
 
-You can also use FOUND_ROWS() to obtain the number of rows returned by a [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) which does not contain a [LIMIT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit) clause. In this case you don't need to use the [SQL_CALC_FOUND_ROWS](../../../data-manipulation/selecting-data/optimizer-hints.md#sql_calc_found_rows) option. This can be useful for example in a [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md).
+You can also use FOUND_ROWS() to obtain the number of rows returned by a [SELECT](../../../data-manipulation/selecting-data/select.md) which does not contain a [LIMIT](../../../data-manipulation/selecting-data/select.md#limit) clause. In this case you don't need to use the [SQL_CALC_FOUND_ROWS](../../../data-manipulation/selecting-data/optimizer-hints.md#sql_calc_found_rows) option. This can be useful for example in a [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md).
 
 
-Also, this function works with some other statements which return a resultset, including [SHOW](../../../administrative-sql-statements/show/show-procedure-code.md), [DESC](../../../administrative-sql-statements/describe.md) and [HELP](../../../administrative-sql-statements/help-command.md). For [DELETE ... RETURNING](../../../data-manipulation/changing-deleting-data/delete.md) you should use [ROW_COUNT()](row_count.md). It also works as a [prepared statement](../../../prepared-statements/README.md), or after executing a prepared statement.
+Also, this function works with some other statements which return a resultset, including [SHOW](../../../administrative-sql-statements/show/README.md), [DESC](../../../administrative-sql-statements/describe.md) and [HELP](../../../administrative-sql-statements/help-command.md). For [DELETE ... RETURNING](../../../data-manipulation/changing-deleting-data/delete.md) you should use [ROW_COUNT()](row_count.md). It also works as a [prepared statement](../../../prepared-statements/README.md), or after executing a prepared statement.
 
 
 Statements which don't return any results don't affect FOUND_ROWS() - the previous value will still be returned.

@@ -12,7 +12,7 @@ One would like to do "SELECT ... ORDER BY RAND() LIMIT 10" to get 10 rows at ran
 
 
 * Fetch all the rows -- this is costly
-* Append [RAND()](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/random-query-generator-tests.md) to the rows
+* Append [RAND()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/rand.md) to the rows
 * Sort the rows -- also costly
 * Pick the first 10.
 
@@ -65,7 +65,7 @@ SELECT *
 ### Case: Consecutive AUTO_INCREMENT without gaps, 1 row returned
 
 
-* Requirement: [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) id
+* Requirement: [AUTO_INCREMENT](../../../../reference/data-types/auto_increment.md) id
 * Requirement: No gaps in id
 
 
@@ -252,4 +252,3 @@ optimizations, and debugging tips.
 
 Original source: [random](https://mysql.rjweb.org/doc.php/random)
 
-<span></span>

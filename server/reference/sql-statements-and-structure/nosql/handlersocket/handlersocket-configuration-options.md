@@ -1,7 +1,7 @@
 
 # HandlerSocket Configuration Options
 
-The [HandlerSocket](handlersocket-external-resources.md) plugin has the following options.
+The [HandlerSocket](README.md) plugin has the following options.
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -215,7 +215,6 @@ Add the options to the [mysqld] section of your my.cnf file.
 * Scope: Global
 * Dynamic: No
 * Type: number
-* Range: `0` to `3600``
-`
+* Range: `0` to `3600```
 
 

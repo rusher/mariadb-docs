@@ -21,7 +21,7 @@ way, you need to explicitly install and enable it in order for feedback data to 
 
 
 To verify whether the `feedback` plugin is installed and enabled, execute the
-[SHOW PLUGINS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) statement or query the [information_schema.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
+[SHOW PLUGINS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information_schema.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
 
 
 Usually, the plugin is installed in MariaDB by default:
@@ -116,12 +116,12 @@ The `feedback` plugin will collect:
 
 
 * Certain rows from [SHOW STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) and [SHOW VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md).
-* All installed [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) and their versions.
+* All installed [plugins](../README.md) and their versions.
 * System information such as CPU count, memory, architecture, and OS/linux distribution.
 * The [feedback_server_uid](#feedback_server_uid), which is a SHA1 hash of the MAC address of the first network interface and the TCP port that the server listens on.
 
 
-The `feedback` plugin creates the [FEEDBACK](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. To see the data that has been collected by the plugin, you can execute:
+The `feedback` plugin creates the [FEEDBACK](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. To see the data that has been collected by the plugin, you can execute:
 
 
 ```
@@ -198,8 +198,8 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.1 | Stable | [MariaDB 10.0.10](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) |
-| 1.1 | Beta | [MariaDB 5.5.20](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes.md), [MariaDB 5.3.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes.md) |
+| 1.1 | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
+| 1.1 | Beta | [MariaDB 5.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes), [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) |
 
 
 

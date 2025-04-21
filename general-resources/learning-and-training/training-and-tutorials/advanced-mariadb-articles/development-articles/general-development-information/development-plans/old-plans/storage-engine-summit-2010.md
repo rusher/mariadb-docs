@@ -160,7 +160,7 @@ NREs or discuss alternative ways of collaborating on having them implemented.
 
 1. MariaDB, Monty Program, Collaboration by Henrik Ingo ([slides, odp](https://askmonty.org/w/images/3/3a/MP_intro_SE_summit.odp))
 1. Storage Engine API: Beyond 5.1 by Sergei Golubchik ([slides, zipped html](https://askmonty.org/w/images/b/b8/SE_API_Beyond_5.1.maff))
-1. CREATE TABLE extension [manual](../../../../../../../../server/reference/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
+1. CREATE TABLE extension [manual](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes)
 1. Performance Schema [manual](https://dev.mysql.com/doc/performance-schema/en/index.html)
 1. Marc Alff's
 [MySQL

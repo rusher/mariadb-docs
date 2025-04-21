@@ -1,7 +1,7 @@
 
 # Metadata Locking
 
-MariaDB supports metadata locking. This means that when a transaction (including [XA transactions](xa-transactions.md)) uses a table, it locks its metadata until the end of transaction. Non-transactional tables are also locked, as well as views and objects which are related to locked tables/views (stored functions, triggers, etc). When a connection tries to use a DDL statement (like an [ALTER TABLE](../data-definition/alter/alter-tablespace.md)) which modifies a table that is locked, that connection is queued, and has to wait until it's unlocked. Using savepoints and performing a partial rollback does not release metadata locks.
+MariaDB supports metadata locking. This means that when a transaction (including [XA transactions](xa-transactions.md)) uses a table, it locks its metadata until the end of transaction. Non-transactional tables are also locked, as well as views and objects which are related to locked tables/views (stored functions, triggers, etc). When a connection tries to use a DDL statement (like an [ALTER TABLE](../data-definition/alter/alter-table.md)) which modifies a table that is locked, that connection is queued, and has to wait until it's unlocked. Using savepoints and performing a partial rollback does not release metadata locks.
 
 
 [LOCK TABLES ... WRITE](lock-tables.md) are also queued. Some wrong statements which produce an error may not need to wait for the lock to be freed.
@@ -14,12 +14,12 @@ The metadata lock's timeout is determined by the value of the [lock_wait_timeout
 ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
 ```
 
-If the [metadata_lock_info](../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [metadata_lock_info](../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table stores information about existing metadata locks.
+If the [metadata_lock_info](../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../administrative-sql-statements/system-tables/information-schema/README.md) [metadata_lock_info](../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table stores information about existing metadata locks.
 
 
 
-##### MariaDB starting with [10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the [Performance Schema metadata_locks](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md) table contains metadata lock information.
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the [Performance Schema metadata_locks](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md) table contains metadata lock information.
 
 
 ## Example

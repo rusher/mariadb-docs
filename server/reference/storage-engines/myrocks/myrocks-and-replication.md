@@ -50,8 +50,8 @@ MyRocks upstream (that is, Facebook's MySQL branch) has a number of unique repli
 * Read-Free Replication (see [Read-Free-Replication](https://github.com/facebook/mysql-5.6/wiki/Read-Free-Replication)) TODO
 
 
-* `<<<span class="macro_name">unique</span><span class="macro_arg_string">_check_lag_threshold</span>>>`. This is FB/MySQL-5.6 feature where unique checks are disabled if replication lag exceeds a certain threshold.
-* `<<<span class="macro_name">slave</span><span class="macro_arg_string">_gtid_info=OPTIMIZED</span>>>`. This is said to be:
+* `<<unique_check_lag_threshold>>`. This is FB/MySQL-5.6 feature where unique checks are disabled if replication lag exceeds a certain threshold.
+* `<<slave_gtid_info=OPTIMIZED>>`. This is said to be:
 
 
 ```

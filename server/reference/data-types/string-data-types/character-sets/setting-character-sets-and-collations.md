@@ -1,7 +1,7 @@
 
 # Setting Character Sets and Collations
 
-Prior to [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md), the default [character set](README.md) is `latin1` and the default collation is `latin1_swedish_ci`. From [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), the default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.
+Prior to [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes), the default [character set](README.md) is `latin1` and the default collation is `latin1_swedish_ci`. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.
 This may differ in some distros, see for example [Differences in MariaDB in Debian](../../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
 
 
@@ -30,7 +30,7 @@ SHOW COLLATION LIKE 'latin2%';
 ## Server Level
 
 
-The [character_set_server](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) system variable can be used to change the default server character set. It can be set both on startup or dynamically, with the [SET](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) command:
+The [character_set_server](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) system variable can be used to change the default server character set. It can be set both on startup or dynamically, with the [SET](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) command:
 
 
 ```
@@ -108,7 +108,7 @@ Although there are [character_set_database](../../../../server-usage/replication
 ## Table Level
 
 
-The [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) and [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statements support optional character set and collation clauses, a MariaDB and MySQL extension to standard SQL.
+The [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses, a MariaDB and MySQL extension to standard SQL.
 
 
 ```
@@ -131,10 +131,10 @@ If no collation is provided, the collation will be set to the default collation 
 For [VARCHAR](../varchar.md) or [TEXT](../text.md) columns, CONVERT TO CHARACTER SET changes the data type if needed to ensure the new column is long enough to store as many characters as the original column.
 
 
-For example, an ascii TEXT column requires a single byte per character, so the column can hold up to 65,535 characters. If the column is converted to utf8mb4 (default from [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md)), 4 bytes can be required for each character, so the column will be converted to [MEDIUMTEXT](../mediumtext.md) to be able to hold the same number of characters.
+For example, an ascii TEXT column requires a single byte per character, so the column can hold up to 65,535 characters. If the column is converted to utf8mb4 (default from [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)), 4 bytes can be required for each character, so the column will be converted to [MEDIUMTEXT](../mediumtext.md) to be able to hold the same number of characters.
 
 
-`CONVERT TO CHARACTER SET binary` will convert [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md), [VARCHAR](../varchar.md) and [TEXT](../text.md) columns to [BINARY](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../varbinary.md) and [BLOB](../blob.md) respectively, and from that point will no longer have a character set, or be affected by future `CONVERT TO CHARACTER SET` statements.
+`CONVERT TO CHARACTER SET binary` will convert [CHAR](../char.md), [VARCHAR](../varchar.md) and [TEXT](../text.md) columns to [BINARY](../binary.md), [VARBINARY](../varbinary.md) and [BLOB](../blob.md) respectively, and from that point will no longer have a character set, or be affected by future `CONVERT TO CHARACTER SET` statements.
 
 
 To avoid data type changes resulting from `CONVERT TO CHARACTER SET`, use `MODIFY` on the individual columns instead. For example:
@@ -148,7 +148,7 @@ ALTER TABLE table_name MODIFY ascii_varchar_column VARCHAR(M) CHARACTER SET utf8
 ## Column Level
 
 
-Character sets and collations can also be specified for columns that are character types CHAR, TEXT or VARCHAR. The [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) and [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statements support optional character set and collation clauses for this purpose - unlike those at the table level, the column level definitions are standard SQL.
+Character sets and collations can also be specified for columns that are character types CHAR, TEXT or VARCHAR. The [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses for this purpose - unlike those at the table level, the column level definitions are standard SQL.
 
 
 ```
@@ -160,7 +160,7 @@ CREATE TABLE european_names (
 If neither collation nor character set is provided, the table default is used. If only the character set is specified, that character set's default collation is used, while if only the collation is specified, the associated character set is used.
 
 
-When using [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) to change a column's character set, you need to ensure the character sets are compatible with your data. MariaDB will map the data as best it can, but it's possible to lose data if care is not taken.
+When using [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) to change a column's character set, you need to ensure the character sets are compatible with your data. MariaDB will map the data as best it can, but it's possible to lose data if care is not taken.
 
 
 The [SHOW CREATE TABLE](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) statement or INFORMATION SCHEMA database can be used to determine column character sets and collations.
@@ -225,7 +225,7 @@ CHARACTER_MAXIMUM_LENGTH: 40
 ## Filenames
 
 
-Since [MariaDB 5.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), the [character_set_filesystem](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem) system variable has controlled interpretation of file names that are given as literal strings. This affects the following statements and functions:
+Since [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1), the [character_set_filesystem](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem) system variable has controlled interpretation of file names that are given as literal strings. This affects the following statements and functions:
 
 
 * [SELECT INTO DUMPFILE](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md)
@@ -381,7 +381,7 @@ SELECT _latin2 'Müller';
 +-----------+
 ```
 
-Prior to [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md):
+Prior to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106):
 
 
 ```
@@ -393,7 +393,7 @@ SELECT CHARSET(N'a string');
 +----------------------+
 ```
 
-From [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md):
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106):
 
 
 ```
@@ -480,8 +480,8 @@ SELECT @param_coll;
 
 
 
-##### MariaDB starting with [11.2.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes.md)
-From [MariaDB 11.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-112.md), it is possible to change the default collation associated with a particular character set. The [character_set_collations](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations) system variable accepts a comma-delimited list of character sets and new default collations, for example:
+##### MariaDB starting with [11.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes)
+From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), it is possible to change the default collation associated with a particular character set. The [character_set_collations](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations) system variable accepts a comma-delimited list of character sets and new default collations, for example:
 
 ```
 SET @@character_set_collations = 'utf8mb4=uca1400_ai_ci, latin2=latin2_hungarian_ci';
@@ -505,7 +505,7 @@ The new variable will take effect in all cases where a character set is explicit
 ## Example: Changing the Default Character Set To UTF-8
 
 
-To change the default character set from latin1 (prior to [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md)) to UTF-8, the following settings should be specified in the my.cnf configuration file.
+To change the default character set from latin1 (prior to [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes)) to UTF-8, the following settings should be specified in the my.cnf configuration file.
 
 
 ```
@@ -529,6 +529,6 @@ Note that the `default-character-set` option is a client option, not a server op
 
 * [String literals](../../../sql-statements-and-structure/sql-language-structure/string-literals.md)
 * [CAST()](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md)
-* [CONVERT()](../../../storage-engines/converting-tables-from-myisam-to-innodb.md)
+* [CONVERT()](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/convert.md)
 * [Operator Precedence](../../../sql-statements-and-structure/operators/operator-precedence.md)
 

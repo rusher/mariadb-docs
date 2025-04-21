@@ -2,7 +2,7 @@
 # InnoDB Encryption Overview
 
 
-MariaDB supports data-at-rest encryption for tables using the [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engines. When enabled, the server encrypts data when it writes it to and decrypts data when it reads it from the file system. You can [configure InnoDB encryption](innodb-enabling-encryption.md) to automatically have all new InnoDB tables automatically encrypted, or specify encrypt per table.
+MariaDB supports data-at-rest encryption for tables using the [InnoDB](../../../../../reference/storage-engines/innodb/README.md) storage engines. When enabled, the server encrypts data when it writes it to and decrypts data when it reads it from the file system. You can [configure InnoDB encryption](innodb-enabling-encryption.md) to automatically have all new InnoDB tables automatically encrypted, or specify encrypt per table.
 
 
 For encrypting data with the Aria storage engine, see [Encrypting Data for Aria](../aria-encryption/aria-encryption-overview.md).
@@ -11,7 +11,7 @@ For encrypting data with the Aria storage engine, see [Encrypting Data for Aria]
 ## Basic Configuration
 
 
-Using data-at-rest encryption requires that you first configure an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin, such as the `[file_key_management](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)` or `[aws_key_management](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)` plugins. 
+Using data-at-rest encryption requires that you first configure an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin, such as the `[file_key_management](../key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)` or `[aws_key_management](../key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)` plugins. 
 MariaDB uses this plugin to store, retrieve and manage the various keys it uses when encrypting data to and decrypting data from the file system.
 
 
@@ -52,7 +52,7 @@ CREATE TABLE t (i int primary key) ENGINE=InnoDB ENCRYPTED=YES ENCRYPTION_KEY_ID
 ## Finding Encrypted Tables
 
 
-When using data-at-rest encryption with the InnoDB storage engine, it is not necessary that you encrypt every table in your database. You can check which tables are encrypted and which are not by querying the `[INNODB_TABLESPACES_ENCRYPTION](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)` table in the [Information Schema](../../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md). This table provides information on which tablespaces are encrypted, which encryption key each tablespace is encrypted with, and whether the background encryption threads are currently working on the tablespace. Since the [system tablespace](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) can also contain tables, it can be helpful to join the `[INNODB_TABLESPACES_ENCRYPTION](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)` table with the `[INNODB_SYS_TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md)` table to find out the encryption status of each specific table, rather than each tablespace. For example:
+When using data-at-rest encryption with the InnoDB storage engine, it is not necessary that you encrypt every table in your database. You can check which tables are encrypted and which are not by querying the `[INNODB_TABLESPACES_ENCRYPTION](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)` table in the [Information Schema](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md). This table provides information on which tablespaces are encrypted, which encryption key each tablespace is encrypted with, and whether the background encryption threads are currently working on the tablespace. Since the [system tablespace](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) can also contain tables, it can be helpful to join the `[INNODB_TABLESPACES_ENCRYPTION](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)` table with the `[INNODB_SYS_TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md)` table to find out the encryption status of each specific table, rather than each tablespace. For example:
 
 
 ```
@@ -144,7 +144,7 @@ ROTATING_OR_FLUSHING: 0
 Using data-at-rest encryption with InnoDB, the [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable only encrypts the InnoDB tablespaces. In order to also encrypt the InnoDB Redo Logs, you also need to set the [innodb_encrypt_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) system variable.
 
 
-Beginning in [MariaDB 10.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), where the encryption key management plugin supports key rotation the InnoDB Redo Log can also rotate encryption keys. In previous releases, the Redo Log can only use the first encryption key.
+Beginning in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), where the encryption key management plugin supports key rotation the InnoDB Redo Log can also rotate encryption keys. In previous releases, the Redo Log can only use the first encryption key.
 
 
 ## See Also
@@ -155,4 +155,3 @@ Beginning in [MariaDB 10.4](../../../../../../release-notes/mariadb-community-se
 * [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md)
 * [Information Schema INNODB_TABLESPACES_ENCRYPTION table](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)
 
-<span></span>

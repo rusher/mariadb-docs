@@ -2,13 +2,13 @@
 # Catalogs Overview
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
 
 
-[Catalogs](catalogs-overview.md) are an upcoming feature that will be included in a future release of MariaDB. The MariaDB catalogs will be a multi-tenancy feature where a single instance MariaDB server handles multiple independent tenants (customers), who have their own users, schemas etc.
+[Catalogs](README.md) are an upcoming feature that will be included in a future release of MariaDB. The MariaDB catalogs will be a multi-tenancy feature where a single instance MariaDB server handles multiple independent tenants (customers), who have their own users, schemas etc.
 See [MDEV-31542](https://jira.mariadb.org/browse/MDEV-31542) "Add multi-tenancy catalogs to MariaDB" for details.
 
 
@@ -74,7 +74,7 @@ For the end user, the MariaDB server will act as a normal a standalone server, w
   * [servers](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) (federated)
   * [transaction_registry](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md) (innodb internal)
   * [func](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) (udf)
-  * [performance_schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md)
+  * [performance_schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/README.md)
 
 
 ## New 'catalog root user'
@@ -92,7 +92,7 @@ catalogs, managing primaries and replicas etc.
 MariaDB server will be able to run either on 'original mode', where the data layout is exactly as it was before, or on 'catalog' mode, with a new data layout:
 
 
-When running [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) with --use-catalogs, it will create
+When running [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) with --use-catalogs, it will create
 the following new data structure:
 
 
@@ -187,11 +187,11 @@ Client changes:
 * Add support for looping over all existing catalogs to:
 
   * [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md)
-  * [mariadb-backup](../../../server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md)
+  * [mariadb-backup](../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md)
   * [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md)
 
 
-Changes to [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md):
+Changes to [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md):
 
 
 * Allow one to create multiple catalogs at once: -–catalogs=”catalog1,catalog2”
@@ -337,7 +337,7 @@ con.connect(function(err) {
 (need to map out a few other connectors here to make sure it’s supported well in this form).
 
 
-Ref: [connection-pools-with-mariadb-connector-r2dbc-native-api.md#handshake-response-packet](../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#handshake-response-packet)
+Ref: [connection.md#handshake-response-packet](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#handshake-response-packet)
 
 
 ## Migration of Existing MariaDB Original Mode to the New Catalog Layout
@@ -348,7 +348,7 @@ As shared hosting services have a naming scheme from user/schema to database nam
 
 * Use [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) to dump the original data
 * On the new server execute:
-* [mariadb-install-db –catalogs=’catalog_name’](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)
+* [mariadb-install-db –catalogs=’catalog_name’](../../../clients-and-utilities/mariadb-install-db.md)
 * mariadb –catalog catalog_name < dump_file
 
 
@@ -364,7 +364,7 @@ Create a migration tool set / procedure that does the following
 * Execute [FLUSH TABLES FOR EXPORT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) for all tables in a catalog.
 * Take a copy of the catalog directory
 * Copy the data to a new catalog directory to the new server
-* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#import-tablespace) on each InnoDB table
+* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#import-tablespace) on each InnoDB table
 
 
 Note that for partitioned tables the process will be a bit more complex, see above link.
@@ -385,4 +385,3 @@ This procedure will be a bit easier after an in-the-works patch for InnoDB relat
 
 * [MDEV-31542](https://jira.mariadb.org/browse/MDEV-31542) Add multi-tenancy catalogs to MariaDB
 
-<span></span>

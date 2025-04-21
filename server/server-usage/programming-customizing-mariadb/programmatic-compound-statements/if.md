@@ -24,7 +24,6 @@ is executed. Each statement_list consists of one or more statements.
 
 
 * The [IF() function](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/if-function.md), which differs from the `IF` statement described above.
-* [Changes in Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Changes in Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 * The [CASE statement](case-statement.md).
 
-<span></span>

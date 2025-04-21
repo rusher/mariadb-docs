@@ -1805,7 +1805,7 @@ The following operators are currently supported.
 
 
 When `$type` is used, it will be converted into a condition involving one or more
-[JSON_TYPE](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_type.md) comparisons. The following subset
+[JSON_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_type) comparisons. The following subset
 of types can be used in `$type` queries:
 
 
@@ -3804,7 +3804,7 @@ the value of the `_id` field of the document in the `doc` column.
 All MongoDB® commands that *mongdbprotocol* support (but for the ones that
 do not require database access), basically access or manipulate the
 content in the `doc` column using the
-[JSON functions](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md) of MariaDB.
+[JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/) of MariaDB.
 
 
 From within the mongo shell itself it is easy to find out just what SQL

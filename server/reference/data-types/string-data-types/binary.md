@@ -15,7 +15,7 @@ BINARY(M)
 ## Description
 
 
-The `BINARY` type is similar to the `[CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md)` type, but stores binary
+The `BINARY` type is similar to the `[CHAR](char.md)` type, but stores binary
 byte strings rather than non-binary character strings. `M` represents the
 column length in bytes.
 
@@ -73,7 +73,7 @@ SELECT * FROM bins ORDER BY a;
 +------+
 ```
 
-Using [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) instead:
+Using [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
 
 ```
@@ -155,6 +155,6 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## See Also
 
 
-* [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md)
+* [CHAR](char.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 

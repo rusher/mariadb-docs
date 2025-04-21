@@ -4184,13 +4184,13 @@
 ## Routers
 
 
-### [Avrorouter](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+### [Avrorouter](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 #### Settings
 
 
-##### [avrodir](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [avrodir](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: path
@@ -4199,7 +4199,7 @@
 * Default: `/var/lib/maxscale/`
 
 
-##### [binlogdir](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [binlogdir](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: path
@@ -4208,7 +4208,7 @@
 * Default: `/var/lib/maxscale/`
 
 
-##### [codec](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [codec](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -4218,7 +4218,7 @@
 * Default: `null`
 
 
-##### [cooperative_replication](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [cooperative_replication](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -4227,7 +4227,7 @@
 * Default: `false`
 
 
-##### [exclude](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [exclude](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -4236,7 +4236,7 @@
 * Default: `""`
 
 
-##### [filestem](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [filestem](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: string
@@ -4245,7 +4245,7 @@
 * Default: `mysql-bin`
 
 
-##### [gtid_start_pos](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [gtid_start_pos](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: string
@@ -4254,7 +4254,7 @@
 * Default: `""`
 
 
-##### [match](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [match](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -4263,7 +4263,7 @@
 * Default: `""`
 
 
-##### [server_id](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [server_id](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: number
@@ -4272,7 +4272,7 @@
 * Default: `1234`
 
 
-##### [start_index](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [start_index](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: number
@@ -4284,7 +4284,7 @@
 #### Settings for Avro File
 
 
-##### [block_size](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [block_size](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -4293,7 +4293,7 @@
 * Default: `16KiB`
 
 
-##### [group_rows](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [group_rows](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: number
@@ -4302,7 +4302,7 @@
 * Default: `1000`
 
 
-##### [group_trx](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [group_trx](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: number
@@ -4311,7 +4311,7 @@
 * Default: `1`
 
 
-##### [max_data_age](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [max_data_age](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -4320,7 +4320,7 @@
 * Default: 0s
 
 
-##### [max_file_size](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+##### [max_file_size](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 
 
 * Type: [size](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -5229,13 +5229,13 @@
 * Default: `all`
 
 
-### [SchemaRouter](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+### [SchemaRouter](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 #### Settings
 
 
-##### [allow_duplicates](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+##### [allow_duplicates](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -5244,7 +5244,7 @@
 * Default: false
 
 
-##### [ignore_tables](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+##### [ignore_tables](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 * Type: stringlist
@@ -5253,7 +5253,7 @@
 * Default: `""`
 
 
-##### [ignore_tables_regex](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+##### [ignore_tables_regex](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 * Type: [regex](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -5262,7 +5262,7 @@
 * Default: `""`
 
 
-##### [max_staleness](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+##### [max_staleness](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -5271,7 +5271,7 @@
 * Default: 150s
 
 
-##### [refresh_databases](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+##### [refresh_databases](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -5280,7 +5280,7 @@
 * Default: `false`
 
 
-##### [refresh_interval](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+##### [refresh_interval](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 
 * Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)

@@ -29,15 +29,15 @@ Use `IF EXISTS` to prevent an error from occurring for databases that do not exi
 
 
 
-##### MariaDB starting with [10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-[MariaDB 10.6.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../atomic-ddl.md). 
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../atomic-ddl.md). 
 `DROP DATABASE` is implemented as
 
 ```
 loop over all tables
   DROP TABLE table
 ```
-Each individual [DROP TABLE](drop-tablespace.md) is atomic while `DROP DATABASE` as a whole is crash-safe.
+Each individual [DROP TABLE](drop-table.md) is atomic while `DROP DATABASE` as a whole is crash-safe.
 
 
 ## Examples

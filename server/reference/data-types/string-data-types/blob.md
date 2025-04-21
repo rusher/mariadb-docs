@@ -12,7 +12,7 @@ BLOB[(M)]
 ## Description
 
 
-A `BLOB` column with a maximum length of `65,535` (`2<sup>16</sup> - 1`) bytes. Each
+A `BLOB` column with a maximum length of `65,535` (`216 - 1`) bytes. Each
 `BLOB` value is stored using a two-byte length prefix that indicates the
 number of bytes in the value.
 
@@ -22,10 +22,10 @@ MariaDB creates the column as the smallest `BLOB` type large enough to
 hold values *`M`* bytes long.
 
 
-BLOBS can also be used to store [dynamic columns](../../sql-statements-and-structure/nosql/dynamic-columns-api.md).
+BLOBS can also be used to store [dynamic columns](../../sql-statements-and-structure/nosql/dynamic-columns.md).
 
 
-`BLOB` and `TEXT` columns can both be assigned a [DEFAULT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) value.
+`BLOB` and `TEXT` columns can both be assigned a [DEFAULT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) value.
 
 
 ### Indexing
@@ -43,7 +43,7 @@ In previous releases, setting a unique index on a column that uses the `BLOB` da
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `BLOB` is a synonym for `LONGBLOB`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `BLOB` is a synonym for `LONGBLOB`.
 
 
 ## EXAMPLES
@@ -109,5 +109,5 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

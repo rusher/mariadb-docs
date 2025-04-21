@@ -214,7 +214,7 @@ SELECT * FROM someTable WHERE field = 1 GROUP BY id,
 ### Checking for keywords
 
 
-MariaDB allows table and field names and aliases that are also [reserved words](../../../../server/reference/sql-statements-and-structure/sql-language-structure/reserved-words.md). To prevent ambiguity, such names must be enclosed in backticks (`):
+MariaDB allows table and field names and aliases that are also [reserved words](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-language-structure/reserved-words). To prevent ambiguity, such names must be enclosed in backticks (`):
 
 
 ```
@@ -222,7 +222,7 @@ SELECT * FROM actionTable WHERE `DELETE` = 1;
 ```
 
 If the syntax error is shown near one of your identifiers, check if it appears
-on the [reserved word list](../../../../server/reference/sql-statements-and-structure/sql-language-structure/reserved-words.md).
+on the [reserved word list](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-language-structure/reserved-words).
 
 
 A text editor with color highlighting for SQL syntax helps to find these

@@ -2,8 +2,8 @@
 # JSON_ARRAYAGG
 
 
-##### MariaDB starting with [10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-JSON_ARRAYAGG was added in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+JSON_ARRAYAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 
 ## Syntax
@@ -25,7 +25,7 @@ The maximum returned length in bytes is determined by the [group_concat_max_len]
 Returns NULL in the case of an error, or if the result contains no rows.
 
 
-`JSON_ARRAYAGG` cannot currently be used as a [window function](../window-functions/window-functions-overview.md).
+`JSON_ARRAYAGG` cannot currently be used as a [window function](../window-functions/README.md).
 
 
 The full syntax is as follows:

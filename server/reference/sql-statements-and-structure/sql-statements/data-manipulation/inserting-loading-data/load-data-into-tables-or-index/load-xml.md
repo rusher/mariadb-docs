@@ -102,11 +102,11 @@ DATA statement's IGNORE ... LINES clause.
 If the `[LOW_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md)` keyword is used, insertions are delayed until no other clients are reading from the table. The `CONCURRENT` keyword allows the use of [concurrent inserts](../concurrent-inserts.md). These clauses cannot be specified together.
 
 
-This statement activates INSERT [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
+This statement activates INSERT [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md).
 
 
 ## See Also
 
 
-* The [CONNECT](../../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine has an [XML table type](../../../../../storage-engines/connect/connect-table-types/connect-table-types-data-files.md#xml-table-type).
+* The [CONNECT](../../../../../storage-engines/connect/README.md) storage engine has an [XML table type](../../../../../storage-engines/connect/connect-table-types/connect-table-types-data-files.md#xml-table-type).
 

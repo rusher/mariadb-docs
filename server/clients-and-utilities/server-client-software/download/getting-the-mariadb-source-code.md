@@ -44,8 +44,8 @@ Source repositories for the MariaDB Connectors are:
 See also:
 
 
-* [Using git](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git.md) page for instructions on how to use git to check out the source code and switch between the various branches.
-* [Compiling MariaDB from source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md)
+* [Using git](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
+* [Compiling MariaDB from source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md)
 
 
 
@@ -54,7 +54,7 @@ MariaDB source from Launchpad. As the current source is now on GitHub, the
 information is mainly of historical interest and not useful for current
 development.
 The instructions on this page will help you download your own local branch of
-the [MariaDB](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) source code repository with the full revision history. If you
+the [MariaDB](/kb/en/mariadb/) source code repository with the full revision history. If you
 want a tarball of the source without the revision history, see the
 [MariaDB download page](https://mariadb.org/download).
 
@@ -110,7 +110,7 @@ then the version of bzr you are using is too old. Using [version 1.12](https://b
 cd $repo/maria/trunk
 bzr log | less
 ```
-1. If you are going to be hacking on the MariaDB source code. See the [Contributing Code](../../../../general-resources/company-and-community/contributing-participating/contributing-code.md) page for help.
+1. If you are going to be hacking on the MariaDB source code. See the [Contributing Code](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/contributing-participating/contributing-code) page for help.
 1. If you just want to compile MariaDB at this point, see the [Compiling MariaDB](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page.
 
 
@@ -151,13 +151,11 @@ tar -zxvf ${downloadsdir}/mariadb-shared-repo.tgz
 ```
 1. After the untar step you will have a bzr shared repository, but not
 a working tree. While in the shared repository directory, use the
-` bzr branch ` command to branch the MariaDB trees you are
+`bzr branch` command to branch the MariaDB trees you are
 interested in. For example:
 
-  * ` bzr branch lp:maria/5.2 
-`
-  * ` bzr branch lp:maria 
-`
+  * `bzr branch lp:maria/5.2`
+  * `bzr branch lp:maria`
 1. Thanks to the repository, either of the above commands will complete very fast.
 1. Before working with the code, make sure you pull down the latest version of the source code: 
 ```
@@ -170,7 +168,7 @@ bzr pull
 ## Alternate Bazaar Instructions
 
 The following alternative instructions are what we have used for setting up
-repositories on our build machines in [buildbot](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md). 
+repositories on our build machines in [buildbot](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/). 
 
 ### Shell Variables
 
@@ -217,7 +215,7 @@ Check out MariaDB sources:
 $BZR branch $MARIA_REPO $MARIA_MASTER
 $BZR branch $MARIA_MASTER $MARIA_WORK
 ```
-Check out packaging sources (only for [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and below):
+Check out packaging sources (only for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and below):
 
 ```
 $BZR branch $PACKAGING_REPO $PACKAGING_MASTER

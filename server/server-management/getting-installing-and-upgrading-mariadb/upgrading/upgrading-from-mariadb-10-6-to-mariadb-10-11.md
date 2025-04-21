@@ -11,16 +11,16 @@ For Windows, see [Upgrading MariaDB on Windows](upgrading-mariadb-on-windows.md)
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.6 to MariaDB 10.11 with Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-10-6-to-mariadb-10-11-with-galeracluster.md).
 
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 
 The suggested upgrade procedure is:
 
 
-1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md). For example,
+1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011). For example,
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../binary-packages/installing-mariadb-deb-files.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 1. [Stop MariaDB](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 `sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../binary-packages/installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
 1. Make any desired changes to configuration options in [option files](../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
@@ -56,7 +56,7 @@ On most servers upgrading from 10.6 should be painless. However, there are some 
 #### Compression
 
 
-If a non-zlib compression algorithm was used in [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) or [Mroonga](../../../reference/storage-engines/mroonga/mroonga-user-defined-functions/mroonga_snippet_html.md) before upgrading to 10.11, those tables will be unreadable until the appropriate compression library is installed. See [Compression Plugins#Upgrading](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md#upgrading).
+If a non-zlib compression algorithm was used in [InnoDB](../../../reference/storage-engines/innodb/README.md) or [Mroonga](../../../reference/storage-engines/mroonga/README.md) before upgrading to 10.11, those tables will be unreadable until the appropriate compression library is installed. See [Compression Plugins#Upgrading](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md#upgrading).
 
 
 #### Options That Have Changed Default Values
@@ -151,11 +151,11 @@ The following options have been deprecated. They have not yet been removed, but 
 ### See Also
 
 
-* [Features in MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
-* [Features in MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
-* [Features in MariaDB 10.9](../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
-* [Features in MariaDB 10.8](../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
-* [Features in MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)
+* [Features in MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
+* [Features in MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
+* [Features in MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+* [Features in MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
+* [Features in MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 
 
 
@@ -167,4 +167,3 @@ The following options have been deprecated. They have not yet been removed, but 
 * [Upgrading from MariaDB 10.6 to MariaDB 10.7](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-6-to-mariadb-10-7.md)
 * [Upgrading from MariaDB 10.5 to MariaDB 10.6](upgrading-from-mariadb-10-5-to-mariadb-10-6.md)
 
-<span></span>

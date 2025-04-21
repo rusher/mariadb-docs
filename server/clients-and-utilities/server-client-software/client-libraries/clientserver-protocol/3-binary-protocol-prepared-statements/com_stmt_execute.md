@@ -32,7 +32,7 @@ Client to server.
 
     * for each parameter :
 
-      * byte<1>: [field type](../4-server-response-packets/resultset-row.md#field-types)
+      * byte<1>: [field type](../4-server-response-packets/result-set-packets.md)
       * byte<1>: [parameter flag](#parameter-flag)
   * for each parameter (i.e param_count times)
 
@@ -122,5 +122,5 @@ The server can answer with 3 different responses:
 
 * 0xff: [ERR_Packet](../4-server-response-packets/err_packet.md) if any errors occur.
 * 0x00: [OK_packet](../4-server-response-packets/ok_packet.md) when query execution works without resultset.
-* one (or more) [Resultset](../4-server-response-packets/resultset-row.md), when query execution return rows (in case of SELECT query for example).
+* one (or more) [Resultset](../4-server-response-packets/result-set-packets.md), when query execution return rows (in case of SELECT query for example).
 

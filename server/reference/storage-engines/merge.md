@@ -6,7 +6,7 @@
 
 
 The MERGE storage engine, also known as the MRG_MyISAM engine, is a
-collection of identical [MyISAM](myisam-storage-engine/myisam-system-variables.md) tables that can be used as one.
+collection of identical [MyISAM](myisam-storage-engine/README.md) tables that can be used as one.
 "Identical" means that all tables have identical column and index
 information. You cannot merge MyISAM tables in which the columns are
 listed in a different order, do not have exactly the same columns, or

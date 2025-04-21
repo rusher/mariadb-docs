@@ -11,7 +11,7 @@ MASTER_POS_WAIT(log_name,log_pos[,timeout,["connection_name"]])
 ## Description
 
 
-This function is useful in [replication](../../../administrative-sql-statements/replication-statements/README.md) for controlling primary/replica synchronization. It blocks until the replica has read and applied all updates up to the specified position (`log_name,log_pos`) in the primary log. The return value is the number of log events the replica had to wait for to advance to the specified position. The function returns NULL if
+This function is useful in [replication](../../../../../../server-usage/replication-cluster-multi-master/README.md) for controlling primary/replica synchronization. It blocks until the replica has read and applied all updates up to the specified position (`log_name,log_pos`) in the primary log. The return value is the number of log events the replica had to wait for to advance to the specified position. The function returns NULL if
 the replica SQL thread is not started, the replica's primary information is not
 initialized, the arguments are incorrect, or an error occurs. It returns -1 if
 the timeout has been exceeded. If the replica SQL thread stops while

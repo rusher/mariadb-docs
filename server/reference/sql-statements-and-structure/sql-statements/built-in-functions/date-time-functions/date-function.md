@@ -11,7 +11,7 @@ DATE(expr)
 ## Description
 
 
-Extracts the date part of the [date](../../../sql-language-structure/date-and-time-literals.md) or [datetime](../../../../data-types/date-and-time-data-types/datetime.md) expression *expr*. Returns NULL and throws a warning when passed an invalid date.
+Extracts the date part of the [date](../../../../data-types/date-and-time-data-types/date.md) or [datetime](../../../../data-types/date-and-time-data-types/datetime.md) expression *expr*. Returns NULL and throws a warning when passed an invalid date.
 
 
 ## Examples

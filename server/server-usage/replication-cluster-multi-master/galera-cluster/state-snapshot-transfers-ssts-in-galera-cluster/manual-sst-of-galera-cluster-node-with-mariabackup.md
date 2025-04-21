@@ -5,7 +5,7 @@
 Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's `[datadir](../../optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is very large, since a normal SST can take a long time to fail in that case.
 
 
-A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 ## Process

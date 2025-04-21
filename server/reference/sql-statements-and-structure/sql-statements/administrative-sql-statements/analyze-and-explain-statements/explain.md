@@ -36,7 +36,7 @@ executes a `SELECT`, `UPDATE` or `DELETE` statement:
  used to provide additional information.
 * `EXPLAIN PARTITIONS` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md).
 * [ANALYZE statement](analyze-statement.md) performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics.
-* `EXPLAIN` output can be printed in the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md). See [EXPLAIN in the Slow Query Log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
+* `EXPLAIN` output can be printed in the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/README.md). See [EXPLAIN in the Slow Query Log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
 
 
 [SHOW EXPLAIN](../show/show-explain.md) shows the output of a running statement. In some cases, its output can be closer to reality than `EXPLAIN`.
@@ -45,7 +45,7 @@ executes a `SELECT`, `UPDATE` or `DELETE` statement:
 The [ANALYZE statement](analyze-statement.md) runs a statement and returns information about its execution plan. It also shows additional columns, to check how much the optimizer's estimation about filtering and found rows are close to reality.
 
 
-There is an online [EXPLAIN Analyzer](../../../../../clients-and-utilities/explain-analyzer-api.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
+There is an online [EXPLAIN Analyzer](../../../../../clients-and-utilities/explain-analyzer.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
 
 
 `EXPLAIN` can acquire metadata locks in the same way that `SELECT` does, as it needs to know table metadata and, sometimes, data as well.

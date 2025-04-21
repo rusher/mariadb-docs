@@ -75,5 +75,5 @@ topics:
 Then you can enter a topic as the search string to see the help entry for that topic.
 
 
-The help is provided with the MariaDB server and makes use of four help tables found in the `mysql` database: [help_relation](system-tables/the-mysql-database-tables/mysql-help_relation-table.md), [help_topic](system-tables/the-mysql-database-tables/mysql-help_topic-table.md), [help_category](system-tables/the-mysql-database-tables/mysql-help_category-table.md) and [help_keyword](system-tables/the-mysql-database-tables/mysql-help_keyword-table.md). These tables are populated by the [mariadb-install-db](../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) or `fill_help_table.sql` scripts.
+The help is provided with the MariaDB server and makes use of four help tables found in the `mysql` database: [help_relation](system-tables/the-mysql-database-tables/mysql-help_relation-table.md), [help_topic](system-tables/the-mysql-database-tables/mysql-help_topic-table.md), [help_category](system-tables/the-mysql-database-tables/mysql-help_category-table.md) and [help_keyword](system-tables/the-mysql-database-tables/mysql-help_keyword-table.md). These tables are populated by the [mariadb-install-db](../../../../clients-and-utilities/mariadb-install-db.md) or `fill_help_table.sql` scripts.
 

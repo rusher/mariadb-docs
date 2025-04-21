@@ -45,14 +45,14 @@ allows IPv6 connections from local machine ::1, from IP addresses starting with 
 ## Client-Side Support for Proxy Protocol
 
 
-Since the functionality is suited only to very specific proxy-like programs, most client APIs do not provide support for sending proxy headers. One exception is [Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) version 3 or later. One can now use [mysql_optionsv()](../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md):
+Since the functionality is suited only to very specific proxy-like programs, most client APIs do not provide support for sending proxy headers. One exception is [Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) version 3 or later. One can now use [mysql_optionsv()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv):
 
 
 ```
 mysql_optionsv(mysql, MARIADB_OPT_PROXY_HEADER, header,  header_size)
 ```
 
-prior to [mysql_real_connect()](../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect.md) or mysql_connect(), to send the header. In the call above `_header_` is the proxy header with the type `void *`, and `_header_size_` is its size in bytes (type is `size_t`).
+prior to [mysql_real_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) or mysql_connect(), to send the header. In the call above `_header_` is the proxy header with the type `void *`, and `_header_size_` is its size in bytes (type is `size_t`).
 
 
 ### Example
@@ -70,7 +70,7 @@ If you want to use proxy protocol with MaxScale:
 
 
 * Add the IP address of the MaxScale server to [proxy-protocol-networks](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks)
-* In `maxscale.cnf`, add the [proxy_protocol](../../../../maxscale/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#proxy_protocol) parameter for all configured servers
+* In `maxscale.cnf`, add the [proxy_protocol](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide#proxy_protocol) parameter for all configured servers
 
 
 Once configured, MaxScale will proxy the credentials from the client to the server.

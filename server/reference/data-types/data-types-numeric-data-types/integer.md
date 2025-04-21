@@ -11,7 +11,7 @@ INTEGER[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ## Description
 
 
-This type is a synonym for [INT](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md).
+This type is a synonym for [INT](int.md).
 
 
 ## EXAMPLES

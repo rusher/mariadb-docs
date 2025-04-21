@@ -8,7 +8,7 @@
 ## Description
 
 
-`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](window-functions-overview.md) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
+`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](README.md) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
 
 
 Essentially, the following process is followed to find the value to return:

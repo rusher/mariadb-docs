@@ -12,7 +12,7 @@ mroonga_normalize(string[, normalizer_name])
 ## Description
 
 
-`mroonga_normalize` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) (UDF) included with the [Mroonga storage engine](mroonga_snippet_html.md). It uses Groonga's normalizer to normalize text. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
+`mroonga_normalize` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDF) included with the [Mroonga storage engine](../README.md). It uses Groonga's normalizer to normalize text. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
 
 
 Given a string, returns the normalized text.
@@ -38,4 +38,3 @@ SELECT mroonga_normalize("ABぃ㍑");
 
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
-<span></span>

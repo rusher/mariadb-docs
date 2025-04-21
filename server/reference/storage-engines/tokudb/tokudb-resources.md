@@ -1,10 +1,10 @@
 
 # TokuDB Resources
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and has been been removed in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) as a long-term migration path.
+TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) and has been been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../myrocks/README.md) as a long-term migration path.
 
 
-This page contains links to various online resources for [TokuDB](tokudb-resources.md).
+This page contains links to various online resources for [TokuDB](README.md).
 
 
 ## Website
@@ -35,10 +35,10 @@ These were discontinued and redirected to [Percona's MySQL and MariaDB forum](ht
 ## IRC
 
 
-Tokutek has a ` #tokutek` [IRC](/kb/en/irc/) channel on [Freenode](https://freenode.net).
+Tokutek has a `#tokutek` [IRC](/kb/en/irc/) channel on [Freenode](https://freenode.net).
 
 
-The following link will take you to the ` #tokutek` channel using Freenode's web IRC client:
+The following link will take you to the `#tokutek` channel using Freenode's web IRC client:
 
 
 * [?randomnick=1&channels=tokutek&prompt=1](https://webchat.freenode.net/?randomnick=1&channels=tokutek&prompt=1)
@@ -47,5 +47,5 @@ The following link will take you to the ` #tokutek` channel using Freenode's web
 ## See Also
 
 
-The [Where to find other MariaDB users and developers](../../../../general-resources/company-and-community/friends-of-mariadb/resources.md) page has many great MariaDB resources listed.
+The [Where to find other MariaDB users and developers](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/friends-of-mariadb/resources) page has many great MariaDB resources listed.
 

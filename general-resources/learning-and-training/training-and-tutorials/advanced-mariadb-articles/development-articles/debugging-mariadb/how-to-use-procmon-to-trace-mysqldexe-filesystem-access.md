@@ -13,7 +13,7 @@ Process Monitor is an advanced monitoring tool for Windows that shows real-time 
 ## Installation
 
 
-There is no installation necessary; the single executable can be used after unpacking. I suggest putting procmon into some directory in the PATH [environment variable](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/mariadb-environment-variables.md).
+There is no installation necessary; the single executable can be used after unpacking. I suggest putting procmon into some directory in the PATH [environment variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/mariadb-environment-variables).
 
 
 ## Example of taking a mysqld.exe trace

@@ -73,7 +73,7 @@ contains all module specific configuration options and detailed explanations
 of their use.
 
 
-* [Avrorouter](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
+* [Avrorouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 * [Binlogrouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
 * [Cat](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-cat.md)
 * [Diff](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-diff-router-for-comparing-servers.md)
@@ -82,7 +82,7 @@ of their use.
 * [MirrorRouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-mirror.md)
 * [Read Connection Router](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readconnroute.md)
 * [Read Write Split](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
-* [Schemarouter](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
+* [Schemarouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 * [SmartRouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-smartrouter.md)
 
 

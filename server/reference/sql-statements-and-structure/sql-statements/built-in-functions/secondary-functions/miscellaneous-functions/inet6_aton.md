@@ -24,8 +24,8 @@ Returns NULL if the argument is not understood.
 
 
 
-##### MariaDB starting with [10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-From [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), `INET6_ATON` can take [INET6](inet6_aton.md) as an argument.
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), `INET6_ATON` can take [INET6](../../../../../data-types/string-data-types/inet6.md) as an argument.
 
 
 ## Examples
@@ -52,5 +52,5 @@ SELECT HEX(INET6_ATON('48f3::d432:1431:ba23:846f'));
 
 * [INET6_NTOA()](inet6_ntoa.md)
 * [INET_ATON()](inet_aton.md)
-* [INET6](inet6_aton.md) Data Type
+* [INET6](../../../../../data-types/string-data-types/inet6.md) Data Type
 

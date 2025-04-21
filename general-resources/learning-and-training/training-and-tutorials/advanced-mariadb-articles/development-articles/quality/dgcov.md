@@ -1,7 +1,7 @@
 
 # Code Coverage with dgcov
 
-The dgcov tool helps you check the coverage for new code. The dgcov.pl script is part of the [mariadb-test](../../../../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) framework (and any packages that include mariadb-test).
+The dgcov tool helps you check the coverage for new code. The dgcov.pl script is part of the [mariadb-test](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-test/) framework (and any packages that include mariadb-test).
 
 
 ## Overview
@@ -92,7 +92,7 @@ Checking the coverage for a specific commit 1234567:
 dgcov.pl 1234567^ 1234567
 ```
 
-[mariadb-test-run-pl-options.md](../../../../../../server/clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md) can invoke dgcov automatically:
+[mariadb-test-run](https://mariadb.com/kb/en/mariadb-test-run) can invoke dgcov automatically:
 
 
 ```
@@ -105,7 +105,7 @@ in the latter case the coverate for the uncommitted changes (or the last commit)
 ## Caveats
 
 
-Note that to be able to run gcov with the [mariadb-test](../../../../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) framework you need to have gcc version 4.8 or newer.
+Note that to be able to run gcov with the [mariadb-test](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-test/) framework you need to have gcc version 4.8 or newer.
 
 
 ## References

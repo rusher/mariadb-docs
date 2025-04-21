@@ -11,7 +11,7 @@ ELT(N, str1[, str2, str3,...])
 ## Description
 
 
-Takes a numeric argument and a series of string arguments. Returns the string that corresponds to the given numeric position. For instance, it returns `str1` if `N` is 1, `str2` if `N` is 2, and so on. If the numeric argument is a `[FLOAT](../../../../data-types/data-types-numeric-data-types/float.md)`, MariaDB rounds it to the nearest `[INTEGER](../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)`. If the numeric argument is less than 1, greater than the total number of arguments, or not a number, `ELT()` returns `NULL`. It must have at least two arguments.
+Takes a numeric argument and a series of string arguments. Returns the string that corresponds to the given numeric position. For instance, it returns `str1` if `N` is 1, `str2` if `N` is 2, and so on. If the numeric argument is a `[FLOAT](../../../../data-types/data-types-numeric-data-types/float.md)`, MariaDB rounds it to the nearest `[INTEGER](../../../../data-types/data-types-numeric-data-types/int.md)`. If the numeric argument is less than 1, greater than the total number of arguments, or not a number, `ELT()` returns `NULL`. It must have at least two arguments.
 
 
 It is complementary to the `[FIELD()](field.md)` function.

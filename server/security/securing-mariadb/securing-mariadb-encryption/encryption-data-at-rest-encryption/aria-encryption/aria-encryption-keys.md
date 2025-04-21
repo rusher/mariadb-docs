@@ -8,7 +8,7 @@ As with other storage engines that support data-at-rest encryption, Aria relies 
 ## Encryption Keys
 
 
-MariaDB keeps track of each encryption key internally using a 32-bit integer, which serves as the key identifier. Unlike [InnoDB](../innodb-encryption/innodb-encryption-troubleshooting.md), Aria does not support the `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id)` table option (for more information, see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049)), which allows the user to specify the encryption key to use. Instead, Aria defaults to specific encryption keys provided by the Encryption Key Management plugin.
+MariaDB keeps track of each encryption key internally using a 32-bit integer, which serves as the key identifier. Unlike [InnoDB](../innodb-encryption/README.md), Aria does not support the `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id)` table option (for more information, see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049)), which allows the user to specify the encryption key to use. Instead, Aria defaults to specific encryption keys provided by the Encryption Key Management plugin.
 
 
 * When working with user-created tables, Aria encrypts them to disk using the ID 1 key.
@@ -25,4 +25,3 @@ Some [key management and encryption plugins](../key-management-and-encryption-pl
 
 In order for key rotation to work, both the backend key management service (KMS) and the corresponding [key management and encryption plugin](../key-management-and-encryption-plugins/encryption-key-management.md) have to support key rotation. See [Encryption Key Management: Support for Key Rotation in Encryption Plugins](../key-management-and-encryption-plugins/encryption-key-management.md#support-for-key-rotation-in-encryption-plugins) to determine which plugins currently support key rotation.
 
-<span></span>

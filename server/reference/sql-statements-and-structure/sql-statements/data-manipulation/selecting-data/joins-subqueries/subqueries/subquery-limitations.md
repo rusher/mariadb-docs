@@ -1,7 +1,7 @@
 
 # Subquery Limitations
 
-There are a number of limitations regarding [subqueries](subqueries-and-all.md), which are discussed below.
+There are a number of limitations regarding [subqueries](README.md), which are discussed below.
 
 The following tables and data will be used in the examples that follow:
 
@@ -23,7 +23,7 @@ INSERT INTO customer VALUES
 ### ORDER BY and LIMIT
 
 
-To use [ORDER BY](../../order-by.md) or limit [LIMIT](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) in [subqueries](subqueries-and-all.md) both must be used.. For example:
+To use [ORDER BY](../../order-by.md) or limit [LIMIT](../../limit.md) in [subqueries](README.md) both must be used.. For example:
 
 
 ```

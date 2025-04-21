@@ -1,7 +1,7 @@
 
 # List of Performance Schema Tables
 
-Below is a list of all [Performance Schema](performance-schema-table_handles-table.md) tables as well as a brief description of each of them.
+Below is a list of all [Performance Schema](../README.md) tables as well as a brief description of each of them.
 
 
 

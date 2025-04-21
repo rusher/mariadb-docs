@@ -1,7 +1,7 @@
 
 # Replication as a Backup Solution
 
-[Replication](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) can be used to support the [backup](README.md) strategy.
+[Replication](../../server-usage/replication-cluster-multi-master/README.md) can be used to support the [backup](README.md) strategy.
 
 
 Replication alone is *not* sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `DROP DATABASE` or `TRUNCATE TABLE` statement will be replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
@@ -27,8 +27,7 @@ Note that when backing up off a replica server, it is important to ensure that t
 ## See Also
 
 
-* [Replication](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md)
-* [Replication Compatibility](../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md#replication-compatibility)
+* [Replication](../../server-usage/replication-cluster-multi-master/README.md)
+* [Replication Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#replication-compatibility)
 * [Backing Up and Restoring](README.md)
 
-<span></span>

@@ -20,9 +20,9 @@ scale).
 * The decimal point and (for negative numbers) the "-" sign are not
 counted in `M`.
 * If `D` is `0`, values have no decimal point or fractional
-part and on [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) the value will be rounded to the nearest `DECIMAL`.
+part and on [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) the value will be rounded to the nearest `DECIMAL`.
 * The maximum number of digits (`M`) for `DECIMAL` is 65.
-* The maximum number of supported decimals (`D`) is `30` before [MariadB 10.2.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md) and `38` afterwards.
+* The maximum number of supported decimals (`D`) is `30` before [MariadB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and `38` afterwards.
 * If `D` is omitted, the default is `0`. If `M` is omitted, the default is `10`.
 
 
@@ -40,7 +40,7 @@ a precision of 65 digits.
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
 
-`DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md).
+`DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
 
 ## Examples
@@ -286,5 +286,5 @@ SELECT * FROM decimal_zerofill_example;
 
 
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
-* [Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

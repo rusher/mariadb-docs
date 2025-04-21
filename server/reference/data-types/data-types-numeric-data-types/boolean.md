@@ -15,7 +15,7 @@ These types are synonyms for [TINYINT(1)](tinyint.md).
 A value of zero is considered false. Non-zero values are considered true.
 
 
-However, the values TRUE and FALSE are merely aliases for 1 and 0. See [Boolean Literals](../../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md), as well as the [IS operator](../../sql-statements-and-structure/geographic-geometric-features/geometry-properties/isclosed.md) for testing values against a boolean.
+However, the values TRUE and FALSE are merely aliases for 1 and 0. See [Boolean Literals](../../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md), as well as the [IS operator](../../sql-statements-and-structure/operators/comparison-operators/is.md) for testing values against a boolean.
 
 
 ## Examples
@@ -115,5 +115,5 @@ to neither 1 nor 0.
 
 
 * [Boolean Literals](../../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md)
-* [IS operator](../../sql-statements-and-structure/geographic-geometric-features/geometry-properties/isclosed.md)
+* [IS operator](../../sql-statements-and-structure/operators/comparison-operators/is.md)
 

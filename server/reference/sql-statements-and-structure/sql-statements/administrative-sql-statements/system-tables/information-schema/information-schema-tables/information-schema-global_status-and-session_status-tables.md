@@ -1,7 +1,7 @@
 
 # Information Schema GLOBAL_STATUS and SESSION_STATUS Tables
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `GLOBAL_STATUS` and `SESSION_STATUS` tables store a record of all [status variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW STATUS](../../../show/show-status.md)` commands `SHOW GLOBAL STATUS` and `SHOW SESSION STATUS`.
+The [Information Schema](../README.md) `GLOBAL_STATUS` and `SESSION_STATUS` tables store a record of all [status variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW STATUS](../../../show/show-status.md)` commands `SHOW GLOBAL STATUS` and `SHOW SESSION STATUS`.
 
 
 They contain the following columns:

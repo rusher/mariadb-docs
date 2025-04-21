@@ -79,7 +79,7 @@ key (accountName)
 ## Create server entries on spider server
 
 
-While the connection information can also be specified inline in the comment or (from [MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md)) as table options, it is cleaner to define a server object representing each remote backend server connection:
+While the connection information can also be specified inline in the comment or (from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)) as table options, it is cleaner to define a server object representing each remote backend server connection:
 
 
 ```
@@ -92,14 +92,14 @@ create server backend2 foreign data wrapper mysql options
 ### Unable to Connect Errors
 
 
-Bear in mind, if you ever need to remove, recreate or otherwise modify the server definition for any reason, you need to also execute a [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement. Otherwise, Spider continues to use the old server definition, which can result in queries raising the error
+Bear in mind, if you ever need to remove, recreate or otherwise modify the server definition for any reason, you need to also execute a [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement. Otherwise, Spider continues to use the old server definition, which can result in queries raising the error
 
 
 ```
 Error 1429: Unable to connect to foreign data source
 ```
 
-If you encounter this error when querying Spider tables, issue a [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement to update the server definitions.
+If you encounter this error when querying Spider tables, issue a [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definitions.
 
 
 ```
@@ -210,12 +210,12 @@ key(accountName)
 ) ;
 ```
 
-With [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) the following partition clause can be used to specify a default partition for all other values, however this must be a distinct partition / shard:
+With [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) the following partition clause can be used to specify a default partition for all other values, however this must be a distinct partition / shard:
 
 
 ```
 PARTITION partition_name DEFAULT
 ```
 
-For a complete list of partition types, see `[partitioning-types](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)`.
+For a complete list of partition types, see `[partitioning-types](../../../server-management/partitioning-tables/partitioning-types/README.md)`.
 

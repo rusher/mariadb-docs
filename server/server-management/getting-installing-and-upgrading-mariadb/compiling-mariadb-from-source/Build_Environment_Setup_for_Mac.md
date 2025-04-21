@@ -16,8 +16,7 @@ You can install the necessary dependencies using either MacPorts or Homebrew.
 * [Download](https://svn.macports.org/repository/macports/downloads/) and install the MacPorts dmg image from [www.macports.org](https://www.macports.org)
 
 
-* After installing, update it from the terminal: `sudo port -v selfupdate
-`
+* After installing, update it from the terminal: `sudo port -v selfupdate`
 
 
 `sudo port install cmake jemalloc judy openssl boost gnutls`

@@ -1,7 +1,7 @@
 
 # Information Schema PROCESSLIST Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PROCESSLIST` table contains information about running threads.
+The [Information Schema](../README.md) `PROCESSLIST` table contains information about running threads.
 
 
 Similar information can also be returned with the [SHOW [FULL] PROCESSLIST](../../../show/show-processlist.md) statement, or the [mariadb-admin processlist](../../../../../../../clients-and-utilities/mariadb-admin.md) command.
@@ -29,11 +29,11 @@ It contains the following columns:
 | MEMORY_USED | Memory in bytes used by the thread. |
 | MAX_MEMORY_USED | Maximum memory in bytes used by the thread. |
 | EXAMINED_ROWS | Rows examined by the thread. Only updated by UPDATE, DELETE, and similar statements. For SELECT and other statements, the value remains zero. |
-| SENT_ROWS | Number of rows sent by the statement being executed. From [MariaDB 11.3.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md). |
+| SENT_ROWS | Number of rows sent by the statement being executed. From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes). |
 | QUERY_ID | Query ID. |
 | INFO_BINARY | Binary data information |
 | TID | Thread ID ([MDEV-6756](https://jira.mariadb.org/browse/MDEV-6756)) |
-| TMP_SPACE_USED | See [Limiting Size of Created Disk Temporary Files and Tables Overview](../../../../../../../security/user-account-management/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview.md). From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md). |
+| TMP_SPACE_USED | See [Limiting Size of Created Disk Temporary Files and Tables Overview](../../../../../../../security/user-account-management/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview.md). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115). |
 
 
 
@@ -41,7 +41,7 @@ Note that as a difference to MySQL, in MariaDB the `TIME`
 column (and also the `TIME_MS` column) are not affected by
 any setting of `[@TIMESTAMP](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)`. This means that it can be
 reliably used also for threads that change `@TIMESTAMP` (such
-as the [replication](../../../replication-statements/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
+as the [replication](../../../../../../../server-usage/replication-cluster-multi-master/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
 
 
 As a consequence of this, the `TIME` column of 

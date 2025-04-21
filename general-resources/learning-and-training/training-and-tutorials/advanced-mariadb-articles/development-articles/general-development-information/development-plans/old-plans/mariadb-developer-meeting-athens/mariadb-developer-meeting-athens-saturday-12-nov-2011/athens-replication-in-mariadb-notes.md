@@ -5,16 +5,16 @@
 
 
 
-Overview of Replication in MariaDB: [Replication](../../../../../../../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md)
+Overview of Replication in MariaDB: [Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/)
 
 
-## In [MariaDB 5.3](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md):
+## In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3):
 
 
 * Group Commit for the binary log.
 
   * [Mark Callaghan from Facebook did some benchmarks:](https://www.facebook.com/note.php?note_id=10150211546215933)
-  * The Facebook patch and the implementation in [MariaDB 5.3](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) are two different solutions to the same problem. The latest Facebook patch is close to the performance in MariaDB, but MariaDB is still faster.
+  * The Facebook patch and the implementation in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) are two different solutions to the same problem. The latest Facebook patch is close to the performance in MariaDB, but MariaDB is still faster.
   * [Benchmarking thread scheduling in group commit, part 2](https://kristiannielsen.livejournal.com/15739.html)
 
 
@@ -38,7 +38,7 @@ Overview of Replication in MariaDB: [Replication](../../../../../../../../../../
 * Binlog Event Checksums (backport from MySQL 5.6
 
 
-## To be in [MariaDB 5.5](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+## To be in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
 * `@@do_not_replicate`

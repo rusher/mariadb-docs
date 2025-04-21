@@ -1,7 +1,7 @@
 
 # Row Subqueries
 
-A row subquery is a [subquery](subqueries-and-all.md) returning a single row, as opposed to a [scalar subquery](subqueries-scalar-subqueries.md), which returns a single column from a row, or a literal.
+A row subquery is a [subquery](README.md) returning a single row, as opposed to a [scalar subquery](subqueries-scalar-subqueries.md), which returns a single column from a row, or a literal.
 
 
 ## Examples

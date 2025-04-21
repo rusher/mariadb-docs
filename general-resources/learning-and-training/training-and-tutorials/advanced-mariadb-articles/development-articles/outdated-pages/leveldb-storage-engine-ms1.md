@@ -1,7 +1,7 @@
 
 # LevelDB Storage Engine MS1
 
-This page describes what will be implemented for milestone#1 of [LevelDB Storage Engine](leveldb-storage-engine-ms2.md). *For development after MS1, see [LevelDB Storage Engine Development](leveldb-storage-engine-development.md)*
+This page describes what will be implemented for milestone#1 of [LevelDB Storage Engine](leveldb.md). *For development after MS1, see [LevelDB Storage Engine Development](leveldb-storage-engine-development.md)*
 
 
 

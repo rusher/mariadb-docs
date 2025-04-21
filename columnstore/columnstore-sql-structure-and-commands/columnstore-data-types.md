@@ -11,15 +11,15 @@ ColumnStore supports the following data types:
 | Datatypes | Column Size | Description |
 | --- | --- | --- |
 | Datatypes | Column Size | Description |
-| [BOOLEAN](../../server/reference/data-types/data-types-numeric-data-types/boolean.md) | 1-byte | A synonym for "TINYINT(1)". Supported from version 1.2.0 onwards. |
-| [TINYINT](../../server/reference/data-types/data-types-numeric-data-types/tinyint.md) | 1-byte | A very small integer. Numeric value with scale 0. Signed: -126 to +127. Unsigned: 0 to 253. |
-| [SMALLINT](../../server/reference/data-types/data-types-numeric-data-types/smallint.md) | 2-bytes | A small integer. Signed: -32,766 to 32,767. Unsigned: 0 to 65,533. |
-| [MEDIUMINT](../../server/reference/data-types/data-types-numeric-data-types/mediumint.md) | 3-bytes | A medium integer. Signed: -8388608 to 8388607. Unsigned: 0 to 16777215. Supported starting with MariaDB ColumnStore 1.4.2. |
-| [INTEGER/INT](../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) | 4-bytes | A normal-size integer. Numeric value with scale 0. Signed: -2,147,483,646 to 2,147,483,647. Unsigned: 0 to 4,294,967,293 |
-| [BIGINT](../../server/reference/data-types/data-types-numeric-data-types/bigint.md) | 8-bytes | A large integer. Numeric value with scale 0. Signed: -9,223,372,036,854,775,806 to+9,223,372,036,854,775,807 Unsigned: 0 to +18,446,744,073,709,551,613 |
-| [DECIMAL/NUMERIC](../../server/reference/data-types/data-types-numeric-data-types/decimal.md) | 2, 4, or 8 bytes | A packed fixed-point number that can have a specific total number of digits and with a set number of digits after a decimal. The maximum precision (total number of digits) that can be specified is 18. |
-| [FLOAT](../../server/reference/data-types/data-types-numeric-data-types/float.md) | 4 bytes | Stored in 32-bit IEEE-754 floating point format. As such, the number of significant digits is about 6and the range of values is approximately +/- 1e38.The MySQL extension to specify precision and scale is not supported. |
-| [DOUBLE/REAL](../../server/reference/data-types/data-types-numeric-data-types/double.md) | 8 bytes | Stored in 64-bit IEEE-754 floating point format. As such, the number of significant digits is about 15 and the range of values is approximately +/-1e308. The MySQL extension to specify precision and scale is not supported. “REAL” is a synonym for “DOUBLE”. |
+| [BOOLEAN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/boolean) | 1-byte | A synonym for "TINYINT(1)". Supported from version 1.2.0 onwards. |
+| [TINYINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/tinyint) | 1-byte | A very small integer. Numeric value with scale 0. Signed: -126 to +127. Unsigned: 0 to 253. |
+| [SMALLINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/smallint) | 2-bytes | A small integer. Signed: -32,766 to 32,767. Unsigned: 0 to 65,533. |
+| [MEDIUMINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/mediumint) | 3-bytes | A medium integer. Signed: -8388608 to 8388607. Unsigned: 0 to 16777215. Supported starting with MariaDB ColumnStore 1.4.2. |
+| [INTEGER/INT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/int) | 4-bytes | A normal-size integer. Numeric value with scale 0. Signed: -2,147,483,646 to 2,147,483,647. Unsigned: 0 to 4,294,967,293 |
+| [BIGINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/bigint) | 8-bytes | A large integer. Numeric value with scale 0. Signed: -9,223,372,036,854,775,806 to+9,223,372,036,854,775,807 Unsigned: 0 to +18,446,744,073,709,551,613 |
+| [DECIMAL/NUMERIC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/decimal) | 2, 4, or 8 bytes | A packed fixed-point number that can have a specific total number of digits and with a set number of digits after a decimal. The maximum precision (total number of digits) that can be specified is 18. |
+| [FLOAT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/float) | 4 bytes | Stored in 32-bit IEEE-754 floating point format. As such, the number of significant digits is about 6and the range of values is approximately +/- 1e38.The MySQL extension to specify precision and scale is not supported. |
+| [DOUBLE/REAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/double) | 8 bytes | Stored in 64-bit IEEE-754 floating point format. As such, the number of significant digits is about 15 and the range of values is approximately +/-1e308. The MySQL extension to specify precision and scale is not supported. “REAL” is a synonym for “DOUBLE”. |
 
 
 
@@ -30,16 +30,16 @@ ColumnStore supports the following data types:
 | Datatypes | Column Size | Description |
 | --- | --- | --- |
 | Datatypes | Column Size | Description |
-| [CHAR](../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) | 1, 2, 4, or 8 bytes | Holds letters and special characters of fixed length. Max length is 255. Default and minimum size is 1 byte. |
-| [VARCHAR](../../server/reference/data-types/string-data-types/varchar.md) | 1, 2, 4, or 8 bytes or 8-byte token | Holds letters, numbers, and special characters of variable length. Max length = 8000 bytes or characters and minimum length = 1 byte or character. |
-| [TINYTEXT](../../server/reference/data-types/string-data-types/tinytext.md) | 255 bytes | Holds a small amount of letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
-| [TINYBLOB](../../server/reference/data-types/string-data-types/tinyblob.md) | 255 bytes | Holds a small amount of binary data of variable length. Supported from version 1.1.0 onwards. |
-| [TEXT](../../server/reference/data-types/string-data-types/text.md) | 64 KB | Holds letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
-| [BLOB](../../server/reference/data-types/string-data-types/blob.md) | 64 KB | Holds binary data of variable length. Supported from version 1.1.0 onwards. |
-| [MEDIUMTEXT](../../server/reference/data-types/string-data-types/mediumtext.md) | 16 MB | Holds a medium amount of letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
-| [MEDIUMBLOB](../../server/reference/data-types/string-data-types/mediumblob.md) | 16 MB | Holds a medium amount of binary data of variable length. Supported from version 1.1.0 onwards. |
-| [LONGTEXT](../../server/reference/data-types/string-data-types/longtext.md) | 1.96 GB | Holds a large amount of letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
-| [LONGBLOB](../../server/reference/data-types/string-data-types/longblob.md) | 1.96 GB | Holds a large amount of binary data of variable length. Supported from version 1.1.0 onwards. |
+| [CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char) | 1, 2, 4, or 8 bytes | Holds letters and special characters of fixed length. Max length is 255. Default and minimum size is 1 byte. |
+| [VARCHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varchar) | 1, 2, 4, or 8 bytes or 8-byte token | Holds letters, numbers, and special characters of variable length. Max length = 8000 bytes or characters and minimum length = 1 byte or character. |
+| [TINYTEXT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/tinytext) | 255 bytes | Holds a small amount of letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
+| [TINYBLOB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/tinyblob) | 255 bytes | Holds a small amount of binary data of variable length. Supported from version 1.1.0 onwards. |
+| [TEXT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/text) | 64 KB | Holds letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
+| [BLOB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/blob) | 64 KB | Holds binary data of variable length. Supported from version 1.1.0 onwards. |
+| [MEDIUMTEXT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/mediumtext) | 16 MB | Holds a medium amount of letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
+| [MEDIUMBLOB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/mediumblob) | 16 MB | Holds a medium amount of binary data of variable length. Supported from version 1.1.0 onwards. |
+| [LONGTEXT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/longtext) | 1.96 GB | Holds a large amount of letters, numbers, and special characters of variable length. Supported from version 1.1.0 onwards. |
+| [LONGBLOB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/longblob) | 1.96 GB | Holds a large amount of binary data of variable length. Supported from version 1.1.0 onwards. |
 
 
 
@@ -50,10 +50,10 @@ ColumnStore supports the following data types:
 | Datatypes | Column Size | Description |
 | --- | --- | --- |
 | Datatypes | Column Size | Description |
-| [DATE](../../server/reference/sql-statements-and-structure/sql-language-structure/date-and-time-literals.md) | 4-bytes | Date has year, month, and day. The internal representation of a date is a string of 4 bytes. The first 2 bytes represent the year, .5 bytes the month, and .75 bytes the day in the following format: YYYY-MM-DD. Supported range is 1000-01-01 to 9999-12-31. |
-| [DATETIME](../../server/reference/data-types/date-and-time-data-types/datetime.md) | 8-bytes | A date and time combination. Supported range is 1000-01-01 00:00:00 to 9999-12-31 23:59:59. From version 1.2.0 microseconds are also supported. |
-| [TIME](../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) | 8-bytes | Holds hour, minute, second and optionally microseconds for time. Supported range is '-838:59:59.999999' to '838:59:59.999999'. Supported from version 1.2.0 onwards. |
-| [TIMESTAMP](../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) | 4-bytes | Values are stored as the number of seconds since 1970-01-01 00:00:00 UTC, and optionally microseconds. The max value is currently 2038-01-19 03:14:07 UTC. Supported starting with MariaDB ColumnStore 1.4.2. |
+| [DATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/date) | 4-bytes | Date has year, month, and day. The internal representation of a date is a string of 4 bytes. The first 2 bytes represent the year, .5 bytes the month, and .75 bytes the day in the following format: YYYY-MM-DD. Supported range is 1000-01-01 to 9999-12-31. |
+| [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime) | 8-bytes | A date and time combination. Supported range is 1000-01-01 00:00:00 to 9999-12-31 23:59:59. From version 1.2.0 microseconds are also supported. |
+| [TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time) | 8-bytes | Holds hour, minute, second and optionally microseconds for time. Supported range is '-838:59:59.999999' to '838:59:59.999999'. Supported from version 1.2.0 onwards. |
+| [TIMESTAMP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/timestamp) | 4-bytes | Values are stored as the number of seconds since 1970-01-01 00:00:00 UTC, and optionally microseconds. The max value is currently 2038-01-19 03:14:07 UTC. Supported starting with MariaDB ColumnStore 1.4.2. |
 
 
 

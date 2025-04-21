@@ -1,7 +1,7 @@
 
 # Automating MariaDB Tasks with Events
 
-MariaDB has an event scheduler that can be used to automate tasks, making them run at regular intervals of time. This page is about using events for [automation](automated-mariadb-deployment-and-administration-puppet-and-mariadb/README.md). For more information about events themselves, and how to work with them, see [event scheduler](../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md).
+MariaDB has an event scheduler that can be used to automate tasks, making them run at regular intervals of time. This page is about using events for [automation](README.md). For more information about events themselves, and how to work with them, see [event scheduler](../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md).
 
 
 ## Pros and Cons of Using Events for Automation
@@ -12,7 +12,7 @@ Events can be compared to Unix cron jobs or Windows scheduled tasks. MariaDB eve
 
 * Events are system-independent. The same code can run on any system.
 * Events are written in procedural SQL. There is no need to install other languages or libraries.
-* If you use [user-defined functions](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md), you can still take advantage of them in your events.
+* If you use [user-defined functions](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md), you can still take advantage of them in your events.
 * Events run in MariaDB. An implication, for example, is that the results of queries remain in MariaDB itself and are not sent to a client. This means that network glitches don't affect events, there is no overhead due to data roundtrip, and therefore locks are held for a shorter time.
 
 
@@ -45,7 +45,7 @@ Just like cron jobs, events should log whether if they succeed or not. Logging d
 Some examples of tasks that could easily be automated with events:
 
 
-* Copying data from a remote table to a local table by night, using the [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine. This can be a good idea if many rows need be copied, because data won't be sent to an external client.
+* Copying data from a remote table to a local table by night, using the [CONNECT](../../../../reference/storage-engines/connect/README.md) storage engine. This can be a good idea if many rows need be copied, because data won't be sent to an external client.
 * Periodically delete historical data. For example, rows that are older than 5 years. Nothing prevents us from doing this with an external script, but probably this wouldn't add any value.
 * Periodically delete invalid rows. In an e-commerce, they could be abandoned carts. In a messaging system, they could be messages to users that don't exist anymore.
 * Add a new [partition](../../../partitioning-tables/README.md) to a table and drop the oldest one (partition rotation).

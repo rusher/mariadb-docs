@@ -36,7 +36,7 @@ Reads rows from a text file into the designated table on the database at a very 
 Files are written to disk using the [SELECT INTO OUTFILE](../../selecting-data/select-into-outfile.md) statement. You can then read the files back into a table using the `LOAD DATA INFILE` statement. The `FIELDS` and `LINES` clauses are the same in both statements and by default fields are expected to be terminated with tabs (`\t`) and lines with newlines (`\n`). These clauses are optional, but if both are specified then the `FIELDS` clause must precede `LINES`.
 
 
-Executing this statement activates `INSERT` [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
+Executing this statement activates `INSERT` [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md).
 
 
 One must have the [FILE](../../../account-management-sql-commands/grant.md#file) privilege to be able to execute LOAD DATA INFILE. This is to ensure normal users cannot read system files. LOAD DATA LOCAL INFILE does not have this requirement.
@@ -58,7 +58,7 @@ If you don't want to permit this operation (perhaps for security reasons), you c
 
 
 * The `LOAD DATA LOCAL INFILE` statement can be disabled on the server by setting the [local_infile](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) system variable to `0`.
-* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](../../../../../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql_real_connect](../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect.md) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql_optionsv](../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
+* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql_real_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
 
 
 * The `LOAD DATA LOCAL INFILE` strict modes like `STRICT_TRANS_TABLES` are disabled with keyword "local". ([MDEV-11235](https://jira.mariadb.org/browse/MDEV-11235))
@@ -74,7 +74,7 @@ The used command is not allowed with this MariaDB version
 Note that it is not entirely accurate to say that the MariaDB version does not support the command. It would be more accurate to say that the MariaDB configuration does not support the command. See [MDEV-20500](https://jira.mariadb.org/browse/MDEV-20500) for more information.
 
 
-From [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the error message is more accurate:
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the error message is more accurate:
 
 
 ```
@@ -88,7 +88,7 @@ The used command is not allowed because the MariaDB server or client
 If you load data from a file into a table that already contains data and has a [primary key](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key), you may encounter issues where the statement attempts to insert a row with a primary key that already exists. When this happens, the statement fails with Error 1064, protecting the data already on the table. If you want MariaDB to overwrite duplicates, use the `REPLACE` keyword.
 
 
-The `REPLACE` keyword works like the [REPLACE](../../../built-in-functions/string-functions/replace-function.md) statement. Here, the statement attempts to load the data from the file. If the row does not exist, it adds it to the table. If the row contains an existing primary key, it replaces the table data. That is, in the event of a conflict, it assumes the file contains the desired row.
+The `REPLACE` keyword works like the [REPLACE](../../changing-deleting-data/replace.md) statement. Here, the statement attempts to load the data from the file. If the row does not exist, it adds it to the table. If the row contains an existing primary key, it replaces the table data. That is, in the event of a conflict, it assumes the file contains the desired row.
 
 
 This operation can cause a degradation in load speed by a factor of 20 or more if the part that has already been loaded is larger than the capacity of the [InnoDB Buffer Pool](../../../../../storage-engines/innodb/innodb-buffer-pool.md). This happens because it causes a lot of turnaround in the buffer pool.
@@ -125,13 +125,13 @@ It is currently not possible to load data files that use the `ucs2` character se
 ### Preprocessing Inputs
 
 
-*col_name_or_user_var* can be a column name, or a user variable. In the case of a variable, the [SET](../../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement can be used to preprocess the value before loading into the table.
+*col_name_or_user_var* can be a column name, or a user variable. In the case of a variable, the [SET](../../../administrative-sql-statements/set-commands/set.md) statement can be used to preprocess the value before loading into the table.
 
 
 ### Priority and Concurrency
 
 
-In storage engines that perform table-level locking ([MyISAM](../../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md), [MEMORY](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/mariadb-fault-finding/memory-is-leaking.md) and [MERGE](../../../../../storage-engines/merge.md)), using the [LOW_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md) keyword, MariaDB delays insertions until no other clients are reading from the table. Alternatively, when using the [MyISAM](../../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) storage engine, you can use the [CONCURRENT](../concurrent-inserts.md) keyword to perform concurrent insertion.
+In storage engines that perform table-level locking ([MyISAM](../../../../../storage-engines/myisam-storage-engine/README.md), [MEMORY](../../../../../storage-engines/memory-storage-engine.md) and [MERGE](../../../../../storage-engines/merge.md)), using the [LOW_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md) keyword, MariaDB delays insertions until no other clients are reading from the table. Alternatively, when using the [MyISAM](../../../../../storage-engines/myisam-storage-engine/README.md) storage engine, you can use the [CONCURRENT](../concurrent-inserts.md) keyword to perform concurrent insertion.
 
 
 The `LOW_PRIORITY` and `CONCURRENT` keywords are mutually exclusive.  They cannot be used in the same statement.
@@ -146,7 +146,7 @@ The `LOAD DATA INFILE` statement supports [progress reporting](../../../../../ma
 ### Using mariadb-import
 
 
-MariaDB ships with a separate utility for loading data from files: [mariadb-import](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (or `mysqlimport` before [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)). It operates by sending `LOAD DATA INFILE` statements to the server.
+MariaDB ships with a separate utility for loading data from files: [mariadb-import](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (or `mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)). It operates by sending `LOAD DATA INFILE` statements to the server.
 
 
 Using [mariadb-import](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) you can compress the file using the `--compress` option, to get better performance over slow networks, providing both the client and server support the compressed protocol. Use the `--local` option to load from the local file system.
@@ -155,7 +155,7 @@ Using [mariadb-import](../../../../../../clients-and-utilities/backup-restore-an
 ### Indexing
 
 
-In cases where the storage engine supports [ALTER TABLE... DISABLE KEYS](../../../data-definition/alter/alter-tablespace.md#enable-disable-keys) statements ([MyISAM](../../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) and [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md)), the `LOAD DATA INFILE` statement automatically disables indexes during the execution.
+In cases where the storage engine supports [ALTER TABLE... DISABLE KEYS](../../../data-definition/alter/alter-table.md#enable-disable-keys) statements ([MyISAM](../../../../../storage-engines/myisam-storage-engine/README.md) and [Aria](../../../../../storage-engines/aria/README.md)), the `LOAD DATA INFILE` statement automatically disables indexes during the execution.
 
 
 ## Examples

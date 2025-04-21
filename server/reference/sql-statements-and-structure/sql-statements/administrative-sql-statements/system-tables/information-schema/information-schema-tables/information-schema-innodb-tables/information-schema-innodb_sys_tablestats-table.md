@@ -1,13 +1,13 @@
 
 # Information Schema INNODB_SYS_TABLESTATS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_TABLESTATS` table contains InnoDB status information. It can be used for developing new performance-related extensions, or high-level performance monitoring.
+The [Information Schema](../../README.md) `INNODB_SYS_TABLESTATS` table contains InnoDB status information. It can be used for developing new performance-related extensions, or high-level performance monitoring.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
-Note that the MySQL InnoDB and Percona XtraDB versions of the tables differ (see [XtraDB and InnoDB](../../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)).
+Note that the MySQL InnoDB and Percona XtraDB versions of the tables differ (see [XtraDB and InnoDB](../../../../../../../storage-engines/innodb/README.md)).
 
 
 It contains the following columns:
@@ -25,7 +25,7 @@ It contains the following columns:
 | CLUST_INDEX_SIZE | Number of pages on disk storing the clustered index, holding InnoDB table data in primary key order, or NULL if not statistics yet collected. |
 | OTHER_INDEX_SIZE | Number of pages on disk storing secondary indexes for the table, or NULL if not statistics yet collected. |
 | MODIFIED_COUNTER | Number of rows modified by statements modifying data. |
-| AUTOINC | [Auto_increment](../../../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) value. |
+| AUTOINC | [Auto_increment](../../../../../../../data-types/auto_increment.md) value. |
 | REF_COUNT | Countdown to zero, when table metadata can be removed from the table cache. (InnoDB only) |
 | MYSQL_HANDLES_OPENED | (XtraDB only). |
 

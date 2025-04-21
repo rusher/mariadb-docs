@@ -2,14 +2,14 @@
 # Configuring MariaDB for Remote Client Access
 
 Some MariaDB packages bind MariaDB to 127.0.0.1 (the loopback IP address) by default
-as a security measure using the [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) configuration directive. Old MySQL packages sometimes disabled TCP/IP networking altogether using the [skip-networking](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) directive. Before going in to how to configure these, let's
+as a security measure using the [bind-address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#bind_address) configuration directive. Old MySQL packages sometimes disabled TCP/IP networking altogether using the [skip-networking](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#skip_networking) directive. Before going in to how to configure these, let's
 explain what each of them actually does:
 
 
-* [skip-networking](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is fairly simple. It just tells MariaDB to run without any of the TCP/IP networking options.
+* [skip-networking](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#skip_networking) is fairly simple. It just tells MariaDB to run without any of the TCP/IP networking options.
 
 
-* [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) requires a little bit of background information. A given
+* [bind-address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#bind_address) requires a little bit of background information. A given
  server usually has at least two networking interfaces (although this is not
  required) and can easily have more. The two most common are a Loopback
  network device and a physical Network Interface Card (NIC) which allows
@@ -23,11 +23,11 @@ explain what each of them actually does:
 
 
 
-##### MariaDB starting with [10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
+##### MariaDB starting with [10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
   Multiple comma-separated addresses can now be given to `bind_address` to allow the server to listen on more than one specific interface while not listening on others.
 
 
-If [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) is bound to 127.0.0.1 (localhost), one can't connect to the MariaDB server from other hosts or from the same host over TCP/IP on a different interface than the loopback (127.0.0.1). This for example will not work (connecting with a hostname that points to a local IP of the host):
+If [bind-address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#bind_address) is bound to 127.0.0.1 (localhost), one can't connect to the MariaDB server from other hosts or from the same host over TCP/IP on a different interface than the loopback (127.0.0.1). This for example will not work (connecting with a hostname that points to a local IP of the host):
 
 
 ```
@@ -54,7 +54,7 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 
 
 To enable MariaDB to listen to remote connections, you need to edit your defaults
-file. See [Configuring MariaDB with my.cnf](../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) for more detail.
+file. See [Configuring MariaDB with my.cnf](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) for more detail.
 
 
 Common locations for defaults files:
@@ -133,7 +133,7 @@ skip-bind-address
 This works as one can have any number of [mysqld] sections.
 
 
-Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)).
+Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/)).
 
 
 You can check the options mariadbd is using by executing:
@@ -162,7 +162,7 @@ completely different permissions and/or passwords.
 To create a new user:
 
 
-* log into the [mariadb command line client](../../../../server/clients-and-utilities/mariadb-client/mariadb-command-line-client.md) (or your favorite graphical client if you wish)
+* log into the [mariadb command line client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client) (or your favorite graphical client if you wish)
 
 
 ```
@@ -177,7 +177,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
+* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table) table:
 
 
 ```
@@ -221,7 +221,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%'
 (% is a wildcard)
 
 
-For more information about how to use GRANT, please see the [GRANT](../../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)
+For more information about how to use GRANT, please see the [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant)
 page.
 
 
@@ -249,7 +249,7 @@ firewall-cmd --permanent --add-port=3306/tcp
 * If your system is running a software firewall (or behind a hardware firewall
  or NAT) you must allow connections destined to TCP port that MariaDB runs on (by
  default and almost always 3306).
-* To undo this change and not allow remote access anymore, simply remove the `skip-bind-address` line or uncomment the [bind-address](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) line in your defaults file. The end result should be that you should have in the output from `./sql/mariadbd --print-defaults` the option `--bind-address=127.0.0.1` and no `--skip-bind-address`.
+* To undo this change and not allow remote access anymore, simply remove the `skip-bind-address` line or uncomment the [bind-address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#bind_address) line in your defaults file. The end result should be that you should have in the output from `./sql/mariadbd --print-defaults` the option `--bind-address=127.0.0.1` and no `--skip-bind-address`.
 
 
 *The initial version of this article was copied, with permission, from [Remote_Clients_Cannot_Connect](https://hashmysql.org/wiki/Remote_Clients_Cannot_Connect) on 2012-10-30.*

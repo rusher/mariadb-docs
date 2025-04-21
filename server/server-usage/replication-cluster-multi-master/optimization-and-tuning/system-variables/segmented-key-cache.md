@@ -5,7 +5,7 @@
 ## About Segmented Key Cache
 
 
-A segmented key cache is a collection of structures for regular [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+A segmented key cache is a collection of structures for regular [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md)
 key caches called key cache segments. Segmented key caches mitigate one
 of the major problems of the simple key cache: thread contention for key
 cache lock (mutex). With regular key caches, every call of a key cache
@@ -32,7 +32,7 @@ reworked, improved, and eventually merged into MariaDB by Igor Babaev
 from Monty Program (now MariaDB Corporation).
 
 
-You can find some benchmark results comparing various settings on the [Segmented Key Cache Performance](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance.md) page.
+You can find some benchmark results comparing various settings on the [Segmented Key Cache Performance](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) page.
 
 
 ## Segmented Key Cache Syntax
@@ -62,7 +62,7 @@ apply to segmented key caches: [key_buffer_size](../../../../reference/storage-e
 
 
 Statistics about the key cache can be found by looking at the
-[KEY_CACHES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_caches-table.md) table in the [INFORMATION_SCHEMA](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md)
+[KEY_CACHES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_caches-table.md) table in the [INFORMATION_SCHEMA](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md)
 database. Columns in this table are:
 
 
@@ -88,6 +88,5 @@ database. Columns in this table are:
 ## See Also
 
 
-* [Segmented Key Cache Performance](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance.md)
+* [Segmented Key Cache Performance](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance)
 
-<span></span>

@@ -29,13 +29,13 @@ developer.
 If you want to be part of developing any of these features, get
 [an account](https://kb.askmonty.org/v/about) and add your name after the
 feature you are interested in. You can also add new features to this list or
-to the [worklog](../../../../../quality/worklog-quality-checklist-template.md).
+to the [worklog](../../../../../tools/worklog.md).
 
 
-## [MariaDB 5.3](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+## [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 
-Features which will be in [MariaDB 5.3](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) (instead of waiting until 5.6 to add them).
+Features which will be in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) (instead of waiting until 5.6 to add them).
 
 
 * Storage independent test suite (add to 5.3)
@@ -43,10 +43,10 @@ Features which will be in [MariaDB 5.3](../../../../../../../../../../release-no
 * OpenGIS: stored procedure AddGeometryColumn (Holyfoot) (move to 5.3)
 
 
-## [MariaDB 5.5](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
+## [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
-Features which will be in [MariaDB 5.5](../../../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (instead of waiting until 5.6 to add them).
+Features which will be in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (instead of waiting until 5.6 to add them).
 
 
 * Present in MySQL 5.5: Performance Schema

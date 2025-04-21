@@ -26,8 +26,7 @@ Once running you can connect to the VNC server from your local host with:
 vncviewer -via ${remote_host} localhost
 ```
 
-Replace `<span class="si">${</span><span class="nv">remote_host</span><span class="si">}</span>
-` with the host the
+Replace `${remote_host}` with the host the
 vm is running on.
 
 
@@ -58,11 +57,9 @@ Install, picking default options mostly, with the following notes:
 * Final Configuration: Apply configuration and exit
 * Manual Configuration: yes to opening a shell
 
-  * `<span class="nb">echo</span> <span class="s1">'console="comconsole"'</span> >> /boot/loader.conf
-`
+  * `echo 'console="comconsole"' >> /boot/loader.conf`
   * Edit /etc/ttys and change off to on and dialup to vt100 for the ttyu0 entry.
-  * `shutdown -p now
-`
+  * `shutdown -p now`
 
 
 Now that the VM is installed, it's time to configure it.

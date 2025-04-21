@@ -65,7 +65,7 @@ vice versa.
 
 This is why it is possible to specify the field format when it does not
 correspond to the column type default using the *field_format* column option
-in the [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement. Here are the available field formats for BIN tables:
+in the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement. Here are the available field formats for BIN tables:
 
 
 

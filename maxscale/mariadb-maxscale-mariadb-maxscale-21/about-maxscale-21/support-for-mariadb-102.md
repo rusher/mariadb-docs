@@ -12,7 +12,7 @@ In the following will be explained what impact some of those features have,
 when used together with MaxScale 2.1.
 
 
-## [Window Functions](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md)
+## [Window Functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/)
 
 
 The parser of MariaDB MaxScale has not been extended with the window
@@ -28,7 +28,7 @@ will be blocked, if the database firewall filter is used.
 Otherwise the statements will be routed correctly.
 
 
-## [SHOW CREATE USER](../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user.md)
+## [SHOW CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user)
 
 
 Cannot be completely parsed by the MaxScale parser and hence will be
@@ -38,7 +38,7 @@ blocked by the database firewall filter, if it is used.
 Otherwise the statements will be routed correctly.
 
 
-## [CREATE USER](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md)
+## [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user)
 
 
 The new options are not parsed by the MaxScale parser and hence any
@@ -49,7 +49,7 @@ if it is used.
 Otherwise the statements will be routed correctly.
 
 
-## [ALTER USER](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md)
+## [ALTER USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user)
 
 
 The new options are not parsed by the MaxScale parser and hence any
@@ -60,7 +60,7 @@ if it is used.
 Otherwise the statements will be routed correctly.
 
 
-## [WITH](../../../server/reference/sql-statements-and-structure/geographic-geometric-features/geometry-relations/within.md)
+## [WITH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/with)
 
 
 The MaxScale parser correctly parses `WITH` statements such as
@@ -113,7 +113,7 @@ firewall filter will **NOT** be able to block `WITH` statements where
 the `SELECT` of the `WITH` clause refers to to forbidden columns.
 
 
-## [CHECK CONSTRAINT](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md)
+## [CHECK CONSTRAINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/constraint)
 
 
 The new options are not parsed by the MaxScale parser and hence any
@@ -124,13 +124,13 @@ if it is used.
 Otherwise the statements will be routed correctly.
 
 
-## [DEFAULT with expressions](../../../server/reference/sql-statements-and-structure/vectors/create-table-with-vectors.md)
+## [DEFAULT with expressions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table)
 
 
 Parsed and handled correctly.
 
 
-## [EXECUTE IMMEDIATE](../../../server/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md)
+## [EXECUTE IMMEDIATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate)
 
 
 An `EXECUTE IMMEDIATE` statement will only be partially parsed, which means
@@ -138,7 +138,7 @@ that such statements will be blocked by the database firewall filter,
 if it is used.
 
 
-## [JSON functions](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md)
+## [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/)
 
 
 The MaxScape parser treats them as any other function.

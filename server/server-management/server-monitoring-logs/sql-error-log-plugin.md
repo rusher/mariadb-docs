@@ -7,7 +7,7 @@ The `SQL_ERROR_LOG` plugin collects errors sent to clients in a log file defined
 Errors are logged as they happen and an error will be logged even if it was handled by a [condition handler](../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-handler.md) and was never technically *sent* to the client.
 
 
-From [MariaDB 10.11.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes.md) warnings can also be logged if [sql_error_log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings) is enabled.
+From [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes) warnings can also be logged if [sql_error_log_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings) is enabled.
 
 
 Comments are also logged, which can make the log easier to search. But this is only possible if the client does not strip the comments away. For example, the [mariadb](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client only leaves comments when started with the [--comments](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md#mariadb-options) option.
@@ -51,21 +51,21 @@ If you installed the plugin by providing the [--plugin-load](../getting-installi
 ## Logging
 
 
-The log format until [MariaDB 10.10](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) is:
+The log format until [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010) is:
 
 
 ```
 Time User Error_code: Error_message : Query
 ```
 
-Starting from [MariaDB 10.11](../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the format is:
+Starting from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the format is:
 
 
 ```
 Time User Type Error_code: Error_message : Query
 ```
 
-Starting from [MariaDB 10.6.17](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes.md), [MariaDB 10.11.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md), [MariaDB 11.3.2](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes.md), and [MariaDB 11.4.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md), when the [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_with_db_and_thread_info) variable is enabled, the log also contains thread id and database name. If there is no database, `NULL` will be displayed.
+Starting from [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes), [MariaDB 11.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes), and [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes), when the [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_with_db_and_thread_info) variable is enabled, the log also contains thread id and database name. If there is no database, `NULL` will be displayed.
 
 
 ```
@@ -132,10 +132,10 @@ ERROR 1286 (42000): Unknown storage engine 'WHOOPSIE'
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.1 | Stable | [MariaDB 10.6.17](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes.md), [MariaDB 10.11.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md) |
-| 1.0 | Stable | [MariaDB 10.1.13](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.0.10](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 5.5.22](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5522-release-notes.md) |
+| 1.1 | Stable | [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes) |
+| 1.0 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
+| 1.0 | Alpha | [MariaDB 5.5.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5522-release-notes) |
 
 
 
@@ -151,4 +151,3 @@ ERROR 1286 (42000): Unknown storage engine 'WHOOPSIE'
 * [sql_error_log_size_warnings](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md)
 * [sql_error_log_with_db_and_thread_info](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md)
 
-<span></span>

@@ -12,7 +12,7 @@ TINYINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ## Description
 
 
-A very small [integer](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md). The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
+A very small [integer](int.md). The signed range is -128 to 127. The unsigned range is 0 to 255. For details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
 
 [INT1](int1.md), [BOOL, and BOOLEAN](boolean.md) are synonyms for `TINYINT`.
@@ -230,7 +230,7 @@ SELECT *, example + 0 FROM tinyint_zerofill_example;
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
 * [SMALLINT](smallint.md)
 * [MEDIUMINT](mediumint.md)
-* [INTEGER](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)
+* [INTEGER](int.md)
 * [BIGINT](bigint.md)
 * [BOOLEAN](boolean.md)
 

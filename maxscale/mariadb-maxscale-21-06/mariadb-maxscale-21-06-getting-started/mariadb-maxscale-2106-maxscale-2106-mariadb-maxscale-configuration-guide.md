@@ -3859,8 +3859,8 @@ the port is not open on the server, normal port is used.
 
 
 For more information, see
-[extra_port](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)
-and [extra_max_connections](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_max_connections).
+[extra_port](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+and [extra_max_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables#extra_max_connections).
 
 
 ### `persistpoolmax`
@@ -4381,7 +4381,7 @@ backends and map them to backend users.
 
 
 This file functions very similar to
-[PAM-based mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md).
+[PAM-based mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam).
 Both user-to-user and group-to-user mappings can be defined. Also, the password
 and authentication plugin for the mapped users can be added. The file is only
 read during listener creation (typically MaxScale start) or when a listener is
@@ -4676,7 +4676,7 @@ from the previous releases where the newer versions were automatically enabled,
 the protocol versions must be explicitly listed, for example
 `admin_ssl_version=TLSv1.2,TLSv1.3`. The change was done to make the
 `ssl_version` behave identically to how the MariaDB
-[tls_version](../../../server/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version)
+[tls_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version)
 parameter works.
 
 
@@ -4833,7 +4833,7 @@ Simple sharding on database level:
 
 
 Binary log server:
-* [Binlogrouter](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter-24.md)
+* [Binlogrouter](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter.md)
 
 
 ## Monitor Modules

@@ -41,7 +41,7 @@ The steps to create a binary tar file are:
 
 * Decide where to put the source. A good place is under `/usr/local/src/mariadb-5.#`.
 * [Get the source](../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md)
-* [Compile the source](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md)
+* [Compile the source](../compiling-mariadb-from-source/README.md)
 * [Create the binary tar ball](../compiling-mariadb-from-source/creating-the-mariadb-binary-tarball.md).
 
 
@@ -102,7 +102,7 @@ The steps are:
  (On Linux you do it with the `useradd` command).
 1. Create the directory (we call it `mariadb-data` in the example below) or
  add a symlink to a directory which is in some other place.
-1. Create the `mysql` permission tables with [mariadb-install-db](../mariadb-install-db-exe.md)
+1. Create the `mysql` permission tables with [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md)
 
 
 ```

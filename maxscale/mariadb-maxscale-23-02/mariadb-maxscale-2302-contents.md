@@ -31,7 +31,7 @@
 
 
 * [MaxCtrl - Command Line Admin Interface](mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md)
-* [MaxScale REST API](mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-rest-api-tutorial.md)
+* [MaxScale REST API](mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md)
 * [Module Commands](mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-module-commands.md)
 * [Routing Hints](mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-hint-syntax.md)
 
@@ -71,8 +71,8 @@ contains all module specific configuration options and detailed explanations
 of their use.
 
 
-* [Avrorouter](mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-avrorouter-tutorial.md)
-* [Binlogrouter](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter-24.md)
+* [Avrorouter](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-avrorouter.md)
+* [Binlogrouter](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter.md)
 * [Cat](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-cat.md)
 * [KafkaCDC](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-kafkacdc.md)
 * [KafkaImporter](https://mariadb.com/kb/en/mariadb-maxscale-2302-kafkaimporter/)

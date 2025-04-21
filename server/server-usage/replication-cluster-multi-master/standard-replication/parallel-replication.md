@@ -6,7 +6,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-Some writes, [replicated](README.md) from the primary can be executed in parallel (simultaneously) on the replica. Note that for parallel replication to work, both the primary and replica need to be [MariaDB 10.0.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md) or later.
+Some writes, [replicated](README.md) from the primary can be executed in parallel (simultaneously) on the replica. Note that for parallel replication to work, both the primary and replica need to be [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) or later.
 
 
 ## Parallel Replication Overview
@@ -78,7 +78,7 @@ is part of the GTID.
 #### Optimistic Mode of In-Order Parallel Replication
 
 
-Optimistic mode of in-order parallel replication provides a lot of opportunities for parallel apply on the replica while still preserving exact transaction semantics from the point of view of applications. It is the default mode from [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md).
+Optimistic mode of in-order parallel replication provides a lot of opportunities for parallel apply on the replica while still preserving exact transaction semantics from the point of view of applications. It is the default mode from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes).
 
 
 Optimistic mode of in-order parallel replication can be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `optimistic` on the replica.
@@ -117,7 +117,7 @@ any other transactions, earlier or later.
 
 
 The different kind of transactions can be identified in the output of
-[mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md). For example:
+[mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md). For example:
 
 
 ```
@@ -154,7 +154,7 @@ Aggressive mode of in-order parallel replication can be configured by setting th
 Conservative mode of in-order parallel replication uses the [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary to discover potential for parallel apply of events on the replica. If two transactions commit together in a [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary, they are written into the binlog with the same commit id. Such events are certain to not conflict with each other, and they can be scheduled by the parallel replication to run in different worker threads.
 
 
-Conservative mode of in-order parallel replication is the default mode until [MariaDB 10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), but it can also be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `conservative` on the replica.
+Conservative mode of in-order parallel replication is the default mode until [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), but it can also be configured by setting the [slave_parallel_mode](replication-and-binary-log-system-variables.md) system variable to `conservative` on the replica.
 
 
 Two transactions that were committed separately on the primary can potentially
@@ -165,7 +165,7 @@ second transaction, as it can no longer disrupt the execution of the first
 one.
 
 
-Here is example output from [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) that shows how GTID events are marked
+Here is example output from [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md) that shows how GTID events are marked
 with commit id. The GTID 0-1-47 has no commit id, and can not run in
 parallel. The GTIDs 0-1-48 and 0-1-49 have the same commit id 630, and can
 thus replicate in parallel with one another on a replica:
@@ -356,10 +356,10 @@ On the other hand, if set too low, the [SQL thread](replication-threads.md#slave
 +----+-------------+-----------+------+---------+--------+-----------------------------------------------+------------------+----------+
 ```
 
-The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable does not define a hard limit, since the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events that are currently executing always need to be held in-memory. This means that at least two events per [worker thread](replication-threads.md#worker-threads) can always be queued in-memory, regardless of the value of [slave_parallel_threads](replication-and-binary-log-system-variables.md).
+The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable does not define a hard limit, since the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) events that are currently executing always need to be held in-memory. This means that at least two events per [worker thread](replication-threads.md#worker-threads) can always be queued in-memory, regardless of the value of [slave_parallel_threads](replication-and-binary-log-system-variables.md).
 
 
-Usually, the [slave_parallel_threads](replication-and-binary-log-system-variables.md) system variable should be set large enough that the [SQL thread](replication-threads.md#slave-sql-thread) is able to read far enough ahead in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to exploit all possible parallelism. In normal operation, the replica will hopefully not be too far
+Usually, the [slave_parallel_threads](replication-and-binary-log-system-variables.md) system variable should be set large enough that the [SQL thread](replication-threads.md#slave-sql-thread) is able to read far enough ahead in the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) to exploit all possible parallelism. In normal operation, the replica will hopefully not be too far
 behind, so there will not be a need to queue much data in-memory. The [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) system variable could be set fairly high (eg. a few hundred kilobytes) to not limit throughtput. It should just be set low enough that total allocation of the parallel replica queue will not cause the server to run out of memory.
 
 
@@ -403,4 +403,3 @@ The implementation is described in [MDEV-4506](https://jira.mariadb.org/browse/M
 * [Better Parallel Replication for MariaDB and MySQL](https://mariadb.com/blog/better-parallel-replication-mariadb-and-mysql) (MariaDB.com blog)
 * [Evaluating MariaDB & MySQL Parallel Replication Part 2: Slave Group Commit](https://mariadb.com/blog/evaluating-mariadb-mysql-parallel-replication-part-2-slave-group-commit) (MariaDB.com blog)
 
-<span></span>

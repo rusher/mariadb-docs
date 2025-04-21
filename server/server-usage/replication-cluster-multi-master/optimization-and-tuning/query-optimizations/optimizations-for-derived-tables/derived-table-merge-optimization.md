@@ -19,7 +19,7 @@ WHERE
   big_city.Country='DEU'
 ```
 
-For MySQL, using such syntax was taboo. If you run [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) for
+For MySQL, using such syntax was taboo. If you run [EXPLAIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for
 this query, you can see why:
 
 
@@ -102,7 +102,7 @@ set @@optimizer_switch='derived_merge=OFF'
 * Versions of MySQL and MariaDB which do not have support for this optimization
  will execute subqueries even when running `EXPLAIN`. This can result in a
  well-known problem (see e.g. [MySQL Bug #44802](https://bugs.mysql.com/bug.php?id=44802)) of `EXPLAIN` statements taking a
- very long time. Starting from [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)+ and MySQL 5.6+ `EXPLAIN`
+ very long time. Starting from [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)+ and MySQL 5.6+ `EXPLAIN`
  commands execute instantly, regardless of the `derived_merge` setting.
 
 
@@ -111,4 +111,3 @@ set @@optimizer_switch='derived_merge=OFF'
 
 * FAQ entry: [Why is ORDER BY in a FROM subquery ignored?](../../../../../reference/faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
 
-<span></span>

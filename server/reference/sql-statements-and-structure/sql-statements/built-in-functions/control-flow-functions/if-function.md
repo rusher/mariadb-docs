@@ -17,7 +17,7 @@ returns `expr2`; otherwise it returns `expr3`. `IF()` returns a numeric
 or string value, depending on the context in which it is used.
 
 
-**Note:** There is also an [IF statement](ifnull.md) which differs from the
+**Note:** There is also an [IF statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/if.md) which differs from the
 `IF()` function described here.
 
 
@@ -54,5 +54,5 @@ SELECT IF(STRCMP('test','test1'),'no','yes');
 ## See Also
 
 
-There is also an [IF statement](ifnull.md), which differs from the `IF()` function described above.
+There is also an [IF statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
 

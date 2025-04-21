@@ -2,14 +2,14 @@
 # metrics Sys Schema View
 
 
-##### MariaDB starting with [10.6](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
-The [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) was introduced in [MariaDB 10.6](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+The [Sys Schema](../README.md) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
 
 ## Description
 
 
-The `metrics` view contains global status variables (as found in the [Performance Schema global_status Table](../../performance-schema/performance-schema-tables/performance-schema-global_status-table.md)), [InnoDB](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) metrics (as found in the [Information Schema INNODB_METRICS Table](../../information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md), current and total memory allocation, based on the Performance Schema memory instrumentation, as well the current time in human readable and Unix timestamp formats.
+The `metrics` view contains global status variables (as found in the [Performance Schema global_status Table](../../performance-schema/performance-schema-tables/performance-schema-global_status-table.md)), [InnoDB](../../../../../../storage-engines/innodb/README.md) metrics (as found in the [Information Schema INNODB_METRICS Table](../../information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md), current and total memory allocation, based on the Performance Schema memory instrumentation, as well the current time in human readable and Unix timestamp formats.
 
 
 It contains the following columns:

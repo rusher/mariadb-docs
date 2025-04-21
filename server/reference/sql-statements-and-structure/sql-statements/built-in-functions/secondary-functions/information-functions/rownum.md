@@ -2,8 +2,8 @@
 # ROWNUM
 
 
-##### MariaDB starting with [10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-From [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), the `ROWNUM()` function is supported.
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), the `ROWNUM()` function is supported.
 
 
 
@@ -14,7 +14,7 @@ From [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-serve
 ROWNUM()
 ```
 
-In [Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) one can just use `ROWNUM`, without the parentheses.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) one can just use `ROWNUM`, without the parentheses.
 
 
 ## Description
@@ -22,7 +22,7 @@ In [Oracle mode](../../../../../../../release-notes/mariadb-community-server/com
 
 `ROWNUM()` returns the current number of accepted rows in the
 current context. It main purpose is to emulate the `ROWNUM`
-[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md), as it is easier to use and gives more predictable results than the usage of `ROWNUM()`.
+[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](../../../data-manipulation/selecting-data/limit.md), as it is easier to use and gives more predictable results than the usage of `ROWNUM()`.
 
 
 The main difference between using `LIMIT` and
@@ -58,9 +58,9 @@ SELECT * FROM (select * from t1 ORDER BY a) WHERE ROWNUM() <= 10;
 `ROWNUM()` can be used in the following contexts:
 
 
-* [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
-* [INSERT](../../string-functions/insert-function.md)
-* [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
+* [SELECT](../../../data-manipulation/selecting-data/select.md)
+* [INSERT](../../../data-manipulation/inserting-loading-data/insert.md)
+* [UPDATE](../../../data-manipulation/changing-deleting-data/update.md)
 * [DELETE](../../../data-manipulation/changing-deleting-data/delete.md)
 * [LOAD DATA INFILE](../../../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
 
@@ -87,7 +87,7 @@ LOAD DATA INFILE 'filename' into table t1 fields terminated by ','
 ## Optimizations
 
 
-In many cases where `ROWNUM()` is used, MariaDB will use the same optimizations it uses with [LIMIT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md).
+In many cases where `ROWNUM()` is used, MariaDB will use the same optimizations it uses with [LIMIT](../../../data-manipulation/selecting-data/limit.md).
 
 
 `LIMIT` optimization is possible when using `ROWNUM` in the following manner:
@@ -151,5 +151,5 @@ Note that usage of `ROWNUM()` in functions or [stored procedures](../../../../..
 
 
 * [MDEV-24089](https://jira.mariadb.org/browse/MDEV-24089) support oracle syntax: rownum
-* [LIMIT clause](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT clause](../../../data-manipulation/selecting-data/limit.md)
 

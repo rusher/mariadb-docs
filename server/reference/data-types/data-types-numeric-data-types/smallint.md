@@ -12,7 +12,7 @@ SMALLINT[(M)] [SIGNED | UNSIGNED | ZEROFILL]
 ## Description
 
 
-A small [integer](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md). The signed range is -32768 to 32767. The unsigned range is 0 to 65535.
+A small [integer](int.md). The signed range is -32768 to 32767. The unsigned range is 0 to 65535.
 
 
 If a column has been set to ZEROFILL, all values will be prepended by zeros so that the SMALLINT value contains a number of M digits.
@@ -232,6 +232,6 @@ SELECT *, example + 0 FROM smallint_zerofill_example;
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
 * [TINYINT](tinyint.md)
 * [MEDIUMINT](mediumint.md)
-* [INTEGER](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)
+* [INTEGER](int.md)
 * [BIGINT](bigint.md)
 

@@ -79,7 +79,7 @@ of their use.
 
 
 * [Avrorouter](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-avrorouter.md)
-* [Binlogrouter](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter-24.md)
+* [Binlogrouter](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter.md)
 * [Cat](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-cat.md)
 * [KafkaCDC](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-kafkacdc.md)
 * [MirrorRouter](mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-mirror.md)

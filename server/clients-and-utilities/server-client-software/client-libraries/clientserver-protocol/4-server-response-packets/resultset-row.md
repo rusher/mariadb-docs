@@ -15,7 +15,7 @@ Using [COM_STMT_EXECUTE](../3-binary-protocol-prepared-statements/com_stmt_execu
 
 
 
-The byte representation of the string according to [client character collation](../../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md).
+The byte representation of the string according to [client character collation](../1-connecting/connection.md).
 
 
 ### Binary resultset row
@@ -86,7 +86,7 @@ DOUBLE is the IEEE 754 floating-point value in Little-endian format on 8 bytes.
 
 
 BIGINT is the value in Little-endian format on 8 bytes. 
-Signed is defined by the [Column field detail flag](resultset-row.md#field-detail-flag).
+Signed is defined by the [Column field detail flag](result-set-packets.md).
 
 
 
@@ -96,7 +96,7 @@ Signed is defined by the [Column field detail flag](resultset-row.md#field-detai
 
 
 INTEGER is the value in Little-endian format on 4 bytes. 
-Signed is defined by the [Column field detail flag](resultset-row.md#field-detail-flag).
+Signed is defined by the [Column field detail flag](result-set-packets.md).
 
 
 
@@ -124,7 +124,7 @@ FLOAT is the IEEE 754 floating-point value in Little-endian format on 4 bytes.
 
 
 SMALLINT is the value in Little-endian format on 2 bytes. 
-Signed is defined by the [Column field detail flag](resultset-row.md#field-detail-flag).
+Signed is defined by the [Column field detail flag](result-set-packets.md).
 
 
 
@@ -143,7 +143,7 @@ YEAR uses the same format as SMALLINT.
 
 
 TINYINT is the value of 1 byte. 
-Signed is defined by the [Column field detail flag](resultset-row.md#field-detail-flag).
+Signed is defined by the [Column field detail flag](result-set-packets.md).
 
 
 

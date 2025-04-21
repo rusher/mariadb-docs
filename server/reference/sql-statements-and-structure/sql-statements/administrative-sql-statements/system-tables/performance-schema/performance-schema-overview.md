@@ -43,7 +43,7 @@ SHOW TABLES;
 80 rows in set (0.00 sec)
 ```
 
-See [List of Performance Schema Tables](performance-schema-tables/list-of-performance-schema-tables.md) for a full list and links to detailed descriptions of each table. From [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), there are 80 Performance Schema tables.
+See [List of Performance Schema Tables](performance-schema-tables/list-of-performance-schema-tables.md) for a full list and links to detailed descriptions of each table. From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), there are 80 Performance Schema tables.
 
 
 ## Activating the Performance Schema
@@ -68,7 +68,7 @@ The performance schema cannot be activated at runtime - it must be set when the 
 performance_schema=ON
 ```
 
-From [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), some memory is allocated dynamically, depending on load, number of connections, number of tables open etc.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), some memory is allocated dynamically, depending on load, number of connections, number of tables open etc.
 
 
 ## Enabling the Performance Schema
@@ -123,8 +123,8 @@ Note that the "consumer" events are not shown on this list, as they are only ava
 
 
 
-##### MariaDB starting with [10.7.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1071-release-notes.md)
-From [MariaDB 10.7.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1071-release-notes.md), comments have been added to table columns in the Performance Schema. These can be viewed with, for example:
+##### MariaDB starting with [10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes)
+From [MariaDB 10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes), comments have been added to table columns in the Performance Schema. These can be viewed with, for example:
 
 ```
 SELECT column_name, column_comment FROM information_schema.columns 
@@ -145,9 +145,8 @@ column_comment: Open handles on the file. A value of greater than zero means
 
 
 * [Performance schema options](../../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)
-* [SHOW ENGINE STATUS](../../show/show-engine-innodb-status.md)
-* [SHOW PROFILE](../../show/show-profile.md)`
-`
+* [SHOW ENGINE STATUS](../../show/show-engine.md)
+* [SHOW PROFILE](../../show/show-profile.md)``
 * [ANALYZE STATEMENT](../../analyze-and-explain-statements/analyze-statement.md)
 * [Performance schema in MySQL 5.6](https://dev.mysql.com/doc/refman/5.6/en/performance-schema.html). All things here should also work for MariaDB.
 

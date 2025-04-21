@@ -39,7 +39,7 @@ will have caught up with that master position.
 
 
 MASTER_GTID_WAIT() can also be used in client applications together with the
-[last_gtid](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) session variable. This is useful in a read-scaleout [replication](../../../administrative-sql-statements/replication-statements/README.md) setup, where the application writes to a single master but divides the
+[last_gtid](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) session variable. This is useful in a read-scaleout [replication](../../../../../../server-usage/replication-cluster-multi-master/README.md) setup, where the application writes to a single master but divides the
 reads out to a number of slaves to distribute the load. In such a setup, there
 is a risk that an application could first do an update on the master, and then
 a bit later do a read on a slave, and if the slave is not fast enough, the

@@ -2,8 +2,8 @@
 # Virtual Column Support in the Optimizer
 
 
-##### MariaDB starting with [11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md)
-Starting from [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md), the optimizer can recognize use of indexed virtual column expressions in the WHERE clause and use them to construct range and ref(const) accesses.
+##### MariaDB starting with [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118)
+Starting from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118), the optimizer can recognize use of indexed virtual column expressions in the WHERE clause and use them to construct range and ref(const) accesses.
 
 
 
@@ -28,7 +28,7 @@ alter table t1
   add index(vcol1);
 ```
 
-Before [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md), one had to use `vcol1` in the WHERE clause. Now, one can use the 
+Before [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118), one had to use `vcol1` in the WHERE clause. Now, one can use the 
 virtual column expression, too:
 
 

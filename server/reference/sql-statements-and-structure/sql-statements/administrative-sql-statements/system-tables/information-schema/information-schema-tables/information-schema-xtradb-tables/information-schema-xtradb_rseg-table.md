@@ -1,7 +1,7 @@
 
 # Information Schema XTRADB_RSEG Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `XTRADB_RSEG` table contains information about the XtraDB rollback segments.
+The [Information Schema](../../README.md) `XTRADB_RSEG` table contains information about the XtraDB rollback segments.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.

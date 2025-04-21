@@ -8,9 +8,9 @@ The Open Query GRAPH computation engine, or OQGRAPH as the engine itself is call
 | OQGRAPH Version | Introduced | Maturity |
 | --- | --- | --- |
 | OQGRAPH Version | Introduced | Maturity |
-| 3.0 | [MariaDB 10.0.25](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10025-release-notes.md) | Gamma |
-| 3.0 | [MariaDB 10.0.7](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) | Beta |
-| 2.0 | [MariaDB 5.2.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-521-release-notes.md) |  |
+| 3.0 | [MariaDB 10.0.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10025-release-notes) | Gamma |
+| 3.0 | [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) | Beta |
+| 2.0 | [MariaDB 5.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-521-release-notes) |  |
 
 
 

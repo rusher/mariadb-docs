@@ -10,9 +10,9 @@ This document is designed as a quick introduction to setting up MariaDB MaxScale
 The installation and configuration of the MariaDB Server is not covered in this document.
 See the following MariaDB knowledgebase articles for more information on setting up a
 master-slave-cluster or a Galera-cluster:
-[Setting Up Replication](../../../server/server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication.md)
+[Setting Up Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication)
  and
- [Getting Started With MariaDB Galera Cluster](../../../server/server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md)
+ [Getting Started With MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster)
 .
 
 

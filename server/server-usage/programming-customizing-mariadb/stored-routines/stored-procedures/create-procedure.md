@@ -56,7 +56,7 @@ routine creator. See also [Stored Routine Privileges](../stored-functions/stored
 
 The `DEFINER` and SQL SECURITY clauses specify the security context to
 be used when checking access privileges at routine execution time, as
-described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
+described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
 
 
 If the routine name is the same as the name of a built-in SQL
@@ -133,23 +133,23 @@ parameter.
 `CONTAINS SQL`, `NO SQL`, `READS SQL DATA`, and `MODIFIES SQL DATA` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `CONTAINS SQL` is used by default.
 
 
-`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) or DDL.
+`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md), [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) or DDL.
 
 
-`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements are used, but there no write operations are executed.
+`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements are used, but there no write operations are executed.
 
 
-`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) or [DO](../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md).
+`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) or [DO](../../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/do.md).
 
 
 `NO SQL` means nothing, because MariaDB does not currently support any language other than SQL.
 
 
 The routine_body consists of a valid SQL procedure statement. This can
-be a simple statement such as [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), or it can be a
+be a simple statement such as [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) or [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md), or it can be a
 compound statement written using [BEGIN and END](../../programmatic-compound-statements/begin-end.md). Compound statements
 can contain declarations, loops, and other control structure
-statements. See [Programmatic and Compound Statements](../../programmatic-compound-statements/programmatic-compound-statements-cursors/README.md) for syntax details.
+statements. See [Programmatic and Compound Statements](../../programmatic-compound-statements/README.md) for syntax details.
 
 
 MariaDB allows routines to contain DDL statements, such as `CREATE` and
@@ -184,7 +184,7 @@ with the exception that any existing [privileges](../stored-functions/stored-rou
 ### sql_mode
 
 
-MariaDB stores the [sql_mode](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable setting that is in effect at the time a routine is created, and always executes the routine with this setting in force, regardless of the server [SQL mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) in effect when the routine is invoked.
+MariaDB stores the [sql_mode](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable setting that is in effect at the time a routine is created, and always executes the routine with this setting in force, regardless of the server [SQL mode](../../../../server-management/variables-and-modes/sql-mode.md) in effect when the routine is invoked.
 
 
 ### Character Sets and Collations
@@ -196,7 +196,7 @@ Procedure parameters can be declared with any character set/collation. If the ch
 ### Oracle Mode
 
 
-A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) for details on changes when running Oracle mode.
+A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) for details on changes when running Oracle mode.
 
 
 ## Examples
@@ -288,4 +288,3 @@ Query OK, 0 rows affected (0.03 sec)
 * [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-<span></span>

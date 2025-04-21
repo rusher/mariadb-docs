@@ -18,7 +18,7 @@ guide on how to set up Kerberos for MaxScale.
 
 The first step is to configure MariaDB to use GSSAPI authentication. The MariaDB
 documentation for the
-[GSSAPI Authentication Plugin](../../../server/reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)
+[GSSAPI Authentication Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi)
 is a good example on how to set it up.
 
 

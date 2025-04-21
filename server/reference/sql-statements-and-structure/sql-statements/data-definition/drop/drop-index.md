@@ -21,7 +21,7 @@ index.
 If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
 
-See [ALTER TABLE](../alter/alter-tablespace.md).
+See [ALTER TABLE](../alter/alter-table.md).
 
 
 Another shortcut, [CREATE INDEX](../create/create-index.md), allows the creation of an index.
@@ -42,7 +42,7 @@ Executing the `DROP INDEX` statement requires the `[INDEX](../../account-managem
 Online DDL is used by default with InnoDB, when the drop index operation supports it.
 
 
-See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md).
+See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../storage-engines/innodb/README.md).
 
 
 ## DROP INDEX IF EXISTS ...
@@ -69,5 +69,5 @@ that support the new progress reporting protocol. For example, if you were using
 
 * [Getting Started with Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
 * [CREATE INDEX](../create/create-index.md)
-* [ALTER TABLE](../alter/alter-tablespace.md)
+* [ALTER TABLE](../alter/alter-table.md)
 

@@ -1,7 +1,7 @@
 
 # Information Schema WSREP_MEMBERSHIP Table
 
-The `WSREP_STATUS` table makes [Galera](../../../../built-in-functions/special-functions/galera-functions/README.md) node cluster membership information available through the [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md). The same information can be returned using the [SHOW WSREP_MEMBERSHIP](../../../show/show-wsrep_membership.md) statement. Only users with the [SUPER](../../../../account-management-sql-commands/grant.md#super) can access information from this table.
+The `WSREP_STATUS` table makes [Galera](../../../../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node cluster membership information available through the [Information Schema](../README.md). The same information can be returned using the [SHOW WSREP_MEMBERSHIP](../../../show/show-wsrep_membership.md) statement. Only users with the [SUPER](../../../../account-management-sql-commands/grant.md#super) can access information from this table.
 
 
 The `WSREP_MEMBERSHIP` table is part of the [WSREP_INFO plugin](../../../../../../plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md).

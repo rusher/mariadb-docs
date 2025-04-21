@@ -120,7 +120,7 @@ All code in MariaDB comes from one of the following sources:
 * Code with a known origin that is under a permissive license (BSD or public domain).
 
 
-If you want the code to be part of the main [MariaDB](../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) tree, you also have to
+If you want the code to be part of the main [MariaDB](/kb/en/mariadb/) tree, you also have to
 give the MariaDB Foundation a shared copyright to your code. This is needed so
 that the foundation can offer the code to other projects (like MySQL).
 

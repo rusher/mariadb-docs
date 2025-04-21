@@ -35,4 +35,3 @@ myisamchk
   --write_buffer_size=64M
 ...
 ```
-<span></span>

@@ -1,7 +1,7 @@
 
 # EXCEPT
 
-The result of `EXCEPT` is all records of the left `SELECT` result set except records which are in right `SELECT` result set, i.e. it is subtraction of two result sets. From [MariaDB 10.6.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), `MINUS` is a synonym when [SQL_MODE=ORACLE](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
+The result of `EXCEPT` is all records of the left `SELECT` result set except records which are in right `SELECT` result set, i.e. it is subtraction of two result sets. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), `MINUS` is a synonym when [SQL_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set.
 
 
 # Syntax
@@ -30,10 +30,10 @@ Please note:
 ## Description
 
 
-MariaDB supports `EXCEPT` and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md) in addition to [UNION](union.md).
+MariaDB supports `EXCEPT` and [INTERSECT](intersect.md) in addition to [UNION](union.md).
 
 
-The queries before and after `EXCEPT` must be [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [VALUES](../../../../sql-language-structure/table-value-constructors.md) statements.
+The queries before and after `EXCEPT` must be [SELECT](../select.md) or [VALUES](../../../../sql-language-structure/table-value-constructors.md) statements.
 
 
 All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNION](union.md). Note that the alternative [SELECT ... OFFSET ... FETCH](../select-offset-fetch.md) syntax is only supported. This allows us to use the `WITH TIES` clause.
@@ -45,7 +45,7 @@ All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNIO
 The result of `EXCEPT` is all records of the left `SELECT` result except records which are in right `SELECT` result set, i.e. it is subtraction of two result sets.
 
 
-`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
 
 
 ### Parentheses
@@ -55,11 +55,11 @@ Parentheses can be used to specify precedence. Before this, a syntax error would
 
 
 
-##### MariaDB starting with [10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 ### ALL/DISTINCT
 
-`EXCEPT ALL` and `EXCEPT DISTINCT` were introduced in [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).  
+`EXCEPT ALL` and `EXCEPT DISTINCT` were introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105).  
 
 
 ## Examples
@@ -74,7 +74,7 @@ EXCEPT
 (SELECT c_name AS name, email FROM employees);
 ```
 
-Difference between [UNION](union.md), EXCEPT and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+Difference between [UNION](union.md), EXCEPT and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 
 ```
@@ -198,6 +198,6 @@ Here is an example that makes use of the [SEQUENCE](../../../../../storage-engin
 
 
 * [UNION](union.md)
-* [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md)
+* [INTERSECT](intersect.md)
 * [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
 

@@ -37,7 +37,7 @@ SELECT IS_IPV6('10.0.1.1');
 ## See Also
 
 
-* [INET6](inet6_aton.md) data type
+* [INET6](../../../../../data-types/string-data-types/inet6.md) data type
 * [INET6_ATON](inet6_aton.md)
 * [INET6_NTOA](inet6_ntoa.md)
 

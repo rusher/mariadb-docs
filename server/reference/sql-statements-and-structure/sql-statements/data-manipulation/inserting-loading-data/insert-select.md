@@ -31,16 +31,16 @@ INSERT INTO tbl_temp2 (fld_id)
 If the new table has a primary key or UNIQUE indexes, you can use [IGNORE](ignore.md) to handle duplicate key errors during the query. The newer values will not be inserted if an identical value already exists.
 
 
-`[REPLACE](../../built-in-functions/string-functions/replace-function.md)` can be used instead of `INSERT` to prevent duplicates on `UNIQUE` indexes by deleting old values. In that case, `ON DUPLICATE KEY UPDATE` cannot be used.
+`[REPLACE](../changing-deleting-data/replace.md)` can be used instead of `INSERT` to prevent duplicates on `UNIQUE` indexes by deleting old values. In that case, `ON DUPLICATE KEY UPDATE` cannot be used.
 
 
-`INSERT ... SELECT` works for tables which already exist. To create a table for a given resultset, you can use [CREATE TABLE ... SELECT](../../../vectors/create-table-with-vectors.md).
+`INSERT ... SELECT` works for tables which already exist. To create a table for a given resultset, you can use [CREATE TABLE ... SELECT](../../data-definition/create/create-table.md).
 
 
 ## See Also
 
 
-* [INSERT](../../built-in-functions/string-functions/insert-function.md)
+* [INSERT](insert.md)
 * [INSERT DELAYED](insert-delayed.md)
 * [HIGH_PRIORITY and LOW_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)
 * [Concurrent Inserts](concurrent-inserts.md)

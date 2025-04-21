@@ -4,7 +4,7 @@
 The `mysql.innodb_index_stats` table stores data related to particular [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains multiple rows for each index.
 
 
-This table, along with the related [mysql.innodb_table_stats](mysql-innodb_table_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb_index_stats](../../flush-commands/flush-tables-for-export.md) is required to load the changes.
+This table, along with the related [mysql.innodb_table_stats](mysql-innodb_table_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb_index_stats](../../flush-commands/flush.md) is required to load the changes.
 
 
 `mysql.innodb_index_stats` is not replicated, although any [ANALYZE TABLE](../../../table-statements/analyze-table.md) statements on the table will be by default..

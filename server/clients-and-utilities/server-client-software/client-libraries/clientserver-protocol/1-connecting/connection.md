@@ -40,7 +40,7 @@ Connection is done by many exchanges:
 
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) protocol version
-* [string<NUL>](../protocol-data-types.md#null-terminated-strings) server version (MariaDB server version for 10.X versions is by default prefixed by "5.5.5-". [MariaDB 11.0](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md) and later versions do not have a "5.5.5-" default prefix)
+* [string<NUL>](../protocol-data-types.md#null-terminated-strings) server version (MariaDB server version for 10.X versions is by default prefixed by "5.5.5-". [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) and later versions do not have a "5.5.5-" default prefix)
 * [int<4>](../protocol-data-types.md#fixed-length-integers) connection id
 * [string<8>](../protocol-data-types.md#fixed-length-strings) authentication plugin data (1st part)
 * [string<1>](../protocol-data-types.md#fixed-length-strings) reserved byte
@@ -60,7 +60,7 @@ Connection is done by many exchanges:
   * [string<4>](../protocol-data-types.md#fixed-length-strings) filler
 * else
 
-  * [int<4>](../protocol-data-types.md#fixed-length-integers) server capabilities 3rd part . MariaDB specific flags /* [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) or later */
+  * [int<4>](../protocol-data-types.md#fixed-length-integers) server capabilities 3rd part . MariaDB specific flags /* [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) or later */
 * if (server_capabilities & CLIENT_SECURE_CONNECTION)
 
   * [string<n>](../protocol-data-types.md#fixed-length-strings) authentication plugin data 2nd part . Length = max(12, plugin data length - 9)
@@ -103,10 +103,10 @@ If the client requests a TLS/SSL connection, first response will be an SSL conne
 #### ZERO-CONFIGURATION SSL ENCRYPTION
 
 
-Automatic Encrypted Connections ([MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)+):
+Automatic Encrypted Connections ([MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)+):
 
 
-Previously, failed SSL connections due to self-signed certificates prevented communication. [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)+ introduces a secondary validation method that works for all servers.
+Previously, failed SSL connections due to self-signed certificates prevented communication. [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)+ introduces a secondary validation method that works for all servers.
 
 
 ##### What Happens When SSL Validation Fails?
@@ -141,7 +141,7 @@ Password hash is generated depending on authentication plugin:
 ##### Server 11.4+ Confirmation Details:
 
 
-For servers running [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) or later, the final confirmation packet contains:
+For servers running [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) or later, the final confirmation packet contains:
 
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) encryption (actually only 0x01 = SHA256 encryption)
@@ -358,7 +358,7 @@ The only difference compared to standard client-server GSSAPI authentication is 
 
 
 The ed25519 plugin uses the Elliptic Curve Digital Signature Algorithm to securely store users' passwords and to authenticate users. 
-It has been Implemented in the server since [MariaDB 10.1.22](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes.md).
+It has been Implemented in the server since [MariaDB 10.1.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes).
 
 
 See [plugin description](../../../../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md).
@@ -440,7 +440,7 @@ client with capabilities CLIENT_MYSQL + CONNECT_WITH_DB will have a value of 9 (
 
 |   |   |   |
 | --- | --- | --- |
-| CLIENT_MYSQL | 1 | Set by older MariaDB versions. [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) leaves this bit unset to permit MariaDB identification and indicate support for extended capabilities. (MySQL named this CLIENT_LONG_PASSWORD) |
+| CLIENT_MYSQL | 1 | Set by older MariaDB versions. [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) leaves this bit unset to permit MariaDB identification and indicate support for extended capabilities. (MySQL named this CLIENT_LONG_PASSWORD) |
 | FOUND_ROWS | 2 |  |
 | CONNECT_WITH_DB | 8 | One can specify db on connect |
 | COMPRESS | 32 | Can use compression protocol |
@@ -485,4 +485,3 @@ The 20 byte string 'seed' is calculated by concatenating scramble first part (8 
 
 SHA1( passwd) ^ SHA1( seed + SHA1( SHA1( passwd ) ) )
 
-<span></span>

@@ -17,10 +17,10 @@ provided for compatibility with Oracle. The standard SQL function
 `[STDDEV_POP()](stddev_pop.md)` can be used instead.
 
 
-It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+It is an [aggregate function](README.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
-STDDEV() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
+STDDEV() can be used as a [window function](../special-functions/window-functions/README.md).
 
 
 This function returns `NULL` if there were no matching rows.
@@ -29,7 +29,7 @@ This function returns `NULL` if there were no matching rows.
 ## Examples
 
 
-As an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md):
+As an [aggregate function](README.md):
 
 
 ```
@@ -49,7 +49,7 @@ SELECT category, STDDEV_POP(x), STDDEV_SAMP(x), VAR_POP(x)
 +----------+---------------+----------------+------------+
 ```
 
-As a [window function](../special-functions/window-functions/window-functions-overview.md):
+As a [window function](../special-functions/window-functions/README.md):
 
 
 ```

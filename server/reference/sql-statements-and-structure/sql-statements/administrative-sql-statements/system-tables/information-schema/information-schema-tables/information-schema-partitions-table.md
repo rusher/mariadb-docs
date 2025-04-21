@@ -1,7 +1,7 @@
 
 # Information Schema PARTITIONS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PARTITIONS` contains information about [table partitions](../../../../../../../server-management/partitioning-tables/partitioning-overview.md), with each record corresponding to a single partition or subpartition of a partitioned table. Each non-partitioned table also has a record in the `PARTITIONS` table, but most of the values are `NULL`.
+The [Information Schema](../README.md) `PARTITIONS` contains information about [table partitions](../../../../../../../server-management/partitioning-tables/partitioning-overview.md), with each record corresponding to a single partition or subpartition of a partitioned table. Each non-partitioned table also has a record in the `PARTITIONS` table, but most of the values are `NULL`.
 
 
 It contains the following columns:
@@ -20,8 +20,8 @@ It contains the following columns:
 | SUBPARTITION_ORDINAL_POSITION | Order of the subpartition starting from 1. |
 | PARTITION_METHOD | The partitioning type; one of [RANGE](../../../../../../../server-management/partitioning-tables/partitioning-types/range-partitioning-type.md), [LIST](../../../../../../../server-management/partitioning-tables/partitioning-types/list-partitioning-type.md), [HASH](../../../../../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md), [LINEAR HASH](../../../../../../../server-management/partitioning-tables/partitioning-types/linear-hash-partitioning-type.md), [KEY](../../../../../../../server-management/partitioning-tables/partitioning-types/key-partitioning-type.md) or [LINEAR KEY](../../../../../../../server-management/partitioning-tables/partitioning-types/linear-key-partitioning-type.md). |
 | SUBPARTITION_METHOD | Subpartition type; one of HASH, LINEAR HASH, KEY or LINEAR KEY, or NULL if not a subpartition. |
-| PARTITION_EXPRESSION | Expression used to create the partition by the [CREATE TABLE](../../../../../vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../../data-definition/alter/alter-tablespace.md) statement. |
-| SUBPARTITION_EXPRESSION | Expression used to create the subpartition by the [CREATE TABLE](../../../../../vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../../data-definition/alter/alter-tablespace.md) statement, or NULL if not a subpartition. |
+| PARTITION_EXPRESSION | Expression used to create the partition by the [CREATE TABLE](../../../../data-definition/create/create-table.md) or [ALTER TABLE](../../../../data-definition/alter/alter-table.md) statement. |
+| SUBPARTITION_EXPRESSION | Expression used to create the subpartition by the [CREATE TABLE](../../../../data-definition/create/create-table.md) or [ALTER TABLE](../../../../data-definition/alter/alter-table.md) statement, or NULL if not a subpartition. |
 | PARTITION_DESCRIPTION | For a RANGE partition, contains either MAXINTEGER or an integer, as set in the VALUES LESS THAN clause. For a LIST partition, contains a comma-separated list of integers, as set in the VALUES IN. For a SYSTEM_TIME INTERVAL partition, shows a defined upper boundary timestamp for historical values (the last history partition can contain values above the upper boundary). NULL if another type of partition. |
 | TABLE_ROWS | Number of rows in the table (may be an estimate for some storage engines). |
 | AVG_ROW_LENGTH | Average row length, that is DATA_LENGTH divided by TABLE_ROWS |

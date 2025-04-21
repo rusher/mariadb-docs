@@ -81,10 +81,10 @@ Note that when a transaction starts (not in autocommit mode), all locks acquired
 These statements do not cause an implicit commit in the following cases:
 
 
-* [CREATE TABLE](../../vectors/create-table-with-vectors.md) and [DROP TABLE](../data-definition/drop/drop-tablespace.md), when the `TEMPORARY` keyword is used.
+* [CREATE TABLE](../data-definition/create/create-table.md) and [DROP TABLE](../data-definition/drop/drop-table.md), when the `TEMPORARY` keyword is used.
 
   * However, [TRUNCATE TABLE](../table-statements/truncate-table.md) causes an implicit commit even when used on a temporary table.
 * [CREATE FUNCTION](../data-definition/create/create-function.md) and [DROP FUNCTION](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/drop-function.md), when used to create a UDF (instead of a stored function). However, [CREATE INDEX](../data-definition/create/create-index.md) and [DROP INDEX](../data-definition/drop/drop-index.md) cause commits even when used with temporary tables.
 * [UNLOCK TABLES](lock-tables.md) causes a commit only if a [LOCK TABLES](lock-tables.md) was used on non-transactional tables.
-* [START SLAVE](../administrative-sql-statements/replication-statements/start-replica.md), [STOP SLAVE](../administrative-sql-statements/replication-statements/stop-replica.md), [RESET SLAVE](../administrative-sql-statements/replication-statements/reset-replica.md) and [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md) did not cause implicit commits prior to [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
+* [START SLAVE](../administrative-sql-statements/replication-statements/start-replica.md), [STOP SLAVE](../administrative-sql-statements/replication-statements/stop-replica.md), [RESET SLAVE](../administrative-sql-statements/replication-statements/reset-replica.md) and [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md) did not cause implicit commits prior to [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 

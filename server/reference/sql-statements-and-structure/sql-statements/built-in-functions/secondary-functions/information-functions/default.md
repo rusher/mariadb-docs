@@ -14,10 +14,10 @@ DEFAULT(col_name)
 Returns the default value for a table column. If the column has no default value (and is not NULLABLE - NULLABLE fields have a NULL default), an error is returned.
 
 
-For integer columns using [AUTO_INCREMENT](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md), `0` is returned.
+For integer columns using [AUTO_INCREMENT](../../../../../data-types/auto_increment.md), `0` is returned.
 
 
-When using `DEFAULT` as a value to set in an [INSERT](../../string-functions/insert-function.md) or [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
+When using `DEFAULT` as a value to set in an [INSERT](../../../data-manipulation/inserting-loading-data/insert.md) or [UPDATE](../../../data-manipulation/changing-deleting-data/update.md)
 statement, you can use the bare keyword `DEFAULT` without the parentheses and argument to
 refer to the column in context. You can only use `DEFAULT` as a bare keyword if you are using it
 alone without a surrounding expression or function.
@@ -132,5 +132,5 @@ SELECT * FROM t WHERE m <=> DEFAULT(m);
 ## See Also
 
 
-* [CREATE TABLE DEFAULT Clause](../../../../vectors/create-table-with-vectors.md#default-column-option)
+* [CREATE TABLE DEFAULT Clause](../../../data-definition/create/create-table.md#default-column-option)
 

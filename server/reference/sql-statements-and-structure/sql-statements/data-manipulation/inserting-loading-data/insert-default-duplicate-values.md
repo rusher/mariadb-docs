@@ -5,7 +5,7 @@
 ## Default Values
 
 
-If the `[SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md)` contains `STRICT_TRANS_TABLES` and you are [inserting](../../built-in-functions/string-functions/insert-function.md) into a transactional table (like InnoDB), or if the SQL_MODE contains `STRICT_ALL_TABLES`, all `NOT NULL` columns which do not have a `DEFAULT` value (and are not [AUTO_INCREMENT](../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)) must be explicitly referenced in `INSERT` statements. If not, an error like this is produced:
+If the `[SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md)` contains `STRICT_TRANS_TABLES` and you are [inserting](insert.md) into a transactional table (like InnoDB), or if the SQL_MODE contains `STRICT_ALL_TABLES`, all `NOT NULL` columns which do not have a `DEFAULT` value (and are not [AUTO_INCREMENT](../../../../data-types/auto_increment.md)) must be explicitly referenced in `INSERT` statements. If not, an error like this is produced:
 
 
 ```
@@ -38,13 +38,13 @@ By default, if you try to insert a duplicate row and there is a `UNIQUE` index, 
 ERROR 1062 (23000): Duplicate entry 'dup_value' for key 'col'
 ```
 
-To handle duplicates you can use the [IGNORE](ignore.md) clause, [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md) or the [REPLACE](../../built-in-functions/string-functions/replace-function.md) statement. Note that the IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md).
+To handle duplicates you can use the [IGNORE](ignore.md) clause, [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md) or the [REPLACE](../changing-deleting-data/replace.md) statement. Note that the IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md).
 
 
 ## See Also
 
 
-* [INSERT](../../built-in-functions/string-functions/insert-function.md)
+* [INSERT](insert.md)
 * [INSERT DELAYED](insert-delayed.md)
 * [INSERT SELECT](insert-select.md)
 * [HIGH_PRIORITY and LOW_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)

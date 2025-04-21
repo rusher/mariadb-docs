@@ -1,7 +1,7 @@
 
 # Information Schema SCHEMATA Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SCHEMATA` table stores information about databases on the server.
+The [Information Schema](../README.md) `SCHEMATA` table stores information about databases on the server.
 
 
 It contains the following columns:
@@ -16,7 +16,7 @@ It contains the following columns:
 | DEFAULT_CHARACTER_SET_NAME | Default [character set](../../../../../../data-types/string-data-types/character-sets/README.md) for the database. |
 | DEFAULT_COLLATION_NAME | Default [collation](../../../../../../data-types/string-data-types/character-sets/README.md). |
 | SQL_PATH | Always NULL. |
-| SCHEMA_COMMENT | Database comment. From [MariaDB 10.5.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). |
+| SCHEMA_COMMENT | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). |
 
 
 
@@ -52,7 +52,7 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 ...
 ```
 
-From [MariaDB 10.5.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md):
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
 
 
 ```

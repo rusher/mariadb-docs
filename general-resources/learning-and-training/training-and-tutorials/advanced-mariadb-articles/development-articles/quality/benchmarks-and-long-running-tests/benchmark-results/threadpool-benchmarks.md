@@ -1,7 +1,7 @@
 
 # Threadpool Benchmarks
 
-Here are some benchmarks of some development threadpool code (the [5.5 threadpool](../../../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md)).
+Here are some benchmarks of some development threadpool code (the [5.5 threadpool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb)).
 
 
 The benchmarks were run on three machines:

@@ -24,7 +24,7 @@ Client to server.
 
   * for each parameter :
 
-    * byte<1>: [field type](../4-server-response-packets/resultset-row.md#field-types)
+    * byte<1>: [field type](../4-server-response-packets/result-set-packets.md)
     * byte<1>: [parameter type flag](#parameter-type-flag)
 * until end of packet
 

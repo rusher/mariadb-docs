@@ -1,37 +1,37 @@
 
 # Aria Storage Engine
 
-The [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine is compiled in by default from [MariaDB 5.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md) and it is required to be 'in use' when MariaDB is started.
+The [Aria](README.md) storage engine is compiled in by default from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and it is required to be 'in use' when MariaDB is started.
 
 
-From [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), all [system tables](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) are Aria.
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), all [system tables](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) are Aria.
 
 
 Additionally, internal on-disk tables are in the Aria table format instead of
-the [MyISAM](../myisam-storage-engine/myisam-system-variables.md) table format. This should speed up some [GROUP BY](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
+the [MyISAM](../myisam-storage-engine/README.md) table format. This should speed up some [GROUP BY](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
 and [DISTINCT](../../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count-distinct.md) queries because Aria has better caching than
 MyISAM.
 
 
 Note: The ***Aria*** storage engine was previously called *Maria* (see
 [The Aria Name](the-aria-name.md) for details on the
-rename) and in previous versions of [MariaDB](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) the engine was still called
+rename) and in previous versions of [MariaDB](/kb/en/mariadb/) the engine was still called
 Maria.
 
 
-The following table options to Aria tables in [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) and [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md):
+The following table options to Aria tables in [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md):
 
 
-* `TRANSACTIONAL= 0 <code>|</code> 1` : If the `TRANSACTIONAL` table option is set for an Aria table, then the table will be crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
+* `TRANSACTIONAL= 0 | 1` : If the `TRANSACTIONAL` table option is set for an Aria table, then the table will be crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
 
   * `TRANSACTIONAL=1` is not supported for partitioned tables.
   * An Aria table's default value for the `TRANSACTIONAL` table option depends on the table's value for the `ROW_FORMAT` table option. See below for more details.
   * If the `TRANSACTIONAL` table option is set for an Aria table, the table does not actually support transactions. See [MDEV-21364](https://jira.mariadb.org/browse/MDEV-21364) for more information. In this context, transactional just means crash-safe.
-* `PAGE_CHECKSUM= 0 <code>|</code> 1` : If index and data should use
+* `PAGE_CHECKSUM= 0 | 1` : If index and data should use
  page checksums for extra safety.
-* `TABLE_CHECKSUM= 0 <code>|</code> 1` :
+* `TABLE_CHECKSUM= 0 | 1` :
  Same as `CHECKSUM` in MySQL 5.1
-* `ROW_FORMAT=PAGE <code>|</code> FIXED <code>|</code> DYNAMIC` : The table's [row format](aria-storage-formats.md).
+* `ROW_FORMAT=PAGE | FIXED | DYNAMIC` : The table's [row format](aria-storage-formats.md).
 
   * The default value is `PAGE`.
   * To emulate MyISAM, set `ROW_FORMAT=FIXED` or `ROW_FORMAT=DYNAMIC`
@@ -56,7 +56,7 @@ Some other improvements are:
  engines that uses the default way to calculate and MyISAM which does the
  calculation internally. Note: Old MyISAM tables with internal checksum will
  return the same checksum as before. To fix them to calculate according to new
- rules you have to do an `[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)`. You can use the old
+ rules you have to do an `[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`. You can use the old
  ways to calculate checksums by using the option `--old` to mariadbdmysqld or set the
  system variable '`@@old`' to `1` when you
  do `CHECKSUM TABLE ... EXTENDED;`
@@ -94,7 +94,7 @@ In normal operations, the only variables you have to consider are:
 
   * Set this to "`at_flush`" if you want to keep a copy of the transaction logs
  (good as an extra backup). The logs will stay around until you
- execute [FLUSH ENGINE LOGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+ execute [FLUSH ENGINE LOGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 
 
 ## Aria Log Files

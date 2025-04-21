@@ -18,19 +18,19 @@ keyword can be used to find the maximum of the distinct values of *`expr`*,
 however, this produces the same result as omitting `DISTINCT`.
 
 
-Note that [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) and [ENUM](../../../../data-types/string-data-types/enum.md) fields are currently compared by their string value rather than their relative position in the set, so MAX() may produce a different highest result than ORDER BY DESC.
+Note that [SET](../../administrative-sql-statements/set-commands/set.md) and [ENUM](../../../../data-types/string-data-types/enum.md) fields are currently compared by their string value rather than their relative position in the set, so MAX() may produce a different highest result than ORDER BY DESC.
 
 
-It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+It is an [aggregate function](README.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
-MAX() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
+MAX() can be used as a [window function](../special-functions/window-functions/README.md).
 
 
 `MAX()` returns `NULL` if there were no matching rows.
 
 
-From [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), not only ascending but also [descending indexes](../../../vectors/create-table-with-vectors.md#index-types) can be used to optimize MAX.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../data-definition/create/create-table.md#index-types) can be used to optimize MAX.
 
 
 ## Examples
@@ -103,7 +103,7 @@ SELECT grade FROM student2 ORDER BY grade DESC LIMIT 1;
 +-------+
 ```
 
-As a [window function](../special-functions/window-functions/window-functions-overview.md):
+As a [window function](../special-functions/window-functions/README.md):
 
 
 ```
@@ -133,7 +133,7 @@ SELECT name, test, score, MAX(score)
 
 
 * [AVG](avg.md) (average)
-* [MIN](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) (minimum)
+* [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
 * [MIN/MAX optimization](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
 * [GREATEST()](../../../operators/comparison-operators/greatest.md) returns the largest value from a list

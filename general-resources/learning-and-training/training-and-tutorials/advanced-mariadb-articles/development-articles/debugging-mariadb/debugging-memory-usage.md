@@ -64,7 +64,7 @@ Then, run
 pprof --dot /usr/sbin/mysqld heap-prof-1.0007.heap  > 7.dot
 ```
 
-(Note: this produces a lot of statements like `/bin/addr2line: Dwarf Error: ... `. Is this because it cannot find locations from the plugin .so files in mariadbd? Anyhow, this is not a showstopper at the moment)
+(Note: this produces a lot of statements like `/bin/addr2line: Dwarf Error: ...`. Is this because it cannot find locations from the plugin .so files in mariadbd? Anyhow, this is not a showstopper at the moment)
 
 
 Then, please send us the 7.dot file.

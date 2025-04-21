@@ -1,7 +1,7 @@
 
 # Information Schema PARAMETERS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `PARAMETERS` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) parameters.
+The [Information Schema](../README.md) `PARAMETERS` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) parameters.
 
 
 It contains the following columns:
@@ -17,7 +17,7 @@ It contains the following columns:
 | ORDINAL_POSITION | Ordinal position of the parameter, starting at 1. 0 for a function RETURNS clause. |
 | PARAMETER_MODE | One of IN, OUT, INOUT or NULL for RETURNS. |
 | PARAMETER_NAME | Name of the parameter, or NULL for RETURNS. |
-| DATA_TYPE | The column's [data type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md). |
+| DATA_TYPE | The column's [data type](../../../../../../data-types/README.md). |
 | CHARACTER_MAXIMUM_LENGTH | Maximum length. |
 | CHARACTER_OCTET_LENGTH | Same as the CHARACTER_MAXIMUM_LENGTH except for multi-byte [character sets](../../../../../../data-types/string-data-types/character-sets/README.md). |
 | NUMERIC_PRECISION | For numeric types, the precision (number of significant digits) for the column. NULL if not a numeric field. |

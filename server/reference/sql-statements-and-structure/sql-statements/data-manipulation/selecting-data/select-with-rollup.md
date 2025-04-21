@@ -5,7 +5,7 @@
 ## Syntax
 
 
-See [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) for the full syntax.
+See [SELECT](select.md) for the full syntax.
 
 
 ## Description
@@ -14,7 +14,7 @@ See [SELECT](../../../../../../general-resources/learning-and-training/training-
 The `WITH ROLLUP` modifier adds extra rows to the resultset that represent super-aggregate summaries. The super-aggregated column is represented by a `NULL` value. Multiple aggregates over different columns will be added if there are multiple `GROUP BY` columns.
 
 
-The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used at the same time, and is applied after the `WITH ROLLUP` rows have been added.
+The [LIMIT](limit.md) clause can be used at the same time, and is applied after the `WITH ROLLUP` rows have been added.
 
 
 `WITH ROLLUP` cannot be used with [ORDER BY](order-by.md). Some sorting is still possible by using `ASC` or `DESC` clauses with the `GROUP BY` column, although the super-aggregate rows will always be added last.
@@ -148,9 +148,9 @@ SELECT country, year, genre, SUM(sales)
 ## See Also
 
 
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](select.md)
 * [Joins and Subqueries](joins-subqueries/README.md)
-* [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
 * [GROUP BY](group-by.md)
 * [Common Table Expressions](common-table-expressions/README.md)

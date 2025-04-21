@@ -22,7 +22,7 @@ LOAD DATA [LOCAL] INFILE 'file_name'
 * ColumnStore ignores the ON DUPLICATE KEY clause.
 * Non-transactional LOAD DATA INFILE is directed to ColumnStores cpimport tool by default, which significantly increases performance.
 * Transactional LOAD DATA INFILE statements (that is with AUTOCOMMIT off or after a START TRANSACTION) are processed through normal DML processes.
-* When using LOAD DATA LOCAL INFILE with the mcsmysql utility , use the [--local-infile](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) command-line option.
+* When using LOAD DATA LOCAL INFILE with the mcsmysql utility , use the [--local-infile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#local_infile) command-line option.
 * Use cpimport for importing UTF-8 data that contains multi-byte values
 
 
@@ -48,5 +48,5 @@ If the default mode is set to use cpimport internally any output error files wil
 ### See Also
 
 
-[LOAD DATA INFILE](../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
+[LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
 

@@ -17,7 +17,7 @@ To create the trace log, start `mysqld` like so:
 mysqld --debug
 ```
 
-Without options for --debug, the trace file will be named `/tmp/mysqld.trace` in MySQL and older versions of MariaDB before 10.5 and `/tmp/mariadbd.trace` starting from [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).
+Without options for --debug, the trace file will be named `/tmp/mysqld.trace` in MySQL and older versions of MariaDB before 10.5 and `/tmp/mariadbd.trace` starting from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105).
 
 
 On Windows, the debug `mysqld` is called `mysqld-debug` and you should also use the `--standalone` option. So the command on Windows will look like:
@@ -62,5 +62,5 @@ The '`o`' option redirects the output to a file (`/tmp/mariadbd.trace` in the ex
 ## See Also
 
 
-* [Options for --debug](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_debug.md)
+* [Options for --debug](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_debug)
 

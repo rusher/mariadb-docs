@@ -5,10 +5,10 @@
 ## Overview
 
 
-A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/relational-databases-foreign-keys.md).
+A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/relational-databases-foreign-keys).
 
 
-Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and the obsolete [PBXT](PBXT) support foreign keys.
+Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../../reference/storage-engines/innodb/README.md) and the obsolete [PBXT](PBXT) support foreign keys.
 
 
 [Partitioned tables](../../../../server-management/partitioning-tables/README.md) cannot contain foreign keys, and cannot be referenced by a foreign key.
@@ -17,16 +17,16 @@ Foreign keys can only be used with storage engines that support them. The defaul
 ## Syntax
 
 
-**Note:** Until [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
+**Note:** Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
 
 ```
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
 ```
 MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. However, only the syntax described below creates foreign keys.
-From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), MariaDB will attempt to apply the constraint. See the [Examples](#references) below.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](#references) below.
 
 
-Foreign keys are created with [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md). The definition must follow this syntax:
+Foreign keys are created with [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md). The definition must follow this syntax:
 
 
 ```
@@ -84,7 +84,7 @@ The allowed actions for `ON DELETE` and `ON UPDATE` are:
 * `SET DEFAULT`: Only worked with PBXT. Similar to `SET NULL`, but the foreign key columns were set to their default values. If default values do not exist, an error is produced.
 
 
-The delete or update operations triggered by foreign keys do not activate [triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) and are not counted in the [Com_delete](../system-variables/server-status-variables.md#com_delete) and [Com_update](../system-variables/server-status-variables.md#com_update) status variables.
+The delete or update operations triggered by foreign keys do not activate [triggers](../../../programming-customizing-mariadb/triggers-events/triggers/README.md) and are not counted in the [Com_delete](../system-variables/server-status-variables.md#com_delete) and [Com_update](../system-variables/server-status-variables.md#com_update) status variables.
 
 
 Foreign key constraints can be disabled by setting the [foreign_key_checks](../system-variables/server-system-variables.md#foreign_key_checks) server system variable to 0. This speeds up the insertion of large quantities of data.
@@ -93,7 +93,7 @@ Foreign key constraints can be disabled by setting the [foreign_key_checks](../s
 ## Metadata
 
 
-The [Information Schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `[REFERENTIAL_CONSTRAINTS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md)` table contains information about foreign keys. The individual columns are listed in the `[KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md)` table.
+The [Information Schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) `[REFERENTIAL_CONSTRAINTS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md)` table contains information about foreign keys. The individual columns are listed in the `[KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md)` table.
 
 
 The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the `[INNODB_SYS_FOREIGN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md)`. Data about the individual columns are stored in `[INNODB_SYS_FOREIGN_COLS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign_cols-table.md)`.
@@ -111,7 +111,7 @@ Foreign keys have the following limitations in MariaDB:
 * Currently, foreign keys are only supported by InnoDB.
 * Cannot be used with views.
 * The `SET DEFAULT` action is not supported.
-* Foreign keys actions do not activate [triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
+* Foreign keys actions do not activate [triggers](../../../programming-customizing-mariadb/triggers-events/triggers/README.md).
 * If ON UPDATE CASCADE recurses to update the same table it has previously updated during the cascade, it acts like RESTRICT.
 * Indexed [generated columns](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) (both VIRTUAL and PERSISTENT) are not supported as InnoDB foreign key indexes.
 
@@ -195,7 +195,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 ### REFERENCES
 
 
-Until [MariaDB 10.4](../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md)
+Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 
 ```
@@ -230,7 +230,7 @@ SELECT * FROM b;
 +---------+
 ```
 
-From [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 
 
 ```
@@ -276,4 +276,3 @@ SELECT * FROM c;
 
 * [MariaDB: InnoDB foreign key constraint errors](https://blog.mariadb.org/mariadb-innodb-foreign-key-constraint-errors/), a post in the MariaDB blog
 
-<span></span>

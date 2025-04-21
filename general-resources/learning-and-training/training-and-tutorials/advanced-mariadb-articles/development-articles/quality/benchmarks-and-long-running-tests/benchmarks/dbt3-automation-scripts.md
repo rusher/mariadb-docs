@@ -464,14 +464,14 @@ Now the server could be started with the following command:
 $PROJECT_HOME/bin/mysql-5.6.x-m5-linux2.6-x86_64/bin/mysqld_safe --datadir=some/data/dir &
 ```
 
-### Download and build [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).x / [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).x
+### Download and build [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).x / [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).x
 
 
-**NOTE:** These steps are the same for [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).x with properly replaced
+**NOTE:** These steps are the same for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).x with properly replaced
 version numbers
 
 
-1. Download with Bazaar the [mariadb 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) project
+1. Download with Bazaar the [mariadb 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) project
 ```
 bzr branch lp:maria/5.3
 mv 5.3/ mariadb-5.3
@@ -670,7 +670,7 @@ facebook-maria1:
 
 
 The results of the benchmark will be stored in a separate database that will be
-run by [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).x.
+run by [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).x.
 
 
 **NOTE:** The results database will be a subject to change in future versions
@@ -685,7 +685,7 @@ In that file you can find details about every table and column in the database.
 To prepare the database for work follow these steps:
 
 
-1. Go to [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).x installation directory
+1. Go to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).x installation directory
 ```
 cd $PROJECT_HOME/bin/mariadb-5.3.x-beta-linux-x86_64
 ```
@@ -895,9 +895,9 @@ following directories for different MariaDB/MySQL system directories:
 * `mysql_mysql_5_5` — a copy of the system directory
  '`mysql`' upgraded by MySQL 5.5.x
 * `mysql_mariadb_5_3` — a copy of the system
- directory '`mysql`' upgraded by [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md).x
+ directory '`mysql`' upgraded by [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).x
 * `mysql_mariadb_5_5` — a copy of the system
- directory '`mysql`' upgraded by [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md).x
+ directory '`mysql`' upgraded by [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).x
 
 If `MYSQL_SYSTEM_DIR` is set to one of these directories, the automation
 script will unlink the current system directory 'mysql' and make a new symbolic
@@ -1288,8 +1288,7 @@ The automation script provides hooks that allow the user to add both SQL and OS 
 * Pre-test SQL hook: it is set with the parameter `PRE_TEST_SQL`. Contains
  SQL commands that are run once for the whole test configuration before the
  first run.
- (Example: "`<span class="k">use</span> <span class="n">dbt3</span><span class="p">;</span> <span class="k">select</span> <span class="nf">version</span><span class="p">();</span> <span class="k">show</span> <span class="n">variables</span><span class="p">;</span> <span class="k">show</span> <span class="n">engines</span><span class="p">;</span> <span class="k">show</span> <span class="k">table</span> <span class="n">status</span><span class="p">;</span>
-`")
+ (Example: "`use dbt3; select version(); show variables; show engines; show table status;`")
 * Post-test SQL hook: it is set with the parameter `POST_TEST_SQL`. Contains
  SQL commands that are run once for the whole test configuration after the
  last run.
@@ -1301,12 +1300,10 @@ The automation script provides hooks that allow the user to add both SQL and OS 
  run.
 * Pre-run SQL hook: it is set with the parameter `PRE_RUN_SQL`. Contains SQL
  commands that are run prior each query run.
- (Example: "`<span class="k">flush</span> <span class="n">status</span><span class="p">;</span> <span class="kt">set</span> <span class="n">global</span> <span class="n">userstat</span><span class="o">=</span><span class="k">on</span><span class="p">;</span>
-`")
+ (Example: "`flush status; set global userstat=on;`")
 * Post-run SQL hook: it is set with the parameter `POST_RUN_SQL`. Contains SQL
  commands that are run after each query run.
- (Example: "`<span class="k">show</span> <span class="n">status</span><span class="p">;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">TABLE_STATISTICS</span><span class="p">;</span>
-`")
+ (Example: "`show status; select * from information_schema.TABLE_STATISTICS;`")
 * Pre-run OS hook: it is set with the parameter `PRE_RUN_OS`. Contains OS
  commands that are run once prior each query run.
 * Post-run OS hook: it is set with the parameter `POST_RUN_OS`. Contains OS
@@ -1464,7 +1461,7 @@ perl launcher.pl \
 ```
 
 
-* If a newer version of [MariaDB 5.5](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) is available:
+* If a newer version of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) is available:
 
   * copy or edit the DMBS server configuration
  file `mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb_5_5_myisam.conf`
@@ -1472,7 +1469,7 @@ perl launcher.pl \
  can also edit `KEYWORD` and `GRAPH_HEADING`
 
 
-* If you want to add additional test in the MyISAM benchmark for [MariaDB 5.3](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md),
+* If you want to add additional test in the MyISAM benchmark for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3),
  but with another defaults-file (my.cnf):
 
   * copy or edit the DMBS server configuration
@@ -1510,7 +1507,7 @@ DB_CONFIG 	= $PROJECT_HOME/mariadb-tools/dbt3_benchmark/tests/db_conf/db_mariadb
 DBT3 benchmark for the following configuration:
 
 
-* [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) Beta + MyISAM
+* [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) Beta + MyISAM
 * [MariaDB 5.5.18](https://mariadb.com/kb/en/mariadb-5518-release-notes/) + MyISAM
 * MySQL 5.5.19 + MyISAM
 * MySQL 5.6.4 + MyISAM
@@ -1525,7 +1522,7 @@ Results page: [DBT3 benchmark results MyISAM](dbt3-benchmark-results-myisam.md)
 DBT3 benchmark for the following configuration:
 
 
-* [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) Beta + XtraDB
+* [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) Beta + XtraDB
 * [MariaDB 5.5.18](/kb/en/mariadb-5518-release-notes/) + XtraDB
 * MySQL 5.5.19 + InnoDB
 * MySQL 5.6.4 + InnoDB
@@ -1540,7 +1537,7 @@ Results page: [DBT3 benchmark results InnoDB](dbt3-benchmark-results-innodb.md)
 DBT3 benchmark for the following configuration:
 
 
-* [MariaDB 5.3.2](../../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes.md) Beta + XtraDB
+* [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) Beta + XtraDB
 * MySQL 5.6.4 + InnoDB
 * PostgreSQL
 

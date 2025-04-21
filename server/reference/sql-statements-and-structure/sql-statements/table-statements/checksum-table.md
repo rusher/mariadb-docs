@@ -20,8 +20,8 @@ and slave).
 With `QUICK`, the live table checksum is reported if it is
 available, or `NULL` otherwise. This is very fast. A live
 checksum is enabled by specifying the `CHECKSUM=1` table
-option when you [create the table](../../vectors/create-table-with-vectors.md); currently, this is supported
-only for [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) and [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) tables.
+option when you [create the table](../data-definition/create/create-table.md); currently, this is supported
+only for [Aria](../../../storage-engines/aria/README.md) and [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) tables.
 
 
 With `EXTENDED`, the entire table is read row by row and the
@@ -62,7 +62,7 @@ Identical tables mean that the CREATE statement is identical and that the follow
 ignore `NULL`s in the columns as MySQL 5.1 does (Later MySQL
 versions should calculate checksums the same way as MariaDB). You can get the
 'old style' checksum in MariaDB by starting [mariadbd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd.md) with the
-[--old](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old) option (deprecated from [MariaDB 10.9](../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)) or setting [old_mode](../../../../server-management/variables-and-modes/old-mode.md) to [COMPAT_5_1_CHECKSUM](../../../../server-management/variables-and-modes/old-mode.md#compat_5_1_checksum) (from [MariaDB 10.9](../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)) . Note however that that the MyISAM and Aria storage engines in MariaDB are using the new checksum internally, so if you are
+[--old](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old) option (deprecated from [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)) or setting [old_mode](../../../../server-management/variables-and-modes/old-mode.md) to [COMPAT_5_1_CHECKSUM](../../../../server-management/variables-and-modes/old-mode.md#compat_5_1_checksum) (from [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)) . Note however that that the MyISAM and Aria storage engines in MariaDB are using the new checksum internally, so if you are
 using this old mode, the `CHECKSUM` command will be
 slower as it needs to calculate the checksum row by row.
 

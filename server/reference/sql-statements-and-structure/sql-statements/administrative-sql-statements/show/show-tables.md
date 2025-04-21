@@ -13,7 +13,7 @@ SHOW [FULL] TABLES [FROM db_name]
 ## Description
 
 
-`SHOW TABLES` lists the tables (until [MariaDB 11.2.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md), only non-`TEMPORARY` tables are shown), [sequences](../../../sequences/README.md) and [views](../../../../../server-usage/programming-customizing-mariadb/views/README.md) in a given database.
+`SHOW TABLES` lists the tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables are shown), [sequences](../../../sequences/README.md) and [views](../../../../../server-usage/programming-customizing-mariadb/views/README.md) in a given database.
 
 
 The `LIKE` clause, if present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md). For example, when searching for tables in the `test` database, the column name for use in the `WHERE` and `LIKE` clauses will be `Tables_in_test`
@@ -32,7 +32,7 @@ mariadb-show db_name
 See [mariadb-show](../../../../../clients-and-utilities/mariadb-show.md) for more details.
 
 
-If you have no privileges for a base table or view, it does not show up in the output from `SHOW TABLES` or `mariadb-show <em>db_name</em>`.
+If you have no privileges for a base table or view, it does not show up in the output from `SHOW TABLES` or `mariadb-show db_name`.
 
 
 The [information_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table, as well as the [SHOW TABLE STATUS](show-table-status.md) statement, provide extended information about tables.
@@ -85,7 +85,7 @@ SHOW FULL TABLES;
 ```
 
 Showing temporary tables:
-<= [MariaDB 11.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-111.md)
+<= [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
 
 
 ```
@@ -101,7 +101,7 @@ SHOW TABLES;
 +----------------+
 ```
 
-From [MariaDB 11.2.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md):
+From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes):
 
 
 ```

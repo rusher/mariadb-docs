@@ -197,7 +197,7 @@ The avrorouter does not support the following data types, conversions or SQL sta
 
 * BIT
 * Fields CAST from integer types to string types
-* [CREATE TABLE ... AS SELECT statements](../../../server/reference/sql-statements-and-structure/vectors/create-table-with-vectors.md)
+* [CREATE TABLE ... AS SELECT statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table)
 
 
 The avrorouter does not do any crash recovery. This means that the avro files

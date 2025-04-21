@@ -107,7 +107,7 @@ This tests a replica based on the `--replication_*` parameters. The replica test
 These are tested for all connections, if `--replication_all` is set (default), or `--replication_name`.
 
 
-The connecting user must have [REPLICATION_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) or later.
+The connecting user must have [REPLICATION_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) or later.
 
 
 ## --mariadbupgrade
@@ -195,4 +195,3 @@ healthcheck.sh --su-mysql --connect --replication_io --replication_sql --replica
 
 Switch to `mysql` user, check if connections can be made, for the replication channel "archive", ensure io and sql threads are running and the seconds behind master < 600 seconds and the sql remaining delay < 30 seconds. For the "channel1", the seconds behind master is limit to 10 seconds maximum.
 
-<span></span>

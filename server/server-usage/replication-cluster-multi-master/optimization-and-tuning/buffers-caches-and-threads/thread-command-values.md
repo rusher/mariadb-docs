@@ -8,10 +8,10 @@ A thread can have any of the following `COMMAND` values (displayed by the `COMMA
 | Value | Description |
 | --- | --- |
 | Value | Description |
-| Binlog Dump | Master thread for sending [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) contents to a slave. |
+| Binlog Dump | Master thread for sending [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) contents to a slave. |
 | Change user | Executing a change user operation. |
 | Close stmt | Closing a [prepared statement](../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/README.md). |
-| Connect | [Replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) slave is connected to its master. |
+| Connect | [Replication](../../README.md) slave is connected to its master. |
 | Connect Out | Replication slave is in the process of connecting to its master. |
 | Create DB | Executing an operation to create a database. |
 | Daemon | Internal server thread rather than for servicing a client connection. |
@@ -30,7 +30,7 @@ A thread can have any of the following `COMMAND` values (displayed by the `COMMA
 | Processlist | Preparing processlist information about server threads. |
 | Query | Executing a statement. |
 | Quit | In the process of terminating the thread. |
-| Refresh | [Flushing](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) a table, logs or caches, or refreshing replication server or [status variable](../system-variables/server-status-variables.md) information. |
+| Refresh | [Flushing](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) a table, logs or caches, or refreshing replication server or [status variable](../system-variables/server-status-variables.md) information. |
 | Register Slave | Registering a slave server. |
 | Reset stmt | Resetting a [prepared statement](../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/README.md). |
 | Set option | Setting or resetting a client statement execution option. |
@@ -41,4 +41,3 @@ A thread can have any of the following `COMMAND` values (displayed by the `COMMA
 | Time | Not used. |
 
 
-<span></span>

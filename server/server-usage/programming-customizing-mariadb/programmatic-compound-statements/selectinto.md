@@ -35,13 +35,13 @@ Windows, to the application event log.
 This statement can be used with both [local variables](declare-variable.md) and [user-defined variables](../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
 
 
-For the complete syntax, see [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md).
+For the complete syntax, see [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md).
 
 
 Another way to set a variable's value is the [SET](set-variable.md) statement.
 
 
-`SELECT ... INTO` results are not stored in the [query cache](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) even if `SQL_CACHE` is specified.
+`SELECT ... INTO` results are not stored in the [query cache](../../replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) even if `SQL_CACHE` is specified.
 
 
 ## Examples
@@ -63,8 +63,7 @@ SELECT  * INTO @x FROM (SELECT t1.a FROM t1 UNION SELECT t2.a FROM t2) dt;
 ## See Also
 
 
-* [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) - full SELECT syntax.
+* [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) - full SELECT syntax.
 * [SELECT INTO OUTFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) - formatting and writing the result to an external file.
 * [SELECT INTO DUMPFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
 
-<span></span>

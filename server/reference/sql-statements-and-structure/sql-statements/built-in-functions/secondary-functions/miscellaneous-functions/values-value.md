@@ -11,7 +11,7 @@ VALUE(col_name)
 ## Description
 
 
-In an [INSERT ... ON DUPLICATE KEY UPDATE](../../../data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statement, you can use the `VALUES(col_name)` function in the [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) clause to refer to column values from the [INSERT](../../string-functions/insert-function.md) portion of the statement. In other words, `VALUES(col_name)` in the `UPDATE` clause refers to the value of col_name that would be inserted, had no duplicate-key conflict occurred. This function is especially useful in multiple-row inserts.
+In an [INSERT ... ON DUPLICATE KEY UPDATE](../../../data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statement, you can use the `VALUES(col_name)` function in the [UPDATE](../../../data-manipulation/changing-deleting-data/update.md) clause to refer to column values from the [INSERT](../../../data-manipulation/inserting-loading-data/insert.md) portion of the statement. In other words, `VALUES(col_name)` in the `UPDATE` clause refers to the value of col_name that would be inserted, had no duplicate-key conflict occurred. This function is especially useful in multiple-row inserts.
 
 
 The `VALUES()` function is meaningful only in `INSERT ... ON DUPLICATE KEY UPDATE` statements and returns `NULL` otherwise.

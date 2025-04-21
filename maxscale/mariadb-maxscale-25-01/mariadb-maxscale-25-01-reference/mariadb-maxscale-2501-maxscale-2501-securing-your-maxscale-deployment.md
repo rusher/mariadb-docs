@@ -137,7 +137,7 @@ transit. Follow these steps to configure SSL:
 
 
 * Generate SSL keys and certificates. See
- [Certificate Creation with OpenSSL](../../../server/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/certificate-creation-with-openssl.md)
+ [Certificate Creation with OpenSSL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/certificate-creation-with-openssl)
 * Add them to the MaxScale configuration file.
 
 
@@ -280,7 +280,7 @@ MaxScale.
 
 * Implement log rotation to manage the size and number of audit files. This
  can be achieved using standard Linux log rotation tools. See
- [Rotating Logs on Unix and Linux](../../../server/server-management/server-monitoring-logs/rotating-logs-on-unix-and-linux.md)
+ [Rotating Logs on Unix and Linux](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/rotating-logs-on-unix-and-linux)
 
 
 For manual log rotation, you can use the following MaxCtrl command:

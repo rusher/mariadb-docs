@@ -9,7 +9,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 While replication is usually meant to take place between primaries and replicas with the same table definitions and this is recommended, in certain cases replication can still take place even if the definitions are identical.
 
 
-Tables on the replica and the primary do not need to have the same definition in order for [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) to take place. There can be differing numbers of columns, or differing data definitions and, in certain cases, replication can still proceed.
+Tables on the replica and the primary do not need to have the same definition in order for [replication](../README.md) to take place. There can be differing numbers of columns, or differing data definitions and, in certain cases, replication can still proceed.
 
 
 ## Different Column Definitions - Attribute Promotion and Demotion
@@ -171,7 +171,7 @@ SHOW SLAVE STATUS\G;
 #### Supported Conversions
 
 
-* Between [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../../reference/data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../../reference/data-types/data-types-numeric-data-types/mediumint.md), [INT](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) and [BIGINT](../../../reference/data-types/data-types-numeric-data-types/bigint.md). If lossy conversion is supported, the value from the primary will be converted to the maximum or minimum permitted on the replica, which non-lossy conversions require the replica column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
+* Between [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../../reference/data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../../reference/data-types/data-types-numeric-data-types/mediumint.md), [INT](../../../reference/data-types/data-types-numeric-data-types/int.md) and [BIGINT](../../../reference/data-types/data-types-numeric-data-types/bigint.md). If lossy conversion is supported, the value from the primary will be converted to the maximum or minimum permitted on the replica, which non-lossy conversions require the replica column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
 
 
 ## Different Number or Order of Columns
@@ -276,4 +276,3 @@ SELECT * FROM r;
 |    1 | NULL |    1 |
 +------+------+------+
 ```
-<span></span>

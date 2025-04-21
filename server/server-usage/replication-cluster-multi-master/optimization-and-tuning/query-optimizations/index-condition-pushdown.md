@@ -130,6 +130,5 @@ That way, the value `Handler_icp_attempts - Handler_icp_match` shows the number 
 ## Partitioned Tables
 
 
-Index condition pushdown support for [partitioned tables](../../../../server-management/partitioning-tables/README.md) was added in [MariaDB 11.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md).
+Index condition pushdown support for [partitioned tables](../../../../server-management/partitioning-tables/README.md) was added in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
 
-<span></span>

@@ -12,7 +12,7 @@ UNINSTALL SONAME  [IF EXISTS] 'plugin_library'
 ## Description
 
 
-This statement is a variant of [UNINSTALL PLUGIN](uninstall-plugin.md) statement, that removes all [plugins](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) belonging to a specified `plugin_library`. See [UNINSTALL PLUGIN](uninstall-plugin.md) for details.
+This statement is a variant of [UNINSTALL PLUGIN](uninstall-plugin.md) statement, that removes all [plugins](../../../../plugins/README.md) belonging to a specified `plugin_library`. See [UNINSTALL PLUGIN](uninstall-plugin.md) for details.
 
 
 `plugin_library` is the name of the shared library that
@@ -59,10 +59,10 @@ SHOW WARNINGS;
 
 
 * [INSTALL SONAME](install-soname.md)
-* [SHOW PLUGINS](../show/show-plugins-soname.md)
+* [SHOW PLUGINS](../show/show-plugins.md)
 * [INSTALL PLUGIN](install-plugin.md)
 * [UNINSTALL PLUGIN](uninstall-plugin.md)
-* [SHOW PLUGINS](../show/show-plugins-soname.md)
+* [SHOW PLUGINS](../show/show-plugins.md)
 * [INFORMATION_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mysql_plugin](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 * [List of Plugins](../../../../plugins/information-on-plugins/list-of-plugins.md)

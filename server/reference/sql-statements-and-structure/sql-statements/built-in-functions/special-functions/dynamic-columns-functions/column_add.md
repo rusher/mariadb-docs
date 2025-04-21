@@ -12,7 +12,7 @@ COLUMN_ADD(dyncol_blob, column_name, value [as type], [column_name, value [as ty
 ## Description
 
 
-Adds or updates [dynamic columns](../../../../nosql/dynamic-columns-api.md).
+Adds or updates [dynamic columns](../../../../nosql/dynamic-columns.md).
 
 
 * `dyncol_blob` must be either a valid dynamic columns blob (for example, `COLUMN_CREATE` returns such blob), or an empty string.
@@ -32,7 +32,7 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value") WHERE 
 ```
 
 Note: `COLUMN_ADD()` is a regular function (just like
-`[CONCAT()](../../string-functions/concat_ws.md)`), hence, in order to update the value in the table
+`[CONCAT()](../../string-functions/concat.md)`), hence, in order to update the value in the table
 you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col,
-....) ` pattern.
+....)` pattern.
 

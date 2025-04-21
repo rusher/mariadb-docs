@@ -34,7 +34,7 @@ SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 +-------------------------------+-----------------------+
 ```
 
-The values of these variables can be changed by an administrator with the `SUPER` privilege, using the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement. Below is an example of how to disable audit logging:
+The values of these variables can be changed by an administrator with the `SUPER` privilege, using the [SET](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) statement. Below is an example of how to disable audit logging:
 
 
 ```
@@ -51,7 +51,7 @@ server_audit_logging=OFF
 …
 ```
 
-For the reason given in the paragraph above, you would not generally set variables related to the auditing plugin using the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement. However, you might do so to test settings before making them more permanent. Since one cannot always restart the server, you would use the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) statement to change immediately the variables and then include the same settings in the configuration file so that the variables are set again as you prefer when the server is restarted.
+For the reason given in the paragraph above, you would not generally set variables related to the auditing plugin using the [SET](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) statement. However, you might do so to test settings before making them more permanent. Since one cannot always restart the server, you would use the [SET](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) statement to change immediately the variables and then include the same settings in the configuration file so that the variables are set again as you prefer when the server is restarted.
 
 
 #### Configuring Logs and Setting Other Variables

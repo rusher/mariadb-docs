@@ -12,7 +12,7 @@ YEARWEEK(date), YEARWEEK(date,mode)
 
 
 Returns year and week for a date. The mode argument works exactly like the mode
-argument to [WEEK()](weekofyear.md). The year in the result may be different from the
+argument to [WEEK()](week.md). The year in the result may be different from the
 year in the date argument for the first and the last week of the year.
 
 

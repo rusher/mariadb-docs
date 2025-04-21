@@ -121,7 +121,7 @@ wait_for_ready () {
     if $bindir/mariadb-admin --defaults-file=/opt/mariadb-data/my.cnf ping >/dev/null 2>&1; then
 ```
 
-* Run [mariadb-install-db](../mariadb-install-db-exe.md) by explicitly giving it the my.cnf file as argument:
+* Run [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) by explicitly giving it the my.cnf file as argument:
 
 
 ```

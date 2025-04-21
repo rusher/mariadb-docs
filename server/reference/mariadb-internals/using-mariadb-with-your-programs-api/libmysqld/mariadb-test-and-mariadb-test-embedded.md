@@ -35,7 +35,7 @@ shell> mariadb-test **[options] [db_name]** < //test_file//
 ```
 
 You can also name the test case file with a
-`--test-file=<em>file_name</em>` option.
+`--test-file=file_name` option.
 
 
 The exit value from mariadb-test is 0 for success, 1 for failure, and 62 if it

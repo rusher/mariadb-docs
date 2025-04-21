@@ -1,9 +1,9 @@
 
 # Contributing to the MariaDB Project
 
-The success of [MariaDB](../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) depends on the participation of the
-[community](../../../server/reference/faq/community-questions/README.md). MariaDB would not be as good as it is today without the
-participation of the entire [MariaDB community](../../../server/reference/faq/community-questions/README.md).
+The success of [MariaDB](/kb/en/mariadb/) depends on the participation of the
+[community](/kb/en/community/). MariaDB would not be as good as it is today without the
+participation of the entire [MariaDB community](/kb/en/community/).
 
 
 ## Getting Started
@@ -13,7 +13,7 @@ There are several ways to contribute besides [Contributing Code](contributing-co
 strong C/C++ skills. Areas for non-developers include:
 
 
-* [Reporting Bugs](../../../server/reference/bug-tracking/reporting-bugs.md)
+* [Reporting Bugs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/bug-tracking/reporting-bugs)
 
   * To report a bug you'll need to sign up for an account by clicking on the Create an account link below the login fields
 * [Suggesting Features](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md)
@@ -25,7 +25,7 @@ strong C/C++ skills. Areas for non-developers include:
 * Creating [documentation and KB articles](https://mariadb.com/kb/en/meta/writing-and-editing-knowledge-base-articles) for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
-* Running a [BuildBot](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
+* Running a [BuildBot](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/README.md) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
 * [Donate](donate-to-the-foundation.md) time or money to the MariaDB project.
 * Ask your company to [sponsor a feature](sponsoring-the-mariadb-project.md).
 * [MariaDB Foundation page on getting involved](https://mariadb.org/get-involved/)

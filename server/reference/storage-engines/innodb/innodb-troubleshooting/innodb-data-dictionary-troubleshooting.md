@@ -44,7 +44,7 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_TABLES WHERE NAME LIKE 'dbname/%';
 An orphan intermediate table may prevent you from dropping the tablespace even if it is otherwise empty, and generally takes up unnecessary space.
 
 
-It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITHM=INPLACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md#algorithm) operation. They will be listed in the [INFORMATION_SCHEMA.INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table, and always start with an `#sql-ib` prefix. The accompanying `.frm` file also begins with `#sql-`, but has a different name.
+It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITHM=INPLACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) operation. They will be listed in the [INFORMATION_SCHEMA.INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table, and always start with an `#sql-ib` prefix. The accompanying `.frm` file also begins with `#sql-`, but has a different name.
 
 
 To identify orphan tables, run:

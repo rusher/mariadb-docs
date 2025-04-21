@@ -35,7 +35,7 @@ This program requires the librabbitmq and libmysqlclient libraries.
 
 
 * [librabbitmq-c](https://github.com/alanxz/rabbitmq-c)
-* [MariaDB Client Library for C 2.0 Series](../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md)
+* [MariaDB Client Library for C 2.0 Series](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/)
 
 
 Building with CMake:

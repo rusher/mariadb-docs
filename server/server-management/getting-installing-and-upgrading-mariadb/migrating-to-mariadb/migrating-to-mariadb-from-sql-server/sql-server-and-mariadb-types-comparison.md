@@ -27,7 +27,7 @@ For more information see [Numeric Data Type Overview](../../../../reference/data
 | tinyint | 1 | [TINYINT](../../../../reference/data-types/data-types-numeric-data-types/tinyint.md) | 1 |  |
 | smallint | 2 | [SMALLINT](../../../../reference/data-types/data-types-numeric-data-types/smallint.md) | 2 |  |
 |  |  | [MEDIUMINT](../../../../reference/data-types/data-types-numeric-data-types/mediumint.md) | 3 | Takes 3 bytes on disk, but 4 bytes in memory |
-| int | 1 | [INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) / [INTEGER](../../../../reference/data-types/data-types-numeric-data-types/integer.md) | 4 |  |
+| int | 1 | [INT](../../../../reference/data-types/data-types-numeric-data-types/int.md) / [INTEGER](../../../../reference/data-types/data-types-numeric-data-types/integer.md) | 4 |  |
 | bigint | 8 | [BIGINT](../../../../reference/data-types/data-types-numeric-data-types/bigint.md) | 8 |  |
 
 
@@ -107,7 +107,7 @@ There is a small incompatibility that users should be aware about. `money` and `
 ### Bits
 
 
-The [BIT](../../../../reference/sql-statements-and-structure/temporal-tables/bitemporal-tables.md) type is supported in MariaDB. Its maximum size is `BIT(64)`. The `BIT` type has a fixed length. If we insert a value which requires less bits than the ones that are allocated, zero-bits are padded on the left.
+The [BIT](../../../../reference/data-types/data-types-numeric-data-types/bit.md) type is supported in MariaDB. Its maximum size is `BIT(64)`. The `BIT` type has a fixed length. If we insert a value which requires less bits than the ones that are allocated, zero-bits are padded on the left.
 
 
 In MariaDB, binary values can be written in one of the following ways:
@@ -140,19 +140,19 @@ In MariaDB `'True'` and `'False'` are always strings.
 | SQL Server Types | Range | Precision | Size (bytes) | MariaDB Types | Range | Size (bytes) | Precision | Notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | SQL Server Types | Range | Precision | Size (bytes) | MariaDB Types | Range | Size (bytes) | Precision | Notes |
-| date | 0001-01-01 - 9999-12-31 | 3 | / | [DATE](../../../../reference/sql-statements-and-structure/sql-language-structure/date-and-time-literals.md) | 0001-01-01 - 9999-12-31 | 3 | / | They cover the same range |
+| date | 0001-01-01 - 9999-12-31 | 3 | / | [DATE](../../../../reference/data-types/date-and-time-data-types/date.md) | 0001-01-01 - 9999-12-31 | 3 | / | They cover the same range |
 | datetime | 1753-01-01 - 9999-12-31 | 8 | 0 to 3, rounded | [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) | 001-01-01 - 9999-12-31 | 8 | 0 to 6 | MariaDB values are not approximated, see below. |
 | datetime2 | 001-01-01 - 9999-12-31 | 8 | 6 to 8 | [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) | 001-01-01 - 9999-12-31 | 8 | 0 to 6 | MariaDB values are not approximated, see below. |
 | smalldatetime |  |  |  | [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) |  |  |  |  |
 | datetimeoffset |  |  |  | [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) |  |  |  |  |
-| time |  |  |  | [TIME](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) |  |  |  |  |
+| time |  |  |  | [TIME](../../../../reference/data-types/date-and-time-data-types/time.md) |  |  |  |  |
 
 
 
 You may also consider the following MariaDB types:
 
 
-* [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) has little to do with SQL Server's `timestamp`. In MariaDB it is the number of seconds elapsed since the beginning of 1970-01-01, with a decimal precision up to 6 digits (0 by default). The maximum allowed value is '2038-01-19 03:14:07'. Values are always stored in UTC. A TIMESTAMP column can optionally be automatically set to the current timestamp on insert, on update, or both. It is not meant to be a unique row identifier. Also, in MariaDB the range of TIMESTAMP values is
+* [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) has little to do with SQL Server's `timestamp`. In MariaDB it is the number of seconds elapsed since the beginning of 1970-01-01, with a decimal precision up to 6 digits (0 by default). The maximum allowed value is '2038-01-19 03:14:07'. Values are always stored in UTC. A TIMESTAMP column can optionally be automatically set to the current timestamp on insert, on update, or both. It is not meant to be a unique row identifier. Also, in MariaDB the range of TIMESTAMP values is
 * [YEAR](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md) is a 1-byte type representing years between 1901 and 2155, as well as 0000.
 
 
@@ -171,7 +171,7 @@ It is also possible to use values where only some date parts are zeroes, for exa
 Several different date formats are understood. Typically used formats are `'YYYY-MM-DD'` and `YYYYMMDD`. Several separators are accepted.
 
 
-The syntax defined in standard SQL and ODBC are understood - for example, `DATE '1994-01-01'` and `{d '1994-01-01'} `. Using these eliminates possible ambiguities in contexts where a temporal value could be interpreted as a string or as an integer.
+The syntax defined in standard SQL and ODBC are understood - for example, `DATE '1994-01-01'` and `{d '1994-01-01'}`. Using these eliminates possible ambiguities in contexts where a temporal value could be interpreted as a string or as an integer.
 
 
 See [Date and Time Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/date-and-time-literals.md) for the details.
@@ -218,10 +218,10 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 | SQL Server Types | Size (bytes) | MariaDB Types | Size (bytes) | Character set |
 | --- | --- | --- | --- | --- |
 | SQL Server Types | Size (bytes) | MariaDB Types | Size (bytes) | Character set |
-| char | 1 to 8000 | [CHAR](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) | 0 to 255 | utf8mb4 (1, 4) |
+| char | 1 to 8000 | [CHAR](../../../../reference/data-types/string-data-types/char.md) | 0 to 255 | utf8mb4 (1, 4) |
 | varchar | 1 to 8000 | [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) | 0 to 65,532 (2) | utf8mb4 (1) |
 | text | 2^31-1 | [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) | 2^31-1 | ucs2 |
-| nchar | 2 to 8000 | [CHAR](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) | 0 to 255 | utf16 or ucs2 (3, 4) |
+| nchar | 2 to 8000 | [CHAR](../../../../reference/data-types/string-data-types/char.md) | 0 to 255 | utf16 or ucs2 (3, 4) |
 | nvarchar | 2 to 8000 | [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) | 0 to 65,532 (2) (5) | utf16 or ucs2 (1) (3) |
 | ntext | 2^30 - 1 | [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) | 2^31-1 | ucs2 |
 
@@ -233,7 +233,7 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 1) If SQL Server uses a non-unicode collation, a subset of UTF-8 is used. So it is possible to use a smaller character set on MariaDB too.
 
 
-2) [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has a maximum row length of 65,535 bytes. [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) columns do not contribute to the row size, because they are stored separately (except for the first 12 bytes).
+2) [InnoDB](../../../../reference/storage-engines/innodb/README.md) has a maximum row length of 65,535 bytes. [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) columns do not contribute to the row size, because they are stored separately (except for the first 12 bytes).
 
 
 3) In SQL Server, UTF-16 is used if data contains Supplementary Characters, otherwise UCS-2 is used. If not sure, use `utf16` in MariaDB.
@@ -254,7 +254,7 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 MariaDB does not have the `rowversion` type.
 
 
-If the only purpose is to check if a row has been modified since its last read, a [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) column can be used instead. Its default value should be `ON UPDATE CURRENT_TIMESTAMP`. In this way, the timestamp will be updated whenever the column is modified.
+If the only purpose is to check if a row has been modified since its last read, a [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) column can be used instead. Its default value should be `ON UPDATE CURRENT_TIMESTAMP`. In this way, the timestamp will be updated whenever the column is modified.
 
 
 A way to preserve much more information is to use a [temporal table](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md). Past versions of the row will be preserved.
@@ -281,7 +281,7 @@ While MariaDB does not support the `uniqueidentifier` type, the [UUID](../../../
 `uniqueidentifier` columns contain 16-bit GUIDs. MariaDB UUID columns store UUIDv1 values (128 bits).
 
 
-The UUID type was implemented in [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md). On older versions, you can generate unique values with the [UUID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) or [UUID_SHORT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) functions, and store them in `BIT(128)` or `BIT(64)` columns, respectively.
+The UUID type was implemented in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107). On older versions, you can generate unique values with the [UUID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) or [UUID_SHORT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) functions, and store them in `BIT(128)` or `BIT(64)` columns, respectively.
 
 
 ### xml
@@ -299,7 +299,7 @@ XML data can be stored in string columns. MariaDB supports several XML functions
 With SQL Server, typically JSON documents are stored in `nvarchar` columns in a text form.
 
 
-MariaDB has a [JSON](../../../../reference/storage-engines/connect/json-sample-files.md) pseudo-type that maps to [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md). However, from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) the `JSON` pseudo-type also checks that the value is valid a JSON document.
+MariaDB has a [JSON](../../../../reference/data-types/string-data-types/json.md) pseudo-type that maps to [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md). However, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) the `JSON` pseudo-type also checks that the value is valid a JSON document.
 
 
 MariaDB supports different JSON functions than SQL Server. MariaDB currently has more functions, and SQL Server syntax will not work. See [JSON functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md) for more information.
@@ -311,7 +311,6 @@ MariaDB supports different JSON functions than SQL Server. MariaDB currently has
 The following types are supported by MariaDB and don't have a direct equivalent in SQL Server. If you are migrating your database to MariaDB, you can consider using these types.
 
 
-* [INET6](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) - IPv6 addresses.
+* [INET6](../../../../reference/data-types/string-data-types/inet6.md) - IPv6 addresses.
 * [INET4](../../../../reference/data-types/string-data-types/inet4.md) - IPv4 addresses.
 
-<span></span>

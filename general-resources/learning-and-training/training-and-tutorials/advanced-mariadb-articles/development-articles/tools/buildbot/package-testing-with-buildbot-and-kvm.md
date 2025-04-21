@@ -15,7 +15,7 @@ The current box is capable of running up to 3 builds in parallel. The entire set
 The build host has no virtual machines that are kept running when idle. Instead each build boots up and shuts down virtual machines on the fly as needed, using the [runvm](runvm.md) tool.
 
 
-The details of the setup (installation) of the virtual machines are [here](buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md).
+The details of the setup (installation) of the virtual machines are [here](buildbot-setup/README.md).
 
 
 ### Builds
@@ -111,5 +111,5 @@ Note that currently, due to [Bug #491349](https://bugs.launchpad.net/bugs/491349
 ## See also
 
 
-* [Buildbot Setup for Virtual Machines](buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md)
+* [Buildbot Setup for Virtual Machines](buildbot-setup/buildbot-setup-for-virtual-machines/README.md)
 

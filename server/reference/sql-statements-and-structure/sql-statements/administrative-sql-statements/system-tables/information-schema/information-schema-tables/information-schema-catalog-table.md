@@ -2,11 +2,11 @@
 # Information Schema CATALOG Table
 
 
-##### MariaDB starting with [12.0](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `CATALOG` table stores information about [catalogs](../../../../../../../security/user-account-management/catalogs/catalogs-overview.md) on the server.
+The [Information Schema](../README.md) `CATALOG` table stores information about [catalogs](../../../../../../../security/user-account-management/catalogs/README.md) on the server.
 
 
 It contains the following columns:

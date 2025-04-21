@@ -2,8 +2,8 @@
 # FORMAT_BYTES
 
 
-##### MariaDB starting with [11.8](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md)
-Introduced in [MariaDB 11.8](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md)
+##### MariaDB starting with [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118)
+Introduced in [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118)
 
 
 ## Syntax

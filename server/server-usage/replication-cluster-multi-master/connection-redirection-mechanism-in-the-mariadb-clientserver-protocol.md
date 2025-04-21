@@ -2,8 +2,8 @@
 # Connection Redirection Mechanism in the MariaDB Client/Server Protocol
 
 
-##### MariaDB starting with [11.3](../../../release-notes/mariadb-community-server/what-is-mariadb-113.md)
-A connection redirection mechanism was added in [MariaDB 11.3.0](../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md) ([MDEV-15935](https://jira.mariadb.org/browse/MDEV-15935))
+##### MariaDB starting with [11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
+A connection redirection mechanism was added in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes) ([MDEV-15935](https://jira.mariadb.org/browse/MDEV-15935))
 
 
 Redirection mechanisms are widely used in proxy-based scenarios.
@@ -61,4 +61,3 @@ Invalid formats are not permitted:
 set global redirect_url="mysql://mariadb.org:"; 
 ERROR 1231 (42000): Variable 'redirect_url' can't be set to the value of 'mysql://mariadb.org:'
 ```
-<span></span>

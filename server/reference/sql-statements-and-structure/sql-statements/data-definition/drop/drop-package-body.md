@@ -12,22 +12,22 @@ DROP PACKAGE BODY [IF EXISTS]  [ db_name . ] package_name
 ## Description
 
 
-The `DROP PACKAGE BODY` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set.
+The `DROP PACKAGE BODY` statement can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set.
 
 
 The `DROP PACKAGE BODY` statement drops the package body (i.e the implementation), previously created using the [CREATE PACKAGE BODY](../create/create-package-body.md) statement.
 
 
-Note, `DROP PACKAGE BODY` drops only the package implementation, but does not drop the package specification. Use [DROP PACKAGE](drop-package-body.md) to drop the package entirely (i.e. both implementation and specification).
+Note, `DROP PACKAGE BODY` drops only the package implementation, but does not drop the package specification. Use [DROP PACKAGE](drop-package.md) to drop the package entirely (i.e. both implementation and specification).
 
 
 ## See also
 
 
-* [CREATE PACKAGE](../create/create-package-body.md)
+* [CREATE PACKAGE](../create/create-package.md)
 * [SHOW CREATE PACKAGE](../../administrative-sql-statements/show/show-create-package.md)
-* [DROP PACKAGE](drop-package-body.md)
+* [DROP PACKAGE](drop-package.md)
 * [CREATE PACKAGE BODY](../create/create-package-body.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
-* [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

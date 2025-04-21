@@ -50,7 +50,7 @@ SHOW CONTRIBUTORS;
 ## See Also
 
 
-* [Log of MariaDB contributors](../../../../../../general-resources/company-and-community/contributing-participating/log-of-mariadb-contributions.md).
+* [Log of MariaDB contributors](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/contributing-participating/log-of-mariadb-contributions).
 * [SHOW AUTHORS](show-authors.md) list the authors of MariaDB (including documentation, QA etc).
 * [MariaDB Foundation page on contributing financially](https://mariadb.org/donate/)
 

@@ -1,7 +1,7 @@
 
 # Performance Schema events_waits_summary_by_instance Table
 
-The [Performance Schema](performance-schema-table_handles-table.md) `events_waits_summary_by_instance` table contains wait events summarized by instance. It contains the following columns:
+The [Performance Schema](../README.md) `events_waits_summary_by_instance` table contains wait events summarized by instance. It contains the following columns:
 
 
 

@@ -21,13 +21,13 @@ operands are NULL, the result is NULL.
 For this operator, [short-circuit evaluation](../operator-precedence.md#short-circuit-evaluation) can be used.
 
 
-Note that, if the `PIPES_AS_CONCAT` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is set, `||` is used as a string concatenation operator. This means that `a || b` is the same as `CONCAT(a,b)`. See `[CONCAT()](../../sql-statements/built-in-functions/string-functions/concat_ws.md)` for details.
+Note that, if the `PIPES_AS_CONCAT` [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is set, `||` is used as a string concatenation operator. This means that `a || b` is the same as `CONCAT(a,b)`. See `[CONCAT()](../../sql-statements/built-in-functions/string-functions/concat.md)` for details.
 
 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#null-handling), `||` ignores [nullif.md](../../sql-statements/built-in-functions/control-flow-functions/nullif.md).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#null-handling), `||` ignores [null](null).
 
 
 ## Examples
@@ -70,7 +70,7 @@ SELECT 1 || NULL;
 +-----------+
 ```
 
-In [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#null-handling):
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#null-handling):
 
 
 ```
@@ -89,5 +89,5 @@ SELECT 0 || NULL;
 
 
 * [Operator Precedence](../operator-precedence.md)
-* [Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md#null-handling)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#null-handling)
 

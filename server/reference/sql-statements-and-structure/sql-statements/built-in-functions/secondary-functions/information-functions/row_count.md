@@ -13,22 +13,22 @@ ROW_COUNT()
 
 ROW_COUNT() returns the number of rows updated, inserted or deleted
 by the preceding statement. This is the same as the row count that the
-mariadb client displays and the value from the [mysql_affected_rows()](../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_affected_rows.md) C
+mariadb client displays and the value from the [mysql_affected_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_affected_rows) C
 API function.
 
 
 Generally:
 
 
-* For statements which return a result set (such as [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md), [SHOW](../../../administrative-sql-statements/show/show-procedure-code.md), [DESC](../../../administrative-sql-statements/describe.md) or [HELP](../../../administrative-sql-statements/help-command.md)), returns -1, even when the result set is empty. This is also true for administrative statements, such as [OPTIMIZE](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md).
-* For DML statements other than [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) and for [ALTER TABLE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/altering-tables-in-mariadb.md), returns the number of affected rows.
-* For DDL statements (including [TRUNCATE](../../../table-statements/truncate-table.md)) and for other statements which don't return any result set (such as [USE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md), [DO](../../../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md), [SIGNAL](../../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/signal.md) or [DEALLOCATE PREPARE](../../../prepared-statements/deallocate-drop-prepare.md)), returns 0.
+* For statements which return a result set (such as [SELECT](../../../data-manipulation/selecting-data/select.md), [SHOW](../../../administrative-sql-statements/show/README.md), [DESC](../../../administrative-sql-statements/describe.md) or [HELP](../../../administrative-sql-statements/help-command.md)), returns -1, even when the result set is empty. This is also true for administrative statements, such as [OPTIMIZE](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md).
+* For DML statements other than [SELECT](../../../data-manipulation/selecting-data/select.md) and for [ALTER TABLE](../../../data-definition/alter/README.md), returns the number of affected rows.
+* For DDL statements (including [TRUNCATE](../../numeric-functions/truncate.md)) and for other statements which don't return any result set (such as [USE](../../../administrative-sql-statements/use-database.md), [DO](../../../stored-routine-statements/do.md), [SIGNAL](../../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/signal.md) or [DEALLOCATE PREPARE](../../../prepared-statements/deallocate-drop-prepare.md)), returns 0.
 
 
-For [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), affected rows is by default the number of rows that were actually changed. If the CLIENT_FOUND_ROWS flag to [mysql_real_connect()](../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect.md) is specified when connecting to mariadbd, affected rows is instead the number of rows matched by the WHERE clause.
+For [UPDATE](../../../data-manipulation/changing-deleting-data/update.md), affected rows is by default the number of rows that were actually changed. If the CLIENT_FOUND_ROWS flag to [mysql_real_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) is specified when connecting to mariadbd, affected rows is instead the number of rows matched by the WHERE clause.
 
 
-For [REPLACE](../../string-functions/replace-function.md), deleted rows are also counted. So, if REPLACE deletes a row and adds a new row, ROW_COUNT() returns 2.
+For [REPLACE](../../../data-manipulation/changing-deleting-data/replace.md), deleted rows are also counted. So, if REPLACE deletes a row and adds a new row, ROW_COUNT() returns 2.
 
 
 For [INSERT ... ON DUPLICATE KEY](../../../data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), values returned are as follows:

@@ -23,7 +23,7 @@ Server to client.
 * if packet has more data
 
   * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) info
-  * if (status flags & SERVER_SESSION_STATE_CHANGED) and session_tracking_supported (see [CLIENT_SESSION_TRACK](../../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md))
+  * if (status flags & SERVER_SESSION_STATE_CHANGED) and session_tracking_supported (see [CLIENT_SESSION_TRACK](../1-connecting/connection.md))
 
     * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) [session state info](#session-state-info)
 
@@ -47,7 +47,7 @@ Values of server status flag
 | SERVER_STATUS_IN_TRANS | 1 | A transaction is currently active |
 | SERVER_STATUS_AUTOCOMMIT | 2 | Autocommit mode is set |
 | SERVER_MORE_RESULTS_EXISTS | 8 | More results exists (more packets will follow) |
-| SERVER_QUERY_NO_GOOD_INDEX_USED | 16 | Set if [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) would've shown Range checked for each record |
+| SERVER_QUERY_NO_GOOD_INDEX_USED | 16 | Set if [EXPLAIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) would've shown Range checked for each record |
 | SERVER_QUERY_NO_INDEX_USED | 32 | The query did not use an index |
 | SERVER_STATUS_CURSOR_EXISTS | 64 | When using COM_STMT_FETCH, indicate that current cursor still has result |
 | SERVER_STATUS_LAST_ROW_SENT | 128 | When using COM_STMT_FETCH, indicate that current cursor has finished to send results |
@@ -196,5 +196,5 @@ The transaction state string is always 8 characters long. The characters, in ord
 ### Notes
 
 
-* Session tracking is supported from [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md). To determine if session tracking is enabled, check if the [CLIENT_SESSION_TRACK](../../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md) flag is set in server_capabilities.
+* Session tracking is supported from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102). To determine if session tracking is enabled, check if the [CLIENT_SESSION_TRACK](../1-connecting/connection.md) flag is set in server_capabilities.
 

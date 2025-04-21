@@ -141,7 +141,7 @@ to (mirror (at) mariadb [dot] org) with the following information:
  Texas, USA") of the mirror (we use geolocation to try and send people to a
  mirror close to them).
 1. The base public URL for the mirror
- (e.g. `'<code>http://mirror.example.net/pub/mariadb</code>'`).
+ (e.g. `'http://mirror.example.net/pub/mariadb'`).
 1. The mirror you are using to rsync from
 
 

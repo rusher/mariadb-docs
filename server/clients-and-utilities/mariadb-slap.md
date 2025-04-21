@@ -4,7 +4,7 @@
 `mariadb-slap` is a tool for load-testing MariaDB. It allows you to emulate multiple concurrent connections, and run a set of queries multiple times.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlslap`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlslap`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 It returns a benchmark including the following information:
@@ -38,7 +38,7 @@ mariadb-slap [options]
 | --- | --- |
 | Option | Description |
 | -a, --auto-generate-sql | Generate SQL statements automatically when they are not supplied in files or via command options. |
-| --auto-generate-sql-add-autoincrement | Add an [AUTO_INCREMENT](../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) column to auto-generated tables. |
+| --auto-generate-sql-add-autoincrement | Add an [AUTO_INCREMENT](../reference/data-types/auto_increment.md) column to auto-generated tables. |
 | --auto-generate-sql-execute-number=num | Specify how many queries to generate automatically. |
 | --auto-generate-sql-guid-primary | Add GUID based primary keys to auto-generated tables. |
 | --auto-generate-sql-load-type=name | Specify the test load type. The allowable values are read (scan tables), write (insert into tables), key (read primary keys), update (update primary keys), or mixed (half inserts, half scanning selects). The default is mixed. |
@@ -65,12 +65,12 @@ mariadb-slap [options]
 | -e name, --engine=name | Comma separated list of storage engines to use for creating the table. The test is run for each engine. You can also specify an option for an engine after a #:#, for example memory:max_row=2300. |
 | -?, --help | Display help and exit. |
 | -h name, --host=name | Connect to the MariaDB server on the given host. |
-| --init-command=name | SQL Command to execute when connecting to the MariaDB server. Will automatically be re-executed when reconnecting. Added in [MariaDB 5.5.34](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes.md). |
+| --init-command=name | SQL Command to execute when connecting to the MariaDB server. Will automatically be re-executed when reconnecting. Added in [MariaDB 5.5.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes). |
 | -i num, --iterations=num | Number of times to run the tests. |
 | --no-defaults | Don't read default options from any option file. Must be given as the first option. |
 | --no-drop | Do not drop any schema created during the test after the test is complete. |
 | -x name, --number-char-cols=name | Number of [VARCHAR](../reference/data-types/string-data-types/varchar.md) columns to create in table if specifying --auto-generate-sql. |
-| -y name, --number-int-cols=name | Number of [INT](../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) columns to create in table if specifying --auto-generate-sql. |
+| -y name, --number-int-cols=name | Number of [INT](../reference/data-types/data-types-numeric-data-types/int.md) columns to create in table if specifying --auto-generate-sql. |
 | --number-of-queries=num | Limit each client to approximately this number of queries. Query counting takes into account the statement delimiter. For example, if you invoke as follows, mariadb-slap --delimiter=";" --number-of-queries=10 --query="use test;insert into t values(null)", the #;
 
 # delimiter is recognized so that each instance of the query string counts as two queries. As a result, 5 rows (not 10) are inserted. |
@@ -125,7 +125,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`mariadb-slap` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-slap` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
@@ -139,7 +139,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --- | --- |
 | Group | Description |
 | [mysqlslap] | Options read by mariadb-slap, which includes both MariaDB Server and MySQL Server. |
-| [mariadb-slap] | Options read by mariadb-slap. Available starting with [MariaDB 10.4.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-slap] | Options read by mariadb-slap. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 | [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
@@ -186,4 +186,3 @@ Benchmark
 	Number of clients running queries: 10
 	Average number of queries per client: 1
 ```
-<span></span>

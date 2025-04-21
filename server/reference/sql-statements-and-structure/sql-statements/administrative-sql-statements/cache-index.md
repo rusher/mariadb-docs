@@ -17,7 +17,7 @@ tbl_index_list:
 
 
 The `CACHE INDEX` statement assigns table indexes to a specific key
-cache. It is used only for [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) tables.
+cache. It is used only for [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) tables.
 
 
 A default key cache exists and cannot be destroyed. To create more key caches, the [key_buffer_size](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) server system variable.

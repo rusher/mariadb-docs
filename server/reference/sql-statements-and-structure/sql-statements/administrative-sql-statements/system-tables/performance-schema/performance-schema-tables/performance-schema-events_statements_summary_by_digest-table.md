@@ -4,7 +4,7 @@
 The [Performance Schema digest](../performance-schema-digests.md) is a hashed, normalized form of a statement with the specific data values removed. It allows statistics to be gathered for similar kinds of statements.
 
 
-The [Performance Schema](performance-schema-table_handles-table.md) `events_statements_summary_by_digest` table records statement events summarized by schema and digest. It contains the following columns:
+The [Performance Schema](../README.md) `events_statements_summary_by_digest` table records statement events summarized by schema and digest. It contains the following columns:
 
 
 

@@ -1,7 +1,7 @@
 
 # aria_read_log
 
-**aria_read_log** is a tool for displaying and applying log records from an [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) [transaction log](../../reference/storage-engines/aria/aria-storage-engine.md#aria-log-files).
+**aria_read_log** is a tool for displaying and applying log records from an [Aria](../../reference/storage-engines/aria/README.md) [transaction log](../../reference/storage-engines/aria/aria-storage-engine.md#aria-log-files).
 
 
 Note: Aria is compiled without -DIDENTICAL_PAGES_AFTER_RECOVERY
@@ -38,7 +38,7 @@ The following variables can be set while passed as commandline options to aria_r
 | -e, --end-lsn=# | Stop applying at this lsn. If end-lsn is used, UNDO:s will not be applied |
 | -h, --aria-log-dir-path=name | Path to the directory where to store transactional log |
 | -P, --page-buffer-size=# | The size of the buffer used for index blocks for Aria tables. |
-| -l, --print-log-control-file | Print the content of the aria_log_control_file. From [MariaDB 10.4.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md). |
+| -l, --print-log-control-file | Print the content of the aria_log_control_file. From [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes). |
 | -o, --start-from-lsn=# | Start reading log from this lsn. |
 | -C, --start-from-checkpoint | Start applying from last checkpoint. |
 | -s, --silent | Print less information during apply/undo phase. |
@@ -50,4 +50,3 @@ The following variables can be set while passed as commandline options to aria_r
 | -V, --version | Print version and exit. |
 
 
-<span></span>

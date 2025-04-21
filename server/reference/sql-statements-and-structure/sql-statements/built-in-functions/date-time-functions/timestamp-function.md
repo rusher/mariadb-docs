@@ -1,7 +1,7 @@
 
 # TIMESTAMP FUNCTION
 
-This page is about the TIMESTAMP function. For the timestamp data type, see [TIMESTAMP](timestamp-function.md).
+This page is about the TIMESTAMP function. For the timestamp data type, see [TIMESTAMP](../../../../data-types/date-and-time-data-types/timestamp.md).
 
 
 ## Syntax

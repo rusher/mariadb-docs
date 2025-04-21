@@ -7,8 +7,8 @@ a perfect plan and in these cases you may have to provide hints to force the
 optimizer to use another plan.
 
 
-You can examine the query plan for a [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) by writing
-[EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) before the statement. [SHOW EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `EXPLAIN`.
+You can examine the query plan for a [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) by writing
+[EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) before the statement. [SHOW EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `EXPLAIN`.
 
 
 For the following queries, we will use the world database for
@@ -41,8 +41,8 @@ gunzip world.sql.gz
 ## Forcing Join Order
 
 
-You can force the join order by using [STRAIGHT_JOIN](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) either in
-the [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) or [JOIN](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) part.
+You can force the join order by using [STRAIGHT_JOIN](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) either in
+the [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) or [JOIN](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) part.
 
 
 The simplest way to force the join order is to put the tables in the correct
@@ -70,7 +70,7 @@ match. As there is only one matching country this will be faster than the
 original query.
 
 
-The output of [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) for the above cases is:
+The output of [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for the above cases is:
 
 
 
@@ -289,13 +289,13 @@ and [ORDER BY](../../../../reference/sql-statements-and-structure/sql-statements
 
   * Create a temporary (in memory) table for the 'to-be-sorted' data. (If this
  gets bigger than `max_heap_table_size` or contains blobs
- then an [Aria](../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) or [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) disk based table will be used)
+ then an [Aria](../../../../reference/storage-engines/aria/README.md) or [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md) disk based table will be used)
   * Sort the keys + reference to row (with filesort)
   * Scan the table in sorted order
 
 
 A temporary table will always be used if the fields which will be sorted are
-not from the first table in the [JOIN](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) order.
+not from the first table in the [JOIN](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) order.
 
 
 * Use a temporary table for [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md):
@@ -394,12 +394,12 @@ temporary table for the result set.
 ## Optimizer Switch
 
 
-In [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) we added an [optimizer switch](../system-variables/server-system-variables.md#optimizer_switch)
+In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) we added an [optimizer switch](../system-variables/server-system-variables.md#optimizer_switch)
 which allows you to specify which algorithms will be considered when optimizing
 a query.
 
 
-See the [optimizer](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/optimizer-and-performance-tuning-videos.md) section for more information about the different
+See the [optimizer](README.md) section for more information about the different
 algorithms which are used.
 
 
@@ -412,4 +412,3 @@ algorithms which are used.
 * [GROUP BY](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
-<span></span>

@@ -2,7 +2,7 @@
 # USE CATALOG
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
@@ -17,7 +17,7 @@ USE CATALOG catalog_name
 ## Description
 
 
-Changes to another [catalog](catalogs-overview.md).
+Changes to another [catalog](README.md).
 Can only be done by a super user in the 'def' catalog.
 Changing catalog will update catalog status and reset all session status.
 
@@ -30,5 +30,5 @@ user to import SQL scripts that use `USE CATALOG...`.
 ## See Also
 
 
-* [USE database](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md). Changing database.
+* [USE database](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md). Changing database.
 

@@ -23,7 +23,7 @@ If any argument is `NULL`, the function returns `NULL`.
 
 
 The inverse of this function (when called with a single argument) is
-the [EXP()](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) function.
+the [EXP()](exp.md) function.
 
 
 ## Examples

@@ -8,13 +8,13 @@ The `WSREP_INFO` plugin library contains the following plugins:
 * `WSREP_STATUS`
 
 
-The `WSREP_MEMBERSHIP` plugin creates the [WSREP_MEMBERSHIP](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. The plugin also adds the [SHOW WSREP_MEMBERSHIP](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-wsrep_membership.md) statement.
+The `WSREP_MEMBERSHIP` plugin creates the [WSREP_MEMBERSHIP](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_membership-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. The plugin also adds the [SHOW WSREP_MEMBERSHIP](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-wsrep_membership.md) statement.
 
 
-The `WSREP_STATUS` plugin creates the [WSREP_STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. The plugin also adds the [SHOW WSREP_STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-wsrep_status.md) statement.
+The `WSREP_STATUS` plugin creates the [WSREP_STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. The plugin also adds the [SHOW WSREP_STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-wsrep_status.md) statement.
 
 
-These tables and statements provide information about [Galera](../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md). Only users with the [SUPER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege can access this information.
+These tables and statements provide information about [Galera](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md). Only users with the [SUPER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege can access this information.
 
 
 
@@ -73,9 +73,9 @@ SHOW TABLES FROM information_schema LIKE 'WSREP%';
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.18](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.1.13](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Alpha | [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes) |
 
 
 

@@ -27,7 +27,7 @@ ENUMs require relatively little storage space compared to strings, either one or
 ### NULL and empty values
 
 
-An ENUM can also contain NULL and empty values. If the ENUM column is declared to permit NULL values, NULL becomes a valid value, as well as the default value (see below). If [strict SQL Mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is not enabled, and an invalid value is inserted into an ENUM, a special empty string, with an index value of zero (see Numeric index, below), is inserted, with a warning. This may be confusing, because the empty string is also a possible value, and the only difference if that is this case its index is not 0. Inserting will fail with an error if strict mode is active.
+An ENUM can also contain NULL and empty values. If the ENUM column is declared to permit NULL values, NULL becomes a valid value, as well as the default value (see below). If [strict SQL Mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled, and an invalid value is inserted into an ENUM, a special empty string, with an index value of zero (see Numeric index, below), is inserted, with a warning. This may be confusing, because the empty string is also a possible value, and the only difference if that is this case its index is not 0. Inserting will fail with an error if strict mode is active.
 
 
 If a `DEFAULT` clause is missing, the default value will be:

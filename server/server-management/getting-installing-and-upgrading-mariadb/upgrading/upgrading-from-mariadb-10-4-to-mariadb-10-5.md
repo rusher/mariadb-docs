@@ -11,16 +11,16 @@ For Windows, see [Upgrading MariaDB on Windows](upgrading-mariadb-on-windows.md)
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.4 to MariaDB 10.5 with Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-10-4-to-mariadb-10-5-with-galera-cluster.md).
 
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 
 The suggested upgrade procedure is:
 
 
-1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md). For example,
+1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105). For example,
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../binary-packages/installing-mariadb-deb-files.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 1. [Stop MariaDB](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 `sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../binary-packages/installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
 1. Make any desired changes to configuration options in [option files](../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
@@ -107,15 +107,15 @@ The following options should be removed or renamed if you use them in your [opti
 | Option | Reason |
 | --- | --- |
 | Option | Reason |
-| [innodb_checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) | Deprecated and functionality replaced by [innodb_checksum_algorithms](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
-| [innodb_idle_flush_pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct) | Has had no effect since merging InnoDB 5.7 from mysql-5.7.9 ([MariaDB 10.2.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md)). |
-| [innodb_locks_unsafe_for_binlog](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) | Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Use [READ COMMITTED transaction isolation level](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) instead. |
-| [innodb_rollback_segments](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) | Deprecated and replaced by [innodb_undo_logs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). |
-| [innodb_stats_sample_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) | Deprecated in [MariaDB 10.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md). Use [innodb_stats_transient_sample_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages) instead. |
-| [max_long_data_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size) | Deprecated and replaced by [max_allowed_packet](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). |
-| [multi_range_count](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count) | Deprecated and has had no effect since [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). |
-| [thread_concurrency](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_concurrency) | Deprecated and has had no effect since [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). |
-| [timed_mutexes](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timed_mutexes) | Deprecated and has had no effect since [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). |
+| [innodb_checksums](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums) | Deprecated and functionality replaced by [innodb_checksum_algorithms](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). |
+| [innodb_idle_flush_pct](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct) | Has had no effect since merging InnoDB 5.7 from mysql-5.7.9 ([MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)). |
+| [innodb_locks_unsafe_for_binlog](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) | Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). Use [READ COMMITTED transaction isolation level](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#read-committed) instead. |
+| [innodb_rollback_segments](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) | Deprecated and replaced by [innodb_undo_logs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). |
+| [innodb_stats_sample_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) | Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). Use [innodb_stats_transient_sample_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_stats_transient_sample_pages) instead. |
+| [max_long_data_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size) | Deprecated and replaced by [max_allowed_packet](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). |
+| [multi_range_count](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count) | Deprecated and has had no effect since [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). |
+| [thread_concurrency](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_concurrency) | Deprecated and has had no effect since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). |
+| [timed_mutexes](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timed_mutexes) | Deprecated and has had no effect since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). |
 
 
 
@@ -137,7 +137,7 @@ The following options have been deprecated. They have not yet been removed, but 
 | [innodb_buffer_pool_instances](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances) | Having more than one buffer pool is no longer necessary. |
 | [innodb_commit_concurrency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_commit_concurrency) | No need for thread throttling any more. |
 | [innodb_concurrency_tickets](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) | No need for thread throttling any more. |
-| [innodb_log_files_in_group](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) | Redo log was unnecessarily split into multiple files. Limited to 1 from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md). |
+| [innodb_log_files_in_group](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_files_in_group) | Redo log was unnecessarily split into multiple files. Limited to 1 from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105). |
 | [innodb_log_optimize_ddl](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) | Prohibited optimizations. |
 | [innodb_page_cleaners](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) | Having more than one page cleaner task no longer necessary. |
 | [innodb_replication_delay](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) | No need for thread throttling any more. |
@@ -153,18 +153,18 @@ The following options have been deprecated. They have not yet been removed, but 
 ### Major New Features To Consider
 
 
-You might consider using the following major new features in [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md):
+You might consider using the following major new features in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105):
 
 
-* The [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md) allows one to archive MariaDB tables in Amazon S3, or any third-party public or private cloud that implements S3 API.
-* [ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) columnar storage engine.
+* The [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/README.md) allows one to archive MariaDB tables in Amazon S3, or any third-party public or private cloud that implements S3 API.
+* [ColumnStore](/kb/en/mariadb-columnstore/) columnar storage engine.
 * See also [System Variables Added in MariaDB 10.5](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-10-5.md).
 
 
 ### See Also
 
 
-* [The features in MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
+* [The features in MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 
 
 
@@ -176,4 +176,3 @@ You might consider using the following major new features in [MariaDB 10.5](../.
 * [Upgrading from MariaDB 10.2 to MariaDB 10.3](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-102-to-mariadb-103.md)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-101-to-mariadb-102.md)
 
-<span></span>

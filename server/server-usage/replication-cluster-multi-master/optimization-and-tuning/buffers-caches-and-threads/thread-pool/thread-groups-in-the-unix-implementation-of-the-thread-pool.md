@@ -8,7 +8,7 @@ This article does not apply to the thread pool implementation on Windows. On Win
 On Unix, the thread pool implementation uses objects called thread groups to divide up client connections into many independent sets of threads. The `[thread_pool_size](thread-pool-system-status-variables.md#thread_pool_size)` system variable defines the number of thread groups on a system. Generally speaking, the goal of the thread group implementation is to have one running thread on each CPU on the system at a time. Therefore, the default value of the `[thread_pool_size](thread-pool-system-status-variables.md#thread_pool_size)` system variable is auto-sized to the number of CPUs on the system.
 
 
-When setting the `[thread_pool_size](thread-pool-system-status-variables.md#thread_pool_size)` system variable's value at system startup, the max value is `100000`. However, it is not a good idea to set it that high. When setting its value dynamically, the max value is either `128` or the value that was set at system startup--whichever value is higher. It can be changed dynamically with `[SET GLOBAL](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example:
+When setting the `[thread_pool_size](thread-pool-system-status-variables.md#thread_pool_size)` system variable's value at system startup, the max value is `100000`. However, it is not a good idea to set it that high. When setting its value dynamically, the max value is either `128` or the value that was set at system startup--whichever value is higher. It can be changed dynamically with `[SET GLOBAL](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example:
 
 
 ```
@@ -176,7 +176,7 @@ The thread pool's **timer thread** creates a new **worker thread** for a thread 
 In some of the scenarios listed above, a thread is only created within a thread group if no new threads have been created for the thread group within the *throttling interval*. The throttling interval depends on the number of threads that are already in the thread group.
 
 
-In [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and later, thread creation is not throttled until a thread group has more than 1 + `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` threads:
+In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) and later, thread creation is not throttled until a thread group has more than 1 + `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` threads:
 
 
 
@@ -200,7 +200,7 @@ In [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-
 The thread pool has a feature that allows it to detect if a client connection is executing a long-running query that may be monopolizing its thread group. If a client connection were to monopolize its thread group, then that could prevent other client connections in the thread group from running their queries. In other words, the thread group would appear to be *stalled*.
 
 
-This stall detection feature is implemented by creating a **timer thread** that periodically checks if any of the thread groups are stalled. There is only a single **timer thread** for the entire thread pool. The `[thread_pool_stall_limit](thread-pool-system-status-variables.md#thread_pool_stall_limit)` system variable defines the number of milliseconds between each stall check performed by the timer thread. The default value is `500`. It can be changed dynamically with `[SET GLOBAL](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example:
+This stall detection feature is implemented by creating a **timer thread** that periodically checks if any of the thread groups are stalled. There is only a single **timer thread** for the entire thread pool. The `[thread_pool_stall_limit](thread-pool-system-status-variables.md#thread_pool_stall_limit)` system variable defines the number of milliseconds between each stall check performed by the timer thread. The default value is `500`. It can be changed dynamically with `[SET GLOBAL](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example:
 
 
 ```
@@ -244,7 +244,7 @@ In general, changing the value of the `[thread_pool_stall_limit](thread-pool-sys
 If the **timer thread** were to detect a stall in a thread group, then it would either wake up a sleeping **worker thread** or create a new **worker thread** in that thread group. At that point, the thread group would have multiple active **worker threads**. In other words, the thread group would be *oversubscribed*.
 
 
-You might expect that the thread pool would shutdown one of the **worker threads** when the stalled client connection finished what it was doing, so that the thread group would only have one active **worker thread** again. However, this does not always happen. Once a thread group is oversubscribed, the `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` system variable defines the upper limit for when **worker threads** start shutting down after they finish work for client connections. The default value is `3`. It can be changed dynamically with `[SET GLOBAL](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example:
+You might expect that the thread pool would shutdown one of the **worker threads** when the stalled client connection finished what it was doing, so that the thread group would only have one active **worker thread** again. However, this does not always happen. Once a thread group is oversubscribed, the `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` system variable defines the upper limit for when **worker threads** start shutting down after they finish work for client connections. The default value is `3`. It can be changed dynamically with `[SET GLOBAL](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example:
 
 
 ```
@@ -268,4 +268,3 @@ To clarify, the `[thread_pool_oversubscribe](thread-pool-system-status-variables
 
 In general, the default value of `3` should be adequate for most users. Most users should not need to change the value of the `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` system variable.
 
-<span></span>

@@ -5,7 +5,7 @@
 ## Introduction
 
 
-Before [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), the MySQL/MariaDB optimizer relied on storage engines (e.g. InnoDB) to provide statistics for the query optimizer. This approach worked; however it had some deficiencies:
+Before [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), the MySQL/MariaDB optimizer relied on storage engines (e.g. InnoDB) to provide statistics for the query optimizer. This approach worked; however it had some deficiencies:
 
 
 * Storage engines provided poor statistics (this was
@@ -53,7 +53,7 @@ Engine-independent statistics are collected by doing full table and full index s
 The [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement can be used to collect table statistics. However, simply running `ANALYZE TABLE table_name` does not collect engine-independent (or histogram) statistics by default.
 
 
-When the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
+When the [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../../reference/storage-engines/innodb/README.md) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
 
 
 [ANALYZE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) may also collect engine-independent statistics for the table. The specific behavior depends on the value of the [use_stat_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. Engine-independent statistics will only be collected if one of the following is true:
@@ -111,7 +111,7 @@ ANALYZE TABLE tbl;
 Statistics are stored in three tables, [mysql.table_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-table_stats-table.md), [mysql.column_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-column_stats-table.md) and [mysql.index_stats](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-index_stats-table.md).
 
 
-It is possible to update statistics tables manually. One should modify the table(s) with regular [INSERT](../../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md)/[UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)/[DELETE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements. Statistics data will be re-read when the tables are re-opened. One way to force all tables to be re-opened is to issue [FLUSH TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) command.
+It is possible to update statistics tables manually. One should modify the table(s) with regular [INSERT](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md)/[UPDATE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)/[DELETE](../../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements. Statistics data will be re-read when the tables are re-opened. One way to force all tables to be re-opened is to issue [FLUSH TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) command.
 
 
 A few scenarios where one might need to update statistics tables manually:
@@ -131,4 +131,3 @@ A few scenarios where one might need to update statistics tables manually:
 * [JSON histograms](https://mariadb.org/10-7-preview-feature-json-histograms/) (mariadb.org blog)
 * [Improving MariaDB’s optimizer with better selectivity estimates - Sergey Petrunia - Server Fest 2021](https://www.youtube.com/watch?v=bsl7Fis0onE) (video)
 
-<span></span>

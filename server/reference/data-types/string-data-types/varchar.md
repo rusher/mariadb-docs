@@ -23,7 +23,7 @@ to be a maximum of 21,844 characters.
 
 #### Note:
 
-For the [ColumnStore](../../../../columnstore/columnstore-data-ingestion/columnstore-remote-bulk-data-import-mcsimport.md) engine, M represents the maximum column length in
+For the [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/) engine, M represents the maximum column length in
 bytes.
 
 
@@ -37,7 +37,7 @@ bytes.
 MariaDB follows the standard SQL specification, and does not remove trailing spaces from VARCHAR values.
 
 
-VARCHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine does not support VARCHAR(0).
+VARCHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../storage-engines/connect/README.md) storage engine does not support VARCHAR(0).
 
 
 VARCHAR is shorthand for CHARACTER VARYING. NATIONAL VARCHAR is the
@@ -167,20 +167,20 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## Truncation
 
 
-* Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a VARCHAR column. If the extra characters are spaces, the spaces that can't fit will be removed and you will always get a warning, regardless of the [sql mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) setting.
+* Depending on whether or not [strict sql mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is set, you will either get a warning or an error if you try to insert a string that is too long into a VARCHAR column. If the extra characters are spaces, the spaces that can't fit will be removed and you will always get a warning, regardless of the [sql mode](../../../server-management/variables-and-modes/sql-mode.md) setting.
 
 
 ## Difference Between VARCHAR and [TEXT](text.md)
 
 
 * VARCHAR columns can be fully indexed. [TEXT](text.md) columns can only be indexed over a specified length.
-* Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria_pagecache_buffer_size](../../storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
+* Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria_pagecache_buffer_size](../../storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
 
 
 ## Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `VARCHAR2` is a synonym.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `VARCHAR2` is a synonym.
 
 
 ### For Storage Engine Developers
@@ -195,8 +195,8 @@ In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibilit
 
 * [VARBINARY](varbinary.md)
 * [TEXT](text.md)
-* [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md)
+* [CHAR](char.md)
 * [Character Sets and Collations](character-sets/README.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

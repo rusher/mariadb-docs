@@ -1,7 +1,7 @@
 
 # Scalar Subqueries
 
-A scalar subquery is a [subquery](subqueries-and-all.md) that returns a single value. This is the simplest form of a subquery, and can be used in most places a literal or single column value is valid.
+A scalar subquery is a [subquery](README.md) that returns a single value. This is the simplest form of a subquery, and can be used in most places a literal or single column value is valid.
 
 
 The data type, length and [character set and collation](../../../../../../data-types/string-data-types/character-sets/README.md) are all taken from the result returned by the subquery. The result of a subquery can always be NULL, that is, no result returned. Even if the original value is defined as NOT NULL, this is disregarded.

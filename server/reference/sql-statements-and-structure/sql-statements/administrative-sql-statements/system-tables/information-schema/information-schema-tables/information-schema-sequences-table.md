@@ -2,8 +2,8 @@
 # Information Schema SEQUENCES Table
 
 
-##### MariaDB starting with [11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SEQUENCES` table stores information about [sequences](../../../../../sequences/README.md) on the server. 
+##### MariaDB starting with [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+The [Information Schema](../README.md) `SEQUENCES` table stores information about [sequences](../../../../../sequences/README.md) on the server. 
 
 
 It contains the following columns. See [CREATE SEQUENCE](../../../../../sequences/create-sequence.md) for details.
@@ -60,6 +60,6 @@ NUMERIC_PRECISION_RADIX: 2
 * [NEXT VALUE FOR](../../../../../sequences/sequence-functions/next-value-for-sequence_name.md)
 * [PREVIOUS VALUE FOR](../../../../../sequences/sequence-functions/previous-value-for-sequence_name.md)
 * [SETVAL()](../../../../../sequences/sequence-functions/setval.md). Set next value for the sequence.
-* [AUTO INCREMENT](../../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [AUTO INCREMENT](../../../../../../data-types/auto_increment.md)
 * [Sequence Storage Engine](../../../../../../storage-engines/sequence-storage-engine.md)
 

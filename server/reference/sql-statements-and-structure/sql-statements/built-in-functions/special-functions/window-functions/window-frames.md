@@ -19,7 +19,7 @@ frame_border:
 ## Description
 
 
-A basic overview of [window functions](window-functions-overview.md) is described in [Window Functions Overview](window-functions-overview.md). Window frames expand this functionality by allowing the function to include a specified a number of rows around the current row.
+A basic overview of [window functions](README.md) is described in [Window Functions Overview](window-functions-overview.md). Window frames expand this functionality by allowing the function to include a specified a number of rows around the current row.
 
 
 These include:
@@ -29,7 +29,7 @@ These include:
 * All rows after the current row (UNBOUNDED FOLLOWING), for example `RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING`
 * A set number of rows before the current row (expr PRECEDING) for example `RANGE BETWEEN 6 PRECEDING AND CURRENT ROW`
 * A set number of rows after the current row (expr PRECEDING AND expr FOLLOWING) for example `RANGE BETWEEN CURRENT ROW AND 2 FOLLOWING`
-* A specified number of rows both before and after the current row, for example `RANGE BETWEEN 6 PRECEDING AND 3 FOLLOWING `
+* A specified number of rows both before and after the current row, for example `RANGE BETWEEN 6 PRECEDING AND 3 FOLLOWING`
 
 
 The following functions operate on window frames:
@@ -41,8 +41,8 @@ The following functions operate on window frames:
 * [BIT_XOR](../../aggregate-functions/bit_xor.md)
 * [COUNT](../../aggregate-functions/count.md)
 * [LEAD](lead.md)
-* [MAX](../../../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md)
-* [MIN](../../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md)
+* [MAX](../../aggregate-functions/max.md)
+* [MIN](../../aggregate-functions/min.md)
 * [NTILE](ntile.md)
 * [STD](../../aggregate-functions/std.md)
 * [STDDEV](../../aggregate-functions/stddev.md)

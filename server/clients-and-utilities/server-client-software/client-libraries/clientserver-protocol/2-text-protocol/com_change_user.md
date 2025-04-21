@@ -35,7 +35,7 @@ COM_CHANGE_USER resets the connection and re-authenticates with the given creden
 #### Response
 
 
-Server response is like [connection authentication](../../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md) :
+Server response is like [connection authentication](../1-connecting/connection.md) :
 
 
 * An OK packet in case of success [OK_Packet](../4-server-response-packets/ok_packet.md).

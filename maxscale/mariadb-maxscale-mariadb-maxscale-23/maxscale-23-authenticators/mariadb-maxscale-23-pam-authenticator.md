@@ -67,7 +67,7 @@ account         required        pam_unix.so
 
 
 The MaxScale PAM authenticator supports a limited version of [user
-mapping](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam.md). It requires
+mapping](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/user-and-group-mapping-with-pam). It requires
 less configuration but is also less accurate than the server authentication. Anonymous
 mapping is enabled in MaxScale if the following user exists:
 - Empty username (e.g. `''@'%'` or `''@'myhost.com'`)
@@ -102,7 +102,7 @@ outcome.
 
 Setting up PAM group mapping for the MariaDB server is a more involved process as the
 server requires details on which Unix user or group is mapped to which MariaDB user. See
-[this guide](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication.md)
+[this guide](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/configuring-pam-authentication-and-user-mapping-with-unix-authentication)
 for more details. Performing all the steps in the guide also on the MaxScale machine is
 not required, as the MaxScale PAM plugin only checks that the client host matches an
 anonymous user and that the client (with the username and password it provided) can log

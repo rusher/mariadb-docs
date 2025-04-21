@@ -23,7 +23,7 @@ This will be couched in terms of Data Warehousing, with a huge `Fact` table and 
 `Staging` is one (or more) tables in which the data lives only long enough to be handed off to Normalization, Summary, and the Fact tables.
 
 
-Since we are probably talking about a billion-row table, shrinking the width of the Fact table by normalizing (as mentioned here). Changing an [INT](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) to a [MEDIUMINT](../../../../reference/data-types/data-types-numeric-data-types/mediumint.md) will save a GB. Replacing a string by an id (normalizing) saves many GB. This helps disk space and cacheability, hence speed.
+Since we are probably talking about a billion-row table, shrinking the width of the Fact table by normalizing (as mentioned here). Changing an [INT](../../../../reference/data-types/data-types-numeric-data-types/int.md) to a [MEDIUMINT](../../../../reference/data-types/data-types-numeric-data-types/mediumint.md) will save a GB. Replacing a string by an id (normalizing) saves many GB. This helps disk space and cacheability, hence speed.
 
 
 ## Injection speed
@@ -156,7 +156,7 @@ The choice depends on which is faster (insertion or processing). There are trade
 ## Engine choice
 
 
-`Fact` table -- [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), if for no other reason than that a system crash would not need a REPAIR TABLE. (REPAIRing a billion-row [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) table can take hours or days.)
+`Fact` table -- [InnoDB](../../../../reference/storage-engines/innodb/README.md), if for no other reason than that a system crash would not need a REPAIR TABLE. (REPAIRing a billion-row [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md) table can take hours or days.)
 
 
 Normalization tables -- InnoDB, primarily because it can be done efficiently with 2 indexes, whereas, MyISAM would need 4 to achieve the same efficiency.
@@ -285,4 +285,3 @@ optimizations, and debugging tips.
 
 Original source: [staging_table](https://mysql.rjweb.org/doc.php/staging_table)
 
-<span></span>

@@ -18,7 +18,7 @@ Returns `1` if the lock is free (no one is using the lock),
 error occurs (such as an incorrect argument, like an empty string or `NULL`). `str` is case insensitive.
 
 
-If the [metadata_lock_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [metadata_lock_info](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table contains information about locks of this kind (as well as [metadata locks](../../../transactions/metadata-locking.md)).
+If the [metadata_lock_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../../../administrative-sql-statements/system-tables/information-schema/README.md) [metadata_lock_info](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table contains information about locks of this kind (as well as [metadata locks](../../../transactions/metadata-locking.md)).
 
 
 Statements using the `IS_FREE_LOCK` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).

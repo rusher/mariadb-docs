@@ -4,7 +4,7 @@
 Due to their nature, not all floating-point numbers can be stored with exact precision. Hardware architecture, the CPU or even the compiler version and optimization level may affect the precision.
 
 
-If you are comparing [DOUBLEs](double.md) or [FLOATs](float.md) with numeric decimals, it is not safe to use the [equality](../../sql-statements-and-structure/geographic-geometric-features/geometry-relations/equals.md) operator.
+If you are comparing [DOUBLEs](double.md) or [FLOATs](float.md) with numeric decimals, it is not safe to use the [equality](../../sql-statements-and-structure/operators/comparison-operators/equal.md) operator.
 
 
 Sometimes, changing a floating-point number from single-precision (FLOAT) to double-precision (DOUBLE) will fix the problem.

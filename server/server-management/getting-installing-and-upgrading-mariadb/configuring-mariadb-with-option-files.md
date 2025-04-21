@@ -63,7 +63,7 @@ The option files are each scanned once, in the order given by `--help --verbose`
 On Linux, Unix, or Mac OS X, the default option file is called `my.cnf`. MariaDB looks for the MariaDB option file in the locations and orders listed below.
 
 
-The locations are dependent on whether the `DEFAULT_SYSCONFDIR` `[cmake](compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` option was defined when MariaDB was built. This option is usually defined as `/etc` when building [RPM packages](binary-packages/rpm/README.md), but it is usually not defined when building [DEB packages](binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md) or [binary tarballs](binary-packages/installing-mariadb-binary-tarballs.md).
+The locations are dependent on whether the `DEFAULT_SYSCONFDIR` `[cmake](compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` option was defined when MariaDB was built. This option is usually defined as `/etc` when building [RPM packages](binary-packages/rpm/README.md), but it is usually not defined when building [DEB packages](binary-packages/installing-mariadb-deb-files.md) or [binary tarballs](binary-packages/installing-mariadb-binary-tarballs.md).
 
 
 * When the `DEFAULT_SYSCONFDIR` `[cmake](compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` option was not defined, MariaDB looks for the MariaDB option file in the following locations in the following order:
@@ -90,18 +90,18 @@ The locations are dependent on whether the `DEFAULT_SYSCONFDIR` `[cmake](compili
 | --- | --- |
 | Location | Scope |
 | DEFAULT_SYSCONFDIR/my.cnf | Global |
-| $MARIADB_HOME/my.cnf | Server (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) |
+| $MARIADB_HOME/my.cnf | Server (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)) |
 | $MYSQL_HOME/my.cnf | Server |
 | defaults-extra-file | File specified with [--defaults-extra-file](starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
 | ~/.my.cnf | User |
 
 
 
-* `MARIADB_HOME` (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) or `MYSQL_HOME` is the [environment variable](mariadb-environment-variables.md) containing the path to the directory holding the server-specific `my.cnf` file. If `MYSQL_HOME` is not set, and the server is started with [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), `MYSQL_HOME` is set as follows:
+* `MARIADB_HOME` (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)) or `MYSQL_HOME` is the [environment variable](mariadb-environment-variables.md) containing the path to the directory holding the server-specific `my.cnf` file. If `MYSQL_HOME` is not set, and the server is started with [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), `MYSQL_HOME` is set as follows:
 
   * If there is a `my.cnf` file in the MariaDB data directory, but not in the MariaDB base directory, `MYSQL_HOME` is set to the MariaDB data directory.
   * Else, `MYSQL_HOME` is set to the MariaDB base directory.
-* Note that if `MARIADB_HOME` is set (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)), `MYSQL_HOME` will not be used, even if set.
+* Note that if `MARIADB_HOME` is set (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)), `MYSQL_HOME` will not be used, even if set.
 
 
 ### Default Option File Locations on Windows
@@ -124,8 +124,8 @@ On Windows, the option file can be called either `my.ini` or `my.cnf`. MariaDB l
 | INSTALLDIR\my.cnf | Server |
 | INSTALLDIR\data\my.ini | Server |
 | INSTALLDIR\data\my.cnf | Server |
-| %MARIADB_HOME%\my.ini | Server (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) |
-| %MARIADB_HOME%\my.cnf | Server (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) |
+| %MARIADB_HOME%\my.ini | Server (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)) |
+| %MARIADB_HOME%\my.cnf | Server (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)) |
 | %MYSQL_HOME%\my.ini | Server |
 | %MYSQL_HOME%\my.cnf | Server |
 | defaults-extra-file | File specified with [--defaults-extra-file](starting-and-stopping-mariadb/mariadbd-options.md#-defaults-extra-file), if any |
@@ -137,9 +137,9 @@ On Windows, the option file can be called either `my.ini` or `my.cnf`. MariaDB l
 echo %WINDIR%
 ```
 * The `Windows Directory` is the directory returned by the `[GetWindowsDirectory](https://docs.microsoft.com/en-us/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getwindowsdirectorya)` function. The value may be a private `Windows Directory` for the application, or it may be the same as the `System Windows Directory` returned by the `[GetSystemWindowsDirectory](https://docs.microsoft.com/en-us/windows/desktop/api/sysinfoapi/nf-sysinfoapi-getsystemwindowsdirectorya)` function.
-* `INSTALLDIR` is the parent directory of the directory where `mysqld.exe` is located. For example, if `mysqld.exe` is in `C:\Program Files\[MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)\bin`, then `INSTALLDIR` would be `C:\Program Files\[MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)`.
-* `MARIADB_HOME` (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) or `MYSQL_HOME` is the [environment variable](mariadb-environment-variables.md) containing the path to the directory holding the server-specific `my.cnf` file.
-* Note that if `MARIADB_HOME` is set (from [MariaDB 10.6](../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)), `MYSQL_HOME` will not be used, even if set.
+* `INSTALLDIR` is the parent directory of the directory where `mysqld.exe` is located. For example, if `mysqld.exe` is in `C:\Program Files\[MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)\bin`, then `INSTALLDIR` would be `C:\Program Files\[MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)`.
+* `MARIADB_HOME` (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)) or `MYSQL_HOME` is the [environment variable](mariadb-environment-variables.md) containing the path to the directory holding the server-specific `my.cnf` file.
+* Note that if `MARIADB_HOME` is set (from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)), `MYSQL_HOME` will not be used, even if set.
 
 
 ### Default Option File Hierarchy
@@ -240,13 +240,13 @@ MariaDB programs reads server options from the following server option groups:
 | [mysqld-X.Y] | Options read by a specific version of mysqld, which includes both MariaDB Server and MySQL Server. For example, [mysqld-10.4]. |
 | [mariadb] | Options read by MariaDB Server. |
 | [mariadb-X.Y] | Options read by a specific version of MariaDB Server. For example, [mariadb-10.4]. |
-| [mariadbd] | Options read by MariaDB Server. Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
-| [mariadbd-X.Y] | Options read by a specific version of MariaDB Server. For example, [mariadbd-10.4]. Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
-| [galera] | Options read by MariaDB Server, but only if it is compiled with [Galera Cluster](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) support. In [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and later, all builds on Linux are compiled with [Galera Cluster](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) support. When using one of these builds, options from this option group are read even if the [Galera Cluster](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) functionality is not enabled. |
+| [mariadbd] | Options read by MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [mariadbd-X.Y] | Options read by a specific version of MariaDB Server. For example, [mariadbd-10.4]. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [galera] | Options read by MariaDB Server, but only if it is compiled with [Galera Cluster](../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) support. In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and later, all builds on Linux are compiled with [Galera Cluster](../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) support. When using one of these builds, options from this option group are read even if the [Galera Cluster](../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) functionality is not enabled. |
 
 
 
-*X.Y* in the examples above refer to the base (major.minor) version of the server. For example, [MariaDB 10.3.10](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10310-release-notes.md) would read from `[mariadb-10.3]`. By using the `mariadb-X.Y` syntax, one can create option files that have MariaDB-only options in the MariaDB-specific option groups. That would allow the option file to work for both MariaDB and MySQL.
+*X.Y* in the examples above refer to the base (major.minor) version of the server. For example, [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) would read from `[mariadb-10.3]`. By using the `mariadb-X.Y` syntax, one can create option files that have MariaDB-only options in the MariaDB-specific option groups. That would allow the option file to work for both MariaDB and MySQL.
 
 
 ### Client Option Groups
@@ -277,30 +277,30 @@ Many MariaDB tools reads options from their own option groups as well. Many of t
 | Group | Description |
 | [mysqld_safe] | Options read by [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), which includes both MariaDB Server and MySQL Server. |
 | [safe_mysqld] | Options read by [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadbd-safe] | Options read by [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) from MariaDB Server. Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadbd-safe] | Options read by [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mariadb_safe] | Options read by [mysqld_safe](../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) from MariaDB Server. Deprecated, please avoid using this. |
-| [mariabackup] | Options read by [Mariabackup](../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). Available starting with [MariaDB 10.1.31](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes.md) and [MariaDB 10.2.13](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10213-release-notes.md). |
-| [xtrabackup] | Options read by [Mariabackup](../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) and [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md). |
+| [mariabackup] | Options read by [Mariabackup](../backing-up-and-restoring-databases/mariabackup/README.md). Available starting with [MariaDB 10.1.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes) and [MariaDB 10.2.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10213-release-notes). |
+| [xtrabackup] | Options read by [Mariabackup](../backing-up-and-restoring-databases/mariabackup/README.md) and [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md). |
 | [mysql_upgrade] | Options read by [mysql_upgrade](../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-upgrade] | Options read by [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-upgrade] | Options read by [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [sst] | Specific options read by the [mariabackup SST method](../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md) and the [xtrabackup-v2 SST method](https://mariadb.com/kb/en/). |
-| [mysql] | Options read by [mysql](../../../connectors/mariadb-connector-c/other-c-c-connectors/mysql-client-library-32358.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-client] | Options read by [mariadb](../../clients-and-utilities/mariadb-client/README.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
-| [mysqldump] | Options read by [mysqldump](../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-dump] | Options read by [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mysql] | Options read by [mysql](../../clients-and-utilities/mariadb-client/README.md), which includes both MariaDB Server and MySQL Server. |
+| [mariadb-client] | Options read by [mariadb](../../clients-and-utilities/mariadb-client/README.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [mysqldump] | Options read by [mysqldump](../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md), which includes both MariaDB Server and MySQL Server. |
+| [mariadb-dump] | Options read by [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mysqlimport] | Options read by [mysqlimport](../../clients-and-utilities/legacy-clients-and-utilities/mysqlimport.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-import] | Options read by [mariadb-import](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
-| [mysqlbinlog] | Options read by [mysqlbinlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-binlog] | Options read by [mariadb-binlog](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-import] | Options read by [mariadb-import](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [mysqlbinlog] | Options read by [mysqlbinlog](../../clients-and-utilities/mariadb-binlog/README.md), which includes both MariaDB Server and MySQL Server. |
+| [mariadb-binlog] | Options read by [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/README.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mysqladmin] | Options read by [mysqladmin](../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-admin] | Options read by [mariadb-admin](../../clients-and-utilities/mariadb-admin.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-admin] | Options read by [mariadb-admin](../../clients-and-utilities/mariadb-admin.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mysqlshow] | Options read by [mysqlshow](../../clients-and-utilities/legacy-clients-and-utilities/mysqlshow.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-show] | Options read by [mariadb-show](../../clients-and-utilities/mariadb-show.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-show] | Options read by [mariadb-show](../../clients-and-utilities/mariadb-show.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mysqlcheck] | Options read by [mariadb-check](../../clients-and-utilities/mariadb-check.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-check] | Options read by [mariadb-check](../../clients-and-utilities/mariadb-check.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-check] | Options read by [mariadb-check](../../clients-and-utilities/mariadb-check.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mysqlslap] | Options read by [mysqlslap](../../clients-and-utilities/legacy-clients-and-utilities/mysqlslap.md), which includes both MariaDB Server and MySQL Server. |
-| [mariadb-slap] | Options read by [mariadb-slap](../../clients-and-utilities/mariadb-slap.md). Available starting with [MariaDB 10.4.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
-| [odbc] | Options read by [MariaDB Connector/ODBC](../../../connectors/mariadb-connector-odbc/README.md), but only if the [USE_MYCNF](../../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md#general-connection-parameters) parameter has been set. |
+| [mariadb-slap] | Options read by [mariadb-slap](../../clients-and-utilities/mariadb-slap.md). Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [odbc] | Options read by [MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/), but only if the [USE_MYCNF](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc#general-connection-parameters) parameter has been set. |
 
 
 
@@ -495,7 +495,7 @@ Most MariaDB installations include a sample MariaDB option file called `my-defau
 * `my-huge.cnf`
 
 
-However, these option files are now very dated for modern servers, so they were removed in [MariaDB 10.3.1](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md).
+However, these option files are now very dated for modern servers, so they were removed in [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes).
 
 
 In source distributions, the sample option files are usually found in the `support-files` directory, and in other distributions, the option files are usually found in the `share/mysql` directory that is relative to the MariaDB base installation directory.
@@ -589,9 +589,8 @@ loose-abort-source-on-error
 ## See Also
 
 
-* [Configuring MariaDB Connector/C with Option Files](../../../connectors/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files.md)
-* [Troubleshooting Connection Issues](../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues.md)
-* [Configuring MariaDB for Remote Client Access](../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/configuring-mariadb-for-remote-client-access.md)
+* [Configuring MariaDB Connector/C with Option Files](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files)
+* [Troubleshooting Connection Issues](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
+* [Configuring MariaDB for Remote Client Access](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/configuring-mariadb-for-remote-client-access)
 * [MySQL 5.6: Security through Complacency?](https://mariadb.com/resources/blog/mysql-5-6-security-through-complacency)
 
-<span></span>

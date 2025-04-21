@@ -1,11 +1,11 @@
 
 # Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT
 
-With the introduction of [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+With the introduction of [group commit](../../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md).
 
 
 With these improvements, the `START TRANSACTION WITH CONSISTENT SNAPSHOT` statement was enhanced to ensure consistency between storage engines that support the new
-API. At the time of writing, the supporting engines are [XtraDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [PBXT](pbxt-storage-engine). In
+API. At the time of writing, the supporting engines are [XtraDB](../../../reference/storage-engines/innodb/README.md) and [PBXT](pbxt-storage-engine). In
 addition, the binary log, while not a storage engine as such, also supports
 the new API and can provide a binlog position consistent with storage engine
 transaction snapshots.
@@ -49,7 +49,7 @@ Then transaction T2 will always see the same value for `xtradb_table.a` and
 `pbxt_table.b`.
 
 
-(In [MariaDB 5.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) and earlier, and MySQL at least up to 5.5, `START TRANSACTION
+(In [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and earlier, and MySQL at least up to 5.5, `START TRANSACTION
 WITH CONSISTENT SNAPSHOT` did not give any guarantees of consistency between
 different storage engines. So it is possible, even with a "consistent"
 snapshot, to see the changes in a transaction only to InnoDB/XtraDB tables, not
@@ -106,7 +106,7 @@ mariadb-dump --single-transaction --master-data ...
 
 The dump will be fully non-blocking if both the mariadb-dump program and the
 queried server include the necessary feature (eg. both are from [MariaDB
-5.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md)-rpl, 5.3, or higher). In other cases, it will fall back to the old
+5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)-rpl, 5.3, or higher). In other cases, it will fall back to the old
 blocking method using `FLUSH TABLES WITH READ LOCK`.
 
 
@@ -117,7 +117,6 @@ For more information on the design and implementation of this feature, see [MWL#
 
 
 * [START TRANSACTION](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md)
-* [What is MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 * [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../reference/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 
-<span></span>

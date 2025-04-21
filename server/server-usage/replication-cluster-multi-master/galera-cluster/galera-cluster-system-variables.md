@@ -1,7 +1,7 @@
 
 # Galera Cluster System Variables
 
-This page documents system variables related to [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md). For options that are not system variables, see [Galera Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to [Galera Cluster](README.md). For options that are not system variables, see [Galera Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 
 See [Server System Variables](../optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
@@ -19,14 +19,14 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: String
 * Default Value: None
-* Introduced: [MariaDB 10.10](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* Introduced: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 
 
 #### `wsrep_auto_increment_control`
 
 
-* Description: If set to `1` (the default), will automatically adjust the [auto_increment_increment](../standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../standard-replication/replication-and-binary-log-system-variables.md) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto_increment](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md). In a primary-replica environment, can be set to `OFF`.
+* Description: If set to `1` (the default), will automatically adjust the [auto_increment_increment](../standard-replication/replication-and-binary-log-system-variables.md) and [auto_increment_offset](../standard-replication/replication-and-binary-log-system-variables.md) variables according to the size of the cluster, and when the cluster size changes. This avoids replication conflicts due to [auto_increment](../../../reference/data-types/auto_increment.md). In a primary-replica environment, can be set to `OFF`.
 * Commandline: `--wsrep-auto-increment-control[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -44,8 +44,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: Boolean
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.1.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md)
-* Removed: [MariaDB 11.3.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md)
+* Deprecated: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
+* Removed: [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)
 
 
 
@@ -62,7 +62,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: Enumeration
 * Default Value: `strict`
 * Valid Values: `strict`, `optimized`
-* Introduced: [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md), MariazDB 10.3.13, [MariaDB 10.2.22](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10222-release-notes.md), [MariaDB 10.1.38](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes.md)
+* Introduced: [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), MariazDB 10.3.13, [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes), [MariaDB 10.1.38](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes)
 
 
 
@@ -151,7 +151,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: WSREP debug level logging.
 
-  * Before [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), DDL logging was only logged on the originating node. From [MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md), it is logged on other nodes as well.
+  * Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), DDL logging was only logged on the originating node. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), it is logged on other nodes as well.
 
 
 It is an enum. Valid values are: 
@@ -202,7 +202,7 @@ It is an enum. Valid values are:
 #### `wsrep_drupal_282555_workaround`
 
 
-* Description: If set to `ON`, a workaround for [Drupal/MySQL/InnoDB bug #282555](https://www.drupal.org/node/282555) is enabled. This is a bug where, in some cases, when inserting a `DEFAULT` value into an [AUTO_INCREMENT](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) column, a duplicate key error may be returned.
+* Description: If set to `ON`, a workaround for [Drupal/MySQL/InnoDB bug #282555](https://www.drupal.org/node/282555) is enabled. This is a bug where, in some cases, when inserting a `DEFAULT` value into an [AUTO_INCREMENT](../../../reference/data-types/auto_increment.md) column, a duplicate key error may be returned.
 * Commandline: `--wsrep-drupal-282555-workaround[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -266,7 +266,7 @@ It is an enum. Valid values are:
 * Dynamic: Yes
 * Data Type: `numeric`
 * Range: `0` to `18446744073709551615`
-* Introduced: [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
+* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
 
 
 
@@ -285,7 +285,7 @@ It is an enum. Valid values are:
 * Data Type: Numeric
 * Default Value: `7`
 * Range: `0` to `7`
-* Introduced: [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
+* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
 
 
 
@@ -298,8 +298,8 @@ It is an enum. Valid values are:
 * Dynamic: Yes
 * Data Type: Boolean
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
-* Removed: [MariaDB 11.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
+* Deprecated: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
+* Removed: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
 
@@ -356,8 +356,8 @@ It is an enum. Valid values are:
     * A DDL statement is executed with wsrep_OSU_method=RSU set.
     * A DML statement writes to a non-InnoDB table.
     * A DML statement writes to an InnoDB table with wsrep_on=OFF set.
-  * REPLICATE_ARIA: Whether or not DML updates for [Aria](../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
-  * REPLICATE_MYISAM: Whether or not DML updates for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE_ARIA: Whether or not DML updates for [Aria](../../../reference/storage-engines/aria/README.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE_MYISAM: Whether or not DML updates for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
   * REQUIRED_PRIMARY_KEY: Table should have PRIMARY KEY defined.
   * STRICT_REPLICATION: Same as the old [wsrep_strict_ddl](#wsrep_strict_ddl) setting.
 * Commandline: `--wsrep-mode=value`
@@ -366,7 +366,7 @@ It is an enum. Valid values are:
 * Data Type: Enumeration
 * Default Value: (Empty)
 * Valid Values: `BINLOG_ROW_FORMAT_ONLY`, `DISALLOW_LOCAL_GTID`, `REQUIRED_PRIMARY_KEY`, `REPLICATE_ARIA`, `REPLICATE_MYISAM` and `STRICT_REPLICATION`
-* Introduced: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -435,8 +435,8 @@ It is an enum. Valid values are:
 * Scope: Global
 * Dynamic:
 
-  * No (>= [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md))
-  * Yes (<= [MariaDB 10.5.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes.md))
+  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes))
+  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: Empty
 
@@ -490,8 +490,8 @@ It is an enum. Valid values are:
 * Commandline: `--wsrep-provider=value`
 * Scope: Global
 
-  * No (>= [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md))
-  * Yes (<= [MariaDB 10.5.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes.md))
+  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes))
+  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: None
 
@@ -535,22 +535,22 @@ It is an enum. Valid values are:
 * Data Type: Enum
 * Default Value: `NONE`
 * Valid Values: `NONE`, `ALL`, `ALL_KILL`
-* Introduced: [MariaDB 10.3.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md), [MariaDB 10.2.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10214-release-notes.md), [MariaDB 10.1.32](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10132-release-notes.md)
+* Introduced: [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), [MariaDB 10.2.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10214-release-notes), [MariaDB 10.1.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10132-release-notes)
 
 
 
 #### `wsrep_replicate_myisam`
 
 
-* Description: Whether or not DML updates for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), and removed in [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), use [wsrep_mode](#wsrep_mode) instead.
+* Description: Whether or not DML updates for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), use [wsrep_mode](#wsrep_mode) instead.
 * Commandline: `--wsrep-replicate-myisam[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Default Value: `OFF`
 * Data Type: Boolean
 * Valid Values: `ON`, `OFF`
-* Deprecated: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-* Removed: [MariaDB 10.7.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+* Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+* Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 
 
@@ -626,7 +626,7 @@ It is an enum. Valid values are:
 * Data Type: Enum
 * Default Value: `table`
 * Valid Values: `table`, `none`
-* Introduced: [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
+* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
 
 
 
@@ -700,7 +700,7 @@ It is an enum. Valid values are:
 * Scope: Global
 * Dynamic: Yes
 * Data Type: String
-* Default Value: ` 00000000-0000-0000-0000-000000000000:-1`
+* Default Value: `00000000-0000-0000-0000-000000000000:-1`
 
 
 
@@ -713,7 +713,7 @@ It is an enum. Valid values are:
 * Dynamic: No
 * Data Type: String
 * Default Value: None
-* Introduced: [MariaDB 10.9](../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
+* Introduced: [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
 
 
 
@@ -721,26 +721,26 @@ It is an enum. Valid values are:
 
 
 * Description: If set, reject DDL statements on affected tables not supporting Galera replication. This is done by checking if the table is InnoDB, which is the only table currently fully supporting Galera replication. MyISAM tables will not trigger the error if the experimental [wsrep_replicate_myisam](#wsrep_replicate_myisam) setting is `ON`. If set, should be set on all tables in the cluster. Affected DDL statements include:
-[CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) (e.g. CREATE TABLE t1(a int) engine=Aria)
-[ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
+[CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) (e.g. CREATE TABLE t1(a int) engine=Aria)
+[ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
 [TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md)
 [CREATE VIEW](../../programming-customizing-mariadb/views/create-view.md)
 [CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
 [CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
 [DROP INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md)
 [RENAME TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md)
-[DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md)
+[DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md)
 Statements in [procedures](../../programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [events](../../programming-customizing-mariadb/triggers-events/event-scheduler/README.md), and [functions](../../programming-customizing-mariadb/stored-routines/stored-functions/README.md) are permitted as the affected
 tables are only known at execution. Furthermore, the various USER, ROLE, SERVER and 
-DATABASE statements are also allowed as they do not have an affected table. Deprecated in [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) and removed in [MariaDB 10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md). Use [wsrep_mode=STRICT_REPLICATION](#wsrep_mode) instead.
+DATABASE statements are also allowed as they do not have an affected table. Deprecated in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107). Use [wsrep_mode=STRICT_REPLICATION](#wsrep_mode) instead.
 * Commandline: `--wsrep-strict-ddl[={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.5.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-* Deprecated: [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-* Removed: [MariaDB 10.7.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
+* Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+* Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 
 
@@ -786,7 +786,7 @@ DATABASE statements are also allowed as they do not have an affected table. Depr
 * Data Type: numeric
 * Default Value: `0`
 * Range: `0` to `2147483647`
-* Introduced: [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
+* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
 
 
 
@@ -804,7 +804,6 @@ DATABASE statements are also allowed as they do not have an affected table. Depr
 * Data Type: enum
 * Default Value: `bytes`
 * Valid Values: `bytes`, `rows` or `statements`
-* Introduced: [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)
+* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
 
 
-<span></span>

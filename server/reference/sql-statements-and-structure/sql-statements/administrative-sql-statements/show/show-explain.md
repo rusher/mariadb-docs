@@ -13,7 +13,7 @@ EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>;
 ## Description
 
 
-The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) (that is, a
+The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](../analyze-and-explain-statements/explain.md) (that is, a
 description of a query plan) of a query running in a certain connection.
 
 
@@ -52,7 +52,7 @@ SHOW WARNINGS;
 
 
 
-##### MariaDB starting with [10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
+##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
 The `EXPLAIN FOR CONNECTION` syntax was added for MySQL compatibility.
 
 
@@ -60,8 +60,8 @@ The `EXPLAIN FOR CONNECTION` syntax was added for MySQL compatibility.
 
 
 
-##### MariaDB starting with [10.9](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md)
-`SHOW EXPLAIN [FORMAT=JSON] FOR &lt;connection_id&gt;` extends `SHOW EXPLAIN` to return more detailed JSON output. 
+##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+`SHOW EXPLAIN [FORMAT=JSON] FOR <connection_id>` extends `SHOW EXPLAIN` to return more detailed JSON output. 
 
 
 ### Possible Errors
@@ -125,7 +125,7 @@ Running `SHOW EXPLAIN` requires the same permissions as running [SHOW PROCESSLIS
 ## See Also
 
 
-* [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md)
+* [EXPLAIN](../analyze-and-explain-statements/explain.md)
 * [EXPLAIN ANALYZE](../analyze-and-explain-statements/explain-analyze.md), which will perform a query and outputs enhanced `EXPLAIN` results.
 * [SHOW ANALYZE](show-analyze.md)
 * It is also possible to [save EXPLAIN into the slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md).

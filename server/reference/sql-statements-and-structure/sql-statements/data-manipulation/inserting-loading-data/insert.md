@@ -52,8 +52,8 @@ The PARTITION clause can be used in both the INSERT and the SELECT part. See [Pa
 
 
 
-##### MariaDB starting with [10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-The RETURNING clause was introduced in [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md).
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+The RETURNING clause was introduced in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105).
 
 
 The columns list is optional. It specifies which values are explicitly inserted, and in which order. If this clause is not specified, all values must be explicitly specified, in the same order they are listed in the table definition.
@@ -194,7 +194,7 @@ Aggregate functions cannot be used in the RETURNING clause. Since aggregate func
 
 * [INSERT DELAYED](insert-delayed.md)
 * [INSERT SELECT](insert-select.md)
-* [REPLACE](../../built-in-functions/string-functions/replace-function.md) Equivalent to DELETE + INSERT of conflicting row.
+* [REPLACE](../changing-deleting-data/replace.md) Equivalent to DELETE + INSERT of conflicting row.
 * [HIGH_PRIORITY and LOW_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)
 * [Concurrent Inserts](concurrent-inserts.md)
 * [INSERT - Default & Duplicate Values](insert-default-duplicate-values.md)

@@ -12,14 +12,14 @@ SET GLOBAL sql_slave_skip_counter = N
 ## Description
 
 
-This statement skips the next `<em>N</em>` events from the primary. This is useful
-for recovering from [replication](README.md) stops caused by a statement.
+This statement skips the next `N` events from the primary. This is useful
+for recovering from [replication](../../../../../server-usage/replication-cluster-multi-master/README.md) stops caused by a statement.
 
 
 If multi-source replication is used, this statement applies to the default connection. It could be necessary to change the value of the [default_master_connection](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) system variable.
 
 
-Note that, if the event is a [transaction](../../../../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md), the whole transaction will be skipped. With non-transactional engines, an event is always a single statement.
+Note that, if the event is a [transaction](../../transactions/README.md), the whole transaction will be skipped. With non-transactional engines, an event is always a single statement.
 
 
 This statement is valid only when the replica threads are not running.

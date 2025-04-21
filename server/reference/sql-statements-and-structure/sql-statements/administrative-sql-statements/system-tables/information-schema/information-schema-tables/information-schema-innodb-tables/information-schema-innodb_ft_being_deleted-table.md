@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_FT_BEING_DELETED Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_FT_BEING_DELETED` table is only used while document ID's in the related [INNODB_FT_DELETED](information-schema-innodb_ft_deleted-table.md) are being removed from an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) while an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is underway. At all other times the table will be empty.
+The [Information Schema](../../README.md) `INNODB_FT_BEING_DELETED` table is only used while document ID's in the related [INNODB_FT_DELETED](information-schema-innodb_ft_deleted-table.md) are being removed from an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) while an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is underway. At all other times the table will be empty.
 
 
 The `SUPER` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.

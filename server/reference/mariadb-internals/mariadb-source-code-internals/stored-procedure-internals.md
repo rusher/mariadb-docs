@@ -68,7 +68,7 @@ This is the base class for "instructions", that is, what is generated
 
 * sp_instr_stmt
  Execute a statement. This is the "call-out" any normal SQL statement,
- like a [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md), [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) etc. It contains the Lex structure for the
+ like a [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md), [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) etc. It contains the Lex structure for the
  statement in question.
 * sp_instr_set
  Set the value of a local variable (or parameter)
@@ -141,13 +141,13 @@ The parsing of the parameter list and body is relatively
  containing the variable's frame offset, the expression (an Item),
  and the type.
 * Flow control:
- Flow control constructs such as [IF](../../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md), [WHILE](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/while.md), etc, generate a conditional
+ Flow control constructs such as [IF](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/if.md), [WHILE](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/while.md), etc, generate a conditional
  and unconditional jumps in the "obvious" way, but a few notes may
  be required:
 * Forward jumps: When jumping forward, the exact destination is not
  known at the time of the creation of the jump instruction. The
 
-  1. sphead` therefore contains a list of instruction-label pairs for
+  1. sphead`therefore contains a list of instruction-label pairs for
  each forward reference. When the position later is known, the
  instructions in the list are updated with the correct location.`
 * Loop constructs have optional labels. If a loop doesn't have a
@@ -308,7 +308,7 @@ The sp_head::execute() method works as follows:
 
 
 Before executing the instruction we also keeps the current default
- database (if any). If this was changed during execution (i.e. a [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md)
+ database (if any). If this was changed during execution (i.e. a [USE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md)
  statement has been executed), we restore the current database to the
  original.
 
@@ -348,7 +348,7 @@ The semantics in stored procedures is "call-by-value", so we have to
 
 Functions don't have an explicit call keyword like procedures. Instead,
  they appear in expressions with the conventional syntax "fun(arg, ...)".
- The problem is that we already have [User Defined Functions](../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) (UDFs) which
+ The problem is that we already have [User Defined Functions](../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDFs) which
  are called the same way. A UDF is detected by the lexical analyzer (not
  the parser!), in the `find_keyword()` function, and returns a `UDF_*_FUNC`
  or `UDA_*_SUM` token with the `udf_func` object as the yylval.
@@ -424,7 +424,7 @@ Dropping is done by simply getting the procedure with the sp_find()
  function and calling `sp_drop()` (both in `sp.{cc,h}`).
 
 
-[DROP PROCEDURE](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure.md)/[DROP FUNCTION](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/drop-function.md) also supports the non-standard "IF EXISTS", analogous to other [DROP](../../sql-statements-and-structure/sequences/drop-sequence.md) statements in MariaDB.
+[DROP PROCEDURE](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure.md)/[DROP FUNCTION](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/drop-function.md) also supports the non-standard "IF EXISTS", analogous to other [DROP](../../sql-statements-and-structure/sql-statements/data-definition/drop/README.md) statements in MariaDB.
 
 
 #### Condition and Handlers
@@ -1236,7 +1236,7 @@ class sp_instr_cfetch : public sp_instr
 ### The mysql.proc schema
 
 
-This is the [mysql.proc table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md) used in [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md):
+This is the [mysql.proc table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md) used in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 
 ```

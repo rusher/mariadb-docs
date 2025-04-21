@@ -5,7 +5,7 @@
 
 
 
-The `mysql.slow_log` table stores the contents of the [Slow Query Log](../../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) if slow logging is active and the output is being written to table (see [Writing logs into tables](../../../../../../server-management/server-monitoring-logs/writing-logs-into-tables.md)).
+The `mysql.slow_log` table stores the contents of the [Slow Query Log](../../../../../../server-management/server-monitoring-logs/slow-query-log/README.md) if slow logging is active and the output is being written to table (see [Writing logs into tables](../../../../../../server-management/server-monitoring-logs/writing-logs-into-tables.md)).
 
 
 It contains the following fields:
@@ -27,7 +27,7 @@ It contains the following fields:
 | server_id | int(10) unsigned | NO |  | NULL | The server's id. |
 | sql_text | mediumtext | NO |  | NULL | Full query. |
 | thread_id | bigint(21) unsigned | NO |  | NULL | Thread id. |
-| rows_affected | int(11) | NO |  | NULL | Number of rows affected by an [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../data-manipulation/changing-deleting-data/delete.md) (from [MariaDB 10.1.2](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)) |
+| rows_affected | int(11) | NO |  | NULL | Number of rows affected by an [UPDATE](../../../data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../data-manipulation/changing-deleting-data/delete.md) (from [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)) |
 
 
 

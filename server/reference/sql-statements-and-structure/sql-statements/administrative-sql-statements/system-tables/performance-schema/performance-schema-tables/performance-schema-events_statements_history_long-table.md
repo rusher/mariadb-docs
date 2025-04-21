@@ -28,9 +28,9 @@ The table structure is identical to the [events_statements_current](performance-
 | OBJECT_NAME | Reserved, currently NULL |
 | OBJECT_TYPE | Reserved, currently NULL |
 | OBJECT_INSTANCE_BEGIN | Address in memory of the statement object. |
-| MYSQL_ERRNO | Error code. See [MariaDB Error Codes](../../../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) for a full list. |
+| MYSQL_ERRNO | Error code. See [MariaDB Error Codes](../../../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) for a full list. |
 | RETURNED_SQLSTATE | The [SQLSTATE](../../../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) value. |
-| MESSAGE_TEXT | Statement error message. See [MariaDB Error Codes](../../../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md). |
+| MESSAGE_TEXT | Statement error message. See [MariaDB Error Codes](../../../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md). |
 | ERRORS | 0 if SQLSTATE signifies completion (starting with 00) or warning (01), otherwise 1. |
 | WARNINGS | Number of warnings from the diagnostics area. |
 | ROWS_AFFECTED | Number of rows affected the statement affected. |
@@ -48,7 +48,7 @@ The table structure is identical to the [events_statements_current](performance-
 | SORT_ROWS | Number of rows sorted by the statement. |
 | SORT_SCAN | Number of sorts performed by the statement which used a full table scan. |
 | NO_INDEX_USED | 0 if the statement performed a table scan with an index, 1 if without an index. |
-| NO_GOOD_INDEX_USED | 0 if a good index was found for the statement, 1 if no good index was found. See the Range checked for each record description in the [EXPLAIN](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) article. |
+| NO_GOOD_INDEX_USED | 0 if a good index was found for the statement, 1 if no good index was found. See the Range checked for each record description in the [EXPLAIN](../../../analyze-and-explain-statements/explain.md) article. |
 | NESTING_EVENT_ID | Reserved, currently NULL. |
 | NESTING_EVENT_TYPE | Reserved, currently NULL. |
 

@@ -33,7 +33,7 @@ where
 ## Table pullout in action
 
 
-If one runs [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) for the above query in MySQL 5.1-5.6 or [MariaDB 5.1](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)-5.2, they'll get this plan:
+If one runs [EXPLAIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for the above query in MySQL 5.1-5.6 or [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)-5.2, they'll get this plan:
 
 
 ```
@@ -50,7 +50,7 @@ MySQL [world]> explain select * from City where City.Country in (select Country.
 It shows that the optimizer is going to do a full scan on table `City`, and for each city it will do a lookup in table `Country`.
 
 
-If one runs the same query in [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), they will get this plan:
+If one runs the same query in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), they will get this plan:
 
 
 ```

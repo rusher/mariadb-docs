@@ -55,7 +55,7 @@ Do not use this mechanism to create the root superuser, that user gets created b
 Set MARIADB_MYSQL_LOCALHOST_USER to a non-empty value to create the mysql@locahost database user. This user is especially useful for a variety of health checks and backup scripts.
 
 
-The mysql@localhost user gets `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` privileges by default. If more access is required, additional global privileges in the form of a comma separated list can be provided. If you are sharing a volume containing MariaDB's unix socket (/var/run/mysqld by default), privileges beyond `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` can result in confidentiality, integrity and availability risks, so use a minimal set. Its also possible to use for [Mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The [healthcheck.sh](using-healthcheck-sh.md) script also documents the required privileges for each health check test.
+The mysql@localhost user gets `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` privileges by default. If more access is required, additional global privileges in the form of a comma separated list can be provided. If you are sharing a volume containing MariaDB's unix socket (/var/run/mysqld by default), privileges beyond `[USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#usage)` can result in confidentiality, integrity and availability risks, so use a minimal set. Its also possible to use for [Mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/README.md). The [healthcheck.sh](using-healthcheck-sh.md) script also documents the required privileges for each health check test.
 
 
 ### MARIADB_HEALTHCHECK_GRANTS
@@ -82,8 +82,7 @@ Set MARIADB_AUTO_UPGRADE to a non-empty value to have the entrypoint check wheth
 Before the upgrade, a backup of the system database is created in the top of the datadir with the name system_mysql_backup_*.sql.zst. This backup process can be disabled with by setting MARIADB_DISABLE_UPGRADE_BACKUP to a non-empty value.
 
 
-If `MARIADB_AUTO_UPGRADE` is set, and the `.my-healthcheck.cnf` file is missing, the `healthcheck` users are recreated if they don't exist, `MARIADB_HEALTHCHECK_GRANTS
-` grants are given, the passwords of the `healthcheck` users are reset to a random value and the `.my-healthcheck.cnf` file is recreated with the new password populated.
+If `MARIADB_AUTO_UPGRADE` is set, and the `.my-healthcheck.cnf` file is missing, the `healthcheck` users are recreated if they don't exist, `MARIADB_HEALTHCHECK_GRANTS` grants are given, the passwords of the `healthcheck` users are reset to a random value and the `.my-healthcheck.cnf` file is recreated with the new password populated.
 
 
 ### MARIADB_MASTER_HOST
@@ -100,4 +99,3 @@ When MARIADB_MASTER_HOST is specified, MARIADB_REPLICATION_USER and MARIADB_REPL
 
 When not specified, the MARIADB_REPLICATION_USER will be created with the REPLICATION REPLICA grants required to a client to start replication.
 
-<span></span>

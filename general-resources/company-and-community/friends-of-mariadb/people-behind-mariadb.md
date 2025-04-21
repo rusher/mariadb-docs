@@ -1,7 +1,7 @@
 
 # People Behind MariaDB
 
-The [MariaDB](../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md) project is the brainchild of Michael
+The [MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility) project is the brainchild of Michael
 "Monty" Widenius, the founder of MySQL®, Monty Program Ab (now
 [MariaDB Corporation](https://mariadb.com)), and a founding member of the
 [MariaDB Foundation](https://mariadb.org).
@@ -9,7 +9,7 @@ The [MariaDB](../../../release-notes/mariadb-community-server/compatibility-and-
 
 The core team consists of developers sponsored by the MariaDB Foundation,
 companies and individuals who are members of the Foundation, and people in
-the [MariaDB community](../../../server/reference/faq/community-questions/README.md).
+the [MariaDB community](/kb/en/community/).
 MariaDB is a technocracy, and we want our core membership to reflect this.
 
 

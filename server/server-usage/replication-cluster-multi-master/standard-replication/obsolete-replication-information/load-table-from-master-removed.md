@@ -23,9 +23,9 @@ will have the additional advantage of working with more storage engines.
 
 For MariaDB and MySQL 5.1 and earlier, the recommended alternative solution to
 using `LOAD DATA FROM MASTER` or
- `LOAD TABLE FROM MASTER` is using [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) or [mysqlhotcopy](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqlhotcopy.md).
+ `LOAD TABLE FROM MASTER` is using [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) or [mysqlhotcopy](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqlhotcopy.md).
 The latter requires Perl and two Perl modules (DBI and DBD:mysql) and works for
-[MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) and [ARCHIVE](../../../../reference/storage-engines/archive/README.md) tables only. With mysqldump, you can create SQL dumps on the
+[MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md) and [ARCHIVE](../../../../reference/storage-engines/archive/README.md) tables only. With mysqldump, you can create SQL dumps on the
 master and pipe (or copy) these to a mysql client on the slave. This has the
 advantage of working for all storage engines, but can be quite slow, since it
 works using `SELECT`.
@@ -46,4 +46,3 @@ For example, `LOAD TABLE FROM MASTER` works only for MyISAM
 tables. The timeout notes for `LOAD DATA FROM MASTER` apply as
 well.
 
-<span></span>

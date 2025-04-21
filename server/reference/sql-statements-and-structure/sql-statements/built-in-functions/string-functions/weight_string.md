@@ -18,7 +18,7 @@ Returns a binary string representing the string's sorting and comparison value. 
 WEIGHT_STRING() is particularly useful when adding new collations, for testing purposes.
 
 
-If `str` is a non-binary string ([CHAR](../secondary-functions/information-functions/charset.md), [VARCHAR](../../../../data-types/string-data-types/varchar.md) or [TEXT](../../../../data-types/string-data-types/text.md)), WEIGHT_STRING returns the string's collation weight. If `str` is a binary string ([BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md) or [BLOB](../../../../data-types/string-data-types/blob.md)), the return value is simply the input value, since the weight for each byte in a binary string is the byte value.
+If `str` is a non-binary string ([CHAR](../../../../data-types/string-data-types/char.md), [VARCHAR](../../../../data-types/string-data-types/varchar.md) or [TEXT](../../../../data-types/string-data-types/text.md)), WEIGHT_STRING returns the string's collation weight. If `str` is a binary string ([BINARY](../../../../data-types/string-data-types/binary.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md) or [BLOB](../../../../data-types/string-data-types/blob.md)), the return value is simply the input value, since the weight for each byte in a binary string is the byte value.
 
 
 WEIGHT_STRING() returns NULL if given a NULL input.
@@ -57,7 +57,7 @@ If the LEVEL is specified without using a range, an optional modifier is permitt
 ## Examples
 
 
-The examples below use the [HEX()](../../../sql-language-structure/hexadecimal-literals.md) function to represent non-printable results in hexadecimal format.
+The examples below use the [HEX()](hex.md) function to represent non-printable results in hexadecimal format.
 
 
 ```

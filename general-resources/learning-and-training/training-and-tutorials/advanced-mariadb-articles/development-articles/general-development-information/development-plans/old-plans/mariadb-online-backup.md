@@ -70,10 +70,10 @@ back up a complete MySQL server:
  databases/schemas.
 * There seems to be no facility to backup the binary log
 * There seems to be no facility to backup `GRANT`s or other server-global
- configuration, using [mysqldump](../../../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) on the "mysql" schema/database is
+ configuration, using [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) on the "mysql" schema/database is
  suggested
 * Restoring a new server from scratch seems to involve setting up a new server,
- including running [mysql_install_db](../../../../../../../../server/clients-and-utilities/legacy-clients-and-utilities/mysql_install_db.md) and adding `GRANT`s, and only then
+ including running [mysql_install_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_install_db) and adding `GRANT`s, and only then
  restoring tables and other schema objects
 
 

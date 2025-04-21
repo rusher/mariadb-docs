@@ -23,7 +23,7 @@ As an example, by default, the character `y` comes between `x` and `z`, while in
 ## Viewing Character Sets and Collations
 
 
-Prior to [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md), the default [character set](README.md) is `latin1` and the default collation is `latin1_swedish_ci`. In [MariaDB 11.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md) the default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.
+Prior to [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes), the default [character set](README.md) is `latin1` and the default collation is `latin1_swedish_ci`. In [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116) the default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.
 This may differ in some distros, see for example [Differences in MariaDB in Debian](../../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
 
 

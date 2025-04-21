@@ -4,7 +4,7 @@
 ## Syntax
 
 
-Until [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)
+Until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 
 
 ```
@@ -14,7 +14,7 @@ cursor_formal_parameter:
     name type [collate clause]
 ```
 
-From [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
+From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 
 
 ```
@@ -31,7 +31,7 @@ cursor_formal_parameter:
 This statement declares a [cursor](README.md). Multiple cursors may be declared in a [stored program](../../stored-routines/README.md), but each cursor in a given block must have a unique name.
 
 
-`select_statement` is not executed until the [OPEN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/qa-datasets/openstreetmap-dataset.md) statement is executed. It is important to remember this if the query produces an error, or calls functions which have side effects.
+`select_statement` is not executed until the [OPEN](open.md) statement is executed. It is important to remember this if the query produces an error, or calls functions which have side effects.
 
 
 A `SELECT` associated to a cursor can use variables, but the query itself cannot be a variable, and cannot be dynamically composed. The `SELECT` statement cannot have an `INTO` clause.
@@ -50,8 +50,8 @@ Cursors can have parameters. This is a non-standard SQL extension. Cursor parame
 
 
 
-##### MariaDB starting with [10.8.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md)
-From [MariaDB 10.8.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md) preview release, the `IN` qualifier is supported in the `cursor_formal_parameter` part of the syntax.
+##### MariaDB starting with [10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
+From [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes) preview release, the `IN` qualifier is supported in the `cursor_formal_parameter` part of the syntax.
 
 
 See [Cursor Overview](cursor-overview.md) for an example.
@@ -61,8 +61,8 @@ See [Cursor Overview](cursor-overview.md) for an example.
 
 
 * [Cursor Overview](cursor-overview.md)
-* [OPEN cursor_name](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/qa-datasets/openstreetmap-dataset.md)
+* [OPEN cursor_name](open.md)
 * [FETCH cursor_name](fetch.md)
 * [CLOSE cursor_name](close.md)
-* [Cursors in Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

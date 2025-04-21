@@ -32,8 +32,8 @@ SELECT UPPER(surname), givenname FROM users ORDER BY surname;
 +----------------+------------+
 ```
 
-`UPPER()` is ineffective when applied to binary strings ([BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md), [BLOB](../../../../data-types/string-data-types/blob.md)). The description of [LOWER](lower.md)() shows how to perform lettercase conversion of binary strings.
+`UPPER()` is ineffective when applied to binary strings ([BINARY](../../../../data-types/string-data-types/binary.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md), [BLOB](../../../../data-types/string-data-types/blob.md)). The description of [LOWER](lower.md)() shows how to perform lettercase conversion of binary strings.
 
 
-Prior to [MariaDB 11.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md), the query optimizer did not handle queries of the format `UCASE(varchar_col)=...`. An [optimizer_switch](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) option, `sargable_casefold=ON`, was added in [MariaDB 11.3.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md) to handle this case. ([MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496))
+Prior to [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), the query optimizer did not handle queries of the format `UCASE(varchar_col)=...`. An [optimizer_switch](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) option, `sargable_casefold=ON`, was added in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes) to handle this case. ([MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496))
 

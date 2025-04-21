@@ -7,7 +7,7 @@ MariaDB has many built-in functions that can be used to manipulate strings of da
 #### Formatting
 
 
-There are several string functions that are used to format text and numbers for nicer display. A popular and very useful function for pasting together the contents of data fields with text is the [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) function. As an example, suppose that a table called contacts has a column for each sales contact's first name and another for the last name. The following SQL statement would put them together:
+There are several string functions that are used to format text and numbers for nicer display. A popular and very useful function for pasting together the contents of data fields with text is the [CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat) function. As an example, suppose that a table called contacts has a column for each sales contact's first name and another for the last name. The following SQL statement would put them together:
 
 
 ```
@@ -19,7 +19,7 @@ FROM contacts;
 This statement will display the first name, a space, and then the last name together in one column. The AS clause will change the column heading of the results to Name.
 
 
-A less used concatenating function is [CONCAT_WS()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md). It will put together columns with a separator between each. This can be useful when making data available for other programs. For instance, suppose we have a program that will import data, but it requires the fields to be separated by vertical bars. We could just export the data, or we could use a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement like the one that follows in conjunction with an interface written with an API language like Perl:
+A less used concatenating function is [CONCAT_WS()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws). It will put together columns with a separator between each. This can be useful when making data available for other programs. For instance, suppose we have a program that will import data, but it requires the fields to be separated by vertical bars. We could just export the data, or we could use a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement like the one that follows in conjunction with an interface written with an API language like Perl:
 
 
 ```
@@ -30,7 +30,7 @@ FROM table1;
 The first element above is the separator. The remaining elements are the columns to be strung together.
 
 
-If we want to format a long number with commas every three digits and a period for the decimal point (e.g., 100,000.00), we can use the function [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) like so:
+If we want to format a long number with commas every three digits and a period for the decimal point (e.g., 100,000.00), we can use the function [FORMAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/format) like so:
 
 
 ```
@@ -38,7 +38,7 @@ SELECT CONCAT('$', FORMAT(col5, 2))
 FROM table3;
 ```
 
-In this statement, the [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) will place a dollar sign in front of the numbers found in the `col5` column, which will be formatted with commas by [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md). The `2` within the [FORMAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) stipulates two decimal places.
+In this statement, the [CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat) will place a dollar sign in front of the numbers found in the `col5` column, which will be formatted with commas by [FORMAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/format). The `2` within the [FORMAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/format) stipulates two decimal places.
 
 
 Occasionally, one will want to convert the text from a column to either all upper-case letters or all lower-case letters. In the example that follows, the output of the first column is converted to upper-case and the second to lower-case:
@@ -50,7 +50,7 @@ LCASE(col2)
 FROM table4;
 ```
 
-When displaying data in forms, it's sometimes useful to pad the data displayed with zeros or dots or some other filler. This can be necessary when dealing with [VARCHAR](../../../../server/reference/data-types/string-data-types/varchar.md) columns where the width varies to help the user to see the column limits. There are two functions that may be used for padding: [LPAD()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/lpad.md) and [RPAD()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/rpad.md).
+When displaying data in forms, it's sometimes useful to pad the data displayed with zeros or dots or some other filler. This can be necessary when dealing with [VARCHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/varchar) columns where the width varies to help the user to see the column limits. There are two functions that may be used for padding: [LPAD()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/lpad) and [RPAD()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/rpad).
 
 
 ```
@@ -62,7 +62,7 @@ FROM catalog;
 In this SQL statement, dots are added to the right end of each part number. So a part number of "H200" will display as "H200....", but without the quotes. Each part's description will have under-scores preceding it. A part with a description of "brass hinge" will display as "brass hinge".
 
 
-If a column is a [CHAR](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) data-type, a fixed width column, then it may be necessary to trim any leading or trailing spaces from displays. There are a few functions to accomplish this task. The [LTRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/ltrim.md) function will eliminate any leading spaces to the left. So "` H200`" becomes "`H200`". For columns with trailing spaces, spaces on the right, [RTRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/rtrim.md) will work: "`H500 `" becomes "`H500`". A more versatile trimming function, though, is [TRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim.md). With it one can trim left, right or both. Below are a few examples:
+If a column is a [CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char) data-type, a fixed width column, then it may be necessary to trim any leading or trailing spaces from displays. There are a few functions to accomplish this task. The [LTRIM()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/ltrim) function will eliminate any leading spaces to the left. So "`H200`" becomes "`H200`". For columns with trailing spaces, spaces on the right, [RTRIM()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/rtrim) will work: "`H500`" becomes "`H500`". A more versatile trimming function, though, is [TRIM()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim). With it one can trim left, right or both. Below are a few examples:
 
 
 ```
@@ -73,13 +73,13 @@ TRIM(col4)
 FROM table5;
 ```
 
-In the first [TRIM()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim.md) clause, the padding component is specified; the leading dots are to be trimmed from the output of `col1`. The trailing spaces will be trimmed off of `col2`—space is the default. Both leading and trailing under-scores are trimmed from `col3` above. Unless specified, BOTH is the default. So leading and trailing spaces are trimmed from `col4` in the statement here.
+In the first [TRIM()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/trim) clause, the padding component is specified; the leading dots are to be trimmed from the output of `col1`. The trailing spaces will be trimmed off of `col2`—space is the default. Both leading and trailing under-scores are trimmed from `col3` above. Unless specified, BOTH is the default. So leading and trailing spaces are trimmed from `col4` in the statement here.
 
 
 #### Extracting
 
 
-When there is a need to extract specific elements from a column, MariaDB has a few functions that can help. Suppose a column in the table contacts contains the telephone numbers of sales contacts, including the area-codes, but without any dashes or parentheses. The area-code of each could be extracted for sorting with the [LEFT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/left.md) and the telephone number with the [RIGHT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/right.md) function.
+When there is a need to extract specific elements from a column, MariaDB has a few functions that can help. Suppose a column in the table contacts contains the telephone numbers of sales contacts, including the area-codes, but without any dashes or parentheses. The area-code of each could be extracted for sorting with the [LEFT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/left) and the telephone number with the [RIGHT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/right) function.
 
 
 ```
@@ -89,7 +89,7 @@ FROM contacts
 ORDER BY area_code;
 ```
 
-In the [LEFT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/left.md) function above, the column telephone is given along with the number of characters to extract, starting from the first character on the left in the column. The [RIGHT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/right.md) function is similar, but it starts from the last character on the right, counting left to capture, in this statement, the last seven characters. In the SQL statement above, area_code is reused to order the results set. To reformat the telephone number, it will be necessary to use the [SUBSTRING()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring.md) function.
+In the [LEFT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/left) function above, the column telephone is given along with the number of characters to extract, starting from the first character on the left in the column. The [RIGHT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/right) function is similar, but it starts from the last character on the right, counting left to capture, in this statement, the last seven characters. In the SQL statement above, area_code is reused to order the results set. To reformat the telephone number, it will be necessary to use the [SUBSTRING()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring) function.
 
 
 ```
@@ -100,13 +100,13 @@ FROM contacts
 ORDER BY LEFT(telephone, 3);
 ```
 
-In this SQL statement, the [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) function is employed to assemble some characters and extracted data to produce a common display for telephone numbers (e.g., (504) 555-1234). The first element of the [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) is an opening parenthesis. Next, a [LEFT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/left.md) is used to get the first three characters of telephone, the area-code. After that a closing parenthesis, along with a space is added to the output. The next element uses the [SUBSTRING()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring.md) function to extract the telephone number's prefix, starting at the fourth position, for a total of three characters. Then a dash is inserted into the display. Finally, the function [MID()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/mid.md) extracts the remainder of the telephone number, starting at the seventh position. The functions [MID()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/mid.md) and [SUBSTRING()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring.md) are interchangeable and their syntax are the same. By default, for both functions, if the number of characters to capture isn't specified, then it's assumed that the remaining ones are to be extracted.
+In this SQL statement, the [CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat) function is employed to assemble some characters and extracted data to produce a common display for telephone numbers (e.g., (504) 555-1234). The first element of the [CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat) is an opening parenthesis. Next, a [LEFT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/left) is used to get the first three characters of telephone, the area-code. After that a closing parenthesis, along with a space is added to the output. The next element uses the [SUBSTRING()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring) function to extract the telephone number's prefix, starting at the fourth position, for a total of three characters. Then a dash is inserted into the display. Finally, the function [MID()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/mid) extracts the remainder of the telephone number, starting at the seventh position. The functions [MID()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/mid) and [SUBSTRING()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring) are interchangeable and their syntax are the same. By default, for both functions, if the number of characters to capture isn't specified, then it's assumed that the remaining ones are to be extracted.
 
 
 #### Manipulating
 
 
-There are a few functions in MariaDB that can help in manipulating text. One such function is [REPLACE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md). With it every occurrence of a search parameter in a string can be replaced. For example, suppose we wanted to replace the title *Mrs.* with *Ms.* in a column containing the person's title, but only in the output. The following SQL would do the trick:
+There are a few functions in MariaDB that can help in manipulating text. One such function is [REPLACE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function). With it every occurrence of a search parameter in a string can be replaced. For example, suppose we wanted to replace the title *Mrs.* with *Ms.* in a column containing the person's title, but only in the output. The following SQL would do the trick:
 
 
 ```
@@ -115,10 +115,10 @@ SELECT CONCAT(REPLACE(title, 'Mrs.', 'Ms.'),
 FROM contacts;
 ```
 
-We're using the ever handy [CONCAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) function to put together the contact's name with spaces. The [REPLACE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) function extracts each title and replaces *Mrs.* with *Ms.*, where applicable. Otherwise, for all other titles, it displays them unchanged.
+We're using the ever handy [CONCAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat) function to put together the contact's name with spaces. The [REPLACE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function) function extracts each title and replaces *Mrs.* with *Ms.*, where applicable. Otherwise, for all other titles, it displays them unchanged.
 
 
-If we want to insert or replace certain text from a column (but not all of its contents), we could use the [INSERT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) function in conjunction with the [LOCATE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/locate.md) function. For example, suppose another contacts table has the contact's title and full name in one column. To change the occurrences of Mrs. to Ms., we could not use [REPLACE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) since the title is embedded in this example. Instead, we would do the following:
+If we want to insert or replace certain text from a column (but not all of its contents), we could use the [INSERT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function) function in conjunction with the [LOCATE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/locate) function. For example, suppose another contacts table has the contact's title and full name in one column. To change the occurrences of Mrs. to Ms., we could not use [REPLACE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function) since the title is embedded in this example. Instead, we would do the following:
 
 
 ```
@@ -126,10 +126,10 @@ SELECT INSERT(name, LOCATE(name, 'Mrs.'), 4, 'Ms.')
 FROM contacts;
 ```
 
-The first element of the [INSERT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) function is the column. The second element which contains the [LOCATE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/locate.md) is the position in the string that text is to be inserted. The third element is optional; it states the number of characters to overwrite. In this case, Mrs. which is four characters is overwritten with Ms. (the final element), which is only three. Incidentally, if 0 is specified, then nothing is overwritten, text is inserted only. As for the [LOCATE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/locate.md) function, the first element is the column and the second the search text. It returns the position within the column where the text is found. If it's not found, then 0 is returned. A value of 0 for the position in the [INSERT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) function negates it and returns the value of name unchanged.
+The first element of the [INSERT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function) function is the column. The second element which contains the [LOCATE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/locate) is the position in the string that text is to be inserted. The third element is optional; it states the number of characters to overwrite. In this case, Mrs. which is four characters is overwritten with Ms. (the final element), which is only three. Incidentally, if 0 is specified, then nothing is overwritten, text is inserted only. As for the [LOCATE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/locate) function, the first element is the column and the second the search text. It returns the position within the column where the text is found. If it's not found, then 0 is returned. A value of 0 for the position in the [INSERT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function) function negates it and returns the value of name unchanged.
 
 
-On the odd chance that there is a need to reverse the content of a column, there's the [REVERSE()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/reverse.md) function. You would just place the column name within the function. Another minor function is the [REPEAT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/repeat-function.md) function. With it a string may be repeated in the display:
+On the odd chance that there is a need to reverse the content of a column, there's the [REVERSE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/reverse) function. You would just place the column name within the function. Another minor function is the [REPEAT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/repeat-function) function. With it a string may be repeated in the display:
 
 
 ```
@@ -143,7 +143,7 @@ The first component of the function above is the string or column to be repeated
 #### Expression Aids
 
 
-The function [CHAR_LENGTH()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/char_length.md) is used to determine the number of characters in a string. This could be useful in a situation where a column contains different types of information of specific lengths. For instance, suppose a column in a table for a college contains identification numbers for students, faculty, and staff. If student identification numbers have eight characters while others have less, the following will count the number of student records:
+The function [CHAR_LENGTH()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/char_length) is used to determine the number of characters in a string. This could be useful in a situation where a column contains different types of information of specific lengths. For instance, suppose a column in a table for a college contains identification numbers for students, faculty, and staff. If student identification numbers have eight characters while others have less, the following will count the number of student records:
 
 
 ```
@@ -153,10 +153,10 @@ FROM table8
 WHERE CHAR_LENGTH(school_id)=8;
 ```
 
-The [COUNT()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md) function above counts the number of rows that meet the condition of the `WHERE` clause.
+The [COUNT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count) function above counts the number of rows that meet the condition of the `WHERE` clause.
 
 
-In a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, an [ORDER BY](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#order-by) clause can be used to sort a results set by a specific column. However, if the column contains IP addresses, a simple sort may not produce the desired results:
+In a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement, an [ORDER BY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select#order-by) clause can be used to sort a results set by a specific column. However, if the column contains IP addresses, a simple sort may not produce the desired results:
 
 
 ```
@@ -173,7 +173,7 @@ ORDER BY ip_address LIMIT 3;
 +-------------+
 ```
 
-In the limited results above, the IP address 10.0.2.1 should be second. This happens because the column is being sorted lexically and not numerically. The function [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md) will solve this sorting problem.
+In the limited results above, the IP address 10.0.2.1 should be second. This happens because the column is being sorted lexically and not numerically. The function [INET_ATON()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton) will solve this sorting problem.
 
 
 ```
@@ -182,10 +182,10 @@ FROM computers WHERE server='Y'
 ORDER BY INET_ATON(ip_address) LIMIT 3;
 ```
 
-Basically, the [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md) function will convert IP addresses to regular numbers for numeric sorting. For instance, if we were to use the function in the list of columns in a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, instead of the `WHERE` clause, the address 10.0.1.1 would return 167772417, 10.0.11.1 will return 167774977, and 10.0.2.1 the number 167772673. As a complement to [INET_ATON()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton.md), the function [INET_NTOA()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa.md) will translate these numbers back to their original IP addresses.
+Basically, the [INET_ATON()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton) function will convert IP addresses to regular numbers for numeric sorting. For instance, if we were to use the function in the list of columns in a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement, instead of the `WHERE` clause, the address 10.0.1.1 would return 167772417, 10.0.11.1 will return 167774977, and 10.0.2.1 the number 167772673. As a complement to [INET_ATON()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_aton), the function [INET_NTOA()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet_ntoa) will translate these numbers back to their original IP addresses.
 
 
-MariaDB is fairly case insensitive, which usually is fine. However, to be able to check by case, the [STRCMP()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp.md) function can be used. It converts the column examined to a string and makes a comparison to the search parameter.
+MariaDB is fairly case insensitive, which usually is fine. However, to be able to check by case, the [STRCMP()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp) function can be used. It converts the column examined to a string and makes a comparison to the search parameter.
 
 
 ```
@@ -194,10 +194,10 @@ FROM table6
 WHERE STRCMP(col3, 'text')=0;
 ```
 
-If there is an exact match, the function [STRCMP()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp.md) returns 0. So if `col3` here contains "Text", it won't match. Incidentally, if `col3` alphabetically is before the string to which it's compared, a `-1` will be returned. If it's after it, a `1` is returned.
+If there is an exact match, the function [STRCMP()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/strcmp) returns 0. So if `col3` here contains "Text", it won't match. Incidentally, if `col3` alphabetically is before the string to which it's compared, a `-1` will be returned. If it's after it, a `1` is returned.
 
 
-When you have list of items in one string, the [SUBSTRING_INDEX()](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring_index.md) can be used to pull out a sub-string of data. As an example, suppose we have a column which has five elements, but we want to retrieve just the first two elements. This SQL statement will return them:
+When you have list of items in one string, the [SUBSTRING_INDEX()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/substring_index) can be used to pull out a sub-string of data. As an example, suppose we have a column which has five elements, but we want to retrieve just the first two elements. This SQL statement will return them:
 
 
 ```

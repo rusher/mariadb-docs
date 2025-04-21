@@ -8,7 +8,7 @@ Qualifiers can be composed by one or more [identifiers](identifier-names.md), wh
 
 
 * For a database, only the database identifier needs to be specified.
-* For objects which are contained in a database (like tables, views, functions, etc) the database identifier can be specified. If no database is specified, the current database is assumed (see [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) and [DATABASE()](../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) for more details). If there is no default database and no database is specified, an error is issued.
+* For objects which are contained in a database (like tables, views, functions, etc) the database identifier can be specified. If no database is specified, the current database is assumed (see [USE](../sql-statements/administrative-sql-statements/use-database.md) and [DATABASE()](../sql-statements/built-in-functions/secondary-functions/information-functions/database.md) for more details). If there is no default database and no database is specified, an error is issued.
 * For column names, the table and the database are generally obvious from the context of the statement. It is however possible to specify the table identifier, or the database identifier plus the table identifier.
 * An identifier is fully-qualified if it contains all possible qualifiers, for example, the following column is fully qualified: `db_name.tbl_name.col_name`.
 
@@ -42,6 +42,6 @@ For DML statements, it is possible to specify a list of the partitions using the
 
 
 * [Identifier Names](identifier-names.md)
-* [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md)
-* [DATABASE()](../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md)
+* [USE](../sql-statements/administrative-sql-statements/use-database.md)
+* [DATABASE()](../sql-statements/built-in-functions/secondary-functions/information-functions/database.md)
 

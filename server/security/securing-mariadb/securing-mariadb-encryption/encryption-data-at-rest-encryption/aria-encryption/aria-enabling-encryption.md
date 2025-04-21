@@ -2,19 +2,19 @@
 # Aria Enabling Encryption
 
 
-In order to enable data-at-rest encryption for tables using the [Aria](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine, you first need to configure the server to use an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin. Once this is done, you can enable encryption by setting the relevant system variables.
+In order to enable data-at-rest encryption for tables using the [Aria](../../../../../reference/storage-engines/aria/README.md) storage engine, you first need to configure the server to use an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin. Once this is done, you can enable encryption by setting the relevant system variables.
 
 
 ## Encrypting User-created Tables
 
 
-With tables that the user creates, you can enable encryption by setting the `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` system variable to `ON`, then restart the Server. Once this is set, Aria automatically enables encryption on all tables you create after with the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option set to `PAGE`.
+With tables that the user creates, you can enable encryption by setting the `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` system variable to `ON`, then restart the Server. Once this is set, Aria automatically enables encryption on all tables you create after with the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)` table option set to `PAGE`.
 
 
-Currently, Aria does not support encryption on tables where the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option is set to the `FIXED` or `DYNAMIC` values.
+Currently, Aria does not support encryption on tables where the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)` table option is set to the `FIXED` or `DYNAMIC` values.
 
 
-Unlike InnoDB, Aria does not support the `[ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted)` table option (see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049) about that). Encryption for Aria can only be enabled globally using the `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` system variable.
+Unlike InnoDB, Aria does not support the `[ENCRYPTED](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option (see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049) about that). Encryption for Aria can only be enabled globally using the `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` system variable.
 
 
 ### Encrypting Existing Tables
@@ -30,7 +30,7 @@ First, set the `[aria_encrypt_tables](../../../../../reference/storage-engines/a
 SET GLOBAL aria_encrypt_tables=ON;
 ```
 
-Identify Aria tables that have the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option set to `PAGE`.
+Identify Aria tables that have the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)` table option set to `PAGE`.
 
 
 ```
@@ -41,14 +41,14 @@ WHERE ENGINE='Aria'
   AND TABLE_SCHEMA != 'information_schema';
 ```
 
-For each table in the result-set, issue an `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)` statement to rebuild the table.
+For each table in the result-set, issue an `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement to rebuild the table.
 
 
 ```
 ALTER TABLE test.aria_table ENGINE=Aria ROW_FORMAT=PAGE;
 ```
 
-This statement causes Aria to rebuild the table using the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option. In the process, with the new default setting, it encrypts the table when it writes to disk.
+This statement causes Aria to rebuild the table using the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)` table option. In the process, with the new default setting, it encrypts the table when it writes to disk.
 
 
 ## Encrypting Internal On-disk Temporary Tables
@@ -63,9 +63,8 @@ Encryption for internal temporary tables is handled separately from encryption f
 ## Manually Encrypting Tables
 
 
-Currently, Aria does not support manually encrypting tables through the `[ENCRYPTED](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encrypted)` and `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#encryption_key_id)` table options. For more information, see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049).
+Currently, Aria does not support manually encrypting tables through the `[ENCRYPTED](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` and `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id)` table options. For more information, see [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049).
 
 
-In cases where you want to encrypt tables manually or set the specific encryption key, use [InnoDB](../innodb-encryption/innodb-encryption-troubleshooting.md).
+In cases where you want to encrypt tables manually or set the specific encryption key, use [InnoDB](../innodb-encryption/README.md).
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_TRX Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_TRX` table stores information about all currently executing InnoDB transactions.
+The [Information Schema](../../README.md) `INNODB_TRX` table stores information about all currently executing InnoDB transactions.
 
 
 It has the following columns:
@@ -34,7 +34,7 @@ It has the following columns:
 | TRX_ADAPTIVE_HASH_LATCHED | Whether the adaptive hash index is locked by the current transaction or not. One transaction at a time can change the adaptive hash index. |
 | TRX_ADAPTIVE_HASH_TIMEOUT | Whether the adaptive hash index search latch shoild be relinquished immediately or reserved across all MariaDB calls. 0 if there is no contention on the adaptive hash index, in which case the latch is reserved until completion, otherwise counts down to zero and the latch is released after each row lookup. |
 | TRX_IS_READ_ONLY | 1 if a read-only transaction, otherwise 0. |
-| TRX_AUTOCOMMIT_NON_LOCKING | 1 if the transaction only contains this one statement, that is, a [SELECT](../../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement not using FOR UPDATE or LOCK IN SHARED MODE, and with autocommit on. If this and TRX_IS_READ_ONLY are both 1, the transaction can be optimized by the storrage engine to reduce some overheads |
+| TRX_AUTOCOMMIT_NON_LOCKING | 1 if the transaction only contains this one statement, that is, a [SELECT](../../../../../data-manipulation/selecting-data/select.md) statement not using FOR UPDATE or LOCK IN SHARED MODE, and with autocommit on. If this and TRX_IS_READ_ONLY are both 1, the transaction can be optimized by the storrage engine to reduce some overheads |
 
 
 

@@ -57,7 +57,7 @@ definer and not the invoker.
 ### Roles
 
 
-`SHOW GRANTS` can also be used to view the privileges granted to a [role](../../../../../security/user-account-management/roles/roles_overview.md).
+`SHOW GRANTS` can also be used to view the privileges granted to a [role](../../../../../security/user-account-management/roles/README.md).
 
 
 #### Example
@@ -77,8 +77,8 @@ SHOW GRANTS FOR journalist;
 
 
 
-##### MariaDB starting with [10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
-[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
+##### MariaDB starting with [10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
+[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 
 ```
 SHOW GRANTS FOR public;
@@ -96,5 +96,5 @@ SHOW GRANTS FOR public;
 * [Authentication from MariaDB 10.4](../../../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [SHOW CREATE USER](show-create-user.md) shows how the user was created.
 * [SHOW PRIVILEGES](show-privileges.md) shows the privileges supported by MariaDB.
-* [Roles](../../../../../security/user-account-management/roles/roles_overview.md)
+* [Roles](../../../../../security/user-account-management/roles/README.md)
 

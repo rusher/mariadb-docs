@@ -25,7 +25,7 @@ Taken from [Rick's RoTs - Rules of Thumb](https://mysql.rjweb.org/doc.php/ricksr
 * PARTITION BY RANGE is the only useful method.
 * SUBPARTITIONs are not useful.
 * The partition field should not be the field first in any key.
-* It is OK to have an [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) as the first part of a compound key, or in a non-UNIQUE index.
+* It is OK to have an [AUTO_INCREMENT](../../reference/data-types/auto_increment.md) as the first part of a compound key, or in a non-UNIQUE index.
 
 
 It is so tempting to believe that PARTITIONing will solve performance problems. But it is so often wrong.
@@ -71,7 +71,7 @@ The big win for Case #3: Improving caching to decrease I/O to speed up operation
 ## AUTO_INCREMENT in PARTITION
 
 
-* For [AUTO_INCREMENT](../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) to work (in any table), it must be the first field in some index. Period. There are no other requirements on indexing it.
+* For [AUTO_INCREMENT](../../reference/data-types/auto_increment.md) to work (in any table), it must be the first field in some index. Period. There are no other requirements on indexing it.
 * Being the first field in some index lets the engine find the 'next' value when opening the table.
 * AUTO_INCREMENT need not be UNIQUE. What you lose: prevention of explicitly inserting a duplicate id. (This is rarely needed, anyway.)
 
@@ -203,10 +203,10 @@ How many partitions?
 * Under, say, 5 partitions -- you get very little of the benefits.
 * Over, say, 50 partitions, and you hit inefficiencies elsewhere.
 * Certain operations (SHOW TABLE STATUS, opening the table, etc) open every partition.
-* [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), before version 5.6.6, would lock all partitions before pruning!
+* [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md), before version 5.6.6, would lock all partitions before pruning!
 * Partition pruning does not happen on INSERTs (until Version 5.6.7), so INSERT needs to open all the partitions.
 * A possible 2-partition use case: [read.php?24,633179,633179](https://forums.mysql.com/read.php?24,633179,633179)
-* 8192 partitions is a hard limit (1024 before [MariaDB 10.0.4](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes.md)).
+* 8192 partitions is a hard limit (1024 before [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)).
 * Before "native partitions" (5.7.6), each partition consumed a chunk of memory.
 
 
@@ -297,4 +297,3 @@ optimizations, and debugging tips.
 
 Original source: [partitionmaint](https://mysql.rjweb.org/doc.php/partitionmaint)
 
-<span></span>

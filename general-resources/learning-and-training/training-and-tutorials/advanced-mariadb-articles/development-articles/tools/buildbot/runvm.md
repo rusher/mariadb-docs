@@ -1,7 +1,7 @@
 
 # Buildbot runvm
 
-One type of build we do in BuildBot is to build and test [MariaDB](../../../../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md) binary
+One type of build we do in BuildBot is to build and test [MariaDB](/en/mariadb/) binary
 packages for the platforms we release on. We build and test packages for Debian
 (4 and 5), Ubuntu (8.04 to 10.04), Centos 5, and generic Linux; amd64 and i386
 architectures. This testing is done with virtual machines run in 
@@ -21,7 +21,7 @@ always shut down after use (gracefully if possible), even in case of various
 failures or the loss of the parent process or controlling TTY. And if a
 conflicting virtual machine somehow manages to escape shutdown, runvm
 automatically attempts to terminate it before starting a new one. This extra
-robustness is important for fully automated testing as in our [Buildbot](buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md)
+robustness is important for fully automated testing as in our [Buildbot](README.md)
 setup, to ensure that the system can run unattended for longer periods of time.
 
 

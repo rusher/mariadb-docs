@@ -12,7 +12,7 @@ FLUSH TABLE[S] table_name [, table_name] FOR EXPORT
 ## Description
 
 
-`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../storage-engines/archive/README.md), [Aria](../../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../../../../storage-engines/csv/csv-overview.md), [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), [MyISAM](../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) and [MERGE](../../../../storage-engines/merge.md) tables.
+`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../storage-engines/archive/README.md), [Aria](../../../../storage-engines/aria/README.md), [CSV](../../../../storage-engines/csv/README.md), [InnoDB](../../../../storage-engines/innodb/README.md), [MyISAM](../../../../storage-engines/myisam-storage-engine/README.md) and [MERGE](../../../../storage-engines/merge.md) tables.
 
 
 The table is read locked until one has issued [UNLOCK TABLES](../../transactions/transactions-unlock-tables.md).
@@ -30,7 +30,7 @@ If `FLUSH TABLES ... FOR EXPORT` is in effect in the session, the following stat
 * Any statement trying to update any table
 
 
-If any of the following statements is in effect in the session, attempting ` FLUSH TABLES ... FOR EXPORT` will produce an error.
+If any of the following statements is in effect in the session, attempting `FLUSH TABLES ... FOR EXPORT` will produce an error.
 
 
 * `FLUSH TABLES ... WITH READ LOCK`
@@ -39,7 +39,7 @@ If any of the following statements is in effect in the session, attempting ` FLU
 * `LOCK TABLES ... WRITE`
 
 
-`FLUSH FOR EXPORT` is not written to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+`FLUSH FOR EXPORT` is not written to the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md).
 
 
 This statement requires the [RELOAD](../../account-management-sql-commands/grant.md#global-privileges) and the [LOCK TABLES](../../account-management-sql-commands/grant.md#database-privileges) privileges.
@@ -77,7 +77,7 @@ For a full description, please see [copying MariaDB tables](../../../../../serve
 ## See Also
 
 
-* [FLUSH TABLES](flush-tables-for-export.md)
+* [FLUSH TABLES](flush.md)
 * [Copying Tables Between Different MariaDB Databases and MariaDB Servers](../../../../../server-management/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md)
 * [Copying Transportable InnoDB Tablespaces](../../../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces)
 * [myisampack](../../../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.

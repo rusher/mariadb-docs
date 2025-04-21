@@ -2,7 +2,7 @@
 # Starting with Catalogs
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
@@ -11,12 +11,12 @@ Catalog support is planned for 12.0.
 ## Background
 
 
-[mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) initializes the MariaDB data directory and creates the
+[mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) initializes the MariaDB data directory and creates the
 [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database.
 
 
 When used with the `--catalog` options it will initialize MariaDB server to use catalogs.
-The [mariadbd server](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) will automatically discover if catalogs are used or not.
+The [mariadbd server](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd.md) will automatically discover if catalogs are used or not.
 
 
 Note that **one cannot change** a 'normal server' to a server with catalogs or a server with catalogs to
@@ -63,6 +63,5 @@ One benefit of using `mariadb_install_db` is that it's possible to create many c
 
 * [CREATE CATALOG](create-catalog.md)
 * [DROP CATALOG](drop-catalog.md)
-* [mariadb-install-db](../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)
+* [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md)
 
-<span></span>

@@ -85,8 +85,8 @@ Currently, some restrictions apply to ODBC tables:
 1. Cursor type is forward only (sequential reading).
 1. No indexing of ODBC tables (do not specify any columns as key). However,
  because CONNECT can often add a where clause to the query sent to the data
- source, indexing will be used by the data source if it supports it. (Remote indexing is available with version 1.04, released with [MariaDB 10.1.6](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md))
-1. CONNECT ODBC supports [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) and [INSERT](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md). [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) are also supported
+ source, indexing will be used by the data source if it supports it. (Remote indexing is available with version 1.04, released with [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes))
+1. CONNECT ODBC supports [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) and [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md). [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) are also supported
  in a somewhat restricted way (see below). For other operations, use an ODBC
  table with the EXECSRC option (see below) to directly send proper commands
  to the data source.
@@ -95,7 +95,7 @@ Currently, some restrictions apply to ODBC tables:
 ## Random Access of ODBC Tables
 
 
-In CONNECT version 1.03 (until [MariaDB 10.1.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md)) ODBC tables are not indexable. Version 1.04 (from [MariaDB 10.1.6](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md)) adds remote indexing facility to the ODBC table type.
+In CONNECT version 1.03 (until [MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes)) ODBC tables are not indexable. Version 1.04 (from [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes)) adds remote indexing facility to the ODBC table type.
 
 
 However, some queries require random access to an ODBC table; for instance when it is joined to another table or used in an order by queries applied to a long column or large tables.
@@ -134,7 +134,7 @@ Note that the best way to handle ORDER BY is to set the max_length_for_sort_data
 For tables too large to be stored in memory another possibility is to make your table to use a scrollable cursor. In this case each randomly accessed row can be retrieved from the data source specifying its cursor position, which is reasonably fast. However, scrollable cursors are not supported by all data sources.
 
 
-With CONNECT version 1.04 (from [MariaDB 10.1.6](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md)), another way to provide random access is to specify some columns to be indexed. This should be done only when the corresponding column of the source table is also indexed. This should be used for tables too large to be stored in memory and is similar to the remote indexing used by the [MYSQL table type](connect-mysql-table-type-accessing-mysqlmariadb-tables.md) and by the [FEDERATED engine](../../federatedx-storage-engine/README.md).
+With CONNECT version 1.04 (from [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes)), another way to provide random access is to specify some columns to be indexed. This should be done only when the corresponding column of the source table is also indexed. This should be used for tables too large to be stored in memory and is similar to the remote indexing used by the [MYSQL table type](connect-mysql-table-type-accessing-mysqlmariadb-tables.md) and by the [FEDERATED engine](../../federatedx-storage-engine/README.md).
 
 
 There remains the possibility to extract data from the external table and to construct
@@ -340,7 +340,7 @@ minimizes the data transfer through ODBC.
 ## Data Modifying Operations
 
 
-The only data modifying operations are the [INSERT](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) , [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands.
+The only data modifying operations are the [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) , [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands.
 They can be executed successfully only if the data source database or tables
 are not read/only.
 
@@ -376,7 +376,7 @@ result in error if the key value is duplicated.
 ### UPDATE and DELETE Commands
 
 
-Unlike the [INSERT](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) command, [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) are supported in a simplified way. Only simple table commands are supported; CONNECT does not support multi-table commands, commands sent from a procedure, or issued via a trigger.
+Unlike the [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) command, [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) are supported in a simplified way. Only simple table commands are supported; CONNECT does not support multi-table commands, commands sent from a procedure, or issued via a trigger.
 These commands are just rephrased to correspond to the data source syntax and sent to the
 data source for execution. Let us suppose we created the table:
 
@@ -544,7 +544,7 @@ CONNECTION='Driver=SQLite3 ODBC Driver;Database=test.sqlite3;NoWCHAR=yes'
 CHARSET=utf8 DATA_CHARSET=utf8;
 ```
 
-We can populate it directly using the supported [INSERT](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statement:
+We can populate it directly using the supported [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
 
 ```
@@ -572,7 +572,7 @@ select * from tlite;
 
 
 
-Any command, for instance [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), can be executed from the *crlite* table:
+Any command, for instance [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), can be executed from the *crlite* table:
 
 
 ```

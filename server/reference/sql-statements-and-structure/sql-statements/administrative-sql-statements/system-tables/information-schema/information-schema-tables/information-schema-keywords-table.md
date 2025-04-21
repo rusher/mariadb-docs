@@ -2,14 +2,14 @@
 # Information Schema KEYWORDS Table
 
 
-##### MariaDB starting with [10.6.3](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md)
-The `KEYWORDS` table was added in [MariaDB 10.6.3](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes.md).
+##### MariaDB starting with [10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes)
+The `KEYWORDS` table was added in [MariaDB 10.6.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1063-release-notes).
 
 
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `KEYWORDS` table contains the list of MariaDB keywords.
+The [Information Schema](../README.md) `KEYWORDS` table contains the list of MariaDB keywords.
 
 
 It contains a single column:

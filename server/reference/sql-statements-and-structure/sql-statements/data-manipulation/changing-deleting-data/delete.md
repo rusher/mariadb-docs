@@ -57,7 +57,7 @@ DELETE HISTORY
 | --- | --- |
 | Option | Description |
 | LOW_PRIORITY | Wait until all SELECT's are done before starting the statement. Used with storage engines that uses table locking (MyISAM, Aria etc). See [HIGH_PRIORITY and LOW_PRIORITY clauses](high_priority-and-low_priority.md) for details. |
-| QUICK | Signal the storage engine that it should expect that a lot of rows are deleted. The storage engine engine can do things to speed up the DELETE like ignoring merging of data blocks until all rows are deleted from the block (instead of when a block is half full). This speeds up things at the expanse of lost space in data blocks. At least [MyISAM](../../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) and [Aria](../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) support this feature. |
+| QUICK | Signal the storage engine that it should expect that a lot of rows are deleted. The storage engine engine can do things to speed up the DELETE like ignoring merging of data blocks until all rows are deleted from the block (instead of when a block is half full). This speeds up things at the expanse of lost space in data blocks. At least [MyISAM](../../../../storage-engines/myisam-storage-engine/README.md) and [Aria](../../../../storage-engines/aria/README.md) support this feature. |
 | IGNORE | Don't stop the query even if a not-critical error occurs (like data overflow). See [How IGNORE works](../inserting-loading-data/ignore.md) for a full description. |
 
 
@@ -68,17 +68,17 @@ be obtained by calling the [ROW_COUNT()](../../built-in-functions/secondary-func
 `WHERE` clause, if given, specifies the conditions that identify
 which rows to delete. With no `WHERE` clause, all rows are
 deleted. If the [ORDER BY](../selecting-data/order-by.md) clause is specified, the rows are
-deleted in the order that is specified. The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause
+deleted in the order that is specified. The [LIMIT](../selecting-data/limit.md) clause
 places a limit on the number of rows that can be deleted.
 
 
 For the multiple-table syntax, `DELETE` deletes from each
 `tbl_name` the rows that satisfy the conditions. In this case,
-[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)> cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md) for the syntax.
+[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md)> cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md) for the syntax.
 
 
 `where_condition` is an expression that evaluates to true for
-each row to be deleted. It is specified as described in [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md).
+each row to be deleted. It is specified as described in [SELECT](../selecting-data/select.md).
 
 
 Currently, you cannot delete from a table and select from the same
@@ -104,8 +104,8 @@ can. See [TRUNCATE TABLE](../../table-statements/truncate-table.md), and
 
 
 
-##### MariaDB starting with [11.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md)
-From [MariaDB 11.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), single table DELETEs support aliases. For example:
+##### MariaDB starting with [11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
+From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), single table DELETEs support aliases. For example:
 
 ```
 CREATE TABLE t1 (c1 INT);
@@ -158,7 +158,7 @@ One can use `DELETE HISTORY` to delete historical information from [System-versi
 ## Examples
 
 
-How to use the [ORDER BY](../selecting-data/order-by.md) and [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clauses:
+How to use the [ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md) clauses:
 
 
 ```
@@ -194,7 +194,7 @@ CREATE TABLE t1 (c1 INT, c2 INT);
 DELETE FROM t1 WHERE c1 IN (SELECT b.c1 FROM t1 b WHERE b.c2=0);
 ```
 
-Until [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md), this returned:
+Until [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), this returned:
 
 
 ```
@@ -202,7 +202,7 @@ ERROR 1093 (HY000): Table 't1' is specified twice, both as a target for 'DELETE'
   and as a separate source for
 ```
 
-From [MariaDB 10.3.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md):
+From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes):
 
 
 ```
@@ -213,9 +213,9 @@ Query OK, 0 rows affected (0.00 sec)
 
 
 * [How IGNORE works](../inserting-loading-data/ignore.md)
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../selecting-data/select.md)
 * [ORDER BY](../selecting-data/order-by.md)
-* [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md)
+* [LIMIT](../selecting-data/limit.md)
 * [REPLACE ... RETURNING](replacereturning.md)
 * [INSERT ... RETURNING](../inserting-loading-data/insertreturning.md)
 * [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)

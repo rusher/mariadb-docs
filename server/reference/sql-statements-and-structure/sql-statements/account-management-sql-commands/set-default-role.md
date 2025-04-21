@@ -12,7 +12,7 @@ SET DEFAULT ROLE { role | NONE } [ FOR user@host ]
 ## Description
 
 
-The `SET DEFAULT ROLE` statement sets a **default [role](../../../../security/user-account-management/roles/roles_overview.md)** for a specified (or current) user. A default role is automatically enabled when a user connects (an implicit [SET ROLE](set-role.md) statement is executed immediately after a connection is established).
+The `SET DEFAULT ROLE` statement sets a **default [role](../../../../security/user-account-management/roles/README.md)** for a specified (or current) user. A default role is automatically enabled when a user connects (an implicit [SET ROLE](set-role.md) statement is executed immediately after a connection is established).
 
 
 To be able to set a role as a default, the role must already have been granted to that user, and one needs the privileges to enable this role (if you cannot do `SET ROLE X`, you won't be able to do `SET DEFAULT ROLE X`). To set a default role for another user one needs to have write access to the `mysql` database.

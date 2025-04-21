@@ -2,12 +2,12 @@
 # S3 Storage Engine Internals
 
 
-##### MariaDB starting with [10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-The [S3 storage engine](s3-storage-engine-status-variables.md) has been available since [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md).
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+The [S3 storage engine](README.md) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
 
 
 
-The [S3 storage engine](s3-storage-engine-status-variables.md) is based on the [Aria](../aria/aria-storage-engine.md) code.
+The [S3 storage engine](README.md) is based on the [Aria](../aria/aria-storage-engine.md) code.
 Internally the S3 storage inherits from the Aria code, with hooks
 that change reads, so that instead of reading data from the local disk it
 reads things from S3.
@@ -19,7 +19,7 @@ The S3 engine uses it's own page cache, modified to be able to handle reading bl
 ## ALTER TABLE
 
 
-[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) will first create a local table in the normal Aria on disk
+[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) will first create a local table in the normal Aria on disk
 format and then move both index and data to S3 in buckets of S3_BLOCK_SIZE.
 The .frm file is also copied to S3 for discovery to support discovery for
 other MariaDB servers.
@@ -29,8 +29,8 @@ One can also use ALTER TABLE to change the structure of an S3 table.
 ## Partitioning Tables
 
 
-Starting from [MariaDB 10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md), S3 tables can also be used with [Partitioning tables](../../../server-management/partitioning-tables/README.md).
-All [ALTER PARTITION](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) operations are supported except:
+Starting from [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), S3 tables can also be used with [Partitioning tables](../../../server-management/partitioning-tables/README.md).
+All [ALTER PARTITION](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations are supported except:
 
 
 * REBUILD PARTITION

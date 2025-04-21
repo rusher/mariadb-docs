@@ -9,7 +9,7 @@
 
 
 
-The [DROP TABLE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) statement deletes a table from ColumnStore.
+The [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table) statement deletes a table from ColumnStore.
 
 
 ## Syntax
@@ -37,5 +37,5 @@ DROP TABLE orders RESTRICT;
 ## See also
 
 
-* [DROP TABLE](../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md)
+* [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table)
 

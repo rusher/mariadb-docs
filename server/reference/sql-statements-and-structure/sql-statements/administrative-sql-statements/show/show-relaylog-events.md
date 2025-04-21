@@ -20,19 +20,19 @@ SHOW RELAYLOG ['connection_name'] EVENTS
 On [replicas](../../../../../server-usage/replication-cluster-multi-master/standard-replication/README.md), this command shows the events in the [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). If `'log_name'` is not specified, the first relay log is shown.
 
 
-Syntax for the `LIMIT` clause is the same as for [SELECT ... LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit).
+Syntax for the `LIMIT` clause is the same as for [SELECT ... LIMIT](../../data-manipulation/selecting-data/select.md#limit).
 
 
 Using the `LIMIT` clause is highly recommended because the `SHOW RELAYLOG EVENTS` command returns the complete contents of the relay log, which can be quite large.
 
 
-This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog](../../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md).
+This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog](../../../../../clients-and-utilities/mariadb-binlog/README.md).
 
 
 On the primary, this command does nothing.
 
 
-Requires the [REPLICA MONITOR](../../account-management-sql-commands/grant.md#replica-monitor) privilege (>= [MariaDB 10.5.9](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md)), the [REPLICATION SLAVE ADMIN](../../account-management-sql-commands/grant.md#replication-slave-admin) privilege (>= [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)) or the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (<= [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)).
+Requires the [REPLICA MONITOR](../../account-management-sql-commands/grant.md#replica-monitor) privilege (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes)), the [REPLICATION SLAVE ADMIN](../../account-management-sql-commands/grant.md#replication-slave-admin) privilege (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)) or the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)).
 
 
 #### connection_name
@@ -42,7 +42,7 @@ If there is only one nameless primary, or the default primary (as specified by t
 
 
 
-##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as
 using the channel_name directly after `SHOW RELAYLOG`.
 

@@ -111,7 +111,7 @@ only if you use the `FULL` keyword.
 
 
 `SHOW FIELDS` is a synonym for
-`SHOW COLUMNS`. Also [DESCRIBE](../describe.md) and [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) can be used as shortcuts.
+`SHOW COLUMNS`. Also [DESCRIBE](../describe.md) and [EXPLAIN](../analyze-and-explain-statements/explain.md) can be used as shortcuts.
 
 
 You can also list a table's columns with:

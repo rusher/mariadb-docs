@@ -49,7 +49,7 @@ sudo yum install MariaDB-connect-engine
 ##### Installing with apt-get
 
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md) from MariaDB's
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's
 repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
 

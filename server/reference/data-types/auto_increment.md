@@ -5,13 +5,13 @@
 ## Description
 
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO_INCREMENT](../storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute with the [ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement), and the auto_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO_AUTO_VALUE_ON_ZERO SQL_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement), and the auto_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO_AUTO_VALUE_ON_ZERO SQL_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
 
 
 `AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than 0.
 
 
-Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../storage-engines/s3-storage-engine/aria_s3_copy.md), [MyISAM](../storage-engines/myisam-storage-engine/myisam-system-variables.md), [MERGE](../storage-engines/merge.md), [Spider](../storage-engines/spider/spider-functions/spider_copy_tables.md), [TokuDB](../storage-engines/tokudb/tokudb-resources.md), [BLACKHOLE](../storage-engines/blackhole.md), [FederatedX](../storage-engines/federatedx-storage-engine/README.md) and [Federated](../storage-engines/legacy-storage-engines/federated-storage-engine.md).
+Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../storage-engines/innodb/README.md)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../storage-engines/aria/README.md), [MyISAM](../storage-engines/myisam-storage-engine/README.md), [MERGE](../storage-engines/merge.md), [Spider](../storage-engines/spider/README.md), [TokuDB](../storage-engines/tokudb/README.md), [BLACKHOLE](../storage-engines/blackhole.md), [FederatedX](../storage-engines/federatedx-storage-engine/README.md) and [Federated](../storage-engines/legacy-storage-engines/federated-storage-engine.md).
 
 
 ```
@@ -59,7 +59,7 @@ Create Table: CREATE TABLE `t` (
 ## Setting or Changing the Auto_Increment Value
 
 
-You can use an `[ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)` statement to assign a new value to the `auto_increment` table option, or set the [insert_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
+You can use an `[ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement to assign a new value to the `auto_increment` table option, or set the [insert_id](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
 
 
 `[LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)` can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
@@ -105,7 +105,7 @@ SELECT * FROM animals;
 ## InnoDB
 
 
-AUTO_INCREMENT is persistent in InnoDB. Prior to [MariaDB 10.2.3](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), InnoDB used an auto-increment counter that was stored in memory. When the server restarted, the counter was re-initialized to the highest value used in the table, which canceled the effects of any AUTO_INCREMENT = N option in the table statements).
+AUTO_INCREMENT is persistent in InnoDB. Prior to [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), InnoDB used an auto-increment counter that was stored in memory. When the server restarted, the counter was re-initialized to the highest value used in the table, which canceled the effects of any AUTO_INCREMENT = N option in the table statements).
 
 
 See also [AUTO_INCREMENT Handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md).
@@ -272,7 +272,7 @@ SELECT * FROM t4;
 ## CHECK Constraints, DEFAULT Values and Virtual Columns
 
 
-auto_increment columns are not permitted in [CHECK constraints](../sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements-and-structure/vectors/create-table-with-vectors.md#default) and [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+auto_increment columns are not permitted in [CHECK constraints](../sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
 
 
 ## Generating Auto_Increment Values When Adding the Attribute
@@ -328,7 +328,7 @@ SELECT * FROM t1;
 
 
 * [Getting Started with Indexes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
-* [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md)
+* [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [AUTO_INCREMENT FAQ](auto_increment-faq.md)
 * [LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
 * [AUTO_INCREMENT handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)

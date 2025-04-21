@@ -27,5 +27,5 @@ SHOW PLUGINS SONAME 'ha_example.so';
 +----------+---------------+----------------+---------------+---------+
 ```
 
-There is also a corresponding `[information_schema](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md)` table, called `[ALL_PLUGINS](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md)`, which contains more complete information.
+There is also a corresponding `[information_schema](../system-tables/information-schema/README.md)` table, called `[ALL_PLUGINS](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md)`, which contains more complete information.
 

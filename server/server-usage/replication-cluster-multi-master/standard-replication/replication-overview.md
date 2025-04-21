@@ -7,7 +7,7 @@ Replication is a feature allowing the contents of one or more servers (called pr
 You can exert control over which data to replicate. All databases, one or more databases, or tables within a database can each be selectively replicated.
 
 
-The main mechanism used in replication is the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). If binary logging is enabled, all updates to the database (data manipulation and data definition) are written into the binary log as binlog events. Replicas read the binary log from each primary in order to access the data to replicate. A [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) is created on the replica, using the same format as the binary log, and this is used to perform the replication. Old relay log files are removed when no longer needed.
+The main mechanism used in replication is the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md). If binary logging is enabled, all updates to the database (data manipulation and data definition) are written into the binary log as binlog events. Replicas read the binary log from each primary in order to access the data to replicate. A [relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) is created on the replica, using the same format as the binary log, and this is used to perform the replication. Old relay log files are removed when no longer needed.
 
 
 A replica server keeps track of the position in the primary's binlog of the last event applied on the replica. This allows the replica server to re-connect and resume from where it left off after replication has been temporarily stopped. It also allows a replica to disconnect, be cloned and then have the new replica resume replication from the same primary.
@@ -87,7 +87,7 @@ Replication is used in a number of common scenarios. Uses include:
 * Provides read and write scaling.
 * Doesn’t handle conflicts.
 * Have to use replication filters to avoid duplication of data.
-* [MariaDB Galera Cluster](../galera-cluster/galera-cluster-status-variables.md), which is a [virtually synchronous](../galera-cluster/about-galera-replication.md) multi-primary (multi-master) cluster for MariaDB, has a similar configuration and can handle conflicts.
+* [MariaDB Galera Cluster](../galera-cluster/README.md), which is a [virtually synchronous](../galera-cluster/about-galera-replication.md) multi-primary (multi-master) cluster for MariaDB, has a similar configuration and can handle conflicts.
 
 
 ### Multi-Source Replication
@@ -108,16 +108,16 @@ The following table describes replication compatibility between different MariaD
 
 
 
-|  | Primary→ | [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) | [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) | [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) | [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) | [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) | [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) | Replica ↓ |  |  |  |  |  |  |  | [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) |  | [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) |  | [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) |  | [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |  | [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) |  | [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) |  |
+|  | Primary→ | [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) | [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) | [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) | [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) | [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) | Replica ↓ |  |  |  |  |  |  |  | [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) |  | [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) |  | [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) |  | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |  | [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) |  | [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|  | Primary→ | [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) | [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) | [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) | [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) | [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) | [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) |
+|  | Primary→ | [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) | [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) | [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) | [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) | [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) |
 | Replica ↓ |  |  |  |  |  |  |  |
-| [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) |  | ✅ | ⛔ | ⛔ | ⛔ | ⛔ | ⛔ |
-| [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) |  | ✅ | ✅ | ⛔ | ⛔ | ⛔ | ⛔ |
-| [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) |  | ✅ | ✅ | ✅ | ⛔ | ⛔ | ⛔ |
-| [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |  | ✅ | ✅ | ✅ | ✅ | ⛔ | ⛔ |
-| [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) |  | ✅ | ✅ | ✅ | ✅ | ✅ | ⛔ |
-| [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md) |  | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) |  | ✅ | ⛔ | ⛔ | ⛔ | ⛔ | ⛔ |
+| [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) |  | ✅ | ✅ | ⛔ | ⛔ | ⛔ | ⛔ |
+| [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) |  | ✅ | ✅ | ✅ | ⛔ | ⛔ | ⛔ |
+| [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |  | ✅ | ✅ | ✅ | ✅ | ⛔ | ⛔ |
+| [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) |  | ✅ | ✅ | ✅ | ✅ | ✅ | ⛔ |
+| [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114) |  | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 
 
 
@@ -135,14 +135,13 @@ Note: where it is not officially supported to replicate to a server with a lesse
 provided the configurations for each server allow for consistent behavior in the execution of the events (i.e. the execution of the event should not be reliant on newer configuration variables, character sets/collations, etc, that don't exist on the replica). Additionally note, if binlog_format=MIXED, it may be possible that the higher-versioned server (primary) may consider it safe to log a transaction using STATEMENT binlog format, while the older-versioned replica categorizes it as unsafe, which will result in an error while the replica tries to execute the transaction. See [this page](unsafe-statements-for-statement-based-replication.md#unsafe-statements) for more details on unsafe statements.
 
 
-For replication compatibility details between MariaDB and MySQL, see [MariaDB versus MySQL - Compatibility: Replication Compatibility](../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md#replication-compatibility).
+For replication compatibility details between MariaDB and MySQL, see [MariaDB versus MySQL - Compatibility: Replication Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#replication-compatibility).
 
 
 ## See Also
 
 
 * [Setting Up Replication](setting-up-replication.md)
-* [Replication Compatibility Between MariaDB and MySQL](../../../../release-notes/mariadb-community-server/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql.md)
+* [Replication Compatibility Between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql)
 * [MariaDB Galera Cluster and M/S replication](https://www.youtube.com/watch?v=Nd0nvltLPdQ) (video)
 
-<span></span>

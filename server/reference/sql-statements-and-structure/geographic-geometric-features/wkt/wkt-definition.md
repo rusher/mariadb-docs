@@ -18,7 +18,7 @@ The Well-Known Text (WKT) representation of Geometry is designed to exchange geo
 | [MULTILINESTRING](../geometry-constructors/multilinestring.md) |
 | [MULTIPOLYGON](../geometry-constructors/multipolygon.md) |
 | [GEOMETRYCOLLECTION](../geometry-constructors/geometrycollection.md) |
-| [GEOMETRY](../geometry-constructors/geometrycollection.md) |
+| [GEOMETRY](../geometry-types.md) |
 
 
 

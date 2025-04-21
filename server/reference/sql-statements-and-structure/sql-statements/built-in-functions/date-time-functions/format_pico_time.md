@@ -2,8 +2,8 @@
 # FORMAT_PICO_TIME
 
 
-##### MariaDB starting with [11.0.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes.md)
-Introduced in [MariaDB 11.0.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes.md)
+##### MariaDB starting with [11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes)
+Introduced in [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes)
 
 
 ## Syntax
@@ -36,7 +36,7 @@ With the exception of results under one nanosecond, which are not rounded and ar
 Returns NULL if the argument is NULL.
 
 
-This function is very similar to the [Sys Schema](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) [FORMAT_TIME](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_time.md) function, but with the following differences:
+This function is very similar to the [Sys Schema](../../administrative-sql-statements/system-tables/sys-schema/README.md) [FORMAT_TIME](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_time.md) function, but with the following differences:
 
 
 * Represents minutes as `min` rather than `m`.

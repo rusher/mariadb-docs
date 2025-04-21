@@ -12,7 +12,7 @@ INSTALL PLUGIN [IF NOT EXISTS] plugin_name SONAME 'plugin_library'
 ## Description
 
 
-This statement installs an individual [plugin](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) from the specified library. To install the whole library (which could be required), use [INSTALL SONAME](install-soname.md). See also [Installing a Plugin](../../../../plugins/plugin-overview.md#installing-a-plugin).
+This statement installs an individual [plugin](../../../../plugins/README.md) from the specified library. To install the whole library (which could be required), use [INSTALL SONAME](install-soname.md). See also [Installing a Plugin](../../../../plugins/plugin-overview.md#installing-a-plugin).
 
 
 `plugin_name` is the name of the plugin as defined in the
@@ -127,7 +127,7 @@ SHOW WARNINGS;
 * [Plugin Overview](../../../../plugins/plugin-overview.md)
 * [INFORMATION_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mariadb-plugin](../../../../../clients-and-utilities/mariadb-plugin.md)
-* [SHOW PLUGINS](../show/show-plugins-soname.md)
+* [SHOW PLUGINS](../show/show-plugins.md)
 * [INSTALL SONAME](install-soname.md)
 * [UNINSTALL PLUGIN](uninstall-plugin.md)
 * [UNINSTALL SONAME](uninstall-soname.md)

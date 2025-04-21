@@ -1017,7 +1017,7 @@ being routed almost exclusively to the primary server.
 
 **Note:** This feature also enables multi-statement execution of SQL in the
  protocol. This is equivalent to using `allowMultiQueries=true` in
- [Connector/J](../../../connectors/mariadb-connector-j/about-mariadb-connector-j.md#allowmultiqueries)
+ [Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#allowmultiqueries)
  or using `CLIENT_MULTI_STATEMENTS` and `CLIENT_MULTI_RESULTS` in the
  Connector/C. The *Implementation of causal_reads* section explains why this is
  necessary.
@@ -1173,7 +1173,7 @@ SET @maxscale_secret_variable=(
 
 The `SET` command will synchronize the replica to a certain logical point in the
 replication stream (see
-[MASTER_GTID_WAIT](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md) for more
+[MASTER_GTID_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait) for more
 details). If the synchronization fails, the query will not run and it will be
 retried on the server where the transaction was originally done.
 
@@ -1254,7 +1254,7 @@ server which would cause the connection to be closed and a warning to be logged.
 * Starting with MaxScale 24.02.5, the fast modes `fast`, `fast_global` and
  `fast_universal` work with Galera clusters. In older versions, none of the
  `causal_reads` modes worked with Galera. The non-fast modes that rely on the
- [MASTER_GTID_WAIT](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
+ [MASTER_GTID_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait)
  function still do not work with Galera. This is because Galera does not
  implement a mechanism that allows a client to wait for a particular GTID.
 * If the combination of the original SQL statement and the modifications
@@ -1702,7 +1702,7 @@ results, transaction replay will fail.
 
 
 The following partial transaction demonstrates the problem by using
-[SQL_MODE](../../../server/server-management/variables-and-modes/sql-mode.md) inside a transaction.
+[SQL_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) inside a transaction.
 
 
 

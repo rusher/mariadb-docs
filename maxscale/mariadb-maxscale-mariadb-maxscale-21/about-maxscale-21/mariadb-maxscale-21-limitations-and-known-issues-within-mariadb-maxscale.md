@@ -176,7 +176,7 @@ The avrorouter does not support the following data types, conversions or SQL sta
 
 * BIT
 * Fields CAST from integer types to string types
-* [CREATE TABLE ... AS SELECT statements](../../../server/reference/sql-statements-and-structure/vectors/create-table-with-vectors.md)
+* [CREATE TABLE ... AS SELECT statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table)
 
 
 The avrorouter does not do any crash recovery. This means that the avro files
@@ -240,7 +240,7 @@ periodically executed (for example `SET @a = 1;`).
 
 
 If the backend server is configured with a low
-[wait_timeout](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md),
+[wait_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables),
 it is possible that connections get closed during long sessions. It is
 recommended to set the `wait_timeout` to a high value and let MariaDB MaxScale
 handle the client timeouts. This can be achieved by using the

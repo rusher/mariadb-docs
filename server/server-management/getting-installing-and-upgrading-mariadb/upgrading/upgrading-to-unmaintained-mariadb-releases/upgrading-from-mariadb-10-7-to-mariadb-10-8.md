@@ -11,16 +11,16 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.7 to MariaDB 10.8 with Galera Cluster](https://mariadb.com/kb/en/upgrading-from-mariadb-107-to-mariadb-108-with-galera-cluster) instead.
 
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 
 The suggested upgrade procedure is:
 
 
-1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md). For example,
+1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108). For example,
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/installing-mariadb-deb-files.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 `sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
 1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
@@ -96,7 +96,7 @@ The following options have been deprecated. They have not yet been removed, but 
 ### Major New Features To Consider
 
 
-You might consider using the following major new features in [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md):
+You might consider using the following major new features in [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
 
 
 * Stored procedures already have support for the [IN, OUT and INOUT](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md#inoutinout) parameter qualifiers. Added as well for [stored functions](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md#in-out-inout-in-out) and (IN only) [cursors](../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/declare-cursor.md#in) ([MDEV-10654](https://jira.mariadb.org/browse/MDEV-10654)).
@@ -107,7 +107,7 @@ You might consider using the following major new features in [MariaDB 10.8](../.
 ### See Also
 
 
-* [The features in MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md)
+* [The features in MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 
 
 
@@ -119,4 +119,3 @@ You might consider using the following major new features in [MariaDB 10.8](../.
 * [Upgrading from MariaDB 10.5 to MariaDB 10.6](../upgrading-from-mariadb-10-5-to-mariadb-10-6.md)
 * [Upgrading from MariaDB 10.4 to MariaDB 10.5](../upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
-<span></span>

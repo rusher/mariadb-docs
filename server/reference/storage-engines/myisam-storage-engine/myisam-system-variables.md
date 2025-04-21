@@ -1,7 +1,7 @@
 
 # MyISAM System Variables
 
-This page documents system variables related to the [MyISAM](myisam-system-variables.md) storage engine. For options, see [MyISAM Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to the [MyISAM](README.md) storage engine. For options, see [MyISAM Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 
 See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
@@ -39,7 +39,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_block_size`
 
 
-* Description: [MyISAM](myisam-system-variables.md) key cache block size in bytes .
+* Description: [MyISAM](README.md) key cache block size in bytes .
 * Commandline: `--key-cache-block-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -78,7 +78,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `key_cache_segments`
 
 
-* Description: The number of segments in a key cache. See [Segmented Key Cache](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance.md).
+* Description: The number of segments in a key cache. See [Segmented Key Cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/segmented-key-cache.md).
 * Commandline: `--key-cache-segments=#`
 * Scope: Global
 * Dynamic: Yes
@@ -92,9 +92,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 
 * Description: Block size to be used for MyISAM index pages.
-* Commandline: `--myisam-block-size=
-
-# `
+* Commandline: `--myisam-block-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -105,7 +103,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_data_pointer_size`
 
 
-* Description: Size in bytes of the default pointer, used in a [MyISAM](myisam-system-variables.md) [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) with no MAX_ROWS option.
+* Description: Size in bytes of the default pointer, used in a [MyISAM](README.md) [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) with no MAX_ROWS option.
 * Commandline: `--myisam-data-pointer-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -168,8 +166,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `enumeration`
 * Default Value:
 
-  * `BACKUP,QUICK` (>= [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md))
-  * `DEFAULT` (<= [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md))
+  * `BACKUP,QUICK` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
+  * `DEFAULT` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
   * `OFF`
 * Valid Values: `OFF`, `DEFAULT`, `BACKUP`, `BACKUP_ALL`, `FORCE` or `QUICK`
 
@@ -192,7 +190,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_sort_buffer_size`
 
 
-* Description: Size in bytes of the buffer allocated when creating or sorting indexes on a MyISAM table. Increase for better [myisamchk -r, --recover](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md#repairing-tables) performance.
+* Description: Size in bytes of the buffer allocated when creating or sorting indexes on a MyISAM table. Increase for better [myisamchk -r, --recover](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md#repairing-tables) performance.
 * Commandline: `--myisam-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -205,7 +203,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `myisam_stats_method`
 
 
-* Description: Determines how NULLs are treated for [MyISAM](myisam-system-variables.md) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria_stats_method](../aria/aria-system-variables.md), [innodb_stats_method](../innodb/innodb-system-variables.md).
+* Description: Determines how NULLs are treated for [MyISAM](README.md) index statistics purposes. If set to `nulls_equal`, the default, all NULL index values are treated as a single group. This is usually fine, but if you have large numbers of NULLs the average group size is slanted higher, and the optimizer may miss using the index for ref accesses when it would be useful. If set to `nulls_unequal`, the opposite approach is taken, with each NULL forming its own group of one. Conversely, the average group size is slanted lower, and the optimizer may use the index for ref accesses when not suitable. Setting to `nulls_ignored` ignores NULLs altogether from index group calculations. See also [Index Statistics](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md), [aria_stats_method](../aria/aria-system-variables.md), [innodb_stats_method](../innodb/innodb-system-variables.md).
 * Commandline: `--myisam-stats-method=name`
 * Scope: Global, Session
 * Dynamic: Yes

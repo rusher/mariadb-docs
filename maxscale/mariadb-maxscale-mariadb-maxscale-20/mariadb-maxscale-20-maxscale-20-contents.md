@@ -78,7 +78,7 @@ of their use.
 
 * [Read Write Split](../mariadb-maxscale-21-06/README.md)
 * [Read Connection Router](../mariadb-maxscale-21-06/README.md)
-* [Schemarouter](../mariadb-maxscale-14/maxscale-design-documents/schemarouter-router-technical-overview.md)
+* [Schemarouter](../mariadb-maxscale-21-06/README.md)
 * [Binlogrouter](../mariadb-maxscale-21-06/README.md)
 * [Avrorouter](../mariadb-maxscale-21-06/README.md)
 

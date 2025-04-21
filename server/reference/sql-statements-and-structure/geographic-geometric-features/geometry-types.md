@@ -6,8 +6,8 @@
 
 
 MariaDB provides a standard way of creating spatial columns for geometry types,
-for example, with [CREATE TABLE](../vectors/create-table-with-vectors.md) or [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md).
-Currently, spatial columns are supported for [MyISAM](../../storage-engines/myisam-storage-engine/myisam-system-variables.md), [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [ARCHIVE](../../storage-engines/archive/README.md)
+for example, with [CREATE TABLE](../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md).
+Currently, spatial columns are supported for [MyISAM](../../storage-engines/myisam-storage-engine/README.md), [InnoDB](../../storage-engines/innodb/README.md) and [ARCHIVE](../../storage-engines/archive/README.md)
 tables. See also [SPATIAL INDEX](spatial-index.md).
 
 
@@ -153,7 +153,7 @@ INSERT INTO gis_geometrycollection VALUES
     (GeomFromText('GeometryCollection EMPTY'));
 ```
 
-### [GEOMETRY](geometry-constructors/geometrycollection.md)
+### [GEOMETRY](geometry-types.md)
 
 
 ```

@@ -15,9 +15,9 @@ It is best practice not to rely upon implicit conversion; rather use [CAST](cast
 * If both arguments are strings, they are compared as strings.
 * If one argument is decimal and the other argument is decimal or integer, they are compared as decimals.
 * If one argument is decimal and the other argument is a floating point, they are compared as floating point values.
-* If one argument is string and the other argument is integer, they are compared as decimals. This conversion was added in [MariaDB 10.3.36](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10336-release-notes.md). Prior to 10.3.36, this combination was compared as floating point values, which did not always work well for huge 64-bit integers because of a possible precision loss on conversion to double.
+* If one argument is string and the other argument is integer, they are compared as decimals. This conversion was added in [MariaDB 10.3.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10336-release-notes). Prior to 10.3.36, this combination was compared as floating point values, which did not always work well for huge 64-bit integers because of a possible precision loss on conversion to double.
 * If a hexadecimal argument is not compared to a number, it is treated as a binary string.
-* If a constant is compared to a TIMESTAMP or DATETIME, the constant is converted to a timestamp, unless used as an argument to the [IN](../../../../../../columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x.md) function.
+* If a constant is compared to a TIMESTAMP or DATETIME, the constant is converted to a timestamp, unless used as an argument to the [IN](../../../operators/comparison-operators/in.md) function.
 * In other cases, arguments are compared as floating point, or real, numbers.
 
 

@@ -5,7 +5,7 @@
 ## Overview
 
 
-[MindsDB](https://docs.mindsdb.com/) is a third-party application that interfaces with MariaDB Server to provide Machine Learning capabilities through SQL. The interface is done via the [Connect Storage Engine](../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md).
+[MindsDB](https://docs.mindsdb.com/) is a third-party application that interfaces with MariaDB Server to provide Machine Learning capabilities through SQL. The interface is done via the [Connect Storage Engine](connect/README.md).
 
 
 ## Installation

@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_BUFFER_PAGE_LRU Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_BUFFER_PAGE_LRU` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) and how they are ordered for eviction purposes.
+The [Information Schema](../../README.md) `INNODB_BUFFER_PAGE_LRU` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) and how they are ordered for eviction purposes.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
@@ -14,7 +14,7 @@ It has the following columns:
 | Column | Description |
 | --- | --- |
 | Column | Description |
-| POOL_ID | Buffer Pool identifier. From [MariaDB 10.5.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
+| POOL_ID | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
 | LRU_POSITION | LRU (Least recently-used), for determining eviction order from the buffer pool. |
 | SPACE | Tablespace identifier. Matches the SPACE value on the [INNODB_SYS_TABLES](information-schema-innodb_sys_tables-table.md) table. |
 | PAGE_NUMBER | Buffer pool page number. |
@@ -37,7 +37,7 @@ It has the following columns:
 
 
 
-The related [INFORMATION_SCHEMA.INNODB_BUFFER_PAGE](information-schema-innodb_buffer_page_lru-table.md) table contains the same information, but with a block id rather than LRU position.
+The related [INFORMATION_SCHEMA.INNODB_BUFFER_PAGE](information-schema-innodb_buffer_page-table.md) table contains the same information, but with a block id rather than LRU position.
 
 
 ## Example

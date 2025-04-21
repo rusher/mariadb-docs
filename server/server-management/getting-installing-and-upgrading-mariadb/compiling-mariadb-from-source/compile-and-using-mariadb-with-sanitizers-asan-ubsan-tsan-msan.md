@@ -8,7 +8,7 @@
 Sanitizers are open source runtime error detectors developed by Google that are enabled during the compile step. These sanitizers add extra code during compilation that will throw exceptions when certain errors are detected.
 
 
-[AddressSanitizer (aka ASAN)](https://github.com/google/sanitizers/wiki/AddressSanitizer) is a memory error detector for C/C++. It finds a lot of the same things as [valgrind](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md), but with a lot less overhead.
+[AddressSanitizer (aka ASAN)](https://github.com/google/sanitizers/wiki/AddressSanitizer) is a memory error detector for C/C++. It finds a lot of the same things as [valgrind](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging), but with a lot less overhead.
 
 
 * Use after free (dangling pointer dereference)
@@ -46,7 +46,7 @@ Before using ASAN locally, please ensure that it is installed on the system:
 yum install -y /usr/lib64/libasan.so.6.0.0
 ```
 
-ASAN is supported in [MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and up.
+ASAN is supported in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and up.
 
 
 You can use one of the two following build commands:
@@ -56,7 +56,7 @@ You can use one of the two following build commands:
 cmake . -DWITH_ASAN=ON
 ```
 
-or from [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and up:
+or from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and up:
 
 
 ```
@@ -184,12 +184,11 @@ ASAN_OPTIONS=help=1 extra/perror 0
 ### Using Valgrind
 
 
-The [MariaDB test system](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) can use [Valgrind](https://www.valgrind.org) for finding memory leaks and wrong memory accesses. Valgrind is an instrumentation framework for building dynamic analysis tools. If Valgrind is installed on your system, you can simply use [mysql-test-run --valgrind](../../../clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md) to run the test under Valgrind.
+The [MariaDB test system](../../../clients-and-utilities/mariadb-test/README.md) can use [Valgrind](https://www.valgrind.org) for finding memory leaks and wrong memory accesses. Valgrind is an instrumentation framework for building dynamic analysis tools. If Valgrind is installed on your system, you can simply use [mysql-test-run --valgrind](../../../clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md) to run the test under Valgrind.
 
 
 ## See Also
 
 
-* [Compiling MariaDB for debugging](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md)
+* [Compiling MariaDB for debugging](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging)
 
-<span></span>

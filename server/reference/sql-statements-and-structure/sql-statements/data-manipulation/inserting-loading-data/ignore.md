@@ -8,11 +8,11 @@ The `IGNORE` option tells the server to ignore some common errors.
 
 
 * [DELETE](../changing-deleting-data/delete.md)
-* [INSERT](../../built-in-functions/string-functions/insert-function.md) (see also [INSERT IGNORE](insert-ignore.md))
+* [INSERT](insert.md) (see also [INSERT IGNORE](insert-ignore.md))
 * [LOAD DATA INFILE](load-data-into-tables-or-index/load-data-infile.md)
-* [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)
-* [ALTER TABLE](../../data-definition/alter/alter-tablespace.md)
-* [CREATE TABLE ... SELECT](../../../vectors/create-table-with-vectors.md#create-select)
+* [UPDATE](../changing-deleting-data/update.md)
+* [ALTER TABLE](../../data-definition/alter/alter-table.md)
+* [CREATE TABLE ... SELECT](../../data-definition/create/create-table.md#create-select)
 * [INSERT ... SELECT](insert-select.md)
 
 
@@ -22,7 +22,7 @@ The logic used:
 * Variables out of ranges are replaced with the maximum/minimum value.
 
 
-* [SQL_MODEs](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) `STRICT_TRANS_TABLES`, `STRICT_ALL_TABLES`, `NO_ZERO_IN_DATE`, `NO_ZERO_DATE` are ignored.
+* [SQL_MODEs](../../../../../server-management/variables-and-modes/sql-mode.md) `STRICT_TRANS_TABLES`, `STRICT_ALL_TABLES`, `NO_ZERO_IN_DATE`, `NO_ZERO_DATE` are ignored.
 
 
 * Inserting `NULL` in a `NOT NULL` field will insert 0 ( in a numerical

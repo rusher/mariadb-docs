@@ -24,7 +24,7 @@ The `-p` option above instructs the `mariadb` client to prompt you for the passw
 #### Creating a Structure
 
 
-In order to be able to add and to manipulate data, you first have to create a database structure. Creating a database is simple. You would enter something like the following from within the [mariadb client](../../../../server/clients-and-utilities/mariadb-client/mariadb-command-line-client.md):
+In order to be able to add and to manipulate data, you first have to create a database structure. Creating a database is simple. You would enter something like the following from within the [mariadb client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client):
 
 
 ```
@@ -49,7 +49,7 @@ year_pub CHAR(4),
 description TEXT );
 ```
 
-This SQL statement creates the table books with six fields, or rather columns. The first column (isbn) is an identification number for each row—this name relates to the unique identifier used in the book publishing business. It has a fixed-width character type of 20 characters. It will be the primary key column on which data will be indexed. The column data type for the book title is a variable width character column of fifty characters at most. The third and fourth columns will be used for identification numbers for the author and the publisher. They are integer data types. The fifth column is used for the publication year of each book. The last column is for entering a description of each book. It's a [TEXT](../../../../server/reference/data-types/string-data-types/text.md) data type, which means that it's a variable width column and it can hold up to 65535 bytes of data for each row. There are several other data types that may be used for columns, but this gives you a good sampling.
+This SQL statement creates the table books with six fields, or rather columns. The first column (isbn) is an identification number for each row—this name relates to the unique identifier used in the book publishing business. It has a fixed-width character type of 20 characters. It will be the primary key column on which data will be indexed. The column data type for the book title is a variable width character column of fifty characters at most. The third and fourth columns will be used for identification numbers for the author and the publisher. They are integer data types. The fifth column is used for the publication year of each book. The last column is for entering a description of each book. It's a [TEXT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/text) data type, which means that it's a variable width column and it can hold up to 65535 bytes of data for each row. There are several other data types that may be used for columns, but this gives you a good sampling.
 
 
 To see how the table we created looks, enter the following SQL statement:
@@ -69,7 +69,7 @@ DESCRIBE books;
 +--------------+-------------+------+-----+---------+-------+
 ```
 
-To change the settings of a table, you can use the [ALTER TABLE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) statement, followed by the table name. Be careful with this statement since it's not reversible.
+To change the settings of a table, you can use the [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table) statement, followed by the table name. Be careful with this statement since it's not reversible.
 
 
 The next table we'll create for our examples is the authors table to hold author information. This table will save us from having to enter the author's name and other related data for each book written by each author. It also helps to ensure consistency of data: there's less chance of inadvertent spelling deviations.
@@ -98,7 +98,7 @@ As a basic convention, reserved words are printed in all capital letters. This i
 #### Entering Data
 
 
-The primary method for entering data into a table is to use the [INSERT](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statement. As an example, let's enter some information about an author into the authors table. We'll do that like so:
+The primary method for entering data into a table is to use the [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statement. As an example, let's enter some information about an author into the authors table. We'll do that like so:
 
 
 ```
@@ -107,7 +107,7 @@ INSERT INTO authors
 VALUES('Kafka', 'Franz', 'Czech Republic');
 ```
 
-This will add the name and country of the author Franz Kafka to the authors table. We don't need to give a value for the author_id since that column was created with the [AUTO_INCREMENT](../../../../server/reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) option. MariaDB will automatically assign an identification number. You can manually assign one, especially if you want to start the count at a higher number than 1 (e.g., 1000). Since we are not providing data for all of the columns in the table, we have to list the columns for which we are giving data and in the order that the data is given in the set following the VALUES keyword. This means that we could give the data in a different order.
+This will add the name and country of the author Franz Kafka to the authors table. We don't need to give a value for the author_id since that column was created with the [AUTO_INCREMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/auto_increment) option. MariaDB will automatically assign an identification number. You can manually assign one, especially if you want to start the count at a higher number than 1 (e.g., 1000). Since we are not providing data for all of the columns in the table, we have to list the columns for which we are giving data and in the order that the data is given in the set following the VALUES keyword. This means that we could give the data in a different order.
 
 
 For an actual database, we would probably enter data for many authors. We'll assume that we've done that and move on to entering data for some books. Below is an entry for one of Kafka's books:
@@ -136,7 +136,7 @@ In this example, we've added three books in one statement. This allows us to giv
 #### Retrieving Data
 
 
-The primary method of retrieving data from tables is to use a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement. There are many options available with the [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, but you can start simply. As an example, let's retrieve a list of book titles from the books table:
+The primary method of retrieving data from tables is to use a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement. There are many options available with the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement, but you can start simply. As an example, let's retrieve a list of book titles from the books table:
 
 
 ```
@@ -144,7 +144,7 @@ SELECT title
 FROM books;
 ```
 
-This will display all of the rows of books in the table. If the table has thousands of rows, MariaDB will display thousands. To limit the number of rows retrieved, we could add a [LIMIT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit) clause to the [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement like so:
+This will display all of the rows of books in the table. If the table has thousands of rows, MariaDB will display thousands. To limit the number of rows retrieved, we could add a [LIMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select#limit) clause to the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement like so:
 
 
 ```
@@ -153,7 +153,7 @@ FROM books
 LIMIT 5;
 ```
 
-This will limit the number of rows displayed to five. To be able to list the author's name for each book along with the title, you will have to join the books table with the authors table. To do this, we can use the [JOIN](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause like so:
+This will limit the number of rows displayed to five. To be able to list the author's name for each book along with the title, you will have to join the books table with the authors table. To do this, we can use the [JOIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax) clause like so:
 
 
 ```
@@ -162,10 +162,10 @@ FROM books
 JOIN authors USING (author_id);
 ```
 
-Notice that the primary table from which we're drawing data is given in the `FROM` clause. The table to which we're joining is given in the [JOIN](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause along with the commonly named column (i.e., author_id) that we're using for the join.
+Notice that the primary table from which we're drawing data is given in the `FROM` clause. The table to which we're joining is given in the [JOIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax) clause along with the commonly named column (i.e., author_id) that we're using for the join.
 
 
-To retrieve the titles of only books written by Kafka based on his name (not the author_id), we would use the `WHERE` clause with the [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement. This would be entered like the following:
+To retrieve the titles of only books written by Kafka based on his name (not the author_id), we would use the `WHERE` clause with the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement. This would be entered like the following:
 
 
 ```
@@ -190,7 +190,7 @@ This statement will list the titles of Kafka books stored in the database. Notic
 #### Changing & Deleting Data
 
 
-In order to change existing data, a common method is to use the [UPDATE](../advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement. When changing data, though, we need to be sure that we change the correct rows. In our example, there could be another book with the title *America* written by a different author. Since the key column isbn has only unique numbers and we know the ISBN number for the book that we want to change, we can use it to specify the row.
+In order to change existing data, a common method is to use the [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) statement. When changing data, though, we need to be sure that we change the correct rows. In our example, there could be another book with the title *America* written by a different author. Since the key column isbn has only unique numbers and we know the ISBN number for the book that we want to change, we can use it to specify the row.
 
 
 ```
@@ -202,7 +202,7 @@ WHERE isbn = '0805210644';
 This will change the value of the title column for the row specified. We could change the value of other columns for the same row by giving the column = value for each, separated by commas.
 
 
-If we want to delete a row of data, we can use the [DELETE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement. For instance, suppose that our fictitious bookstore has decided no longer to carry books by John Grisham. By first running a [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, we determine the identification number for the author to be 2034. Using this author identification number, we could enter the following:
+If we want to delete a row of data, we can use the [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) statement. For instance, suppose that our fictitious bookstore has decided no longer to carry books by John Grisham. By first running a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement, we determine the identification number for the author to be 2034. Using this author identification number, we could enter the following:
 
 
 ```

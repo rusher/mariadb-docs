@@ -22,13 +22,13 @@ To copy SQL Server data structures to MariaDB, one has to:
 DDL statements are affected by some server system variables.
 
 
-[sql_mode](../../../variables-and-modes/sql-mode.md) determines the behavior of some SQL statements and expressions, including how strict error checking is, and some details regarding the syntax. Objects like [stored procedures](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [stored functions](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) [triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) and [views](../../../../server-usage/programming-customizing-mariadb/views/README.md), are always executed with the sql_mode that was in effect during their creation. [sql_mode='MSSQL'](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) can be used to have MariaDB behaving as close to SQL Server as possible.
+[sql_mode](../../../variables-and-modes/sql-mode.md) determines the behavior of some SQL statements and expressions, including how strict error checking is, and some details regarding the syntax. Objects like [stored procedures](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [stored functions](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) [triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) and [views](../../../../server-usage/programming-customizing-mariadb/views/README.md), are always executed with the sql_mode that was in effect during their creation. [sql_mode='MSSQL'](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql) can be used to have MariaDB behaving as close to SQL Server as possible.
 
 
-[innodb_strict_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
+[innodb_strict_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
 
 
-[updatable_views_with_limit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement with a `LIMIT` clause if the view does not contain all primary or not null unique key columns from the underlying table.
+[updatable_views_with_limit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement with a `LIMIT` clause if the view does not contain all primary or not null unique key columns from the underlying table.
 
 
 ### Dumps and sys.sql_modules
@@ -98,7 +98,7 @@ SQL Server Management Studio and several other Microsoft tools allow one to expo
 MariaDB allows importing CSV files with the [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, which is essentially the MariaDB equivalent of `BULK INSERT`.
 
 
-It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md).
+It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](../../../../reference/storage-engines/connect/README.md) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md).
 
 
 ## Moving Data from MariaDB to SQL Server
@@ -109,7 +109,7 @@ There are several ways to move data from MariaDB to SQL Server:
 
 * If the tables don't exist at all in SQL Server, we need to generate a dump first. The dump can include data or not.
 * If the tables are already in SQL Server, we can use CSV files instead of dumps to move the rows. CSV files are the most concise format to move data between different technologies.
-* With the tables already in SQL Server, another way to move data is to insert the rows into [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) tables that "point" to remote SQL Server tables.
+* With the tables already in SQL Server, another way to move data is to insert the rows into [CONNECT](../../../../reference/storage-engines/connect/README.md) tables that "point" to remote SQL Server tables.
 
 
 ### Using a Dump (Structure)
@@ -130,7 +130,7 @@ By specifying the `--no-data` option we can dump the table structures without da
 mariadb-dump by default produces an output with both data and structure.
 
 
-`--no-create-info` can be used to skip the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements.
+`--no-create-info` can be used to skip the [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statements.
 
 
 `--compatible=mssql` will produce an output that should be usable in SQL Server.
@@ -149,14 +149,14 @@ CSV files can also be used to export data to SQL Server. There are several ways 
 
 
 * The [SELECT INTO OUTFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) statement.
-* The [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine, with the [CSV table type](../../../../reference/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md).
-* The [CSV](../../../../reference/storage-engines/csv/csv-overview.md) storage engine (note that it doesn't support `NULL` and indexes).
+* The [CONNECT](../../../../reference/storage-engines/connect/README.md) storage engine, with the [CSV table type](../../../../reference/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md).
+* The [CSV](../../../../reference/storage-engines/csv/README.md) storage engine (note that it doesn't support `NULL` and indexes).
 
 
 ### Using CONNECT Tables
 
 
-The [CONNECT](../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine allows one to access external data, in many forms:
+The [CONNECT](../../../../reference/storage-engines/connect/README.md) storage engine allows one to access external data, in many forms:
 
 
 * [Data files](../../../../reference/storage-engines/connect/connect-table-types/connect-table-types-data-files.md) ([CSV](../../../../reference/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md), [JSON](../../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), [XML](../../../../reference/storage-engines/connect/connect-table-types/connect-xml-table-type.md), HTML and more).
@@ -224,4 +224,3 @@ Instead of using MariaDB `CONNECT`, it is possible to use SQL Server Linked Serv
 
 Refer to [Linked Servers](https://docs.microsoft.com/en-us/sql/relational-databases/linked-servers/linked-servers-database-engine?view=sql-server-ver15) section in Microsoft documentation.
 
-<span></span>

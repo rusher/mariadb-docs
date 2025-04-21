@@ -1,7 +1,7 @@
 
 # Performance Schema file_summary_by_instance Table
 
-The [Performance Schema](performance-schema-table_handles-table.md) `file_summary_by_instance` table contains file events summarized by instance. It contains the following columns:
+The [Performance Schema](../README.md) `file_summary_by_instance` table contains file events summarized by instance. It contains the following columns:
 
 
 

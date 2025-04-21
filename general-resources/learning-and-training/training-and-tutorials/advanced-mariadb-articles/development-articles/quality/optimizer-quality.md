@@ -75,8 +75,8 @@ without simple views.
 
 
 `outer_join_with_cache` is always ON.
-`<code>--</code>join_cache_level` varies from 0 to 8.
-`<code>--</code>join_buffer_size` varies between 1, 100, 1K, 10K and 100K.
+`--join_cache_level` varies from 0 to 8.
+`--join_buffer_size` varies between 1, 100, 1K, 10K and 100K.
 The `optimizer_no_subquery.yy`, `outer_join.yy` and `range_access.yy`
 grammars are used. Once semijoin is stable, join_cache + semijoin will be
 tested with `optimizer_subquery.yy`.
@@ -85,7 +85,7 @@ tested with `optimizer_subquery.yy`.
 ### Configuration for MRR/ICP/DS-MRR-CPK Testing
 
 
-`<code>--</code>optimizer_use_mrr` is ON,
+`--optimizer_use_mrr` is ON,
 `mrr_sort_keys` is both ON and OFF,
 `index_condition_pushdown` is both ON and OFF,
 `join_cache_level` is between 0 and 8,

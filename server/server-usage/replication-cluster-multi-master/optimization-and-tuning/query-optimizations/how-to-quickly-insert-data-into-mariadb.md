@@ -47,9 +47,9 @@ faster than creating the index one row at a time and it also uses less key
 buffer memory.
 
 
-**Note:** When you insert into an **empty table** with [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) or
+**Note:** When you insert into an **empty table** with [INSERT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) or
 [LOAD DATA](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a
-[DISABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) before and an [ENABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
+[DISABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) before and an [ENABLE KEYS](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
 afterwards.
 
 
@@ -68,7 +68,7 @@ For InnoDB tables, the [AUTO_INCREMENT lock mode](../../../../reference/storage-
 SET @@global.innodb_autoinc_lock_mode = 2;
 ```
 
-Also, if the table has [INSERT triggers](../../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) or [PERSISTENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
+Also, if the table has [INSERT triggers](../../../programming-customizing-mariadb/triggers-events/triggers/README.md) or [PERSISTENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
 
 
 ## Loading Text Files
@@ -124,7 +124,7 @@ You will also get [progress reporting](../../../../reference/mariadb-internals/u
 ### mariadb-import
 
 
-You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)). For example:
+You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)). For example:
 
 
 ```
@@ -227,4 +227,3 @@ delimiter ;
 See [Server System Variables](../system-variables/server-system-variables.md) for the full list of server
 variables.
 
-<span></span>

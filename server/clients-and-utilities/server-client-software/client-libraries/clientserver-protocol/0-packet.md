@@ -91,7 +91,7 @@ Note that data of exact size size 2^24 -1 byte must be sent in 2 packets, the fi
 
 
 For slow connections, the packet can be compressed. 
-This is activated after the [handshake-response-packet](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md) when the client indicates [[1-connecting-connecting#capabilities|COMPRESS] capability with the server having this functionality too.
+This is activated after the [handshake-response-packet](1-connecting/connection.md) when the client indicates [[1-connecting-connecting#capabilities|COMPRESS] capability with the server having this functionality too.
 
 
 When activated, packets will be composed of 7 bytes a compress header + data. The compression algorithm used is is ZLIB, widely available and supported by many languages and runtimes.

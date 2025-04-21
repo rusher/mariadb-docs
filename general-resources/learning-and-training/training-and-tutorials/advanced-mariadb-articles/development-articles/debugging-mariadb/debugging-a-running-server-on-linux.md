@@ -17,7 +17,7 @@ If this doesn't say 'stripped' then you are fine. If not, you should either [dow
 ### Debugging Memory Consumption With tcmalloc
 
 
-Read the [Profiling Memory Usage](../../../../../../server/reference/bug-tracking/profiling-memory-usage.md) page for more information on how to debug high memory consumption.
+Read the [Profiling Memory Usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/bug-tracking/profiling-memory-usage) page for more information on how to debug high memory consumption.
 
 
 If you have a problem with a mysqld process that keeps on growing, you can use tcmalloc to find out
@@ -42,7 +42,7 @@ ulimit -c unlimted
 LD_PRELOAD=/usr/lib64/libtcmalloc.so.4 HEAPPROFILE=/tmp/mysqld.prof /usr/sbin/mysqld --core-file
 ```
 
-You can of course add other [mysqld options](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) to the end of the above line.
+You can of course add other [mysqld options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) to the end of the above line.
 
 
 Now start your client/application that uses MariaDB. You can find where memory is allocated in the `/tmp/mysqld.prof` file. If you find any memory issues, please report this in the [MariaDB bug tracker](https://jira.mariadb.org/secure/Dashboard.jspa)!

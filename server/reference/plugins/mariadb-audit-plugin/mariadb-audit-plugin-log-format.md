@@ -31,7 +31,7 @@ If the [server_audit_output_type](mariadb-audit-plugin-options-and-system-variab
 | connectionid | Connection ID number for the related operation. |
 | queryid | Query ID number, which can be used for finding the relational table events and related queries. For TABLE events, multiple lines will be added. |
 | operation | Recorded action type: CONNECT, QUERY, READ, WRITE, CREATE, ALTER, RENAME, DROP. |
-| database | Active database (as set by [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md)). |
+| database | Active database (as set by [USE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md)). |
 | object | Executed query for QUERY events, or the table name in the case of TABLE events. |
 | retcode | Return code of the logged operation. |
 

@@ -1,7 +1,7 @@
 
 # Galera Cluster Address
 
-URL's in [Galera](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) take a particular format:
+URL's in [Galera](README.md) take a particular format:
 
 
 ```
@@ -21,7 +21,7 @@ URL's in [Galera](../../../reference/sql-statements-and-structure/sql-statements
 
 * The cluster address shouldn't be empty like `gcomm://`. This should never be hardcoded into any configuration files.
 * To connect the node to an existing cluster, the cluster address should contain the address of any member of the cluster you want to join.
-* The cluster address can also contain a comma-separated list of multiple members of the cluster. It is good practice to list all possible members of the cluster, for example `gcomm:<em><node1 name or ip>,<node2 name or ip2>,<node3 name or ip></em>`. Alternately if multicast is use put the multicast address instead of the list of nodes. Each member address or multicast address can specify `<node name or ip>:<port>` if a non-default port is used.
+* The cluster address can also contain a comma-separated list of multiple members of the cluster. It is good practice to list all possible members of the cluster, for example `gcomm:<node1 name or ip>,<node2 name or ip2>,<node3 name or ip>`. Alternately if multicast is use put the multicast address instead of the list of nodes. Each member address or multicast address can specify `<node name or ip>:<port>` if a non-default port is used.
 
 
 ## Option list
@@ -38,4 +38,3 @@ A useful option to set is `pc.wait_prim=no` to ensure the server will start runn
 
 By default, gcomm listens on all interfaces. The port is either provided in the cluster address, or will default to 4567 if not set.
 
-<span></span>

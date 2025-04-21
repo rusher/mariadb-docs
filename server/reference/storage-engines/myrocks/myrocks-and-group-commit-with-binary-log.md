@@ -1,7 +1,7 @@
 
 # MyRocks and Group Commit with Binary log
 
-MyRocks supports group commit with the [binary log](../innodb/binary-log-group-commit-and-innodb-flushing-performance.md) ([MDEV-11934](https://jira.mariadb.org/browse/MDEV-11934)).
+MyRocks supports group commit with the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) ([MDEV-11934](https://jira.mariadb.org/browse/MDEV-11934)).
 
 
 ## Counter Values to Watch

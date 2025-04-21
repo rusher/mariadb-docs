@@ -14,7 +14,7 @@ CREATE [OR REPLACE] ROLE [IF NOT EXISTS] role
 ## Description
 
 
-The `CREATE ROLE` statement creates one or more MariaDB [roles](../../../../security/user-account-management/roles/roles_overview.md). To
+The `CREATE ROLE` statement creates one or more MariaDB [roles](../../../../security/user-account-management/roles/README.md). To
 use it, you must have the global [CREATE USER](grant.md#create-user)
 privilege or the [INSERT](grant.md#table-privileges) privilege for the mysql
 database. For each account, `CREATE ROLE` creates a new row in the

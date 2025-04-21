@@ -23,10 +23,10 @@ There are two kinds of CTEs:
 
 
 * [Non-Recursive](non-recursive-common-table-expressions-overview.md)
-* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword, supported since [MariaDB 10.2.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md))
+* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword, supported since [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes))
 
 
-You can use `table_reference` as any normal table in the external `SELECT` part. You can also use `WITH` in subqueries, as well as with [EXPLAIN](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) and [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md).
+You can use `table_reference` as any normal table in the external `SELECT` part. You can also use `WITH` in subqueries, as well as with [EXPLAIN](../../../administrative-sql-statements/analyze-and-explain-statements/explain.md) and [SELECT](../select.md).
 
 
 Poorly-formed recursive CTEs can in theory cause infinite loops. The [max_recursive_iterations](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations) system variable limits the number of recursions.
@@ -36,7 +36,7 @@ Poorly-formed recursive CTEs can in theory cause infinite loops. The [max_recurs
 
 
 
-##### MariaDB starting with [10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 The CYCLE clause enables CTE cycle detection, avoiding excessive or infinite loops,
 MariaDB supports a relaxed, non-standard grammar.
 The SQL Standard permits a CYCLE clause, as follows:
@@ -145,7 +145,7 @@ SELECT * FROM cte;
 +-------+-------+------+
 ```
 
-However, the CYCLE ... RESTRICT clause (from [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)) can overcome this:
+However, the CYCLE ... RESTRICT clause (from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)) can overcome this:
 
 
 ```

@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_SYS_VIRTUAL Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_VIRTUAL` table contains information about base columns of [virtual columns](../../../../../data-definition/create/generated-columns.md). The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The [Information Schema](../../README.md) `INNODB_SYS_VIRTUAL` table contains information about base columns of [virtual columns](../../../../../data-definition/create/generated-columns.md). The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It contains the following columns:

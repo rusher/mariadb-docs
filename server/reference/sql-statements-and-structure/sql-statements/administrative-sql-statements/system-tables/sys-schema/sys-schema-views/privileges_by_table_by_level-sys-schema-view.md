@@ -2,8 +2,8 @@
 # privileges_by_table_by_level Sys Schema View
 
 
-##### MariaDB starting with [11.4](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
-This [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) view was introduced in [MariaDB 11.4.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes.md).
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+This [Sys Schema](../README.md) view was introduced in [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes).
 
 
 ## Description

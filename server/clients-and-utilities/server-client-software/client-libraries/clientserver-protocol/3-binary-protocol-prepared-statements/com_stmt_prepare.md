@@ -11,8 +11,8 @@ See [PREPARE](../../../../../reference/sql-statements-and-structure/sql-statemen
 ### Implemented by
 
 
-* [mariadb_stmt_execute_direct()](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mariadb_stmt_execute_direct.md)
-* [mysql_stmt_prepare()](../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare.md)
+* [mariadb_stmt_execute_direct()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mariadb_stmt_execute_direct)
+* [mysql_stmt_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare)
 
 
 ## Fields
@@ -48,13 +48,13 @@ If the command succeeds, different packets will be received:
 
   * for each parameter:
 
-    * [column definition packet](../4-server-response-packets/resultset-row.md#column-definition-packet)
+    * [column definition packet](../4-server-response-packets/result-set-packets.md)
   * if !DEPRECATE_EOF [eof_packet](../4-server-response-packets/eof_packet.md)
 * if prepared statement returns result set and number of result set columns > 0
 
   * for each column:
 
-    * [column definition packet](../4-server-response-packets/resultset-row.md#column-definition-packet)
+    * [column definition packet](../4-server-response-packets/result-set-packets.md)
   * if !DEPRECATE_EOF [eof_packet](../4-server-response-packets/eof_packet.md)
 
 
@@ -71,4 +71,3 @@ placeholders)
 * [int<2>](../protocol-data-types.md#fixed-length-integers) number of warnings
 
 
-<span></span>

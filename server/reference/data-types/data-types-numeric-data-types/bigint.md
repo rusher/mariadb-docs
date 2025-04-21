@@ -220,5 +220,5 @@ SELECT *, example + 0 FROM bigint_zerofill_example;
 * [TINYINT](tinyint.md)
 * [SMALLINT](smallint.md)
 * [MEDIUMINT](mediumint.md)
-* [INTEGER](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)
+* [INTEGER](int.md)
 

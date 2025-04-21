@@ -10,32 +10,32 @@ Also see [Common MariaDB Queries](useful-mariadb-queries.md) for examples of com
 ## Defining How Your Data Is Stored
 
 
-* [CREATE DATABASE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md) is used to create a new, empty database.
-* [DROP DATABASE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md) is used to completely destroy an existing database.
-* [USE](useful-mariadb-queries.md) is used to select a default database.
-* [CREATE TABLE](../../../../server/reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) is used to create a new table, which is where your data is actually stored.
-* [ALTER TABLE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) is used to modify an existing table's definition.
-* [DROP TABLE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-tablespace.md) is used to completely destroy an existing table.
-* [DESCRIBE](../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) shows the structure of a table.
+* [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database) is used to create a new, empty database.
+* [DROP DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database) is used to completely destroy an existing database.
+* [USE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database) is used to select a default database.
+* [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) is used to create a new table, which is where your data is actually stored.
+* [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) is used to modify an existing table's definition.
+* [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table) is used to completely destroy an existing table.
+* [DESCRIBE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/describe) shows the structure of a table.
 
 
 ## Manipulating Your Data
 
 
-* [SELECT](../advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) is used when you want to read (or select) your data.
-* [INSERT](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) is used when you want to add (or insert) new data.
-* [UPDATE](../advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) is used when you want to change (or update) existing data.
-* [DELETE](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) is used when you want to remove (or delete) existing data.
-* [REPLACE](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) is used when you want to add or change (or replace) new or existing data.
-* [TRUNCATE](../../../../server/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) is used when you want to empty (or delete) all data from the template.
+* [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) is used when you want to read (or select) your data.
+* [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) is used when you want to add (or insert) new data.
+* [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update) is used when you want to change (or update) existing data.
+* [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete) is used when you want to remove (or delete) existing data.
+* [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace) is used when you want to add or change (or replace) new or existing data.
+* [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table) is used when you want to empty (or delete) all data from the template.
 
 
 ## Transactions
 
 
-* [START TRANSACTION](../../../../server/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) is used to begin a transaction.
-* [COMMIT](../../../../server/reference/sql-statements-and-structure/sql-statements/transactions/commit.md) is used to apply changes and end transaction.
-* [ROLLBACK](../../../../server/reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) is used to discard changes and end transaction.
+* [START TRANSACTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) is used to begin a transaction.
+* [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/commit) is used to apply changes and end transaction.
+* [ROLLBACK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/rollback) is used to discard changes and end transaction.
 
 
 ### A Simple Example

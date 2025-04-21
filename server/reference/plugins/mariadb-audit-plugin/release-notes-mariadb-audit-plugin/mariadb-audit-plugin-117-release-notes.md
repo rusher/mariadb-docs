@@ -4,13 +4,13 @@
 **Release date:** 1 May 2014
 
 
-This is a ***[Stable](../../../../../release-notes/mariadb-release-criteria.md) (GA)*** release. In general this means that there are no known serious bugs, except for those marked as feature requests, that no bugs were fixed since last release that caused a notable code changes, and that we believe the code is ready for general usage (based on bug inflow).
+This is a ***[Stable](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) (GA)*** release. In general this means that there are no known serious bugs, except for those marked as feature requests, that no bugs were fixed since last release that caused a notable code changes, and that we believe the code is ready for general usage (based on bug inflow).
 
 
 ## Important Notices
 
 
-* The [Audit Plugin](mariadb-audit-plugin-113-release-notes.md) is included by default from versions 5.5.37 and 10.0.10.
+* The [Audit Plugin](../README.md) is included by default from versions 5.5.37 and 10.0.10.
 * The MariaDB Audit Plugin works for MariaDB, MySQL and Percona Server. For MySQL and Percona Server it has to be downloaded separately from [SkySQL's site](https://www.skysql.com/downloads/mariadb-audit-plugin)
 
 

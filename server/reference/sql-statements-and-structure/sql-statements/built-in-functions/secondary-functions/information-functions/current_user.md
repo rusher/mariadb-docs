@@ -17,7 +17,7 @@ determines your access privileges. The return value is a string in the
 utf8 [character set](../../../../../data-types/string-data-types/character-sets/README.md).
 
 
-The value of `CURRENT_USER()` can differ from the value of [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md). [CURRENT_ROLE()](current_role.md) returns the current active role.
+The value of `CURRENT_USER()` can differ from the value of [USER()](user.md). [CURRENT_ROLE()](current_role.md) returns the current active role.
 
 
 Statements using the `CURRENT_USER` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
@@ -43,7 +43,7 @@ When calling `CURRENT_USER()` in a stored procedure, it returns the owner of the
 ## See Also
 
 
-* [USER()](../../../../../plugins/other-plugins/user-variables-plugin.md)
+* [USER()](user.md)
 * [SESSION_USER()](session_user.md)
 * [CREATE PROCEDURE](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md)
 

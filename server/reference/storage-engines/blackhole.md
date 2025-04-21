@@ -52,46 +52,46 @@ If you installed the plugin by providing the [--plugin-load](../../server-manage
 ### Using with DML
 
 
-[INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md), [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements all work with the `BLACKHOLE` storage engine. However, no data changes are actually applied.
+[INSERT](../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md), [UPDATE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements all work with the `BLACKHOLE` storage engine. However, no data changes are actually applied.
 
 
 ### Using with Replication
 
 
-If the binary log is enabled, all SQL statements will be logged as usual, and replicated to any slave servers. However, since rows are not stored, it is important to use statement-based rather than the row or mixed format, as [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are neither logged nor replicated. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md).
+If the binary log is enabled, all SQL statements will be logged as usual, and replicated to any slave servers. However, since rows are not stored, it is important to use statement-based rather than the row or mixed format, as [UPDATE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are neither logged nor replicated. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md).
 
 
 ### Using with Triggers
 
 
-Some [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) work with the `BLACKHOLE` storage engine.
+Some [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) work with the `BLACKHOLE` storage engine.
 
 
-`BEFORE` [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) for [INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements are still activated.
+`BEFORE` [triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) for [INSERT](../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements are still activated.
 
 
-[Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) for [UPDATE](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are **not** activated.
+[Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) for [UPDATE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements are **not** activated.
 
 
-[Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) with the `FOR EACH ROW` clause do not apply, since the tables have no rows.
+[Triggers](../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) with the `FOR EACH ROW` clause do not apply, since the tables have no rows.
 
 
 ### Using with Foreign Keys
 
 
-Foreign keys are not supported. If you convert an [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table to `BLACKHOLE`, then the foreign keys will disappear. If you convert the same table back to InnoDB, then you will have to recreate them.
+Foreign keys are not supported. If you convert an [InnoDB](innodb/README.md) table to `BLACKHOLE`, then the foreign keys will disappear. If you convert the same table back to InnoDB, then you will have to recreate them.
 
 
 ### Using with Virtual Columns
 
 
-If you convert an [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) table which contains [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) to `BLACKHOLE`, then it produces an error.
+If you convert an [InnoDB](innodb/README.md) table which contains [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) to `BLACKHOLE`, then it produces an error.
 
 
 ### Using with AUTO_INCREMENT
 
 
-Because a BLACKHOLE table does not store data, it will not maintain the [AUTO_INCREMENT](innodb/auto_increment-handling-in-innodb.md) value. If you are replicating to a table that can handle `AUTO_INCREMENT` columns, and are not explicitly setting the primary key auto-increment value in the [INSERT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) query, or using the [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) [INSERT_ID](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) statement, inserts will fail on the slave due to duplicate keys.
+Because a BLACKHOLE table does not store data, it will not maintain the [AUTO_INCREMENT](../data-types/auto_increment.md) value. If you are replicating to a table that can handle `AUTO_INCREMENT` columns, and are not explicitly setting the primary key auto-increment value in the [INSERT](../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) query, or using the [SET](../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) [INSERT_ID](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) statement, inserts will fail on the slave due to duplicate keys.
 
 
 ## Limits
@@ -100,8 +100,8 @@ Because a BLACKHOLE table does not store data, it will not maintain the [AUTO_IN
 The maximum key size is:
 
 
-* 3500 bytes (>= [MariaDB 10.1.48](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10148-release-notes.md), [MariaDB 10.2.35](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10235-release-notes.md), [MariaDB 10.3.26](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10326-release-notes.md), [MariaDB 10.4.16](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md) and [MariaDB 10.5.7](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md))
-* 1000 bytes (<= [MariaDB 10.1.47](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10147-release-notes.md), [MariaDB 10.2.34](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10234-release-notes.md), [MariaDB 10.3.25](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10325-release-notes.md), [MariaDB 10.4.15](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10415-release-notes.md) and [MariaDB 10.5.6](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes.md)).
+* 3500 bytes (>= [MariaDB 10.1.48](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10148-release-notes), [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes) and [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes))
+* 1000 bytes (<= [MariaDB 10.1.47](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10147-release-notes), [MariaDB 10.2.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10234-release-notes), [MariaDB 10.3.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10325-release-notes), [MariaDB 10.4.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10415-release-notes) and [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1056-release-notes)).
 
 
 ## Examples

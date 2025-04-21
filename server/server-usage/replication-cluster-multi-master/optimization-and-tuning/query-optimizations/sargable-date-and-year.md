@@ -1,7 +1,7 @@
 
 # Sargable DATE and YEAR
 
-Starting from [MariaDB 11.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-111.md), conditions in the form
+Starting from [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111), conditions in the form
 
 
 ```

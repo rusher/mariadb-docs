@@ -6,8 +6,8 @@
 
 
 A member of the MariaDB community, Mark `<ms (at) it-infrastrukturen (dot) org>`,
-has created some Debian "squeeze" 6.0.4 based, live iso images with [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md)
-or 5.3 pre-installed on them and some Debian "squeeze" 6.0.5 based, live iso images with [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) pre-installed on them.
+has created some Debian "squeeze" 6.0.4 based, live iso images with [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)
+or 5.3 pre-installed on them and some Debian "squeeze" 6.0.5 based, live iso images with [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) pre-installed on them.
 
 
 These live and install images can be used to quickly run a MariaDB server in
@@ -39,35 +39,35 @@ There are three iso images for each type, one for 32-bit (i386) systems, one
 for 64-bit (amd64) systems, and one with both.
 
 
-1. [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) Live iso images (text) for i386, amd64 or multi architectures.
+1. [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) Live iso images (text) for i386, amd64 or multi architectures.
 
   * `[binary-hybrid-squeeze-i386-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb52-text.iso)`
   * `[binary-hybrid-squeeze-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb52-text.iso)`
   * `[binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso)`
 
 
-1. [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) Live iso images (text) for i386, amd64 or multi architectures.
+1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) Live iso images (text) for i386, amd64 or multi architectures.
 
   * `[binary-hybrid-squeeze-i386-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-text.iso)`
   * `[binary-hybrid-squeeze-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-text.iso)`
   * `[binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso)`
 
 
-1. [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) Live iso images with LXDE for i386, amd64 or multi architectures.
+1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) Live iso images with LXDE for i386, amd64 or multi architectures.
 
   * `[binary-hybrid-squeeze-i386-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-lxde.iso)`
   * `[binary-hybrid-squeeze-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-lxde.iso)`
   * `[binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso)`
 
 
-1. [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) Live iso images with Gnome for i386, amd64 or multi architectures.
+1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) Live iso images with Gnome for i386, amd64 or multi architectures.
 
   * `[binary-hybrid-squeeze-i386-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-gnome.iso)`
   * `[binary-hybrid-squeeze-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-gnome.iso)`
   * `[binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso)`
 
 
-1. [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) Live images
+1. [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Live images
 
   * `[binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso)`
   * `[binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso)`
@@ -75,7 +75,7 @@ for 64-bit (amd64) systems, and one with both.
   * `[binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso)`
 
 
-1. [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) Live images demonstration video
+1. [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Live images demonstration video
 
   * `[README-mariadb-video.txt](https://rsync.it-infrastrukturen.org/public-mariadb/README-mariadb-video.txt)`
   * `[video-mariadb5.5-live-images-on-USB.ogv](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.ogv)`
@@ -150,7 +150,7 @@ the image or assigning a static IP address and running sshd.
  password immediately after first login!
 
 
-1. Depending on the image [MariaDB 5.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) or 5.3 server is installed. There is no
+1. Depending on the image [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) or 5.3 server is installed. There is no
  root passord for the database set so please set a password immediately
  after first login!
 

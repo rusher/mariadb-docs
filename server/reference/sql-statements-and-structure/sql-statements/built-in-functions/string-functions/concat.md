@@ -32,7 +32,7 @@ A `NULL` parameter hides all information contained in other parameters from the 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `CONCAT` ignores [nullif.md](../control-flow-functions/nullif.md).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `CONCAT` ignores [null](null).
 
 
 ## Examples
@@ -73,7 +73,7 @@ SELECT CONCAT('The value of @v is: ', IFNULL(@v, ''));
 +------------------------------------------------+
 ```
 
-In [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), from [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md):
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
 
 
 ```
@@ -89,5 +89,5 @@ SELECT CONCAT('Ma', 'ria', NULL, 'DB');
 
 
 * [GROUP_CONCAT()](../aggregate-functions/group_concat.md)
-* [Oracle mode from MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

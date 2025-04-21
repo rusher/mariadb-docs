@@ -1,7 +1,7 @@
 
 # FORMAT_DESCRIPTION_EVENT
 
-This is a descriptor event that is written to the beginning of a [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file, at position 4 (after the 4 magic number bytes)
+This is a descriptor event that is written to the beginning of a [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) file, at position 4 (after the 4 magic number bytes)
 
 
 The whole event written to disk is [byte<19>](../protocol-data-types.md#fixed-length-bytes) event header + data fields
@@ -36,7 +36,7 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 
 
 
-### Example FDE of [MariaDB 10.2.10](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10210-release-notes.md) With CRC32
+### Example FDE of [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) With CRC32
 
 
 ```
@@ -82,7 +82,7 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * CRC32 bytes = d6 ce 13 e2
 
 
-### Example FDE of [MariaDB 10.1.16](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes.md) With CRC32
+### Example FDE of [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes) With CRC32
 
 
 ```
@@ -121,4 +121,3 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * checksum_algo = 0 => 0 (NONE)
 * CRC32 bytes = 2b 91 c2 91 (useless)
 
-<span></span>

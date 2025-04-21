@@ -1,7 +1,7 @@
 
 # UNION
 
-`UNION` is used to combine the results from multiple [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements into a single result set.
+`UNION` is used to combine the results from multiple [SELECT](../select.md) statements into a single result set.
 
 
 ## Syntax
@@ -19,7 +19,7 @@ UNION [ALL | DISTINCT] SELECT ...
 ## Description
 
 
-`UNION` is used to combine the results from multiple [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements into a single result set.
+`UNION` is used to combine the results from multiple [SELECT](../select.md) statements into a single result set.
 
 
 The column names from the first `SELECT` statement are used as the column names for the results returned. Selected columns listed in corresponding positions of each SELECT statement should have the same data type. (For example, the first column selected by the first statement should have the same type as the first column selected by the other statements.)
@@ -31,10 +31,10 @@ If they don't, the type and length of the columns in the result take into accoun
 Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNION`s which involve multiple databases. See [Identifier Qualifiers](../../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
 
 
-UNION queries cannot be used with [aggregate functions](../../../built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md).
+UNION queries cannot be used with [aggregate functions](../../../built-in-functions/aggregate-functions/README.md).
 
 
-`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](../../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
 
 
 ### ALL/DISTINCT
@@ -52,16 +52,16 @@ The server can in most cases execute `UNION ALL` without creating a temporary ta
 ### ORDER BY and LIMIT
 
 
-Individual SELECTs can contain their own [ORDER BY](../order-by.md) and [LIMIT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clauses. In this case, the individual queries need to be wrapped between parentheses. However, this does not affect the order of the UNION, so they only are useful to limit the record read by one SELECT.
+Individual SELECTs can contain their own [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses. In this case, the individual queries need to be wrapped between parentheses. However, this does not affect the order of the UNION, so they only are useful to limit the record read by one SELECT.
 
 
-The UNION can have global [ORDER BY](../order-by.md) and [LIMIT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clauses, which affect the whole resultset. If the columns retrieved by individual SELECT statements have an alias (AS), the ORDER BY must use that alias, not the real column names.
+The UNION can have global [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses, which affect the whole resultset. If the columns retrieved by individual SELECT statements have an alias (AS), the ORDER BY must use that alias, not the real column names.
 
 
 ### HIGH_PRIORITY
 
 
-Specifying a query as [HIGH_PRIORITY](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#high-priority) will not work inside a UNION. If applied to the first SELECT, it will be ignored. Applying to a later SELECT results in a syntax error:
+Specifying a query as [HIGH_PRIORITY](../select.md#high-priority) will not work inside a UNION. If applied to the first SELECT, it will be ignored. Applying to a later SELECT results in a syntax error:
 
 
 ```
@@ -80,7 +80,7 @@ If the result is a single row, [SELECT ... INTO @var_name](../../../../../../ser
 ### Parentheses
 
 
-Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), a syntax error would be returned.
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), a syntax error would be returned.
 
 
 ## Examples
@@ -136,7 +136,7 @@ UNION
 (SELECT 2, c_name AS name, email FROM customers) ORDER BY sort_column;
 ```
 
-Difference between UNION, [EXCEPT](except.md) and [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 
 ```
@@ -236,9 +236,9 @@ INSERT INTO t3 VALUES (1),(6);
 ## See Also
 
 
-* [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../select.md)
 * [EXCEPT](except.md)
-* [INTERSECT](../../../../geographic-geometric-features/geometry-relations/intersects.md)
+* [INTERSECT](intersect.md)
 * [Recursive Common Table Expressions Overview](../common-table-expressions/recursive-common-table-expressions-overview.md)
 * [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
 

@@ -18,7 +18,7 @@ ANALYZE [NO_WRITE_TO_BINLOG | LOCAL] TABLE tbl_name [,tbl_name ...]
 
 
 `ANALYZE TABLE` analyzes and stores the key distribution for a
-table ([index statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md), [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) and [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md).
+table ([index statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../../storage-engines/myisam-storage-engine/README.md), [Aria](../../../storage-engines/aria/README.md) and [InnoDB](../../../storage-engines/innodb/README.md) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md).
 
 
 ANALYZE uses histograms, which can provide a better selectivity than InnoDB statistics offer. InnoDB statistics work with a limited sample set and is therefore not as accurate as persistent statistics can be. For more information on how the analysis works within InnoDB, see
@@ -34,21 +34,21 @@ which indexes to use for a specific table within a query.
 This statement requires [SELECT and INSERT privileges](../account-management-sql-commands/grant.md) for the table.
 
 
-By default, ANALYZE TABLE statements are written to the [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) and will be [replicated](../administrative-sql-statements/replication-statements/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
+By default, ANALYZE TABLE statements are written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) and will be [replicated](../../../../server-usage/replication-cluster-multi-master/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 
-From [MariaDB 10.3.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10319-release-notes.md), `ANALYZE TABLE` statements are not logged to the binary log if [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../../server-usage/replication-cluster-multi-master/standard-replication/read-only-replicas.md).
+From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), `ANALYZE TABLE` statements are not logged to the binary log if [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../../server-usage/replication-cluster-multi-master/standard-replication/read-only-replicas.md).
 
 
-From [MariaDB 10.6.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes.md) `ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
+From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes) `ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
 
 
 `ANALYZE TABLE` is also supported for partitioned tables. You
-can use `[ALTER TABLE](../data-definition/alter/alter-tablespace.md) ... ANALYZE PARTITION` to analyze one or
+can use `[ALTER TABLE](../data-definition/alter/alter-table.md) ... ANALYZE PARTITION` to analyze one or
 more partitions.
 
 
-The [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine supports [progress reporting](../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for the `ANALYZE TABLE` statement.
+The [Aria](../../../storage-engines/aria/README.md) storage engine supports [progress reporting](../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for the `ANALYZE TABLE` statement.
 
 
 ## Performance Impact
@@ -63,7 +63,7 @@ Running ANALYZE is indicated:
 * for newly populated tables,
 * for tables that have additional columns added that are used in WHERE clauses,
 * when a table has doubled in size,
-* when you note that a query becomes slow because the table order has changed and you can see from [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) or [ANALYZE FORMAT=JSON](../administrative-sql-statements/analyze-and-explain-statements/analyze-format-json.md) that the selectivity is wrong for a table.
+* when you note that a query becomes slow because the table order has changed and you can see from [EXPLAIN](../administrative-sql-statements/analyze-and-explain-statements/explain.md) or [ANALYZE FORMAT=JSON](../administrative-sql-statements/analyze-and-explain-statements/analyze-format-json.md) that the selectivity is wrong for a table.
 
 
 ANALYZE isn’t useful for table columns of type UNIQUE, PRIMARY KEY, TIME, or CURRENT_TIME. In ANALYZE queries, you should omit columns of those types.

@@ -27,7 +27,7 @@ Ansible code consists of the following components:
 * Modules implement actions that tasks can use. Action examples are file (to declare that files and directories must exist) or mysql_variables (to declare MySQL/MariaDB variables that need to be set).
 
 
-See [Ansible Overview - concepts](ansible-and-mariadb/ansible-overview-for-mariadb-users.md#concepts) for more details and an example.
+See [Ansible Overview - concepts](ansible-and-mariadb/ansible-overview-for-mariadb-users.md) for more details and an example.
 
 
 ### Puppet Code Structure

@@ -5,7 +5,7 @@
 ## Overview
 
 
-MariaDB contains a robust, full instance, at-rest encryption. This feature uses a flexible plugin interface to allow actual encryption to be done using a key management approach that meets the customer's needs. MariaDB Server, starting with [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), includes a plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS) to facilitate separation of responsibilities and remote logging & auditing of key access requests.
+MariaDB contains a robust, full instance, at-rest encryption. This feature uses a flexible plugin interface to allow actual encryption to be done using a key management approach that meets the customer's needs. MariaDB Server, starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), includes a plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS) to facilitate separation of responsibilities and remote logging & auditing of key access requests.
 
 
 Rather than storing the encryption key in a local file, this plugin keeps the master key in AWS KMS. When you first start MariaDB, the AWS KMS plugin will connect to the AWS Key Management Service and ask it to generate a new key. MariaDB will store that key on-disk in an encrypted form. The key stored on-disk cannot be used to decrypt the data; rather, on each startup, MariaDB connects to AWS KMS and has the service decrypt the locally-stored key(s). The decrypted key is stored in-memory as long as the MariaDB server process is running, and that in-memory decrypted key is used to encrypt the local data.
@@ -23,7 +23,7 @@ The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.co
 ### Installing from Source
 
 
-When [compiling MariaDB from source](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md), the AWS Key Management plugin is not built by default in [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), but it is built by default in [MariaDB 10.2](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, on systems that support it.
+When [compiling MariaDB from source](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md), the AWS Key Management plugin is not built by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), but it is built by default in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, on systems that support it.
 
 
 Compilation is controlled by the `-DPLUGIN_AWS_KEY_MANAGEMENT=DYNAMIC -DAWS_SDK_EXTERNAL_PROJECT=1` [cmake](../../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake) arguments.
@@ -275,7 +275,7 @@ You can see the encrypted keys stored on-disk in the datadir:
 Note that those keys are not useful alone. They are encrypted. When MariaDB starts up, the AWS KMS plugin decrypts those keys by interacting with AWS KMS.
 
 
-For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `sudo` to run `mariadb-install-db` so that it finds your credentials file:
+For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../clients-and-utilities/mariadb-install-db.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `sudo` to run `mariadb-install-db` so that it finds your credentials file:
 
 
 ```
@@ -313,7 +313,7 @@ Query OK, 0 rows affected (0.91 sec)
 -rw-rw----. 1 mysql mysql 188 Feb 25 19:10 /var/lib/mysql/aws-kms-key.3.1
 ```
 
-Read more about encrypting data in the [Data at Rest Encryption](../data-at-rest-encryption-overview.md#encrypting-data) section of the MariaDB Documentation.
+Read more about encrypting data in the [Data at Rest Encryption](../data-at-rest-encryption-overview.md) section of the MariaDB Documentation.
 
 
 ## AWS KMS Plugin Option Reference
@@ -332,4 +332,3 @@ Read more about encrypting data in the [Data at Rest Encryption](../data-at-rest
 
 For more information about advanced usage, including strategies to manage credentials, enforce separation of responsibilities, and even require 2-factor authentication to start your MariaDB server, please review [Amazon Web Services (AWS) Key Management Service (KMS) Encryption Plugin Advanced Usage](aws-key-management-encryption-plugin-advanced-usage.md).
 
-<span></span>

@@ -50,7 +50,7 @@ file. The `-norandkey` option tells that the password we defined earlier,
 i.e. no password at all, should be used instead of a random password.
 
 
-The MariaDB documentation for the [GSSAPI Authentication Plugin](../../../server/reference/plugins/authentication-plugins/authentication-plugin-gssapi.md)
+The MariaDB documentation for the [GSSAPI Authentication Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi)
 is a good example on how to set up a new principal for the MariaDB server.
 
 

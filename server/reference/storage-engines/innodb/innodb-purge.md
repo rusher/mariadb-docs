@@ -38,7 +38,7 @@ innodb_purge_batch_size = 50
 If purge operations are lagging on a busy server, then this can be a tough situation to recover from. As a solution, InnoDB allows you to set the max purge lag. The max purge lag is defined as the maximum number of [InnoDB undo log](innodb-undo-log.md) that can be waiting to be purged from the history until InnoDB begins delaying DML statements.
 
 
-The max purge lag can be set by configuring the [innodb_max_purge_lag](innodb-system-variables.md#innodb_max_purge_lag) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The max purge lag can be set by configuring the [innodb_max_purge_lag](innodb-system-variables.md#innodb_max_purge_lag) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -54,7 +54,7 @@ This system variable can also be specified as a command-line argument to [mysqld
 innodb_max_purge_lag = 1000
 ```
 
-The maximum delay can be set by configuring the [innodb_max_purge_lag_delay](innodb-system-variables.md#innodb_max_purge_lag_delay) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The maximum delay can be set by configuring the [innodb_max_purge_lag_delay](innodb-system-variables.md#innodb_max_purge_lag_delay) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -73,7 +73,7 @@ innodb_max_purge_lag_delay = 100
 ### Configuring the Purge Rollback Segment Truncation Frequency
 
 
-The purge rollback segment truncation frequency is defined as the number of purge loops that are run before unnecessary rollback segments are truncated. The purge rollback segment truncation frequency can be set by configuring the [innodb_purge_rseg_truncate_frequency](innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The purge rollback segment truncation frequency is defined as the number of purge loops that are run before unnecessary rollback segments are truncated. The purge rollback segment truncation frequency can be set by configuring the [innodb_purge_rseg_truncate_frequency](innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -95,7 +95,7 @@ innodb_purge_rseg_truncate_frequency = 64
 Purge undo log truncation occurs when InnoDB truncates an entire [InnoDB undo log](innodb-undo-log.md) tablespace, rather than deleting individual [InnoDB undo log](innodb-undo-log.md) records.
 
 
-Purge undo log truncation can be enabled by configuring the [innodb_undo_log_truncate](innodb-system-variables.md#innodb_undo_log_truncate) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+Purge undo log truncation can be enabled by configuring the [innodb_undo_log_truncate](innodb-system-variables.md#innodb_undo_log_truncate) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -111,7 +111,7 @@ This system variable can also be specified as a command-line argument to [mysqld
 innodb_undo_log_truncate = ON
 ```
 
-An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds the maximum size that is configured for [InnoDB undo log](innodb-undo-log.md) tablespaces. The maximum size can be set by configuring the [innodb_max_undo_log_size](innodb-system-variables.md#innodb_max_undo_log_size) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds the maximum size that is configured for [InnoDB undo log](innodb-undo-log.md) tablespaces. The maximum size can be set by configuring the [innodb_max_undo_log_size](innodb-system-variables.md#innodb_max_undo_log_size) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -141,10 +141,10 @@ An InnoDB table's clustered index has three hidden system columns that are autom
 If a row's last [InnoDB undo log](innodb-undo-log.md) record is purged, this can obviously effect the value of the row's `DB_ROLL_PTR` column, because there would no longer be any [InnoDB undo log](innodb-undo-log.md) record for the pointer to reference.
 
 
-In [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and before, the purge process wouldn't touch the value of the row's `DB_TRX_ID` column.
+In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and before, the purge process wouldn't touch the value of the row's `DB_TRX_ID` column.
 
 
-However, in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and later, the purge process will set a row's `DB_TRX_ID` column to `0` after all of the row's associated [InnoDB undo log](innodb-undo-log.md) records have been deleted. This change allows InnoDB to perform an optimization: if a query wants to read a row, and if the row's `DB_TRX_ID` column is set to `0`, then it knows that no other transaction has the row locked. Usually, InnoDB needs to lock the transaction system's mutex in order to safely check whether a row is locked, but this optimization allows InnoDB to confirm that the row can be safely read without any heavy internal locking.
+However, in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, the purge process will set a row's `DB_TRX_ID` column to `0` after all of the row's associated [InnoDB undo log](innodb-undo-log.md) records have been deleted. This change allows InnoDB to perform an optimization: if a query wants to read a row, and if the row's `DB_TRX_ID` column is set to `0`, then it knows that no other transaction has the row locked. Usually, InnoDB needs to lock the transaction system's mutex in order to safely check whether a row is locked, but this optimization allows InnoDB to confirm that the row can be safely read without any heavy internal locking.
 
 
 This optimization can speed up reads, but it come at a noticeable cost at other times. For example, it can cause the purge process to use more I/O after inserting a lot of rows, since the value of each row's `DB_TRX_ID` column will have to be reset.

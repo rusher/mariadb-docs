@@ -12,7 +12,7 @@ EXP(X)
 
 
 Returns the value of e (the base of natural logarithms) raised to the
-power of X. The inverse of this function is [LOG()](../../../../../../general-resources/company-and-community/contributing-participating/log-of-mariadb-contributions.md) (using a single
+power of X. The inverse of this function is [LOG()](log.md) (using a single
 argument only) or [LN()](ln.md).
 
 

@@ -11,8 +11,8 @@ MariaDB supports the following types of replication:
 
 
 
-##### MariaDB starting with [10.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)
-Note: in the snippets in this page, several SQL statements use the keyword `SLAVE`. This word is considered inappropriate by some persons or cultures, so from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) it is possible to use the `REPLICA` keyword, as a synonym.
+##### MariaDB starting with [10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
+Note: in the snippets in this page, several SQL statements use the keyword `SLAVE`. This word is considered inappropriate by some persons or cultures, so from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) it is possible to use the `REPLICA` keyword, as a synonym.
 Similar synonyms will be created in the future for status variables and system variables. See [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to track the status of these changes.
 
 
@@ -22,7 +22,7 @@ Similar synonyms will be created in the future for status variables and system v
 The original MariaDB replication system is asynchronous primary-replica replication.
 
 
-A primary needs to have the [binary log](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) enabled. The primary logs all data changes in the binary log. Every *event* (a binary log entry) is sent to all the replicas.
+A primary needs to have the [binary log](../../../server-monitoring-logs/binary-log/README.md) enabled. The primary logs all data changes in the binary log. Every *event* (a binary log entry) is sent to all the replicas.
 
 
 For a high-level description of the binary log for SQL Server users, see [Understanding MariaDB Architecture](understanding-mariadb-architecture.md#the-binary-log).
@@ -34,7 +34,7 @@ The events can be written in two formats: as an SQL statement (*statement-based 
 For more details on replication formats, see [binary log formats](../../../server-monitoring-logs/binary-log/binary-log-formats.md).
 
 
-The replicas have an [I/O thread](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) that receives the binary log events and writes them to the [relay log](../../../server-monitoring-logs/binary-log/relay-log.md). These events are then read by the [SQL thread](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-sql-thread). This thread could directly apply the changes to the local databases, and this was the only option before [MariaDB 10.0.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md). If [parallel replication](#parallel-replication-and-group-commit) is enabled, the SQL thread hands the events to the worker thread, that apply them to the databases. The latter method is recommended for performance reasons.
+The replicas have an [I/O thread](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) that receives the binary log events and writes them to the [relay log](../../../server-monitoring-logs/binary-log/relay-log.md). These events are then read by the [SQL thread](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-sql-thread). This thread could directly apply the changes to the local databases, and this was the only option before [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes). If [parallel replication](#parallel-replication-and-group-commit) is enabled, the SQL thread hands the events to the worker thread, that apply them to the databases. The latter method is recommended for performance reasons.
 
 
 When a replica cannot apply an event to the local data, the SQL thread stops. This happens, for example, if the event is a row deletion but that row doesn't exist on the replica. There can be several reasons for this, for example non-deterministic statements, or a user deleted the row in the replica. To reduce the risk, it is recommended to set [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to 1 in the replicas.
@@ -67,7 +67,7 @@ The replica relay log also has coordinates. The coordinates of the last applied 
 To easily find out how far the replica is lagging behind the primary, we can look at `Seconds_Behind_Master`.
 
 
-Coordinates represented in this way have a problem: they are different on each server. Each server can use files with different (or the same) names, depending on its configuration. And files can be rotated at different times, including when a user runs [FLUSH LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md). By enabling the GTID (global transaction id) an event will have the same id on the primary and on all the replicas.
+Coordinates represented in this way have a problem: they are different on each server. Each server can use files with different (or the same) names, depending on its configuration. And files can be rotated at different times, including when a user runs [FLUSH LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md). By enabling the GTID (global transaction id) an event will have the same id on the primary and on all the replicas.
 
 
 When [GTID](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is enabled, `SHOW SLAVE STATUS` shows two GTIDs: `Gtid_IO_Pos` is the last event written into the relay log, and `Gtid_Slave_Pos` is the last event applied by the SQL thread. There is no need for a column identifying the same event in the primary, because the id is the same.
@@ -114,7 +114,7 @@ See [Setting Up Replication](../../../../server-usage/replication-cluster-multi-
 MariaDB uses [group commit](../../../server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), which means that a group of events are physically written in the binary log altogether. This reduces the number of IOPS (input/output operations per second). Group commit cannot be disabled, but it can be tuned with variables like [binlog_commit_wait_count](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_commit_wait_count) and [binlog_commit_wait_usec](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_commit_wait_usec).
 
 
-Replicas can apply the changes using multiple threads. This is known as [parallel replication](../../../../server-usage/replication-cluster-multi-master/standard-replication/parallel-replication.md). Before [MariaDB 10.0.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md) only one thread was used to apply changes. Since a primary can use many threads to write data, mono-thread replication is a well-known bottleneck. Parallel replication is not enabled by default. To use it, set the [slave_parallel_threads](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_threads) variable to a number greater than 1. If replication is running, the replica threads must be stopped in order to change this value:
+Replicas can apply the changes using multiple threads. This is known as [parallel replication](../../../../server-usage/replication-cluster-multi-master/standard-replication/parallel-replication.md). Before [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) only one thread was used to apply changes. Since a primary can use many threads to write data, mono-thread replication is a well-known bottleneck. Parallel replication is not enabled by default. To use it, set the [slave_parallel_threads](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#slave_parallel_threads) variable to a number greater than 1. If replication is running, the replica threads must be stopped in order to change this value:
 
 
 ```
@@ -141,7 +141,7 @@ There are different parallel replication styles available: in-order and out-of-o
 Out-of-order replication cannot be enabled automatically by changing a variable in the replica. Instead, it must be enabled by the applications that run transactions in the primary. They can do this if the GTID is enabled. They can set different values for the [gtid_domain_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#gtid_domain_id) variable in different transactions. This shifts a lot of responsibility to the application layer; however, if the application is aware of which transactions are not going to conflict and this information allows one to sensibly increase the parallelism, and using out-of-order replication can be a good idea.
 
 
-Even if out-of-order replication is not normally used, it can be a good idea to use it for long running transactions or [ALTER TABLEs](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), so they can be applied at the same time as normal operations that are not conflicting.
+Even if out-of-order replication is not normally used, it can be a good idea to use it for long running transactions or [ALTER TABLEs](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), so they can be applied at the same time as normal operations that are not conflicting.
 
 
 The impact of the number of threads and mode on performance can be partly seen with [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md), which shows the state of all threads. This includes the replication worker threads, and shows if they are blocking each other.
@@ -253,10 +253,10 @@ See Sveta Smirnova's slides at MariaDB Day 2020: "[How Safe is Asynchronous Mast
 ## Semi-Synchronous Replication
 
 
-Semi-synchronous replication was initially implemented as a plugin, in MySQL. Two different plugins needed to be used, one on the primary and the other on the replicas. Starting from [MariaDB 10.3.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md) it is built-in, which improved its performance.
+Semi-synchronous replication was initially implemented as a plugin, in MySQL. Two different plugins needed to be used, one on the primary and the other on the replicas. Starting from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) it is built-in, which improved its performance.
 
 
-The problem with standard replication is that there is no guarantee that it will not lag, even by long amounts of time. [Semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) reduces this problem, at the cost of reducing the speed of the primary.
+The problem with standard replication is that there is no guarantee that it will not lag, even by long amounts of time. [Semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) reduces this problem, at the cost of reducing the speed of the primary.
 
 
 In semi-synchronous replication, when a transaction is committed on the primary, the primary does not immediately return control to the client. Instead, it sends the event to the replicas. After one replica reported that the commit was executed with success, the primary reports success to the client.
@@ -290,10 +290,10 @@ START SLAVE IO_THREAD;
 The most important aspects to tune are the wait point and the primary timeout.
 
 
-When the binary log is enabled, transactions must be committed both in the [storage engine](understanding-mariadb-architecture.md#storage-engines) (usually [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)) and in the [binary log](understanding-mariadb-architecture.md#the-binary-log). Semi-synchronous replication requires that the transaction is also acknowledged by at least one replica before the primary can report success to the client.
+When the binary log is enabled, transactions must be committed both in the [storage engine](understanding-mariadb-architecture.md#storage-engines) (usually [InnoDB](../../../../reference/storage-engines/innodb/README.md)) and in the [binary log](understanding-mariadb-architecture.md#the-binary-log). Semi-synchronous replication requires that the transaction is also acknowledged by at least one replica before the primary can report success to the client.
 
 
-The wait point determines at which point the primary must stop and wait for a confirmation from a replica. This is an important decision from disaster recovery standpoint, in case the primary crashes when a transaction is not fully committed. The [rpl_semi_sync_master_wait_point](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_point) is used to set the wait point, Its allowed values are:
+The wait point determines at which point the primary must stop and wait for a confirmation from a replica. This is an important decision from disaster recovery standpoint, in case the primary crashes when a transaction is not fully committed. The [rpl_semi_sync_master_wait_point](../../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point) is used to set the wait point, Its allowed values are:
 
 
 * `AFTER_SYNC`: After committing the transaction in the binary log, but before committing it to the storage engine. After a crash, a transaction may be present in the binary log even if it was not committed.
@@ -303,13 +303,13 @@ The wait point determines at which point the primary must stop and wait for a co
 Primary timeout is meant to avoid that a primary remains stuck for a long time, or virtually forever, because no replica acknowledges a transaction. If primary timeout is reached, the primary switches to asynchronous replication. Before doing that, the primary writes an error in the [error log](../../../server-monitoring-logs/error-log.md) and increments the [Rpl_semi_sync_master_no_times](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) status variable.
 
 
-The timeout is set via the [rpl_semi_sync_master_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_timeout) variable.
+The timeout is set via the [rpl_semi_sync_master_timeout](../../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_timeout) variable.
 
 
 ## Galera Cluster
 
 
-[Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md) is a technology that implements virtually synchronous, primary-primary replication for a cluster of MariaDB servers.
+[Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) is a technology that implements virtually synchronous, primary-primary replication for a cluster of MariaDB servers.
 
 
 ### Raft and the Primary Cluster
@@ -393,9 +393,8 @@ For other required settings, see [Mandatory Options](../../../../server-usage/re
 Galera is not suitable for all databases and workloads.
 
 
-* Galera only replicates [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables. Other storage engines should not be used.
+* Galera only replicates [InnoDB](../../../../reference/storage-engines/innodb/README.md) tables. Other storage engines should not be used.
 * For performance reasons, it is highly desirable that all tables have a primary key.
 * Long transactions will damage performance.
-* Some applications use an integer [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `AUTO_INCREMENT` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) columns for chronological order instead.
+* Some applications use an integer [AUTO_INCREMENT](../../../../reference/data-types/auto_increment.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `AUTO_INCREMENT` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) columns for chronological order instead.
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # Information Schema STATISTICS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `STATISTICS` table provides information about table indexes.
+The [Information Schema](../README.md) `STATISTICS` table provides information about table indexes.
 
 
 It contains the following columns:
@@ -20,13 +20,13 @@ It contains the following columns:
 | SEQ_IN_INDEX | The column sequence number, starting at 1. |
 | COLUMN_NAME | Column name. |
 | COLLATION | A for sorted in ascending order, or NULL for unsorted. |
-| CARDINALITY | Estimate of the number of unique values stored in the index based on statistics stored as integers. Higher cardinalities usually mean a greater chance of the index being used in a join. Updated by the [ANALYZE TABLE](../../../../table-statements/analyze-table.md) statement or [myisamchk -a](../../../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md). |
+| CARDINALITY | Estimate of the number of unique values stored in the index based on statistics stored as integers. Higher cardinalities usually mean a greater chance of the index being used in a join. Updated by the [ANALYZE TABLE](../../../../table-statements/analyze-table.md) statement or [myisamchk -a](../../../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md). |
 | SUB_PART | NULL if the whole column is indexed, or the number of indexed characters if partly indexed. |
 | PACKED | NULL if not packed, otherwise how the index is packed. |
 | NULLABLE | YES if the column may contain NULLs, empty string if not. |
 | INDEX_TYPE | Index type, one of BTREE, RTREE, HASH or FULLTEXT. See [Storage Engine Index Types](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md). |
 | COMMENT | Index comments from the [CREATE INDEX](../../../../data-definition/create/create-index.md) statement. |
-| IGNORED | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md). |
+| IGNORED | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
 
 
 

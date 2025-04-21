@@ -15,7 +15,7 @@ DENSE_RANK() OVER (
 ## Description
 
 
-DENSE_RANK() is a [window function](window-functions-overview.md) that displays the number of a given row, starting at one and following the [ORDER BY](../../../data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving the same result. Unlike the [RANK()](rank.md) function, there are no skipped values if the preceding results are identical. It is also similar to the [ROW_NUMBER()](row_number.md) function except that in that function, identical values will receive a different row number for each result.
+DENSE_RANK() is a [window function](README.md) that displays the number of a given row, starting at one and following the [ORDER BY](../../../data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving the same result. Unlike the [RANK()](rank.md) function, there are no skipped values if the preceding results are identical. It is also similar to the [ROW_NUMBER()](row_number.md) function except that in that function, identical values will receive a different row number for each result.
 
 
 ## Examples

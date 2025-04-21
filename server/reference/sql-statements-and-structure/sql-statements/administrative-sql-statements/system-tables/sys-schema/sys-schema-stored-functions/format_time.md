@@ -11,7 +11,7 @@ sys.format_time(picoseconds)
 ## Description
 
 
-`format_time` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md). Given a time in picoseconds, returns a human-readable time value and unit indicator. Unit can be:
+`format_time` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md). Given a time in picoseconds, returns a human-readable time value and unit indicator. Unit can be:
 
 
 * ps - picoseconds
@@ -25,7 +25,7 @@ sys.format_time(picoseconds)
 * w - weeks
 
 
-This function is very similar to the [FORMAT_PICO_TIME](../../../../built-in-functions/date-time-functions/format_pico_time.md) function introduced in [MariaDB 11.0.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes.md), but with the following differences:
+This function is very similar to the [FORMAT_PICO_TIME](../../../../built-in-functions/date-time-functions/format_pico_time.md) function introduced in [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes), but with the following differences:
 
 
 * Represents minutes as `m` rather than `min`.

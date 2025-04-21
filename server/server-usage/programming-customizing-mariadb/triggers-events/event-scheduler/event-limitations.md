@@ -14,4 +14,3 @@ The following restrictions apply to [Events](README.md).
 * A new connection is used for each execution of statements within the body of an event, so the session counts for [server status variables](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) such as Com_delete and Com_select will not reflect these.
 * Because the Event Scheduler depends on grant tables for its functionality, it is automatically disabled when the server is running with [--skip-grant-tables](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables).
 
-<span></span>

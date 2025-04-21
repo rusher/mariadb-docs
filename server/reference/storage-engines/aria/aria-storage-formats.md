@@ -1,10 +1,10 @@
 
 # Aria Storage Formats
 
-The [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine supports three different table storage formats.
+The [Aria](README.md) storage engine supports three different table storage formats.
 
 
-These are FIXED, DYNAMIC and PAGE, and they can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement. PAGE is the default format, while FIXED and DYNAMIC are essentially the same as the [MyISAM formats](../myisam-storage-engine/myisam-storage-formats.md).
+These are FIXED, DYNAMIC and PAGE, and they can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement. PAGE is the default format, while FIXED and DYNAMIC are essentially the same as the [MyISAM formats](../myisam-storage-engine/myisam-storage-formats.md).
 
 
 The [SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table.

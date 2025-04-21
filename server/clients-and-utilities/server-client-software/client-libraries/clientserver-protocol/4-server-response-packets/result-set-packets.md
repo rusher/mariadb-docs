@@ -69,7 +69,7 @@ A column definition packet describes a column in the result set. It uses the fol
 * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) table
 * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) column alias
 * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) column
-* if extended type supported (see `MARIADB_CLIENT_EXTENDED_METADATA ` ) 
+* if extended type supported (see `MARIADB_CLIENT_EXTENDED_METADATA` ) 
 
   * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) [extended metadata](#extended-metadata)
 * [int<lenenc>](../protocol-data-types.md#length-encoded-integers) length of fixed fields (=0xC)
@@ -157,7 +157,7 @@ It is a bitmask with the following flags:
 
 
 
-The `BLOB` flag cannot be used to determine if a column has binary data, because `[BINARY](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)` and `[VARBINARY](../../../../../reference/data-types/string-data-types/varbinary.md)` columns are treated as strings, instead of blobs.
+The `BLOB` flag cannot be used to determine if a column has binary data, because `[BINARY](../../../../../reference/data-types/string-data-types/binary.md)` and `[VARBINARY](../../../../../reference/data-types/string-data-types/varbinary.md)` columns are treated as strings, instead of blobs.
 The `BINARY_COLLATION` flag can be used to determine if a string column has binary data.
 
 
@@ -171,7 +171,7 @@ For example:
 
 
 * For a `[POINT](../../../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md)` column, the column type field will be `MYSQL_TYPE_GEOMETRY`, but the extended type will indicate 'point'.
-* For a `[JSON](../../../../../reference/storage-engines/connect/json-sample-files.md)` column, the column type field will be `MYSQL_TYPE_STRING`, but the extended type will indicate 'json'.
+* For a `[JSON](../../../../../reference/data-types/string-data-types/json.md)` column, the column type field will be `MYSQL_TYPE_STRING`, but the extended type will indicate 'json'.
 
 
 
@@ -181,4 +181,3 @@ For example:
   * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) value
 
 
-<span></span>

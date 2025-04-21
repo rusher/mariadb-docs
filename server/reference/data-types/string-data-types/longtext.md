@@ -12,16 +12,16 @@ LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
 ## Description
 
 
-A [TEXT](text.md) column with a maximum length of 4,294,967,295 or 4GB (`2<sup>32</sup> - 1`) characters. The effective maximum length is less if the value contains multi-byte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a four-byte length prefix that indicates the number of bytes in the value.
+A [TEXT](text.md) column with a maximum length of 4,294,967,295 or 4GB (`232 - 1`) characters. The effective maximum length is less if the value contains multi-byte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a four-byte length prefix that indicates the number of bytes in the value.
 
 
-JSON is an alias for LONGTEXT. See [JSON Data Type](../../storage-engines/connect/json-sample-files.md) for details.
+JSON is an alias for LONGTEXT. See [JSON Data Type](json.md) for details.
 
 
 ## Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), [CLOB](https://mariadb.com/kb/en/clob/) is a synonym for `LONGTEXT`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CLOB](https://mariadb.com/kb/en/clob/) is a synonym for `LONGTEXT`.
 
 
 ## EXAMPLES
@@ -85,6 +85,6 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [TEXT](text.md)
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [JSON Data Type](../../storage-engines/connect/json-sample-files.md)
-* [Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [JSON Data Type](json.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

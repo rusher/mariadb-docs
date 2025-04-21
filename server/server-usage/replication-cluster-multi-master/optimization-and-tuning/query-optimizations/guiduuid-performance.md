@@ -48,7 +48,7 @@ To compress
 * utf8 is unnecessary (ascii would do); but this is obviated by the next two steps
 * Toss dashes
 * [UNHEX](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/unhex.md)
-Now it will fit in 16 bytes: [BINARY(16)](../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)
+Now it will fit in 16 bytes: [BINARY(16)](../../../../reference/data-types/string-data-types/binary.md)
 
 
 ## Combining the problems and crafting a solution
@@ -140,11 +140,11 @@ WHERE UuidFromBin(uuid) = '1026-baba-6ccd780c-9564-0040f4311e29' -- NO
 ## TokuDB
 
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and has been been removed in [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) as a long-term migration path.
+TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) and has been been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../../../../reference/storage-engines/myrocks/README.md) as a long-term migration path.
 
 
 
-[TokuDB](../../../../reference/storage-engines/tokudb/tokudb-resources.md) is a viable engine if you must have UUIDs (even non-type-1) in a huge table. TokuDB is available in MariaDB as a 'standard' engine, making the barrier to entry very low. There are a small number of differences between [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and TokuDB; I will not go into them here.
+[TokuDB](../../../../reference/storage-engines/tokudb/README.md) is a viable engine if you must have UUIDs (even non-type-1) in a huge table. TokuDB is available in MariaDB as a 'standard' engine, making the barrier to entry very low. There are a small number of differences between [InnoDB](../../../../reference/storage-engines/innodb/README.md) and TokuDB; I will not go into them here.
 
 
 Tokudb, with its “fractal” indexing strategy builds the indexes in stages. In contrast, InnoDB inserts index entries “immediately” — actually that indexing is buffered by most of the size of the buffer_pool. To elaborate…
@@ -233,4 +233,3 @@ optimizations, and debugging tips.
 
 Original source: [uuid](https://mysql.rjweb.org/doc.php/uuid)
 
-<span></span>

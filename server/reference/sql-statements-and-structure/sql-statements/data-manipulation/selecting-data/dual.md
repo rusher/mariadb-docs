@@ -5,7 +5,7 @@
 
 
 You are allowed to specify `DUAL` as a dummy table name in
-situations where no tables are referenced, such as the following [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement:
+situations where no tables are referenced, such as the following [SELECT](select.md) statement:
 
 
 ```
@@ -35,5 +35,5 @@ Empty set (0.00 sec)
 ## See Also
 
 
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](select.md)
 

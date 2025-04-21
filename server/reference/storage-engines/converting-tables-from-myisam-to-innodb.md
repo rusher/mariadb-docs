@@ -5,7 +5,7 @@
 ## The task
 
 
-You have decided to change one or more tables from [MyISAM](myisam-storage-engine/myisam-system-variables.md) to [InnoDB](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md). That should be
+You have decided to change one or more tables from [MyISAM](myisam-storage-engine/README.md) to [InnoDB](innodb/README.md). That should be
 as simple as `ALTER TABLE foo ENGINE=InnoDB`. But you have heard that there might
 be some subtle issues.
 
@@ -152,7 +152,7 @@ not) be worth putting the tables back together. Caution: An InnoDB row is
 limited to 8KB, and the 767 counts against that.
 
 
-*Fact.* FULLTEXT (prior to [MariaDB 10.0.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md)) and SPATIAL indexes are not available in InnoDB. Note that MyISAM and InnoDB [FULLTEXT indexes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) use different [stopword](https://mariadb.com/kb/en/stopword) lists and different system variables.
+*Fact.* FULLTEXT (prior to [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes)) and SPATIAL indexes are not available in InnoDB. Note that MyISAM and InnoDB [FULLTEXT indexes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) use different [stopword](https://mariadb.com/kb/en/stopword) lists and different system variables.
 
 
 *Recommendation.* Search for such indexes. Keep such tables in MyISAM.
@@ -246,12 +246,12 @@ from your maintenance scripts. (No real harm if you keep them.)
 
 
 Backup scripts may need checking. A MyISAM table can be backed up by copying
-three files. With InnoDB this is only possible if [innodb_file_per_table](innodb/innodb-system-variables.md) is set to 1. Before [MariaDB 10.0](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md),
+three files. With InnoDB this is only possible if [innodb_file_per_table](innodb/innodb-system-variables.md) is set to 1. Before [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0),
 capturing a table or database for copying from production to a development
-environment was not possible. Change to [mysqldump](../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md). Since [MariaDB 10.0](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) a hot copy can be created - see [Backup and restore overview](../../server-management/backing-up-and-restoring-databases/backup-and-restore-overview.md).
+environment was not possible. Change to [mysqldump](../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md). Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) a hot copy can be created - see [Backup and restore overview](../../server-management/backing-up-and-restoring-databases/backup-and-restore-overview.md).
 
 
-Before [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), the DATA DIRECTORY [table option](../sql-statements-and-structure/vectors/create-table-with-vectors.md#table-options) was not supported for InnoDB. Since [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) it is supported, but only in CREATE TABLE. INDEX DIRECTORY has no effect, since InnoDB does not use separate files for indexes. To better balance the workload through several disks, the paths of some InnoDB log files can also be changed.
+Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), the DATA DIRECTORY [table option](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#table-options) was not supported for InnoDB. Since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) it is supported, but only in CREATE TABLE. INDEX DIRECTORY has no effect, since InnoDB does not use separate files for indexes. To better balance the workload through several disks, the paths of some InnoDB log files can also be changed.
 
 
 Understand autocommit and BEGIN/COMMIT.

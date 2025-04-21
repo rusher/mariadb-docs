@@ -2,7 +2,7 @@
 # 4-Semi-Sync Replication
 
 [Regular MariaDB replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) is asynchronous.
-MariaDB, since [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), has included [semisynchronous replication](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) semi-synchronous Binlog Event.
+MariaDB, since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), has included [semisynchronous replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) semi-synchronous Binlog Event.
 
 
 ### Event Header Changes
@@ -33,7 +33,7 @@ If the semi-sync flag is set to 0x01, the master waits for a Semi Sync ACK packe
 The master can then write the transaction to the binary log and send the next events to the slave.
 
 
-**Note** : The master only requests Semi Sync ACKs if [rpl_semi_sync_master_enabled](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled) is enabled. If it is not enabled, the semi-sync flag will always be 0x00.
+**Note** : The master only requests Semi Sync ACKs if [rpl_semi_sync_master_enabled](../../../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) is enabled. If it is not enabled, the semi-sync flag will always be 0x00.
 
 
 #### Semi Sync ACK Details

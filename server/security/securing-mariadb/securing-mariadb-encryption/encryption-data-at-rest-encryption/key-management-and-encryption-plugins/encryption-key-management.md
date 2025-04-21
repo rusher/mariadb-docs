@@ -29,7 +29,7 @@ For more information, see [File Key Management Plugin](file-key-management-encry
 The AWS Key Management plugin is a key management and encryption plugin that uses the Amazon Web Services (AWS) Key Management Service (KMS). The AWS Key Management plugin depends on the [AWS SDK for C++](https://github.com/aws/aws-sdk-cpp), which uses the [Apache License, Version 2.0](https://github.com/aws/aws-sdk-cpp/blob/master/LICENSE). This license is not compatible with MariaDB Server's [GPL 2.0 license](../../../../../reference/faq/licensing-questions/mariadb-licenses.md), so we are not able to distribute packages that contain the AWS Key Management plugin. Therefore, the only way to currently obtain the plugin is to install it from source.
 
 
-For more information, see [AWS Key Management Plugin](aws-key-management-encryption-plugin-setup-guide.md).
+For more information, see [AWS Key Management Plugin](aws-key-management-encryption-plugin.md).
 
 
 ### Eperi Key Management Plugin
@@ -53,10 +53,10 @@ The support for multiple keys opens up some potential use cases. For example, le
 There are two encryption key identifiers that have special meanings in MariaDB. Encryption key `1` is intended for encrypting system data, such as InnoDB redo logs, binary logs, and so on. It must always exist when [data-at-rest encryption](../data-at-rest-encryption-overview.md) is enabled. Encryption key `2` is intended for encrypting temporary data, such as temporary files and temporary tables. It is optional. If it doesn't exist, then MariaDB uses encryption key `1` for these purposes instead.
 
 
-When [encrypting InnoDB tables](../innodb-encryption/innodb-encryption-troubleshooting.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
+When [encrypting InnoDB tables](../innodb-encryption/README.md), the key that is used to encrypt tables [can be changed](../innodb-encryption/innodb-encryption-keys.md).
 
 
-When [encrypting Aria tables](../aria-encryption/aria-encryption-overview.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
+When [encrypting Aria tables](../aria-encryption/README.md), the key that is used to encrypt tables [cannot currently be changed](../aria-encryption/aria-encryption-keys.md).
 
 
 ## Key Rotation
@@ -72,10 +72,10 @@ Key rotation allows users to improve data security in the following ways:
 * If the server is configured to simultaneously encrypt table data with multiple versions of the encryption key after the key is rotated, then that prevents all data from being leaked if a single encryption key version is compromised.
 
 
-The [InnoDB storage engine](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has [background encryption threads](../innodb-encryption/innodb-background-encryption-threads.md) that can [automatically re-encrypt pages when key rotations occur](../innodb-encryption/innodb-background-encryption-threads.md#background-operations).
+The [InnoDB storage engine](../../../../../reference/storage-engines/innodb/README.md) has [background encryption threads](../innodb-encryption/innodb-background-encryption-threads.md) that can [automatically re-encrypt pages when key rotations occur](../innodb-encryption/innodb-background-encryption-threads.md#background-operations).
 
 
-The [Aria storage engine](../../../../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) does [not currently have a similar mechanism to re-encrypt pages in the background when key rotations occur](../aria-encryption/aria-encryption-keys.md#key-rotation).
+The [Aria storage engine](../../../../../reference/storage-engines/aria/README.md) does [not currently have a similar mechanism to re-encrypt pages in the background when key rotations occur](../aria-encryption/aria-encryption-keys.md#key-rotation).
 
 
 ### Support for Key Rotation in Encryption Plugins
@@ -84,7 +84,7 @@ The [Aria storage engine](../../../../../reference/storage-engines/s3-storage-en
 #### Encryption Plugins with Key Rotation Support
 
 
-* The [AWS Key Management Service (KMS)](https://aws.amazon.com/kms/) supports encryption key rotation, and the corresponding [AWS Key Management Plugin](aws-key-management-encryption-plugin-setup-guide.md) also supports encryption key rotation.
+* The [AWS Key Management Service (KMS)](https://aws.amazon.com/kms/) supports encryption key rotation, and the corresponding [AWS Key Management Plugin](aws-key-management-encryption-plugin.md) also supports encryption key rotation.
 
 
 * The [eperi Gateway for Databases](https://eperi.com/database-encryption/) supports encryption key rotation, and the corresponding [Eperi Key Management Plugin](eperi-key-management-encryption-plugin.md) also supports encryption key rotation.
@@ -101,4 +101,3 @@ The [Aria storage engine](../../../../../reference/storage-engines/s3-storage-en
 
 New key management and encryption plugins can be developed using the [encryption plugin API](../../../../../reference/mariadb-internals/encryption-plugin-api.md).
 
-<span></span>

@@ -448,7 +448,7 @@ objects.
 
 
 The full list of all available endpoints in MaxScale can be found in the
-[REST API documentation](mariadb-maxscale-2302-rest-api-tutorial.md).
+[REST API documentation](../mariadb-maxscale-23-02-rest-api/mariadb-maxscale-2302-rest-api.md).
 
 
 The `maxctrl` command line client is self-documenting and the `maxctrl help`

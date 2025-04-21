@@ -34,11 +34,11 @@ option: >= MariaDB 11.7
 ## Description
 
 
-This statement creates the definition of a server for use with the [Spider](../../../../storage-engines/spider/spider-functions/spider_copy_tables.md), [Connect](../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md), 
+This statement creates the definition of a server for use with the [Spider](../../../../storage-engines/spider/README.md), [Connect](../../../../storage-engines/connect/README.md), 
 [FEDERATED](../../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../../storage-engines/federatedx-storage-engine/README.md) storage
 engine. The CREATE SERVER statement creates a new row within the
 [servers](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) table within the mysql database. This statement
-requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [FEDERATED ADMIN](../../account-management-sql-commands/grant.md#federated-admin) privilege.
+requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-commands/grant.md#federated-admin) privilege.
 
 
 The server_name should be a unique reference to the server. Server definitions
@@ -52,7 +52,7 @@ The wrapper_name may be quoted with single quotes. Supported values are:
 
 
 * `mysql`
-* `mariadb` (in [MariaDB 10.3](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and later)
+* `mariadb` (in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later)
 
 
 For each option you must specify either a character literal or numeric literal.
@@ -68,7 +68,7 @@ the ownership or operation of the server connection that is created.
 
 The CREATE SERVER statement creates an entry in the
 [mysql.servers](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) table that can later be used with the
-CREATE TABLE statement when creating a [Spider](../../../../storage-engines/spider/spider-functions/spider_copy_tables.md), [Connect](../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md), [FederatedX](../../../../storage-engines/federatedx-storage-engine/README.md) or
+CREATE TABLE statement when creating a [Spider](../../../../storage-engines/spider/README.md), [Connect](../../../../storage-engines/connect/README.md), [FederatedX](../../../../storage-engines/federatedx-storage-engine/README.md) or
 [FEDERATED](../../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) table. The options that you specify will
 be used to populate the columns in the mysql.servers table. The table columns
 are Server_name, Host, Db, Username, Password, Port and Socket.
@@ -77,16 +77,16 @@ are Server_name, Host, Db, Username, Password, Port and Socket.
 [DROP SERVER](../drop/drop-server.md) removes a previously created server definition.
 
 
-CREATE SERVER is not written to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), irrespective of
-the [binary log format](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md), [Galera](../../built-in-functions/special-functions/galera-functions/README.md) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
+CREATE SERVER is not written to the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md), irrespective of
+the [binary log format](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](../../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
 
 
 For valid identifiers to use as server names, see [Identifier Names](../../../sql-language-structure/identifier-names.md).
 
 
 
-##### MariaDB starting with [11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md)
-From [MariaDB 11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), the [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md) statement can be used to show the CREATE SERVER statement that created a given server definition.
+##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), the [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md) statement can be used to show the CREATE SERVER statement that created a given server definition.
 
 
 #### OR REPLACE
@@ -148,8 +148,8 @@ SHOW WARNINGS;
 * [Identifier Names](../../../sql-language-structure/identifier-names.md)
 * [ALTER SERVER](../alter/alter-server.md)
 * [DROP SERVER](../drop/drop-server.md)
-* [Spider Storage Engine](../../../../storage-engines/spider/spider-functions/spider_copy_tables.md)
-* [Connect Storage Engine](../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md)
+* [Spider Storage Engine](../../../../storage-engines/spider/README.md)
+* [Connect Storage Engine](../../../../storage-engines/connect/README.md)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 * [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md)
 

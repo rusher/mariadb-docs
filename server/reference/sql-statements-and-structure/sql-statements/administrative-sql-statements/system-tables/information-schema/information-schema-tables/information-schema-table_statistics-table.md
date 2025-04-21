@@ -1,7 +1,7 @@
 
 # Information Schema TABLE_STATISTICS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `TABLE_STATISTICS` table shows statistics on table usage.
+The [Information Schema](../README.md) `TABLE_STATISTICS` table shows statistics on table usage.
 
 
 This is part of the [User Statistics](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
@@ -19,11 +19,11 @@ It contains the following columns:
 | ROWS_READ | bigint(21) | The number of rows read from the table. |
 | ROWS_CHANGED | bigint(21) | The number of rows changed in the table. |
 | ROWS_CHANGED_X_INDEXES | bigint(21) | The number of rows changed in the table, multiplied by the number of indexes changed. |
-| ROWS_INSERTED | bigint(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
-| ROWS_UPDATED | bigint(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
-| ROWS_DELETED | bigint(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
-| KEY_READ_HITS | bigint(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
-| KEY_READ_MISSES | bigint(21) | From [MariaDB 11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md) |
+| ROWS_INSERTED | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| ROWS_UPDATED | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| ROWS_DELETED | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY_READ_HITS | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY_READ_MISSES | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
 
 
 

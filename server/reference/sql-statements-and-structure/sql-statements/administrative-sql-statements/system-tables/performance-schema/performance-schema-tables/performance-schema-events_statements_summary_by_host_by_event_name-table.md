@@ -1,7 +1,7 @@
 
 # Performance Schema events_statements_summary_by_host_by_event_name Table
 
-The [Performance Schema](performance-schema-table_handles-table.md) events_statements_summary_by_host_by_event_name table contains statement events summarized by host and event name. It contains the following columns:
+The [Performance Schema](../README.md) events_statements_summary_by_host_by_event_name table contains statement events summarized by host and event name. It contains the following columns:
 
 
 

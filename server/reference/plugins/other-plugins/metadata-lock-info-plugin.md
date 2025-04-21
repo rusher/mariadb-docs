@@ -1,7 +1,7 @@
 
 # METADATA_LOCK_INFO Plugin
 
-The `METADATA_LOCK_INFO` plugin creates the [METADATA_LOCK_INFO](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. This table shows active [metadata locks](../../sql-statements-and-structure/sql-statements/transactions/metadata-locking.md). The table will be empty if there are no active metadata locks.
+The `METADATA_LOCK_INFO` plugin creates the [METADATA_LOCK_INFO](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. This table shows active [metadata locks](../../sql-statements-and-structure/sql-statements/transactions/metadata-locking.md). The table will be empty if there are no active metadata locks.
 
 
 
@@ -94,9 +94,9 @@ SHOW PROCESSLIST;
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 0.1 | Stable | [MariaDB 10.1.13](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 0.1 | Beta | [MariaDB 10.0.10](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) |
-| 0.1 | Alpha | [MariaDB 10.0.7](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes.md) |
+| 0.1 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 0.1 | Beta | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
+| 0.1 | Alpha | [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) |
 
 
 

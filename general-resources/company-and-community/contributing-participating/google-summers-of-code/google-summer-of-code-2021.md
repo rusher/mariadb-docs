@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2021
 
-This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md), [ODBC](../../../../connectors/mariadb-connector-odbc/README.md), [Java](../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md), [Node.js](/kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/), [Node.js](/kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](/kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 
 
@@ -157,9 +157,9 @@ Some have also been added to Columnstore.
 
 It would be useful if MariaDB had a utility that was able to parse frm files and print the DDL associated with the table.
 For example, it would be useful for users who performed a partial backup with Mariabackup:
-[partial-backup-and-restore-with-mariabackup.md](../../../../server/server-management/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup.md)
+[partial-backup-and-restore-with-mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup)
 But they forgot to also backup the table DDL, so they can't restore the tables using the following process:
-[innodb-file-per-table-tablespaces.md](../../../../server/reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md)
+[innodb-file-per-table-tablespaces](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces)
 mysqlfrm is a tool that already exists that does similar things:
 [mysqlfrm.py](https://github.com/mysql/mysql-utilities/blob/master/scripts/mysqlfrm.py)
 But it doesn't seem very user-friendly. It needs to be able to contact the local MariaDB server, and it also needs to be able to spawn a server instance, and it seems to need to be able to create a bunch of files during this process. e.g.:
@@ -195,7 +195,7 @@ CREATE TABLE `db1`.`tab` (
 
 ### JSON_DETAILED output unnecessarily verbose
 
-JSON_DETAILED function ([json_detailed.md](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) ) is described as 
+JSON_DETAILED function ([json_detailed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_detailed) ) is described as 
 
 ```
 Represents JSON in the most understandable way emphasizing nested structures.
@@ -450,11 +450,9 @@ The function should return future-like object, since we have to notify IO_CACHE 
 Formatting more complex strings in a `SELECT` statement can get awkward when there are many `concat()`, `format()`, etc calls involved.
 It would be very cool and helpful to have a function that takes an input string and a formatting specification and returns string formatted using the rules the user passed in the specification.
 A great example for such a function is the classic `C printf` function, which, in this context, would look something like:
-`<span class="k">SELECT</span> <span class="n">printf</span><span class="p">(</span><span class="s1">'%s %s, %s'</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">job_title</span><span class="p">)</span> <span class="k">from</span> <span class="n">employees</span><span class="p">;</span>
-`
+`SELECT printf('%s %s, %s', first_name, last_name, job_title) from employees;`
 But it doesn't necessarily need to look this way, an alternative syntax could be Python-ish, which would leverage the fact that the server already knows the datatype of each field used in the formatting scheme:
-`<span class="k">SELECT</span> <span class="n">sformat</span><span class="p">(</span><span class="s1">'arg1: {}, arg2: {}'</span><span class="p">,</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span><span class="p">)</span> <span class="k">from</span> <span class="k">table</span><span class="p">;</span>
-`
+`SELECT sformat('arg1: {}, arg2: {}', col1, col2) from table;`
 In that syntax one passes formatting options within the curly braces:
 
 ```

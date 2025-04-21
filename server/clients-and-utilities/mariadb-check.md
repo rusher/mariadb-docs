@@ -4,10 +4,10 @@
 `mariadb-check` is a maintenance tool that allows you to check, repair, analyze and optimize multiple tables from the command line.
 
 
-Prior to [MariaDB 10.5](../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
-It is essentially a commandline interface to the [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk-table-information.md) and [aria_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
+It is essentially a commandline interface to the [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk.md) and [aria_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
 
 
 This tool does not work with partitioned tables.
@@ -94,7 +94,7 @@ copying it somewhere with another name, the alternatives are:
 | -m, --medium-check | Faster than extended-check, but only finds 99.99 percent of all errors. Should be good enough for most cases. |
 | -o, --optimize | Optimize tables. |
 | -p, --password[=name] | Password to use when connecting to the server. If you use the short option form (-p), you cannot have a space between the option and the password. If you omit the password value following the --password or -p option on the command line, mariadb-check prompts for one. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line. |
-| -Z, --persistent | When using ANALYZE TABLE (--analyze), uses the PERSISTENT FOR ALL option, which forces [Engine-independent Statistics](../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md) for this table to be updated. Added in [MariaDB 10.1.10](../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes.md) |
+| -Z, --persistent | When using ANALYZE TABLE (--analyze), uses the PERSISTENT FOR ALL option, which forces [Engine-independent Statistics](../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md) for this table to be updated. Added in [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes) |
 | -W, --pipe | On Windows, connect to the server via a named pipe. This option applies only if the server supports named-pipe connections. |
 | --plugin-dir | Directory for client-side plugins. |
 | -P num, --port=num | Port number to use for connection or 0 for default to, in order of preference, my.cnf, $MYSQL_TCP_PORT, /etc/services, built-in default (3306). |
@@ -107,7 +107,7 @@ copying it somewhere with another name, the alternatives are:
 | -s, --silent | Print only error messages. |
 | --skip-database | Don't process the database (case-sensitive) specified as argument. |
 | -S name, --socket=name | For connections to localhost, the Unix socket file to use, or, on Windows, the name of the named pipe to use. |
-| --ssl | Enables [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). TLS is also enabled even without setting this option when certain other TLS options are set. Starting with [MariaDB 10.2](../../release-notes/mariadb-community-server/what-is-mariadb-102.md), the --ssl option will not enable [verifying the server certificate](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the --ssl-verify-server-cert option. |
+| --ssl | Enables [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). TLS is also enabled even without setting this option when certain other TLS options are set. Starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), the --ssl option will not enable [verifying the server certificate](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the --ssl-verify-server-cert option. |
 | --ssl-ca=name | Defines a path to a PEM file that should contain one or more X509 certificates for trusted Certificate Authorities (CAs) to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option implies the --ssl option. |
 | --ssl-capath=name | Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information. This option is only supported if the client was built with OpenSSL or yaSSL. If the client was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. This option implies the --ssl option. |
 | --ssl-cert=name | Defines a path to the X509 certificate file to use for [TLS](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
@@ -121,7 +121,7 @@ copying it somewhere with another name, the alternatives are:
 | -u, --user=name | User for login if not current user. |
 | -v, --verbose | Print info about the various stages. You can give this option several times to get even more information. See [mariadb-check and verbose](#mariadb-check-and-verbose), below. |
 | -V, --version | Output version information and exit. |
-| --write-binlog | Write ANALYZE, OPTIMIZE and REPAIR TABLE commands to the [binary log](../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). Enabled by default; use --skip-write-binlog when commands should not be sent to replication slaves. |
+| --write-binlog | Write ANALYZE, OPTIMIZE and REPAIR TABLE commands to the [binary log](../server-management/server-monitoring-logs/binary-log/README.md). Enabled by default; use --skip-write-binlog when commands should not be sent to replication slaves. |
 
 
 
@@ -146,7 +146,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`mariadb-check` is linked with [MariaDB Connector/C](../../connectors/mariadb-connector-c/about-mariadb-connector-c.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-check` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
@@ -160,7 +160,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --- | --- |
 | Group | Description |
 | [mysqlcheck] | Options read by mysqlcheck, which includes both MariaDB Server and MySQL Server. |
-| [mariadb-check] | Options read by mariadb-check. Available starting with [MariaDB 10.4.6](../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadb-check] | Options read by mariadb-check. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 | [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
@@ -206,6 +206,5 @@ Using one `--verbose` option will give you more information about what mariadb-c
 Using two `--verbose` options will also give you connection information.
 
 
-If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
 
-<span></span>

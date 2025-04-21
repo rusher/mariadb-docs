@@ -1,7 +1,7 @@
 
 # Optimizing key_buffer_size
 
-[key_buffer_size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) is a [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) variable which determines the size of the index buffers held in memory, which affects the speed of index reads. Note that Aria tables by default make use of an alternative setting, [aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md).
+[key_buffer_size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) is a [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md) variable which determines the size of the index buffers held in memory, which affects the speed of index reads. Note that Aria tables by default make use of an alternative setting, [aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md).
 
 
 A good rule of thumb for servers consisting particularly of MyISAM tables is for about 25% or more of the available server memory to be dedicated to the key buffer.
@@ -18,4 +18,3 @@ The effective maximum size might be lower than what is set, depending on the ser
 
 If you don't make use of MyISAM tables at all, you can set this to a very low value, such as 64K.
 
-<span></span>

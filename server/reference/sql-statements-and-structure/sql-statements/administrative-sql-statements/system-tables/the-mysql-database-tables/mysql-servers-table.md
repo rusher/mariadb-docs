@@ -5,13 +5,13 @@
 
 
 
-The `mysql.servers` table contains information about servers as used by the [Spider](../../../../../storage-engines/spider/spider-functions/spider_copy_tables.md), [FEDERATED](../../../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../../../storage-engines/federatedx-storage-engine/README.md), [Connect](../../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engines.
+The `mysql.servers` table contains information about servers as used by the [Spider](../../../../../storage-engines/spider/README.md), [FEDERATED](../../../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../../../storage-engines/federatedx-storage-engine/README.md), [Connect](../../../../../storage-engines/connect/README.md) storage engines.
 
 
 The contents are modified by the [CREATE SERVER](../../../data-definition/create/create-server.md), [ALTER SERVER](../../../data-definition/alter/alter-server.md) and [DROP SERVER](../../../data-definition/drop/drop-server.md) statements.
 
 
-This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/README.md) storage engine.
 
 
 The `mysql.servers` table contains the following fields:

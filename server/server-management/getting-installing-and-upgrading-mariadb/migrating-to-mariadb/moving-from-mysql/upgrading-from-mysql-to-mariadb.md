@@ -1,14 +1,14 @@
 
 # Upgrading from MySQL to MariaDB
 
-For [all practical purposes](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md), you can view MariaDB as an upgrade of MySQL:
+For [all practical purposes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility), you can view MariaDB as an upgrade of MySQL:
 
 
-* Before upgrading, please [check if there are any known incompatibilities](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md) between your MySQL release and the MariaDB release you want to move to.
-* In particular, note that the [JSON type](../../../../reference/storage-engines/connect/json-sample-files.md) in MariaDB is a LONGTEXT, while in MySQL it's a binary type. See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/).
-* If you are using MySQL 8.0 or above, you have to use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) to move your database to MariaDB.
+* Before upgrading, please [check if there are any known incompatibilities](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility) between your MySQL release and the MariaDB release you want to move to.
+* In particular, note that the [JSON type](../../../../reference/data-types/string-data-types/json.md) in MariaDB is a LONGTEXT, while in MySQL it's a binary type. See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/).
+* If you are using MySQL 8.0 or above, you have to use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) to move your database to MariaDB.
 * For upgrading from very old MySQL versions, see [Upgrading to MariaDB from MySQL 5.0 (or older version)](migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md).
-* Within the same base version (for example MySQL 5.5 -> [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), MySQL 5.6 -> [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and MySQL 5.7 -> [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)) you can in most cases just uninstall MySQL and install MariaDB and you are good to go. There is no need to dump and restore databases. As with any upgrade, we recommend making a backup of your data beforehand.
+* Within the same base version (for example MySQL 5.5 -> [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), MySQL 5.6 -> [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and MySQL 5.7 -> [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)) you can in most cases just uninstall MySQL and install MariaDB and you are good to go. There is no need to dump and restore databases. As with any upgrade, we recommend making a backup of your data beforehand.
 * You should run [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) (as you would with `mysql_upgrade` in MySQL) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses. Note that if you use a MariaDB package, `mariadb-upgrade` is usually run automatically.
 * All your old clients and connectors (PHP, Perl, Python, Java, etc.) will work
  unchanged (no need to recompile). This works because MariaDB and MySQL use
@@ -32,7 +32,7 @@ Check the values of the following server variables:
 select @@Innodb_file_per_table,@@Innodb_fast_shutdown\G
 ```
 
-[innodb_file_per_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) should be 1. This is the default setting for MySQL and MariaDB. If not, one should use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) for migration as some of the following recommendations will not work.
+[innodb_file_per_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) should be 1. This is the default setting for MySQL and MariaDB. If not, one should use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) for migration as some of the following recommendations will not work.
 
 
 [innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) should be 0 (at least on the migrated server during shutdown, to ensure that a full shutdown is done when taking server down). This is required when upgrading between major versions of both MySQL and MariaDB as the format of the undo or redo files can change between major versions. This variable can be set just before doing the shutdown.
@@ -75,7 +75,7 @@ MariaDB stores JSON differently than MySQL. Normally you do not have to do anyth
 If you are using JSON columns and want to upgrade to MariaDB, use the [mysql_json](../../../../reference/plugins/other-plugins/mysql_json.md) plugin to automatically convert MySQL JSON to TEXT.
 
 
-Alternatively you need to either convert them to TEXT or use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) to copy these tables to MariaDB.
+Alternatively you need to either convert them to TEXT or use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) to copy these tables to MariaDB.
 
 
 You can check if you are have tables that uses the MySQL JSON type with:
@@ -120,7 +120,7 @@ create_options like "%comp%";
 
 
 * Create config files for MariaDB that match the MySQL cluster option files
-* There are some configuration options that differ. See [System Variable Differences between MariaDB and MySQL](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/README.md).
+* There are some configuration options that differ. See [System Variable Differences between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/).
 * You can use `[mariadb]` or `[mariadb-x.y.z]` (for the specific version) in the current config files for MariaDB-specific options.
 * You can also place MySQL-specific options inside a `[mysqld-5.7]` section. This includes all options that use mysql-specific directories for logging or replication (on other words, paths with `mysql` as part of the path).
 * With a combination of these, it's easy to create a config file that will work with both MariaDB and MySQL, no matter what options are present.
@@ -299,24 +299,23 @@ However as MariaDB has more features than MySQL, there are a few things that you
 
 * MariaDB uses the [Aria storage engine](../../../../reference/storage-engines/aria/aria-storage-engine.md) by default for internal temporary files, instead of MyISAM. If you have a lot of temporary files, you should add and set `[aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)` to the same value as you have for `[key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)`.
 * If you don't use MyISAM tables, you can set [key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
-* If you have a LOT of connections (> 100) that mostly run short running queries, you should consider using the [thread pool](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md). For example using : [thread_handling=pool-of-threads](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_handling) and [thread_pool_size=128](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_pool_size) could give a notable performance boost in this case. Where the `thread_pool_size` should be about `2 * number of cores on your machine`.
+* If you have a LOT of connections (> 100) that mostly run short running queries, you should consider using the [thread pool](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md). For example using : [thread_handling=pool-of-threads](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_handling) and [thread_pool_size=128](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#thread_pool_size) could give a notable performance boost in this case. Where the `thread_pool_size` should be about `2 * number of cores on your machine`.
 
 
 ## Other Things to Think About
 
 
-* MariaDB has LGPL versions of the [C connector](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) and [Java Client](../../../../../release-notes/connectors/java/mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes.md). If you are shipping an application that supports MariaDB or MySQL, you should consider using these!
-* You should consider trying out the [MyRocks storage engine](../../../../reference/storage-engines/myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) or some of the other [new storage engines](../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) that MariaDB provides.
+* MariaDB has LGPL versions of the [C connector](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) and [Java Client](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/). If you are shipping an application that supports MariaDB or MySQL, you should consider using these!
+* You should consider trying out the [MyRocks storage engine](../../../../reference/storage-engines/myrocks/README.md) or some of the other [new storage engines](../../../../reference/storage-engines/README.md) that MariaDB provides.
 
 
 ## See Also
 
 
-* MariaDB has a lot of [new features](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-features.md) that you should know about.
-* [MariaDB versus MySQL - Compatibility](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md)
-* [Migrating to MariaDB](../../../../reference/faq/migrating-to-mariadb-questions/README.md)
+* MariaDB has a lot of [new features](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-features) that you should know about.
+* [MariaDB versus MySQL - Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility)
+* [Migrating to MariaDB](../README.md)
 * You can find general upgrading informations on the [MariaDB installation page](../../README.md).
 * There is a [Screencast for upgrading MySQL to MariaDB](migrating-to-mariadb-from-mysql-obsolete-articles/screencast-for-upgrading-mysql-to-mariadb-obsolete.md).
 * [Upgrading to MariaDB in Debian 9](../../troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/moving-from-mysql-to-mariadb-in-debian-9.md)
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # Aggregate Functions as Window Functions
 
-It is possible to use [aggregate functions](aggregate-functions-as-window-functions.md) as window functions. An aggregate function used as a window function must have the `OVER` clause. For example, here's [COUNT()](../../aggregate-functions/count.md) used as a window function:
+It is possible to use [aggregate functions](../../aggregate-functions/README.md) as window functions. An aggregate function used as a window function must have the `OVER` clause. For example, here's [COUNT()](../../aggregate-functions/count.md) used as a window function:
 
 
 ```
@@ -16,8 +16,8 @@ MariaDB currently allows these aggregate functions to be used as window function
 * [BIT_OR](../../aggregate-functions/bit_or.md)
 * [BIT_XOR](../../aggregate-functions/bit_xor.md)
 * [COUNT](../../aggregate-functions/count.md)
-* [MAX](../../../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md)
-* [MIN](../../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md)
+* [MAX](../../aggregate-functions/max.md)
+* [MIN](../../aggregate-functions/min.md)
 * [STD](../../aggregate-functions/std.md)
 * [STDDEV](../../aggregate-functions/stddev.md)
 * [STDDEV_POP](../../aggregate-functions/stddev_pop.md)

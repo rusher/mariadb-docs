@@ -810,10 +810,10 @@ Run the post-install script:
 
 1. Download the package mariadb-columnstore-release#.amd64.deb.tar.gz into the /root directory of the server where you are installing MariaDB ColumnStore.
 1. Unpack the tarball, which contains multiple DEBs. 
-` tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz`
+`tar -zxf mariadb-columnstore-release#.amd64.deb.tar.gz`
 1. Install the MariaDB ColumnStore DEBs. The MariaDB ColumnStore software will be installed in /usr/
 local/. 
-` dpkg -i mariadb-columnstore*release#*.deb`
+`dpkg -i mariadb-columnstore*release#*.deb`
 
 
 ### Unprivileged user installation

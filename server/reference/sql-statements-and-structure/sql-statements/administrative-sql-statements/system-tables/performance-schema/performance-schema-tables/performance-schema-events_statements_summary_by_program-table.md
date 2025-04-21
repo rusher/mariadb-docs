@@ -2,11 +2,11 @@
 # Performance Schema events_statements_summary_by_program Table
 
 
-##### MariaDB starting with [10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-The `events_statements_summary_by_program` table, along with many other new [Performance Schema tables](list-of-performance-schema-tables.md), was added in [MariaDB 10.5.2](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md).
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+The `events_statements_summary_by_program` table, along with many other new [Performance Schema tables](list-of-performance-schema-tables.md), was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
-Each row in the the [Performance Schema](performance-schema-table_handles-table.md) events_statements_summary_by_program table summarizes events for a particular stored program (stored procedure, stored function, trigger or event).
+Each row in the the [Performance Schema](../README.md) events_statements_summary_by_program table summarizes events for a particular stored program (stored procedure, stored function, trigger or event).
 
 
 It contains the following fields.

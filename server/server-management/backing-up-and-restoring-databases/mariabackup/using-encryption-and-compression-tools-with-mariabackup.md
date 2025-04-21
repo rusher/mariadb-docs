@@ -1,7 +1,7 @@
 
 # Using Encryption and Compression Tools With Mariabackup
 
-[Mariabackup](mariabackup-and-backup-stage-commands.md) supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
+[Mariabackup](README.md) supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
 
 
 ## Encrypting and Decrypting Backup With openssl

@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_LOCK_WAITS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_LOCK_WAITS` table contains information about blocked InnoDB transactions. The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The [Information Schema](../../README.md) `INNODB_LOCK_WAITS` table contains information about blocked InnoDB transactions. The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
 
 It contains the following columns:

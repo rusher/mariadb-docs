@@ -34,7 +34,7 @@ for debugging and tracing.
 On Unix you need to pass `-DCMAKE_BUILD_TYPE=Debug` to cmake to compile with debug information.
 
 
-### Building [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and Older
+### Building [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and Older
 
 
 Here is how you compile with debug on older versions:
@@ -65,7 +65,7 @@ BUILD/compile-pentium64-debug-max
 BUILD/compile-pentium64-valgrind-max
 ```
 
-This is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes.md) as an example:
+This is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes) as an example:
 
 
 ```
@@ -112,7 +112,7 @@ In `ddd` or `gdb`
 run --datadir=/data --language=./share/english --gdb
 ```
 
-You can [set the options in your /.my.cnf file](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md) so as not to have to repeat them on the `run` line.
+You can [set the options in your /.my.cnf file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory) so as not to have to repeat them on the `run` line.
 
 
 If you run `mysqld` with `--debug`, you will get a [trace file](creating-a-trace-file.md) in /tmp/mysqld.trace that shows what is happening.
@@ -173,13 +173,13 @@ The above `.my.cnf` file:
 
 * Uses an explicit socket for both client and server.
 * Assumes the server source is in /my/maria-xxx. You should change this to point to where your sources are located.
-* Has a unique patch for each MariaDB version so that one doesn't have to specify [--lc-messages-dir](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) or [--language](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#language) even if one switches between debugging different MariaDB versions.
+* Has a unique patch for each MariaDB version so that one doesn't have to specify [--lc-messages-dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#lc_messages_dir) or [--language](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#language) even if one switches between debugging different MariaDB versions.
 
 
 ### See Also
 
 
 * [Creating a trace file](creating-a-trace-file.md)
-* [Configuring MariaDB with my.cnf](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md)
-* [Running mariadbd from the build director](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md)
+* [Configuring MariaDB with my.cnf](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files)
+* [Running mariadbd from the build director](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory)
 

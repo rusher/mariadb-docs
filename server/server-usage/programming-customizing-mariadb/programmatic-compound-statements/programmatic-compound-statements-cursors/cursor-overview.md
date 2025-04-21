@@ -16,7 +16,7 @@ MariaDB permits cursors inside [stored programs](../../stored-routines/README.md
 * Asensitive means that the cursor points to the actual underlying data. This kind of cursor is quicker than the alternative, an insensitive cursor, as no data is copied to a temporary table. However, changes to the data being used by the cursor will affect the cursor data.
 
 
-Cursors are created with a [DECLARE CURSOR](declare-cursor.md) statement and opened with an [OPEN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/qa-datasets/openstreetmap-dataset.md) statement. Rows are read with a [FETCH](fetch.md) statement before the cursor is finally closed with a [CLOSE](close.md) statement.
+Cursors are created with a [DECLARE CURSOR](declare-cursor.md) statement and opened with an [OPEN](open.md) statement. Rows are read with a [FETCH](fetch.md) statement before the cursor is finally closed with a [CLOSE](close.md) statement.
 
 
 When FETCH is issued and there are no more rows to extract, the following error is produced:
@@ -29,10 +29,10 @@ ERROR 1329 (02000): No data - zero rows fetched, selected, or processed
 To avoid problems, a [DECLARE HANDLER](../declare-handler.md) statement is generally used. The HANDLER should handler the 1329 error, or the '02000' [SQLSTATE](../programmatic-compound-statements-diagnostics/sqlstate.md), or the NOT FOUND error class.
 
 
-Only [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements are allowed for cursors, and they cannot be contained in a variable - so, they cannot be composed dynamically. However, it is possible to SELECT from a view. Since the [CREATE VIEW](../../views/create-view.md) statement can be executed as a prepared statement, it is possible to dynamically create the view that is queried by the cursor.
+Only [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements are allowed for cursors, and they cannot be contained in a variable - so, they cannot be composed dynamically. However, it is possible to SELECT from a view. Since the [CREATE VIEW](../../views/create-view.md) statement can be executed as a prepared statement, it is possible to dynamically create the view that is queried by the cursor.
 
 
-From [MariaDB 10.3.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md), cursors can have parameters. Cursor parameters can appear in any part of the [DECLARE CURSOR](declare-cursor.md) select_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc). See [DECLARE CURSOR](declare-cursor.md) and [OPEN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/qa-datasets/openstreetmap-dataset.md) for syntax, and below for an example:
+From [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes), cursors can have parameters. Cursor parameters can appear in any part of the [DECLARE CURSOR](declare-cursor.md) select_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc). See [DECLARE CURSOR](declare-cursor.md) and [OPEN](open.md) for syntax, and below for an example:
 
 
 ## Examples
@@ -93,7 +93,7 @@ SELECT * FROM c3;
 +------+
 ```
 
-From [MariaDB 10.3.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
+From [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
 
 
 ```
@@ -146,8 +146,8 @@ SELECT * FROM t1;
 
 
 * [DECLARE CURSOR](declare-cursor.md)
-* [OPEN cursor_name](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/qa-datasets/openstreetmap-dataset.md)
+* [OPEN cursor_name](open.md)
 * [FETCH cursor_name](fetch.md)
 * [CLOSE cursor_name](close.md)
-* [Cursors in Oracle mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

@@ -87,7 +87,7 @@ Both `rewrite_src` and `rewrite_dest` must be defined to enable statement rewrit
 
 
 When statement rewriting is enabled
-[GTID-based replication](../../../server/server-usage/replication-cluster-multi-master/standard-replication/gtid.md)
+[GTID-based replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid)
 must be used. The filter will disallow replication for all slaves that attempt
 to replicate with traditional file-and-position based replication.
 
@@ -131,4 +131,4 @@ port=4000
 
 
 For more information about the binlogrouter and how to use it, refer to the
-[binlogrouter documentation](../maxscale-25-routers/mariadb-maxscale-25-binlogrouter-24.md).
+[binlogrouter documentation](../maxscale-25-routers/mariadb-maxscale-25-binlogrouter.md).

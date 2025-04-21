@@ -10,7 +10,7 @@
 ## About MaxScale
 
 
-* [About MaxScale](about-maxscale-14/README.md)
+* [About MaxScale](https://mariadb.com/kb/en/about-maxscale/)
 * [MaxScale 1.4.3 Release Notes](maxscale-14-release-notes/mariadb-maxscale-143-release-notes.md)
 * [Changelog](../mariadb-maxscale-21-06/README.md)
 * [Limitations](about-maxscale-14/limitations-and-known-issues-within-maxscale.md)
@@ -92,7 +92,7 @@ There are also two diagnostic routing modules. The CLI is for MaxAdmin and
 the Debug CLI client for Telnet.
 
 
-* [CLI](../../server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/README.md)
+* [CLI](../maxscale-troubleshooting.md)
 * [Debug CLI](maxscale-14-routers/debug-cli.md)
 
 

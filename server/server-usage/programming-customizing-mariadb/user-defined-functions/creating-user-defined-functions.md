@@ -2,7 +2,7 @@
 # Creating User-Defined Functions
 
 
-[User-defined functions](user-defined-functions-security.md) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/abs.md) or [CONCAT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../../reference/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/README.md).
+[User-defined functions](README.md) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/abs.md) or [CONCAT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../../reference/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/README.md).
 
 
 Statements making use of user-defined functions are not [safe for replication](../../replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
@@ -96,7 +96,7 @@ Used to add the argument to the current aggregate.
 ### x_remove()
 
 
-Starting from [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md), improves the support of [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 
 ### Description
@@ -133,4 +133,3 @@ For an example, see `sql/udf_example.cc` in the source tree. For a collection of
 * [User-defined Functions Calling Sequences](user-defined-functions-calling-sequences.md)
 * [allow-suspicious-udfs](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-allow-suspicious-udfs)
 
-<span></span>

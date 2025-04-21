@@ -53,7 +53,7 @@ In some of these scenarios a database password may prevent these security exploi
 The `unix_socket` authentication plugin is installed by default, so **if you do not want it to be available by default on those versions, then you will need to disable it**.
 
 
-The `unix_socket` authentication plugin is also installed by default in **new installations** that use the `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)` packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later, so **if you do not want it to be available by default on those systems when those packages are used, then you will need to disable it**. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+The `unix_socket` authentication plugin is also installed by default in **new installations** that use the `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md)` packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later, so **if you do not want it to be available by default on those systems when those packages are used, then you will need to disable it**. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 
 
 The `unix_socket` authentication plugin can be disabled by starting the server with the `[unix_socket](#unix_socket)` option set to `OFF`. This can be specified as a command-line argument to `[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). For example:
@@ -80,7 +80,7 @@ disable_unix_socket
 The `unix_socket` authentication plugin is installed by default, so **this step can be skipped on those versions**.
 
 
-The `unix_socket` authentication plugin is also installed by default in **new installations** that use the `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)` packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later, so **this step can be skipped on those systems when those packages are used**. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+The `unix_socket` authentication plugin is also installed by default in **new installations** that use the `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md)` packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later, so **this step can be skipped on those systems when those packages are used**. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 
 
 In other systems, although the plugin's shared library is distributed with MariaDB by default as `auth_socket.so`, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
@@ -133,9 +133,9 @@ GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA unix_socket;
 ```
 
 
-##### MariaDB starting with [11.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md)
-Prior to [MariaDB 11.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), the plugin only checked whether the OS socket user id matched the MariaDB user name, and ignored the authentication string.
-From [MariaDB 11.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), the authentication string, if present, will be compared with the socket's user name, and authentication can proceed if there's a match. The [external_user](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable will contain the OS user in this case.
+##### MariaDB starting with [11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
+Prior to [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the plugin only checked whether the OS socket user id matched the MariaDB user name, and ignored the authentication string.
+From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the authentication string, if present, will be compared with the socket's user name, and authentication can proceed if there's a match. The [external_user](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable will contain the OS user in this case.
 For example, assuming an OS user of 'bob': 
 
 ```
@@ -225,8 +225,8 @@ In this example, a user `serg` is already logged into the operating system and h
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.0.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes.md) |
-| 1.0 | Beta | [MariaDB 5.2.0](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) |
+| 1.0 | Beta | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes) |
 
 
 

@@ -4,10 +4,10 @@
 The `mariadbd-safe` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that starts `mariadbd` with some extra safety features. For example, if `mariadbd-safe` notices that `mariadbd` has crashed, then `mariadbd-safe` will automatically restart `mariadbd`.
 
 
-`mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support `[systemd](systemd.md)`. Additionally, the [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
+`mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support `[systemd](systemd.md)`. Additionally, the [mysql.server](mysql-server.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
 
 
-Prior to [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 
@@ -49,7 +49,7 @@ options supported by `[mariadbd](mariadbd-options.md)`. If an unknown option is 
 | --flush-caches | Flush and purge buffers/caches before starting the server. |
 | --ledir=path | If mariadbd-safe cannot find the server, use this option to indicate the path name to the directory where the server is located. |
 | --log-error=file_name | Write the error log to the given file. |
-| --malloc-lib=lib | Preload shared library lib if available. See [debugging MariaDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux.md) for an example. |
+| --malloc-lib=lib | Preload shared library lib if available. See [debugging MariaDB](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux) for an example. |
 | --mysqld=prog_nam | The name of the server program (in the ledir directory) that you want to start. This option is needed if you use the MariaDB binary distribution but have the data directory outside of the binary distribution. If mariadbd-safe cannot find the server, use the --ledir option to indicate the path name to the directory where the server is located. |
 | --mysqld-version=suffix | This option is similar to the --mysqld option, but you specify only the suffix for the server program name. The basename is assumed to be mysqld. For example, if you use--mysqld-version=debug, mariadbd-safe starts the mariadbd-debug program in the ledir directory. If the argument to --mysqld-version is empty, mariadbd-safe uses mysqld in the ledir directory. |
 | --nice=priority | Use the nice program to set the server´s scheduling priority to the given value. |
@@ -103,7 +103,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | Group | Description |
 | [mysqld_safe] | Options read by mysqld_safe, which includes both MariaDB Server and MySQL Server. |
 | [safe_mysqld] | Options read by mysqld_safe, which includes both MariaDB Server and MySQL Server. |
-| [mariadbd-safe] | Options read by mariadbd_safe_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md). |
+| [mariadbd-safe] | Options read by mariadbd_safe_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mariadb-safe] | Options read by mysqld_safe from MariaDB Server. Deprecated, please avoid using this. |
 
 
@@ -159,7 +159,7 @@ When `mariadbd-safe` starts `mariadbd`, it also uses this option to set the valu
 ### Configuring the Core File Size
 
 
-When using `mariadbd-safe`, if you would like to [enable core dumps](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps.md), the system's core file size limit can be changed by providing the `--core-file-size` option either on the command-line or in an option file. For example:
+When using `mariadbd-safe`, if you would like to [enable core dumps](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps), the system's core file size limit can be changed by providing the `--core-file-size` option either on the command-line or in an option file. For example:
 
 
 ```
@@ -292,4 +292,3 @@ follows:
 * [mariadbd Options](mariadbd-options.md)
 * [systemd](systemd.md)
 
-<span></span>

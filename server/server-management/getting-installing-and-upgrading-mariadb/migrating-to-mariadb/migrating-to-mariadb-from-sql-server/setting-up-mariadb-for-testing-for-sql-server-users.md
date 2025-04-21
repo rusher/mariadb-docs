@@ -8,13 +8,13 @@ This page contains links and hints to setup MariaDB for testing. The page is des
 ## Choosing a MariaDB Version
 
 
-As a general rule, for new installations it's better to choose the [latest Generally Available (GA) version](../../../../../release-notes/latest-releases.md).
+As a general rule, for new installations it's better to choose the [latest Generally Available (GA) version](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/latest-releases).
 
 
 If you need a feature that is only present in a version that is not yet production-ready, and the project will surely not go to production before that version is GA, it could make sense to use a non-GA version. In this case however, keep in mind that you are using a version that is only suitable for testing.
 
 
-If you need to work with an existing production instance, you should of course use the same version in testing. However, deprecated versions should not be used in production, because they could be exposed to vulnerabilities that will never be fixed. See [deprecation policies](../../../../../release-notes/mariadb-platform-deprecation-policy.md) if you are not sure about the version you are using.
+If you need to work with an existing production instance, you should of course use the same version in testing. However, deprecated versions should not be used in production, because they could be exposed to vulnerabilities that will never be fixed. See [deprecation policies](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-platform-deprecation-policy) if you are not sure about the version you are using.
 
 
 ## Setting up MariaDB on Windows
@@ -71,7 +71,7 @@ See [Installing and Using MariaDB via Docker](../../binary-packages/automated-ma
 ## Reinitializing MariaDB Data Directory
 
 
-While experimenting with MariaDB, you could end up with an unusable installation. This occurs for example if you deliberately delete files that you shouldn't delete. If it happens, there is no need to uninstall and reinstall MariaDB. Instead, you can simply delete the contents of the data directory and run [mariadb-install-db](../../mariadb-install-db-exe.md). The program will recreate your system tables and the essential files.
+While experimenting with MariaDB, you could end up with an unusable installation. This occurs for example if you deliberately delete files that you shouldn't delete. If it happens, there is no need to uninstall and reinstall MariaDB. Instead, you can simply delete the contents of the data directory and run [mariadb-install-db](../../../../clients-and-utilities/mariadb-install-db.md). The program will recreate your system tables and the essential files.
 
 
 To know where your data directory is, check the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.

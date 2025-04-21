@@ -5,7 +5,7 @@
 
 
 This tutorial is a short introduction to the
-[Avrorouter](mariadb-maxscale-25-avrorouter-tutorial.md), how to set it up and how it interacts
+[Avrorouter](../maxscale-25-routers/mariadb-maxscale-25-avrorouter.md), how to set it up and how it interacts
 with the binlogrouter.
 
 
@@ -39,7 +39,7 @@ binlog_row_image=full
 
 
 *You can find out more about replication formats from the
-[MariaDB Knowledge Base](../../../server/server-management/server-monitoring-logs/binary-log/binary-log-formats.md)*
+[MariaDB Knowledge Base](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats)*
 
 
 ## Configuring MaxScale
@@ -102,7 +102,7 @@ file you are replicating is `my-binlog-file.001234`, set the parameters to
 
 
 For more information on the avrorouter options, read the [Avrorouter
-Documentation](mariadb-maxscale-25-avrorouter-tutorial.md).
+Documentation](../maxscale-25-routers/mariadb-maxscale-25-avrorouter.md).
 
 
 # Preparing the data in the master server
@@ -122,7 +122,7 @@ created. There are multiple ways to do this:
 * Dump the database to a slave, configure it to replicate from the master and
  point MaxScale to this slave (this is the recommended method as it requires no
  extra steps)
-* Use the [cdc_schema Go utility](mariadb-maxscale-25-avrorouter-tutorial.md#avro-schema-generator)
+* Use the [cdc_schema Go utility](../maxscale-25-routers/mariadb-maxscale-25-avrorouter.md#avro-schema-generator)
  and copy the generated .avsc files to the avrodir
 * Use the [Python version of the schema generator](https://mariadb.com/server/modules/protocol/examples/cdc_schema.py)
  and copy the generated .avsc files to the avrodir
@@ -168,7 +168,7 @@ starting file in the avrorouter.
 
 
 For more details about the SQL commands, refer to the
-[Binlogrouter](../maxscale-25-routers/mariadb-maxscale-25-binlogrouter-24.md) documentation.
+[Binlogrouter](../maxscale-25-routers/mariadb-maxscale-25-binlogrouter.md) documentation.
 
 
 After the binary log streaming has started, the avrorouter will automatically

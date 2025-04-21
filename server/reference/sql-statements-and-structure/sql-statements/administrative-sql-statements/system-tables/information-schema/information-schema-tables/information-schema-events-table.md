@@ -1,7 +1,7 @@
 
 # Information Schema EVENTS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `EVENTS` table stores information about [Events](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md) on the server.
+The [Information Schema](../README.md) `EVENTS` table stores information about [Events](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md) on the server.
 
 
 It contains the following columns:

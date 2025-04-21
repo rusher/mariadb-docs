@@ -16,7 +16,7 @@ Optimizer hints are options available that affect the execution plan.
 ### SQL_CACHE / SQL_NO_CACHE
 
 
-If the [query_cache_type](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) system variable is set to 2 or `DEMAND`, and the current statement is cacheable, `SQL_CACHE` causes the query to be cached and `SQL_NO_CACHE` causes the query not to be cached. For `UNION`s, `SQL_CACHE` or `SQL_NO_CACHE` should be specified for the first query. See also [The Query Cache](../../../../plugins/other-plugins/query-cache-information-plugin.md) for more detail and a list of the types of statements that aren't cacheable.
+If the [query_cache_type](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type) system variable is set to 2 or `DEMAND`, and the current statement is cacheable, `SQL_CACHE` causes the query to be cached and `SQL_NO_CACHE` causes the query not to be cached. For `UNION`s, `SQL_CACHE` or `SQL_NO_CACHE` should be specified for the first query. See also [The Query Cache](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) for more detail and a list of the types of statements that aren't cacheable.
 
 
 ### SQL_BUFFER_RESULT
@@ -34,7 +34,7 @@ If the [query_cache_type](../../../../../server-usage/replication-cluster-multi-
 ### STRAIGHT_JOIN
 
 
-`STRAIGHT_JOIN` applies to the [JOIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md) queries, and tells the optimizer that the tables must be read in the order they appear in the `SELECT`. For `const` and `system` table this options is sometimes ignored.
+`STRAIGHT_JOIN` applies to the [JOIN](joins-subqueries/joins/join-syntax.md) queries, and tells the optimizer that the tables must be read in the order they appear in the `SELECT`. For `const` and `system` table this options is sometimes ignored.
 
 
 ### SQL_CALC_FOUND_ROWS
@@ -53,11 +53,11 @@ For further information about some of these options, see [How to force query pla
 
 
 
-##### MariaDB starting with [12.0](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 
 ## Expanded Optimizer Hints
 
-[MariaDB 12.0](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md) features an extensive expansion of optimizer hints.
+[MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120) features an extensive expansion of optimizer hints.
 
 ### Syntax
 

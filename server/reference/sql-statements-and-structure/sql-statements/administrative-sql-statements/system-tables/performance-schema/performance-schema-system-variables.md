@@ -4,7 +4,7 @@
 
 
 
-The following variables are used with MariaDB's [Performance Schema](performance-schema-tables/performance-schema-table_handles-table.md). See [Performance Schema Options](../../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) for Performance Schema options that are not system variables. See [Server System Variables](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
+The following variables are used with MariaDB's [Performance Schema](README.md). See [Performance Schema Options](../../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) for Performance Schema options that are not system variables. See [Server System Variables](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -25,7 +25,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `performance_schema_accounts_size`
 
 
-* Description: Maximum number of rows in the [performance_schema.accounts](performance-schema-tables/performance-schema-accounts-table.md) table. If set to 0, the [Performance Schema](performance-schema-tables/performance-schema-table_handles-table.md) will not store statistics in the accounts table. Use `-1` (the default) for automated sizing.
+* Description: Maximum number of rows in the [performance_schema.accounts](performance-schema-tables/performance-schema-accounts-table.md) table. If set to 0, the [Performance Schema](README.md) will not store statistics in the accounts table. Use `-1` (the default) for automated sizing.
 * Commandline: `--performance-schema-accounts-size=#`
 * Scope: Global
 * Dynamic: No
@@ -110,7 +110,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `1048576`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -124,7 +124,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `1024`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -175,7 +175,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `90` (>= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md)), `80` (<= [MariaDB 10.5.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md))
+* Default Value: `90` (>= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)), `80` (<= [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes))
 * Range: `0` to `256`
 
 
@@ -214,7 +214,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value:`80` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `50` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
+* Default Value:`80` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `50` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
 * Range: `0` to `256`
 
 
@@ -255,7 +255,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `1048576`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -269,7 +269,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `320`
 * Range: `0` to `1024`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -283,7 +283,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `104857600`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -295,7 +295,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `210` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `200` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
+* Default Value: `210` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `200` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
 * Range: `0` to `256`
 
 
@@ -323,7 +323,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `1048576`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -337,7 +337,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `1048576`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -349,7 +349,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `50` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `40` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
+* Default Value: `50` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `40` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
 * Range: `0` to `256`
 
 
@@ -403,7 +403,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `1024`
 * Range: `0` to `1048576`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -443,7 +443,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `10`
 * Range: `1` to `256`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -483,7 +483,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value: `-1`
 * Range: `-1` to `1048576`
-* Introduced: [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
+* Introduced: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 
@@ -529,33 +529,33 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `performance_schema_setup_actors_size`
 
 
-* Description: The maximum number of rows to store in the performance schema [setup_actors](performance-schema-tables/performance-schema-setup_actors-table.md) table. `-1` (from [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)) denotes automated sizing.
+* Description: The maximum number of rows to store in the performance schema [setup_actors](performance-schema-tables/performance-schema-setup_actors-table.md) table. `-1` (from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)) denotes automated sizing.
 * Commandline: `--performance-schema-setup-actors-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `-1` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `100` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
-* Range: `-1` to `1024` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `0` to `1024` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
+* Default Value: `-1` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `100` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
+* Range: `-1` to `1024` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `0` to `1024` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
 
 
 
 #### `performance_schema_setup_objects_size`
 
 
-* Description: The maximum number of rows that can be stored in the performance schema [setup_objects](performance-schema-tables/performance-schema-setup_objects-table.md) table. `-1` (from [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)) denotes automated sizing.
+* Description: The maximum number of rows that can be stored in the performance schema [setup_objects](performance-schema-tables/performance-schema-setup_objects-table.md) table. `-1` (from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)) denotes automated sizing.
 * Commandline: `--performance-schema-setup-objects-size=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
-* Default Value: `-1` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `100` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
-* Range: `-1` to `1048576` (>= [MariaDB 10.5.2](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)), `0` to `1048576` (<= [MariaDB 10.5.1](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md))
+* Default Value: `-1` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `100` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
+* Range: `-1` to `1048576` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)), `0` to `1048576` (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes))
 
 
 
 #### `performance_schema_users_size`
 
 
-* Description: Number of rows in the [performance_schema.users](performance-schema-tables/performance-schema-users-table.md) table. If set to 0, the [Performance Schema](performance-schema-tables/performance-schema-table_handles-table.md) will not store connection statistics in the users table. `-1` (the default) for automated sizing.
+* Description: Number of rows in the [performance_schema.users](performance-schema-tables/performance-schema-users-table.md) table. If set to 0, the [Performance Schema](README.md) will not store connection statistics in the users table. `-1` (the default) for automated sizing.
 * Commandline: `--performance-schema-users-size=#`
 * Scope: Global
 * Dynamic: No

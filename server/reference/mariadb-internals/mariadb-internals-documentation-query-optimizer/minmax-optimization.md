@@ -5,7 +5,7 @@
 ## Min/Max optimization without GROUP BY
 
 
-MariaDB and MySQL can optimize the [MIN()](minmax-optimization.md) and [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) functions to be a single row lookup in the following cases:
+MariaDB and MySQL can optimize the [MIN()](../../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md) and [MAX()](../../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) functions to be a single row lookup in the following cases:
 
 
 * There is only one table used in the `SELECT`.
@@ -33,7 +33,7 @@ SELECT MAX(b) FROM t1 WHERE a=const AND b BETWEEN const AND const
 * Instead of `a=const` the condition `a IS NULL` can be used.
 
 
-The above optimization also works for [subqueries](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-all.md):
+The above optimization also works for [subqueries](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/README.md):
 
 
 ```
@@ -62,7 +62,7 @@ Loose scan is possible in the following cases:
 * Partial indexed columns cannot be used (like only indexing 10 characters of a `VARCHAR(20)` column).
 
 
-Loose scan will apply for your query if [EXPLAIN](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) shows `Using index for group-by` in the `Extra` column.
+Loose scan will apply for your query if [EXPLAIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) shows `Using index for group-by` in the `Extra` column.
 In this case the optimizer will do only one extra row fetch to calculate the value for `MIN()` or `MAX()` for every unique key prefix.
 
 
@@ -76,7 +76,7 @@ SELECT a, b, MIN(c),MAX(c) FROM t1 GROUP BY a,b
 ## See also
 
 
-* [MIN()](minmax-optimization.md)
-* [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md)
+* [MIN()](../../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md)
+* [MAX()](../../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md)
 * [MySQL manual on loose index scans](https://dev.mysql.com/doc/refman/5.7/en/group-by-optimization.html)
 

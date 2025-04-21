@@ -14,7 +14,7 @@ There are two conceptually different ways to transfer a state from one MariaDB s
 1. Logical
 
 
-The only SST method of this type is the `mysqldump` SST method, which actually uses the `[mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md)` utility to get a logical dump of the donor. This SST method requires the joiner node to be fully initialized and ready to accept connections before the transfer. This method is, by definition, blocking, in that it blocks the donor node from modifying its own state for the duration of the transfer. It is also the slowest of all, and that might be an issue in a cluster with a lot of load.
+The only SST method of this type is the `mysqldump` SST method, which actually uses the `[mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md)` utility to get a logical dump of the donor. This SST method requires the joiner node to be fully initialized and ready to accept connections before the transfer. This method is, by definition, blocking, in that it blocks the donor node from modifying its own state for the duration of the transfer. It is also the slowest of all, and that might be an issue in a cluster with a lot of load.
 
 
 1. Physical
@@ -29,7 +29,7 @@ SST methods of this type physically copy the data files from the donor node to t
 SST methods are supported via a scriptable interface. New SST methods could potentially be developed by creating new SST scripts. The scripts usually have names of the form `wsrep_sst_<method>` where `<method>` is one of the SST methods listed below.
 
 
-You can choose your SST method by setting the `[wsrep_sst_method](../galera-cluster-system-variables.md#wsrep_sst_method)` system variable. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)` on the node that you intend to be a SST donor. For example:
+You can choose your SST method by setting the `[wsrep_sst_method](../galera-cluster-system-variables.md#wsrep_sst_method)` system variable. It can be changed dynamically with `[SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)` on the node that you intend to be a SST donor. For example:
 
 
 ```
@@ -54,7 +54,7 @@ MariaDB Galera Cluster comes with the following built-in SST methods:
 ### mariabackup
 
 
-This SST method uses the [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariabackup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
+This SST method uses the [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariabackup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
 
 
 This SST method supports [GTID](../../standard-replication/gtid.md).
@@ -63,7 +63,7 @@ This SST method supports [GTID](../../standard-replication/gtid.md).
 This SST method supports [Data at Rest Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 
 
-This SST method is available from [MariaDB 10.1.26](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10126-release-notes.md) and [MariaDB 10.2.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10210-release-notes.md).
+This SST method is available from [MariaDB 10.1.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10126-release-notes) and [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes).
 
 
 With this SST method, it is impossible to upgrade the cluster between some major versions; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
@@ -87,14 +87,14 @@ This SST method supports [GTID](../../standard-replication/gtid.md).
 This SST method supports [Data at Rest Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 
 
-The rsync SST method does not support tables created with the [DATA DIRECTORY or INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#data-directoryindex-directory) clause. Use the [mariabackup](mariabackup-sst-method.md) SST method as an alternative to support this feature.
+The rsync SST method does not support tables created with the [DATA DIRECTORY or INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#data-directoryindex-directory) clause. Use the [mariabackup](mariabackup-sst-method.md) SST method as an alternative to support this feature.
 
 
 Use of this SST method **could result in data corruption** when using 
-[innodb_use_native_aio](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio) (the default) if the donor is older than [MariaDB 10.3.35](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10335-release-notes.md), [MariaDB 10.4.25](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10425-release-notes.md), [MariaDB 10.5.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes.md), [MariaDB 10.6.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes.md), or [MariaDB 10.7.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md); see [MDEV-25975](https://jira.mariadb.org/browse/MDEV-25975). Starting with those donor versions, `wsrep_sst_method=rsync` is a reliable way to upgrade the cluster to a newer major version.
+[innodb_use_native_aio](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_native_aio) (the default) if the donor is older than [MariaDB 10.3.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10335-release-notes), [MariaDB 10.4.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10425-release-notes), [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes), or [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes); see [MDEV-25975](https://jira.mariadb.org/browse/MDEV-25975). Starting with those donor versions, `wsrep_sst_method=rsync` is a reliable way to upgrade the cluster to a newer major version.
 
 
-As of [MariaDB 10.1.36](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes.md), [MariaDB 10.2.18](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10218-release-notes.md), and [MariaDB 10.3.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10310-release-notes.md), `[stunnel](https://www.stunnel.org)` can be used to encrypt data over the wire. Be sure to have `stunnel` installed. You will also need to generate certificates and keys. See [the stunnel documentation](https://www.stunnel.org/howto.html) for information on how to do that. Once you have the keys, you will need to add the `tkey` and `tcert` options to the `[sst]` option group in your MariaDB configuration file, such as:
+As of [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), `[stunnel](https://www.stunnel.org)` can be used to encrypt data over the wire. Be sure to have `stunnel` installed. You will also need to generate certificates and keys. See [the stunnel documentation](https://www.stunnel.org/howto.html) for information on how to do that. Once you have the keys, you will need to add the `tkey` and `tcert` options to the `[sst]` option group in your MariaDB configuration file, such as:
 
 
 ```
@@ -109,7 +109,7 @@ You also need to run the certificate directory through `[openssl rehash](https:/
 ### mysqldump
 
 
-This SST method runs [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) on the donor node and pipes
+This SST method runs [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) on the donor node and pipes
 the output to the [mariadb](../../../../clients-and-utilities/mariadb-client/README.md) client connected to the joiner node. The `mysqldump` SST method
 needs a username/password pair set in the [wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth) variable in order to get the dump. The donor node is blocked with a read lock during the SST. This is the slowest SST method.
 
@@ -123,7 +123,7 @@ This SST method supports [Data at Rest Encryption](../../../../security/securing
 ### xtrabackup-v2
 
 
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 
 
 
@@ -145,11 +145,11 @@ See [xtrabackup-v2 SST method](https://mariadb.com/kb/en/) for more information.
 ### xtrabackup
 
 
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 
 
 
-This SST method is an older SST method that uses the [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/README.md) utility for performing SSTs. The `xtrabackup-v2` SST method should be used instead of the `xtrabackup` SST method starting from [MariaDB 5.5.33](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes.md).
+This SST method is an older SST method that uses the [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/README.md) utility for performing SSTs. The `xtrabackup-v2` SST method should be used instead of the `xtrabackup` SST method starting from [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes).
 
 
 This SST method does **not** support [GTID](../../standard-replication/gtid.md).
@@ -161,7 +161,7 @@ This SST method does **not** support [Data at Rest Encryption](../../../../secur
 ## Authentication
 
 
-All SST methods except `rsync` require authentication via username and password. You can tell the client what username and password to use by setting the `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` system variable. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)` on the node that you intend to be a SST donor. For example:
+All SST methods except `rsync` require authentication via username and password. You can tell the client what username and password to use by setting the `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` system variable. It can be changed dynamically with `[SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)` on the node that you intend to be a SST donor. For example:
 
 
 ```
@@ -222,7 +222,7 @@ sudo systemctl daemon-reload
 See [Configuring the Systemd Service Timeout](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-the-systemd-service-timeout) for more details.
 
 
-Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.35](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes.md), [MariaDB 10.2.17](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10217-release-notes.md), and [MariaDB 10.3.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1038-release-notes.md), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during long SSTs. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your SSTs run for longer than the configured value. See [MDEV-15607](https://jira.mariadb.org/browse/MDEV-15607) for more information.
+Note that [systemd 236 added the EXTEND_TIMEOUT_USEC environment variable](https://lists.freedesktop.org/archives/systemd-devel/2017-December/039996.html) that allows services to extend the startup timeout during long-running processes. Starting with [MariaDB 10.1.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes), and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), on systems with systemd versions that support it, MariaDB uses this feature to extend the startup timeout during long SSTs. Therefore, if you are using `systemd` 236 or later, then you should not need to manually override `TimeoutStartSec`, even if your SSTs run for longer than the configured value. See [MDEV-15607](https://jira.mariadb.org/browse/MDEV-15607) for more information.
 
 
 ## SST Failure
@@ -240,7 +240,7 @@ Restarting a node after a `mysqldump` SST failure may require manual restoration
 Look at the description of each SST method to determine which methods support [Data at Rest Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md).
 
 
-For logical SST methods like `mysqldump`, each node should be able to have different [encryption keys](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md#encryption-key-management). For physical SST methods, all nodes need to have the same [encryption keys](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md#encryption-key-management), since the donor node will copy encrypted data files to the joiner node, and the joiner node will need to be able to decrypt them.
+For logical SST methods like `mysqldump`, each node should be able to have different [encryption keys](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md). For physical SST methods, all nodes need to have the same [encryption keys](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md), since the donor node will copy encrypted data files to the joiner node, and the joiner node will need to be able to decrypt them.
 
 
 ## Minimal Cluster Size
@@ -279,4 +279,3 @@ See [MDEV-18863](https://jira.mariadb.org/browse/MDEV-18863) for more informatio
 
 * [Galera Cluster documentation: STATE SNAPSHOT TRANSFERS](https://galeracluster.com/library/documentation/sst.html)
 
-<span></span>

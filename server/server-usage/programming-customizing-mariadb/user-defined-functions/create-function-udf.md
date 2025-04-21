@@ -16,7 +16,7 @@ CREATE [OR REPLACE] [AGGREGATE] FUNCTION [IF NOT EXISTS] function_name
 
 A user-defined function (UDF) is a way to extend MariaDB with a new function
 that works like a native (built-in) MariaDB function such as [ABS()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/abs.md) or
-[CONCAT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md).
+[CONCAT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat.md).
 
 
 `function_name` is the name that should be used in SQL statements to invoke
@@ -53,7 +53,7 @@ For valid identifiers to use as function names, see [Identifier Names](../../../
 
 
 The `RETURNS` clause indicates the type of the function's
-return value, and can be one of [string-literals.md](../../../reference/sql-statements-and-structure/sql-language-structure/string-literals.md), [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](https://mariadb.com/kb/en/real/) or [DECIMAL](../../../reference/data-types/data-types-numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../../reference/data-types/string-data-types/README.md) functions.
+return value, and can be one of [string](https://mariadb.com/kb/en/string), [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](https://mariadb.com/kb/en/real/) or [DECIMAL](../../../reference/data-types/data-types-numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../../reference/data-types/string-data-types/README.md) functions.
 
 
 #### shared_library_name
@@ -72,7 +72,7 @@ that was searched by your system's dynamic linker.
 
 Aggregate functions are summary functions such as [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) and
 [AVG()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md).
-Aggregate UDF functions can be used as [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/window-functions-overview.md).
+Aggregate UDF functions can be used as [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md).
 
 
 #### OR REPLACE
@@ -137,4 +137,3 @@ SHOW WARNINGS;
 * [DROP FUNCTION](../stored-routines/stored-functions/drop-function.md)
 * [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
 
-<span></span>

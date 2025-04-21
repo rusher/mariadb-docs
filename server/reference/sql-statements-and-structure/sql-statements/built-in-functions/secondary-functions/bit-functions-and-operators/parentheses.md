@@ -23,10 +23,10 @@ The precedence of the `NOT` operator can also be affected by the `HIGH_NOT_PRECE
 ## Other uses
 
 
-Parentheses must always be used to enclose [subqueries](../../../data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-and-all.md).
+Parentheses must always be used to enclose [subqueries](../../../data-manipulation/selecting-data/joins-subqueries/subqueries/README.md).
 
 
-Parentheses can also be used in a `[JOIN](../../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md)` statement between multiple tables to determine which tables must be joined first.
+Parentheses can also be used in a `[JOIN](../../../data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)` statement between multiple tables to determine which tables must be joined first.
 
 
 Also, parentheses are used to enclose the list of parameters to be passed to built-in functions, user-defined functions and stored routines. However, when no parameter is passed to a stored procedure, parentheses are optional. For builtin functions and user-defined functions, spaces are not allowed between the function name and the open parenthesis, unless the `IGNORE_SPACE` [SQL_MODE](../../../../../../server-management/variables-and-modes/sql-mode.md) is set. For stored routines (and for functions if `IGNORE_SPACE` is set) spaces are allowed before the open parenthesis, including tab characters and new line characters.

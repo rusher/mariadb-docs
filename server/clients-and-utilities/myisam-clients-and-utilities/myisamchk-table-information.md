@@ -1,7 +1,7 @@
 
 # myisamchk Table Information
 
-[myisamchk](myisamchk-table-information.md) can be used to obtain information about MyISAM tables, particularly with the *-d*, *-e*, *-i* and *-v* options.
+[myisamchk](myisamchk.md) can be used to obtain information about MyISAM tables, particularly with the *-d*, *-e*, *-i* and *-v* options.
 
 
 Common options for gathering information include:
@@ -51,7 +51,7 @@ The following table describes the output from the running myisamchk with the *-d
 | Len | Length of the index or index part. The length of a multiple-column index is the sum of the component lengths. Indexes of string columns will be shorter than the full column length if only a string prefix is indexed. |
 | Index | Whether an index value is unique or not. Either multip. or unique. |
 | Type | Data type of the index of index part. |
-| Rec/key | Record of the number of rows per value for the index or index part. Used by the optimizer to calculate query plans. Can be updated with [myisamchk-a](myisamchk-table-information.md). If not present, defaults to 30. |
+| Rec/key | Record of the number of rows per value for the index or index part. Used by the optimizer to calculate query plans. Can be updated with [myisamchk-a](myisamchk.md). If not present, defaults to 30. |
 | Root | Root index block address. |
 | Blocksize | Index block size, in bytes. |
 | Field | Column number, starting with one. The first line will contain the position and number of bytes used to store NULL flags, if any (see Nullpos and Nullbit, below). |
@@ -232,4 +232,3 @@ Non-physical pagefaults 925, Physical pagefaults 0, Swaps 0
 Blocks in 0 out 0, Messages in 0 out 0, Signals 0
 Voluntary context switches 0, Involuntary context switches 74
 ```
-<span></span>

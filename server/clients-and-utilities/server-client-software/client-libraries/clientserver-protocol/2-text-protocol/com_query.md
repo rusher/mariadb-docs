@@ -37,7 +37,7 @@ The server can answer with 4 different responses that can be differentiated by t
 * 0xFF - [ERR_Packet](../4-server-response-packets/err_packet.md) if any error occurs.
 * 0x00 - [OK_Packet](../4-server-response-packets/ok_packet.md) when query execution works without resultset.
 * 0xFB - [LOCAL_INFILE Packet](../4-server-response-packets/packet_local_infile.md) if the query was "LOCAL INFILE ...".
-* Or a [Resultset](../4-server-response-packets/resultset-row.md), when the query returns results (in case of a SELECT query for example).
+* Or a [Resultset](../4-server-response-packets/result-set-packets.md), when the query returns results (in case of a SELECT query for example).
 
 
 ### Example

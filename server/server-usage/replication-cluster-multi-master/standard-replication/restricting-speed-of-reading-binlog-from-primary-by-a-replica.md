@@ -19,7 +19,7 @@ the SQL thread is at applying them, an appropriate value for
 much limit in the speed of the replica.
 
 
-The option **read_binlog_speed_limit** is available starting from [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md).
+The option **read_binlog_speed_limit** is available starting from [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes).
 
 
 #### `read_binlog_speed_limit`
@@ -32,6 +32,6 @@ The option **read_binlog_speed_limit** is available starting from [MariaDB 10.2.
 * Data Type: `numeric`
 * Default Value: `0`
 * Range: `0` to `4294967295`
-* Introduced: [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)
+* Introduced: [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)
 
 

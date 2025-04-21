@@ -102,7 +102,7 @@ The output is useful to determine how much physical I/O was required, how much d
 # Query plan / trace
 
 
-While the MariaDB Server's [EXPLAIN](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) utility can be used to look at the query plan, it is somewhat less helpful for ColumnStore tables as ColumnStore does not use indexes or make use of MariaDB I/O functionality.
+While the MariaDB Server's [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) utility can be used to look at the query plan, it is somewhat less helpful for ColumnStore tables as ColumnStore does not use indexes or make use of MariaDB I/O functionality.
 The execution plan for a query on a ColumnStore table is made up of multiple steps. Each step in the query plan performs a set of operations that are issued from the [User Module](../columnstore-architecture/columnstore-user-module.md) to the set of [Performance Modules](../columnstore-architecture/columnstore-performance-module.md) in support of a given step in a query.
 
 

@@ -32,7 +32,7 @@ The following table shows the type and size of all the properties:
 | Property name | Property type | Notes |
 | RETURNED_SQLSTATE | VARCHAR(5) |  |
 | MYSQL_ERRNO | SMALLINT UNSIGNED |  |
-| MESSAGE_TEXT | VARCHAR(512) | Before [MariaDB 10.3.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1036-release-notes.md), was VARCHAR(128) |
+| MESSAGE_TEXT | VARCHAR(512) | Before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), was VARCHAR(128) |
 | CLASS_ORIGIN | VARCHAR(64) |  |
 | SUBCLASS_ORIGIN | VARCHAR(64) |  |
 | CONSTRAINT_CATALOG | VARCHAR(64) |  |
@@ -58,7 +58,7 @@ The most common ones have a value for all built-in errors, and can be read both 
 RETURNED_SQLSTATE is the SQLSTATE of the condition. It is a five characters code, composed by a class (first two characters) and a subclass (last three characters). For more information about this property, refer to the [SQLSTATE](sqlstate.md) page.
 
 
-MYSQL_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md). The API function to read it is mysql_errno().
+MYSQL_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md). The API function to read it is mysql_errno().
 
 
 MESSAGE_TEXT is a descriptive, human-readable message. For built-in errors, parsing this string is the only way to get more information about the error. For example, parsing a message like "Table 'tab1' already exists", a program can find out that the missing table is tab1. The API function to read it is mysql_error().
@@ -156,11 +156,10 @@ All these statements can also be executed inside a stored routine. However, only
 
 * [RESIGNAL](../resignal.md)
 * [SIGNAL](../signal.md)
-* [HANDLER](../../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md)
+* [HANDLER](../../../../reference/sql-statements-and-structure/nosql/handler/README.md)
 * [GET DIAGNOSTICS](get-diagnostics.md)
 * [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)
 * [SHOW ERRORS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md)
 * [DECLARE HANDLER](../declare-handler.md)
-* [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md)
+* [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
 
-<span></span>

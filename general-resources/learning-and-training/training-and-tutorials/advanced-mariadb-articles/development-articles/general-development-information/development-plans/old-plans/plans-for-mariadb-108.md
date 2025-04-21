@@ -2,7 +2,7 @@
 # Plans for MariaDB 10.8
 
 
-[MariaDB 10.8](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md) is stable, so no new features will be added. See [Plans for MariaDB 10.9](plans-for-mariadb-10-9.md) instead.
+[MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) is stable, so no new features will be added. See [Plans for MariaDB 10.9](plans-for-mariadb-10-9.md) instead.
 
 
 ## JIRA
@@ -23,6 +23,6 @@ to [JIRA](../../../tools/jira.md).
 
 * [Current tasks for 10.8](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.8)%20ORDER%20BY%20priority%20DESC)
 * [10.8 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.8)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 10.7?](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)
-* [What is MariaDB 10.6?](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
+* [What is MariaDB 10.7?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
+* [What is MariaDB 10.6?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 

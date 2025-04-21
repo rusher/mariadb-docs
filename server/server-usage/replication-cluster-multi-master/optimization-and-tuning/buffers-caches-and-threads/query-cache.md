@@ -28,17 +28,17 @@ SHOW VARIABLES LIKE 'have_query_cache';
 If this is set to `NO`, you cannot enable the query cache unless you rebuild or reinstall a version of MariaDB with the cache available.
 
 
-To see if the cache is enabled, view the [query_cache_type](../system-variables/server-system-variables.md#query_cache_type) server variable. It is enabled by default in MariaDB versions up to 10.1.6, but disabled starting with [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md) - if needed enable it by setting `query_cache_type` to `1`.
+To see if the cache is enabled, view the [query_cache_type](../system-variables/server-system-variables.md#query_cache_type) server variable. It is enabled by default in MariaDB versions up to 10.1.6, but disabled starting with [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes) - if needed enable it by setting `query_cache_type` to `1`.
 
 
-Although enabled in versions prior to [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md), the [query_cache_size](../system-variables/server-system-variables.md#query_cache_size) is by default 0KB there, which effectively disables the query cache. From 10.1.7 on the cache size defaults to 1MB. If needed set the cache to a size large enough amount, for example:
+Although enabled in versions prior to [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes), the [query_cache_size](../system-variables/server-system-variables.md#query_cache_size) is by default 0KB there, which effectively disables the query cache. From 10.1.7 on the cache size defaults to 1MB. If needed set the cache to a size large enough amount, for example:
 
 
 ```
 SET GLOBAL query_cache_size = 1000000;
 ```
 
-Starting from [MariaDB 10.1.7](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes.md), `query_cache_type` is automatically set to ON if the server is started with the `query_cache_size` set to a non-zero (and non-default) value.
+Starting from [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes), `query_cache_type` is automatically set to ON if the server is started with the `query_cache_size` set to a non-zero (and non-default) value.
 
 
 See [Limiting the size of the Query Cache](#limiting-the-size-of-the-query-cache) below for details.
@@ -114,17 +114,17 @@ If any of the following functions are present in a query, it will not be cached.
 
 |   |   |
 | --- | --- |
-| [BENCHMARK()](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/benchmark-builds.md) | [CONNECTION_ID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/connection_id.md) |
+| [BENCHMARK()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/benchmark.md) | [CONNECTION_ID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/connection_id.md) |
 | [CONVERT_TZ()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/convert_tz.md) | [CURDATE()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md) |
 | [CURRENT_DATE()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/current_date.md) | [CURRENT_TIME()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/current_time.md) |
 | [CURRENT_TIMESTAMP()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/current_timestamp.md) | [CURTIME()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curtime.md) |
-| [DATABASE()](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) | [ENCRYPT()](../../../../reference/mariadb-internals/encryption-plugin-api.md) (one parameter) |
+| [DATABASE()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/database.md) | [ENCRYPT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) (one parameter) |
 | [FOUND_ROWS()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/found_rows.md) | [GET_LOCK()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md) |
 | [LAST_INSERT_ID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) | [LOAD_FILE()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/load_file.md) |
 | [MASTER_POS_WAIT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md) | [NOW()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) |
-| [RAND()](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/random-query-generator-tests.md) | [RELEASE_LOCK()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md) |
+| [RAND()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/rand.md) | [RELEASE_LOCK()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md) |
 | [SLEEP()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sleep.md) | [SYSDATE()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md) |
-| [UNIX_TIMESTAMP()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md) (no parameters) | [USER()](../../../../reference/plugins/other-plugins/user-variables-plugin.md) |
+| [UNIX_TIMESTAMP()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md) (no parameters) | [USER()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md) |
 | [UUID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) | [UUID_SHORT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) |
 
 
@@ -242,10 +242,10 @@ SHOW STATUS LIKE 'Qcache%';
 The above example could indicate a poorly performing cache. More queries have been added, and more queries have been dropped, than have actually been used.
 
 
-Note that before [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), queries returned from the query cache did not increment the [Com_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com_select](../system-variables/server-status-variables.md#com_select) to [Qcache_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
+Note that before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), queries returned from the query cache did not increment the [Com_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com_select](../system-variables/server-status-variables.md#com_select) to [Qcache_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
 
 
-The [QUERY_CACHE_INFO plugin](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md) creates the [QUERY_CACHE_INFO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_cache_info-table.md) table in the [INFORMATION_SCHEMA](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md), allowing you to examine the contents of the query cache.
+The [QUERY_CACHE_INFO plugin](../../../../reference/plugins/other-plugins/query-cache-information-plugin.md) creates the [QUERY_CACHE_INFO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_cache_info-table.md) table in the [INFORMATION_SCHEMA](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md), allowing you to examine the contents of the query cache.
 
 
 ## Query Cache Fragmentation
@@ -280,7 +280,7 @@ SHOW STATUS LIKE 'Qcache%';
 ## Emptying and disabling the Query Cache
 
 
-To empty or clear all results from the query cache, use [RESET QUERY CACHE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md). [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) will have the same effect.
+To empty or clear all results from the query cache, use [RESET QUERY CACHE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/reset.md). [FLUSH TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) will have the same effect.
 
 
 Setting either [query_cache_type](../system-variables/server-system-variables.md#query_cache_type) or [query_cache_size](../system-variables/server-system-variables.md#query_cache_size) to `0` will disable the query cache, but to free up the most resources, set both to `0` when you wish to disable caching.
@@ -289,9 +289,9 @@ Setting either [query_cache_type](../system-variables/server-system-variables.md
 ## Limitations
 
 
-* The query cache needs to be disabled in order to use [OQGRAPH](../../../../reference/storage-engines/oqgraph-storage-engine/oqgraph-examples.md).
-* The query cache is not used by the [Spider](../../../../reference/storage-engines/spider/spider-functions/spider_copy_tables.md) storage engine (amongst others).
-* The query cache also needs to be disabled for MariaDB [Galera](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
+* The query cache needs to be disabled in order to use [OQGRAPH](../../../../reference/storage-engines/oqgraph-storage-engine/README.md).
+* The query cache is not used by the [Spider](../../../../reference/storage-engines/spider/README.md) storage engine (amongst others).
+* The query cache also needs to be disabled for MariaDB [Galera](../../galera-cluster/README.md) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 
 ## LOCK TABLES and the Query Cache
@@ -330,10 +330,10 @@ The query cache can be used when tables have a write lock (which may seem confus
 ## Transactions and the Query Cache
 
 
-The query cache handles transactions. Internally a flag (FLAGS_IN_TRANS) is set to 0 when a query was executed outside a transaction, and to 1 when the query was inside a transaction ([beginner-books.md](../../../../../general-resources/learning-and-training/training-and-tutorials/books/beginner-books.md) / [COMMIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) / [ROLLBACK](../../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md)). This flag is part of the "query cache hash", in others words one query inside a transaction is different from a query outside a transaction.
+The query cache handles transactions. Internally a flag (FLAGS_IN_TRANS) is set to 0 when a query was executed outside a transaction, and to 1 when the query was inside a transaction ([begin](https://mariadb.com/kb/en/begin) / [COMMIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) / [ROLLBACK](../../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md)). This flag is part of the "query cache hash", in others words one query inside a transaction is different from a query outside a transaction.
 
 
-Queries that change rows ([INSERT](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) / [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) / [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) / [TRUNCATE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md)) inside a transaction will invalidate all queries from the table, and turn off the query cache to the changed table. Transactions that don't end with COMMIT / ROLLBACK check that even without COMMIT / ROLLBACK, the query cache is turned off to allow row level locking and consistency level.
+Queries that change rows ([INSERT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) / [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) / [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) / [TRUNCATE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate.md)) inside a transaction will invalidate all queries from the table, and turn off the query cache to the changed table. Transactions that don't end with COMMIT / ROLLBACK check that even without COMMIT / ROLLBACK, the query cache is turned off to allow row level locking and consistency level.
 
 
 Examples:
@@ -444,7 +444,7 @@ Some fields that differentiate queries are (from "Query_cache_query_flags" inter
 * lc_time_names ([lc_time_names](../system-variables/server-system-variables.md#lc_time_names) session variable)
 
 
-More information can be found by viewing the source code ([MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)) :
+More information can be found by viewing the source code ([MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)) :
 
 
 * [sql_cache.cc](https://github.com/MariaDB/server/blob/10.1/sql/sql_cache.cc)
@@ -501,4 +501,3 @@ SELECT SQL_CACHE .... FROM (SELECT SQL_NO_CACHE ...) AS temp_table
 
 The second query will be checked. The query cache only checks if SQL_NO_CACHE/SQL_CACHE exists after the first SELECT. (More info at [MDEV-6631](https://jira.mariadb.org/browse/MDEV-6631))
 
-<span></span>

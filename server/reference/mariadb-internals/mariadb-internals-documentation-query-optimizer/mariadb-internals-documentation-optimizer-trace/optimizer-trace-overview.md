@@ -5,7 +5,7 @@
 ## Usage
 
 
-This feature produces a trace as a JSON document for any [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)/[UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)/[DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) containing information about decisions taken by the optimizer during
+This feature produces a trace as a JSON document for any [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)/[UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)/[DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) containing information about decisions taken by the optimizer during
 the optimization phase (choice of table access method, various costs,
 transformations, etc). This feature helps to explain why some decisions were
 taken by the optimizer and why some were rejected.
@@ -52,7 +52,7 @@ See [Optimizer Trace Guide](optimizer-trace-guide.md) for an overview of what on
 ## Traceable Queries
 
 
-These include [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md), [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) as well as their multi-table variants and all of the preceding prefixed by [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) and [ANALYZE](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md).
+These include [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md), [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) as well as their multi-table variants and all of the preceding prefixed by [EXPLAIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) and [ANALYZE](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md).
 
 
 ## Enabling Optimizer Trace

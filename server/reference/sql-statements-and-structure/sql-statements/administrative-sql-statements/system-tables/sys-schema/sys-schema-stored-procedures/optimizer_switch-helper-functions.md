@@ -14,8 +14,8 @@ optimizer_switch_choice("on" | "off")
 ## Description
 
 
-The above procedures can be used to check which [optimizer_switch](optimizer_switch-helper-functions.md) options are `on` or `off`.
-The result set is sorted according to [optimizer_switch](optimizer_switch-helper-functions.md) option name.
+The above procedures can be used to check which [optimizer_switch](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) options are `on` or `off`.
+The result set is sorted according to [optimizer_switch](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) option name.
 
 
 ## Example

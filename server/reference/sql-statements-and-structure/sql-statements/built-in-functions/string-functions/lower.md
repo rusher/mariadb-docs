@@ -34,8 +34,8 @@ SELECT LOWER('QUADRATICALLY');
 ```
 
 `LOWER()` (and `[UPPER](upper.md)()`) are ineffective when applied to binary
-strings (`[BINARY](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md)`, `[VARBINARY](../../../../data-types/string-data-types/varbinary.md)`, `[BLOB](../../../../data-types/string-data-types/blob.md)`). 
-To perform lettercase conversion, [CONVERT](../../../../storage-engines/converting-tables-from-myisam-to-innodb.md) the string to a non-binary string:
+strings (`[BINARY](../../../../data-types/string-data-types/binary.md)`, `[VARBINARY](../../../../data-types/string-data-types/varbinary.md)`, `[BLOB](../../../../data-types/string-data-types/blob.md)`). 
+To perform lettercase conversion, [CONVERT](convert.md) the string to a non-binary string:
 
 
 ```

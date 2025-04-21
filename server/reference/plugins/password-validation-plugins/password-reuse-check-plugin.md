@@ -2,8 +2,8 @@
 # Password Reuse Check Plugin
 
 
-##### MariaDB starting with [10.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)
-`password_reuse_check` is a [password validation](README.md) plugin introduced in [MariaDB 10.7.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md).
+##### MariaDB starting with [10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
+`password_reuse_check` is a [password validation](../../mariadb-internals/password-validation.md) plugin introduced in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
 
 
 
@@ -77,10 +77,10 @@ ERROR 1819 (HY000): Your password does not satisfy the current policy requiremen
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Alpha | [MariaDB 10.7.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md) |
-| 1.0 | Beta | [MariaDB 10.7.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.7.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md) |
-| 2.0 | Stable | [MariaDB 10.7.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-10-7-7-release-notes.md), [MariaDB 10.8.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes.md), [MariaDB 10.9.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes.md), [MariaDB 10.10.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-2-release-notes.md) |
+| 1.0 | Alpha | [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes) |
+| 1.0 | Beta | [MariaDB 10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1072-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes) |
+| 2.0 | Stable | [MariaDB 10.7.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-7-release-notes), [MariaDB 10.8.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes), [MariaDB 10.9.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes), [MariaDB 10.10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-2-release-notes) |
 
 The bump to version 2.0 required the change of the stored format to mitigate an implementation weakness ([MDEV-28838](https://jira.mariadb.org/browse/MDEV-28838)) and as such the bump from 1.0 to 2.0 will invalidate previously saved password reuse protections.
 
@@ -88,6 +88,6 @@ The bump to version 2.0 required the change of the stored format to mitigate an 
 ## See Also
 
 
-* [Password Validation](README.md)
+* [Password Validation](../../mariadb-internals/password-validation.md)
 * [10.7 preview feature: Password Reuse Check plugin](https://mariadb.org/10-7-preview-feature-password-reuse-check-plugin/) (mariadb.org blog post)
 

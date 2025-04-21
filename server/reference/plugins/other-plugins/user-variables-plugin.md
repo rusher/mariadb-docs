@@ -1,7 +1,7 @@
 
 # User Variables Plugin
 
-The `user_variables` plugin creates the [USER_VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) table in the [INFORMATION_SCHEMA](../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database. This table contains information about [user-defined variables](../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+The `user_variables` plugin creates the [USER_VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) table in the [INFORMATION_SCHEMA](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database. This table contains information about [user-defined variables](../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
 
 
 
@@ -14,7 +14,7 @@ User-defined variables can be viewed by either querying the [USER_VARIABLES](../
 ### Flushing User-Defined Variables
 
 
-User-defined variables are reset and the Information Schema table emptied with the [FLUSH USER_VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement.
+User-defined variables are reset and the Information Schema table emptied with the [FLUSH USER_VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement.
 
 
 ## Examples
@@ -55,7 +55,7 @@ Empty set (0.000 sec)
 In current versions, the `user_variables` plugin is statically linked into the server by default, so it does not need to be installed, and the following steps are unnecessary.
 
 
-Prior to [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md), although the plugin's shared library is distributed with MariaDB by default, the plugin was not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
+Prior to [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), although the plugin's shared library is distributed with MariaDB by default, the plugin was not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
@@ -94,9 +94,9 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.3.13](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10313-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.2.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) |
-| 1.0 | Alpha | [MariaDB 10.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) |
+| 1.0 | Alpha | [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes) |
 
 
 

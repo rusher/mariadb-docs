@@ -2,8 +2,8 @@
 # Authentication Plugin - PARSEC
 
 
-##### MariaDB starting with [11.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md)
-The PARSEC Authentication Plugin was introduced in [MariaDB 11.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md). It is intended to be the default in a future release.
+##### MariaDB starting with [11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
+The PARSEC Authentication Plugin was introduced in [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). It is intended to be the default in a future release.
 
 
 The PARSEC (Password Authentication using Response Signed with Elliptic Curve) authentication plugin uses salted passwords, key derivation, extensible password storage format, and both server- and client-side scrambles.
@@ -43,9 +43,9 @@ first two fields together are called below *ext-salt*, extended salt.
 #### Login Process, Packet Exchange
 
 
-1. Server sends an [Authentication Switch Request](../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#authentication-switch-request) with a 32-byte random scramble
-1. Client sends an empty packet to the server to request the [ext-salt](../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#parsec-plugin)
-1. Server sends the [ext-salt](../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#parsec-plugin) to the client
+1. Server sends an [Authentication Switch Request](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#authentication-switch-request) with a 32-byte random scramble
+1. Client sends an empty packet to the server to request the [ext-salt](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#parsec-plugin)
+1. Server sends the [ext-salt](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection.md#parsec-plugin) to the client
 1. Client sends the random 32-byte scramble, and the concat(server scramble, client scramble) ed25519-signed by a secret key generated from the PBKDF2(password, ext-salt)
 1. Server replies with ["ok"](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/ok_packet.md) or ["access denied"](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/err_packet.md)
 

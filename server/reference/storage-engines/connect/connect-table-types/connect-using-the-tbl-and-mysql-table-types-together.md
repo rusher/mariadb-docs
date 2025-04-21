@@ -103,7 +103,7 @@ to the thread option, making this query super-fast even on big tables placed on
 many remote machines.
 
 
-Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md).
+Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira).
 
 
 ## Providing a list of servers

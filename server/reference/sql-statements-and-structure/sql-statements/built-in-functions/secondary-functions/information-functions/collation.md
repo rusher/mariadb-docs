@@ -42,5 +42,5 @@ SELECT COLLATION(_utf8'abc');
 
 * [String literals](../../../../sql-language-structure/string-literals.md)
 * [CAST()](../../string-functions/cast.md)
-* [CONVERT()](../../../../../storage-engines/converting-tables-from-myisam-to-innodb.md)
+* [CONVERT()](../../string-functions/convert.md)
 

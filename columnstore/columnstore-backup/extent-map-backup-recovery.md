@@ -50,7 +50,7 @@ In the interim, we recommend that users of ColumnStore follow the following proc
 * `$ cat /dev/null > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss`
 * `$ cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/`
 * `$ chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/`
-* `$ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start --header 'Content-Type:application/json' --header 'x-api-key:somekey123' --data '{"timeout":60}' -k `
+* `$ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start --header 'Content-Type:application/json' --header 'x-api-key:somekey123' --data '{"timeout":60}' -k`
 
 
 ### AUTOMATION

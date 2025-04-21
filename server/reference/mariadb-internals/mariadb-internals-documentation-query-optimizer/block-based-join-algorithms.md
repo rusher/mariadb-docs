@@ -5,7 +5,7 @@
 In the versions of MariaDB/MySQL before 5.3 only one block-based join algorithm was implemented: the Block Nested Loops (BNL) join algorithm which could only be used for inner joins.
 
 
-[MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) enhanced the implementation of BNL joins and provides a variety of block-based join algorithms that can be used for inner joins, outer joins, and semi-joins. Block-based join algorithms in MariaDB employ a join buffer to accumulate records of the first join operand before they start looking for matches in the second join operand.
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) enhanced the implementation of BNL joins and provides a variety of block-based join algorithms that can be used for inner joins, outer joins, and semi-joins. Block-based join algorithms in MariaDB employ a join buffer to accumulate records of the first join operand before they start looking for matches in the second join operand.
 
 
 This page documents the various block-based join algorithms.
@@ -20,7 +20,7 @@ This page documents the various block-based join algorithms.
 ## Block Nested Loop Join
 
 
-The major difference between the implementation of BNL join in [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+The major difference between the implementation of BNL join in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 compared to earlier versions of MariaDB/MySQL is that the former uses a new
 format for records written into join buffers. This new format allows:
 
@@ -73,7 +73,7 @@ The same match flag is used for any record in the join buffer is a semi-join ope
 ## Block Hash Join
 
 
-Block based hash join algorithm is a new option to be used for join operations in [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). It can be employed in the cases when there are equi-join sub-condition for the joined tables, in the other words when equalities of the form t2.f1= e1(t1),...,t2.fn=en(t1) can be extracted from the full join condition. As any block based join algorithm this one used a join buffer filled with the records of
+Block based hash join algorithm is a new option to be used for join operations in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). It can be employed in the cases when there are equi-join sub-condition for the joined tables, in the other words when equalities of the form t2.f1= e1(t1),...,t2.fn=en(t1) can be extracted from the full join condition. As any block based join algorithm this one used a join buffer filled with the records of
 the first operand and looks through the records of the second operand to find matches for the records in the buffer.
 
 
@@ -164,12 +164,12 @@ The maximum size of join buffers used by block-based algorithms is controlled by
 This value must be large enough in order for the join buffer employed for a join operation to contain all relevant fields for at least one joined record.
 
 
-[MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) introduced the system variable [join_buffer_space_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_space_limit) that limits the total memory used for join buffers in a query.
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) introduced the system variable [join_buffer_space_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_space_limit) that limits the total memory used for join buffers in a query.
 
 
 To optimize the usage of the join buffers within the limit set by `join_buffer_space_limit`, one should use the [optimizer switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) `optimize_join_buffer_size=on`.
-When this flag is set to 'off' (default until [MariaDB 10.4.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1042-release-notes.md)), the size of the used join buffer is taken directly from the [join_buffer_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) system variable.
-When this flag is set to 'on' (default from [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md)) then the size of the buffer depends on the estimated number of rows in the partial join whose records are to be stored in the buffer.
+When this flag is set to 'off' (default until [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)), the size of the used join buffer is taken directly from the [join_buffer_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) system variable.
+When this flag is set to 'on' (default from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes)) then the size of the buffer depends on the estimated number of rows in the partial join whose records are to be stored in the buffer.
 
 
 ### Related MRR Settings

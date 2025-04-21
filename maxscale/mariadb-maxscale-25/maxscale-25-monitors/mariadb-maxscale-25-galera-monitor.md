@@ -146,7 +146,7 @@ to increase the cluster size.
 
 The current list of non-blocking SST
 methods are `xtrabackup`, `xtrabackup-v2` and `mariabackup`. Read the
-[wsrep_sst_method](../../../server/server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md)
+[wsrep_sst_method](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables)
 documentation for more details.
 
 

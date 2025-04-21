@@ -14,7 +14,7 @@ analyse([max_elements[,max_memory]])
 This procedure is defined in the sql/sql_analyse.cc file. It examines
 the result from a query and returns an analysis of the results that
 suggests optimal data types for each column. To obtain this analysis,
-append PROCEDURE ANALYSE to the end of a [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement:
+append PROCEDURE ANALYSE to the end of a [SELECT](../../../data-manipulation/selecting-data/select.md) statement:
 
 
 ```
@@ -46,6 +46,6 @@ The arguments are optional and are used as follows:
 ## See Also
 
 
-* [PROCEDURE](procedure-analyse.md)
-* [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [PROCEDURE](../../../data-manipulation/selecting-data/procedure.md)
+* [SELECT](../../../data-manipulation/selecting-data/select.md)
 

@@ -18,10 +18,10 @@ The `SHUTDOWN` command shuts the server down.
 ## WAIT FOR ALL REPLICAS / SLAVES
 
 
-The `WAIT FOR ALL SLAVES` option was first added in [MariaDB 10.4.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1044-release-notes.md). `WAIT FOR ALL REPLICAS` has been a synonym since [MariaDB 10.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md).
+The `WAIT FOR ALL SLAVES` option was first added in [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes). `WAIT FOR ALL REPLICAS` has been a synonym since [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes).
 
 
-When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md) is being used.
+When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../../../../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) is being used.
 
 
 This problem can be solved by shutting down the server with the [SHUTDOWN](shutdown.md) command and by providing the `WAIT FOR ALL REPLICAS`/`WAIT FOR ALL SLAVES` option to the command. For example:
@@ -31,7 +31,7 @@ This problem can be solved by shutting down the server with the [SHUTDOWN](shutd
 SHUTDOWN WAIT FOR ALL REPLICAS;
 ```
 
-When the `WAIT FOR ALL REPLICAS` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) has been sent to all connected replicas.
+When the `WAIT FOR ALL REPLICAS` option is provided, the server only kills its binary log dump threads after all client threads have been killed, and it only completes the shutdown after the last [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) has been sent to all connected replicas.
 
 
 See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#binary-log-dump-threads-and-the-shutdown-process) for more information.
@@ -46,7 +46,7 @@ One must have a `SHUTDOWN` privilege (see [GRANT](../account-management-sql-comm
 ## Shutdown for Upgrades
 
 
-If you are doing a shutdown to [migrate to another major version of MariaDB](../../../../server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-between-major-mariadb-versions.md), please ensure that the [innodb_fast_shutdown](../../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
+If you are doing a shutdown to [migrate to another major version of MariaDB](https://mariadb.com/kb/en/upgrading-between-major-mariadb-version), please ensure that the [innodb_fast_shutdown](../../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
 
 
 ## Example

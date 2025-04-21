@@ -387,10 +387,10 @@ Possible values are:
 
 
 Enable
-[semi-synchronous](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)
+[semi-synchronous](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication)
 replication when replicating from a MariaDB server. If enabled, the binlogrouter
 will send acknowledgment for each received event. Note that the
-[rpl_semi_sync_master_enabled](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_enabled)
+[rpl_semi_sync_master_enabled](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication#rpl_semi_sync_master_enabled)
 parameter must be enabled in the MariaDB server where the replication is done
 from for the semi-synchronous replication to take place.
 
@@ -447,7 +447,7 @@ and store all the data.
  See [datadir](#datadir).
 * If the primary contains binlogs from the blank state, and there
  is a large amount of data, consider purging old binlogs.
- See [Using and Maintaining the Binary Log](../../../server/server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log.md).
+ See [Using and Maintaining the Binary Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log).
 
 
 ### Deployment
@@ -532,7 +532,7 @@ set to true, and the servers must be monitored by the
 Configuring binlogrouter is the same as described above.
 
 
-The Galera cluster must be configured to use [Wsrep GTID Mode](../../../server/server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
+The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
 
 
 The MariaDB version must be 10.5.1 or higher.

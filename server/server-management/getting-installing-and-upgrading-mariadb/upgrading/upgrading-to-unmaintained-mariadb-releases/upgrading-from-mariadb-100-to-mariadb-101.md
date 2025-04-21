@@ -5,8 +5,8 @@
 ## What You Need to Know
 
 
-There are no changes in table or index formats between [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and [MariaDB
-10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), so on most servers the upgrade should be painless.
+There are no changes in table or index formats between [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and [MariaDB
+10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), so on most servers the upgrade should be painless.
 
 
 ### How to Upgrade
@@ -25,12 +25,12 @@ Before you upgrade, it would be best to take a backup of your database. This is 
 The suggested upgrade procedure is:
 
 
-1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md). For example,
+1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1). For example,
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/installing-mariadb-deb-files.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](../../binary-packages/rpm/installing-mariadb-with-zypper.md#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
-1. Set `[innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)`. For example: 
+1. Set `[innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example: 
 `SET GLOBAL innodb_fast_shutdown=0;`
 1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 1. Uninstall the old version of MariaDB.
@@ -43,7 +43,7 @@ The suggested upgrade procedure is:
 `sudo zypper remove MariaDB-server`
 1. Install the new version of MariaDB.
 
-  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt) for more information.
+  * On Debian, Ubuntu, and other similar Linux distributions, see [Installing MariaDB Packages with APT](../../binary-packages/installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Installing MariaDB Packages with YUM](../../binary-packages/rpm/yum.md#installing-mariadb-packages-with-yum) for more information.
   * On SLES, OpenSUSE, and other similar Linux distributions, see [Installing MariaDB Packages with ZYpp](../../binary-packages/rpm/installing-mariadb-with-zypper.md#installing-mariadb-packages-with-zypp) for more information.
 1. Make any desired changes to configuration options in [option files](../../configuring-mariadb-with-option-files.md), such as `my.cnf`. This includes removing any options that are no longer supported.
@@ -73,7 +73,7 @@ However, there are some things that have changed which could affect an upgrade:
 #### Replication
 
 
-* [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) introduces new, standards-compliant behavior for dealing with [primary keys over nullable columns](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns.md). In certain edge cases this could cause replication issues when replicating from a [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) master to a [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) slave using [statement-based replication](../../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based). See [MDEV-12248](https://jira.mariadb.org/browse/MDEV-12248).
+* [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) introduces new, standards-compliant behavior for dealing with [primary keys over nullable columns](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns.md). In certain edge cases this could cause replication issues when replicating from a [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) master to a [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) slave using [statement-based replication](../../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based). See [MDEV-12248](https://jira.mariadb.org/browse/MDEV-12248).
 
 
 #### Options That Have Changed Default Values
@@ -127,12 +127,12 @@ Note that explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL 
 ### Major New Features To Consider
 
 
-You might consider using the following major new features in [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md):
+You might consider using the following major new features in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1):
 
 
-* [Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is now included by default.
+* [Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) is now included by default.
 * [Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
-* [InnoDB/XtraDB Page Compression](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md)
+* [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md)
 
 
 ## Notes
@@ -144,9 +144,8 @@ You might consider using the following major new features in [MariaDB 10.1](../.
 ## See Also
 
 
-* [The features in MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+* [The features in MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
 * [Upgrading from MariaDB Galera Cluster 10.0 to MariaDB 10.1 with Galera Cluster](upgrading-galera-cluster-upgrading-from-mariadb-galera-cluster-100-to-maria)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
 * [Upgrading from MariaDB 5.5 to MariaDB 10.0](../upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
-<span></span>

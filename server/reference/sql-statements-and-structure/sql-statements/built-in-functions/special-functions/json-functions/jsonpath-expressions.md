@@ -159,5 +159,5 @@ will select the second element in each of the arrays present in the document.
 MariaDB's JSONPath syntax supports a subset of JSON Path's definition in the SQL Standard. The most notable things not supported are the `strict` mode and filters.
 
 
-MariaDB's JSONPath is close to MySQL's JSONPath. The wildcard step ( `**` ) is a non-standard extension that has the same meaning as in MySQL. The difference between MariaDB and MySQL's JSONPath is: MySQL doesn't allow one to specify the mode explicitly (but uses `lax ` mode implicitly).
+MariaDB's JSONPath is close to MySQL's JSONPath. The wildcard step ( `**` ) is a non-standard extension that has the same meaning as in MySQL. The difference between MariaDB and MySQL's JSONPath is: MySQL doesn't allow one to specify the mode explicitly (but uses `lax` mode implicitly).
 

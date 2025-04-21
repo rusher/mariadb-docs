@@ -5,7 +5,7 @@ The basic idea behind table elimination is that sometimes it is possible to
 resolve a query without even accessing some of the tables that the query refers
 to. One can invent many kinds of such cases, but in Table Elimination we
 targeted only a certain class of SQL constructs that one ends up writing when
-they are querying [highly-normalized](../../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) data.
+they are querying [highly-normalized](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/) data.
 
 
 The sample queries were drawn from “Anchor Modeling”, a database modeling

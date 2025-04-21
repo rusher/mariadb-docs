@@ -30,7 +30,7 @@ BACKUP STAGE END
 ```
 
 The above ensures that all non-transactional tables are properly flushed to disk before the snapshot is done.
-Using `BACKUP STAGE` commands is also more efficient than using the [FLUSH TABLES WITH READ LOCK](../flush-commands/flush-tables-for-export.md) command as the above set of commands will not block or be blocked by write operations to transactional tables.
+Using `BACKUP STAGE` commands is also more efficient than using the [FLUSH TABLES WITH READ LOCK](../flush-commands/flush.md) command as the above set of commands will not block or be blocked by write operations to transactional tables.
 
 
 Note that when the backup is completed, one should delete all files with the "#sql" prefix, as these are files used by concurrent running `ALTER TABLE`. Note that InnoDB will on server restart automatically delete any tables with the "#sql" prefix.

@@ -39,7 +39,7 @@ unsigned int STDCALL mysql_get_timeout_value(const MYSQL *mysql)
 unsigned int STDCALL mysql_get_timeout_value_ms(const MYSQL *mysql)
 ```
 
- This function is available starting from [MariaDB 5.5.28](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md) and [MariaDB 10.0.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes.md).
+ This function is available starting from [MariaDB 5.5.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes) and [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes).
 
 
 
@@ -52,13 +52,13 @@ unsigned int STDCALL mysql_get_timeout_value_ms(const MYSQL *mysql)
 
 
  The difference to mysql_get_timeout_value() is that this provides millisecond
- resolution for timeouts, rather than just whole seconds. In [MariaDB 10.0](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md),
+ resolution for timeouts, rather than just whole seconds. In [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0),
  internal timeouts can now be in milliseconds, while in 5.5 and below it was
  only whole seconds.
 
 
 
- This milliseconds version is provided also in [MariaDB 5.5](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) (from 5.5.28
+ This milliseconds version is provided also in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (from 5.5.28
  onwards) to make it easier for applications to work with either library
  version. However, in 5.5 it always returns a multiple of 1000 milliseconds.
 
@@ -345,72 +345,71 @@ operations; no need to call any special `_start()` variant. (Even if a
 `_cont()` call would ever be needed).
 
 
-* [mysql_num_rows()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_num_rows.md)
-* [mysql_num_fields()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_num_fields.md)
-* mysql_eof()`
-`
-* [mysql_fetch_field_direct()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_field_direct.md)
-* [mysql_fetch_fields()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_fields.md)
-* [mysql_row_tell](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_row_tell.md)
-* [mysql_field_tell()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_field_tell.md)
-* [mysql_field_count()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_field_count.md)
-* [mysql_affected_rows()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_affected_rows.md)
-* [mysql_insert_id()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id.md)
-* [mysql_errno()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_errno.md)
-* [mysql_error()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_error.md)
-* [mysql_sqlstate()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_sqlstate.md)
-* [mysql_warning_count()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_warning_count.md)
-* [mysql_info()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_info.md)
-* [mysql_thread_id()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_thread_id.md)
-* [mysql_character_set_name()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_character_set_name.md)
-* [mysql_init()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_init.md)
-* [mysql_ssl_set()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_ssl_set.md)
-* [mysql_get_ssl_cipher()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_ssl_cipher.md)
-* [mysql_use_result()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_use_result.md)
-* [mysql_get_character_set_info()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_character_set_info.md)
+* [mysql_num_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_num_rows)
+* [mysql_num_fields()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_num_fields)
+* mysql_eof()``
+* [mysql_fetch_field_direct()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_field_direct)
+* [mysql_fetch_fields()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_fields)
+* [mysql_row_tell](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_row_tell)
+* [mysql_field_tell()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_field_tell)
+* [mysql_field_count()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_field_count)
+* [mysql_affected_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_affected_rows)
+* [mysql_insert_id()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id)
+* [mysql_errno()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_errno)
+* [mysql_error()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_error)
+* [mysql_sqlstate()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_sqlstate)
+* [mysql_warning_count()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_warning_count)
+* [mysql_info()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_info)
+* [mysql_thread_id()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_thread_id)
+* [mysql_character_set_name()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_character_set_name)
+* [mysql_init()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_init)
+* [mysql_ssl_set()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_ssl_set)
+* [mysql_get_ssl_cipher()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_ssl_cipher)
+* [mysql_use_result()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_use_result)
+* [mysql_get_character_set_info()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_character_set_info)
 * mysql_set_local_infile_handler()
 * mysql_set_local_infile_default()
-* [mysql_get_server_info()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_server_info.md)
+* [mysql_get_server_info()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_server_info)
 * mysql_get_server_name()
-* [mysql_get_client_info()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_client_info.md)
-* [mysql_get_client_version()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_client_version.md)
-* [mysql_get_host_info()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_host_info.md)
-* [mysql_get_server_version()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_server_version.md)
-* [mysql_get_proto_info()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_proto_info.md)
-* [mysql_options()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options.md)
-* [mysql_data_seek()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_data_seek.md)
-* [mysql_row_seek()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_row_seek.md)
-* [mysql_field_seek()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_field_seek.md)
-* [mysql_fetch_lengths()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_lengths.md)
-* [mysql_fetch_field()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_field.md)
-* [mysql_escape_string()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_escape_string.md)
-* [mysql_hex_string()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_hex_string.md)
-* [mysql_real_escape_string()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_escape_string.md)
-* [mysql_debug()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_debug.md)
+* [mysql_get_client_info()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_client_info)
+* [mysql_get_client_version()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_client_version)
+* [mysql_get_host_info()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_host_info)
+* [mysql_get_server_version()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_server_version)
+* [mysql_get_proto_info()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_get_proto_info)
+* [mysql_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options)
+* [mysql_data_seek()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_data_seek)
+* [mysql_row_seek()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_row_seek)
+* [mysql_field_seek()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_field_seek)
+* [mysql_fetch_lengths()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_lengths)
+* [mysql_fetch_field()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_fetch_field)
+* [mysql_escape_string()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_escape_string)
+* [mysql_hex_string()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_hex_string)
+* [mysql_real_escape_string()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_escape_string)
+* [mysql_debug()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_debug)
 * myodbc_remove_escape()
 * mysql_thread_safe()
 * mysql_embedded()
 * mariadb_connection()
-* [mysql_stmt_init()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_init.md)
-* [mysql_stmt_fetch_column()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_fetch_column.md)
-* [mysql_stmt_param_count()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_param_count.md)
-* [mysql_stmt_attr_set()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_attr_set.md)
-* [mysql_stmt_attr_get()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_attr_get.md)
-* [mysql_stmt_bind_param()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_bind_param.md)
-* [mysql_stmt_bind_result()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_bind_result.md)
-* [mysql_stmt_result_metadata()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_result_metadata.md)
-* [mysql_stmt_param_metadata()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_param_metadata.md)
-* [mysql_stmt_errno()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_errno.md)
-* [mysql_stmt_error()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_error.md)
-* [mysql_stmt_sqlstate()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_sqlstate.md)
-* [mysql_stmt_row_seek()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_row_seek.md)
-* [mysql_stmt_row_tell()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_row_tell.md)
-* [mysql_stmt_data_seek()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_data_seek.md)
-* [mysql_stmt_num_rows()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_num_rows.md)
-* [mysql_stmt_affected_rows()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_affected_rows.md)
-* [mysql_stmt_insert_id()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_insert_id.md)
-* [mysql_stmt_field_count()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_field_count.md)
-* [mysql_more_results()](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_more_results.md)
+* [mysql_stmt_init()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_init)
+* [mysql_stmt_fetch_column()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_fetch_column)
+* [mysql_stmt_param_count()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_param_count)
+* [mysql_stmt_attr_set()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_attr_set)
+* [mysql_stmt_attr_get()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_attr_get)
+* [mysql_stmt_bind_param()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_bind_param)
+* [mysql_stmt_bind_result()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_bind_result)
+* [mysql_stmt_result_metadata()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_result_metadata)
+* [mysql_stmt_param_metadata()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_param_metadata)
+* [mysql_stmt_errno()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_errno)
+* [mysql_stmt_error()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_error)
+* [mysql_stmt_sqlstate()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_sqlstate)
+* [mysql_stmt_row_seek()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_row_seek)
+* [mysql_stmt_row_tell()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_row_tell)
+* [mysql_stmt_data_seek()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_data_seek)
+* [mysql_stmt_num_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_num_rows)
+* [mysql_stmt_affected_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_affected_rows)
+* [mysql_stmt_insert_id()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_insert_id)
+* [mysql_stmt_field_count()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_field_count)
+* [mysql_more_results()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_more_results)
 * mysql_get_socket()
 * mysql_get_timeout_value
 * mysql_get_timeout_value_ms

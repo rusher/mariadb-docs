@@ -12,5 +12,5 @@ SHOW INNODB STATUS
 
 
 This was a deprecated synonym for 
- `[SHOW ENGINE INNODB STATUS](show-engine-innodb-status.md)`. It was removed in MariaDB and MySQL 5.5.
+ `[SHOW ENGINE INNODB STATUS](show-engine.md)`. It was removed in MariaDB and MySQL 5.5.
 

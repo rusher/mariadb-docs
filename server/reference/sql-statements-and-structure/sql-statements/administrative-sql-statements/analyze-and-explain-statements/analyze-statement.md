@@ -9,7 +9,7 @@ The `ANALYZE statement` is similar to the `EXPLAIN statement`. `ANALYZE statemen
 
 
 This lets one check how close the optimizer's estimates about the query plan are to the reality. `ANALYZE` produces an overview, while the
-[ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) command provides a more detailed view of the query plan and the query execution.
+[ANALYZE FORMAT=JSON](analyze-format-json.md) command provides a more detailed view of the query plan and the query execution.
 
 
 The syntax is
@@ -19,7 +19,7 @@ The syntax is
 ANALYZE explainable_statement;
 ```
 
-where the statement is any statement for which one can run [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md).
+where the statement is any statement for which one can run [EXPLAIN](explain.md).
 
 
 ## Command Output
@@ -127,7 +127,7 @@ Indeed, we can also see customer.r_filtered=0.00. This shows that a part of WHER
 ## ANALYZE FORMAT=JSON
 
 
-[ANALYZE FORMAT=JSON](analyze-formatjson-examples.md) produces JSON output. It produces much more information than tabular `ANALYZE`.
+[ANALYZE FORMAT=JSON](analyze-format-json.md) produces JSON output. It produces much more information than tabular `ANALYZE`.
 
 
 ## Notes
@@ -135,13 +135,13 @@ Indeed, we can also see customer.r_filtered=0.00. This shows that a part of WHER
 
 * `ANALYZE UPDATE` or `ANALYZE DELETE` will actually make updates/deletes (`ANALYZE SELECT` will perform the select operation and then discard the resultset).
 * PostgreSQL has a similar command, `EXPLAIN ANALYZE`.
-* The [EXPLAIN in the slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) feature allows MariaDB to have `ANALYZE` output of slow queries printed into the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) (see [MDEV-6388](https://jira.mariadb.org/browse/MDEV-6388)).
+* The [EXPLAIN in the slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) feature allows MariaDB to have `ANALYZE` output of slow queries printed into the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/README.md) (see [MDEV-6388](https://jira.mariadb.org/browse/MDEV-6388)).
 
 
 ## See Also
 
 
-* [ANALYZE FORMAT=JSON](analyze-formatjson-examples.md)
+* [ANALYZE FORMAT=JSON](analyze-format-json.md)
 * [SHOW ANALYZE](../show/show-analyze.md)
 * [ANALYZE TABLE](../../table-statements/analyze-table.md)
 * JIRA task for ANALYZE statement, [MDEV-406](https://jira.mariadb.org/browse/MDEV-406)

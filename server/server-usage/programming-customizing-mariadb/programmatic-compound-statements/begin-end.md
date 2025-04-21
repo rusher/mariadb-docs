@@ -76,13 +76,12 @@ BEGIN
 END;
 ```
 
-In this example, a [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md) variable, `x` is declared in the outter block. But in the inner block `x` is re-declared as a [CHAR](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) and an `y` variable is declared. The inner [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) shows the "new" value of `x`, and the value of `y`. But when x is selected in the outer block, the "old" value is returned. The final [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) doesn't try to read `y`, because it doesn't exist in that context.
+In this example, a [TINYINT](../../../reference/data-types/data-types-numeric-data-types/tinyint.md) variable, `x` is declared in the outter block. But in the inner block `x` is re-declared as a [CHAR](../../../reference/data-types/string-data-types/char.md) and an `y` variable is declared. The inner [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) shows the "new" value of `x`, and the value of `y`. But when x is selected in the outer block, the "old" value is returned. The final [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) doesn't try to read `y`, because it doesn't exist in that context.
 
 
 ## See Also
 
 
 * [Using compound statements outside of stored programs](using-compound-statements-outside-of-stored-programs.md)
-* [Changes in Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Changes in Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
-<span></span>

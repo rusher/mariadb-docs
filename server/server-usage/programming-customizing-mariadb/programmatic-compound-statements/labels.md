@@ -22,7 +22,7 @@ Labels need not be unique in the stored program they belong to. However, a label
 ERROR 1309 (42000): Redefining label <label_name>
 ```
 
-[LEAVE](leave.md) and [ITERATE](iterate.md) statements can be used to exit or repeat a portion of code identified by a label. They must be in the same [Stored Routine](../stored-routines/README.md), [Trigger](../triggers-events/triggers/triggers-and-implicit-locks.md) or [Event](../triggers-events/event-scheduler/events.md) which contains the target label.
+[LEAVE](leave.md) and [ITERATE](iterate.md) statements can be used to exit or repeat a portion of code identified by a label. They must be in the same [Stored Routine](../stored-routines/README.md), [Trigger](../triggers-events/triggers/README.md) or [Event](../triggers-events/event-scheduler/events.md) which contains the target label.
 
 
 Below is an example using a simple label that is used to exit a [LOOP](loop.md):
@@ -53,4 +53,3 @@ BEGIN
    DO something();
 END `my_label`;
 ```
-<span></span>

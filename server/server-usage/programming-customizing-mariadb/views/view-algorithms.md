@@ -29,13 +29,13 @@ Views with definition ALGORITHM=MERGE or ALGORITHM=TEMPTABLE got accidentally sw
 A view cannot be of type ALGORITHM=MERGE if it uses any of the following:
 
 
-* [HAVING](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
-* [LIMIT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit)
-* [GROUP BY](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by)
-* [DISTINCT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#distinct)
+* [HAVING](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)
+* [LIMIT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit)
+* [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#group-by)
+* [DISTINCT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#distinct)
 * [UNION](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
 * [UNION ALL](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)
-* An aggregate function, such as [MAX()](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md), [MIN()](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md), [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
+* An aggregate function, such as [MAX()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md), [MIN()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md), [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) or [COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md)
 * subquery in the SELECT list
 * if it has no underlying table because it refers only to literal values
 
@@ -90,4 +90,3 @@ SELECT field1, field2 FROM table_name WHERE (field3 > '2013-06-01') AND (field1 
 
 When connecting with `AND`, parentheses are added to make sure the correct precedence is used.
 
-<span></span>

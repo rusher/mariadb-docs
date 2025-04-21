@@ -5,7 +5,7 @@
 ## Ignoring Errors
 
 
-Normally [INSERT](../../built-in-functions/string-functions/insert-function.md) stops and rolls back when it encounters an error.
+Normally [INSERT](insert.md) stops and rolls back when it encounters an error.
 
 
 By using the [IGNORE](ignore.md) keyword all errors are converted to warnings, which will not stop inserts of additional rows.
@@ -17,7 +17,7 @@ Invalid values are changed to the closest valid value and inserted, with a warni
 The IGNORE and DELAYED options are ignored when you use [ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md).
 
 
-Prior to MySQL and [MariaDB 5.5.28](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md), no warnings were issued for duplicate key errors when using `IGNORE`.
+Prior to MySQL and [MariaDB 5.5.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes), no warnings were issued for duplicate key errors when using `IGNORE`.
 You can get the old behavior if you set [OLD_MODE](../../../../../server-management/variables-and-modes/old-mode.md) to `NO_DUP_KEY_WARNINGS_WITH_IGNORE`.
 
 
@@ -98,7 +98,7 @@ See [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md) for furt
 ## See Also
 
 
-* [INSERT](../../built-in-functions/string-functions/insert-function.md)
+* [INSERT](insert.md)
 * [INSERT DELAYED](insert-delayed.md)
 * [INSERT SELECT](insert-select.md)
 * [HIGH_PRIORITY and LOW_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)

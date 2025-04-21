@@ -39,7 +39,7 @@ The script will will set up 3 different repositories in a single repository conf
 ### MariaDB Repository
 
 
-The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../reference/plugins/README.md), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 The binaries in MariaDB Corporation's **MariaDB Repository** are currently identical to the binaries in MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
@@ -57,7 +57,7 @@ If you would not like to configure the **MariaDB Repository** on your system, th
 ### MariaDB MaxScale Repository
 
 
-The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md).
+The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](/kb/en/maxscale/).
 
 
 By default, the script will configure your system to install from the repository of the *latest* GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g. '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
@@ -162,7 +162,7 @@ By default, the script will configure your system to install from the repository
 The script can also configure your system to install from the repository of a different version of MariaDB if you use the `--mariadb-server-version` option.
 
 
-The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), that would be:
+The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), that would be:
 
 
 ```
@@ -183,7 +183,7 @@ The following MariaDB versions are currently supported:
 
 
 If you want to pin the repository of a specific minor release, such as [MariaDB
-10.6.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-14-release-notes.md), then you can also specify the minor release. For example,
+10.6.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-14-release-notes), then you can also specify the minor release. For example,
 `mariadb-10.6.14`. This may be helpful if you want to avoid upgrades. However,
 avoiding upgrades is not recommended, since minor maintenance releases may
 contain important bug fixes and fixes for security vulnerabilities.
@@ -379,7 +379,7 @@ To install MariaDB on Red Hat Enterprise Linux (RHEL) and CentOS, see the instru
 sudo yum install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
-To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [MariaDB MaxScale Installation Guide](../../../../maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide.md). For example:
+To install MariaDB MaxScale on Red Hat Enterprise Linux (RHEL) and CentOS, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
 
 ```
@@ -389,14 +389,14 @@ sudo yum install maxscale
 ### Installing Packages on Debian and Ubuntu
 
 
-To install MariaDB on Debian and Ubuntu, see the instructions at [Installing MariaDB Packages with APT](automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md#installing-mariadb-packages-with-apt). For example:
+To install MariaDB on Debian and Ubuntu, see the instructions at [Installing MariaDB Packages with APT](installing-mariadb-deb-files.md#installing-mariadb-packages-with-apt). For example:
 
 
 ```
 sudo apt-get install mariadb-server mariadb-client mariadb-backup
 ```
 
-To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](../../../../maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide.md). For example:
+To install MariaDB MaxScale on Debian and Ubuntu, see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
 
 ```
@@ -413,7 +413,7 @@ To install MariaDB on SUSE Linux Enterprise Server (SLES), see the instructions 
 sudo zypper install MariaDB-server MariaDB-client MariaDB-backup
 ```
 
-To install MariaDB MaxScale on SUSE Linux Enterprise Server (SLES), see the instructions at [MariaDB MaxScale Installation Guide](../../../../maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide.md). For example:
+To install MariaDB MaxScale on SUSE Linux Enterprise Server (SLES), see the instructions at [MariaDB MaxScale Installation Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide). For example:
 
 
 ```

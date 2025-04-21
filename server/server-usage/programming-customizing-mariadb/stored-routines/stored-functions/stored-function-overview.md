@@ -61,7 +61,7 @@ This function takes an argument, `price` which is defined as a DECIMAL, and retu
 Take a look at the [CREATE FUNCTION](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) page for more details.
 
 
-From [MariaDB 10.3.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), it is also possible to create [stored aggregate functions](stored-aggregate-functions.md).
+From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), it is also possible to create [stored aggregate functions](stored-aggregate-functions.md).
 
 
 ## Stored Function listings and definitions
@@ -150,4 +150,3 @@ See the article [Stored Routine Privileges](stored-routine-privileges.md).
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 * [Stored Aggregate Functions](stored-aggregate-functions.md).
 
-<span></span>

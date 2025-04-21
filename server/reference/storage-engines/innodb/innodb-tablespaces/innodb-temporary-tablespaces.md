@@ -1,13 +1,13 @@
 
 # InnoDB Temporary Tablespaces
 
-When the user creates a temporary table using the [CREATE TEMPORARY TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement and the engine is set as InnoDB, MariaDB creates a temporary tablespace file. When the table is not compressed, MariaDB writes to a shared temporary tablespace as defined by the [innodb_temp_data_file_path](../innodb-system-variables.md#innodb_temp_data_file_path) system variable. MariaDB does not allow the creation of ROW_FORMAT=COMPRESSED temporary tables. All temporary tables will be uncompressed. MariaDB deletes temporary tablespaces when the server shuts down gracefully and is recreated when it starts again. It cannot be placed on a raw device.
+When the user creates a temporary table using the [CREATE TEMPORARY TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement and the engine is set as InnoDB, MariaDB creates a temporary tablespace file. When the table is not compressed, MariaDB writes to a shared temporary tablespace as defined by the [innodb_temp_data_file_path](../innodb-system-variables.md#innodb_temp_data_file_path) system variable. MariaDB does not allow the creation of ROW_FORMAT=COMPRESSED temporary tables. All temporary tables will be uncompressed. MariaDB deletes temporary tablespaces when the server shuts down gracefully and is recreated when it starts again. It cannot be placed on a raw device.
 
 
 Internal temporary tablespaces, (that is, temporary tables that cannot be kept in memory) use either Aria or MyISAM, depending on the [aria_used_for_temp_tables](../../aria/aria-system-variables.md#aria_used_for_temp_tables) system variable. You can set the default storage engine for user-created temporary tables using the [default_tmp_storage_engine](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) system variable.
 
 
-Prior to [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), temporary tablespaces existed as part of the InnoDB [system](innodb-system-tablespaces.md) tablespace or were file-per-table depending on the configuration of the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable.
+Prior to [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), temporary tablespaces existed as part of the InnoDB [system](innodb-system-tablespaces.md) tablespace or were file-per-table depending on the configuration of the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable.
 
 
 ## Syntax for the value of the innodb_temp_data_file_path variable
@@ -66,8 +66,8 @@ Unlike normal tablespaces, temporary tablespaces are deleted when you stop Maria
 
 
 
-##### MariaDB starting with [11.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md)
-From [MariaDB 11.3.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md), the temporary tablespace can be shrunk by setting [innodb_truncate_temporary_tablespace_now](../innodb-system-variables.md#innodb_truncate_temporary_tablespace_now) to ON:
+##### MariaDB starting with [11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
+From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes), the temporary tablespace can be shrunk by setting [innodb_truncate_temporary_tablespace_now](../innodb-system-variables.md#innodb_truncate_temporary_tablespace_now) to ON:
 
 ```
 SET GLOBAL innodb_truncate_temporary_tablespace_now=1;

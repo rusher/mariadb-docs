@@ -21,7 +21,7 @@ for MariaDB for passwordless login.
 ## Installing the Plugin's Package
 
 
-Since [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), on Windows, the plugin is included in the server, and there is no need for separate installation.
+Since [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), on Windows, the plugin is included in the server, and there is no need for separate installation.
 
 
 The `gssapi` authentication plugin's shared library is included in MariaDB packages as the `auth_gssapi.so` or `auth_gssapi.dll` shared library on systems where it can be built.
@@ -59,7 +59,7 @@ sudo yum install MariaDB-gssapi-server
 ##### Installing with apt-get
 
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md) from MariaDB's
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's
 repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
 
@@ -80,19 +80,19 @@ sudo zypper install MariaDB-gssapi-server
 ### Installing on Windows
 
 
-Since [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the plugin is included in the server, and there is no need for separate installation.
+Since [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the plugin is included in the server, and there is no need for separate installation.
 
 
-Before [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the `gssapi` authentication plugin is included in [MSI](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows.
+Before [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the `gssapi` authentication plugin is included in [MSI](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows.
 
 
 ## Installing the Plugin
 
 
-Since [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), on Windows, the plugin is included in the server, and there is no need for separate installation.
+Since [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), on Windows, the plugin is included in the server, and there is no need for separate installation.
 
 
-Before [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md) on Windows, and on other operating systems, although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
+Before [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) on Windows, and on other operating systems, although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
@@ -306,15 +306,15 @@ Using SIDs will perform slightly faster than using name (since it will spare tra
 
 
 
-##### MariaDB starting with [10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md)
-From [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), on Windows, in addition to the usual authentication with a password, passwordless authentication is permitted, when creating the 'root' user during install.
+##### MariaDB starting with [10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
+From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), on Windows, in addition to the usual authentication with a password, passwordless authentication is permitted, when creating the 'root' user during install.
 This works in a similar manner to [Unix socket authentication](../../../security/user-account-management/authentication-from-mariadb-10-4.md). However, since auth_gssapi, unlike unix_socket, requires client support, to avoid failures when MariaDB is used with 3rd party drivers, authentication on Windows first attempts password-based native_authentication, and only if it fails, falls back to passwordless auth_gssapi.
 
 
 ## Client Authentication Plugins
 
 
-For clients that use the `libmysqlclient` or [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) libraries, MariaDB provides one client authentication plugin that is compatible with the `gssapi` authentication plugin:
+For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) libraries, MariaDB provides one client authentication plugin that is compatible with the `gssapi` authentication plugin:
 
 
 * `auth_gssapi_client`
@@ -339,19 +339,19 @@ The `auth_gssapi_client` client authentication plugin receives the principal nam
 ### Using the Plugin with MariaDB Connector/C
 
 
-[MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) supports `gssapi` authentication using the [client authentication plugins](#client-authentication-plugins) mentioned in the previous section since MariaDB Connector/C 3.0.1.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) supports `gssapi` authentication using the [client authentication plugins](#client-authentication-plugins) mentioned in the previous section since MariaDB Connector/C 3.0.1.
 
 
 ### Using the Plugin with MariaDB Connector/ODBC
 
 
-[MariaDB Connector/ODBC](../../../../connectors/mariadb-connector-odbc/README.md) supports `gssapi` authentication using the [client authentication plugins](#client-authentication-plugins) mentioned in the previous section since MariaDB Connector/ODBC 3.0.0.
+[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/) supports `gssapi` authentication using the [client authentication plugins](#client-authentication-plugins) mentioned in the previous section since MariaDB Connector/ODBC 3.0.0.
 
 
 ### Using the Plugin with MariaDB Connector/J
 
 
-[MariaDB Connector/J](../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md) supports `gssapi` authentication since MariaDB Connector/J 1.4.0. Current documentation can be found [here](../../../../connectors/mariadb-connector-j/gssapi-authentication-with-mariadb-connector-j.md).
+[MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/) supports `gssapi` authentication since MariaDB Connector/J 1.4.0. Current documentation can be found [here](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/gssapi-authentication-with-mariadb-connector-j).
 
 
 ### Using the Plugin with MariaDB Connector/Node.js
@@ -363,7 +363,7 @@ The `auth_gssapi_client` client authentication plugin receives the principal nam
 ### Using the Plugin with MySqlConnector for .NET
 
 
-[MySqlConnector for ADO.NET](../../../../connectors/net-connector/mysqlconnector-for-ado-net.md) supports `gssapi` authentication since MySqlConnector 0.47.0.
+[MySqlConnector for ADO.NET](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/net-connector/mysqlconnector-for-ado-net) supports `gssapi` authentication since MySqlConnector 0.47.0.
 
 
 The support is transparent. Normally, the connector only needs to be provided the correct user name, and no other parameters are required.
@@ -393,8 +393,8 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.15](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes.md) |
-| 1.0 | Beta | [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes) |
+| 1.0 | Beta | [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes) |
 
 
 
@@ -413,7 +413,7 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 * Dynamic: No
 * Data Type: `string`
 * Default Value: ''
-* Introduced: [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
+* Introduced: [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes)
 
 
 
@@ -428,7 +428,7 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 * Dynamic: No
 * Data Type: `string`
 * Default Value: ''
-* Introduced: [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
+* Introduced: [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes)
 
 
 
@@ -444,7 +444,7 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 * Data Type: `enumerated`
 * Default Value: `Negotiate`
 * Valid Values: `Kerberos`, `Negotiate`
-* Introduced: [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
+* Introduced: [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes)
 
 
 
@@ -467,6 +467,6 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
-* Introduced: [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
+* Introduced: [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes)
 
 

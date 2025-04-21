@@ -43,7 +43,7 @@ There are currently three options for key management:
 
 
 * [File Key Management Plugin](key-management-and-encryption-plugins/file-key-management-encryption-plugin.md)
-* [AWS Key Management Plugin](key-management-and-encryption-plugins/aws-key-management-encryption-plugin-setup-guide.md)
+* [AWS Key Management Plugin](key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md)
 * [eperi Gateway for Databases](key-management-and-encryption-plugins/encryption-key-management.md#eperi-gateway-for-databases)
 
 

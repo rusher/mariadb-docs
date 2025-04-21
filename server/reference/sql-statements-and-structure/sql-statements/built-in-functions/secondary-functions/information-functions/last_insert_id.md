@@ -14,14 +14,14 @@ LAST_INSERT_ID(), LAST_INSERT_ID(expr)
 
 LAST_INSERT_ID() (no arguments) returns
 the first automatically generated value successfully inserted for an
-[AUTO_INCREMENT](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) column as a result of the most recently executed INSERT
+[AUTO_INCREMENT](../../../../../data-types/auto_increment.md) column as a result of the most recently executed INSERT
 statement. The value of LAST_INSERT_ID() remains unchanged if no rows
 are successfully inserted.
 
 
 If one gives an argument to LAST_INSERT_ID(), then it will return the value of the expression and
 the next call to LAST_INSERT_ID() will return the same value. The value will also be sent to the client
-and can be accessed by the [mysql_insert_id](../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id.md) function.
+and can be accessed by the [mysql_insert_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id) function.
 
 
 For example, after inserting a row that generates an AUTO_INCREMENT
@@ -51,7 +51,7 @@ One can also use [INSERT...RETURNING](../../../data-manipulation/inserting-loadi
 
 
 The value of LAST_INSERT_ID() will be consistent across all versions
-if all rows in the [INSERT](../../string-functions/insert-function.md) or [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement were successful.
+if all rows in the [INSERT](../../../data-manipulation/inserting-loading-data/insert.md) or [UPDATE](../../../data-manipulation/changing-deleting-data/update.md) statement were successful.
 
 
 The currently executing statement does not affect the value of
@@ -84,7 +84,7 @@ kind of routine:
 * If a [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) executes statements that change the value of LAST_INSERT_ID(), the new value will be seen by statements that follow the procedure call.
 
 
-* For [stored functions](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) and [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) that change the value, the value is restored when the function or trigger ends, so following statements will not see a changed value.
+* For [stored functions](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) and [triggers](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) that change the value, the value is restored when the function or trigger ends, so following statements will not see a changed value.
 
 
 ## Examples
@@ -197,8 +197,8 @@ SELECT * FROM t;
 ## See Also
 
 
-* [mysql_insert_id](../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id.md)
-* [AUTO_INCREMENT](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [mysql_insert_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id)
+* [AUTO_INCREMENT](../../../../../data-types/auto_increment.md)
 * [AUTO_INCREMENT handling in InnoDB](../../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [Sequences](../../../../sequences/README.md) - an alternative to auto_increment
 * [INSERT...RETURNING](../../../data-manipulation/inserting-loading-data/insertreturning.md)

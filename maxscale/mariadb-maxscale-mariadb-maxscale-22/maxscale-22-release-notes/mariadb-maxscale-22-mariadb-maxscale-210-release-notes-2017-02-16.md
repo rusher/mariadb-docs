@@ -321,7 +321,7 @@ Read [Module Commands](../maxscale-22-reference/mariadb-maxscale-22-module-comma
 
 
 In the 2.1 release of MaxScale, the [*dbfwfilter*}(../Filters/Database-Firewall-Filter.md),
-[avrorouter](../maxscale-22-tutorials/mariadb-maxscale-22-avrorouter-tutorial.md), [cache](../maxscale-22-filters/mariadb-maxscale-22-cache.md) and
+[avrorouter](../maxscale-22-routers/mariadb-maxscale-22-avrorouter.md), [cache](../maxscale-22-filters/mariadb-maxscale-22-cache.md) and
 [masking](../maxscale-22-filters/mariadb-maxscale-22-masking.md) modules implement module commands.
 
 

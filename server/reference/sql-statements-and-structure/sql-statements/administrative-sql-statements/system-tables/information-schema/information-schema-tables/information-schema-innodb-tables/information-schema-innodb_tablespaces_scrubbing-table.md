@@ -1,10 +1,10 @@
 
 # Information Schema INNODB_TABLESPACES_SCRUBBING Table
 
-The table was removed in [MariaDB 10.5.2](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md) - see [MDEV-15528](https://jira.mariadb.org/browse/MDEV-15528).
+The table was removed in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) - see [MDEV-15528](https://jira.mariadb.org/browse/MDEV-15528).
 
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_TABLESPACES_SCRUBBING` table contains [data scrubbing](../../../../../../../storage-engines/innodb/innodb-data-scrubbing.md) information.
+The [Information Schema](../../README.md) `INNODB_TABLESPACES_SCRUBBING` table contains [data scrubbing](../../../../../../../storage-engines/innodb/innodb-data-scrubbing.md) information.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.

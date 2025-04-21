@@ -1,7 +1,7 @@
 
 # Aria System Variables
 
-This page documents system variables related to the [Aria storage engine](../s3-storage-engine/aria_s3_copy.md). For options that are not system variables, see [Aria Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to the [Aria storage engine](README.md). For options that are not system variables, see [Aria Options](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 
 See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting system variables.
@@ -21,8 +21,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Default Value: `8192`
 * Range:
 
-  * >= [MariaDB 10.4.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md): `4096` to `32768` in increments of `1024`
-  * <= [MariaDB 10.4.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md): `1024` to `32768` in increments of `1024`
+  * >= [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes): `4096` to `32768` in increments of `1024`
+  * <= [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes): `1024` to `32768` in increments of `1024`
 
 
 
@@ -55,7 +55,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `aria_encrypt_tables`
 
 
-* Description: Enables automatic encryption of all user-created Aria tables that have the `[ROW_FORMAT](../../sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)` table option set to `[PAGE](aria-storage-formats.md#page)`. See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
+* Description: Enables automatic encryption of all user-created Aria tables that have the `[ROW_FORMAT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)` table option set to `[PAGE](aria-storage-formats.md#page)`. See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
 * Commandline: `aria-encrypt-tables={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -125,7 +125,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `string`
 * Default Value: Same as DATADIR
-* Introduced: [MariaDB 10.5.20](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-20-release-notes.md), [MariaDB 10.6.13](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-13-release-notes.md), [MariaDB 10.11.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes.md) (as a system variable, existed as an option only before that)
+* Introduced: [MariaDB 10.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-20-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-13-release-notes), [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes) (as a system variable, existed as an option only before that)
 
 
 
@@ -144,7 +144,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `aria_log_purge_type`
 
 
-* Description: Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md);
+* Description: Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md);
 * Commandline: `--aria-log-purge-type=name`
 * Scope: Global
 * Dynamic: Yes
@@ -170,7 +170,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `aria_page_checksum`
 
 
-* Description: Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE_CHECKSUM clause in [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md).
+* Description: Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE_CHECKSUM clause in [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md).
 * Commandline: `--aria-page-checksum=#`
 * Scope: Global
 * Dynamic: Yes
@@ -234,7 +234,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `aria_recover`
 
 
-* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md). See [aria_recover_options](#aria_recover_options) for the description.
+* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes). See [aria_recover_options](#aria_recover_options) for the description.
 
 
 
@@ -243,7 +243,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 * Description: Specifies how corrupted tables should be automatically repaired. More than one option can be specified, for example `FORCE,BACKUP`.
 
-  * `NORMAL`: Normal automatic repair, the default until [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md)
+  * `NORMAL`: Normal automatic repair, the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)
   * `OFF`: Autorecovery is disabled, the equivalent of not using the option
   * `QUICK`: Does not check rows in the table if there are no delete blocks.
   * `FORCE`: Runs the recovery even if it determines that more than one row from the data file will be lost.
@@ -254,10 +254,10 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `enumeration`
 * Default Value:
 
-  * `BACKUP,QUICK` (>= [MariaDB 10.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md))
-  * `NORMAL` (<= [MariaDB 10.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md))
+  * `BACKUP,QUICK` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
+  * `NORMAL` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
 * Valid Values: `NORMAL`, `BACKUP`, `FORCE`, `QUICK`, `OFF`
-* Introduced: [MariaDB 10.2.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md)
+* Introduced: [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes)
 
 
 
@@ -276,7 +276,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `aria_sort_buffer_size`
 
 
-* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../sql-statements-and-structure/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md).
+* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../sql-statements-and-structure/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md).
 * Commandline: `--aria-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -314,7 +314,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `aria_used_for_temp_tables`
 
 
-* Description: Readonly variable indicating whether the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine is used for temporary tables. If set to `ON`, the default, the Aria storage engine is used. If set to `OFF`, MariaDB reverts to using [MyISAM](../myisam-storage-engine/myisam-system-variables.md) for on-disk temporary tables. The [MEMORY](../memory-storage-engine.md) storage engine is used for temporary tables regardless of this variable's setting where appropriate. The default can be changed by not using the `--with-aria-tmp-tables` option when building MariaDB.
+* Description: Readonly variable indicating whether the [Aria](README.md) storage engine is used for temporary tables. If set to `ON`, the default, the Aria storage engine is used. If set to `OFF`, MariaDB reverts to using [MyISAM](../myisam-storage-engine/README.md) for on-disk temporary tables. The [MEMORY](../memory-storage-engine.md) storage engine is used for temporary tables regardless of this variable's setting where appropriate. The default can be changed by not using the `--with-aria-tmp-tables` option when building MariaDB.
 * Commandline: No
 * Scope: Global
 * Dynamic: No
@@ -326,7 +326,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `deadlock_search_depth_long`
 
 
-* Description: Long search depth for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine.
+* Description: Long search depth for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](README.md) storage engine.
 * Commandline: `--deadlock-search-depth-long=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -339,7 +339,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `deadlock_search_depth_short`
 
 
-* Description: Short search depth for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine.
+* Description: Short search depth for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](README.md) storage engine.
 * Commandline: `--deadlock-search-depth-short=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -352,10 +352,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `deadlock_timeout_long`
 
 
-* Description: Long timeout in microseconds for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine.
-* Commandline: `--deadlock-timeout-long=
-
-# `
+* Description: Long timeout in microseconds for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](README.md) storage engine.
+* Commandline: `--deadlock-timeout-long=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -367,10 +365,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `deadlock_timeout_short`
 
 
-* Description: Short timeout in microseconds for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine.
-* Commandline: `--deadlock-timeout-short=
-
-# `
+* Description: Short timeout in microseconds for the [two-step deadlock detection](aria-two-step-deadlock-detection.md). Only used by the [Aria](README.md) storage engine.
+* Commandline: `--deadlock-timeout-short=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`

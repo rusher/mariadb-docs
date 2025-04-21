@@ -38,7 +38,7 @@
 * When running in a container, MaxScale adapts to the amount of resources
  available in the container.
 * MaxGUI Query Editor now requires delimiter changes for compound statements such
- as stored procedures, functions, etc. See [delimiters documentation](../../server/clients-and-utilities/mariadb-client/delimiters.md)
+ as stored procedures, functions, etc. See [delimiters documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters)
  for more information. However, the dedicated SQL editor (opened via "Create Function",
  "Alter Function", "Create Trigger" etc., in the schema tree explorer) does not require
  delimiter changes as it handles SQL as a single statement.
@@ -53,7 +53,7 @@
  file. This is a low-overhead alternative to enabling `log_info` and is
  intended to be used for debugging application problems in production where the
  overhead of `log_info` cannot be afforded.
-* The [Avro Router](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md) and the [CDC Protocol](mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md)
+* The [Avro Router](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md) and the [CDC Protocol](mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md)
  have been deprecated and will be removed in the next major release.
  [KafkaCDC](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md) can be used instead.
 * The [passive](https://mariadb.com/kb/Getting-Started/Configuration-Guide#passive) configuration

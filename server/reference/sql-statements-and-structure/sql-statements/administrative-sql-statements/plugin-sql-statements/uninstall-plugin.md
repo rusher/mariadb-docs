@@ -12,7 +12,7 @@ UNINSTALL PLUGIN [IF EXISTS] plugin_name
 ## Description
 
 
-This statement removes a single installed [plugin](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md). To uninstall the whole library which contains the plugin, use [UNINSTALL SONAME](uninstall-soname.md). You cannot uninstall a plugin if any table that uses it is open.
+This statement removes a single installed [plugin](../../../../plugins/README.md). To uninstall the whole library which contains the plugin, use [UNINSTALL SONAME](uninstall-soname.md). You cannot uninstall a plugin if any table that uses it is open.
 
 
 `plugin_name` must be the name of some plugin that is listed

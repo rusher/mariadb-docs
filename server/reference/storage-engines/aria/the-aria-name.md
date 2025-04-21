@@ -1,7 +1,7 @@
 
 # The Aria Name
 
-The [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine used to be called Maria. This page gives the history
+The [Aria](README.md) storage engine used to be called Maria. This page gives the history
 and background of how and why this name was changed to Aria.
 
 

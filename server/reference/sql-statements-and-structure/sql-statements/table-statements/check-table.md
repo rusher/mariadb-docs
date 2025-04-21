@@ -14,14 +14,14 @@ option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 
 
 `CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for
-[Archive](../../../storage-engines/archive/README.md), [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md), [CSV](../../../storage-engines/csv/csv-overview.md), [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [MyISAM](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. For Aria and MyISAM tables, the
+[Archive](../../../storage-engines/archive/README.md), [Aria](../../../storage-engines/aria/README.md), [CSV](../../../storage-engines/csv/README.md), [InnoDB](../../../storage-engines/innodb/README.md) and [MyISAM](../../../storage-engines/myisam-storage-engine/README.md) tables. For Aria and MyISAM tables, the
 key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](../../../storage-engines/csv/checking-and-repairing-csv-tables.md).
 
 
-As an alternative, [myisamchk](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk-table-information.md) is a commandline tool for checking MyISAM tables when the tables are not being accessed. For Aria tables, there is a similar tool: [aria_chk](../../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md).
+As an alternative, [myisamchk](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is a commandline tool for checking MyISAM tables when the tables are not being accessed. For Aria tables, there is a similar tool: [aria_chk](../../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md).
 
 
-For checking [dynamic columns](../../nosql/dynamic-columns-api.md) integrity, [COLUMN_CHECK()](../../nosql/dynamic-columns-from-mariadb-10.md) can be used.
+For checking [dynamic columns](../../nosql/dynamic-columns.md) integrity, [COLUMN_CHECK()](../../nosql/dynamic-columns-from-mariadb-10.md) can be used.
 
 
 `CHECK TABLE` can also check views for problems, such as tables
@@ -29,7 +29,7 @@ that are referenced in the view definition that no longer exist.
 
 
 `CHECK TABLE` is also supported for partitioned tables. You can
-use `[ALTER TABLE](../data-definition/alter/alter-tablespace.md) ... CHECK PARTITION` 
+use `[ALTER TABLE](../data-definition/alter/alter-table.md) ... CHECK PARTITION` 
 to check one or more partitions.
 
 
@@ -45,7 +45,7 @@ storage engines:
 | CHANGED | Check only tables that has changed since last REPAIR / CHECK. Only supported by the MyISAM and Aria engines. For other engines the table is checked normally. |
 | QUICK | Do a fast check. For MyISAM and Aria, this means skipping the check of the delete link chain, which may take some time. |
 | MEDIUM | Scan also the data files. Checks integrity between data and index files with checksums. In most cases this should find all possible errors. |
-| EXTENDED | Does a full check to verify every possible error. For InnoDB, Aria, and MyISAM, verify for each row that all its keys exists, and for those index keys, they point back to the primary clustered key. This may take a long time on large tables. This option was previously ignored by InnoDB before [MariaDB 10.6.11](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-11-release-notes.md), [MariaDB 10.7.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-10-7-7-release-notes.md), [MariaDB 10.8.6](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-6-release-notes.md) and [MariaDB 10.9.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-10-9-4-release-notes.md). From [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md), also checks for referential integrity. |
+| EXTENDED | Does a full check to verify every possible error. For InnoDB, Aria, and MyISAM, verify for each row that all its keys exists, and for those index keys, they point back to the primary clustered key. This may take a long time on large tables. This option was previously ignored by InnoDB before [MariaDB 10.6.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-11-release-notes), [MariaDB 10.7.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-7-release-notes), [MariaDB 10.8.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-6-release-notes) and [MariaDB 10.9.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-4-release-notes). From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118), also checks for referential integrity. |
 
 
 
@@ -53,7 +53,7 @@ For most cases running `CHECK TABLE` without options or `MEDIUM` should be
 good enough.
 
 
-The [Aria](../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine supports [progress reporting](../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for this statement.
+The [Aria](../../../storage-engines/aria/README.md) storage engine supports [progress reporting](../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for this statement.
 
 
 If you want to know if two tables are identical, take a look
@@ -84,7 +84,7 @@ CHECK TABLE y EXTENDED;
 +--------+-------+----------+----------+
 ```
 
-From [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md):
+From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118):
 
 
 ```

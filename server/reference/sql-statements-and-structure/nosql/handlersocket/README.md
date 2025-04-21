@@ -1,7 +1,7 @@
 
 # HandlerSocket
 
-HandlerSocket gives you direct access to [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [SPIDER](../../../storage-engines/spider/spider-functions/spider_copy_tables.md). It is included in MariaDB as a ready-to use plugin.
+HandlerSocket gives you direct access to [InnoDB](../../../storage-engines/innodb/README.md) and [SPIDER](../../../storage-engines/spider/README.md). It is included in MariaDB as a ready-to use plugin.
 
 
 HandlerSocket is a NoSQL plugin for MariaDB. It works as a daemon inside the mariadbd process, accepting TCP connections, and executing requests from clients. HandlerSocket does not support SQL queries. Instead, it supports simple CRUD operations on tables.

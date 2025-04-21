@@ -1,7 +1,7 @@
 
 # aria_chk
 
-`aria_chk` is used to check, repair, optimize, sort and get information about [Aria](../../reference/storage-engines/s3-storage-engine/aria_s3_copy.md) tables.
+`aria_chk` is used to check, repair, optimize, sort and get information about [Aria](../../reference/storage-engines/aria/README.md) tables.
 
 
 With the MariaDB server you can use [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md),
@@ -189,4 +189,3 @@ In case you have a serious problem and have to use `--safe-recover`:
 ```
 aria_chk --safe-recover --zerofill --page_buffer_size=2G */*.MAI
 ```
-<span></span>

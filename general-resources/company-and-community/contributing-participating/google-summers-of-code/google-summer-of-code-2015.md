@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2015
 
-We participated in the Google Summer of Code 2015. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
+We participated in the Google Summer of Code 2015. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
 
 
 
@@ -29,7 +29,7 @@ This project consists of two parts -- it can either be performed by 2 students o
 ### Support for GTID in mysqlbinlog
 
 
-The [mysqlbinlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) tool needs to be updated to understand the replication feature called [Global Transaction IDs](../../../../server/server-usage/replication-cluster-multi-master/standard-replication/gtid.md) (GTIDs) in MariaDB 10. The current version does not support GTIDs and the MySQL variant does not speak MariaDB 10's GTIDs.
+The [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog/) tool needs to be updated to understand the replication feature called [Global Transaction IDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid) (GTIDs) in MariaDB 10. The current version does not support GTIDs and the MySQL variant does not speak MariaDB 10's GTIDs.
 
 
 | Details: | Skills: | Mentor: |
@@ -42,7 +42,7 @@ The [mysqlbinlog](../../../../connectors/mariadb-connector-c/mariadb-binlogrepli
 ### Remote backup of binary logs
 
 
-[mysqlbinlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md) in MySQL 5.6 also supports streaming [binlog](../../../../server/reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) servers for [backups](../../../../server/server-management/backing-up-and-restoring-databases/README.md). This is important as the MHA tool can also use this feature.
+[mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog/) in MySQL 5.6 also supports streaming [binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/) servers for [backups](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/). This is important as the MHA tool can also use this feature.
 
 
 | Details: | Skills: | Mentor: |
@@ -55,7 +55,7 @@ The [mysqlbinlog](../../../../connectors/mariadb-connector-c/mariadb-binlogrepli
 ## Indexes on virtual columns
 
 
-We have the concept of [virtual](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) (non-materialized) columns, and currently to have an [index](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/README.md) on a virtual column one has to materialize it. To support indexes on fully virtual columns, a storage engine must call back into the server to calculate the value of the virtual column.
+We have the concept of [virtual](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns) (non-materialized) columns, and currently to have an [index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/) on a virtual column one has to materialize it. To support indexes on fully virtual columns, a storage engine must call back into the server to calculate the value of the virtual column.
 
 
 | Details: | Skills: | Mentor: |
@@ -82,7 +82,7 @@ A possible implementation could be: the function exports a generator, we create 
 ## Aggregate stored functions
 
 
-With [CREATE FUNCTION](../../../../server/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) one can create functions in SQL, but this syntax doesn't allow one to create an aggregate function (like [SUM](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md), [AVG](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md), etc). This task is to add support for aggregate [stored functions](../../../../server/server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
+With [CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function) one can create functions in SQL, but this syntax doesn't allow one to create an aggregate function (like [SUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum), [AVG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg), etc). This task is to add support for aggregate [stored functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programming-customizing-mariadb/stored-routines/stored-functions/).
 
 
 | Details: | Skills: | Mentor: |
@@ -95,7 +95,7 @@ With [CREATE FUNCTION](../../../../server/reference/sql-statements-and-structure
 ## GIS enhancements
 
 
-[GIS](../../../../server/reference/sql-statements-and-structure/geographic-geometric-features/README.md) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), converters (eg. ST_GeomFromGeoJSON - ST_AsGeoJSON, ST_GeomFromKML - ST_AsKML, etc.), Getting data from SHP format (shp2sql convertor), as well as making sure we are fully OpenGIS compliant.
+[GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/geographic-geometric-features/) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), converters (eg. ST_GeomFromGeoJSON - ST_AsGeoJSON, ST_GeomFromKML - ST_AsKML, etc.), Getting data from SHP format (shp2sql convertor), as well as making sure we are fully OpenGIS compliant.
 
 
 | Details: | Skills: | Mentor: |
@@ -121,7 +121,7 @@ MySQL 5.6 has a memcached plugin to InnoDB. MySQL 5.7 has improved performance o
 ## Automatic provisioning of slave
 
 
-The purpose of this task is to create an easy-to-use facility for setting up a new MariaDB [replication](../../../../server/server-usage/replication-cluster-multi-master/README.md) slave.
+The purpose of this task is to create an easy-to-use facility for setting up a new MariaDB [replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/) slave.
 
 
 | Details: | Skills: | Mentor: |
@@ -134,7 +134,7 @@ The purpose of this task is to create an easy-to-use facility for setting up a n
 ## Indexes for BLOBs (in MyISAM and Aria)
 
 
-MyISAM and Aria support special [kinds of indexes](../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md) that only store the hash of the data in the index tree. When two hashes match in the index, the engine compares actual row data to find whether the rows are identical. This is used in internal temporary tables that the optimizer creates to resolve SELECT DISTINCT queries. Normal unique indexes cannot always be used here, because the select list can be very long or include very long strings.
+MyISAM and Aria support special [kinds of indexes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types) that only store the hash of the data in the index tree. When two hashes match in the index, the engine compares actual row data to find whether the rows are identical. This is used in internal temporary tables that the optimizer creates to resolve SELECT DISTINCT queries. Normal unique indexes cannot always be used here, because the select list can be very long or include very long strings.
 
 
 This task is to provide a direct SQL interface to this feature and to allow users to create these indexes explicitly. This way we can have unique constraints for blobs and very longs strings.
@@ -163,7 +163,7 @@ It is a well-known and very old MySQL/MariaDB limitation that temporary tables c
 ## Provide GTID support for MHA
 
 
-MySQL Master HA (MHA) is a tool to assist with automating master failover and slave promotion within short downtime, without suffering from replication consistency problems, and without performance penalty. We would like to have this tool support MariaDB 10 [GTIDs](../../../../server/server-usage/replication-cluster-multi-master/standard-replication/gtid.md).
+MySQL Master HA (MHA) is a tool to assist with automating master failover and slave promotion within short downtime, without suffering from replication consistency problems, and without performance penalty. We would like to have this tool support MariaDB 10 [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid).
 
 
 | Skills: | Mentor: |

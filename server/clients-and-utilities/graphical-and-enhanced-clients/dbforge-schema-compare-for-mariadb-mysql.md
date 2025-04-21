@@ -159,13 +159,13 @@ Download a free 30-day trial of dbForge MariaDB and MySQL Schema Compare [here](
 | --- | --- |
 | Version | Introduced |
 | dbForge Schema Compare 10.1 | Support for the rds-ca-rsa2048-g1 SSL/TLS certificate for connecting to MariaDB servers on AWS and enhanced cloud compatibility features, new automation capabilities |
-| dbForge Schema Compare 10.0 | [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), Added support for temporal tables in MariaDB |
-| dbForge Schema Compare 5.2 | [MariaDB 11.3](../../../release-notes/mariadb-community-server/what-is-mariadb-113.md) |
-| dbForge Schema Compare 5.1 | [MariaDB 10.9](../../../release-notes/mariadb-community-server/what-is-mariadb-109.md), [MariaDB 10.10](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) |
-| dbForge Schema Compare 5.0 | [MariaDB 10.5](../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) |
-| dbForge Schema Compare 4.4 | [MariaDB 10.4](../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) |
-| dbForge Schema Compare 4.3 | [MariaDB 10.3](../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) |
-| dbForge Schema Compare 4.2 | [MariaDB 10.2](../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) |
-| dbForge Schema Compare 3.1 | [MariaDB 10.0](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) |
+| dbForge Schema Compare 10.0 | [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), Added support for temporal tables in MariaDB |
+| dbForge Schema Compare 5.2 | [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) |
+| dbForge Schema Compare 5.1 | [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109), [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010) |
+| dbForge Schema Compare 5.0 | [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) |
+| dbForge Schema Compare 4.4 | [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) |
+| dbForge Schema Compare 4.3 | [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) |
+| dbForge Schema Compare 4.2 | [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) |
+| dbForge Schema Compare 3.1 | [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) |
 
 

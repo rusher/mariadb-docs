@@ -5,7 +5,7 @@
 There could be many reasons that MariaDB fails to start. This page will help troubleshoot some of the more common reasons and provide solutions.
 
 
-If you have tried everything here, and still need help, you can ask for help on IRC or on the forums - see [Where to find other MariaDB users and developers](../../../../general-resources/company-and-community/friends-of-mariadb/resources.md) - or ask a question at the [Starting and Stopping MariaDB](starting-and-stopping-mariadb-automatically.md) page.
+If you have tried everything here, and still need help, you can ask for help on IRC or on the forums - see [Where to find other MariaDB users and developers](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/friends-of-mariadb/resources) - or ask a question at the [Starting and Stopping MariaDB](README.md) page.
 
 
 ## The Error Log and the Data Directory
@@ -99,7 +99,7 @@ If errors like this occur, then critical [system tables](../../../reference/sql-
 If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
 
-If the [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) really do not exist, then you may need to create them with [mariadb-install-db](../mariadb-install-db-exe.md). See [Installing System Tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db.md) for more information.
+If the [system tables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/README.md) really do not exist, then you may need to create them with [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db.md) for more information.
 
 
 ## Can't Create Test File
@@ -154,7 +154,7 @@ Like the above, this is an indication that a second MariaDB instance is already 
 ## InnoDB
 
 
-[InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) is probably the MariaDB component that most frequently causes a crash. In the error log, lines containing InnoDB messages generally start with "InnoDB:".
+[InnoDB](../../../reference/storage-engines/innodb/README.md) is probably the MariaDB component that most frequently causes a crash. In the error log, lines containing InnoDB messages generally start with "InnoDB:".
 
 
 ### Cannot Allocate Memory for the InnoDB Buffer Pool
@@ -257,4 +257,3 @@ The restart AppArmor:
 ```
 sudo systemctl restart apparmor
 ```
-<span></span>

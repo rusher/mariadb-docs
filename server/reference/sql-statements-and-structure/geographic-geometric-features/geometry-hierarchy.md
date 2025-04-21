@@ -27,6 +27,6 @@ non-instantiable classes. They define a common set of methods for
 their subclasses and are included for extensibility.
 
 
-[Point](point-properties/point-properties-y.md), [LineString](linestring-properties/linestring-properties-endpoint.md), [Polygon](polygon-properties/polygon-properties-area.md), [GeometryCollection](geometry-constructors/geometrycollection.md), [MultiPoint](geometry-constructors/multipoint.md),
+[Point](point-properties/README.md), [LineString](linestring-properties/README.md), [Polygon](polygon-properties/README.md), [GeometryCollection](geometry-constructors/geometrycollection.md), [MultiPoint](geometry-constructors/multipoint.md),
 [MultiLineString](geometry-constructors/multilinestring.md), and [MultiPolygon](geometry-constructors/multipolygon.md) are instantiable classes.
 

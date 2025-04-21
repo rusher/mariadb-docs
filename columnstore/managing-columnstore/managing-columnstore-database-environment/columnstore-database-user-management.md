@@ -18,7 +18,7 @@
 # Basic user management
 
 
-MariaDB ColumnStore allows permissions to be set for user accounts. The syntax of these grants follows the standard MariaDB syntax (see [GRANT](../../../server/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)).
+MariaDB ColumnStore allows permissions to be set for user accounts. The syntax of these grants follows the standard MariaDB syntax (see [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant)).
 
 
 For the root user, ColumnStore comes with full privileges. In order to set/restrict user accounts, privileges must be given/restricted. ColumnStore uses a dedicated schema called *infinidb_vtable* for creation of all temporary tables used for ColumnStore query processing. The root user account has been given permission to this account by default, but full permission MUST be given for all user accounts to this schema:
@@ -55,7 +55,7 @@ FLUSH PRIVILEGES;
 # PAM Unix authentication
 
 
-Starting with ColumnStore 1.0.8, ColumnStore includes the necessary authentication plugin for PAM support. For general details see [pam-authentication-plugin](../../../server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) but here we will outline the steps necessary to configure this for os authentication specific to a ColumnStore installation.
+Starting with ColumnStore 1.0.8, ColumnStore includes the necessary authentication plugin for PAM support. For general details see [pam-authentication-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam) but here we will outline the steps necessary to configure this for os authentication specific to a ColumnStore installation.
 
 
 First ensure that the mysql user has read access to the /etc/shadow file, in this example a group is used to facilitate this:

@@ -114,7 +114,7 @@ The syntax of `my.cnf` template is the same of a normal `my.cnf` file, with
 a few extensions and assumptions. They are:
 
 
-* For any group with the name `[mysqld.<strong>N</strong>]`, where N is a number, mtr
+* For any group with the name `[mysqld.N]`, where N is a number, mtr
  will start one `mysqld` process. Usually one needs to have
  only `[mysqld.1]` group, and `[mysqld.2]` group for replication tests.
 
@@ -242,7 +242,7 @@ files have exactly the same format as a suite `combinations` file.
 This can cause many combination files affecting one test file (if a test
 includes two `.inc` files, and both of them have corresponding
 `.combinations` files). In this case, mtr will run the test for all
-combinations of combinations from both files. In [MariaDB 5.5](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), for example,
+combinations of combinations from both files. In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), for example,
 `rpl_init.inc` adds combinations for row/statement/mixed, and
 `have_innodb.inc` adds combinations for innodb/xtradb. Thus any replication
 test that uses innodb will be run six times.

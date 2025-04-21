@@ -8,7 +8,7 @@
 You have a website with news articles, or a blog, or some other thing with a list of things that might be too long for a single page. So, you decide to break it into chunks of, say, 10 items and provide a [Next] button to go the next "page".
 
 
-You spot [OFFSET and LIMIT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) in MariaDB and decide that is the obvious way to do it.
+You spot [OFFSET and LIMIT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/limit.md) in MariaDB and decide that is the obvious way to do it.
 
 
 ```
@@ -317,4 +317,3 @@ optimizations, and debugging tips.
 
 Original source: [pagination](https://mysql.rjweb.org/doc.php/pagination)
 
-<span></span>

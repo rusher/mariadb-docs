@@ -2,8 +2,8 @@
 # host_summary_by_file_io and x$host_summary_by_file_io Sys Schema Views
 
 
-##### MariaDB starting with [10.6](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
-These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) views were introduced in [MariaDB 10.6](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
 
 ## Description
@@ -12,7 +12,7 @@ These [Sys Schema](sys-schema-views-host_summary_by_statement_latency-and-xhost_
 The `host_summary_by_file_io` and `x$host_summary_by_file_io` views summarize file I/O, grouped by host. Rows are sorted by descending total file I/O latency by default.
 
 
-The `host_summary_by_file_io` view is intended to be easier for human reading, while the `and `x$host_summary_by_file_io`<code> view provides the data in raw form, intended for tools that process the data. </code>`
+The `host_summary_by_file_io` view is intended to be easier for human reading, while the `and`x$host_summary_by_file_io`view provides the data in raw form, intended for tools that process the data.`
 
 
 They contain the following columns:

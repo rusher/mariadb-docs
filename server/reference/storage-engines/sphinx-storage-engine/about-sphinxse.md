@@ -14,10 +14,10 @@ Sphinx does not depend on MariaDB, and can run independently, but SphinxSE provi
 | SphinxSE Version | Introduced | Maturity |
 | --- | --- | --- |
 | SphinxSE Version | Introduced | Maturity |
-| [SphinxSE 2.2.6](https://sphinxsearch.com/docs/current.html) | [MariaDB 10.0.15](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes.md) | Stable |
-| [SphinxSE 2.1.9](https://sphinxsearch.com/docs/2.1.9/) | [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md) | Stable |
-| SphinxSE 2.0.4 | [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) |  |
-| SphinxSE 0.99 | [MariaDB 5.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) and [MariaDB 5.3](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) |  |
+| [SphinxSE 2.2.6](https://sphinxsearch.com/docs/current.html) | [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) | Stable |
+| [SphinxSE 2.1.9](https://sphinxsearch.com/docs/2.1.9/) | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes) | Stable |
+| SphinxSE 2.0.4 | [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) |  |
+| SphinxSE 0.99 | [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) |  |
 
 
 

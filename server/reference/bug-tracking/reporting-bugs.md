@@ -8,7 +8,7 @@ For reporting documentation bugs specifically, see [Reporting Documentation Bugs
 MariaDB's bug and feature tracker is found at [jira.mariadb.org](https://jira.mariadb.org).
 
 
-This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](../../../general-resources/company-and-community/friends-of-mariadb/resources.md).
+This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/friends-of-mariadb/resources).
 
 
 ## Known Issues
@@ -85,7 +85,7 @@ A good bug report consists of:
 1. If the bug is about server producing wrong query results: the actual result (what you are getting), the expected result (what you think should be produced instead), and, unless it is obvious, the reason why you think the current result is wrong.
 1. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://mariadb.com/kb/en/analyze-format-json_ANALYZE_FORMAT%3DJSON).
 1. A test case or some other way to repeat the bug. This should preferably be in plain SQL or in mysqltest format. See mysqltest/README for information about this.
-1. If it's impossible to do a test case, then providing us with a [backtrace information](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md) would be of great help.
+1. If it's impossible to do a test case, then providing us with a [backtrace information](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd) would be of great help.
 
 
 ### JIRA Fields
@@ -120,10 +120,10 @@ Some project names include:
 #### Type
 
 
-Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
+Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
 
-See also [plans for next release](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plans-for-103.md) for things that we are considering to have in the next MariaDB release.
+See also [plans for next release](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plans-for-103) for things that we are considering to have in the next MariaDB release.
 
 
 #### Summary
@@ -212,7 +212,7 @@ If the bug affects Percona server and not MySQL, it should go to [Percona Launch
 #### Getting a Stack Trace with Details
 
 
-See the article [How to produce a stack trace from a core file](../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).
+See the article [How to produce a stack trace from a core file](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
 
 
 #### Extracting a Portion of a Binary Log

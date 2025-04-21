@@ -7,25 +7,25 @@ Here is a list of the differences between MariaDB and MySQL in terms of protocol
 ### MariaDB Capabilities Extension
 
 
-MariaDB/MySQL servers can advertise feature support using capabilities. To expand the capabilities beyond the original 4 bytes, MariaDB utilizes 4 bytes, unused by MySQL, in the [Initial handshake packet](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#initial-handshake-packet) (server capabilities 3rd part). In order to avoid incompatibility in the future, those 4 bytes have to be read only if capability CLIENT_MYSQL is not SET (server then being MariaDB).
+MariaDB/MySQL servers can advertise feature support using capabilities. To expand the capabilities beyond the original 4 bytes, MariaDB utilizes 4 bytes, unused by MySQL, in the [Initial handshake packet](1-connecting/connection.md#initial-handshake-packet) (server capabilities 3rd part). In order to avoid incompatibility in the future, those 4 bytes have to be read only if capability CLIENT_MYSQL is not SET (server then being MariaDB).
 
 
 Enhanced Capabilities
 
 
-* MARIADB_CLIENT_CACHE_METADATA: Enables clients to cache metadata and avoid repeated network transmissions. (since [MariaDB 10.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md))
-* MARIADB_CLIENT_EXTENDED_METADATA : Provides more detailed column metadata information for specific data types. (since [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md))
-* MARIADB_CLIENT_STMT_BULK_OPERATIONS: Introduces a dedicated command, [COM_STMT_BULK_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements. (since [MariaDB 10.2.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md))
-* MARIADB_CLIENT_BULK_UNIT_RESULTS: Allows for individual result sets for each bulk operation. (since [MariaDB 11.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes.md))
+* MARIADB_CLIENT_CACHE_METADATA: Enables clients to cache metadata and avoid repeated network transmissions. (since [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes))
+* MARIADB_CLIENT_EXTENDED_METADATA : Provides more detailed column metadata information for specific data types. (since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes))
+* MARIADB_CLIENT_STMT_BULK_OPERATIONS: Introduces a dedicated command, [COM_STMT_BULK_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements. (since [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes))
+* MARIADB_CLIENT_BULK_UNIT_RESULTS: Allows for individual result sets for each bulk operation. (since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes))
 
 
-See [Connection Capabilities](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#capabilities).
+See [Connection Capabilities](1-connecting/connection.md#capabilities).
 
 
 ### Prepare Statement Skipping Metadata
 
 
-*since [MariaDB 10.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)*
+*since [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)*
 
 
 Prepared statement metadata, which typically remains unchanged except during table alterations, can be cached by clients when the MARIADB_CLIENT_CACHE_METADATA capability is enabled. The server won't then send them again, unless they change. This significantly improves the performance of subsequent executions, especially for large metadata sets.
@@ -126,7 +126,7 @@ OK_Packet with a 0xFE header:
 ### Extended Column Information
 
 
-*since [MariaDB 10.5.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)*
+*since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)*
 
 
 When the MARIADB_CLIENT_EXTENDED_METADATA capability is set, [column definition packet](4-server-response-packets/result-set-packets.md#column-definition-packet) can include additional type and format information.
@@ -140,7 +140,7 @@ When the MARIADB_CLIENT_EXTENDED_METADATA capability is set, [column definition 
 ### Bulk
 
 
-*since [MariaDB 10.2.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1020-release-notes.md) - [MariaDB 11.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes.md) for unit results*
+*since [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes) - [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes) for unit results*
 
 
 The MARIADB_CLIENT_STMT_BULK_OPERATIONS capability enables the [COM_STMT_BULK_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) command for efficient batch processing. However, note that only one result (OK or ERROR) is returned per batch, containing the total affected rows and the first auto-generated ID. For individual results, the MARIADB_CLIENT_BULK_UNIT_RESULTS capability can be set. The server will then return a resultset containing for each unitary results (containing auto generated ids and affected rows)
@@ -200,15 +200,15 @@ OK_Packet:
 MariaDB has specific authentication methods.
 
 
-* [ED25519 plugin](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#client_ed25519-plugin) since [MariaDB 10.3.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1030-release-notes.md)
-* [PARSEC plugin](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#parsec-plugin) since [MariaDB 11.6.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes.md)
-* [GSSAPI plugin](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#auth_gssapi_client-plugin) since [MariaDB 10.1.10](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes.md)
+* [ED25519 plugin](1-connecting/connection.md#client_ed25519-plugin) since [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)
+* [PARSEC plugin](1-connecting/connection.md#parsec-plugin) since [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)
+* [GSSAPI plugin](1-connecting/connection.md#auth_gssapi_client-plugin) since [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes)
 
 
 ### Redirection
 
 
-*since [MariaDB 11.3.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-1-release-notes.md) or Maxscale 25.08.0*
+*since [MariaDB 11.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-1-release-notes) or Maxscale 25.08.0*
 
 
 MariaDB permits [connection redirection](../../../../server-usage/replication-cluster-multi-master/connection-redirection-mechanism-in-the-mariadb-clientserver-protocol.md).
@@ -234,7 +234,7 @@ Connectors can support 2 different levels:
 ### Zero-Configuration SSL
 
 
-**Note**: This feature is available since [MariaDB 11.4.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md)
+**Note**: This feature is available since [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes)
 
 
 A feature that enables TLS certificate validation without requiring client-side certificate configuration.
@@ -298,10 +298,10 @@ A feature that enables TLS certificate validation without requiring client-side 
 ### Initial Session Tracking
 
 
-MySQL 5.7.0 and [MariaDB 10.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md) support session tracking when the CLIENT_SESSION_TRACK capability is set.
+MySQL 5.7.0 and [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) support session tracking when the CLIENT_SESSION_TRACK capability is set.
 
 
-One difference is that since [MariaDB 11.5.1](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes.md), connection ending OK_Packet lists all the current variables of tracked variable.
+One difference is that since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes), connection ending OK_Packet lists all the current variables of tracked variable.
 
 
 This is usefull for connector having method to set transaction type, retrieving database for example to always have the server current value when changed. This permit to avoid executing some queries when not needed
@@ -369,7 +369,7 @@ MariaDB connectors use specific criteria to determine if a server is a MariaDB i
 The two key indicators used are:
 
 
-* Missing CLIENT_MYSQL Capability: [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and newer versions do not set the CLIENT_MYSQL capability flag in the initial handshake packet.
+* Missing CLIENT_MYSQL Capability: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and newer versions do not set the CLIENT_MYSQL capability flag in the initial handshake packet.
 * Server Version String: The server's version string is examined for the presence of the word "mariadb" (ignoring case sensitivity).
 
 
@@ -386,7 +386,7 @@ Connectors usually follow a two-step process for prepared statements:
 * Execute: Send a [COM_STMT_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) command, using the statement ID obtained in the previous step.
 
 
-When the server support MARIADB_CLIENT_STMT_BULK_OPERATIONS capability (since [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md)), a specific statement ID value of -1 (or 0xffffffff in hexadecimal) can be used to indicate that the previously prepared statement could be reused. This enables connectors to pipeline the preparation and execution steps into a single request:
+When the server support MARIADB_CLIENT_STMT_BULK_OPERATIONS capability (since [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)), a specific statement ID value of -1 (or 0xffffffff in hexadecimal) can be used to indicate that the previously prepared statement could be reused. This enables connectors to pipeline the preparation and execution steps into a single request:
 
 
 * Send a [COM_STMT_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) then a [COM_STMT_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_execute.md) with statement ID -1 (0xffffffff) commands to the server.
@@ -408,15 +408,13 @@ This description has been done for [COM_STMT_EXECUTE](3-binary-protocol-prepared
 #### Query Timeout
 
 
-*Since [MariaDB 10.1.2](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md)*
+*Since [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)*
 
 
-Setting a timeout for all commands can be set using `<span class="k">SET</span> <span class="n">max_statement_time</span><span class="o">=</span><span class="n">XXX</span>
-` with XXX in seconds.
+Setting a timeout for all commands can be set using `SET max_statement_time=XXX` with XXX in seconds.
 
 
-Setting it for a specific query can be done using `<span class="k">SET</span> <span class="k">STATEMENT</span> <span class="n">max_statement_time</span><span class="o">=</span><span class="n">XXX</span> <span class="k">FOR</span> <span class="p">...</span>
-`
+Setting it for a specific query can be done using `SET STATEMENT max_statement_time=XXX FOR ...`
 
 
 ### Collations
@@ -425,13 +423,11 @@ Setting it for a specific query can be done using `<span class="k">SET</span> <s
 Connectors don't care about collations, but normally want to ensure charset in connection exchanges.
 
 
-The only good solution is to use `<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8mb4</span>
-` or `<span class="k">SET</span> <span class="k">NAMES</span> <span class="n">utf8mb4</span> <span class="k">COLLATE</span> <span class="n">someUtf8mb4collation</span>
-`
+The only good solution is to use `SET NAMES utf8mb4` or `SET NAMES utf8mb4 COLLATE someUtf8mb4collation`
 
 
 If supporting session tracking, connectors can check if charset of initial tracked variable 'character_set_connection' corresponds to the expected value, then permit skipping this SET NAMES command.
 
 
-( 'server default collation' from [initial handshare packet](../../../../../connectors/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/connection-pools-with-mariadb-connector-r2dbc-native-api.md#initial-handshake-packet) cannot be trusted, since truncated to one byte. Recent mysql and mariadb collation can go on 2 bytes)
+( 'server default collation' from [initial handshare packet](1-connecting/connection.md#initial-handshake-packet) cannot be trusted, since truncated to one byte. Recent mysql and mariadb collation can go on 2 bytes)
 

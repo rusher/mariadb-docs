@@ -22,7 +22,7 @@ TRUNCATE [TABLE] tbl_name
 Logically, `TRUNCATE TABLE` is equivalent to a [DELETE](../data-manipulation/changing-deleting-data/delete.md) statement that deletes all rows, but there are practical differences under some circumstances.
 
 
-`TRUNCATE TABLE` will fail for an [InnoDB table](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) if any FOREIGN KEY constraints from other tables reference the table, returning the error:
+`TRUNCATE TABLE` will fail for an [InnoDB table](../../../storage-engines/innodb/README.md) if any FOREIGN KEY constraints from other tables reference the table, returning the error:
 
 
 ```
@@ -32,7 +32,7 @@ ERROR 1701 (42000): Cannot truncate a table referenced in a foreign key constrai
 Foreign Key constraints between columns in the same table are permitted.
 
 
-For an InnoDB table, if there are no `FOREIGN KEY` constraints, InnoDB performs fast truncation by dropping the original table and creating an empty one with the same definition, which is much faster than deleting rows one by one. The [AUTO_INCREMENT](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) counter is reset by `TRUNCATE TABLE`, regardless of whether there is a `FOREIGN KEY` constraint.
+For an InnoDB table, if there are no `FOREIGN KEY` constraints, InnoDB performs fast truncation by dropping the original table and creating an empty one with the same definition, which is much faster than deleting rows one by one. The [AUTO_INCREMENT](../../../data-types/auto_increment.md) counter is reset by `TRUNCATE TABLE`, regardless of whether there is a `FOREIGN KEY` constraint.
 
 
 The count of rows affected by `TRUNCATE TABLE` is accurate only
@@ -56,7 +56,7 @@ For other storage engines, `TRUNCATE TABLE` differs from
  with `TRUNCATE TABLE`, even if the data or index files have become
  corrupted.
 * The table handler does not remember the last
- used [AUTO_INCREMENT](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md) value, but starts counting
+ used [AUTO_INCREMENT](../../../data-types/auto_increment.md) value, but starts counting
  from the beginning. This is true even for MyISAM and InnoDB, which normally
  do not reuse sequence values.
 * When used with partitioned tables, `TRUNCATE TABLE` preserves
@@ -68,7 +68,7 @@ For other storage engines, `TRUNCATE TABLE` differs from
 * `TRUNCATE TABLE` will only reset the values in the [Performance Schema summary tables](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables.md) to zero or null, and will not remove the rows.
 
 
-For the purposes of binary logging and [replication](../administrative-sql-statements/replication-statements/README.md), `TRUNCATE TABLE` is treated as [DROP TABLE](../data-definition/drop/drop-tablespace.md) followed by [CREATE TABLE](../../vectors/create-table-with-vectors.md) (DDL rather than DML).
+For the purposes of binary logging and [replication](../../../../server-usage/replication-cluster-multi-master/README.md), `TRUNCATE TABLE` is treated as [DROP TABLE](../data-definition/drop/drop-table.md) followed by [CREATE TABLE](../data-definition/create/create-table.md) (DDL rather than DML).
 
 
 `TRUNCATE TABLE` does not work on [views](../../../../server-usage/programming-customizing-mariadb/views/README.md). Currently, `TRUNCATE TABLE` drops all historical records from a [system-versioned table](../../temporal-tables/system-versioned-tables.md).
@@ -83,7 +83,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../transactions/wait-and-nowait
 ### Oracle-mode
 
 
-[Oracle-mode](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) from [MariaDB 10.3](../../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) permits the optional keywords REUSE STORAGE or DROP STORAGE to be used.
+[Oracle-mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) permits the optional keywords REUSE STORAGE or DROP STORAGE to be used.
 
 
 ```
@@ -99,10 +99,10 @@ These have no effect on the operation.
 `TRUNCATE TABLE` is faster than [DELETE](https://mariadb.com/kb/en/delete-table), because it drops and re-creates a table.
 
 
-With [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), `TRUNCATE TABLE` is slower if [innodb_file_per_table=ON](../../../storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) is set (the default). This is because `TRUNCATE TABLE` unlinks the underlying tablespace file, which can be an expensive operation. See [MDEV-8069](https://jira.mariadb.org/browse/MDEV-8069) for more details.
+With [InnoDB](../../../storage-engines/innodb/README.md), `TRUNCATE TABLE` is slower if [innodb_file_per_table=ON](../../../storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) is set (the default). This is because `TRUNCATE TABLE` unlinks the underlying tablespace file, which can be an expensive operation. See [MDEV-8069](https://jira.mariadb.org/browse/MDEV-8069) for more details.
 
 
-The performance issues with [innodb_file_per_table=ON](../../../storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) can be exacerbated in cases where the [InnoDB buffer pool](../../../storage-engines/innodb/innodb-buffer-pool.md) is very large and [innodb_adaptive_hash_index=ON](../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is set. In that case, using [DROP TABLE](../data-definition/drop/drop-tablespace.md) followed by [CREATE TABLE](../../vectors/create-table-with-vectors.md) instead of `TRUNCATE TABLE` may perform better. Setting [innodb_adaptive_hash_index=OFF](../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) (it defaults to ON before [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)) can also help. In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) only, from [MariaDB 10.2.19](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10219-release-notes.md), this performance can also be improved by setting [innodb_safe_truncate=OFF](../../../storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate). See [MDEV-9459](https://jira.mariadb.org/browse/MDEV-9459) for more details.
+The performance issues with [innodb_file_per_table=ON](../../../storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) can be exacerbated in cases where the [InnoDB buffer pool](../../../storage-engines/innodb/innodb-buffer-pool.md) is very large and [innodb_adaptive_hash_index=ON](../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is set. In that case, using [DROP TABLE](../data-definition/drop/drop-table.md) followed by [CREATE TABLE](../data-definition/create/create-table.md) instead of `TRUNCATE TABLE` may perform better. Setting [innodb_adaptive_hash_index=OFF](../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) (it defaults to ON before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)) can also help. In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) only, from [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes), this performance can also be improved by setting [innodb_safe_truncate=OFF](../../../storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate). See [MDEV-9459](https://jira.mariadb.org/browse/MDEV-9459) for more details.
 
 
 Setting [innodb_adaptive_hash_index=OFF](../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) can also improve `TRUNCATE TABLE` performance in general. See [MDEV-16796](https://jira.mariadb.org/browse/MDEV-16796) for more details.
@@ -111,7 +111,7 @@ Setting [innodb_adaptive_hash_index=OFF](../../../storage-engines/innodb/innodb-
 ## See Also
 
 
-* [TRUNCATE function](truncate-table.md)
+* [TRUNCATE function](../built-in-functions/numeric-functions/truncate.md)
 * [innodb_safe_truncate](../../../storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) system variable
-* [Oracle mode from MariaDB 10.3](../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

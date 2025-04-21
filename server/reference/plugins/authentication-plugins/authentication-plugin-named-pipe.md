@@ -109,7 +109,7 @@ In this example, a user `wlad` is already logged into the system. Because he has
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.0 | Stable | [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md) |
+| 1.0 | Stable | [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes) |
 
 
 
@@ -133,6 +133,6 @@ In this example, a user `wlad` is already logged into the system. Because he has
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
-* Introduced: [MariaDB 10.1.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes.md)
+* Introduced: [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes)
 
 

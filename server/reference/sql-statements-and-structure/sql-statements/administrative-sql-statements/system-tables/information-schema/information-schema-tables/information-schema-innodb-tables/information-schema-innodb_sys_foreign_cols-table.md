@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_SYS_FOREIGN_COLS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_FOREIGN_COLS` table contains information about InnoDB [foreign key](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) columns.
+The [Information Schema](../../README.md) `INNODB_SYS_FOREIGN_COLS` table contains information about InnoDB [foreign key](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) columns.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.

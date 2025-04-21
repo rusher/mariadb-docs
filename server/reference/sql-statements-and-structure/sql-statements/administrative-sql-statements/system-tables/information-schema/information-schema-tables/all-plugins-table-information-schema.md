@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `ALL_PLUGINS` table contains information about [server plugins](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), whether installed or not.
+The [Information Schema](../README.md) `ALL_PLUGINS` table contains information about [server plugins](../../../../../../plugins/README.md), whether installed or not.
 
 
 It contains the following columns:

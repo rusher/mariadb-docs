@@ -1,7 +1,7 @@
 
 # CONNECT System Variables
 
-This page documents system variables related to the [CONNECT storage engine](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md). See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [CONNECT storage engine](README.md). See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -41,8 +41,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value:
 
-  * >= [MariaDB 10.4.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1048-release-notes.md): `1024`
-  * <= [MariaDB 10.4.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md): `8192`
+  * >= [MariaDB 10.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1048-release-notes): `1024`
+  * <= [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes): `8192`
 * Range: `0` to `65500`
 
 
@@ -57,7 +57,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value:`5`
 * Range: `-1` to `16`
-* Introduced: [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md)
+* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)
 
 
 
@@ -71,7 +71,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Default Value:`6`
 * Range: `0` to `16`
-* Introduced: [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md), [MariaDB 10.4.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10418-release-notes.md)
+* Introduced: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
 
 
 
@@ -84,8 +84,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic:
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md), [MariaDB 10.2.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1029-release-notes.md)
-* Removed: [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
+* Introduced: [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)
+* Removed: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 
 
@@ -110,7 +110,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md), [MariaDB 10.4.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10418-release-notes.md)
+* Introduced: [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), [MariaDB 10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)
 
 
 
@@ -148,7 +148,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 * Data Type: `boolean`
 * Default Value: `ON`
-* Introduced: [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), [MariaDB 10.4.16](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10416-release-notes.md)
+* Introduced: [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)
 
 
 
@@ -253,15 +253,15 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `STMT` or `64`: Currently executing statement
   * `HANDLER` or `128`: Creating and dropping CONNECT handlers
   * `BLOCK` or `256`: Creating and dropping CONNECT objects
-  * `MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md)) tracing
+  * `MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](README.md)) tracing
 * For example: 
 
-  * `set global connect_xtrace=0; <em> No trace</em>`
-  * `set global connect_xtrace='YES'; <em> By name</em>`
-  * `set global connect_xtrace=1; <em> By value</em>`
-  * `set global connect_xtrace='QUERY,STMT'; <em> By name</em>`
-  * `set global connect_xtrace=96; <em> By value</em>`
-  * `set global connect_xtrace=1023; <em> Trace all</em>`
+  * `set global connect_xtrace=0; No trace`
+  * `set global connect_xtrace='YES'; By name`
+  * `set global connect_xtrace=1; By value`
+  * `set global connect_xtrace='QUERY,STMT'; By name`
+  * `set global connect_xtrace=96; By value`
+  * `set global connect_xtrace=1023; Trace all`
 * Commandline: `--connect-xtrace=#`
 * Scope: Global
 * Dynamic: Yes

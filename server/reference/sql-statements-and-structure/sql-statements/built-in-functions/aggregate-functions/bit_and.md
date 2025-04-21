@@ -11,13 +11,13 @@ BIT_AND(expr) [over_clause]
 ## Description
 
 
-Returns the bitwise AND of all bits in *expr*. The calculation is performed with 64-bit ([BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)) precision. It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+Returns the bitwise AND of all bits in *expr*. The calculation is performed with 64-bit ([BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)) precision. It is an [aggregate function](README.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
 If no rows match, `BIT_AND` will return a value with all bits set to 1. NULL values have no effect on the result unless all results are NULL, which is treated as no match.
 
 
-`BIT_AND` can be used as a [window function](../special-functions/window-functions/window-functions-overview.md) with the addition of the *over_clause*.
+`BIT_AND` can be used as a [window function](../special-functions/window-functions/README.md) with the addition of the *over_clause*.
 
 
 ## Examples
@@ -36,7 +36,7 @@ SELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;
 +------------+-----------+------------+
 ```
 
-As an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md):
+As an [aggregate function](README.md):
 
 
 ```

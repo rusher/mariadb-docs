@@ -1,7 +1,7 @@
 
 # EXPLAIN Analyzer API
 
-The online [EXPLAIN Analyzer](explain-analyzer-api.md) tool has an open API to allow client applications to send it EXPLAINs.
+The online [EXPLAIN Analyzer](explain-analyzer.md) tool has an open API to allow client applications to send it EXPLAINs.
 
 
 ## Sending EXPLAINs to the EXPLAIN Analyzer

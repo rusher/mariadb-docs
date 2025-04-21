@@ -1,7 +1,7 @@
 
 # JSON Data Type
 
-The JSON alias was added to make it possible to use JSON columns in [statement based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) [replication](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) from MySQL to MariaDB and to make it possible for MariaDB to read [mysqldumps](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) from MySQL.
+The JSON alias was added to make it possible to use JSON columns in [statement based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) [replication](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) from MySQL to MariaDB and to make it possible for MariaDB to read [mysqldumps](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) from MySQL.
 
 
 JSON is an alias for `LONGTEXT COLLATE utf8mb4_bin` introduced for compatibility reasons with MySQL's JSON data type. MariaDB implements this as a [LONGTEXT](longtext.md) rather, as the JSON data type contradicts the SQL:2016 standard, and MariaDB's benchmarks indicate that performance is at least equivalent.
@@ -135,9 +135,9 @@ MariaDB can't directly access MySQL's JSON format.
 There are a a few different ways to move the table to MariaDB:
 
 
-* From [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), see the you can use the [mysql_json](../../plugins/other-plugins/mysql_json.md) plugin. See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/).
+* From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), see the you can use the [mysql_json](../../plugins/other-plugins/mysql_json.md) plugin. See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/).
 * Change the JSON column to type TEXT in MySQL. After this, MariaDB can directly use the table without any need for a dump and restore.
-* [Use mysqldump to copy the table](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md#examples).
+* [Use mysqldump to copy the table](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md#examples).
 
 
 ## Differences Between MySQL JSON Strings and MariaDB JSON Strings

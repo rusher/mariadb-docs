@@ -1,7 +1,7 @@
 
 # CREATE PACKAGE BODY
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114).
 
 
 In Oracle mode, the PL/SQL dialect is used, while in non-Oracle mode, SQL/PSM is used.
@@ -99,10 +99,10 @@ condition_value:
 ## Description
 
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) is set, or in any mode from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114).
 
 
-The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package-body.md) statement.
+The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package.md) statement.
 
 
 A package body provides implementations of the package public routines and can optionally have:
@@ -179,7 +179,7 @@ $$
 DELIMITER ;
 ```
 
-Non-Oracle mode, from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md):
+Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114):
 
 
 ```
@@ -224,8 +224,8 @@ DELIMITER ;
 ## See Also
 
 
-* [CREATE PACKAGE](create-package-body.md)
+* [CREATE PACKAGE](create-package.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
 * [DROP PACKAGE BODY](../drop/drop-package-body.md)
-* [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

@@ -46,7 +46,7 @@ collation_connection: utf8_general_ci
 
 * [SHOW PACKAGE BODY](show-package-body-status.md)
 * [SHOW CREATE PACKAGE](show-create-package.md)
-* [CREATE PACKAGE](../../data-definition/create/create-package-body.md)
-* [DROP PACKAGE](../../data-definition/drop/drop-package-body.md)
-* [Oracle SQL_MODE](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [CREATE PACKAGE](../../data-definition/create/create-package.md)
+* [DROP PACKAGE](../../data-definition/drop/drop-package.md)
+* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

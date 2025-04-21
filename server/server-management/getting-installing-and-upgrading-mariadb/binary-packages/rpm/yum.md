@@ -31,7 +31,7 @@ We currently have YUM/DNF repositories for the following Linux distributions, an
 If you want to install MariaDB with `yum`, then you can configure `yum` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](../mariadb-package-repository-setup-and-usage.md).
 
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../reference/plugins/README.md), and [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 
 To use the script, execute the following command:
@@ -41,7 +41,7 @@ To use the script, execute the following command:
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 ```
 
-Note that this script also configures a repository for [MariaDB MaxScale](../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) and its dependencies.
+Note that this script also configures a repository for [MariaDB MaxScale](/kb/en/maxscale/) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) and its dependencies.
 
 
 See [MariaDB Package Repository Setup and Usage](../mariadb-package-repository-setup-and-usage.md) for more information.
@@ -53,13 +53,13 @@ See [MariaDB Package Repository Setup and Usage](../mariadb-package-repository-s
 If you want to install MariaDB with `yum`, then you can configure `yum` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
 
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md), and [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md). The MariaDB Repository Configuration Tool can easily generate the appropriate configuration file to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](/kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/README.md), [plugins](../../../../reference/plugins/README.md), and [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md). The MariaDB Repository Configuration Tool can easily generate the appropriate configuration file to add the repository for your distribution.
 
 
 Once you have the appropriate repository configuration section for your distribution, add it to a file named `MariaDB.repo` under `/etc/yum.repos.d/`.
 
 
-For example, if you wanted to use the repository to install [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) on RHEL (any version), then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
+For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) on RHEL (any version), then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
 
 
 ```
@@ -89,7 +89,7 @@ The MariaDB Foundation archives repositories all releases is at the following UR
 Note this isn't configured as a highly available server. For that purpose please use the main mirrors.
 
 
-For example, if you wanted to pin your repository to [MariaDB 10.8.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes.md) on CentOS 7, then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
+For example, if you wanted to pin your repository to [MariaDB 10.8.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes) on CentOS 7, then you could use the following `yum` repository configuration in `/etc/yum.repos.d/MariaDB.repo`:
 
 
 ```
@@ -122,14 +122,14 @@ If you configured `yum` to install from MariaDB Corporation's MariaDB Package Re
 ### Updating the Major Release with the MariaDB Repository Configuration Tool
 
 
-If you configured `yum` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/), then you can update the major release that the repository uses by updating the `yum` repository configuration file in-place. For example, if you wanted to change the repository from [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) to [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), and if the repository configuration file was at `/etc/yum.repos.d/MariaDB.repo`, then you could execute the following:
+If you configured `yum` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/), then you can update the major release that the repository uses by updating the `yum` repository configuration file in-place. For example, if you wanted to change the repository from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), and if the repository configuration file was at `/etc/yum.repos.d/MariaDB.repo`, then you could execute the following:
 
 
 ```
 sudo sed -i 's/10.6/10.11/' /etc/yum.repos.d/MariaDB.repo
 ```
 
-After that, the repository should refer to [MariaDB 10.11](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md).
+After that, the repository should refer to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011).
 
 
 If the `yum` repository is pinned to a specific minor release, then the above `sed` command can result in an invalid repository configuration. In that case, the recommended options are:
@@ -208,7 +208,7 @@ sudo dnf install MariaDB-server
 The process to install MariaDB Galera Cluster with the MariaDB `yum` repository is practically the same as installing standard MariaDB Server.
 
 
-You need to install the `galera-4` package to obtain the [Galera](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) 4 wsrep provider library.
+You need to install the `galera-4` package to obtain the [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, you could execute the following command:
@@ -222,13 +222,13 @@ If you haven't yet imported the MariaDB GPG public key, then `yum` will prompt y
 import it after it downloads the packages, but before it prompts you to install them.
 
 
-See [MariaDB Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) for more information on MariaDB Galera Cluster.
 
 
 ### Installing MariaDB Clients and Client Libraries with YUM
 
 
-[MariaDB Connector/C](../../../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md) has been included as the client library (staticly linked). However, the package name for the client library has not been changed.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c) has been included as the client library (staticly linked). However, the package name for the client library has not been changed.
 
 
 To Install the clients and client libraries, execute the following command:
@@ -238,7 +238,7 @@ To Install the clients and client libraries, execute the following command:
 sudo yum install MariaDB-client MariaDB-shared
 ```
 
-If you want compile your own programs against [MariaDB Connector/C](../../../../../connectors/mariadb-connector-c/about-mariadb-connector-c.md), execute the following command:
+If you want compile your own programs against [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c), execute the following command:
 
 
 ```
@@ -248,7 +248,7 @@ sudo yum install MariaDB-devel
 ### Installing Mariabackup with YUM
 
 
-To install [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md), execute the following command:
+To install [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md), execute the following command:
 
 
 ```
@@ -258,7 +258,7 @@ sudo yum install MariaDB-backup
 ### Installing Plugins with YUM
 
 
-Some [plugins](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) may also need to be installed.
+Some [plugins](../../../../reference/plugins/README.md) may also need to be installed.
 
 
 For example, to install the [cracklib_password_check](../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
@@ -271,7 +271,7 @@ sudo yum install MariaDB-cracklib-password-check
 ### Installing Debug Info Packages with YUM
 
 
-The MariaDB `yum` repository also contains [debuginfo](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/developing_c_and_cpp_applications_in_rhel_9/debugging-applications_developing-applications#debuginfo-packages_enabling-debugging-with-debugging-information) packages. These package may be needed when [debugging a problem](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).
+The MariaDB `yum` repository also contains [debuginfo](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/developing_c_and_cpp_applications_in_rhel_9/debugging-applications_developing-applications#debuginfo-packages_enabling-debugging-with-debugging-information) packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
 
 
 #### Installing Debug Info for the Most Common Packages with YUM
@@ -324,7 +324,7 @@ MariaDB-server.x86_64   10.3.12-1.el7.centos    mariadb
 mariadb-server.x86_64   1:5.5.60-1.el7_5         base
 ```
 
-The MariaDB `yum` repository in this example contains [MariaDB 10.3.10](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10310-release-notes.md), [MariaDB 10.3.11](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10311-release-notes.md), and [MariaDB 10.3.12](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10312-release-notes.md). The CentOS base `yum` repository also contains [MariaDB 5.5.60](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5560-release-notes.md).
+The MariaDB `yum` repository in this example contains [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), [MariaDB 10.3.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10311-release-notes), and [MariaDB 10.3.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10312-release-notes). The CentOS base `yum` repository also contains [MariaDB 5.5.60](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5560-release-notes).
 
 
 To install an older version of a package instead of the latest version we just
@@ -337,7 +337,7 @@ However, when installing an older version of a package, if `yum` has to install 
 
 
 The packages that the MariaDB-server package depend on are: MariaDB-client,
-MariaDB-shared, and MariaDB-common. Therefore, to install [MariaDB 10.3.11](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10311-release-notes.md) from this `yum`
+MariaDB-shared, and MariaDB-common. Therefore, to install [MariaDB 10.3.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10311-release-notes) from this `yum`
 repository, we would do the following:
 
 
@@ -354,6 +354,5 @@ The rest of the install and setup process is as normal.
 After the installation is complete, you can [start MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 
 
-If you are using [MariaDB Galera Cluster](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
 
-<span></span>

@@ -5,8 +5,8 @@
 
 
 
-##### MariaDB starting with [10.5.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md)
-From [MariaDB 10.5.2](../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), `mysql-stress-test` is the symlink, and `mariadb-stress-test` the binary name.
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), `mysql-stress-test` is the symlink, and `mariadb-stress-test` the binary name.
 
 
 *mariadb-stress-test.pl* is a Perl script that performs stress-testing of the MariaDB server. It requires a version of Perl that has been built with threads support.
@@ -32,7 +32,7 @@ mariadb-stress-test.pl [options]
 | --cleanup | Force cleanup of the working directory. |
 | --log-error-details | Log error details in the global [error log](../server-management/server-monitoring-logs/error-log.md) file. |
 | --loop-count=N | In sequential test mode, the number of loops to execute before exiting. |
-| --mysqltest=path | The path name to the [mysqltest](../reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md) program. |
+| --mysqltest=path | The path name to the [mysqltest](mariadb-test/README.md) program. |
 | --server-database=db_name | The database to use for the tests. The default is test. |
 | --server-host=host_name | he host name of the local host to use for making a TCP/IP connection to the local server. By default, the connection is made to localhost using a Unix socket file. |
 | --server-logs-dir=path | This option is required. path is the directory where all client session logs will be stored. Usually this is the shared directory that is associated with the server used for testing. |
@@ -54,4 +54,3 @@ mariadb-stress-test.pl [options]
 | --verbose | Verbose mode. Print more information about what the program does |
 
 
-<span></span>

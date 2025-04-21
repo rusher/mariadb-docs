@@ -118,7 +118,7 @@ version.
 ## Modifying Operations
 
 
-All [INSERT](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) / [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) / [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) operations can be used with proxy tables. However, the same restrictions applying to the source table also apply to the proxy table.
+All [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) / [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) / [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) operations can be used with proxy tables. However, the same restrictions applying to the source table also apply to the proxy table.
 
 
 Note: All PROXY and PROXY-based table types are not indexable.

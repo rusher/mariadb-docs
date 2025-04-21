@@ -1,7 +1,7 @@
 
 # Using Buffer UPDATE Algorithm
 
-This article explains the [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statement's *Using Buffer* algorithm.
+This article explains the [UPDATE](../../data-manipulation/changing-deleting-data/update.md) statement's *Using Buffer* algorithm.
 
 
 Take the following table and query:
@@ -43,5 +43,5 @@ In order to prevent such situations, the optimizer checks whether the UPDATE sta
 This way, each row will be updated only once.
 
 
-The `Using buffer` [EXPLAIN](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) output indicates that the buffer as described above will be used.
+The `Using buffer` [EXPLAIN](explain.md) output indicates that the buffer as described above will be used.
 

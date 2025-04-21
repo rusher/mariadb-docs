@@ -2,7 +2,7 @@
 # Upgrading Between Major MariaDB Versions
 
 MariaDB is designed to allow easy upgrades. You should be able to trivially upgrade from ANY earlier
-MariaDB version to the latest one (for example [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md).x to [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md).x), usually in a few seconds. This is also mainly true for any MySQL version < 8.0 to [MariaDB 10.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and up.
+MariaDB version to the latest one (for example [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).x to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011).x), usually in a few seconds. This is also mainly true for any MySQL version < 8.0 to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and up.
 
 
 Upgrades are normally easy because:
@@ -13,18 +13,18 @@ Upgrades are normally easy because:
 * The MariaDB replica can be of any newer version than the primary.
 
 
-MariaDB Corporation regularly runs tests to check that one can upgrade from [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) to the latest MariaDB version without any trouble. All older versions should work too (as long as the storage engines you were using are still around).
+MariaDB Corporation regularly runs tests to check that one can upgrade from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) to the latest MariaDB version without any trouble. All older versions should work too (as long as the storage engines you were using are still around).
 
 
-Note that if you are using [MariaDB Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md), you have to follow the [Galera upgrading instructions](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/README.md)!
+Note that if you are using [MariaDB Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), you have to follow the [Galera upgrading instructions](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/README.md)!
 
 
 ## Requirements for Doing an Upgrade Between Major Versions
 
 
 * Go through the individual version upgrade notes (listed below) to look for any major changes or configuration options that have changed.
-* Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../reference/storage-engines/tokudb/tokudb-resources.md) is not supported.
-* Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
+* Ensure that the target MariaDB version supports the storage engines you are using. For example, in 10.5 [TokuDB](../../../reference/storage-engines/tokudb/README.md) is not supported.
+* Back up the database (just in case). At least, take a copy of the `mysql` system database directory under the data directory with [mariadb-dump --add-drop-table mysql](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (called mysqldump in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and earlier) as most of the upgrade changes are done there (adding new fields and new system tables etc).
 * Cleanly shutdown the server. This is necessary because even if data files are compatible between versions, recovery logs may not be.
 
   * Ensure that the [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
@@ -40,7 +40,7 @@ Note that rpms don't support upgrading between major versions, only minor like 1
 * If you have a [primary-replica setup](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md), first upgrade one replica and when you have verified that the replica works well, upgrade the rest of the replicas (if any). Then [upgrade one replica to primary](../../../server-usage/replication-cluster-multi-master/standard-replication/changing-a-replica-to-become-the-primary.md), upgrade the primary, and change the replica to a primary.
 
 
-* If you don't have a primary-replica setup, then [take a backup](../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md), [shutdown MariaDB](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md) and do the upgrade.
+* If you don't have a primary-replica setup, then [take a backup](../../backing-up-and-restoring-databases/mariabackup/README.md), [shutdown MariaDB](../../../clients-and-utilities/legacy-clients-and-utilities/mysqladmin.md) and do the upgrade.
 
 
 ### Step by Step Instructions for Upgrades
@@ -74,8 +74,8 @@ The common warnings/errors are:
 * Using obsolete options. If this is the case, remove them from your [my.cnf files](../configuring-mariadb-with-option-files.md).
 
 
-* Check the manual for [new features](../../../../columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-103-to-104.md) that have been added since your last MariaDB version.
-* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md), [optimizer trace](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/README.md) or [optimizer_switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
+* Check the manual for [new features](README.md) that have been added since your last MariaDB version.
+* Test that your application works as before. The main difference from before is that because of optimizer improvements your application should work better than before, but in some rare cases the optimizer may get something wrong. In this case, you can try to use [explain](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), [optimizer trace](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/README.md) or [optimizer_switch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) to fix the queries.
 
 
 ## If Something Goes Wrong
@@ -99,7 +99,7 @@ In the unlikely event something goes wrong, you can try the following:
   * innodb_table_stats
   * innodb_index_stats
   * transaction_registry
-* Move the `mysql` data directory to `mysql-old` and run [mariadb-install-db](../mariadb-install-db-exe.md) to generate a new one.
+* Move the `mysql` data directory to `mysql-old` and run [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) to generate a new one.
 * After the above, you have to add back your old users.
 * When done, delete the `mysql-old` data directory.
 
@@ -107,7 +107,7 @@ In the unlikely event something goes wrong, you can try the following:
 ## Downgrading
 
 
-MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) or [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
+MariaDB server is not designed for downgrading. That said, in most cases, as long as you haven't run any [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) or [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statements and you have a [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) of your old `mysql` database , you should be able to downgrade to your previous version by doing the following:
 
 
 * Do a clean shutdown. For this special case you have to set [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) to 0,before taking down the new MariaDB server, to ensure there are no redo or undo logs that need to be applied on the downgraded server.
@@ -116,7 +116,7 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 * Install the old MariaDB version
 * Start the server with [mariadbd --skip-grant-tables](../starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables)
 * Install the old `mysql` database
-* Execute in the [mariadb client](../../../clients-and-utilities/mariadb-client/README.md) [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* Execute in the [mariadb client](../../../clients-and-utilities/mariadb-client/README.md) [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)
 
 
 ## See Also
@@ -133,4 +133,3 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 * [Galera upgrading instructions](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/README.md)
 * [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
-<span></span>

@@ -25,7 +25,7 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])
 query parts where a stored procedure variable is allowed:
 
 
-* Assignment is using the `:=` operator and the [SET](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) command:
+* Assignment is using the `:=` operator and the [SET](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) command:
 
 
 ```

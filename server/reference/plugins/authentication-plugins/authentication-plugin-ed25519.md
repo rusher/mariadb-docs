@@ -49,7 +49,7 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 ## Creating Users
 
 
-You can create a user account by executing the [CREATE USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement and providing the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause followied by the the name of the plugin, which is `ed25519`, and providing the the `USING` clause followed by the [PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md) function with the plain-text password as an argument. For example:
+You can create a user account by executing the [CREATE USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement and providing the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause followied by the the name of the plugin, which is `ed25519`, and providing the the `USING` clause followed by the [PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function with the plain-text password as an argument. For example:
 
 
 ```
@@ -66,7 +66,7 @@ GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING PASSWORD(
 <</product>>
 
 
-The [PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md) function and [SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) that comes with the authentication plugin to calculate the password hash. For example:
+The [PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) that comes with the authentication plugin to calculate the password hash. For example:
 
 
 ```
@@ -114,21 +114,21 @@ Note that users require a password in order to be able to connect. It is possibl
 ## Changing User Passwords
 
 
-You can change a user account's password by executing the [SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement followed by the [PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md) function and providing the plain-text password as an argument. For example:
+You can change a user account's password by executing the [SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement followed by the [PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and providing the plain-text password as an argument. For example:
 
 
 ```
 SET PASSWORD =  PASSWORD('new_secret')
 ```
 
-You can also change the user account's password with the [ALTER USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md#identified-viawith-authentication_plugin) clause while providing the plain-text password as an argument to the [PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md) function in the `USING` clause. For example:
+You can also change the user account's password with the [ALTER USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md#identified-viawith-authentication_plugin) clause while providing the plain-text password as an argument to the [PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function in the `USING` clause. For example:
 
 
 ```
 ALTER USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('new_secret');
 ```
 
-The [PASSWORD()](../password-validation-plugins/password-reuse-check-plugin.md) function and [SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/programming-customizing-mariadb/user-defined-functions/user-defined-functions-security.md) that comes with the authentication plugin to calculate the password hash. For example:
+The [PASSWORD()](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) that comes with the authentication plugin to calculate the password hash. For example:
 
 
 ```
@@ -164,7 +164,7 @@ ALTER USER username@hostname IDENTIFIED VIA ed25519
 ## Client Authentication Plugins
 
 
-For clients that use the `libmysqlclient` or [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) libraries, MariaDB provides one client authentication plugin that is compatible with the `ed25519` authentication plugin:
+For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) libraries, MariaDB provides one client authentication plugin that is compatible with the `ed25519` authentication plugin:
 
 
 * `client_ed25519`
@@ -189,19 +189,19 @@ The `client_ed25519` client authentication plugin hashes and signs the password 
 ### Using the Plugin with MariaDB Connector/C
 
 
-[MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) supports `ed25519` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/C 3.1.0.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) supports `ed25519` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/C 3.1.0.
 
 
 ### Using the Plugin with MariaDB Connector/ODBC
 
 
-[MariaDB Connector/ODBC](../../../../connectors/mariadb-connector-odbc/README.md) supports `ed25519` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/ODBC 3.1.2.
+[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/) supports `ed25519` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/ODBC 3.1.2.
 
 
 ### Using the Plugin with MariaDB Connector/J
 
 
-[MariaDB Connector/J](../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md) supports `ed25519` authentication since MariaDB Connector/J 2.2.1.
+[MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/) supports `ed25519` authentication since MariaDB Connector/J 2.2.1.
 
 
 ### Using the Plugin with MariaDB Connector/Node.js
@@ -213,7 +213,7 @@ The `client_ed25519` client authentication plugin hashes and signs the password 
 ### Using the Plugin with MySqlConnector for .NET
 
 
-[MySqlConnector for ADO.NET](../../../../connectors/net-connector/mysqlconnector-for-ado-net.md) supports `ed25519` authentication since MySqlConnector 0.56.0.
+[MySqlConnector for ADO.NET](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/net-connector/mysqlconnector-for-ado-net) supports `ed25519` authentication since MySqlConnector 0.56.0.
 
 
 The connector implemented support for this authentication plugin in a separate [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) package called [MySqlConnector.Authentication.Ed25519](https://www.nuget.org/packages/MySqlConnector.Authentication.Ed25519/). After the package is installed, your application must call `Ed25519AuthenticationPlugin.Install` to enable it.
@@ -226,9 +226,9 @@ The connector implemented support for this authentication plugin in a separate [
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 1.1 | Stable | [MariaDB 10.4.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md) |
-| 1.0 | Stable | [MariaDB 10.3.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1038-release-notes.md), [MariaDB 10.2.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10217-release-notes.md), [MariaDB 10.1.35](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes.md) |
-| 1.0 | Beta | [MariaDB 10.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md), [MariaDB 10.1.22](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes.md) |
+| 1.1 | Stable | [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1040-release-notes) |
+| 1.0 | Stable | [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes), [MariaDB 10.1.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes) |
+| 1.0 | Beta | [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes), [MariaDB 10.1.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes) |
 
 
 

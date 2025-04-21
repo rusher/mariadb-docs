@@ -1241,14 +1241,14 @@ diverging history and the old primary can no longer join the replication cluster
 
 
 To reduce the chance of losing data, use
-[semisynchronous replication](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md).
+[semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication).
 In semisynchronous mode, the primary waits for a replica to receive an event before
 returning an acknowledgement to the client. This does not yet guarantee a clean
 failover. If the primary fails after preparing a transaction but before receiving
 replica acknowledgement, it will still commit the prepared transaction as part of
 its crash recovery. If the replicas never saw this transaction, the
 old primary has diverged from the cluster. See
-[Configuring the Master Wait Point](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)
+[Configuring the Master Wait Point](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication)
 for more information. This situation is much less likely in MariaDB Server
 10.6.2 and later, as the improved crash recovery logic will delete such
 transactions.
@@ -1259,7 +1259,7 @@ default wait for all data to be replicated to the replicas when shutting down an
 instead simply closes all connections. Before shutting down the primary with the
 intention of having a replica promoted, run *switchover* first to ensure that all
 data is replicated. For more information on server shutdown, see
-[Binary Log Dump Threads and the Shutdown Process](../../../server/server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md).
+[Binary Log Dump Threads and the Shutdown Process](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-threads).
 
 
 Switchover requires that the cluster is "frozen" for the duration of the
@@ -1789,7 +1789,7 @@ the configuration file.
 
 
 Cooperative monitoring uses
-[server locks](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)
+[server locks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)
 for coordinating between monitors. When cooperating, the monitor regularly
 checks the status of a lock named *maxscale_mariadbmonitor* on every server and
 acquires it if free. If the monitor acquires a majority of locks, it is the
@@ -1897,7 +1897,7 @@ running MariaDB Server.
 
 On MariaDB Server 10.3.3 and later, the TCP keepalive settings can be configured
 for just the server process. See
-[Server System Variables](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_interval)
+[Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#tcp_keepalive_interval)
 for information on settings *tcp_keepalive_interval*, *tcp_keepalive_probes* and
 *tcp_keepalive_time*. These settings can also be set on the operating system
 level, as described
@@ -2084,7 +2084,7 @@ The following tools need to be installed on the backends:
 
 1. Mariabackup. Backs up and restores MariaDB Server contents. Installed e.g.
 with `yum install MariaDB-backup`. See
-[Mariabackup documentation](../../../server/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) for more
+[Mariabackup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/) for more
 information.
 1. pigz. Compresses and decompresses the backup stream. Installed e.g. with
 `yum install pigz`.
@@ -2095,7 +2095,7 @@ installed. If not, can be installed e.g. with `yum install socat`.
 Mariabackup needs server credentials to log in and authenticate to the
 MariaDB Server being copied from. For this, MaxScale uses the monitor user.
 The monitor user may thus require additional privileges. See
-[Mariabackup documentation](../../../server/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges)
+[Mariabackup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges)
 for more details.
 
 
@@ -2414,7 +2414,7 @@ starting, MaxScale will attempt to kill the process.
 String, default: "1G". Given as is to
 `mariabackup --prepare --use-memory=<mariabackup_use_memory>`. If set to empty,
 no `--use-memory` is set and Mariabackup will use its internal default. See
-[here](../../../server/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md#-use-memory) for more
+[here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-use-memory) for more
 information.
 
 
@@ -2430,7 +2430,7 @@ mariabackup_use_memory=2G
 
 Numeric, default: 1. Given as is to`mariabackup --backup --parallel=<val>`.
 Defines the number of threads used for parallel data file transfer. See
-[here](../../../server/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md#-parallel) for more
+[here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-parallel) for more
 information.
 
 

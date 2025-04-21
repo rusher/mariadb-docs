@@ -250,6 +250,6 @@ SELECT *, example + 0 FROM mediumint_zerofill_example;
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
 * [TINYINT](tinyint.md)
 * [SMALLINT](smallint.md)
-* [INTEGER](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md)
+* [INTEGER](int.md)
 * [BIGINT](bigint.md)
 

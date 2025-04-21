@@ -24,7 +24,7 @@ DO statement_list
 END FOR [ end_label ]
 ```
 
-Explicit cursor FOR loop ([Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md))
+Explicit cursor FOR loop ([Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle))
 
 
 ```
@@ -120,7 +120,7 @@ SELECT * FROM t1;
 +------+
 ```
 
-Explicit cursor in [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md):
+Explicit cursor in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle):
 
 
 ```

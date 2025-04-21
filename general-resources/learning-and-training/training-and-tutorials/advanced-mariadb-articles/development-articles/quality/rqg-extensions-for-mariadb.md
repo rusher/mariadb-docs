@@ -11,7 +11,7 @@ While all described changes were made in order to test MariaDB code, many of the
 ## Galera Mode
 
 
-A set of changes to support running RQG tests with multi-master Galera replication, implemented to test [MariaDB Galera cluster](../../../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md).
+A set of changes to support running RQG tests with multi-master Galera replication, implemented to test [MariaDB Galera cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/).
 
 
 The top-level script `runall-new.pl` got a new option --galera, which takes a string value. The string can be a combination of 'm' or 's', where each symbol represents a Galera node. 'm' stands for 'master', and 's' stands for 'slave'.
@@ -83,7 +83,7 @@ The exit code for this failure is `STATUS_REQUIREMENT_UNMET`.
 ## MariadbGtidCrashSafety Reporter
 
 
-The reporter was created to test slave crash-safety with [MariaDB implementation of GTID](../../../../../../server/server-usage/replication-cluster-multi-master/standard-replication/gtid.md). It is similar to [SlaveCrashRecovery reporter](#slavecrashrecovery-reporter), but is adjusted to check GTID-specific aspects:
+The reporter was created to test slave crash-safety with [MariaDB implementation of GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid). It is similar to [SlaveCrashRecovery reporter](#slavecrashrecovery-reporter), but is adjusted to check GTID-specific aspects:
 
 
 * it restarts the slave with --skip-slave-start, and executes
@@ -115,7 +115,7 @@ The reporter itself does not check consistency of the data, but it can be used t
 It is supposed to be used with `runall-new.pl`, so that the server is started without MTR involvement.
 
 
-*Usage example: testing of [GTID in MariaDB 10.0](../../../../../../server/server-usage/replication-cluster-multi-master/standard-replication/gtid.md)*
+*Usage example: testing of [GTID in MariaDB 10.0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid)*
 
 
 ## BinlogConsistency Reporter
@@ -130,7 +130,7 @@ After the main test flow is finished, the reporter creates a data dump of the se
 It is to be used with `runall-new.pl`.
 
 
-*Usage example: testing of binlog changes in [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) (e.g. [MDEV-181](https://jira.mariadb.org/browse/MDEV-181), [MDEV-232](https://jira.mariadb.org/browse/MDEV-232))*
+*Usage example: testing of binlog changes in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) (e.g. [MDEV-181](https://jira.mariadb.org/browse/MDEV-181), [MDEV-232](https://jira.mariadb.org/browse/MDEV-232))*
 
 
 ## CrashRecovery Reporter
@@ -145,7 +145,7 @@ It is to be used with `runall-new.pl`
 ## LimitRowsExamined Transformer
 
 
-The transformer was developed for testing new [LIMIT ROWS EXAMINED](../../../../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/limit-rows-examined.md) functionality added in [MariaDB 5.5](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). It can be used in the usual way, by providing its name in the `--transformers` list.
+The transformer was developed for testing new [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/limit-rows-examined) functionality added in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). It can be used in the usual way, by providing its name in the `--transformers` list.
 
 
 The transformer checks whether the original query already contains a `ROWS EXAMINED` clause. If it does not, it adds the clause either after the `LIMIT` clause, or at the end of the query. In any case (even if `ROWS EXAMINED` was already there), the transformer returns the following sequence of statements:
@@ -171,7 +171,7 @@ Note: Status values `STATUS_REQUIREMENT_UNMET` and `STATUS_REQUIREMENT_UNMET_SEL
 ## ShowExplain Validator
 
 
-The validator was developed for testing the new functionality [SHOW EXPLAIN](../../../../../../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) introduced in [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md).
+The validator was developed for testing the new functionality [SHOW EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain) introduced in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
 
 The validator checks that the output of `SHOW EXPLAIN` correlates with the output of traditional `EXPLAIN` executed for the same query. It also tries to filter out known expected mismatches between the produced plans.
@@ -186,7 +186,7 @@ RQG already provided `--views[=<view type>]` option, which means that in additio
 The change was made in `gentest.pl` and both `runall.pl` and `runall-new.pl`.
 
 
-*Usage example: testing of MERGE view extension in [MariaDB 10.0](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) ([MDEV-3862](https://jira.mariadb.org/browse/MDEV-3862))*
+*Usage example: testing of MERGE view extension in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) ([MDEV-3862](https://jira.mariadb.org/browse/MDEV-3862))*
 
 
 ## Multiple Redefining Grammars

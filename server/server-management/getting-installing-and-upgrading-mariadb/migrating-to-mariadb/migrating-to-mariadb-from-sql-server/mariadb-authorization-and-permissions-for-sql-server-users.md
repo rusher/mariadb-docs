@@ -22,7 +22,7 @@ CREATE USER viviana;
 CREATE USER viviana@'%';
 ```
 
-However, such accounts may be unable to connect from localhost if an anonymous user `''@'%'` is present. See [localhost and %](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues.md#localhost-and) for the details.
+However, such accounts may be unable to connect from localhost if an anonymous user `''@'%'` is present. See [localhost and %](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues#localhost-and) for the details.
 
 
 Accounts are not bound to a specific database. They are global. Once an account is created, it is possible to assign it permissions on any existing or non existing database.
@@ -62,7 +62,7 @@ ALTER USER tom@'%.example.com' IDENTIFIED BY PASSWORD 'secret hash';
 SET PASSWORD = PASSWORD('secret hash');
 ```
 
-The [PASSWORD()](../../../../reference/plugins/password-validation-plugins/password-reuse-check-plugin.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
+The [PASSWORD()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
 
 
 `SET PASSWORD` applies to the current account, by default. Superusers can change other accounts passwords in this way:
@@ -177,7 +177,7 @@ The list of supported privileges can be found in the [GRANT](../../../../referen
 
 * `USAGE` privilege has no effect. The `GRANT` command fails if we don't grant at least one privilege; but sometimes we want to run it for other purposes, for example to require a user to use TLS connections. In such cases, it is useful to grant `USAGE`.
 * Normally we can obtain a list of all databases for which we have at least one permission. The `SHOW DATABASES` permission allows getting a list of all databases.
-* There is no `SHOWPLAN` privilege in MariaDB. Instead, [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) requires the `SELECT` privilege for each accessed table and the `SHOW VIEW` privilege for each accessed view.
+* There is no `SHOWPLAN` privilege in MariaDB. Instead, [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) requires the `SELECT` privilege for each accessed table and the `SHOW VIEW` privilege for each accessed view.
 * The same permissions are needed to see a table structure (`SELECT`) or a view definition (`SHOW VIEW`).
 * `REFERENCES` has no effect.
 
@@ -196,7 +196,7 @@ Some differences concerning the SQL commands:
 ## Roles
 
 
-MariaDB supports [roles](../../../../security/user-account-management/roles/roles_overview.md). Permissions can be assigned to roles, and roles can be assigned to accounts.
+MariaDB supports [roles](../../../../security/user-account-management/roles/README.md). Permissions can be assigned to roles, and roles can be assigned to accounts.
 
 
 An account may have zero or one default roles. A default role is a role that is automatically active for a user when they connect. To assign an account or remove a default role, these SQL statements can be used:
@@ -226,4 +226,3 @@ MariaDB does not have predefined roles, like public.
 
 For an introduction to roles, see [Roles Overview](../../../../security/user-account-management/roles/roles_overview.md).
 
-<span></span>

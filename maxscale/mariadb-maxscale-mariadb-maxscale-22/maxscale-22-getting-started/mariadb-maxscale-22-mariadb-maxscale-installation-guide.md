@@ -14,7 +14,7 @@ Download the MaxScale package from the MariaDB Downloads page:
 
 
 Select your operating system and download the package. You can also use
-[the MariaDB package repository](../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)
+[the MariaDB package repository](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage)
 to install MaxScale.
 
 

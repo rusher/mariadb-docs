@@ -18,10 +18,10 @@ prepared statement parameter, or a stored program parameter.
 
 
 The purpose of this optimization is to provide the means to terminate the
-execution of `[SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)` statements which examine too many rows, and
+execution of `[SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)` statements which examine too many rows, and
 thus use too many resources. This is achieved through an extension of the
-`[LIMIT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit)` clause —
-`LIMIT ROWS EXAMINED number_of_rows `. Whenever possible the
+`[LIMIT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit)` clause —
+`LIMIT ROWS EXAMINED number_of_rows`. Whenever possible the
 semantics of `LIMIT ROWS EXAMINED` is the same as that of normal `LIMIT`
 (for instance for aggregate functions).
 
@@ -30,12 +30,12 @@ The `LIMIT ROWS EXAMINED` clause is taken into account by the query engine
 only during query execution. Thus the clause is ignored in the following cases:
 
 
-* If a query is `[EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md)`-ed.
+* If a query is `[EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md)`-ed.
 * During query optimization.
 * During auxiliary operations such as writing to system tables (e.g. logs).
 
 
-The clause is not applicable to `[DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)` or `[UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)`
+The clause is not applicable to `[DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)` or `[UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)`
 statements, and if used in those statements produces a syntax error.
 
 
@@ -101,4 +101,3 @@ LIMIT ROWS EXAMINED 11;
 
 The limit that is taken into account is 11, not 0.
 
-<span></span>

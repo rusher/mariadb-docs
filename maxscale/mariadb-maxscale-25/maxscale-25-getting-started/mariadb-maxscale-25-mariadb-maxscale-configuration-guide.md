@@ -2663,7 +2663,7 @@ port is used.
 
 
 For more information, read the
-[extra_port documentation](../../../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md).
+[extra_port documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables).
 
 
 ### `persistpoolmax`
@@ -3289,7 +3289,7 @@ Simple sharding on database level:
 
 
 Binary log server:
-* [Binlogrouter](../maxscale-25-routers/mariadb-maxscale-25-binlogrouter-24.md)
+* [Binlogrouter](../maxscale-25-routers/mariadb-maxscale-25-binlogrouter.md)
 
 
 ## Monitor Modules

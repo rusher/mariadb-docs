@@ -105,13 +105,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -120,19 +120,19 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Centos 6 Binary Package
@@ -194,13 +194,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -209,13 +209,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB MaxScale
@@ -224,7 +224,7 @@ Additional information on the Java Connector:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 # Centos 7
@@ -305,13 +305,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -320,13 +320,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -344,7 +344,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Centos 7 Binary Package
@@ -422,13 +422,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -437,13 +437,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -461,7 +461,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 # Suse 12
@@ -525,13 +525,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -540,19 +540,19 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Suse 12 Binary Package
@@ -613,13 +613,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -628,13 +628,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB MaxScale
@@ -643,7 +643,7 @@ Additional information on the Java Connector:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 # Debian 8 (jessie)
@@ -724,13 +724,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -739,13 +739,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -763,7 +763,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Debian 8 Binary Package
@@ -841,13 +841,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -856,13 +856,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -880,7 +880,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 # Debian 9 (stretch)
@@ -961,13 +961,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -976,13 +976,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -1000,7 +1000,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Debian 9 Binary Package
@@ -1078,13 +1078,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -1093,13 +1093,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -1117,7 +1117,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 # Ubuntu 16 (xenial)
@@ -1198,13 +1198,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -1213,13 +1213,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -1237,7 +1237,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Ubuntu 16 Binary Package
@@ -1315,13 +1315,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -1330,13 +1330,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -1354,7 +1354,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 # Ubuntu 18 (bionic)
@@ -1435,13 +1435,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -1450,13 +1450,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -1474,7 +1474,7 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
 
 ## Ubuntu 18 Binary Package
@@ -1552,13 +1552,13 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc.md](../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md)
+[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
 
 
 Additional Information on the ODBC connector:
 
 
-[README.md](../../connectors/mariadb-connector-odbc/README.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/)
 
 
 #### Java Connector
@@ -1567,13 +1567,13 @@ Additional Information on the ODBC connector:
 How to Install the Java Connector:
 
 
-[installing-mariadb-connectorj.md](../../connectors/mariadb-connector-j/installing-mariadb-connectorj.md)
+[installing-mariadb-connectorj](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/installing-mariadb-connectorj)
 
 
 Additional information on the Java Connector:
 
 
-[mariadb-connector-j-releases.md](../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md)
+[](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)
 
 
 ### MariaDB ColumnStore Data Adapters
@@ -1591,5 +1591,5 @@ How to Install on the Data Adapters:
 How to Install on the MariaDB MaxScale:
 
 
-[README.md](../../maxscale/mariadb-maxscale-21-06/README.md)
+[](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 

@@ -8,7 +8,7 @@
 ![spider_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png "spider_overview")
 
 
-The Spider storage engine is a [storage engine](../../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
+The Spider storage engine is a [storage engine](../README.md) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
 
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
@@ -24,18 +24,18 @@ The Spider documentation on the MariaDB Knowledge Base is currently incomplete. 
 | Spider Version | Introduced | Maturity |
 | --- | --- | --- |
 | Spider Version | Introduced | Maturity |
-| Spider 3.3.15 | [MariaDB 10.5.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes.md), [MariaDB 10.4.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md) | Stable |
-| Spider 3.3.15 | [MariaDB 10.5.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes.md) | Gamma |
-| Spider 3.3.14 | [MariaDB 10.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1043-release-notes.md), [MariaDB 10.3.13](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10313-release-notes.md) | Stable |
-| Spider 3.3.13 | [MariaDB 10.3.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1037-release-notes.md) | Stable |
-| Spider 3.3.13 | [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md) | Gamma |
-| Spider 3.2.37 | [MariaDB 10.1.10](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes.md), [MariaDB 10.0.23](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes.md) | Gamma |
-| Spider 3.2.21 | [MariaDB 10.1.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes.md), [MariaDB 10.0.18](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes.md) | Gamma |
-| Spider 3.2.18 | [MariaDB 10.0.17](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes.md) | Gamma |
-| Spider 3.2.11 | [MariaDB 10.0.14](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes.md) | Gamma |
-| Spider 3.2.4 | [MariaDB 10.0.12](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md) | Gamma |
-| Spider 3.2 | [MariaDB 10.0.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes.md) | Gamma |
-| Spider 3.0 | [MariaDB 10.0.4](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes.md) | Beta |
+| Spider 3.3.15 | [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes) | Stable |
+| Spider 3.3.15 | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes) | Gamma |
+| Spider 3.3.14 | [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes) | Stable |
+| Spider 3.3.13 | [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes) | Stable |
+| Spider 3.3.13 | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) | Gamma |
+| Spider 3.2.37 | [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes), [MariaDB 10.0.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes) | Gamma |
+| Spider 3.2.21 | [MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes), [MariaDB 10.0.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes) | Gamma |
+| Spider 3.2.18 | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes) | Gamma |
+| Spider 3.2.11 | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes) | Gamma |
+| Spider 3.2.4 | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes) | Gamma |
+| Spider 3.2 | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) | Gamma |
+| Spider 3.0 | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) | Beta |
 
 
 
@@ -46,7 +46,7 @@ The Spider documentation on the MariaDB Knowledge Base is currently incomplete. 
 ### Basic Usage
 
 
-To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement are used to pass connection information about the remote server.
+To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement are used to pass connection information about the remote server.
 
 
 For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](../../../clients-and-utilities/legacy-clients-and-utilities/mysql-sandbox.md) tool, an easy way to test with multiple installations)::
@@ -87,7 +87,7 @@ node1 > SELECT * FROM s;
 ```
 
 
-##### MariaDB starting with [10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md)
+##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 Alternative to specifying the data node information in the COMMENT, certain information (server, database, table) can also be specified using Table Options, like so:
 
 ```
@@ -237,7 +237,7 @@ EOF
 ![spbench10](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench10.png "spbench10")
 
 
-Without connection pool or MariaDB thread pool, HaProxy and Spider have been protecting the tcp socket overflow without specific TCP tuning. In reality with a well tuned TCP stack or thread pool the curve should not decrease so abruptly to 0. Refer to the [MariaDB Thread Pool](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) to explore this feature.
+Without connection pool or MariaDB thread pool, HaProxy and Spider have been protecting the tcp socket overflow without specific TCP tuning. In reality with a well tuned TCP stack or thread pool the curve should not decrease so abruptly to 0. Refer to the [MariaDB Thread Pool](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) to explore this feature.
 
 
 #### Sharding Setup
@@ -357,7 +357,7 @@ We need to increase the concurrency to get better throughput.
 #### Background Setup
 
 
-We have no background search available in MariaDB. It won't be available before [MariaDB 10.2](../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md), but the next table definition mainly enables improving the performance of a single complex query plan with background search that can be found via the upstream spiral binaries MariaDB branch.
+We have no background search available in MariaDB. It won't be available before [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), but the next table definition mainly enables improving the performance of a single complex query plan with background search that can be found via the upstream spiral binaries MariaDB branch.
 
 
 We have 4 cores per backend and 2 backends .
@@ -538,8 +538,8 @@ mysql> select sum(k) from sbtest;
 
 
 
-##### MariaDB starting with [10.7.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1075-release-notes.md)
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md).
+##### MariaDB starting with [10.7.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md).
 
 
 ![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png "spider9")

@@ -4,7 +4,7 @@
 This article describes the different methods MariaDB provides to limit/timeout a query:
 
 
-## [LIMIT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit)
+## [LIMIT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit)
 
 
 ```
@@ -15,7 +15,7 @@ or
 SELECT ... LIMIT row_count OFFSET offset
 ```
 
-The [LIMIT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#limit) clause restricts the number of returned rows.
+The [LIMIT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause restricts the number of returned rows.
 
 
 ## [LIMIT ROWS EXAMINED](limit-rows-examined.md)
@@ -31,7 +31,7 @@ Stops the query after 'rows_limit' number of rows have been examined.
 ## sql_safe_updates
 
 
-If the [sql_safe_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
+If the [sql_safe_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
 statement unless one specifies a key constraint in the `WHERE` clause or provide a `LIMIT` clause (or both).
 
 
@@ -45,7 +45,7 @@ UPDATE tbl_name SET not_key_column=val;
 ## sql_select_limit
 
 
-[sql_select_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `LIMIT row_count` to any [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) query.
+[sql_select_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `LIMIT row_count` to any [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) query.
 
 
 ```
@@ -88,4 +88,3 @@ If the [max_statement_time](../system-variables/server-system-variables.md#max_s
 * [Aborting statements that take longer than a certain time to execute](aborting-statements.md)
 * [lock_wait_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 
-<span></span>

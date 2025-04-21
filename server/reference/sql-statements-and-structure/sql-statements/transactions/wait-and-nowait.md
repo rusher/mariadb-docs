@@ -30,13 +30,13 @@ The lock wait timeout can be explicitly set in the statement by using either `WA
 
 
 * [Query Limits and Timeouts](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/query-limits-and-timeouts.md)
-* [ALTER TABLE](../data-definition/alter/alter-tablespace.md)
+* [ALTER TABLE](../data-definition/alter/alter-table.md)
 * [CREATE INDEX](../data-definition/create/create-index.md)
 * [DROP INDEX](../data-definition/drop/drop-index.md)
-* [DROP TABLE](../data-definition/drop/drop-tablespace.md)
+* [DROP TABLE](../data-definition/drop/drop-table.md)
 * [LOCK TABLES and UNLOCK TABLES](lock-tables.md)
 * [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md)
 * [RENAME TABLE](../data-definition/rename-table.md)
-* [SELECT](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../data-manipulation/selecting-data/select.md)
 * [TRUNCATE TABLE](../table-statements/truncate-table.md)
 

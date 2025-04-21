@@ -85,13 +85,13 @@ example, large values of spin_waits and spin_rounds may indicate scalability
 problems.
 
 
-The `[information_schema](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md).[INNODB_MUTEXES](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table.md)` table provides similar information.
+The `[information_schema](../system-tables/information-schema/README.md).[INNODB_MUTEXES](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table.md)` table provides similar information.
 
 
 ### SHOW ENGINE PERFORMANCE_SCHEMA STATUS
 
 
-This statement shows how much memory is used for `[performance_schema](../system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md)` tables and internal buffers.
+This statement shows how much memory is used for `[performance_schema](../system-tables/performance-schema/README.md)` tables and internal buffers.
 
 
 The output contains the following fields:

@@ -10,7 +10,7 @@ A variant of this partitioning method, [RANGE COLUMNS](range-columns-and-list-co
 ## Syntax
 
 
-The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statement can be definition of the new table's partitions. In the case of RANGE partitioning, the syntax is the following:
+The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement can be definition of the new table's partitions. In the case of RANGE partitioning, the syntax is the following:
 
 
 ```
@@ -43,7 +43,7 @@ As a catchall, MAXVALUE can be specified as a value for the last partition. Note
 A typical use case is when we want to partition a table whose rows refer to a moment or period in time; for example commercial transactions, blog posts, or events of some kind. We can partition the table by year, to keep all recent data in one partition and distribute historical data in big partitions that are stored on slower disks. Or, if our queries always read rows which refer to the same month or week, we can partition the table by month or year week (in this case, historical data and recent data will be stored together).
 
 
-[AUTO_INCREMENT](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) values also represent a chronological order. So, these values can be used to store old data in separate partitions. However, partitioning by id is not the best choice if we usually query a table by date.
+[AUTO_INCREMENT](../../../reference/data-types/auto_increment.md) values also represent a chronological order. So, these values can be used to store old data in separate partitions. However, partitioning by id is not the best choice if we usually query a table by date.
 
 
 ## Examples
@@ -151,4 +151,3 @@ PARTITION BY RANGE (YEAR(dt))
 	PARTITION p4 VALUES LESS THAN MAXVALUE
 );
 ```
-<span></span>

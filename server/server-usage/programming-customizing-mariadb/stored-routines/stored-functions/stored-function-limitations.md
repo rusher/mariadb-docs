@@ -5,8 +5,8 @@ The following restrictions apply to [stored functions](README.md).
 
 
 * All of the restrictions listed in [Stored Routine Limitations](../stored-routine-limitations.md).
-* Any statements that return a result set are not permitted. For example, a regular [SELECTs](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) is not permitted, but a [SELECT INTO](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) is. A cursor and [FETCH](../../programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) statement is permitted.
-* [FLUSH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statements are not permitted.
+* Any statements that return a result set are not permitted. For example, a regular [SELECTs](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) is not permitted, but a [SELECT INTO](../../programmatic-compound-statements/selectinto.md) is. A cursor and [FETCH](../../programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) statement is permitted.
+* [FLUSH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements are not permitted.
 * Statements that perform explicit or implicit commits or rollbacks are not permitted
 * Cannot be used recursively.
 * Cannot make changes to a table that is already in use (reading or writing) by the statement invoking the stored function.
@@ -14,4 +14,3 @@ The following restrictions apply to [stored functions](README.md).
 * ROLLBACK TO SAVEPOINT and RELEASE SAVEPOINT statement which are in a stored function cannot refer to a savepoint which has been defined out of the current function.
 * Prepared statements ([PREPARE](../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md), [EXECUTE](../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md), [DEALLOCATE PREPARE](../../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/deallocate-drop-prepare.md)) cannot be used, and therefore nor can statements be constructed as strings and then executed.
 
-<span></span>

@@ -70,11 +70,11 @@ MyRocks writes data directly onto the bottommost level, which avoids all compact
 ## Requirements and Limitations
 
 
-* MyRocks is included from [MariaDB 10.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1025-release-notes.md).
+* MyRocks is included from [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes).
 * MyRocks is available in the MariaDB Server packages for Linux and Windows.
 * Maria DB optimistic parallel replication may not be supported.
 * MyRocks is not available for 32-bit platforms
-* [Galera Cluster](../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) is tightly integrated into InnoDB storage engine (it also supports Percona's XtraDB which is a modified version of InnoDB). Galera Cluster does not work with any other storage engines, including MyRocks (or TokuDB for example).
+* [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) is tightly integrated into InnoDB storage engine (it also supports Percona's XtraDB which is a modified version of InnoDB). Galera Cluster does not work with any other storage engines, including MyRocks (or TokuDB for example).
 
 
 MyRocks builds are available on platforms that support a sufficiently modern compiler, for example:

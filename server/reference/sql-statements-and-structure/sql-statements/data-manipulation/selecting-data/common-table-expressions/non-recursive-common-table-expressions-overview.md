@@ -7,7 +7,7 @@ Common Table Expressions (CTEs) are a standard SQL feature, and are essentially 
 ## Non-Recursive CTEs
 
 
-The [WITH](../../../../geographic-geometric-features/geometry-relations/within.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:
+The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:
 ![cte_syntax](../../../../../../.gitbook/assets/non-recursive-common-table-expressions-overview/+image/cte_syntax.png "cte_syntax")
 
 

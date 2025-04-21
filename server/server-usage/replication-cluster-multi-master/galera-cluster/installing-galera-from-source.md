@@ -8,7 +8,7 @@ If these are not available, you will need to build Galera from source.
 
 
 The wsrep API for Galera Cluster is included by default. Follow 
-the usual [compiling-mariadb-from-source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md) instructions
+the usual [compiling-mariadb-from-source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md) instructions
 
 
 ## Preparation

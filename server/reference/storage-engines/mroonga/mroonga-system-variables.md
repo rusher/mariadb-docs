@@ -1,7 +1,7 @@
 
 # Mroonga System Variables
 
-This page documents system variables related to the [Mroonga storage engine](mroonga-user-defined-functions/mroonga_snippet_html.md). See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
+This page documents system variables related to the [Mroonga storage engine](README.md). See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -64,7 +64,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: `TokenBigram`
-* Deprecated: [MariaDB 10.1.6](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md), Mroonga 5.0.4
+* Deprecated: [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes), Mroonga 5.0.4
 
 
 
@@ -77,7 +77,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: `TokenBigram`
-* Introduced: [MariaDB 10.1.6](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md), Mroonga 5.0.4
+* Introduced: [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes), Mroonga 5.0.4
 
 
 
@@ -108,13 +108,13 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 #### `mroonga_enable_operations_recording`
 
 
-* Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) after changing the variable.
+* Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) after changing the variable.
 * Commandline: `--mroonga-enable-operations-recording={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Introduced: [MariaDB 10.2.11](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md), [MariaDB 10.1.29](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md)
+* Introduced: [MariaDB 10.2.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10211-release-notes), [MariaDB 10.1.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes)
 
 
 
@@ -139,7 +139,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `ON`
-* Introduced: [MariaDB 10.1.6](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes.md)
+* Introduced: [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes)
 
 
 
@@ -176,7 +176,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.2.11](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md), [MariaDB 10.1.29](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes.md)
+* Introduced: [MariaDB 10.2.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10211-release-notes), [MariaDB 10.1.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes)
 
 
 
@@ -224,8 +224,8 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `NONE` 	No output.
   * `EMERG`: Only emergency error messages, such as database corruption.
   * `ALERT`: Alert messages, such as internal errors.
-  * `CRIT `: Critical error messages, such as deadlocks.
-  * `ERROR `: Errors, such as API errors.
+  * `CRIT`: Critical error messages, such as deadlocks.
+  * `ERROR`: Errors, such as API errors.
   * `WARNING`: Warnings, such as invalid arguments.
   * `NOTICE`: Notices, such as a change in configuration or a status change.
   * `INFO`: Information messages, such as file system operations.
@@ -274,7 +274,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `string`
 * Default Value: (Empty string)
-* Introduced: [MariaDB 10.2.11](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md)
+* Introduced: [MariaDB 10.2.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10211-release-notes)
 
 
 
@@ -286,7 +286,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
-* Default Value: ` ` (white space)
+* Default Value: `` (white space)
 
 
 
@@ -300,4 +300,3 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `string`
 
 
-<span></span>

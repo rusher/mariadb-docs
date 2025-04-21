@@ -20,7 +20,7 @@ Please keep in mind that in April we travel a lot (conferences, busy time), so i
 We would like the authentication system to be able to authenticate against a LDAP Directory Server.
 
 
-See [pluggable authentication](../../../../server/reference/plugins/authentication-plugins/pluggable-authentication-overview.md).
+See [pluggable authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview).
 
 
 Skills: C, working knowledge of LDAP
@@ -38,7 +38,7 @@ Mentor: Sergei Golubchik
 Kerberos is a security mechanism used in a lot of financial institutions. A MySQL plugin that allows authentication against Kerberos is the goal here.
 
 
-See [pluggable authentication](../../../../server/reference/plugins/authentication-plugins/pluggable-authentication-overview.md).
+See [pluggable authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview).
 
 
 Skills: C/C++, working knowledge of Kerberos
@@ -53,7 +53,7 @@ Mentor: Sergei Golubchik
 The Microsoft Windows world is all about Active Directory and upstream MySQL Enterprise already has this feature (though its a paid offering). It would be great to have an open source equivalent.
 
 
-See [pluggable authentication](../../../../server/reference/plugins/authentication-plugins/pluggable-authentication-overview.md).
+See [pluggable authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/pluggable-authentication-overview).
 
 
 Skills: C/C++, working knowledge of Active Directory/SAMBA, Windows-based development environment

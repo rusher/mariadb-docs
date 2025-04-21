@@ -1,7 +1,7 @@
 
 # Information Schema CHECK_CONSTRAINTS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `CHECK_CONSTRAINTS` table stores metadata about the [constraints](../../../../data-definition/constraint.md) defined for tables in all databases.
+The [Information Schema](../README.md) `CHECK_CONSTRAINTS` table stores metadata about the [constraints](../../../../data-definition/constraint.md) defined for tables in all databases.
 
 
 It contains the following columns:
@@ -15,7 +15,7 @@ It contains the following columns:
 | CONSTRAINT_SCHEMA | Database name. |
 | CONSTRAINT_NAME | Constraint name. |
 | TABLE_NAME | Table name. |
-| LEVEL | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md) |
+| LEVEL | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) |
 | CHECK_CLAUSE | Constraint clause. |
 
 
@@ -30,7 +30,7 @@ A table with a numeric table check constraint and with a default check constrain
 CREATE TABLE t ( a int, CHECK (a>10));
 ```
 
-To see check constraint call `check_constraints` table from [information schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+To see check constraint call `check_constraints` table from [information schema](../README.md).
 
 
 ```
@@ -72,7 +72,7 @@ CONSTRAINT_CATALOG: def
       CHECK_CLAUSE: `a` < 100
 ```
 
-A new table `tt` with a field check constraint called `b` , as well as a table check constraint called ` b_upper`:
+A new table `tt` with a field check constraint called `b` , as well as a table check constraint called `b_upper`:
 
 
 ```
@@ -92,7 +92,7 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 *Note:* The name of the field constraint is the same as the field name.
 
 
-After dropping the default table constraint called ` CONSTRAINT_1`:
+After dropping the default table constraint called `CONSTRAINT_1`:
 
 
 ```
@@ -122,7 +122,7 @@ INSERT INTO tt VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `b_upper` failed for `test`.`tt`
 ```
 
-From [MariaDB 10.5.10](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md):
+From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes):
 
 
 ```

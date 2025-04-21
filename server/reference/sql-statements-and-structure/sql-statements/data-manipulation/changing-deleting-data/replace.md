@@ -39,7 +39,7 @@ REPLACE [LOW_PRIORITY | DELAYED]
 
 
 `REPLACE` works exactly like
- `[INSERT](../../built-in-functions/string-functions/insert-function.md)`, except that if an old row in the table
+ `[INSERT](../inserting-loading-data/insert.md)`, except that if an old row in the table
  has the same value as a new row for a `PRIMARY KEY` or a
  `UNIQUE` index, the old row is deleted before the new row is
  inserted. If the table has more than one `UNIQUE` keys, it is possible that the new row conflicts with more than one row. In this case, all conflicting rows will be deleted.
@@ -49,8 +49,8 @@ The table name can be specified in the form `db_name`.`tbl_name` or, if a defaul
 
 
 
-##### MariaDB starting with [10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-The RETURNING clause was introduced in [MariaDB 10.5.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+The RETURNING clause was introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
 
 Basically it works like this:
@@ -102,9 +102,9 @@ for the table.
 There are some gotchas you should be aware of, before using `REPLACE`:
 
 
-* If there is an `[AUTO_INCREMENT](../../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)` field, a new value will be generated.
+* If there is an `[AUTO_INCREMENT](../../../../data-types/auto_increment.md)` field, a new value will be generated.
 * If there are foreign keys, `ON DELETE` action will be activated by `REPLACE`.
-* [Triggers](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) on `DELETE` and `INSERT` will be activated by `REPLACE`.
+* [Triggers](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) on `DELETE` and `INSERT` will be activated by `REPLACE`.
 
 
 To avoid some of these behaviors, you can use `INSERT ... ON DUPLICATE KEY UPDATE`.
@@ -256,7 +256,7 @@ ECT...RETURNING if the table in the RETURNING clause is not the same as the REPL
 ## See Also
 
 
-* [INSERT](../../built-in-functions/string-functions/insert-function.md)
+* [INSERT](../inserting-loading-data/insert.md)
 * [HIGH_PRIORITY and LOW_PRIORITY clauses](high_priority-and-low_priority.md)
 * [INSERT DELAYED](../inserting-loading-data/insert-delayed.md) for details on the `DELAYED` clause
 

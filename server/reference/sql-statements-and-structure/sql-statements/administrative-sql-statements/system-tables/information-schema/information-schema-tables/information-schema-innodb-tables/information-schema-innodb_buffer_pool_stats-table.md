@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_BUFFER_POOL_STATS Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_BUFFER_POOL_STATS` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md), similar to what is returned with the `[SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md)` statement.
+The [Information Schema](../../README.md) `INNODB_BUFFER_POOL_STATS` table contains information about pages in the [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md), similar to what is returned with the `[SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md)` statement.
 
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
@@ -14,7 +14,7 @@ It has the following columns:
 | Column | Description |
 | --- | --- |
 | Column | Description |
-| POOL_ID | Buffer Pool identifier. From [MariaDB 10.5.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
+| POOL_ID | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
 | POOL_SIZE | Size in pages of the buffer pool. |
 | FREE_BUFFERS | Number of free pages in the buffer pool. |
 | DATABASE_PAGES | Total number of pages in the buffer pool. |

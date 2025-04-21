@@ -61,7 +61,7 @@ Dedicated window functions include
 * [RANK](rank.md), [ROW_NUMBER](row_number.md)
 
 
-[Aggregate functions](aggregate-functions-as-window-functions.md) that can also be used as window functions include
+[Aggregate functions](../../aggregate-functions/README.md) that can also be used as window functions include
 
 
 * [AVG](../../aggregate-functions/avg.md)
@@ -69,8 +69,8 @@ Dedicated window functions include
 * [BIT_OR](../../aggregate-functions/bit_or.md)
 * [BIT_XOR](../../aggregate-functions/bit_xor.md)
 * [COUNT](../../aggregate-functions/count.md)
-* [MAX](../../../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md)
-* [MIN](../../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md)
+* [MAX](../../aggregate-functions/max.md)
+* [MIN](../../aggregate-functions/min.md)
 * [STD](../../aggregate-functions/std.md)
 * [STDDEV](../../aggregate-functions/stddev.md)
 * [STDDEV_POP](../../aggregate-functions/stddev_pop.md)

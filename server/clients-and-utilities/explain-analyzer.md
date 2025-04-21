@@ -4,7 +4,7 @@
 The EXPLAIN Analyzer is no longer active.
 
 
-The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) was an online tool for analyzing and optionally sharing the output of both [EXPLAIN](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) and `EXPLAIN EXTENDED`.
+The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) was an online tool for analyzing and optionally sharing the output of both [EXPLAIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) and `EXPLAIN EXTENDED`.
 
 
 ## Using the Analyzer

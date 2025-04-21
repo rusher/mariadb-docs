@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_BUFFER_POOL_PAGES_INDEX Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_BUFFER_POOL_PAGES` table is a Percona enhancement, and is only available for XtraDB, not InnoDB (see [XtraDB and InnoDB](../../../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)). It contains information about [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) index pages.
+The [Information Schema](../../README.md) `INNODB_BUFFER_POOL_PAGES` table is a Percona enhancement, and is only available for XtraDB, not InnoDB (see [XtraDB and InnoDB](../../../../../../../storage-engines/innodb/README.md)). It contains information about [buffer pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md) index pages.
 
 
 It has the following columns:

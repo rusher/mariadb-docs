@@ -12,7 +12,7 @@ INSERT DELAYED ...
 ## Description
 
 
-The `DELAYED` option for the `[INSERT](../../built-in-functions/string-functions/insert-function.md)`
+The `DELAYED` option for the `[INSERT](insert.md)`
 statement is a MariaDB/MySQL extension to standard SQL that is very useful if you have
 clients that cannot or need not wait for the `INSERT` to
 complete. This is a common situation when you use MariaDB for logging and you
@@ -80,7 +80,7 @@ There are some limitations on the use of `DELAYED`:
 * `INSERT DELAYED` is not supported for views. If you try, you will get an error like this: `ERROR 1347 (HY000): 'view_name' is not BASE TABLE`
 * `INSERT DELAYED` is not supported for [partitioned tables](../../../../../server-management/partitioning-tables/README.md).
 * `INSERT DELAYED` is not supported within [stored programs](../../../../../server-usage/programming-customizing-mariadb/stored-routines/README.md).
-* `INSERT DELAYED` does not work with [triggers](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md).
+* `INSERT DELAYED` does not work with [triggers](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md).
 * `INSERT DELAYED` does not work if there is a check constraint in place.
 * `INSERT DELAYED` does not work if [skip-new](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-new) mode is active.
 
@@ -88,7 +88,7 @@ There are some limitations on the use of `DELAYED`:
 ## See Also
 
 
-* [INSERT](../../built-in-functions/string-functions/insert-function.md)
+* [INSERT](insert.md)
 * [INSERT SELECT](insert-select.md)
 * [HIGH_PRIORITY and LOW_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)
 * [Concurrent Inserts](concurrent-inserts.md)

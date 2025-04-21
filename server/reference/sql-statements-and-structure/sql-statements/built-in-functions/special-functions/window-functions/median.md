@@ -14,7 +14,7 @@ MEDIAN(median expression) OVER (
 ## Description
 
 
-MEDIAN() is a [window function](window-functions-overview.md) that returns the median value of a range of values.
+MEDIAN() is a [window function](README.md) that returns the median value of a range of values.
 
 
 It is a specific case of [PERCENTILE_CONT](percentile_cont.md), with an argument of 0.5 and the [ORDER BY](../../../data-manipulation/selecting-data/order-by.md) column the one in `MEDIAN`'s argument.

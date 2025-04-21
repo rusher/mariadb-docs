@@ -9,10 +9,10 @@ The terms *master* and *slave* have historically been used in replication, and M
 caused the row event.
 
 
-Until [MariaDB 10.2.4](../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1024-release-notes.md), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) to MySQL/[MariaDB 5.1](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)). You can enable this with `[--binlog-annotate-row-events](#master-option-binlog-annotate-row-events)`.
+Until [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) to MySQL/[MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)). You can enable this with `[--binlog-annotate-row-events](#master-option-binlog-annotate-row-events)`.
 
 
-In the [binary log](../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md), each `Annotate_rows` event precedes the
+In the [binary log](README.md), each `Annotate_rows` event precedes the
 corresponding Table map event or the first of the Table map events, if there
 are more than one (e.g. in a case of multi-delete or insert delayed).
 
@@ -77,7 +77,7 @@ The following options have been added to control the behavior of
 `Annotate_rows_log_event`:
 
 
-### Master Option: `<code>--</code>binlog-annotate-row-events`
+### Master Option: `--binlog-annotate-row-events`
 
 
 This option tells the master to write `Annotate_rows` events to the binary
@@ -95,7 +95,7 @@ SET SESSION binlog_annotate_row_events=OFF;
 ... statements not to be annotated ...
 ```
 
-### Slave Option: `<code>--</code>replicate-annotate-row-events`
+### Slave Option: `--replicate-annotate-row-events`
 
 
 This option tells the slave to reproduce `Annotate_row` events received from
@@ -106,7 +106,7 @@ the master in its own binary log (sensible only when used in tandem with the
 See [replicate_annotate_row_events](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for a detailed description of the variable.
 
 
-### mariadb-binlog Option: `<code>--</code>skip-annotate-row-events`
+### mariadb-binlog Option: `--skip-annotate-row-events`
 
 
 This option tells [mariadb-binlog](using-mariadb-binlog.md) to skip all `Annotate_row` events in its
@@ -331,5 +331,5 @@ ROLLBACK /* added by mariadb-binlog */;
 * [Replication and Binary Log Server System Variables](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)
 * [Full List of MariaDB Options, System and Status Variables](../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
 * [mariadbd Options](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)
-* [What is MariaDB 5.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

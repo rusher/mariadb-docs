@@ -1,7 +1,7 @@
 
 # MyRocks and Index-Only Scans
 
-This article is about [MyRocks](myrocks-in-mariadb-102-vs-mariadb-103.md) and index-only scans on secondary indexes. It applies to MariaDB's MyRocks, Facebook's MyRocks, and other variants.
+This article is about [MyRocks](README.md) and index-only scans on secondary indexes. It applies to MariaDB's MyRocks, Facebook's MyRocks, and other variants.
 
 
 ## Secondary Keys Only
@@ -31,7 +31,7 @@ Index-only scans are supported for numeric and date/time datatypes. For CHAR and
 Index-only scans are currently not supported for less frequently used datatypes, like
 
 
-* `[BIT(n)](../../sql-statements-and-structure/temporal-tables/bitemporal-tables.md)`
+* `[BIT(n)](../../data-types/data-types-numeric-data-types/bit.md)`
 * `[SET(...)](../../data-types/string-data-types/set-data-type.md)`
 * `[ENUM(...)](../../data-types/string-data-types/enum.md)`
 It is actually possible to add support for those, feel free to write a patch or at least make a case why a particular datatype is important

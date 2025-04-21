@@ -6,7 +6,7 @@ single table using several index scans. The results of the scans are then
 merged.
 
 
-When using [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md), if `index_merge` is the plan chosen by the
+When using [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), if `index_merge` is the plan chosen by the
 optimizer, it will show up in the "type" column. For example:
 
 
@@ -60,7 +60,7 @@ In the above output, the "rows" column shows that the first is almost 10x less
 efficient and the second is over 15x less efficient than `index_merge`.
 
 
-Starting in [MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md), the optimizer will delay discarding potential
+Starting in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the optimizer will delay discarding potential
 `index_merge` plans until the point where it is really necessary. See [MWL#24](https://askmonty.org/worklog/?tid=24)
 for more information.
 
@@ -98,5 +98,5 @@ This new behavior is always on and there is no need to enable it. There are no k
 ## See Also
 
 
-* [What is MariaDB 5.3](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

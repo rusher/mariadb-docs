@@ -118,13 +118,13 @@ server where you are installing MariaDB ColumnStore.
 * Unpack the tarball, in the /usr/local/ directory.
 
 
-` tar -zxvf -mariadb-columnstore-1.0.8-1.x86_64.bin.tar.gz`
+`tar -zxvf -mariadb-columnstore-1.0.8-1.x86_64.bin.tar.gz`
 
 
 * Run post-install scripts
 
 
-` /usr/local/mariadb/columnstore/bin/post-install`
+`/usr/local/mariadb/columnstore/bin/post-install`
 
 
 * Run postConfigure using the upgrade option, which will utilize the configuration from
@@ -213,24 +213,23 @@ server where you are installing MariaDB ColumnStore.
 * Run pre-uninstall script
 
 
-` $HOME/mariadb/columnstore/bin/pre-uninstall -i /home/guest/mariadb/columnstore`
+`$HOME/mariadb/columnstore/bin/pre-uninstall -i /home/guest/mariadb/columnstore`
 
 
 * Unpack the tarball, which will generate the $HOME/ directory.
 
 
-` tar -zxvf -mariadb-columnstore-1.0.8-1.x86_64.bin.tar.gz`
+`tar -zxvf -mariadb-columnstore-1.0.8-1.x86_64.bin.tar.gz`
 
 
 * Run post-install scripts 
 
-  1. $HOME/mariadb/columnstore/bin/post-install -i /home/guest/mariadb/columnstore`
-`
+  1. $HOME/mariadb/columnstore/bin/post-install -i /home/guest/mariadb/columnstore``
 
 
 * Run postConfigure using the upgrade option, which will utilize the configuration from
 the Columnstore.xml,rpmsave
 
 
-` $HOME/mariadb/columnstore/bin/postConfigure -u -i /home/guest/mariadb/columnstore`
+`$HOME/mariadb/columnstore/bin/postConfigure -u -i /home/guest/mariadb/columnstore`
 

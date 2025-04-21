@@ -2,11 +2,11 @@
 # Information Schema THREAD_POOL_QUEUES Table
 
 
-##### MariaDB starting with [10.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `THREAD_POOL_QUEUES` table was introduced in [MariaDB 10.5.0](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md).
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+The [Information Schema](../README.md) `THREAD_POOL_QUEUES` table was introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 
-The table provides information about [thread pool](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) queues, and contains the following columns:
+The table provides information about [thread pool](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) queues, and contains the following columns:
 
 
 
@@ -15,7 +15,7 @@ The table provides information about [thread pool](../../../../../../../server-u
 | Column | Description |
 | GROUP_ID | the thread group this row is showing data for |
 | POSITION | position in the groups queue |
-| PRIORITY | request priority, see [priority scheduling](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md#configuring-priority-scheduling) |
+| PRIORITY | request priority, see [priority scheduling](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md#configuring-priority-scheduling) |
 | CONNECTION_ID | ID of the client connection that submitted the queued request |
 | QUEUEING_TIME_MICROSECONDS | how long the request has already been waiting in the queue in microseconds |
 

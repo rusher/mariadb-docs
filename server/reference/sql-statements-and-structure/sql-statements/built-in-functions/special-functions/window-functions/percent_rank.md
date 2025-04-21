@@ -15,7 +15,7 @@ PERCENT_RANK() OVER (
 ## Description
 
 
-PERCENT_RANK() is a [window function](window-functions-overview.md) that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:
+PERCENT_RANK() is a [window function](README.md) that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:
 
 
 ```

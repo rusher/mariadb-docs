@@ -1,7 +1,7 @@
 
 # Getting Started with Indexes
 
-For a very basic overview, see [The Essentials of an Index](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index.md).
+For a very basic overview, see [The Essentials of an Index](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index).
 
 
 There are four main kinds of indexes; primary keys (unique and not null), unique indexes (unique and can be null), plain indexes (not necessarily unique) and full-text indexes (for full-text searching).
@@ -16,13 +16,13 @@ The terms 'KEY' and 'INDEX' are generally used interchangeably, and statements s
 A primary key is unique and can never be null. It will always identify only one record, and each record must be represented. Each table can only have one primary key.
 
 
-In [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
+In [InnoDB](../../../../reference/storage-engines/innodb/README.md) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
 
 
-Many tables use a numeric ID field as a primary key. The [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) attribute can be used to generate a unique identity for new rows, and is commonly-used with primary keys.
+Many tables use a numeric ID field as a primary key. The [AUTO_INCREMENT](../../../../reference/data-types/auto_increment.md) attribute can be used to generate a unique identity for new rows, and is commonly-used with primary keys.
 
 
-Primary keys are usually added when the table is created with the [CREATE TABLE](../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#indexes) statement. For example, the following creates a primary key on the ID field. Note that the ID field had to be defined as NOT NULL, otherwise the index could not have been created.
+Primary keys are usually added when the table is created with the [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#indexes) statement. For example, the following creates a primary key on the ID field. Note that the ID field had to be defined as NOT NULL, otherwise the index could not have been created.
 
 
 ```
@@ -37,7 +37,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-You cannot create a primary key with the [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), for example:
+You cannot create a primary key with the [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), for example:
 
 
 ```
@@ -47,7 +47,7 @@ ALTER TABLE Employees ADD PRIMARY KEY(ID);
 ### Finding Tables Without Primary Keys
 
 
-Tables in the `[information_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tablespaces-table.md)` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
+Tables in the `[information_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/README.md)` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
 
 
 ```
@@ -70,7 +70,7 @@ A Unique Index must be unique, but it can have columns that may be NULL. So each
 
 
 
-##### MariaDB starting with [10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
 
 
@@ -91,7 +91,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-Unique keys can also be added after the table is created with the [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) command, for example:
+Unique keys can also be added after the table is created with the [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) command, for example:
 
 
 ```
@@ -194,7 +194,7 @@ If a unique index consists of a column where trailing pad characters are strippe
 
 
 
-##### MariaDB starting with [10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 For some engines, like InnoDB, `UNIQUE` can be used with any type of columns or any number of columns.
 
 ```
@@ -274,7 +274,7 @@ indexes will not make much difference but as soon as your tables are larger
 than your buffer sizes the indexes will start to speed things up dramatically.
 
 
-Using the [EXPLAIN](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) statement on your queries can help you decide which columns need indexing.
+Using the [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) statement on your queries can help you decide which columns need indexing.
 
 
 If you query contains something like `LIKE '%word%'`, without a fulltext index you are using a full table scan every time, which is very slow.
@@ -309,10 +309,10 @@ If an index is rarely used (or not used at all) then remove it to increase INSER
 and UPDATE performance.
 
 
-If [user statistics](../query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, the [Information Schema](../../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md) [INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md) table stores the index usage.
+If [user statistics](../query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, the [Information Schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) [INDEX_STATISTICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md) table stores the index usage.
 
 
-If the [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/slow-query-log-overview.md) is enabled and the `[log_queries_not_using_indexes](../system-variables/server-system-variables.md#log_queries_not_using_indexes)` server system variable is `ON`, the queries which do not use indexes are logged.
+If the [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/README.md) is enabled and the `[log_queries_not_using_indexes](../system-variables/server-system-variables.md#log_queries_not_using_indexes)` server system variable is `ON`, the queries which do not use indexes are logged.
 
 
 *The initial version of this article was copied, with permission, from [Proper_Indexing_Strategy](https://hashmysql.org/wiki/Proper_Indexing_Strategy) on 2012-10-30.*
@@ -321,7 +321,6 @@ If the [slow query log](../../../../server-management/server-monitoring-logs/slo
 ## See Also
 
 
-* [AUTO_INCREMENT](../../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md)
-* [The Essentials of an Index](../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index.md)
+* [AUTO_INCREMENT](../../../../reference/data-types/auto_increment.md)
+* [The Essentials of an Index](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
 
-<span></span>

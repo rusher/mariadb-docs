@@ -6,7 +6,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-MariaDB can force the replica thread to run [triggers](../../programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) for row-based binlog events.
+MariaDB can force the replica thread to run [triggers](../../programming-customizing-mariadb/triggers-events/triggers/README.md) for row-based binlog events.
 
 
 The setting is controlled by the [slave_run_triggers_for_rbr](replication-and-binary-log-system-variables.md) global variable. It can be also specified as a command-line option or in my.cnf.
@@ -22,7 +22,7 @@ Possible values are:
 | NO (Default) | Don't invoke triggers for row-based events |
 | YES | Invoke triggers for row-based events, don't log their effect into the binary log |
 | LOGGING | Invoke triggers for row-based events, and log their effect into the binary log |
-| ENFORCE | From [MariaDB 10.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md) only. Triggers will always be run on the replica, even if there are triggers on the master. ENFORCE implies LOGGING. |
+| ENFORCE | From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) only. Triggers will always be run on the replica, even if there are triggers on the master. ENFORCE implies LOGGING. |
 
 
 

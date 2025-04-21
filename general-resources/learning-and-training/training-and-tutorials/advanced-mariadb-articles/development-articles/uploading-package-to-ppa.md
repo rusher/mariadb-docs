@@ -65,7 +65,7 @@ ENV LC_ALL C.UTF-8
 7. Generate OpenPGP key with the following command:
 
 
-`$ gpg --gen-key `
+`$ gpg --gen-key`
 
 
 * select (1) RSA and RSA
@@ -81,7 +81,7 @@ ENV LC_ALL C.UTF-8
 Set generated key as default in `~/.bashrc`
 
 
-`$ nano ~/.bashrc `
+`$ nano ~/.bashrc`
 
 
 [.. add this ..]
@@ -172,7 +172,7 @@ Uncomment it and add your name there
 
 
 23.
-`gbp buildpackage `
+`gbp buildpackage`
 
 
 #### For re-running the set up container

@@ -174,4 +174,3 @@ These tools are meant to create and manage test clusters on a personal machine. 
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # myisampack
 
-`myisampack` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables. The resulting tables
+`myisampack` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) tables. The resulting tables
 are read-only, and usually about 40% to 70% smaller. It is run as follows:
 
 
@@ -25,7 +25,7 @@ is read, only the individual rows and columns required need to be decompressed,
 allowing for quicker reading.
 
 
-Once a table has been packed, use `[myisamchk -rq](myisamchk-table-information.md)` (the quick
+Once a table has been packed, use `[myisamchk -rq](myisamchk.md)` (the quick
 and recover options) to rebuild its indexes.
 
 
@@ -70,7 +70,7 @@ The following variables can be set while passed as commandline options to
 
 
 To uncompress a table compressed with `myisampack`, use the
-`[myisamchk -u](myisamchk-table-information.md)` option.
+`[myisamchk -u](myisamchk.md)` option.
 
 
 ## Examples
@@ -94,6 +94,5 @@ Data records: 1680
 
 
 * [FLUSH TABLES FOR EXPORT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
-* [myisamchk](myisamchk-table-information.md)
+* [myisamchk](myisamchk.md)
 
-<span></span>

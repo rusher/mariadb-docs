@@ -18,10 +18,10 @@ With tables that the user creates, you can disable encryption by setting the `[a
 SET GLOBAL aria_encrypt_tables = OFF;
 ```
 
-Unlike [InnoDB](../innodb-encryption/innodb-encryption-troubleshooting.md), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](key-management-encryption-plugins) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
+Unlike [InnoDB](../innodb-encryption/README.md), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](key-management-encryption-plugins) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
 
 
-To find the encrypted tables, query the Information Schema, filtering the `[TABLES](https://mariadb.com/kb/en/information_schema-tables-table)` table for those that use the Aria storage engine and the `PAGE` `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#row_format)`.
+To find the encrypted tables, query the Information Schema, filtering the `[TABLES](https://mariadb.com/kb/en/information_schema-tables-table)` table for those that use the Aria storage engine and the `PAGE` `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)`.
 
 
 ```
@@ -32,7 +32,7 @@ WHERE ENGINE = 'Aria'
   AND TABLE_SCHEMA != 'information_schema';
 ```
 
-Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)` statement.
+Each table in the result-set was potentially written to disk in an encrypted state. Before removing the configuration for the encryption keys, you need to rebuild each of these to an unencrypted state. This can be done with an `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement.
 
 
 ```
@@ -50,4 +50,3 @@ MariaDB routinely creates internal temporary tables. When these temporary tables
 
 To decrypt these tables, set the `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)` to `OFF`. Once set, all internal temporary tables that are created from that point on are written unencrypted to disk.
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2023
 
-This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md), [C++](mariadb-connector-c%2B%2B), [ODBC](../../../../connectors/mariadb-connector-odbc/README.md), [Java](../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md), [Node.js](/kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), [C++](mariadb-connector-c%2B%2B), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/), [Node.js](/kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](/kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 
 
@@ -43,7 +43,7 @@ Our version of RocksDB is lagging behind the current upstream and needs to be up
 **Part-time (175h) or full-time project (350h) - depending on scope**
 
 
-Our GIS functionality is limitted compared to other DBMSes. Given that MariaDB looks to facilitate migration from MySQL, we should be on par. We have a list of functions that are missing in MariaDB compared to MySQL, as described in [function-differences-between-mariadb-10-10-and-mysql-8-0.md](../../../../release-notes/mariadb-community-server/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-10-10-and-mysql-8-0.md).
+Our GIS functionality is limitted compared to other DBMSes. Given that MariaDB looks to facilitate migration from MySQL, we should be on par. We have a list of functions that are missing in MariaDB compared to MySQL, as described in [function-differences-between-mariadb-10-10-and-mysql-8-0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-and-mysql-unmaintained-series/function-differences-between-mariadb-10-10-and-mysql-8-0).
  Our goal is to have as many of these functions available within MariaDB. Some of the functionality can be ported from MySQL, while others might require implementation from scratch.
 
 

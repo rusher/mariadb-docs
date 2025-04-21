@@ -1,10 +1,10 @@
 
 # Aria FAQ
 
-This FAQ provides information on the [Aria](../s3-storage-engine/aria_s3_copy.md) storage engine.
+This FAQ provides information on the [Aria](README.md) storage engine.
 
 
-The ***Aria*** storage engine was previously known as ***Maria***, (see, the [Aria Name](the-aria-name.md)).  In current releases of [MariaDB](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), you can refer to the engine as Maria or Aria.  As this will change in future releases, please update references in your scripts and automation to use the correct name.
+The ***Aria*** storage engine was previously known as ***Maria***, (see, the [Aria Name](the-aria-name.md)).  In current releases of [MariaDB](/kb/en/mariadb/), you can refer to the engine as Maria or Aria.  As this will change in future releases, please update references in your scripts and automation to use the correct name.
 
 
 
@@ -14,7 +14,7 @@ The ***Aria*** storage engine was previously known as ***Maria***, (see, the [Ar
 Aria is a storage engine for MySQL® and MariaDB. It was originally developed with the goal of becoming the default transactional **and** non-transactional storage engine for MariaDB and MySQL.
 
 
-It has been in development since 2007 and was first announced on Monty's [blog](https://monty-says.blogspot.com/2008/01/maria-engine-is-released.html). The same core MySQL engineers who developed the MySQL server and the [MyISAM](../myisam-storage-engine/myisam-system-variables.md), [MERGE](../merge.md), and [MEMORY](../memory-storage-engine.md) storage engines are also working on Aria.
+It has been in development since 2007 and was first announced on Monty's [blog](https://monty-says.blogspot.com/2008/01/maria-engine-is-released.html). The same core MySQL engineers who developed the MySQL server and the [MyISAM](../myisam-storage-engine/README.md), [MERGE](../merge.md), and [MEMORY](../memory-storage-engine.md) storage engines are also working on Aria.
 
 
 ## Why is the engine called Aria?
@@ -55,7 +55,7 @@ These are some of the goals for Aria 2.0:
 * Commit/Rollback
 * Concurrent updates/deletes
 * Row locking
-* Group commit (Already in [MariaDB 5.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md))
+* Group commit (Already in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2))
 * Faster lookup in index pages (Page directory)
 
 
@@ -95,7 +95,7 @@ Long term, we have the following goals for Aria:
 ## Where can I find documentation and help about Aria?
 
 
-Documentation is available at [Aria](../s3-storage-engine/aria_s3_copy.md) and related topics. The project is maintained on [GitHub](https://github.com/MariaDB/server).
+Documentation is available at [Aria](README.md) and related topics. The project is maintained on [GitHub](https://github.com/MariaDB/server).
 
 
 If you want to know what happens or be part of developing Aria, you can subscribe to the 
@@ -135,11 +135,11 @@ All except Guilhem Bichot are working for [MariaDB Corporation Ab](https://maria
 ## What is the release policy/schedule of Aria?
 
 
-Aria follows the same [release criteria](../../../../release-notes/mariadb-release-criteria.md) as for [MariaDB](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md). Some clarifications, unique for the Aria storage engine:
+Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) as for [MariaDB](/kb/en/mariadb/). Some clarifications, unique for the Aria storage engine:
 
 
 * Aria index and data file formats should be backwards and forwards compatible to ensure easy upgrades and downgrades.
-* The [log file](aria-storage-engine.md#aria-log-files) format should also be compatible, but we don't make any guarantees yet. In some cases when upgrading, you must remove the old `aria_log.%` and `maria_log.%` files before restarting MariaDB. (So far, this has only occurred in the upgrade from [MariaDB 5.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md) and [MariaDB 5.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md)).
+* The [log file](aria-storage-engine.md#aria-log-files) format should also be compatible, but we don't make any guarantees yet. In some cases when upgrading, you must remove the old `aria_log.%` and `maria_log.%` files before restarting MariaDB. (So far, this has only occurred in the upgrade from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)).
 
 
 ### Extended commitment for Beta 1.5
@@ -174,7 +174,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 * Supports both crash-safe (soon to be transactional) and not transactional tables. (Non-transactional tables are not logged and rows uses less space): `CREATE TABLE foo (...) TRANSACTIONAL=0|1 ENGINE=Aria`.
 * `PAGE` is the only crash-safe/transactional row format.
 * `PAGE` format should give a notable speed improvement on systems which have bad data caching. (For example Windows).
-* From [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), max key length is 2000 bytes, compared to 1000 bytes in MyISAM.
+* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), max key length is 2000 bytes, compared to 1000 bytes in MyISAM.
 
 
 ## Differences between Aria and MyISAM
@@ -201,14 +201,14 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 * Aria doesn't support indexes on virtual fields.
 
 
-## Differences between [MariaDB 5.1](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md) release and the normal MySQL-5.1 release?
+## Differences between [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) release and the normal MySQL-5.1 release?
 
 
 See:
 
 
 * [Aria storage engine](aria-storage-engine.md)
-* [MariaDB versus MySQL](../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md)
+* [MariaDB versus MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility)
 
 
 ## Why do you use the `TRANSACTIONAL` keyword now when Aria is not yet transactional?
@@ -242,7 +242,7 @@ Alternatively,
 ## What is going to change in later Aria main releases?
 
 
-The `LOCK TABLES` statement will not start a crash-safe segment. You should use [beginner-books.md](../../../../general-resources/learning-and-training/training-and-tutorials/books/beginner-books.md) and [COMMIT](../../sql-statements-and-structure/sql-statements/transactions/commit.md) instead.
+The `LOCK TABLES` statement will not start a crash-safe segment. You should use [begin](begin) and [COMMIT](../../sql-statements-and-structure/sql-statements/transactions/commit.md) instead.
 
 
 To make things future safe, you could do this:
@@ -338,7 +338,7 @@ It's safe to copy all the Aria files to another directory or MariaDB instance if
 or
 
 
-* If you have run a [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement and not accessed the table using SQL from that time until the tables have been copied.
+* If you have run a [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement and not accessed the table using SQL from that time until the tables have been copied.
 
 
 In addition, you must adhere the following rule for transactional tables:

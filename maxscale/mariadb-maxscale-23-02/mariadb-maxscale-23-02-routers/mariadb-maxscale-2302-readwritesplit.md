@@ -1014,7 +1014,7 @@ exclusively to the primary server.
 
 **Note:** This feature also enables multi-statement execution of SQL in the
  protocol. This is equivalent to using `allowMultiQueries=true` in
- [Connector/J](../../../connectors/mariadb-connector-j/about-mariadb-connector-j.md#allowmultiqueries)
+ [Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#allowmultiqueries)
  or using `CLIENT_MULTI_STATEMENTS` and `CLIENT_MULTI_RESULTS` in the
  Connector/C. The *Implementation of causal_reads* section explains why this is
  necessary.
@@ -1161,7 +1161,7 @@ SET @maxscale_secret_variable=(
 
 The `SET` command will synchronize the replica to a certain logical point in the
 replication stream (see
-[MASTER_GTID_WAIT](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md) for more
+[MASTER_GTID_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait) for more
 details). If the synchronization fails, the query will not run and it will be
 retried on the server where the transaction was originally done.
 
@@ -1243,7 +1243,7 @@ server which would cause the connection to be closed and a warning to be logged.
 * This feature does not work with Galera or any other non-standard
  replication mechanisms. As Galera does not update the `gtid_slave_pos`
  variable when events are replicated via the Galera library, the
- [MASTER_GTID_WAIT](../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md)
+ [MASTER_GTID_WAIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait)
  function used by MaxScale to synchronize reads will wait until the
  timeout. With Galera this is not a serious issue as it, by nature, is a
  mostly-synchronous replication mechanism.
@@ -1665,7 +1665,7 @@ results, transaction replay will fail.
 
 
 The following partial transaction demonstrates the problem by using
-[SQL_MODE](../../../server/server-management/variables-and-modes/sql-mode.md) inside a transaction.
+[SQL_MODE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) inside a transaction.
 
 
 

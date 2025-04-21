@@ -60,7 +60,7 @@ Optionally y can be appended as an argument to suspendDatabaseWrites to avoid th
 ## Backup the MariaDB Server data files
 
 
-The MariaDB Server should be backed up using one of the available backup methods described in the [server backup and restore overview](../../../../server/server-management/backing-up-and-restoring-databases/backup-and-restore-overview.md). Since the column store data is not stored within the MariaDB Server backup should run very quickly. Utilizing either [mysqldump](../../../../server/clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) or just backing up the directory are straightforward options.
+The MariaDB Server should be backed up using one of the available backup methods described in the [server backup and restore overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/backup-and-restore-overview). Since the column store data is not stored within the MariaDB Server backup should run very quickly. Utilizing either [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) or just backing up the directory are straightforward options.
 
 
 ### Using mysqldump

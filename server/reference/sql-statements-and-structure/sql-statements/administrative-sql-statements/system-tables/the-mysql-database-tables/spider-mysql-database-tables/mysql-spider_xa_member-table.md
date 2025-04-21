@@ -1,10 +1,10 @@
 
 # mysql.spider_xa_member Table
 
-The `mysql.spider_xa_member` table is installed by the [Spider storage engine](../../../../../../storage-engines/spider/spider-functions/spider_copy_tables.md).
+The `mysql.spider_xa_member` table is installed by the [Spider storage engine](../../../../../../storage-engines/spider/README.md).
 
 
-In [MariaDB 10.4](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md) and later, this table uses the [Aria](../../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, this table uses the [Aria](../../../../../../storage-engines/aria/README.md) storage engine.
 
 
 It contains the following fields:

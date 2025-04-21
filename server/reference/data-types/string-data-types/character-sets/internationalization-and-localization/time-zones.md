@@ -149,7 +149,7 @@ Some functions are not affected. These include:
 Some data types are affected by the time zone settings.
 
 
-* [TIMESTAMP](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) - See [TIMESTAMP: Time Zones](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md#time-zones) for information on how this data type is affected by time zones.
+* [TIMESTAMP](../../../date-and-time-data-types/timestamp.md) - See [TIMESTAMP: Time Zones](../../../date-and-time-data-types/timestamp.md#time-zones) for information on how this data type is affected by time zones.
 * [DATETIME](../../../date-and-time-data-types/datetime.md) - See [DATETIME: Time Zones](../../../date-and-time-data-types/datetime.md#time-zones) for information on how this data type is affected by time zones.
 
 

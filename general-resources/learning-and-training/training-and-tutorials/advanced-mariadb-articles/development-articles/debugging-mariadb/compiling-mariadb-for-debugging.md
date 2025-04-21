@@ -25,7 +25,7 @@ The other option is to use the scripts in the BUILD directory that will compile 
 ./BUILD/compile-pentium64-debug-max
 ```
 
-or alternatively if you want to use the [Valgrind](https://www.valgrind.org) memory checking tool with the [MariaDB test system](../../../../../../server/reference/mariadb-internals/using-mariadb-with-your-programs-api/libmysqld/mariadb-test-and-mariadb-test-embedded.md):
+or alternatively if you want to use the [Valgrind](https://www.valgrind.org) memory checking tool with the [MariaDB test system](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-test/):
 
 
 ```
@@ -46,7 +46,7 @@ You can find a list of the needed packages/libraries for building on Linux [here
 * Scripts containing "max" in the name include all normal plugins.
 
 
-Here is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes.md) as an example:
+Here is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes) as an example:
 
 
 ```
@@ -154,7 +154,7 @@ sudo ln -s /usr/sbin/mysqld-debug /usr/sbin/mysqld
 Then, [start MariaDB](https://mariadb.com/kb/en/).
 
 
-Be sure to replace `/usr/sbin/mysqld` with the path to your `mysqld` binary and to also replace `<code>~</code>/mariadb-10.3.14/sql/mysqld` with the path to your debug `mysqld` binary.
+Be sure to replace `/usr/sbin/mysqld` with the path to your `mysqld` binary and to also replace `~/mariadb-10.3.14/sql/mysqld` with the path to your debug `mysqld` binary.
 
 
 ### Reinstalling your Release Build
@@ -199,7 +199,7 @@ A debug binary has lots of code checks and asserts, that are not checked in prod
 In some cases, when one is trying to find a hard-to-repeat bug, it could be beneficial to have these checks in production builds too.
 
 
-Compiling with `-DDBUG_ASSERT_AS_PRINTF` will change DBUG_ASSERT() to print any failed check to the [error log](../../../../../../server/server-management/server-monitoring-logs/error-log.md).
+Compiling with `-DDBUG_ASSERT_AS_PRINTF` will change DBUG_ASSERT() to print any failed check to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log).
 
 
 ```
@@ -220,5 +220,5 @@ This is achieved by grouping asserts in MariaDB server code into two groups:
 * [Build environment setup for Linux](/kb/en/Build_Environment_Setup_for_Linux/)
 * [Debugging MariaDB with a debugger](debugging-mariadb-with-a-debugger.md)
 * [Creating a trace file](creating-a-trace-file.md)
-* [Using ASAN with MariaDB](../../../../../../server/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan.md)
+* [Using ASAN with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan)
 

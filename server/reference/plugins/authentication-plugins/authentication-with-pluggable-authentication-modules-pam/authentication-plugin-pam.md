@@ -216,7 +216,7 @@ If no service name is specified, then the plugin will use `mysql` as the default
 ## Client Authentication Plugins
 
 
-For clients that use the `libmysqlclient` or [MariaDB Connector/C](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) libraries, MariaDB provides two client authentication plugins that are compatible with the `pam` authentication plugin:
+For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) libraries, MariaDB provides two client authentication plugins that are compatible with the `pam` authentication plugin:
 
 
 * `dialog`
@@ -308,7 +308,7 @@ For applications that use MySQL's `libmysqlclient`, the authentication plugin ca
 mysql_options(mysql, MYSQL_ENABLE_CLEARTEXT_PLUGIN, 1);
 ```
 
-For MySQL compatibility, [MariaDB Connector/C](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) also allows applications to set the `MYSQL_ENABLE_CLEARTEXT_PLUGIN` option with the [mysql_optionsv](../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md) function. However, this option does not actually do anything in [MariaDB Connector/C](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md), because the `mysql_clear_password` client authentication plugin is always enabled for MariaDB clients and client libraries.
+For MySQL compatibility, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) also allows applications to set the `MYSQL_ENABLE_CLEARTEXT_PLUGIN` option with the [mysql_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function. However, this option does not actually do anything in [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), because the `mysql_clear_password` client authentication plugin is always enabled for MariaDB clients and client libraries.
 
 
 ## Support in Client Libraries
@@ -317,22 +317,22 @@ For MySQL compatibility, [MariaDB Connector/C](../../../../../connectors/mariadb
 ### Using the Plugin with MariaDB Connector/C
 
 
-[MariaDB Connector/C](../../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) supports `pam` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/C 2.1.0, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) supports `pam` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/C 2.1.0, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
 
 
 ### Using the Plugin with MariaDB Connector/ODBC
 
 
-[MariaDB Connector/ODBC](../../../../../connectors/mariadb-connector-odbc/README.md) supports `pam` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/ODBC 1.0.0, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/) supports `pam` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section since MariaDB Connector/ODBC 1.0.0, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
 
 
 ### Using the Plugin with MariaDB Connector/J
 
 
-[MariaDB Connector/J](../../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md) supports `pam v1` authentication since MariaDB Connector/J 1.4.0, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/) supports `pam v1` authentication since MariaDB Connector/J 1.4.0, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
 
 
-[MariaDB Connector/J](../../../../../connectors/mariadb-connector-j/mariadb-connector-j-releases.md) supports `pam v2` authentication since MariaDB Connector/J 2.4.4, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/) supports `pam v2` authentication since MariaDB Connector/J 2.4.4, regardless of the value of the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable.
 
 
 ### Using the Plugin with MariaDB Connector/Node.js
@@ -344,7 +344,7 @@ For MySQL compatibility, [MariaDB Connector/C](../../../../../connectors/mariadb
 ### Using the Plugin with MySqlConnector for .NET
 
 
-[MySqlConnector for ADO.NET](../../../../../connectors/net-connector/mysqlconnector-for-ado-net.md) supports `pam` authentication since MySqlConnector 0.20.0, but only if the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable is enabled on the server.
+[MySqlConnector for ADO.NET](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/net-connector/mysqlconnector-for-ado-net) supports `pam` authentication since MySqlConnector 0.20.0, but only if the [pam_use_cleartext_plugin](#pam_use_cleartext_plugin) system variable is enabled on the server.
 
 
 ## Logging
@@ -373,7 +373,7 @@ Jan  9 05:35:41 ip-172-30-0-198 mysqld: pam_unix(mariadb:auth): authentication f
 ### PAM Authentication Plugin's Debug Logging
 
 
-MariaDB's `pam` authentication plugin can also log additional verbose debug logging to the [error log](../../../../server-management/server-monitoring-logs/error-log.md). This is only done if the plugin is a [debug build](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md) and if [pam_debug](#pam_debug) is set.
+MariaDB's `pam` authentication plugin can also log additional verbose debug logging to the [error log](../../../../server-management/server-monitoring-logs/error-log.md). This is only done if the plugin is a [debug build](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) and if [pam_debug](#pam_debug) is set.
 
 
 The output looks like this:
@@ -556,7 +556,7 @@ The `pam` authentication plugin isolates PAM module code from the server address
 When a [password validation plugin](../../password-validation-plugins/README.md) is enabled, MariaDB won't allow an account to be created if the password validation plugin says that the account's password is too weak. This creates a problem for accounts that authenticate with the `pam` authentication plugin, since MariaDB has no knowledge of the user's password. When a user tries to create an account that authenticates with the `pam` authentication plugin, the password validation plugin would throw an error, even with [strict_password_validation=OFF](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) set.
 
 
-The workaround is to uninstall the [password validation plugin](../../password-validation-plugins/README.md) with [UNINSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md), and then create the account, and then reinstall the [password validation plugin](../../password-validation-plugins/README.md) with [INSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md).
+The workaround is to uninstall the [password validation plugin](../../password-validation-plugins/README.md) with [UNINSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md), and then create the account, and then reinstall the [password validation plugin](../../../mariadb-internals/password-validation.md) with [INSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md).
 
 
 For example:
@@ -628,7 +628,7 @@ pam: cannot exec /usr/lib64/mysql/plugin/auth_pam_tool_dir/auth_pam_tool (errno:
 This can happen on operating system setups that are configured to prevent memory overcommit. When the MariaDB server process spawns the `auth_pam_tool` helper process there's a brief period where the new process inherits the memory of the MariaDB process before releasing that memory and executing the new command. When having a MariaDB server configured to use more than 50% of the server machnines RAM -- which is common for dedicated database servers -- this duplication would lead to an over-commit situation.
 
 
-Starting with [MariaDB 10.5.16](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes.md), [MariaDB 10.6.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes.md), and [MariaDB 10.7.4](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md), we changed to use `posix_spawn()` instead of the classic `fork();exec()` to prevent this, but systems with older glibc versions prior to 2.26 still use `fork();exec()` to implement `posix_spawn()` internally and so are still affected; this is for example still the case on RedHat Enterprise Linux 7.
+Starting with [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes), and [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes), we changed to use `posix_spawn()` instead of the classic `fork();exec()` to prevent this, but systems with older glibc versions prior to 2.26 still use `fork();exec()` to implement `posix_spawn()` internally and so are still affected; this is for example still the case on RedHat Enterprise Linux 7.
 
 
 To solve this you can either:
@@ -658,9 +658,9 @@ You may find the following PAM-related tutorials helpful:
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| 2.0 | Beta | [MariaDB 10.4.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1040-release-notes.md) |
-| 1.0 | Stable | [MariaDB 10.0.10](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md) |
-| 1.0 | Beta | [MariaDB 5.2.10](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-5210-release-notes.md) |
+| 2.0 | Beta | [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1040-release-notes) |
+| 1.0 | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
+| 1.0 | Beta | [MariaDB 5.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-5210-release-notes) |
 
 
 
@@ -672,13 +672,13 @@ You may find the following PAM-related tutorials helpful:
 
 * Description: Enables verbose debug logging to the [error log](../../../../server-management/server-monitoring-logs/error-log.md) for all authentication handled by the plugin.
 
-  * This system variable is only available when the plugin is a [debug build](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md).
+  * This system variable is only available when the plugin is a [debug build](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging).
 * Commandline: `--pam-debug`
 * Scope: Global
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.2.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1022-release-notes.md), [MariaDB 10.1.17](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes.md)
+* Introduced: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), [MariaDB 10.1.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes)
 
 
 
@@ -691,7 +691,7 @@ You may find the following PAM-related tutorials helpful:
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.1.1](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md), [MariaDB 5.5.32](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md)
+* Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), [MariaDB 5.5.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes)
 
 
 
@@ -704,7 +704,7 @@ You may find the following PAM-related tutorials helpful:
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.4.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-1045-release-notes.md), [MariaDB 10.3.15](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10315-release-notes.md), [MariaDB 10.2.24](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10224-release-notes.md), [MariaDB 10.1.39](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes.md)
+* Introduced: [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), [MariaDB 10.3.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10315-release-notes), [MariaDB 10.2.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10224-release-notes), [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes)
 
 
 

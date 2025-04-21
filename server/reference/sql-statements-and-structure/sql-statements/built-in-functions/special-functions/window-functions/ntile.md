@@ -15,7 +15,7 @@ NTILE (expr) OVER (
 ## Description
 
 
-NTILE() is a [window function](window-functions-overview.md) that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (*expr*), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible.
+NTILE() is a [window function](README.md) that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (*expr*), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible.
 
 
 ## Examples

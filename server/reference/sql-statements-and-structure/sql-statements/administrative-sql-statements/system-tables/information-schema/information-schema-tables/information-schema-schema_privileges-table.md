@@ -1,7 +1,7 @@
 
 # Information Schema SCHEMA_PRIVILEGES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `SCHEMA_PRIVILEGES` table contains information about [database privileges](../../../../account-management-sql-commands/grant.md#database-privileges).
+The [Information Schema](../README.md) `SCHEMA_PRIVILEGES` table contains information about [database privileges](../../../../account-management-sql-commands/grant.md#database-privileges).
 
 
 It contains the following columns:

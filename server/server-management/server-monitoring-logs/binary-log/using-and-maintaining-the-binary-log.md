@@ -4,7 +4,7 @@
 See [Overview of the Binary Log](overview-of-the-binary-log.md) for a general overview of what the binary log is, and [Activating the Binary Log](activating-the-binary-log.md) for how to make sure it's running on your system.
 
 
-For details on using the binary log for replication, see the [Replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) section.
+For details on using the binary log for replication, see the [Replication](../../../server-usage/replication-cluster-multi-master/README.md) section.
 
 
 ## Purging Log Files
@@ -16,11 +16,11 @@ To delete all binary log files on the server, run the [RESET MASTER](../../../re
 If a replica is active but has yet to read from a binary log file you attempt to delete, the statement will fail with an error. However, if the replica is not connected and has yet to read from a log file you delete, the file will be deleted, but the replica will be unable to continue replicating once it connects again.
 
 
-Log files can also be removed automatically with the [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) system variable. This is set to 0 by default (no removal), but can be set to a time, in days, after which a binary log file will be automatically removed. Log files will only be checked for being older than [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) upon log rotation, so if your binary log only fills up slowly and does not reach [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size) on a daily basis, you may see older log files still being kept. You can also force log rotation, and so expiry deletes, by running [FLUSH BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) on a regular basis.
+Log files can also be removed automatically with the [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) system variable. This is set to 0 by default (no removal), but can be set to a time, in days, after which a binary log file will be automatically removed. Log files will only be checked for being older than [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) upon log rotation, so if your binary log only fills up slowly and does not reach [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size) on a daily basis, you may see older log files still being kept. You can also force log rotation, and so expiry deletes, by running [FLUSH BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) on a regular basis.
 Always set [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) higher than any possible replica lag.
 
 
-From [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md), the [binlog_expire_logs_seconds](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), the [binlog_expire_logs_seconds](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
 
 
 If the binary log index file has been removed, or incorrectly manually edited, all of the above forms of purging log files will fail. The .index file is a plain text file, and can be manually recreated or edited so that it lists only the binary log files that are present, in numeric/age order.
@@ -54,8 +54,8 @@ To be sure replication is not broken while deleting log files, perform the follo
 
 
 
-##### MariaDB starting with [11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
-From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it's possible to limit the size of the binlog by setting the [max_binlog_total_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_total_size) system variable. If not set to zero, the total size of the binlog will be stored in the [binlog_disk_use](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use) status variable. It's also possible to limit the size of a single binlog file by setting [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size). 
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), it's possible to limit the size of the binlog by setting the [max_binlog_total_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_total_size) system variable. If not set to zero, the total size of the binlog will be stored in the [binlog_disk_use](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use) status variable. It's also possible to limit the size of a single binlog file by setting [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size). 
 
 
 ## Binary Log Format
@@ -76,13 +76,13 @@ By default, all changes to data or data structure are logged. This behavior can 
 Neither option accepts comma-delimited lists of multiple databases as an option, since a database name can contain a comma. To apply to multiple databases, use the option multiple times.
 
 
-`--binlog-ignore-db=database_name` behaves differently depending on whether statement-based or row-based logging is used. For statement-based logging, the server will not log any statement where the *default database* is database_name. The default database is set with the [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statement.
+`--binlog-ignore-db=database_name` behaves differently depending on whether statement-based or row-based logging is used. For statement-based logging, the server will not log any statement where the *default database* is database_name. The default database is set with the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement.
 
 
 Similarly, `--binlog-do-db=database_name` also behaves differently depending on whether statement-based or row-based logging is used.
 
 
-For statement-based logging, the server will only log statement where the *default database* is database_name. The default database is set with the [USE](../../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) statement.
+For statement-based logging, the server will only log statement where the *default database* is database_name. The default database is set with the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement.
 
 
 For row-based logging, the server will log any updates to any tables in the named database/s, irrespective of the current database.
@@ -138,4 +138,3 @@ However, if MariaDB encounters a full disk error while trying to open a new bina
 
 * [PURGE LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md)
 
-<span></span>

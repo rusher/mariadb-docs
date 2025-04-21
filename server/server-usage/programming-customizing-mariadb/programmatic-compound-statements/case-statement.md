@@ -84,6 +84,5 @@ terminated with `END CASE` instead of `END`.
 
 
 * The [CASE operator](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
-* The [IF statement](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md).
+* The [IF statement](if.md).
 
-<span></span>

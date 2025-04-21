@@ -1,7 +1,7 @@
 
 # mariabackup SST Method
 
-The `mariabackup` SST method uses the [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) utility for performing SSTs. It is one of the methods that does not block the donor node. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) was originally forked from [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/README.md), and similarly, the `mariabackup` SST method was originally forked from the `[xtrabackup-v2](https://mariadb.com/kb/en/)` SST method.
+The `mariabackup` SST method uses the [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) utility for performing SSTs. It is one of the methods that does not block the donor node. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) was originally forked from [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/README.md), and similarly, the `mariabackup` SST method was originally forked from the `[xtrabackup-v2](https://mariadb.com/kb/en/)` SST method.
 
 
 Note that if you use the `mariabackup` SST method, then you also need to have `[socat](#socat-dependency)` installed on the server. This is needed to stream the backup from the donor node to the joiner node. This is a limitation that was inherited from the `[xtrabackup-v2](https://mariadb.com/kb/en/)` SST method.
@@ -11,7 +11,7 @@ Note that if you use the `mariabackup` SST method, then you also need to have `[
 ## Choosing Mariabackup for SSTs
 
 
-To use the `mariabackup` SST method, you must set the `[wsrep_sst_method=mariabackup](../galera-cluster-system-variables.md#wsrep_sst_method)` on both the donor and joiner node. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)` on the node that you intend to be a SST donor. For example:
+To use the `mariabackup` SST method, you must set the `[wsrep_sst_method=mariabackup](../galera-cluster-system-variables.md#wsrep_sst_method)` on both the donor and joiner node. It can be changed dynamically with `[SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)` on the node that you intend to be a SST donor. For example:
 
 
 ```
@@ -33,7 +33,7 @@ For an SST to work properly, the donor and joiner node must use the same SST met
 ## Major version upgrades
 
 
-The InnoDB redo log format has been changed in [MariaDB 10.5](../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major version upgrades, unless you temporarily edit the `wsrep_sst_mariabackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariabackup` tool.
+The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major version upgrades, unless you temporarily edit the `wsrep_sst_mariabackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariabackup` tool.
 
 
 The default method `wsrep_sst_method=rsync` will work for major version upgrades; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
@@ -42,7 +42,7 @@ The default method `wsrep_sst_method=rsync` will work for major version upgrades
 ## Authentication and Privileges
 
 
-To use the `mariabackup` SST method, [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` system variable. It can be changed dynamically with `[SET GLOBAL](../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session)` on the node that you intend to be a SST donor. For example:
+To use the `mariabackup` SST method, [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the `[wsrep_sst_auth](../galera-cluster-system-variables.md#wsrep_sst_auth)` system variable. It can be changed dynamically with `[SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)` on the node that you intend to be a SST donor. For example:
 
 
 ```
@@ -67,7 +67,7 @@ Some [authentication plugins](../../../../reference/plugins/authentication-plugi
 wsrep_sst_auth = mariabackup:
 ```
 
-The user account that performs the backup for the SST needs to have [the same privileges as Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges), which are the `RELOAD` , `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) connects locally on the donor node to perform the backup, so the following user should be sufficient:
+The user account that performs the backup for the SST needs to have [the same privileges as Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges), which are the `RELOAD` , `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. [Mariabackup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) connects locally on the donor node to perform the backup, so the following user should be sufficient:
 
 
 ```
@@ -360,4 +360,3 @@ ENCRYPTING SST TRAFFIC](https://www.percona.com/doc/percona-xtradb-cluster/5.7/s
 * [XTRABACKUP PARAMETERS](https://galeracluster.com/library/documentation/xtrabackup-options.html)
 * [SSL FOR STATE SNAPSHOT TRANSFERS: ENABLING SSL FOR XTRABACKUP](https://galeracluster.com/library/documentation/ssl-sst.html#ssl-xtrabackup)
 
-<span></span>

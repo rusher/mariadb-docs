@@ -78,8 +78,8 @@ contains all module specific configuration options and detailed explanations
 of their use.
 
 
-* [Avrorouter](maxscale-25-tutorials/mariadb-maxscale-25-avrorouter-tutorial.md)
-* [Binlogrouter](maxscale-25-routers/mariadb-maxscale-25-binlogrouter-24.md)
+* [Avrorouter](maxscale-25-routers/mariadb-maxscale-25-avrorouter.md)
+* [Binlogrouter](maxscale-25-routers/mariadb-maxscale-25-binlogrouter.md)
 * [Cat](maxscale-25-routers/mariadb-maxscale-25-cat.md)
 * [HintRouter](maxscale-25-routers/mariadb-maxscale-25-hintrouter.md)
 * [KafkaCDC](maxscale-25-routers/mariadb-maxscale-25-kafkacdc.md)

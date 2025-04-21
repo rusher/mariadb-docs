@@ -54,7 +54,7 @@ you use the programs in the tar file.
 
 
 This is done by [creating your own .my.cnf file](../configuring-mariadb-with-option-files.md) in
-your home directory and telling [mariadb-install-db](../mariadb-install-db-exe.md),
+your home directory and telling [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md),
 [mysqld_safe](../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) and possibly [mariadb (the
 command-line client utility)](../../../clients-and-utilities/mariadb-client/README.md) to **only** use this one with the option
 '`--defaults-file=~/.my.cnf`'. Note that
@@ -193,7 +193,7 @@ After this, remember to set proper passwords for all accounts accessible from
 untrusted sources, to avoid exposing the host to security risks!
 
 
-Also consider using the [mysql.server](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) to
+Also consider using the [mysql.server](../starting-and-stopping-mariadb/mysql-server.md) to
 [start MariaDB automatically](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 when your system boots.
 
@@ -209,6 +209,5 @@ instead.
 
 
 For details on the exact steps used to build the binaries, see the
-[compiling MariaDB section](../compiling-mariadb-from-source/compiling-mariadb-from-source-mariadb-source-configuration-options.md) of the KB.
+[compiling MariaDB section](../compiling-mariadb-from-source/README.md) of the KB.
 
-<span></span>

@@ -13,8 +13,7 @@ tornadoes. You have been warned.
 ## Galera Test Repositories for YUM
 
 
-Replace `<span class="si">${</span><span class="nv">dist</span><span class="si">}</span>
-` in the code below for
+Replace `${dist}` in the code below for
 the YUM-based distribution you are testing. Valid distributions are:
 
 
@@ -57,8 +56,7 @@ gpgcheck=1
 ## Galera Test Repositories for APT
 
 
-Replace `<span class="si">${</span><span class="nv">dist</span><span class="si">}</span>
-` in the code below
+Replace `${dist}` in the code below
 for the APT-based distribution
 you are testing. Valid ones are:
 

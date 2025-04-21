@@ -4,7 +4,7 @@
 NULL represents an unknown value. It is *not* an empty string (by default), or a zero value. These are all valid values, and are not NULLs.
 
 
-When a table is [created](../sql-statements-and-structure/vectors/create-table-with-vectors.md) or the format [altered](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
+When a table is [created](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or the format [altered](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
 
 
 For example, a customer table could contain dates of birth. For some customers, this information is unknown, so the value could be NULL.
@@ -33,13 +33,13 @@ CREATE TABLE customer (
 The case of `NULL` is not relevant. `\N` (uppercase) is an alias for `NULL`.
 
 
-The `[IS](../sql-statements-and-structure/geographic-geometric-features/geometry-properties/isclosed.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
+The `[IS](../sql-statements-and-structure/operators/comparison-operators/is.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
 
 
 ## Comparison Operators
 
 
-NULL values cannot be used with most [comparison operators](../sql-statements-and-structure/operators/comparison-operators/README.md). For example, [=](../sql-statements-and-structure/geographic-geometric-features/geometry-relations/equals.md), [>](../sql-statements-and-structure/operators/comparison-operators/greater-than-or-equal.md), [>=](../sql-statements-and-structure/operators/comparison-operators/greater-than-or-equal.md), [<=](../sql-statements-and-structure/operators/comparison-operators/less-than-or-equal.md), [<](../sql-statements-and-structure/operators/comparison-operators/less-than.md), or [!=](../sql-statements-and-structure/operators/comparison-operators/not-equal.md) cannot be used, as any comparison with a NULL always returns a NULL value, never true (1) or false (0).
+NULL values cannot be used with most [comparison operators](../sql-statements-and-structure/operators/comparison-operators/README.md). For example, [=](../sql-statements-and-structure/operators/comparison-operators/equal.md), [>](../sql-statements-and-structure/operators/comparison-operators/greater-than.md), [>=](../sql-statements-and-structure/operators/comparison-operators/greater-than-or-equal.md), [<=](../sql-statements-and-structure/operators/comparison-operators/less-than-or-equal.md), [<](../sql-statements-and-structure/operators/comparison-operators/less-than.md), or [!=](../sql-statements-and-structure/operators/comparison-operators/not-equal.md) cannot be used, as any comparison with a NULL always returns a NULL value, never true (1) or false (0).
 
 
 ```
@@ -167,7 +167,7 @@ SELECT COUNT(*) FROM t;
 ## AUTO_INCREMENT, TIMESTAMP and Virtual Columns
 
 
-MariaDB handles NULL values in a special way if the field is an [AUTO_INCREMENT](../storage-engines/innodb/auto_increment-handling-in-innodb.md), a [TIMESTAMP](../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) or a [virtual column](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). Inserting a NULL value into a numeric AUTO_INCREMENT column will result in the next number in the auto increment sequence being inserted instead. This technique is frequently used with AUTO_INCREMENT fields, which are left to take care of themselves.
+MariaDB handles NULL values in a special way if the field is an [AUTO_INCREMENT](auto_increment.md), a [TIMESTAMP](date-and-time-data-types/timestamp.md) or a [virtual column](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). Inserting a NULL value into a numeric AUTO_INCREMENT column will result in the next number in the auto increment sequence being inserted instead. This technique is frequently used with AUTO_INCREMENT fields, which are left to take care of themselves.
 
 
 ```
@@ -231,7 +231,7 @@ In all these special cases, `NULL` is equivalent to the `DEFAULT` keyword.
 ## Inserting
 
 
-If a NULL value is single-row inserted into a column declared as NOT NULL, an error will be returned. However, if the [SQL mode](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is not [strict](../../server-management/variables-and-modes/sql-mode.md#strict-mode) (strict is the default), if a NULL value is multi-row inserted into a column declared as NOT NULL, the implicit default for the column type will be inserted (and NOT the default value in the table definition). The implicit defaults are an empty string for string types, and the zero value for numeric, date and time types.
+If a NULL value is single-row inserted into a column declared as NOT NULL, an error will be returned. However, if the [SQL mode](../../server-management/variables-and-modes/sql-mode.md) is not [strict](../../server-management/variables-and-modes/sql-mode.md#strict-mode) (strict is the default), if a NULL value is multi-row inserted into a column declared as NOT NULL, the implicit default for the column type will be inserted (and NOT the default value in the table definition). The implicit defaults are an empty string for string types, and the zero value for numeric, date and time types.
 
 
 By default both cases will result in an error.
@@ -256,7 +256,7 @@ INSERT INTO nulltest (a,x,y) VALUES (1,NULL,NULL);
 ERROR 1048 (23000): Column 'x' cannot be null
 ```
 
-Multi-row insert with [SQL mode](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) not [strict](../../server-management/variables-and-modes/sql-mode.md#strict-mode):
+Multi-row insert with [SQL mode](../../server-management/variables-and-modes/sql-mode.md) not [strict](../../server-management/variables-and-modes/sql-mode.md#strict-mode):
 
 
 ```
@@ -300,14 +300,14 @@ Primary keys are never nullable.
 ## Oracle Compatibility
 
 
-In [Oracle mode](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), NULL can be used as a statement:
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), NULL can be used as a statement:
 
 
 ```
 IF a=10 THEN NULL; ELSE NULL; END IF
 ```
 
-In [Oracle mode](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), [CONCAT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat_ws.md) and the [Logical OR operator ||](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/ord.md) ignore [nullif.md](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/nullif.md).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CONCAT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-statements-and-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
 
 
 When setting [sql_mode=EMPTY_STRING_IS_NULL](../../server-management/variables-and-modes/sql-mode.md), empty strings and NULLs are the same thing. For example:
@@ -330,5 +330,5 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [IFNULL function](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md)
 * [NULLIF function](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../storage-engines/connect/connect-data-types.md#null-handling)
-* [Oracle mode from MariaDB 10.3](../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

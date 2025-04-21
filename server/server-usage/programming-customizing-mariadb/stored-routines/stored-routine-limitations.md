@@ -1,13 +1,13 @@
 
 # Stored Routine Limitations
 
-The following SQL statements are not permitted inside any [stored routines](README.md) ([stored functions](stored-functions/README.md), [stored procedures](stored-procedures/README.md), [events](../triggers-events/event-scheduler/events.md) or [triggers](../triggers-events/triggers/triggers-and-implicit-locks.md)).
+The following SQL statements are not permitted inside any [stored routines](README.md) ([stored functions](stored-functions/README.md), [stored procedures](stored-procedures/README.md), [events](../triggers-events/event-scheduler/events.md) or [triggers](../triggers-events/triggers/README.md)).
 
 
 * [ALTER VIEW](../views/alter-view.md); you can use [CREATE OR REPLACE VIEW](../views/create-view.md) instead.
 * [LOAD DATA](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [LOAD TABLE](../../replication-cluster-multi-master/standard-replication/obsolete-replication-information/load-table-from-master-removed.md).
 * [CHANGE MASTER TO](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)
-* [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is permitted, but the statement is handled as a regular [INSERT](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md).
+* [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is permitted, but the statement is handled as a regular [INSERT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md).
 * [LOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) and [UNLOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
 * References to [local variables](../programmatic-compound-statements/declare-variable.md) within prepared statements inside a stored routine (use [user-defined variables](../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) instead).
 * [BEGIN (WORK)](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) is treated as the beginning of a [BEGIN END](../programmatic-compound-statements/begin-end.md) block, not a transaction, so [START TRANSACTION](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) needs to be used instead.
@@ -28,4 +28,3 @@ Note that, if a stored program calls another stored program, the latter will inh
 * [Trigger Limitations](../triggers-events/triggers/trigger-limitations.md)
 * [Event Limitations](../triggers-events/event-scheduler/event-limitations.md)
 
-<span></span>

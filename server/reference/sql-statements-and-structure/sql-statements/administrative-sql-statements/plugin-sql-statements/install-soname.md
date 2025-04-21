@@ -12,7 +12,7 @@ INSTALL SONAME 'plugin_library'
 ## Description
 
 
-This statement is a variant of [INSTALL PLUGIN](install-plugin.md). It installs **all** [plugins](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) from a given `plugin_library`. See [INSTALL PLUGIN](install-plugin.md) for details.
+This statement is a variant of [INSTALL PLUGIN](install-plugin.md). It installs **all** [plugins](../../../../plugins/README.md) from a given `plugin_library`. See [INSTALL PLUGIN](install-plugin.md) for details.
 
 
 `plugin_library` is the name of the shared library that
@@ -105,11 +105,11 @@ INSTALL SONAME 'ha_sequence';
 
 * [List of Plugins](../../../../plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../../../../plugins/plugin-overview.md)
-* [SHOW PLUGINS](../show/show-plugins-soname.md)
+* [SHOW PLUGINS](../show/show-plugins.md)
 * [INSTALL PLUGIN](install-plugin.md)
 * [UNINSTALL PLUGIN](uninstall-plugin.md)
 * [UNINSTALL SONAME](uninstall-soname.md)
-* [SHOW PLUGINS](../show/show-plugins-soname.md)
+* [SHOW PLUGINS](../show/show-plugins.md)
 * [INFORMATION_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mysql_plugin](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 

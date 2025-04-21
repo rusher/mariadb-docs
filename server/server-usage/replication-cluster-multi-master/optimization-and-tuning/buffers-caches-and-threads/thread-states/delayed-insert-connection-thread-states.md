@@ -22,4 +22,3 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | waiting for handler open | Waiting for the delayed-insert handler thread to initialize. Follows from the Creating delayed handler state and before the got old table state. |
 
 
-<span></span>

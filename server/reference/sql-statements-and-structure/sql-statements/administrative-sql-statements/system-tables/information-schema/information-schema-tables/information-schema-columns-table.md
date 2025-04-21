@@ -1,7 +1,7 @@
 
 # Information Schema COLUMNS Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `COLUMNS` table provides information about columns in each table on the server.
+The [Information Schema](../README.md) `COLUMNS` table provides information about columns in each table on the server.
 
 
 It contains the following columns:
@@ -16,9 +16,9 @@ It contains the following columns:
 | TABLE_NAME | Table name. |
 | COLUMN_NAME | Column name. |
 | ORDINAL_POSITION | Column position in the table. Can be used for ordering. |
-| COLUMN_DEFAULT | Default value for the column. Literals are quoted to distinguish them from expressions. NULL means that the column has no default. In [MariaDB 10.2.6](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1026-release-notes.md) and earlier, no quotes were used for any type of default and NULL can either mean that there is no default, or that the default column value is NULL. |
+| COLUMN_DEFAULT | Default value for the column. Literals are quoted to distinguish them from expressions. NULL means that the column has no default. In [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes) and earlier, no quotes were used for any type of default and NULL can either mean that there is no default, or that the default column value is NULL. |
 | IS_NULLABLE | Whether the column can contain NULLs. |
-| DATA_TYPE | The column's [data type](../../../../../../data-types/data-types-overview/data-types-subcategory/data-types-dec.md). |
+| DATA_TYPE | The column's [data type](../../../../../../data-types/README.md). |
 | CHARACTER_MAXIMUM_LENGTH | Maximum length. |
 | CHARACTER_OCTET_LENGTH | Same as the CHARACTER_MAXIMUM_LENGTH except for multi-byte [character sets](../../../../../../data-types/string-data-types/character-sets/README.md). |
 | NUMERIC_PRECISION | For numeric types, the precision (number of significant digits) for the column. NULL if not a numeric field. |
@@ -33,8 +33,8 @@ It contains the following columns:
 | COLUMN_COMMENT | Column comments. |
 | IS_GENERATED | Indicates whether the column value is [generated (virtual, or computed)](../../../../data-definition/create/generated-columns.md). Can be ALWAYS or NEVER. |
 | GENERATION_EXPRESSION | The expression used for computing the column value in a [generated (virtual, or computed)](../../../../data-definition/create/generated-columns.md) column. |
-| IS_SYSTEM_TIME_PERIOD_START | From [MariaDB 11.4.1](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md). |
-| IS_SYSTEM_TIME_PERIOD_END | From [MariaDB 11.4.1](../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md). |
+| IS_SYSTEM_TIME_PERIOD_START | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes). |
+| IS_SYSTEM_TIME_PERIOD_END | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes). |
 
 
 
@@ -111,7 +111,7 @@ AND TABLE_NAME='t';
 In the results above, the two single quotes in `concat(''A'',''B'')` indicate an escaped single quote - see [string-literals](../../../../../sql-language-structure/string-literals.md). Note that while [mariadb client](../../../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) appears to show the same default value for columns `s5` and `s6`, the first is a 4-character string "NULL", while the second is the SQL NULL value.
 
 
-From [MariaDB 11.3](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-113.md):
+From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113):
 
 
 ```

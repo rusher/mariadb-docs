@@ -2,8 +2,8 @@
 # RANDOM_BYTES
 
 
-##### MariaDB starting with [10.10.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10100-release-notes.md)
-The RANDOM_BYTES function generates a binary string of random bytes. It was added in [MariaDB 10.10.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10100-release-notes.md).
+##### MariaDB starting with [10.10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-release-notes)
+The RANDOM_BYTES function generates a binary string of random bytes. It was added in [MariaDB 10.10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-release-notes).
 
 
 ## Syntax

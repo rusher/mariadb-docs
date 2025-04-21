@@ -73,7 +73,7 @@ $ docker run --rm mariadb:latest sh -c 'apt-get update -qq && apt-cache search m
 A new image needs to be created when using additional packages. The `mariadb` image can however be used as a base:
 
 
-In the following, the [CONNECT Storage Engine](../../../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) is installed:
+In the following, the [CONNECT Storage Engine](../../../../../reference/storage-engines/connect/README.md) is installed:
 
 
 ```
@@ -85,4 +85,3 @@ RUN apt-get update && \
 
 Installing plugins from packages creates a configuration file in the directory `/etc/mysql/mariadb.conf.d/` that loads the plugin on startup.
 
-<span></span>

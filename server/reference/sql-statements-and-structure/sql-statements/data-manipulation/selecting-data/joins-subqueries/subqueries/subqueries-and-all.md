@@ -1,7 +1,7 @@
 
 # Subqueries and ALL
 
-[Subqueries](subqueries-and-all.md) using the ALL keyword will return `true` if the comparison returns `true` for each row returned by the subquery, or the subquery returns no rows.
+[Subqueries](README.md) using the ALL keyword will return `true` if the comparison returns `true` for each row returned by the subquery, or the subquery returns no rows.
 
 
 ## Syntax

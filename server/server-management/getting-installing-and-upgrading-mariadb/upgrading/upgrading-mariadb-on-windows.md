@@ -2,7 +2,7 @@
 # Upgrading MariaDB on Windows
 
 
-For incompatibilities such as removed features, and changes to variables, see the pages describing changes by version on [Upgrading MariaDB](../../../../columnstore/mariadb-columnstore-columnstore/mariadb-columnstore-10-upgrades/upgrading-mariadb-columnstore-from-103-to-104.md).
+For incompatibilities such as removed features, and changes to variables, see the pages describing changes by version on [Upgrading MariaDB](README.md).
 
 
 ## Minor Upgrades
@@ -25,7 +25,7 @@ First, check everything listed in the Incompatibilities section of the article r
 
 MariaDB (and also MySQL) allows different versions of the product to co-exist
 on the same machine, as long as these versions are different either in major or
-minor version numbers. For example, it is possible to have say [MariaDB 5.1.51](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5151-release-notes.md)
+minor version numbers. For example, it is possible to have say [MariaDB 5.1.51](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5151-release-notes)
 and 5.2.6 to be installed on the same machine.
 
 
@@ -42,7 +42,7 @@ to accomplish this. On Windows, the
 upgrade](https://dev.mysql.com/doc/refman/5.5/en/windows-upgrading.html) is a complicated multiple-step manual process.
 
 
-Since [MariaDB 5.2.6](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-526-release-notes.md), the Windows distribution includes tools that simplify
+Since [MariaDB 5.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-526-release-notes), the Windows distribution includes tools that simplify
 migration between different versions and also allow migration between MySQL and
 MariaDB.
 

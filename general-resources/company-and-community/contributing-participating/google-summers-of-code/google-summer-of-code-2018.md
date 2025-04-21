@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2018
 
-We participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/) 2018. The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently C, ODBC, Java) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+We participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/) 2018. The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently C, ODBC, Java) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](/kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 
 
@@ -110,7 +110,7 @@ Here is a suggested list of things to be done:
 
   1. --read-from-remote-server`. For the latter, there are a couple of extra
  things that need doing in the master-slave protocol, see`
-  1. get_master_version_and_clock()` in `sql/slave.cc`.`
+  1. get_master_version_and_clock()`in`sql/slave.cc`.`
 
 
 * At the end of the dump, put these statements, to reduce the risk of those session variables incorrectly spilling into subsequent statements run in the same session:
@@ -313,7 +313,7 @@ It's unfortunately been a little while since I wrote that code, but I think thos
 
 
 Currently only a few aggregate function are supported as window functions, the list can be found here 
-[aggregate-functions-as-window-functions.md](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md)
+[aggregate-functions-as-window-functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions)
 
 
 So in MDEV-7773, support for creating of custom aggregate functions was added.
@@ -415,7 +415,7 @@ A lot can be done to improve it.
 ## Cassandra Storage Engine v2, based on DataStax C++ driver/
 
 
-[MariaDB 10.1](../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) had Cassandra Storage Engine which was developed for Cassandra 1.1.x. Back then, Cassandra provided a Thrift API, and that was what Cassandra-SE used.
+[MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) had Cassandra Storage Engine which was developed for Cassandra 1.1.x. Back then, Cassandra provided a Thrift API, and that was what Cassandra-SE used.
 
 
 Then, Cassandra 2.0 switched to using a different network protocol (and also changed the data model).

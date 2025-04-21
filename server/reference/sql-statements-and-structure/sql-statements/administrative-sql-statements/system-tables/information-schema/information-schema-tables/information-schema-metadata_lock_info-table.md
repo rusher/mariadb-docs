@@ -1,7 +1,7 @@
 
 # Information Schema METADATA_LOCK_INFO Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `METADATA_LOCK_INFO` table is created by the [metadata_lock_info](../../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
+The [Information Schema](../README.md) `METADATA_LOCK_INFO` table is created by the [metadata_lock_info](../../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
 
 
 It has the following columns:

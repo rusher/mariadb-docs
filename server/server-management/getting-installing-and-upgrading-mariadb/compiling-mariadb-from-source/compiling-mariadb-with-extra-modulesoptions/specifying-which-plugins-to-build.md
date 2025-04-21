@@ -4,7 +4,7 @@
 By default all plugins are enabled and built as dynamic `.so` (or `.dll`) modules. If a plugin does not support dynamic builds, it is not built at all.
 
 
-Use `PLUGIN_xxx` cmake variables. They can be set on the command line with `-DPLUGIN_xxx=<em>value</em>` or in the cmake gui. Supported values are
+Use `PLUGIN_xxx` cmake variables. They can be set on the command line with `-DPLUGIN_xxx=value` or in the cmake gui. Supported values are
 
 
 

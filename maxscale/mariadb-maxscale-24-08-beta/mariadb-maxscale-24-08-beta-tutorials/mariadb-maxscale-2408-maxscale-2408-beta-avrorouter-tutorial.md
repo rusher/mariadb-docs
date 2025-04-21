@@ -39,7 +39,7 @@ binlog_row_image=full
 
 
 *You can find out more about replication formats from the
-[MariaDB Knowledge Base](../../../server/server-management/server-monitoring-logs/binary-log/binary-log-formats.md)*
+[MariaDB Knowledge Base](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/binary-log-formats)*
 
 
 ## Configuring MaxScale

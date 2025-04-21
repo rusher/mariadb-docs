@@ -14,12 +14,12 @@ The following tables indicate the approximate data storage requirements for each
 | [TINYINT](data-types-numeric-data-types/tinyint.md) | 1 byte |
 | [SMALLINT](data-types-numeric-data-types/smallint.md) | 2 bytes |
 | [MEDIUMINT](data-types-numeric-data-types/mediumint.md) | 3 bytes |
-| [INT](../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) | 4 bytes |
+| [INT](data-types-numeric-data-types/int.md) | 4 bytes |
 | [BIGINT](data-types-numeric-data-types/bigint.md) | 8 bytes |
 | [FLOAT](data-types-numeric-data-types/float.md)(p) | 4 bytes if p <= 24, otherwise 8 bytes |
 | [DOUBLE](data-types-numeric-data-types/double.md) | 8 bytes |
 | [DECIMAL](data-types-numeric-data-types/decimal.md) | See table below |
-| [BIT](../sql-statements-and-structure/temporal-tables/bitemporal-tables.md)(M) | (M+7)/8 bytes |
+| [BIT](data-types-numeric-data-types/bit.md)(M) | (M+7)/8 bytes |
 
 
 
@@ -59,15 +59,15 @@ In the descriptions below, `M` is the declared column length (in characters or i
 | --- | --- |
 | Data Type | Storage Requirement |
 | [ENUM](string-data-types/enum.md) | 1 byte for up to 255 enum values, 2 bytes for 256 to 65,535 enum values |
-| [CHAR(M)](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) | M × w bytes, where w is the number of bytes required for the maximum-length character in the character set |
-| [BINARY(M)](../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) | M bytes |
+| [CHAR(M)](string-data-types/char.md) | M × w bytes, where w is the number of bytes required for the maximum-length character in the character set |
+| [BINARY(M)](string-data-types/binary.md) | M bytes |
 | [VARCHAR(M)](string-data-types/varchar.md), [VARBINARY(M)](string-data-types/varbinary.md) | len + 1 bytes if column is 0 – 255 bytes, len + 2 bytes if column may require more than 255 bytes |
 | [TINYBLOB](string-data-types/tinyblob.md), [TINYTEXT](string-data-types/tinytext.md) | len + 1 bytes |
 | [BLOB](string-data-types/blob.md), [TEXT](string-data-types/text.md) | len + 2 bytes |
 | [MEDIUMBLOB](string-data-types/mediumblob.md), [MEDIUMTEXT](string-data-types/mediumtext.md) | len + 3 bytes |
 | [LONGBLOB](string-data-types/longblob.md), [LONGTEXT](string-data-types/longtext.md) | len + 4 bytes |
 | [SET](string-data-types/set-data-type.md) | Given M members of the set, (M+7)/8 bytes, rounded up to 1, 2, 3, 4, or 8 bytes |
-| [INET6](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) | 16 bytes |
+| [INET6](string-data-types/inet6.md) | 16 bytes |
 | [UUID](https://mariadb.com/kb/en/uuid_datatype) | 16 bytes |
 
 
@@ -101,10 +101,10 @@ Assuming a single-byte character-set:
 | Data Type | Storage Requirement |
 | --- | --- |
 | Data Type | Storage Requirement |
-| [DATE](../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md) | 3 bytes |
-| [TIME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) | 3 bytes |
+| [DATE](date-and-time-data-types/date.md) | 3 bytes |
+| [TIME](date-and-time-data-types/time.md) | 3 bytes |
 | [DATETIME](date-and-time-data-types/datetime.md) | 8 bytes |
-| [TIMESTAMP](../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestamp-function.md) | 4 bytes |
+| [TIMESTAMP](date-and-time-data-types/timestamp.md) | 4 bytes |
 | [YEAR](date-and-time-data-types/year-data-type.md) | 1 byte |
 
 
@@ -112,10 +112,10 @@ Assuming a single-byte character-set:
 ### Microseconds
 
 
-[MariaDB 5.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and MySQL 5.6 introduced [microseconds](../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), MariaDB defaults to the MySQL format (by means of the [mysql56_temporal_format](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and MySQL 5.6 introduced [microseconds](../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB defaults to the MySQL format (by means of the [mysql56_temporal_format](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
 
 
-#### MySQL 5.6+ and [MariaDB 10.1](../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)+
+#### MySQL 5.6+ and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)+
 
 
 
@@ -129,7 +129,7 @@ Assuming a single-byte character-set:
 
 
 
-#### [MariaDB 5.3](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) - [MariaDB 10.0](../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+#### [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) - [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 
 

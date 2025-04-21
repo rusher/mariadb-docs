@@ -15,7 +15,7 @@ These tables contain the following columns:
 | --- | --- |
 | Column Name | Description |
 | PAGE_SIZE | Compressed page size, in bytes. This value is unique in the table; other values are totals which refer to pages of this size. |
-| BUFFER_POOL_INSTANCE | Buffer Pool identifier. From [MariaDB 10.5.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
+| BUFFER_POOL_INSTANCE | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
 | PAGES_USED | Number of pages of the size PAGE_SIZE which are currently in the buffer pool. |
 | PAGES_FREE | Number of pages of the size PAGE_SIZE which are currently free, and thus are available for allocation. This value represents the buffer pool's fragmentation. A totally unfragmented buffer pool has at most 1 free page. |
 | RELOCATION_OPS | How many times a page of the size PAGE_SIZE has been relocated. This happens when data exceeds a page (because a row must be copied into a new page) and when two pages are merged (because their data shrunk and can now be contained in one page). |

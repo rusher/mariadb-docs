@@ -34,7 +34,7 @@ example, "\n" to represent the newline character), you must double any
 REGEXP is not case sensitive, except when used with binary strings.
 
 
-[MariaDB 10.0.5](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md) moved to the PCRE regex library - see [PCRE Regular Expressions](pcre.md) for enhancements to REGEXP introduced in [MariaDB 10.0.5](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes.md).
+[MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) moved to the PCRE regex library - see [PCRE Regular Expressions](pcre.md) for enhancements to REGEXP introduced in [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes).
 
 
 The [default_regex_flags](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags) variable addresses the remaining compatibilities between PCRE and the old regex library.
@@ -83,7 +83,7 @@ SELECT 'a' REGEXP '^[a-d]';
 ### default_regex_flags examples
 
 
-[MariaDB 10.0.11](../../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes.md) introduced the [default_regex_flags](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags) variable to address the remaining compatibilities between PCRE and the old regex library.
+[MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) introduced the [default_regex_flags](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags) variable to address the remaining compatibilities between PCRE and the old regex library.
 
 
 The default behaviour (multiline match is off)

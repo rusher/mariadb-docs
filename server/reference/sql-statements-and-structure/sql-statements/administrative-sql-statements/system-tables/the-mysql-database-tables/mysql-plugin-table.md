@@ -5,10 +5,10 @@
 
 
 
-The `mysql.plugin` table can be queried to get information about installed [plugins](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md).
+The `mysql.plugin` table can be queried to get information about installed [plugins](../../../../../plugins/README.md).
 
 
-This table only contains information about [plugins](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/old-plans/plugins-storage-engines-summit-for-mysqlmariadbdrizzle-2011.md) that have been installed via the following methods:
+This table only contains information about [plugins](../../../../../plugins/README.md) that have been installed via the following methods:
 
 
 * The [INSTALL SONAME](../../plugin-sql-statements/install-soname.md) statement.
@@ -27,7 +27,7 @@ This table does not contain information about:
 This table only contains enough information to reload the plugin when the server is restarted, which means it only contains the plugin name and the plugin library.
 
 
-This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/README.md) storage engine.
 
 
 The `mysql.plugin` table contains the following fields:

@@ -48,7 +48,7 @@ MariaDB supports the following partitioning types:
 ## Enabling Partitioning
 
 
-By default, MariaDB permits partitioning. You can determine this by using the [SHOW PLUGINS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) statement, for example:
+By default, MariaDB permits partitioning. You can determine this by using the [SHOW PLUGINS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md) statement, for example:
 
 
 ```
@@ -83,10 +83,10 @@ and you will not be able to create partitions.
 ## Using Partitions
 
 
-It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md).
+It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md).
 
 
-[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) allows one to:
+[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) allows one to:
 
 
 * Partition an existing table;
@@ -103,7 +103,7 @@ It is possible to create a new partitioned table using [CREATE TABLE](../../refe
 ADD PARTITION [IF NOT EXISTS] (partition_definition)
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... ADD PARTITION` can be used to add partitions to an existing table:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... ADD PARTITION` can be used to add partitions to an existing table:
 
 
 ```
@@ -145,7 +145,7 @@ You can work around this by using REORGANIZE PARTITION to split the partition in
 COALESCE PARTITION number
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... COALESCE PARTITION` is used to reduce the number of HASH or KEY partitions by the specified number. For example, given the following table with 5 partitions:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... COALESCE PARTITION` is used to reduce the number of HASH or KEY partitions by the specified number. For example, given the following table with 5 partitions:
 
 
 ```
@@ -165,13 +165,13 @@ ALTER TABLE t1 COALESCE PARTITION 2;
 
 
 
-##### MariaDB starting with [10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)
+##### MariaDB starting with [10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 
 ```
 CONVERT PARTITION partition_name TO TABLE tbl_name
 CONVERT TABLE normal_table TO partition_definition
 ```
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md), be used to convert partitions in an existing table to a standalone table:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), be used to convert partitions in an existing table to a standalone table:
 
 ```
 CREATE OR REPLACE TABLE t1 (
@@ -268,9 +268,9 @@ Create Table: CREATE TABLE `t1` (
 
 
 
-##### MariaDB starting with [11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 When converting tables to a partition, validation is performed on each row to ensure it meets the partition requirements. This can be very slow in the case of larger tables. 
-From [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```
 CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
@@ -278,7 +278,7 @@ CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
 `WITH VALIDATION` will result in the validation being performed, and is the default behaviour.
 
 
-An alternative (and the only method prior to [MariaDB 10.7](../../../release-notes/mariadb-community-server/what-is-mariadb-107.md)) to convert partitions to tables is to use `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
+An alternative (and the only method prior to [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)) to convert partitions to tables is to use `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
 
 
 * create an empty table with the same structure as the partition
@@ -355,7 +355,7 @@ Create Table: CREATE TABLE `t2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
 ```
 
-Similarly, to do the reverse and convert a table into a partition `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... EXCHANGE PARTITION` can also be used, with the following manual steps required:
+Similarly, to do the reverse and convert a table into a partition `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... EXCHANGE PARTITION` can also be used, with the following manual steps required:
 
 
 * create the partition
@@ -402,7 +402,7 @@ Create Table: CREATE TABLE `t1` (
 DROP PARTITION [IF EXISTS] partition_names
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... DROP PARTITION` can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](#removing-partitioning).
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... DROP PARTITION` can be used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](partitioning-types/range-partitioning-type.md) and [LIST](partitioning-types/list-partitioning-type.md) partitions. It cannot be used on [HASH](partitioning-types/hash-partitioning-type.md) or [KEY](partitioning-types/key-partitioning-type.md) partitions. To rather remove all partitioning, while leaving the data unaffected, see [Removing Partitioning](#removing-partitioning).
 
 
 ```
@@ -435,21 +435,21 @@ Empty set (0.002 sec)
 ### Exchanging Partitions
 
 
-<= [MariaDB 11.3](../../../release-notes/mariadb-community-server/what-is-mariadb-113.md)
+<= [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
 
 
 ```
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name
 ```
 
->= [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
+>= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 
 
 ```
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) t1 EXCHANGE PARTITION p1 WITH TABLE t2` permits one to exchange a partition or subpartition with another table.
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) t1 EXCHANGE PARTITION p1 WITH TABLE t2` permits one to exchange a partition or subpartition with another table.
 
 
 ```
@@ -510,7 +510,7 @@ The following requirements must be met:
 * Table t1 must be partitioned, and table t2 cannot be partitioned
 * Table t2 cannot be a temporary table
 * Table t1 and t2 must otherwise be identica
-* Any existing row in t2 must match the conditions for storage in the exchanged partition p1 unless, from [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), the `WITHOUT VALIDATION` option is specified.
+* Any existing row in t2 must match the conditions for storage in the exchanged partition p1 unless, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), the `WITHOUT VALIDATION` option is specified.
 
 
 MariaDB will by default perform the validation to see that each row meets the partition requirements, and the statement will fail if a row does not fit.
@@ -546,9 +546,9 @@ ERROR 1526 (HY000): Table has no partition for value 0
 
 
 
-##### MariaDB starting with [11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 This validation is performed for each row, and can be very slow in the case of larger tables. 
-From [MariaDB 11.4](../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```
 ALTER TABLE t1 EXCHANGE PARTITION p1 with TABLE t2 WITHOUT VALIDATION;
@@ -564,7 +564,7 @@ Query OK, 0 rows affected (0.048 sec)
 REMOVE PARTITIONING
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... REMOVE PARTITIONING` will remove all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](#dropping-partitions).
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... REMOVE PARTITIONING` will remove all partitioning from the table, while leaving the data unaffected. To rather drop a particular partition (and discard all of its data), see [Dropping Partitions](#dropping-partitions).
 
 
 ```
@@ -712,7 +712,7 @@ ALTER TABLE t1 REORGANIZE PARTITION p3 INTO (
 TRUNCATE PARTITION partition_names
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) ... TRUNCATE PARTITION` will remove all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous.
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... TRUNCATE PARTITION` will remove all data from the specified partition/s, leaving the table and partition structure unchanged. Partitions don't need to be contiguous.
 
 
 ```
@@ -844,24 +844,24 @@ The `ALL` keyword can be used in place of the list of partition names, and the o
 ### Partitioning for Specific Storage Engines
 
 
-Some MariaDB [storage engines](../../../general-resources/learning-and-training/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md) allow more interesting uses for partitioning.
+Some MariaDB [storage engines](../../reference/storage-engines/README.md) allow more interesting uses for partitioning.
 
 
 The [MERGE](../../reference/storage-engines/merge.md) storage engine allows one to:
 
 
-* Treat a set of identical defined [MyISAM](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) tables as one.
+* Treat a set of identical defined [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) tables as one.
 * A MyISAM table can be in many different MERGE sets and also used separately.
 
 
-[SPIDER](../../reference/storage-engines/spider/spider-functions/spider_copy_tables.md) allows one to:
+[SPIDER](../../reference/storage-engines/spider/README.md) allows one to:
 
 
 * Move partitions of the same table on different servers. In this way, the workload can be distributed on more physical or virtual machines (data sharding).
 * All partitions of a SPIDER table can also live on the same machine. In this case there will be a small overhead (SPIDER will use connections to localhost), but queries that read multiple partitions will use parallel threads.
 
 
-[CONNECT](../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) allows one to:
+[CONNECT](../../reference/storage-engines/connect/README.md) allows one to:
 
 
 * Build a table whose partitions are tables using different storage engines (like InnoDB, MyISAM, or even engines that do not support partitioning).
@@ -874,8 +874,7 @@ See also: [Using CONNECT - Partitioning and Sharding](../../reference/storage-en
 ## See Also
 
 
-* [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md)
+* [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
 * [INFORMATION_SCHEMA.PARTITIONS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 
-<span></span>

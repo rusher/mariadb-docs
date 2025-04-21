@@ -8,7 +8,7 @@ There are many different ways to migrate from [PostgreSQL](https://www.postgresq
 ## MariaDB's CONNECT Storage Engine
 
 
-MariaDB's [CONNECT](../../../../connectors/mariadb-connector-nodejs/connector-nodejs-pipelining.md) storage engine can be used to migrate from PostgreSQL to MariaDB. There are two primary ways that this can be done.
+MariaDB's [CONNECT](../../../reference/storage-engines/connect/README.md) storage engine can be used to migrate from PostgreSQL to MariaDB. There are two primary ways that this can be done.
 
 
 See [Loading the CONNECT Storage Engine](../../../reference/storage-engines/connect/installing-the-connect-storage-engine.md) for information on how to install the CONNECT storage engine.
@@ -17,7 +17,7 @@ See [Loading the CONNECT Storage Engine](../../../reference/storage-engines/conn
 ### Tables with ODBC table_type
 
 
-The CONNECT storage engine allows you to create tables that refer to tables on an external server, and it can fetch the data using a compatible [ODBC](https://en.wikipedia.org/wiki/Open_Database_Connectivity) driver. PostgreSQL does have a freely available ODBC driver called `[psqlODBC](https://odbc.postgresql.org/)`. Therefore, if you install `psqlODBC` on the MariaDB Server, and then configure the system's ODBC framework (such as [unixODBC](https://www.unixodbc.org/)), then the MariaDB server will be able to connect to the remote PostgreSQL server. At that point, you can create tables with the `[ENGINE=CONNECT](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#storage-engine)` and `[table_type=ODBC](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)` table options set, so that you can access the PostgreSQL tables from MariaDB.
+The CONNECT storage engine allows you to create tables that refer to tables on an external server, and it can fetch the data using a compatible [ODBC](https://en.wikipedia.org/wiki/Open_Database_Connectivity) driver. PostgreSQL does have a freely available ODBC driver called `[psqlODBC](https://odbc.postgresql.org/)`. Therefore, if you install `psqlODBC` on the MariaDB Server, and then configure the system's ODBC framework (such as [unixODBC](https://www.unixodbc.org/)), then the MariaDB server will be able to connect to the remote PostgreSQL server. At that point, you can create tables with the `[ENGINE=CONNECT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine)` and `[table_type=ODBC](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)` table options set, so that you can access the PostgreSQL tables from MariaDB.
 
 
 See [CONNECT ODBC Table Type: Accessing Tables From Another DBMS](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md) for more information on how to do that.
@@ -46,7 +46,7 @@ INSERT INTO tab SELECT * FROM psql_tab;
 ### Tables with JDBC table_type
 
 
-The CONNECT storage engine allows you to create tables that refer to tables on an external server, and it can fetch the data using a compatible [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) driver. PostgreSQL does have a freely available [JDBC driver](https://jdbc.postgresql.org/). If you install this JDBC driver on the MariaDB server, then the MariaDB server will be able to connect to the remote PostgreSQL server via JDBC. At that point, you can create tables with the `[ENGINE=CONNECT](../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md#storage-engine)` and `[table_type=JDBC](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)` table options set, so that you can access the PostgreSQL tables from MariaDB.
+The CONNECT storage engine allows you to create tables that refer to tables on an external server, and it can fetch the data using a compatible [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) driver. PostgreSQL does have a freely available [JDBC driver](https://jdbc.postgresql.org/). If you install this JDBC driver on the MariaDB server, then the MariaDB server will be able to connect to the remote PostgreSQL server via JDBC. At that point, you can create tables with the `[ENGINE=CONNECT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine)` and `[table_type=JDBC](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)` table options set, so that you can access the PostgreSQL tables from MariaDB.
 
 
 See [CONNECT JDBC Table Type: Accessing Tables from Another DBMS](../../../reference/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms.md) for more information on how to do that.
@@ -134,7 +134,7 @@ See [Set up and configure PostgreSQL ODBC drivers for the MySQL Workbench Migrat
 ### Migrating Functions and Procedures
 
 
-PostgreSQL's [functions](https://www.postgresql.org/docs/current/sql-createfunction.html) and [procedures](https://www.postgresql.org/docs/11/sql-createprocedure.html) use a language called `[PL/pgSQL](https://www.postgresql.org/docs/current/plpgsql.html)`. This language is quite different than the default `SQL/PSM` language used for MariaDB's [stored procedures](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md). `PL/pgSQL` is more similar to `PL/PSQL` from Oracle, so you may find it beneficial to try migrate with `[SQL_MODE=ORACLE](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)` set.
+PostgreSQL's [functions](https://www.postgresql.org/docs/current/sql-createfunction.html) and [procedures](https://www.postgresql.org/docs/11/sql-createprocedure.html) use a language called `[PL/pgSQL](https://www.postgresql.org/docs/current/plpgsql.html)`. This language is quite different than the default `SQL/PSM` language used for MariaDB's [stored procedures](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md). `PL/pgSQL` is more similar to `PL/PSQL` from Oracle, so you may find it beneficial to try migrate with `[SQL_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)` set.
 
 
 ## See also
@@ -142,4 +142,3 @@ PostgreSQL's [functions](https://www.postgresql.org/docs/current/sql-createfunct
 
 * [Set up and configure PostgreSQL ODBC drivers for the MySQL Workbench Migration Wizard](https://mysqlworkbench.org/2012/11/set-up-and-configure-postgresql-odbc-drivers-for-the-mysql-workbench-migration-wizard/)
 
-<span></span>

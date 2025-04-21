@@ -38,11 +38,11 @@ lock_option:
 ## Description
 
 
-The *CREATE INDEX* statement is used to add indexes to a table. Indexes can be created at the same as the table, with the [CREATE TABLE](../../../vectors/create-table-with-vectors.md) statement. In some cases, such as for InnoDB primary keys, doing so during creation is preferable, as adding a primary key will involve rebuilding the table.
+The *CREATE INDEX* statement is used to add indexes to a table. Indexes can be created at the same as the table, with the [CREATE TABLE](create-table.md) statement. In some cases, such as for InnoDB primary keys, doing so during creation is preferable, as adding a primary key will involve rebuilding the table.
 
 
 The statement is mapped to an ALTER TABLE statement to create [indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/README.md).
-See [ALTER TABLE](../alter/alter-tablespace.md). CREATE INDEX cannot be used to create a
+See [ALTER TABLE](../alter/alter-table.md). CREATE INDEX cannot be used to create a
 [PRIMARY KEY](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key); use ALTER TABLE instead.
 
 
@@ -73,7 +73,7 @@ Executing the `CREATE INDEX` statement requires the `[INDEX](../../account-manag
 Online DDL is supported with the [ALGORITHM](#algorithm) and [LOCK](#lock) clauses.
 
 
-See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md).
+See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../storage-engines/innodb/README.md).
 
 
 ## CREATE OR REPLACE INDEX
@@ -91,7 +91,7 @@ If the `IF NOT EXISTS` clause is used, then the index will only be created if an
 ## Index Definitions
 
 
-See [CREATE TABLE: Index Definitions](../../../vectors/create-table-with-vectors.md#index-definitions) for information about index definitions.
+See [CREATE TABLE: Index Definitions](create-table.md#index-definitions) for information about index definitions.
 
 
 ## WAIT/NOWAIT
@@ -103,13 +103,13 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 ## ALGORITHM
 
 
-See [ALTER TABLE: ALGORITHM](../alter/alter-tablespace.md#algorithm) for more information.
+See [ALTER TABLE: ALGORITHM](../alter/alter-table.md#algorithm) for more information.
 
 
 ## LOCK
 
 
-See [ALTER TABLE: LOCK](../alter/alter-tablespace.md#lock) for more information.
+See [ALTER TABLE: LOCK](../alter/alter-table.md#lock) for more information.
 
 
 ## Progress Reporting
@@ -134,7 +134,7 @@ See [Progress Reporting](../../../../mariadb-internals/using-mariadb-with-your-p
 
 
 
-##### MariaDB starting with [10.5.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md)
+##### MariaDB starting with [10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
 The [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) clause allows one to constrain a primary or unique index such that [application-time periods](../../../temporal-tables/application-time-periods.md) cannot overlap.
 
 
@@ -172,7 +172,7 @@ SHOW WARNINGS;
 +-------+------+-------------------------+
 ```
 
-From [MariaDB 10.5.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md), creating a unique index for an [application-time period table](../../../temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) constraint:
+From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), creating a unique index for an [application-time period table](../../../temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 
 ```
@@ -184,8 +184,8 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 
 * [Identifier Names](../../../sql-language-structure/identifier-names.md)
 * [Getting Started with Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
-* [What is an Index?](../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index.md)
-* [ALTER TABLE](../alter/alter-tablespace.md)
+* [What is an Index?](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
+* [ALTER TABLE](../alter/alter-table.md)
 * [DROP INDEX](../drop/drop-index.md)
 * [SHOW INDEX](../../administrative-sql-statements/show/show-index.md)
 * [SPATIAL INDEX](../../../geographic-geometric-features/spatial-index.md)

@@ -4,7 +4,7 @@
 Out parameters in PREPARE were only available for an earlier version of MariaDB.
 
 
-One can use question mark placeholders for out-parameters in the [PREPARE](prepare-statement.md) statement. Only [SELECT … INTO](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#into) can be used this way:
+One can use question mark placeholders for out-parameters in the [PREPARE](prepare-statement.md) statement. Only [SELECT … INTO](../data-manipulation/selecting-data/select.md#into) can be used this way:
 
 
 ```

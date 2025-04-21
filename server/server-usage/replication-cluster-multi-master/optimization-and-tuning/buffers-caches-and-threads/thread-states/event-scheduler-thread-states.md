@@ -18,4 +18,3 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | Waiting on empty queue | Sleeping, as the event scheduler's queue is empty. |
 
 
-<span></span>

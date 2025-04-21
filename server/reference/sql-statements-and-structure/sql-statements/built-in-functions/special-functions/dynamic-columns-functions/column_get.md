@@ -12,7 +12,7 @@ COLUMN_GET(dyncol_blob, column_name as type);
 ## Description
 
 
-Gets the value of a [dynamic column](../../../../nosql/dynamic-columns-api.md) by its name. If no column with the given name exists, `NULL` will be returned.
+Gets the value of a [dynamic column](../../../../nosql/dynamic-columns.md) by its name. If no column with the given name exists, `NULL` will be returned.
 
 
 **`column_name as type`** requires that one specify the datatype of the dynamic column they are reading.
@@ -37,5 +37,5 @@ SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
 without specifying a maximum length (i.e. using `as CHAR`, not `as CHAR(n)`), MariaDB will report the maximum length of the resultset column to be 16,777,216. This may cause excessive memory usage in some client libraries, because they try to pre-allocate a buffer of maximum resultset width. To avoid this problem, use CHAR(n) whenever you're using COLUMN_GET in the select list.
 
 
-See [Dynamic Columns:Datatypes](../../../../nosql/dynamic-columns-api.md#datatypes) for more information about datatypes.
+See [Dynamic Columns:Datatypes](../../../../nosql/dynamic-columns.md#datatypes) for more information about datatypes.
 

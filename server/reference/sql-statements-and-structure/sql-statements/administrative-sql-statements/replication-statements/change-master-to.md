@@ -49,7 +49,7 @@ master_def:
 
 
 
-##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to
 using the channel_name directly after `CHANGE MASTER`.
 
@@ -94,10 +94,10 @@ START SLAVE 'gandalf';
 #### MASTER_USER
 
 
-The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](README.md) will use to connect to the [primary](README.md).
+The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](../../../../../server-usage/replication-cluster-multi-master/README.md) will use to connect to the [primary](../../../../../server-usage/replication-cluster-multi-master/README.md).
 
 
-This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) on the primary.
+This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) on the primary.
 
 
 For example:
@@ -111,13 +111,13 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), and 128 characters from [MariaDB 10.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md).
+The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 128 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 #### MASTER_PASSWORD
 
 
-The `MASTER_PASSWORD` option for `CHANGE MASTER` defines the password that the [replica](README.md) will use to connect to the [primary](README.md) as the user account defined by the [MASTER_USER](#master_user) option.
+The `MASTER_PASSWORD` option for `CHANGE MASTER` defines the password that the [replica](../../../../../server-usage/replication-cluster-multi-master/README.md) will use to connect to the [primary](../../../../../server-usage/replication-cluster-multi-master/README.md) as the user account defined by the [MASTER_USER](#master_user) option.
 
 
 For example:
@@ -139,10 +139,10 @@ Due to [MDEV-29994](https://jira.mariadb.org/browse/MDEV-29994), the password ca
 #### MASTER_HOST
 
 
-The `MASTER_HOST` option for `CHANGE MASTER` defines the hostname or IP address of the [primary](README.md).
+The `MASTER_HOST` option for `CHANGE MASTER` defines the hostname or IP address of the [primary](../../../../../server-usage/replication-cluster-multi-master/README.md).
 
 
-If you set the value of the `MASTER_HOST` option to the empty string, then that is not the same as not setting the option's value at all. If you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command will fail with an error. In [MariaDB 5.3](../../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and before, if you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command would succeed, but the subsequent [START SLAVE](start-replica.md) command would fail.
+If you set the value of the `MASTER_HOST` option to the empty string, then that is not the same as not setting the option's value at all. If you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command will fail with an error. In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and before, if you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command would succeed, but the subsequent [START SLAVE](start-replica.md) command would fail.
 
 
 For example:
@@ -159,19 +159,19 @@ START SLAVE;
 ```
 
 If you set the value of the `MASTER_HOST` option in a `CHANGE MASTER` command, then the replica assumes that the primary is different from before, even if you set the value of this option to the same value it had previously. In this scenario, the replica will consider the old values for the primary's [binary
-log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file name and position to be invalid for the new primary. As a side effect, if you do not explicitly set the values of the [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) options in the statement, then the statement will be implicitly appended with `MASTER_LOG_FILE=''` and `MASTER_LOG_POS=4`. However, if you enable [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode for replication by setting the [MASTER_USE_GTID](#master_use_gtid) option to some value other than `no` in the statement, then these values will effectively be ignored anyway.
+log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) file name and position to be invalid for the new primary. As a side effect, if you do not explicitly set the values of the [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) options in the statement, then the statement will be implicitly appended with `MASTER_LOG_FILE=''` and `MASTER_LOG_POS=4`. However, if you enable [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode for replication by setting the [MASTER_USE_GTID](#master_use_gtid) option to some value other than `no` in the statement, then these values will effectively be ignored anyway.
 
 
 Replicas cannot connect to primaries using Unix socket files or Windows named pipes. The replica must connect to the primary using TCP/IP.
 
 
-The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), and 255 characters from [MariaDB 10.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md).
+The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 255 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 #### MASTER_PORT
 
 
-The `MASTER_PORT` option for `CHANGE MASTER` defines the TCP/IP port of the [primary](README.md).
+The `MASTER_PORT` option for `CHANGE MASTER` defines the TCP/IP port of the [primary](../../../../../server-usage/replication-cluster-multi-master/README.md).
 
 
 For example:
@@ -189,7 +189,7 @@ START SLAVE;
 ```
 
 If you set the value of the `MASTER_PORT` option in a `CHANGE MASTER` command, then the replica assumes that the primary is different from before, even if you set the value of this option to the same value it had previously. In this scenario, the replica will consider the old values for the primary's [binary
-log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file name and position to be invalid for the new primary. As a side effect, if you do not explicitly set the values of the [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) options in the statement, then the statement will be implicitly appended with `MASTER_LOG_FILE=''` and `MASTER_LOG_POS=4`. However, if you enable [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode for replication by setting the [MASTER_USE_GTID](#master_use_gtid) option to some value other than `no` in the statement, then these values will effectively be ignored anyway.
+log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) file name and position to be invalid for the new primary. As a side effect, if you do not explicitly set the values of the [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) options in the statement, then the statement will be implicitly appended with `MASTER_LOG_FILE=''` and `MASTER_LOG_POS=4`. However, if you enable [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode for replication by setting the [MASTER_USE_GTID](#master_use_gtid) option to some value other than `no` in the statement, then these values will effectively be ignored anyway.
 
 
 Replicas cannot connect to primaries using Unix socket files or Windows named pipes. The replica must connect to the primary using TCP/IP.
@@ -229,7 +229,7 @@ The `MASTER_BIND` option for `CHANGE MASTER` can be used on replicas that have m
 #### MASTER_HEARTBEAT_PERIOD
 
 
-The `MASTER_HEARTBEAT_PERIOD` option for `CHANGE MASTER` can be used to set the interval in seconds between replication heartbeats. Whenever the primary's [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is updated with an event, the waiting period for the next heartbeat is reset.
+The `MASTER_HEARTBEAT_PERIOD` option for `CHANGE MASTER` can be used to set the interval in seconds between replication heartbeats. Whenever the primary's [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) is updated with an event, the waiting period for the next heartbeat is reset.
 
 
 This option's *interval* argument has the following characteristics:
@@ -454,7 +454,7 @@ The maximum length of `MASTER_SSL_CIPHER` string is 511 characters.
 #### MASTER_SSL_VERIFY_SERVER_CERT
 
 
-The `MASTER_SSL_VERIFY_SERVER_CERT` option for `CHANGE MASTER` enables [server certificate verification](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default prior to [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), and enabled by default from [MariaDB 11.4](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md).
+The `MASTER_SSL_VERIFY_SERVER_CERT` option for `CHANGE MASTER` enables [server certificate verification](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), and enabled by default from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114).
 
 
 For example:
@@ -476,13 +476,13 @@ See [Secure Connections Overview: Server Certificate Verification](../../../../.
 ### Binary Log Options
 
 
-These options are related to the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position on the primary.
+These options are related to the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) position on the primary.
 
 
 #### MASTER_LOG_FILE
 
 
-The `MASTER_LOG_FILE` option for `CHANGE MASTER` can be used along with `MASTER_LOG_POS` to specify the coordinates at which the [replica's I/O thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) should begin reading from the primary's [binary logs](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) the next time the thread starts.
+The `MASTER_LOG_FILE` option for `CHANGE MASTER` can be used along with `MASTER_LOG_POS` to specify the coordinates at which the [replica's I/O thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) should begin reading from the primary's [binary logs](../../../../../server-management/server-monitoring-logs/binary-log/README.md) the next time the thread starts.
 
 
 For example:
@@ -505,7 +505,7 @@ The [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) op
 #### MASTER_LOG_POS
 
 
-The `MASTER_LOG_POS` option for `CHANGE MASTER` can be used along with `MASTER_LOG_FILE` to specify the coordinates at which the [replica's I/O thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) should begin reading from the primary's [binary logs](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) the next time the thread starts.
+The `MASTER_LOG_POS` option for `CHANGE MASTER` can be used along with `MASTER_LOG_FILE` to specify the coordinates at which the [replica's I/O thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) should begin reading from the primary's [binary logs](../../../../../server-management/server-monitoring-logs/binary-log/README.md) the next time the thread starts.
 
 
 For example:
@@ -593,7 +593,7 @@ The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the re
 
 
 * `current_pos` - Replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode and use [gtid_current_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid_current_pos with gtid_binlog_pos and gtid_slave_pos. Use the new, safe, [MASTER_DEMOTE_TO_SLAVE=<bool>](#master_demote_to_slave) option instead.
-* `slave_pos` - Replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode and use [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes.md), `replica_pos` is an alias for `slave_pos`.
+* `slave_pos` - Replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode and use [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
 * `no` - Don't replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode.
 
 
@@ -622,7 +622,7 @@ START SLAVE;
 
 
 
-##### MariaDB starting with [10.10](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md)
+##### MariaDB starting with [10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 Used to transition a primary to become a replica. Replaces the old [MASTER_USE_GTID=current_pos](#master_use_gtid) with a safe alternative by forcing users to set `Using_Gtid=Slave_Pos` and merging `gtid_binlog_pos` into `gtid_slave_pos` once at `CHANGE MASTER TO` time. If `gtid_slave_pos` is more
 recent than `gtid_binlog_pos` (as in the case of chain replication), the replication state should be preserved.
 
@@ -646,7 +646,7 @@ Also see [Replication filters](../../../../../server-usage/replication-cluster-m
 #### IGNORE_SERVER_IDS
 
 
-The `IGNORE_SERVER_IDS` option for `CHANGE MASTER` can be used to configure a [replica](README.md) to ignore [binary log](binary_log) events that originated from certain servers. Filtered [binary log](binary_log) events will not get logged to the replica’s [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The `IGNORE_SERVER_IDS` option for `CHANGE MASTER` can be used to configure a [replica](../../../../../server-usage/replication-cluster-multi-master/README.md) to ignore [binary log](binary_log) events that originated from certain servers. Filtered [binary log](binary_log) events will not get logged to the replica’s [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 
 The option's value can be specified by providing a comma-separated list of [server_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#server_id) values. For example:
@@ -672,7 +672,7 @@ START SLAVE;
 #### DO_DOMAIN_IDS
 
 
-The `DO_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](README.md) to only apply [binary log](binary_log) events if the transaction's [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is in a specific [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](binary_log) events will not get logged to the replica’s [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The `DO_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](../../../../../server-usage/replication-cluster-multi-master/README.md) to only apply [binary log](binary_log) events if the transaction's [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is in a specific [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](binary_log) events will not get logged to the replica’s [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 
 The option's value can be specified by providing a comma-separated list of [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) values. Duplicate values are automatically ignored. For example:
@@ -712,7 +712,7 @@ The `DO_DOMAIN_IDS` option can only be specified if the replica is replicating i
 #### IGNORE_DOMAIN_IDS
 
 
-The `IGNORE_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](README.md) to ignore [binary log](binary_log) events if the transaction's [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is in a specific [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](binary_log) events will not get logged to the replica’s [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The `IGNORE_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](../../../../../server-usage/replication-cluster-multi-master/README.md) to ignore [binary log](binary_log) events if the transaction's [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) is in a specific [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](binary_log) events will not get logged to the replica’s [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 
 The option's value can be specified by providing a comma-separated list of [gtid_domain_id](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id) values. Duplicate values are automatically ignored. For example:
@@ -784,7 +784,7 @@ There are some cases where options are implicitly reset, such as when the [MASTE
 ## Option Persistence
 
 
-The values of the [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) options (i.e. the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position on the primary) and most other options are written to either the default `master.info` file or the file that is configured by the [master_info_file](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option. The [replica's I/O thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) keeps this [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position updated as it downloads events only when [MASTER_USE_GTID](#master_use_gtid) option
+The values of the [MASTER_LOG_FILE](#master_log_file) and [MASTER_LOG_POS](#master_log_pos) options (i.e. the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) position on the primary) and most other options are written to either the default `master.info` file or the file that is configured by the [master_info_file](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option. The [replica's I/O thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-io-thread) keeps this [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) position updated as it downloads events only when [MASTER_USE_GTID](#master_use_gtid) option
  is set to `NO`. Otherwise the file is not updated on a per event basis.
 
 
@@ -812,19 +812,19 @@ relay_log_info_file=/mariadb/myserver1-relay-log.info
 ## GTID Persistence
 
 
-If the replica is replicating [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) events that contain [GTIDs](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), then the [replica's SQL thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-sql-thread) will write every GTID that it applies to the [mysql.gtid_slave_pos](../system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table. This GTID can be inspected and modified through the [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) system variable.
+If the replica is replicating [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) events that contain [GTIDs](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), then the [replica's SQL thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-sql-thread) will write every GTID that it applies to the [mysql.gtid_slave_pos](../system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table. This GTID can be inspected and modified through the [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) system variable.
 
 
-If the replica has the [log_slave_updates](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates) system variable enabled and if the replica has the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) enabled, then every write by the [replica's SQL thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-sql-thread) will also go into the replica's [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). This means that [GTIDs](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) of replicated transactions would be reflected in the value of the [gtid_binlog_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_binlog_pos) system variable.
+If the replica has the [log_slave_updates](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates) system variable enabled and if the replica has the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) enabled, then every write by the [replica's SQL thread](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#slave-sql-thread) will also go into the replica's [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md). This means that [GTIDs](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) of replicated transactions would be reflected in the value of the [gtid_binlog_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_binlog_pos) system variable.
 
 
 ## Creating a Replica from a Backup
 
 
-The `CHANGE MASTER` statement is useful for setting up a replica when you have a backup of the primary and you also have the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position or [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) position corresponding to the backup.
+The `CHANGE MASTER` statement is useful for setting up a replica when you have a backup of the primary and you also have the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) position or [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) position corresponding to the backup.
 
 
-After restoring the backup on the replica, you could execute something like this to use the [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) position:
+After restoring the backup on the replica, you could execute something like this to use the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) position:
 
 
 ```
@@ -844,7 +844,7 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-See [Setting up a Replication Slave with Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information on how to do this with [Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md).
+See [Setting up a Replication Slave with Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information on how to do this with [Mariabackup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md).
 
 
 ## Example

@@ -1,7 +1,7 @@
 
 # Checking and Repairing CSV Tables
 
-[CSV tables](csv-overview.md) support the [CHECK TABLE](../../sql-statements-and-structure/sql-statements/table-statements/check-table.md) and [REPAIR TABLE](../../sql-statements-and-structure/sql-statements/table-statements/repair-table.md) statements.
+[CSV tables](README.md) support the [CHECK TABLE](../../sql-statements-and-structure/sql-statements/table-statements/check-table.md) and [REPAIR TABLE](../../sql-statements-and-structure/sql-statements/table-statements/repair-table.md) statements.
 
 
 CHECK TABLE will mark the table as corrupt if it finds a problem, while REPAIR TABLE will restore rows until the first corrupted row, discarding the rest.

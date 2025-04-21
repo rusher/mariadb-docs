@@ -1,7 +1,7 @@
 
 # Subqueries and JOINs
 
-A [subquery](subqueries-and-all.md) can quite often, but not in all cases, be rewritten as a [JOIN](../../../../../../../../general-resources/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses.md).
+A [subquery](README.md) can quite often, but not in all cases, be rewritten as a [JOIN](../joins/join-syntax.md).
 
 
 

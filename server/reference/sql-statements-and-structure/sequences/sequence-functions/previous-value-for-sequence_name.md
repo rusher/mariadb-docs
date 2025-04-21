@@ -35,7 +35,7 @@ Gets the most recent value in the current connection generated from a sequence.
 * If the sequence has not yet been used by the connection, `PREVIOUS VALUE FOR` returns `NULL` (the same thing applies with a new connection which doesn't see a last value for an existing sequence).
 * If a `SEQUENCE` has been dropped and re-created then it's treated as a new `SEQUENCE` and `PREVIOUS VALUE FOR` will return `NULL`.
 * Returns `NULL` if the sequence is complete
-* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) has no effect on `PREVIOUS VALUE FOR`.
+* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) has no effect on `PREVIOUS VALUE FOR`.
 * Previous values for all used sequences are stored per connection until connection ends.
 * `PREVIOUS VALUE FOR` requires the [SELECT privilege](../../sql-statements/account-management-sql-commands/grant.md).
 
@@ -136,7 +136,7 @@ SELECT LASTVAL(s);
 * [ALTER SEQUENCE](../alter-sequence.md)
 * [NEXT VALUE FOR](next-value-for-sequence_name.md)
 * [SETVAL()](setval.md). Set next value for the sequence.
-* [AUTO_INCREMENT](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [AUTO_INCREMENT](../../../data-types/auto_increment.md)
 * [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
 

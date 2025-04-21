@@ -10,7 +10,7 @@ The `session_account_connect_attrs` table shows connection attributes for the cu
 Applications can pass key/value connection attributes to the server when a connection is made. The [session_connect_attrs](performance-schema-session_connect_attrs-table.md) and `session_account_connect_attrs` tables provide access to this information, for all sessions and the current session respectively.
 
 
-The C API functions [mysql_options()](../../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options.md) and [mysql_optionsv()](../../../../../../../../connectors/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv.md) are used for passing connection attributes to the server.
+The C API functions [mysql_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options) and [mysql_optionsv()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) are used for passing connection attributes to the server.
 
 
 `session_account_connect_attrs` contains the following columns:

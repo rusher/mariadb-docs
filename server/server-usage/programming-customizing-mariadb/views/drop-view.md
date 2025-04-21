@@ -52,8 +52,8 @@ Note that it is not necessary to use `DROP VIEW` to replace an existing view, be
 
 
 
-##### MariaDB starting with [10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md)
-[MariaDB 10.6.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes.md) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `DROP VIEW` for a singular view is atomic. Dropping multiple views is crash-safe.
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../../../reference/sql-statements-and-structure/sql-statements/data-definition/atomic-ddl.md) and `DROP VIEW` for a singular view is atomic. Dropping multiple views is crash-safe.
 
 
 ## Examples
@@ -91,4 +91,3 @@ SHOW WARNINGS;
 * [SHOW CREATE VIEWS](https://mariadb.com/kb/en/show-create-views)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
-<span></span>

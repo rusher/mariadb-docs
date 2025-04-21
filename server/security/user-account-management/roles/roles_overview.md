@@ -188,4 +188,3 @@ SHOW CREATE VIEW db.b2;
 
 * [Roles Review](https://ocelot.ca/blog/blog/2014/01/12/roles-review/) by Peter Gulutzan
 
-<span></span>

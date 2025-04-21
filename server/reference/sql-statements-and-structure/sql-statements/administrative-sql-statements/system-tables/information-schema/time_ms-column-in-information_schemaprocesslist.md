@@ -31,7 +31,7 @@ Note that as a difference to MySQL, in MariaDB the `TIME`
 column (and also the `TIME_MS` column) are not affected by
 any setting of [@TIMESTAMP](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp). This means that it can be
 reliably used also for threads that change `@TIMESTAMP` (such
-as the [replication](../../replication-statements/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
+as the [replication](../../../../../../server-usage/replication-cluster-multi-master/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
 
 
 As a consequence of this, the `TIME` column of 

@@ -25,7 +25,7 @@ function (UDF) defined by a plugin. See [CREATE FUNCTION (UDF)](../../../../../s
 for details.
 
 
-You can use a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement for the function body by enclosing it in
+You can use a [SELECT](../../data-manipulation/selecting-data/select.md) statement for the function body by enclosing it in
 parentheses, exactly as you would to use a subselect for any other expression. The `SELECT`
 statement must return a single value. If more than one column is returned when the function is called,
 error 1241 results. If more than one row is returned when the function is called, error 1242
@@ -39,7 +39,7 @@ are effectively ignored.
 
 
 By default, a function is associated with the current database. To associate the function explicitly
-with a given database, specify the fully-qualified name as `<em>db_name</em>.<em>func_name</em>`
+with a given database, specify the fully-qualified name as `db_name.func_name`
 when you create it. If the function name is the same as the name of a built-in function, you must
 use the fully qualified name when you call it.
 
@@ -60,7 +60,7 @@ For valid identifiers to use as function names, see [Identifier Names](../../../
 
 
 
-##### MariaDB starting with [10.8.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes.md)
+##### MariaDB starting with [10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
 The function parameter qualifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` were added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.
 
 
@@ -172,7 +172,7 @@ If the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an
 #### [NOT] DETERMINISTIC
 
 
-The `[NOT] DETERMINISTIC` clause also affects [binary logging](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), because the `STATEMENT` format can not be used to store or replicate non-deterministic statements.
+The `[NOT] DETERMINISTIC` clause also affects [binary logging](../../../../../server-management/server-monitoring-logs/binary-log/README.md), because the `STATEMENT` format can not be used to store or replicate non-deterministic statements.
 
 
 `CONTAINS SQL`, `NO SQL`, `READS SQL DATA`, and `MODIFIES SQL DATA` are informative clauses that tell the server what the function does. MariaDB does not check in any way whether the specified clause is correct. If none of these clauses are specified, `CONTAINS SQL` is used by default.
@@ -181,19 +181,19 @@ The `[NOT] DETERMINISTIC` clause also affects [binary logging](../../../../stora
 #### MODIFIES SQL DATA
 
 
-`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md), [INSERT](../../built-in-functions/string-functions/insert-function.md), [REPLACE](../../built-in-functions/string-functions/replace-function.md) or DDL.
+`MODIFIES SQL DATA` means that the function contains statements that may modify data stored in databases. This happens if the function contains statements like [DELETE](../../data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../data-manipulation/changing-deleting-data/update.md), [INSERT](../../data-manipulation/inserting-loading-data/insert.md), [REPLACE](../../data-manipulation/changing-deleting-data/replace.md) or DDL.
 
 
 #### READS SQL DATA
 
 
-`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements are used, but there no write operations are executed.
+`READS SQL DATA` means that the function reads data stored in databases, but does not modify any data. This happens if [SELECT](../../data-manipulation/selecting-data/select.md) statements are used, but there no write operations are executed.
 
 
 #### CONTAINS SQL
 
 
-`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md) or [DO](../../../../../../general-resources/company-and-community/contributing-participating/donate-to-the-foundation.md).
+`CONTAINS SQL` means that the function contains at least one SQL statement, but it does not read or write any data stored in a database. Examples include [SET](../../administrative-sql-statements/set-commands/set.md) or [DO](../../stored-routine-statements/do.md).
 
 
 #### NO SQL
@@ -205,7 +205,7 @@ The `[NOT] DETERMINISTIC` clause also affects [binary logging](../../../../stora
 #### Oracle Mode
 
 
-A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](../../../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md) for details on changes when running Oracle mode.
+A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) for details on changes when running Oracle mode.
 
 
 ## Security
@@ -218,7 +218,7 @@ account that called `CREATE FUNCTION`, even if the `DEFINER` clause was used.
 
 Each function has an account associated as the definer. By default, the definer is the account
 that created the function. Use the `DEFINER` clause to specify a different account as the
-definer. You must have the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes.md), the [SET USER](../../account-management-sql-commands/grant.md#set-user) privilege, to use the `DEFINER`
+definer. You must have the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-commands/grant.md#set-user) privilege, to use the `DEFINER`
 clause. See [Account Names](../../account-management-sql-commands/create-user.md#account-names) for details on specifying accounts.
 
 

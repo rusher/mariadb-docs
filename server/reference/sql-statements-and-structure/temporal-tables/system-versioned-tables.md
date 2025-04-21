@@ -22,7 +22,7 @@ System-versioned tables were first introduced in the SQL:2011 standard.
 ### Creating a System-Versioned Table
 
 
-The [CREATE TABLE](../vectors/create-table-with-vectors.md) syntax has been extended to permit creating a system-versioned table. To be system-versioned, according to SQL:2011, a table must have two generated columns, a period, and a special table option clause:
+The [CREATE TABLE](../sql-statements/data-definition/create/create-table.md) syntax has been extended to permit creating a system-versioned table. To be system-versioned, according to SQL:2011, a table must have two generated columns, a period, and a special table option clause:
 
 
 ```
@@ -53,7 +53,7 @@ SELECT x, ROW_START, ROW_END FROM t;
 ### Adding or Removing System Versioning To/From a Table
 
 
-An existing table can be [altered](../sql-statements/data-definition/alter/alter-tablespace.md) to enable system versioning for it.
+An existing table can be [altered](../sql-statements/data-definition/alter/alter-table.md) to enable system versioning for it.
 
 
 ```
@@ -114,8 +114,8 @@ Create Table: CREATE TABLE `t` (
 ```
 
 
-##### MariaDB starting with [11.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md)
-From [MariaDB 11.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), it is possible to convert a versioned table from implicit to explicit row_start/row_end columns. Note that in order to do any ALTER on a system versioned table, [system_versioning_alter_history](#system_versioning_alter_history) must be set to `KEEP`.
+##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to convert a versioned table from implicit to explicit row_start/row_end columns. Note that in order to do any ALTER on a system versioned table, [system_versioning_alter_history](#system_versioning_alter_history) must be set to `KEEP`.
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;
@@ -125,7 +125,7 @@ SET system_versioning_alter_history = keep;
 ALTER TABLE t1 ADD COLUMN rs TIMESTAMP(6) AS ROW START, 
   ADD COLUMN re TIMESTAMP(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re)
 ```
-Prior to [MariaDB 11.7](../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), this would result in a duplicate row error:
+Prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), this would result in a duplicate row error:
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;
@@ -213,7 +213,7 @@ Additionally MariaDB implements a non-standard extension:
 SELECT * FROM t FOR SYSTEM_TIME ALL;
 ```
 
-If the `FOR SYSTEM_TIME` clause is not used, the table will show the *current* data. This is usually the same as if one had specified `FOR SYSTEM_TIME AS OF CURRENT_TIMESTAMP`, unless one has adjusted the *row_start* value (until [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), only possible by setting the [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) variable). For example:
+If the `FOR SYSTEM_TIME` clause is not used, the table will show the *current* data. This is usually the same as if one had specified `FOR SYSTEM_TIME AS OF CURRENT_TIMESTAMP`, unless one has adjusted the *row_start* value (until [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), only possible by setting the [secure_timestamp](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) variable). For example:
 
 
 ```
@@ -299,7 +299,7 @@ A point in time when a row was inserted or deleted does not necessarily mean tha
 For some applications — for example, when doing data analytics on one-year-old data — this distinction does not matter much. For others — forensic analysis — it might be crucial.
 
 
-MariaDB supports transaction-precise history (only for the [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted *before* that point, but committed *after* will not be shown.
+MariaDB supports transaction-precise history (only for the [InnoDB storage engine](../../storage-engines/innodb/README.md)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted *before* that point, but committed *after* will not be shown.
 
 
 To use transaction-precise history, InnoDB needs to remember not timestamps, but transaction identifier per row. This is done by creating generated columns as `BIGINT UNSIGNED`, not `TIMESTAMP(6)`:
@@ -404,8 +404,8 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
 
 
 
-##### MariaDB starting with [10.5.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md)
-Since partitioning by current and historical data is such a typical usecase, from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md), it is possible to use a simplified statement to do so. For example, instead of
+##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+Since partitioning by current and historical data is such a typical usecase, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), it is possible to use a simplified statement to do so. For example, instead of
 
 ```
 CREATE TABLE t (x INT) WITH SYSTEM VERSIONING 
@@ -450,8 +450,8 @@ ERROR 4128 (HY000): Wrong partitions for `t`: must have at least one HISTORY and
 
 
 
-##### MariaDB starting with [10.9.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md)
-From [MariaDB 10.9.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-1091-release-notes.md), the `AUTO` keyword can be used to automatically create history partitions.
+##### MariaDB starting with [10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes)
+From [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes), the `AUTO` keyword can be used to automatically create history partitions.
 For example
 
 ```
@@ -534,7 +534,7 @@ or to a specific transaction (with `BEFORE SYSTEM_TIME TRANSACTION xxx`).
 To protect the integrity of the history, this statement requires a special [DELETE HISTORY](../sql-statements/account-management-sql-commands/grant.md#table-privileges) privilege.
 
 
-Currently, using the DELETE HISTORY statement with a BEFORE SYSTEM_TIME greater than the ROW_END of the active records (as a [TIMESTAMP](../sql-statements/built-in-functions/date-time-functions/timestamp-function.md), this has a maximum value of '2038-01-19 03:14:07' [UTC](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) will result in the historical records being dropped, and the active records being deleted and moved to history. See [MDEV-25468](https://jira.mariadb.org/browse/MDEV-25468).
+Currently, using the DELETE HISTORY statement with a BEFORE SYSTEM_TIME greater than the ROW_END of the active records (as a [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md), this has a maximum value of '2038-01-19 03:14:07' [UTC](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) will result in the historical records being dropped, and the active records being deleted and moved to history. See [MDEV-25468](https://jira.mariadb.org/browse/MDEV-25468).
 
 
 The [TRUNCATE TABLE](../sql-statements/table-statements/truncate-table.md) statement drops all historical records from a system-versioned-table.
@@ -572,8 +572,8 @@ CREATE TABLE t (
 ```
 
 Changes in other sections:
-[create-table-with-vectors.md](../vectors/create-table-with-vectors.md)
-[alter-tablespace.md](../sql-statements/data-definition/alter/alter-tablespace.md)
+[create-table.md](../sql-statements/data-definition/create/create-table.md)
+[alter-table.md](../sql-statements/data-definition/alter/alter-table.md)
 [join-syntax.md](../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)
 [partitioning-types-overview.md](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)
 [date-and-time-units.md](../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)
@@ -595,7 +595,7 @@ There are a number of system variables related to system-versioned tables:
 #### system_versioning_alter_history
 
 
-* Description: SQL:2011 does not allow [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
+* Description: SQL:2011 does not allow [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
 * Commandline: `--system-versioning-alter-history=value`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -608,7 +608,7 @@ There are a number of system variables related to system-versioned tables:
 #### `system_versioning_asof`
 
 
-* Description: If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `'DEFAULT'` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](../sql-statements/data-manipulation/inserting-loading-data/insert-select.md) and [REPLACE .. SELECT](../sql-statements/built-in-functions/string-functions/replace-function.md) need to state AS OF explicitly.
+* Description: If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `'DEFAULT'` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](../sql-statements/data-manipulation/inserting-loading-data/insert-select.md) and [REPLACE .. SELECT](../sql-statements/data-manipulation/changing-deleting-data/replace.md) need to state AS OF explicitly.
 
 
 **Note**: You need to use quotes around the name `'DEFAULT'` when setting the session value, unquoted literal `DEFAULT` will restore the current global value instead.
@@ -631,8 +631,8 @@ There are a number of system variables related to system-versioned tables:
 * Dynamic: Yes
 * Type: Boolean
 * Default Value: `ON`
-* Introduced: [MariaDB 10.3.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1034-release-notes.md)
-* Removed: [MariaDB 10.3.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md)
+* Introduced: [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes)
+* Removed: [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes)
 
 
 
@@ -645,7 +645,7 @@ There are a number of system variables related to system-versioned tables:
 * Dynamic: Yes
 * Type: Boolean
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.11.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes.md)
+* Introduced: [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes)
 
 
 
@@ -653,7 +653,7 @@ There are a number of system variables related to system-versioned tables:
 
 
 * Versioning clauses can not be applied to [generated (virtual and persistent) columns](../sql-statements/data-definition/create/generated-columns.md).
-* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldumpslow.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), use the `-H` or `--dump-history` options to include the history.
+* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), use the `-H` or `--dump-history` options to include the history.
 
 
 ## See Also

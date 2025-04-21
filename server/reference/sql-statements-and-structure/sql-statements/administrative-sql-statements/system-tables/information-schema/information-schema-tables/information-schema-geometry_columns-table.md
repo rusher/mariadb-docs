@@ -4,7 +4,7 @@
 ## Description
 
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `GEOMETRY_COLUMNS` table provides support for Spatial Reference systems for GIS data.
+The [Information Schema](../README.md) `GEOMETRY_COLUMNS` table provides support for Spatial Reference systems for GIS data.
 
 
 It contains the following columns:

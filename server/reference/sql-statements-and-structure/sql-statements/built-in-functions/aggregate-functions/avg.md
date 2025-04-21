@@ -12,13 +12,13 @@ AVG([DISTINCT] expr)
 ## Description
 
 
-Returns the average value of expr. The DISTINCT option can be used to return the average of the distinct values of expr. NULL values are ignored. It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+Returns the average value of expr. The DISTINCT option can be used to return the average of the distinct values of expr. NULL values are ignored. It is an [aggregate function](README.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
 AVG() returns NULL if there were no matching rows.
 
 
-AVG() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
+AVG() can be used as a [window function](../special-functions/window-functions/README.md).
 
 
 ## Examples
@@ -44,7 +44,7 @@ SELECT AVG(DISTINCT(sales_value)) FROM sales;
 +----------------------------+
 ```
 
-Commonly, AVG() is used with a [GROUP BY](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md#group-by) clause:
+Commonly, AVG() is used with a [GROUP BY](../../data-manipulation/selecting-data/select.md#group-by) clause:
 
 
 ```
@@ -79,7 +79,7 @@ SELECT name,test,AVG(score) FROM student;
 +------+------+------------+
 ```
 
-As a [window function](../special-functions/window-functions/window-functions-overview.md):
+As a [window function](../special-functions/window-functions/README.md):
 
 
 ```
@@ -110,7 +110,7 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY test)
 ## See Also
 
 
-* [MAX](../../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) (maximum)
-* [MIN](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) (minimum)
+* [MAX](max.md) (maximum)
+* [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
 

@@ -20,13 +20,12 @@ If you are using a log of on-disk temporary tables, increase the above to as muc
 key-cache-segments=8
 ```
 
-If you use/have a lot of MyISAM files, increase the above to 4 or 8. See [Segmented Key Cache](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance.md) and [Segmented Key Cache Performance](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance.md) for more information.
+If you use/have a lot of MyISAM files, increase the above to 4 or 8. See [Segmented Key Cache](segmented-key-cache.md) and [Segmented Key Cache Performance](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) for more information.
 
 
 ```
 thread-handling=pool-of-threads
 ```
 
-Threadpool is a great way to increase performance in situations where queries are relatively short and the load is CPU bound (e.g. OLTP workloads). To enable it, add the above to your my.cnf file. See [Threadpool in 5.5](../buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb-51-53.md) for more information.
+Threadpool is a great way to increase performance in situations where queries are relatively short and the load is CPU bound (e.g. OLTP workloads). To enable it, add the above to your my.cnf file. See [Threadpool in 5.5](../buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) for more information.
 
-<span></span>

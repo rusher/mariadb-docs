@@ -1,7 +1,7 @@
 
 # Date and Time Units
 
-The `INTERVAL` keyword can be used to add or subtract a time interval of time to a `[DATETIME](../../../../data-types/date-and-time-data-types/datetime.md)`, `[DATE](../../../sql-language-structure/date-and-time-literals.md)` or `[TIME](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md)` value.
+The `INTERVAL` keyword can be used to add or subtract a time interval of time to a `[DATETIME](../../../../data-types/date-and-time-data-types/datetime.md)`, `[DATE](../../../../data-types/date-and-time-data-types/date.md)` or `[TIME](../../../../data-types/date-and-time-data-types/time.md)` value.
 
 
 The syntax is:
@@ -69,9 +69,9 @@ Time units can be used in the following contexts:
 
 
 * after a `[+](../numeric-functions/addition-operator.md)` or a `[-](../../../operators/arithmetic-operators/subtraction-operator-.md)` operator;
-* with the following `DATE` or `TIME` functions: `[ADDDATE()](adddate.md)`, `[SUBDATE()](subdate.md)`, `[DATE_ADD()](date_add.md)`, `[DATE_SUB()](date_sub.md)`, `[TIMESTAMPADD()](timestampadd.md)`, `[TIMESTAMPDIFF()](timestampdiff.md)`, `[EXTRACT()](../../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md)`;
+* with the following `DATE` or `TIME` functions: `[ADDDATE()](adddate.md)`, `[SUBDATE()](subdate.md)`, `[DATE_ADD()](date_add.md)`, `[DATE_SUB()](date_sub.md)`, `[TIMESTAMPADD()](timestampadd.md)`, `[TIMESTAMPDIFF()](timestampdiff.md)`, `[EXTRACT()](extract.md)`;
 * in the `ON SCHEDULE` clause of `[CREATE EVENT](../../data-definition/create/create-event.md)` and `[ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md)`.
-* when defining a [partitioning](../../../vectors/create-table-with-vectors.md#partitions) `BY SYSTEM_TIME`
+* when defining a [partitioning](../../data-definition/create/create-table.md#partitions) `BY SYSTEM_TIME`
 
 
 ## See Also

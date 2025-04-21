@@ -9,7 +9,7 @@ This document discusses techniques for improving performance for data-warehouse-
 
 
 * How to load large tables.
-* [Normalization](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md).
+* [Normalization](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/).
 * Developing 'summary tables' to make 'reports' efficient.
 * Purging old data.
 
@@ -265,7 +265,7 @@ For "read scaling", backup, and failover, use master-slave replication or someth
 ## Sharding
 
 
-"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) and [Galera](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) have the same data on all servers, requiring all data to be written to all servers.)
+"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](../../README.md) and [Galera](../../galera-cluster/README.md) have the same data on all servers, requiring all data to be written to all servers.)
 
 
 With the non-sharding techniques described here, terabyte(s) of data can be handled by a single machine. Tens of terabytes probably requires sharding.
@@ -338,7 +338,7 @@ Let's say your insert rate is only one-tenth of your disk IOPs (eg, 10 rows/sec 
 Note that 10 rows/sec (300M/year) implies maybe 30GB for data + indexes + normalization tables + summary tables for 1 year. I would call this "not so big".
 
 
-Still, the [normalization](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) and summarization are important. Normalization keeps the data from being, say, twice as big. Summarization speeds up the reports by orders of magnitude.
+Still, the [normalization](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/) and summarization are important. Normalization keeps the data from being, say, twice as big. Summarization speeds up the reports by orders of magnitude.
 
 
 Let's design and analyse a "simple ingestion scheme" for 10 rows/second, without 'batching'.
@@ -386,4 +386,3 @@ optimizations, and debugging tips.
 
 Original source: [datawarehouse](https://mysql.rjweb.org/doc.php/datawarehouse)
 
-<span></span>

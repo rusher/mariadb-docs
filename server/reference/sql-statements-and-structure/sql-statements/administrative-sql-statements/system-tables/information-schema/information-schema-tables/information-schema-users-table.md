@@ -2,8 +2,8 @@
 # Information Schema USERS Table
 
 
-##### MariaDB starting with [11.5](../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `USERS` table contains information about users, [password expiry](../../../../../../../security/user-account-management/user-password-expiry.md), and the limits set by [max_password_errors](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors). Unprivileged users can access their own data, which is different to what [mysql.global_priv](../../the-mysql-database-tables/mysql-global_priv-table.md) provides.
+##### MariaDB starting with [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+The [Information Schema](../README.md) `USERS` table contains information about users, [password expiry](../../../../../../../security/user-account-management/user-password-expiry.md), and the limits set by [max_password_errors](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors). Unprivileged users can access their own data, which is different to what [mysql.global_priv](../../the-mysql-database-tables/mysql-global_priv-table.md) provides.
 
 
 It contains the following columns:

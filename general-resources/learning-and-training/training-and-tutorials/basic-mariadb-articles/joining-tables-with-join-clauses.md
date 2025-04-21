@@ -108,8 +108,8 @@ That should give you a bit more understanding of how JOINS work!
 ## See Also
 
 
-* [More Advanced JOINs](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
-* [Comma vs JOIN](../../../../server/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
+* [More Advanced JOINs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins)
+* [Comma vs JOIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join)
 * [mysql_p5.shtml](https://www.keithjbrown.co.uk/vworks/mysql/mysql_p5.shtml) - Nice tutorial.
  Part 5 covers joins.
 

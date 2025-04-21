@@ -1,7 +1,7 @@
 
 # InnoDB Limitations
 
-The [InnoDB storage engine](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) has the following limitations.
+The [InnoDB storage engine](README.md) has the following limitations.
 
 
 ## Limitations on Schema
@@ -86,7 +86,7 @@ The InnoDB storage engine does not maintain internal row counts. Transactions is
 
 * When defining an index on an auto-incrementing column, it must be defined in a way that allows the equivalent of `SELECT MAX(col)` lookups on the table.
 * Restarting MariaDB may cause InnoDB to reuse old auto-increment values, such as in the case of a transaction that was rolled back.
-* When auto-incrementing columns run out of values, [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) statements generate duplicate-key errors.
+* When auto-incrementing columns run out of values, [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements generate duplicate-key errors.
 
 
 ## Transactions and Locks

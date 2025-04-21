@@ -8,7 +8,7 @@
 USE db_name
 ```
 
-From [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md), one can also use
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), one can also use
 
 ```
 USE DATABASE db_name;
@@ -31,7 +31,7 @@ USE db2;
 SELECT COUNT(*) FROM mytable;   # selects from db2.mytable
 ```
 
-The [DATABASE()](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) function ([SCHEMA()](../../../../../maxscale/mariadb-maxscale-14/maxscale-design-documents/schemarouter-router-technical-overview.md) is a synonym) returns the default database.
+The [DATABASE()](../built-in-functions/secondary-functions/information-functions/database.md) function ([SCHEMA()](../built-in-functions/secondary-functions/information-functions/schema.md) is a synonym) returns the default database.
 
 
 Another way to set the default database is specifying its name at [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command line client startup.

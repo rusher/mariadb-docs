@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2020
 
-We are participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/) 2020. The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently C, ODBC, Java) and on [MariaDB Galera Cluster](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../columnstore/using-mariadb-columnstore/mariadb-columnstore-with-spark.md), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+We are participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/) 2020. The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently C, ODBC, Java) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 
 
@@ -211,7 +211,7 @@ It's unfortunately been a little while since I wrote that code, but I think thos
 ### Aggregate Window Functions
 
 With a few exceptions, most native aggregate functions are supported as window functions.
-[aggregate-functions-as-window-functions.md](../../../../server/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions.md)
+[aggregate-functions-as-window-functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/aggregate-functions-as-window-functions)
 In [MDEV-7773](https://jira.mariadb.org/browse/MDEV-7773), support for creating of custom aggregate functions was added.
 This task proposes to extend that feature and allow custom aggregate functions to be used as window functions
 An example of a creating a custom aggregate function is given below:

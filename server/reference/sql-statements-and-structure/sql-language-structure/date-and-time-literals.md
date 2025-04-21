@@ -5,7 +5,7 @@
 ## Standard syntaxes
 
 
-MariaDB supports the SQL standard and ODBC syntaxes for [DATE](date-and-time-literals.md), [TIME](../sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) and [TIMESTAMP](../sql-statements/built-in-functions/date-time-functions/timestamp-function.md) literals.
+MariaDB supports the SQL standard and ODBC syntaxes for [DATE](../../data-types/date-and-time-data-types/date.md), [TIME](../../data-types/date-and-time-data-types/time.md) and [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) literals.
 
 
 SQL standard syntax:
@@ -78,7 +78,7 @@ All the following `DATE` literals are valid, and they all represent the same val
 ## `TIME` literals
 
 
-A `TIME` string is a string in one of the following formats: ` 'D HH:MM:SS'`, `'HH:MM:SS`, `'D HH:MM'`, `'HH:MM'`, `'D HH'`, or `'SS'`. `D` is a value from 0 to 34 which represents days. `:` is the only allowed delimiter for `TIME` literals. Delimiters are mandatory, with an exception: the `'HHMMSS'` format is allowed. When delimiters are used, each part of the literal can consist of one character.
+A `TIME` string is a string in one of the following formats: `'D HH:MM:SS'`, `'HH:MM:SS`, `'D HH:MM'`, `'HH:MM'`, `'D HH'`, or `'SS'`. `D` is a value from 0 to 34 which represents days. `:` is the only allowed delimiter for `TIME` literals. Delimiters are mandatory, with an exception: the `'HHMMSS'` format is allowed. When delimiters are used, each part of the literal can consist of one character.
 
 
 A `TIME` literal can also be a number in one of the following formats: `HHMMSS`, `MMSS`, or `SS`.

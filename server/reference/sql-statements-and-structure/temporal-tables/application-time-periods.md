@@ -2,7 +2,7 @@
 # Application-Time Periods
 
 
-Extending [system-versioned tables](system-versioned-tables.md), MariaDB supports application-time period tables. Time periods are defined by a range between two temporal columns. The columns must be of the same [temporal data type](../../data-types/date-and-time-data-types/README.md), i.e. [DATE](../sql-language-structure/date-and-time-literals.md), [TIMESTAMP](../sql-statements/built-in-functions/date-time-functions/timestamp-function.md) or [DATETIME](../../data-types/date-and-time-data-types/datetime.md) ([TIME](../sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) and [YEAR](../../data-types/date-and-time-data-types/year-data-type.md) are not supported), and of the same width.
+Extending [system-versioned tables](system-versioned-tables.md), MariaDB supports application-time period tables. Time periods are defined by a range between two temporal columns. The columns must be of the same [temporal data type](../../data-types/date-and-time-data-types/README.md), i.e. [DATE](../../data-types/date-and-time-data-types/date.md), [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md) or [DATETIME](../../data-types/date-and-time-data-types/datetime.md) ([TIME](../../data-types/date-and-time-data-types/time.md) and [YEAR](../../data-types/date-and-time-data-types/year-data-type.md) are not supported), and of the same width.
 
 
 Using time periods implicitly defines the two columns as `NOT NULL`. It also adds a constraint to check whether the first value is less than the second value. The constraint is invisible to [SHOW CREATE TABLE](../sql-statements/administrative-sql-statements/show/show-create-table.md) statements. The name of this constraint is prefixed by the time period name, to avoid conflict with other constraints.
@@ -11,7 +11,7 @@ Using time periods implicitly defines the two columns as `NOT NULL`. It also add
 ### Creating Tables with Time Periods
 
 
-To create a table with a time period, use a [CREATE TABLE](../vectors/create-table-with-vectors.md) statement with the `PERIOD` table option.
+To create a table with a time period, use a [CREATE TABLE](../sql-statements/data-definition/create/create-table.md) statement with the `PERIOD` table option.
 
 
 ```
@@ -31,7 +31,7 @@ Examples are available in the MariaDB Server source code, at `mysql-test/suite/p
 ### Adding and Removing Time Periods
 
 
-The [ALTER TABLE](../sql-statements/data-definition/alter/alter-tablespace.md) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
+The [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement now supports syntax for adding and removing time periods from a table. To add a period, use the `ADD PERIOD` clause.
 
 
 For example:
@@ -148,7 +148,7 @@ If there are `DELETE` or `INSERT` triggers, it works as follows: any matched row
 ### Updating by Portion
 
 
-The [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) syntax now supports `UPDATE FOR PORTION`, which modifies rows based on their occurrence in a range:
+The [UPDATE](../sql-statements/data-manipulation/changing-deleting-data/update.md) syntax now supports `UPDATE FOR PORTION`, which modifies rows based on their occurrence in a range:
 
 
 To test it, first populate the table with some data:
@@ -216,8 +216,8 @@ The `UPDATE FOR PORTION` statement has the following limitations:
 
 
 
-##### MariaDB starting with [10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md)
-[MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.
+##### MariaDB starting with [10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
+[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.
 An index constrained by `WITHOUT OVERLAPS` is required to be either a primary key or a unique index.
 
 
@@ -265,8 +265,8 @@ ERROR 1062 (23000): Duplicate entry '2-2020-10-06-2020-10-04' for key 'room_numb
 
 
 
-##### MariaDB starting with [11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md)
-From [MariaDB 11.4](../../../../release-notes/mariadb-community-server/what-is-mariadb-114.md), the Information Schema contains the following support for application time period tables.
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), the Information Schema contains the following support for application time period tables.
 
 * [INFORMATION_SCHEMA.PERIODS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-periods-table.md) view.
 * [INFORMATION_SCHEMA.KEY_PERIOD_USAGE](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table.md) view.

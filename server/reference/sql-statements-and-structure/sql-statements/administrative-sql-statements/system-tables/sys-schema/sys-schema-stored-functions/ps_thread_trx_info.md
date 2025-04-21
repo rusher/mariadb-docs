@@ -12,7 +12,7 @@ sys.ps_thread_trx_info(thread_id)
 ## Description
 
 
-`ps_thread_trx_info` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md).
+`ps_thread_trx_info` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
 
 
 It returns a JSON object with information about the thread specified by the given *thread_id*. This information includes:

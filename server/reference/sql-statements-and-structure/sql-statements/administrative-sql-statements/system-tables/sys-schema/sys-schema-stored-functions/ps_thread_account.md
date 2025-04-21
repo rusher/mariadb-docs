@@ -11,7 +11,7 @@ sys.ps_thread_account(thread_id)
 ## Description
 
 
-`ps_thread_account` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../sys-schema-views/sys-schema-views-host_summary_by_statement_latency-and-xhost_summary_by_sta.md) that returns the account (username@hostname) associated with the given *thread_id*.
+`ps_thread_account` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md) that returns the account (username@hostname) associated with the given *thread_id*.
 
 
 Returns `NULL` if the thread_id is not found.

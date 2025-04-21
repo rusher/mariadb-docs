@@ -6,7 +6,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-Normally, all changes that are logged as events in the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) are also
+Normally, all changes that are logged as events in the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) are also
 replicated to all replicas (though still subject to filtering by
 [replicate-do-db](replication-and-binary-log-system-variables.md#replicate_do_db), [replicate-ignore-db](replication-and-binary-log-system-variables.md#replicate_ignore_db),
 and similar options). However, sometimes it may be desirable to have certain
@@ -26,7 +26,7 @@ This is possible with the following [system variables](../optimization-and-tunin
 ## Primary Session Variable: skip_replication
 
 
-When the [skip_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) with the flag `@@skip_replication` set. Such events will not be replicated by replicas that run with
+When the [skip_replication](replication-and-binary-log-system-variables.md) variable is set to true, changes are logged into the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) with the flag `@@skip_replication` set. Such events will not be replicated by replicas that run with
 `--replicate-events-marked-for-skip` set different from its default of `REPLICATE`.
 
 
@@ -41,7 +41,7 @@ When the [skip_replication](replication-and-binary-log-system-variables.md) vari
 
 
 
-The `skip_replication` option only has effect if [binary logging](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) is enabled
+The `skip_replication` option only has effect if [binary logging](../../../server-management/server-monitoring-logs/binary-log/README.md) is enabled
 and [sql_log_bin](replication-and-binary-log-system-variables.md) is true.
 
 
@@ -126,10 +126,10 @@ and so are not replicated by any replica.
 
 
 When events in the binlog are marked with the `@@skip_replication` flag, the
-flag will be preserved if the events are dumped by the [mariadb-binlog](../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md)
+flag will be preserved if the events are dumped by the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md)
 program and re-applied against a server with the
 [mariadb client](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) program. Similarly, the
-[BINLOG](../../../../maxscale/mariadb-maxscale-14/maxscale-14-routers/binlogrouter.md) statement will preserve the flag from the
+[BINLOG](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/binlog.md) statement will preserve the flag from the
 event being replayed. And a replica which runs with
 `--log-slave-updates` and does not filter events
 (`--replicate-events-marked-for-skip=REPLICATE`) will also
@@ -141,4 +141,3 @@ preserve the flag in the events logged into the binlog on the replica.
 
 * [Using SQL_SLAVE_SKIP_COUNTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md) - How to skip a number of events on the replica
 
-<span></span>

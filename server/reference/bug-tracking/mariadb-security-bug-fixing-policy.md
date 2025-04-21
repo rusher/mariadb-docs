@@ -7,7 +7,7 @@ See [MariaDB Security Policy](https://mariadb.org/about/security-policy/).
 ## See Also
 
 
-* [MariaDB Maintenance Policy](../../../release-notes/mariadb-maintenance-policy.md)
-* [MariaDB Deprecation Policy](../../../release-notes/mariadb-platform-deprecation-policy.md)
+* [MariaDB Maintenance Policy](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-maintenance-policy)
+* [MariaDB Deprecation Policy](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-platform-deprecation-policy)
 * [MariaDB plc Legal](https://mariadb.com/legal)
 

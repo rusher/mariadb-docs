@@ -14,19 +14,19 @@
 | [<](../../operators/comparison-operators/less-than.md) | Less than |  |
 | [<=](../../operators/comparison-operators/less-than-or-equal.md) | Less than or equal |  |
 | [<=>](../../operators/comparison-operators/null-safe-equal.md) | NULL-safe equal |  |
-| [=](../../geographic-geometric-features/geometry-relations/equals.md) | Equal |  |
-| [>](../../operators/comparison-operators/greater-than-or-equal.md) | Greater than |  |
+| [=](../../operators/comparison-operators/equal.md) | Equal |  |
+| [>](../../operators/comparison-operators/greater-than.md) | Greater than |  |
 | [>=](../../operators/comparison-operators/greater-than-or-equal.md) | Greater than or equal |  |
 | [&](secondary-functions/bit-functions-and-operators/bitwise_and.md) | Bitwise AND |  |
 | [<<](secondary-functions/bit-functions-and-operators/shift-left.md) | Shift left |  |
 | [>>](secondary-functions/bit-functions-and-operators/shift-right.md) | Shift right |  |
 | [^](secondary-functions/bit-functions-and-operators/bitwise-xor.md) | Bitwise XOR |  |
-| [!](../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md) | Logical NOT |  |
+| [!](../../operators/logical-operators/not.md) | Logical NOT |  |
 | [&&](../../operators/logical-operators/and.md) | Logical AND |  |
 | [XOR](../../operators/logical-operators/xor.md) | Logical XOR |  |
 | || | Logical OR |  |
 | | | [Bitwise OR](secondary-functions/bit-functions-and-operators/bitwise-or.md) |  |
-| [:=](../../operators/assignment-operators/assignment-operators-assignment-operator.md) | Assignment operator |  |
+| [:=](../../operators/assignment-operators/assignment-operator.md) | Assignment operator |  |
 | [=](../../operators/assignment-operators/assignment-operators-assignment-operator.md) | Assignment and comparison operator |  |
 | ~ | [Bitwise NOT](secondary-functions/bit-functions-and-operators/bitwise-not.md) |  |
 | [ABS](numeric-functions/abs.md) | Returns an absolute value |  |
@@ -43,12 +43,12 @@
 | [AsText](../../geographic-geometric-features/wkt/st_astext.md) | Synonym for ST_AsText |  |
 | [AsWKB](../../geographic-geometric-features/wkb/aswkb.md) | Synonym for ST_AsBinary |  |
 | [AsWKT](../../geographic-geometric-features/wkt/st_aswkt.md) | Synonym for ST_AsText |  |
-| [ATAN](numeric-functions/atan2.md) | Returns the arc tangent |  |
+| [ATAN](numeric-functions/atan.md) | Returns the arc tangent |  |
 | [ATAN2](numeric-functions/atan2.md) | Returns the arc tangent of two variables |  |
 | [AVG](aggregate-functions/avg.md) | Returns the average value |  |
-| [BENCHMARK](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/benchmark-builds.md) | Executes an expression repeatedly |  |
+| [BENCHMARK](secondary-functions/information-functions/benchmark.md) | Executes an expression repeatedly |  |
 | [BETWEEN AND](../../operators/comparison-operators/between-and.md) | True if expression between two values |  |
-| [BIN](../../../../../maxscale/mariadb-maxscale-14/maxscale-14-routers/binlogrouter.md) | Returns binary value |  |
+| [BIN](string-functions/bin.md) | Returns binary value |  |
 | [BINARY OPERATOR](string-functions/binary-operator.md) | Casts to a binary string |  |
 | [BINLOG_GTID_POS](secondary-functions/information-functions/binlog_gtid_pos.md) | Returns a string representation of the corresponding GTID position |
 | [BIT_AND](aggregate-functions/bit_and.md) | Bitwise AND |  |
@@ -60,7 +60,7 @@
 | [BUFFER](../../geographic-geometric-features/geometry-constructors/buffer.md) | Synonym for ST_BUFFER |  |
 | [CASE](control-flow-functions/case-operator.md) | Returns the result where value=compare_value or for the first condition that is true |  |
 | [CAST](string-functions/cast.md) | Casts a value of one type to another type |  |
-| [CEIL](numeric-functions/ceiling.md) | Synonym for CEILING() |  |
+| [CEIL](numeric-functions/ceil.md) | Synonym for CEILING() |  |
 | [CEILING](numeric-functions/ceiling.md) | Returns the smallest integer not less than X |  |
 | [CENTROID](../../geographic-geometric-features/polygon-properties/centroid.md) | Synonym for ST_CENTROID |  |
 | [CHAR Function](string-functions/char-function.md) | Returns string based on the integer values for the individual characters |  |
@@ -80,12 +80,12 @@
 | [COLUMN_JSON](special-functions/dynamic-columns-functions/column_json.md) | Returns a JSON representation of dynamic column blob data |  |
 | [COLUMN_LIST](special-functions/dynamic-columns-functions/column_list.md) | Returns comma-separated list |  |
 | [COMPRESS](secondary-functions/encryption-hashing-and-compression-functions/compress.md) | Returns a binary, compressed string |  |
-| [CONCAT](string-functions/concat_ws.md) | Returns concatenated string |  |
+| [CONCAT](string-functions/concat.md) | Returns concatenated string |  |
 | [CONCAT_WS](string-functions/concat_ws.md) | Concatenate with separator |  |
 | [CONNECTION_ID](secondary-functions/information-functions/connection_id.md) | Connection thread ID |  |
 | [CONTAINS](../../geographic-geometric-features/geometry-relations/contains.md) | Whether one geometry contains another |  |
-| [CONVERT](../../../storage-engines/converting-tables-from-myisam-to-innodb.md) | Convert a value from one type to another type |  |
-| [CONV](../../../storage-engines/converting-tables-from-myisam-to-innodb.md) | Converts numbers between different number bases |  |
+| [CONVERT](string-functions/convert.md) | Convert a value from one type to another type |  |
+| [CONV](numeric-functions/conv.md) | Converts numbers between different number bases |  |
 | [CONVERT_TZ](date-time-functions/convert_tz.md) | Converts a datetime from on time zone to another |  |
 | [CONVEXHULL](../../geographic-geometric-features/geometry-constructors/convexhull.md) | Synonym for ST_CONVEXHULL |  |
 | [COS](numeric-functions/cos.md) | Returns the cosine |  |
@@ -93,7 +93,7 @@
 | [COUNT](aggregate-functions/count.md) | Returns count of non-null values |  |
 | [COUNT DISTINCT](aggregate-functions/count-distinct.md) | Returns count of number of different non-NULL values |  |
 | [CRC32](numeric-functions/crc32.md) | Computes a cyclic redundancy check value |  |
-| [CRC32C](numeric-functions/crc32c.md) | Computes a cyclic redundancy check value | [MariaDB 10.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-108.md) |
+| [CRC32C](numeric-functions/crc32c.md) | Computes a cyclic redundancy check value | [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) |
 | [CROSSES](../../geographic-geometric-features/geometry-relations/crosses.md) | Whether two geometries spatially cross |  |
 | [CUME_DIST](special-functions/window-functions/cume_dist.md) | Window function that returns the cumulative distribution of a given row |  |
 | [CURDATE](date-time-functions/curdate.md) | Returns the current date |  |
@@ -103,7 +103,7 @@
 | [CURRENT_TIMESTAMP](date-time-functions/current_timestamp.md) | Synonym for NOW() |  |
 | [CURRENT_USER](secondary-functions/information-functions/current_user.md) | Username/host that authenicated the current client |  |
 | [CURTIME](date-time-functions/curtime.md) | Returns the current time |  |
-| [DATABASE](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md) | Current default database |  |
+| [DATABASE](secondary-functions/information-functions/database.md) | Current default database |  |
 | [DATE FUNCTION](date-time-functions/date-function.md) | Extracts the date portion of a datetime |  |
 | [DATEDIFF](date-time-functions/datediff.md) | Difference in days between two date/time values |  |
 | [DATE_ADD](date-time-functions/date_add.md) | Date arithmetic - addition |  |
@@ -126,21 +126,21 @@
 | [DIV](numeric-functions/div.md) | Integer division |  |
 | [ELT](string-functions/elt.md) | Returns the N'th element from a set of strings |  |
 | [ENCODE](secondary-functions/encryption-hashing-and-compression-functions/encode.md) | Encrypts a string |  |
-| [ENCRYPT](../../../mariadb-internals/encryption-plugin-api.md) | Encrypts a string with Unix crypt() |  |
+| [ENCRYPT](secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) | Encrypts a string with Unix crypt() |  |
 | [ENDPOINT](../../geographic-geometric-features/linestring-properties/st_endpoint.md) | Synonym for ST_ENDPOINT |  |
 | [ENVELOPE](../../geographic-geometric-features/geometry-properties/st_envelope.md) | Synonym for ST_ENVELOPE |  |
 | [EQUALS](../../geographic-geometric-features/geometry-relations/equals.md) | Indicates whether two geometries are spatially equal |  |
-| [EXP](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/explain-formatjson-in-mysql.md) | e raised to the power of the argument |  |
+| [EXP](numeric-functions/exp.md) | e raised to the power of the argument |  |
 | [EXPORT_SET](string-functions/export_set.md) | Returns an on string for every bit set, an off string for every bit not set |  |
 | [ExteriorRing](../../geographic-geometric-features/polygon-properties/st_exteriorring.md) | Synonym for ST_ExteriorRing |  |
-| [EXTRACT](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md) | Extracts a portion of the date |  |
+| [EXTRACT](date-time-functions/extract.md) | Extracts a portion of the date |  |
 | [EXTRACTVALUE](string-functions/extractvalue.md) | Returns the text of the first text node matched by the XPath expression |  |
 | [FIELD](string-functions/field.md) | Returns the index position of a string in a list |  |
 | [FIND_IN_SET](string-functions/find_in_set.md) | Returns the position of a string in a set of strings |  |
 | [FLOOR](numeric-functions/floor.md) | Largest integer value not greater than the argument |  |
-| [FORMAT](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) | Formats a number |  |
-| [FORMAT_BYTES](secondary-functions/miscellaneous-functions/miscellaneous-functions-format_bytes.md) | Given a byte count, returns a string consisting of a value and the units in a human-readable format. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
-| [FORMAT_PICO_TIME](date-time-functions/format_pico_time.md) | Given a time in picoseconds, returns a human-readable time value and unit indicator | [MariaDB 11.0.2](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes.md) |
+| [FORMAT](string-functions/format.md) | Formats a number |  |
+| [FORMAT_BYTES](secondary-functions/miscellaneous-functions/miscellaneous-functions-format_bytes.md) | Given a byte count, returns a string consisting of a value and the units in a human-readable format. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
+| [FORMAT_PICO_TIME](date-time-functions/format_pico_time.md) | Given a time in picoseconds, returns a human-readable time value and unit indicator | [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes) |
 | [FOUND_ROWS](secondary-functions/information-functions/found_rows.md) | Number of (potentially) returned rows |  |
 | [FROM_BASE64](string-functions/from_base64.md) | Given a base-64 encoded string, returns the decoded result as a binary string |  |
 | [FROM_DAYS](date-time-functions/from_days.md) | Returns a date given a day |  |
@@ -161,11 +161,11 @@
 | [GLENGTH](../../geographic-geometric-features/linestring-properties/glength.md) | Length of a LineString value |  |
 | [GREATEST](../../operators/comparison-operators/greatest.md) | Returns the largest argument |  |
 | [GROUP_CONCAT](aggregate-functions/group_concat.md) | Returns string with concatenated values from a group |  |
-| [HEX](../../sql-language-structure/hexadecimal-literals.md) | Returns hexadecimal value |  |
+| [HEX](string-functions/hex.md) | Returns hexadecimal value |  |
 | [HOUR](date-time-functions/hour.md) | Returns the hour |  |
 | [IF](control-flow-functions/if-function.md) | If expr1 is TRUE, returns expr2; otherwise returns expr3 |  |
 | [IFNULL](control-flow-functions/ifnull.md) | Check whether an expression is NULL |  |
-| [IN](../../../../../columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x.md) | True if expression equals any of the values in the list |  |
+| [IN](../../operators/comparison-operators/in.md) | True if expression equals any of the values in the list |  |
 | [INTERVAL](../../operators/comparison-operators/interval.md) | Index of the argument that is less than the first argument |  |
 | [INET6_ATON](secondary-functions/miscellaneous-functions/inet6_aton.md) | Given an IPv6 or IPv4 network address, returns a VARBINARY numeric value |  |
 | [INET6_NTOA](secondary-functions/miscellaneous-functions/inet6_ntoa.md) | Given an IPv6 or IPv4 network address, returns the address as a nonbinary string |  |
@@ -175,7 +175,7 @@
 | [INSTR](string-functions/instr.md) | Returns the position of a string withing a string |  |
 | [InteriorRingN](../../geographic-geometric-features/polygon-properties/st_interiorringn.md) | Synonym for ST_InteriorRingN |  |
 | [INTERSECTS](../../geographic-geometric-features/geometry-relations/intersects.md) | Indicates whether two geometries spatially intersect |  |
-| [IS](../../geographic-geometric-features/geometry-properties/isclosed.md) | Tests whether a boolean is TRUE, FALSE, or UNKNOWN |  |
+| [IS](../../operators/comparison-operators/is.md) | Tests whether a boolean is TRUE, FALSE, or UNKNOWN |  |
 | [IsClosed](../../geographic-geometric-features/geometry-properties/isclosed.md) | Synonym for ST_IsClosed |  |
 | [IsEmpty](../../geographic-geometric-features/geometry-properties/st_isempty.md) | Synonym for ST_IsEmpty |  |
 | [IS_FREE_LOCK](secondary-functions/miscellaneous-functions/is_free_lock.md) | Checks whether lock is free to use |  |
@@ -190,21 +190,21 @@
 | [IsRing](../../geographic-geometric-features/geometry-properties/isring.md) | Synonym for ST_IsRing |  |
 | [IsSimple](../../geographic-geometric-features/geometry-properties/geometry-properties-issimple.md) | Synonym for ST_IsSimple |  |
 | [IS_USED_LOCK](secondary-functions/miscellaneous-functions/is_used_lock.md) | Check if lock is in use |  |
-| [JSON_ARRAY](special-functions/json-functions/json_array_intersect.md) | Returns a JSON array containing the listed values |  |
+| [JSON_ARRAY](special-functions/json-functions/json_array.md) | Returns a JSON array containing the listed values |  |
 | [JSON_ARRAYAGG](special-functions/json-functions/json_arrayagg.md) | Returns a JSON array containing an element for each value in a given set of JSON or SQL values. |  |
-| [JSON_ARRAY_INTERSECT](special-functions/json-functions/json_array_intersect.md) |  | [MariaDB 11.2.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md) |
+| [JSON_ARRAY_INTERSECT](special-functions/json-functions/json_array_intersect.md) |  | [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes) |
 | [JSON_ARRAY_APPEND](special-functions/json-functions/json_array_append.md) | Appends values to the end of the given arrays within a JSON document |  |
 | [JSON_ARRAY_INSERT](special-functions/json-functions/json_array_insert.md) | Inserts a value into a JSON document |  |
 | [JSON_COMPACT](special-functions/json-functions/json_compact.md) | Removes all unnecessary spaces so the json document is as short as possible |  |
-| [JSON_CONTAINS](special-functions/json-functions/json_contains_path.md) | Whether a value is found in a given JSON document or at a specified path within the document |  |
+| [JSON_CONTAINS](special-functions/json-functions/json_contains.md) | Whether a value is found in a given JSON document or at a specified path within the document |  |
 | [JSON_CONTAINS_PATH](special-functions/json-functions/json_contains_path.md) | Indicates whether the given JSON document contains data at the specified path or paths |  |
 | [JSON_DEPTH](special-functions/json-functions/json_depth.md) | Maximum depth of a JSON document |  |
 | [JSON_DETAILED](special-functions/json-functions/json_detailed.md) | Represents JSON in the most understandable way emphasizing nested structures |  |
-| [JSON_EQUALS](special-functions/json-functions/json_equals.md) | Check for equality between JSON objects. | [MariaDB 10.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-107.md) |
+| [JSON_EQUALS](special-functions/json-functions/json_equals.md) | Check for equality between JSON objects. | [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107) |
 | [JSON_EXISTS](special-functions/json-functions/json_exists.md) | Determines whether a specified JSON value exists in the given data |  |
 | [JSON_EXTRACT](special-functions/json-functions/json_extract.md) | Extracts data from a JSON document. |  |
 | [JSON_INSERT](special-functions/json-functions/json_insert.md) | Inserts data into a JSON document |  |
-| [JSON_KEY_VALUE](special-functions/json-functions/json_key_value.md) | Extracts key/value pairs from a JSON object | [MariaDB 11.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-112.md) |
+| [JSON_KEY_VALUE](special-functions/json-functions/json_key_value.md) | Extracts key/value pairs from a JSON object | [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112) |
 | [JSON_KEYS](special-functions/json-functions/json_keys.md) | Returns keys from top-level value of a JSON object or top-level keys from the path |  |
 | [JSON_LENGTH](special-functions/json-functions/json_length.md) | Returns the length of a JSON document, or the length of a value within the document |  |
 | [JSON_LOOSE](special-functions/json-functions/json_loose.md) | Adds spaces to a JSON document to make it look more readable |  |
@@ -212,25 +212,25 @@
 | [JSON_MERGE_PATCH](special-functions/json-functions/json_merge.md) | RFC 7396-compliant merge of the given JSON documents |  |
 | [JSON_MERGE_PRESERVE](special-functions/json-functions/json_merge.md) | Synonym for [JSON_MERGE_PATCH](special-functions/json-functions/json_merge.md). |  |
 | [JSON_NORMALIZE](special-functions/json-functions/json_normalize.md) | Recursively sorts keys and removes spaces, allowing comparison of json documents for equality |  |
-| [JSON_OBJECT](special-functions/json-functions/json_object_filter_keys.md) | Returns a JSON object containing the given key/value pairs |  |
-| [JSON_OBJECT_FILTER_KEYS](special-functions/json-functions/json_object_filter_keys.md) |  | [MariaDB 11.2.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md) |
-| [JSON_OBJECT_TO_ARRAY](special-functions/json-functions/json_object_to_array.md) |  | [MariaDB 11.2.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes.md) |
+| [JSON_OBJECT](special-functions/json-functions/json_object.md) | Returns a JSON object containing the given key/value pairs |  |
+| [JSON_OBJECT_FILTER_KEYS](special-functions/json-functions/json_object_filter_keys.md) |  | [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes) |
+| [JSON_OBJECT_TO_ARRAY](special-functions/json-functions/json_object_to_array.md) |  | [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes) |
 | [JSON_OBJECTAGG](special-functions/json-functions/json_objectagg.md) | Returns a JSON object containing key-value pairs |  |
-| [JSON_OVERLAPS](special-functions/json-functions/json_overlaps.md) | Compares two json documents for overlaps | [MariaDB 10.9](../../../../../release-notes/mariadb-community-server/what-is-mariadb-109.md) |
-| [JSON_PRETTY](special-functions/json-functions/json_pretty.md) | Alias for [json_detailed](special-functions/json-functions/json_detailed.md) | [MariaDB 10.10.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-10-series/mariadb-10-10-3-release-notes.md), [MariaDB 10.9.5](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes.md), [MariaDB 10.8.7](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes.md), [MariaDB 10.7.8](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-10-7-8-release-notes.md), [MariaDB 10.6.12](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-12-release-notes.md) |
+| [JSON_OVERLAPS](special-functions/json-functions/json_overlaps.md) | Compares two json documents for overlaps | [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) |
+| [JSON_PRETTY](special-functions/json-functions/json_pretty.md) | Alias for [json_detailed](special-functions/json-functions/json_detailed.md) | [MariaDB 10.10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-3-release-notes), [MariaDB 10.9.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes), [MariaDB 10.8.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes), [MariaDB 10.7.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-8-release-notes), [MariaDB 10.6.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-12-release-notes) |
 | [JSON_QUERY](special-functions/json-functions/json_query.md) | Given a JSON document, returns an object or array specified by the path |  |
 | [JSON_QUOTE](special-functions/json-functions/json_quote.md) | Quotes a string as a JSON value |  |
 | [JSON_REMOVE](special-functions/json-functions/json_remove.md) | Removes data from a JSON document |  |
 | [JSON_REPLACE](special-functions/json-functions/json_replace.md) | Replaces existing values in a JSON document |  |
-| [JSON_SCHEMA_VALID](special-functions/json-functions/json_schema_valid.md) | Validates a JSON schema | [MariaDB 11.1.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes.md) |
+| [JSON_SCHEMA_VALID](special-functions/json-functions/json_schema_valid.md) | Validates a JSON schema | [MariaDB 11.1.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-0-release-notes) |
 | [JSON_SEARCH](special-functions/json-functions/json_search.md) | Returns the path to the given string within a JSON document |  |
 | [JSON_SET](special-functions/json-functions/json_set.md) | Updates or inserts data into a JSON document |  |
-| [JSON_TABLE](special-functions/json-functions/json_table.md) | Returns a representation of a JSON document as a relational table | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
+| [JSON_TABLE](special-functions/json-functions/json_table.md) | Returns a representation of a JSON document as a relational table | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
 | [JSON_TYPE](special-functions/json-functions/json_type.md) | Returns the type of a JSON value |  |
 | [JSON_UNQUOTE](special-functions/json-functions/json_unquote.md) | Unquotes a JSON value, returning a string |  |
 | [JSON_VALID](special-functions/json-functions/json_valid.md) | Whether a value is a valid JSON document or not |  |
 | [JSON_VALUE](special-functions/json-functions/json_value.md) | Given a JSON document, returns the specified scalar |  |
-| [KDF](secondary-functions/encryption-hashing-and-compression-functions/kdf.md) | Key derivation function | [MariaDB 11.3.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes.md) |
+| [KDF](secondary-functions/encryption-hashing-and-compression-functions/kdf.md) | Key derivation function | [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes) |
 | [LAST_DAY](date-time-functions/last_day.md) | Returns the last day of the month |  |
 | [LAST_INSERT_ID](secondary-functions/information-functions/last_insert_id.md) | Last inserted autoinc value |  |
 | [LAST_VALUE](secondary-functions/information-functions/last_value.md) | Returns the last value in a list |  |
@@ -238,7 +238,7 @@
 | [LCASE](string-functions/lcase.md) | Synonym for [LOWER() |  |
 | [LEAST](../../operators/comparison-operators/least.md) | Returns the smallest argument |  |
 | [LEFT](string-functions/left.md) | Returns the leftmost characters from a string |  |
-| [LENGTH](string-functions/lengthb.md) | Length of the string in bytes |  |
+| [LENGTH](string-functions/length.md) | Length of the string in bytes |  |
 | [LIKE](string-functions/like.md) | Whether expression matches a pattern |  |
 | [LineFromText](../../geographic-geometric-features/wkt/st_linefromtext.md) | Synonym for ST_LineFromText |  |
 | [LineFromWKB](../../geographic-geometric-features/wkb/st_linefromwkb.md) | Synonym for ST_LineFromWKB |  |
@@ -247,10 +247,10 @@
 | [LineStringFromWKB](../../geographic-geometric-features/wkb/linestringfromwkb.md) | Synonym for ST_LineFromWKB |  |
 | [LN](numeric-functions/ln.md) | Returns natural logarithm |  |
 | [LOAD_FILE](string-functions/load_file.md) | Returns file contents as a string |  |
-| [LOCALTIME](date-time-functions/localtimestamp.md) | Synonym for NOW() |  |
+| [LOCALTIME](date-time-functions/localtime.md) | Synonym for NOW() |  |
 | [LOCALTIMESTAMP](date-time-functions/localtimestamp.md) | Synonym for NOW() |  |
 | [LOCATE](string-functions/locate.md) | Returns the position of a substring in a string |  |
-| [LOG](../../../../../general-resources/company-and-community/contributing-participating/log-of-mariadb-contributions.md) | Returns the natural logarithm |  |
+| [LOG](numeric-functions/log.md) | Returns the natural logarithm |  |
 | [LOG10](numeric-functions/log10.md) | Returns the base-10 logarithm |  |
 | [LOG2](numeric-functions/log2.md) | Returns the base-2 logarithm |  |
 | [LOWER](string-functions/lower.md) | Returns a string with all characters changed to lowercase |  |
@@ -262,9 +262,9 @@
 | [MASTER_GTID_WAIT](secondary-functions/miscellaneous-functions/master_gtid_wait.md) | Wait until slave reaches the GTID position |  |
 | [MASTER_POS_WAIT](secondary-functions/miscellaneous-functions/master_pos_wait.md) | Blocks until the slave has applied all specified updates |  |
 | [MATCH AGAINST](string-functions/match-against.md) | Perform a fulltext search on a fulltext index |  |
-| [MAX](../../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) | Returns the maximum value |  |
+| [MAX](aggregate-functions/max.md) | Returns the maximum value |  |
 | [MBRContains](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrcontains.md) | Whether one Minimum Bounding Rectangle contains another. |  |
-| [MBRCoveredBy](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrcoveredby.md) | Whether one Minimum Bounding Rectangle is covered by another. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [MBRCoveredBy](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrcoveredby.md) | Whether one Minimum Bounding Rectangle is covered by another. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [MBRDisjoint](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrdisjoint.md) | Whether the Minimum Bounding Rectangles of two geometries are disjoint |  |
 | [MBREqual](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrequal.md) | Whether the Minimum Bounding Rectangles of two geometries are the same. |  |
 | [MBREquals](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrequal.md) | Synonym for MBREqual. |  |
@@ -274,9 +274,9 @@
 | [MBRWithin](../../geographic-geometric-features/mbr-minimum-bounding-rectangle/mbrwithin.md) | Indicates whether one Minimum Bounding Rectangle is within another |  |
 | [MD5](secondary-functions/encryption-hashing-and-compression-functions/md5.md) | MD5 checksum |  |
 | [MEDIAN](special-functions/window-functions/median.md) | Window function that returns the median value of a range of values |  |
-| [MICROSECOND](date-time-functions/microseconds-in-mariadb.md) | Returns microseconds from a date or datetime |  |
+| [MICROSECOND](date-time-functions/microsecond.md) | Returns microseconds from a date or datetime |  |
 | [MID](string-functions/mid.md) | Synonym for SUBSTRING(str,pos,len) |  |
-| [MIN](../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) | Returns the minimum value |  |
+| [MIN](aggregate-functions/min.md) | Returns the minimum value |  |
 | [MINUTE](date-time-functions/minute.md) | Returns a minute from 0 to 59 |  |
 | [MLineFromText](../../geographic-geometric-features/wkt/mlinefromtext.md) | Constructs MULTILINESTRING using its WKT representation and SRID |  |
 | [MLineFromWKB](../../geographic-geometric-features/wkb/mlinefromwkb.md) | Constructs a MULTILINESTRING |  |
@@ -314,7 +314,7 @@
 | [OLD_PASSWORD](secondary-functions/encryption-hashing-and-compression-functions/old_password.md) | Pre MySQL 4.1 password implementation |  |
 | [ORD](string-functions/ord.md) | Return ASCII or character code |  |
 | [OVERLAPS](../../geographic-geometric-features/geometry-relations/overlaps.md) | Indicates whether two elements spatially overlap |  |
-| [PASSWORD](../../../plugins/password-validation-plugins/password-reuse-check-plugin.md) | Calculates a password string |  |
+| [PASSWORD](secondary-functions/encryption-hashing-and-compression-functions/password.md) | Calculates a password string |  |
 | [PERCENT_RANK](special-functions/window-functions/percent_rank.md) | Window function that returns the relative percent rank of a given row |  |
 | [PERCENTILE_CONT](special-functions/window-functions/percentile_cont.md) | Returns a value which corresponds to the given fraction in the sort order. |  |
 | [PERCENTILE_DISC](special-functions/window-functions/percentile_disc.md) | Returns the first value in the set whose ordered position is the same or more than the specified fraction. |  |
@@ -335,9 +335,9 @@
 | [POW](numeric-functions/pow.md) | Returns X raised to the power of Y |  |
 | [POWER](numeric-functions/power.md) | Synonym for POW() |  |
 | [QUARTER](date-time-functions/quarter.md) | Returns year quarter from 1 to 4 |  |
-| [QUOTE](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/quote_identifier.md) | Returns quoted, properly escaped string |  |
+| [QUOTE](string-functions/quote.md) | Returns quoted, properly escaped string |  |
 | [RADIANS](numeric-functions/radians.md) | Converts from degrees to radians |  |
-| [RAND](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/random-query-generator-tests.md) | Random floating-point value |  |
+| [RAND](numeric-functions/rand.md) | Random floating-point value |  |
 | [RANK](special-functions/window-functions/rank.md) | Rank of a given row with identical values receiving the same result |  |
 | [REGEXP](string-functions/regular-expressions-functions/regexp.md) | Performs pattern matching |  |
 | [REGEXP_INSTR](string-functions/regular-expressions-functions/regexp_instr.md) | Position of the first appearance of a regex |  |
@@ -354,12 +354,12 @@
 | [ROW_COUNT](secondary-functions/information-functions/row_count.md) | Number of rows affected by previous statement |  |
 | [ROW_NUMBER](special-functions/window-functions/row_number.md) | Row number of a given row with identical values receiving a different result |  |
 | [RTRIM](string-functions/rtrim.md) | Returns the string with trailing space characters removed |  |
-| [SCHEMA](../../../../../maxscale/mariadb-maxscale-14/maxscale-design-documents/schemarouter-router-technical-overview.md) | Synonym for DATABASE() |  |
+| [SCHEMA](secondary-functions/information-functions/schema.md) | Synonym for DATABASE() |  |
 | [SECOND](date-time-functions/second.md) | Returns the second of a time |  |
 | [SEC_TO_TIME](date-time-functions/sec_to_time.md) | Converts a second to a time |  |
 | [SETVAL](../../sequences/sequence-functions/setval.md) | Set the next value to be returned by a sequence |  |
 | [SESSION_USER](secondary-functions/information-functions/session_user.md) | Synonym for USER() |  |
-| [sha2.md](secondary-functions/encryption-hashing-and-compression-functions/sha2.md) | Synonym for SHA1() |  |
+| [sha](https://mariadb.com/kb/en/sha) | Synonym for SHA1() |  |
 | [SHA1](secondary-functions/encryption-hashing-and-compression-functions/sha1.md) | Calculates an SHA-1 checksum |  |
 | [SHA2](secondary-functions/encryption-hashing-and-compression-functions/sha2.md) | Calculates an SHA-2 checksum |  |
 | [SIGN](numeric-functions/sign.md) | Returns 1, 0 or -1 |  |
@@ -383,7 +383,7 @@
 | [ST_BOUNDARY](../../geographic-geometric-features/geometry-properties/st_boundary.md) | Returns a geometry that is the closure of a combinatorial boundary |  |
 | [ST_BUFFER](../../geographic-geometric-features/geometry-constructors/st_buffer.md) | A new geometry with a buffer added to the original geometry |  |
 | [ST_CENTROID](../../geographic-geometric-features/polygon-properties/st_centroid.md) | The mathematical centroid (geometric center) for a MultiPolygon |  |
-| [ST_Collect](../../geographic-geometric-features/miscellaneous-gis-functions/st_collect.md) | Returns the aggregation of the distinct geometry arguments | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [ST_Collect](../../geographic-geometric-features/miscellaneous-gis-functions/st_collect.md) | Returns the aggregation of the distinct geometry arguments | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [ST_CONTAINS](../../geographic-geometric-features/geometry-relations/st-contains.md) | Whether one geometry is contained by another |  |
 | [ST_CONVEXHULL](../../geographic-geometric-features/geometry-constructors/st_convexhull.md) | The minimum convex geometry enclosing all geometries within the set |  |
 | [ST_CROSSES](../../geographic-geometric-features/geometry-relations/st-crosses.md) | Whether two geometries spatially cross |  |
@@ -396,7 +396,7 @@
 | [ST_ENVELOPE](../../geographic-geometric-features/geometry-properties/st_envelope.md) | Returns the Minimum Bounding Rectangle for a geometry value |  |
 | [ST_EQUALS](../../geographic-geometric-features/geometry-relations/st-equals.md) | Whether two geometries are spatoially equal |  |
 | [ST_ExteriorRing](../../geographic-geometric-features/polygon-properties/st_exteriorring.md) | Returns the exterior ring of a Polygon as a LineString |  |
-| [ST_GeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_geohash.md) | Returns a geohash. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [ST_GeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_geohash.md) | Returns a geohash. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [ST_GeomCollFromText](../../geographic-geometric-features/wkt/st_geomcollfromtext.md) | Constructs a GEOMETRYCOLLECTION value |  |
 | [ST_GeomCollFromWKB](../../geographic-geometric-features/wkb/st_geomcollfromwkb.md) | Constructs a GEOMETRYCOLLECTION value from a WKB |  |
 | [ST_GeometryCollectionFromText](../../geographic-geometric-features/wkt/st_geometrycollectionfromtext.md) | Synonym for ST_GeomCollFromText |  |
@@ -415,9 +415,9 @@
 | [ST_ISEMPTY](../../geographic-geometric-features/geometry-properties/st_isempty.md) | Indicated validity of geometry value |  |
 | [ST_IsRing](../../geographic-geometric-features/geometry-properties/st_isring.md) | Returns true if a given LINESTRING is both ST_IsClosed and ST_IsSimple |  |
 | [ST_IsSimple](../../geographic-geometric-features/geometry-properties/st_issimple.md) | Returns true if the given Geometry has no anomalous geometric points |  |
-| [ST_IsValid](../../geographic-geometric-features/miscellaneous-gis-functions/st_isvalid.md) | Returns 1 if the argument is geometrically valid, 0 if not. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
-| [ST_LatFromGeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_latfromgeohash.md) | Returns a latitude from the given geohash. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
-| [ST_LongFromGeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_longfromgeohash.md) | Returns a longitude from the given geohash. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [ST_IsValid](../../geographic-geometric-features/miscellaneous-gis-functions/st_isvalid.md) | Returns 1 if the argument is geometrically valid, 0 if not. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
+| [ST_LatFromGeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_latfromgeohash.md) | Returns a latitude from the given geohash. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
+| [ST_LongFromGeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_longfromgeohash.md) | Returns a longitude from the given geohash. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [ST_LENGTH](../../geographic-geometric-features/geometry-relations/st_length.md) | Length of a LineString value |  |
 | [ST_LineFromText](../../geographic-geometric-features/wkt/st_linefromtext.md) | Creates a linestring value |  |
 | [ST_LineFromWKB](../../geographic-geometric-features/wkb/st_linefromwkb.md) | Constructs a LINESTRING using its WKB and SRID |  |
@@ -439,7 +439,7 @@
 | [ST_NumInteriorRings](../../geographic-geometric-features/polygon-properties/st_numinteriorrings.md) | Number of interior rings in a Polygon |  |
 | [ST_NUMPOINTS](../../geographic-geometric-features/linestring-properties/st_numpoints.md) | Returns the number of Point objects in a LineString |  |
 | [ST_OVERLAPS](../../geographic-geometric-features/geometry-relations/st-overlaps.md) | Whether two geometries overlap |  |
-| [ST_PointFromGeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_pointfromgeohash.md) | Returns a point from the given geohash. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [ST_PointFromGeoHash](../../geographic-geometric-features/miscellaneous-gis-functions/st_pointfromgeohash.md) | Returns a point from the given geohash. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [ST_PointFromText](../../geographic-geometric-features/wkt/st_pointfromtext.md) | Constructs a POINT value |  |
 | [ST_PointFromWKB](../../geographic-geometric-features/wkb/st_pointfromwkb.md) | Constructs POINT using its WKB and SRID |  |
 | [ST_POINTN](../../geographic-geometric-features/linestring-properties/st_pointn.md) | Returns the N-th Point in the LineString |  |
@@ -449,13 +449,13 @@
 | [ST_PolygonFromText](../../geographic-geometric-features/wkt/st_polygonfromtext.md) | Synonym for ST_PolyFromText |  |
 | [ST_PolygonFromWKB](../../geographic-geometric-features/wkb/st_polygonfromwkb.md) | Synonym for ST_PolyFromWKB |  |
 | [ST_RELATE](../../geographic-geometric-features/geometry-properties/st_relate.md) | Returns true if two geometries are related |  |
-| [ST_Simplify](../../geographic-geometric-features/miscellaneous-gis-functions/st_simplify.md) | Applies the Ramer–Douglas–Peucker algorithm to provide generalized simplifications. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [ST_Simplify](../../geographic-geometric-features/miscellaneous-gis-functions/st_simplify.md) | Applies the Ramer–Douglas–Peucker algorithm to provide generalized simplifications. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [ST_SRID](../../geographic-geometric-features/geometry-properties/st_srid.md) | Returns a Spatial Reference System ID |  |
 | [ST_STARTPOINT](../../geographic-geometric-features/linestring-properties/st_startpoint.md) | Returns the start point of a LineString |  |
 | [ST_SYMDIFFERENCE](../../geographic-geometric-features/geometry-constructors/st_symdifference.md) | Portions of two geometries that don't intersect |  |
 | [ST_TOUCHES](../../geographic-geometric-features/geometry-relations/st-touches.md) | Whether one geometry g1 spatially touches another |  |
 | [ST_UNION](../../geographic-geometric-features/geometry-constructors/st_union.md) | Union of two geometries |  |
-| [ST_Validate](../../geographic-geometric-features/miscellaneous-gis-functions/st_validate.md) | Whether a geometry is compliant with the WKB format and SRID syntax, and is geometrically valid. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
+| [ST_Validate](../../geographic-geometric-features/miscellaneous-gis-functions/st_validate.md) | Whether a geometry is compliant with the WKB format and SRID syntax, and is geometrically valid. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
 | [ST_WITHIN](../../geographic-geometric-features/geometry-relations/st-within.md) | Whether one geometry is within another |  |
 | [ST_X](../../geographic-geometric-features/point-properties/st_x.md) | X-coordinate value for a point |  |
 | [ST_Y](../../geographic-geometric-features/point-properties/st_y.md) | Y-coordinate for a point |  |
@@ -472,28 +472,28 @@
 | [SUBSTRING_INDEX](string-functions/substring_index.md) | Returns the substring from string before count occurrences of a delimiter |  |
 | [SUBTIME](date-time-functions/subtime.md) | Subtracts a time from a date/time |  |
 | [SUM](aggregate-functions/sum.md) | Sum total |  |
-| [SYS.EXTRACT_SCHEMA_FROM_FILE_NAME](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md) | Given a file path, returns the schema (database) name | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.EXTRACT_TABLE_FROM_FILE_NAME](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_table_from_file_name.md) | Given a file path, returns the table name | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.FORMAT_BYTES](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/sys_schema_format_bytes.md) | Returns a string consisting of a value and the units in a human-readable format | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.FORMAT_PATH](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_path.md) | Returns a modified path after replacing subpaths matching the values of various system variables with the variable name | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.FORMAT_STATEMENT](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) | Returns a reduced length string | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.FORMAT_TIME](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_time.md) | Returns a human-readable time value and unit indicator | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.LIST_ADD](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/list_add.md) | Adds a value to a given list | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.LIST_DROP](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/list_drop.md) | Drops a value from a given list | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_IS_ACCOUNT_ENABLED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_account_enabled.md) | Whether Performance Schema instrumentation for the given account is enabled | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_IS_CONSUMER_ENABLED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_consumer_enabled.md) | Whether Performance Schema instrumentation for the given consumer is enabled | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_IS_INSTRUMENT_DEFAULT_ENABLED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_instrument_default_enabled.md) | Whether a given Performance Schema instrument is enabled by default | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_IS_INSTRUMENT_DEFAULT_TIMED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_instrument_default_timed.md) | Returns whether a given Performance Schema instrument is timed by default | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_IS_THREAD_INSTRUMENTED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_thread_instrumented.md) | Returns whether or not Performance Schema instrumentation for the given connection_id is enabled | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_THREAD_ACCOUNT](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_account.md) | Returns the account (username@hostname) associated with the given thread_id | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_THREAD_ID](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_id.md) | Returns the thread_id associated with the given connection_id | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_THREAD_STACK](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_stack.md) | Returns all statements, stages, and events within the Performance Schema for a given thread_id | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.PS_THREAD_TRX_INFO](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_trx_info.md) | Returns a JSON object with information about the thread specified by the given thread_id | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.QUOTE_IDENTIFIER](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/quote_identifier.md) | Quotes a string to produce a result that can be used as an identifier in an SQL statement | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.SYS_GET_CONFIG](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/sys_get_config.md) | Returns a configuration option value from the sys_config table | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.VERSION_MAJOR](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_major.md) | Returns the MariaDB Server major release version | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.VERSION_MINOR](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_minor.md) | Returns the MariaDB Server minor release version | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
-| [SYS.VERSION_PATCH](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_patch.md) | Returns the MariaDB Server patch release version | [MariaDB 10.6](../../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) |
+| [SYS.EXTRACT_SCHEMA_FROM_FILE_NAME](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_schema_from_file_name.md) | Given a file path, returns the schema (database) name | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.EXTRACT_TABLE_FROM_FILE_NAME](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/extract_table_from_file_name.md) | Given a file path, returns the table name | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.FORMAT_BYTES](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/sys_schema_format_bytes.md) | Returns a string consisting of a value and the units in a human-readable format | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.FORMAT_PATH](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_path.md) | Returns a modified path after replacing subpaths matching the values of various system variables with the variable name | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.FORMAT_STATEMENT](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_statement.md) | Returns a reduced length string | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.FORMAT_TIME](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/format_time.md) | Returns a human-readable time value and unit indicator | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.LIST_ADD](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/list_add.md) | Adds a value to a given list | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.LIST_DROP](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/list_drop.md) | Drops a value from a given list | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_IS_ACCOUNT_ENABLED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_account_enabled.md) | Whether Performance Schema instrumentation for the given account is enabled | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_IS_CONSUMER_ENABLED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_consumer_enabled.md) | Whether Performance Schema instrumentation for the given consumer is enabled | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_IS_INSTRUMENT_DEFAULT_ENABLED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_instrument_default_enabled.md) | Whether a given Performance Schema instrument is enabled by default | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_IS_INSTRUMENT_DEFAULT_TIMED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_instrument_default_timed.md) | Returns whether a given Performance Schema instrument is timed by default | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_IS_THREAD_INSTRUMENTED](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_is_thread_instrumented.md) | Returns whether or not Performance Schema instrumentation for the given connection_id is enabled | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_THREAD_ACCOUNT](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_account.md) | Returns the account (username@hostname) associated with the given thread_id | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_THREAD_ID](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_id.md) | Returns the thread_id associated with the given connection_id | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_THREAD_STACK](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_stack.md) | Returns all statements, stages, and events within the Performance Schema for a given thread_id | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.PS_THREAD_TRX_INFO](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/ps_thread_trx_info.md) | Returns a JSON object with information about the thread specified by the given thread_id | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.QUOTE_IDENTIFIER](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/quote_identifier.md) | Quotes a string to produce a result that can be used as an identifier in an SQL statement | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.SYS_GET_CONFIG](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/sys_get_config.md) | Returns a configuration option value from the sys_config table | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.VERSION_MAJOR](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_major.md) | Returns the MariaDB Server major release version | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.VERSION_MINOR](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_minor.md) | Returns the MariaDB Server minor release version | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
+| [SYS.VERSION_PATCH](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_patch.md) | Returns the MariaDB Server patch release version | [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
 | [SYS_GUID](secondary-functions/miscellaneous-functions/sys_guid.md) | Generates a globally unique identifier |  |
 | [SYSDATE](date-time-functions/sysdate.md) | Returns the current date and time |  |
 | [SYSTEM_USER](secondary-functions/information-functions/system_user.md) | Synonym for USER() |  |
@@ -511,7 +511,7 @@
 | [TO_SECONDS](date-time-functions/to_seconds.md) | Number of seconds since year 0 |  |
 | [TOUCHES](../../geographic-geometric-features/geometry-relations/touches.md) | Whether two geometries spatially touch |  |
 | [TRIM](string-functions/trim.md) | Returns a string with all given prefixes or suffixes removed |  |
-| [TRUNCATE](../table-statements/truncate-table.md) | Truncates X to D decimal places |  |
+| [TRUNCATE](numeric-functions/truncate.md) | Truncates X to D decimal places |  |
 | [UCASE](string-functions/ucase.md) | Synonym for UPPER]]() |  |
 | [UNHEX](string-functions/unhex.md) | Interprets pairs of hex digits as a number and converts to the character represented by the number |  |
 | [UNCOMPRESS](secondary-functions/encryption-hashing-and-compression-functions/uncompress.md) | Uncompresses string compressed with COMPRESS() |  |
@@ -519,25 +519,25 @@
 | [UNIX_TIMESTAMP](date-time-functions/unix_timestamp.md) | Returns a Unix timestamp |  |
 | [UPDATEXML](string-functions/updatexml.md) | Replace XML |  |
 | [UPPER](string-functions/upper.md) | Changes string to uppercase |  |
-| [USER](../../../plugins/other-plugins/user-variables-plugin.md) | Current user/host |  |
+| [USER](secondary-functions/information-functions/user.md) | Current user/host |  |
 | [UTC_DATE](date-time-functions/utc_date.md) | Returns the current UTC date |  |
 | [UTC_TIME](date-time-functions/utc_time.md) | Returns the current UTC time |  |
 | [UTC_TIMESTAMP](date-time-functions/utc_timestamp.md) | Returns the current UTC date and time |  |
 | [UUID](secondary-functions/miscellaneous-functions/uuid.md) | Returns a Universal Unique Identifier v1 |  |
-| [UUIDv4](secondary-functions/miscellaneous-functions/uuid_v4.md) | Returns a Universal Unique Identifier v4 | [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) |
-| [UUIDv7](secondary-functions/miscellaneous-functions/uuid_v7.md) | Returns a Universal Unique Identifier v7 | [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) |
+| [UUIDv4](secondary-functions/miscellaneous-functions/uuid_v4.md) | Returns a Universal Unique Identifier v4 | [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) |
+| [UUIDv7](secondary-functions/miscellaneous-functions/uuid_v7.md) | Returns a Universal Unique Identifier v7 | [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) |
 | [UUID_SHORT](secondary-functions/miscellaneous-functions/uuid_short.md) | Return short universal identifier |  |
 | [VALUES or VALUE](secondary-functions/miscellaneous-functions/values-value.md) | Refer to columns in INSERT ... ON DUPLICATE KEY UPDATE |  |
 | [VAR_POP](aggregate-functions/var_pop.md) | Population standard variance |  |
 | [VAR_SAMP](aggregate-functions/var_samp.md) | Returns the sample variance |  |
 | [VARIANCE](aggregate-functions/variance.md) | Population standard variance |  |
-| [VEC_DISTANCE](../../vectors/vector-functions/vector-functions-vec_distance.md) | Calculates either a Euclidean or Cosine distance between two vectors. | [MariaDB 11.8](../../../../../release-notes/mariadb-community-server/what-is-mariadb-118.md) |
-| [VEC_DISTANCE_COSINE](../../vectors/vector-functions/vec_distance_cosine.md) | Calculates a Cosine distance between two vectors. | [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) |
-| [VEC_DISTANCE_EUCLIDEAN](../../vectors/vector-functions/vec_distance_euclidean.md) | Calculates a Euclidean (L2) distance between two points. | [MariaDB 11.7](../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md) |
-| [VEC_FromText](../../vectors/vector-functions/vec_fromtext.md) | Converts a text representation of the vector to a vector. | [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md) Vector |
-| [VEC_ToText](../../vectors/vector-functions/vec_totext.md) | Converts a binary vector into a json array of numbers (floats). | [MariaDB 11.6.0](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes.md) Vector |
-| [VERSION](../administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/version_patch.md) | MariaDB server version |  |
-| [WEEK](date-time-functions/weekofyear.md) | Returns the week number |  |
+| [VEC_DISTANCE](../../vectors/vector-functions/vector-functions-vec_distance.md) | Calculates either a Euclidean or Cosine distance between two vectors. | [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118) |
+| [VEC_DISTANCE_COSINE](../../vectors/vector-functions/vec_distance_cosine.md) | Calculates a Cosine distance between two vectors. | [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) |
+| [VEC_DISTANCE_EUCLIDEAN](../../vectors/vector-functions/vec_distance_euclidean.md) | Calculates a Euclidean (L2) distance between two points. | [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) |
+| [VEC_FromText](../../vectors/vector-functions/vec_fromtext.md) | Converts a text representation of the vector to a vector. | [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes) Vector |
+| [VEC_ToText](../../vectors/vector-functions/vec_totext.md) | Converts a binary vector into a json array of numbers (floats). | [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes) Vector |
+| [VERSION](secondary-functions/information-functions/version.md) | MariaDB server version |  |
+| [WEEK](date-time-functions/week.md) | Returns the week number |  |
 | [WEEKDAY](date-time-functions/weekday.md) | Returns the weekday index |  |
 | [WEEKOFYEAR](date-time-functions/weekofyear.md) | Returns the calendar week of the date as a number in the range from 1 to 53 |  |
 | [WEIGHT_STRING](string-functions/weight_string.md) | Weight of the input string |  |
@@ -545,8 +545,8 @@
 | [WSREP_LAST_SEEN_GTID](special-functions/galera-functions/wsrep_last_seen_gtid.md) | Returns the Global Transaction ID of the most recent write transaction observed by the client. |  |
 | [WSREP_LAST_WRITTEN_GTID](special-functions/galera-functions/wsrep_last_written_gtid.md) | Returns the Global Transaction ID of the most recent write transaction performed by the client. |  |
 | [WSREP_SYNC_WAIT_UPTO_GTID](special-functions/galera-functions/wsrep_sync_wait_upto_gtid.md) | Blocks the client until the transaction specified by the given Global Transaction ID is applied and committed by the node |  |
-| [X](../transactions/xa-transactions.md) | Synonym for ST_X |  |
-| [Y](date-time-functions/year.md) | Synonym for ST_Y |  |
+| [X](../../geographic-geometric-features/point-properties/st_x.md) | Synonym for ST_X |  |
+| [Y](../../geographic-geometric-features/point-properties/st_y.md) | Synonym for ST_Y |  |
 | [YEAR](date-time-functions/year.md) | Returns the year for the given date |  |
 | [YEARWEEK](date-time-functions/yearweek.md) | Returns year and week for a date |  |
 

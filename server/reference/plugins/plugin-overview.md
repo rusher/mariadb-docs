@@ -17,7 +17,7 @@ A server almost always has a large number of active plugins, because the server 
 ### Querying Plugin Information with `SHOW PLUGINS`
 
 
-The [SHOW PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md) statement can be used to query information about all active plugins.
+The [SHOW PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md) statement can be used to query information about all active plugins.
 
 
 For example:
@@ -180,7 +180,7 @@ If a plugin is installed with one of these statements, then a record will be add
 You can install a plugin dynamically by executing the [INSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) statement. [INSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) installs all plugins from the given plugin library. This could be required for some plugin libraries.
 
 
-For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin), you could execute the following:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the [server_audit](mariadb-audit-plugin/README.md) audit plugin), you could execute the following:
 
 
 ```
@@ -193,7 +193,7 @@ INSTALL SONAME 'server_audit';
 You can install a plugin dynamically by executing the [INSTALL PLUGIN](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) statement. [INSTALL PLUGIN](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) installs a single plugin from the given plugin library.
 
 
-For example, to install the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin from the `server_audit` plugin library, you could execute the following:
+For example, to install the [server_audit](mariadb-audit-plugin/README.md) audit plugin from the `server_audit` plugin library, you could execute the following:
 
 
 ```
@@ -223,7 +223,7 @@ The [--plugin-load-add](https://mariadb.com/kb/en/-options/#-plugin-load-add) op
 * Multiple plugins can be specified by separating them with semicolons.
 
 
-For example, to install all plugins in the `server_audit` plugin library (which is currently only the `[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin) and also the `[ed25519](authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the `[server_audit](mariadb-audit-plugin/README.md)` audit plugin) and also the `[ed25519](authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
 
 
 ```
@@ -257,7 +257,7 @@ The [--plugin-load](../../server-management/getting-installing-and-upgrading-mar
 * Multiple plugins can be specified by separating them with semicolons.
 
 
-For example, to install all plugins in the `server_audit` plugin library (which is currently only the `[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin) and also the `[ed25519](authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
+For example, to install all plugins in the `server_audit` plugin library (which is currently only the `[server_audit](mariadb-audit-plugin/README.md)` audit plugin) and also the `[ed25519](authentication-plugins/authentication-plugin-ed25519.md)` authentication plugin from the `auth_ed25519` plugin library, you could set the option to the following values on the command-line:
 
 
 ```
@@ -328,7 +328,7 @@ The syntax is:
 mariadb-plugin [options] <plugin> ENABLE|DISABLE
 ```
 
-For example, to install the [server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) audit plugin, you could execute the following:
+For example, to install the [server_audit](mariadb-audit-plugin/README.md) audit plugin, you could execute the following:
 
 
 ```
@@ -375,7 +375,7 @@ A plugin will be loaded by default when the server starts if:
 * The server is configured to load the plugin with the [--plugin-load](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option.
 
 
-This behavior can be changed with special options that take the form `--plugin-name`. For example, for the `[server_audit](mariadb-audit-plugin/release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md)` audit plugin, the special option is called [--server-audit](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
+This behavior can be changed with special options that take the form `--plugin-name`. For example, for the `[server_audit](mariadb-audit-plugin/README.md)` audit plugin, the special option is called [--server-audit](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md).
 
 
 The possible values for these special options are:
@@ -419,7 +419,7 @@ Plugins that were enabled as a `--plugin-load` option do not need to be uninstal
 * [INSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)
 * [UNINSTALL PLUGIN](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)
-* [SHOW PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins-soname.md)
+* [SHOW PLUGINS](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md)
 * [INFORMATION_SCHEMA.PLUGINS Table](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md)
 

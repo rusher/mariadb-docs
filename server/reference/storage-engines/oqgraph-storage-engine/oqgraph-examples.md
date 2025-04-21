@@ -22,7 +22,7 @@ INSERT INTO oq_backing(origid, destid)
  VALUES (1,2), (2,3), (3,4), (4,5), (2,6), (5,6);
 ```
 
-Now the read-only [OQGRAPH](oqgraph-examples.md) table is created.
+Now the read-only [OQGRAPH](README.md) table is created.
 
 
 You can use the following syntax:

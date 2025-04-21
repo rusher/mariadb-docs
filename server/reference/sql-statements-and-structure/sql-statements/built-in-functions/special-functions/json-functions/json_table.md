@@ -2,8 +2,8 @@
 # JSON_TABLE
 
 
-##### MariaDB starting with [10.6.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
-JSON_TABLE was added in [MariaDB 10.6.0](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md).
+##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+JSON_TABLE was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
 
 
 JSON_TABLE is a table function that converts JSON data into a relational form.
@@ -45,7 +45,7 @@ on_error:
 ## Description
 
 
-JSON_TABLE can be used in contexts where a table reference can be used; in the FROM clause of a [SELECT](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement, and in multi-table [UPDATE](../../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)/[DELETE](../../../data-manipulation/changing-deleting-data/delete.md) statements.
+JSON_TABLE can be used in contexts where a table reference can be used; in the FROM clause of a [SELECT](../../../data-manipulation/selecting-data/select.md) statement, and in multi-table [UPDATE](../../../data-manipulation/changing-deleting-data/update.md)/[DELETE](../../../data-manipulation/changing-deleting-data/delete.md) statements.
 
 
 `json_doc` is the JSON document to extract data from. In the simplest case, it is a string literal containing JSON. In more complex cases it can be an arbitrary expression returning JSON. The expression may have references to columns of other tables. However, one can only refer to tables that precede this JSON_TABLE invocation. For RIGHT JOIN, it is assumed that its outer side precedes the inner. All tables in outer selects are also considered preceding.
@@ -268,7 +268,7 @@ The ON ERROR clause specifies what should be done if a JSON structure error occu
 When the `ON ERROR` clause is not present, `NULL ON ERROR` is implied.
 
 
-**Note**: A datatype conversion error (e.g. attempt to store a non-integer value into an [integer](../../../../../../../general-resources/learning-and-training/video-presentations-and-screencasts/interviews-related-to-mariadb.md) field, or a [varchar](../../../../../data-types/string-data-types/varchar.md) column being truncated) is not considered a JSON error and so will not trigger the `ON ERROR` behavior. It will produce warnings, in the same way as [CAST(value AS datatype)](../../string-functions/cast.md) would.
+**Note**: A datatype conversion error (e.g. attempt to store a non-integer value into an [integer](../../../../../data-types/data-types-numeric-data-types/int.md) field, or a [varchar](../../../../../data-types/string-data-types/varchar.md) column being truncated) is not considered a JSON error and so will not trigger the `ON ERROR` behavior. It will produce warnings, in the same way as [CAST(value AS datatype)](../../string-functions/cast.md) would.
 
 
 ### Replication
@@ -286,8 +286,8 @@ the function is marked as [unsafe for statement-based replication](../../../../.
 
 
 
-##### MariaDB starting with [10.6.9](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1069-release-notes.md)
-Prior to [MariaDB 10.6.9](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1069-release-notes.md), JSON_TABLE did not allow one to extract a JSON "subdocument" into a JSON column. 
+##### MariaDB starting with [10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1069-release-notes)
+Prior to [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1069-release-notes), JSON_TABLE did not allow one to extract a JSON "subdocument" into a JSON column. 
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;
@@ -297,7 +297,7 @@ SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.fo
 | NULL  |
 +-------+
 ```
-This is supported from [MariaDB 10.6.9](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1069-release-notes.md):
+This is supported from [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1069-release-notes):
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;

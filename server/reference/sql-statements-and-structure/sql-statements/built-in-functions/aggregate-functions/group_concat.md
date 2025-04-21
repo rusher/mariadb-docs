@@ -47,7 +47,7 @@ GROUP_CONCAT([DISTINCT] expr [,expr ...]
 ### LIMIT
 
 
-The [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) clause can be used with `GROUP_CONCAT`. This was not possible prior to [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md).
+The [LIMIT](../../data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`. This was not possible prior to [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes).
 
 
 ## Examples
@@ -82,7 +82,7 @@ SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ')
 The former example shows the difference between the `GROUP_CONCAT`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the concatenated hosts), and the `SELECT`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the rows).
 
 
-From [MariaDB 10.3.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md), [LIMIT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/limitationsdifferences-with-a-mariadb-server-compiled-for-debugging.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
+From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), [LIMIT](../../data-manipulation/selecting-data/limit.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
 
 
 ```
@@ -136,8 +136,8 @@ SELECT GROUP_CONCAT(a, b) FROM t1;
 ## See Also
 
 
-* [CONCAT()](../string-functions/concat_ws.md)
+* [CONCAT()](../string-functions/concat.md)
 * [CONCAT_WS()](../string-functions/concat_ws.md)
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../../data-manipulation/selecting-data/select.md)
 * [ORDER BY](../../data-manipulation/selecting-data/order-by.md)
 

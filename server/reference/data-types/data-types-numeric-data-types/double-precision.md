@@ -15,7 +15,7 @@ REAL[(M,D)] [SIGNED | UNSIGNED | ZEROFILL]
 REAL and DOUBLE PRECISION are synonyms for [DOUBLE](double.md).
 
 
-Exception: If the REAL_AS_FLOAT [SQL mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modemssql.md) is enabled, 
+Exception: If the REAL_AS_FLOAT [SQL mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled, 
 REAL is a synonym for [FLOAT](float.md) rather than 
 [DOUBLE](double.md).
 

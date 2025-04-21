@@ -6,7 +6,7 @@
 
 **NOTE** This is the documentation for the binlogrouter in
 MaxScale 2.4 and is only provided for reference. The documentation
-for the binlogrouter in MaxScale 2.5 is provided [here](mariadb-maxscale-2106-maxscale-2106-binlogrouter-24.md).
+for the binlogrouter in MaxScale 2.5 is provided [here](mariadb-maxscale-2106-maxscale-2106-binlogrouter.md).
 
 
 
@@ -566,7 +566,7 @@ only guaranteed to work if GTIDs have not become inconsistent within the cluster
 
 
 See
-[Wsrep GTID Mode](../../../server/server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md)
+[Wsrep GTID Mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster)
 for more information.
 
 

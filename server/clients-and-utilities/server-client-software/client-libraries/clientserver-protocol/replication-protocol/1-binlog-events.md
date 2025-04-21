@@ -1,7 +1,7 @@
 
 # 1-Binlog Events
 
-Binary log events, or binlog events, are information about data modification made to a MariaDB server instance stored in the [binary log](../../../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) files.
+Binary log events, or binlog events, are information about data modification made to a MariaDB server instance stored in the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) files.
 
 
 ### Log File Structure
@@ -45,7 +45,7 @@ The final event is usually a log-rotation event [ROTATE_EVENT](rotate_event.md) 
 **Note**: in case of a server crash there is no terminating event (no ROTATE nor STOP)
 
 
-### Example [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) Binlog File (Hexdump -C $file_name)
+### Example [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) Binlog File (Hexdump -C $file_name)
 
 
 ```
@@ -65,7 +65,7 @@ fe 62 69 6e a4 85 9e 59  0f 8c 27 00 00 f5 00 00  |.bin...Y..'.....|
 ```
 
 
-### Example From [mysqlbinlog](../../../../../../connectors/mariadb-connector-c/mariadb-binlogreplication-api-reference.md)
+### Example From [mysqlbinlog](../../../../mariadb-binlog/README.md)
 
 
 ```
@@ -90,4 +90,3 @@ AAAAAAAAAAAEEwQAAatbouA=
 ...
 ```
 
-<span></span>

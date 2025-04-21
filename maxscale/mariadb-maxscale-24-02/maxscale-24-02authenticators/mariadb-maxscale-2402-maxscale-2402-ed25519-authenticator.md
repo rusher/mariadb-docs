@@ -27,7 +27,7 @@ message. The client signs the message using their password as private key and
 sends the signature back. MaxScale then checks the signature using the public
 key fetched from the *mysql.user*-table. The client password or an equivalent
 token is never exposed. For more information, see
-[server documentation](../../../server/reference/plugins/authentication-plugins/authentication-plugin-ed25519.md).
+[server documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-ed25519).
 
 
 The security of this authentication scheme presents a problem for a proxy such

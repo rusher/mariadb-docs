@@ -14,7 +14,7 @@ framework, but which does not require GNOME and, on Windows, MS-DOM (DOMDOC), th
 
 DOMDOC is the default for the Windows version of CONNECT and libxml2 is always
 used on other systems. On Windows the choice can be specified using the XMLSUP
-[CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) list option, for instance specifying
+[CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) list option, for instance specifying
 `option_list='xmlsup=libxml2'`.
 
 
@@ -238,7 +238,7 @@ been different from the order in which the nodes appear in the XML file.
 ## Using Xpaths with XML tables
 
 
-Xpath is used by XML to locate and retrieve nodes. The table's main node Xpath is specified by the `tabname` option. If just the node name is given, CONNECT constructs an Xpath such as `‘<em>BIBLIO’</em>` in the example above that should retrieve the `BIBLIO` node wherever it is within the XML file.
+Xpath is used by XML to locate and retrieve nodes. The table's main node Xpath is specified by the `tabname` option. If just the node name is given, CONNECT constructs an Xpath such as `‘BIBLIO’` in the example above that should retrieve the `BIBLIO` node wherever it is within the XML file.
 
 
 The row nodes are by default the children of the table node. However, for instance to eliminate some children nodes that are not real row nodes, the row node name can be specified using the `rownode` sub-option of the `option_list` option.
@@ -455,7 +455,7 @@ This time, all ‘ele` tags are recognized. This solution does not work with DOM
 ## Having Columns defined by Discovery
 
 
-It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement, CONNECT endeavours to analyze the XML file and to provide the column specifications. This is possible only for true XML tables, but not for HTML tables.
+It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement, CONNECT endeavours to analyze the XML file and to provide the column specifications. This is possible only for true XML tables, but not for HTML tables.
 
 
 For instance, the *xsamp* table could have been created specifying:
@@ -484,7 +484,7 @@ CREATE TABLE `xsamp` (
   `FILE_NAME`='E:/Data/Xml/Xsample.xml' `TABNAME`='BIBLIO' `OPTION_LIST`='rownode=BOOK';
 ```
 
-It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. Also, all columns are specified as type [CHAR](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) because XML does not provide information about the node content data type. Nullable is set to true if the column is missing in some rows.
+It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. Also, all columns are specified as type [CHAR](../../../data-types/string-data-types/char.md) because XML does not provide information about the node content data type. Nullable is set to true if the column is missing in some rows.
 
 
 If a more complex definition is desired, you can ask CONNECT to analyse the XPATH up to a given level using the level option in the option list. The level value is the number of nodes that are taken in the XPATH. For instance:

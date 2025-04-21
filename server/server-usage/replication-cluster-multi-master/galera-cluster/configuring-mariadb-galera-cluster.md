@@ -15,7 +15,7 @@ Several options are mandatory, which means that they *must* be set in order for 
 * `[wsrep_cluster_address](galera-cluster-system-variables.md#wsrep_cluster_address)` — See [Galera Cluster address format and usage](galera-cluster-address.md)
 * `[binlog_format=ROW](../standard-replication/replication-and-binary-log-system-variables.md)` — See [Binary Log Formats](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)
 * `[wsrep_on=ON](galera-cluster-system-variables.md#wsrep_on)` — Enable wsrep replication
-* `[default_storage_engine=InnoDB](../optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)` — This is the default value, or alternately `[wsrep_replicate_myisam=1](galera-cluster-system-variables.md#wsrep_replicate_myisam)` (before [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md)) or `[galera-cluster-system-variables/#wsrep_mode=REPLICATE_ARIA,REPLICATE_MYISAM](galera-cluster-system-variables.md#wsrep_mode%3DREPLICATE_ARIA%2CREPLICATE_MYISAM)` ([MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) and later)
+* `[default_storage_engine=InnoDB](../optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)` — This is the default value, or alternately `[wsrep_replicate_myisam=1](galera-cluster-system-variables.md#wsrep_replicate_myisam)` (before [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)) or `[galera-cluster-system-variables/#wsrep_mode=REPLICATE_ARIA,REPLICATE_MYISAM](galera-cluster-system-variables.md#wsrep_mode%3DREPLICATE_ARIA%2CREPLICATE_MYISAM)` ([MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) and later)
 * `[innodb_doublewrite=1](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)` — This is the default value, and should not be changed.
 
 
@@ -40,7 +40,7 @@ The logic here is that, in a balanced system, four slave threads can typically s
 ## Writing Replicated Write Sets to the Binary Log
 
 
-Like with [MariaDB replication](../standard-replication/README.md), write sets that are received by a node with [Galera Cluster's certification-based replication](about-galera-replication.md) are not written to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) by default. If you would like a node to write its replicated write sets to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md), then you will have to set `[log_slave_updates=ON](../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)`. This is especially helpful if the node is a replication master. See [Using MariaDB Replication with MariaDB Galera Cluster: Configuring a Cluster Node as a Replication Master](using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md).
+Like with [MariaDB replication](../standard-replication/README.md), write sets that are received by a node with [Galera Cluster's certification-based replication](about-galera-replication.md) are not written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) by default. If you would like a node to write its replicated write sets to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md), then you will have to set `[log_slave_updates=ON](../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)`. This is especially helpful if the node is a replication master. See [Using MariaDB Replication with MariaDB Galera Cluster: Configuring a Cluster Node as a Replication Master](using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md).
 
 
 ## Replication Filters
@@ -49,7 +49,7 @@ Like with [MariaDB replication](../standard-replication/README.md), write sets t
 Like with [MariaDB replication](../standard-replication/README.md), [replication filters](../standard-replication/replication-filters.md) can be used to filter write sets from being replicated by [Galera Cluster's certification-based replication](about-galera-replication.md). However, they should be used with caution because they may not work as you'd expect.
 
 
-The following replication filters are honored for [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) DML, but not DDL:
+The following replication filters are honored for [InnoDB](../../../reference/storage-engines/innodb/README.md) DML, but not DDL:
 
 
 * `[binlog_do_db](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`
@@ -58,7 +58,7 @@ The following replication filters are honored for [InnoDB](../../../../general-r
 * `[replicate_wild_ignore_table](../standard-replication/replication-and-binary-log-system-variables.md)`
 
 
-The following replication filters are honored for DML and DDL for tables that use both the [InnoDB](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) and [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) storage engines:
+The following replication filters are honored for DML and DDL for tables that use both the [InnoDB](../../../reference/storage-engines/innodb/README.md) and [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) storage engines:
 
 
 * `[replicate_do_table](../standard-replication/replication-and-binary-log-system-variables.md)`
@@ -98,4 +98,3 @@ You need to ensure that each instance is configured with a different `[datadir](
 
 You also need to ensure that each instance is configured with different [network ports](#network-ports).
 
-<span></span>

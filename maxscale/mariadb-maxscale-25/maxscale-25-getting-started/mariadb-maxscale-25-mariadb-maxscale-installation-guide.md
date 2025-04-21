@@ -23,7 +23,7 @@ Select your operating system and download either the RPM or the DEB package.
 
 
 You can also use
-[the MariaDB package repository](../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)
+[the MariaDB package repository](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage)
 to install MaxScale by first configuring the repository and then
 installing the `maxscale` package via your package manager.
 

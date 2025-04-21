@@ -33,7 +33,7 @@ The columns shown in `SHOW PROCESSLIST` are:
 | HOST | The host the client is connected to. |
 | DB | The default database of the process (NULL if no default). |
 | COMMAND | The command type. See [Thread Command Values](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-command-values.md). |
-| TIME | The amount of time, in seconds, the process has been in its current state. For a replica SQL thread before [MariaDB 10.1](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md), this is the time in seconds between the last replicated event's timestamp and the replica machine's real time. |
+| TIME | The amount of time, in seconds, the process has been in its current state. For a replica SQL thread before [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this is the time in seconds between the last replicated event's timestamp and the replica machine's real time. |
 | STATE | See [Thread States](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-states/README.md). |
 | INFO | The statement being executed. |
 | PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](../../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)). |
@@ -49,7 +49,7 @@ Note that the `PROGRESS` field from the information schema, and the `PROGRESS` f
 Threads can be killed using their thread_id or their query_id, with the [KILL](../kill.md) statement.
 
 
-Since queries on this table are locking, if the [performance_schema](../system-tables/performance-schema/performance-schema-tables/performance-schema-table_handles-table.md) is enabled, you may want to query the [THREADS](../system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table instead.
+Since queries on this table are locking, if the [performance_schema](../system-tables/performance-schema/README.md) is enabled, you may want to query the [THREADS](../system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table instead.
 
 
 ## Examples

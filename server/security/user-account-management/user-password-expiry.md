@@ -11,7 +11,7 @@ Password expiry permits administrators to expire user passwords, either manually
 There are two system variables which affect password expiry: [default_password_lifetime](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), which determines the amount of time between requiring the user to change their password. `0`, the default, means automatic password expiry is not active.
 
 
-The second variable, [disconnect_on_expired_password](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#disconnect_on_expired_password) determines whether a client is permitted to connect if their password has expired, or whether they are permitted to connect in sandbox mode, able to perform a limited subset of queries related to resetting the password, in particular [SET PASSWORD](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) and [SET](../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md).
+The second variable, [disconnect_on_expired_password](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#disconnect_on_expired_password) determines whether a client is permitted to connect if their password has expired, or whether they are permitted to connect in sandbox mode, able to perform a limited subset of queries related to resetting the password, in particular [SET PASSWORD](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) and [SET](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md).
 
 
 ## Setting a Password Expiry Limit for a User
@@ -91,8 +91,8 @@ SHOW CREATE USER 'amse'@'localhost';
 
 
 
-##### MariaDB starting with [11.5](../../../release-notes/mariadb-community-server/what-is-mariadb-115.md)
-From [MariaDB 11.5](../../../release-notes/mariadb-community-server/what-is-mariadb-115.md), the [Information Schema USERS table](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-users-table.md) stores password expiry and password error information. An unprivileged user can access their own user data from the table.
+##### MariaDB starting with [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the [Information Schema USERS table](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-users-table.md) stores password expiry and password error information. An unprivileged user can access their own user data from the table.
 
 
 The following query can also be used to check when the current passwords expire for all users:
@@ -140,4 +140,3 @@ The [mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-
 
 * [Account Locking and Password Expiry](https://www.youtube.com/watch?v=AWM_fWZ3XIw) video tutorial
 
-<span></span>

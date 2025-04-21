@@ -2,8 +2,8 @@
 # SHOW CREATE SERVER
 
 
-##### MariaDB starting with [11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md)
-The  SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-117.md).
+##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
+The  SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117).
 
 
 
@@ -35,5 +35,5 @@ Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql
 
 
 * [CREATE SERVER](../../data-definition/create/create-server.md)
-* [SHOW](show-procedure-code.md)
+* [SHOW](README.md)
 

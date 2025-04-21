@@ -14,7 +14,7 @@ innochecksum [options] file_name
 ## Description
 
 
-It reads an [InnoDB](../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md) tablespace file, calculates the checksum for each page, compares the calculated checksum to the stored checksum, and reports mismatches, which indicate damaged pages. It was originally developed to speed up verifying the integrity of tablespace files after power outages but can also be used after file copies. Because checksum mismatches will cause InnoDB to deliberately shut down a running server, it can be preferable to use innochecksum rather than waiting for a server in production usage to encounter the damaged pages.
+It reads an [InnoDB](../reference/storage-engines/innodb/README.md) tablespace file, calculates the checksum for each page, compares the calculated checksum to the stored checksum, and reports mismatches, which indicate damaged pages. It was originally developed to speed up verifying the integrity of tablespace files after power outages but can also be used after file copies. Because checksum mismatches will cause InnoDB to deliberately shut down a running server, it can be preferable to use innochecksum rather than waiting for a server in production usage to encounter the damaged pages.
 
 
 Multiple filenames can be specified by a wildcard on non-Windows systems only.
@@ -44,18 +44,18 @@ innochecksum supports the following options. For options that refer to page numb
 | -f, --leaf | Examine leaf index pages. |
 | -l fn, --log=fn | Log output to the specified filename fn. |
 | -m num, --merge=# | Leaf page count if merge given number of consecutive pages. |
-| -n, --no-check | Ignore the checksum verification. Until [MariaDB 10.6](../../release-notes/mariadb-community-server/what-is-mariadb-106.md), must be used with the --write option. |
+| -n, --no-check | Ignore the checksum verification. Until [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), must be used with the --write option. |
 | -p num, --page=# | Check only this page number (0-based). |
 | -D, --page-type-dump=name | Dump the page type info for each page in a tablespace. |
 | -S, --page-type-summary | Display a count of each page type in a tablespace |
 | -i, --per-page-details | Print out per-page detail information. |
 | -u, --skip-corrupt | Skip corrupt pages. |
-| -r, --skip-freed-pages | innochecksum misinterprets freed pages as active, leading to confusion that too many valid pages exist. To avoid this, this option was introduced to avoid freed pages while dumping or printing the summary of the tablespace. From [MariaDB 10.6.21](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes.md), [MariaDB 10.11.11](../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes.md), [MariaDB 11.4.5](../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes.md), [MariaDB 11.7.2](../../release-notes/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md). |
+| -r, --skip-freed-pages | innochecksum misinterprets freed pages as active, leading to confusion that too many valid pages exist. To avoid this, this option was introduced to avoid freed pages while dumping or printing the summary of the tablespace. From [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes), [MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes), [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes), [MariaDB 11.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes). |
 | -s num, --start-page=# | Start at this page number (0-based). |
-| -C, --strict-check=name | Specify the strict checksum algorithm. One of: crc32, innodb, none. If not specified, validates against innodb, crc32 and none. full_crc32 is not supported. See also [innodb_checksum_algorithm](../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Removed in [MariaDB 10.6.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) |
+| -C, --strict-check=name | Specify the strict checksum algorithm. One of: crc32, innodb, none. If not specified, validates against innodb, crc32 and none. full_crc32 is not supported. See also [innodb_checksum_algorithm](../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
 | -v, --verbose | Verbose mode; print a progress indicator every five seconds. |
 | -V, --version | Displays version information and exits. |
-| -w, --write=name | Rewrite the checksum algorithm. One of crc32, innodb, none. An exclusive lock is obtained during use. Use in conjunction with the -no-check option to rewrite an invalid checksum. Removed in [MariaDB 10.6.0](../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md) |
+| -w, --write=name | Rewrite the checksum algorithm. One of crc32, innodb, none. An exclusive lock is obtained during use. Use in conjunction with the -no-check option to rewrite an invalid checksum. Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
 
 
 
@@ -105,4 +105,3 @@ index_id	#pages		#leaf_pages	#recs_per_page	#bytes_per_page
 index_id	page_data_bytes_histgram(empty,...,oversized)
 24		1	0	0	0	0	0	0	0	0	0	0	0
 ```
-<span></span>

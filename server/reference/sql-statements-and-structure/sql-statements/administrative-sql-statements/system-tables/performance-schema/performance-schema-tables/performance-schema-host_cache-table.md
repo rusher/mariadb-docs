@@ -22,7 +22,7 @@ The host_cache table contains the following columns:
 | COUNT_ADDRINFO_TRANSIENT_ERRORS | Number of transient errors during host-to-IP reverse DNS lookups. |
 | COUNT_ADDRINFO_PERMANENT_ERRORS | Number of permanent errors during host-to-IP reverse DNS lookups. |
 | COUNT_FCRDNS_ERRORS | Number of forward-confirmed reverse DNS errors, which occur when IP-to-host DNS lookup does not match the originating IP address. |
-| COUNT_HOST_ACL_ERRORS | Number of errors occurring because no user from the host is permitted to log in. These attempts return [error code](../../../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/README.md) 1130 ER_HOST_NOT_PRIVILEGED and do not proceed to username and password authentication. |
+| COUNT_HOST_ACL_ERRORS | Number of errors occurring because no user from the host is permitted to log in. These attempts return [error code](../../../../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) 1130 ER_HOST_NOT_PRIVILEGED and do not proceed to username and password authentication. |
 | COUNT_NO_AUTH_PLUGIN_ERRORS | Number of errors due to requesting an authentication plugin that was not available. This can be due to the plugin never having been loaded, or the load attempt failing. |
 | COUNT_AUTH_PLUGIN_ERRORS | Number of errors reported by an authentication plugin. Plugins can increment COUNT_AUTHENTICATION_ERRORS or COUNT_HANDSHAKE_ERRORS instead, but, if specified or the error is unknown, this column is incremented. |
 | COUNT_HANDSHAKE_ERRORS | Number of errors detected at the wire protocol level. |
@@ -43,5 +43,5 @@ The host_cache table contains the following columns:
 
 
 
-The `host_cache` table, along with the `host_cache`, is cleared with [FLUSH HOSTS](../../../flush-commands/flush-tables-for-export.md), [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) `host_cache` or by setting the [host_cache_size](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size) system variable at runtime.
+The `host_cache` table, along with the `host_cache`, is cleared with [FLUSH HOSTS](../../../flush-commands/flush.md), [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) `host_cache` or by setting the [host_cache_size](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size) system variable at runtime.
 

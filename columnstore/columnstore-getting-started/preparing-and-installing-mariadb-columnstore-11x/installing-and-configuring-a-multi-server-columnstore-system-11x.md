@@ -37,7 +37,7 @@
 ## Preparing to Install
 
 
-After the MariaDB ColumnStore servers have been setup based on the [Preparing for Installations](preparing-for-columnstore-installation-11x.md) document and the required MariaDB ColumnStore Packages have been Installed, use of the following option to configure and install MariaDB ColumnStore:
+After the MariaDB ColumnStore servers have been setup based on the [Preparing for Installations](../preparing-and-installing-mariadb-columnstore-10x/preparing-for-columnstore-installation-10x.md) document and the required MariaDB ColumnStore Packages have been Installed, use of the following option to configure and install MariaDB ColumnStore:
 
 
 * MariaDB ColumnStore One Step Quick Installer Script - Release 1.1.6 and later

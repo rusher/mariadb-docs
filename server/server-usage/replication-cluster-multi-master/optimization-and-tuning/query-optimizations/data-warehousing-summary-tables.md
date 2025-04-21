@@ -8,7 +8,7 @@
 This document discusses the creation and maintenance of "Summary Tables". It is a companion to the document on [Data Warehousing Techniques](data-warehousing-techniques.md).
 
 
-The basic terminology ("Fact Table", "[Normalization](../../../../../general-resources/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/database-normalization-2nd-normal-form.md)", etc) is covered in that document.
+The basic terminology ("Fact Table", "[Normalization](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization/)", etc) is covered in that document.
 
 
 ## Summary tables for data warehouse "reports"
@@ -360,7 +360,7 @@ How fast should you flip-flop? Probably the best scheme is to
 If Staging is 'big', an iteration will take longer, but run more efficiently. Hence, it is self-regulating.
 
 
-In a [Galera](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
+In a [Galera](../../galera-cluster/README.md) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
 
 
 ## Multiple summary tables
@@ -420,4 +420,3 @@ Examples
 * [1766831](https://stackoverflow.com/a/39403194/1766831)
 * [1766831](https://stackoverflow.com/a/40310314/1766831)
 
-<span></span>

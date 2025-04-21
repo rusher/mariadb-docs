@@ -487,7 +487,7 @@ The editor also comes with various options to assist your querying tasks. To see
 available options, right-click on the editor to show the context menu.
 
 
-The editor is powered by [Monaco editor](../../../server/clients-and-utilities/mariadb-client/delimiters.md), therefore, its features are similar to those of
+The editor is powered by [Monaco editor](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters), therefore, its features are similar to those of
 Visual Studio Code.
 
 

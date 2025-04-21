@@ -2,7 +2,7 @@
 # DROP CATALOG
 
 
-##### MariaDB starting with [12.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-120.md)
+##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
 
@@ -17,7 +17,7 @@ DROP CATALOG catalog_name
 ## Description
 
 
-Deletes a [catalog](catalogs-overview.md).
+Deletes a [catalog](README.md).
 
 
 Limitations:

@@ -7,13 +7,13 @@ A trigger, as its name suggests, is a set of statements that run, or are trigger
 ## Events
 
 
-The event can be an INSERT, an UPDATE or a DELETE. The trigger can be executed BEFORE or AFTER the event. Until [MariaDB 10.2.3](../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1023-release-notes.md), a table could have only one trigger defined for each event/timing combination: for example, a table could only have one BEFORE INSERT trigger.
+The event can be an INSERT, an UPDATE or a DELETE. The trigger can be executed BEFORE or AFTER the event. Until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), a table could have only one trigger defined for each event/timing combination: for example, a table could only have one BEFORE INSERT trigger.
 
 
 The [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [LOAD XML](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) statements invoke INSERT triggers for each row that is being inserted.
 
 
-The [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) statement is executed with the following workflow:
+The [REPLACE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) statement is executed with the following workflow:
 
 
 * BEFORE INSERT;
@@ -193,7 +193,7 @@ SELECT * FROM animal_count;
 If a trigger contains an error and the engine is transactional, or it is a BEFORE trigger, the trigger will not run, and will prevent the original statement from running as well. If the engine is non-transactional, and it is an AFTER trigger, the trigger will not run, but the original statement will.
 
 
-Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/innodb-upgrade-tests/README.md), a transactional engine, and then again using [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), a non-transactional engine.
+Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../../reference/storage-engines/innodb/README.md), a transactional engine, and then again using [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/README.md), a non-transactional engine.
 
 
 ```
@@ -284,4 +284,3 @@ Empty set (0.00 sec)
 * [Trigger Limitations](trigger-limitations.md)
 * [Creative uses of triggers: Things you people wouldn't believe](https://www.youtube.com/watch?v=-O2up6Fr9M0) (video)
 
-<span></span>

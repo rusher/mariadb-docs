@@ -49,7 +49,7 @@ Once installed, make sure that the `maxlog` parameter is not disabled and then s
 ### Profiling Release Mode Binaries
 
 
-The instructions on the [profiling-memory-usage](../server/reference/bug-tracking/profiling-memory-usage.md) page that are for the MariaDB server also apply to MaxScale. The following modifications to the commands must be done in order for them to work with MaxScale.
+The instructions on the [profiling-memory-usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/bug-tracking/profiling-memory-usage) page that are for the MariaDB server also apply to MaxScale. The following modifications to the commands must be done in order for them to work with MaxScale.
 
 
 * Replace `/usr/sbin/mariadbd` with `/usr/bin/maxscale`
@@ -93,7 +93,7 @@ ERROR 1045 (28000): Access denied for user 'bob'@'office' (using password: YES)
 Make sure you create users for both `'bob'@'office'` and `'bob'@'maxscale'`. The host `'office'` is where the client is attempting to connect from and `'maxscale'` is the host where MaxScale is installed.
 
 
-If you do not want to create a second set of users, you can enable [proxy_protocol](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#proxy_protocol) in MaxScale and configure the MariaDB server to [allow proxied connections](../server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks) from the MaxScale host.
+If you do not want to create a second set of users, you can enable [proxy_protocol](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-configuration-guide/#proxy_protocol) in MaxScale and configure the MariaDB server to [allow proxied connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks) from the MaxScale host.
 
 
 ### Verifying that a user is allowed to connect
@@ -103,14 +103,14 @@ If you do not want to create a second set of users, you can enable [proxy_protoc
 
   1. SSH to the server where MaxScale is installed
   1. Connect to MariaDB
-  1. Check output of [SHOW GRANTS](../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md)
+  1. Check output of [SHOW GRANTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants)
 
 
 * Client connection
 
   1. SSH to theserver where client is connecting from
   1. Connect to MariaDB
-  1. Check output of [SHOW GRANTS](../server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md)
+  1. Check output of [SHOW GRANTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants)
 
 
 ### Checking MaxScale has correct grants
@@ -327,5 +327,5 @@ JournalSizeMax=1G
 #KeepFree=
 ```
 
-Read the MariaDB documentation for [enabling-core-dumps](../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps.md) and [how-to-produce-a-full-stack-trace-for-mysqld](../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md). Most of the operating system level documentation applies to MaxScale as well except that MaxScale is always run as a SystemD service and it only supports Linux as the platform.
+Read the MariaDB documentation for [enabling-core-dumps](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps) and [how-to-produce-a-full-stack-trace-for-mysqld](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd). Most of the operating system level documentation applies to MaxScale as well except that MaxScale is always run as a SystemD service and it only supports Linux as the platform.
 

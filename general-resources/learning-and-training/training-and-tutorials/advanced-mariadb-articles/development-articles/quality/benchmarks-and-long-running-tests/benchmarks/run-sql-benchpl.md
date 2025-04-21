@@ -2,7 +2,7 @@
 # run-sql-bench.pl
 
 `run-sql-bench.pl` is a perl script for automating runs of sql-bench
-(You can find sql-bench in the [MariaDB source code](../../../../../../../../server/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md).)
+(You can find sql-bench in the [MariaDB source code](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code).)
 
 
 `run-sql-bench.pl` can be found in the
@@ -21,10 +21,9 @@ Example configuration scripts used for different runs can be found in the variou
 To run the `run-sql-bench.pl` script, do the following:
 
 
-1. [Branch a MariaDB or MySQL tree](../../../../../../../../server/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md)
+1. [Branch a MariaDB or MySQL tree](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
 1. Optionally do some code changes in that tree and commit your changes
-1. Edit `run-sql-bench.pl` to set internal options, especially the "`<span class="k">my</span> <span class="nv">$path</span>
-`" variable.
+1. Edit `run-sql-bench.pl` to set internal options, especially the "`my $path`" variable.
 1. Create a `${BASE_DIR}/sql-bench/conf/host.cnf` file for your system. An
  easy way to do this is by duplicating one of the example `host.cnf` files:
 ```
@@ -41,10 +40,10 @@ cd ${BASE_DIR}/sql-bench/; ./run-sql-bench.pl --repository=[/path/to/bzr/reposit
 ```
 
 
-  * `<code>--</code>repository` is the MariaDB tree to use and compile, the script will also look here for sql-bench.
-  * `<code>--</code>sql-bench-options` is mostly used in testing and debugging cases where
- we want to have short run times. For instance, using `<code>--</code>small-test`
- or `<code>--</code>small-table`.
+  * `--repository` is the MariaDB tree to use and compile, the script will also look here for sql-bench.
+  * `--sql-bench-options` is mostly used in testing and debugging cases where
+ we want to have short run times. For instance, using `--small-test`
+ or `--small-table`.
   * You can separate several sql-bench options with spaces like so:
 ```
 --sql-bench-options="--small-test --small-table"
@@ -54,8 +53,7 @@ cd ${BASE_DIR}/sql-bench/; ./run-sql-bench.pl --repository=[/path/to/bzr/reposit
 ## The results
 
 
-Results are stored at the location specified by the `<span class="nv">$sql_bench_results</span>
-` variable in the `${BASE_DIR}/sql-bench/conf/hostname.cnf` file for your host.
+Results are stored at the location specified by the `$sql_bench_results` variable in the `${BASE_DIR}/sql-bench/conf/hostname.cnf` file for your host.
 Results are organized in sub directories with the following schema:
 
 
@@ -67,5 +65,5 @@ sql-bench-results-dir/${HOSTNAME}/YYYY-MM-DD
 
 
 * Crash and error detection and reporting.
-* One should be able to specify a test name for each file (`run-all-tests` `<code>--</code>suffix='_xxxx'`)
+* One should be able to specify a test name for each file (`run-all-tests` `--suffix='_xxxx'`)
 

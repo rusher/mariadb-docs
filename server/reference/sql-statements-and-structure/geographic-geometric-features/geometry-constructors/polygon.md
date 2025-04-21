@@ -11,7 +11,7 @@ Polygon(ls1,ls2,...)
 ## Description
 
 
-Constructs a WKB Polygon value from a number of [WKB](../wkb/wkb-polyfromwkb.md) [LineString](linestring.md)
+Constructs a WKB Polygon value from a number of [WKB](../wkb/README.md) [LineString](linestring.md)
 arguments. If any argument does not represent the WKB of a LinearRing (that is,
 not a closed and simple LineString) the return value is `NULL`.
 

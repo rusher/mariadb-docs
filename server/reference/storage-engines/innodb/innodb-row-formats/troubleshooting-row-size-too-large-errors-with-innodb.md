@@ -25,8 +25,8 @@ These messages indicate that the table's definition allows rows that the table's
 These messages are raised in the following cases:
 
 
-* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), then InnoDB will raise an error with this message
-* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md), then InnoDB will raise a warning with this message.
+* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise an error with this message
+* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements-and-structure/sql-statements/data-definition/README.md) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise a warning with this message.
 * Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements-and-structure/sql-statements/data-manipulation/README.md) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
 
 
@@ -267,7 +267,7 @@ InnoDB's row formats work around this limit by storing certain kinds of variable
 InnoDB does not currently have an easy way to check all existing tables to determine which tables have this problem. See [MDEV-20400](https://jira.mariadb.org/browse/MDEV-20400) for more information.
 
 
-One method to check a single existing table for this problem is to enable [InnoDB strict mode](../innodb-strict-mode.md), and then try to create a duplicate of the table with [CREATE TABLE ... LIKE](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md#create-table-like). If the table has this problem, then the operation will fail. For example:
+One method to check a single existing table for this problem is to enable [InnoDB strict mode](../innodb-strict-mode.md), and then try to create a duplicate of the table with [CREATE TABLE ... LIKE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#create-table-like). If the table has this problem, then the operation will fail. For example:
 
 
 ```
@@ -355,7 +355,7 @@ If the table is using either the [REDUNDANT](innodb-redundant-row-format.md) or 
 If your tables were originally created on an older version of MariaDB or MySQL, then your table may be using one of InnoDB's older row formats:
 
 
-* In [MariaDB 10.1](../../../../../release-notes/mariadb-community-server/what-is-mariadb-1010.md) and before, and in MySQL 5.6 and before, the [COMPACT](innodb-compact-row-format.md) row format was the default row format.
+* In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, and in MySQL 5.6 and before, the [COMPACT](innodb-compact-row-format.md) row format was the default row format.
 * In MySQL 4.1 and before, the [REDUNDANT](innodb-redundant-row-format.md) row format was the default row format.
 
 
@@ -369,7 +369,7 @@ Therefore, a potential solution to the *Row size too large* error is to convert 
 ALTER TABLE tab ROW_FORMAT=DYNAMIC;
 ```
 
-You can use the [INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information_schema](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tablespaces-table.md) database to find all tables that use the [REDUNDANT](innodb-redundant-row-format.md) or the [COMPACT](innodb-compact-row-format.md) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](innodb-dynamic-row-format.md) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](../innodb-tablespaces/innodb-system-tablespaces.md#system-tables-within-the-innodb-system-tablespace):
+You can use the [INNODB_SYS_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information_schema](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/README.md) database to find all tables that use the [REDUNDANT](innodb-redundant-row-format.md) or the [COMPACT](innodb-compact-row-format.md) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](innodb-dynamic-row-format.md) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](../innodb-tablespaces/innodb-system-tablespaces.md#system-tables-within-the-innodb-system-tablespace):
 
 
 ```
@@ -379,7 +379,7 @@ WHERE ROW_FORMAT IN('Redundant', 'Compact')
 AND NAME NOT IN('SYS_DATAFILES', 'SYS_FOREIGN', 'SYS_FOREIGN_COLS', 'SYS_TABLESPACES', 'SYS_VIRTUAL', 'SYS_ZIP_DICT', 'SYS_ZIP_DICT_COLS');
 ```
 
-In [MariaDB 10.2](../../../../../release-notes/mariadb-community-server/what-is-mariadb-102.md) and later, the [DYNAMIC](innodb-dynamic-row-format.md) row format is the default row format. If your tables were originally created on one of these newer versions, then they may already be using this row format. In that case, you may need to try the next solution.
+In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, the [DYNAMIC](innodb-dynamic-row-format.md) row format is the default row format. If your tables were originally created on one of these newer versions, then they may already be using this row format. In that case, you may need to try the next solution.
 
 
 ### Fitting More Columns on Overflow Pages
@@ -1087,7 +1087,7 @@ The JSON document can be stored in a column that uses one of the following data 
 * [TEXT](../../../data-types/string-data-types/text.md): The maximum size of a [TEXT](../../../data-types/string-data-types/text.md) column is 64 KB.
 * [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md): The maximum size of a [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md) column is 16 MB.
 * [LONGTEXT](../../../data-types/string-data-types/longtext.md): The maximum size of a [LONGTEXT](../../../data-types/string-data-types/longtext.md) column is 4 GB.
-* [JSON](../../connect/json-sample-files.md): This is just an alias for the [LONGTEXT](../../../data-types/string-data-types/longtext.md) data type.
+* [JSON](../../../data-types/string-data-types/json.md): This is just an alias for the [LONGTEXT](../../../data-types/string-data-types/longtext.md) data type.
 
 
 This workaround can even work if your table is so wide that the previous solutions have failed to solve them problem for your table.

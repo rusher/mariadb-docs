@@ -4,7 +4,7 @@
 The `mysql.proc` table contains information about [stored procedures](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md). It contains similar information to that stored in the [INFORMATION SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table.
 
 
-This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/README.md) storage engine.
 
 
 The `mysql.proc` table contains the following fields:
@@ -16,7 +16,7 @@ The `mysql.proc` table contains the following fields:
 | Field | Type | Null | Key | Default | Description |
 | db | char(64) | NO | PRI |  | Database name. |
 | name | char(64) | NO | PRI |  | Routine name. |
-| type | enum('FUNCTION','PROCEDURE','PACKAGE', 'PACKAGE BODY') | NO | PRI | NULL | Whether [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [stored function](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) or, from [MariaDB 10.3.5](../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1035-release-notes.md), a [package](../../../data-definition/create/create-package-body.md) or [package body](../../../data-definition/create/create-package-body.md). |
+| type | enum('FUNCTION','PROCEDURE','PACKAGE', 'PACKAGE BODY') | NO | PRI | NULL | Whether [stored procedure](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md), [stored function](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) or, from [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes), a [package](../../../data-definition/create/create-package.md) or [package body](../../../data-definition/create/create-package-body.md). |
 | specific_name | char(64) | NO |  |  |  |
 | language | enum('SQL') | NO |  | SQL | Always SQL. |
 | sql_data_access | enum('CONTAINS_SQL', 'NO_SQL', 'READS_SQL_DATA', 'MODIFIES_SQL_DATA') | NO |  | CONTAINS_SQL |  |

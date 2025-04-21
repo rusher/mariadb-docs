@@ -8,7 +8,7 @@ This article is about the Sequence storage engine. For details about sequence ob
 A **Sequence** engine allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment.
 
 
-It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md), and [support XA](../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
+It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../sql-statements-and-structure/sql-statements/transactions/README.md), and [support XA](../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
 
 
 ## Installing
@@ -219,7 +219,7 @@ SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 [CAST](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
 
 
-Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../../../general-resources/learning-and-training/training-and-tutorials/beginner-mariadb-articles/useful-mariadb-queries.md) command) to be able to query a Sequence table. The [information_schema](../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) database cannot be used as the default for a Sequence table.
+Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information_schema](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database cannot be used as the default for a Sequence table.
 
 
 ## Table Name Conflicts

@@ -55,7 +55,7 @@ SET GLOBAL event_scheduler = ON;
 to activate it. If `event_scheduler` has been set to `Disabled`, you cannot change the value at runtime. Changing the value of the `event_scheduler` variable requires the SUPER privilege.
 
 
-Since [MariaDB 10.0.22](../../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes.md), setting the [event_scheduler](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.
+Since [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes), setting the [event_scheduler](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.
 
 
 ## Viewing Current Events
@@ -139,4 +139,3 @@ Query OK, 0 rows affected (0.00 sec)
 * [Event Limitations](event-limitations.md)
 * [Automating MariaDB Tasks with Events](../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/automating-mariadb-tasks-with-events.md)
 
-<span></span>

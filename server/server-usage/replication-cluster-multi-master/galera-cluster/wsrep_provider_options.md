@@ -123,7 +123,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 * Description: Frequency of checks for peer inactivity (looking for nodes with delayed responses), after which nodes may be added to the delayed list, and later evicted.
 * Dynamic: No
-* Default: ` PT0.5S `
+* Default: `PT0.5S`
 
 
 
@@ -136,7 +136,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 
 
-#### `evs.info_log_mask `
+#### `evs.info_log_mask`
 
 
 * Description: Controls extra EVS info logging. Bits:
@@ -300,7 +300,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 * Description: Whether or not gcache recovery takes place when the node starts up. If it is possible to recover gcache, the node can then provide IST to other joining nodes, which assists when the whole cluster is restarted.
 * Dynamic: No
 * Default: `no`
-* Introduced: [MariaDB 10.1.20](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10120-release-notes.md), [MariaDB Galera 10.0.29](../../../../release-notes/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10029-release-notes.md), [MariaDB Galera 5.5.54](../../../../release-notes/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5554-release-notes.md)
+* Introduced: [MariaDB 10.1.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10120-release-notes), [MariaDB Galera 10.0.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10029-release-notes), [MariaDB Galera 5.5.54](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5554-release-notes)
 
 
 
@@ -356,7 +356,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 #### `gcs.fc_master_slave`
 
 
-* Description: Whether to assume that the cluster only contains one master. Deprecated since Galera 4.10 ([MariaDB 10.8.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1081-release-notes.md), [MariaDB 10.7.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1072-release-notes.md), [MariaDB 10.6.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes.md), [MariaDB 10.5.14](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes.md), [MariaDB 10.4.22](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10422-release-notes.md)) - see [gcs.fc_single_primary](#gcsfc_single_primary)
+* Description: Whether to assume that the cluster only contains one master. Deprecated since Galera 4.10 ([MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), [MariaDB 10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1072-release-notes), [MariaDB 10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1066-release-notes), [MariaDB 10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10514-release-notes), [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes)) - see [gcs.fc_single_primary](#gcsfc_single_primary)
 * Dynamic: No
 * Default: `no`
 
@@ -497,7 +497,7 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 * Description:
 * Dynamic: No
 * Default: Empty string
-* Introduced: [MariaDB 10.1.17](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes.md), [MariaDB Galera 10.0.27](../../../../release-notes/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes.md), [MariaDB Galera 5.5.51](../../../../release-notes/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5551-release-notes.md)
+* Introduced: [MariaDB 10.1.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10117-release-notes), [MariaDB Galera 10.0.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10027-release-notes), [MariaDB Galera 5.5.51](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-cluster-5551-release-notes)
 
 
 
@@ -600,7 +600,7 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 
 
 
-#### `protonet.backend `
+#### `protonet.backend`
 
 
 * Description: Deprecated option. Transport backend to use. Only ASIO is supported currently.
@@ -688,7 +688,7 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 * Description: Allow both encrypted and unencrypted connections between nodes. Typically this should be set to `false` (the default), when set to `true` encrypted connections will still be preferred, but will fall back to unencrypted connections when encryption is not possible, e.g. not enabled on all nodes yet. Needs to be `true` on all nodes when wanting to enable or disable encryption via a rolling restart. As this can't be changed at runtime a rolling restart to enable or disable encryption may need three restarts per node in total: one to enable `socket.dynamic` on each node, one to change the actual encryption settings on each node, and a final round to change `socket.dynamic` back to `false`.
 * Dynamic: No
 * Default: `false`
-* Introduced: [MariaDB 10.4.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10419-release-notes.md), [MariaDB 10.5.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md), [MariaDB 10.6.0](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md)
+* Introduced: [MariaDB 10.4.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10419-release-notes), [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes), [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
 
 
@@ -699,8 +699,8 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 * Dynamic: No
 * Default:
 
-  * >= [MariaDB 10.3.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.2.32](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.1.45](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes.md): Auto
-  * < [MariaDB 10.3.22](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10322-release-notes.md): [MariaDB 10.2.31](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10231-release-notes.md), [MariaDB 10.1.44](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10144-release-notes.md): `212992`
+  * >= [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.2.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10232-release-notes), [MariaDB 10.1.45](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes): Auto
+  * < [MariaDB 10.3.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10322-release-notes): [MariaDB 10.2.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10231-release-notes), [MariaDB 10.1.44](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10144-release-notes): `212992`
 
 
 
@@ -710,7 +710,7 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 * Description: Size in bytes of the send buffer used on the network sockets between nodes, passed on to the kernel via the SO_SNDBUF socket option.
 * Dynamic: No
 * Default:: Auto
-* Introduced: [MariaDB 10.3.23](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), [MariaDB 10.2.32](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md), [MariaDB 10.1.45](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes.md)
+* Introduced: [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.2.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10232-release-notes), [MariaDB 10.1.45](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes)
 
 
 
@@ -742,9 +742,9 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 #### `socket.ssl_cipher`
 
 
-* Description: TLS cipher to use. Implicitly enables the `[socket.ssl](#socket.ssl)` option. Since [MariaDB 10.2.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10218-release-notes.md) defaults to the value of the `[ssl_cipher](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#ssl_cipher)` system variable.
+* Description: TLS cipher to use. Implicitly enables the `[socket.ssl](#socket.ssl)` option. Since [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to the value of the `[ssl_cipher](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#ssl_cipher)` system variable.
 * Dynamic: No
-* Default: system default, before [MariaDB 10.2.18](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-10218-release-notes.md) defaults to `AES128-SHA`.
+* Default: system default, before [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to `AES128-SHA`.
 
 
 

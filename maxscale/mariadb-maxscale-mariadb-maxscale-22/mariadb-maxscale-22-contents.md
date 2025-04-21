@@ -78,7 +78,7 @@ contains all module specific configuration options and detailed explanations
 of their use.
 
 
-* [Avrorouter](maxscale-22-tutorials/mariadb-maxscale-22-avrorouter-tutorial.md)
+* [Avrorouter](maxscale-22-routers/mariadb-maxscale-22-avrorouter.md)
 * [Binlogrouter](../mariadb-maxscale-21-06/README.md)
 * [HintRouter](../mariadb-maxscale-21-06/README.md)
 * [Read Connection Router](maxscale-22-routers/mariadb-maxscale-22-readconnroute.md)

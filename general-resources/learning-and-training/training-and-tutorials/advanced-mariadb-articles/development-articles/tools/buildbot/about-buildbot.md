@@ -144,7 +144,7 @@ integration test framework. For more information on BuildBot, see the
 ## Volunteering to Run a Build Slave
 
 
-Many of our build hosts are run by [community](../../../../../../../server/reference/faq/community-questions/README.md) members, and we are always
+Many of our build hosts are run by [community](/kb/en/community/) members, and we are always
 looking for additional volunteers to help us cover additional platforms or
 build options in BuildBot.
 
@@ -158,7 +158,7 @@ lists.mariadb.org' with an offer to run a BuildBot slave.
 ## Setting up the Slave BuildBot
 
 
-See [buildbot-setup](buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-debian/buildbot-setup-for-virtual-machines-debian-4-i386.md).
+See [buildbot-setup](buildbot-setup/README.md).
 
 
 ### Pausing mysql-test-run.pl

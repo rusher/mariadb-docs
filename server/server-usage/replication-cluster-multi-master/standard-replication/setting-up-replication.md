@@ -5,13 +5,13 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 
-Getting [replication](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md) working involves steps on both the master server/s and steps on the replica server/s.
+Getting [replication](../README.md) working involves steps on both the master server/s and steps on the replica server/s.
 
 
 ## Setting up a Replication Replica with MariaDB-Backup
 
 
-If you would like to use [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../../server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
+If you would like to use [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../../server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
 
 
 ## Versions
@@ -44,7 +44,7 @@ binlog-format=mixed
 ```
 
 The server id is a unique number for each MariaDB/MySQL server in your network.
-[binlog-format](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) specifies how your statements are logged. This mainly affects the size of the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) that is sent between the Master and the Replicas.
+[binlog-format](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) specifies how your statements are logged. This mainly affects the size of the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) that is sent between the Master and the Replicas.
 
 
 Then execute the following SQL with the [mysql](../../../clients-and-utilities/mariadb-client/mysql-command-line-client.md) command line client:
@@ -67,7 +67,7 @@ log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md#mysql-80).
+For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#mysql-80).
 
 
 ## Settings to Check
@@ -106,7 +106,7 @@ SHOW MASTER STATUS;
 ```
 
 * Record the File and Position details. If binary logging has just been enabled, these will be blank.
-* Now, with the lock still in place, copy the data from the master to the slave. See [Backup, Restore and Import](../../../clients-and-utilities/backup-restore-and-import-clients/backup-restore-and-import-clients-backuprestore-data-exportimport-via-dbfor.md) for details on how to do this.
+* Now, with the lock still in place, copy the data from the master to the slave. See [Backup, Restore and Import](../../../clients-and-utilities/backup-restore-and-import-clients/README.md) for details on how to do this.
 * Note for live databases: You just need to make a local copy of the data, you don't need to keep the master locked until the slave has imported the data.
 * Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
 
@@ -179,7 +179,7 @@ Slave_SQL_Running: Yes
 * Replication from MySQL 5.6 with GTID, binlog_rows_query_log_events and ignorable events works. In this case MariaDB will remove the MySQL GTIDs and other unneeded events and instead adds its own GTIDs.
 * [Replication from MySQL 8.
 
-# to MariaDB](../../../../release-notes/mariadb-community-server/compatibility-and-differences/mariadb-vs-mysql-compatibility.md#mysql-80) requires [MariaDB 11.4.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes.md) or newer.
+# to MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#mysql-80) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
 
 
 ## See Also
@@ -193,8 +193,7 @@ Slave_SQL_Running: Yes
 * [Parallel Replication](parallel-replication.md)
 * [Replication and Binary Log System Variables](replication-and-binary-log-system-variables.md)
 * [Replication and Binary Log Status Variables](replication-and-binary-log-status-variables.md)
-* [Semisynchronous Replication](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md)
+* [Semisynchronous Replication](semisynchronous-replication.md)
 * [Delayed Replication](delayed-replication.md)
-* [Replication Compatibility Between MariaDB and MySQL](../../../../release-notes/mariadb-community-server/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql.md)
+* [Replication Compatibility Between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql)
 
-<span></span>

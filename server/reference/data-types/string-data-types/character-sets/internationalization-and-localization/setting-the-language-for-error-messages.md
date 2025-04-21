@@ -12,14 +12,14 @@ Error message localization is supported for the following languages:
 
 
 * Bulgarian
-* Chinese (from [MariaDB 10.4.25](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-4-series/mariadb-10425-release-notes.md), [10.5.16](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes.md), [10.6.8](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes.md), [10.7.4](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1074-release-notes.md), [10.8.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-8-series/mariadb-1083-release-notes.md))
+* Chinese (from [MariaDB 10.4.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10425-release-notes), [10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10516-release-notes), [10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1068-release-notes), [10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes), [10.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1083-release-notes))
 * Czech
 * Danish
 * Dutch
 * English
 * Estonian
 * French
-* Georgian (from [MariaDB 10.11.3](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes.md))
+* Georgian (from [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes))
 * German
 * Greek
 * Hindi
@@ -36,7 +36,7 @@ Error message localization is supported for the following languages:
 * Serbian
 * Slovak
 * Spanish
-* Swahili (from [MariaDB 11.1.2](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes.md))
+* Swahili (from [MariaDB 11.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes))
 * Swedish
 * Ukrainian
 
@@ -65,7 +65,7 @@ This system variable can be specified as command-line arguments to [mariadbd](..
 lc_messages=fr_CA
 ```
 
-The [lc_messages](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) system variable can also be changed dynamically with [SET GLOBAL](../../../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+The [lc_messages](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) system variable can also be changed dynamically with [SET GLOBAL](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```

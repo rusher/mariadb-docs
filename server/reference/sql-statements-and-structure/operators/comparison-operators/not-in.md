@@ -11,7 +11,7 @@ expr NOT IN (value,...)
 ## Description
 
 
-This is the same as NOT (expr [IN](../../../../../columnstore/columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x.md) (value,...)).
+This is the same as NOT (expr [IN](in.md) (value,...)).
 
 
 ## Examples

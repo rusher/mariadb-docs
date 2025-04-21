@@ -12,7 +12,7 @@ COUNT(expr)
 ## Description
 
 
-Returns a count of the number of non-NULL values of expr in the rows retrieved by a [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statement. The result is a [BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md) value. It is an [aggregate function](../special-functions/window-functions/aggregate-functions-as-window-functions.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
+Returns a count of the number of non-NULL values of expr in the rows retrieved by a [SELECT](../../data-manipulation/selecting-data/select.md) statement. The result is a [BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md) value. It is an [aggregate function](README.md), and so can be used with the [GROUP BY](../../data-manipulation/selecting-data/group-by.md) clause.
 
 
 COUNT(*) counts the total number of rows in a table.
@@ -21,7 +21,7 @@ COUNT(*) counts the total number of rows in a table.
 COUNT() returns 0 if there were no matching rows.
 
 
-COUNT() can be used as a [window function](../special-functions/window-functions/window-functions-overview.md).
+COUNT() can be used as a [window function](../special-functions/window-functions/README.md).
 
 
 ## Examples
@@ -56,7 +56,7 @@ SELECT COUNT(DISTINCT (name)) FROM student;
 +------------------------+
 ```
 
-As a [window function](../special-functions/window-functions/window-functions-overview.md)
+As a [window function](../special-functions/window-functions/README.md)
 
 
 ```
@@ -86,7 +86,7 @@ SELECT name, test, score, COUNT(score) OVER (PARTITION BY name)
 ## See Also
 
 
-* [SELECT](../../../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)
+* [SELECT](../../data-manipulation/selecting-data/select.md)
 * [COUNT DISTINCT](count-distinct.md)
-* [Window Functions](../special-functions/window-functions/window-functions-overview.md)
+* [Window Functions](../special-functions/window-functions/README.md)
 

@@ -21,13 +21,13 @@ It contains no [character set](character-sets/README.md), and comparison and sor
 If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
 
-Unlike [BINARY](../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) values, VARBINARYs are not right-padded when inserting.
+Unlike [BINARY](binary.md) values, VARBINARYs are not right-padded when inserting.
 
 
 ### Oracle Mode
 
 
-In [Oracle mode](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md), `RAW` is a synonym for `VARBINARY`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `RAW` is a synonym for `VARBINARY`.
 
 
 ## Examples
@@ -74,7 +74,7 @@ SELECT * FROM varbins ORDER BY a;
 +------+
 ```
 
-Using [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/charset.md) instead:
+Using [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
 
 ```
@@ -156,5 +156,5 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 * [VARCHAR](varchar.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](../../../../release-notes/mariadb-community-server/compatibility-and-differences/sql_modeoracle.md)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

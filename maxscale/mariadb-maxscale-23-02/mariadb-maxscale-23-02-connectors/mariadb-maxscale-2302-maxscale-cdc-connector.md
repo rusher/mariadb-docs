@@ -17,7 +17,7 @@ easily embedded into existing applications.
 
 To start using the connector, either download it from the
 [MariaDB website](https://mariadb.com/downloads/mariadb-tx/connector) or
-[configure the MaxScale repository](../../../server/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md)
+[configure the MaxScale repository](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/mariadb-package-repository-setup-and-usage)
 and install the `maxscale-cdc-connector` package.
 
 

@@ -50,17 +50,17 @@ occurs if you try to execute it, but it will show up in the profiling list.
 
 
 `SHOW PROFILE` displays detailed information about a single
-statement. Without the `FOR QUERY <em>n</em>` clause, the output
+statement. Without the `FOR QUERY n` clause, the output
 pertains to the most recently executed statement. If 
- `FOR QUERY <em>n</em>` is included,
+ `FOR QUERY n` is included,
  `SHOW PROFILE` displays information for statement *n*. The
 values of *n* correspond to
 the `Query_ID` values displayed by `SHOW PROFILES`.
 
 
-The `LIMIT <em>row_count</em>` clause may be given to limit the
+The `LIMIT row_count` clause may be given to limit the
 output to *row_count* rows. If `LIMIT` is given, 
- `OFFSET <em>offset</em>` may be added to begin the output offset
+ `OFFSET offset` may be added to begin the output offset
 rows into the full set of rows.
 
 
@@ -71,15 +71,15 @@ columns. The Status values are like the State values displayed by [SHOW PROCESSL
 Optional type values may be specified to display specific additional types of information:
 
 
-* `<strong>ALL</strong>` displays all information
-* `<strong>BLOCK IO</strong>` displays counts for block input and output operations
-* `<strong>CONTEXT SWITCHES</strong>` displays counts for voluntary and involuntary context switches
-* `<strong>CPU</strong>` displays user and system CPU usage times
-* `<strong>IPC</strong>` displays counts for messages sent and received
-* `<strong>MEMORY</strong>` is not currently implemented
-* `<strong>PAGE FAULTS</strong>` displays counts for major and minor page faults
-* `<strong>SOURCE</strong>` displays the names of functions from the source code, together with the name and line number of the file in which the function occurs
-* `<strong>SWAPS</strong>` displays swap counts
+* `ALL` displays all information
+* `BLOCK IO` displays counts for block input and output operations
+* `CONTEXT SWITCHES` displays counts for voluntary and involuntary context switches
+* `CPU` displays user and system CPU usage times
+* `IPC` displays counts for messages sent and received
+* `MEMORY` is not currently implemented
+* `PAGE FAULTS` displays counts for major and minor page faults
+* `SOURCE` displays the names of functions from the source code, together with the name and line number of the file in which the function occurs
+* `SWAPS` displays swap counts
 
 
 Profiling is enabled per session. When a session ends, its profiling information is lost.

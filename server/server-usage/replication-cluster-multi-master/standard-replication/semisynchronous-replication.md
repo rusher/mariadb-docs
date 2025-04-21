@@ -5,13 +5,13 @@
 ## Description
 
 
-[Standard MariaDB replication](README.md) is asynchronous, but MariaDB also provides a semisynchronous replication option. The feature is built into the server and is always available. In versions prior to [MariaDB 10.3](../../../../release-notes/mariadb-community-server/what-is-mariadb-103.md), it was a separate plugin that needed to be installed.
+[Standard MariaDB replication](README.md) is asynchronous, but MariaDB also provides a semisynchronous replication option. The feature is built into the server and is always available. In versions prior to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), it was a separate plugin that needed to be installed.
 
 
 With regular asynchronous replication, replicas request events from the primary's binary log whenever the replicas are ready. The primary does not wait for a replica to confirm that an event has been received.
 
 
-With fully synchronous replication, all replicas are required to respond that they have received the events. See [Galera Cluster](../galera-cluster/galera-cluster-status-variables.md).
+With fully synchronous replication, all replicas are required to respond that they have received the events. See [Galera Cluster](../galera-cluster/README.md).
 
 
 Semisynchronous replication waits for just one replica to acknowledge that it has received and logged the events.
@@ -29,13 +29,13 @@ Semisynchronous replication is built into the server. See [MDEV-13073](https://j
 Semisynchronous replication can be enabled by setting the relevant system variables on the primary and the replica.
 
 
-If a server needs to be able to switch between acting as a primary and a replica, then you can enable both the primary and replica system variables on the server. For example, you might need to do this if [MariaDB MaxScale](../../../../maxscale/mariadb-maxscale-14/maxscale-14-tutorials/maxscale-connection-routing-with-mysql-replication.md) is being used to enable [auto-failover or switchover](../../../../maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor.md#cluster-manipulation-operations) with [MariaDB Monitor](../../../../maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor.md).
+If a server needs to be able to switch between acting as a primary and a replica, then you can enable both the primary and replica system variables on the server. For example, you might need to do this if [MariaDB MaxScale](/kb/en/maxscale/) is being used to enable [auto-failover or switchover](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor#cluster-manipulation-operations) with [MariaDB Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor).
 
 
 ### Enabling Semisynchronous Replication on the Primary
 
 
-Semisynchronous replication can be enabled on the primary by setting the [rpl_semi_sync_master_enabled](#rpl_semi_sync_master_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+Semisynchronous replication can be enabled on the primary by setting the [rpl_semi_sync_master_enabled](#rpl_semi_sync_master_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -54,7 +54,7 @@ rpl_semi_sync_master_enabled=ON
 ### Enabling Semisynchronous Replication on the Replica
 
 
-Semisynchronous replication can be enabled on the replica by setting the [rpl_semi_sync_slave_enabled](#rpl_semi_sync_slave_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+Semisynchronous replication can be enabled on the replica by setting the [rpl_semi_sync_slave_enabled](#rpl_semi_sync_slave_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -109,7 +109,7 @@ When this occurs, the [Rpl_semi_sync_master_status](../optimization-and-tuning/s
 The number of times that semisynchronous replication has been switched off can be checked by looking at the value of the [Rpl_semi_sync_master_no_times](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) status variable.
 
 
-If you see a lot of timeouts like this in your environment, then you may want to change the timeout period. The timeout period can be changed by setting the [rpl_semi_sync_master_timeout](#rpl_semi_sync_master_timeout) system variable. It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+If you see a lot of timeouts like this in your environment, then you may want to change the timeout period. The timeout period can be changed by setting the [rpl_semi_sync_master_timeout](#rpl_semi_sync_master_timeout) system variable. It can be set dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -141,7 +141,7 @@ The wait point is configured by the [rpl_semi_sync_master_wait_point](#rpl_semi_
 * `AFTER_COMMIT`
 
 
-It can be set dynamically with [SET GLOBAL](../../../../connectors/mariadb-connector-cpp/setup-for-connector-cpp-examples.md#global-session). For example:
+It can be set dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 
 ```
@@ -161,7 +161,7 @@ When this variable is set to `AFTER_SYNC`, the primary performs the following st
 
 
 1. Prepares the transaction in the storage engine.
-1. Syncs the transaction to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+1. Syncs the transaction to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md).
 1. Waits for acknowledgement from the replica.
 1. Commits the transaction to the storage engine.
 1. Returns an acknowledgement to the client.
@@ -176,10 +176,10 @@ The effects of the `AFTER_SYNC` wait point are:
 * If the primary crashes, then failover should be lossless, because all transactions committed on the primary would have been replicated to the replica.
 
 
-* However, if the primary crashes, then its [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) may also contain events for transactions that were prepared by the storage engine and written to the binary log, but that were never actually committed by the storage engine. As part of the server's [automatic crash recovery](../../../server-management/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) process, the server may recover these prepared transactions when the server is restarted. This could cause the "old" crashed primary to become inconsistent with its former replicas when they have
+* However, if the primary crashes, then its [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) may also contain events for transactions that were prepared by the storage engine and written to the binary log, but that were never actually committed by the storage engine. As part of the server's [automatic crash recovery](../../../server-management/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md) process, the server may recover these prepared transactions when the server is restarted. This could cause the "old" crashed primary to become inconsistent with its former replicas when they have
 been reconfigured to replace the old primary with a new one.
 The old primary in such a scenario can be re-introduced only as a 
-[semisync slave](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_enabled).
+[semisync slave](semisynchronous-replication.md#rpl_semi_sync_slave_enabled).
 The server post-crash recovery of the server configured with `rpl_semi_sync_slave_enabled = ON`
 ensures through [MDEV-21117](https://jira.mariadb.org/browse/MDEV-21117) that the server will not have extra transactions.
 The reconfigured as semisync replica server's binlog gets truncated to discard transactions proven
@@ -192,7 +192,7 @@ When this variable is set to `AFTER_COMMIT`, the primary performs the following 
 
 
 1. Prepares the transaction in the storage engine.
-1. Syncs the transaction to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+1. Syncs the transaction to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md).
 1. Commits the transaction to the storage engine.
 1. Waits for acknowledgement from the replica.
 1. Returns an acknowledgement to the client.
@@ -214,11 +214,11 @@ The effects of the `AFTER_COMMIT` wait point are:
 | Version | Status | Introduced |
 | --- | --- | --- |
 | Version | Status | Introduced |
-| N/A | N/A | [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md) (feature is built-in, no longer available as a separate plugin) |
-| 1.0 | Stable | [MariaDB 10.1.13](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes.md) |
-| 1.0 | Gamma | [MariaDB 10.0.13](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10013-release-notes.md) |
-| 1.0 | Unknown | [MariaDB 10.0.11](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes.md) |
-| 1.0 | N/A | [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) |
+| N/A | N/A | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) (feature is built-in, no longer available as a separate plugin) |
+| 1.0 | Stable | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
+| 1.0 | Gamma | [MariaDB 10.0.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10013-release-notes) |
+| 1.0 | Unknown | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) |
+| 1.0 | N/A | [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) |
 
 
 
@@ -291,18 +291,18 @@ The effects of the `AFTER_COMMIT` wait point are:
   * When this variable is set to `AFTER_SYNC`, the primary performs the following steps:
 
     1. Prepares the transaction in the storage engine.
-    1. Syncs the transaction to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+    1. Syncs the transaction to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md).
     1. Waits for acknowledgement from the replica.
     1. Commits the transaction to the storage engine.
     1. Returns an acknowledgement to the client.
   * When this variable is set to `AFTER_COMMIT`, the primary performs the following steps:
 
     1. Prepares the transaction in the storage engine.
-    1. Syncs the transaction to the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md).
+    1. Syncs the transaction to the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md).
     1. Commits the transaction to the storage engine.
     1. Waits for acknowledgement from the replica.
     1. Returns an acknowledgement to the client.
-  * In [MariaDB 10.1.2](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes.md) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
+  * In [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
   * See [Configuring the Primary Wait Point](#configuring-the-primary-wait-point) for more information.
 * Commandline: `--rpl-semi-sync-master-wait-point=value`
 * Scope: Global
@@ -369,7 +369,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 ### `init-rpl-rol`
 
 
-* From [MariaDB 10.6.19](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes.md), [MariaDB 10.11.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes.md), [MariaDB 11.1.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes.md), [MariaDB 11.2.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes.md), [MariaDB 11.4.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes.md) and [MariaDB 11.5.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes.md), changes the condition for semi-sync recovery to truncate the [binlog](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) to instead use this option, when set to SLAVE. This avoids a possible error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-init-rpl-role).
+* From [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes) and [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), changes the condition for semi-sync recovery to truncate the [binlog](../../../server-management/server-monitoring-logs/binary-log/README.md) to instead use this option, when set to SLAVE. This avoids a possible error state where the replica’s state is ahead of the primary’s. See [-init-rpl-role](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-init-rpl-role).
 
 
 ### `rpl-semi-sync_master`
@@ -388,7 +388,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
-* Removed: [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
+* Removed: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 
 
@@ -408,7 +408,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
-* Removed: [MariaDB 10.3.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1033-release-notes.md)
+* Removed: [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)
 
 
 
@@ -417,4 +417,3 @@ The effects of the `AFTER_COMMIT` wait point are:
 
 For a list of status variables added when the plugin is installed, see [Semisynchronous Replication Plugin Status Variables](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md).
 
-<span></span>

@@ -1,7 +1,7 @@
 
 # Information Schema INNODB_SYS_TABLESPACES Table
 
-The [Information Schema](../../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `INNODB_SYS_TABLESPACES` table contains information about InnoDB tablespaces. Until [MariaDB 10.5](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) it was based on the internal `SYS_TABLESPACES` table. This internal table was removed in [MariaDB 10.6.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), so this Information Schema table has been repurposed
+The [Information Schema](../../README.md) `INNODB_SYS_TABLESPACES` table contains information about InnoDB tablespaces. Until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) it was based on the internal `SYS_TABLESPACES` table. This internal table was removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes), so this Information Schema table has been repurposed
 to directly reflect the filesystem (fil_system.space_list).
 
 
@@ -17,23 +17,23 @@ It has the following columns:
 | Column | Description |
 | SPACE | Unique InnoDB tablespace identifier. |
 | NAME | Database and table name separated by a backslash, or the uppercase InnoDB system table name. |
-| FLAG | 1 if a DATA DIRECTORY option has been specified in [CREATE TABLE](../../../../../../vectors/create-table-with-vectors.md), otherwise 0. |
-| FILE_FORMAT | [InnoDB file format](../../../../../../../storage-engines/innodb/innodb-file-format.md). Removed in [MariaDB 10.3.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-3-series/mariadb-1031-release-notes.md) |
-| ROW_FORMAT | [InnoDB storage format](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) used for this tablespace. If the [Antelope](../../../../../../../storage-engines/innodb/innodb-file-format.md#antelope) file format is used, this value is always Compact or Redundant. When a table's [checksum algorithm](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) is full_crc32 (the default from [MariaDB 10.5](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)), the value can only be Compressed or NULL. |
-| PAGE_SIZE | Page size in bytes for this tablespace. Until [MariaDB 10.5.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md), this was the value of the [innodb_page_size](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_page_size) variable. From [MariaDB 10.6.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md), contains the physical page size of a page (previously ZIP_PAGE_SIZE). |
-| ZIP_PAGE_SIZE | Zip page size for this tablespace. Removed in [MariaDB 10.6.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md). |
-| SPACE_TYPE | Tablespace type. Can be General for general tablespaces or Single for file-per-table tablespaces. Introduced [MariaDB 10.2.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md). Removed [MariaDB 10.5.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes.md). |
-| FS_BLOCK_SIZE | File system block size. Introduced [MariaDB 10.2.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md). |
-| FILE_SIZE | Maximum size of the file, uncompressed. Introduced [MariaDB 10.2.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md). |
-| ALLOCATED_SIZE | Actual size of the file as per space allocated on disk. Introduced [MariaDB 10.2.1](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-2-series/mariadb-1021-release-notes.md). |
-| FILENAME | Tablespace datafile path, previously part of the [INNODB_SYS_DATAFILES table](information-schema-innodb_sys_datafiles-table.md). Added in [MariaDB 10.6.0](../../../../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes.md). |
+| FLAG | 1 if a DATA DIRECTORY option has been specified in [CREATE TABLE](../../../../../data-definition/create/create-table.md), otherwise 0. |
+| FILE_FORMAT | [InnoDB file format](../../../../../../../storage-engines/innodb/innodb-file-format.md). Removed in [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes) |
+| ROW_FORMAT | [InnoDB storage format](../../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) used for this tablespace. If the [Antelope](../../../../../../../storage-engines/innodb/innodb-file-format.md#antelope) file format is used, this value is always Compact or Redundant. When a table's [checksum algorithm](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) is full_crc32 (the default from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)), the value can only be Compressed or NULL. |
+| PAGE_SIZE | Page size in bytes for this tablespace. Until [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), this was the value of the [innodb_page_size](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_page_size) variable. From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes), contains the physical page size of a page (previously ZIP_PAGE_SIZE). |
+| ZIP_PAGE_SIZE | Zip page size for this tablespace. Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
+| SPACE_TYPE | Tablespace type. Can be General for general tablespaces or Single for file-per-table tablespaces. Introduced [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes). Removed [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). |
+| FS_BLOCK_SIZE | File system block size. Introduced [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes). |
+| FILE_SIZE | Maximum size of the file, uncompressed. Introduced [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes). |
+| ALLOCATED_SIZE | Actual size of the file as per space allocated on disk. Introduced [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes). |
+| FILENAME | Tablespace datafile path, previously part of the [INNODB_SYS_DATAFILES table](information-schema-innodb_sys_datafiles-table.md). Added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
 
 
 
 ## Examples
 
 
-[MariaDB 10.4](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md):
+[MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 
 ```
@@ -54,7 +54,7 @@ DESC information_schema.innodb_sys_tablespaces;
 +----------------+---------------------+------+-----+---------+-------+
 ```
 
-From [MariaDB 10.4](../../../../../../../../../release-notes/mariadb-community-server/what-is-mariadb-104.md):
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 
 ```

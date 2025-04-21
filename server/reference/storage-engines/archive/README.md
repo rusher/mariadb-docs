@@ -10,7 +10,7 @@ A table using the `ARCHIVE` storage engine is stored in two files on disk. There
 New rows are inserted into a compression buffer and are flushed to disk when needed. SELECTs cause a flush. Sometimes, rows created by multi-row inserts are not visible until the statement is complete.
 
 
-`ARCHIVE` allows a maximum of one key. The key must be on an `[AUTO_INCREMENT](../innodb/auto_increment-handling-in-innodb.md)` column, and can be a `PRIMARY KEY` or a non-unique key. However, it has a limitation: it is not possible to insert a value which is lower than the next `AUTO_INCREMENT` value.
+`ARCHIVE` allows a maximum of one key. The key must be on an `[AUTO_INCREMENT](../../data-types/auto_increment.md)` column, and can be a `PRIMARY KEY` or a non-unique key. However, it has a limitation: it is not possible to insert a value which is lower than the next `AUTO_INCREMENT` value.
 
 
 
@@ -52,13 +52,13 @@ If you installed the plugin by providing the `[--plugin-load](../../../server-ma
 ## Characteristics
 
 
-* Supports [INSERT](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/insert-function.md) and [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md), but not [DELETE](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) or [REPLACE](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md).
+* Supports [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md), but not [DELETE](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [REPLACE](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md).
 * Data is compressed with zlib as it is inserted, making it very small.
-* Data is slow the select, as it needs to be uncompressed, and, besides the [query cache](../../plugins/other-plugins/query-cache-information-plugin.md), there is no cache.
+* Data is slow the select, as it needs to be uncompressed, and, besides the [query cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/query-cache.md), there is no cache.
 * Supports AUTO_INCREMENT (since MariaDB/MySQL 5.1.6), which can be a unique or a non-unique index.
 * Since MariaDB/MySQL 5.1.6, selects scan past BLOB columns unless they are specifically requested, making these queries much more efficient.
 * Does not support [spatial](../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) data types.
-* Does not support [transactions](../../../../connectors/mariadb-connector-cpp/transactions-with-mariadb-connector-cpp.md).
+* Does not support [transactions](../../sql-statements-and-structure/sql-statements/transactions/README.md).
 * Does not support foreign keys.
 * Does not support [virtual columns](../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md).
 * No storage limit.

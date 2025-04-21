@@ -122,7 +122,7 @@ MariaDB [(none)]> SHOW GRANTS FOR yourappname;
 Obviously replace these passwords with something that is a bit more secure than you see in this example for anything other than development purposes.
 
 
-17. Load up your database from your preexisting SQL script that contains [CREATE DATABASE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md); [USE DATABASE](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md); and [CREATE TABLE](../../../../../reference/sql-statements-and-structure/vectors/create-table-with-vectors.md) statements.
+17. Load up your database from your preexisting SQL script that contains [CREATE DATABASE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md); [USE DATABASE](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md); and [CREATE TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statements.
 
 
 Copy the external IP address of your VM instance from the Console in the [VM instances](https://console.cloud.google.com/compute/instances/) list.
@@ -135,4 +135,3 @@ Type:
 $ mariadb --host=ww.xx.yyy.zzz --port=3306 --user=admin --password=admin -e “SOURCE init.sql”
 (switch ww.xx.yyy.zzz for your IP address from step 17.
 
-<span></span>

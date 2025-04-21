@@ -34,7 +34,7 @@ ALTER USER user_name IDENTIFIED WITH mysql_native_password BY  'new_password'
 ### Client Authentication Plugins
 
 
-For clients that use the [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) library, MariaDB provides two client authentication plugins that are compatible with MySQL's SHA-256 authentication plugins:
+For clients that use the [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) library, MariaDB provides two client authentication plugins that are compatible with MySQL's SHA-256 authentication plugins:
 
 
 * `sha256_password`
@@ -48,7 +48,7 @@ When connecting with a [client or utility](/kb/en/clients-utilities/) to a serve
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
 ```
 
-For clients that use MariaDB's `libmysqlclient` library instead of [MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md), these client authentication plugins are not supported.
+For clients that use MariaDB's `libmysqlclient` library instead of [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), these client authentication plugins are not supported.
 
 
 #### `sha256_password`
@@ -69,7 +69,7 @@ The `caching_sha2_password` plugin is now the default authentication plugin in M
 ### Using the Plugin with MariaDB Connector/C
 
 
-[MariaDB Connector/C](../../../../connectors/mariadb-connector-cpp/mariadb-connector-cpp-sample-application.md) supports `sha256_password` and `caching_sha2_password` authentication using the [client authentication plugins](https://mariadb.com/kb/en/client-authentication-plugins) mentioned in the previous section.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) supports `sha256_password` and `caching_sha2_password` authentication using the [client authentication plugins](https://mariadb.com/kb/en/client-authentication-plugins) mentioned in the previous section.
 
 
 It has supported the `sha256_password` client authentication plugin since MariaDB Connector/C 3.0.2. See [CONC-229](https://jira.mariadb.org/browse/CONC-229) for more information.
@@ -81,7 +81,7 @@ It has supported the `caching_sha256_password` client authentication plugin sinc
 ### Using Plugins with MariaDB Connector/ODBC
 
 
-[MariaDB Connector/ODBC](../../../../connectors/mariadb-connector-odbc/about-mariadb-connector-odbc.md) supports `sha256_password` and `caching_sha2_password` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section.
+[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc) supports `sha256_password` and `caching_sha2_password` authentication using the [client authentication plugins](client-authentication-plugins) mentioned in the previous section.
 
 
 It has supported `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/ODBC 3.1.4. See [ODBC-241](https://jira.mariadb.org/browse/ODBC-241) for more information.
@@ -90,7 +90,7 @@ It has supported `sha256_password` and `caching_sha2_password` authentication si
 ### Using Plugins with MariaDB Connector/J
 
 
-[MariaDB Connector/J](../../../../connectors/mariadb-connector-j/about-mariadb-connector-j.md) supports `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/J 2.5.0. See [CONJ-327](https://jira.mariadb.org/browse/CONJ-327) and [CONJ-663](https://jira.mariadb.org/browse/CONJ-663) for more information.
+[MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) supports `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/J 2.5.0. See [CONJ-327](https://jira.mariadb.org/browse/CONJ-327) and [CONJ-663](https://jira.mariadb.org/browse/CONJ-663) for more information.
 
 
 note: The version 3.x being a rewrite of the connector, only caching_sha2_password is implemented, since sha256_password is only implemented on EOL version.

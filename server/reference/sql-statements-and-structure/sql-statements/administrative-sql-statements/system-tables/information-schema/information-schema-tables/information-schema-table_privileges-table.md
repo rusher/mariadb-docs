@@ -1,7 +1,7 @@
 
 # Information Schema TABLE_PRIVILEGES Table
 
-The [Information Schema](../../../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) `TABLE_PRIVILEGES` table contains table privilege information derived from the [mysql.tables_priv](../../the-mysql-database-tables/mysql-tables_priv-table.md) grant table.
+The [Information Schema](../README.md) `TABLE_PRIVILEGES` table contains table privilege information derived from the [mysql.tables_priv](../../the-mysql-database-tables/mysql-tables_priv-table.md) grant table.
 
 
 It has the following columns:

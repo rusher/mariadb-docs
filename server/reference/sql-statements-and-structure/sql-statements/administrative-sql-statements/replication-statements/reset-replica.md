@@ -16,8 +16,8 @@ RESET REPLICA ["connection_name"] [ALL]  [FOR CHANNEL "connection_name"].
 ## Description
 
 
-RESET REPLICA makes the replica forget its [replication](README.md) position in the
-master's [binary log](../../../../storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md). This statement is meant to be used for a clean
+RESET REPLICA makes the replica forget its [replication](../../../../../server-usage/replication-cluster-multi-master/README.md) position in the
+master's [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md). This statement is meant to be used for a clean
 start. It deletes the master.info and relay-log.info files, all the
 [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files, and starts a new relay log file. To use RESET REPLICA,
 the replica threads must be stopped (use [STOP REPLICA](stop-replica.md) if
@@ -61,14 +61,14 @@ If there is only one nameless primary, or the default primary (as specified by t
 
 
 
-##### MariaDB starting with [10.7.0](../../../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-7-series/mariadb-1070-release-notes.md)
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as
 using the channel_name directly after `RESET REPLICA`.
 
 
 
 ##### MariaDB starting with [11.6.0](https://mariadb.com/kb/en/mariadb-1160-release-notes/)
-From [MariaDB 11.6](../../../../../../release-notes/mariadb-community-server/what-is-mariadb-116.md), RESET REPLICA resets the Master/Slave_last_event_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
+From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), RESET REPLICA resets the Master/Slave_last_event_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
 
 
 ## See Also

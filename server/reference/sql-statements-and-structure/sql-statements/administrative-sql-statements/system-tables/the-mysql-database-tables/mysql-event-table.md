@@ -1,13 +1,13 @@
 
 # mysql.event Table
 
-The `mysql.event` table contains information about MariaDB [events](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md). Similar information can be obtained by viewing the [INFORMATION_SCHEMA.EVENTS](../information-schema/information-schema-tables/information-schema-events-table.md) table, or with the [SHOW EVENTS](../../show/show-events.md) and [SHOW CREATE EVENT](../../show/show-create-event.md) statements.
+The `mysql.event` table contains information about MariaDB [events](../../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/README.md). Similar information can be obtained by viewing the [INFORMATION_SCHEMA.EVENTS](../information-schema/information-schema-tables/information-schema-events-table.md) table, or with the [SHOW EVENTS](https://mariadb.com/kb/en/show-event) and [SHOW CREATE EVENT](../../show/show-create-event.md) statements.
 
 
 The table is upgraded live, and there is no need to restart the server if the table has changed.
 
 
-This table uses the [Aria](../../../../../storage-engines/s3-storage-engine/aria_s3_copy.md) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/README.md) storage engine.
 
 
 The `mysql.event` table contains the following fields:

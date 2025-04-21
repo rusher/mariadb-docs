@@ -7,7 +7,7 @@ Data mapping from HBase to SQL
 The Jira task for this is [MDEV-122](https://jira.mariadb.org/browse/MDEV-122)
 
 
-Nobody is working on this feature ATM. See [Cassandra Storage Engine](../../../../../../server/reference/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-issues.md) for a related development that has reached the release stage.
+Nobody is working on this feature ATM. See [Cassandra Storage Engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview) for a related development that has reached the release stage.
 
 
 This page describes a feature that's under development. The feature has not been released (even in beta), its interface and function may change, etc.

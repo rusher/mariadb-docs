@@ -2,11 +2,11 @@
 # TokuDB System Variables
 
 
-TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md) and has been been removed in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../myrocks/myrocks-in-mariadb-102-vs-mariadb-103.md) as a long-term migration path.
+TokuDB has been deprecated by its upstream maintainer. It is disabled from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) and has been been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) - [MDEV-19780](https://jira.mariadb.org/browse/MDEV-19780). We recommend [MyRocks](../myrocks/README.md) as a long-term migration path.
 
 
 
-This page lists system variables that are related to [TokuDB](tokudb-resources.md).
+This page lists system variables that are related to [TokuDB](README.md).
 
 
 See [Server System Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) for a complete list of all options, statis variable and system variables in MariaDB.
@@ -412,9 +412,9 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 #### `tokudb_pk_insert_mode`
 
 
-* Description: Mode for primary key inserts using either [REPLACE INTO](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/replace-function.md) or [INSERT IGNORE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
+* Description: Mode for primary key inserts using either [REPLACE INTO](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) or [INSERT IGNORE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
 
-  * `0`: Fast inserts. [Triggers](../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/triggers-and-implicit-locks.md) may not work, and [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) will not work
+  * `0`: Fast inserts. [Triggers](../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md) may not work, and [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) will not work
   * `1`: Fast inserts if no triggers are defined, otherwise inserts may be slow. Row-based replication will not work.
   * `2`: Slow inserts. Triggers and row-based replication work normally.
 * Scope: Global, Session
@@ -475,7 +475,7 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 #### `tokudb_row_format`
 
 
-* Description: Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](../../sql-statements-and-structure/vectors/create-table-with-vectors.md) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), and before [MariaDB 10.0.10](../../../../release-notes/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes.md), the compression type did not default to this value. See [TokuDB Differences](tokudb-differences.md).
+* Description: Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), and before [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes), the compression type did not default to this value. See [TokuDB Differences](tokudb-differences.md).
 
   * `tokudb_default`, `tokudb_zlib`: Use the zlib library,
   * `tokudb_fast`, `tokudb_quicklz`: Use the quicklz library, the lightest compression with low CPU usage,

@@ -521,12 +521,12 @@ The `--ftwrl-wait-query-type` option supports the following query types. The def
 | --- | --- |
 | Option | Description |
 | ALL | Waits until all queries complete before issuing the global lock |
-| SELECT | Waits until [SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md) statements complete before issuing the global lock |
-| UPDATE | Waits until [UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md) statements complete before issuing the global lock |
+| SELECT | Waits until [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements complete before issuing the global lock |
+| UPDATE | Waits until [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statements complete before issuing the global lock |
 
 
 
-When Mariabackup runs, it issues a global lock to prevent data from changing during the backup process. When it encounters a statement in the process of executing, it waits until the statement is finished before issuing the global lock. Using this option, you can modify this default behavior to ensure that it waits only for certain query types, such as for `[SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)` and `[UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)` statements.
+When Mariabackup runs, it issues a global lock to prevent data from changing during the backup process. When it encounters a statement in the process of executing, it waits until the statement is finished before issuing the global lock. Using this option, you can modify this default behavior to ensure that it waits only for certain query types, such as for `[SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)` and `[UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)` statements.
 
 
 ```
@@ -557,7 +557,7 @@ $ mariabackup --backup \
 ### `--ftwrl-wait-timeout`
 
 
-Defines the timeout to wait for queries before trying to acquire the global lock. The global lock refers to `[BACKUP STAGE BLOCK_COMMIT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md#backup-stage-block_commit)`. The global lock refers to `[FLUSH TABLES WITH READ LOCK (FTWRL)](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md#the-purpose-of-flush-tables-table_list-with-read-lock)`.
+Defines the timeout to wait for queries before trying to acquire the global lock. The global lock refers to `[BACKUP STAGE BLOCK_COMMIT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md#backup-stage-block_commit)`. The global lock refers to `[FLUSH TABLES WITH READ LOCK (FTWRL)](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md#the-purpose-of-flush-tables-table_list-with-read-lock)`.
 
 
 ```
@@ -573,7 +573,7 @@ If the `--ftwrl-wait-timeout` is set to 0, then Mariabackup tries to acquire the
 If the `--ftwrl-wait-timeout` is set to a non-zero value, then Mariabackup waits for the configured number of seconds until trying to acquire the global lock.
 
 
-Starting in [MariaDB 10.5.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes.md), Mariabackup will exit if it can't acquire the global lock after waiting for the configured number of seconds. In earlier versions, it could wait for the global lock indefinitely, even if `--ftwrl-wait-timeout` was set to a non-zero value.
+Starting in [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), Mariabackup will exit if it can't acquire the global lock after waiting for the configured number of seconds. In earlier versions, it could wait for the global lock indefinitely, even if `--ftwrl-wait-timeout` was set to a non-zero value.
 
 
 ```
@@ -585,13 +585,13 @@ $ mariabackup --backup \
 ### `--galera-info`
 
 
-Defines whether you want to back up information about a [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) node's state.
+Defines whether you want to back up information about a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node's state.
 
 
-When this option is used, Mariabackup creates an additional file called `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`, which records information about a [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) node's state. It records the values of the `[wsrep_local_state_uuid](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_state_uuid)` and `[wsrep_last_committed](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_last_committed)` status variables.
+When this option is used, Mariabackup creates an additional file called `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`, which records information about a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node's state. It records the values of the `[wsrep_local_state_uuid](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_state_uuid)` and `[wsrep_last_committed](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_last_committed)` status variables.
 
 
-You should only use this option when backing up a [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) node. If the server is not a [Galera Cluster](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/galera-functions/README.md) node, then this option has no effect.
+You should only use this option when backing up a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node. If the server is not a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node, then this option has no effect.
 
 
 This option, when enabled and used with [GTID replication](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), will rotate the binary logs at backup time.
@@ -618,7 +618,7 @@ When using this option, Mariabackup records its operation in a table on the Mari
 $ mariabackup --backup --history=backup_all
 ```
 
-Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
+Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
 
 
 Mariabackup will also record this in the `[xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info)` file.
@@ -659,7 +659,7 @@ Defines whether you want to take an increment backup, based on another backup. T
 mariabackup --innobackupex --incremental
 ```
 
-Using this option with the `[--backup](#-backup)` command option makes the operation incremental rather than a complete overwrite. When this option is specified, either the `[--incremental-lsn](#-incremental-lsn) or `[--incremental-basedir](#-incremental-basedir)` options can also be given. If neither option is given, option `[--incremental-basedir](#-incremental-basedir)` is used by default, set to the first timestamped backup directory in the backup base directory.`
+Using this option with the `[--backup](#-backup)` command option makes the operation incremental rather than a complete overwrite. When this option is specified, either the `[--incremental-lsn](#-incremental-lsn) or`[--incremental-basedir](#-incremental-basedir)`options can also be given. If neither option is given, option`[--incremental-basedir](#-incremental-basedir)`is used by default, set to the first timestamped backup directory in the backup base directory.`
 
 
 ```
@@ -747,7 +747,7 @@ $ mariabackup --backup \
      --incremental-history-name=morning_backup
 ```
 
-Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](../../../../release-notes/mariadb-community-server/what-is-mariadb-1011.md), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
+Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
 
 
 Mariabackup will also record this in the `[xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info)` file.
@@ -885,7 +885,7 @@ $ mariabackup --backup \
 ### `--innodb-checksum-algorithm`
 
 
-[innodb_checksum_algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) was deprecated in [MariaDB 10.5.10](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes.md) and removed in [MariaDB 10.6](../../../../release-notes/mariadb-community-server/what-is-mariadb-106.md).
+[innodb_checksum_algorithm](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) was deprecated in [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 In earlier versions, it is used to define the checksum algorithm.
@@ -999,7 +999,7 @@ Mariabackup initializes its own embedded instance of InnoDB using the same confi
 ### `--innodb-flush-method`
 
 
-Defines the data flush method. Ignored from [MariaDB 11.0](../../../../release-notes/mariadb-community-server/what-is-mariadb-110.md).
+Defines the data flush method. Ignored from [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110).
 
 
 ```
@@ -1251,7 +1251,7 @@ Defines the query type the utility can kill to unblock the global lock.
 --kill-long-query-type=ALL | UPDATE | SELECT
 ```
 
-When Mariabackup encounters a query that sets a global lock, it can kill the query in order to free up MariaDB Server for the backup. Using this option, you can choose the types of query it kills: `[SELECT](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/select-random-ranges-and-select-random-point.md)`, `[UPDATE](../../../../general-resources/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/buildbot-setup/buildbot-setup-for-virtual-machines/buildbot-setup-for-virtual-machines-additional-steps/update-debian-4-mirrors-for-buildbot-vms.md)`, or both set with `ALL`. The default is `ALL`.
+When Mariabackup encounters a query that sets a global lock, it can kill the query in order to free up MariaDB Server for the backup. Using this option, you can choose the types of query it kills: `[SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)`, `[UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)`, or both set with `ALL`. The default is `ALL`.
 
 
 ```
@@ -1309,7 +1309,7 @@ $ mariabackup --backup \
 Continue backup if InnoDB corrupted pages are found. The pages are logged in `innodb_corrupted_pages` and backup is finished with error. [--prepare](#-prepare) will try to fix corrupted pages. If `innodb_corrupted_pages` exists after [--prepare](#-prepare) in base backup directory, backup still contains corrupted pages and can not be considered as consistent.
 
 
-Added in [MariaDB 10.5.9](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes.md)
+Added in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes)
 
 
 ### `--move-back`
@@ -1347,7 +1347,7 @@ Mariabackup locks the database by default when it runs. This option disables sup
 When backing up Percona Server, Mariabackup would use backup locks by default. To be specific, backup locks refers to the `LOCK TABLES FOR BACKUP` and `LOCK BINLOG FOR BACKUP` statements. This option can be used to disable support for Percona Server's backup locks. This option has no effect when the server does not support Percona's backup locks.
 
 
-Deprecated and has no effect from [MariaDB 10.11.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md) as MariaDB will now always use backup locks for better performance. See [MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932).
+Deprecated and has no effect from [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes) and [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes) as MariaDB will now always use backup locks for better performance. See [MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932).
 
 
 ```
@@ -1553,7 +1553,7 @@ By default, Mariabackup will not commit or rollback uncommitted XA transactions,
 
 
 
-##### MariaDB starting with [10.5](../../../../release-notes/mariadb-community-server/what-is-mariadb-105.md)
+##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 Mariabackup's `--rollback-xa` option is not present because the server has more robust ways of handling uncommitted XA transactions.
 
 
@@ -1576,7 +1576,7 @@ $ mariabackup --backup --rsync
 This option is not compatible with the `[--stream](#-stream)` option.
 
 
-Deprecated and has no effect from [MariaDB 10.11.8](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes.md), [MariaDB 11.0.6](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes.md), [MariaDB 11.1.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes.md) and [MariaDB 11.2.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes.md) as rsync will not work on tables that are in use. See [MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932).
+Deprecated and has no effect from [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes) and [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes) as rsync will not work on tables that are in use. See [MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932).
 
 
 ### `--safe-slave-backup`
@@ -1685,13 +1685,13 @@ $ mariabackup --backup --skip-secure-auth
 Prints the binary log position and the name of the primary server.
 
 
-If the server is a [replica](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/README.md), then this option causes Mariabackup to print the hostname of the replica's replication primary and the [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position of the [replica's SQL thread](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#replica-sql-thread) to `stdout`.
+If the server is a [replica](../../../server-usage/replication-cluster-multi-master/README.md), then this option causes Mariabackup to print the hostname of the replica's replication primary and the [binary log](../../server-monitoring-logs/binary-log/README.md) file and position of the [replica's SQL thread](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md#replica-sql-thread) to `stdout`.
 
 
 This option also causes Mariabackup to record this information as a [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command that can be used to set up a new server as a replica of the original server's primary after the backup has been restored. This information will be written to to the [xtrabackup_slave_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file.
 
 
-Mariabackup does **not** check if [GTIDs](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) system variable is non-empty, then it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options using the primary's [binary log](../../../reference/storage-engines/innodb/binary-log-group-commit-and-innodb-flushing-performance.md) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
+Mariabackup does **not** check if [GTIDs](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) system variable is non-empty, then it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options using the primary's [binary log](../../server-monitoring-logs/binary-log/README.md) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
 
 
 ```
@@ -2132,7 +2132,7 @@ Defines the username for connecting to the MariaDB Server.
 -u name
 ```
 
-When Mariabackup runs, it connects to the specified MariaDB Server to get its backups. Using this option, you can define the database user used for authentication. Starting from [MariaDB 10.5.24](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-24-release-notes.md), [MariaDB 10.6.17](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes.md), [MariaDB 10.11.7](../../../../release-notes/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes.md), [MariaDB 11.0.5](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes.md), [MariaDB 11.1.4](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes.md), [MariaDB 11.2.3](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes.md), [MariaDB 11.3.2](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes.md), [MariaDB 11.4.1](../../../../release-notes/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes.md), if the `--user` option is ommited, the user name is detected from the OS.
+When Mariabackup runs, it connects to the specified MariaDB Server to get its backups. Using this option, you can define the database user used for authentication. Starting from [MariaDB 10.5.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10-5-24-release-notes), [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes), [MariaDB 11.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes), [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes), if the `--user` option is ommited, the user name is detected from the OS.
 
 
 ```
@@ -2163,4 +2163,3 @@ Using this option, you can print the Mariabackup version information to stdout.
 ```
 $ mariabackup --version
 ```
-<span></span>

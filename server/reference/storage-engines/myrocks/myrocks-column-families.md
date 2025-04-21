@@ -1,7 +1,7 @@
 
 # MyRocks Column Families
 
-[MyRocks](myrocks-in-mariadb-102-vs-mariadb-103.md) stores data in column families. These are similar to tablespaces.
+[MyRocks](README.md) stores data in column families. These are similar to tablespaces.
 By default, the data is stored in the `default` column family.
 
 

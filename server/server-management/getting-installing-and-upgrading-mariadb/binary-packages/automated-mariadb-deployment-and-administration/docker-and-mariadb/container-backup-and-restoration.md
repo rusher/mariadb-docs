@@ -50,7 +50,7 @@ $ docker exec mariadb \
 ## Physical Backups
 
 
-[mariadb-backup](../../../migrating-to-mariadb/migrating-to-mariadb-from-sql-server/mariadb-backups-overview-for-sql-server-users.md) is in the Docker Official Image.
+[mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/README.md) is in the Docker Official Image.
 
 
 ### Backup
@@ -59,7 +59,7 @@ $ docker exec mariadb \
 Mariabackup can create a backup as follows:
 
 
-To perform a backup using [Mariabackup](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md), a second container is started that shares the original container's data directory. An additional volume for the backup needs to be included in the second backup instance. Authentication against the MariaDB database instance is required to successfully complete the backup. In the example below, a `mysql@localhost` user is used with the MariaDB server's Unix socket shared with the backup container.
+To perform a backup using [Mariabackup](../../../../backing-up-and-restoring-databases/mariabackup/README.md), a second container is started that shares the original container's data directory. An additional volume for the backup needs to be included in the second backup instance. Authentication against the MariaDB database instance is required to successfully complete the backup. In the example below, a `mysql@localhost` user is used with the MariaDB server's Unix socket shared with the backup container.
 
 
 Note: Privileges listed here are for 10.5+. For an exact list, see [Mariabackup: Authentication and Privileges](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges).
