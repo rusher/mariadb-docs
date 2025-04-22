@@ -17,7 +17,7 @@ Returns the current MariaDB user name and host name, given when authenticating t
 Note that the value of USER() may differ from the value of [CURRENT_USER()](current_user.md), which is the user used to authenticate the current client. [CURRENT_ROLE()](current_role.md) returns the current active role.
 
 
-`SYSTEM_USER()` and, prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), [SESSION_USER](session_user.md), are synonyms for `USER()`.
+`SYSTEM_USER()` and, prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), [SESSION_USER](session_user.md), are synonyms for `USER()`.
 
 
 Statements using the `USER()` function or one of its synonyms are not [safe for statement level replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).

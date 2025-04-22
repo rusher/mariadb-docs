@@ -47,7 +47,7 @@ GROUP_CONCAT([DISTINCT] expr [,expr ...]
 ### LIMIT
 
 
-The [LIMIT](../../data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`. This was not possible prior to [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes).
+The [LIMIT](../../data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`. This was not possible prior to [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes).
 
 
 ## Examples
@@ -82,7 +82,7 @@ SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ')
 The former example shows the difference between the `GROUP_CONCAT`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the concatenated hosts), and the `SELECT`'s [ORDER BY](../../data-manipulation/selecting-data/order-by.md) (which sorts the rows).
 
 
-From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), [LIMIT](../../data-manipulation/selecting-data/limit.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
+From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), [LIMIT](../../data-manipulation/selecting-data/limit.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
 
 
 ```

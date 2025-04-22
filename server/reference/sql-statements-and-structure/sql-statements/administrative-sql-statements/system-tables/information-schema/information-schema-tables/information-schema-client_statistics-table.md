@@ -25,8 +25,8 @@ It contains the following columns:
 | ROWS_DELETED | BIGINT(21) | The number of rows deleted by this client's connections. |
 | ROWS_INSERTED | BIGINT(21) | The number of rows inserted by this client's connections. |
 | ROWS_UPDATED | BIGINT(21) | The number of rows updated by this client's connections. |
-| KEY_READ_HITS | BIGINT(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| KEY_READ_MISSES | BIGINT(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY_READ_HITS | BIGINT(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY_READ_MISSES | BIGINT(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
 | SELECT_COMMANDS | BIGINT(21) | The number of [SELECT](../../../../data-manipulation/selecting-data/select.md) commands executed from this client's connections. |
 | UPDATE_COMMANDS | BIGINT(21) | The number of [UPDATE](../../../../data-manipulation/changing-deleting-data/update.md) commands executed from this client's connections. |
 | OTHER_COMMANDS | BIGINT(21) | The number of other commands executed from this client's connections. |
@@ -36,8 +36,8 @@ It contains the following columns:
 | LOST_CONNECTIONS | BIGINT(21) | The number of this client's connections that were terminated uncleanly. |
 | ACCESS_DENIED | BIGINT(21) | The number of times this client's connections issued commands that were denied. |
 | EMPTY_QUERIES | BIGINT(21) | The number of times this client's connections sent queries that returned no results to the server. |
-| TOTAL_SSL_CONNECTIONS | BIGINT(21) | The number of [TLS connections](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) created for this client. (>= [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)) |
-| MAX_STATEMENT_TIME_EXCEEDED | BIGINT(21) | The number of times a statement was aborted, because it was executed longer than its [MAX_STATEMENT_TIME](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md) threshold. (>= [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)) |
+| TOTAL_SSL_CONNECTIONS | BIGINT(21) | The number of [TLS connections](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) created for this client. (>= [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)) |
+| MAX_STATEMENT_TIME_EXCEEDED | BIGINT(21) | The number of times a statement was aborted, because it was executed longer than its [MAX_STATEMENT_TIME](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md) threshold. (>= [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)) |
 
 
 

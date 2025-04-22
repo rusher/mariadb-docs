@@ -2,13 +2,13 @@
 # Plans for MariaDB 10.4
 
 
-"[What is MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)" shows all features already implemented for 10.4.
+"[What is MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)" shows all features already implemented for 10.4.
 
 
-[MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) is stable, so no new features will be added to 10.4. See [Plans for MariaDB 10.5](plans-for-mariadb-105.md) instead.
+[MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) is stable, so no new features will be added to 10.4. See [Plans for MariaDB 10.5](plans-for-mariadb-105.md) instead.
 
 
-Planning for 10.4 began at the 2017 MariaDB Developer's Unconference in Shenzhen, and further discussions were held at the 2018 Developers Unconference in New York. The features below were considered for inclusion in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104).
+Planning for 10.4 began at the 2017 MariaDB Developer's Unconference in Shenzhen, and further discussions were held at the 2018 Developers Unconference in New York. The features below were considered for inclusion in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104).
 
 
 ## Very Likely
@@ -159,7 +159,7 @@ We manage our development plans in JIRA, so the definitive list will be there. [
 
 * [Current tasks for 10.4](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.4)%20ORDER%20BY%20priority%20DESC)
 * [10.4 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.4)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 10.4?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
-* [What is MariaDB 10.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
-* [What is MariaDB 10.2?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* [What is MariaDB 10.4?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+* [What is MariaDB 10.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [What is MariaDB 10.2?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 

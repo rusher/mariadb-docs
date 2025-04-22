@@ -52,7 +52,7 @@ SHOW WARNINGS;
 
 
 
-##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
 The `EXPLAIN FOR CONNECTION` syntax was added for MySQL compatibility.
 
 
@@ -60,7 +60,7 @@ The `EXPLAIN FOR CONNECTION` syntax was added for MySQL compatibility.
 
 
 
-##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
+##### MariaDB starting with [10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
 `SHOW EXPLAIN [FORMAT=JSON] FOR <connection_id>` extends `SHOW EXPLAIN` to return more detailed JSON output. 
 
 

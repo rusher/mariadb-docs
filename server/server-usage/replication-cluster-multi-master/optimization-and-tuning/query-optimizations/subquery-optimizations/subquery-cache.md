@@ -205,5 +205,5 @@ order by
 * [Query cache](../../buffers-caches-and-threads/query-cache.md)
 * [](https://mysqlmaniac.com/2012/what-about-the-subqueries/) blog post describing impact of subquery cache optimization on queries used by DynamicPageList MediaWiki extension
 * [mariadb-subquery-cache-in-real-use-case.html](https://varokism.blogspot.ru/2013/06/mariadb-subquery-cache-in-real-use-case.html) Another use case from the real world
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

@@ -33,7 +33,7 @@ The columns shown in `SHOW PROCESSLIST` are:
 | HOST | The host the client is connected to. |
 | DB | The default database of the process (NULL if no default). |
 | COMMAND | The command type. See [Thread Command Values](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-command-values.md). |
-| TIME | The amount of time, in seconds, the process has been in its current state. For a replica SQL thread before [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this is the time in seconds between the last replicated event's timestamp and the replica machine's real time. |
+| TIME | The amount of time, in seconds, the process has been in its current state. For a replica SQL thread before [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this is the time in seconds between the last replicated event's timestamp and the replica machine's real time. |
 | STATE | See [Thread States](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-states/README.md). |
 | INFO | The statement being executed. |
 | PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](../../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)). |

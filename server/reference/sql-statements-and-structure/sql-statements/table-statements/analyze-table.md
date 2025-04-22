@@ -37,10 +37,10 @@ This statement requires [SELECT and INSERT privileges](../account-management-sql
 By default, ANALYZE TABLE statements are written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md) and will be [replicated](../../../../server-usage/replication-cluster-multi-master/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 
-From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), `ANALYZE TABLE` statements are not logged to the binary log if [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../../server-usage/replication-cluster-multi-master/standard-replication/read-only-replicas.md).
+From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), `ANALYZE TABLE` statements are not logged to the binary log if [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../../server-usage/replication-cluster-multi-master/standard-replication/read-only-replicas.md).
 
 
-From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes) `ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
+From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes) `ANALYZE TABLE` is non-blocking and non-intrusive. A connection will start using new statistics for the query following the completion of the `ANALYZE TABLE`.
 
 
 `ANALYZE TABLE` is also supported for partitioned tables. You

@@ -5,7 +5,7 @@
 Normally, adding a column to a table requires the full table to be rebuilt. The complexity of the operation is proportional to the size of the table, or O(n·m) where n is the number of rows in the table and m is the number of indexes.
 
 
-In [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and later, the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement supports [online DDL](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#online-ddl) for storage engines that have implemented the relevant online DDL [algorithms](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) and [locking strategies](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock).
+In [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and later, the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement supports [online DDL](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#online-ddl) for storage engines that have implemented the relevant online DDL [algorithms](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) and [locking strategies](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock).
 
 
 The [InnoDB](../README.md) storage engine has implemented online DDL for many operations. These online DDL optimizations allow concurrent DML to the table in many cases, even if the table needs to be rebuilt.
@@ -49,7 +49,7 @@ The operation is also crash safe. If the server is killed while executing an ins
 ## Limitations
 
 
-* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) only applies when the added columns appear last in the table. The place specifier `LAST` is the default. If `AFTER` col is specified, then col must be the last column, or the operation will require the table to be rebuilt. In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this restriction was lifted.
+* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) only applies when the added columns appear last in the table. The place specifier `LAST` is the default. If `AFTER` col is specified, then col must be the last column, or the operation will require the table to be rebuilt. In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this restriction was lifted.
 
 
 * If the table contains a hidden `FTS_DOC_ID` column due to a [FULLTEXT INDEX](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md), then instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) will not be possible.
@@ -64,7 +64,7 @@ The operation is also crash safe. If the server is killed while executing an ins
 * Instant [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) is not available for [ROW_FORMAT=COMPRESSED](../innodb-row-formats/innodb-row-formats-overview.md).
 
 
-* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), [ALTER TABLE … DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) requires the table to be rebuilt. In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this restriction was lifted.
+* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), [ALTER TABLE … DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) requires the table to be rebuilt. In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this restriction was lifted.
 
 
 ## Example

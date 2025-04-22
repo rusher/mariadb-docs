@@ -134,7 +134,7 @@ See [Progress Reporting](../../../../mariadb-internals/using-mariadb-with-your-p
 
 
 
-##### MariaDB starting with [10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
+##### MariaDB starting with [10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
 The [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) clause allows one to constrain a primary or unique index such that [application-time periods](../../../temporal-tables/application-time-periods.md) cannot overlap.
 
 
@@ -172,7 +172,7 @@ SHOW WARNINGS;
 +-------+------+-------------------------+
 ```
 
-From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), creating a unique index for an [application-time period table](../../../temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) constraint:
+From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), creating a unique index for an [application-time period table](../../../temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 
 ```

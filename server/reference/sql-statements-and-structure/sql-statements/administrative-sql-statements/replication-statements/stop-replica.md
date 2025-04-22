@@ -9,13 +9,13 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 ```
-STOP REPLICA ["connection_name"] [thread_type [, thread_type] ... ] [FOR CHANNEL "connection_name"]
+STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ] [FOR CHANNEL "connection_name"]
 
-STOP ALL REPLICAS [thread_type [, thread_type]]
+STOP ALL { SLAVES | REPLICAS } [thread_type [, thread_type]]
 
-STOP REPLICA ["connection_name"] [thread_type [, thread_type] ... ]
+STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ]
 
-STOP ALL REPLICAS [thread_type [, thread_type]] 
+STOP ALL { SLAVES | REPLICAS } [thread_type [, thread_type]] 
 
 thread_type: IO_THREAD | SQL_THREAD
 ```
@@ -24,7 +24,7 @@ thread_type: IO_THREAD | SQL_THREAD
 ## Description
 
 
-Stops the replica threads. `STOP REPLICA` requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-commands/grant.md#replication-slave-admin) privilege.
+Stops the replica threads. `STOP REPLICA` requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-commands/grant.md#replication-slave-admin) privilege.
 
 
 Like [START REPLICA](start-replica.md), this statement may be used with the `IO_THREAD` and
@@ -55,7 +55,7 @@ If there is only one nameless master, or the default master (as specified by the
 
 
 
-##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as
 using the channel_name directly after `STOP REPLICA`.
 

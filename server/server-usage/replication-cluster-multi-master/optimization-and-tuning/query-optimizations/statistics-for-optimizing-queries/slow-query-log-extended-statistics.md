@@ -26,7 +26,7 @@ You can set the verbosity of what's logged to the slow query log by setting the
 the [log_slow_verbosity](../../system-variables/server-system-variables.md#log_slow_verbosity) variable to a combination of the following values:
 
 
-* `All` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes))
+* `All` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes))
 
   * Enable all verbosity options.
 * `Query_plan`
@@ -37,10 +37,10 @@ the [log_slow_verbosity](../../system-variables/server-system-variables.md#log_s
 * `explain`
 
   * EXPLAIN output is logged in the slow query log. See [explain-in-the-slow-query-log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
-* `Innodb` (From [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes). Before that this option did nothing)
+* `Innodb` (From [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes). Before that this option did nothing)
 
   * Kept for compatibility. Same as `engine`.
-* `engine` (From [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes))
+* `engine` (From [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-15-release-notes))
 
   * Writes statistics from the storage engine. This includes:
 
@@ -57,7 +57,7 @@ the [log_slow_verbosity](../../system-variables/server-system-variables.md#log_s
 
 
 
-* `Warnings` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes))
+* `Warnings` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes))
 
   * Print all errors, warnings and notes related to statement, up to `log_slow_max_warnings` lines.
 * `full`.
@@ -85,7 +85,7 @@ You can define which queries to log to the slow query log by setting the
 variable [log_slow_filter](../../system-variables/server-system-variables.md#log_slow_filter) to a combination of the following values:
 
 
-* `All` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes))
+* `All` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes))
 
   * Enable all filter options. `log_slow_filter` will be shown as having all options set.
 * `admin`
@@ -98,7 +98,7 @@ variable [log_slow_filter](../../system-variables/server-system-variables.md#log
 * `filesort_on_disk`
 
   * Log statement if it uses filesort that needs temporary tables on disk
-* `filesort_priority_queue` (from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)) 
+* `filesort_priority_queue` (from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes)) 
 
   * Log statement if it uses filesort with priority_queue (filesort can either use disk or priority queue).
 * `full_join`
@@ -107,7 +107,7 @@ variable [log_slow_filter](../../system-variables/server-system-variables.md#log
 * `full_scan`
 
   * Log statements that uses full table scans
-* `not_using_index` (From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes))
+* `not_using_index` (From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes))
 
   * Logs queries that don't use an index, or that perform a full index scan where the index doesn't limit the number of rows
   * Disregards long_query_time, unlike other options!
@@ -145,7 +145,7 @@ Note that in any case, only queries that takes longer than **log_slow_time** or
 
 
 
-##### MariaDB starting with [10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes)
+##### MariaDB starting with [10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes)
 If one enables the warning option for `log_slow_verbosity`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](../../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md).
 `log_slow_max_warnings` limits the number of warnings printed to the slow query log per query. The default value is 10.
 

@@ -30,7 +30,7 @@ MAX() can be used as a [window function](../special-functions/window-functions/R
 `MAX()` returns `NULL` if there were no matching rows.
 
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../data-definition/create/create-table.md#index-types) can be used to optimize MAX.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../data-definition/create/create-table.md#index-types) can be used to optimize MAX.
 
 
 ## Examples

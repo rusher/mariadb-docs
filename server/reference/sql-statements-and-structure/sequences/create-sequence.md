@@ -46,7 +46,7 @@ The following options may be used:
 #### AS
 
 
-int type, i.e. one of [TINYINT](../../data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../data-types/data-types-numeric-data-types/mediumint.md), [INT](../../data-types/data-types-numeric-data-types/int.md), [INTEGER](../../data-types/data-types-numeric-data-types/integer.md), [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md). Can be signed or unsigned. Maximum value is based on the data type. The use of BIGINT UNSIGNED with this option extends the possible maximum value from 9223372036854775806 to 18446744073709551614. Default BIGINT. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
+int type, i.e. one of [TINYINT](../../data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../data-types/data-types-numeric-data-types/mediumint.md), [INT](../../data-types/data-types-numeric-data-types/int.md), [INTEGER](../../data-types/data-types-numeric-data-types/integer.md), [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md). Can be signed or unsigned. Maximum value is based on the data type. The use of BIGINT UNSIGNED with this option extends the possible maximum value from 9223372036854775806 to 18446744073709551614. Default BIGINT. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115).
 
 
 #### INCREMENT
@@ -58,7 +58,7 @@ Increment to use for values. May be negative. Setting an increment of 0 causes t
 #### MINVALUE
 
 
-Minimum value for the sequence. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), parser permits much smaller numbers, such as -9999999999999999999999999999, but converts to the minimum permitted for the int type, with a note. Default 1 if INCREMENT > 0 and -9223372036854775807 (or based on int type) if INCREMENT < 0.
+Minimum value for the sequence. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), parser permits much smaller numbers, such as -9999999999999999999999999999, but converts to the minimum permitted for the int type, with a note. Default 1 if INCREMENT > 0 and -9223372036854775807 (or based on int type) if INCREMENT < 0.
 
 
 #### MAXVALUE
@@ -66,7 +66,7 @@ Minimum value for the sequence. From [MariaDB 11.5](https://app.gitbook.com/s/aE
 
 |   |
 | --- |
-| Max value for sequence. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), parser permits much larger numbers, such as 9999999999999999999999999999 used in Oracle examples, but converts to the maximum permitted for the int type, with a note. Default 9223372036854775806 (or based on int type) if INCREMENT > 0 and -1 if INCREMENT < 0. |
+| Max value for sequence. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), parser permits much larger numbers, such as 9999999999999999999999999999 used in Oracle examples, but converts to the maximum permitted for the int type, with a note. Default 9223372036854775806 (or based on int type) if INCREMENT > 0 and -1 if INCREMENT < 0. |
 
 
 #### START
@@ -96,8 +96,8 @@ To be able to create a legal sequence, the following must hold:
 * MAXVALUE >= start
 * MAXVALUE > MINVALUE
 * START >= MINVALUE
-* MAXVALUE <= 9223372036854775806 (LONGLONG_MAX-1). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the parser accepts values beyond this, and converts based on the int type.
-* MINVALUE >= -9223372036854775807 (LONGLONG_MIN+1). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the parser accepts values beyond this, and converts based on the int type.
+* MAXVALUE <= 9223372036854775806 (LONGLONG_MAX-1). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the parser accepts values beyond this, and converts based on the int type.
+* MINVALUE >= -9223372036854775807 (LONGLONG_MIN+1). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the parser accepts values beyond this, and converts based on the int type.
 
 
 Note that sequences can't generate the maximum/minimum 64 bit number because of the constraint of
@@ -108,8 +108,8 @@ Note that sequences can't generate the maximum/minimum 64 bit number because of 
 
 
 
-##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
-[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../sql-statements/data-definition/atomic-ddl.md) and `CREATE SEQUENCE` is atomic.
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../sql-statements/data-definition/atomic-ddl.md) and `CREATE SEQUENCE` is atomic.
 
 
 ## Examples
@@ -136,7 +136,7 @@ The sequence can be created by specifying workable minimum and maximum values:
 CREATE SEQUENCE s3 START WITH -100 INCREMENT BY 10 MINVALUE=-100 MAXVALUE=1000;
 ```
 
-From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115):
+From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115):
 
 
 ```

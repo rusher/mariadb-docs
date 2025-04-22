@@ -56,7 +56,7 @@ routine creator. See also [Stored Routine Privileges](../stored-functions/stored
 
 The `DEFINER` and SQL SECURITY clauses specify the security context to
 be used when checking access privileges at routine execution time, as
-described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
+described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
 
 
 If the routine name is the same as the name of a built-in SQL

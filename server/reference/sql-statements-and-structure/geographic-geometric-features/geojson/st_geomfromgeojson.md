@@ -23,7 +23,7 @@ Given a GeoJSON input *g*, returns a geometry object. The *option* specifies wha
 
 
 
-Note that this function did not work correctly before [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes) - see [MDEV-12180](https://jira.mariadb.org/browse/MDEV-12180).
+Note that this function did not work correctly before [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes) - see [MDEV-12180](https://jira.mariadb.org/browse/MDEV-12180).
 
 
 ## Examples

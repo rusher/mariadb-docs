@@ -24,7 +24,7 @@ MariaDB Vector has integrations in several frameworks.
 * [LangGraph](https://github.com/langchain-ai/langgraph) - agentic workflow
 * [MCP (Model Context Protocol)](https://github.com/modelcontextprotocol) - integration to external data sources and tools
 * [Open WebUI](https://github.com/open-webui/open-webui) - AI Interface
-* [Google IDX template for MariaDB](https://idx.uservoice.com/forums/953956-general/suggestions/49702310-mariadb-vector) - visit link to vote for suggestion
+* [Firebase Studio template for MariaDB Vector](https://firebasestudio.uservoice.com/forums/953956-general/suggestions/49702310-mariadb-vector) - visit link to vote for suggestion
 
 
 For further alternatives, see e.g. [Qdrant's list of framework integrations](https://qdrant.tech/documentation/frameworks/).

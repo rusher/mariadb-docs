@@ -34,7 +34,7 @@ If the specified statement has not been PREPAREd, an error similar to the follow
 ERROR 1243 (HY000): Unknown prepared statement handler (stmt_name) given to EXECUTE
 ```
 
-`EXECUTE` with expression as parameters was introduced in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes). Prior to that one could only use variables (@var_name) as parameters.
+`EXECUTE` with expression as parameters was introduced in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes). Prior to that one could only use variables (@var_name) as parameters.
 
 
 ## Example

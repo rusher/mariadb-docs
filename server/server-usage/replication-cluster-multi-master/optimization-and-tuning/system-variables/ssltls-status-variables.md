@@ -129,7 +129,7 @@ This is not necessarily the list of ciphers the MariaDB server can actually acce
 * Description: Last valid date for the server TLS certificate.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: `[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)`
+* Introduced: `[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)`
 
 
 
@@ -139,7 +139,7 @@ This is not necessarily the list of ciphers the MariaDB server can actually acce
 * Description: First valid date for the server TLS certificate.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Introduced: `[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)`
+* Introduced: `[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)`
 
 
 

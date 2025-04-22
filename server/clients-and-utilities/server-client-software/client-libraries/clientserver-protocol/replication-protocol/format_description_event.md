@@ -36,7 +36,7 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 
 
 
-### Example FDE of [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) With CRC32
+### Example FDE of [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) With CRC32
 
 
 ```
@@ -82,7 +82,7 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * CRC32 bytes = d6 ce 13 e2
 
 
-### Example FDE of [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes) With CRC32
+### Example FDE of [MariaDB 10.1.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10116-release-notes) With CRC32
 
 
 ```

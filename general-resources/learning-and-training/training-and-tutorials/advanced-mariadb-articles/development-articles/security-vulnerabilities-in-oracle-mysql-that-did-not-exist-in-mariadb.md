@@ -26,6 +26,44 @@ This page lists all CVEs that were fixed in MySQL and mentioned in Oracle CPU Ad
 ## Full List of CVEs Fixed in Oracle MySQL That Never Existed in MariaDB
 
 
+### [April 2025](https://www.oracle.com/security-alerts/cpuapr2025.html#AppendixMSQL)
+
+
+* [CVE-2024-40896](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-40896)
+* [CVE-2025-30706](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30706)
+* [CVE-2024-7254](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-7254)
+* [CVE-2025-21574](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21574)
+* [CVE-2025-21575](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21575)
+* [CVE-2025-21577](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21577)
+* [CVE-2025-30682](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30682)
+* [CVE-2025-30687](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30687)
+* [CVE-2025-30688](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30688)
+* [CVE-2025-30693](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30693)
+* [CVE-2025-30695](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30695)
+* [CVE-2025-30710](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30710)
+* [CVE-2025-30715](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30715)
+* [CVE-2025-21583](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21583)
+* [CVE-2025-21584](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21584)
+* [CVE-2025-21580](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21580)
+* [CVE-2025-21588](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21588)
+* [CVE-2025-21581](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21581)
+* [CVE-2025-21585](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21585)
+* [CVE-2025-30689](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30689)
+* [CVE-2025-21579](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21579)
+* [CVE-2025-30696](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30696)
+* [CVE-2025-30705](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30705)
+* [CVE-2025-30683](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30683)
+* [CVE-2025-30684](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30684)
+* [CVE-2025-30685](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30685)
+* [CVE-2025-30699](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30699)
+* [CVE-2025-30714](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30714)
+* [CVE-2025-30704](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30704)
+* [CVE-2024-13176](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-13176)
+* [CVE-2025-30721](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30721)
+* [CVE-2025-30681](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30681)
+* [CVE-2025-30703](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-30703)
+
+
 ### [January 2025](https://www.oracle.com/security-alerts/cpujan2025.html#AppendixMSQL)
 
 

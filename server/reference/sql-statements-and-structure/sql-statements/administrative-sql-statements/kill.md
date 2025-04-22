@@ -30,7 +30,7 @@ If a connection is terminated that has an active transaction, the transaction wi
 
 
 If you have the [PROCESS](../account-management-sql-commands/grant.md#process) privilege, you can see all threads. If
-you have the [SUPER](../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-commands/grant.md#connection-admin) privilege, you can kill all threads and
+you have the [SUPER](../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-commands/grant.md#connection-admin) privilege, you can kill all threads and
 statements. Otherwise, you can see and kill only your own threads and
 statements.
 

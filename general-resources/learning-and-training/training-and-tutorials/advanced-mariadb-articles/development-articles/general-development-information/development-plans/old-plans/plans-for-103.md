@@ -2,16 +2,16 @@
 # Plans for 10.3
 
 
-No new features will be added to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). If you wish to contribute new features to the latest development release, see [Plans for MariaDB 10.5](plans-for-mariadb-105.md).
+No new features will be added to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). If you wish to contribute new features to the latest development release, see [Plans for MariaDB 10.5](plans-for-mariadb-105.md).
 
 
-"[What is MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)" shows all features implemented for 10.3.
+"[What is MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)" shows all features implemented for 10.3.
 
 
-## [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+## [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 
-The following features were discussed at the 2016 MariaDB Developer's Meeting for consideration in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). See [Thoughts on MariaDB Server 10.3 from MariaDB Developers Meeting in Amsterdam, part 1](https://mariadb.org/thoughts-mariadb-server-10-3-mariadb-developers-meeting-amsterdam-part-1/).
+The following features were discussed at the 2016 MariaDB Developer's Meeting for consideration in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). See [Thoughts on MariaDB Server 10.3 from MariaDB Developers Meeting in Amsterdam, part 1](https://mariadb.org/thoughts-mariadb-server-10-3-mariadb-developers-meeting-amsterdam-part-1/).
 
 
 * Hidden Columns
@@ -52,8 +52,8 @@ We manage our development plans in JIRA, so the definitive list will be there. [
 
 * [Current tasks for 10.3](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(10.3.0%2C%2010.3)%20ORDER%20BY%20priority%20DESC)
 * [10.3 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20fixVersion%20%3D%2010.3%20ORDER%20BY%20votes%20DESC)
-* [What is MariaDB 10.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
-* [What is MariaDB 10.2?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
-* [What is MariaDB 10.1?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
-* [What is MariaDB 10.0?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+* [What is MariaDB 10.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [What is MariaDB 10.2?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* [What is MariaDB 10.1?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
+* [What is MariaDB 10.0?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 

@@ -46,7 +46,7 @@ You can find a list of the needed packages/libraries for building on Linux [here
 * Scripts containing "max" in the name include all normal plugins.
 
 
-Here is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes) as an example:
+Here is an example of how to compile MariaDB for debugging in your home directory with [MariaDB 5.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-529-release-notes) as an example:
 
 
 ```

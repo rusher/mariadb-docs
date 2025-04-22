@@ -225,7 +225,7 @@ All of the above is filed as [MWL#67](https://askmonty.org/worklog/?tid=67):
 #### Milestone BKA-1: BKA backported
 
 
-After the above is done, BKA will work in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) codebase in the same way
+After the above is done, BKA will work in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) codebase in the same way
 as it worked in MySQL 6.0, but without MRR/InnoDB bugs.
 
 

@@ -124,7 +124,7 @@ You will also get [progress reporting](../../../../reference/mariadb-internals/u
 ### mariadb-import
 
 
-You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105)). For example:
+You can import many files in parallel with [mariadb-import](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)). For example:
 
 
 ```

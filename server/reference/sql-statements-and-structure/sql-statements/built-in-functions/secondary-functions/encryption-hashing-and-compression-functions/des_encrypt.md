@@ -1,7 +1,7 @@
 
 # DES_ENCRYPT
 
-DES_ENCRYPT has been deprecated from [MariaDB 10.10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-release-notes), and will be removed in a future release.
+DES_ENCRYPT has been deprecated from [MariaDB 10.10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-release-notes), and will be removed in a future release.
 
 
 ## Syntax

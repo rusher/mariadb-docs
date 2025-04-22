@@ -46,7 +46,7 @@ Before using ASAN locally, please ensure that it is installed on the system:
 yum install -y /usr/lib64/libasan.so.6.0.0
 ```
 
-ASAN is supported in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and up.
+ASAN is supported in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and up.
 
 
 You can use one of the two following build commands:
@@ -56,7 +56,7 @@ You can use one of the two following build commands:
 cmake . -DWITH_ASAN=ON
 ```
 
-or from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and up:
+or from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and up:
 
 
 ```

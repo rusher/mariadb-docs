@@ -13,9 +13,9 @@ It contains the following columns:
 | Column | Description |
 | COLLATION_NAME | Collation name. |
 | CHARACTER_SET_NAME | Name of the associated character set. |
-| FULL_COLLATION_NAME | Name of the associated character set/collation combination. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
-| ID | The unique identifier of this character set/collation combination. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
-| IS_DEFAULT | If the collation is the default for this character set. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
+| FULL_COLLATION_NAME | Name of the associated character set/collation combination. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
+| ID | The unique identifier of this character set/collation combination. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
+| IS_DEFAULT | If the collation is the default for this character set. Added in [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes). |
 
 
 

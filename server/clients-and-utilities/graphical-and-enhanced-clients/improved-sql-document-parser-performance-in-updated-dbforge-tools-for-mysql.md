@@ -14,11 +14,11 @@ dbForge Tools for MySQL have the following new features and improvements:
 * Connection through Named Pipe implemented;
 * Improved XML View and new JSON View for Data Editor and Viewer Window;
 * Additional SQL statements are supported;
-* Syntax Check supports new [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - 10.1 statements;
+* Syntax Check supports new [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - 10.1 statements;
 * Styled icons are used by default.
 
 
-The upgraded versions of dbForge Schema Compare for MySQL, dbForge Data Compare for MySQL, dbForge Query Builder for MySQL and dbForge Data Generator for MySQL are provided with Syntax Check that supports new [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - 10.1 statements, also additional SQL statements are supported and other improvements were made.
+The upgraded versions of dbForge Schema Compare for MySQL, dbForge Data Compare for MySQL, dbForge Query Builder for MySQL and dbForge Data Generator for MySQL are provided with Syntax Check that supports new [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) - 10.1 statements, also additional SQL statements are supported and other improvements were made.
 
 
 For more information about dbForge tools for MySQL, please visit [](https://www.devart.com/dbforge/mysql/).

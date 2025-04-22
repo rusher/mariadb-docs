@@ -7,7 +7,7 @@ The `mariadbd-safe` startup script is in MariaDB distributions on Linux and Unix
 `mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support `[systemd](systemd.md)`. Additionally, the [mysql.server](mysql-server.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
 
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 
@@ -103,7 +103,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | Group | Description |
 | [mysqld_safe] | Options read by mysqld_safe, which includes both MariaDB Server and MySQL Server. |
 | [safe_mysqld] | Options read by mysqld_safe, which includes both MariaDB Server and MySQL Server. |
-| [mariadbd-safe] | Options read by mariadbd_safe_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [mariadbd-safe] | Options read by mariadbd_safe_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [mariadb-safe] | Options read by mysqld_safe from MariaDB Server. Deprecated, please avoid using this. |
 
 

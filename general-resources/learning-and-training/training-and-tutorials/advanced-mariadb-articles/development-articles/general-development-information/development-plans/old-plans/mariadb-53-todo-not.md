@@ -5,7 +5,7 @@
 
 
 
-This page lists things that were in plans for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) but were not included after all. 
+This page lists things that were in plans for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) but were not included after all. 
 For the actual list of things that are still needed before 5.3 release, see [mariadb-53-todo](mariadb-53-todo.md)
 
 
@@ -63,7 +63,7 @@ In priority order:
 ### [MWL#106](https://askmonty.org/worklog/?tid=106): Backport optimizations for derived tables and views
 
 
-The goal of this task is to backport the implementation of the late materialization of derived tables and views and the additional optimizations for derived tables/views from MySQL 6.0 code line to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
+The goal of this task is to backport the implementation of the late materialization of derived tables and views and the additional optimizations for derived tables/views from MySQL 6.0 code line to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
 
 
 * Done in a separate tree, probable requires refactoring.

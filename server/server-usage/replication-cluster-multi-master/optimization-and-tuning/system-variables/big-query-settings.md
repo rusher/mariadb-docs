@@ -1,7 +1,7 @@
 
 # Big Query Settings
 
-[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and beyond have a number of features that are targeted at big queries and so are disabled by default.
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and beyond have a number of features that are targeted at big queries and so are disabled by default.
 
 
 This page describes recommended settings for IO-bound queries that shovel through lots of records.

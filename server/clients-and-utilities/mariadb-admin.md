@@ -15,7 +15,7 @@
 * Check if the server is alive (ping)
 
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqladmin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 ## Using mariadb-admin
@@ -52,7 +52,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | -f, --force | Don't ask for confirmation on drop database; with multiple commands, continue even if an error occurs. |
 | -?, --help | Display this help and exit. |
 | -h name, --host=name | Hostname to connect to. |
-| -l, --local | Suppress the SQL command(s) from being written to the [binary log](../server-management/server-monitoring-logs/binary-log/README.md) by enabling [sql_log_bin=0](../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for the session, or, from [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) and [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes), for flush commands only, using FLUSH LOCAL rather than SET sql_log_bin=0, so the privilege requirement is RELOAD rather than SUPER. |
+| -l, --local | Suppress the SQL command(s) from being written to the [binary log](../server-management/server-monitoring-logs/binary-log/README.md) by enabling [sql_log_bin=0](../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) for the session, or, from [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) and [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes), for flush commands only, using FLUSH LOCAL rather than SET sql_log_bin=0, so the privilege requirement is RELOAD rather than SUPER. |
 | -b, --no-beep | Turn off beep on error. |
 | -p[password], --password[=password] | Password to use when connecting to server. If password is not given it's asked from the terminal. |
 | --pipe, -W | On Windows, connect to the server via a named pipe. This option applies only if the server supports named-pipe connections. |
@@ -118,7 +118,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --- | --- |
 | Group | Description |
 | [mysqladmin] | Options read by mysqladmin, which includes both MariaDB Server and MySQL Server. |
-| [mariadb-admin] | Options read by mariadb-admin. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| [mariadb-admin] | Options read by mariadb-admin. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
 | [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 | [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
@@ -194,7 +194,7 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 | flush-privileges | Reload grant tables (same as reload). |
 | flush-relay-log | Flush [relay log](../server-management/server-monitoring-logs/binary-log/relay-log.md). |
 | flush-slow-log | Flush slow query log. |
-| flush-ssl | Flush SSL certificates. Added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
+| flush-ssl | Flush SSL certificates. Added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
 | flush-status | Clear [status variables](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md). |
 | flush-table-statistics | Clear table statistics. |
 | flush-tables | Flush all tables. |
@@ -222,10 +222,10 @@ mariadb-admin [options] command [command-arg] [command [command-arg]] ...
 ## The shutdown Command and the --wait-for-all-slaves Option
 
 
-The `--wait-for-all-slaves` option was first added in [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) is being used.
+The `--wait-for-all-slaves` option was first added in [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes). When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../server-usage/replication-cluster-multi-master/standard-replication/semisynchronous-replication.md) is being used.
 
 
-In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
+In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, this problem can be solved by shutting down the server with the mariadb-admin utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility. For example:
 
 
 ```
@@ -327,5 +327,5 @@ You can use the [SHUTDOWN](../reference/sql-statements-and-structure/sql-stateme
 * [SHUTDOWN command](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md)
 * [mytop](https://www.mysqlfanboy.com/mytop-3/), a 'top' like program for
  MariaDB/MySQL that allows you to see what the server is doing. A mytop
- optimized for MariaDB is included in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+ optimized for MariaDB is included in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

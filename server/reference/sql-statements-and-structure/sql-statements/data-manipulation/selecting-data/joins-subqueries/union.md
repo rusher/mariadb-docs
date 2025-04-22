@@ -80,7 +80,7 @@ If the result is a single row, [SELECT ... INTO @var_name](../../../../../../ser
 ### Parentheses
 
 
-Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), a syntax error would be returned.
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), a syntax error would be returned.
 
 
 ## Examples
@@ -136,7 +136,7 @@ UNION
 (SELECT 2, c_name AS name, email FROM customers) ORDER BY sort_column;
 ```
 
-Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
+Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 
 ```

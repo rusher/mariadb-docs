@@ -27,7 +27,7 @@ It contains the following fields:
 | server_id | int(10) unsigned | NO |  | NULL | The server's id. |
 | sql_text | mediumtext | NO |  | NULL | Full query. |
 | thread_id | bigint(21) unsigned | NO |  | NULL | Thread id. |
-| rows_affected | int(11) | NO |  | NULL | Number of rows affected by an [UPDATE](../../../data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../data-manipulation/changing-deleting-data/delete.md) (from [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)) |
+| rows_affected | int(11) | NO |  | NULL | Number of rows affected by an [UPDATE](../../../data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../data-manipulation/changing-deleting-data/delete.md) (from [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)) |
 
 
 

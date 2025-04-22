@@ -4,20 +4,18 @@
 This table shows when different spatial features were introduced into MySQL and MariaDB.
 
 
-| My | MDB | x | MBR | d | * | - |
-| --- | --- | --- | --- | --- | --- | --- |
-| My | MySQL |
-| MDB | MariaDB |
-| x | This feature is supported. |
-| MBR | This feature is present, but operates on the Minimum Bounding Rectangle instead of the actual shape. |
-| d | This feature is present, but has been deprecated and will be removed in a future version. |
-| * | This feature is present, but may not work the way you expect. |
-| - | This feature is not supported. |
+* My = MySQL
+* MDB = MariaDB
+* x	= This feature is supported
+* MBR =	This feature is present, but operates on the Minimum Bounding Rectangle instead of the actual shape
+* d	= This feature is present, but has been deprecated and will be removed in a future version
+* *	= This feature is present, but may not work the way you expect
+* -	= This feature is not supported
 
 
 
-|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 | [ST_Envelope](geometry-properties/st_envelope.md) | [ST_Equals](geometry-relations/st-equals.md) | [ST_ExteriorRing](polygon-properties/st_exteriorring.md) | ST_GeoHash | [ST_GeomCollFromText](wkt/st_geomcollfromtext.md) | [ST_GeomCollFromWKB](wkb/st_geomcollfromwkb.md) | [ST_GeometryCollectionFromText](wkt/st_geomcollfromtext.md) | [ST_GeometryCollectionFromWKB](wkb/st_geomcollfromwkb.md) | [ST_GeometryFromText](wkt/st_geomfromtext.md) | [ST_GeometryFromWKB](wkb/st_geomfromwkb.md) | [ST_GeometryN](geometry-properties/st_geometryn.md) | [ST_GeometryType](geometry-properties/st_geometrytype.md) | [ST_GeomFromGeoJSON](geojson/st_geomfromgeojson.md) | [ST_GeomFromText](wkt/st_geomfromtext.md) | [ST_GeomFromWKB](wkb/st_geomfromwkb.md) | [ST_InteriorRingN](polygon-properties/st_interiorringn.md) | [ST_Intersection](geometry-constructors/st_intersection.md) | [ST_Intersects](geometry-relations/st-intersects.md) |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 | [ST_IsClosed](geometry-properties/st_isclosed.md) | [ST_IsEmpty](geometry-properties/st_isempty.md) | [ST_IsRing](geometry-properties/st_isring.md) | [ST_IsSimple](geometry-properties/st_issimple.md) | ST_IsValid | ST_LatFromGeoHash | [ST_Length](geometry-relations/st_length.md) | [ST_LineFromText](wkt/st_linefromtext.md) | [ST_LineFromWKB](wkb/st_linefromwkb.md) | [ST_LineStringFromText](wkt/st_linefromtext.md) | [ST_LineStringFromWKB](wkb/st_linefromwkb.md) | ST_LongFromGeoHash | [ST_NumGeometries](geometry-properties/st_numgeometries.md) | [ST_NumInteriorRings](polygon-properties/st_numinteriorrings.md) | [ST_NumPoints](linestring-properties/st_numpoints.md) | [ST_Overlaps](geometry-relations/st-overlaps.md) | ST_PointFromGeoHash | [ST_PointFromText](wkt/st_pointfromtext.md) | [ST_PointFromWKB](wkb/st_pointfromwkb.md) | [ST_PointOnSurface](geometry-constructors/st_pointonsurface.md) |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 | [ST_PointN](linestring-properties/st_pointn.md) | [ST_PolyFromText](wkt/st_polyfromtext.md) | [ST_PolyFromWKB](wkb/st_polyfromwkb.md) | [ST_PolygonFromText](wkt/st_polyfromtext.md) | [ST_PolygonFromWKB](wkb/st_polyfromwkb.md) | [ST_Relate](geometry-properties/st_relate.md) | ST_Simplify | [ST_SRID](geometry-properties/st_srid.md) | [ST_StartPoint](linestring-properties/st_startpoint.md) | [ST_SymDifference](geometry-constructors/st_symdifference.md) | [ST_Touches](geometry-relations/st-touches.md) | [ST_Union](geometry-constructors/st_union.md) | ST_Validate | [ST_Within](geometry-relations/st-within.md) | [ST_X](point-properties/st_x.md) | [ST_Y](point-properties/st_y.md) | [StartPoint](linestring-properties/st_startpoint.md) | [Touches](geometry-relations/touches.md) | [Within](geometry-relations/within.md) | [X](point-properties/st_x.md) |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | InnoDB Spatial Indexes | - | - | - | - | x | x | - | - | - | x |
 | [MyISAM Spatial Indexes](spatial-index.md) | x | x | x | x | x | x | x | x | x | x |
@@ -39,6 +37,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [EndPoint](linestring-properties/st_endpoint.md) | x | x | x | x | x | d | x | x | x | x |
 | [Envelope](geometry-properties/st_envelope.md) | x | x | x | x | x | d | x | x | x | x |
 | [Equals](geometry-relations/equals.md) | MBR | MBR | MBR | MBR | MBR | d | MBR | MBR | MBR | MBR |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [ExteriorRing](polygon-properties/st_exteriorring.md) | x | x | x | x | x | d | x | x | x | x |
 | [GeomCollFromText](wkt/st_geomcollfromtext.md) | x | x | x | x | x | d | x | x | x | x |
@@ -60,6 +62,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [IsRing](geometry-properties/st_isring.md) | - | - | - | - | - | - | - | - | x | x |
 | [IsSimple](geometry-properties/st_issimple.md) | - | * | * | x | x | d | - | x | x | x |
 | [LineFromText](wkt/st_linefromtext.md) | x | x | x | x | x | d | x | x | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [LineFromWKB](wkb/st_linefromwkb.md) | x | x | x | x | x | d | x | x | x | x |
 | [LineString](geometry-constructors/linestring.md) | x | x | x | x | x | x | x | x | x | x |
@@ -81,6 +87,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [MPolyFromText](wkt/mpolyfromtext.md) | x | x | x | x | x | d | x | x | x | x |
 | [MPolyFromWKB](wkb/mpolyfromwkb.md) | x | x | x | x | x | d | x | x | x | x |
 | [MultiLineString](geometry-constructors/multilinestring.md) | x | x | x | x | x | x | x | x | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [MultiLineStringFromText](wkt/mlinefromtext.md) | x | x | x | x | x | d | x | x | x | x |
 | [MultiLineStringFromWKB](wkb/mlinefromwkb.md) | x | x | x | x | x | d | x | x | x | x |
@@ -102,6 +112,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [PolyFromText](wkt/st_polyfromtext.md) | x | x | x | x | x | d | x | x | x | x |
 | [PolyFromWKB](wkb/st_polyfromwkb.md) | x | x | x | x | x | d | x | x | x | x |
 | [Polygon](geometry-constructors/polygon.md) | x | x | x | x | x | x | x | x | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [PolygonFromText](wkt/st_polyfromtext.md) | x | x | x | x | x | d | x | x | x | x |
 | [PolygonFromWKB](wkb/st_polyfromwkb.md) | x | x | x | x | x | d | x | x | x | x |
@@ -123,6 +137,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [ST_Dimension](geometry-properties/st_dimension.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_Disjoint](geometry-relations/st_disjoint.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_Distance](geometry-relations/st_distance.md) | - | - | x | x | x | x | - | x | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 | [ST_Envelope](geometry-properties/st_envelope.md) | [ST_Equals](geometry-relations/st-equals.md) | [ST_ExteriorRing](polygon-properties/st_exteriorring.md) | ST_GeoHash | [ST_GeomCollFromText](wkt/st_geomcollfromtext.md) | [ST_GeomCollFromWKB](wkb/st_geomcollfromwkb.md) | [ST_GeometryCollectionFromText](wkt/st_geomcollfromtext.md) | [ST_GeometryCollectionFromWKB](wkb/st_geomcollfromwkb.md) | [ST_GeometryFromText](wkt/st_geomfromtext.md) | [ST_GeometryFromWKB](wkb/st_geomfromwkb.md) | [ST_GeometryN](geometry-properties/st_geometryn.md) | [ST_GeometryType](geometry-properties/st_geometrytype.md) | [ST_GeomFromGeoJSON](geojson/st_geomfromgeojson.md) | [ST_GeomFromText](wkt/st_geomfromtext.md) | [ST_GeomFromWKB](wkb/st_geomfromwkb.md) | [ST_InteriorRingN](polygon-properties/st_interiorringn.md) | [ST_Intersection](geometry-constructors/st_intersection.md) | [ST_Intersects](geometry-relations/st-intersects.md) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | ST_Distance_Sphere | - | - | - | - | - | x | - | - | - | - |
 | [ST_EndPoint](linestring-properties/st_endpoint.md) | - | - | x | x | x | x | - | x | x | x |
@@ -144,6 +162,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [ST_InteriorRingN](polygon-properties/st_interiorringn.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_Intersection](geometry-constructors/st_intersection.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_Intersects](geometry-relations/st-intersects.md) | - | - | x | x | x | x | - | x | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 | [ST_IsClosed](geometry-properties/st_isclosed.md) | [ST_IsEmpty](geometry-properties/st_isempty.md) | [ST_IsRing](geometry-properties/st_isring.md) | [ST_IsSimple](geometry-properties/st_issimple.md) | ST_IsValid | ST_LatFromGeoHash | [ST_Length](geometry-relations/st_length.md) | [ST_LineFromText](wkt/st_linefromtext.md) | [ST_LineFromWKB](wkb/st_linefromwkb.md) | [ST_LineStringFromText](wkt/st_linefromtext.md) | [ST_LineStringFromWKB](wkb/st_linefromwkb.md) | ST_LongFromGeoHash | [ST_NumGeometries](geometry-properties/st_numgeometries.md) | [ST_NumInteriorRings](polygon-properties/st_numinteriorrings.md) | [ST_NumPoints](linestring-properties/st_numpoints.md) | [ST_Overlaps](geometry-relations/st-overlaps.md) | ST_PointFromGeoHash | [ST_PointFromText](wkt/st_pointfromtext.md) | [ST_PointFromWKB](wkb/st_pointfromwkb.md) | [ST_PointOnSurface](geometry-constructors/st_pointonsurface.md) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [ST_IsClosed](geometry-properties/st_isclosed.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_IsEmpty](geometry-properties/st_isempty.md) | - | - | x | x | x | x | - | x | x | x |
@@ -165,6 +187,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [ST_PointFromText](wkt/st_pointfromtext.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_PointFromWKB](wkb/st_pointfromwkb.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_PointOnSurface](geometry-constructors/st_pointonsurface.md) | - | - | - | - | - | - | - | - | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 | [ST_PointN](linestring-properties/st_pointn.md) | [ST_PolyFromText](wkt/st_polyfromtext.md) | [ST_PolyFromWKB](wkb/st_polyfromwkb.md) | [ST_PolygonFromText](wkt/st_polyfromtext.md) | [ST_PolygonFromWKB](wkb/st_polyfromwkb.md) | [ST_Relate](geometry-properties/st_relate.md) | ST_Simplify | [ST_SRID](geometry-properties/st_srid.md) | [ST_StartPoint](linestring-properties/st_startpoint.md) | [ST_SymDifference](geometry-constructors/st_symdifference.md) | [ST_Touches](geometry-relations/st-touches.md) | [ST_Union](geometry-constructors/st_union.md) | ST_Validate | [ST_Within](geometry-relations/st-within.md) | [ST_X](point-properties/st_x.md) | [ST_Y](point-properties/st_y.md) | [StartPoint](linestring-properties/st_startpoint.md) | [Touches](geometry-relations/touches.md) | [Within](geometry-relations/within.md) | [X](point-properties/st_x.md) |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 | [ST_PointN](linestring-properties/st_pointn.md) | - | - | x | x | x | x | - | x | x | x |
 | [ST_PolyFromText](wkt/st_polyfromtext.md) | - | - | x | x | x | x | - | x | x | x |
@@ -187,6 +213,10 @@ This table shows when different spatial features were introduced into MySQL and 
 | [Within](geometry-relations/within.md) | MBR | MBR | MBR | MBR | MBR | d | MBR | MBR | MBR | MBR |
 | [X](point-properties/st_x.md) | x | x | x | x | x | d | x | x | x | x |
 | [Y](point-properties/st_y.md) | x | x | x | x | x | d | x | x | x | x |
+
+
+|  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 
 

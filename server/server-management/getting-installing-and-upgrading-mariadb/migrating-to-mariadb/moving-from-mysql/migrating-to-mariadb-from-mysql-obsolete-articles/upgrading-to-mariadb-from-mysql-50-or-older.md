@@ -1,7 +1,7 @@
 
 # Upgrading to MariaDB From MySQL 5.0 or Older
 
-If you upgrade to [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) from MySQL 5.1 you [don't have to do anything](../upgrading-from-mysql-to-mariadb.md) with your data or MySQL clients. Things should "just work".
+If you upgrade to [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) from MySQL 5.1 you [don't have to do anything](../upgrading-from-mysql-to-mariadb.md) with your data or MySQL clients. Things should "just work".
 
 
 When upgrading between different major versions of MariaDB or MySQL you need to
@@ -70,7 +70,7 @@ If you don't convert the tables, one of the following things may happen:
 Most of the things in the [MySQL 5.1 manual](https://dev.mysql.com/doc/refman/5.1/en/upgrading.html) section also applies to MariaDB.
 
 
-The following differences exists between "mysql_upgrade" in MariaDB and MySQL (as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes)):
+The following differences exists between "mysql_upgrade" in MariaDB and MySQL (as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes)):
 
 
 * MariaDB will convert long table names properly.

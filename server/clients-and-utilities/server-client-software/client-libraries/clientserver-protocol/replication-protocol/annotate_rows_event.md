@@ -4,7 +4,7 @@
 ANNOTATE_ROWS_EVENT events accompany row events and describe the query which caused the row event.
 
 
-You can enable this with [--binlog-annotate-row-events](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) (default on from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)).
+You can enable this with [--binlog-annotate-row-events](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) (default on from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)).
 
 
 In the binary log, each Annotate_rows event precedes the corresponding Table map event.

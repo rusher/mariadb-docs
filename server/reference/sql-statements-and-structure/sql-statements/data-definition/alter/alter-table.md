@@ -106,7 +106,7 @@ clause in the statement (or end if finished).
 
 
 
-##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 If this is directive is used after `ALTER ... TABLE`, one will not get an error if the table doesn't exist.
 
 
@@ -234,8 +234,8 @@ ALTER TABLE t1 ALTER b SET DEFAULT 'hello';
 
 
 
-##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename an index using the `RENAME INDEX` (or `RENAME KEY`) syntax, for example:
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename an index using the `RENAME INDEX` (or `RENAME KEY`) syntax, for example:
 
 ```
 ALTER TABLE t1 RENAME INDEX i_old TO i_new;
@@ -246,8 +246,8 @@ ALTER TABLE t1 RENAME INDEX i_old TO i_new;
 
 
 
-##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename a column using the `RENAME COLUMN` syntax, for example:
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename a column using the `RENAME COLUMN` syntax, for example:
 
 ```
 ALTER TABLE t1 RENAME COLUMN c_old TO c_new;
@@ -538,7 +538,7 @@ See [System-versioned tables](../../../temporal-tables/system-versioned-tables.m
 `ALTER TABLE ... FORCE` can force MariaDB to re-build the table.
 
 
-In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before, this could only be done by setting the [ENGINE](../create/create-table.md#storage-engine) table option to its old value. For example, for an InnoDB table, one could execute the following:
+In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before, this could only be done by setting the [ENGINE](../create/create-table.md#storage-engine) table option to its old value. For example, for an InnoDB table, one could execute the following:
 
 
 ```
@@ -597,7 +597,7 @@ Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overv
 #### CONVERT PARTITION / TABLE
 
 
-`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes).
+`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes).
 
 
 `CONVERT PARTITION` can be used to remove a partition from a table and make this an ordinary table. For example:
@@ -615,7 +615,7 @@ ALTER TABLE partitioned_table CONVERT TABLE normal_table
   TO PARTITION part1 VALUES LESS THAN (12345);
 ```
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
 
 See [Partitioning Overview: Converting Partitions to/from Tables](../../../../../server-management/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details.
@@ -636,7 +636,7 @@ Used to drop specific partitions (and discard all data within the specified part
 This is used to exchange the contents of a partition with another table. This is performed by swapping the tablespaces of the partition with the other table.
 
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
 
 See [Partitioning Overview: Exchanging Partitions](../../../../../server-management/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
@@ -712,7 +712,7 @@ See [InnoDB Online DDL Overview: ALGORITHM](../../../../storage-engines/innodb/i
 The default behavior, which occurs if `ALGORITHM=DEFAULT` is specified, or if `ALGORITHM` is not specified at all, usually only makes a copy if the operation doesn't support being done in-place at all. In this case, the most efficient available algorithm will usually be used.
 
 
-The [old_alter_table](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) system variable is deprecated. Instead, the [alter_algorithm](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable defines the default algorithm for `ALTER TABLE` operations. This was removed in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) for the following reasons:
+The [old_alter_table](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) system variable is deprecated. Instead, the [alter_algorithm](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable defines the default algorithm for `ALTER TABLE` operations. This was removed in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) for the following reasons:
 
 
 * alter_algorithm was introduced as a replacement for the old_alter_table that was used to force the usage of the original alter table algorithm (copy) in cases where the new alter algorithm did not work. The new option was added as a way to force the usage of a specific algorithm when it should instead have made it possible to disable algorithms that would not work for some reason.
@@ -754,7 +754,7 @@ This algorithm is very inefficient, but it is generic, so it works for all stora
 If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](alter-table.md) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](alter-table.md) statement, so that the table is only rebuilt once.
 
 
-From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), ALTER TABLE can now do most operations with ALGORITHM=COPY, LOCK=NONE. See [LOCK=NONE](#none).
+From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), ALTER TABLE can now do most operations with ALGORITHM=COPY, LOCK=NONE. See [LOCK=NONE](#none).
 
 
 #### ALGORITHM=INPLACE
@@ -820,7 +820,7 @@ Acquire the least restrictive lock on the table that is supported for the specif
 #### NONE
 
 
-Acquire no lock on the table. Permit **all** concurrent DML. If this locking strategy is not permitted for an operation, then an error is raised. From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), `ALTER TABLE` can do most operations with `ALGORITHM=COPY, LOCK=NONE`, that is, in most cases, unless the algorithm and lock level are explicitly specified, `ALTER TABLE` will be performed using the `COPY` algorithm while simultaneously allowing concurrent DML statements on the altered table. If this is not desired, one can explicitly specify a different lock level or set old_mode to [LOCK_ALTER_TABLE_COPY](../../../../../server-management/variables-and-modes/old-mode.md#lock_alter_table_copy) that will make `ALGORITHM=COPY` use `LOCK=SHARED` by default (but still allowing `LOCK=NONE` to be specified explicitly).
+Acquire no lock on the table. Permit **all** concurrent DML. If this locking strategy is not permitted for an operation, then an error is raised. From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), `ALTER TABLE` can do most operations with `ALGORITHM=COPY, LOCK=NONE`, that is, in most cases, unless the algorithm and lock level are explicitly specified, `ALTER TABLE` will be performed using the `COPY` algorithm while simultaneously allowing concurrent DML statements on the altered table. If this is not desired, one can explicitly specify a different lock level or set old_mode to [LOCK_ALTER_TABLE_COPY](../../../../../server-management/variables-and-modes/old-mode.md#lock_alter_table_copy) that will make `ALGORITHM=COPY` use `LOCK=SHARED` by default (but still allowing `LOCK=NONE` to be specified explicitly).
 
 
 #### SHARED
@@ -884,8 +884,8 @@ Aborting `ALTER TABLE ... ALGORITHM=COPY` was made faster by removing excessive 
 
 
 
-##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), `ALTER TABLE` is atomic for most engines, including InnoDB, MyRocks, MyISAM and  Aria ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)).
+##### MariaDB starting with [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes)
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), `ALTER TABLE` is atomic for most engines, including InnoDB, MyRocks, MyISAM and  Aria ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)).
 This means that if there is a crash (server down or power outage) during an `ALTER TABLE` operation, after
 recovery, either the old table and associated triggers and status will be intact, or the new table will be active.
 In older MariaDB versions one could get leftover #sql-alter..', '#sql-backup..' or 'table_name.frm˝' files if the system crashed during the `ALTER TABLE` operation.
@@ -896,8 +896,8 @@ See [Atomic DDL](../atomic-ddl.md) for more information.
 
 
 
-##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
-Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER TABLE got fully executed on the primary first, and only then was it replicated and started executing on replicas. From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER TABLE gains [an option](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) to replicate sooner and begin executing on replicas when it merely *starts* executing on the primary, not when it *finishes*. This way the replication lag caused by a heavy ALTER TABLE can be completely eliminated ([MDEV-11675](https://jira.mariadb.org/browse/MDEV-11675)). 
+##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
+Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER TABLE got fully executed on the primary first, and only then was it replicated and started executing on replicas. From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER TABLE gains [an option](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) to replicate sooner and begin executing on replicas when it merely *starts* executing on the primary, not when it *finishes*. This way the replication lag caused by a heavy ALTER TABLE can be completely eliminated ([MDEV-11675](https://jira.mariadb.org/browse/MDEV-11675)). 
 
 
 ## Examples
@@ -968,14 +968,14 @@ Adding a unique index:
 ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 ```
 
-From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), adding a primary key for an [application-time period table](../../../temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) constraint:
+From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), adding a primary key for an [application-time period table](../../../temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 
 ```
 ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
 ```
 
-From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER query can be replicated faster with the setting of
+From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER query can be replicated faster with the setting of
 
 
 ```

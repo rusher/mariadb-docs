@@ -2,8 +2,8 @@
 # Information Schema SPIDER_WRAPPER_PROTOCOLS Table
 
 
-##### MariaDB starting with [10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes)
-The [Information Schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) `SPIDER_WRAPPER_PROTOCOLS` table is installed along with the [Spider](README.md) storage engine from [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1054-release-notes). 
+##### MariaDB starting with [10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes)
+The [Information Schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) `SPIDER_WRAPPER_PROTOCOLS` table is installed along with the [Spider](README.md) storage engine from [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes). 
 
 
 It contains the following columns:

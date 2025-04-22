@@ -34,7 +34,7 @@ It has the following columns:
 
 
 
-Note: In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and earlier the `ENABLED` column was called `STATUS`.
+Note: In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and earlier the `ENABLED` column was called `STATUS`.
 
 
 ## Enabling and Disabling Counters
@@ -64,7 +64,7 @@ or enable a number of counters grouped by module. The `SUBSYSTEM` field indicate
 | module_compress | compression |
 | module_file | file_system |
 | module_index | index |
-| module_adaptive_hash | adaptive_hash_index From [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1062-release-notes), if [innodb_adaptive_hash_index](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is disabled (the default), adaptive_hash_index will not be updated. |
+| module_adaptive_hash | adaptive_hash_index From [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1062-release-notes), if [innodb_adaptive_hash_index](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is disabled (the default), adaptive_hash_index will not be updated. |
 | module_ibuf_system | change_buffer |
 | module_srv | server |
 | module_ddl | ddl |
@@ -115,12 +115,12 @@ Counter status is not persistent, and will be reset when the server restarts. It
 Counters can also be reset. Resetting sets all the `*_COUNT_RESET` values to zero, while leaving the `*_COUNT` values, which perform counts since the counter was enabled, untouched. Resetting is performed with the [innodb_monitor_reset](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) (for individual counters) and [innodb_monitor_reset_all](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) (for all counters) system variables.
 
 
-## Simplifying from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+## Simplifying from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
 
 
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), the interface was simplified by removing the following:
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the interface was simplified by removing the following:
 
 * buffer_LRU_batches_flush
 * buffer_LRU_batch_flush_pages
@@ -138,7 +138,7 @@ The intention is to eventually remove the interface entirely (see [MDEV-15706](h
 ## Examples
 
 
-[MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
+[MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
 
 
 ```

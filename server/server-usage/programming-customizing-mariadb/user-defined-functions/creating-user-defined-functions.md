@@ -96,7 +96,7 @@ Used to add the argument to the current aggregate.
 ### x_remove()
 
 
-Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 
 ### Description

@@ -34,11 +34,11 @@ scripts that were used in the past such as `mysqld.exe` `--install`,
 | -D, --default-user | Create default user |
 | -R, --allow-remote-root-access | Allow remote access from network for user root |
 | -N, --skip-networking | Do not use TCP connections, use pipe instead |
-| -i, --innodb-page-size | Innodb page size, since [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) |
+| -i, --innodb-page-size | Innodb page size, since [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) |
 | -s,--silent | Print less information |
 | -o,--verbose-bootstrap | Include mysqld bootstrap output |
-| -l,--large-pages | Use large pages, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) |
-| -c,--config | my.ini config template file, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) |
+| -l,--large-pages | Use large pages, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) |
+| -c,--config | my.ini config template file, since [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes) |
 
 
 

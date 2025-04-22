@@ -2,8 +2,8 @@
 # Sys Schema sys_config Table
 
 
-##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
-The Sys Schema *sys_config* table was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).  The *sys_config* table is also backported to [MariaDB-10.5-enterprise](https://mariadb.com/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/).
+##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+The Sys Schema *sys_config* table was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).  The *sys_config* table is also backported to [MariaDB-10.5-enterprise](https://mariadb.com/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/).
 
 
 The *sys.sys_config* table holds configuration options for the [Sys Schema](README.md).

@@ -60,7 +60,7 @@ In the above output, the "rows" column shows that the first is almost 10x less
 efficient and the second is over 15x less efficient than `index_merge`.
 
 
-Starting in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the optimizer will delay discarding potential
+Starting in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the optimizer will delay discarding potential
 `index_merge` plans until the point where it is really necessary. See [MWL#24](https://askmonty.org/worklog/?tid=24)
 for more information.
 
@@ -98,5 +98,5 @@ This new behavior is always on and there is no need to enable it. There are no k
 ## See Also
 
 
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

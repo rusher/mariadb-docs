@@ -18,7 +18,7 @@ Before you upgrade, it would be best to take a backup of your database. This is 
 The suggested upgrade procedure is:
 
 
-1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102). For example,
+1. Modify the repository configuration, so the system's package manager installs [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102). For example,
 
   * On Debian, Ubuntu, and other similar Linux distributions, see [Updating the MariaDB APT repository to a New Major Release](../../binary-packages/installing-mariadb-deb-files.md#updating-the-mariadb-apt-repository-to-a-new-major-release) for more information.
   * On RHEL, CentOS, Fedora, and other similar Linux distributions, see [Updating the MariaDB YUM repository to a New Major Release](../../binary-packages/rpm/yum.md#updating-the-mariadb-yum-repository-to-a-new-major-release) for more information.
@@ -26,7 +26,7 @@ The suggested upgrade procedure is:
 1. Set `[innodb_fast_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md)` to `0`. It can be changed dynamically with `[SET GLOBAL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example: 
 `SET GLOBAL innodb_fast_shutdown=0;`
 
-  * This step is not necessary when upgrading to [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) or later. Omitting it can make the upgrade process far faster. See [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289) for more information.
+  * This step is not necessary when upgrading to [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes) or later. Omitting it can make the upgrade process far faster. See [MDEV-12289](https://jira.mariadb.org/browse/MDEV-12289) for more information.
 1. [Stop MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 1. Uninstall the old version of MariaDB.
 
@@ -60,7 +60,7 @@ On most servers upgrading from 10.1 should be painless. However, there are some 
 #### InnoDB Instead of XtraDB
 
 
-[MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) uses [InnoDB](../../../../reference/storage-engines/innodb/README.md) as the default storage engine, rather than XtraDB, used in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before. See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/) In most cases this should have minimal effect as the latest InnoDB has incorporated most of the improvements made in earlier versions of XtraDB. Note that certain [XtraDB system variables](../../../../reference/storage-engines/innodb/innodb-system-variables.md) are now ignored (although they still exist so as to permit easy upgrading).
+[MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) uses [InnoDB](../../../../reference/storage-engines/innodb/README.md) as the default storage engine, rather than XtraDB, used in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before. See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/) In most cases this should have minimal effect as the latest InnoDB has incorporated most of the improvements made in earlier versions of XtraDB. Note that certain [XtraDB system variables](../../../../reference/storage-engines/innodb/innodb-system-variables.md) are now ignored (although they still exist so as to permit easy upgrading).
 
 
 #### Options That Have Changed Default Values
@@ -124,13 +124,13 @@ The following options should be removed or renamed if you use them in your [opti
 | --- | --- |
 | Option | Reason |
 | aria_recover | Renamed to [aria_recover_options](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_recover_options) to match [myisam_recover_options](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options). |
-| [innodb_additional_mem_pool_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). |
+| [innodb_additional_mem_pool_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). |
 | [innodb_api_bk_commit_interval](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
 | [innodb_api_disable_rowlock](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
 | [innodb_api_enable_binlog](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
 | [innodb_api_enable_mdl](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
 | [|innodb_api_trx_level](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Memcache never implemented in MariaDB. |
-| [innodb_use_sys_malloc](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). |
+| [innodb_use_sys_malloc](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | Deprecated in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0). |
 
 
 
@@ -167,13 +167,13 @@ New [reserved words](../../../../reference/sql-statements-and-structure/sql-lang
 #### TLS
 
 
-Starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), when the user specifies the `--ssl` option with a [client or utility](/kb/en/clients-utilities/), the [client or utility](/kb/en/clients-utilities/) will not [verify the server certificate](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option to the [client or utility](/kb/en/clients-utilities/). For more information, see the [list of options](../../../../clients-and-utilities/mariadb-client/mysql-command-line-client.md#options) for the `[mysql](../../../../clients-and-utilities/mariadb-client/mysql-command-line-client.md)` client.
+Starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), when the user specifies the `--ssl` option with a [client or utility](/kb/en/clients-utilities/), the [client or utility](/kb/en/clients-utilities/) will not [verify the server certificate](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification) by default. In order to verify the server certificate, the user must specify the `--ssl-verify-server-cert` option to the [client or utility](/kb/en/clients-utilities/). For more information, see the [list of options](../../../../clients-and-utilities/mariadb-client/mysql-command-line-client.md#options) for the `[mysql](../../../../clients-and-utilities/mariadb-client/mysql-command-line-client.md)` client.
 
 
 ### Major New Features To Consider
 
 
-You might consider using the following major new features in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102):
+You might consider using the following major new features in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102):
 
 
 * [Window Functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md)
@@ -186,7 +186,7 @@ You might consider using the following major new features in [MariaDB 10.2](http
 ### See Also
 
 
-* [The features in MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+* [The features in MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2 with Galera Cluster](upgrading-from-mariadb-101-to-mariadb-102-with-galera-cluster)
 * [Upgrading from MariaDB 10.0 to MariaDB 10.1](upgrading-from-mariadb-100-to-mariadb-101.md)
 * [Upgrading from MariaDB 5.5 to MariaDB 10.0](../upgrading-from-mariadb-10-4-to-mariadb-10-5.md)

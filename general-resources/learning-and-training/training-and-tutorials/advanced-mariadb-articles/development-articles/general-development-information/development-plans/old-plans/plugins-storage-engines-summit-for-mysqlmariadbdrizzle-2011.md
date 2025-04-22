@@ -175,10 +175,10 @@ Cluster with many MySQL servers connected to it. It was originally designed for 
 ## Online ALTER
 
 
-* Zardosht has an example from MySQL Cluster. He likes the implementation in MySQL Cluster 7.1. They have a different alter table API, and they've ported this to TokuDB with support for MySQL 5.1 and [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)/5.2.
+* Zardosht has an example from MySQL Cluster. He likes the implementation in MySQL Cluster 7.1. They have a different alter table API, and they've ported this to TokuDB with support for MySQL 5.1 and [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)/5.2.
 * Wait and see the work that Oracle is doing?
 * Old 6.0.3 - online alter and metadata alter - serg checked
-* Zardosht's patch will work with [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), but once there's [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) based on MySQL 5.5 he's terribly worried about porting
+* Zardosht's patch will work with [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), but once there's [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) based on MySQL 5.5 he's terribly worried about porting
 
 
 ## Group commit

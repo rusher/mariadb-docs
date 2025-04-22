@@ -21,8 +21,8 @@ InnoDB supports multiple algorithms for performing DDL operations. This offers a
 * `DEFAULT` - This implies the default behavior for the specific operation.
 * `COPY`
 * `INPLACE`
-* `NOCOPY` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
-* `INSTANT` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
+* `NOCOPY` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
+* `INSTANT` - This was added in [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes).
 
 
 ## Specifying an Alter Algorithm

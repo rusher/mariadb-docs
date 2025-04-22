@@ -48,7 +48,7 @@ SHOW CREATE DATABASE test;
 +----------+---------------------------------------------------------------+
 ```
 
-With a comment, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105):
+With a comment, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105):
 
 
 ```

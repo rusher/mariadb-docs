@@ -49,7 +49,7 @@ master_def:
 
 
 
-##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to
 using the channel_name directly after `CHANGE MASTER`.
 
@@ -97,7 +97,7 @@ START SLAVE 'gandalf';
 The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](../../../../../server-usage/replication-cluster-multi-master/README.md) will use to connect to the [primary](../../../../../server-usage/replication-cluster-multi-master/README.md).
 
 
-This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) on the primary.
+This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) on the primary.
 
 
 For example:
@@ -111,7 +111,7 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 128 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
+The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 128 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 #### MASTER_PASSWORD
@@ -142,7 +142,7 @@ Due to [MDEV-29994](https://jira.mariadb.org/browse/MDEV-29994), the password ca
 The `MASTER_HOST` option for `CHANGE MASTER` defines the hostname or IP address of the [primary](../../../../../server-usage/replication-cluster-multi-master/README.md).
 
 
-If you set the value of the `MASTER_HOST` option to the empty string, then that is not the same as not setting the option's value at all. If you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command will fail with an error. In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and before, if you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command would succeed, but the subsequent [START SLAVE](start-replica.md) command would fail.
+If you set the value of the `MASTER_HOST` option to the empty string, then that is not the same as not setting the option's value at all. If you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command will fail with an error. In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and before, if you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command would succeed, but the subsequent [START SLAVE](start-replica.md) command would fail.
 
 
 For example:
@@ -165,7 +165,7 @@ log](../../../../../server-management/server-monitoring-logs/binary-log/README.m
 Replicas cannot connect to primaries using Unix socket files or Windows named pipes. The replica must connect to the primary using TCP/IP.
 
 
-The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 255 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106).
+The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 255 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
 
 #### MASTER_PORT
@@ -454,7 +454,7 @@ The maximum length of `MASTER_SSL_CIPHER` string is 511 characters.
 #### MASTER_SSL_VERIFY_SERVER_CERT
 
 
-The `MASTER_SSL_VERIFY_SERVER_CERT` option for `CHANGE MASTER` enables [server certificate verification](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), and enabled by default from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114).
+The `MASTER_SSL_VERIFY_SERVER_CERT` option for `CHANGE MASTER` enables [server certificate verification](../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), and enabled by default from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114).
 
 
 For example:
@@ -593,7 +593,7 @@ The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the re
 
 
 * `current_pos` - Replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode and use [gtid_current_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid_current_pos with gtid_binlog_pos and gtid_slave_pos. Use the new, safe, [MASTER_DEMOTE_TO_SLAVE=<bool>](#master_demote_to_slave) option instead.
-* `slave_pos` - Replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode and use [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
+* `slave_pos` - Replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode and use [gtid_slave_pos](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
 * `no` - Don't replicate in [GTID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) mode.
 
 
@@ -622,7 +622,7 @@ START SLAVE;
 
 
 
-##### MariaDB starting with [10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
+##### MariaDB starting with [10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 Used to transition a primary to become a replica. Replaces the old [MASTER_USE_GTID=current_pos](#master_use_gtid) with a safe alternative by forcing users to set `Using_Gtid=Slave_Pos` and merging `gtid_binlog_pos` into `gtid_slave_pos` once at `CHANGE MASTER TO` time. If `gtid_slave_pos` is more
 recent than `gtid_binlog_pos` (as in the case of chain replication), the replication state should be preserved.
 

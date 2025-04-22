@@ -1,15 +1,15 @@
 
 # Status Variables Added in MariaDB 10.6
 
-This is a list of [status variables](../server-status-variables.md) that were added in the [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106) series.
+This is a list of [status variables](../server-status-variables.md) that were added in the [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106) series.
 
 
 
 | Variable | Added |
 | --- | --- |
 | Variable | Added |
-| [Innodb_buffer_pool_pages_lru_freed](../innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed) | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
-| [resultset_metadata_skipped](../server-status-variables.md#resultset_metadata_skipped) | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
+| [Innodb_buffer_pool_pages_lru_freed](../innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed) | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
+| [resultset_metadata_skipped](../server-status-variables.md#resultset_metadata_skipped) | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
 
 
 

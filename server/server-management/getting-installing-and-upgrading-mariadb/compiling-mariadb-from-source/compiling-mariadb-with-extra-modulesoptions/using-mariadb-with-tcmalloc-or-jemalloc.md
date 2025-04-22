@@ -32,7 +32,7 @@ A value of "system" indicates the system default, which is normally malloc. If a
 #### Building MariaDB with an alternative to malloc
 
 
-To build [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) with `TCMalloc`, you need to use the following command
+To build [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) with `TCMalloc`, you need to use the following command
 
 
 ```

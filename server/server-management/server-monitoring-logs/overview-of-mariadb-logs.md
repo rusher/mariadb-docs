@@ -71,7 +71,7 @@ If you are a super user running a log batch job that you don't want to have logg
 SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 ```
 
-[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) will add this automatically to your dump file if you run it with the `--skip-log-queries` option.
+[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) will add this automatically to your dump file if you run it with the `--skip-log-queries` option.
 
 
 ## See Also

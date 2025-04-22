@@ -309,13 +309,13 @@ Enables administration of the [binary log](../../../../server-management/server-
 * [sync_binlog](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#sync_binlog).
 
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
 ##### BINLOG MONITOR
 
 
-New name for [REPLICATION CLIENT](#replication-client) from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), (`REPLICATION CLIENT` still supported as an alias for compatibility purposes). Permits running SHOW commands related to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md), in particular the [SHOW BINLOG STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) statements. Unlike [REPLICATION CLIENT](#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) isn't included in this privilege, and [REPLICA MONITOR](#replica-monitor) is required.
+New name for [REPLICATION CLIENT](#replication-client) from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), (`REPLICATION CLIENT` still supported as an alias for compatibility purposes). Permits running SHOW commands related to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/README.md), in particular the [SHOW BINLOG STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) statements. Unlike [REPLICATION CLIENT](#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) isn't included in this privilege, and [REPLICA MONITOR](#replica-monitor) is required.
 
 
 ##### BINLOG REPLAY
@@ -330,7 +330,7 @@ Enables replaying the binary log with the [BINLOG](../administrative-sql-stateme
 * [server_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#server_id).
 
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
 
 ##### CONNECTION ADMIN
@@ -365,7 +365,7 @@ The statements specified in [init_connect](../../../../server-usage/replication-
 * [thread_pool_stall_limit](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#thread_pool_stall_limit).
 
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
 ##### CREATE USER
@@ -377,7 +377,7 @@ Create a user using the [CREATE USER](create-user.md) statement, or implicitly c
 ##### FEDERATED ADMIN
 
 
-Execute [CREATE SERVER](../data-definition/create/create-server.md), [ALTER SERVER](../data-definition/alter/alter-server.md), and [DROP SERVER](../data-definition/drop/drop-server.md) statements. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+Execute [CREATE SERVER](../data-definition/create/create-server.md), [ALTER SERVER](../data-definition/alter/alter-server.md), and [DROP SERVER](../data-definition/drop/drop-server.md) statements. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
 ##### FILE
@@ -401,10 +401,10 @@ Show information about the active processes, for example via [SHOW PROCESSLIST](
 ##### READ_ONLY ADMIN
 
 
-User ignores the [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+User ignores the [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
-From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes), the `READ_ONLY ADMIN` privilege has been removed from [SUPER](#super). The benefit of this is that one can remove the READ_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary.
+From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes), the `READ_ONLY ADMIN` privilege has been removed from [SUPER](#super). The benefit of this is that one can remove the READ_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary.
 
 
 ##### RELOAD
@@ -416,25 +416,25 @@ Execute [FLUSH](../administrative-sql-statements/flush-commands/flush.md) statem
 ##### REPLICATION CLIENT
 
 
-Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105).
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105).
 
 
 ##### REPLICATION MASTER ADMIN
 
 
-Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid_binlog_state](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_binlog_state), [gtid_domain_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id), [master_verify_checksum](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid_binlog_state](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_binlog_state), [gtid_domain_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_domain_id), [master_verify_checksum](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server_id](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
 ##### REPLICA MONITOR
 
 
-Permit [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) and [SHOW RELAYLOG EVENTS](../administrative-sql-statements/show/show-relaylog-events.md). From [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes).
+Permit [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) and [SHOW RELAYLOG EVENTS](../administrative-sql-statements/show/show-relaylog-events.md). From [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes).
 
 
-When a user would upgrade from an older major release to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), certain user accounts would lose capabilities. For example, a user account that had the REPLICATION CLIENT privilege in older major releases could run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), but after upgrading to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), they could no longer run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), because that statement was changed to require the REPLICATION REPLICA ADMIN privilege.
+When a user would upgrade from an older major release to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), certain user accounts would lose capabilities. For example, a user account that had the REPLICATION CLIENT privilege in older major releases could run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), but after upgrading to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), they could no longer run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), because that statement was changed to require the REPLICATION REPLICA ADMIN privilege.
 
 
-This issue is fixed in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1059-release-notes) with this new privilege, which now grants the user the ability to execute SHOW [ALL] (SLAVE | REPLICA) STATUS.
+This issue is fixed in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes) with this new privilege, which now grants the user the ability to execute SHOW [ALL] (SLAVE | REPLICA) STATUS.
 
 
 When a database is upgraded from an older major release to MariaDB Server 10.5.9 or later, any user accounts with the REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the new REPLICA MONITOR privilege. The privilege fix occurs when the server is started up, not when mariadb-upgrade is performed.
@@ -446,13 +446,13 @@ However, when a database is upgraded from an early 10.5 minor release to 10.5.9 
 ##### REPLICATION REPLICA
 
 
-Synonym for [REPLICATION SLAVE](#replication-slave). From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes).
+Synonym for [REPLICATION SLAVE](#replication-slave). From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes).
 
 
 ##### REPLICATION SLAVE
 
 
-Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [REPLICATION REPLICA](#replication-replica) is an alias for `REPLICATION SLAVE`.
+Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [REPLICATION REPLICA](#replication-replica) is an alias for `REPLICATION SLAVE`.
 
 
 ##### REPLICATION SLAVE ADMIN
@@ -496,13 +496,13 @@ Permits administering replica servers, including [START REPLICA/SLAVE](../admini
 * [sync_relay_log_info](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#sync_relay_log_info).
 
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
 ##### SET USER
 
 
-Enables setting the `DEFINER` when creating [triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md), [views](../../../../server-usage/programming-customizing-mariadb/views/README.md), [stored functions](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) and [stored procedures](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md). Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+Enables setting the `DEFINER` when creating [triggers](../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/README.md), [views](../../../../server-usage/programming-customizing-mariadb/views/README.md), [stored functions](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) and [stored procedures](../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md). Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 
 ##### SHOW DATABASES
@@ -523,7 +523,7 @@ Shut down the server using [SHUTDOWN](../administrative-sql-statements/shutdown.
 Execute superuser statements: [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md), [KILL](../administrative-sql-statements/kill.md) (users who do not have this privilege can only `KILL` their own threads), [PURGE LOGS](../administrative-sql-statements/purge-binary-logs.md), [SET global system variables](../administrative-sql-statements/set-commands/set.md), or the [mariadb-admin debug](../../../../clients-and-utilities/mariadb-admin.md) command. Also, this permission allows the user to write data even if the [read_only](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#read_only) startup option is set, enable or disable logging, enable or disable replication on replica, specify a `DEFINER` for statements that support that clause, connect once reaching the `MAX_CONNECTIONS`. If a statement has been specified for the [init-connect](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#init_connect) [mariadbd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, that command will not be executed when a user with `SUPER` privileges connects to the server.
 
 
-The SUPER privilege has been split into multiple smaller privileges from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) to allow for more fine-grained privileges ([MDEV-21743](https://jira.mariadb.org/browse/MDEV-21743)). The privileges are:
+The SUPER privilege has been split into multiple smaller privileges from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) to allow for more fine-grained privileges ([MDEV-21743](https://jira.mariadb.org/browse/MDEV-21743)). The privileges are:
 
 
 * [SET USER](#set-user)
@@ -538,10 +538,10 @@ The SUPER privilege has been split into multiple smaller privileges from [MariaD
 * [READ_ONLY ADMIN](#read_only-admin)
 
 
-However, the smaller privileges are still a part of the SUPER grant in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes). From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes) onwards, these grants are no longer a part of SUPER and need to be granted separately ([MDEV-29668](https://jira.mariadb.org/browse/MDEV-29668)).
+However, the smaller privileges are still a part of the SUPER grant in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes). From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes) onwards, these grants are no longer a part of SUPER and need to be granted separately ([MDEV-29668](https://jira.mariadb.org/browse/MDEV-29668)).
 
 
-From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes), the [READ_ONLY ADMIN](#read_only-admin) privilege has been removed from `SUPER`. The benefit of this is that one can remove the READ_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary ([MDEV-29596](https://jira.mariadb.org/browse/MDEV-29596)).
+From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes), the [READ_ONLY ADMIN](#read_only-admin) privilege has been removed from `SUPER`. The benefit of this is that one can remove the READ_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary ([MDEV-29596](https://jira.mariadb.org/browse/MDEV-29596)).
 
 
 #### Database Privileges
@@ -569,7 +569,7 @@ to specify the default database.
 | EVENT | Create, drop and alter EVENTs. |
 | GRANT OPTION | Grant database privileges. You can only grant privileges that you have. |
 | LOCK TABLES | Acquire explicit locks using the [LOCK TABLES](../transactions/lock-tables.md) statement; you also need to have the SELECT privilege on a table, in order to lock it. |
-| SHOW CREATE ROUTINE | Permit viewing the SHOW CREATE definition statement of a routine, for example [SHOW CREATE FUNCTION](../administrative-sql-statements/show/show-create-function.md), even if not the routine owner. From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes). |
+| SHOW CREATE ROUTINE | Permit viewing the SHOW CREATE definition statement of a routine, for example [SHOW CREATE FUNCTION](../administrative-sql-statements/show/show-create-function.md), even if not the routine owner. From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes). |
 
 
 
@@ -584,7 +584,7 @@ to specify the default database.
 | CREATE | Create a table using the [CREATE TABLE](../data-definition/create/create-table.md) statement. You can grant the CREATE privilege on tables that do not yet exist. |
 | CREATE VIEW | Create a view using the [CREATE_VIEW](../../../../server-usage/programming-customizing-mariadb/views/create-view.md) statement. |
 | DELETE | Remove rows from a table using the [DELETE](../data-manipulation/changing-deleting-data/delete.md) statement. |
-| DELETE HISTORY | Remove [historical rows](../../temporal-tables/system-versioned-tables.md) from a table using the [DELETE HISTORY](../data-manipulation/changing-deleting-data/delete.md) statement. Displays as DELETE VERSIONING ROWS when running SHOW PRIVILEGES until [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382)). If a user has the SUPER privilege but not this privilege, running [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) will grant this privilege as well. |
+| DELETE HISTORY | Remove [historical rows](../../temporal-tables/system-versioned-tables.md) from a table using the [DELETE HISTORY](../data-manipulation/changing-deleting-data/delete.md) statement. Displays as DELETE VERSIONING ROWS when running SHOW PRIVILEGES until [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382)). If a user has the SUPER privilege but not this privilege, running [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) will grant this privilege as well. |
 | DROP | Drop a table using the [DROP TABLE](../data-definition/drop/drop-table.md) statement or a view using the [DROP VIEW](../../../../server-usage/programming-customizing-mariadb/views/drop-view.md) statement. Also required to execute the [TRUNCATE TABLE](../table-statements/truncate-table.md) statement. |
 | GRANT OPTION | Grant table privileges. You can only grant privileges that you have. |
 | INDEX | Create an index on a table using the [CREATE INDEX](../data-definition/create/create-index.md) statement. Without the INDEX privilege, you can still create indexes when creating a table using the [CREATE TABLE](../data-definition/create/create-table.md) statement if the you have the CREATE privilege, and you can create indexes using the [ALTER TABLE](../data-definition/alter/alter-table.md) statement if you have the ALTER privilege. |
@@ -947,7 +947,7 @@ The resources are tracked per account, which means `'user'@'server'`; not per us
 The count can be reset for all users using [FLUSH USER_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin reload](../../../../clients-and-utilities/mariadb-admin.md).
 
 
-Users with the `CONNECTION ADMIN` privilege (in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) and later) or the `SUPER` privilege are not restricted by `max_user_connections` or `max_password_errors` and they are allowed one additional connection when `max_connections` is reached.
+Users with the `CONNECTION ADMIN` privilege (in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) and later) or the `SUPER` privilege are not restricted by `max_user_connections` or `max_password_errors` and they are allowed one additional connection when `max_connections` is reached.
 
 
 Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
@@ -1037,7 +1037,7 @@ If a user has been granted a role, they do not automatically obtain all permissi
 
 
 
-##### MariaDB starting with [10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes)
+##### MariaDB starting with [10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes)
  [blog post](https://mariadb.org/grant-to-public-in-mariadb/)
 
 #### Syntax

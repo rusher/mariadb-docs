@@ -77,8 +77,8 @@ SHOW GRANTS FOR journalist;
 
 
 
-##### MariaDB starting with [10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
-[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
+##### MariaDB starting with [10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
+[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 
 ```
 SHOW GRANTS FOR public;

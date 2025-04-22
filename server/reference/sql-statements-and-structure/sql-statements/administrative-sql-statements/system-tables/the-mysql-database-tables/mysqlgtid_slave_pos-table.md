@@ -14,7 +14,7 @@ transaction, since otherwise a multi-engine transaction is needed that can
 reduce performance.
 
 
-Starting from [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), multiple versions of this table are supported,
+Starting from [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), multiple versions of this table are supported,
 each using a different storage engine. This is selected with the
 [gtid_pos_auto_engines option](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), by giving a comma-separated list of engine
 names. The server will then on-demand create an extra version of the table
@@ -31,7 +31,7 @@ non-transactional updates (like MyISAM) are replicated, since there is then
 no active transaction at the time of the `mysql.gtid_slave_pos` table update.
 
 
-Prior to [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), only the default `mysql.gtid_slave_pos` table is
+Prior to [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), only the default `mysql.gtid_slave_pos` table is
 available. In these versions, the table should preferably be using the
 storage engine that is used for most replicated transactions.
 
@@ -48,7 +48,7 @@ ALTER TABLE mysql.gtid_slave_pos ENGINE=MyISAM;
 ```
 
 The `mysql.gtid_slave_pos` table should not be changed manually in any other
-way. From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), it is preferable to use the `gtid_pos_auto_engines`
+way. From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), it is preferable to use the `gtid_pos_auto_engines`
 server variable to get the GTID position updates to use the TokuDB or
 RocksDB storage engine.
 
@@ -74,7 +74,7 @@ The table `mysql.gtid_slave_pos` contains the following fields
 
 
 
-From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), some status variables are available to monitor the use
+From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), some status variables are available to monitor the use
 of the different `gtid_slave_pos` table versions:
 
 

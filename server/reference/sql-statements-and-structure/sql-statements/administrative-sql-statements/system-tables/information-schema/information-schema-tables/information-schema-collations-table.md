@@ -17,14 +17,14 @@ It contains the following columns:
 | IS_DEFAULT | Whether the collation is the character set's default. |
 | IS_COMPILED | Whether the collation is compiled into the server. |
 | SORTLEN | Sort length, used for determining the memory used to sort strings in this collation. |
-| COMMENT | For utf8mb4_0900 collations, contains the corresponding alias collation. From [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes), [MariaDB 11.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes), [MariaDB 11.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/mariadb-11-8-1-release-notes). |
+| COMMENT | For utf8mb4_0900 collations, contains the corresponding alias collation. From [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes), [MariaDB 11.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes), [MariaDB 11.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/mariadb-11-8-1-release-notes). |
 
 
 
 The [SHOW COLLATION](../../../show/show-collation.md) statement returns the same results and both can be reduced in a similar way.
 
 
-For example, in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), the following two statements return the same results:
+For example, in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the following two statements return the same results:
 
 
 ```
@@ -39,7 +39,7 @@ SELECT * FROM information_schema.COLLATIONS
 WHERE CHARACTER_SET_NAME LIKE 'utf8mb3';
 ```
 
-In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) and before, `utf8` should be specified instead of `utf8mb3`.
+In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) and before, `utf8` should be specified instead of `utf8mb3`.
 
 
 ## NO PAD collations

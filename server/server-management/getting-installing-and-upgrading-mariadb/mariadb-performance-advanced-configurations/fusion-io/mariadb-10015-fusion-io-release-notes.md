@@ -17,7 +17,7 @@ code yourself.
 **Release date:** 12 Dec 2014
 
 
-**For an overview of [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) Fusion-io see the
+**For an overview of [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) Fusion-io see the
 [Fusion-io Introduction](fusion-io-introduction.md) page.**
 
 
@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB!
 Since the [MariaDB 10.0.9 Fusion-io preview](https://blog.mariadb.org/significant-performance-boost-with-new-mariadb-page-compression-on-fusionio/) release, the following notable changes have been made.
 
 
-* Merged with [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) release
+* Merged with [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes) release
 * Added support for 4K sector size if supported
 
   * Added status variables for 1K, 2K, 4K, 8K, 16K, and 32K trims
@@ -45,7 +45,7 @@ Since the [MariaDB 10.0.9 Fusion-io preview](https://blog.mariadb.org/significan
 
 ## Other Changes
 
-For a complete list of changes made in [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes), with links to detailed
+For a complete list of changes made in [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes), with links to detailed
 information on each push, see the [changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/changelogs/changelogs-mariadb-100-series/mariadb-10015-changelog).
 
 

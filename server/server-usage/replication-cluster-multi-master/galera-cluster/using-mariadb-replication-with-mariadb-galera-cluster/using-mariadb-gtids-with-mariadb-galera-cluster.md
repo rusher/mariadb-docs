@@ -2,7 +2,7 @@
 # Using MariaDB GTIDs with MariaDB Galera Cluster
 
 
-MariaDB's [global transaction IDs (GTIDs)](../../standard-replication/gtid.md) are very useful when used with [MariaDB replication](../../standard-replication/README.md), which is primarily what that feature was developed for. [Galera Cluster](https://galeracluster.com/), on the other hand, was developed by Codership for all MySQL and MariaDB variants, and the initial development of the technology pre-dated MariaDB's [GTID](../../standard-replication/gtid.md) implementation. As a side effect, [MariaDB Galera Cluster](../README.md) (at least until [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)) only partially supports MariaDB's [GTID](../../standard-replication/gtid.md) implementation.
+MariaDB's [global transaction IDs (GTIDs)](../../standard-replication/gtid.md) are very useful when used with [MariaDB replication](../../standard-replication/README.md), which is primarily what that feature was developed for. [Galera Cluster](https://galeracluster.com/), on the other hand, was developed by Codership for all MySQL and MariaDB variants, and the initial development of the technology pre-dated MariaDB's [GTID](../../standard-replication/gtid.md) implementation. As a side effect, [MariaDB Galera Cluster](../README.md) (at least until [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)) only partially supports MariaDB's [GTID](../../standard-replication/gtid.md) implementation.
 
 
 ## GTID Support for Write Sets Replicated by Galera Cluster
@@ -11,7 +11,7 @@ MariaDB's [global transaction IDs (GTIDs)](../../standard-replication/gtid.md) a
 Galera Cluster has its own [certification-based replication method](../about-galera-replication.md) that is substantially different from [MariaDB replication](../../standard-replication/README.md). However, it would still be beneficial if [MariaDB Galera Cluster](../README.md) was able to associate a Galera Cluster write set with a [GTID](../../standard-replication/gtid.md) that is globally unique, but that is also consistent for that write set on each cluster node.
 
 
-Before [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [MariaDB Galera Cluster](../README.md) did not replicate the original [GTID](../../standard-replication/gtid.md) with the write set except in cases where the transaction was originally applied by a [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread). Each node independently generated its own [GTID](../../standard-replication/gtid.md) for each write set in most cases. See [MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720).
+Before [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [MariaDB Galera Cluster](../README.md) did not replicate the original [GTID](../../standard-replication/gtid.md) with the write set except in cases where the transaction was originally applied by a [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread). Each node independently generated its own [GTID](../../standard-replication/gtid.md) for each write set in most cases. See [MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720).
 
 
 ### Wsrep GTID Mode
@@ -65,10 +65,10 @@ For information on setting `[server_id](../../standard-replication/replication-a
 #### Known Problems with Wsrep GTID Mode
 
 
-Until [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), there were known cases where [GTIDs](../../standard-replication/gtid.md) could become inconsistent across the cluster nodes.
+Until [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), there were known cases where [GTIDs](../../standard-replication/gtid.md) could become inconsistent across the cluster nodes.
 
 
-A known issue (fixed in [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)) is:
+A known issue (fixed in [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)) is:
 
 
 * Implicitly dropped temporary tables can make GTIDs inconsistent. See [MDEV-14153](https://jira.mariadb.org/browse/MDEV-14153) and [MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720).
@@ -83,8 +83,8 @@ This does not necessarily imply that wsrep GTID mode works perfectly in all othe
 If a Galera Cluster node is also a [replication slave](../../standard-replication/replication-overview.md), then that node's [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread) will be applying transactions that it replicates from its replication master. If the node has `[log_slave_updates=ON](../../standard-replication/replication-and-binary-log-system-variables.md#log_slave_updates)` set, then each transaction that the [slave SQL thread](../../standard-replication/replication-threads.md#slave-sql-thread) applies will also generate a Galera Cluster write set that is replicated to the rest of the nodes in the cluster.
 
 
-In [MariaDB 10.1.30](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10130-release-notes) and earlier, the node acting as slave would apply the transaction with the original GTID that it received from the master, and the other Galera Cluster nodes would generate their own GTIDs for the transaction when they replicated the write set.
+In [MariaDB 10.1.30](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10130-release-notes) and earlier, the node acting as slave would apply the transaction with the original GTID that it received from the master, and the other Galera Cluster nodes would generate their own GTIDs for the transaction when they replicated the write set.
 
 
-In [MariaDB 10.1.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes) and later, the node acting as slave will include the transaction's original `Gtid_Log_Event` in the replicated write set, so all nodes should associate the write set with its original GTID. See [MDEV-13431](https://jira.mariadb.org/browse/MDEV-13431) about that.
+In [MariaDB 10.1.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes) and later, the node acting as slave will include the transaction's original `Gtid_Log_Event` in the replicated write set, so all nodes should associate the write set with its original GTID. See [MDEV-13431](https://jira.mariadb.org/browse/MDEV-13431) about that.
 

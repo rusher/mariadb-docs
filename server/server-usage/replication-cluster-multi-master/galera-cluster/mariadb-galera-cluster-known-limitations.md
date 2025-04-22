@@ -111,7 +111,7 @@ This article contains information on known problems and limitations of MariaDB G
 * `FLUSH PRIVILEGES` is not replicated.
 
 
-* The [query cache](../optimization-and-tuning/buffers-caches-and-threads/query-cache.md) needed to be disabled by setting `[query_cache_size=0](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)` prior to MariaDB Galera Cluster 5.5.40, MariaDB Galera Cluster 10.0.14, and [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)..
+* The [query cache](../optimization-and-tuning/buffers-caches-and-threads/query-cache.md) needed to be disabled by setting `[query_cache_size=0](../optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)` prior to MariaDB Galera Cluster 5.5.40, MariaDB Galera Cluster 10.0.14, and [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes)..
 
 
 * In an asynchronous replication setup where a master replicates to a galera node acting as slave, parallel replication (slave-parallel-threads > 1) on slave is currently not supported (see [MDEV-6860](https://jira.mariadb.org/browse/MDEV-6860)).

@@ -2,7 +2,7 @@
 # Mariabackup and BACKUP STAGE Commands
 
 
-The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server/).
+The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/).
 
 
 ## Mariabackup and `BACKUP STAGE` Commands in MariaDB Community Server
@@ -23,7 +23,7 @@ When the backup is complete, it executes the following `[BACKUP STAGE](../../../
 BACKUP STAGE END;
 ```
 
-If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](README.md) that is bundled with [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server/).
+If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](README.md) that is bundled with [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/).
 
 
 ### Tasks Performed Prior to `BACKUP STAGE` in MariaDB Community Server
@@ -93,7 +93,7 @@ Mariabackup from MariaDB Community Server performs the following tasks in the `E
 ## Mariabackup and `BACKUP STAGE` Commands in MariaDB Enterprise Server
 
 
-The following sections describe how the [MariaDB Backup](README.md) version of Mariabackup that is bundled with [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server/) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
+The following sections describe how the [MariaDB Backup](README.md) version of Mariabackup that is bundled with [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
 
 
 ### `BACKUP STAGE START` in MariaDB Enterprise Server

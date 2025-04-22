@@ -7,7 +7,7 @@ Basic information about the existing spatial features can be found in the
 also applies to MariaDB.
 
 
-The [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) release , contains code improving
+The [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) release , contains code improving
 the spatial functionality in MariaDB.
 
 

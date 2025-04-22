@@ -18,7 +18,7 @@ MariaDB provides options that can be used on a [replication primary](../README.m
 ### Binary Log Filter Options
 
 
-The following options are available, and they are evaluated in the order that they are listed below. If there are conflicting settings, *binlog_do_db* prevails. Before [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), they are only available as options; from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes) they are also available as system variables.
+The following options are available, and they are evaluated in the order that they are listed below. If there are conflicting settings, *binlog_do_db* prevails. Before [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), they are only available as options; from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes) they are also available as system variables.
 
 
 #### `binlog_do_db`
@@ -99,7 +99,7 @@ The following options and system variables are available, and they are evaluated
 #### `replicate_rewrite_db`
 
 
-The [replicate_rewrite_db](replication-and-binary-log-system-variables.md#replicate_rewrite_db) option (and, from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), system variable), allows you to configure a [replica](../README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) event in which the default database (i.e. the one selected by the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
+The [replicate_rewrite_db](replication-and-binary-log-system-variables.md#replicate_rewrite_db) option (and, from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), system variable), allows you to configure a [replica](../README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) event in which the default database (i.e. the one selected by the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
 
 
 This option will **not** work with cross-database updates with [statement-based logging](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](#statement-based-logging) section for more information.
@@ -114,7 +114,7 @@ This option's rewrites are evaluated *before* any other replication filters conf
 Statements that use table names qualified with database names do not work with other replication filters such as [replicate_do_table](#replicate_do_table).
 
 
-Until [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011), this option could not be set dynamically.
+Until [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), this option could not be set dynamically.
 
 
 When setting it on the command-line or in a server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times. For example:

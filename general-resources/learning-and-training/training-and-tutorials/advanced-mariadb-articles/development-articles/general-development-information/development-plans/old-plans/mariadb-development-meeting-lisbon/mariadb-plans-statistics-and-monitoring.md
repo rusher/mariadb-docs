@@ -35,7 +35,7 @@ spetrunia: report actual estimates, and all decisions of the optimizer,
 including why an index was *not* picked, etc.
 
 
-* Developed by Serg for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3): Phone Home
+* Developed by Serg for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3): Phone Home
 todo: make a web page on mariadb.org showing the results from the data
 being collected;
 pstoev: do we need to allow people to run their own reporting servers;

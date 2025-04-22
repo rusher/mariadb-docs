@@ -45,7 +45,7 @@ The final event is usually a log-rotation event [ROTATE_EVENT](rotate_event.md) 
 **Note**: in case of a server crash there is no terminating event (no ROTATE nor STOP)
 
 
-### Example [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) Binlog File (Hexdump -C $file_name)
+### Example [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) Binlog File (Hexdump -C $file_name)
 
 
 ```

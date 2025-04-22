@@ -1,7 +1,7 @@
 
 # Install cmake on build VMs
 
-[MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Requires cmake. Install cmake on all -build VMs (and other Unix-like machines) with:
+[MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Requires cmake. Install cmake on all -build VMs (and other Unix-like machines) with:
 
 
 ```

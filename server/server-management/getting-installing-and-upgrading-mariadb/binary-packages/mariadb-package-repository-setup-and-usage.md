@@ -162,7 +162,7 @@ By default, the script will configure your system to install from the repository
 The script can also configure your system to install from the repository of a different version of MariaDB if you use the `--mariadb-server-version` option.
 
 
-The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), that would be:
+The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), that would be:
 
 
 ```
@@ -183,7 +183,7 @@ The following MariaDB versions are currently supported:
 
 
 If you want to pin the repository of a specific minor release, such as [MariaDB
-10.6.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-10-6-14-release-notes), then you can also specify the minor release. For example,
+10.6.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-14-release-notes), then you can also specify the minor release. For example,
 `mariadb-10.6.14`. This may be helpful if you want to avoid upgrades. However,
 avoiding upgrades is not recommended, since minor maintenance releases may
 contain important bug fixes and fixes for security vulnerabilities.

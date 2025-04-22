@@ -91,6 +91,7 @@ log_slave_updates
 
 
 * The main difference between Multi-Master Ring Replication and normal replication is that a change done by a master will eventually replicate back to it. When this happens, the master will see that the binary log event has the same server_id as the master has and will ignore the event. This is why it is critical to ensure that all server_id's are unique and that one does not change the server id.
+* When doing [ALTER TABLE](https://mariadb.com/kb/en/alter_table) in a Multi-Master Ring replication setup, you should be aware the while you are running an [ALTER TABLE](alter_table) on one master, another master can generate events that uses the old table definition. You should especially take care to not drop columns that could be in use by any application or still available in the upcoming replication stream.
 
 
 ## How to resolve things if they go wrong in Multi-Master Ring Replication
@@ -207,7 +208,7 @@ Some other options:
 
 
 * For semi-sync setups, the old master1 can be re-used as slave3 if re-started with `--init-rpl-role=SLAVE` during recovery
-* For non-semi-synchronous setups, one can use option [CHANGE MASTER TO MASTER_DEMOTE_TO_SLAVE=1](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_demote_to_slave) (requires [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) or higher).
+* For non-semi-synchronous setups, one can use option [CHANGE MASTER TO MASTER_DEMOTE_TO_SLAVE=1](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_demote_to_slave) (requires [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) or higher).
 
 
 ## See also

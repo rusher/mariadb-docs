@@ -158,7 +158,7 @@ SELECT * FROM autoinc_test;
 * [AUTO_INCREMENT handling in XtraDB/InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
 * [BLACKHOLE and AUTO_INCREMENT](../storage-engines/blackhole.md#blackhole-and-auto_increment)
-* [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 
 *The initial version of this article was copied, with permission, from [Autoincrement_FAQ](https://hashmysql.org/wiki/Autoincrement_FAQ) on 2012-10-05.*

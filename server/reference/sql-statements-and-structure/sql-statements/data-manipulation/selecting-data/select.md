@@ -6,7 +6,7 @@
 
 ```
 SELECT
-    [/*+ hints */]  /*From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118)*/
+    [/*+ hints */]  /*From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/what-is-mariadb-118)*/
     [ALL | DISTINCT | DISTINCTROW]
     [HIGH_PRIORITY]
     [STRAIGHT_JOIN]
@@ -150,7 +150,7 @@ See [LOCK IN SHARE MODE](lock-in-share-mode.md) and [FOR UPDATE](for-update.md) 
 
 
 
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 See [SELECT ... OFFSET ... FETCH](select-offset-fetch.md).
 
 
@@ -176,8 +176,8 @@ Passes the whole result set to a C Procedure. See [PROCEDURE](procedure.md) and 
 
 
 
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
+##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
+The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
 This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../../storage-engines/innodb/README.md) tables and ignored otherwise.
 
 

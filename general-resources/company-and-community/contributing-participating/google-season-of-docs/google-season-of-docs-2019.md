@@ -8,7 +8,7 @@ MariaDB applied to participate in the first Google Season of Docs. Unfortunately
 # Where to Start
 
 
-Please join us on [Zulip](/en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You can also subscribe to [maria-docs@lists.launchpad.net](https://launchpad.net/~maria-docs), the documentation mailing list.
+Please join us on [Zulip](/kb/en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You can also subscribe to [maria-docs@lists.launchpad.net](https://launchpad.net/~maria-docs), the documentation mailing list.
 
 
 [List of beginner friendly bugs](https://jira.mariadb.org/issues/?jql=status%20%3D%20Open%20AND%20resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20beginner-friendly%20ORDER%20BY%20updated%20DESC)
@@ -45,7 +45,7 @@ A detailed tutorial and user guide, including examples of the various Mroonga [u
 ## Translation
 
 
-You will choose a major language and ensure that a substantial subsection of the documentation is translated into that language. See [translations](/en/translations/).
+You will choose a major language and ensure that a substantial subsection of the documentation is translated into that language. See [translations](/kb/en/translations/).
 
 
 ## Migration Documentation

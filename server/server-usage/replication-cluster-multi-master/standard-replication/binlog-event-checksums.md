@@ -7,7 +7,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 MariaDB includes a feature to include a checksum in [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) events.
 
 
-Checksums are enabled with the [binlog_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), this was disabled by default. From [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), the option is set to `CRC32`.
+Checksums are enabled with the [binlog_checksum option](replication-and-binary-log-system-variables.md). Until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), this was disabled by default. From [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes), the option is set to `CRC32`.
 
 
 The variable can be changed dynamically without restarting the server. Setting
@@ -37,8 +37,8 @@ system corruption of replica relay log files.
 
 
 
-##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), binlog checksums are computed when writing events into the statement or transaction caches, where before this was done when the caches were copied to the real binlog file. This moves the
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), binlog checksums are computed when writing events into the statement or transaction caches, where before this was done when the caches were copied to the real binlog file. This moves the
 checksum computation outside of holding LOCK_log, improving scalability. See [MDEV-31273](https://jira.mariadb.org/browse/MDEV-31273).
 
 
@@ -76,5 +76,5 @@ The [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/README.md) cl
 
 
 * [Binlog Event Checksum Interoperability](binlog-event-checksum-interoperability.md)
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

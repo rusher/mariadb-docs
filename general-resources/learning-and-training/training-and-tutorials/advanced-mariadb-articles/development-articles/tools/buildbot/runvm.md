@@ -1,7 +1,7 @@
 
 # Buildbot runvm
 
-One type of build we do in BuildBot is to build and test [MariaDB](/en/mariadb/) binary
+One type of build we do in BuildBot is to build and test [MariaDB](/kb/en/mariadb/) binary
 packages for the platforms we release on. We build and test packages for Debian
 (4 and 5), Ubuntu (8.04 to 10.04), Centos 5, and generic Linux; amd64 and i386
 architectures. This testing is done with virtual machines run in 

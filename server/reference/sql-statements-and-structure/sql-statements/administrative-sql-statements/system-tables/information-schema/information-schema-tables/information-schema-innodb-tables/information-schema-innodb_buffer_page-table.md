@@ -17,7 +17,7 @@ It has the following columns:
 | Column | Description |
 | --- | --- |
 | Column | Description |
-| POOL_ID | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
+| POOL_ID | Buffer Pool identifier. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) returns a value of 0, since multiple InnoDB buffer pool instances has been removed. |
 | BLOCK_ID | Buffer Pool Block identifier. |
 | SPACE | Tablespace identifier. Matches the SPACE value in the [INNODB_SYS_TABLES](information-schema-innodb_sys_tables-table.md) table. |
 | PAGE_NUMBER | Buffer pool page number. |

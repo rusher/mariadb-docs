@@ -92,7 +92,7 @@ MariaDB supports the following locale values:
 | it_CH | Italian | Switzerland |
 | it_IT | Italian | Italy |
 | ja_JP | Japanese | Japan |
-| ka_GE | Georgian | Georgia (From [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes)) |
+| ka_GE | Georgian | Georgia (From [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-3-release-notes)) |
 | ko_KR | Korean | Republic of Korea |
 | lt_LT | Lithuanian | Lithuania |
 | lv_LV | Latvian | Latvia |
@@ -113,10 +113,10 @@ MariaDB supports the following locale values:
 | sk_SK | Slovak | Slovakia |
 | sl_SI | Slovenian | Slovenia |
 | sq_AL | Albanian | Albania |
-| sr_YU | Serbian | Serbia (Deprecated in [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) and removed in [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)) |
+| sr_YU | Serbian | Serbia (Deprecated in [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) and removed in [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes)) |
 | sv_FI | Swedish | Finland |
 | sv_SE | Swedish | Sweden |
-| sw_KE | Swahili | Kenya (from [MariaDB 11.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes)) |
+| sw_KE | Swahili | Kenya (from [MariaDB 11.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-2-release-notes)) |
 | ta_IN | Tamil | India |
 | te_IN | Telugu | India |
 | th_TH | Thai | Thailand |

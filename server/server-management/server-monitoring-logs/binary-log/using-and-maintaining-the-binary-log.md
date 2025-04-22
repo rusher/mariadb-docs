@@ -20,7 +20,7 @@ Log files can also be removed automatically with the [expire_logs_days](../../..
 Always set [expire_logs_days](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days) higher than any possible replica lag.
 
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), the [binlog_expire_logs_seconds](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the [binlog_expire_logs_seconds](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
 
 
 If the binary log index file has been removed, or incorrectly manually edited, all of the above forms of purging log files will fail. The .index file is a plain text file, and can be manually recreated or edited so that it lists only the binary log files that are present, in numeric/age order.
@@ -54,8 +54,8 @@ To be sure replication is not broken while deleting log files, perform the follo
 
 
 
-##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114)
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/what-is-mariadb-114), it's possible to limit the size of the binlog by setting the [max_binlog_total_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_total_size) system variable. If not set to zero, the total size of the binlog will be stored in the [binlog_disk_use](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use) status variable. It's also possible to limit the size of a single binlog file by setting [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size). 
+##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), it's possible to limit the size of the binlog by setting the [max_binlog_total_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_total_size) system variable. If not set to zero, the total size of the binlog will be stored in the [binlog_disk_use](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use) status variable. It's also possible to limit the size of a single binlog file by setting [max_binlog_size](../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size). 
 
 
 ## Binary Log Format

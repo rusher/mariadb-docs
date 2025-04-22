@@ -15,7 +15,7 @@ database server.
 
 
 This tutorial was written for Ubuntu 22.04, MaxScale 23.08 and
-[MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011). In addition to
+[MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011). In addition to
 the MaxScale server, you'll need two MariaDB servers which will be used for the
 sharding. The installation of MariaDB is not covered by this tutorial.
 

@@ -7,7 +7,7 @@ When a user attempts to log in, the authentication plugin controls how MariaDB S
 When creating or altering a user account with the [GRANT](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md), [CREATE USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) or [ALTER USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statements, you can specify the authentication plugin you want the user account to use by providing the `IDENTIFIED VIA` clause. By default, when you create a user account without specifying an authentication plugin, MariaDB uses the [mysql_native_password](authentication-plugin-mysql_native_password.md) plugin.
 
 
-From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 
 * One can specify multiple authentication plugins for each user account.

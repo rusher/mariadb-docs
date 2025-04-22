@@ -4,7 +4,7 @@
 `mariadb-import` loads tables from text files in various formats.
 
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlimport`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlimport`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 
 `mariadb-import` loads tables from text files in various formats. The base name
@@ -37,7 +37,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 | --character-sets-dir=name | Directory for character set files. |
 | -c cols, --columns=cols | Use only these columns to import the data to. Give the column names in a comma separated list. This is same as giving columns to [LOAD DATA INFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md). |
 | -C, --compress | Use compression in server/client protocol. |
-| --database=name | Restore the specified database, ignoring others.To specify more than one database to include, use the directive multiple times, once for each database. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
+| --database=name | Restore the specified database, ignoring others.To specify more than one database to include, use the directive multiple times, once for each database. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
 | -
 
 # [options] , --debug[=options] | Output debug log. Often this is d:t:o,filename. The default is d:t:o. |
@@ -49,7 +49,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 | --defaults-file=name | Only read default options from the given file name Must be given as the first option. |
 | --defaults-group-suffix=name | In addition to the given groups, also read groups with this suffix. |
 | -d, --delete | First delete all rows from table. |
-| --dir=name | Restore all tables from backup directory created using [mariadb-dump --dir](mariadb-dump.md). From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
+| --dir=name | Restore all tables from backup directory created using [mariadb-dump --dir](mariadb-dump.md). From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
 | --fields-terminated-by=name | Fields in the input file are terminated by the given string. |
 | --fields-enclosed-by=name | Fields in the import file are enclosed by the given character. |
 | --fields-optionally-enclosed-by=name | Fields in the input file are optionally enclosed by the given character. |
@@ -59,16 +59,16 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 | -h name, --host=name | Connect to host. |
 | -i, --ignore | If duplicate unique key was found, keep old row. |
 | k, --ignore-foreign-keys | Disable foreign key checks while importing the data. |
-| --ignore-database=name | Do not restore the specified database. To specify more than one database to ignore, use the directive multiple times, once for each database. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
+| --ignore-database=name | Do not restore the specified database. To specify more than one database to ignore, use the directive multiple times, once for each database. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
 | --ignore-lines=n | Ignore first n lines of data infile. |
-| --ignore-table=name | Do not restore the specified table. To specify more than one table to ignore, use the directive multiple times, once for each table. Each table must be specified with both database and table names, e.g. --ignore-table=database.table. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
-| --innodb-optimize-keys | Create secondary indexes after data load, which speeds up loading (InnoDB only). Defaults to on; use --skip-innodb-optimize-keys to disable. From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-8-series/what-is-mariadb-118). |
+| --ignore-table=name | Do not restore the specified table. To specify more than one table to ignore, use the directive multiple times, once for each table. Each table must be specified with both database and table names, e.g. --ignore-table=database.table. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
+| --innodb-optimize-keys | Create secondary indexes after data load, which speeds up loading (InnoDB only). Defaults to on; use --skip-innodb-optimize-keys to disable. From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/what-is-mariadb-118). |
 | --lines-terminated-by=name | Lines in the input file are terminated by the given string. |
 | -L, --local | Read all files through the client. |
 | -l, --lock-tables | Lock all tables for write (this disables threads). |
 | --low-priority | Use LOW_PRIORITY when updating the table. |
 | --no-defaults | Don't read default options from any option file. Must be given as the first option. |
-| -j, --parallel=num | Number of LOAD DATA jobs executed in parallel. From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes). --use-threads is a synonym. |
+| -j, --parallel=num | Number of LOAD DATA jobs executed in parallel. From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes). --use-threads is a synonym. |
 | -p[passwd], --password[=passwd] | Password to use when connecting to server. If password is not given it's asked from the terminal. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line. |
 | --pipe, -W | On Windows, connect to the server via a named pipe. This option applies only if the server supports named-pipe connections. |
 | --plugin-dir | Directory for client-side plugins. |
@@ -88,9 +88,9 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 | --ssl-crlpath=name | Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-revocation-lists-crls) for more information. This option is only supported if the client was built with OpenSSL. If the client was built with yaSSL, GnuTLS, or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md) for more information about which libraries are used on which platforms. |
 | --ssl-key=name | Defines a path to a private key file to use for [TLS](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md). This option requires that you use the absolute path, not a relative path. This option implies the --ssl option. |
 | --ssl-verify-server-cert | Enables [server certificate verification](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default. |
-| --table=name | Restore the specified table ignoring others. Use --table=dbname.tablename with this option. To specify more than one table to include, use the directive multiple times, once for each table. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
+| --table=name | Restore the specified table ignoring others. Use --table=dbname.tablename with this option. To specify more than one table to include, use the directive multiple times, once for each table. Only takes effect when used together with the --dir option. From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116). |
 | --tls-version=name | This option accepts a comma-separated list of TLS protocol versions. A TLS protocol version will only be enabled if it is present in this list. All other TLS protocol versions will not be permitted. See [Secure Connections Overview: TLS Protocol Versions](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#tls-protocol-versions) for more information. |
-| --use-threads=num | Load files in parallel. The argument is the number of threads to use for loading data. From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes), a synonym for -j, --parallel=num. |
+| --use-threads=num | Load files in parallel. The argument is the number of threads to use for loading data. From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes), a synonym for -j, --parallel=num. |
 | -u name, --user=name | User for login if not current user. |
 | -v, --verbose | Print info about the various stages. |
 | -V, --version | Output version information and exit. |

@@ -11,7 +11,7 @@ Before you upgrade, it would be best to take a backup of your database. This is 
 
 
 
-To upgrade between minor versions of MariaDB on Linux/Unix (for example from [MariaDB 10.11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-4-release-notes) to [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes)), the following procedure is suggested:
+To upgrade between minor versions of MariaDB on Linux/Unix (for example from [MariaDB 10.11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-4-release-notes) to [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-5-release-notes)), the following procedure is suggested:
 
 
 1. [Stop MariaDB](https://mariadb.com/kb/en/).

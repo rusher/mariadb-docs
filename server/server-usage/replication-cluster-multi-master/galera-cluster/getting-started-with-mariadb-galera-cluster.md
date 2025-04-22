@@ -1,8 +1,8 @@
 
 # Getting Started with MariaDB Galera Cluster
 
-The most recent release of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/what-is-mariadb-1011) is:
-**[MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes)** Stable (GA) [Download Now](https://mariadb.com/downloads/)
+The most recent release of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) is:
+**[MariaDB 10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes)** Stable (GA) [Download Now](https://mariadb.com/downloads/)
 *[Alternate download from mariadb.org](https://downloads.mariadb.org/mariadb/10.11.11/)*
 
 
@@ -13,7 +13,7 @@ The current [versions](what-is-mariadb-galera-cluster.md#galera-versions) of the
 
 
 Currently, MariaDB Galera Cluster only supports the [InnoDB](../../../reference/storage-engines/innodb/README.md) storage engine (although there is
-experimental support for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](../../../reference/storage-engines/aria/README.md)).
+experimental support for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/README.md) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](../../../reference/storage-engines/aria/README.md)).
 
 
 A great resource for Galera users is the mailing list run by the developers at Codership. It can be found at [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team). If you use Galera, then it is recommended you subscribe.

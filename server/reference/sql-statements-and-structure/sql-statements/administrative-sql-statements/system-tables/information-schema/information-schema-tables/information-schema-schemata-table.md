@@ -16,7 +16,7 @@ It contains the following columns:
 | DEFAULT_CHARACTER_SET_NAME | Default [character set](../../../../../../data-types/string-data-types/character-sets/README.md) for the database. |
 | DEFAULT_COLLATION_NAME | Default [collation](../../../../../../data-types/string-data-types/character-sets/README.md). |
 | SQL_PATH | Always NULL. |
-| SCHEMA_COMMENT | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). |
+| SCHEMA_COMMENT | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). |
 
 
 
@@ -52,7 +52,7 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 ...
 ```
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
 
 
 ```

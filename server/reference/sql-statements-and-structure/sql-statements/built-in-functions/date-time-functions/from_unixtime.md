@@ -25,16 +25,16 @@ DATE_FORMAT(FROM_UNIXTIME(unix_timestamp), format)
 ```
 
 
-##### MariaDB until [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
-Before [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), the one-argument form of `FROM_UNIXTIME()` was returning a
+##### MariaDB until [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
+Before [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), the one-argument form of `FROM_UNIXTIME()` was returning a
 `DATETIME`. Meaning, it could return values outside of valid `TIMESTAMP` range,
 in particular 1970-01-01 00:00:00. And it could return the same result for different values of unix_timestamp (around DST changes).
 
 
 Timestamps in MariaDB have a maximum value of 4294967295, equivalent to 2106-02-07 06:28:15. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md) as a storage type if you require dates beyond this.
 
-##### MariaDB until [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
-Before [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the maximum value was 2147483647, equivalent to 2038-01-19 05:14:07.
+##### MariaDB until [11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+Before [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the maximum value was 2147483647, equivalent to 2038-01-19 05:14:07.
 
 
 The options that can be used by FROM_UNIXTIME(), as well as [DATE_FORMAT()](date_format.md) and [STR_TO_DATE()](str_to_date.md), are:

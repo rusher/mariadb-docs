@@ -2,8 +2,8 @@
 # JSON_SCHEMA_VALID
 
 
-##### MariaDB starting with [11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
-`JSON_SCHEMA_VALID` was introduced in [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111).
+##### MariaDB starting with [11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
+`JSON_SCHEMA_VALID` was introduced in [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111).
 
 
 ### Syntax

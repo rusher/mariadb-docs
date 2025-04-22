@@ -97,7 +97,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | [mysqld-X.Y] | Options read by a specific version of mysqld, which includes both MariaDB Server and MySQL Server. For example, [mysqld-5.5]. |
 | [mariadbd] | Options read by MariaDB Server. |
 | [mariadbd-X.Y] | Options read by a specific version of MariaDB Server. |
-| [client-server] | Options read by all MariaDB [client programs](/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
+| [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | [galera] | Options read by a galera-capable MariaDB Server. Available on systems compiled with Galera support. |
 
 

@@ -11,7 +11,7 @@ Regular Expressions allow MariaDB to perform complex pattern matching on a strin
 In other cases you may need more control over the returned matches, and will need to use regular expressions.
 
 
-Until [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
+Until [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
 
 
 Regular expression matches are performed with the [REGEXP](regexp.md) function. `RLIKE` is a synonym for `REGEXP`.

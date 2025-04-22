@@ -7,8 +7,8 @@
 This page shows the results for benchmarking the following configuration:
 
 
-* [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) Beta + XtraDB with all optimizations (optimizater_switch) set to `ON`
-* [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) Beta + XtraDB with Igor's suggested optimizations
+* [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) Beta + XtraDB with all optimizations (optimizater_switch) set to `ON`
+* [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) Beta + XtraDB with Igor's suggested optimizations
 * MySQL 5.5.13 + InnoDB
 * MySQL 5.6.2 + InnoDB
 
@@ -109,8 +109,8 @@ Here are the actual results:
 | Configuration | 1.sql | 2.sql | 3.sql | 4.sql | 5.sql | 6.sql | 7.sql | 8.sql | 9.sql | 10.sql | 11.sql | 12.sql | 13.sql | 14.sql | 15.sql | 16.sql | 17.sql | 18.sql | 19.sql | 20.sql | 21.sql | 22.sql |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Configuration | 1.sql | 2.sql | 3.sql | 4.sql | 5.sql | 6.sql | 7.sql | 8.sql | 9.sql | 10.sql | 11.sql | 12.sql | 13.sql | 14.sql | 15.sql | 16.sql | 17.sql | 18.sql | 19.sql | 20.sql | 21.sql | 22.sql |
-| [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) + XtraDB with all optimizations to ON | 165 | n/a | 424.333 | n/a | n/a | 114.333 | n/a | n/a | n/a | n/a | 536 | 173 | n/a | n/a | n/a | 52 | 452 | n/a | n/a | n/a | n/a | 8 |
-| [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) + XtraDB with Igor's suggestions for optimization | 163.667 | n/a | n/a | n/a | n/a | 114 | n/a | n/a | n/a | n/a | 538 | 280.667 | n/a | 257 | n/a | 60 | 456 | n/a | n/a | n/a | n/a | 8 |
+| [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) + XtraDB with all optimizations to ON | 165 | n/a | 424.333 | n/a | n/a | 114.333 | n/a | n/a | n/a | n/a | 536 | 173 | n/a | n/a | n/a | 52 | 452 | n/a | n/a | n/a | n/a | 8 |
+| [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes) + XtraDB with Igor's suggestions for optimization | 163.667 | n/a | n/a | n/a | n/a | 114 | n/a | n/a | n/a | n/a | 538 | 280.667 | n/a | 257 | n/a | 60 | 456 | n/a | n/a | n/a | n/a | 8 |
 | MySQL 5.5.15 + InnoDB | 104 | n/a | n/a | n/a | n/a | 103 | n/a | n/a | n/a | n/a | 534.667 | 177 | n/a | n/a | n/a | n/a | 476 | n/a | n/a | n/a | n/a | 6 |
 | MySQL 5.6.2 + InnoDB | 103 | n/a | n/a | n/a | n/a | 104 | n/a | n/a | n/a | n/a | 531 | 168 | n/a | n/a | n/a | 55 | 460.667 | n/a | n/a | n/a | n/a | 6 |
 

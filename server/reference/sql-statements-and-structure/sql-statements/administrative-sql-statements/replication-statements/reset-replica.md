@@ -9,7 +9,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 
 
 ```
-RESET REPLICA ["connection_name"] [ALL]  [FOR CHANNEL "connection_name"].
+RESET { SLAVE | REPLICA } ["connection_name"] [ALL]  [FOR CHANNEL "connection_name"].
 ```
 
 
@@ -61,14 +61,14 @@ If there is only one nameless primary, or the default primary (as specified by t
 
 
 
-##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as
 using the channel_name directly after `RESET REPLICA`.
 
 
 
 ##### MariaDB starting with [11.6.0](https://mariadb.com/kb/en/mariadb-1160-release-notes/)
-From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), RESET REPLICA resets the Master/Slave_last_event_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
+From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), RESET REPLICA resets the Master/Slave_last_event_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
 
 
 ## See Also

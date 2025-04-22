@@ -9,7 +9,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 caused the row event.
 
 
-Until [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) to MySQL/[MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)). You can enable this with `[--binlog-annotate-row-events](#master-option-binlog-annotate-row-events)`.
+Until [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes), the binlog event type `Annotate_rows_log_event` was off by default (so as not to change the binary log format and to allow one to replicate [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) to MySQL/[MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)). You can enable this with `[--binlog-annotate-row-events](#master-option-binlog-annotate-row-events)`.
 
 
 In the [binary log](README.md), each `Annotate_rows` event precedes the
@@ -331,5 +331,5 @@ ROLLBACK /* added by mariadb-binlog */;
 * [Replication and Binary Log Server System Variables](../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md)
 * [Full List of MariaDB Options, System and Status Variables](../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
 * [mariadbd Options](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 

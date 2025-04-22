@@ -20,7 +20,7 @@ Returns `NULL` if any argument is `NULL`, or if the second or third argument are
 
 
 The argument *`N`* is interpreted as an integer, but may be specified as an
-integer or a string. The minimum base is 2 and the maximum base is 36 (prior to [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes)) or 62 (from [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes)). If *`to_base`* is a negative number, *`N`* is regarded as a signed number.
+integer or a string. The minimum base is 2 and the maximum base is 36 (prior to [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes)) or 62 (from [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes)). If *`to_base`* is a negative number, *`N`* is regarded as a signed number.
 Otherwise, *`N`* is treated as unsigned. `CONV()` works with 64-bit
 precision.
 

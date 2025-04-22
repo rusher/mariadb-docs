@@ -1,7 +1,7 @@
 
 # Information Schema TABLES Table
 
-The [Information Schema](../README.md) table shows information about the various tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md) on the server.
+The [Information Schema](../README.md) table shows information about the various tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md) on the server.
 
 
 It contains the following columns:
@@ -14,7 +14,7 @@ It contains the following columns:
 | TABLE_CATALOG | Always def. |
 | TABLE_SCHEMA | Database name. |
 | TABLE_NAME | Table name. |
-| TABLE_TYPE | One of BASE TABLE for a regular table, VIEW for a [view](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md), SYSTEM VIEW for [Information Schema](../README.md) tables, SYSTEM VERSIONED for [system-versioned tables](../../../../../temporal-tables/system-versioned-tables.md), SEQUENCE for [sequences](../../../../../sequences/README.md) or, from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), TEMPORARY for local temporary tables. |
+| TABLE_TYPE | One of BASE TABLE for a regular table, VIEW for a [view](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md), SYSTEM VIEW for [Information Schema](../README.md) tables, SYSTEM VERSIONED for [system-versioned tables](../../../../../temporal-tables/system-versioned-tables.md), SEQUENCE for [sequences](../../../../../sequences/README.md) or, from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), TEMPORARY for local temporary tables. |
 | ENGINE | [Storage Engine](../../../../../../storage-engines/README.md). |
 | VERSION | Version number from the table's .frm file |
 | ROW_FORMAT | Row format (see [InnoDB](../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), [Aria](../../../../../../storage-engines/aria/aria-storage-formats.md) and [MyISAM](../../../../../../storage-engines/myisam-storage-engine/myisam-storage-formats.md) row formats). |
@@ -32,8 +32,8 @@ It contains the following columns:
 | CHECKSUM | Live checksum value, if any. |
 | CREATE_OPTIONS | Extra [CREATE TABLE](../../../../data-definition/create/create-table.md) options. |
 | TABLE_COMMENT | Table comment provided when MariaDB created the table. |
-| MAX_INDEX_LENGTH | Maximum index length (supported by MyISAM and Aria tables). Added in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes). |
-| TEMPORARY | Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), placeholder to signal that a table is a temporary table and always "N", except "Y" for generated information_schema tables and NULL for [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md). From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), will also be set to "Y" for local temporary tables. Added in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes). |
+| MAX_INDEX_LENGTH | Maximum index length (supported by MyISAM and Aria tables). Added in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes). |
+| TEMPORARY | Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), placeholder to signal that a table is a temporary table and always "N", except "Y" for generated information_schema tables and NULL for [views](../../../../../../../server-usage/programming-customizing-mariadb/views/README.md). From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), will also be set to "Y" for local temporary tables. Added in [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes). |
 
 
 
@@ -46,7 +46,7 @@ Although the table is standard in the Information Schema, all but `TABLE_CATALOG
 ## Examples
 
 
-From [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
+From [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
 
 ```
@@ -102,7 +102,7 @@ MAX_INDEX_LENGTH: 17179868160
 ...
 ```
 
-Example with temporary = 'y', from [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
+Example with temporary = 'y', from [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
 
 ```
@@ -158,7 +158,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
 ...
 ```
 
-From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes)
+From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes)
 
 
 ```

@@ -18,7 +18,7 @@ It has the following columns:
 | EVENT_OBJECT_CATALOG | Always def. |
 | EVENT_OBJECT_SCHEMA | Database name on which the trigger acts. |
 | EVENT_OBJECT_TABLE | Table name on which the trigger acts. |
-| ACTION_ORDER | Indicates the order that the action will be performed in (of the list of a table's triggers with identical EVENT_MANIPULATION and ACTION_TIMING values). Before [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) introduced the [FOLLOWS and PRECEDES clauses](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md#followsprecedes-other_trigger_name), always 0 |
+| ACTION_ORDER | Indicates the order that the action will be performed in (of the list of a table's triggers with identical EVENT_MANIPULATION and ACTION_TIMING values). Before [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) introduced the [FOLLOWS and PRECEDES clauses](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md#followsprecedes-other_trigger_name), always 0 |
 | ACTION_CONDITION | NULL |
 | ACTION_STATEMENT | Trigger body, UTF-8 encoded. |
 | ACTION_ORIENTATION | Always ROW. |

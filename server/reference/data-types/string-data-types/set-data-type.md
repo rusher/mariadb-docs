@@ -23,6 +23,35 @@ SET values cannot contain commas.
 If a SET contains duplicate values, an error will be returned if [strict mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled, or a warning if strict mode is not enabled.
 
 
+## EXAMPLES
+
+
+```
+CREATE TABLE set_example (
+  description VARCHAR(20),
+  example SET('Foo', 'Bar', 'Baz', 'Bob')
+);
+```
+
+```
+INSERT INTO set_example VALUES
+  ('1 val', 'Foo'),
+  ('2 vals', 'Baz,Foo'),
+  ('4 vals', 'Bob,Foo,Bar,Foo,Baz,Bob');
+```
+
+```
+SELECT * FROM set_example;
+
++-------------+-----------------+
+| description | example         |
++-------------+-----------------+
+| 1 val       | Foo             |
+| 2 vals      | Foo,Baz         |
+| 4 vals      | Foo,Bar,Baz,Bob |
++-------------+-----------------+
+```
+
 ## See Also
 
 

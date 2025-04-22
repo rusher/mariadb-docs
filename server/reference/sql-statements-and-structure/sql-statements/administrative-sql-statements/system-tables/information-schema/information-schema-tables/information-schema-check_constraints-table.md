@@ -15,7 +15,7 @@ It contains the following columns:
 | CONSTRAINT_SCHEMA | Database name. |
 | CONSTRAINT_NAME | Constraint name. |
 | TABLE_NAME | Table name. |
-| LEVEL | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) |
+| LEVEL | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) |
 | CHECK_CLAUSE | Constraint clause. |
 
 
@@ -122,7 +122,7 @@ INSERT INTO tt VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `b_upper` failed for `test`.`tt`
 ```
 
-From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-10510-release-notes):
+From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10510-release-notes):
 
 
 ```

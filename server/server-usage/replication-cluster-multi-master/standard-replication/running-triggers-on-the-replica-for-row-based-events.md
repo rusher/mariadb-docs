@@ -22,7 +22,7 @@ Possible values are:
 | NO (Default) | Don't invoke triggers for row-based events |
 | YES | Invoke triggers for row-based events, don't log their effect into the binary log |
 | LOGGING | Invoke triggers for row-based events, and log their effect into the binary log |
-| ENFORCE | From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) only. Triggers will always be run on the replica, even if there are triggers on the master. ENFORCE implies LOGGING. |
+| ENFORCE | From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes) only. Triggers will always be run on the replica, even if there are triggers on the master. ENFORCE implies LOGGING. |
 
 
 

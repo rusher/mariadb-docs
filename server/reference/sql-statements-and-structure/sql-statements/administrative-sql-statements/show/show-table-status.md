@@ -13,7 +13,7 @@ SHOW TABLE STATUS [{FROM | IN} db_name]
 ## Description
 
 
-`SHOW TABLE STATUS` works like [SHOW TABLES](show-tables.md), but provides more extensive information about each table (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-TEMPORARY tables are shown).
+`SHOW TABLE STATUS` works like [SHOW TABLES](show-tables.md), but provides more extensive information about each table (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-TEMPORARY tables are shown).
 
 
 The `LIKE` clause, if present on its own, indicates which table names to
@@ -46,7 +46,7 @@ The following information is returned:
 | Create_options | Extra [CREATE TABLE](../../data-definition/create/create-table.md) options. |
 | Comment | Table comment provided when MariaDB created the table. |
 | Max_index_length | Maximum index length (supported by MyISAM and Aria tables). |
-| Temporary | Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), placeholder to signal that a table is a temporary table and always "N", except "Y" for generated information_schema tables and NULL for views. From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), will also be set to "Y" for local temporary tables. |
+| Temporary | Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), placeholder to signal that a table is a temporary table and always "N", except "Y" for generated information_schema tables and NULL for views. From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), will also be set to "Y" for local temporary tables. |
 
 
 

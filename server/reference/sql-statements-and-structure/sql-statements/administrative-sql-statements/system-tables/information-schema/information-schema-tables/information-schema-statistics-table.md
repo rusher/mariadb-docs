@@ -26,7 +26,7 @@ It contains the following columns:
 | NULLABLE | YES if the column may contain NULLs, empty string if not. |
 | INDEX_TYPE | Index type, one of BTREE, RTREE, HASH or FULLTEXT. See [Storage Engine Index Types](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md). |
 | COMMENT | Index comments from the [CREATE INDEX](../../../../data-definition/create/create-index.md) statement. |
-| IGNORED | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
+| IGNORED | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
 
 
 

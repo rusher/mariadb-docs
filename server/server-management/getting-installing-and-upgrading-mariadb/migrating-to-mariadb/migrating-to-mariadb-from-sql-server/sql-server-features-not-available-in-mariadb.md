@@ -51,7 +51,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 
 
 * Native data masking
-* PolyBase (however, [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) supports accessing Amazon S3 via the [S3 storage engine](../../../../reference/storage-engines/s3-storage-engine/README.md) and several DBMSs via [CONNECT](../../../../reference/storage-engines/connect/README.md))
+* PolyBase (however, [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) supports accessing Amazon S3 via the [S3 storage engine](../../../../reference/storage-engines/s3-storage-engine/README.md) and several DBMSs via [CONNECT](../../../../reference/storage-engines/connect/README.md))
 * R and Python services
 * ColumnStore indexes. MariaDB has a storage engine called [ColumnStore](/kb/en/mariadb-columnstore/), but this is a completely different feature.
 

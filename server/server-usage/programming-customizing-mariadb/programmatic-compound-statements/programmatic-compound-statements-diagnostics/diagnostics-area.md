@@ -32,7 +32,7 @@ The following table shows the type and size of all the properties:
 | Property name | Property type | Notes |
 | RETURNED_SQLSTATE | VARCHAR(5) |  |
 | MYSQL_ERRNO | SMALLINT UNSIGNED |  |
-| MESSAGE_TEXT | VARCHAR(512) | Before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), was VARCHAR(128) |
+| MESSAGE_TEXT | VARCHAR(512) | Before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), was VARCHAR(128) |
 | CLASS_ORIGIN | VARCHAR(64) |  |
 | SUBCLASS_ORIGIN | VARCHAR(64) |  |
 | CONSTRAINT_CATALOG | VARCHAR(64) |  |

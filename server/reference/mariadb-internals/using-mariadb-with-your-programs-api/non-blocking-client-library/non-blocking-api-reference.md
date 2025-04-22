@@ -39,7 +39,7 @@ unsigned int STDCALL mysql_get_timeout_value(const MYSQL *mysql)
 unsigned int STDCALL mysql_get_timeout_value_ms(const MYSQL *mysql)
 ```
 
- This function is available starting from [MariaDB 5.5.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes) and [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes).
+ This function is available starting from [MariaDB 5.5.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes) and [MariaDB 10.0.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1000-release-notes).
 
 
 
@@ -52,13 +52,13 @@ unsigned int STDCALL mysql_get_timeout_value_ms(const MYSQL *mysql)
 
 
  The difference to mysql_get_timeout_value() is that this provides millisecond
- resolution for timeouts, rather than just whole seconds. In [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0),
+ resolution for timeouts, rather than just whole seconds. In [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0),
  internal timeouts can now be in milliseconds, while in 5.5 and below it was
  only whole seconds.
 
 
 
- This milliseconds version is provided also in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (from 5.5.28
+ This milliseconds version is provided also in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (from 5.5.28
  onwards) to make it easier for applications to work with either library
  version. However, in 5.5 it always returns a multiple of 1000 milliseconds.
 

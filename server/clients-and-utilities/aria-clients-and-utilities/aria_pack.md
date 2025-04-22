@@ -39,13 +39,13 @@ The following variables can be set while passed as commandline options to aria_p
 | Option | Description |
 | -b, --backup | Make a backup of the table as table_name.OLD. |
 | --character-sets-dir=name | Directory where character sets are. |
-| -h, --datadir | Path for control file (and logs if --logdir not used). From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes) |
+| -h, --datadir | Path for control file (and logs if --logdir not used). From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes) |
 | -#, --debug[=name] | Output debug log. Often this is 'd:t:o,filename'. |
 | -?, --help | Display help and exit. |
 | -f, --force | Force packing of table even if it gets bigger or if tempfile exists. |
-| --ignore-control-file | Ignore the control file. From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes). |
+| --ignore-control-file | Ignore the control file. From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes). |
 | -j, --join=name | Join all given tables into 'new_table_name'. All tables MUST have identical layouts. |
-| --require-control-file | Abort if cannot find control file. From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1053-release-notes). |
+| --require-control-file | Abort if cannot find control file. From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes). |
 | -s, --silent | Only write output when an error occurs. |
 | -t, --test | Don't pack table, only test packing it. |
 | -T, --tmpdir=name | Use temporary directory to store temporary table. |

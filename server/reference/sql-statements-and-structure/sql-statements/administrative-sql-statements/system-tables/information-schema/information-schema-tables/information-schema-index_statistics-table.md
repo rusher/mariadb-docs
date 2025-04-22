@@ -18,7 +18,7 @@ It contains the following columns:
 | TABLE_NAME | VARCHAR(192) | The table name. |
 | INDEX_NAME | VARCHAR(192) | The index name (as visible in [SHOW CREATE TABLE](../../../show/show-create-table.md)). |
 | ROWS_READ | BIGINT(21) | The number of rows read from this index. |
-| QUERIES | BIGINT(21) | Incremented for each index the query is part of. This assists one to see how effective the index is. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| QUERIES | BIGINT(21) | Incremented for each index the query is part of. This assists one to see how effective the index is. From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
 
 
 

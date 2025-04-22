@@ -5,7 +5,7 @@
 
 
 
-The `mysql.transaction_registry` table was introduced in [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes) as part of [system-versioned tables](../../../../temporal-tables/system-versioned-tables.md). It is used for [transaction-precise versioning](../../../../temporal-tables/system-versioned-tables.md#transaction-precise-history-in-innodb), and contains the following fields:
+The `mysql.transaction_registry` table was introduced in [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes) as part of [system-versioned tables](../../../../temporal-tables/system-versioned-tables.md). It is used for [transaction-precise versioning](../../../../temporal-tables/system-versioned-tables.md#transaction-precise-history-in-innodb), and contains the following fields:
 
 
 

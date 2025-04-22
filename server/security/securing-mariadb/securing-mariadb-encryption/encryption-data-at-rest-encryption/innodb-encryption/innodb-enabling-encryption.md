@@ -23,7 +23,7 @@ The [innodb_encrypt_tables](../../../../../reference/storage-engines/innodb/inno
 | Option | Description |
 | OFF | Disables table encryption. |
 | ON | Enables table encryption, but allows unencrypted tables to be created. |
-| FORCE | Enables table encryption, and doesn't allow unencrypted tables to be created. Added in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). |
+| FORCE | Enables table encryption, and doesn't allow unencrypted tables to be created. Added in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). |
 
 
 
@@ -245,7 +245,7 @@ innodb_encrypt_log = ON
 Then, start MariaDB. When the server starts back up, it checks to recover InnoDB in the event of a crash. Once it is back online, it begins writing encrypted data to the Redo Log.
 
 
-In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, InnoDB does not support key rotation for the Redo Log. Key rotation for the Redo Log is supported in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later. See [InnoDB Encryption Keys: Key Rotation](innodb-encryption-keys.md) for more information.
+In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, InnoDB does not support key rotation for the Redo Log. Key rotation for the Redo Log is supported in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later. See [InnoDB Encryption Keys: Key Rotation](innodb-encryption-keys.md) for more information.
 
 
 ### See Also

@@ -18,8 +18,8 @@ If the [metadata_lock_info](../../../plugins/other-plugins/metadata-lock-info-pl
 
 
 
-##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), the [Performance Schema metadata_locks](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md) table contains metadata lock information.
+##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the [Performance Schema metadata_locks](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md) table contains metadata lock information.
 
 
 ## Example

@@ -107,7 +107,7 @@ This tests a replica based on the `--replication_*` parameters. The replica test
 These are tested for all connections, if `--replication_all` is set (default), or `--replication_name`.
 
 
-The connecting user must have [REPLICATION_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/release-notes-mariadb-10-5-series/what-is-mariadb-105) or later.
+The connecting user must have [REPLICATION_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) or later.
 
 
 ## --mariadbupgrade

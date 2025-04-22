@@ -70,7 +70,7 @@ List of blog posts relevant to MariaDB. In reverse chronological order. The Mari
 * [Moving to MariaDB](https://rlaskey.org/words/1835/moving-to-mariadb/) - 31 July 2012 - On moving to MariaDB and why the repositories are a good idea.
 
 
-* [How to build a Magento web site on Shared Cloud Hosting with MariaDB 5.5, Varnish Cache and PHP APC](https://online-webhosting-plan.com/how_to_build_a_magento_web_site_on_shared_cloud_hosting_with_mariadb_5-5_varnish_cache_and_php_apc/) - 31 July 2012 - a video on how to run Magento using [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
+* [How to build a Magento web site on Shared Cloud Hosting with MariaDB 5.5, Varnish Cache and PHP APC](https://online-webhosting-plan.com/how_to_build_a_magento_web_site_on_shared_cloud_hosting_with_mariadb_5-5_varnish_cache_and_php_apc/) - 31 July 2012 - a video on how to run Magento using [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 
 
 * [How We Spent a Tuesday Fixing a MySQL Replication Bug](https://www.tokutek.com/2012/07/how-we-spent-a-tuesday-fixing-a-mysql-replication-bug/) - 16 July 2012 - Written by Rich Prohaska on how Tokutek and MariaDB work together. A good highlight on how MariaDB works well with the community.
@@ -91,7 +91,7 @@ List of blog posts relevant to MariaDB. In reverse chronological order. The Mari
 * [MariaDB's Virtual Columns](https://www.jonathanlevin.co.uk/2012/04/mariadbs-virtual-columns.html) - 19 April 2012 - Jonathan Levin takes MariaDB's virtual columns for a spin to store business rules next to table data.
 
 
-* [Installing MariaDB 5.5 on Ubuntu 11.10](https://geekgirldev.com/03/16/2012/installing-mariadb-5-ubuntu-1110) - 16 March 2012 - a quick guide on how to install [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) on Ubuntu 11.10.
+* [Installing MariaDB 5.5 on Ubuntu 11.10](https://geekgirldev.com/03/16/2012/installing-mariadb-5-ubuntu-1110) - 16 March 2012 - a quick guide on how to install [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) on Ubuntu 11.10.
 
 
 * [What about the subqueries?](https://mysqlmaniac.com/2012/what-about-the-subqueries/) - 29 March 2012 - a quick benchmark using 2 subqueries found in a MediaWiki plugin.
@@ -127,7 +127,7 @@ List of blog posts relevant to MariaDB. In reverse chronological order. The Mari
 * [Virtual columns in MariaDB now available in HeidiSQL](https://www.heidisql.com/forum.php?t=8671) - 11 June 2011
 
 
-* [MySQL Benchmarks: MariaDB 5.2.5 custom CentOS 64bit RPM binaries – Intel optimized](https://vbtechsupport.com/715/) - 4 May 2011 - benchmarks done using [MariaDB 5.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-525-release-notes) and vBulletin, using different schedulers, engines, and more
+* [MySQL Benchmarks: MariaDB 5.2.5 custom CentOS 64bit RPM binaries – Intel optimized](https://vbtechsupport.com/715/) - 4 May 2011 - benchmarks done using [MariaDB 5.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-525-release-notes) and vBulletin, using different schedulers, engines, and more
 
 
 * [Update on porting table_statistics to MariaDB](https://ebergen.net/wordpress/2011/04/24/update-on-porting-table_statistics-to-mariadb-2/) - 24 April 2011 - On working with the tivo patch to get it into MariaDB

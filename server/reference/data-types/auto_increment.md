@@ -105,7 +105,7 @@ SELECT * FROM animals;
 ## InnoDB
 
 
-AUTO_INCREMENT is persistent in InnoDB. Prior to [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), InnoDB used an auto-increment counter that was stored in memory. When the server restarted, the counter was re-initialized to the highest value used in the table, which canceled the effects of any AUTO_INCREMENT = N option in the table statements).
+AUTO_INCREMENT is persistent in InnoDB. Prior to [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), InnoDB used an auto-increment counter that was stored in memory. When the server restarted, the counter was re-initialized to the highest value used in the table, which canceled the effects of any AUTO_INCREMENT = N option in the table statements).
 
 
 See also [AUTO_INCREMENT Handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md).
@@ -272,7 +272,7 @@ SELECT * FROM t4;
 ## CHECK Constraints, DEFAULT Values and Virtual Columns
 
 
-auto_increment columns are not permitted in [CHECK constraints](../sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+auto_increment columns are not permitted in [CHECK constraints](../sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
 
 
 ## Generating Auto_Increment Values When Adding the Attribute
@@ -328,7 +328,7 @@ SELECT * FROM t1;
 
 
 * [Getting Started with Indexes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
-* [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [AUTO_INCREMENT FAQ](auto_increment-faq.md)
 * [LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
 * [AUTO_INCREMENT handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)

@@ -29,11 +29,11 @@ It contains the following columns:
 | MEMORY_USED | Memory in bytes used by the thread. |
 | MAX_MEMORY_USED | Maximum memory in bytes used by the thread. |
 | EXAMINED_ROWS | Rows examined by the thread. Only updated by UPDATE, DELETE, and similar statements. For SELECT and other statements, the value remains zero. |
-| SENT_ROWS | Number of rows sent by the statement being executed. From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes). |
+| SENT_ROWS | Number of rows sent by the statement being executed. From [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes). |
 | QUERY_ID | Query ID. |
 | INFO_BINARY | Binary data information |
 | TID | Thread ID ([MDEV-6756](https://jira.mariadb.org/browse/MDEV-6756)) |
-| TMP_SPACE_USED | See [Limiting Size of Created Disk Temporary Files and Tables Overview](../../../../../../../security/user-account-management/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview.md). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115). |
+| TMP_SPACE_USED | See [Limiting Size of Created Disk Temporary Files and Tables Overview](../../../../../../../security/user-account-management/limiting-size-of-created-disk-temporary-files-and-tables/limiting-size-of-created-disk-temporary-files-and-tables-overview.md). From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115). |
 
 
 

@@ -11,10 +11,6 @@ The [InnoDB](../README.md) storage engine supports four different row formats:
 * [COMPRESSED](#compressed-row-format)
 
 
-In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, the latter two row formats are only supported if the [InnoDB file format](../innodb-file-format.md) is `Barracuda`. Therefore, the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable must be set to `Barracuda` to use these row formats in those versions.
-In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, the latter two row formats are also only supported if the table is in a [file per-table](../innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespace. Therefore, the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable must be set to `ON` to use these row formats in those versions.
-
-
 ## Default Row Format
 
 
@@ -64,9 +60,6 @@ CREATE TABLE tab (
    str varchar(50)
 ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
 ```
-
-In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) and before, InnoDB can silently ignore and override some row format choices if you do not  have the [innodb_file_format](../innodb-system-variables.md#innodb_file_format) system variable set to `Barracuda` and the [innodb_file_per_table](../innodb-system-variables.md#innodb_file_per_table) system variable set to `ON`.
-
 
 ## Checking a Table's Row Format
 
@@ -135,7 +128,7 @@ See [InnoDB REDUNDANT Row Format](innodb-redundant-row-format.md) for more infor
 ### COMPACT Row Format
 
 
-Default row format in [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and earlier `COMPACT`.
+Default row format in earlier versions `COMPACT`.
 
 
 The `COMPACT` row format is similar to the `REDUNDANT` row format, but it stores data in a more compact manner that requires about 20% less storage.
@@ -244,7 +237,7 @@ For information on how to solve the problem, see [Troubleshooting Row Size Too L
 ### Upgrading Causes Row Size Too Large Errors
 
 
-Prior to [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), and [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes), MariaDB doesn't properly calculate the row sizes while executing DDL. In these versions, *unsafe* tables can be created, even if [InnoDB strict mode](../innodb-strict-mode.md) is enabled. The calculations were fixed by [MDEV-19292](https://jira.mariadb.org/browse/MDEV-19292) in [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), and [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes).
+In earlier versions, MariaDB doesn't properly calculate the row sizes while executing DDL. In these versions, *unsafe* tables can be created, even if [InnoDB strict mode](../innodb-strict-mode.md) is enabled. The calculations were fixed by [MDEV-19292](https://jira.mariadb.org/browse/MDEV-19292).
 
 
 As a side effect, some tables that could be created or altered in previous versions may get rejected with the following error in these releases and any later releases.

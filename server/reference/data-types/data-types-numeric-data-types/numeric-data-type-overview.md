@@ -48,14 +48,14 @@ If `ZEROFILL` is specified, the column will be set to UNSIGNED and the spaces us
 Note that although the preferred syntax indicates that the attributes are exclusive, more than one attribute can be specified.
 
 
-Until [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)), any combination of the attributes could be used in any order, with duplicates. In this case:
+Until [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)), any combination of the attributes could be used in any order, with duplicates. In this case:
 
 
 * the presence of `ZEROFILL` makes the column `UNSIGNED ZEROFILL`.
 * the presence of `UNSIGNED` makes the column `UNSIGNED`.
 
 
-From [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes), only the following combinations are supported:
+From [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes), only the following combinations are supported:
 
 
 * `SIGNED`
@@ -94,10 +94,10 @@ SELECT * FROM zf;
 When attempting to add a value that is out of the valid range for the numeric type, MariaDB will react depending on the [strict SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) setting.
 
 
-If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)), MariaDB will return an error.
+If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has been set (the default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)), MariaDB will return an error.
 
 
-If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set (the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), MariaDB will adjust the number to fit in the field, returning a warning.
+If [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) has not been set (the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), MariaDB will adjust the number to fit in the field, returning a warning.
 
 
 ### Examples

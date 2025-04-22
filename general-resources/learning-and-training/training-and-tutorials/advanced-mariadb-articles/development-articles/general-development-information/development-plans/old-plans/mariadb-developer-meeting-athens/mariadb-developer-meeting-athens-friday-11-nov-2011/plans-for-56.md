@@ -32,10 +32,10 @@ feature you are interested in. You can also add new features to this list or
 to the [worklog](../../../../../tools/worklog.md).
 
 
-## [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+## [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 
-Features which will be in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) (instead of waiting until 5.6 to add them).
+Features which will be in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) (instead of waiting until 5.6 to add them).
 
 
 * Storage independent test suite (add to 5.3)
@@ -43,10 +43,10 @@ Features which will be in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQ
 * OpenGIS: stored procedure AddGeometryColumn (Holyfoot) (move to 5.3)
 
 
-## [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+## [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 
-Features which will be in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (instead of waiting until 5.6 to add them).
+Features which will be in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) (instead of waiting until 5.6 to add them).
 
 
 * Present in MySQL 5.5: Performance Schema
@@ -67,10 +67,10 @@ Features which will be in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQ
   * Need to build it outside the tree as a separate package that people can use
 
 
-## [MariaDB 5.6](/en/what-is-mariadb-56/) Definite
+## [MariaDB 5.6](/kb/en/what-is-mariadb-56/) Definite
 
 
-Features which will definitely be in [MariaDB 5.6](/en/what-is-mariadb-56/)
+Features which will definitely be in [MariaDB 5.6](/kb/en/what-is-mariadb-56/)
 
 
 * FB request: Better monitoring for replication (FB has patch; MP will add) (kristian) (for 5.5 or 5.6)
@@ -80,10 +80,10 @@ Features which will definitely be in [MariaDB 5.6](/en/what-is-mariadb-56/)
 * From MySQL 5.6: Global transaction ID, so the slave state becomes recoverable, and facilitate automatic moving a slave to a new master across multi-level hierarchies.
 
 
-## [MariaDB 5.6](/en/what-is-mariadb-56/) High Probability
+## [MariaDB 5.6](/kb/en/what-is-mariadb-56/) High Probability
 
 
-Features which have a high probability of being in [MariaDB 5.6](/en/what-is-mariadb-56/)
+Features which have a high probability of being in [MariaDB 5.6](/kb/en/what-is-mariadb-56/)
 
 
 * Performance: More scalable query cache under higher concurrency (Sanja) (maybe)
@@ -91,7 +91,7 @@ Features which have a high probability of being in [MariaDB 5.6](/en/what-is-mar
   * Allow stale data (Sanja) (maybe)
 
 
-## [MariaDB 5.6](/en/what-is-mariadb-56/) Rolling
+## [MariaDB 5.6](/kb/en/what-is-mariadb-56/) Rolling
 
 
 Features which will be added when they are ready.
@@ -104,7 +104,7 @@ Features which will be added when they are ready.
 ## Will skip for 5.6
 
 
-Features which will not be added to [MariaDB 5.6](/en/what-is-mariadb-56/).
+Features which will not be added to [MariaDB 5.6](/kb/en/what-is-mariadb-56/).
 
 
 * Community Request: prevent full scans from running at all above a certain table size;

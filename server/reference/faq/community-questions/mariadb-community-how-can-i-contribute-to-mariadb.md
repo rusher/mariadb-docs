@@ -8,12 +8,12 @@ There are many ways to contribute to MariaDB. If you want to contribute to, or p
 the page that gathers together everything you need to get started.
 
 
-The [community category](/en/community/) contains a lot of interesting links about
+The [community category](/kb/en/community/) contains a lot of interesting links about
 how to participate.
 
 
 You can also consider [sponsoring a feature](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/contributing-participating/sponsoring-the-mariadb-project).
 
 
-Welcome to the [MariaDB community](/en/community/)!
+Welcome to the [MariaDB community](/kb/en/community/)!
 
