@@ -90,7 +90,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 
 * [Features in MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
-* [Features in MariaDB 11.2](/kb/en/what-is-mariadb-11-2/)
+* [Features in MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112)
 
 
 

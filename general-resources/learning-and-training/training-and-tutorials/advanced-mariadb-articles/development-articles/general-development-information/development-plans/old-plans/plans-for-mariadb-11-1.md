@@ -2,7 +2,7 @@
 # Plans for MariaDB 11.1
 
 
-[MariaDB 11.1](/kb/en/what-is-mariadb-11-1/) is stable, so no new features will be added. See [Plans for MariaDB 11.2](plans-for-mariadb-11-2.md) instead.
+[MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111) is stable, so no new features will be added. See [Plans for MariaDB 11.2](plans-for-mariadb-11-2.md) instead.
 
 
 ## JIRA
@@ -23,5 +23,5 @@ to [JIRA](../../../tools/jira.md).
 
 * [Current tasks for 11.1](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(11.1)%20ORDER%20BY%20priority%20DESC)
 * [11.1 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(11.1)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 11.0?](/kb/en/what-is-mariadb-11-0/)
+* [What is MariaDB 11.0?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110)
 

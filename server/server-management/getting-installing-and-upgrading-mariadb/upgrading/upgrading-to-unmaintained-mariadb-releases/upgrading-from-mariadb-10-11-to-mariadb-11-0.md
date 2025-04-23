@@ -110,7 +110,7 @@ The following options have been deprecated. They have not yet been removed, but 
 ### See Also
 
 
-* [Features in MariaDB 11.0](/kb/en/what-is-mariadb-11-0/)
+* [Features in MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110)
 * [Features in MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
 
 
