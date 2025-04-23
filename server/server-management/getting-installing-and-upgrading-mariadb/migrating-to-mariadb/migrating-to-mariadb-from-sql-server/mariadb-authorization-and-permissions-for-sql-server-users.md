@@ -22,7 +22,7 @@ CREATE USER viviana;
 CREATE USER viviana@'%';
 ```
 
-However, such accounts may be unable to connect from localhost if an anonymous user `''@'%'` is present. See [localhost and %](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues#localhost-and) for the details.
+However, such accounts may be unable to connect from localhost if an anonymous user `''@'%'` is present. See [localhost and %](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues#localhost-and) for the details.
 
 
 Accounts are not bound to a specific database. They are global. Once an account is created, it is possible to assign it permissions on any existing or non existing database.

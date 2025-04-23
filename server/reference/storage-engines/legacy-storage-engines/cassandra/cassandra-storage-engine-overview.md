@@ -401,5 +401,5 @@ that were defined `WITH COMPACT STORAGE` attribute.
 * [Cassandra Storage Engine - Future Plans](cassandra-storage-engine-future-plans.md)
 * [Cassandra Storage Engine - Use Example](cassandra-storage-engine-use-example.md)
 * [Cassandra Storage Engine - Issues](cassandra-storage-engine-issues.md)
-* [HBase Storage Engine](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/hbase-storage-engine)
+* [HBase Storage Engine](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/hbase-storage-engine)
 

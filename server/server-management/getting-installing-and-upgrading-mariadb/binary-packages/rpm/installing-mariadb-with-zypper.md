@@ -235,7 +235,7 @@ sudo zypper install MariaDB-cracklib-password-check
 ### Installing Debug Info Packages with ZYpp
 
 
-The MariaDB `zypper` repository also contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
+The MariaDB `zypper` repository also contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
 
 
 #### Installing Debug Info for the Most Common Packages with ZYpp

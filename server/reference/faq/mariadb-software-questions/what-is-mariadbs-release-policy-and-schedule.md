@@ -1,7 +1,7 @@
 
 # What is MariaDB's Release Policy and Schedule?
 
-The [MariaDB Development Plans](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/) 
+The [MariaDB Development Plans](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/) 
 page links to plans for future versions of MariaDB.
 
 

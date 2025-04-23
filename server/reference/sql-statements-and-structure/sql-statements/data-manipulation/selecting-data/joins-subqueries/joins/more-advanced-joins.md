@@ -2,7 +2,7 @@
 # More Advanced Joins
 
 This article is a follow up to the
-[Introduction to JOINs](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses) page. If you're just getting
+[Introduction to JOINs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses) page. If you're just getting
 started with JOINs, go through that page first and then come back here.
 
 
@@ -226,7 +226,7 @@ The result (limited by 10):
 ## See Also
 
 
-* [Introduction to JOINs](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses)
+* [Introduction to JOINs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/joining-tables-with-join-clauses)
 
 
 *The first version of this article was copied, with permission, from [More_Advanced_Joins](https://hashmysql.org/wiki/More_Advanced_Joins) on 2012-10-05.*

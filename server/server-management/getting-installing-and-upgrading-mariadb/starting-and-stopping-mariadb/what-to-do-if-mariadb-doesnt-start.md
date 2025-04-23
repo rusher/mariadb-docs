@@ -5,7 +5,7 @@
 There could be many reasons that MariaDB fails to start. This page will help troubleshoot some of the more common reasons and provide solutions.
 
 
-If you have tried everything here, and still need help, you can ask for help on IRC or on the forums - see [Where to find other MariaDB users and developers](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/friends-of-mariadb/resources) - or ask a question at the [Starting and Stopping MariaDB](README.md) page.
+If you have tried everything here, and still need help, you can ask for help on IRC or on the forums - see [Where to find other MariaDB users and developers](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/company-and-community/friends-of-mariadb/resources) - or ask a question at the [Starting and Stopping MariaDB](README.md) page.
 
 
 ## The Error Log and the Data Directory

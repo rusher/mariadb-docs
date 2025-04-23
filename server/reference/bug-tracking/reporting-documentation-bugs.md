@@ -82,7 +82,7 @@ Some project names include:
 #### Type
 
 
-Feature requests are not the same as bug reports. Specify a `Task` type for feature requests in [Jira](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
+Feature requests are not the same as bug reports. Specify a `Task` type for feature requests in [Jira](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
 
 #### Summary

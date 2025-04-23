@@ -1,7 +1,7 @@
 
 # Getting Started with Indexes
 
-For a very basic overview, see [The Essentials of an Index](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index).
+For a very basic overview, see [The Essentials of an Index](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index).
 
 
 There are four main kinds of indexes; primary keys (unique and not null), unique indexes (unique and can be null), plain indexes (not necessarily unique) and full-text indexes (for full-text searching).
@@ -322,5 +322,5 @@ If the [slow query log](../../../../server-management/server-monitoring-logs/slo
 
 
 * [AUTO_INCREMENT](../../../../reference/data-types/auto_increment.md)
-* [The Essentials of an Index](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
+* [The Essentials of an Index](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
 

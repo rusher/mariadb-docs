@@ -2,16 +2,16 @@
 # Building MariaDB Server for Debugging
 
 Instructions on how to build a mysqld that contains all the information we need to fix the problem:
-(A more detailed explanation can be found [here](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).)
+(A more detailed explanation can be found [here](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).)
 
 
 ***Note: this text has been extracted into a separate article from [Reporting bugs](reporting-bugs.md), see its full history there.***
 
 
 * Add the [--core-file](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option to your /.my.cnf or /etc/my.cnf file under the [mysqld] tag.
-* Get the latest [MariaDB code from GitHub](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/contributing-participating/contributing-code).
+* Get the latest [MariaDB code from GitHub](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/company-and-community/contributing-participating/contributing-code).
 * Compile MariaDB with the -g compiler flag (Unix).
-* Optionally: with more checking [Compile MariaDB for debugging](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) - will cause slowdown.
+* Optionally: with more checking [Compile MariaDB for debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) - will cause slowdown.
 * Shut down your old mysqld server.
 * Install the new compiled `mysqld` binary. Note that if you are compiling same version of MariaDB that you have already installed it's enough to just copy this one binary!
 * Restart mysqld.
@@ -53,13 +53,13 @@ ftp> binary
 ftp> put /tmp/mariadb-bug-'short-description'.tgz
 ftp> quit
 ```
-* To be able to follow the progress, create a bug report in [JIRA](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira) about this. This should be easy to do based on the information you have in your README file.
+* To be able to follow the progress, create a bug report in [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira) about this. This should be easy to do based on the information you have in your README file.
 
 
 ## See Also
 
 
 * [Compiling MariaDB from Source](../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md).
-* [Compiling MariaDB for debugging](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging)
-* [How to produce a stack trace from a core file](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd)
+* [Compiling MariaDB for debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging)
+* [How to produce a stack trace from a core file](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd)
 

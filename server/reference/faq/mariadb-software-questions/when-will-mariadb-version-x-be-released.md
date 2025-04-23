@@ -5,6 +5,6 @@ The [downloads](https://downloads.mariadb.org/) page has the current stable and 
 
 
 See the 
-[MariaDB Development Plans](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/)
+[MariaDB Development Plans](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/)
 page for plans for future versions of MariaDB.
 

@@ -590,7 +590,7 @@ loose-abort-source-on-error
 
 
 * [Configuring MariaDB Connector/C with Option Files](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files)
-* [Troubleshooting Connection Issues](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
-* [Configuring MariaDB for Remote Client Access](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/configuring-mariadb-for-remote-client-access)
+* [Troubleshooting Connection Issues](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
+* [Configuring MariaDB for Remote Client Access](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/configuring-mariadb-for-remote-client-access)
 * [MySQL 5.6: Security through Complacency?](https://mariadb.com/resources/blog/mysql-5-6-security-through-complacency)
 

@@ -188,6 +188,6 @@ jeprof --show_bytes --pdf path-to-mariadbd  jeprof.19678.0.f.heap > /tmp/mariadb
 
 
 * [Profiling memory usage](../../../../reference/bug-tracking/profiling-memory-usage.md)
-* [Debugging a running server on Linux](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux)
+* [Debugging a running server on Linux](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux)
 * [Jemalloc leak checking](https://github.com/jemalloc/jemalloc/wiki/Use-Case:-Leak-Checking)
 

@@ -135,7 +135,7 @@ Some common suffixes used for the scripts:
 | -gprof | binary is compiled with profiling (gcc --pg) |
 | -gcov | binary is compiled with code coverage (gcc -fprofile-arcs -ftest-coverage) |
 | -valgrind | The binary is compiled for debugging and optimized to be used with [valgrind](https://www.valgrind.org/). |
-| -debug | The binary is compiled with all symbols (gcc -g) and the [DBUG](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file) log system is enabled. |
+| -debug | The binary is compiled with all symbols (gcc -g) and the [DBUG](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file) log system is enabled. |
 
 
 

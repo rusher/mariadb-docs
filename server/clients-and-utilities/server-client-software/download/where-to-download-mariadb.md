@@ -31,7 +31,7 @@ Instructions how to install the packages can be found
 
 
 Binaries from our [Buildbot](https://buildbot.askmonty.org) system (see also
-the [Buildbot](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/) page), are available at
+the [Buildbot](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/) page), are available at
 [archive](https://hasky.askmonty.org/archive). They are not suitable for use in
 production systems but may be of use for debugging.
 
@@ -54,7 +54,7 @@ In this case, the value is "2434".
 You can find all the source code at [server](https://github.com/MariaDB/server)
 
 
-To retrieve the code, the [Git](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git) source control software offers
+To retrieve the code, the [Git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git) source control software offers
 the path of least resistance. If you are unfamiliar with git, please refer to
 the [git documentation](https://git-scm.com/doc) for an understanding
 of version control with git.

@@ -1068,7 +1068,7 @@ GRANT ALL PRIVILEGES ON  *.* to 'alexander'@'localhost' WITH GRANT OPTION;
 ## See Also
 
 
-* [Troubleshooting Connection Issues](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
+* [Troubleshooting Connection Issues](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
 * [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [--skip-grant-tables](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
 * [CREATE USER](create-user.md)

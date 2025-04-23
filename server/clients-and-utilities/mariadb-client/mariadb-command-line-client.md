@@ -974,6 +974,6 @@ the `--skip-reconnect` option.
 ## See Also
 
 
-* [Troubleshooting Connection Issues](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
+* [Troubleshooting Connection Issues](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
 * [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
 

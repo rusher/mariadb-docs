@@ -8,7 +8,7 @@
 Sanitizers are open source runtime error detectors developed by Google that are enabled during the compile step. These sanitizers add extra code during compilation that will throw exceptions when certain errors are detected.
 
 
-[AddressSanitizer (aka ASAN)](https://github.com/google/sanitizers/wiki/AddressSanitizer) is a memory error detector for C/C++. It finds a lot of the same things as [valgrind](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging), but with a lot less overhead.
+[AddressSanitizer (aka ASAN)](https://github.com/google/sanitizers/wiki/AddressSanitizer) is a memory error detector for C/C++. It finds a lot of the same things as [valgrind](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging), but with a lot less overhead.
 
 
 * Use after free (dangling pointer dereference)
@@ -190,5 +190,5 @@ The [MariaDB test system](../../../clients-and-utilities/mariadb-test/README.md)
 ## See Also
 
 
-* [Compiling MariaDB for debugging](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging)
+* [Compiling MariaDB for debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging)
 

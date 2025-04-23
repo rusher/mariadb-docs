@@ -184,7 +184,7 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 
 * [Identifier Names](../../../sql-language-structure/identifier-names.md)
 * [Getting Started with Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
-* [What is an Index?](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
+* [What is an Index?](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
 * [ALTER TABLE](../alter/alter-table.md)
 * [DROP INDEX](../drop/drop-index.md)
 * [SHOW INDEX](../../administrative-sql-statements/show/show-index.md)

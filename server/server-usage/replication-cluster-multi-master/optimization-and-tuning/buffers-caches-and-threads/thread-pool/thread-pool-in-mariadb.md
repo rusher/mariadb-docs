@@ -350,6 +350,6 @@ The [thread_cache_size](../../system-variables/server-system-variables.md#thread
 
 
 * [Thread Pool System and Status Variables](thread-pool-system-status-variables.md)
-* [Threadpool Benchmarks](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
+* [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
 * [Thread Pool in MariaDB 5.1 - 5.3](thread-pool-in-mariadb-51-53.md)
 

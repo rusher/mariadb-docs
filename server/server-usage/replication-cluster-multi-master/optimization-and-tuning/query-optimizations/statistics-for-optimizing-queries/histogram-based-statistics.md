@@ -91,7 +91,7 @@ From [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 ## Example
 
-Here is an example of the dramatic impact histogram-based statistics can make. The query is based on [DBT3 Benchmark Q20](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/dbt3-benchmark-queries#q20) with 60 millions records in the `lineitem` table.
+Here is an example of the dramatic impact histogram-based statistics can make. The query is based on [DBT3 Benchmark Q20](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/dbt3-benchmark-queries#q20) with 60 millions records in the `lineitem` table.
 
 ```
 select sql_calc_found_rows s_name, s_address from 

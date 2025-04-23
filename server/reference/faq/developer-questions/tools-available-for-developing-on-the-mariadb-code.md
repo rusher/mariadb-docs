@@ -11,10 +11,10 @@ new branch that can be shared with others.
 
 
 The current state of the source with respect to build/test failures can be seen
-in [buildbot](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/).
+in [buildbot](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/).
 
 
-For project management and bug tracking, we use [JIRA](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira).
+For project management and bug tracking, we use [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira).
 
 
 The [source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md) page has links to instructions on setting up a full development environment, if you are interested.

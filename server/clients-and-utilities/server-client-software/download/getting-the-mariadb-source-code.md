@@ -44,7 +44,7 @@ Source repositories for the MariaDB Connectors are:
 See also:
 
 
-* [Using git](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
+* [Using git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
 * [Compiling MariaDB from source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md)
 
 
@@ -110,7 +110,7 @@ then the version of bzr you are using is too old. Using [version 1.12](https://b
 cd $repo/maria/trunk
 bzr log | less
 ```
-1. If you are going to be hacking on the MariaDB source code. See the [Contributing Code](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/company-and-community/contributing-participating/contributing-code) page for help.
+1. If you are going to be hacking on the MariaDB source code. See the [Contributing Code](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/company-and-community/contributing-participating/contributing-code) page for help.
 1. If you just want to compile MariaDB at this point, see the [Compiling MariaDB](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page.
 
 
@@ -168,7 +168,7 @@ bzr pull
 ## Alternate Bazaar Instructions
 
 The following alternative instructions are what we have used for setting up
-repositories on our build machines in [buildbot](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/). 
+repositories on our build machines in [buildbot](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/). 
 
 ### Shell Variables
 

@@ -10,7 +10,7 @@ It is fully backwards compatible, and it identifies itself to MariaDB as
 for standard InnoDB.
 
 
-Percona XtraDB includes all of InnoDB's robust, reliable [ACID](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/acid-concurrency-control-with-transactions)-compliant design
+Percona XtraDB includes all of InnoDB's robust, reliable [ACID](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/acid-concurrency-control-with-transactions)-compliant design
 and advanced MVCC architecture, and builds on that solid foundation with more
 features, more tunability, more metrics, and more scalability. In particular,
 it is designed to scale better on many cores, to use memory more efficiently,

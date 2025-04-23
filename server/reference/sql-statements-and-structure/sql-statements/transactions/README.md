@@ -7,7 +7,7 @@
 — The SQL Standard
 
 
-The [InnoDB](../../../storage-engines/innodb/README.md) storage engine supports [ACID](https://app.gitbook.com/s/iJPrPCGi329TSR8WIXJW/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/acid-concurrency-control-with-transactions)-compliant transactions.
+The [InnoDB](../../../storage-engines/innodb/README.md) storage engine supports [ACID](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/intermediate-mariadb-articles/database-theory/acid-concurrency-control-with-transactions)-compliant transactions.
 
 
 ## Transaction Articles
