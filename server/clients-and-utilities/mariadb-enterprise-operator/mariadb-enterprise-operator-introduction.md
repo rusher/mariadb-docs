@@ -27,7 +27,7 @@ Kubernetes brings several key benefits to the table when managing applications i
 Kubernetes has been designed with flexibility in mind, allowing developers to extend its capabilities through custom resources and operators.
 
 
-![](../../.gitbook/assets/assets/operator-overview.png.png)
+![Operator Overview](../../.gitbook/assets/mariadb-enterprise-operator-introduction/operator-overview.png.png "Operator Overview")
 
 
 In particular, MariaDB Enterprise Operator, watches the desired state defined by users via `MariaDB` and `MaxScale` resources, and takes actions to ensure that the actual state of the system matches the desired state. This includes managing compute, storage and network resources, as well as the full lifecycle of the MariaDB and MaxScale instances. Whenever the desired state changes or the underlying infrastructure is modified, the Operator takes the necessary actions to reconcile the actual state with the desired state.
