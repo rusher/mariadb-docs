@@ -3,7 +3,7 @@
 
 This page is about security vulnerabilities fixed in MariaDB. If you are
 looking for information on securing your MariaDB installation, see
-[Securing MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/).
+[Securing MariaDB](securing-mariadb/README.md).
 Sensitive security issues can be reported on [mariadb](https://hackerone.com/mariadb) or sent directly to the persons responsible for MariaDB security: security [AT] mariadb (dot) org.
 
 
