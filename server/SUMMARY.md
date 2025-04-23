@@ -1,6 +1,8 @@
 # Table of contents
 
 * [MariaDB Server Documentation](README.md)
+* [Quickstart Guides](mariadb-quickstart-guides/README.md)
+  * [MariaDB Usage](mariadb-quickstart-guides/mariadb-usage-guide.md)
 * [Clients & Utilities](clients-and-utilities/README.md)
   * [dbdeployer](clients-and-utilities/dbdeployer.md)
   * [dbForge Studio for MySQL/MariaDB](clients-and-utilities/dbforge-studio-for-mysqlmariadb.md)
@@ -3750,5 +3752,3 @@
         * [LOAD TABLE FROM MASTER (removed)](server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/load-table-from-master-removed.md)
         * [MariaDB 5.2 Replication Feature Preview](server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/mariadb-52-replication-feature-preview.md)
         * [XtraDB option --innodb-release-locks-early](server-usage/replication-cluster-multi-master/standard-replication/obsolete-replication-information/xtradb-option-innodb-release-locks-early.md)
-* [Quickstart Guides](mariadb-quickstart-guides/README.md)
-  * [Usage Guide](mariadb-quickstart-guides/mariadb-usage-guide.md)
