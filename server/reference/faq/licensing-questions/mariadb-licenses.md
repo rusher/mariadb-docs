@@ -1,21 +1,14 @@
-
 # MariaDB Licenses
-
 
 ## MariaDB server license
 
-
-The [MariaDB server](/kb/en/mariadb/) is available under the terms of the GNU General Public License, version 2.
-
+The [MariaDB server](../../../../kb/en/mariadb/) is available under the terms of the GNU General Public License, version 2.
 
 The GNU project mantains an [official page](https://www.gnu.org/licenses/gpl-2.0.html) with information about the GNU GPL 2 license, including a FAQ and various translations.
 
-
 ### The GPL license
 
-
 A copy of the license is reproduced below for reference.
-
 
 ```
 GNU GENERAL PUBLIC LICENSE
@@ -374,15 +367,11 @@ GNU Library General Public License instead of this License.
 
 ## MariaDB LGPL client libraries for C and Java
 
-
-The new [MariaDB client libraries for C and Java](../../../clients-and-utilities/server-client-software/client-libraries/README.md) are distributed under LGPL. The same license that was used for the [older version of the MySQL client library](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/other-c-c-connectors/mysql-client-library-32358).
-
+The new [MariaDB client libraries for C and Java](../../../clients-and-utilities/server-client-software/client-libraries/) are distributed under LGPL. The same license that was used for the [older version of the MySQL client library](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/other-c-c-connectors/mysql-client-library-32358).
 
 ### The LGPL license
 
-
 A copy of the license is reproduced below for reference.
-
 
 ```
 GNU LESSER GENERAL PUBLIC LICENSE
@@ -844,18 +833,13 @@ DAMAGES.  END OF TERMS AND CONDITIONS.
 
 ## GPL MariaDB client library for C license
 
-
 The MariaDB client library distributed with the MariaDB server comes with a FLOSS exception which allows one to use the client library with most Free/Libre and Open Source-only applications without having to release the application as GPL.
 
-
-There is also a [new MariaDB client library for C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/) that is released under LGPL.
-
+There is also a [new MariaDB client library for C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) that is released under LGPL.
 
 ### The FLOSS exception
 
-
 The license text (created by MySQL Ab) follows:
-
 
 ```
 MySQL FLOSS License Exception

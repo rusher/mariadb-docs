@@ -1,43 +1,30 @@
-
 # Introduction
 
 MariaDB Enterprise Operator provides a seamless way to run and operate containerized versions of MariaDB Enterprise Server and MaxScale on Kubernetes, allowing you to leverage Kubernetes orchestration and automation capabilities. This document outlines the features and advantages of using Kubernetes and the MariaDB Enterprise Operator to streamline the deployment and management of MariaDB and MaxScale instances.
 
-
 ## What is Kubernetes?
-
 
 Kubernetes is more than just a container orchestrator; it is a comprehensive platform that provides APIs for managing both applications and the underlying infrastructure. It automates key aspects of container management, including deployment, scaling, and monitoring, while also handling essential infrastructure needs such as networking and storage. By unifying the management of applications and infrastructure, Kubernetes simplifies operations and improves efficiency in cloud-native environments.
 
-
 ## Why Kubernetes?
 
-
 Kubernetes brings several key benefits to the table when managing applications in a containerized environment:
-
 
 * Standardization: Kubernetes relies on standard APIs for managing applications and infrastructure, making it easier to ensure uniformity across various environments. It acts as a common denominator across cloud providers and on-premises.
 * Automation: Kubernetes APIs encapsulate operational best practises, minimizing the need for manual intervention and improving the efficiency of operations.
 * Cost Effectiveness: Having an standarized way to manage infrastructure across cloud providers and automation to streamline operations, Kubernetes helps reducing the infrastructure and operational costs.
 
-
 ## What is a Kubernetes Operator?
-
 
 Kubernetes has been designed with flexibility in mind, allowing developers to extend its capabilities through custom resources and operators.
 
-
-![Operator Overview](../../.gitbook/assets/mariadb-enterprise-operator-introduction/operator-overview.png.png "Operator Overview")
-
+![Operator Overview](../../.gitbook/assets/operator-overview.png)
 
 In particular, MariaDB Enterprise Operator, watches the desired state defined by users via `MariaDB` and `MaxScale` resources, and takes actions to ensure that the actual state of the system matches the desired state. This includes managing compute, storage and network resources, as well as the full lifecycle of the MariaDB and MaxScale instances. Whenever the desired state changes or the underlying infrastructure is modified, the Operator takes the necessary actions to reconcile the actual state with the desired state.
 
-
 Operational expertise is baked into the `MariaDB` and `MaxScale` APIs and seamlessly managed by the Operator. This includes automated backups, restores, upgrades, monitoring, and other critical lifecycle tasks, ensuring reliability in Day 2 operations.
 
-
 ## MariaDB Enterprise Operator Features
-
 
 * Provision and Configure MariaDB and MaxScale Declaratively: Define MariaDB Enterprise Server and MaxScale clusters in YAML manifests and deploy them with ease in Kubernetes.
 * High Availability with Galera: Ensure availability with MariaDB Enterprise Cluster, providing synchronous multi-master replication.
