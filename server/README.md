@@ -1,5 +1,5 @@
 ---
-icon: location-exclamation
+icon: server
 ---
 
 # MariaDB Server Documentation
