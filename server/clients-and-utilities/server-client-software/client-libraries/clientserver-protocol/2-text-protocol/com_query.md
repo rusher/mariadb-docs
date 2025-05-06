@@ -50,3 +50,7 @@ The server can answer with 4 different responses that can be differentiated by t
 | 49 46 20 45 58 49 53 54 53 20 62 75 6c 6b 31 | IF EXISTS bulk1 |
 
 
+
+
+CC BY-SA / Gnu FDL
+

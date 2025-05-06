@@ -161,3 +161,6 @@ SELECT * FROM ranges;
 
 The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto_increment](../auto_increment.md).
 
+
+CC BY-SA / Gnu FDL
+

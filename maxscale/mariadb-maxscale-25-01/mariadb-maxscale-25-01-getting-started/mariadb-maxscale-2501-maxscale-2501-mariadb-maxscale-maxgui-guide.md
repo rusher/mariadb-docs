@@ -159,3 +159,7 @@ ensuring data integrity and consistency throughout the process.
 
 Generating Entity-Relationship Diagrams (ERDs) to gain insights regarding data
 structure, optimizing database design for both efficiency and clarity.
+
+
+CC BY-SA / Gnu FDL
+

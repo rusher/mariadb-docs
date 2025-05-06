@@ -67,3 +67,6 @@ sql-bench-results-dir/${HOSTNAME}/YYYY-MM-DD
 * Crash and error detection and reporting.
 * One should be able to specify a test name for each file (`run-all-tests` `--suffix='_xxxx'`)
 
+
+CC BY-SA / Gnu FDL
+

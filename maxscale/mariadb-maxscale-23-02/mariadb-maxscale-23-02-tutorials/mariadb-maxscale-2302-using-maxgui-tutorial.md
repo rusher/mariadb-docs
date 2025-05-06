@@ -483,3 +483,7 @@ To retain the report and terminate open connections after migration, click the
 Deleting the worksheet will not delete the migration task. To clean-up
 everything after migration, click the `Manage` button, then select
 `Delete`.
+
+
+CC BY-SA / Gnu FDL
+

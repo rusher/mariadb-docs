@@ -106,3 +106,6 @@ See [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md) for furt
 * [INSERT - Default & Duplicate Values](insert-default-duplicate-values.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
+
+CC BY-SA / Gnu FDL
+

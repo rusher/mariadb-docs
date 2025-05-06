@@ -51,3 +51,6 @@ The `table_io_waits_summary_by_table` table records table I/O waits by table.
 
 You can [TRUNCATE](../../../../table-statements/truncate-table.md) the table, which will reset all counters to zero. Truncating this table will also truncate the [table_io_waits_summary_by_index_usage](performance-schema-table_io_waits_summary_by_index_usage-table.md) table.
 
+
+CC BY-SA / Gnu FDL
+

@@ -10,3 +10,6 @@ Pictures from this session:
 
 * [HCxA2J4gw5k](https://plus.google.com/b/102059736934609902389/102059736934609902389/posts/HCxA2J4gw5k)
 
+
+CC BY-SA / Gnu FDL
+

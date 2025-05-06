@@ -139,3 +139,6 @@ a4 85 9e 59 0f 8c 27 00  00 f5 00 00 00 f9 00 00  ...Y..'.........
 * f9 00 00 00 [4] Next Event pos => 00 00 00 f9 => 249 (pos 4 + event size)
 * 00 00 [2] Event flags = 0
 
+
+CC BY-SA / Gnu FDL
+

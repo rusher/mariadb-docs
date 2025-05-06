@@ -24,3 +24,7 @@ It has the following columns:
 | REFERENCED_TABLE_NAME | Referenced key table name, together with UNIQUE_CONSTRAINT_SCHEMA and UNIQUE_CONSTRAINT_NAME identifies the referenced key. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

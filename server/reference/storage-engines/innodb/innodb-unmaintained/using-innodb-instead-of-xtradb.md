@@ -17,3 +17,6 @@ The reasons you may want to use InnoDB instead of XtraDB in earlier versions of 
 
 * [Compiling with the InnoDB plugin from Oracle](../../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-with-the-innodb-plugin-from-oracle.md)
 
+
+CC BY-SA / Gnu FDL
+

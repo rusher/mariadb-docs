@@ -264,3 +264,6 @@ Often, when you're designing a system you don't yet have a complete set of test 
 
 The following articles will describe the process more formally, starting with moving from unnormalized data (or zero normal form) to first normal form.
 
+
+CC BY-SA / Gnu FDL
+

@@ -337,3 +337,7 @@ ssl_verify_peer_certificate=true
 These settings instruct MaxScale to use SSL for connections to the MariaDB
 server and to verify peer certificates, enhancing the security of data in
 transit.
+
+
+CC BY-SA / Gnu FDL
+

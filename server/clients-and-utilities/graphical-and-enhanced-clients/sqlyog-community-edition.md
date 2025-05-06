@@ -17,3 +17,6 @@ Additional Highlights
 
 Click here for the Community version. [README](https://github.com/webyog/sqlyog-community/blob/master/README)
 
+
+CC BY-SA / Gnu FDL
+

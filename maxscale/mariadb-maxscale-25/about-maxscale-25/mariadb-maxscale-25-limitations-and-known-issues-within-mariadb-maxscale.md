@@ -256,3 +256,7 @@ can be influenced with the server priority mechanic described in the
 
 
 Refer to individual router documentation for a list of their limitations.
+
+
+CC BY-SA / Gnu FDL
+

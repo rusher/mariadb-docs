@@ -141,3 +141,6 @@ Tasks which are not critical for 5.3, but could go there:
 * Still a lot of open bugs at [Launchpad](https://bugs.launchpad.net/maria).
 * More testing to be decided later
 
+
+CC BY-SA / Gnu FDL
+

@@ -149,3 +149,6 @@ These operations are wizard-aided allowing users to set up all tasks in a visual
 
 * [Streaming MariaDB backups in the cloud](https://mariadb.com/blog/streaming-mariadb-backups-cloud) (mariadb.com blog)
 
+
+CC BY-SA / Gnu FDL
+

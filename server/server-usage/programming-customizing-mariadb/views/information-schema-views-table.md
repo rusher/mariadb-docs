@@ -54,3 +54,6 @@ COLLATION_CONNECTION: utf8_general_ci
 * [DROP VIEW](drop-view.md)
 * [SHOW CREATE VIEWS](show-create-views)
 
+
+CC BY-SA / Gnu FDL
+

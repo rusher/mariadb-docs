@@ -6,3 +6,6 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 See [mariadbd-multi](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-multi.md) for details.
 
+
+CC BY-SA / Gnu FDL
+

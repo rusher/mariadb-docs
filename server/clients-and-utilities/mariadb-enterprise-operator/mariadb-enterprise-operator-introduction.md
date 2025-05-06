@@ -53,3 +53,7 @@ Operational expertise is baked into the `MariaDB` and `MaxScale` APIs and seamle
 * Prometheus Metrics: Expose metrics using the MariaDB and MaxScale Prometheus exporters.
 * Native Integration with prometheus-operator: Leverage [prometheus-operator](https://github.com/prometheus-operator/prometheus-operator) to scrape metrics from MariaDB and MaxScale instances.
 * Declarative User and Database Management: Manage users, grants, and logical databases in a declarative manner using Kubernetes resources.
+
+
+CC BY-SA / Gnu FDL
+

@@ -233,3 +233,7 @@ Install extra dependencies:
 ```
 sudo yum install perl perl\(DBI\)
 ```
+
+
+CC BY-SA / Gnu FDL
+

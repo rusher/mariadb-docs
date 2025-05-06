@@ -90,3 +90,7 @@ SHOW COLUMNS FROM `#mysql50#table@1`;
 | i     | int(11) | YES  |     | NULL    |       |
 +-------+---------+------+-----+---------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

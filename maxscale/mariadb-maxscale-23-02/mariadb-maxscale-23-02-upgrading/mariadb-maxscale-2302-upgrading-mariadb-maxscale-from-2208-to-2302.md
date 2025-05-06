@@ -22,3 +22,7 @@ up.
 * The `csmon` and `auroramon` monitors have been removed.
 * The obsolete `maxctrl drain` command has been removed.
 * The `maxctrl cluster` commands have been removed.
+
+
+CC BY-SA / Gnu FDL
+

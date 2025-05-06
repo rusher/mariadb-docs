@@ -337,3 +337,6 @@ From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 * [Password Validation Plugins](../../../plugins/password-validation-plugins/README.md) - permits the setting of basic criteria for passwords
 * [Authentication Plugins](../../../plugins/authentication-plugins/README.md) - allow various authentication methods to be used, and new ones to be developed.
 
+
+CC BY-SA / Gnu FDL
+

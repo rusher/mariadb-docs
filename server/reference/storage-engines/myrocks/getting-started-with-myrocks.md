@@ -164,3 +164,7 @@ All MyRocks [system variables](myrocks-system-variables.md) and [status variable
 SHOW VARIABLES LIKE 'rocksdb%';
 SHOW STATUS LIKE 'rocksdb%';
 ```
+
+
+CC BY-SA / Gnu FDL
+

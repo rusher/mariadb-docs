@@ -45,3 +45,7 @@ SELECT sys.ps_is_thread_instrumented(NULL);
 | NULL                                |
 +-------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

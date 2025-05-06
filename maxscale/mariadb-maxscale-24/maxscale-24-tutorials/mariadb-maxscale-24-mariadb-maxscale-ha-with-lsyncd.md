@@ -243,3 +243,7 @@ lsyncd lsyncd.cnf
 
 
 For more information on the lsyncd executable and its options, please see the --help output of lsyncd or the lsyncd(1) manpage.
+
+
+CC BY-SA / Gnu FDL
+

@@ -80,3 +80,6 @@ Time units can be used in the following contexts:
 * [Date and time literals](../../../sql-language-structure/date-and-time-literals.md)
 * [Operator Precedence](../../../operators/operator-precedence.md)
 
+
+CC BY-SA / Gnu FDL
+

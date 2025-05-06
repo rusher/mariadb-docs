@@ -21,3 +21,6 @@ either of the given geometries.
 
 ST_OVERLAPS() uses object shapes, while [OVERLAPS()](overlaps.md), based on the original MySQL implementation, uses object bounding rectangles.
 
+
+CC BY-SA / Gnu FDL
+

@@ -87,3 +87,7 @@ MariaDB [information_schema]> select TABLE_NAME, TABLE_ROWS from TABLES
 +--------------------------+------------+
 16 rows in set (0.00 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

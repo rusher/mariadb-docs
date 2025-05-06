@@ -86,3 +86,6 @@ brew install mariadb --devel
 * [mariadb.rb on github](https://github.com/Homebrew/homebrew-core/blob/master/Formula/m/mariadb.rb)
 * [MariaDB Server on macOS: Does it even make sense to try?](https://www.youtube.com/watch?v=VoAPP6GDyYw) (video)
 
+
+CC BY-SA / Gnu FDL
+

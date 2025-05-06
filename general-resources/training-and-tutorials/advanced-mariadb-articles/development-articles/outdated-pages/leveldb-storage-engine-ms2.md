@@ -246,3 +246,6 @@ Transaction locks are held in memory. Hence, there is an idea: prevent transacti
 
 * (from skype discussion)_Currently max. auto_increment value is loaded every time a TABLE is opened. Make it to be loaded only when TABLE_SHARE is opened.
 
+
+CC BY-SA / Gnu FDL
+

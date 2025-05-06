@@ -29,3 +29,7 @@ thread_stack: {"rankdir": "LR","nodesep": "0.10",
   "mysql_user": "msandbox@localhost",
   "events": []}
 ```
+
+
+CC BY-SA / Gnu FDL
+

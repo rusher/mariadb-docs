@@ -20,3 +20,6 @@ Characteristics:
 
 OmniDB Web Page: [](https://omnidb.org/en/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -38,3 +38,7 @@ SELECT ST_ISCLOSED(GEOMFROMTEXT(@ls));
 |                              0 |
 +--------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

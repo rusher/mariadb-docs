@@ -470,3 +470,7 @@ MariaDB [(none)]> select * from test.t1;
 To read the data from the RabbitMQ, we can use the RabbitMQ Consumer tool
 included in the MaxScale source. For a tutorial on how to use this tool,
 please read [RabbitMQ Consumer Client](../maxscale-14-filters/maxscale-rabbitmq-consumer-client.md).
+
+
+CC BY-SA / Gnu FDL
+

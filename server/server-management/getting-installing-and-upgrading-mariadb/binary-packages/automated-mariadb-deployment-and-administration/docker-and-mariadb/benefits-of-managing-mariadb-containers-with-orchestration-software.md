@@ -119,3 +119,6 @@ See these pages on how to manage containers with different automation technologi
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

@@ -159,3 +159,7 @@ REQUEST-DATA db2.table4 0-11-345
 
 MaxScale includes an example CDC client application written in Python 3. You can
 find the source code for it [in the MaxScale repository](https://github.com/mariadb-corporation/MaxScale/tree/2.0/server/modules/protocol/examples/cdc.py).
+
+
+CC BY-SA / Gnu FDL
+

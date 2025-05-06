@@ -17,3 +17,6 @@ If [autocommit](../../../../../server-usage/replication-cluster-multi-master/opt
 * [FOR UPDATE](for-update.md)
 * [InnoDB Lock Modes](../../../../storage-engines/innodb/innodb-lock-modes.md)
 
+
+CC BY-SA / Gnu FDL
+

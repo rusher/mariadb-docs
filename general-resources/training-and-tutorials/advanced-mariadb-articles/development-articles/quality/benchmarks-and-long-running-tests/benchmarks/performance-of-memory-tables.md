@@ -192,3 +192,7 @@ from results order by operation, instance, started;
 select operation, instance, avg(opsize/(unix_timestamp(ended)-unix_timestamp(started))) as avg_ops_per_sec                                                      
 from results group by operation, instance;
 ```
+
+
+CC BY-SA / Gnu FDL
+

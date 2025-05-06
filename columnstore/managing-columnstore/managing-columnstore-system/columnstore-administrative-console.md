@@ -193,3 +193,7 @@ mcsadmin commands can be short-cutted. This example would execute getSystemInfo.
 ```
 # mcsadmin getsystemi
 ```
+
+
+CC BY-SA / Gnu FDL
+

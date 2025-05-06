@@ -36,3 +36,6 @@ When dropping a catalog, all databases and files within that catalog will be del
 
 * [CREATE CATALOG](create-catalog.md)
 
+
+CC BY-SA / Gnu FDL
+

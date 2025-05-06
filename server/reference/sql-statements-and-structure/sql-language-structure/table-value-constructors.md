@@ -81,3 +81,7 @@ LIMIT 2 OFFSET 4;
 |   50 |   60 |
 +------+------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

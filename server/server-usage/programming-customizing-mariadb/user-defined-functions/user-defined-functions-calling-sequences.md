@@ -139,3 +139,6 @@ It adds more efficient support of aggregate UDFs as [window functions](../../../
 
 If *x_remove()* supported (defined) detected automatically.
 
+
+CC BY-SA / Gnu FDL
+

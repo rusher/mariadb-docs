@@ -56,3 +56,7 @@ SELECT ST_ASTEXT(ST_CONVEXHULL(@g));
 | POLYGON((1 1,1 5,4 9,6 9,9 3,7 2,1 1)) |
 +----------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

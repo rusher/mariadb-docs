@@ -74,3 +74,7 @@ TABLE_ID: 11
      LEN: 0
 3 rows in set (0.00 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

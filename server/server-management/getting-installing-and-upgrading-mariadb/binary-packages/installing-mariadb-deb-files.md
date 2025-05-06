@@ -569,3 +569,6 @@ When the `mariadb-server` DEB package is installed, it will create a user and gr
 * [Differences in MariaDB in Debian](../troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md)
 * [Installing MariaDB .deb Files with Ansible](automated-mariadb-deployment-and-administration/ansible-and-mariadb/installing-mariadb-deb-files-with-ansible.md)
 
+
+CC BY-SA / Gnu FDL
+

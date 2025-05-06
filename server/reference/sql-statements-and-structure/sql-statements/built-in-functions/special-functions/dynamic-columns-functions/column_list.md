@@ -16,3 +16,6 @@ Returns a comma-separated list of column names. The names are quoted with backti
 
 See [dynamic columns](../../../../nosql/dynamic-columns.md) for more information.
 
+
+CC BY-SA / Gnu FDL
+

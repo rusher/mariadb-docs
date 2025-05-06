@@ -27,3 +27,6 @@ Below are links to video presentations related to the MariaDB Optimizer and perf
 
 * [MariaDB Foundation YouTube channel](https://www.youtube.com/c/MariaDBFoundation)
 
+
+CC BY-SA / Gnu FDL
+

@@ -648,3 +648,7 @@ input file:       capture_2024-09-06_090002.cx
 * The capture files are not necessarily compatible with different linux distributions and CPU
  architectures than the original capture server has. Different combinations will require further
  testing, and once done, this document will be updated.
+
+
+CC BY-SA / Gnu FDL
+

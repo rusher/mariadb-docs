@@ -54,3 +54,6 @@ For more information, see the following links:
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

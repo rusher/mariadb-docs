@@ -10,3 +10,6 @@ A MariaDB server configured with `--with-debug=full` has the following differenc
 * Memory overrun/underrun and not freed memory will be reported to the error log (Define `SAFEMALLOC`)
 * You can get a trace of what `mysqld` (and most other binaries) is doing by starting it with the `--debug` option. The trace is usually put in `/tmp` or `C:\`
 
+
+CC BY-SA / Gnu FDL
+

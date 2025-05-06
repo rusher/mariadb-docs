@@ -65,3 +65,7 @@ SELECT JSON_OVERLAPS('[1, 2, true, false, null]', '[3, 4, [1]]') AS is_overlap;
 | 0                    |
 +----------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

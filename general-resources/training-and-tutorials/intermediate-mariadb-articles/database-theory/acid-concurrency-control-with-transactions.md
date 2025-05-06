@@ -30,3 +30,6 @@ To ensure data integrity, transactions need to adhere to four conditions: atomic
 
 *Durability* guarantees that once a transaction is committed, its effects are permanent, even in the event of a system failure. While a transaction is in progress, its changes are not yet permanent. If the database crashes before the transaction is committed, the system can be restored to a consistent state using backups, which reflect the state before the transaction started. A committed transaction cannot be undone by a failure.
 
+
+CC BY-SA / Gnu FDL
+

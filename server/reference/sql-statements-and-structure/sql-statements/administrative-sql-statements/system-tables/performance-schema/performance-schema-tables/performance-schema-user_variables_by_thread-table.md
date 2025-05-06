@@ -45,3 +45,6 @@ SELECT * FROM user_variables_by_thread;
 * [User-defined variables](../../../../../sql-language-structure/user-defined-variables.md)
 * [Information Schema USER_VARIABLES Table](../../information-schema/information-schema-tables/information-schema-user_variables-table.md)
 
+
+CC BY-SA / Gnu FDL
+

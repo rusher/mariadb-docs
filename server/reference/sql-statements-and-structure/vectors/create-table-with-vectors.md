@@ -45,3 +45,7 @@ CREATE TABLE embeddings (
         VECTOR INDEX (embedding) M=8 DISTANCE=cosine
 );
 ```
+
+
+CC BY-SA / Gnu FDL
+

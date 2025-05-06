@@ -67,3 +67,6 @@ SELECT - (3+5);
 * [Division Operator (/)](../../sql-statements/built-in-functions/numeric-functions/division-operator.md)
 * [Operator Precedence](../operator-precedence.md)
 
+
+CC BY-SA / Gnu FDL
+

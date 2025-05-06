@@ -37,3 +37,7 @@ filestem=repl-bin
 
 Additionally, the option `servers=masterdb` in the service definition is no
 longer required.
+
+
+CC BY-SA / Gnu FDL
+

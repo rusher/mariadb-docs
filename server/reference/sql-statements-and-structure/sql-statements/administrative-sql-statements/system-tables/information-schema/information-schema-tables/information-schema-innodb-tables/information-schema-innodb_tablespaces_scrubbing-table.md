@@ -45,3 +45,7 @@ CURRENT_SCRUB_MAX_PAGE_NUMBER: 0
          ROTATING_OR_FLUSHING: 0
 1 rows in set (0.00 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

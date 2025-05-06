@@ -38,3 +38,7 @@ called libreadline-gplv2-dev:
 ```
 sudo apt-get install libreadline-gplv2-dev
 ```
+
+
+CC BY-SA / Gnu FDL
+

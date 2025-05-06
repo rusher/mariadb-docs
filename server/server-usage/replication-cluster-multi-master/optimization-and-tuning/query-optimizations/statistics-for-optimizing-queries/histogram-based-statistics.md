@@ -257,3 +257,6 @@ set join_buffer_space_limit=1024*1024*32;
 * [Improved histograms in MariaDB 10.8 - Sergei Petrunia - FOSDEM 2022](https://youtu.be/uz3rr3WnQOs) (video)
 * [Improving MariaDB’s optimizer with better selectivity estimates - Sergey Petrunia - Server Fest 2021](https://www.youtube.com/watch?v=bsl7Fis0onE) (video)
 
+
+CC BY-SA / Gnu FDL
+

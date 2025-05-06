@@ -169,3 +169,7 @@ document.
 * [DCB States (to be replaced in StarUML)](https://mariadb.com/kb/en/Design-Documents/DCB-States.pdf)
 * [Schema Sharding Router Technical Documentation](maxscale-21-design-documents/mariadb-maxscale-21-schemarouter-router-technical-overview.md)
 * [Plugin development guide](maxscale-21-design-documents/mariadb-maxscale-21-mariadb-maxscale-plugin-development-guide.md)
+
+
+CC BY-SA / Gnu FDL
+

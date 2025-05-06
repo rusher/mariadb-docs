@@ -44,3 +44,6 @@ The decision to enable concurrent insert for a table is done when the table is o
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
+
+CC BY-SA / Gnu FDL
+

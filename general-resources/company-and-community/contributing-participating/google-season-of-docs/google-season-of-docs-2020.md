@@ -71,3 +71,6 @@ Loading Issues from [Jira](https://jira.mariadb.org/issues/?jql=labels=gsdocs19 
 
 Do you have an idea of your own, not listed above? Do let us know!
 
+
+CC BY-SA / Gnu FDL
+

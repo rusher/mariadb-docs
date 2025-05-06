@@ -891,3 +891,7 @@ ColumnStore needs the open file limit to be increased for the specified user. To
 <USER> hard nofile 65536
 <USER> soft nofile 65536
 ```
+
+
+CC BY-SA / Gnu FDL
+

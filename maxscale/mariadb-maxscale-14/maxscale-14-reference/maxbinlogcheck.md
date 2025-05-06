@@ -390,3 +390,7 @@ Check result:
 2015-09-08 12:49:18   Check retcode: 0, Binlog Pos = 1215327
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -142,3 +142,6 @@ For more information on Group Commit, see the [Galera](https://galeracluster.com
 * [Galera Use Cases](galera-use-cases.md)
 * [Getting Started with MariaDB/Galera Cluster](galera-management/getting-started-with-mariadb-galera-cluster.md)
 
+
+CC BY-SA / Gnu FDL
+

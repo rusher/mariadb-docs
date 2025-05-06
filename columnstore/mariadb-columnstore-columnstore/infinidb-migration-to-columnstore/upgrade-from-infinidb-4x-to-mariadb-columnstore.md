@@ -394,3 +394,7 @@ This step should remove the InfiniDB alias's from the /root/.bashrc file. But do
 ```
 # $HOME/mariadb/columnstore/bin/postConfigure -i /home/guest/mariadb/columnstore
 ```
+
+
+CC BY-SA / Gnu FDL
+

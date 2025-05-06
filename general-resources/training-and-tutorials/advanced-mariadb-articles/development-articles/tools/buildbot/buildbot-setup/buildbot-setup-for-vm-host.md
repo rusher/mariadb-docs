@@ -265,3 +265,7 @@ sudo -u buildbot PYTHONPATH=/usr/local/buildbot/lib/python python -c 'exec open(
 sudo /etc/init.d/buildmaster reload
 sudo tail -f /var/lib/buildbot/maria/twistd.log
 ```
+
+
+CC BY-SA / Gnu FDL
+

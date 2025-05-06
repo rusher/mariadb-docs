@@ -89,3 +89,7 @@ Configuration used for MariDB:
 --thread_cache=512 \
 --tmpdir=/mnt/data/sysbench
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -39,3 +39,7 @@ SELECT * FROM INNODB_MUTEXES;
 | &block->lock                 | combined buf0buf.cc |        1120 |        1 |
 +------------------------------+---------------------+-------------+----------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -21,3 +21,7 @@ When one loads data with [rocksdb_bulk_load=1](myrocks-system-variables.md#rocks
 ERROR 1105 (HY000): [./.rocksdb/test.t1_PRIMARY_2_0.bulk_load.tmp] bulk load error: 
   Invalid argument: External file requires flush
 ```
+
+
+CC BY-SA / Gnu FDL
+

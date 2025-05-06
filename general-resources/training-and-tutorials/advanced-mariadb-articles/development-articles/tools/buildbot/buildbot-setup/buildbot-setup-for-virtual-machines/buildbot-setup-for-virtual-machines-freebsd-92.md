@@ -189,3 +189,7 @@ ssh -p 2284 buildbot@localhost sudo shutdown -p now
 exit # the buildbot user
 rm -v /kvm/vms/vm-freebsd92-i386-test.qcow2
 ```
+
+
+CC BY-SA / Gnu FDL
+

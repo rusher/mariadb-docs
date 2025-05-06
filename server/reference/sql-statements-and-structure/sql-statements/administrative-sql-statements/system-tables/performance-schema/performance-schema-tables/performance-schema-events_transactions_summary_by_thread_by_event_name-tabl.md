@@ -35,3 +35,7 @@ The table contains the following columns:
 | MAX_TIMER_READ_ONLY  | bigint(20) unsigned | NO   |     | NULL    |       |
 +----------------------+---------------------+------+-----+---------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

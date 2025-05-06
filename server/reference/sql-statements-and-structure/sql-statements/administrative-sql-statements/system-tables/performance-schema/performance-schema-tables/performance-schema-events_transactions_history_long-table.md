@@ -48,3 +48,7 @@ The table contains the following columns:
 | NESTING_EVENT_TYPE | enum('TRANSACTION',' STATEMENT', 'STAGE', 'WAIT') | The nesting event type. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

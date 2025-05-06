@@ -58,3 +58,7 @@ If you want to use MinIO with different credentials or you want to run the test 
 mariadb-test/suite/s3/my.cnf
 mariadb-test/suite/s3/slave.cnf
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -372,3 +372,7 @@ WL #2771: Usage of multi_read_range in nested loop join
  WL#4165: Prepared statements: validation
  WL#4166: Prepared statements: automatic re-prepare
 ```
+
+
+CC BY-SA / Gnu FDL
+

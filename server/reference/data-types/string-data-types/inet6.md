@@ -556,3 +556,6 @@ Query OK, 3 rows affected (0.027 sec)
 * [INET6_NTOA](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/inet6_ntoa.md)
 * [Working with IPv6 in MariaDB - the INET6 datatype](https://www.youtube.com/watch?v=1zNOGGgUnlQ) (video)
 
+
+CC BY-SA / Gnu FDL
+

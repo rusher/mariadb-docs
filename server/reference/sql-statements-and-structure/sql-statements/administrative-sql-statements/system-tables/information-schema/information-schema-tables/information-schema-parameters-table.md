@@ -60,3 +60,7 @@ CHARACTER_MAXIMUM_LENGTH: 255
           DTD_IDENTIFIER: varchar(255)
             ROUTINE_TYPE: PROCEDURE
 ```
+
+
+CC BY-SA / Gnu FDL
+

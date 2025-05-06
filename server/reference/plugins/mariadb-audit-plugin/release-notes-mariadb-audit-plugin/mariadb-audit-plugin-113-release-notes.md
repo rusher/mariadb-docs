@@ -53,3 +53,6 @@ The revision number links will take you to the revision's page on Launchpad. On 
 
   * [MDEV-4472](https://jira.mariadb.org/browse/MDEV-4472) Audit plugin. Now it's possible to specify a catalog as server_audit_file_path. In this case the log name will be [server_audit_file_path]/server_audit.log
 
+
+CC BY-SA / Gnu FDL
+

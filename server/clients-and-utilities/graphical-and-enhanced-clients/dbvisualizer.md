@@ -23,3 +23,6 @@ Example of features:
 * SQL formatting and Command-line interface for headless execution
 * [All features](https://www.dbvis.com/features/)
 
+
+CC BY-SA / Gnu FDL
+

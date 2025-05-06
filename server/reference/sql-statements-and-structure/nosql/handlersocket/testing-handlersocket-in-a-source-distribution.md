@@ -56,3 +56,6 @@ MYHOST=127.0.0.1 MYPORT=9306 LD_LIBRARY_PATH=../../libhsclient/.libs/ \
 PERL5LIB=../common:../../perl-Net-HandlerSocket/lib:../../perl-Net-HandlerSocket/blib/arch/auto/Net/HandlerSocket/ ./run.sh
 ```
 
+
+CC BY-SA / Gnu FDL
+

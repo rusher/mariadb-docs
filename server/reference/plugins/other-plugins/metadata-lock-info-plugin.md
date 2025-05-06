@@ -121,3 +121,6 @@ SHOW PROCESSLIST;
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
+
+CC BY-SA / Gnu FDL
+

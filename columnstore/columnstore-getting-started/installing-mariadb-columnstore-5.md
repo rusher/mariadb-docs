@@ -24,3 +24,6 @@ MariaDB Enterprise ColumnStore 5 is included with MariaDB Enterprise Server 10.5
 
 * [Deploy MariaDB ColumnStore 5.5 with MariaDB Community Server 10.5](/kb/en/deploy-mariadb-columnstore-with-mariadb-community-server/)
 
+
+CC BY-SA / Gnu FDL
+

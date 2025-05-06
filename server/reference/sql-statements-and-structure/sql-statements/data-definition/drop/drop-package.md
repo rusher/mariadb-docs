@@ -31,3 +31,6 @@ The `DROP PACKAGE` statement drops a stored package entirely:
 * [DROP PACKAGE BODY](drop-package-body.md)
 * [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+CC BY-SA / Gnu FDL
+

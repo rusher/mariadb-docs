@@ -205,3 +205,6 @@ Data is encoded in 9 bytes without fractional seconds, 13 bytes with fractional 
 
 
 
+
+CC BY-SA / Gnu FDL
+

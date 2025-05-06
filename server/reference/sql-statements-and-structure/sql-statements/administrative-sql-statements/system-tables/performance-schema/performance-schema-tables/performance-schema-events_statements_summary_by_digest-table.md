@@ -48,3 +48,6 @@ The `*_TIMER_WAIT` columns only calculate results for timed events, as non-timed
 
 The `events_statements_summary_by_digest` table is limited in size by the [performance_schema_digests_size](../performance-schema-system-variables.md#performance_schema_digests_size) system variable. Once the limit has been reached and the table is full, all entries are aggregated in a row with a `NULL` digest. The `COUNT_STAR` value of this `NULL` row indicates how many digests are recorded in the row and therefore gives an indication of whether `performance_schema_digests_size` should be increased to provide more accurate statistics.
 
+
+CC BY-SA / Gnu FDL
+

@@ -176,3 +176,6 @@ CRLF have been written in the file.
 1. [↑](#_ref-3) It can be specified
 with more than one character, but only the first one is significant.
 
+
+CC BY-SA / Gnu FDL
+

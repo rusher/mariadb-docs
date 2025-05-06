@@ -34,3 +34,6 @@ SELECT SPIDER_DIRECT_SQL('SELECT * FROM s', '', 'srv "node1", port "8607"');
 
 * [SPIDER_BG_DIRECT_SQL](spider_bg_direct_sql.md)
 
+
+CC BY-SA / Gnu FDL
+

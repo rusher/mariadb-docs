@@ -181,3 +181,7 @@ For example:
   * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) value
 
 
+
+
+CC BY-SA / Gnu FDL
+

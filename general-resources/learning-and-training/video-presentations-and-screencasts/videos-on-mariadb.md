@@ -39,3 +39,7 @@ Below are links to uncategorised video presentations on MariaDB in general.
 | [MariaDB](https://www.youtube.com/watch?v=EYBWw4JASn4) | November 2009 | Michael Widenius | Open SQL Camp in Portland |
 
 
+
+
+CC BY-SA / Gnu FDL
+

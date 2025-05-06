@@ -17,3 +17,6 @@ Returns true if a given [LINESTRING](../geometry-constructors/linestring.md) is 
 
 `St_IsRing()` and `IsRing()` are synonyms.
 
+
+CC BY-SA / Gnu FDL
+

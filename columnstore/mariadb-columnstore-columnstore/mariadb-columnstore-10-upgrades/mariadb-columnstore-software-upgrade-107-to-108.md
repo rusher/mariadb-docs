@@ -233,3 +233,6 @@ the Columnstore.xml,rpmsave
 
 `$HOME/mariadb/columnstore/bin/postConfigure -u -i /home/guest/mariadb/columnstore`
 
+
+CC BY-SA / Gnu FDL
+

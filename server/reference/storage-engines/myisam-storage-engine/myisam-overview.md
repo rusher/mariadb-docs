@@ -42,3 +42,6 @@ A MyISAM table is stored in three files on disk. There's a table definition file
   * [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) for compressing
 * It is possible to build a [MERGE](../merge.md) table on the top of one or more MyISAM tables.
 
+
+CC BY-SA / Gnu FDL
+

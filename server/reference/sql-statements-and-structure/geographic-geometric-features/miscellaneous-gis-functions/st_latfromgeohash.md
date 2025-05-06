@@ -42,3 +42,6 @@ SELECT ST_LatFromGeoHash('zzzzzzzzz'), ST_LatFromGeoHash('xvrfxvrfxvrfxvr');
 
 * [ST_GeoHash](st_geohash.md)
 
+
+CC BY-SA / Gnu FDL
+

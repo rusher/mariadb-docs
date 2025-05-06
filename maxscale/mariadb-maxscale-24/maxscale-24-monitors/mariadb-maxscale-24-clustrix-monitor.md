@@ -319,3 +319,7 @@ If the softfailing and unsoftfailing is initiated using the `softfail`
 and `unsoftfail` commands of the Clustrix monitor, then there will be
 no delay between the softfailing or unsoftfailing being initated and the
 `Draining` status being turned on/off.
+
+
+CC BY-SA / Gnu FDL
+

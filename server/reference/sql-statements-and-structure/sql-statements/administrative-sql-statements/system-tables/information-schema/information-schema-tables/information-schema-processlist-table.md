@@ -109,3 +109,6 @@ EXAMINED_ROWS: 0
 
 * [TIME_MS column in Information Schema SHOW PROCESSLIST](../time_ms-column-in-information_schemaprocesslist.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -24,3 +24,6 @@ Other features include:
 * Inline data filtering.
 * Exporting & Exporting options to CSV, JSON & XML.
 
+
+CC BY-SA / Gnu FDL
+

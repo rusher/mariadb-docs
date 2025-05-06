@@ -67,3 +67,7 @@ is maxscale-X.Y.Z.
 
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
+
+
+CC BY-SA / Gnu FDL
+

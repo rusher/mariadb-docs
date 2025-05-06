@@ -50,3 +50,7 @@ client.
 
 For more information about TLS, refer to the
 [Configuration Guide](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md).
+
+
+CC BY-SA / Gnu FDL
+

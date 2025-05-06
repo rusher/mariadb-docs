@@ -346,3 +346,6 @@ Given this algorithm, the configuration parameters could be thought of as minimu
 
 Note that this implementation only affects the processing done by PrimProc. Depending on the work distribution of a given query, a user may or may not observe overall performance proportional to their priority level.
 
+
+CC BY-SA / Gnu FDL
+

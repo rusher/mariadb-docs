@@ -240,3 +240,6 @@ By default mcsimport rolls back the entire bulk import if a malformed csv entry 
 
 With this option an optional error log file is written which states truncated, saturated, and invalid values during the injection. If the command line parameter *-ignore_malformed_csv* is chosen, it also states which lines were ignored.
 
+
+CC BY-SA / Gnu FDL
+

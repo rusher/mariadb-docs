@@ -49,3 +49,6 @@ QUERY, mysql, 'SELECT * FROM user',0
 
 Although the default values for [server_audit_syslog_facility](mariadb-audit-plugin-options-and-system-variables.md) and [server_audit_syslog_priority](mariadb-audit-plugin-options-and-system-variables.md) should be sufficient in most cases, they can be changed based on the definition in `syslog.h` for the functions `openlog()` and `syslog()`.
 
+
+CC BY-SA / Gnu FDL
+

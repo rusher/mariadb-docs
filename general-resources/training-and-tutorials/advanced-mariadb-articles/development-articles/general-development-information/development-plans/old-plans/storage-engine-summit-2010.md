@@ -174,3 +174,7 @@ slides 10-18 from the Sergey Petrunya's [MySQL UC2010 talk](https://en.oreilly.c
 1. [Storage_Engine_API_Testing_Framework](https://forge.mysql.com/wiki/Storage_Engine_API_Testing_Framework)
 
 
+
+
+CC BY-SA / Gnu FDL
+

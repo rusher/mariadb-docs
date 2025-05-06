@@ -187,3 +187,6 @@ Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/l
 
 * [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/README.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -51,3 +51,6 @@ sudo mariadb-embedded --server-arg='--skip-innodb'
 
 * [Using mysql_embedded and mysqld --bootstrap to tinker with privilege tables](https://mariadb.com/kb/en/Using_mysql_embedded_and_mysqld_--bootstrap_to_tinker_with_privilege_tables)
 
+
+CC BY-SA / Gnu FDL
+

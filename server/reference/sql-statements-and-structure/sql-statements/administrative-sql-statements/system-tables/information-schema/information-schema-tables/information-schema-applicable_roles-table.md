@@ -35,3 +35,7 @@ SELECT * FROM information_schema.APPLICABLE_ROLES;
 | root@localhost | dog         | YES          | NO         |
 +----------------+-------------+--------------+------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

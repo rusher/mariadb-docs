@@ -189,3 +189,6 @@ SELECT * FROM t1;
 * [UUID_SHORT function](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md)
 * [SYS_GUID](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sys_guid.md) - UUID without the `-` character for Oracle compatibility
 
+
+CC BY-SA / Gnu FDL
+

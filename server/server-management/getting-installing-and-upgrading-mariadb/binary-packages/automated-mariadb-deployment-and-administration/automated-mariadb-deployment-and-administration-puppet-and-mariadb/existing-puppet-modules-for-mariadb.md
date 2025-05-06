@@ -59,3 +59,6 @@ Several unsupported and not approved modules exist for MariaDB and MaxScale.
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

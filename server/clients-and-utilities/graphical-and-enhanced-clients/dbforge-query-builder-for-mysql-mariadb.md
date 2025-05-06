@@ -151,3 +151,7 @@ Download a free 30-day trial of dbForge Query Builder for MariaDB and MySQL [her
 | dbForge Query Builder 3.1 | [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -66,3 +66,6 @@ FROM t1;
 
 * [LEAD](lead.md) - Window function to access a following row
 
+
+CC BY-SA / Gnu FDL
+

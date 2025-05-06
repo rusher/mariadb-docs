@@ -167,3 +167,7 @@ document.
 * [GSSAPI Authenticator](maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-gssapi-client-authenticator.md)
 * [PAM Authenticator](maxscale-24-02authenticators/mariadb-maxscale-2402-maxscale-2402-pam-authenticator.md)
 * [Ed25519 Authenticator](../mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-ed25519-authenticator.md)
+
+
+CC BY-SA / Gnu FDL
+

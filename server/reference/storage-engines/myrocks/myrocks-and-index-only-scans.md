@@ -94,3 +94,6 @@ TODO: there is also this optimization:
 
 document it.
 
+
+CC BY-SA / Gnu FDL
+

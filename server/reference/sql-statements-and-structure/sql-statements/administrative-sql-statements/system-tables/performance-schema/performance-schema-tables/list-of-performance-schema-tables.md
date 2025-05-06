@@ -91,3 +91,7 @@ Below is a list of all [Performance Schema](../README.md) tables as well as a br
 | [users](performance-schema-users-table.md) | Connection statistics by user. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

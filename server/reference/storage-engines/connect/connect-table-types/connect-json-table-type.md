@@ -3317,3 +3317,6 @@ Variables used with Json tables are:
 1. [↑](#_ref-1) See for instance: [json-functions](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/README.md), [lib_mysqludf_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [json_udf_functions_version_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
 1. [↑](#_ref-2) This will not work when CONNECT is compiled embedded
 
+
+CC BY-SA / Gnu FDL
+

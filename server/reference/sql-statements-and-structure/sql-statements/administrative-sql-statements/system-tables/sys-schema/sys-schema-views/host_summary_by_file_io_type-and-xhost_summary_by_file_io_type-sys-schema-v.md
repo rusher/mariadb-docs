@@ -56,3 +56,7 @@ SELECT * FROM sys.x$host_summary_by_file_io_type;
 | localhost  | wait/io/file/myisam/kfile                    |     1 |      11954300 |    11954300 |
 +------------+----------------------------------------------+-------+---------------+-------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

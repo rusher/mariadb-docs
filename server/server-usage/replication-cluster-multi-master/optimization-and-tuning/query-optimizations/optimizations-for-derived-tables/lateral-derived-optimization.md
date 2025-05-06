@@ -128,3 +128,6 @@ set optimizer_switch='split_materialized=off'
 * Jira task: [MDEV-13369](https://jira.mariadb.org/browse/MDEV-13369)
 * Commit: [b14e2b044b](https://github.com/MariaDB/server/commit/b14e2b044b)
 
+
+CC BY-SA / Gnu FDL
+

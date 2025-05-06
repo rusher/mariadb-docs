@@ -333,3 +333,7 @@ to obtain unequal balancing operations. These options may be found in the
 MariaDB MaxScale Configuration Guide. More details on the use of maxadmin can be
 found in the document
 [MaxAdmin - The MariaDB MaxScale Administration & Monitoring Client Application](mariadb-maxscale-21-mariadb-maxscale-administration-tutorial.md).
+
+
+CC BY-SA / Gnu FDL
+

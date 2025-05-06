@@ -43,3 +43,7 @@ select * from t1 where _rowid>=1 and _rowid<=10;
 | 2 | three |
 +---+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -30,3 +30,6 @@ A cookbook filled with useful MariaDB recipes. Chapters cover such things as [Sp
 *[Building a Web Application with PHP and MariaDB: A Reference Guide](https://www.packtpub.com/application-development/building-web-application-php-and-mariadb-reference-guide)* by Sai Srinivas Sriparasa, June 2014
 A how-to guide for creating scalable and secure web applications with PHP and MariaDB
 
+
+CC BY-SA / Gnu FDL
+

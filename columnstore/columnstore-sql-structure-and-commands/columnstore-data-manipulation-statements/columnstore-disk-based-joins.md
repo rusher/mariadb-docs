@@ -55,3 +55,7 @@ For modification at the session level, before issuing your join query from the S
 ```
 set infinidb_um_mem_limit = value
 ```
+
+
+CC BY-SA / Gnu FDL
+

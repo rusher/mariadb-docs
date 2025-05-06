@@ -371,3 +371,7 @@ All tests passed
 | 20 | crash | 8 | 10.2.7 (inbuilt) |  | on | - | => | 10.2.7 (inbuilt) |  | on | - | - | FAIL | KNOWN_BUGS [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094)(2) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

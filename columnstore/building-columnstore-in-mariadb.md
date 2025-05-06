@@ -73,3 +73,7 @@ Access the server
 source /usr/local/mariadb/columnstore/bin/columnstoreAlias
 mcsmysql
 ```
+
+
+CC BY-SA / Gnu FDL
+

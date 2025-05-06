@@ -50,3 +50,7 @@ cluster. To create a user for the monitor, execute the following SQL.
 CREATE USER 'monitor_user'@'%' IDENTIFIED BY 'my_password';
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

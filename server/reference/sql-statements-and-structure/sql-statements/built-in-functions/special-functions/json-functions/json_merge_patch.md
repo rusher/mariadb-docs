@@ -33,3 +33,7 @@ SELECT JSON_MERGE_PATCH(@json1,@json2),JSON_MERGE_PRESERVE(@json1,@json2);
 | [2, 3]                          | [1, 2, 2, 3]                       |
 +---------------------------------+------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -40,3 +40,6 @@ skip-bdb
 * [Installing MariaDB RPM Files](README.md)
 * [Checking MariaDB RPM Package Signatures](checking-mariadb-rpm-package-signatures.md)
 
+
+CC BY-SA / Gnu FDL
+

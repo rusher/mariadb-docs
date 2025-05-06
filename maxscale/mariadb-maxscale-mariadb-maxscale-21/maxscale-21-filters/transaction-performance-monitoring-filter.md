@@ -205,3 +205,7 @@ is an example log that is generated from the above TPM filter with the above con
 
 
 Note that 3 and 5 are latencies of each transaction in milliseconds.
+
+
+CC BY-SA / Gnu FDL
+

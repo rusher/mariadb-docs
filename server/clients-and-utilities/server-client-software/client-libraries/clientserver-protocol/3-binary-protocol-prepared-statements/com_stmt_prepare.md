@@ -71,3 +71,7 @@ placeholders)
 * [int<2>](../protocol-data-types.md#fixed-length-integers) number of warnings
 
 
+
+
+CC BY-SA / Gnu FDL
+

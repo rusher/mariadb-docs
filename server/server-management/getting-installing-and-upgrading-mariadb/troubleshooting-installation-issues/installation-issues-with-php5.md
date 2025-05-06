@@ -30,3 +30,6 @@ error_reporting($err_level);
 1. Recompile PHP with the MariaDB client libraries.
 1. Use your original MySQL client library with the MariaDB.
 
+
+CC BY-SA / Gnu FDL
+

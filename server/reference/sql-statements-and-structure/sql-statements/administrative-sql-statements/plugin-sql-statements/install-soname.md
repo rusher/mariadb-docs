@@ -113,3 +113,6 @@ INSTALL SONAME 'ha_sequence';
 * [INFORMATION_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mysql_plugin](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 
+
+CC BY-SA / Gnu FDL
+

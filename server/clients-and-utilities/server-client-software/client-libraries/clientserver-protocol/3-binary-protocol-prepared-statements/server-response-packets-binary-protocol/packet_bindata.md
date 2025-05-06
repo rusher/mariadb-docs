@@ -48,3 +48,6 @@ while (!eof) {
 }
 ```
 
+
+CC BY-SA / Gnu FDL
+

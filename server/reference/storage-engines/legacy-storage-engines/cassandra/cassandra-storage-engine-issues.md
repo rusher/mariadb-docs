@@ -25,3 +25,6 @@ Query OK, 1000 rows affected (0.14 sec)
 
 We could use the new [engine-independent-table-statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md) feature to get some data statistics.
 
+
+CC BY-SA / Gnu FDL
+

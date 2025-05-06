@@ -163,3 +163,7 @@ SELECT * FROM autoinc_test;
 
 *The initial version of this article was copied, with permission, from [Autoincrement_FAQ](https://hashmysql.org/wiki/Autoincrement_FAQ) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

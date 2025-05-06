@@ -27,3 +27,7 @@ MariaDB [(none)]> SELECT @@table_open_cache;
 +--------------------+
 1 row in set (0.00 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

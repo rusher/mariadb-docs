@@ -52,3 +52,6 @@ Server response is like [connection authentication](../1-connecting/connection.m
     * Client may have many exchanges with the server according to the [Plugin](#plugin-list).
   * Authentication switch ends with server sending either [OK_Packet](../4-server-response-packets/ok_packet.md) or [ERR_Packet](../4-server-response-packets/err_packet.md).
 
+
+CC BY-SA / Gnu FDL
+

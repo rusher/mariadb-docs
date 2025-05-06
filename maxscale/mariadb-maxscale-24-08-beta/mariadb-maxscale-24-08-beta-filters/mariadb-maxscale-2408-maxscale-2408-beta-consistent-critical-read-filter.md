@@ -176,3 +176,7 @@ replicas. For best performance, the value of *time* should be slightly greater
 than the actual replication lag between the primary and its replicas. If the number
 of critical read statements is known, the *count* parameter could be used to
 control the number reads that are sent to the primary.
+
+
+CC BY-SA / Gnu FDL
+

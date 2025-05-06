@@ -102,3 +102,7 @@ SHOW VARIABLES LIKE 'aria%';
 | aria_used_for_temp_tables                | ON                  |
 +------------------------------------------+---------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

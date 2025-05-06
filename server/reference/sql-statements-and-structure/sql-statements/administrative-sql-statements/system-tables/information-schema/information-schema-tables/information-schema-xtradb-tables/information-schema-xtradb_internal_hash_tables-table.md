@@ -42,3 +42,7 @@ SELECT * FROM information_schema.XTRADB_INTERNAL_HASH_TABLES;
 | Recovery System                |            0 |               0 |               0 |
 +--------------------------------+--------------+-----------------+-----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

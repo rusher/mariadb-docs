@@ -123,3 +123,7 @@ All [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulat
 
 Note: All PROXY and PROXY-based table types are not indexable.
 
+
+
+CC BY-SA / Gnu FDL
+

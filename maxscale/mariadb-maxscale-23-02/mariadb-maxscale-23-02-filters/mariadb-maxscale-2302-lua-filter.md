@@ -230,3 +230,7 @@ function diagnostic()
 end
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

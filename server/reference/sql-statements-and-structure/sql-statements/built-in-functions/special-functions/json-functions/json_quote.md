@@ -28,3 +28,7 @@ SELECT JSON_QUOTE('A'), JSON_QUOTE("B"), JSON_QUOTE('"C"');
 | "A"             | "B"             | "\"C\""           |
 +-----------------+-----------------+-------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

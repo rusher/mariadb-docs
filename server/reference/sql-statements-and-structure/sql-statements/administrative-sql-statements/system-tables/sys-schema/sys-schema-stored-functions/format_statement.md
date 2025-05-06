@@ -49,3 +49,7 @@ SELECT sys.format_statement(
 | SELECT field1, field2, ... d5, field6 FROM table1 |
 +---------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

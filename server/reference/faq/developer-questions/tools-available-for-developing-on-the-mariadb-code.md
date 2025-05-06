@@ -19,3 +19,6 @@ For project management and bug tracking, we use [JIRA](https://app.gitbook.com/s
 
 The [source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md) page has links to instructions on setting up a full development environment, if you are interested.
 
+
+CC BY-SA / Gnu FDL
+

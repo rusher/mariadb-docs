@@ -147,3 +147,6 @@ ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD("v
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
 * [Authentication in MariaDB 10.4 — understanding the changes (mariadb.org)](https://mariadb.org/authentication-in-mariadb-10-4/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -81,3 +81,6 @@ This page documents status variables related to the [Cassandra storage engine](R
 * Data Type: `numeric`
 
 
+
+CC BY-SA / Gnu FDL
+

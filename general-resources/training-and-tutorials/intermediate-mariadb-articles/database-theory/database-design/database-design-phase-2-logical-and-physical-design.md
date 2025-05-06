@@ -39,3 +39,6 @@ Novice database designers usually make a number of common errors. If you've care
 * Have you covered all character sets you may need? German letters, for example, have an expanded character set, and if the database is to cater for German users it will have to take this into account. Similarly, dates and currency formats should be carefully considered if the system is to be international
 * Is your security sufficient? Remember to assign the minimum permissions you can. Do not allow anyone to view a table if they do not need to do so. Allowing malicious users view data, even if they cannot change it, is often the first step in for an attacker.
 
+
+CC BY-SA / Gnu FDL
+

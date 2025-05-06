@@ -33,3 +33,7 @@ SELECT * FROM performance_schema.users;
 | root             |                   1 |                 2 |
 +------------------+---------------------+-------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

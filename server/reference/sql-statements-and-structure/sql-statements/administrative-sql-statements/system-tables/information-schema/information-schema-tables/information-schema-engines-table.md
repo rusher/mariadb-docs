@@ -126,3 +126,7 @@ SELECT ENGINE FROM information_schema.ENGINES WHERE XA = 'YES';
 | InnoDB |
 +--------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

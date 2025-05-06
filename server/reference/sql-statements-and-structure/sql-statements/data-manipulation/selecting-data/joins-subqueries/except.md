@@ -201,3 +201,6 @@ Here is an example that makes use of the [SEQUENCE](../../../../../storage-engin
 * [INTERSECT](intersect.md)
 * [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
 
+
+CC BY-SA / Gnu FDL
+

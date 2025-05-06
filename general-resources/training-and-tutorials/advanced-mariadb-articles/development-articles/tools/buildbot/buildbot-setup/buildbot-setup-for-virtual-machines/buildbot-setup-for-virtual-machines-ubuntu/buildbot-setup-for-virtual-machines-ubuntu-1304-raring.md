@@ -207,3 +207,7 @@ ssh -p 2280 buildbot@localhost sudo shutdown -h now
 exit # the buildbot user
 rm -v /kvm/vms/vm-raring-i386-test.qcow2
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -144,3 +144,6 @@ Regardless of the storage engine used, each table's structure is generally store
 
 The files used for [partitioned tables](../../../partitioning-tables/README.md) are different from the files used for non-partitioned tables. See [Partitions Files](../../../partitioning-tables/partitions-files.md) for details.
 
+
+CC BY-SA / Gnu FDL
+

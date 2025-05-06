@@ -101,3 +101,6 @@ This can be disk corruption where MariaDB reads data and that data wasn't what w
 
 RAM corruptions can also result in undefined behaviour that is unfixable with software.
 
+
+CC BY-SA / Gnu FDL
+

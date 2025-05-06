@@ -1323,3 +1323,6 @@ SHOW WARNINGS;
 
 As mentioned above, even though InnoDB is allowing the table to be created, there is still an opportunity for errors. Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements-and-structure/sql-statements/data-manipulation/README.md) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an **error** with this message. This creates a somewhat *unsafe* situation, because it means that the application has the chance to encounter an additional error while executing [DML](../../../sql-statements-and-structure/sql-statements/data-manipulation/README.md).
 
+
+CC BY-SA / Gnu FDL
+

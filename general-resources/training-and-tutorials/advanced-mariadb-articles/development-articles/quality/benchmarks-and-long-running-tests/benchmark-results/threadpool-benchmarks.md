@@ -234,3 +234,6 @@ Some notes on how the benchmarks were run:
 
 ![update_nokey-windows](../../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-windows.png "update_nokey-windows")
 
+
+CC BY-SA / Gnu FDL
+

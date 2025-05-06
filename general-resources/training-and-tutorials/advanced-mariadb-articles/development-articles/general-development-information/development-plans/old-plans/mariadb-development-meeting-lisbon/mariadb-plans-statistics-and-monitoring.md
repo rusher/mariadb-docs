@@ -113,3 +113,6 @@ needed?
 
 * FB patch: report the time spent in individual phases of query processing
 
+
+CC BY-SA / Gnu FDL
+

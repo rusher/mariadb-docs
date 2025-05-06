@@ -96,3 +96,6 @@ The Standard version has support of own domain-specific scripting language desig
 
 ![automation-scripting](../../.gitbook/assets/ks-db-merge-tools-for-mysql-and-mariadb/+image/automation-scripting.png "automation-scripting")
 
+
+CC BY-SA / Gnu FDL
+

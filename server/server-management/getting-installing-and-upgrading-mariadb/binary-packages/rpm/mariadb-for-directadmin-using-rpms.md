@@ -60,3 +60,7 @@ mysql_inst=no
 When MariaDB is installed manually (i.e. not using YUM), updates are not
 automatic. You will need to update the RPMs yourself.
 
+
+
+CC BY-SA / Gnu FDL
+

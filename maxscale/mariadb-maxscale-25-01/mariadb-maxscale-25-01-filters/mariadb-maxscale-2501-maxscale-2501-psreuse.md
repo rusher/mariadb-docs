@@ -49,3 +49,7 @@ filters=PsReuse
 * If the same SQL is prepared more than once at the same time, only one of them
  will succeed. This happens as the prepared statement reuse uses the SQL string
  in the comparison to detect if a statement is already prepared.
+
+
+CC BY-SA / Gnu FDL
+

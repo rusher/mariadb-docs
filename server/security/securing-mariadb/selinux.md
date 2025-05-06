@@ -291,3 +291,6 @@ The same procedure can be used if MariaDB starts but SELinux prevents it from fu
 
 When you discover any needed SELinux permissions, please report the needed permissions to your operating system bug tracking so all users can benefit from your work (e.g. Red Hat Bugzilla [](https://bugzilla.redhat.com/)).
 
+
+CC BY-SA / Gnu FDL
+

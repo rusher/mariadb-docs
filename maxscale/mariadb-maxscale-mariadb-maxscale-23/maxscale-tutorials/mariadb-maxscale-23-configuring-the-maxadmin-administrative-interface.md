@@ -27,3 +27,7 @@ socket=default
 This defines a UNIX domain socket which `maxadmin` will use to connect to
 MaxScale. MaxAdmin provides monitoring and administration functionality that can
 be used to inspect the state of MaxScale.
+
+
+CC BY-SA / Gnu FDL
+

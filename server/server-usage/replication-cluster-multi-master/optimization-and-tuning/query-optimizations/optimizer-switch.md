@@ -113,3 +113,6 @@ Below is a list of all *optimizer_switch* flags available in MariaDB:
 * [optimizer_adjust_secondary_key_cost](optimizer_adjust_secondary_key_costs.md)
 * [Optimizer hints in SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md)
 
+
+CC BY-SA / Gnu FDL
+

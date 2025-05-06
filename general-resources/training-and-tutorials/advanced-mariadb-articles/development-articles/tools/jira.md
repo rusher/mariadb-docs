@@ -24,3 +24,6 @@ You can easily create links to Jira tasks in the Knowledge Base using their "MDE
 
 * [Jira MDEV workflow - statuses and transitions](jira-status-and-transition-definitions.md)
 
+
+CC BY-SA / Gnu FDL
+

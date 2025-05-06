@@ -42,3 +42,6 @@ SELECT 0b1000001+0;
 
 * [BIN()](../sql-statements/built-in-functions/string-functions/bin.md)
 
+
+CC BY-SA / Gnu FDL
+

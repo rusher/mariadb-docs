@@ -30,3 +30,7 @@ It contains the following columns:
 | MYSQL_HANDLES_OPENED | (XtraDB only). |
 
 
+
+
+CC BY-SA / Gnu FDL
+

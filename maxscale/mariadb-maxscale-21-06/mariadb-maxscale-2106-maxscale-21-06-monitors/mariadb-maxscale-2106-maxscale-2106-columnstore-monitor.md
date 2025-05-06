@@ -762,3 +762,7 @@ the first place). The only exception is if the removed node happened
 to be a bootstrap server. In that case, the server entry should be
 removed from the monitor's list of servers (used as bootstrap nodes).
 If that is not done, then the monitor will log a warning at each startup.
+
+
+CC BY-SA / Gnu FDL
+

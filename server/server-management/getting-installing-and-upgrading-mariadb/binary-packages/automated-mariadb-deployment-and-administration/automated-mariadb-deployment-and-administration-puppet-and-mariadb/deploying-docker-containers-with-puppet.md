@@ -107,3 +107,6 @@ docker::run { 'mariadb-01':
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

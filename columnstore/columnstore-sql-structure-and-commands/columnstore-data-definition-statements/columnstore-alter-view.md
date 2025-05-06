@@ -21,3 +21,7 @@ CREATE
     VIEW view_name [(column_list)]
     AS select_statement
 ```
+
+
+CC BY-SA / Gnu FDL
+

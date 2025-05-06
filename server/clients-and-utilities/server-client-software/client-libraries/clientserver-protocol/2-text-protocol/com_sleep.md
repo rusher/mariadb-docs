@@ -23,3 +23,6 @@ used inside server only
 
 [ERR_Packet](../4-server-response-packets/err_packet.md)
 
+
+CC BY-SA / Gnu FDL
+

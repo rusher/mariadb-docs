@@ -35,3 +35,7 @@ SELECT name,age FROM staff WHERE (name,age) IN (SELECT name,age FROM customer);
 | Valerius |   61 |
 +----------+------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

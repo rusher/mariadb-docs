@@ -10,3 +10,6 @@ Not all topics are covered and some parts are slightly outdated, but still the b
 *[MySQL 5.1 Plugin Development](https://www.amazon.com/dp/1849510601)* by Sergei Golubchik and Andrew Hutching, August 2010
 A must read for anyone wanting to write a plugin for MariaDB, written by the Sergei who designed the plugin interface for MySQL and MariaDB!
 
+
+CC BY-SA / Gnu FDL
+

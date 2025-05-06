@@ -33,3 +33,7 @@ SELECT json_array_intersect(@json1, @json2);
 | [1, 2]                               |
 +--------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -80,3 +80,6 @@ ZIP_PAGE_SIZE: 0
 
 * [InnoDB Data Dictionary Troubleshooting](../../../../../../../storage-engines/innodb/innodb-troubleshooting/innodb-data-dictionary-troubleshooting.md)
 
+
+CC BY-SA / Gnu FDL
+

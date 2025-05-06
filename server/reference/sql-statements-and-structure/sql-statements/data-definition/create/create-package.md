@@ -176,3 +176,6 @@ DELIMITER ;
 * [DROP PACKAGE](../drop/drop-package.md)
 * [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+CC BY-SA / Gnu FDL
+

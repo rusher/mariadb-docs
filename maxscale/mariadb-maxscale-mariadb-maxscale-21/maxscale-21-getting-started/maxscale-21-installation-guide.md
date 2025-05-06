@@ -312,3 +312,7 @@ give some control of the MariaDB MaxScale functionality.
 There is [a separate reference guide](../maxscale-21-reference/mariadb-maxscale-21-maxadmin-admin-interface.md) for the maxadmin utility
 and also [a short administration tutorial](../maxscale-21-tutorials/mariadb-maxscale-21-mariadb-maxscale-administration-tutorial.md)
 that covers the common administration tasks that need to be done with MariaDB MaxScale.
+
+
+CC BY-SA / Gnu FDL
+

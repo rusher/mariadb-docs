@@ -175,3 +175,6 @@ Navigating the complexities of MyISAM storage engines doesn't have to be a daunt
 
 Download a [30-day free trial](https://www.devart.com/dbforge/mysql/studio/download.html) of dbForge Studio to experience firsthand how this comprehensive tool can elevate your database operations to new heights.
 
+
+CC BY-SA / Gnu FDL
+

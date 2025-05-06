@@ -151,3 +151,6 @@ SELECT * FROM t1;
 * [CLOSE cursor_name](close.md)
 * [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+CC BY-SA / Gnu FDL
+

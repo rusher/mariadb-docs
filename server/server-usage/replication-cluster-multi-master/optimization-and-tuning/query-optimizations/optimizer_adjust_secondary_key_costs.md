@@ -55,3 +55,6 @@ The reason for the max_seek optimization was originally to ensure that MariaDB w
 
 * The [optimizer_switch](optimizer-switch.md) system variable.
 
+
+CC BY-SA / Gnu FDL
+

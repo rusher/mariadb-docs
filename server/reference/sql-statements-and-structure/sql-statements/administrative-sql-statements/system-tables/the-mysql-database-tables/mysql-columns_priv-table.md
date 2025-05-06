@@ -32,3 +32,6 @@ The `mysql.columns_priv` table contains the following fields:
 
 The [Acl_column_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_column_grants) status variable indicates how many rows the `mysql.columns_priv` table contains.
 
+
+CC BY-SA / Gnu FDL
+

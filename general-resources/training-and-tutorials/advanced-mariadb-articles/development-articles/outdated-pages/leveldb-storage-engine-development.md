@@ -180,3 +180,6 @@ CREATE TABLE t1 (
 
 Adding them is just a question of careful coding/testing.
 
+
+CC BY-SA / Gnu FDL
+

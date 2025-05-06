@@ -181,3 +181,7 @@ ANALYZE TABLE lineitem;
 ANALYZE TABLE nation;
 ANALYZE TABLE region;
 ```
+
+
+CC BY-SA / Gnu FDL
+

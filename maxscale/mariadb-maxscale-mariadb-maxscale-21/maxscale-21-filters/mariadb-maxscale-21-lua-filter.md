@@ -108,3 +108,7 @@ This function can only be called from the `routeQuery` entry point.
 * `number id_gen()`
 * This function generates unique integers that can be used to distinct
  sessions from each other.
+
+
+CC BY-SA / Gnu FDL
+

@@ -187,3 +187,6 @@ SELECT * FROM oq2_graph;
 
 See [OQGRAPH Examples](oqgraph-examples.md) for OQGRAPH usage examples.
 
+
+CC BY-SA / Gnu FDL
+

@@ -23,3 +23,6 @@ Here are some common use cases for Galera replication:
 * [Getting Started with MariaDB/Galera Cluster](galera-management/getting-started-with-mariadb-galera-cluster.md)
 * [MariaDB Galera Cluster and M/S replication](https://www.youtube.com/watch?v=Nd0nvltLPdQ) (video)
 
+
+CC BY-SA / Gnu FDL
+

@@ -1553,3 +1553,7 @@ For maximum performance:
 * If `selects=assume_cacheable` is used, use only regexp based rules.
 * If `selects=verify_cacheable` has been configured, non-regex based
  matching can be used.
+
+
+CC BY-SA / Gnu FDL
+

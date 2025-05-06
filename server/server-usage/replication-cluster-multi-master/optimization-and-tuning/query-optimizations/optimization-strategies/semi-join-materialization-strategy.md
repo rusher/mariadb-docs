@@ -202,3 +202,6 @@ Semi-join materialization
 * Is enabled when one has both `materialization=on` and `semijoin=on` in the [optimizer_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
 * The `materialization=on|off` flag is shared with [Non-semijoin materialization](../subquery-optimizations/non-semi-join-subquery-optimizations.md#materialization-for-non-correlated-in-subqueries).
 
+
+CC BY-SA / Gnu FDL
+

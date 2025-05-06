@@ -79,3 +79,7 @@ rows_examined: 0
 rows_affected: 0
    full_scans: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

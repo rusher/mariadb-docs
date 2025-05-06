@@ -24,3 +24,7 @@ It has the following columns:
 | SIZE | Size in pages of the segment. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -42,3 +42,7 @@ SELECT FROM_BASE64('TWFyaWE=') AS 'Output';
 | Maria  |
 +--------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

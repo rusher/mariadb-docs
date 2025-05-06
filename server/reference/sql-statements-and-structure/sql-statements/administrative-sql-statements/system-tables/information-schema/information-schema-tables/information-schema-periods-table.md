@@ -40,3 +40,7 @@ SELECT * FROM INFORMATION_SCHEMA.PERIODS;
 | def           | test         | t1         | date_period | date_1            | date_2          |
 +---------------+--------------+------------+-------------+-------------------+-----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

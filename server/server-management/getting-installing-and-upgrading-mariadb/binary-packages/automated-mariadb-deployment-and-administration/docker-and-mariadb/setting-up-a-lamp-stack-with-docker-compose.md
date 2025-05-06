@@ -195,3 +195,6 @@ Further information about the concepts explained in this page can be found in Do
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

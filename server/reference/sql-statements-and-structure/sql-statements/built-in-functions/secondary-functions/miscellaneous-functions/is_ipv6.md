@@ -41,3 +41,6 @@ SELECT IS_IPV6('10.0.1.1');
 * [INET6_ATON](inet6_aton.md)
 * [INET6_NTOA](inet6_ntoa.md)
 
+
+CC BY-SA / Gnu FDL
+

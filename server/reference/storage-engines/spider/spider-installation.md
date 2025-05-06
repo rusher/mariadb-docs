@@ -236,3 +236,7 @@ CREATE TABLE test.spider_example (
 ) ENGINE=Spider
 REMOTE_SERVER=dataNode1 REMOTE_TABLE=spider_example;
 ```
+
+
+CC BY-SA / Gnu FDL
+

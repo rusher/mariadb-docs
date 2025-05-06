@@ -510,3 +510,7 @@ view or a srcdef option.
 
 All PIVOT tables are read only.
 
+
+
+CC BY-SA / Gnu FDL
+

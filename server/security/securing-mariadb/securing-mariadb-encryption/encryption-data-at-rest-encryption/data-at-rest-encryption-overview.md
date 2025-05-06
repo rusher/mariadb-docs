@@ -134,3 +134,6 @@ We are grateful to these companies for their support of MariaDB!
 * [DES_ENCRYPT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md)
 * A [blog post about table encryption](https://mariadb.com/blog/table-and-tablespace-encryption-mariadb-101/) with benchmark results
 
+
+CC BY-SA / Gnu FDL
+

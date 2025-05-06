@@ -321,3 +321,6 @@ mariadb-galera-10.0.30
 * [git-for-bzr-users.pdf](https://agateau.com/talks/2010/git-for-bzr-users_uds-natty/git-for-bzr-users.pdf)
 * [Sergei's "Using GIT" presentation. Malaga Meeting, January 2015 "Sergei's "Using GIT" presentation. Malaga Meeting, January 2015"](https://mariadb.com/kb/en/usare-git/+attachment/using-git)
 
+
+CC BY-SA / Gnu FDL
+

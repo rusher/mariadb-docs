@@ -48,3 +48,7 @@ It is recommended to complement the examples with the [API reference](api-refere
 
 
 If you are looking for production-grade examples, you can check the `mariadb_galera_production.yaml` and `maxscale_galera_production.yaml` examples.
+
+
+CC BY-SA / Gnu FDL
+

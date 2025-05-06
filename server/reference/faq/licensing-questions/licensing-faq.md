@@ -201,3 +201,6 @@ part has had anything to do with this KB article but they are the
 default authorities to turn to when you want to know more about the
 GPL or LGPL.
 
+
+CC BY-SA / Gnu FDL
+

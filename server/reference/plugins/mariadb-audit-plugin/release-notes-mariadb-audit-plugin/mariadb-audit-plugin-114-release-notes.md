@@ -74,3 +74,6 @@ The issue number links will take you to the corresponding issue in MariaDB proje
 
   * [MDEV-4472](https://jira.mariadb.org/browse/MDEV-4472) _my_hash_init in 10.0 fix.
 
+
+CC BY-SA / Gnu FDL
+

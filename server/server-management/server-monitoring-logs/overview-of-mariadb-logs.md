@@ -79,3 +79,6 @@ SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 
 * [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/README.md)
 
+
+CC BY-SA / Gnu FDL
+

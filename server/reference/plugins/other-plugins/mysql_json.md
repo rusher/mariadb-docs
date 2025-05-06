@@ -29,3 +29,6 @@ install soname 'type_mysql_json';
 
 See [Making MariaDB understand MySQL JSON](https://mariadb.org/making-mariadb-understand-mysql-json/) for a full description.
 
+
+CC BY-SA / Gnu FDL
+

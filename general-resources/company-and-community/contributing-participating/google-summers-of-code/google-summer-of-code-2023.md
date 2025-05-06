@@ -299,3 +299,6 @@ Skills needed:
 
 Do you have an idea of your own, not listed above? Do let us know!
 
+
+CC BY-SA / Gnu FDL
+

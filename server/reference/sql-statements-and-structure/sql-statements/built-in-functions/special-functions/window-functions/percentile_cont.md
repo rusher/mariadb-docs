@@ -97,3 +97,6 @@ SELECT name, PERCENTILE_CONT(0.6) WITHIN GROUP (ORDER BY star_rating)
 
 * [MEDIAN()](median.md) - a special case of `PERCENTILE_CONT` equivalent to `PERCENTILE_CONT(0.5)`
 
+
+CC BY-SA / Gnu FDL
+

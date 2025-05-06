@@ -51,3 +51,6 @@ SELECT ST_GeoHash(ST_GeomFromText('POINT(1 1)'),15), ST_GeoHash(0,30,15);
 * [Geometry Constructors](../geometry-constructors/README.md)
 * [ST_GeomFromText](../wkt/st_geomfromtext.md)
 
+
+CC BY-SA / Gnu FDL
+

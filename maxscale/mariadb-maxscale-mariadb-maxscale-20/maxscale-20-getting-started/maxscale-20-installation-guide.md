@@ -212,3 +212,7 @@ Configuration is read by default from the file /etc/maxscale.cnf. An example fil
 
 
 There are various administration tasks that may be done with MariaDB MaxScale, a client command, maxadmin, is available that will interact with a running MariaDB MaxScale and allow the status of MariaDB MaxScale to be monitored and give some control of the MariaDB MaxScale functionality. There is [a separate reference guide](../../mariadb-maxscale-21-06/README.md) for the maxadmin utility and also [a short administration tutorial](../../mariadb-maxscale-21-06/README.md) that covers the common administration tasks that need to be done with MariaDB MaxScale.
+
+
+CC BY-SA / Gnu FDL
+

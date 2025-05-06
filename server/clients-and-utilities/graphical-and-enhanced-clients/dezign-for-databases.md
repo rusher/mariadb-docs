@@ -42,3 +42,6 @@ DeZign for Databases is available for Windows OS.
 
 See [www.datanamic.com](https://www.datanamic.com) for more information.
 
+
+CC BY-SA / Gnu FDL
+

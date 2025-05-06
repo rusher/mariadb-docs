@@ -150,3 +150,7 @@ Example output:
 | 000026.sst | Snappy           |
 +------------+------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

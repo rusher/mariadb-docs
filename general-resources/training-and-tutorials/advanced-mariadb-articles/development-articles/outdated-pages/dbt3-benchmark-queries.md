@@ -254,3 +254,7 @@ and n_name = 'UNITED STATES'
 order by s_name
 limit 10;
 ```
+
+
+CC BY-SA / Gnu FDL
+

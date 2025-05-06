@@ -247,3 +247,6 @@ MariaDB shows what is really is going on:
 
 ## TODO: other differences
 
+
+CC BY-SA / Gnu FDL
+

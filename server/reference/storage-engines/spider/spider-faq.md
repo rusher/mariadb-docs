@@ -54,3 +54,6 @@ This architecture need to be used with care if you have a highly transactional w
 
 * When using MRR and BKA (and you do so with network storage), when Spider needs to create temporary tables on the backends, use the CREATE TEMPORARY TABLES privilege. Spider can still switch to a lower performance solution using [spider_bka_mode=2](spider-system-variables.md), or Query push down or range predicate using [spider_bka_mode=0](spider-system-variables.md)
 
+
+CC BY-SA / Gnu FDL
+

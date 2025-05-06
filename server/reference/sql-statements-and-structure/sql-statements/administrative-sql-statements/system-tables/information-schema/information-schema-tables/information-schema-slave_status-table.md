@@ -8,3 +8,6 @@ The [Information Schema](../README.md) `SLAVE_STATUS` table contains replica sta
 
 See [SHOW REPLICA STATUS](../../../show/show-replica-status.md) for column descriptions.
 
+
+CC BY-SA / Gnu FDL
+

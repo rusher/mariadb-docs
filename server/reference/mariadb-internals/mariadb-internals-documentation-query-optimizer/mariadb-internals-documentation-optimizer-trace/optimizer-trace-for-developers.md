@@ -69,3 +69,6 @@ The BuildBot instance at [](https://buildbot.askmonty.org/) also runs tests with
 
 See [optimizer-debugging-with-gdb/#printing-the-optimizer-trace](../optimizer-debugging-with-gdb.md#printing-the-optimizer-trace) for commands to print the trace for the current statement.
 
+
+CC BY-SA / Gnu FDL
+

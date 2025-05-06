@@ -737,3 +737,6 @@ TotalUmMemory - 50% of total memory
 The user can choose to change these settings after the install is completed if for instance, they want to set up more memory for Joins to utilize. On a single server or combined UM/PM server, it is recommended to not
 have the combination of these 2 settings over 75% of total memory
 
+
+CC BY-SA / Gnu FDL
+

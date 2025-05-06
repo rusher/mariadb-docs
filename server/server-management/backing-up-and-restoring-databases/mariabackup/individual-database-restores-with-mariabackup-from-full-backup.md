@@ -229,3 +229,7 @@ Run the add key statements on ONE NODE
 ALTER TABLE schmeaname.tablename ADD CONSTRAINT key_name FOREIGN KEY (`column_name`) REFERENCES `foreign_table` (`colum_name`) ON UPDATE NO ACTION ON DELETE NO ACTION;
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

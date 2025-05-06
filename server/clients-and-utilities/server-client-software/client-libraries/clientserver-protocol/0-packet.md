@@ -146,3 +146,6 @@ If data size needs splitting, it's better to separate compress packet.
 
 
 
+
+CC BY-SA / Gnu FDL
+

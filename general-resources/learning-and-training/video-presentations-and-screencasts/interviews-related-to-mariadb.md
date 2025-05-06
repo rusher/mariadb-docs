@@ -51,3 +51,6 @@ A discussion of the new MariaDB Foundation with COO Andrew Katz and CTO Michael 
 
 * [MariaDB Can't Be Sold Like MySQL: Exclusive Interview](https://www.muktware.com/n/04/2011/742) by Swapnil Bhartiya. Featuring Rasmus Johansson, COO of Monty Program Ab and Colin Charles, Chief Evangelist of Monty Program Ab - February 2011
 
+
+CC BY-SA / Gnu FDL
+

@@ -88,3 +88,7 @@ default behavior is to listen on all network interfaces (the IPv6 address `::`).
 
 
 For the last steps, please return to [MaxScale Tutorial](mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+
+
+CC BY-SA / Gnu FDL
+

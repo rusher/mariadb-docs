@@ -20,3 +20,7 @@ It contains the following columns:
 | VALUE |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

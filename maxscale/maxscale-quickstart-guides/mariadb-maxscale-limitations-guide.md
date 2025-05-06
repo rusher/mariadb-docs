@@ -301,3 +301,7 @@ result in MaxScale running out of memory
 
 
 * ETL operations that operate on more than one catalog are not supported.
+
+
+CC BY-SA / Gnu FDL
+

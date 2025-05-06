@@ -88,3 +88,6 @@ select statement_schema, statement_text, result_blocks_count,
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
+
+CC BY-SA / Gnu FDL
+

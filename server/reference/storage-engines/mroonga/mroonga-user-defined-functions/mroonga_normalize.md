@@ -38,3 +38,6 @@ SELECT mroonga_normalize("ABぃ㍑");
 
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -279,3 +279,6 @@ See [MDEV-18863](https://jira.mariadb.org/browse/MDEV-18863) for more informatio
 
 * [Galera Cluster documentation: STATE SNAPSHOT TRANSFERS](https://galeracluster.com/library/documentation/sst.html)
 
+
+CC BY-SA / Gnu FDL
+

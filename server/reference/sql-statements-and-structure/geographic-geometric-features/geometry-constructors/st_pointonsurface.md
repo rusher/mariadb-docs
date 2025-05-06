@@ -17,3 +17,6 @@ Given a geometry, returns a [POINT](point.md) guaranteed to intersect a surface.
 
 ST_PointOnSurface() and PointOnSurface() are synonyms.
 
+
+CC BY-SA / Gnu FDL
+

@@ -104,3 +104,7 @@ for i in 'vm-natty-amd64-install.qcow2 2255 qemu64' 'vm-natty-i386-install.qcow2
     'mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"' ;\
 done
 ```
+
+
+CC BY-SA / Gnu FDL
+

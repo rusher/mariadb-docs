@@ -266,3 +266,7 @@ nodes.
 As a rule of thumb, use *readwritesplit* if it is important that
 changes taking place in the cluster configuration are hidden from the
 applications, otherwise use *readconnroute*.
+
+
+CC BY-SA / Gnu FDL
+

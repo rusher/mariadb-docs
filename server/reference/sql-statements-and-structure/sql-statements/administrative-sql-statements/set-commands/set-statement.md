@@ -110,3 +110,6 @@ There are a number of variables that cannot be set on per-query basis. These inc
 * Percona Server 5.6 included it as [Per-query variable statement](https://www.percona.com/doc/percona-server/5.6/flexibility/per_query_variable_statement.html)
 * MariaDB ported the patch and fixed many bugs. The task in MariaDB Jira is [MDEV-5231](https://jira.mariadb.org/browse/MDEV-5231).
 
+
+CC BY-SA / Gnu FDL
+

@@ -93,3 +93,6 @@ NUMERIC_PRECISION_RADIX: 2
 * [ALTER SEQUENCE](../../../sequences/alter-sequence.md)
 * [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
+
+CC BY-SA / Gnu FDL
+

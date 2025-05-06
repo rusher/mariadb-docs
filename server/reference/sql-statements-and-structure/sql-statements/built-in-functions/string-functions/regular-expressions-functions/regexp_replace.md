@@ -73,3 +73,7 @@ SELECT REGEXP_REPLACE('ABC','(?-i)b','-') AS force_case_sensitive;
 SELECT REGEXP_REPLACE(BINARY 'ABC','(?i)b','-') AS force_case_insensitive;
 -> A-C
 ```
+
+
+CC BY-SA / Gnu FDL
+

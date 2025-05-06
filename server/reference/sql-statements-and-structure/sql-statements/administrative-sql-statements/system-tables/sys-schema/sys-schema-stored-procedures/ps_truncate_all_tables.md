@@ -51,3 +51,7 @@ CALL sys.ps_truncate_all_tables(true);
 | Truncated 44 tables |
 +---------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

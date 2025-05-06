@@ -632,3 +632,6 @@ A typical log might look like this:
 
 *Prior to version 1.4, this folder was located at* `/usr/local/mariadb/columnstore/bulk`*.*
 
+
+CC BY-SA / Gnu FDL
+

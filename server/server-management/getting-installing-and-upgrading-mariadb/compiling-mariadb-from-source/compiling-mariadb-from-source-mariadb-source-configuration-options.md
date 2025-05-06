@@ -14,3 +14,6 @@ cmake . -LH
 * [Get the Code, Build it, Test it](https://mariadb.org/get-involved/getting-started-for-developers/get-code-build-test/) (mariadb.org)
 * [Generic Build Instructions](generic-build-instructions.md)
 
+
+CC BY-SA / Gnu FDL
+

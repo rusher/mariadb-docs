@@ -14,3 +14,6 @@
 * Introduced: [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
 
+
+CC BY-SA / Gnu FDL
+

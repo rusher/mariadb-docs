@@ -99,3 +99,6 @@ When MARIADB_MASTER_HOST is specified, MARIADB_REPLICATION_USER and MARIADB_REPL
 
 When not specified, the MARIADB_REPLICATION_USER will be created with the REPLICATION REPLICA grants required to a client to start replication.
 
+
+CC BY-SA / Gnu FDL
+

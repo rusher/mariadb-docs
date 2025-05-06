@@ -24,3 +24,6 @@ The following are the steps in the testing phase:
 1. Test the data integrity
 1. Fine-tune the parameters or modify the logical or physical designs in response to the tests.
 
+
+CC BY-SA / Gnu FDL
+

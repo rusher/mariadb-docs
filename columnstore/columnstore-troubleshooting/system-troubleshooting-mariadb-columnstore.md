@@ -1183,3 +1183,6 @@ DROP TABLE TABLE1 RESTRICT;
 
 Then the customer should be able to create the table at this point.
 
+
+CC BY-SA / Gnu FDL
+

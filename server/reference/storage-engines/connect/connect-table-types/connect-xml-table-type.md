@@ -1205,3 +1205,6 @@ table.
 blanks depending on the structure and indentation of the data file.
 1. [↑](#_ref-2) This may cause some rows to be lost because an eventual where clause on the “multiple” column is applied only on the limited number of retrieved rows.
 
+
+CC BY-SA / Gnu FDL
+

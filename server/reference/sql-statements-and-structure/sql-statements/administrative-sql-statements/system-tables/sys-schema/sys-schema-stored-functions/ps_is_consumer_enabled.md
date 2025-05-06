@@ -48,3 +48,6 @@ SELECT sys.ps_is_consumer_enabled('nonexistent_consumer');
 
 * [Performance Schema setup_consumers Table](../../performance-schema/performance-schema-tables/performance-schema-setup_consumers-table.md)
 
+
+CC BY-SA / Gnu FDL
+

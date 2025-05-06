@@ -381,3 +381,7 @@ DELETE /v1/users/unix/:name
 Status: 204 No Content
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

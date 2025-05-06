@@ -120,3 +120,6 @@ Empty set (0.000 sec)
 * [Performance Schema user_variables_by_thread Table](../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
 * [Information Schema USER_VARIABLES Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
 
+
+CC BY-SA / Gnu FDL
+

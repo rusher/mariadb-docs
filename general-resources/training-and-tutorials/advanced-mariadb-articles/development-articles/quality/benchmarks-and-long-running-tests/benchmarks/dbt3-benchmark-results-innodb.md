@@ -164,3 +164,6 @@ Most of the queries have timed out for the given period of 10 minutes per query
 and until a new test with longer timeout is performed, no correct comparison
 summary could be made.
 
+
+CC BY-SA / Gnu FDL
+

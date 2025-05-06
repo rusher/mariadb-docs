@@ -132,3 +132,7 @@ CREATE OR REPLACE TABLE t1 (
 ) PARTITION BY KEY() PARTITIONS 2;
 ERROR 1503 (HY000): A PRIMARY KEY must include all columns in the table's partitioning function
 ```
+
+
+CC BY-SA / Gnu FDL
+

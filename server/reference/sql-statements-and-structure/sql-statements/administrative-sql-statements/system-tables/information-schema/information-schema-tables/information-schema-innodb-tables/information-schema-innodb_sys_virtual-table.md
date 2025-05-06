@@ -16,3 +16,7 @@ It contains the following columns:
 | BASE_POS | int(11) unsigned | NO |  | 0 |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

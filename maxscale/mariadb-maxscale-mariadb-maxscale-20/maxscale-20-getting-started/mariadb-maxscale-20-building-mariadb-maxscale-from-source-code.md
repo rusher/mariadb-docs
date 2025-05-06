@@ -249,3 +249,7 @@ make
 LD_LIBRARY_PATH=$PWD/server/core/ make package
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -537,3 +537,7 @@ sudo zypper install maxscale
 | 2022-01-18 | c330d2755e18e48c3bba300a2898b0fc8ad2d3326d50b64e02fe65c67b454599 |
 
 
+
+
+CC BY-SA / Gnu FDL
+

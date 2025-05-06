@@ -6,3 +6,6 @@ dbdeployer is a tool for installing multiple versions of MariaDB and/or MySQL in
 
 Visit [www.dbdeployer.com](https://www.dbdeployer.com) for details on how to install and use it.
 
+
+CC BY-SA / Gnu FDL
+

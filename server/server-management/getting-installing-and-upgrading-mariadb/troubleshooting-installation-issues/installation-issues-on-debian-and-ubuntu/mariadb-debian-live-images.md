@@ -170,3 +170,6 @@ Send any feedback or suggestions related to these images to:
 
 * Mark `<ms (at) it-infrastrukturen (dot) org>`
 
+
+CC BY-SA / Gnu FDL
+

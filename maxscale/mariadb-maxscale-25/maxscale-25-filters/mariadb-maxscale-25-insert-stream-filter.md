@@ -139,3 +139,7 @@ type=filter
 module=insertstream
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -22,3 +22,6 @@ Returns the node that applied and committed the Global Transaction ID, `ER_LOCAL
 
 The result from [WSREP_LAST_SEEN_GTID](wsrep_last_seen_gtid.md) can be useful to determine the transaction to provide to WSREP_SYNC_WAIT_UPTO_GTID for waiting and unblocking purposes.
 
+
+CC BY-SA / Gnu FDL
+

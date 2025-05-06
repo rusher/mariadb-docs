@@ -30,3 +30,6 @@ Key Features:
 
 SQLyog runs on Windows and is a graphical MariaDB manager and admin tool, combining the features of MySQL Administrator, phpMyAdmin and other MariaDB Front Ends and MariaDB GUI tools.
 
+
+CC BY-SA / Gnu FDL
+

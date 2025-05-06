@@ -30,3 +30,6 @@ This section includes a summary of all important features in [MariaDB 5.2](https
 As stated above, all non-completed todo items have been moved to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3),
 see [MariaDB 5.3 TODO](mariadb-53-todo.md).
 
+
+CC BY-SA / Gnu FDL
+

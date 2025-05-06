@@ -20,3 +20,7 @@ It has the following columns:
 | READ_VIEW_LOW_LIMIT_TRX_ID | Latest committed transaction ID at the time the oldest view was created. Should see all transactions with IDs equal to or less than the value. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

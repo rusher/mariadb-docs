@@ -163,3 +163,7 @@ systemctl start mariadb
 ```
 tail -f /var/log/mysql/mysqld.log
 ```
+
+
+CC BY-SA / Gnu FDL
+

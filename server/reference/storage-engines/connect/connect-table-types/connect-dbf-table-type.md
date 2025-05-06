@@ -106,3 +106,6 @@ alter table tabdbf option_list='Readmode=1';
 
 To come back to normal mode, specify READMODE=0.
 
+
+CC BY-SA / Gnu FDL
+

@@ -57,3 +57,6 @@ For information about the parameters accepted by the routine, you can query the 
 * [Stored Function Overview](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/stored-function-overview.md)
 * [Stored Procedure Overview](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview.md)
 
+
+CC BY-SA / Gnu FDL
+

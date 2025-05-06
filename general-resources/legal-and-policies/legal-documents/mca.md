@@ -123,3 +123,6 @@ MariaDB Contributor Agreement – version 1.0
 
 Questions? See the [MCA FAQ](mariadb-contributor-agreement-faq.md) page.
 
+
+CC BY-SA / Gnu FDL
+

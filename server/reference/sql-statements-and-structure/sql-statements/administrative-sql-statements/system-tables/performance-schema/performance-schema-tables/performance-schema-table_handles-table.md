@@ -35,3 +35,7 @@ The table contains the following columns:
 | EXTERNAL_LOCK | The table lock used at the storage engine level. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

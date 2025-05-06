@@ -124,3 +124,6 @@ innodb_io_capacity_max=20000
 
 * [Significant performance boost with new MariaDB page compression on FusionIO](https://blog.mariadb.org/significant-performance-boost-with-new-mariadb-page-compression-on-fusionio/)
 
+
+CC BY-SA / Gnu FDL
+

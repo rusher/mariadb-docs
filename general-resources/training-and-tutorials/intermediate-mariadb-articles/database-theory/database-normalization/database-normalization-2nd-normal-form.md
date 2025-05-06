@@ -77,3 +77,6 @@ Let's examine all the fields. *Location name* is only dependent on *location cod
 
 The resulting tables are now in 2nd normal form. The process for turning a table into 3rd normal form is continued in the next article.
 
+
+CC BY-SA / Gnu FDL
+

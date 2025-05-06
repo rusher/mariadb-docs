@@ -150,3 +150,6 @@ See the article [Stored Routine Privileges](stored-routine-privileges.md).
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 * [Stored Aggregate Functions](stored-aggregate-functions.md).
 
+
+CC BY-SA / Gnu FDL
+

@@ -174,3 +174,7 @@ MariaDB [(none)]> SHOW DATABASES;
 
 
 Refer to the [documentation](README.md), the [API reference](api-reference.md)and the [examples catalog](examples-catalog.md) for further detail.
+
+
+CC BY-SA / Gnu FDL
+

@@ -9,3 +9,6 @@ The network database model was a progression from the [hierarchical database mod
 
 Of course, this model has its problems, or everyone would still be using it. It is more difficult to implement and maintain, and, although more flexible than the hierarchical model, it still has flexibility problems, Not all relations can be satisfied by assigning another owner, and the programmer still has to understand the data structure well in order to make the model efficient.
 
+
+CC BY-SA / Gnu FDL
+

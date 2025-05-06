@@ -37,3 +37,6 @@ Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql
 * [CREATE SERVER](../../data-definition/create/create-server.md)
 * [SHOW](README.md)
 
+
+CC BY-SA / Gnu FDL
+

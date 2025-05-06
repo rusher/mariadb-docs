@@ -25,3 +25,7 @@ It contains the following columns:
 | ROLLED_BACK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

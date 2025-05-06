@@ -46,3 +46,6 @@ SELECT ST_ASTEXT(ST_POINTFROMGEOHASH(ST_GEOHASH(180,90,20),0));
 
 * [ST_GeoHash](st_geohash.md)
 
+
+CC BY-SA / Gnu FDL
+

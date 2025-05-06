@@ -12,3 +12,6 @@ The password_reuse_check_interval system variable is available when the [passwor
 * Range: `0` to `36500`
 
 
+
+CC BY-SA / Gnu FDL
+

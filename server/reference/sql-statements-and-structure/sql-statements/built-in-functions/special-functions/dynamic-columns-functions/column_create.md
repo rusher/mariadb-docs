@@ -36,3 +36,7 @@ a date. See [Dynamic Columns:Datatypes](../../../../nosql/dynamic-columns.md#dat
 ```
 INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE("column_name", "value");
 ```
+
+
+CC BY-SA / Gnu FDL
+

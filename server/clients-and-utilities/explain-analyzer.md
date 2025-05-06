@@ -56,3 +56,6 @@ The following clients have support for the EXPLAIN Analyzer built in:
 
 [HeidiSQL](https://www.heidisql.com/) has a button when viewing a query that sends the query to the explain analyzer.
 
+
+CC BY-SA / Gnu FDL
+

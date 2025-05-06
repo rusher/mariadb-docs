@@ -174,3 +174,6 @@ Notice that the 5 is not preceded by a negative sign. If it were, it would have 
 
 This article along with the previous one on time and date in MariaDB in no way exhaust the topic. There are many more functions and tricks to manipulating temporal values in MariaDB, not to mention what can be done with the extension of a script using a programming language like PHP. Plus, new functions are occasionally being added to MariaDB.
 
+
+CC BY-SA / Gnu FDL
+

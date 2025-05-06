@@ -20,3 +20,7 @@ It contains the following fields.
 | DESIRED_DELAY | int(11) | NO | Target number of seconds the replica should be delayed to the master. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -36,3 +36,7 @@ The `mysql.column_stats` table contains the following fields:
 | histogram | blob (>= [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107))varbinary(255) (<=[MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)) | YES |  | NULL |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

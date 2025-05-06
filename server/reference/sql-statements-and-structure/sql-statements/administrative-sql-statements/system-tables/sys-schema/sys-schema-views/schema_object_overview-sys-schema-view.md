@@ -46,3 +46,7 @@ SELECT * FROM sys.schema_object_overview;
 | sys                | VIEW          |   100 |
 +--------------------+---------------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

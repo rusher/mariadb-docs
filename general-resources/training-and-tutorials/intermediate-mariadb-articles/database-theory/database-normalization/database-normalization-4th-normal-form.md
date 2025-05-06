@@ -93,3 +93,6 @@ Thus, a table is in 4th normal form if:
 * it is in Boyce-Codd normal form
 * it does not contain more than one multivalued dependency
 
+
+CC BY-SA / Gnu FDL
+

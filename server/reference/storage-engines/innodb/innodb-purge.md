@@ -194,3 +194,6 @@ The purge process will set a row's `DB_TRX_ID` column to `0` after all of the ro
 
 This optimization can speed up reads, but it come at a noticeable cost at other times. For example, it can cause the purge process to use more I/O after inserting a lot of rows, since the value of each row's `DB_TRX_ID` column will have to be reset.
 
+
+CC BY-SA / Gnu FDL
+

@@ -297,3 +297,6 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 [Using the S3 Storage Engine](using-the-s3-storage-engine.md)
 
+
+CC BY-SA / Gnu FDL
+

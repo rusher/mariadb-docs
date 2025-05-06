@@ -313,3 +313,7 @@ having a priority of 0 and will be used only if all nodes with a positive
 
 With priority ranks you can control the order in which MaxScale chooses the
 primary node. This will allow for a controlled failure and replacement of nodes.
+
+
+CC BY-SA / Gnu FDL
+

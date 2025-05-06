@@ -17,3 +17,6 @@ If you have any issues with Sequel Pro on MariaDB, please use the [issue trackin
 * [Source code](https://github.com/sequelpro)
 * [Issue tracking](https://github.com/sequelpro/sequelpro/issues)
 
+
+CC BY-SA / Gnu FDL
+

@@ -52,3 +52,6 @@ Warning (Code 4201): Invalid binary vector format. Must use IEEE standard float
 
 * [Error 4201: Invalid binary vector format](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4201.md)
 
+
+CC BY-SA / Gnu FDL
+

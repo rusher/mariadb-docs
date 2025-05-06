@@ -389,3 +389,7 @@ This is an example of how it run on a non-root user install, assuming ColumnStor
 ```
 $HOME/mariadb/columnstore/mysql/bin/mysql_upgrade --defaults-file=$HOME/mariadb/columnstore/mysql/my.cnf --force
 ```
+
+
+CC BY-SA / Gnu FDL
+

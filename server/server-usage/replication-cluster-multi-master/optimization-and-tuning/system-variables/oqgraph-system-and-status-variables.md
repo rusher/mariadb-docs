@@ -49,3 +49,6 @@ This page documents system and status variables related to the [OQGRAPH storage 
 * Data Type: `string`
 
 
+
+CC BY-SA / Gnu FDL
+

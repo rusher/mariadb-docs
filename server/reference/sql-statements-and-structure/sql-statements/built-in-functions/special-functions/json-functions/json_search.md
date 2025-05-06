@@ -37,3 +37,7 @@ SELECT JSON_SEARCH(@json, 'one', 'AB');
 | "$[2].C"                        |
 +---------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

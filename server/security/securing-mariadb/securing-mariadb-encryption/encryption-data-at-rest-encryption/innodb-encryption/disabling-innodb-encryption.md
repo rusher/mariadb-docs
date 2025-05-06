@@ -125,3 +125,6 @@ After the server has been successfully restarted with encryption disabled, you m
 
 * [Enabling InnoDB encryption](innodb-enabling-encryption.md)
 
+
+CC BY-SA / Gnu FDL
+

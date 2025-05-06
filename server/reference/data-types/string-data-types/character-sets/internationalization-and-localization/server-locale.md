@@ -161,3 +161,7 @@ SET lc_messages = 'nl_NL';
 SELECT blah;
 ERROR 1054 (42S22): Onbekende kolom 'blah' in field list
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -251,3 +251,6 @@ It's also possible to use option files (or configuration files) to set these opt
 * [Configuring MariaDB for Remote Client Access](/kb/en/configuring-mariadb-for-remote-client-access/)
 * [--skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
 
+
+CC BY-SA / Gnu FDL
+

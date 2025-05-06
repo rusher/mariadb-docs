@@ -167,3 +167,7 @@ document.
 
 * [MySQL Authenticator](mariadb-maxscale-24-08-beta-authenticators/mariadb-maxscale-2408-maxscale-2408-beta-mariadbmysql-authenticator.md)
 * [GSSAPI Authenticator](mariadb-maxscale-24-08-beta-authenticators/mariadb-maxscale-2408-maxscale-2408-beta-gssapi-client-authenticator.md)
+
+
+CC BY-SA / Gnu FDL
+

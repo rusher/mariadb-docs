@@ -181,3 +181,6 @@ chkconfig --add mysql
 
 * Galera Cluster can now be started using the service command, and is set to start at boot.
 
+
+CC BY-SA / Gnu FDL
+

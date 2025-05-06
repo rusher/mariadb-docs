@@ -59,3 +59,6 @@ dbForge Edge is not just a comprehensive IDE for MySQL and MariaDB – it goes f
 [Order now](https://www.devart.com/dbforge/edge/ordering.html)
 
 
+
+CC BY-SA / Gnu FDL
+

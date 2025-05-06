@@ -31,3 +31,7 @@ SELECT NUMGEOMETRIES(GeomFromText(@gc));
 |                                2 |
 +----------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

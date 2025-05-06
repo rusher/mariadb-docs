@@ -300,3 +300,7 @@ When we combine these two rules we get the result we want. To combine these two 
 users %@% match all rules safe_delete managers_table
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

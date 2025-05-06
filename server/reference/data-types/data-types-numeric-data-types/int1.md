@@ -35,3 +35,7 @@ Create Table: CREATE TABLE `int1_example` (
   `example` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
+
+
+CC BY-SA / Gnu FDL
+

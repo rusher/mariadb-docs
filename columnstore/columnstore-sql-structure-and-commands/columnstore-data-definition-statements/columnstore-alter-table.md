@@ -120,3 +120,7 @@ orders table:
 ```
 ALTER TABLE orders RENAME TO customer_orders;
 ```
+
+
+CC BY-SA / Gnu FDL
+

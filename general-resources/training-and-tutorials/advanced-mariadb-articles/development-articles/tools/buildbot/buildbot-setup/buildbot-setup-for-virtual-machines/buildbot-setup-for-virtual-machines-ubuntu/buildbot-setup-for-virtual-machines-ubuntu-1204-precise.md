@@ -195,3 +195,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get install -y libaio1
 sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 sudo shutdown -h now
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -145,3 +145,6 @@ For replication compatibility details between MariaDB and MySQL, see [MariaDB ve
 * [Replication Compatibility Between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql)
 * [MariaDB Galera Cluster and M/S replication](https://www.youtube.com/watch?v=Nd0nvltLPdQ) (video)
 
+
+CC BY-SA / Gnu FDL
+

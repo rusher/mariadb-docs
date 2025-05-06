@@ -63,3 +63,7 @@ static int query_response_time_info_init(void *p)
   return 0;
 }
 ```
+
+
+CC BY-SA / Gnu FDL
+

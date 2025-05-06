@@ -420,3 +420,6 @@ Examples
 * [1766831](https://stackoverflow.com/a/39403194/1766831)
 * [1766831](https://stackoverflow.com/a/40310314/1766831)
 
+
+CC BY-SA / Gnu FDL
+

@@ -344,3 +344,7 @@ SELECT * FROM t;
 |    4 | a    |
 +------+------
 ```
+
+
+CC BY-SA / Gnu FDL
+

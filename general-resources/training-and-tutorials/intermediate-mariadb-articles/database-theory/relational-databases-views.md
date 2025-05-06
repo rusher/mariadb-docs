@@ -94,3 +94,6 @@ Much simpler for a junior developer who hasn't yet learned to do joins, and it's
 
 For more use cases, see the [Views Tutorial](https://mariadb.com/kb/en/views-tutorial/).
 
+
+CC BY-SA / Gnu FDL
+

@@ -48,3 +48,6 @@ Thanks for the info.
 
 Luca
 
+
+CC BY-SA / Gnu FDL
+

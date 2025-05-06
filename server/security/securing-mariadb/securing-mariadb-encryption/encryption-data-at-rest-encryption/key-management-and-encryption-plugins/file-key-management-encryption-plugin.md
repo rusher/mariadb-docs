@@ -361,3 +361,6 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
+
+CC BY-SA / Gnu FDL
+

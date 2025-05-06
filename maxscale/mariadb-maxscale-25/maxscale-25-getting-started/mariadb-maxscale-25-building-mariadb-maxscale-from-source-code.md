@@ -169,3 +169,7 @@ cmake ../MaxScale -DPACKAGE=Y -DTARGET_COMPONENT=all
 make package
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

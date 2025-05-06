@@ -32,3 +32,6 @@ For people who want to learn SQL and the basics of MariaDB.
 Learn how to construct scalable and secure web applications
 
 
+
+CC BY-SA / Gnu FDL
+

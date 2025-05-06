@@ -38,3 +38,7 @@ It contains the following fields.
 | REPL_IGNORE_DOMAIN_IDS | longtext | NO | Binary log events from domains to ignore. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

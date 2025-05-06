@@ -1027,3 +1027,7 @@ SELECT * FROM setup_instruments ORDER BY name;
 +--------------------------------------------------------------------------------+---------+-------+
 996 rows in set (0.005 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

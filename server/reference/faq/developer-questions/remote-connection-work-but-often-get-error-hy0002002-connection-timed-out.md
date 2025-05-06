@@ -21,3 +21,6 @@ Any suggestions?
 
 Thanks
 
+
+CC BY-SA / Gnu FDL
+

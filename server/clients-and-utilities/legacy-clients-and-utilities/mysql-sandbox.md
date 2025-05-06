@@ -9,3 +9,6 @@ MySQL Sandbox is a Perl Module for installing multiple versions of MariaDB and/o
 
 Visit [](https://mysqlsandbox.net/) for details on how to install and use it.
 
+
+CC BY-SA / Gnu FDL
+

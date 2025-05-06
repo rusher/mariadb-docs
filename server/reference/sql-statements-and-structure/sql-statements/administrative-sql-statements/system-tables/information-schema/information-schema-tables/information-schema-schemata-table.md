@@ -78,3 +78,6 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 * [SHOW DATABASES](../../../show/show-databases.md)
 * [Character Sets and Collations](../../../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 
+
+CC BY-SA / Gnu FDL
+

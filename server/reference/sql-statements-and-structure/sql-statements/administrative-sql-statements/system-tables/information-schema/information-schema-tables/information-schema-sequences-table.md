@@ -63,3 +63,6 @@ NUMERIC_PRECISION_RADIX: 2
 * [AUTO INCREMENT](../../../../../../data-types/auto_increment.md)
 * [Sequence Storage Engine](../../../../../../storage-engines/sequence-storage-engine.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -332,3 +332,6 @@ Read more about encrypting data in the [Data at Rest Encryption](../data-at-rest
 
 For more information about advanced usage, including strategies to manage credentials, enforce separation of responsibilities, and even require 2-factor authentication to start your MariaDB server, please review [Amazon Web Services (AWS) Key Management Service (KMS) Encryption Plugin Advanced Usage](aws-key-management-encryption-plugin-advanced-usage.md).
 
+
+CC BY-SA / Gnu FDL
+

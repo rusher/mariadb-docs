@@ -257,3 +257,7 @@ PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 07:12:56.324 7/01/2016, SELECT * FROM PRODUCTS
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

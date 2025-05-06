@@ -58,3 +58,7 @@ TABLE_CATALOG: def
 INDEX_COMMENT:
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

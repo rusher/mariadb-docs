@@ -565,3 +565,7 @@ Fatal connection error:
 * If the API returns this response, the connection to the database server was
  lost. The only valid action to take at this point is to close it with the
  `DELETE /v1/sql/:id` endpoint.
+
+
+CC BY-SA / Gnu FDL
+

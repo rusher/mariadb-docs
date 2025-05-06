@@ -116,3 +116,6 @@ curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start \ --header 'Cont
 
 Incorporate the `save_brm` command into your data import scripts (e.g., those using `cpimport`) to automate Extent Map backups. This practice ensures regular backups without manual intervention. Refer to the MariaDB ColumnStore Backup Script for an example implementation.​
 
+
+CC BY-SA / Gnu FDL
+

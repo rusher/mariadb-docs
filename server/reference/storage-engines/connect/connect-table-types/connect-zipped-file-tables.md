@@ -243,3 +243,6 @@ file_name='C:/Data/Ziptest/CCAM06300_DBF_PART*.zip';
 
 Here we added the special column zipname to get the name of the zip file for each entry.
 
+
+CC BY-SA / Gnu FDL
+

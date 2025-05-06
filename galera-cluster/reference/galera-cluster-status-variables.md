@@ -463,3 +463,6 @@ MariaDB Galera Cluster has the following status variables:
 * Description: Total number of wsrep (applier/rollbacker) threads.
 
 
+
+CC BY-SA / Gnu FDL
+

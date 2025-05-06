@@ -214,3 +214,7 @@ spec:
 
 
 For instance, you probably don't want to inject the Istio sidecar to `Backup` `Pods`, as it will prevent the `Jobs` from finishing and therefore your backup process will hang.
+
+
+CC BY-SA / Gnu FDL
+

@@ -198,3 +198,6 @@ The transaction state string is always 8 characters long. The characters, in ord
 
 * Session tracking is supported from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102). To determine if session tracking is enabled, check if the [CLIENT_SESSION_TRACK](../1-connecting/connection.md) flag is set in server_capabilities.
 
+
+CC BY-SA / Gnu FDL
+

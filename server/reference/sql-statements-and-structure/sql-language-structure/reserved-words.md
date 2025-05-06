@@ -333,3 +333,6 @@ If the `IGNORE_SPACE` [SQL_MODE](../../../server-management/variables-and-modes/
 
 * [Information Schema KEYWORDS Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table.md)
 
+
+CC BY-SA / Gnu FDL
+

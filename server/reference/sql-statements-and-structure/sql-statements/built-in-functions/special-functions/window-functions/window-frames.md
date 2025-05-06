@@ -194,3 +194,7 @@ SELECT name, test, score, SUM(score)
 | Kaolin  | Tuning |    88 |         175 |
 +---------+--------+-------+-------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

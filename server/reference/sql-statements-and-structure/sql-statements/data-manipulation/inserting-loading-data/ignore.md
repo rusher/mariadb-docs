@@ -67,3 +67,6 @@ A property of the `IGNORE` clause consists in causing transactional engines and 
 
 Duplicate key errors also generate warnings. The [OLD_MODE](../../../../../server-management/variables-and-modes/old-mode.md) server variable can be used to prevent this.
 
+
+CC BY-SA / Gnu FDL
+

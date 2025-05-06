@@ -25,3 +25,6 @@ DBeaver is actively developed and maintained. Usability is the main goal of this
 
 ![screen2](../../.gitbook/assets/graphical-and-enhanced-clients-dbeaver/+image/screen2.png "screen2")
 
+
+CC BY-SA / Gnu FDL
+

@@ -12,3 +12,6 @@ Sponsorships are crucial for ongoing and future development of the MariaDB proje
 
 To get going with the sponsorship please visit the [MariaDB Foundation sponsorships page](https://mariadb.org/donate/).
 
+
+CC BY-SA / Gnu FDL
+

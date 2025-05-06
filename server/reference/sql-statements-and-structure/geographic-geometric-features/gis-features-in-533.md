@@ -67,3 +67,7 @@ Predicates, return boolean result of the relationship
 | [ST_TOUCHES(A,B)](geometry-relations/st-touches.md) | if A touches B |
 
 
+
+
+CC BY-SA / Gnu FDL
+

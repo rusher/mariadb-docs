@@ -334,3 +334,7 @@ order by 1 limit 3) a;
 MariaDB [infinidb_querystats]> select min(endtime-starttime), max(endtime-starttime), avg(endtime-starttime) from querystats 
 where querytype='INSERT SELECT' and starttime >= now() - interval 12 hour;
 ```
+
+
+CC BY-SA / Gnu FDL
+

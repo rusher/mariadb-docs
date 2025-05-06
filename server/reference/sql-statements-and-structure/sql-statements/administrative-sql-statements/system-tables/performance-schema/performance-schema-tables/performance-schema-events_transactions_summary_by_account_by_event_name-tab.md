@@ -36,3 +36,7 @@ The table contains the following columns:
 | MAX_TIMER_READ_ONLY | bigint(20) unsigned | The maximum wait time of only READ ONLY transaction events. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -17,3 +17,6 @@ Get internal server statistics.
 
 [string<EOF>](../protocol-data-types.md#end-of-file-length-strings) Human readable string
 
+
+CC BY-SA / Gnu FDL
+

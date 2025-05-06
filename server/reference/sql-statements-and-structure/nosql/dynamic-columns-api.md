@@ -448,3 +448,7 @@ Compare two column names for equality
 int mariadb_dyncol_column_cmp_named(const MYSQL_LEX_STRING *s1,
                                     const MYSQL_LEX_STRING *s2);
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -186,3 +186,6 @@ Cluster with many MySQL servers connected to it. It was originally designed for 
 
 * See slides for Monty+Kristian's talk
 
+
+CC BY-SA / Gnu FDL
+

@@ -54,3 +54,7 @@ This event specifies a binlog file such that XA crash recovery can start from th
 * filename = mysql-bin.000062
 
 
+
+
+CC BY-SA / Gnu FDL
+

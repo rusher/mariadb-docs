@@ -25,3 +25,7 @@ Some [key management and encryption plugins](../key-management-and-encryption-pl
 
 In order for key rotation to work, both the backend key management service (KMS) and the corresponding [key management and encryption plugin](../key-management-and-encryption-plugins/encryption-key-management.md) have to support key rotation. See [Encryption Key Management: Support for Key Rotation in Encryption Plugins](../key-management-and-encryption-plugins/encryption-key-management.md#support-for-key-rotation-in-encryption-plugins) to determine which plugins currently support key rotation.
 
+
+
+CC BY-SA / Gnu FDL
+

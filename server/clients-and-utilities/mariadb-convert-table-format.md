@@ -53,3 +53,7 @@ The `db_name` argument indicates the database containing the tables to be conver
 | -V, --version | Display version information and exit. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

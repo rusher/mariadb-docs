@@ -22,3 +22,7 @@ PREPARE stmt FROM "BEGIN NOT ATOMIC
   SELECT 'Hello World', v_res INTO ?,?;
 END"|
 ```
+
+
+CC BY-SA / Gnu FDL
+

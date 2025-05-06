@@ -630,3 +630,6 @@ There are some restrictions when using the UDF’s this way:
 * In case of error, warnings are replaced by messages sent to stderr.
 * No trace.
 
+
+CC BY-SA / Gnu FDL
+

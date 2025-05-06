@@ -410,3 +410,6 @@ The two main optimizer switches - *materialization* and *in_to_exists*
 cannot be simultaneously off. If both are set to off, the server will
 issue an error.
 
+
+CC BY-SA / Gnu FDL
+

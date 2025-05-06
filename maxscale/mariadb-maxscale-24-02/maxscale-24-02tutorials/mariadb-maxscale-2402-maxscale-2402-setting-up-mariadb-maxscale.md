@@ -244,3 +244,7 @@ More options can be found in the
 
 For more information about MaxCtrl and how to secure it, see the
 [REST-API Tutorial](mariadb-maxscale-2402-maxscale-2402-rest-api-tutorial.md).
+
+
+CC BY-SA / Gnu FDL
+

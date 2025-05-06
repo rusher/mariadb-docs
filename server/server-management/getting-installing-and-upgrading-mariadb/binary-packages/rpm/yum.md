@@ -356,3 +356,6 @@ After the installation is complete, you can [start MariaDB](../../starting-and-s
 
 If you are using [MariaDB Galera Cluster](/kb/en/galera/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 
+
+CC BY-SA / Gnu FDL
+

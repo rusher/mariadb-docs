@@ -473,3 +473,7 @@ adding the following flags to the CMake invocation when configuring the Avro C l
 
 For more details about building MaxScale from source, please refer to the
 [Building MaxScale from Source Code](../maxscale-22-getting-started/mariadb-maxscale-22-building-mariadb-maxscale-from-source-code.md) document.
+
+
+CC BY-SA / Gnu FDL
+

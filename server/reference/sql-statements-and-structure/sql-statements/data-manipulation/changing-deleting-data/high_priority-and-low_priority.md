@@ -30,3 +30,6 @@ The use of `LOW_PRIORITY` or `HIGH_PRIORITY` for an `INSERT` prevents [Concurren
 * [INSERT IGNORE](../inserting-loading-data/insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](../inserting-loading-data/insert-on-duplicate-key-update.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -20,3 +20,7 @@ It has the following columns:
 | POS | Ordinal position of the column in the table, starting from 0. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

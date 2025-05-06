@@ -53,3 +53,6 @@ SELECT * FROM mysql.time_zone_name;
 * [mysql.time_zone_transition table](mysql-time_zone_transition-table.md)
 * [mysql.time_zone_transition_type table](mysql-time_zone_transition_type-table.md)
 
+
+CC BY-SA / Gnu FDL
+

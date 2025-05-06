@@ -40,3 +40,6 @@ The lock wait timeout can be explicitly set in the statement by using either `WA
 * [SELECT](../data-manipulation/selecting-data/select.md)
 * [TRUNCATE TABLE](../table-statements/truncate-table.md)
 
+
+CC BY-SA / Gnu FDL
+

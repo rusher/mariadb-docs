@@ -23,3 +23,7 @@ Below is a list of the releases of the MariaDB Audit Plugin, the most recent ver
 | [1.1.3](release-notes-mariadb-audit-plugin/mariadb-audit-plugin-113-release-notes.md) | [MariaDB 5.5.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes), [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -53,3 +53,6 @@ For system variables that have been removed or deprecated, see [Upgrading from M
 * [System Variables Added in MariaDB 10.4](system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-4.md)
 * [System Variables Added in MariaDB 10.3](system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-3.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -47,3 +47,7 @@ SELECT * FROM sys.x$host_summary_by_stages\G
 total_latency: 3747098000
   avg_latency: 3747098000
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -42,3 +42,7 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_FT_DELETED;
 |      3 |
 +--------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

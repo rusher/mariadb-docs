@@ -62,3 +62,7 @@ CREATE TABLE orders (
   customer VARCHAR(45)
 ) ENGINE=ColumnStore
 ```
+
+
+CC BY-SA / Gnu FDL
+

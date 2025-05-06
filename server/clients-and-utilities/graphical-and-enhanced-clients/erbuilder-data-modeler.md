@@ -50,3 +50,6 @@ Feature limited free version is available for download. Advanced features are av
 
 See [www.soft-builder.com](https://www.soft-builder.com) for more information.
 
+
+CC BY-SA / Gnu FDL
+

@@ -17,3 +17,7 @@ The table provides wait counters for the [thread pool](../../../../../../../serv
 | COUNT | how often a wait for this specific reason has happened so far |
 
 
+
+
+CC BY-SA / Gnu FDL
+

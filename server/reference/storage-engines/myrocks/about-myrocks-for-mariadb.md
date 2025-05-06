@@ -96,3 +96,6 @@ MyRocks builds are available on platforms that support a sufficiently modern com
 
 * Windows 64 (zip and MSI)
 
+
+CC BY-SA / Gnu FDL
+

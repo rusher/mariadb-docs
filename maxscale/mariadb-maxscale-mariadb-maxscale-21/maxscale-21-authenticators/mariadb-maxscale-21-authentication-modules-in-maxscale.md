@@ -132,3 +132,7 @@ be closed.
 
 Read the individual authenticator module documentation for more details on the
 authentication process of each authentication plugin.
+
+
+CC BY-SA / Gnu FDL
+

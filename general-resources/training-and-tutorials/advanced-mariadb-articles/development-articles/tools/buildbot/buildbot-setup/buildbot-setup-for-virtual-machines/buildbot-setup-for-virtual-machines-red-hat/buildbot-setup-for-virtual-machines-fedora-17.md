@@ -350,3 +350,7 @@ for i in '/kvm/vms/vm-fedora17-amd64-serial.qcow2 2266 qemu64' '/kvm/vms/vm-fedo
 done
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

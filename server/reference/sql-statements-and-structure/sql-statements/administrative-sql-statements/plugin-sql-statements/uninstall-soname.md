@@ -67,3 +67,6 @@ SHOW WARNINGS;
 * [mysql_plugin](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 * [List of Plugins](../../../../plugins/information-on-plugins/list-of-plugins.md)
 
+
+CC BY-SA / Gnu FDL
+

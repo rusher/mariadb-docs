@@ -253,3 +253,7 @@ for i in '/kvm/vms/vm-fedora18-amd64-serial.qcow2 2278 qemu64' '/kvm/vms/vm-fedo
     'sudo mv -vi /tmp/MariaDB.local.repo /etc/yum.repos.d/'; \
 done
 ```
+
+
+CC BY-SA / Gnu FDL
+

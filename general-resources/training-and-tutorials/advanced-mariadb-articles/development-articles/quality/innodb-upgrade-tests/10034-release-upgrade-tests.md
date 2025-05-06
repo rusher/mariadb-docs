@@ -73,3 +73,7 @@ All tests passed
 | downgrade | 8 | 10.0.34 (inbuilt) |  | - | - | => | 10.0.14 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

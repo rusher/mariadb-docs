@@ -118,3 +118,6 @@ SELECT * FROM sys.privileges_by_table_by_level;
 * [INFORMATION_SCHEMA.TABLE_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md)
 * [MDEV-24486](https://jira.mariadb.org/browse/MDEV-24486)
 
+
+CC BY-SA / Gnu FDL
+

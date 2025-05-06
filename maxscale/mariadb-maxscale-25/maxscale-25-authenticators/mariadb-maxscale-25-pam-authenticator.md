@@ -237,3 +237,7 @@ program asks for a username, password and PAM service and then uses the given
 credentials to login to the given service. *test_pam_login* uses the same code
 as MaxScale itself to communicate with the OS PAM interface and may be useful
 for diagnosing PAM login issues.
+
+
+CC BY-SA / Gnu FDL
+

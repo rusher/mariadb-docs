@@ -365,3 +365,7 @@ queries to make application debugging easier and more efficient.
 
 *The initial version of this article was copied, with permission, from [Views_(Basic](https://hashmysql.org/wiki/Views_(Basic)) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

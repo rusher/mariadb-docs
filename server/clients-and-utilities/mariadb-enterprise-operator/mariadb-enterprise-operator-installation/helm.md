@@ -405,3 +405,7 @@ helm uninstall mariadb-enterprise-operator-crds
 | webhook.serviceMonitor.scrapeTimeout | string | "25s" | Timeout if metrics can't be retrieved in given time interval |
 | webhook.tolerations | list | [] | Tolerations to add to webhook Pod |
 | webhook.topologySpreadConstraints | list | [] | topologySpreadConstraints to add to webhook Pod |
+
+
+CC BY-SA / Gnu FDL
+

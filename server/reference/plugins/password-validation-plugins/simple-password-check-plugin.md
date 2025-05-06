@@ -160,3 +160,6 @@ Prior to [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb
 * [Password Validation](../../mariadb-internals/password-validation.md)
 * [cracklib_password_check plugin](cracklib-password-check-plugin.md) - use the Cracklib password-strength checking library
 
+
+CC BY-SA / Gnu FDL
+

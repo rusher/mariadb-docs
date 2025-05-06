@@ -33,3 +33,6 @@ Variable data part:
 
 TODO: Add an example
 
+
+CC BY-SA / Gnu FDL
+

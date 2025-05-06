@@ -80,3 +80,6 @@ Tasks that currently have no apparent solutions:
  inserts made into all relevant column families in Cassandra.
 1. ...
 
+
+CC BY-SA / Gnu FDL
+

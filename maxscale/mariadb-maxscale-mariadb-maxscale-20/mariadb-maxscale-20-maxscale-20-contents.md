@@ -147,3 +147,7 @@ Documentation for MaxScale protocol modules.
 * [Binlog Router Design (in development)](https://mariadb-corporation.github.io/MaxScale/Design-Documents/binlog-router-html-docs)
 * [DCB States (to be replaced in StarUML)](Design-Documents/DCB-States.pdf)
 * [Schema Sharding Router Technical Documentation](../mariadb-maxscale-21-06/README.md)
+
+
+CC BY-SA / Gnu FDL
+

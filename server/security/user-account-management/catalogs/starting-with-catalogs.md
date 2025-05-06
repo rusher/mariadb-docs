@@ -65,3 +65,6 @@ One benefit of using `mariadb_install_db` is that it's possible to create many c
 * [DROP CATALOG](drop-catalog.md)
 * [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md)
 
+
+CC BY-SA / Gnu FDL
+

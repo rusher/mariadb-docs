@@ -50,3 +50,6 @@ path = /var/lib/columnstore/storagemanager/cache
 
 *Note: This is an AWS only feature. For other deployment methods, see the example [here](https://mariadb.com/kb/en/).*
 
+
+CC BY-SA / Gnu FDL
+

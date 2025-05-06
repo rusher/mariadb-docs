@@ -584,3 +584,6 @@ MariaDB will reload the plugin with the setting from the configuration file. Set
 * Range: `0` to `4294967295`
 
 
+
+CC BY-SA / Gnu FDL
+

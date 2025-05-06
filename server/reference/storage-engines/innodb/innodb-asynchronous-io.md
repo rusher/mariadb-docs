@@ -71,3 +71,6 @@ Similar variables exist for write operations:
 * [innodb_async_writes_wait_slot_sec](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_wait_slot_sec)
 * [innodb_async_writes_total_enqueues](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_enqueues)
 
+
+CC BY-SA / Gnu FDL
+

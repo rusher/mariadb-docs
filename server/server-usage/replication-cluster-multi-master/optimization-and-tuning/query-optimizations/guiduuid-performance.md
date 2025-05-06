@@ -233,3 +233,6 @@ optimizations, and debugging tips.
 
 Original source: [uuid](https://mysql.rjweb.org/doc.php/uuid)
 
+
+CC BY-SA / Gnu FDL
+

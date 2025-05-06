@@ -40,3 +40,6 @@ Then from a shell, run `launchctl load /Library/LaunchDaemons/com.mariadb.server
 * [Creating Launch Daemons and Agents](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html)
 * [A launchd Tutorial](https://www.launchd.info/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -104,3 +104,6 @@ In some cases it might be useful to re-trigger one or more checks. This can easi
 
 **Note**: If you want to re-trigger all checks, the easiest approach is to make a new push. Alternatively, you can follow the above steps for all the checks
 
+
+CC BY-SA / Gnu FDL
+

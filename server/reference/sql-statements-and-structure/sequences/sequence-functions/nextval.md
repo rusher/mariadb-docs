@@ -3,3 +3,6 @@
 
 `NEXTVAL` is a synonym for [NEXT VALUE for sequence_name](next-value-for-sequence_name.md).
 
+
+CC BY-SA / Gnu FDL
+

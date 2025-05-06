@@ -342,3 +342,7 @@ variables to the master.
 
 
 Please see [SchemaRouter documentation](../maxscale-23-routers/mariadb-maxscale-23-schemarouter-router.md).
+
+
+CC BY-SA / Gnu FDL
+

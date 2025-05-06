@@ -242,3 +242,7 @@ being used.
 authenticator_options=lower_case_table_names=0
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

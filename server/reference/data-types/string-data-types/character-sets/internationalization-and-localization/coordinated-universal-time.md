@@ -20,3 +20,6 @@ In general terms it is equivalent to Greenwich Mean Time (GMT), but UTC is used 
 * [UTC_TIME](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_time.md)
 * [UTC_TIMESTAMP](../../../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/utc_timestamp.md)
 
+
+CC BY-SA / Gnu FDL
+

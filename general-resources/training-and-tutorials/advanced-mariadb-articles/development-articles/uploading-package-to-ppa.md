@@ -205,3 +205,6 @@ It should ask for the gpg key password again
 * Docker tutorial available here:
 [edit#slide=id.p4](https://docs.google.com/presentation/d/1euJrK7MJ9QRvwW33iwESIEo5Dyi7JWExIKFrISktFao/edit#slide=id.p4)
 
+
+CC BY-SA / Gnu FDL
+

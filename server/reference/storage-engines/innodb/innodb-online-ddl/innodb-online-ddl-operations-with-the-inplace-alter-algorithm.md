@@ -1321,3 +1321,6 @@ This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements-and-structur
 
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](../../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md#statement-support) for more information on the limitations.
 
+
+CC BY-SA / Gnu FDL
+

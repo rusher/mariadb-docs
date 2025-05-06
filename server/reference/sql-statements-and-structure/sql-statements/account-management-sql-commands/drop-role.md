@@ -64,3 +64,6 @@ Note (Code 1975): Can't drop role 'journalist'; it doesn't exist
 * [Roles Overview](../../../../security/user-account-management/roles/roles_overview.md)
 * [CREATE ROLE](create-role.md)
 
+
+CC BY-SA / Gnu FDL
+

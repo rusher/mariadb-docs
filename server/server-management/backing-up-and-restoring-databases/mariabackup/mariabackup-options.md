@@ -2163,3 +2163,7 @@ Using this option, you can print the Mariabackup version information to stdout.
 ```
 $ mariabackup --version
 ```
+
+
+CC BY-SA / Gnu FDL
+

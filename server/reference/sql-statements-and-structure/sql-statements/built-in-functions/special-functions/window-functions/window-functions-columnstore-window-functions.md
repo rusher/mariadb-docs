@@ -425,3 +425,6 @@ With example results:
 | Olivier | Devpulse | 2016-10-05 | 834235.93 | 667519.1100000000 | 500802.29 |
 | Olivier | Trupe | 2016-10-07 | 500802.29 | 667519.1100000000 | 500802.29 |
 
+
+CC BY-SA / Gnu FDL
+

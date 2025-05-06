@@ -57,3 +57,6 @@ SELECT RELEASE_ALL_LOCKS();
 * [IS_USED_LOCK](is_used_lock.md)
 * [RELEASE_LOCK](release_lock.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -64,3 +64,6 @@ Returns the snippet string.
 
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
+
+CC BY-SA / Gnu FDL
+

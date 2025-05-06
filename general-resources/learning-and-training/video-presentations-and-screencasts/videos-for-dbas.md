@@ -29,3 +29,6 @@
 
 * [MariaDB Foundation YouTube channel](https://www.youtube.com/c/MariaDBFoundation)
 
+
+CC BY-SA / Gnu FDL
+

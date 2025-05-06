@@ -62,3 +62,7 @@ user=maxscale
 password=maxscale_pw
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -36,3 +36,7 @@ SELECT * FROM mysql.func;
 | spider_flush_table_mon_cache |   2 | ha_spider.so | function  |
 +------------------------------+-----+--------------+-----------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

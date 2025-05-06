@@ -62,3 +62,7 @@ building from source code, is included in the
 The same guide also provides basic information on running MariaDB MaxScale.
 More detailed information about configuring MariaDB MaxScale is given in the
 [Configuration Guide](../../mariadb-maxscale-21-06/README.md).
+
+
+CC BY-SA / Gnu FDL
+

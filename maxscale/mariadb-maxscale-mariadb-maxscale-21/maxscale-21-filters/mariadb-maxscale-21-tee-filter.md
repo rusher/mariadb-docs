@@ -205,3 +205,7 @@ protocol=MySQLClient
 port=4012
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

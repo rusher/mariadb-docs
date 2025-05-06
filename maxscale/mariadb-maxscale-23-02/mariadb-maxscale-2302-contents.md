@@ -159,3 +159,7 @@ document.
 
 
 * [Plugin development guide](mariadb-maxscale-23-02-design-documents/mariadb-maxscale-2302-mariadb-maxscale-plugin-development-guide.md)
+
+
+CC BY-SA / Gnu FDL
+

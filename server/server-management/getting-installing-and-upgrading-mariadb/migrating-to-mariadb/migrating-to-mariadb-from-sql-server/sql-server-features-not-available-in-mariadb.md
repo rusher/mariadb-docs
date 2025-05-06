@@ -68,3 +68,6 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 
 * [SQL Server Features Implemented Differently in MariaDB](sql-server-features-implemented-differently-in-mariadb.md)
 
+
+CC BY-SA / Gnu FDL
+

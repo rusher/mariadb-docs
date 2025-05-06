@@ -292,3 +292,6 @@ follows:
 * [mariadbd Options](mariadbd-options.md)
 * [systemd](systemd.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -76,3 +76,6 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 
+
+CC BY-SA / Gnu FDL
+

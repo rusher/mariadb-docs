@@ -696,3 +696,7 @@ MariaDB 10 GTID Event 0
 MariaDB 10 GTID List Event 0
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

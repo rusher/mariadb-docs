@@ -27,3 +27,6 @@ If [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) is run, will
 
 If [FLUSH STATUS](https://mariadb.com/kb/en/flush-status) is run, session status from all active sessions are added to the global status variables, the status of all active sessions are reset, and values aggregated from disconnected sessions are reset.
 
+
+CC BY-SA / Gnu FDL
+

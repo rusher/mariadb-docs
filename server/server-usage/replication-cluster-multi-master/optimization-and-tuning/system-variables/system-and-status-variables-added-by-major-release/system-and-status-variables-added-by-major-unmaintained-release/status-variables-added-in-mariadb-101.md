@@ -77,3 +77,6 @@ The list excludes status related to the following storage engines included in [M
 * [Status variables added in MariaDB 10.2](status-variables-added-in-mariadb-102.md)
 * [Status variables added in MariaDB 10.0](status-variables-added-in-mariadb-100.md)
 
+
+CC BY-SA / Gnu FDL
+

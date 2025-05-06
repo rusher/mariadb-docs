@@ -100,3 +100,6 @@ This new behavior is always on and there is no need to enable it. There are no k
 
 * [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
+
+CC BY-SA / Gnu FDL
+

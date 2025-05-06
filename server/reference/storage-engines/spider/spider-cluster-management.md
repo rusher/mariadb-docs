@@ -231,3 +231,7 @@ SELECT * FROM performance_schema.events_waits_summary_global_by_event_name
   WHERE COUNT_STAR<>0 AND EVENT_NAME LIKE '%spider%' 
   ORDER BY SUM_TIMER_WAIT DESC LIMIT 10;
 ```
+
+
+CC BY-SA / Gnu FDL
+

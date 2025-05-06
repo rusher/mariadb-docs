@@ -82,3 +82,7 @@ engine=MyISAM CHARACTER SET utf8 COLLATE utf8_bin
 comment='Host privileges;  Merged with database privileges';
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

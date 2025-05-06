@@ -102,3 +102,7 @@ done
 kubectl rollout restart deployment mariadb-enterprise-operator
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

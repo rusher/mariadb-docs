@@ -35,3 +35,7 @@ Create Table: CREATE TABLE "number_example" (
   "example" double DEFAULT NULL
 )
 ```
+
+
+CC BY-SA / Gnu FDL
+

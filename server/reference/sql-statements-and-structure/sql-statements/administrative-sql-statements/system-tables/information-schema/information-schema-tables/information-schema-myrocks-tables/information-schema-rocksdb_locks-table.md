@@ -20,3 +20,7 @@ It contains the following columns:
 | MODE |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -25,3 +25,6 @@ It has the following columns:
 
 The number of records will match the value set in the `[innodb_undo_logs](../../../../../../../storage-engines/innodb/innodb-system-variables.md)` variable (by default 128).
 
+
+CC BY-SA / Gnu FDL
+

@@ -259,3 +259,6 @@ buildslave start maria-slave
 
 That's the basic process.
 
+
+CC BY-SA / Gnu FDL
+

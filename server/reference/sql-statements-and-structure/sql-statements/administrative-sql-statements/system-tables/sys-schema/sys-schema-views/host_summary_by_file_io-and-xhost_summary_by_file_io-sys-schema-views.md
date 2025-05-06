@@ -52,3 +52,7 @@ io_latency: 490447878974
        ios: 457
 io_latency: 151388125856
 ```
+
+
+CC BY-SA / Gnu FDL
+

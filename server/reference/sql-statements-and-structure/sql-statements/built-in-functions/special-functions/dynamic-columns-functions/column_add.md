@@ -36,3 +36,6 @@ Note: `COLUMN_ADD()` is a regular function (just like
 you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col,
 ....)` pattern.
 
+
+CC BY-SA / Gnu FDL
+

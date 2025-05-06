@@ -60,3 +60,7 @@ Empty set (0.000 sec)
 SELECT * FROM t;
 ERROR 2006 (HY000): MySQL server has gone away
 ```
+
+
+CC BY-SA / Gnu FDL
+

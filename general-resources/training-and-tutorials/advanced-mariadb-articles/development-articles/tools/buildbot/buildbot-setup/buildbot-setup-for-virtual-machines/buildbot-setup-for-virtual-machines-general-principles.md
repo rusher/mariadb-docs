@@ -151,3 +151,6 @@ A detail is that some 32-bit vms crashed during boot with default options. This
 was fixed by using the kvm "-cpu qemu32,-nx" option. Some background
 information [here](https://bugs.launchpad.net/ubuntu/+source/kvm/+bug/396219).
 
+
+CC BY-SA / Gnu FDL
+

@@ -47,3 +47,7 @@ Concurrent_connections: 0
          Access_denied: 0
          Empty_queries: 35
 ```
+
+
+CC BY-SA / Gnu FDL
+

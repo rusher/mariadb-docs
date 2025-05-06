@@ -195,3 +195,7 @@ The default InnoDB stopword list differs from the default MyISAM list, being muc
 | with | und | the | www |
 
 
+
+
+CC BY-SA / Gnu FDL
+

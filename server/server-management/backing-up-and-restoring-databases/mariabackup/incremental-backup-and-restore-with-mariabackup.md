@@ -165,3 +165,6 @@ $ chown -R mysql:mysql /var/lib/mysql/
 
 * Finally, [start the MariaDB Server process](https://mariadb.com/kb/en/).
 
+
+CC BY-SA / Gnu FDL
+

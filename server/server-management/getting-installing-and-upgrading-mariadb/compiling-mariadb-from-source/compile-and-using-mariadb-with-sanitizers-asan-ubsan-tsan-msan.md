@@ -8,32 +8,16 @@
 Sanitizers are open source runtime error detectors developed by Google that are enabled during the compile step. These sanitizers add extra code during compilation that will throw exceptions when certain errors are detected.
 
 
-[AddressSanitizer (aka ASAN)](https://github.com/google/sanitizers/wiki/AddressSanitizer) is a memory error detector for C/C++. It finds a lot of the same things as [valgrind](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging), but with a lot less overhead.
+Sanitizers find server bugs bug instrumenting the runtime MariaDB during compile time, and performing runtime checks on the executed test. Sanitizers detect a variety of implementation defects:
 
 
-* Use after free (dangling pointer dereference)
-* Heap buffer overflow
-* Stack buffer overflow
-* Global buffer overflow
-* Use after return
-* Use after scope
-* Initialization order bugs
-* Memory leaks
+The sanitizers for clang are:
 
 
-At the moment the clang based sanitizers are more comprehensive than gcc.
-
-
-In addition to ASAN there are sanitizers for Undefined Behaviour, Thread and Memory related errors.
-
-
-[UndefinedBehaviourSanitizer (aka UBSAN)](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
-
-
-[ThreadSanitizer (aka TSAN)](https://clang.llvm.org/docs/ThreadSanitizer.html)
-
-
-[MemorySanitizer (aka MSAN)](https://clang.llvm.org/docs/MemorySanitizer.html)
+* [AddressSanitizer (aka ASAN)](https://clang.llvm.org/docs/AddressSanitizer.html)
+* [UndefinedBehaviourSanitizer (aka UBSAN)](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html)
+* [ThreadSanitizer (aka TSAN)](https://clang.llvm.org/docs/ThreadSanitizer.html)
+* [MemorySanitizer (aka MSAN)](https://clang.llvm.org/docs/MemorySanitizer.html)
 
 
 ## How to Compile MariaDB with Sanitizers
@@ -69,17 +53,38 @@ cmake -DWITH_TSAN=ON /source
 MSAN:
 
 
-Note: keep in mind that only clang supports MSAN, g++ or other compilers will not work.
-
-
 ```
 cmake -DWITH_MSAN=ON /source
 ```
 
-## Running an MSAN Build
+Important to note MSAN requires instrumented c++ and system libraries to have a functioning build per container guide below.
 
 
-The time consuming aspect of building with MSAN is having [https:github.com/MariaDB/buildbot/blob/main/ci_build_images/msan.instrumentedlibs.sh](https://mariadb.com/kb/en/instrumented_system_libraries). As MariaDB Foundation have built the MSAN container already for buildbot, this is how you re-use this for building locally.
+## Buildbot's MSAN container
+
+
+The time consuming aspect of building with MSAN is having [instrumented system libraries](https://github.com/MariaDB/buildbot/blob/main/ci_build_images/msan.instrumentedlibs.sh). To help with this MariaDB Foundation has built the MSAN container for buildbot, but this is reusable locally.
+
+
+The MariaDB Buildbot MSAN container, `quay.io/mariadb-foundation/bb-worker/debian12-msan-clang-20` a container with:
+
+
+* the instrumented libraries required for MSAN
+* a very modern clang version
+* the latest stable Debian as a base image
+* a compiled [rr](https://rr-project.org/) for debugging
+
+
+The build of this container isn't hard coded to MSAN so it can be used for:
+
+
+* A general Debian build container
+* Using the gcc/g++ of Debian (by removing the CC and CXX environment variables
+* Compiling with a latest clang
+* Compiling with the ASAN/UBSAN feature available in the latest clang
+
+
+### Running the MSAN container
 
 
 First, run the container where your current directory is the source directory:
@@ -95,10 +100,11 @@ podman run -v $PWD:/source:z \
    quay.io/mariadb-foundation/bb-worker:debian12-msan-clang-20
 ```
 
-## Docker/Podman Command Table
+The purposes of these, and other options include:
 
 
-|   |   |   |
+
+| Command Component | Purpose | Notes |
 | --- | --- | --- |
 | Command Component | Purpose | Notes |
 | podman run | run a container | other implementations use docker syntax (or at at least close) |
@@ -109,11 +115,12 @@ podman run -v $PWD:/source:z \
 | --workdir /build | default directory |  |
 | --entrypoint bash | Ensure the cmd of buildbot start isn't executed |  |
 | --cap-add=SYS_PTRACE | capability for tracing used by gdb | for debugging |
-| Extra options |  |  |  |
+| Extra options |  |
 | --name containername | useful if running multiple to keep track | Used as a name for a new session in the container (podman exec -ti containername bash) |
 | --shm-size=10g | Size of /dev/shm as alternate for mtr tests | Default is unsable 64k, This is large enough for most --big-tests with some parallelism |
 | --privileged | Allow rr recording | Note security impacting, don't run untrusted code as root |
 | -v $DATADIR:/var/lib/mysql:Z | Mount an existing datadir | For testing against some prepared data |
+
 
 
 Notes:
@@ -124,18 +131,50 @@ Notes:
 * optionally can make /build a filesystem mount to preserve the build.
 
 
-All the following instructions are executed within the container - there is a document in /etc/motd that contains the latest information. Now run the configure stage of cmake:
+There are environment variables that affect the cmake configure options and mtr are:
+
+
+```
+CXX=clang++
+CC=clang
+MSAN_LIBDIR=/msan-libs
+CMAKE_GENERATOR=Ninja
+MSAN_SYMBOLIZER_PATH=/usr/bin/llvm-symbolizer-20
+WSREP_PROVIDER=/usr/lib/galera/libgalera_smm.so
+MTR_PARALLEL=auto
+ASAN_OPTIONS=quarantine_size_mb=512:atexit=0:detect_invalid_pointer_pairs=3:dump_instruction_bytes=1:allocator_may_return_null=1
+UBSAN_OPTIONS=print_stacktrace=1:report_error_type=1
+MSAN_OPTIONS=abort_on_error=1:poison_in_dtor=0
+```
+
+Note: galera WSREP_PROVIDER isn't instrumented with any sanitizer
+
+
+Check the latest version of these running `env`.
+
+
+### Running an MSAN Build
+
+
+Once you have started the MSAN container this is how you perform a MSAN build.
+
+
+The time consuming aspect of building with MSAN is having [instrumented system libraries](https://github.com/MariaDB/buildbot/blob/main/ci_build_images/msan.instrumentedlibs.sh).
+
+
+All the following instructions are executed within the container - there is a document in /etc/motd that contains the latest information. Start by running the configure stage of `cmake`:
 
 
 ```
 cmake \
+      -DUPDATE_SUBMODULES=OFF \
       -DWITH_MSAN=ON  \
       -DCMAKE_{EXE,MODULE}_LINKER_FLAGS="-L${MSAN_LIBDIR} -Wl,-rpath=${MSAN_LIBDIR}" \
       -DHAVE_CXX_NEW=1  \
       -DWITH_INNODB_{BZIP2,LZ4,LZMA,LZO,SNAPPY}=OFF \
       -DWITH_ZLIB=bundled  \
       -DWITH_NUMA=NO  \
-      -DWITH_SYSTEMD=no \
+      -DWITH_SYSTEMD=NO \
       -DHAVE_LIBAIO_H=0    \
       -DCMAKE_DISABLE_FIND_PACKAGE_{URING,LIBAIO}=1  \
       -DPLUGIN_{MROONGA,ROCKSDB,OQGRAPH}=NO  \
@@ -143,11 +182,16 @@ cmake \
       /source
 ```
 
-|   |   |
+MSAN is a clang only compile options and other compilers will not work.
+
+
+
+| CMake Options | Why |
 | --- | --- |
 | CMake Options | Why |
+| UPDATE_SUBMODULES=OFF | The source directory is read-only so cannot be updated from within the container |
 | WITH_MSAN=ON | Enables MSAN build in compile options |
-| CMAKE_{EXE,MODULE}_LINKER_FLAGS | links executables and shared libraries against the instrumented libraries with a rpath so a LD_LIBRARY_PATH env isn't required |
+| CMAKE_{EXE,MODULE}_LINKER_FLAGS | links executables and shared libraries against the instrumented libraries with a rpath so a LD_LIBRARY_PATH environment variable isn't required |
 | WITH_INNODB_{BZIP2,LZ4,LZMA,LZO,SNAPPY}=OFF | system libraries for these haven't been MSAN instrumented currently |
 | HAVE_CXX_NEW | Works around a ODR violation |
 | WITH_ZLIB=bundled | This hasn't been MSAN instrumented currently |
@@ -157,6 +201,8 @@ cmake \
 | PLUGIN_OQGRAPH (and PLUGIN_COLUMNSTORE) | Dependency on boost libraries are instrumented |
 | WITH_EMBEDDED_SERVER=OFF | reduce build time |
 | WITH_DBUG_TRACE=OFF | reduce runtime overhead if CMAKE_BUILD_TYPE=Debug chosen |
+| CMAKE_CXX_FLAGS=-O2 | Required with CMAKE_BUILD_TYPE=Debug to avoid [MDEV-36316](https://jira.mariadb.org/browse/MDEV-36316). Plan to incorporate into the basic build |
+
 
 
 Run the build stage:
@@ -184,10 +230,94 @@ mysql-test/mtr   (usual mtr options)
 As newer versions occur and improvements happen these instructions may change. Look at the execution on the [buildbot builder](https://buildbot.mariadb.org/#/builders/amd64-debian-11-msan) to see if any changes have been made.
 
 
-## Running an ASAN Build
+#### Bug Reporting
 
 
-To run mariadbd with instrumentation you have to set the `ASAN_OPTIONS` environment variable before starting `mariadbd` including starting `mariadbd` when running mtr.
+Use the MSAN in the label when reporting bugs.
+
+
+Current outstanding MSAN bugs can be found on [JIRA by searching for this label](https://jira.mariadb.org/issues/?jql=labels%20%3D%20MSAN%20and%20status%20!%3D%20Closed).
+
+
+### Running an combined ASAN and UBSAN Build
+
+
+The clang implemented instrumentation of the MemoryStanitizer (MSAN) conflicts with the AddressSanitizer (ASAN) and UndefinedBehaviour (UBSAN) mechanisms, however ASAN and UBSAN can be combined into the same build.
+
+
+After starting the MSAN container the following will configure a combined ASAN and UBSAN build:
+
+
+```
+cmake \
+      -DUPDATE_SUBMODULES=OFF \
+      -DWITH_ASAN=ON  \
+      -DWITH_UBSAN=ON  \
+      -DWITH_UNIT_TESTS=OFF \
+     /source
+```
+
+
+| CMake Options | Why |
+| --- | --- |
+| CMake Options | Why |
+| UPDATE_SUBMODULES=OFF | The source directory is read-only so cannot be updated from within the container |
+| WITH_ASAN=ON | Enables ASAN build in compile options |
+| WITH_UBSAN=ON | Enables UBSAN build in compile options |
+| WITH_UNIT_TESTS=OFF or PLUGIN_PERFSCHEMA=OFF | clang is incompatible with performance schema unit tests, at least one must be disabled (ref: [MDEV-22940](https://jira.mariadb.org/browse/MDEV-22940)) |
+
+
+
+Build and test run are standard.
+
+
+Note: list of unfixed [UBSAN issues by MariaDB Corporation Testing](https://github.com/mariadb-corporation/mariadb-qa/blob/master/UBSAN.filter).
+
+
+#### Bug Reporting
+
+
+UBSAN bugs are labelled with `UBSAN` and also the short form of the undefined behaviour.
+
+
+For example in the following output, the `insufficient-object-size` would be used as the additional short form of the label.
+
+
+```
+SUMMARY: UndefinedBehaviorSanitizer: insufficient-object-size /source/sql/item_strfunc.cc:5256:44 
+ /source/sql/item_strfunc.cc:5256:44
+```
+
+Likewise for ASAN, should use `ASAN` as the label with the short form of the ASAN type from the output.
+
+
+### Using RR
+
+
+In the MSAN container there is a build version of the latest rr at the time of the container build.
+
+
+A recording of the execution can be make with the [mariadb-test-run.pl option --rr](https://mariadb.com/kb/en/%5Bmariadb-test-run-pl-options/#options-for-debugging-the-product). Or alternately you can execute:
+
+
+```
+$ rr record sql/mariadbd ......
+```
+
+To replay a recording adjust per the test worker and instance used in the test:
+
+
+```
+$ rr replay mysql-test/var/log/mysqld.1.rr/mariadbd-0/
+```
+
+Using curl in the container its possible to save up this directory for another user or developer to use with the same container. This can also be shared with our [public ftp server](https://mariadb.com/kb/en/mariadb-public-ftp-server/) for assistance diagnosing validating a bug report.
+
+
+## ASAN Options
+
+
+To run `mariadbd` with instrumentation you have to set the `ASAN_OPTIONS` environment variable before starting `mariadbd` including starting `mariadbd` when running mtr.
 
 
 ```
@@ -235,4 +365,7 @@ The [MariaDB test system](../../../clients-and-utilities/mariadb-test/README.md)
 
 
 * [Compiling MariaDB for debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging)
+
+
+CC BY-SA / Gnu FDL
 

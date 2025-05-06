@@ -344,3 +344,7 @@ First make sure you have the required libraries for your platform, including eit
 
 
 If you wish to generate your own MaxScale package, you can do so by first configuring CMake with -DPACKAGE=Y. This will enable the package building target, `package` for the Makefile build system. After configuring, it should be as simple as running the `make package` command in the build directory. This will result in two packages, a tar.gz package and either a .rpm package or a .deb package depending on your system.
+
+
+CC BY-SA / Gnu FDL
+

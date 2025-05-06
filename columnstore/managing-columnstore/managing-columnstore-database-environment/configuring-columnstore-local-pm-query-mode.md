@@ -97,3 +97,7 @@ Then you can execute the script to pipe it directly into cpimport:
 ```
 mcsmysql source_schema -N < extract_query_script.sql | /usr/local/mariadb/columnstore/bin/cpimport target_schema target_table -s '\t' –n1
 ```
+
+
+CC BY-SA / Gnu FDL
+

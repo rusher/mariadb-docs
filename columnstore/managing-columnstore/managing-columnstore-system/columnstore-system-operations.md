@@ -297,3 +297,7 @@ ModuleIPAdd NIC ID 1 = 10.100.7.10
 ModuleHostName NIC ID 1 = srvhst1
 DBRootIDs assigned  = 1
 ```
+
+
+CC BY-SA / Gnu FDL
+

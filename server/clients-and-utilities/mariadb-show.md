@@ -168,3 +168,7 @@ Database: test  Table: book
 | author_id | smallint(5) unsigned  |                   | NO   | MUL |         |                | select,insert,update,references |         |
 +-----------+-----------------------+-------------------+------+-----+---------+----------------+--------------------------------+---------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

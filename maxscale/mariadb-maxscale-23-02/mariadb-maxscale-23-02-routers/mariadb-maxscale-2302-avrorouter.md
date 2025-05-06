@@ -790,3 +790,7 @@ The avrorouter does not support the following data types, conversions or SQL sta
 The avrorouter does not do any crash recovery. This means that the avro files
 need to be removed or truncated to valid block lengths before starting the
 avrorouter.
+
+
+CC BY-SA / Gnu FDL
+

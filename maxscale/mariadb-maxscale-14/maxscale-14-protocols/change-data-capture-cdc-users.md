@@ -50,3 +50,7 @@ bash$ cdc_users.py user1 pass1 >> /var/lib/maxscale/avro-service/cdcusers
 
 Users can be deleted by removing the related rows in 'cdcusers' file. For
 more details on the format of the *cdcusers* file, read the [CDC Protocol documentation](cdc-protocol.md).
+
+
+CC BY-SA / Gnu FDL
+

@@ -243,3 +243,7 @@ spec:
       maxUnavailable: 33%
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

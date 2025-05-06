@@ -1422,3 +1422,7 @@ This doesn't affect `MaxScale`, as it is able to establish trust with intermedia
 
 
 Refer to the [MaxScale documentation](https://mariadb.com/kb/en/mariadb-maxscale-2308-mariadb-maxscale-configuration-guide/#tlsssl-encryption)for further detail.
+
+
+CC BY-SA / Gnu FDL
+

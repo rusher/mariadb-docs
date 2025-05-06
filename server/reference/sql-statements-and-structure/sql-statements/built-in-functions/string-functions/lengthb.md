@@ -54,3 +54,6 @@ SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 * [LENGTH()](length.md)
 * [OCTET_LENGTH()](octet_length.md)
 
+
+CC BY-SA / Gnu FDL
+

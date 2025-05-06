@@ -324,3 +324,6 @@ If the [slow query log](../server-management/server-monitoring-logs/slow-query-l
 * [AUTO_INCREMENT](../reference/data-types/auto_increment.md)
 * [The Essentials of an Index](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
 
+
+CC BY-SA / Gnu FDL
+

@@ -38,3 +38,6 @@ It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 events_waits_current and events_waits_history are related tables.
 
+
+CC BY-SA / Gnu FDL
+

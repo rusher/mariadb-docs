@@ -1494,3 +1494,7 @@ All tests passed
 | 24 | normal | 16 | 5.6.35 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | on | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

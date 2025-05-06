@@ -411,3 +411,7 @@ servers, only one server will get the command.
 
 [Here](../maxscale-25-tutorials/mariadb-maxscale-25-simple-sharding-with-two-servers.md) is a small tutorial on how
 to set up a sharded database.
+
+
+CC BY-SA / Gnu FDL
+

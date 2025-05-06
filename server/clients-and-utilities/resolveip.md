@@ -37,3 +37,7 @@ IP address of mariadb.org is 166.78.144.191
 resolveip 166.78.144.191
 Host name of 166.78.144.191 is mariadb.org
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -41,3 +41,7 @@ The table contains the following columns:
 | HIGH_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Highest number of bytes used. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -29,3 +29,6 @@ The appropriate release notes listed [here](/kb/en/columnstore-release-notes/) d
 
 There are no known CVEs on ColumnStore specific infrastructure outside of the MariaDB Server at this time.
 
+
+CC BY-SA / Gnu FDL
+

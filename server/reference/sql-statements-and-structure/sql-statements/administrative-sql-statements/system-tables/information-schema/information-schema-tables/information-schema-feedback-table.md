@@ -77,3 +77,7 @@ VARIABLE_VALUE: 16
  VARIABLE_NAME: Collation used utf8_bin
 VARIABLE_VALUE: 4044
 ```
+
+
+CC BY-SA / Gnu FDL
+

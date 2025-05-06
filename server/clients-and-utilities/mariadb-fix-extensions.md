@@ -16,3 +16,7 @@ Invoke mariadb-fix-extensions as follows, where data_dir is the path name to the
 ```
 mariadb-fix-extensions data_dir
 ```
+
+
+CC BY-SA / Gnu FDL
+

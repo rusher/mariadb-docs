@@ -10,3 +10,6 @@ Some resources and documentation about HandlerSocket.
 * [HandlerSocket plugin for MySQL](https://www.slideshare.net/akirahiguchi/handlersocket-20100629en-5698215) presentation by Akira Higuchi of DeNA - June 29 2010 - DeNA Technology Seminar
 * [HandlerSocket plugin for MySQL](https://www.slideshare.net/akirahiguchi/handlersocket-plugin-for-mysql-4664154) presentation by Akira Higuchi of DeNA - June 29 2011 - in Japanese
 
+
+CC BY-SA / Gnu FDL
+

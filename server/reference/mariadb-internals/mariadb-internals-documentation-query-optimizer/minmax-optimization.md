@@ -80,3 +80,6 @@ SELECT a, b, MIN(c),MAX(c) FROM t1 GROUP BY a,b
 * [MAX()](../../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md)
 * [MySQL manual on loose index scans](https://dev.mysql.com/doc/refman/5.7/en/group-by-optimization.html)
 
+
+CC BY-SA / Gnu FDL
+

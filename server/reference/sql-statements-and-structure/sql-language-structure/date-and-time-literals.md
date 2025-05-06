@@ -135,3 +135,6 @@ Unless the `NO_ZERO_IN_DATE` flag is set, each subpart of a date or time value (
 
 * [Date and time units](../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)
 
+
+CC BY-SA / Gnu FDL
+

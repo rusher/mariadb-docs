@@ -43,3 +43,6 @@ SELECT ST_LongFromGeoHash('zzzzzzzzz'), ST_LongFromGeoHash('sj248j248j248j2');
 * [ST_GeoHash](st_geohash.md)
 * [ST_LatFromGeoHash](st_latfromgeohash.md)
 
+
+CC BY-SA / Gnu FDL
+

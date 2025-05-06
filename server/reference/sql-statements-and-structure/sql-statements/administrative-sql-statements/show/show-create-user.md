@@ -54,3 +54,6 @@ SHOW CREATE USER 'monty'@'localhost';
 * [SHOW GRANTS](show-grants.md) shows the `GRANTS/PRIVILEGES` for a user.
 * [SHOW PRIVILEGES](show-privileges.md) shows the privileges supported by MariaDB.
 
+
+CC BY-SA / Gnu FDL
+

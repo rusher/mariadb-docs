@@ -55,3 +55,6 @@ ERROR 3037 (22023): Invalid GIS data provided to function st_isvalid.
 * [Geometry Constructors](../geometry-constructors/README.md)
 * [ST_AsText](../wkt/st_astext.md)
 
+
+CC BY-SA / Gnu FDL
+

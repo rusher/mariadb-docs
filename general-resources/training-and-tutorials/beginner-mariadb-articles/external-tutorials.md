@@ -42,3 +42,6 @@ Here are some links to external MariaDB, MySQL and SQL tutorials that may be of 
 
 * [MariaDB Knowledge Base Training and Tutorials](https://mariadb.com/kb/en/training-tutorials/)
 
+
+CC BY-SA / Gnu FDL
+

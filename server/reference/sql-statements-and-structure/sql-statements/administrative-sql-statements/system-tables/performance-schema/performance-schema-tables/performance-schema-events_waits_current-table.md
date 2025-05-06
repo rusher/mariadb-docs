@@ -38,3 +38,6 @@ It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 The related tables, [events_waits_history](performance-schema-events_waits_history-table.md) and [events_waits_history_long](performance-schema-events_waits_history_long-table.md) derive their values from the current events.
 
+
+CC BY-SA / Gnu FDL
+

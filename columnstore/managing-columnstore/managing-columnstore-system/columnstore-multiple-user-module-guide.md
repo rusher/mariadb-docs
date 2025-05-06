@@ -266,3 +266,6 @@ If you set a root password within the MariaDB Database, you will need to create 
 
 [#mysql-root-user-password](https://mariadb.com/kb/en/library/mariadb-columnstore-system-usage/#mysql-root-user-password)
 
+
+CC BY-SA / Gnu FDL
+

@@ -61,3 +61,7 @@ SELECT JSON_ARRAYAGG(a), JSON_ARRAYAGG(b) FROM t1 GROUP BY b;
 | [3,2,2,2]        | [2,2,2,2]        |
 +------------------+------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

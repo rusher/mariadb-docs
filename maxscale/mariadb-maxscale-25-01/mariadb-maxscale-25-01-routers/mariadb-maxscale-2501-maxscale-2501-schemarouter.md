@@ -515,3 +515,7 @@ servers, only one server will get the command.
 
 [Here](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md) is a small tutorial on how
 to set up a sharded database.
+
+
+CC BY-SA / Gnu FDL
+

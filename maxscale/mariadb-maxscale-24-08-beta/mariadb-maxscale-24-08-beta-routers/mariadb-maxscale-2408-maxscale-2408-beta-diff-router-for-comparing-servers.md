@@ -901,3 +901,7 @@ will not sever the replication from *main* to *other*. The result
 will be that *other* receives the same writes twice; once via the
 replication from the server it is replicating from and once when
 Diff executes the same writes.
+
+
+CC BY-SA / Gnu FDL
+

@@ -61,3 +61,7 @@ SELECT * FROM mysql.plugin;
 | sequence                  | ha_sequence.so         |
 +---------------------------+------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

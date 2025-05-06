@@ -45,3 +45,7 @@ CALL sys.table_exists('mysql', 'user', @table_type); SELECT @table_type;
 | VIEW        |
 +-------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

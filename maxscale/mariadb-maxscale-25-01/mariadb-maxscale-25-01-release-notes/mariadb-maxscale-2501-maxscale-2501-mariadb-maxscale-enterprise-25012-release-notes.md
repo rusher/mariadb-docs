@@ -94,3 +94,7 @@ RPM and Debian packages are provided for the supported Linux distributions.
 
 
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
+
+
+CC BY-SA / Gnu FDL
+

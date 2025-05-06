@@ -86,3 +86,6 @@ The `table_lock_waits_summary_by_table` table records table lock waits by table.
 
 You can [TRUNCATE](../../../../table-statements/truncate-table.md) the table, which will reset all counters to zero.
 
+
+CC BY-SA / Gnu FDL
+

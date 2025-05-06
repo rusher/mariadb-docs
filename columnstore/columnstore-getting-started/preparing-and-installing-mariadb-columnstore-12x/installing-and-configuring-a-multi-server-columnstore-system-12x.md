@@ -84,3 +84,6 @@ NOTE: The Multi-Server Quick Installer defaults to a Non-Distributed Install mea
 
 If you choose not to do the quick install and chose to customize the various options of installations using a wizard, you may use MariaDB ColumnStore postConfigure script. Please look at [Custom Installation of Multi-Server Cluster](custom-installation-of-multi-server-columnstore-cluster.md).
 
+
+CC BY-SA / Gnu FDL
+

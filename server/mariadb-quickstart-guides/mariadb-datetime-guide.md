@@ -22,7 +22,7 @@ INSERT INTO billable_work
 VALUES('1021', '1256', CURRENT_DATE);
 ```
 
-The column *session_date* is a `DATE` column. Notice that there are no quotes around the date function. If there were it would be taken as a literal value rather than a function. Incidentally, I've skipped discussing how the table was set up. If you're not familiar with how to set up a table, you may want to read the [MariaDB Basics](/kb/en/mariadb-basics/) article. To see what was just recorded by the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement above, the following may be entered (results follow):
+The column *session_date* is a `DATE` column. Notice that there are no quotes around the date function. If there were it would be taken as a literal value rather than a function. Incidentally, I've skipped discussing how the table was set up. If you're not familiar with how to set up a table, you may want to read the [MariaDB Basics](/en/mariadb-basics/) article. To see what was just recorded by the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement above, the following may be entered (results follow):
 
 
 ```
@@ -319,4 +319,7 @@ The option `%l` provides the hours 01 through 12. The `%p` at the end indicates 
 
 
 Many developers use PHP, Perl, or some other scripting language with MariaDB. Sometimes developers will solve retrieval problems with longer scripts rather than learn precisely how to extract temporal data with MariaDB. As you can see in several of the examples here (particularly the one using the [QUARTER( )](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/quarter.md) function), you can accomplish a great deal within MariaDB. When faced with a potentially complicated SQL statement, try creating it in the mariadb client first. Once you get what you need (under various conditions) and in the format desired, then copy the statement into your script. This practice can greatly help you improve your MariaDB statements and scripting code.
+
+
+CC BY-SA / Gnu FDL
 

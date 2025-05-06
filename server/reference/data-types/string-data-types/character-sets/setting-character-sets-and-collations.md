@@ -532,3 +532,6 @@ Note that the `default-character-set` option is a client option, not a server op
 * [CONVERT()](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/convert.md)
 * [Operator Precedence](../../../sql-statements-and-structure/operators/operator-precedence.md)
 
+
+CC BY-SA / Gnu FDL
+

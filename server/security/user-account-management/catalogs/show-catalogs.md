@@ -65,3 +65,6 @@ SHOW CATALOGS LIKE 'c%';
 * [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Information Schema CATALOG Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-catalog-table.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -47,3 +47,7 @@ SELECT CURRENT_ROLE;
 | staff        |
 +--------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

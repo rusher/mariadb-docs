@@ -21,3 +21,6 @@
 
 *Due to the frequent code changes and deviation from the AWS standards, none are approved at this time.*
 
+
+CC BY-SA / Gnu FDL
+

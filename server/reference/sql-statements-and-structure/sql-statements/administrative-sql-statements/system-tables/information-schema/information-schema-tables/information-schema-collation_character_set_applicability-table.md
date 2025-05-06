@@ -50,3 +50,7 @@ SELECT * FROM information_schema.COLLATION_CHARACTER_SET_APPLICABILITY  WHERE
 +--------------------+--------------------+---------------------+-----+------------+
 10 rows in set (0.004 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

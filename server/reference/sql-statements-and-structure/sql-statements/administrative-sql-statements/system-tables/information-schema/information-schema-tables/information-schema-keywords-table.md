@@ -737,3 +737,6 @@ SELECT * FROM INFORMATION_SCHEMA.KEYWORDS;
 
 * [Reserved Words](../../../../../sql-language-structure/reserved-words.md)
 
+
+CC BY-SA / Gnu FDL
+

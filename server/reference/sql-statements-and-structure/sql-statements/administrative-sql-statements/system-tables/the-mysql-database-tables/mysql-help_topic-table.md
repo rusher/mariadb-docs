@@ -79,3 +79,7 @@ URL: https://mariadb.com/kb/en/json_depth/
          example: 
              url: https://mariadb.com/kb/en/json_depth/
 ```
+
+
+CC BY-SA / Gnu FDL
+

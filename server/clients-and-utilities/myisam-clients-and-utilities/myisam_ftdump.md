@@ -62,3 +62,7 @@ myisam_ftdump -c mytexttable 1 | sort -r
 | -v, --verbose | Be verbose. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

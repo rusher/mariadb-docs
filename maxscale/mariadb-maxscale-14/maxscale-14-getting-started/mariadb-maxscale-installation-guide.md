@@ -203,3 +203,7 @@ Configuration is read by default from the file /etc/maxscale.cnf. An example fil
 
 
 There are various administration tasks that may be done with MaxScale, a client command, maxadmin, is available that will interact with a running MaxScale and allow the status of MaxScale to be monitored and give some control of the MaxScale functionality. There is [a separate reference guide](../maxscale-14-reference/maxadmin.md) for the maxadmin utility and also [a short administration tutorial](../maxscale-14-tutorials/maxscale-administration-tutorial.md) that covers the common administration tasks that need to be done with MaxScale.
+
+
+CC BY-SA / Gnu FDL
+

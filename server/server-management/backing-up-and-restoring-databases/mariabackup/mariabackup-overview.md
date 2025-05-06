@@ -618,3 +618,6 @@ $ ulimit -Hn
 * [MariaDB Backup](README.md). An updated version of mariabackup.
 * [Percona Xtrabackup 2.3 documentation](https://www.percona.com/doc/percona-xtrabackup/2.3/index.html/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -36,3 +36,7 @@ The two tables below relate to each other through the *product_code* field. Any 
 | 3804 | 2 | C923 | 15 |
 
 
+
+
+CC BY-SA / Gnu FDL
+

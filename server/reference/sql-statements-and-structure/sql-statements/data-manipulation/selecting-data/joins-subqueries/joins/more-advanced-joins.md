@@ -231,3 +231,7 @@ The result (limited by 10):
 
 *The first version of this article was copied, with permission, from [More_Advanced_Joins](https://hashmysql.org/wiki/More_Advanced_Joins) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

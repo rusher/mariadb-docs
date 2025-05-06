@@ -281,3 +281,6 @@ precision. The declared column precision should be at least the number of
 decimals of the format to avoid a loss of decimals as it happened for `col3`
 of the above example.
 
+
+CC BY-SA / Gnu FDL
+

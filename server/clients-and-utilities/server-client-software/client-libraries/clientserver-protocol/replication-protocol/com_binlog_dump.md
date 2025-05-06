@@ -55,3 +55,6 @@ After 4 bytes network protocol header we can see:
 * flags [2] = 02 00 => 2 = BINLOG_SEND_ANNOTATE_ROWS_EVENT
 * binlog file[n] = mysql-bin.000034
 
+
+CC BY-SA / Gnu FDL
+

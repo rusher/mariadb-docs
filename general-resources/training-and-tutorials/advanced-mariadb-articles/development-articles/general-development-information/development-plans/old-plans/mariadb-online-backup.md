@@ -81,3 +81,6 @@ Compared to something like XtraBackup, full backup and restore seems to be
 somewhat more involved. It may be necessary to add extra facilities or wrapper
 scripts to enable to backup/restore a full database server.
 
+
+CC BY-SA / Gnu FDL
+

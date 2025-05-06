@@ -72,3 +72,6 @@
 
 * Greetz: [Case study: how Oracle licensing drove us into the arms of Maria](https://www.computing.co.uk/ctg/analysis/2331232/case-study-how-oracle-licensing-drove-us-into-the-arms-of-maria) (computing.co.uk)
 
+
+CC BY-SA / Gnu FDL
+

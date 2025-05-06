@@ -332,3 +332,6 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [CONNECT data types](../storage-engines/connect/connect-data-types.md#null-handling)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+CC BY-SA / Gnu FDL
+

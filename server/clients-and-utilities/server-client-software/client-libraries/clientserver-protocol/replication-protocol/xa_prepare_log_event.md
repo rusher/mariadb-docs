@@ -24,3 +24,6 @@ Payload:
 
 * [byte<n>](../protocol-data-types.md#fixed-length-bytes) xid, where n is sum of gtrid and bqual lengths
 
+
+CC BY-SA / Gnu FDL
+

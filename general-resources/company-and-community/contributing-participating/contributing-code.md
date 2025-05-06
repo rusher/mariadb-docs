@@ -3,7 +3,7 @@
 
 This page contains general guidelines and procedures for contributing code. If
 you have any questions we invite you to ask on the
-[maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) mailing list, on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com), or on the #maria [IRC](/kb/en/irc/) channel on [](https://libera.chat/). Other email lists and places to find MariaDB can be found
+[maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) mailing list, on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com), or on the #maria [IRC](/en/irc/) channel on [](https://libera.chat/). Other email lists and places to find MariaDB can be found
 [here](../friends-of-mariadb/resources.md).
 
 
@@ -46,7 +46,7 @@ to (in addition to any ideas you may have yourself).
 * Join MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) and ask for suggestions.
 
 
-* Join #/maria on [](https://libera.chat/) [IRC](/kb/en/irc/) and ask for suggestions.
+* Join #/maria on [](https://libera.chat/) [IRC](/en/irc/) and ask for suggestions.
 
 
 If you have your own ideas, please submit them to [JIRA](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md) so other
@@ -120,7 +120,7 @@ All code in MariaDB comes from one of the following sources:
 * Code with a known origin that is under a permissive license (BSD or public domain).
 
 
-If you want the code to be part of the main [MariaDB](/kb/en/mariadb/) tree, you also have to
+If you want the code to be part of the main [MariaDB](/en/mariadb/) tree, you also have to
 give the MariaDB Foundation a shared copyright to your code. This is needed so
 that the foundation can offer the code to other projects (like MySQL).
 

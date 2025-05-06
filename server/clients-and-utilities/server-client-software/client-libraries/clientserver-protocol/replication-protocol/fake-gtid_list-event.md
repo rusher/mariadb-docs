@@ -30,3 +30,6 @@ The content is the same as the "real" [GTID_LIST](gtid_list_event.md).
 * sequence
 * ...
 
+
+CC BY-SA / Gnu FDL
+

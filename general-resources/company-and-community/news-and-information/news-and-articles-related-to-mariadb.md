@@ -207,3 +207,6 @@ Loek Essers
 * [NoSQL & MariaDB via Dynamic Columns](https://journal.mycom.co.jp/news/2011/05/27/016/index.html) - 27 May 2011 - written in Japanese, and refers to the dynamic columns feature in MariaDB.
 * [MariaDB comes to 64-bit Windows and Natty Narwhal](https://www.h-online.com/open/news/item/MariaDB-comes-to-64-bit-Windows-and-Natty-Narwhal-1242939.html) - 13 May 2011 - Focused on the release on [MariaDB 5.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-526-release-notes).
 
+
+CC BY-SA / Gnu FDL
+

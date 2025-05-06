@@ -77,3 +77,7 @@ sc stop <servicename>
 sc delete <servicename>
 rmdir /s /q <path-to-datadir>
 ```
+
+
+CC BY-SA / Gnu FDL
+

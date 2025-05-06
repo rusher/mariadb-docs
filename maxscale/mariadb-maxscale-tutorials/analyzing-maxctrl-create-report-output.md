@@ -127,3 +127,7 @@ jq '.servers.data|map(select(.id == "DB-1"))|.[].relationships.monitors.data' < 
 ```
 jq '[.threads.data[].attributes.stats.query_classifier_cache.size]|add' < maxctrl-report.json
 ```
+
+
+CC BY-SA / Gnu FDL
+

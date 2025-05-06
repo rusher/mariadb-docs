@@ -24,3 +24,6 @@ The following links will also help:
 1. [buildbot-setup-buildbot-setup-notes](buildbot-setup-buildbot-setup-notes.md)
 1. [about-buildbot](../about-buildbot.md)
 
+
+CC BY-SA / Gnu FDL
+

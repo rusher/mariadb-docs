@@ -108,3 +108,6 @@ Create Table: CREATE TABLE `t1` (
 * [LAST_INSERT_ID](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
 * [Sequences](../../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
+
+CC BY-SA / Gnu FDL
+

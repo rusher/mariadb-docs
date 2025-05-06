@@ -277,3 +277,7 @@ CLI                  | maxscaled          | localhost       |  6603 | Running
 
 
 MariaDB MaxScale is now ready to start accepting client connections and routing them to the master or slaves within your cluster. Other configuration options are available that can alter the criteria used for routing, such as using weights to obtain unequal balancing operations. These options may be found in the MariaDB MaxScale Configuration Guide. More detail on the use of maxadmin can be found in the document ["MaxAdmin - The MariaDB MaxScale Administration & Monitoring Client Application"](../maxscale-20-reference/mariadb-maxscale-20-maxadmin.md).
+
+
+CC BY-SA / Gnu FDL
+

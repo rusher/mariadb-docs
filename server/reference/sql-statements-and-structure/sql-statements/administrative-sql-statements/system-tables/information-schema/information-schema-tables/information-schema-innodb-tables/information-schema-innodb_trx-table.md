@@ -96,3 +96,7 @@ trx_last_foreign_key_error: NULL
           trx_is_read_only: 0
 trx_autocommit_non_locking: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

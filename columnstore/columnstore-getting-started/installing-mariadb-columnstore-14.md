@@ -12,3 +12,6 @@ MariaDB ColumnStore 5 and later have significant enhancements that are not avail
 
 * [Installing MariaDB ColumnStore 5](installing-mariadb-columnstore-5.md)
 
+
+CC BY-SA / Gnu FDL
+

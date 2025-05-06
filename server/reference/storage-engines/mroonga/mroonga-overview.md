@@ -157,3 +157,7 @@ SELECT * FROM ft_mroonga WHERE MATCH(copy) AGAINST('ick');
 | A really wicked, wicked witch!!?! |
 +-----------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

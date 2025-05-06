@@ -60,3 +60,6 @@ FROM student ORDER BY course, mark DESC;
 * [DENSE_RANK()](dense_rank.md)
 * [ORDER BY](../../../data-manipulation/selecting-data/order-by.md)
 
+
+CC BY-SA / Gnu FDL
+

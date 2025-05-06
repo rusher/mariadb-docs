@@ -10,3 +10,6 @@ Fonts:
 
 * The font for the logo is STHeiti Regular. This font is not easy to acquire.
 
+
+CC BY-SA / Gnu FDL
+

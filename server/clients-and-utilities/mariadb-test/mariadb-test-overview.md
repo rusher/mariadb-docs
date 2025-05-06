@@ -296,3 +296,6 @@ For each worker `run_worker()` function is called, which is executing the follow
 * `master` accepts `TESTRESULT` command and run `mtr_report_test()` function which check does the test fail and also generates the new command `TESTCASE` if some new test case exist
 * If there is no other test case `master` sends `BYE` command which gets accepted by the `worker` which is properly closing the connection.
 
+
+CC BY-SA / Gnu FDL
+

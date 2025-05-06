@@ -363,3 +363,6 @@ See also [How to Quickly Insert Data Into MariaDB](../../../../server-usage/repl
 * [MariaDB Transactions and Isolation Levels for SQL Server Users](mariadb-transactions-and-isolation-levels-for-sql-server-users.md)
 * [SQL_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql)
 
+
+CC BY-SA / Gnu FDL
+

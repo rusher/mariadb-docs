@@ -105,3 +105,7 @@ MaxScale to backends.
 
 The PAM authenticator modules require the PAM and SQLite3 development
 libraries (libpam0g-dev and sqlite3-dev on Ubuntu).
+
+
+CC BY-SA / Gnu FDL
+

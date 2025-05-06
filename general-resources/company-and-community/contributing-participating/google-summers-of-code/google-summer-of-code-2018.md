@@ -589,3 +589,6 @@ MEM_ROOT can be changed to have debug mode which make it read only which can be 
 | Mentor: | Oleksandr Byelkin |
 
 
+
+CC BY-SA / Gnu FDL
+

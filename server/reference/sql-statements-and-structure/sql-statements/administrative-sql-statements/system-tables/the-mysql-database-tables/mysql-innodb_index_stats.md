@@ -97,3 +97,6 @@ stat_description: Number of leaf pages in the index
 * [mysql.innodb_table_stats](mysql-innodb_table_stats.md)
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
+
+CC BY-SA / Gnu FDL
+

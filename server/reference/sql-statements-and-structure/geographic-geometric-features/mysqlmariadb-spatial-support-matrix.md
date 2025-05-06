@@ -220,3 +220,7 @@ This table shows when different spatial features were introduced into MySQL and 
 |  | My 5.4.2 | My 5.5 | My 5.6.1 | My 5.7.4 | My 5.7.5 | My 5.7.6 | MDB 5.1 | MDB 5.3.3 | MDB 10.1.2 | MDB 10.2 |
 
 
+
+
+CC BY-SA / Gnu FDL
+

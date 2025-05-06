@@ -61,3 +61,6 @@ ansible-vault can use more than one password. Each password can manage a differe
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

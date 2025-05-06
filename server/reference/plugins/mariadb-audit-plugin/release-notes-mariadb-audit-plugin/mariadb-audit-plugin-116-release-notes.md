@@ -26,3 +26,6 @@ If you want to download the MariaDB Audit Plugin separately from the MariaDB ser
 * [MDEV-5681](https://jira.mariadb.org/browse/MDEV-5681) audit log will not rotate when the file size exceeds global variable setting. The variables [server_audit_file_rotate_now](../mariadb-audit-plugin-options-and-system-variables.md) and [server_audit_file_rotations](../mariadb-audit-plugin-options-and-system-variables.md) are now handled and one doesn't need to stop/start logging to make them effective.
 * [MDEV-5862](https://jira.mariadb.org/browse/MDEV-5862) server_audit test fails in buildbot on Mac (labrador). The RTLD_DEFAULT value on Labrador machine is not NULL, so the dlsym() commands in the server_audit just fail to bind the necessary functions. Fixed by using RTLD_DEFAULT explicitly.
 
+
+CC BY-SA / Gnu FDL
+

@@ -9,3 +9,6 @@ When the number of [threads_connected](server-status-variables.md#threads_connec
 
 This error may be a symptom of slow queries and other bottlenecks, but if the system is running smoothly this can be addressed by increasing the value of max_connections.
 
+
+CC BY-SA / Gnu FDL
+

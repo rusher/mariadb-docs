@@ -913,3 +913,7 @@ Usage: postConfigure [-h][-c][-u][-p][-s][-port][-i][-n]
    -port MariaDB ColumnStore Port Address
    -i Non-root Install directory, Only use for non-root installs
 ```
+
+
+CC BY-SA / Gnu FDL
+

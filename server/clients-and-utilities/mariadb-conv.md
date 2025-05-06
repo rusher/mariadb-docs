@@ -133,3 +133,6 @@ Note:
 * The `-c` option is needed to ignore conversion errors for Cyrillic and CJK characters.
 * `--delimiter=` additionally needs the carriage return character \r
 
+
+CC BY-SA / Gnu FDL
+

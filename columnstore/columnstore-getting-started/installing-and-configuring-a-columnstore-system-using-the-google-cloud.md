@@ -107,3 +107,6 @@ NOTE: Can you follow the postConfigure install instructions from the Single-Serv
 
 NOTE: When configuring the nodes, use the Internal IP addresses.
 
+
+CC BY-SA / Gnu FDL
+

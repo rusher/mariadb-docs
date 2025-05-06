@@ -131,3 +131,7 @@ if defined:
  `transaction_replay_attempts` parameter.
 * If transaction replay is enabled and a deadlock occurs (SQLSTATE 40XXX), the
  transaction is automatically retried.
+
+
+CC BY-SA / Gnu FDL
+

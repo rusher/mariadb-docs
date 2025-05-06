@@ -66,3 +66,7 @@ SELECT * FROM sq1 WHERE num = (SELECT MAX(num)/10 FROM sq2);
 |    1 |
 +------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

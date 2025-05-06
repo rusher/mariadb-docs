@@ -27,3 +27,6 @@ to [JIRA](../../../tools/jira.md).
 * [What is MariaDB 10.5?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 * [What is MariaDB 10.4?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
+
+CC BY-SA / Gnu FDL
+

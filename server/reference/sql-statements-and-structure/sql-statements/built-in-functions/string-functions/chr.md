@@ -62,3 +62,6 @@ SHOW WARNINGS;
 * [ORD()](ord.md) - Return value for character in single or multi-byte character sets
 * [CHAR()](char-function.md) - Similar function which accepts multiple integers
 
+
+CC BY-SA / Gnu FDL
+

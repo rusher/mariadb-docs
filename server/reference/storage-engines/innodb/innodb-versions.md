@@ -129,3 +129,6 @@ variable-size page compression before MySQL 5.7 introduced them.
 * [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/)
 * [XtraDB Versions](innodb-unmaintained/about-xtradb.md)
 
+
+CC BY-SA / Gnu FDL
+

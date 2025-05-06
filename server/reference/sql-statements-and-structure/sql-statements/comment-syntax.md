@@ -132,3 +132,7 @@ Instead, the delimiter should be placed outside the executable portion:
 | 1 |
 +---+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -65,3 +65,6 @@ Please email university@mariadb.org and share:
 
 Based on your email, MariaDB Foundation will contact you for a virtual meeting.
 
+
+CC BY-SA / Gnu FDL
+

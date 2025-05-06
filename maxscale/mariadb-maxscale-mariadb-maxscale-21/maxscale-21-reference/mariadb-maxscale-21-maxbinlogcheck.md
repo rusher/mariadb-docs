@@ -466,3 +466,7 @@ Following bytes are the HEX representation of the key (length must be 16, 24 or
 2016-12-07 16:23:02   notice : Check retcode: 0, Binlog Pos = 173
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

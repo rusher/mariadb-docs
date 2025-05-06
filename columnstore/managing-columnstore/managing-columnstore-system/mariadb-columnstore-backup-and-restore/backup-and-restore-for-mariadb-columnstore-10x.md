@@ -180,3 +180,6 @@ The data<N> directories should simply be copied from the backup location or rest
 > mcsadmin startSystem
 ```
 
+
+CC BY-SA / Gnu FDL
+

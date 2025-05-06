@@ -61,3 +61,7 @@ MyRocks upstream (that is, Facebook's MySQL branch) has a number of unique repli
 "avoid MySQL layer's performance overhead",
 <</quote>>
 ```
+
+
+CC BY-SA / Gnu FDL
+

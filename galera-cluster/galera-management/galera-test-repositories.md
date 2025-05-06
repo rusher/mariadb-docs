@@ -76,3 +76,7 @@ sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
 # Add the following line to your /etc/apt/sources.list file:
 deb http://yum.mariadb.org/galera/repo/deb ${dist} main
 ```
+
+
+CC BY-SA / Gnu FDL
+

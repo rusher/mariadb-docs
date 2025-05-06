@@ -314,3 +314,6 @@ SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.fo
 
 * [JSON Support](https://www.youtube.com/watch?v=ZkmwHPqA790) (video)
 
+
+CC BY-SA / Gnu FDL
+

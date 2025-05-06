@@ -22,3 +22,6 @@ where t1.a > ALL(select b from t2 where t2.c > 100)
 
 Removing these unnecessary clauses allows the optimizer to find more efficient query plans because it doesn't need to take care of post-processing the subquery result to satisfy DISTINCT / GROUP BY.
 
+
+CC BY-SA / Gnu FDL
+

@@ -4615,3 +4615,7 @@ GET /v1/maxscale/query_classifier/classify?sql=SELECT+1
 }
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -23,3 +23,7 @@ It has the following columns:
 | END_LSN | Interval end before which page was changed (equal to checkpoint LSN) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -129,3 +129,6 @@ Please note:
   71 6c 2d 62 69 6e 2e 30    30 30 30 33 34             ql-bin.000034
 ```
 
+
+CC BY-SA / Gnu FDL
+

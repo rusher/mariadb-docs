@@ -245,3 +245,6 @@ To fix issues like this, run `mariadb-upgrade`, [mariadb-check](mariadb-check.md
 * [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md)
 * [Downgrading between Major Versions of MariaDB](../server-management/getting-installing-and-upgrading-mariadb/downgrading-between-major-versions-of-mariadb.md)
 
+
+CC BY-SA / Gnu FDL
+

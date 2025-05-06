@@ -58,3 +58,6 @@ at line 1
 
 Note the quoted closed parenthesis.
 
+
+CC BY-SA / Gnu FDL
+

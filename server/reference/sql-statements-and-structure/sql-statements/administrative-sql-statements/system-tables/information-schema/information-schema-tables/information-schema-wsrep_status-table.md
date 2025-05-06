@@ -23,3 +23,7 @@ CLUSTER_STATE_SEQNO: 2
                 GAP: NO
    PROTOCOL_VERSION: 3
 ```
+
+
+CC BY-SA / Gnu FDL
+

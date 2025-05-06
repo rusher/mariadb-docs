@@ -59,3 +59,7 @@ SELECT * FROM sys.schema_auto_increment_columns\G
       auto_increment: 7
 auto_increment_ratio: 0.0551
 ```
+
+
+CC BY-SA / Gnu FDL
+

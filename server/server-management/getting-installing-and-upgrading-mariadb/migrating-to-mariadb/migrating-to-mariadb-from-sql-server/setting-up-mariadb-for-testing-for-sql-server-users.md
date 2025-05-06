@@ -76,3 +76,6 @@ While experimenting with MariaDB, you could end up with an unusable installation
 
 To know where your data directory is, check the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
+
+CC BY-SA / Gnu FDL
+

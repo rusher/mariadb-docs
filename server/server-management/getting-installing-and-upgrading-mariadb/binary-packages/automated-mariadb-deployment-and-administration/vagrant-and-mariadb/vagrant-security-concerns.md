@@ -35,3 +35,6 @@ Note that security bugs are not reported as normal bugs. Information about secur
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

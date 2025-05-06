@@ -100,3 +100,6 @@ perl runall.pl \
  --validator=None
 ```
 
+
+CC BY-SA / Gnu FDL
+

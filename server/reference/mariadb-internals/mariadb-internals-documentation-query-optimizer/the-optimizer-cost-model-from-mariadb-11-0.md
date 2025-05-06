@@ -274,3 +274,6 @@ The costs for an engine are set the following way when the engine plugin is load
 * User changes to engine costs are stored in the data pointed to by `handlerton->costs`. This is why [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) is needed to activate new engine costs.
 * To speed up cost access for the optimizer, `handler::set_optimizer_costs()` is called for each query to copy `OPTIMIZER_WHERE_COST` and `OPTIMIZER_SCAN_SETUP_COST` to the engine cost structure.
 
+
+CC BY-SA / Gnu FDL
+

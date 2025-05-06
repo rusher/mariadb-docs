@@ -161,3 +161,7 @@ longer this time is, the longer bursts of high frequency querying is allowed.
 This value defines what continuous throttling means. Continuous throttling
 starts as soon as the filter throttles the frequency. Continuous throttling ends
 when no throttling has been performed in the past `continuous_duration` time.
+
+
+CC BY-SA / Gnu FDL
+

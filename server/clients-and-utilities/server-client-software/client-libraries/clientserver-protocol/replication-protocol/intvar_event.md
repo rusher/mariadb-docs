@@ -50,3 +50,6 @@ SET LAST_INSERT_ID=1/*!*/;
 00 2d 3f a2 f5                                   .-?..
 ```
 
+
+CC BY-SA / Gnu FDL
+

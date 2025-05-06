@@ -279,3 +279,7 @@ topic=my-cdc-topic
  events. This means that each replication event is delivered to kafka at least
  once but there can be duplicate events in case of failures.
 * Authentication to Kafka is not currently supported.
+
+
+CC BY-SA / Gnu FDL
+

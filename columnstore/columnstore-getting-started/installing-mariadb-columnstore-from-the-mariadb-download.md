@@ -1593,3 +1593,6 @@ How to Install on the MariaDB MaxScale:
 
 [](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-21-06/)
 
+
+CC BY-SA / Gnu FDL
+

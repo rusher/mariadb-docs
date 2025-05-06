@@ -2337,3 +2337,7 @@ For maximum performance:
 Otherwise it is mostly a personal preference whether exact or regex
 based rules are used. However, one should always test with real data
 and real queries before choosing one over the other.
+
+
+CC BY-SA / Gnu FDL
+

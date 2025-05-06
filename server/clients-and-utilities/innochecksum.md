@@ -105,3 +105,7 @@ index_id	#pages		#leaf_pages	#recs_per_page	#bytes_per_page
 index_id	page_data_bytes_histgram(empty,...,oversized)
 24		1	0	0	0	0	0	0	0	0	0	0	0
 ```
+
+
+CC BY-SA / Gnu FDL
+

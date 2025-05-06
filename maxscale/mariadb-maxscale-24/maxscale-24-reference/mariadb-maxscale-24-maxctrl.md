@@ -1545,3 +1545,7 @@ an array of JSON values: maxctrl api get servers data[].attributes.state
 Usage: classify <statement>
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

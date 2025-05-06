@@ -334,3 +334,7 @@ Known bugs [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103), [MDEV-13094
 | undo | 8 | 5.6.39 (inbuilt) |  | - | - | => | 10.2.14 (inbuilt) |  | - | - | - | FAIL | TEST_FAILURE |
 
 
+
+
+CC BY-SA / Gnu FDL
+

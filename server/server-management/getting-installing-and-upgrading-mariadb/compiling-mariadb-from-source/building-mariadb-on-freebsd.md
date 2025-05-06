@@ -146,3 +146,7 @@ You can then install MariaDB from Poudriere using the package manager.
 ```
 # pkg install mariadb103-server
 ```
+
+
+CC BY-SA / Gnu FDL
+

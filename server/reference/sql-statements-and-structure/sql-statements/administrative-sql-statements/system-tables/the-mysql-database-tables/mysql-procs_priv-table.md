@@ -37,3 +37,6 @@ The [Acl_function_grants](../../../../../../server-usage/replication-cluster-mul
 
 The [Acl_procedure_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_procedure_grants) status variable indicates how many rows the `mysql.columns_priv` table contains with the `PROCEDURE` routine type.
 
+
+CC BY-SA / Gnu FDL
+

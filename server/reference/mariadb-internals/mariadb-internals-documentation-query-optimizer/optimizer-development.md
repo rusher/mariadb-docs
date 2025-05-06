@@ -28,3 +28,6 @@ On a per-file basis, one can use this include:
 
 TODO
 
+
+CC BY-SA / Gnu FDL
+

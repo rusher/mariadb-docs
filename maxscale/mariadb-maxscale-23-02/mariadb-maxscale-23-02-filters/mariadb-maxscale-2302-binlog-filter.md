@@ -170,3 +170,7 @@ port=4000
 
 For more information about the binlogrouter and how to use it, refer to the
 [binlogrouter documentation](../mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter.md).
+
+
+CC BY-SA / Gnu FDL
+

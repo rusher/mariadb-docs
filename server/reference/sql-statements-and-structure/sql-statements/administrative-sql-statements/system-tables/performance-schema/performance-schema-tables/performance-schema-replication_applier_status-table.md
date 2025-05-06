@@ -22,3 +22,7 @@ It contains the following fields.
 | COUNT_TRANSACTIONS_RETRIES | bigint(20) unsigned | NO | The number of retries that were made because the replication SQL thread failed to apply a transaction. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

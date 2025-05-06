@@ -37,3 +37,6 @@ The [Information Schema INNODB_TABLESPACES_SCRUBBING table](../../sql-statements
 
 * Scrubbing was donated to the MariaDB project by Google.
 
+
+CC BY-SA / Gnu FDL
+

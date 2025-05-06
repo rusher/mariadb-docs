@@ -92,3 +92,6 @@ Question not answered? Subscribe to the
 [maria-developers mailing list](https://launchpad.net/~maria-developers) 
 and ask there or visit us on our [Zulip channel](https://mariadb.zulipchat.com) or the **#maria** [IRC](/en/irc/) channel on [](https://libera.chat/).
 
+
+CC BY-SA / Gnu FDL
+

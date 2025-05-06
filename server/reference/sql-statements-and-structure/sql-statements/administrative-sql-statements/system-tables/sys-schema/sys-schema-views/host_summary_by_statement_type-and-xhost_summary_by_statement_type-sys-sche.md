@@ -89,3 +89,7 @@ rows_examined: 14370
 rows_affected: 0
    full_scans: 22
 ```
+
+
+CC BY-SA / Gnu FDL
+

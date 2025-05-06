@@ -35,3 +35,6 @@ Using `BACKUP STAGE` commands is also more efficient than using the [FLUSH TABLE
 
 Note that when the backup is completed, one should delete all files with the "#sql" prefix, as these are files used by concurrent running `ALTER TABLE`. Note that InnoDB will on server restart automatically delete any tables with the "#sql" prefix.
 
+
+CC BY-SA / Gnu FDL
+

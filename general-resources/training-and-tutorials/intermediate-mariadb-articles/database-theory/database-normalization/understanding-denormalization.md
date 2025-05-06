@@ -41,3 +41,7 @@ But you also need to look at how your tables are used. *Town* and *Zip code* wou
 
 There are some scary database designs out there, almost always because of not normalizing rather than too much normalization. So if you're unsure, normalize!
 
+
+
+CC BY-SA / Gnu FDL
+

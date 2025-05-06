@@ -32,3 +32,6 @@ user to import SQL scripts that use `USE CATALOG...`.
 
 * [USE database](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md). Changing database.
 
+
+CC BY-SA / Gnu FDL
+

@@ -117,3 +117,7 @@ nodes that the Clustrix monitor discovers at runtime.
 
 For additional details, please consult the monitor
 [documentation](../maxscale-24-monitors/mariadb-maxscale-24-clustrix-monitor.md).
+
+
+CC BY-SA / Gnu FDL
+

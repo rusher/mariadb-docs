@@ -148,3 +148,6 @@ language=/usr/share/mysql/french/
 
 The character set that the error messages are returned in is determined by the [character_set_results](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results) variable, which defaults to UTF8.
 
+
+CC BY-SA / Gnu FDL
+

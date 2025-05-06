@@ -31,3 +31,7 @@ It contains the following columns:
 | QUERY |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -65,3 +65,7 @@ COMMIT;
 Query OK, 1 row affected (35.23 sec)
 Records: 1  Duplicates: 0  Warnings: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

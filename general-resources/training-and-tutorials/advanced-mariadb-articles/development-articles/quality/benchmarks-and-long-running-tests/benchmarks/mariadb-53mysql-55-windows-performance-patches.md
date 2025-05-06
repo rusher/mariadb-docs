@@ -62,3 +62,6 @@ Without doubt, the discussions around that was a highlight in my very short stin
 
 Taken from a note on Facebook: [note.php?note_id=238505812835782](https://www.facebook.com/note.php?note_id=238505812835782) by Vladislav Vaintroub.
 
+
+CC BY-SA / Gnu FDL
+

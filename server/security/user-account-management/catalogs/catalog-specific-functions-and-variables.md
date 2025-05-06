@@ -47,3 +47,6 @@ select @@catalogs;
 
 1 means that the server is configured for catalogs.
 
+
+CC BY-SA / Gnu FDL
+

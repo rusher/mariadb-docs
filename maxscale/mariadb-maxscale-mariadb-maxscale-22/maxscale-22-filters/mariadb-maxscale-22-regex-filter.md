@@ -166,3 +166,7 @@ passwd=mypasswd
 filters=CreateTableFilter
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

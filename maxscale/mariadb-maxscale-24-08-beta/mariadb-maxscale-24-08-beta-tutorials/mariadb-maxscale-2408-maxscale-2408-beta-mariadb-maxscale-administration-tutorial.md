@@ -720,3 +720,7 @@ maxctrl alter user admin-user new-admin-password
 maxctrl destroy user basic-user
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

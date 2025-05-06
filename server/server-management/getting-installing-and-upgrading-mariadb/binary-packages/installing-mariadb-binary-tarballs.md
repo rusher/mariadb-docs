@@ -211,3 +211,6 @@ instead.
 For details on the exact steps used to build the binaries, see the
 [compiling MariaDB section](../compiling-mariadb-from-source/README.md) of the KB.
 
+
+CC BY-SA / Gnu FDL
+

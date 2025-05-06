@@ -122,3 +122,6 @@ is OFF to prevent subquery cache bugs from showing up during the test.
 * [QA Tools](qa-tools.md)
 * [Worklog Quality Checklist Template](worklog-quality-checklist-template.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -232,3 +232,6 @@ Q: can we avoid that for the first milestone?
 * TODO: There is no efficient way to run TRUNCATE TABLE. Is this ok?
 * TODO: In the above spec, nothing is said about max. transaction size. Is it ok not to have it for MS1?
 
+
+CC BY-SA / Gnu FDL
+

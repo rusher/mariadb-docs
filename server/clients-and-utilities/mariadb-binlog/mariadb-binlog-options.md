@@ -143,3 +143,6 @@ In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 
 * [Using mariadb-binlog](using-mariadb-binlog.md)
 
+
+CC BY-SA / Gnu FDL
+

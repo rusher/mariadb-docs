@@ -72,3 +72,7 @@ $30 = 24576
 (gdb) p thd->variables.trans_prealloc_size
 $37 = 4096
 ```
+
+
+CC BY-SA / Gnu FDL
+

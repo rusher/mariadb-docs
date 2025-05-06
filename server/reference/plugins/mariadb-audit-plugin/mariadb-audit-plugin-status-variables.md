@@ -56,3 +56,6 @@ Below is a list of all status variables related to the Audit Plugin. These canno
 * Default Value: `0`
 
 
+
+CC BY-SA / Gnu FDL
+

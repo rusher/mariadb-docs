@@ -161,3 +161,7 @@ For a list of schemarouter limitations, please read the [Limitations](../about-m
 
 
 [Here](../maxscale-22-tutorials/mariadb-maxscale-22-simple-sharding-with-two-servers.md) is a small tutorial on how to set up a sharded database.
+
+
+CC BY-SA / Gnu FDL
+

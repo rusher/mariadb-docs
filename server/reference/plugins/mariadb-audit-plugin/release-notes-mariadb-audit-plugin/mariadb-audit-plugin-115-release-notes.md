@@ -42,3 +42,6 @@ The issue number links will take you to the corresponding issue in MariaDB proje
 
   * [MDEV-5722](https://jira.mariadb.org/browse/MDEV-5722) MariaDB audit plugin crashes when variables set in .my.cnf. The 'thd' parameter is NULL when variables are changed in server_audit_init(). That we should take into account.
 
+
+CC BY-SA / Gnu FDL
+

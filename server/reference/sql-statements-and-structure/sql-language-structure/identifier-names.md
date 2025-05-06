@@ -204,3 +204,7 @@ ERROR 1064 (42000): You have an error in your SQL syntax;
 CREATE TABLE `8981e56cce5d` (x INT);
 Query OK, 0 rows affected (0.39 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

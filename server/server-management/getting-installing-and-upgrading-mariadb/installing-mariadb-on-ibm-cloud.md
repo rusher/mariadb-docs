@@ -288,3 +288,6 @@ $ mysql -u root -p
 
 You have succesfully deployed MariaDB IBM Cloud!
 
+
+CC BY-SA / Gnu FDL
+

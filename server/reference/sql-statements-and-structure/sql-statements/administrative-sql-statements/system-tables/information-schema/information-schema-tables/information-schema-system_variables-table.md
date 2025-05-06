@@ -51,3 +51,7 @@ SELECT * FROM information_schema.SYSTEM_VARIABLES
             READ_ONLY: NO
 COMMAND_LINE_ARGUMENT: REQUIRED
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -50,3 +50,6 @@ A list of MariaDB-related social media links and pages. Many are community group
 * [@mariadb_org](https://x.com/mariadb_org) - official MariaDB Foundation X account
 * [@mariadb](https://x.com/mariadb) - official MariaDB plc X account
 
+
+CC BY-SA / Gnu FDL
+

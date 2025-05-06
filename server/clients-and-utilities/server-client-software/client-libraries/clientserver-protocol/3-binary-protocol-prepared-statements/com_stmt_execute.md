@@ -124,3 +124,6 @@ The server can answer with 3 different responses:
 * 0x00: [OK_packet](../4-server-response-packets/ok_packet.md) when query execution works without resultset.
 * one (or more) [Resultset](../4-server-response-packets/result-set-packets.md), when query execution return rows (in case of SELECT query for example).
 
+
+CC BY-SA / Gnu FDL
+

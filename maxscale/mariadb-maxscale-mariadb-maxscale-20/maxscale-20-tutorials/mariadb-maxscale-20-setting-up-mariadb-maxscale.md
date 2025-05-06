@@ -184,3 +184,7 @@ The configuration file creation is covered in different tutorials.
 
 * [Galera Cluster Connection Routing Tutorial](../../mariadb-maxscale-21-06/README.md)
 * [Galera Cluster Read Write Splitting Tutorial](../../mariadb-maxscale-21-06/README.md)
+
+
+CC BY-SA / Gnu FDL
+

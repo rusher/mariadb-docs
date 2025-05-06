@@ -44,3 +44,7 @@ It contains the following fields:
 | static_link_id | char(64) | YES |  | NULL |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

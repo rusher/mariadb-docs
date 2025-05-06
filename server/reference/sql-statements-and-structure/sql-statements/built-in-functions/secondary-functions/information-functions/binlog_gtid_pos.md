@@ -26,3 +26,6 @@ SELECT BINLOG_GTID_POS("master-bin.000001", 600);
 
 * [SHOW BINLOG EVENTS](../../../administrative-sql-statements/show/show-binlog-events.md) - Show events and their positions in the binary log
 
+
+CC BY-SA / Gnu FDL
+

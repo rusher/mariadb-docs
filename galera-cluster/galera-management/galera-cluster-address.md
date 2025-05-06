@@ -38,3 +38,6 @@ A useful option to set is `pc.wait_prim=no` to ensure the server will start runn
 
 By default, gcomm listens on all interfaces. The port is either provided in the cluster address, or will default to 4567 if not set.
 
+
+CC BY-SA / Gnu FDL
+

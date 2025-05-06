@@ -315,3 +315,7 @@ is 1.2.1. Further, *master* always refers to the latest released non-beta versio
 
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
+
+
+CC BY-SA / Gnu FDL
+

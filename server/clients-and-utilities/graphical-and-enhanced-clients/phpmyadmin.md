@@ -9,3 +9,6 @@ It requires a web server, PHP, and a browser.
 
 Read more at [phpmyadmin.net](https://phpmyadmin.net)
 
+
+CC BY-SA / Gnu FDL
+

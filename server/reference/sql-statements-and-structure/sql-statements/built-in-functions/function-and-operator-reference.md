@@ -551,3 +551,7 @@
 | [YEARWEEK](date-time-functions/yearweek.md) | Returns year and week for a date |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

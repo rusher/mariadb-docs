@@ -159,3 +159,6 @@ SELECT aggregate_count(stud_id) FROM marks;
 * [SHOW FUNCTION STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -27,3 +27,7 @@ It contains the following fields.
 | LAST_TRANS_RETRY_COUNT | Total number of retries attempted by last transaction. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

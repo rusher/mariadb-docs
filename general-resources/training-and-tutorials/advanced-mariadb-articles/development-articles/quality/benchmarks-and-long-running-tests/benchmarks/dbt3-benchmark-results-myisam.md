@@ -453,3 +453,7 @@ Here are the actual results in seconds (smaller is better):
 | MYSQL 5.6.4 + MyISAM | 19845 | >30000 | - | - | 5.6.4-m7 | [Explain details](https://askmonty.org/w/images/c/cc/DBT3_MyISAM_HDD_s30_q20_mysql_5_6_4.txt) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

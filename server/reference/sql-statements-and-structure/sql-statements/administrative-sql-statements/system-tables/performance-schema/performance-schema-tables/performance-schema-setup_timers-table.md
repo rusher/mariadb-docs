@@ -39,3 +39,7 @@ SELECT * FROM setup_timers;
 | statement | NANOSECOND  |
 +-----------+-------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

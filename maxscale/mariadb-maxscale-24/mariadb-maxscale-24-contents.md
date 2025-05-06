@@ -181,3 +181,7 @@ document.
 
 
 * [Plugin development guide](https://mariadb.com/kb/en/mariadb-maxscale-24-mariadb-maxscale-plugin-development-guide/)
+
+
+CC BY-SA / Gnu FDL
+

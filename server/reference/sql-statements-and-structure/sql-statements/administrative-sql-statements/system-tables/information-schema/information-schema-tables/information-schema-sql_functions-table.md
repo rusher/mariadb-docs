@@ -277,3 +277,6 @@ SELECT * FROM INFORMATION_SCHEMA.SQL_FUNCTIONS;
 
 * [Reserved Words](../../../../../sql-language-structure/reserved-words.md)
 
+
+CC BY-SA / Gnu FDL
+

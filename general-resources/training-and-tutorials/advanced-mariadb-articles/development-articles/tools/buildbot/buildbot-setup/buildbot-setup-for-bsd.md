@@ -154,3 +154,7 @@ edited /home/buildbot/.profile and added that dir to the path
 cd /usr/local/bin/
 sudo ln -s /compat/linux/usr/bin/md5sum md5sum
 ```
+
+
+CC BY-SA / Gnu FDL
+

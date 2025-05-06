@@ -135,3 +135,6 @@ List of blog posts relevant to MariaDB. In reverse chronological order. The Mari
 
 <</style>>
 
+
+CC BY-SA / Gnu FDL
+

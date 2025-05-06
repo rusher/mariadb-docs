@@ -8,3 +8,6 @@ You can read about the features and improvements included in the current stable 
 The [MariaDB Development Plans](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/)
 page links to our plans for future versions of MariaDB.
 
+
+CC BY-SA / Gnu FDL
+

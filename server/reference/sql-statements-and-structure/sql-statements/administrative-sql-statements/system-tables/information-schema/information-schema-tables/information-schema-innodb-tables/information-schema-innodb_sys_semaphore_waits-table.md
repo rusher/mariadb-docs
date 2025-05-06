@@ -38,3 +38,7 @@ It contains the following columns:
 | OS_WAIT_COUNT | Wait count |
 
 
+
+
+CC BY-SA / Gnu FDL
+

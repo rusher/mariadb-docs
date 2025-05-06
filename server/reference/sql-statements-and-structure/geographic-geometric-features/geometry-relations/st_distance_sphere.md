@@ -46,3 +46,7 @@ SELECT ST_Distance_Sphere(@zenica, @sarajevo, 200);
 |                           1.754158410516584 |
 +---------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

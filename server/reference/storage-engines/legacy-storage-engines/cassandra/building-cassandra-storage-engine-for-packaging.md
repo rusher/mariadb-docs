@@ -156,3 +156,6 @@ scp runvm:/home/buildbot/build/5.5-cassandra/mariadb-5.5.25-linux-x86_64.tar.gz 
 1. [2578](https://buildbot.askmonty.org/buildbot/builders/kvm-tarbake-jaunty-x86/builds/2578)
 1. [1907](https://buildbot.askmonty.org/buildbot/builders/kvm-bintar-hardy-amd64/builds/1907)
 
+
+CC BY-SA / Gnu FDL
+

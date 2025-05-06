@@ -58,3 +58,6 @@ information can be found on the
 page.
 
 
+
+CC BY-SA / Gnu FDL
+

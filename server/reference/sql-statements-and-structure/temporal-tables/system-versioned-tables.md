@@ -664,3 +664,6 @@ There are a number of system variables related to system-versioned tables:
 * [mysql.transaction_registry Table](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md)
 * [MariaDB Temporal Tables](https://youtu.be/uBoUlTsU1Tk) (video)
 
+
+CC BY-SA / Gnu FDL
+

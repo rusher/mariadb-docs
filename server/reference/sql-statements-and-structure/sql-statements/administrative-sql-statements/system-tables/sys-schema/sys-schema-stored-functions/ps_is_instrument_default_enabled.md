@@ -49,3 +49,7 @@ SELECT sys.ps_is_instrument_default_enabled(NULL);
 | NO                                         |
 +--------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

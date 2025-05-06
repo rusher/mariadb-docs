@@ -49,3 +49,6 @@ The following link will take you to the `#tokutek` channel using Freenode's web 
 
 The [Where to find other MariaDB users and developers](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/company-and-community/friends-of-mariadb/resources) page has many great MariaDB resources listed.
 
+
+CC BY-SA / Gnu FDL
+

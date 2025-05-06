@@ -50,3 +50,7 @@ It contains the following fields.
 | SUM_NO_GOOD_INDEX_USED | bigint(20) unsigned | NO | The total number of statements where no good index was found. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -87,3 +87,6 @@ SELECT name, PERCENTILE_DISC(0.6) WITHIN GROUP (ORDER BY star_rating)
 
 * [CUME_DIST()](cume_dist.md)
 
+
+CC BY-SA / Gnu FDL
+

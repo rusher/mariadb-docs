@@ -27,3 +27,7 @@ SELECT ST_AsText(ST_Difference(@g1, @g2));
 | POINT(10 10)                       |
 +------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

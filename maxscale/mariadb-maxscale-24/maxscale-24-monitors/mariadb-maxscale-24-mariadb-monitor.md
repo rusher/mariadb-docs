@@ -1136,3 +1136,7 @@ binlog server to the list of servers only if *master_id* identity is set.
 For addition information read the
 [Replication Proxy](../maxscale-24-tutorials/mariadb-maxscale-24-mariadb-maxscale-as-a-binlog-server.md)
 tutorial.
+
+
+CC BY-SA / Gnu FDL
+

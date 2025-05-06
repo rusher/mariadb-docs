@@ -76,3 +76,6 @@ This SST method simply uses the [mariadb-dump](https://app.gitbook.com/s/SsmexDF
 
 This SST method supports encryption in transit via `[stunnel](https://www.stunnel.org/)`. See [Introduction to State Snapshot Transfers (SSTs): rsync](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
 
+
+CC BY-SA / Gnu FDL
+

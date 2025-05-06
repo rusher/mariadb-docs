@@ -154,3 +154,7 @@ $ bin/maxscale --help
 
 
 to find out the appropriate flags.
+
+
+CC BY-SA / Gnu FDL
+

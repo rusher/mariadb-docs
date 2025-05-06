@@ -199,3 +199,7 @@ SELECT * FROM INFORMATION_SCHEMA.SESSION_STATUS WHERE VARIABLE_NAME RLIKE
 | COM_STMT_PREPARE      | 1              |
 +-----------------------+----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

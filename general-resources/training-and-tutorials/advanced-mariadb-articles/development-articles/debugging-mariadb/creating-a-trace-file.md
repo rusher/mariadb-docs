@@ -64,3 +64,6 @@ The '`o`' option redirects the output to a file (`/tmp/mariadbd.trace` in the ex
 
 * [Options for --debug](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_debug)
 
+
+CC BY-SA / Gnu FDL
+

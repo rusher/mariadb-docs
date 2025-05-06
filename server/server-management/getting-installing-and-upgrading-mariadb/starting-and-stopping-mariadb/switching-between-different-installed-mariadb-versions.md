@@ -185,3 +185,6 @@ If you create an `~/.my.cnf` file, you should start
 `mysqld` with `--defaults-file=~/.my.cnf`
 instead of `--no-defaults` in the examples above.
 
+
+CC BY-SA / Gnu FDL
+

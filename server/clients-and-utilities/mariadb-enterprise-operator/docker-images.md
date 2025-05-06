@@ -38,3 +38,7 @@ MariaDB Enterprise Operator is compatible with the following Docker images:
 
 
 Refer to the registry documentation to [access docker.mariadb.com with your customer credentials](customer-access-to-docker-mariadb-com.md).
+
+
+CC BY-SA / Gnu FDL
+

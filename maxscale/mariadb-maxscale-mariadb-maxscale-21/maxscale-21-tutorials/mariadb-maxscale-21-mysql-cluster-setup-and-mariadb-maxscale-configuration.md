@@ -451,3 +451,7 @@ mysql -h 127.0.0.1 -P 4906 -utest -ptest -e "INSERT INTO test.t1 VALUES (19)"
 +----------+
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

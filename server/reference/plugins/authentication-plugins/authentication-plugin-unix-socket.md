@@ -259,3 +259,6 @@ In this example, a user `serg` is already logged into the operating system and h
 * [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
 
+
+CC BY-SA / Gnu FDL
+

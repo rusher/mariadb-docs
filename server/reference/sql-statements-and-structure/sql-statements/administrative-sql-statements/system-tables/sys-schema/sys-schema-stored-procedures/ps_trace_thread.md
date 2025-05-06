@@ -69,3 +69,7 @@ CALL sys.ps_trace_thread(25, CONCAT('/tmp/stack-', REPLACE(NOW(), ' ', '-'), '.d
 | dot -Tpng -o /tmp/stack_25.png /tmp/stack-2023-04-05-19:06:29.dot |
 +-------------------------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

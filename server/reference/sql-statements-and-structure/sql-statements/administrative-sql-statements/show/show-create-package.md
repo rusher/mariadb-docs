@@ -47,3 +47,6 @@ collation_connection: utf8_general_ci
 * [DROP PACKAGE BODY](../../data-definition/drop/drop-package-body.md)
 * [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+CC BY-SA / Gnu FDL
+

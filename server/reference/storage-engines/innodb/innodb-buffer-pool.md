@@ -83,3 +83,6 @@ The file which contains the buffer pool dump is specified via the [innodb_buffer
 * [Information Schema INNODB_BUFFER_POOL_STATS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_stats-table.md)
 * [Setting Innodb Buffer Pool Size Dynamically](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md)
 
+
+CC BY-SA / Gnu FDL
+

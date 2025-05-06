@@ -6,3 +6,6 @@ Packages for Fedora Linux are included with our other packages available for dow
 
 We have also added YUM repositories to our online [Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 
+
+CC BY-SA / Gnu FDL
+

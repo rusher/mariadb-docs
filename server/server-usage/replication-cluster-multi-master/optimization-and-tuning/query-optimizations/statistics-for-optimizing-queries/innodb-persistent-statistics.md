@@ -43,3 +43,6 @@ Prior to [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maria
 * [Engine-independent Statistics](engine-independent-table-statistics.md)
 * [Histogram-based Statistics](histogram-based-statistics.md)
 
+
+CC BY-SA / Gnu FDL
+

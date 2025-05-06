@@ -25,3 +25,7 @@ up.
  format, create a new key file with `maxkeys` and re-encrypt the passwords with
  `maxpasswd`.
 * The deprecated Database Firewall filter has been removed.
+
+
+CC BY-SA / Gnu FDL
+

@@ -329,3 +329,6 @@ JournalSizeMax=1G
 
 Read the MariaDB documentation for [enabling-core-dumps](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps) and [how-to-produce-a-full-stack-trace-for-mysqld](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd). Most of the operating system level documentation applies to MaxScale as well except that MaxScale is always run as a SystemD service and it only supports Linux as the platform.
 
+
+CC BY-SA / Gnu FDL
+

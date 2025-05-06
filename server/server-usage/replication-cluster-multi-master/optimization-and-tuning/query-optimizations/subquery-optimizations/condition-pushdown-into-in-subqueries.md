@@ -6,3 +6,6 @@ This article describes Condition Pushdown into IN subqueries as implemented in [
 
 [optimizer_switch](../optimizer-switch.md) flag name: `condition_pushdown_for_subquery`.
 
+
+CC BY-SA / Gnu FDL
+

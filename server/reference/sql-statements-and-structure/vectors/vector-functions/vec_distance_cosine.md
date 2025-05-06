@@ -42,3 +42,6 @@ select vec_distance_cosine(vec_fromtext('[1,2,3]'), vec_fromtext('[3,5,7]'));
 * [Vector Overview](../vector-overview.md)
 * [CREATE TABLE with Vectors](../create-table-with-vectors.md)
 
+
+CC BY-SA / Gnu FDL
+

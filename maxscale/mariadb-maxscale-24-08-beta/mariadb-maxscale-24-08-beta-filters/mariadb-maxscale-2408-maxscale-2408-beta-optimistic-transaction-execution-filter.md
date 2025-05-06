@@ -51,3 +51,7 @@ maxctrl create filter OptimisticTrx optimistictrx
 maxctrl alter service-filter MyService OptimisticTrx
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -977,3 +977,6 @@ the `--skip-reconnect` option.
 * [Troubleshooting Connection Issues](/kb/en/troubleshooting-connection-issues/)
 * [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
 
+
+CC BY-SA / Gnu FDL
+

@@ -112,3 +112,7 @@ PLUGIN_LIBRARY_VERSION: 1.13
            LOAD_OPTION: OFF
        PLUGIN_MATURITY: Stable
 ```
+
+
+CC BY-SA / Gnu FDL
+

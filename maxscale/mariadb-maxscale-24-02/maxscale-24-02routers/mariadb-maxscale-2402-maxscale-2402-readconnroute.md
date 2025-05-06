@@ -196,3 +196,7 @@ The `router_diagnostics` output for readconnroute has the following fields.
 
 * Sending of binary data with `LOAD DATA LOCAL INFILE` is not supported.
 * The router will never reconnect to the server it initially connected to.
+
+
+CC BY-SA / Gnu FDL
+

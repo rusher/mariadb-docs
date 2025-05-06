@@ -66,3 +66,6 @@ FROM t1;
 
 * [LAG](lag.md) - Window function to access a previous row
 
+
+CC BY-SA / Gnu FDL
+

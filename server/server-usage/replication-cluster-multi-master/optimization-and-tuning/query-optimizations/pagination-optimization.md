@@ -317,3 +317,6 @@ optimizations, and debugging tips.
 
 Original source: [pagination](https://mysql.rjweb.org/doc.php/pagination)
 
+
+CC BY-SA / Gnu FDL
+

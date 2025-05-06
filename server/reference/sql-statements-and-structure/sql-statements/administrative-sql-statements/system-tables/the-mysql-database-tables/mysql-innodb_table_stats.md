@@ -55,3 +55,6 @@ sum_of_other_index_sizes: 2
 * [mysql.innodb_index_stats](mysql-innodb_index_stats.md)
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
+
+CC BY-SA / Gnu FDL
+

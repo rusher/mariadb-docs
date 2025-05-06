@@ -57,3 +57,6 @@ We manage our development plans in JIRA, so the definitive list will be there. [
 * [What is MariaDB 10.1?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
 * [What is MariaDB 10.0?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
+
+CC BY-SA / Gnu FDL
+

@@ -22,3 +22,7 @@ The table is a MariaDB and MySQL extension, and does not include information abo
 | TABLESPACE_COMMENT |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

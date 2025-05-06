@@ -205,3 +205,6 @@ the desired strategy and join order.
 
 * See mysql-test/t/debug_optimizer.test (in the MariaDB source code) for examples
 
+
+CC BY-SA / Gnu FDL
+

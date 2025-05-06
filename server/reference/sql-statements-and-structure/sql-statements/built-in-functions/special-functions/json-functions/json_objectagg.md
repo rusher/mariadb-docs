@@ -48,3 +48,7 @@ SELECT JSON_OBJECTAGG(a, b) FROM t1;
 | {"1":"Hello", "1":"World", "2":"This"} |
 +----------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -1964,3 +1964,6 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Removed: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 
+
+CC BY-SA / Gnu FDL
+

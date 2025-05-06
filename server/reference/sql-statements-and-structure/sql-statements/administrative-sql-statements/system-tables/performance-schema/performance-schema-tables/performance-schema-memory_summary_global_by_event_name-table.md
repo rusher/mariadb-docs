@@ -62,3 +62,7 @@ SELECT * FROM memory_summary_global_by_event_name
 CURRENT_NUMBER_OF_BYTES_USED: 0
    HIGH_NUMBER_OF_BYTES_USED: 275808
 ```
+
+
+CC BY-SA / Gnu FDL
+

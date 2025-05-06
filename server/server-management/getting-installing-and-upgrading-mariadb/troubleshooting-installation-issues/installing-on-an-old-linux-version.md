@@ -41,3 +41,6 @@ The options you have are:
 
 * [Download the source](../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md) and [build it](../compiling-mariadb-from-source/generic-build-instructions.md).
 
+
+CC BY-SA / Gnu FDL
+

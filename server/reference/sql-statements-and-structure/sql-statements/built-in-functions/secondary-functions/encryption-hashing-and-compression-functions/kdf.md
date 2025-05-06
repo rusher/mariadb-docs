@@ -41,3 +41,7 @@ select hex(kdf('foo', 'bar', 'infa', 'hkdf'));
 | 612875F859CFB4EE0DFEFF9F2A18E836       |
 +----------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -211,3 +211,7 @@ SELECT * FROM tbl;
 | THIS NEVER SHOWS UP |
 +---------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

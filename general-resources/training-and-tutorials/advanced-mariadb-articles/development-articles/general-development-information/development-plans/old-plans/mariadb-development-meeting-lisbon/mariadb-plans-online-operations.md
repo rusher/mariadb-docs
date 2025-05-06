@@ -73,3 +73,6 @@ Query logging tracking per user
 
 flush and reload variables from my.cnf
 
+
+CC BY-SA / Gnu FDL
+

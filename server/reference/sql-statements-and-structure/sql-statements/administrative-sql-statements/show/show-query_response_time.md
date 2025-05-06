@@ -31,3 +31,7 @@ SHOW QUERY_RESPONSE_TIME;
 | TOO LONG       |     0 | TOO LONG       |
 +----------------+-------+----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

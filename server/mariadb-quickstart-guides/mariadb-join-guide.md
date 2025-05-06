@@ -116,3 +116,7 @@ That should give you a bit more understanding of how JOINS work!
 
 *The initial version of this article was copied, with permission, from [Introduction_to_Joins](https://hashmysql.org/wiki/Introduction_to_Joins) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

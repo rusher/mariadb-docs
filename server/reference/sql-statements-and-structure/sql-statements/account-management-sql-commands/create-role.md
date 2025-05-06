@@ -134,3 +134,6 @@ SHOW WARNINGS;
 * [Roles Overview](../../../../security/user-account-management/roles/roles_overview.md)
 * [DROP ROLE](drop-role.md)
 
+
+CC BY-SA / Gnu FDL
+

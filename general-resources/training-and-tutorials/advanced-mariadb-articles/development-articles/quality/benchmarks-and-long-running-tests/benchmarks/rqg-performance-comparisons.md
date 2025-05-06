@@ -146,3 +146,6 @@ in `performance/perfreport.pl`
 * [QA Tools](../../qa-tools.md)
 * [Worklog Quality Checklist Template](../../worklog-quality-checklist-template.md)
 
+
+CC BY-SA / Gnu FDL
+

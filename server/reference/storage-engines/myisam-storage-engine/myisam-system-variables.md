@@ -224,3 +224,6 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Default Value: `OFF`
 
 
+
+CC BY-SA / Gnu FDL
+

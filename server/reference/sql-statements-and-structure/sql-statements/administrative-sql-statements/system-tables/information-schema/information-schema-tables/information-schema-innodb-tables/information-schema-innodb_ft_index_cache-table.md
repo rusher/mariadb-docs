@@ -126,3 +126,7 @@ OPTIMIZE TABLE test.ft_innodb;
 SELECT * FROM INNODB_FT_INDEX_CACHE;
 Empty set (0.00 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

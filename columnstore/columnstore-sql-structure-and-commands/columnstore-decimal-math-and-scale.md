@@ -67,3 +67,6 @@ set infinidb_decimal_scale = n
 
 where *n* is the amount of precision desired for calculations.
 
+
+CC BY-SA / Gnu FDL
+

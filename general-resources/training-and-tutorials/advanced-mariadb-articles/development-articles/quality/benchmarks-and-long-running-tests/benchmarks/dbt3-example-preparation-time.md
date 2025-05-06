@@ -17,7 +17,7 @@ while working on the [DBT3 Automation Scripts](dbt3-automation-scripts.md).
 | MariaDB + MyISAM s100 on facebook-maria2: | 424m 4s = 7h 4m 4s. | 162 GB |
 | MariaDB + InnoDB s100 on facebook-maria2: | 577m 42s = 9h 37m 42s. |  |
 | [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) + InnoDB s30 on facebook-maria1 | 122m39.753s = 2h 2m 40s. | 71 GB |
-| [MariaDB 5.5.18](/kb/en/mariadb-5518-release-notes/) + InnoDB s30 on facebook-maria1 | 150m46.218s = 2h 30m 46s. | 71 GB |
+| [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + InnoDB s30 on facebook-maria1 | 150m46.218s = 2h 30m 46s. | 71 GB |
 | MySQL 5.6.4 + InnoDB s30 on facebook-maria1: | 140m18.272s = 2h 20m 18s. | 71 GB |
 | MariaDB + MyISAM s30 on pitbull with pre_create_PK | > 3h 30m (with limited RAM to 11 GB) |  |
 | MariaDB + MyISAM s30 on facebook-maria1: | 99m 8s = 1h 39m 8s. | 49 GB |
@@ -37,4 +37,8 @@ while working on the [DBT3 Automation Scripts](dbt3-automation-scripts.md).
 | Scale 100 on facebook-maria2 | 78 min 27.601s. | 106 GB |
 | Scale 30 on facebook-maria1 | 23 min 40 sec. |  |
 
+
+
+
+CC BY-SA / Gnu FDL
 

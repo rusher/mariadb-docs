@@ -101,3 +101,7 @@ for i in 'vm-lucid-amd64-install.qcow2 2238 qemu64' 'vm-lucid-i386-install.qcow2
     'mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"' ;\
 done
 ```
+
+
+CC BY-SA / Gnu FDL
+

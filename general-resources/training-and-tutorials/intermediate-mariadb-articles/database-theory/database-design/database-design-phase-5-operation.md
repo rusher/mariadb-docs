@@ -16,3 +16,6 @@ The following are the steps in the operation phase:
 1. Hand over operation of the database to the users.
 1. Make any final changes based on the problems discovered by users.
 
+
+CC BY-SA / Gnu FDL
+

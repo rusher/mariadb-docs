@@ -21,3 +21,6 @@ The following limitations apply to partitioning in MariaDB:
 * [INFORMATION_SCHEMA.PARTITIONS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 
+
+CC BY-SA / Gnu FDL
+

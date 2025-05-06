@@ -39,3 +39,6 @@ SELECT NVL2('x',1,2);
 
 * [IFNULL (or NVL)](ifnull.md)
 
+
+CC BY-SA / Gnu FDL
+

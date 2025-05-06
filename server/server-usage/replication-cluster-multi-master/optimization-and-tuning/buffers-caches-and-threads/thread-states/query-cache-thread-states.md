@@ -16,3 +16,7 @@ This article documents thread states that are related to the [Query Cache](../qu
 | Waiting for query cache lock | Waiting to take a query cache lock. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -62,3 +62,7 @@ Guide](../mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-
 The same guide also provides basic information on running MariaDB MaxScale. More
 detailed information about configuring MariaDB MaxScale can be found in the
 [Configuration Guide](../mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+
+
+CC BY-SA / Gnu FDL
+

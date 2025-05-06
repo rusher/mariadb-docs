@@ -665,3 +665,7 @@ SELECT 'Maria' REGEXP 'r+';
 |                   1 |
 +---------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

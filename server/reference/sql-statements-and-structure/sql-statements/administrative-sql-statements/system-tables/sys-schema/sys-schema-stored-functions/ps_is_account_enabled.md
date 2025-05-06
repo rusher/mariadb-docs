@@ -28,3 +28,7 @@ SELECT sys.ps_is_account_enabled('localhost', 'root');
 | YES                                            |
 +------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

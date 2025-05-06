@@ -62,3 +62,7 @@ replication breaks for some reason.
 detect_stale_master=true
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

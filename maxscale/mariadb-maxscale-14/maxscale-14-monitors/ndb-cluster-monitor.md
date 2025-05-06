@@ -32,3 +32,7 @@ passwd=mypwd
 
 
 For a list of optional parameters that all monitors support, read the [Monitor Common](../../mariadb-maxscale-21-06/README.md) document.
+
+
+CC BY-SA / Gnu FDL
+

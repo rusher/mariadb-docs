@@ -25,3 +25,7 @@ SELECT ST_Distance(POINT(1,2),POINT(2,2));
 |                                  1 |
 +------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

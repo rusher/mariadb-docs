@@ -205,3 +205,7 @@ for i in 'vm-karmic-amd64-install.qcow2 2232 qemu64' 'vm-karmic-i386-install.qco
     'mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"' ; \
 done
 ```
+
+
+CC BY-SA / Gnu FDL
+

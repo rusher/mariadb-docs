@@ -52,3 +52,7 @@ last_insert_id: 0
      thread_id: 74
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

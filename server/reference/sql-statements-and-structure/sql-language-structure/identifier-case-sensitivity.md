@@ -28,3 +28,6 @@ For a full list of identifier naming rules, see [Identifier Names](identifier-na
 
 Please note that [lower_case_table_names](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lower_case_table_names) is a database initialization parameter. This means that, along with [innodb_page_size](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#innodb_page_size), this variable must be set before running [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md), and will not change the behavior of servers unless applied before the creation of core system databases.
 
+
+CC BY-SA / Gnu FDL
+

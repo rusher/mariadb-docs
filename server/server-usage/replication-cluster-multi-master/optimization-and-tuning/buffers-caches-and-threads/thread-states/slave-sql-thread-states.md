@@ -23,3 +23,7 @@ This article documents thread states that are related to [replication](../../../
 | Waiting for the next event in relay log | State before reading next event from the [relay log](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). |
 
 
+
+
+CC BY-SA / Gnu FDL
+

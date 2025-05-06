@@ -9,3 +9,6 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 See [mariadb-install-db](../mariadb-install-db.md) for details.
 
+
+CC BY-SA / Gnu FDL
+

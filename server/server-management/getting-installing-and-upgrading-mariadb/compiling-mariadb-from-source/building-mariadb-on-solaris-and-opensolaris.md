@@ -16,3 +16,6 @@ The following two articles should help you get your Solaris machine prepared to 
 
 * The scripts do not play nice with non-bash shells such as the Korn Shell (ksh). So if your /bin/sh is pointing at ksh or ksh93, you'll want to change it so that it points at bash.
 
+
+CC BY-SA / Gnu FDL
+

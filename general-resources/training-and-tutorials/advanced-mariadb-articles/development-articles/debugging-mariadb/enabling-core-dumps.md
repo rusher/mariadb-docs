@@ -378,3 +378,6 @@ In those cases, the core dump may exclude some additional data. If that is not a
 * [A Nice Feature in MariaDB 10.3: no InnoDB Buffer Pool in Core Dumps](https://www.percona.com/community-blog/2018/06/28/nice-feature-in-mariadb-103-no-innodb-buffer-pool-in-coredumps/)
 * [Getting MySQL Core file on Linux](https://www.percona.com/blog/2011/08/26/getting-mysql-core-file-on-linux/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -28,3 +28,6 @@ The list of automatic tests is located in the `buildbot.conf` file in the
 * [QA Tools](qa-tools.md)
 * [Worklog Quality Checklist Template](worklog-quality-checklist-template.md)
 
+
+CC BY-SA / Gnu FDL
+

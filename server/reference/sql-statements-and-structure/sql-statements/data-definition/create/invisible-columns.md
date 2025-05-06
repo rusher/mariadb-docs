@@ -129,3 +129,7 @@ select pkid, z from t1;
 |    3 | amet  |
 +------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -646,3 +646,6 @@ It does not contain:
 
 * ColumnStore data
 
+
+CC BY-SA / Gnu FDL
+

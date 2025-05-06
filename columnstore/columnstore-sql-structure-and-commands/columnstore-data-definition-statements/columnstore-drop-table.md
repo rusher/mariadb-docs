@@ -39,3 +39,6 @@ DROP TABLE orders RESTRICT;
 
 * [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table)
 
+
+CC BY-SA / Gnu FDL
+

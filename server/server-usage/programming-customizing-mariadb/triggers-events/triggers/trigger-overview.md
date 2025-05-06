@@ -284,3 +284,6 @@ Empty set (0.00 sec)
 * [Trigger Limitations](trigger-limitations.md)
 * [Creative uses of triggers: Things you people wouldn't believe](https://www.youtube.com/watch?v=-O2up6Fr9M0) (video)
 
+
+CC BY-SA / Gnu FDL
+

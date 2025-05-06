@@ -45,3 +45,7 @@ mariadb-find-rows supports the following options:
 mariadb-find-rows --regexp=problem_table --rows=20 < update.log
 mariadb-find-rows --regexp=problem_table  update-log.1 update-log.2
 ```
+
+
+CC BY-SA / Gnu FDL
+

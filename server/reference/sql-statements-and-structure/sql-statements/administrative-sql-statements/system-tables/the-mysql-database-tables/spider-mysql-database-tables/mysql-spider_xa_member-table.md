@@ -37,3 +37,7 @@ It contains the following fields:
 | driver | char(64) | YES |  | NULL |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

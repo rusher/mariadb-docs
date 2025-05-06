@@ -37,3 +37,6 @@ SELECT sys.extract_schema_from_file_name('/usr/local/mysql/data/db/t1.ibd');
 
 * [extract_table_from_file_name()](extract_table_from_file_name.md)
 
+
+CC BY-SA / Gnu FDL
+

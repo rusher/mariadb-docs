@@ -199,3 +199,7 @@ Elapsed time: 57 msec(s).
 ```
 rsync -avP host::kvm/vms/*fulltest* /kvm/vms/
 ```
+
+
+CC BY-SA / Gnu FDL
+

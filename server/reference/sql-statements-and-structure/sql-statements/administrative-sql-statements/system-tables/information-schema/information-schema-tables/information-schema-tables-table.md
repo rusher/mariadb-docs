@@ -181,3 +181,6 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='foo' AND TEMPORARY='
 * [SHOW TABLE STATUS](../../../show/show-table-status.md)
 * [Finding Tables Without Primary Keys](/kb/en/getting-started-with-indexes/#finding-tables-without-primary-keys)
 
+
+CC BY-SA / Gnu FDL
+

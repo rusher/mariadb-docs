@@ -185,3 +185,7 @@ The compression_ratio() procedure calculates the average compression ratio acros
 
 **Note:** The compression ratio is incorrectly calculated before versions 1.0.12 / 1.1.2
 
+
+
+CC BY-SA / Gnu FDL
+

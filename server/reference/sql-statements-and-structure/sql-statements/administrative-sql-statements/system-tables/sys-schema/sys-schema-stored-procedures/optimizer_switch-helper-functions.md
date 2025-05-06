@@ -97,3 +97,6 @@ call sys.optimizer_switch_off();
 
 * [optimizer-switch](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) Documentation for optimizer_switch
 
+
+CC BY-SA / Gnu FDL
+

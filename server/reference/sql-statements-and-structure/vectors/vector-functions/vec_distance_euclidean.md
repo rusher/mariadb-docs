@@ -64,3 +64,6 @@ SELECT id FROM v
 * [Vector Overview](../vector-overview.md)
 * [CREATE TABLE with Vectors](../create-table-with-vectors.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -38,3 +38,7 @@ It contains the following columns:
 | TABLESPACE_NAME | Always default. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

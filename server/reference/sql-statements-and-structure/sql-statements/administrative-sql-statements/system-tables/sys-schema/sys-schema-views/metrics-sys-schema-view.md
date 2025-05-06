@@ -60,3 +60,7 @@ Variable_value: 1725891368.745
           Type: System Time
        Enabled: YES
 ```
+
+
+CC BY-SA / Gnu FDL
+

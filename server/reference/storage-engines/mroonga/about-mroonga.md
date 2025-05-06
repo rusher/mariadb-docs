@@ -108,3 +108,6 @@ Mroonga supports a limited number of [character sets](../../data-types/string-da
 
 Further documentation for Mroonga can be found at [](https://mroonga.org/docs/)
 
+
+CC BY-SA / Gnu FDL
+

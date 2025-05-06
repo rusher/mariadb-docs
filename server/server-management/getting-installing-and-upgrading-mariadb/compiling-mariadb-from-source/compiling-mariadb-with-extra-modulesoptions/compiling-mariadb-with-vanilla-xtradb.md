@@ -29,3 +29,7 @@ BUILD/autorun.sh
 ./configure --with-plugin-innodb_plugin
 make
 ```
+
+
+CC BY-SA / Gnu FDL
+

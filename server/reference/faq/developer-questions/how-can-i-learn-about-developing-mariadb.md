@@ -3,3 +3,6 @@
 
 See [MariaDB Development](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/) for this.
 
+
+CC BY-SA / Gnu FDL
+

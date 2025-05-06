@@ -107,3 +107,6 @@ OLDEST_MODIFICATION: 0
 * [InnoDB Buffer Pool](../../../../../../../storage-engines/innodb/innodb-buffer-pool.md)
 * [innodb_buffer_stats_by_schema and x$innodb_buffer_stats_by_schema Sys Schema Views](https://mariadb.com/kb/en/sys-schema-views-innodb_buffer_stats_by_schema-and-xinnodb_buffer_stats_by_/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -183,3 +183,6 @@ Alternatively, [server_audit_incl_users](mariadb-audit-plugin-options-and-system
 
 Note that `CONNECT` events are always logged for all users, regardless of these two settings. Logging is also based on username only, not the username and hostname combination that MariaDB uses to determine privileges.
 
+
+CC BY-SA / Gnu FDL
+

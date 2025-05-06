@@ -59,3 +59,7 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_TEMP_TABLE_INFO;
 |       39 | #sql1c93_3_1 |      4 |    64 | FALSE                | FALSE         |
 +----------+--------------+--------+-------+----------------------+---------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

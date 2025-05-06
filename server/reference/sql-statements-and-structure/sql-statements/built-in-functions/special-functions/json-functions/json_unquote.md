@@ -75,3 +75,7 @@ SELECT JSON_UNQUOTE('Si\bng\ting');
 | Si\bng\ting                 |
 +-----------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

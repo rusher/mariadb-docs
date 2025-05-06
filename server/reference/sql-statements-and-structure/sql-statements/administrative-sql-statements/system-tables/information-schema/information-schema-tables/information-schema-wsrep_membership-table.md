@@ -20,3 +20,7 @@ SELECT * FROM information_schema.WSREP_MEMBERSHIP;
 |     2 | 7473fd75-6e9e-11e4-91de-0b541ad91bd0 | node3 | 10.0.2.15:16002 |
 +-------+--------------------------------------+-------+-----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

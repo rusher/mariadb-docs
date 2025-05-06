@@ -147,3 +147,6 @@ SELECT @row_num;
 
 * [Diagnostics Area](diagnostics-area.md)
 
+
+CC BY-SA / Gnu FDL
+

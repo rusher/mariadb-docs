@@ -252,3 +252,7 @@ service = SmartQuery
 port = <port>
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

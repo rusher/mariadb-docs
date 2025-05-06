@@ -41,3 +41,7 @@ SELECT TO_BASE64('Maria');
 | TWFyaWE=           |
 +--------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -44,3 +44,6 @@ This indicates that MariaDB is starting on a MySQL-8.0 data directory. Other fla
 
 MariaDB cannot startup on MySQL-8.0 data directory. MySQL should be run on the MySQL data directory and if the objective is to migrate, take logical dumps from MySQL before recreating a MariaDB database, prehaps in a different location, or after the MySQL data directory has been moved.
 
+
+CC BY-SA / Gnu FDL
+

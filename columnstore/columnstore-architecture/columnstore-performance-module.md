@@ -73,3 +73,6 @@ In cases of failover where the underlying storage data is externally mounted, (s
 
 When the failed Performance Module is brought back online, ColumnStore auto-adopts it back into the configuration and begins using it for work.
 
+
+CC BY-SA / Gnu FDL
+

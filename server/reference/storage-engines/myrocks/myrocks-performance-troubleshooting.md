@@ -62,3 +62,6 @@ RocksDB has an internal mechanism called "perf context". The counter values are 
 
 By default statistics are NOT collected. One needs to set [rocksdb_perf_context_level](myrocks-system-variables.md#rocksdb_perf_context_level) to some value (e.g. 3) to enable collection.
 
+
+CC BY-SA / Gnu FDL
+

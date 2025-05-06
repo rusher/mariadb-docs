@@ -249,3 +249,7 @@ end
 * The Lua code is not restricted in any way which means excessively slow
  execution of it can cause the MaxScale process to become slower or to be
  aborted due to a SystemD watchdog timeout.
+
+
+CC BY-SA / Gnu FDL
+

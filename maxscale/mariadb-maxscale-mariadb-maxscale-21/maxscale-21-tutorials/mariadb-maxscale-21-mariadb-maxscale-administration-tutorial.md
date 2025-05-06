@@ -417,3 +417,7 @@ them maintenance mode must be set within each MariaDB MaxScale instance. However
 if multiple services within one MariaDB MaxScale instance are using the server
 then you only need set the maintenance mode once on the server for all services
 to take note of the mode change.
+
+
+CC BY-SA / Gnu FDL
+

@@ -52,3 +52,6 @@ SELECT JSON_DETAILED(@j);
 
 * [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_DETAILED.
 
+
+CC BY-SA / Gnu FDL
+

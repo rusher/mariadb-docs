@@ -133,3 +133,6 @@ See [CHANGE MASTER TO: GTID Persistence](../../../reference/sql-statements-and-s
 
 When [parallel replication](parallel-replication.md) is in use, then the SQL thread hands off the events to its worker threads to apply in parallel.
 
+
+CC BY-SA / Gnu FDL
+

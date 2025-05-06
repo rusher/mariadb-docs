@@ -38,3 +38,7 @@ SELECT * FROM performance_schema.setup_actors;
 | %    | %    | %    |
 +------+------+------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

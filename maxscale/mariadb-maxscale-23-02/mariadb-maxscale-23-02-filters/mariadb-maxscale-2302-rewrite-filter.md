@@ -486,3 +486,7 @@ maxctrl alter filter Rewrite log_replacement=false
 * Awk [awk.html#tag_20_06_13_04](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/awk.html#tag_20_06_13_04)
 * Grep Same as Posix with the addition of newline '\n' as an alternation separator.
 * EGrep Same as EPosix with the addition of newline '\n' as an alternation separator in addition to '|'.
+
+
+CC BY-SA / Gnu FDL
+

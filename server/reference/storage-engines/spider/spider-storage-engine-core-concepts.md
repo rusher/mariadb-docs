@@ -58,3 +58,6 @@ Spider maintains an internal dictionary of Table and Index statistics based on s
 
 Spider stores resultsets into memory, but [spider_quick_mode](spider-system-variables.md)=3 stores resultsets into internal temporary tables if the resultsets are larger than quick_table_size.
 
+
+CC BY-SA / Gnu FDL
+

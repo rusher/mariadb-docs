@@ -123,3 +123,7 @@ default_action=master
 max_slaves=2
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

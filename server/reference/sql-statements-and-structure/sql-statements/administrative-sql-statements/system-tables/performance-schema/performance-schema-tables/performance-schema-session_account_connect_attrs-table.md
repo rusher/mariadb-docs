@@ -43,3 +43,7 @@ SELECT * FROM performance_schema.session_account_connect_attrs;
 |             45 | program_name    | mysql            |                5 |
 +----------------+-----------------+------------------+------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

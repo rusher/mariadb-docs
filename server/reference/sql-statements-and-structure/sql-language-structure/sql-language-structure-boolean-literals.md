@@ -18,3 +18,6 @@ The `IS` operator accepts a third constant exists: `UNKNOWN`. It is always a syn
 
 * [BOOLEAN](../../data-types/data-types-numeric-data-types/boolean.md) type
 
+
+CC BY-SA / Gnu FDL
+

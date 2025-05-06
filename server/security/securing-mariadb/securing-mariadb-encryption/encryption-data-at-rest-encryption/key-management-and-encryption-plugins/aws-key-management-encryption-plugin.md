@@ -324,3 +324,6 @@ SET GLOBAL aws_key_management_rotate_key=-1;
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
+
+CC BY-SA / Gnu FDL
+

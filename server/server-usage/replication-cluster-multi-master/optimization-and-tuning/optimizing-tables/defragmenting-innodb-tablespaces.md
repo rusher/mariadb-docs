@@ -212,3 +212,6 @@ table_name index_name sum(number_records) sum(data_size)
 
 See [Defragmenting unused space on InnoDB tablespace](https://blog.mariadb.org/defragmenting-unused-space-on-innodb-tablespace/) on the Mariadb.org blog for more details.
 
+
+CC BY-SA / Gnu FDL
+

@@ -83,3 +83,6 @@ The [innodb_change_buffer_max_size](innodb-system-variables.md#innodb_change_buf
 
 * [InnoDB Buffer Pool](innodb-buffer-pool.md)
 
+
+CC BY-SA / Gnu FDL
+

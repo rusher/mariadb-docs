@@ -296,3 +296,7 @@ spec:
 
 
 You can opt-out from this cleanup process using `cleanupPolicy=Skip`. Note that this resources will remain in the database.
+
+
+CC BY-SA / Gnu FDL
+

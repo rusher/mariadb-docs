@@ -20,3 +20,7 @@ The `rwlock_instances` table contains the following columns:
 | READ_LOCKED_BY_COUNT | Count of current read locks held |
 
 
+
+
+CC BY-SA / Gnu FDL
+

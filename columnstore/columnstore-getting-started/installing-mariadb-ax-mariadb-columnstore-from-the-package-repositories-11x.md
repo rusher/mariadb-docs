@@ -1713,3 +1713,7 @@ With the repo file in place you can now install MariaDB ColumnStore Kafka Data A
 sudo apt-get update
 sudo apt-get install mariadb-columnstore-kafka-adapters
 ```
+
+
+CC BY-SA / Gnu FDL
+

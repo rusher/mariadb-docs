@@ -53,3 +53,7 @@ SELECT sys.ps_thread_id(NULL);
 |                     13 |
 +------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

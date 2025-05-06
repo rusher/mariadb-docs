@@ -481,3 +481,7 @@ The queries Message Queue Consumer application gets from the server are stored w
 | 01050106010701080109010a010b010c10d | select RAND(?), RAND(?)           | Columns: 2 | 2014-09-02 11:24:37 | 2014-09-02 11:29:15 |       3 |
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

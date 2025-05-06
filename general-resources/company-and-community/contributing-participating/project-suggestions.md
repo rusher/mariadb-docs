@@ -65,3 +65,6 @@ Keystone is the OpenStack Identity Service. The idea would be to ensure that Mar
 
 * Skills: Python, C/C++
 
+
+CC BY-SA / Gnu FDL
+

@@ -253,3 +253,6 @@ The connector implemented support for this authentication plugin in a separate [
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`
 
 
+
+CC BY-SA / Gnu FDL
+

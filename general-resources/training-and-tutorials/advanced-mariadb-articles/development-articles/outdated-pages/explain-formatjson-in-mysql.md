@@ -61,3 +61,6 @@ EXPLAIN: {
 
 Neither version of EXPLAIN in 5.6 shows the "filesort with small limit" optimization. See [MDEV-6430](https://jira.mariadb.org/browse/MDEV-6430).
 
+
+CC BY-SA / Gnu FDL
+

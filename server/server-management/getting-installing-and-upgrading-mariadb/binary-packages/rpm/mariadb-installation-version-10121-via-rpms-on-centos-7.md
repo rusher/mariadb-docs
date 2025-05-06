@@ -95,3 +95,6 @@ After step 4, the installation will be completed. The last step will be to run [
 
 * 5) mysql_secure_installation
 
+
+CC BY-SA / Gnu FDL
+

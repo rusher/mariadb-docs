@@ -1523,7 +1523,7 @@ DBT3 benchmark for the following configuration:
 
 
 * [MariaDB 5.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-532-release-notes) Beta + XtraDB
-* [MariaDB 5.5.18](/kb/en/mariadb-5518-release-notes/) + XtraDB
+* [MariaDB 5.5.18](/en/mariadb-5518-release-notes/) + XtraDB
 * MySQL 5.5.19 + InnoDB
 * MySQL 5.6.4 + InnoDB
 
@@ -1543,4 +1543,7 @@ DBT3 benchmark for the following configuration:
 
 
 Results page: (TODO)
+
+
+CC BY-SA / Gnu FDL
 

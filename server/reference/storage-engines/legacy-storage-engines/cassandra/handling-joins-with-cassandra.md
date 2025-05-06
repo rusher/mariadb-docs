@@ -69,3 +69,6 @@ another).
 
 It is possible to run Hive/Pig on Cassandra.
 
+
+CC BY-SA / Gnu FDL
+

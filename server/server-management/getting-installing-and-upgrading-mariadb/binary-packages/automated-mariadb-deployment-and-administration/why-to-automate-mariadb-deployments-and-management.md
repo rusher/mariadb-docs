@@ -51,3 +51,6 @@ Automating failover will minimise the time to recover. A way to do it is to use 
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

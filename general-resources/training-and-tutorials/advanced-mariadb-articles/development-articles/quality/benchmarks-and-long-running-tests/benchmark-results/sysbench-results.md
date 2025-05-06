@@ -59,3 +59,6 @@ For reference, the "perro" and "work" systems were configured as follows:
 
 * `select_random_points.lua --random-points=10, 50, and 100` results on pitbull with key_cache_segments off, 32, and 64 OO.org spreadsheet: [Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods](https://askmonty.org/sysbench-results/Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods)
 
+
+CC BY-SA / Gnu FDL
+

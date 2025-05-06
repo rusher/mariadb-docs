@@ -16,3 +16,6 @@ This clause cannot be used in a [view](../../../../../server-usage/programming-c
 * [SELECT](select.md)
 * [Stored Procedures](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -18,3 +18,6 @@
 * n [resultset row](../4-server-response-packets/resultset-row.md)
 * [EOF_Packet](../4-server-response-packets/eof_packet.md)
 
+
+CC BY-SA / Gnu FDL
+

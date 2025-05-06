@@ -45,3 +45,6 @@ For more information about how to manage containers, see [Installing and Using M
 
 To test an application that uses ColumnStore, it is desirable to setup several containers that will communicate with each other. To do this, we can use Docker Compose. See [Setting Up a LAMP Stack with Docker Compose](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/setting-up-a-lamp-stack-with-docker-compose) for more information.
 
+
+CC BY-SA / Gnu FDL
+

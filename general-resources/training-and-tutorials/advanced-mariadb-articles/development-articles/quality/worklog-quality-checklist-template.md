@@ -324,3 +324,6 @@ when clearing the WL for merging into a stable release.
 * [Optimizer Quality](optimizer-quality.md)
 * [QA Tools](qa-tools.md)
 
+
+CC BY-SA / Gnu FDL
+

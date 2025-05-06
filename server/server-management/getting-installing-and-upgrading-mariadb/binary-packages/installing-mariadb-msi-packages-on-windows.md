@@ -317,3 +317,6 @@ development scenario, where users want to run a 64 bit server and develop both
 installed, including a database instance plus development-related features
 (headers and libraries) from the 32 bit package.
 
+
+CC BY-SA / Gnu FDL
+

@@ -28,3 +28,7 @@ It contains the following columns:
 | AUTO_INCREMENT |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

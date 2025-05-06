@@ -43,3 +43,7 @@ set global use_stat_tables='preferably';
 USE backend; 
 ANALYZE TABLE sbtest;
 ```
+
+
+CC BY-SA / Gnu FDL
+

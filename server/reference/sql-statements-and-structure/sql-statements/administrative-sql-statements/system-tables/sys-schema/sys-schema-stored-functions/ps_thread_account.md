@@ -42,3 +42,7 @@ SELECT sys.ps_thread_account(sys.ps_thread_id(NULL));
 | msandbox@localhost                            |
 +-----------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

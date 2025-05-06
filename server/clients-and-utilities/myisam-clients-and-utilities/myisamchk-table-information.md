@@ -232,3 +232,7 @@ Non-physical pagefaults 925, Physical pagefaults 0, Swaps 0
 Blocks in 0 out 0, Messages in 0 out 0, Signals 0
 Voluntary context switches 0, Involuntary context switches 74
 ```
+
+
+CC BY-SA / Gnu FDL
+

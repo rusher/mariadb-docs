@@ -45,3 +45,6 @@ SELECT ST_AsText(ST_GeomFromGeoJSON(@j));
 
 * [ST_AsGeoJSON](geojson-st_asgeojson.md)
 
+
+CC BY-SA / Gnu FDL
+

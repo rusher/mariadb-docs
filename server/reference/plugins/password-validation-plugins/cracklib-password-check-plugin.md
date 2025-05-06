@@ -238,3 +238,6 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 * [Password Validation](../../mariadb-internals/password-validation.md)
 * [simple_password_check plugin](simple-password-check-plugin.md) - permits the setting of basic criteria for passwords
 
+
+CC BY-SA / Gnu FDL
+

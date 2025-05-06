@@ -77,3 +77,7 @@ The servers *cluster-1*, *cluster-2* and *cluster-3* are the unique Aurora
 endpoints configured as MaxScale servers. The monitor will use the
 *aurora*:*borealis* credentials to connect to each of the endpoint. The status
 of the nodes is inspected every 2500 milliseconds.
+
+
+CC BY-SA / Gnu FDL
+

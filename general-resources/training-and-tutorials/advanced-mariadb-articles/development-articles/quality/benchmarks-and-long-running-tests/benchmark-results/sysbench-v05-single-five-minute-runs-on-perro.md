@@ -103,3 +103,7 @@ Configuration used for MariDB and MySQL:
 --innodb_thread_concurrency=0 \
 --innodb_max_dirty_pages_pct=80"
 ```
+
+
+CC BY-SA / Gnu FDL
+

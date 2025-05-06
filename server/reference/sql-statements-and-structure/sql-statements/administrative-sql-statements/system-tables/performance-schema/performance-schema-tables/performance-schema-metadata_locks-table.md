@@ -49,3 +49,7 @@ The table contains the following columns:
 | OWNER_EVENT_ID | bigint(20) unsigned | YES | NULL | Event that requested the lock. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

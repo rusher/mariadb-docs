@@ -132,3 +132,6 @@ FROM t1;
 
 * [Setting a variable to a value](../../../administrative-sql-statements/set-commands/set.md)
 
+
+CC BY-SA / Gnu FDL
+

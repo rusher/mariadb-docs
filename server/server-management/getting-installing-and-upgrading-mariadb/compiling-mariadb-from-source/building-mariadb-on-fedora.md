@@ -49,3 +49,7 @@ Once CMake readies the relevant Makefile for your system, use Make to build Mari
 ```
 $ make package
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -10,3 +10,6 @@ Here are a few resources for those interested in GIS in MariaDB.
 
 There are currently no differences between GIS in stable versions of MariaDB and GIS in MySQL. There are, however, some extensions and enhancements being worked on. See "[MariaDB Plans - GIS](mariadb-plans-gis.md)" for more information.
 
+
+CC BY-SA / Gnu FDL
+

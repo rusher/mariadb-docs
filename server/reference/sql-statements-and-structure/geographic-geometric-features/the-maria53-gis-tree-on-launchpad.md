@@ -104,3 +104,7 @@ Geometry metadata views:
 |  | SRTEXT TEXT |
 
 
+
+
+CC BY-SA / Gnu FDL
+

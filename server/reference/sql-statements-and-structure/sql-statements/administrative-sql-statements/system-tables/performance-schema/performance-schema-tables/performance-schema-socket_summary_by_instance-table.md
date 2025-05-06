@@ -40,3 +40,6 @@ The corresponding row in the table is deleted when a connection terminates.
 
 You can [TRUNCATE](../../../../table-statements/truncate-table.md) the table, which will reset all counters to zero.
 
+
+CC BY-SA / Gnu FDL
+

@@ -145,3 +145,6 @@ On the environment variables here:
 
 For further information on Mariabackup, see [Mariabackup Overview](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md).
 
+
+CC BY-SA / Gnu FDL
+

@@ -85,3 +85,6 @@ RUN apt-get update && \
 
 Installing plugins from packages creates a configuration file in the directory `/etc/mysql/mariadb.conf.d/` that loads the plugin on startup.
 
+
+CC BY-SA / Gnu FDL
+

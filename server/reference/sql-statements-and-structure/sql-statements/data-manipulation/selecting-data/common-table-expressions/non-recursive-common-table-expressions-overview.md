@@ -107,3 +107,7 @@ total_amt >
      FROM sales_product_year S2
      WHERE S2.year = S1.year)
 ```
+
+
+CC BY-SA / Gnu FDL
+

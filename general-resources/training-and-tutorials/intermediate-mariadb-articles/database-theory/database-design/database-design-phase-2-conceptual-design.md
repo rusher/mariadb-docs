@@ -135,3 +135,6 @@ The same applies even if the entity is recursive. The person entity that has an 
 
 ![brother-intersection](../../../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/brother-intersection.png "brother-intersection")
 
+
+CC BY-SA / Gnu FDL
+

@@ -29,3 +29,7 @@ If this is not the case, then you can find out if there is any modules missing t
 ```
 cmake . -LAH | grep -i oqgraph
 ```
+
+
+CC BY-SA / Gnu FDL
+

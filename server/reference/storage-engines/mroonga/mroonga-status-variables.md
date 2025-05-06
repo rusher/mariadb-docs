@@ -20,3 +20,6 @@ This page documents status variables related to the [Mroonga storage engine](REA
 * Data Type: `numeric`
 
 
+
+CC BY-SA / Gnu FDL
+

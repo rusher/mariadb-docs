@@ -32,3 +32,6 @@ Links:
 
 MariaDB ColumnStore is released under the GPL license.
 
+
+CC BY-SA / Gnu FDL
+

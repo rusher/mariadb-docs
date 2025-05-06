@@ -254,3 +254,7 @@ firewall-cmd --permanent --add-port=3306/tcp
 
 *The initial version of this article was copied, with permission, from [Remote_Clients_Cannot_Connect](https://hashmysql.org/wiki/Remote_Clients_Cannot_Connect) on 2012-10-30.*
 
+
+
+CC BY-SA / Gnu FDL
+

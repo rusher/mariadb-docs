@@ -91,3 +91,7 @@ DESC information_schema.innodb_buffer_pool_stats;
 | UNCOMPRESS_CURRENT               | bigint(21) unsigned | NO   |     | 0       |       |
 +----------------------------------+---------------------+------+-----+---------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

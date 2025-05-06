@@ -123,3 +123,6 @@ The following options have been deprecated. They have not yet been removed, but 
 * [Upgrading from MariaDB 10.7 to MariaDB 10.8](upgrading-from-mariadb-10-7-to-mariadb-10-8.md)
 * [Upgrading from MariaDB 10.6 to MariaDB 10.7](upgrading-from-mariadb-10-6-to-mariadb-10-7.md)
 
+
+CC BY-SA / Gnu FDL
+

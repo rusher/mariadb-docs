@@ -46,3 +46,7 @@ by saving all incoming GTIDs into a SQLite map database.
 In the 2.2.1 beta version MaxCtrl was in its own package whereas in 2.2.2
 it is in the main `maxscale` package. If you have a previous installation
 of MaxCtrl, please remove it before upgrading to MaxScale 2.2.2.
+
+
+CC BY-SA / Gnu FDL
+

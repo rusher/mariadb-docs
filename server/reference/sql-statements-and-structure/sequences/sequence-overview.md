@@ -305,3 +305,6 @@ The `cycle_count` column is incremented every time the sequence wraps around.
 * [Information Schema SEQUENCES Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
 
+
+CC BY-SA / Gnu FDL
+

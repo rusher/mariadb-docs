@@ -40,3 +40,6 @@ ERROR 42000: You have an error in your SQL syntax; check the manual that corresp
 * [System-versioned Tables](system-versioned-tables.md)
 * [Application-time Periods](application-time-periods.md)
 
+
+CC BY-SA / Gnu FDL
+

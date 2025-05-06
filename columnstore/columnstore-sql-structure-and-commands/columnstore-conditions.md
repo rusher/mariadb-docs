@@ -95,3 +95,6 @@ Notes:
 * Circular joins are not supported in ColumnStore. See the Troubleshooting section
 * When the join memory limit is exceeded, a disk-based join will be used for processing if this option has been enabled.
 
+
+CC BY-SA / Gnu FDL
+

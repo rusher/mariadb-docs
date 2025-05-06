@@ -30,3 +30,7 @@ They contain the following columns:
 | total_allocated | Total memory allocation in bytes for the host. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

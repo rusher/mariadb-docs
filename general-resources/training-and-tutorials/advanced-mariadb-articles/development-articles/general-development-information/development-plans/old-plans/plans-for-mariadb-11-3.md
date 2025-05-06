@@ -25,3 +25,6 @@ to [JIRA](../../../tools/jira.md).
 * [11.3 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20(11.3)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
 * [What is MariaDB 11.3?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
 
+
+CC BY-SA / Gnu FDL
+

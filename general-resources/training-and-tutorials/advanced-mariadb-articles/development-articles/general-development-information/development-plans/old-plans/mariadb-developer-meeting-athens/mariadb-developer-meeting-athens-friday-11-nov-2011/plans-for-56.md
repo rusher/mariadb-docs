@@ -328,3 +328,6 @@ including why an index was *not* picked, etc.
   * duplicate plugin names ([MWL#79](https://askmonty.org/worklog/?tid=79))
   * create a charset service ([MWL#81](https://askmonty.org/worklog/?tid=81))
 
+
+CC BY-SA / Gnu FDL
+

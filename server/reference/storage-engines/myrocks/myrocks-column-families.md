@@ -79,3 +79,6 @@ Options that are frequently configured are:
 
 See the [INFORMATION_SCHEMA.ROCKSDB_CF_OPTIONS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_cf_options-table.md) table.
 
+
+CC BY-SA / Gnu FDL
+

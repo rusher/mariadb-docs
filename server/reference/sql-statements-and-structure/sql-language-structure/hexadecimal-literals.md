@@ -132,3 +132,6 @@ SELECT 0x0a+0;
 * [HEX()](../sql-statements/built-in-functions/string-functions/hex.md)
 * [UNHEX()](../sql-statements/built-in-functions/string-functions/unhex.md)
 
+
+CC BY-SA / Gnu FDL
+

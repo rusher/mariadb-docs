@@ -493,3 +493,6 @@ The following CVEs were fixed in [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZX
 * [CVE-2012-0075](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0075): [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * [CVE-2012-0494](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0494): [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
+
+CC BY-SA / Gnu FDL
+

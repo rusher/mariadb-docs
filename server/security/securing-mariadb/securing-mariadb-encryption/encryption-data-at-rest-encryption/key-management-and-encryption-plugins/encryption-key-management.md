@@ -101,3 +101,6 @@ The [Aria storage engine](../../../../../reference/storage-engines/aria/README.m
 
 New key management and encryption plugins can be developed using the [encryption plugin API](../../../../../reference/mariadb-internals/encryption-plugin-api.md).
 
+
+CC BY-SA / Gnu FDL
+

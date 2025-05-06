@@ -73,3 +73,6 @@ The [Knowledge Base](https://mariadb.com/kb/en/the-mariadb-library/) contains do
 * [Log of MariaDB Contributors](../contributing-participating/log-of-mariadb-contributions.md).
 * [Knowledge Base User Contribution Statistics](https://mariadb.com/kb/stats/users/)
 
+
+CC BY-SA / Gnu FDL
+

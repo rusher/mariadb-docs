@@ -37,3 +37,6 @@ SELECT mroonga_command('status');
 
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
+
+CC BY-SA / Gnu FDL
+

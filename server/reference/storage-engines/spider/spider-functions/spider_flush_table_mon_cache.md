@@ -25,3 +25,7 @@ SELECT SPIDER_FLUSH_TABLE_MON_CACHE();
 |                              1 |
 +--------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

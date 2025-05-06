@@ -400,3 +400,7 @@ source include/wait_condition.inc;
 
 SET DEBUG_SYNC='RESET'; # Now this is safe
 ```
+
+
+CC BY-SA / Gnu FDL
+

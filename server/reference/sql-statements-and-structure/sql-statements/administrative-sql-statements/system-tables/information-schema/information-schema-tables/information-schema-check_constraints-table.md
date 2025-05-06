@@ -157,3 +157,7 @@ select * from information_schema.check_constraints where table_name='majra';
 +--------------------+-------------------+------------+-----------------+--------+------------------------------------+
 4 rows in set (0.001 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

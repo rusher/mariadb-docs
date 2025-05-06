@@ -599,3 +599,6 @@ In some case or some platform, when CONNECT is set up for use with JDBC table ty
 
 This was reported by Robert Dyas who found the cause - see the discussion at [MDEV-11238](https://jira.mariadb.org/browse/MDEV-11238).
 
+
+CC BY-SA / Gnu FDL
+

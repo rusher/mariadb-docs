@@ -412,3 +412,6 @@ CALL row_proc();
 * [STORED PROCEDURES](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md)
 * [DECLARE Variable](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md)
 
+
+CC BY-SA / Gnu FDL
+

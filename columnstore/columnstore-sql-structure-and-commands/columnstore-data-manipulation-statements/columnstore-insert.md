@@ -57,3 +57,6 @@ With INSERT ... SELECT, you can quickly insert many rows into a table from one o
 
 Autoincrement is not supported by MariaDB ColumnStore.
 
+
+CC BY-SA / Gnu FDL
+

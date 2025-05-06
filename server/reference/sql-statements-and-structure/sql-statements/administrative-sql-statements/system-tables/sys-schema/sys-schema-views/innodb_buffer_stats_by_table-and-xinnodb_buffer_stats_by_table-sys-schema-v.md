@@ -101,3 +101,7 @@ object_schema: InnoDB System
   rows_cached: 10
 ....
 ```
+
+
+CC BY-SA / Gnu FDL
+

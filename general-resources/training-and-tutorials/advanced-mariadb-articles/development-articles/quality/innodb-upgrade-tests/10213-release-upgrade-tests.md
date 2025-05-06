@@ -334,3 +334,7 @@ Some tests failed due to [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103
 | undo | 8 | 5.6.39 (inbuilt) |  | - | - | => | 10.2.13 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

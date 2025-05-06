@@ -737,3 +737,6 @@ You may find the following PAM-related tutorials helpful:
 * [MariaDB: Improve Security with Two-Step Verification](https://mariadb.org/improve-security-with-two-step-verification/)
 * [Using PAM with MaxScale](https://mariadb.com/kb/en/mariadb-maxscale-2208-pam-authenticator/)
 
+
+CC BY-SA / Gnu FDL
+

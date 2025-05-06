@@ -233,3 +233,7 @@ The following example shows how you might set up an option file for use with mar
            language   = /usr/local/share/mysql/japanese
            user       = jani
 ```
+
+
+CC BY-SA / Gnu FDL
+

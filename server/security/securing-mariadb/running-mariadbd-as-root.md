@@ -9,3 +9,6 @@ MariaDB will normally return the error **Fatal error: Please read "Security" sec
 
 Better practice, and the default in most situations, is to use a separate user, exclusively used for MariaDB. In most distributions, this user is called `mysql`.
 
+
+CC BY-SA / Gnu FDL
+

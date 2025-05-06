@@ -183,3 +183,6 @@ Time zone data needs to be updated on occasion. When that happens, the time zone
 
 * [LinuxJedi in Spacetime: Properly Handling Time and Date](https://www.youtube.com/watch?v=IV8q_mbZzEo) (video)
 
+
+CC BY-SA / Gnu FDL
+

@@ -38,3 +38,7 @@ mariadb-dumpslow [ options... ] [ logs... ]
 | -v, --verbose | Verbose mode. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

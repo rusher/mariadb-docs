@@ -130,3 +130,6 @@ The above comparison was made using
 * Percona Server 5.7.20-19-log
 * [MariaDB 10.2.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10213-release-notes) (MyRocks is beta)
 
+
+CC BY-SA / Gnu FDL
+

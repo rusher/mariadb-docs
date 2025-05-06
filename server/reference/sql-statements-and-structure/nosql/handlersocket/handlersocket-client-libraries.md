@@ -39,3 +39,6 @@ following client libraries are available:
 
   * HandlerSocket-Haskell-Client
 
+
+CC BY-SA / Gnu FDL
+

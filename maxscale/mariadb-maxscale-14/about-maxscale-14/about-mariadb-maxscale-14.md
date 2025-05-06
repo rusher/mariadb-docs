@@ -60,3 +60,7 @@ building from source code, is included in the
 The same guide also provides basic information on running MaxScale.
 More detailed information about configuring MaxScale is given in the
 [Configuration Guide](../maxscale-14-getting-started/maxscale-configuration-usage-scenarios.md).
+
+
+CC BY-SA / Gnu FDL
+

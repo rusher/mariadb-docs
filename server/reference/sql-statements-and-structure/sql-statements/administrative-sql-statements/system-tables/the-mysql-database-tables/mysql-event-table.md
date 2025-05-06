@@ -41,3 +41,7 @@ The `mysql.event` table contains the following fields:
 | body_utf8 | longblob | YES |  | NULL |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

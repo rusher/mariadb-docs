@@ -90,3 +90,6 @@ As a server variable:
 
 * [Type conversions](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/type-conversion.md)
 
+
+CC BY-SA / Gnu FDL
+

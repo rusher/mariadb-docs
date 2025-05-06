@@ -129,3 +129,6 @@ The `BACKUP STAGE` commands are a set of commands to make it possible to make an
 * [BACKUP LOCK](backup-lock.md) Locking a table from DDL.
 * [MDEV-5336](https://jira.mariadb.org/browse/MDEV-5336). Implement BACKUP STAGE for safe external backups.
 
+
+CC BY-SA / Gnu FDL
+

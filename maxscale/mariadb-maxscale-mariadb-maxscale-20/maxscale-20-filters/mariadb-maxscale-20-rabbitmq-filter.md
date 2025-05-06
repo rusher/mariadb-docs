@@ -82,3 +82,7 @@ The RabbitMQ filter has parameters to control which queries are logged based on 
 | ssl_CA_cert | Path to the CA certificate in PEM format |  |  |
 | ssl_client_cert | Path to the client certificate in PEM format |  |  |
 | ssl_client_key | Path to the client public key in PEM format |  |  |
+
+
+CC BY-SA / Gnu FDL
+

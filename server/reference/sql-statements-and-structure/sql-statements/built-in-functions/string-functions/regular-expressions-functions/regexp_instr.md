@@ -64,3 +64,7 @@ SELECT REGEXP_INSTR('ABC','(?-i)b');
 SELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'(?i)b');
 -> 2
 ```
+
+
+CC BY-SA / Gnu FDL
+

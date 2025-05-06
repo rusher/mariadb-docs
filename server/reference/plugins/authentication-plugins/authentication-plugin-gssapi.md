@@ -470,3 +470,6 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 * Introduced: [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes)
 
 
+
+CC BY-SA / Gnu FDL
+

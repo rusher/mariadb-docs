@@ -32,3 +32,7 @@ SELECT JSON_OBJECT_FILTER_KEYS (@obj1, JSON_ARRAY_INTERSECT(JSON_KEYS(@obj1), JS
 | {"b": 2, "c": 3}                                                                          |
 +-------------------------------------------------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

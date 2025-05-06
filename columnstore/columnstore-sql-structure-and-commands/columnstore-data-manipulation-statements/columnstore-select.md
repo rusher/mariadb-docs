@@ -141,3 +141,6 @@ SELECT custkey from customer limit 1000,5;
 
 **NOTE: When LIMIT is applied on a nested query's results, and the inner query contains ORDER BY, LIMIT is applied first and then ORDER BY is applied.(Valid for Columnstore 1.0.x - 1.2.x)**
 
+
+CC BY-SA / Gnu FDL
+

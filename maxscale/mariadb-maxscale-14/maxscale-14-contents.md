@@ -158,3 +158,7 @@ Module specific documentation.
 * [MaxScale 0.7 Release Notes](maxscale-14-release-notes/maxscale-07-alpha-new-features.md)
 * [MaxScale 0.6 Release Notes](maxscale-14-release-notes/maxscale-bug-fixes.md)
 * [MaxScale 0.5 Release Notes](maxscale-14-release-notes/maxscale-05-alpha-new-features.md)
+
+
+CC BY-SA / Gnu FDL
+

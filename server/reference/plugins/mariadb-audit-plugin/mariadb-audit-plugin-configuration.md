@@ -62,3 +62,6 @@ Of all of the server variables you can set, you may want to set initially the [s
 
 You can see a detailed list of system variables related to the MariaDB Audit Plugin on the [System Variables documentation page](mariadb-audit-plugin-options-and-system-variables.md). Status variables related to the Audit Plugin are listed and explained on the [Status Variables documentation page](mariadb-audit-plugin-status-variables.md).
 
+
+CC BY-SA / Gnu FDL
+

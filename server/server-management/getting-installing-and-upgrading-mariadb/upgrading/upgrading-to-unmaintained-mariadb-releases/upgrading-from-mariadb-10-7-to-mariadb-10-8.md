@@ -119,3 +119,6 @@ You might consider using the following major new features in [MariaDB 10.8](http
 * [Upgrading from MariaDB 10.5 to MariaDB 10.6](../upgrading-from-mariadb-10-5-to-mariadb-10-6.md)
 * [Upgrading from MariaDB 10.4 to MariaDB 10.5](../upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
+
+CC BY-SA / Gnu FDL
+

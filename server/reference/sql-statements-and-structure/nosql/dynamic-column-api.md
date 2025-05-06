@@ -421,3 +421,7 @@ Compare two column names (currently, column names are compared with memcmp())
 int mariadb_dyncol_column_cmp_named(const MYSQL_LEX_STRING *s1,
                                     const MYSQL_LEX_STRING *s2);
 ```
+
+
+CC BY-SA / Gnu FDL
+

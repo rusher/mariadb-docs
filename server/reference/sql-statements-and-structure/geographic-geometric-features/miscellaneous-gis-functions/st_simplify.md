@@ -54,3 +54,6 @@ SELECT ST_AsText(ST_Simplify(ST_GeomFromText('LINESTRING(0 0,0 2,2 2,2 4,4 4,4 6
 * [ST_AsText](../wkt/st_astext.md)
 * [ST_GeomFromText](../wkt/st_geomfromtext.md)
 
+
+CC BY-SA / Gnu FDL
+

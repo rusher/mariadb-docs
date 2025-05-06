@@ -30,3 +30,7 @@ Parameters:
 ```
 CALL sys.ps_trace_statement_digest('891ec6860f98ba46d89dd20b0c03652c', 5, 0.5, TRUE, TRUE);
 ```
+
+
+CC BY-SA / Gnu FDL
+

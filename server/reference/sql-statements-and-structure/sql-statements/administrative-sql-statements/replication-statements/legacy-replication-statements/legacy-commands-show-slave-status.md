@@ -3,3 +3,6 @@
 
 Old name for **[SHOW REPLICA STATUS](../../show/show-replica-status.md)**
 
+
+CC BY-SA / Gnu FDL
+

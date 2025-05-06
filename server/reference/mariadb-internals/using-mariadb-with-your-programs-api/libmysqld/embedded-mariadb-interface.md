@@ -38,3 +38,6 @@ This is also safe to do when using the standard C library.
 * [mysql_library_init](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_library_init)
 * [mariadb client with MariaDB embedded](../../../../clients-and-utilities/mariadb-embedded.md)
 
+
+CC BY-SA / Gnu FDL
+

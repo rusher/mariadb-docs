@@ -50,3 +50,6 @@ Event size is: header[19] + XID[8] + CRC32[4] of (header + xid)
 
 * 09 30 45 a8 => a8 45 30 09 => 2823106569
 
+
+CC BY-SA / Gnu FDL
+

@@ -48,3 +48,7 @@ id FOR ORDINALITY )) AS jt;
 | key2 | val2 |    2 |
 +------+------+------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

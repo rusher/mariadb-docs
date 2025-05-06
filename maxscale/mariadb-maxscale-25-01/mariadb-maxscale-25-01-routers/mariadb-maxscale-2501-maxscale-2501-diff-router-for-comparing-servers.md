@@ -912,3 +912,7 @@ Diff is not compatible with
 [configuration synchronization](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 If *configuration synchronization* is enabled, an attempt to create a
 Diff router will fail.
+
+
+CC BY-SA / Gnu FDL
+

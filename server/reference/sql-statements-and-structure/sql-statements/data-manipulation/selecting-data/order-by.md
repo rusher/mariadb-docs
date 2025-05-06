@@ -157,3 +157,6 @@ SELECT * FROM store;
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
 * [Optimizer Hints](optimizer-hints.md)
 
+
+CC BY-SA / Gnu FDL
+

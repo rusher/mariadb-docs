@@ -72,3 +72,7 @@ SELECT db_name,table_name,column_name,
 | test    | origin     | v           | DOUBLE_PREC_HB | 5200F600480116067E0CB30F1B16831CB81FD67F | 0.00125,0.00250,0.00125,0.01877,0.02502,0.01253,0.02502,0.02502,0.01253,0.37546,0.50063 |
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

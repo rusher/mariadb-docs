@@ -26,3 +26,7 @@ The version_string is optional, the default value will be taken from the embedde
 | 418 | Statements are not routed to master if a transaction is started implicitly by setting autocommit=0. In such cases statements were previously routed as if they were not part of a transaction.
 
 This fix changes the behavior so that is autocommit is disabled, all statements are routed to the master and in case of session variable updates, to both master and slave. |
+
+
+CC BY-SA / Gnu FDL
+

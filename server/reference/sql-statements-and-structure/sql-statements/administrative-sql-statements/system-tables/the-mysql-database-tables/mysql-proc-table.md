@@ -45,3 +45,6 @@ The `mysql.proc` table contains the following fields:
 * [Stored Procedure Internals](../../../../../mariadb-internals/mariadb-source-code-internals/stored-procedure-internals.md)
 * [MySQL to MariaDB migration: handling privilege table differences when using mysqldump](https://mariadb.com/blog/mysql-mariadb-migration-handling-privilege-table-differences-when-using-mysqldump)
 
+
+CC BY-SA / Gnu FDL
+

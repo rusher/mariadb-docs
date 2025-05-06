@@ -103,3 +103,7 @@ SELECT * FROM sq1 WHERE num <> SOME (SELECT * FROM sq2);
 |  100 |
 +------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -257,3 +257,7 @@ The restart AppArmor:
 ```
 sudo systemctl restart apparmor
 ```
+
+
+CC BY-SA / Gnu FDL
+

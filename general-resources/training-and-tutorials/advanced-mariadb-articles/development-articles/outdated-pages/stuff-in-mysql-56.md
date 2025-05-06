@@ -23,3 +23,6 @@ This is SergeyP's list of patches in MySQL 5.6 that he has found interesting. It
 * but the SQL layer still does reads before doing writes. This code is not suitable for update-without-reads.
 * The main idea is that we do [deleted|updated]= table->file->end_read_removal(); at the end. This only counts #of affected rows.
 
+
+CC BY-SA / Gnu FDL
+

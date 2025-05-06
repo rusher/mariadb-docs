@@ -297,3 +297,7 @@ features that InnoDB supports.
 
 * The backend servers used by this service must be MariaDB version 10.2 or
  newer.
+
+
+CC BY-SA / Gnu FDL
+

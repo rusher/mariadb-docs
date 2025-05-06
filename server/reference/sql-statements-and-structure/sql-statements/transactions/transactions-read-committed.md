@@ -6,3 +6,6 @@
 
 See [SET TRANSACTION#Isolation Levels](set-transaction.md#isolation-levels) for details.
 
+
+CC BY-SA / Gnu FDL
+

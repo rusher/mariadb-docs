@@ -147,3 +147,7 @@ quality modules.
 
 To build the experimental modules along with the MaxScale core components,
 invoke CMake with `-DTARGET_COMPONENT=core,experimental`.
+
+
+CC BY-SA / Gnu FDL
+

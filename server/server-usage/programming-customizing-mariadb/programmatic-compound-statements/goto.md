@@ -54,3 +54,7 @@ call p1();
 +---+
 1 row in set (0.000 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -50,3 +50,7 @@ SELECT CURRENT_ROLE();
 | NULL           |
 +----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

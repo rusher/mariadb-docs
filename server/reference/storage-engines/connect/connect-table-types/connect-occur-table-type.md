@@ -141,3 +141,7 @@ This table is displayed as:
 | Foo | december | 14 |
 
 
+
+
+CC BY-SA / Gnu FDL
+

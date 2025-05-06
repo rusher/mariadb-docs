@@ -91,3 +91,7 @@ object_schema: test
     pages_old: 0
   rows_cached: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

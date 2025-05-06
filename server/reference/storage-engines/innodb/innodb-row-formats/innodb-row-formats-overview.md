@@ -280,3 +280,6 @@ InnoDB does not currently have an easy way to check which existing tables have t
 
 For information on how to solve the problem, see [Troubleshooting Row Size Too Large Errors with InnoDB](troubleshooting-row-size-too-large-errors-with-innodb.md).
 
+
+CC BY-SA / Gnu FDL
+

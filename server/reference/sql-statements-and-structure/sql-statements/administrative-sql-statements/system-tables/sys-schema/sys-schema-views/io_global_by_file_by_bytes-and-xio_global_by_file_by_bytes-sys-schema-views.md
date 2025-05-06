@@ -86,3 +86,7 @@ total_written: 82944
     write_pct: 54.92
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

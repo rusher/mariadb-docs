@@ -28,3 +28,7 @@ SHOW INDEX_STATISTICS;
 | test         | employees_example | PRIMARY    |         1 |
 +--------------+-------------------+------------+-----------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -40,3 +40,7 @@ the command line, only those tables are updated.
 | -V | Display version information. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

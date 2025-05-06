@@ -37,3 +37,7 @@ DROP FUNCTION IF EXISTS mroonga_query_expand;
 CREATE FUNCTION mroonga_query_expand RETURNS STRING
   SONAME 'ha_mroonga.so';
 ```
+
+
+CC BY-SA / Gnu FDL
+

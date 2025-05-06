@@ -60,3 +60,6 @@ This **never happened with SQL Server**, even under simultaneous access.
 
 Any help or insight would be very welcome! :) Thanks in advance.
 
+
+CC BY-SA / Gnu FDL
+

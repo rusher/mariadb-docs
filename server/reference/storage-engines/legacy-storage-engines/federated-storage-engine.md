@@ -6,3 +6,6 @@ The FEDERATED Storage Engine is a legacy storage engine no longer being supporte
 
 The FEDERATED Storage Engine was originally designed to let one access data remotely without using clustering or replication, and perform local queries that automatically access the remote data.
 
+
+CC BY-SA / Gnu FDL
+

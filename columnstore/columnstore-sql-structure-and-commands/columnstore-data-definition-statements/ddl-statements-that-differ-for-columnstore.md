@@ -17,3 +17,7 @@ The following table lists the data definition statements (DDL) that differ from 
 | [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index) | ColumnStore doesn't need indexes. Hence an index many not be created on a table that is defined with engine=columnstore |
 
 
+
+
+CC BY-SA / Gnu FDL
+

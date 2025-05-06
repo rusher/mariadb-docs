@@ -67,3 +67,6 @@ As you can see from this article, [mariadb-dump](../clients-and-utilities/backup
 
 * [Devart backup tutorial](https://blog.devart.com/mysql-backup-tutorial.html)
 
+
+CC BY-SA / Gnu FDL
+

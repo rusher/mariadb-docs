@@ -90,3 +90,6 @@ AAAAAAAAAAAEEwQAAatbouA=
 ...
 ```
 
+
+CC BY-SA / Gnu FDL
+

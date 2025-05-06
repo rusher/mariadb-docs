@@ -75,3 +75,6 @@ SHOW VARIABLES LIKE 'collation%';
 * [Setting Character Sets and Collations](setting-character-sets-and-collations.md)
 * [SET NAMES](set-names.md)
 
+
+CC BY-SA / Gnu FDL
+

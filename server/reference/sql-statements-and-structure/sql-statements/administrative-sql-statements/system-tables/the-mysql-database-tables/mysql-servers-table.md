@@ -49,3 +49,7 @@ Server_name: s
     Wrapper: mariadb
       Owner:
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -53,3 +53,6 @@ Other tables that can be used to monitor XtraDB/InnoDB compressed tables:
 * [INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET](information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
 * [INNODB_CMPMEM and INNODB_CMPMEM_RESET](information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -170,3 +170,6 @@ END;
 * [Stored Routines](../stored-routines/README.md)
 * [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -276,3 +276,7 @@ SELECT * FROM r;
 |    1 | NULL |    1 |
 +------+------+------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

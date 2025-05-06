@@ -15,3 +15,6 @@ where n is:
 * 1) (the default) query syntax is evaluated by ColumnStore for compatibility with distributed execution and incompatible queries are rejected. Queries executed in this mode take advantage of distributed execution and typically result in higher performance.
 * 2) auto-switch mode: ColumnStore will attempt to process the query internally, if it cannot, it will automatically switch the query to run in row-by-row mode.
 
+
+CC BY-SA / Gnu FDL
+

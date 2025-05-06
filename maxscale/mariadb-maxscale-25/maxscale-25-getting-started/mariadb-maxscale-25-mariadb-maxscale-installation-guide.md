@@ -79,3 +79,7 @@ functionality.
 
 [The administration tutorial](../maxscale-25-tutorials/mariadb-maxscale-25-mariadb-maxscale-administration-tutorial.md)
 covers the common administration tasks that need to be done with MariaDB MaxScale.
+
+
+CC BY-SA / Gnu FDL
+

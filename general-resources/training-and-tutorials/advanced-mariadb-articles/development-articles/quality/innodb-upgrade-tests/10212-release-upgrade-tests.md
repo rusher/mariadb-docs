@@ -335,3 +335,7 @@ Crash recovery with encryption also fails due to [MDEV-13103](https://jira.maria
 | undo | 8 | 5.6.38 (inbuilt) |  | - | - | => | 10.2.12 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

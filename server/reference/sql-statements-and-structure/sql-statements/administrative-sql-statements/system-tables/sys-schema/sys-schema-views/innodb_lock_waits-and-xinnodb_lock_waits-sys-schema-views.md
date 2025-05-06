@@ -53,3 +53,7 @@ They contain the following columns:
 | sql_kill_blocking_connection | KILL statement that could be used to kill the blocking statement session. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

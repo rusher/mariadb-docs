@@ -34,3 +34,6 @@ SELECT ST_AsGeoJSON(ST_GeomFromText('POINT(5.3 7.2)'));
 
 * [ST_GeomFromGeoJSON](st_geomfromgeojson.md)
 
+
+CC BY-SA / Gnu FDL
+

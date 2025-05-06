@@ -208,3 +208,7 @@ As you can see in the previous screenshot, the form view that the OpenShift cons
 
 
 ![](../../../.gitbook/assets/assets/openshift-yaml.png.png)
+
+
+CC BY-SA / Gnu FDL
+

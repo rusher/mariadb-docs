@@ -399,3 +399,7 @@ Linux program iconv is one utility to convert it.
 ```
 iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
 ```
+
+
+CC BY-SA / Gnu FDL
+

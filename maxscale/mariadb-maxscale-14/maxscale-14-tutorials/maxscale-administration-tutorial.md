@@ -328,3 +328,7 @@ MaxScale> clear server dbserver3 maintenance
 
 
 Note that maintenance mode is not persistent, if MaxScale restarts when a node is in maintenance mode a new instance of MaxScale will not honor this mode. If multiple MaxScale instances are configured to use the node them maintenance mode must be set within each MaxScale instance. However if multiple services within one MaxScale instance are using the server then you only need set the maintenance mode once on the server for all services to take note of the mode change.
+
+
+CC BY-SA / Gnu FDL
+

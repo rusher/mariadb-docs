@@ -28,3 +28,6 @@ $ cmake --build . --target package
 * [Installing MariaDB RPM Files](../binary-packages/rpm/README.md)
 * [MariaDB RPM Packages](../../../clients-and-utilities/server-client-software/download/mariadb-rpm-packages.md)
 
+
+CC BY-SA / Gnu FDL
+

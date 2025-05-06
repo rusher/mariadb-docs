@@ -67,3 +67,6 @@ From [MariaDB 10.5.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-co
 * [BACKUP STAGE](backup-stage.md)
 * [MDEV-17309](https://jira.mariadb.org/browse/MDEV-17309) - BACKUP LOCK: DDL locking of tables during backup
 
+
+CC BY-SA / Gnu FDL
+

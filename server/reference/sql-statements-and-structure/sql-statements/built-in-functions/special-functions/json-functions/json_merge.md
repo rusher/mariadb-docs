@@ -44,3 +44,6 @@ SELECT JSON_MERGE(@json1,@json2);
 * [JSON_MERGE_PATCH](json_merge_patch.md)
 * [JSON_MERGE_PRESERVE](json_merge_preserve.md)
 
+
+CC BY-SA / Gnu FDL
+

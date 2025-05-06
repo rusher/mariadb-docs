@@ -71,3 +71,7 @@ The replace program is used by [msql2mysql](msql2mysql.md).
 | -V | Display version information and exit. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

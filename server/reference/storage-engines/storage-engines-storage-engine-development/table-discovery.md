@@ -138,3 +138,6 @@ Before table discovery was introduced, MariaDB used `.frm` files to store the ta
 
 The cache is completely transparent for a user; MariaDB makes sure that it always stores the actual table definition and invalidates the `.frm` file automatically when it becomes out of date. This can happen, for example, if a user copies a new [Archive](../archive/README.md) table into the datadir and forgets to delete the `.frm` file of the old table with the same name.
 
+
+CC BY-SA / Gnu FDL
+

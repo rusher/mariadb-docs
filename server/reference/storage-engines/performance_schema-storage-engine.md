@@ -24,3 +24,6 @@ The [SHOW ENGINE PERFORMANCE_SCHEMA STATUS](../sql-statements-and-structure/sql-
 
 See [Performance Schema](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/README.md) for more details.
 
+
+CC BY-SA / Gnu FDL
+

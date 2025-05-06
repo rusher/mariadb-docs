@@ -74,3 +74,6 @@ bzr commit -m 'pcre-8.34 mergetree initial merge'
 
 Now see [Merging with a merge tree](merging-with-a-merge-tree.md).
 
+
+CC BY-SA / Gnu FDL
+

@@ -44,3 +44,7 @@ SELECT * FROM information_schema.ENABLED_ROLES;
 | staff     |
 +-----------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

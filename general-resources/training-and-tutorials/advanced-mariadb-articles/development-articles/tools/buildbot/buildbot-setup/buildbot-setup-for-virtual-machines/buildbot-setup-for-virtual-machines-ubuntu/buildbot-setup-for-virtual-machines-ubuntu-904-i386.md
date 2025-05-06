@@ -150,3 +150,7 @@ Prepare initial MySQL install with some test data.
 sudo apt-get install mysql-server-5.1
 mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"
 ```
+
+
+CC BY-SA / Gnu FDL
+

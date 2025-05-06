@@ -56,3 +56,6 @@ Given this kind of structure, the database gives you a way to manipulate this da
 * [What is an RDBMS?](https://www.devart.com/what-is-rdbms/)
 * [DBMS vs RDBMS: Definitions, Differences, and a Comparison Table](https://www.devart.com/difference-between-rdbms-and-dbms/)
 
+
+CC BY-SA / Gnu FDL
+

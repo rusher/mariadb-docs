@@ -299,3 +299,6 @@ optimizations, and debugging tips.
 
 Original source: [pivot](https://mysql.rjweb.org/doc.php/pivot)
 
+
+CC BY-SA / Gnu FDL
+

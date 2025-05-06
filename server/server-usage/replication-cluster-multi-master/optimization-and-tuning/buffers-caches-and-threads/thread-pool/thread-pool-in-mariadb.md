@@ -353,3 +353,6 @@ The [thread_cache_size](../../system-variables/server-system-variables.md#thread
 * [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
 * [Thread Pool in MariaDB 5.1 - 5.3](thread-pool-in-mariadb-51-53.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -4,7 +4,7 @@
 ## Instructions on compiling MariaDB on musl-based operating systems (Alpine)
 
 
-The instructions on this page will help you compile [MariaDB](/kb/en/mariadb/) from source.
+The instructions on this page will help you compile [MariaDB](/en/mariadb/) from source.
 Links to more complete instructions for specific platforms can be found on the
 [source](README.md) page.
 
@@ -33,4 +33,7 @@ sudo make install
 ```
 
 Note that building with MariaDB this way will disable tokuDB, till tokuDB becomes fully supported on musl.
+
+
+CC BY-SA / Gnu FDL
 

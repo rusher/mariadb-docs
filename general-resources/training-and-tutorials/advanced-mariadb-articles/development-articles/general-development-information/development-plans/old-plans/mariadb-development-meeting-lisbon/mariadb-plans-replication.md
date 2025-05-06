@@ -43,3 +43,6 @@ So far discussed:
   * Most important [MWL#120](https://askmonty.org/worklog/?tid=120) and [MWL#133](https://askmonty.org/worklog/?tid=133), for obtaining and applying events.
   * Then a mechanism for prioritising transactions.
 
+
+CC BY-SA / Gnu FDL
+

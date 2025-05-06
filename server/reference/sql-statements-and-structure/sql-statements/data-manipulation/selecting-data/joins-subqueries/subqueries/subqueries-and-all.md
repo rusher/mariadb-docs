@@ -95,3 +95,7 @@ INSERT INTO sq2 VALUES (NULL);
 
 SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
 ```
+
+
+CC BY-SA / Gnu FDL
+

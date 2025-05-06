@@ -42,3 +42,6 @@ open source project. MariaDB is a community open source project because:
 * Anyone can contribute articles or make changes to the MariaDB Knowledge Base.
 * The MariaDB Foundation manages the MariaDB trademark, but gives broad rights to it to others.
 
+
+CC BY-SA / Gnu FDL
+

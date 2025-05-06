@@ -20,3 +20,6 @@ Below are links to video presentations made a various conferences. The main topi
 
 * [MariaDB Foundation YouTube channel](https://www.youtube.com/c/MariaDBFoundation)
 
+
+CC BY-SA / Gnu FDL
+

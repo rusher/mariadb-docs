@@ -153,3 +153,7 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=34;
 |             34 | entry2          | val2               |                8 |
 +----------------+-----------------+--------------------+------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

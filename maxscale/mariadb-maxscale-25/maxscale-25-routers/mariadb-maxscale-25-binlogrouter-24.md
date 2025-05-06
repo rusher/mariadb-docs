@@ -666,3 +666,7 @@ master_host=192.168.121.76
 ...
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

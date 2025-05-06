@@ -28,3 +28,6 @@ Source: [MDEV-3926, Comment by Sergei Golubchik](https://jira.mariadb.org/browse
 * [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)
 * [ORDER BY](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md)
 
+
+CC BY-SA / Gnu FDL
+

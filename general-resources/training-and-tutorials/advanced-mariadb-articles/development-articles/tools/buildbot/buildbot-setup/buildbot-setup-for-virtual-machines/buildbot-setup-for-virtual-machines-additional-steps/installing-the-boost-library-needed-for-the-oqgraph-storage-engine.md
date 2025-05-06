@@ -70,3 +70,6 @@ sudo ln -s ../src/boost_1_49_0/boost .
 sudo /sbin/shutdown -h now
 ```
 
+
+CC BY-SA / Gnu FDL
+

@@ -38,3 +38,7 @@ SELECT ASTEXT(ST_SYMDIFFERENCE(@g1,@g2));
 | LINESTRING(10 40,10 41)           |
 +-----------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

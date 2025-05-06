@@ -76,3 +76,6 @@ For compatibility with some other database systems, MariaDB supports the [JSON](
   * Subpartitions.
 * [Progress reporting](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for some typically expensive statements.
 
+
+CC BY-SA / Gnu FDL
+

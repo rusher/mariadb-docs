@@ -89,3 +89,7 @@ CREATE OR REPLACE TABLE t1 (
     PARTITION p2 DEFAULT
   );
 ```
+
+
+CC BY-SA / Gnu FDL
+

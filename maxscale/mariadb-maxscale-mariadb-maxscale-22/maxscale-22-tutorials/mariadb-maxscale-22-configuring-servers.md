@@ -33,3 +33,7 @@ protocol=MariaDBBackend
 
 The `address` and `port` parameters tell where the server is located. The
 `protocol` should always be set to `MariaDBBackend`.
+
+
+CC BY-SA / Gnu FDL
+

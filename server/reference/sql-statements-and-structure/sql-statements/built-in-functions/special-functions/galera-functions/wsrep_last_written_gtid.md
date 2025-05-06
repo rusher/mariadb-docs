@@ -13,3 +13,6 @@ WSREP_LAST_WRITTEN_GTID()
 
 Returns the [Global Transaction ID](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md) of the most recent write transaction performed by the client.
 
+
+CC BY-SA / Gnu FDL
+

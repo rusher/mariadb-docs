@@ -75,3 +75,7 @@ Removing a default role for another user
 ```
 SET DEFAULT ROLE NONE FOR taniel;
 ```
+
+
+CC BY-SA / Gnu FDL
+

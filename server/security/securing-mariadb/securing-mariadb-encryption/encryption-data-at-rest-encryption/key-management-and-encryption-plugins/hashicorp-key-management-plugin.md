@@ -156,3 +156,6 @@ The plugin supports the following parameters, which must be set in advance and c
 
 * [HashiCorp Vault and MariaDB](../../../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb.md)
 
+
+CC BY-SA / Gnu FDL
+

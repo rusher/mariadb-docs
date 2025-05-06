@@ -35,3 +35,7 @@ SELECT * FROM information_schema.GLOBAL_STATUS;
 | UPTIME_SINCE_FLUSH_STATUS                     | 57358              |
 +-----------------------------------------------+--------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

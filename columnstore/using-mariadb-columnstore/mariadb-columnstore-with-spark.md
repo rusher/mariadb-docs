@@ -214,3 +214,6 @@ df = DataFrameReader(sqlContext).jdbc(url='%s' % url,
                                       properties=properties)
 ```
 
+
+CC BY-SA / Gnu FDL
+

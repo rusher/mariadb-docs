@@ -369,3 +369,6 @@ where (salary_ranks.ranking <= 5)
 * [Window Frames](window-frames.md)
 * [Introduction to Window Functions in MariaDB Server 10.2](https://mariadb.com/resources/blog/introduction-window-functions-mariadb-server-102)
 
+
+CC BY-SA / Gnu FDL
+

@@ -136,3 +136,7 @@ Number of system rows inserted 0, updated 0, deleted 0, read 0
 END OF INNODB MONITOR OUTPUT
 ============================
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -242,3 +242,7 @@ Known bug [MDEV-13112](https://jira.mariadb.org/browse/MDEV-13112). A few upgrad
 | undo | 8 | 5.6.39 (inbuilt) |  | - | - | => | 10.1.32 (inbuilt) |  | - | - | - | FAIL | TEST_FAILURE |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -103,3 +103,6 @@ This restriction does not apply if only non-transactional storage engines are us
 
 * [Replication and Foreign Keys](replication-and-foreign-keys.md)
 
+
+CC BY-SA / Gnu FDL
+

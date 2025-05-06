@@ -68,3 +68,7 @@ This is a speed optimization. Also, since functions can have side-effects, this 
 ```
 SELECT some_function() OR log_error();
 ```
+
+
+CC BY-SA / Gnu FDL
+

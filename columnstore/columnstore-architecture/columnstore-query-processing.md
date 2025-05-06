@@ -15,3 +15,6 @@ MariaDB ColumnStore processes an end user query from the user to User and Perfor
 1. The MariaDB Server performs any select list functions, `ORDER BY` and `LIMIT` operations on the result-set.
 1. The MariaDB Server returns the result-set to the client.
 
+
+CC BY-SA / Gnu FDL
+

@@ -83,3 +83,6 @@ This page documents system variables related to the [Cassandra storage engine](R
 * Valid Values: `ONE`, `TWO`, `THREE`, `ANY`, `ALL`, `QUORUM`, `EACH_QUORUM`, `LOCAL_QUORUM`, ``
 
 
+
+CC BY-SA / Gnu FDL
+

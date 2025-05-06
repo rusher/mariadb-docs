@@ -47,3 +47,6 @@ SELECT @x, @y := @x;
 
 * [Operator Precedence](../operator-precedence.md)
 
+
+CC BY-SA / Gnu FDL
+

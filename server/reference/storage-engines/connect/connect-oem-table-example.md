@@ -183,3 +183,6 @@ This will work with the last (not yet) distributed versions of [MariaDB 10.0](ht
 
 To implement for older versions that do not contain the MONGO type, you can add the corresponding source files, namely `javaconn.cpp`, `jmgfam.cpp`, `jmgoconn.cpp`, `mongo.cpp` and `tabjmg.cpp` that you should find in the CONNECT extracted source files if you downloaded a recent version. As they include `my_global.h`, this is the reason why the included file was named this way. In addition, your compiling should define `HAVE_JMGO` and `HAVE_JAVACONN`. Of course, this is possible only if `ha_connect.lib` is available.
 
+
+CC BY-SA / Gnu FDL
+

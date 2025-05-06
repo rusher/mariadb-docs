@@ -176,3 +176,7 @@ Failed, x.x.x.x has a different OS than local node
 
 Failure occurred, do you want to continue? (y,n) > n
 ```
+
+
+CC BY-SA / Gnu FDL
+

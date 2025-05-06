@@ -24,3 +24,6 @@ This is a list of [system variables](../server-system-variables.md) that have be
 
 * [System Variables Added in MariaDB 11.6](system-variables-added-in-mariadb-11-6.md)
 
+
+CC BY-SA / Gnu FDL
+

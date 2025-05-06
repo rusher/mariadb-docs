@@ -24,3 +24,7 @@ To do this run the following on PM1:
 ```
 mscadmin distributeconfigfile
 ```
+
+
+CC BY-SA / Gnu FDL
+

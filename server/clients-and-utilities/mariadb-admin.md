@@ -329,3 +329,6 @@ You can use the [SHUTDOWN](../reference/sql-statements-and-structure/sql-stateme
  MariaDB/MySQL that allows you to see what the server is doing. A mytop
  optimized for MariaDB is included in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
+
+CC BY-SA / Gnu FDL
+

@@ -17,3 +17,6 @@ COM_PING permits sending a packet containing one byte to check that the connecti
 
 [OK_Packet](../4-server-response-packets/ok_packet.md)
 
+
+CC BY-SA / Gnu FDL
+

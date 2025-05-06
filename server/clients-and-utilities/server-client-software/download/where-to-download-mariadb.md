@@ -69,3 +69,6 @@ general instructions on compiling MariaDB from the source.
 The [source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/README.md) page has links to platform and distribution-specific
 information, including information on how we build the release packages.
 
+
+CC BY-SA / Gnu FDL
+

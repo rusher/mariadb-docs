@@ -52,3 +52,6 @@ Other tables that can be used to monitor InnoDB compressed tables:
 * [INNODB_CMP and INNODB_CMP_RESET](information-schema-innodb_cmp-and-innodb_cmp_reset-tables.md)
 * [INNODB_CMP_PER_INDEX and INNODB_CMP_PER_INDEX_RESET](information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
 
+
+CC BY-SA / Gnu FDL
+

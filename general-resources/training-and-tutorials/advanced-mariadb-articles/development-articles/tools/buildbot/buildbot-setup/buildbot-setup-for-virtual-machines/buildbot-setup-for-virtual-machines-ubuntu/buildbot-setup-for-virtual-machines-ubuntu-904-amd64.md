@@ -91,3 +91,7 @@ kvm -m 1024 -hda vm-jaunty-amd64-install.qcow2 -cdrom /kvm/ubuntu-9.04-server-am
 
 sudo adduser --system --group mysql
 ```
+
+
+CC BY-SA / Gnu FDL
+

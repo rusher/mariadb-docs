@@ -56,3 +56,6 @@ id	select_type	table	type	possible_keys	key	key_len	ref	rows	Extra
 * [FORCE INDEX](force-index.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
+
+CC BY-SA / Gnu FDL
+

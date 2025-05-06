@@ -316,3 +316,6 @@ The MariaDB entrypoint briefly starts as root, and if a explicit volume is there
 
 Yes. using the *user: 2022* in a compose file, or *--user 2022* as a command will run the entrypoint as the user id 2022. When this occurs, it is assumed that the volume of the datadir has the right permissions for MariaDB to access the datadir. This can be useful if your local user is user id 2022 and your datadir is owned locally by this user. Note inside the container there isn't the same user names outside the container defined, so working with numbers is more portable.
 
+
+CC BY-SA / Gnu FDL
+

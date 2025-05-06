@@ -13,3 +13,6 @@
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 * [mroonga_snippet](mroonga_snippet.md)
 
+
+CC BY-SA / Gnu FDL
+

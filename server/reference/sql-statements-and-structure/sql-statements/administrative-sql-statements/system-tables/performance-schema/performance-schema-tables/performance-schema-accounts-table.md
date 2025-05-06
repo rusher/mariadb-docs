@@ -37,3 +37,7 @@ SELECT * FROM performance_schema.accounts;
 | debian-sys-maint | localhost |                   0 |                35 |
 +------------------+-----------+---------------------+-------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

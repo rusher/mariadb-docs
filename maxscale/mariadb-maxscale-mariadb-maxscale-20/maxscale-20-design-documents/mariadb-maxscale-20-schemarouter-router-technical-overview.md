@@ -35,3 +35,7 @@ After the session ends the closeSession is called where the session is set to a 
 
 
 ![](../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Design-Documents/schemarouter-lifecycle.png.png)
+
+
+CC BY-SA / Gnu FDL
+

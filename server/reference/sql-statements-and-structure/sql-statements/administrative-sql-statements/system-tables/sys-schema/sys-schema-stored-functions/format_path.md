@@ -44,3 +44,7 @@ SELECT sys.format_path('/home/ian/sandboxes/msb_10_8_2/tmp/testdb.ibd');
 | @@tmpdir/testdb.ibd                                              |
 +------------------------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

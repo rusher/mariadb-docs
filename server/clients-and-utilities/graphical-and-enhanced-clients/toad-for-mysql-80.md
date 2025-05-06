@@ -30,3 +30,6 @@
 
 * Import/export utility.
 
+
+CC BY-SA / Gnu FDL
+

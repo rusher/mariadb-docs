@@ -130,3 +130,7 @@ For a fully automated read/write splitting setup, read the
 [Read Write Splitting Tutorial](../../mariadb-maxscale-21-06/README.md).
 For a simpler connection based setup, read the
 [Connection Routing Tutorial](mariadb-maxscale-22-connection-routing-with-mariadb-maxscale.md).
+
+
+CC BY-SA / Gnu FDL
+

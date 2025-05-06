@@ -159,3 +159,6 @@ For more information about the systems mentioned in this page, from MariaDB user
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

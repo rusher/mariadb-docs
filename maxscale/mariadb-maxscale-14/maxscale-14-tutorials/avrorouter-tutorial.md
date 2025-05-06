@@ -218,3 +218,7 @@ File sync marker: caaed7778bbe58e701eec1f96d7719a
 /home/markusjm/build/avrodata/test.t1.000001.avro: 1 blocks, 1 records and 12 bytes
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

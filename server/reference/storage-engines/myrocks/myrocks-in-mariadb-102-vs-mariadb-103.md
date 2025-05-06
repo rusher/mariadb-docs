@@ -9,3 +9,6 @@ MyRocks storage engine itself is identical in [MariaDB 10.2](https://app.gitbook
 
 For further information, see [mysql.gtid_slave_pos table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md).
 
+
+CC BY-SA / Gnu FDL
+

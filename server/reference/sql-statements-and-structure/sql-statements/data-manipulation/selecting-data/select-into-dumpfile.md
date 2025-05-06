@@ -49,3 +49,6 @@ SELECT LOAD_FILE('/tmp/world') AS world;
 * [SELECT INTO Variable](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/selectinto.md)
 * [SELECT INTO OUTFILE](select-into-outfile.md)
 
+
+CC BY-SA / Gnu FDL
+

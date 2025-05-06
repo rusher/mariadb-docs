@@ -565,3 +565,7 @@ configuring the Avro C library.
 For more details about building MaxScale from source, please refer to the
 [Building MaxScale from Source Code](../maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md)
 document.
+
+
+CC BY-SA / Gnu FDL
+

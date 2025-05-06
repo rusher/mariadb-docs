@@ -92,3 +92,7 @@ SUM_NUMBER_OF_BYTES_WRITE: 0
            MAX_TIMER_MISC: 0
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

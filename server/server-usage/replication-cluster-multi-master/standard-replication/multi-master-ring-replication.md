@@ -216,3 +216,6 @@ Some other options:
 
 * [Multi-source replication](multi-source-replication.md)
 
+
+CC BY-SA / Gnu FDL
+

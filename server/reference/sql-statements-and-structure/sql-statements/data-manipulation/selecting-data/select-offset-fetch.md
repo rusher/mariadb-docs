@@ -121,3 +121,6 @@ SELECT i FROM t1 ORDER BY i ASC OFFSET 1 ROWS FETCH FIRST 3 ROWS WITH TIES;
 * [ORDER BY](order-by.md)
 * [SELECT](select.md)
 
+
+CC BY-SA / Gnu FDL
+

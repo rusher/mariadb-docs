@@ -107,3 +107,7 @@ module_telnetd_api      1.0.0
 module_telnetd_releasestatus    GA
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

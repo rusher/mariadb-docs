@@ -100,3 +100,6 @@ $ cat csv_test.CSV
 
 * [Checking and Repairing CSV Tables](checking-and-repairing-csv-tables.md)
 
+
+CC BY-SA / Gnu FDL
+

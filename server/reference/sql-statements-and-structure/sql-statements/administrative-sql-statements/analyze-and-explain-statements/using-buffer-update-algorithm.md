@@ -45,3 +45,6 @@ This way, each row will be updated only once.
 
 The `Using buffer` [EXPLAIN](explain.md) output indicates that the buffer as described above will be used.
 
+
+CC BY-SA / Gnu FDL
+

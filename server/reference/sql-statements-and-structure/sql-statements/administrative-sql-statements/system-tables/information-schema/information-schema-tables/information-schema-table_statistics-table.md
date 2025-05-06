@@ -38,3 +38,7 @@ SELECT * FROM INFORMATION_SCHEMA.TABLE_STATISTICS WHERE TABLE_NAME='user';
 | mysql        | user       |         5 |            2 |                      2 |
 +--------------+------------+-----------+--------------+------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

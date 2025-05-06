@@ -51,3 +51,7 @@ sql_query = \
   SELECT id, group_id, UNIX_TIMESTAMP(date_added) AS date_added, title, content \
   FROM documents
 ```
+
+
+CC BY-SA / Gnu FDL
+

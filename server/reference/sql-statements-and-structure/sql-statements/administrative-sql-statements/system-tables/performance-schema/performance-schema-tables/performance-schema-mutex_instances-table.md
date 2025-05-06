@@ -22,3 +22,7 @@ The [performance_schema_max_mutex_instances](../performance-schema-system-variab
 | LOCKED_BY_THREAD_ID | The THREAD_ID of the locking thread if a thread has a mutex locked, otherwise NULL. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

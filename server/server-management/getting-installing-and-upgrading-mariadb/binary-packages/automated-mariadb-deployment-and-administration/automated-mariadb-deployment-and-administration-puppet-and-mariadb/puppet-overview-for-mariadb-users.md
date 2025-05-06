@@ -229,3 +229,6 @@ More information about the topics discussed in this page can be found in the Ans
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

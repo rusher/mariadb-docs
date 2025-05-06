@@ -177,3 +177,6 @@ Query OK, 0 rows affected (0.000 sec)
 
 * [LOOP](loop.md)
 
+
+CC BY-SA / Gnu FDL
+

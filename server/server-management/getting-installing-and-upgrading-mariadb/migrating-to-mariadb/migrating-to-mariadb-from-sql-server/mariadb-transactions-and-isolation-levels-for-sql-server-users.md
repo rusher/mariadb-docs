@@ -474,3 +474,6 @@ The latest detected deadlock never disappears from the output of `SHOW ENGINE In
 
 Another way to monitor deadlocks is to set [innodb_print_all_deadlocks](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) to 1 (0 is the default). InnoDB will log all detected deadlocks into the [error log](../../../server-monitoring-logs/error-log.md).
 
+
+CC BY-SA / Gnu FDL
+

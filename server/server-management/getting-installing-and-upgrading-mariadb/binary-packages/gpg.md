@@ -81,3 +81,6 @@ See the [this page](https://mariadb.com/kb/en/repo/#configure-mariadb-repository
 
 See the [this page](https://downloads.mariadb.org/mariadb/repositories/) for details on configuring MariaDB Foundation repositories that use these keys.
 
+
+CC BY-SA / Gnu FDL
+

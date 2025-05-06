@@ -1246,3 +1246,6 @@ disk when the operation took more than one second.
 * Description: Number of transactions that have been committed.
 
 
+
+CC BY-SA / Gnu FDL
+

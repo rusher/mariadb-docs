@@ -39,3 +39,7 @@ Signal 1 is used if the kill() system call cannot handle signal 0
 | -V, --version | Print version information and exit |
 
 
+
+
+CC BY-SA / Gnu FDL
+

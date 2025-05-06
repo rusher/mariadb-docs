@@ -523,3 +523,7 @@ port=3306
 * Only replication from MariaDB servers (including Galera) is supported.
 * The MariaDB server where the replication is done from must be configured with
  `binlog_checksum=CRC32`.
+
+
+CC BY-SA / Gnu FDL
+

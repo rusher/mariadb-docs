@@ -29,3 +29,6 @@ Database Workbench comes in multiple editions and is licensed on a per module ba
 
 ![dbwoverview](../../.gitbook/assets/database-workbench/+image/dbwoverview.jpg "dbwoverview")
 
+
+CC BY-SA / Gnu FDL
+

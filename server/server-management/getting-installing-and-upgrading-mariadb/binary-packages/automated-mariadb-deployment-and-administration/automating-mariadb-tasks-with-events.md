@@ -54,3 +54,6 @@ Some examples of tasks that could easily be automated with events:
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

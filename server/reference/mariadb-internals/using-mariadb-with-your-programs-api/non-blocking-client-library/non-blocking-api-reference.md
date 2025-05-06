@@ -414,3 +414,6 @@ operations; no need to call any special `_start()` variant. (Even if a
 * mysql_get_timeout_value
 * mysql_get_timeout_value_ms
 
+
+CC BY-SA / Gnu FDL
+

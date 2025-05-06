@@ -34,3 +34,7 @@ WHERE TABLE_NAME = "author";
 | books        | author     | by_name    |        15 |
 +--------------+------------+------------+-----------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

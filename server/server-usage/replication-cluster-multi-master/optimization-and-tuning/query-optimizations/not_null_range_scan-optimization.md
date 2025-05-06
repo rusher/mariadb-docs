@@ -82,3 +82,6 @@ TODO.
 * [MDEV-15777](https://jira.mariadb.org/browse/MDEV-15777) - JIRA bug report which resulted in the optimization
 * [NULL Filtering Optimization](https://dev.mysql.com/doc/internals/en/optimizer-nulls-filtering.html) is a related optimization in MySQL and MariaDB. It uses inferred NOT NULL conditions to perform filtering (but not index access)
 
+
+CC BY-SA / Gnu FDL
+

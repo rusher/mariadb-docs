@@ -72,3 +72,7 @@ CREATE TABLE sale(
   FOREIGN KEY(customer_code) REFERENCES customer(customer_code)
 );
 ```
+
+
+CC BY-SA / Gnu FDL
+

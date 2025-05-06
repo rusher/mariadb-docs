@@ -80,3 +80,7 @@ What would you like to do:
      (user will have all permission fields set to N)
   0. exit this program
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -100,3 +100,7 @@ SELECT JSON_SCHEMA_VALID(@schema, '{ "number1":10, "string1":"ab" }');
 |                                                              1 |
 +----------------------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

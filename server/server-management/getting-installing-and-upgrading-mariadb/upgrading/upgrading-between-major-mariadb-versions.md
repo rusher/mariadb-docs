@@ -133,3 +133,6 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 * [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/)
 * [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
+
+CC BY-SA / Gnu FDL
+

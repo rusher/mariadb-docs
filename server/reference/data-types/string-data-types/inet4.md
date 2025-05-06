@@ -85,3 +85,7 @@ SELECT LEAST(i4,i6) FROM t1;
 | ::ffff:10.10.10.10 |
 +--------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

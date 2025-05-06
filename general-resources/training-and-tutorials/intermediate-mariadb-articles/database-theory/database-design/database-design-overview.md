@@ -16,3 +16,6 @@ A database is much more flexible; a similar set of data to what's in a phone boo
 * Real-world example: creating a publishing tracking system
 * Concurrency control with transactions
 
+
+CC BY-SA / Gnu FDL
+

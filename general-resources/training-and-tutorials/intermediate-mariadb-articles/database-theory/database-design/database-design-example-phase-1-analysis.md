@@ -29,3 +29,6 @@ The designer asks various questions to get more detailed information, such as "W
 * A single sale can be for one publication, but many publications can also be purchased at the same time. If more than one customer is involved in this sale, Poet's Circle treats it as more than one sale. Each customer has their own sale.
 * Not all publications make sales — some may be special editions, and others simply never sell any copies.
 
+
+CC BY-SA / Gnu FDL
+

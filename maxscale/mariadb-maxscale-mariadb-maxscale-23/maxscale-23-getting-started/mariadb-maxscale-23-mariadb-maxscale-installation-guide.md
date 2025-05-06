@@ -79,3 +79,7 @@ There are a separate reference guides for the [maxctrl](../maxscale-23-reference
 
 [The administration tutorial](../maxscale-tutorials/mariadb-maxscale-23-mariadb-maxscale-administration-tutorial.md)
 covers the common administration tasks that need to be done with MariaDB MaxScale.
+
+
+CC BY-SA / Gnu FDL
+

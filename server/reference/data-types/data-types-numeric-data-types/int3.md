@@ -33,3 +33,7 @@ Create Table: CREATE TABLE `int3_example` (
   `example` mediumint(9) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
+
+
+CC BY-SA / Gnu FDL
+

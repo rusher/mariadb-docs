@@ -166,3 +166,7 @@ Both RPM and Debian packages are available for MaxScale in addition to the tar b
 * OpenSuSE 13
 * SuSE Linux Enterprise 11
 * SuSE Linux Enterprise 12
+
+
+CC BY-SA / Gnu FDL
+

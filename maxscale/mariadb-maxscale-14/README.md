@@ -36,3 +36,6 @@ MaxScale 1.4 reached end-of-life (EOL) in January, 2019.
 
 [Documentation for MariaDB MaxScale 1.4](https://id.mariadb.com/es-docs/pdf-download/pdfs/MariaDB%20MaxScale%201.4.pdf) is available as a downloadable PDF.
 
+
+CC BY-SA / Gnu FDL
+

@@ -384,3 +384,7 @@ One new (previously unknown) bug [MDEV-15912](https://jira.mariadb.org/browse/MD
 | undo | 8 | 5.6.39 (inbuilt) |  | - | - | => | 10.3.6 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

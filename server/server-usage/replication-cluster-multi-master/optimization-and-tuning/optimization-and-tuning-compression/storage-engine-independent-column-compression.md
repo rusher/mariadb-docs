@@ -130,3 +130,6 @@ CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);
 * [InnoDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md)
 * [InnoDB Compressed Row Format](../../../../reference/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
 
+
+CC BY-SA / Gnu FDL
+

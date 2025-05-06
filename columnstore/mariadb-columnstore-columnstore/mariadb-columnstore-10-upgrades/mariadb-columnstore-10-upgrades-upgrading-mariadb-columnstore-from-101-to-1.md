@@ -236,3 +236,6 @@ the Columnstore.xml,rpmsave
 
 `$HOMEMariaDB/Columnstore/bin/postConfigure -n`
 
+
+CC BY-SA / Gnu FDL
+

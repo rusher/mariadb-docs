@@ -119,3 +119,7 @@ case-insensitive by converting all names into their lowercase form.
 authenticator_options=lower_case_table_names=false
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -52,3 +52,7 @@ SELECT ST_CROSSES(@g1,@g2);
 |                   0 |
 +---------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

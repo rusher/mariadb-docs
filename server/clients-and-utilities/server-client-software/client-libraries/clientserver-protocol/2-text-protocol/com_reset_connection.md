@@ -31,3 +31,6 @@ Database will NOT be reset to initial value.
 
 [ERR_Packet](../4-server-response-packets/err_packet.md) or [OK_Packet](../4-server-response-packets/ok_packet.md)
 
+
+CC BY-SA / Gnu FDL
+

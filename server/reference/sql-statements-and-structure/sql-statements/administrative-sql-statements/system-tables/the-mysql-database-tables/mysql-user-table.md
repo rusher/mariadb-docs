@@ -103,3 +103,7 @@ If the specific authentication plugin uses the `authentication_string` column, t
 ```
 CREATE USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 ```
+
+
+CC BY-SA / Gnu FDL
+

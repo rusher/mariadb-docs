@@ -57,3 +57,7 @@ Whether the use of the replication protocol is allowed through this listener. If
 disabled with `mariadbprotocol.allow_replication=false`, all attempts to start
 replication will be rejected with a ER_FEATURE_DISABLED error (error number
 1289).
+
+
+CC BY-SA / Gnu FDL
+

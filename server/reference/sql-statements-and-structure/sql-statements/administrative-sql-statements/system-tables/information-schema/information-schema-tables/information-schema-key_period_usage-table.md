@@ -25,3 +25,6 @@ It contains the following columns:
 
 ## Example
 
+
+CC BY-SA / Gnu FDL
+

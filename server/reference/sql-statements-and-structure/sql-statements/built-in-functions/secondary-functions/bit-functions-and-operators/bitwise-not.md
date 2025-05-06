@@ -38,3 +38,6 @@ SELECT 5 & ~1;
 
 * [Operator Precedence](../../../../operators/operator-precedence.md)
 
+
+CC BY-SA / Gnu FDL
+

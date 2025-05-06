@@ -73,3 +73,7 @@ Two tests failed due to problems in previous versions (unrelated to the release)
 | downgrade | 8 | 10.0.36 (inbuilt) |  | - | - | => | 10.0.14 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

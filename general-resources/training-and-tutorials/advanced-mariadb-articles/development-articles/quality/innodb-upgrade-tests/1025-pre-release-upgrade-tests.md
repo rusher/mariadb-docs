@@ -333,3 +333,7 @@ All tests passed
 | 30 | normal | 8 | 5.7.17 (inbuilt) | - | - | => | 10.2.5 (inbuilt) | on | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

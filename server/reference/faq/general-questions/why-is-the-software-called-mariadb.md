@@ -11,3 +11,6 @@ MariaDB continues this tradition by being named after his younger daughter, Mari
 
 The name Maria was initially given to a storage engine. After MariaDB was started, to avoid confusion, it was renamed to Aria. [The new name](../../storage-engines/aria/the-aria-name.md) was decided as a result of a contest.
 
+
+CC BY-SA / Gnu FDL
+

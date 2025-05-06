@@ -100,3 +100,7 @@ perf record -e 'probe_ha_rocksdb:*' -p $(pidof mysqld) -- sleep 60
 ```
 perf script
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -179,3 +179,7 @@ spec:
 
 
 When the resources from the previous examples are created, a `Job` with both `mariadb-enterprise` and `backup-registry` `imagePullSecrets` will be reconciled.
+
+
+CC BY-SA / Gnu FDL
+

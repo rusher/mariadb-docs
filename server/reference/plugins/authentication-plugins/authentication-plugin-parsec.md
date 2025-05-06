@@ -63,3 +63,7 @@ install soname 'auth_parsec';
 ```
 create user test1@'%' identified via parsec using PASSWORD('pwd');
 ```
+
+
+CC BY-SA / Gnu FDL
+

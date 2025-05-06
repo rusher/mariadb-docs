@@ -128,3 +128,6 @@ cd galera
 
 When finished, you will have an RPM package containing galera library, arbitrator and related files in the current directory. Note: The same set of instructions can be applied to other RPM based platforms to generate galera package.
 
+
+CC BY-SA / Gnu FDL
+

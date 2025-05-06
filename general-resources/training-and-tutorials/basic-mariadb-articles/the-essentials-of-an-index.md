@@ -63,3 +63,6 @@ Where possible, you should create an index for each column that you search for r
 
 See [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index) and [Getting Started with Indexes](/kb/en/getting-started-with-indexes/) for more information.
 
+
+CC BY-SA / Gnu FDL
+

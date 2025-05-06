@@ -101,3 +101,7 @@ Once a full backup is prepared, it is a fully functional MariaDB data directory.
 $ rsync -avrP /var/mariadb/backup /var/lib/mysql/
 $ chown -R mysql:mysql /var/lib/mysql/
 ```
+
+
+CC BY-SA / Gnu FDL
+

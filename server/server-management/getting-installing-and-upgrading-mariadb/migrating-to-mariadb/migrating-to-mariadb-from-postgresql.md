@@ -142,3 +142,6 @@ PostgreSQL's [functions](https://www.postgresql.org/docs/current/sql-createfunct
 
 * [Set up and configure PostgreSQL ODBC drivers for the MySQL Workbench Migration Wizard](https://mysqlworkbench.org/2012/11/set-up-and-configure-postgresql-odbc-drivers-for-the-mysql-workbench-migration-wizard/)
 
+
+CC BY-SA / Gnu FDL
+

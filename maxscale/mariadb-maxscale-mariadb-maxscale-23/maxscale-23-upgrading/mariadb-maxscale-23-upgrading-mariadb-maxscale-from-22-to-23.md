@@ -84,3 +84,7 @@ password=some-monitor-password
 ...
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

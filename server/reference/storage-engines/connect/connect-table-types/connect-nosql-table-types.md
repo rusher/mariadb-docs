@@ -12,3 +12,6 @@ This is also different from what MariaDB does with dynamic columns, which is clo
 
 Note: The LEVEL option used with these tables should, from Connect 1.07.0002, be specified as DEPTH. Also, what was specified with the FIELD_FORMAT column option should now also be specified using JPATH or XPATH.
 
+
+CC BY-SA / Gnu FDL
+

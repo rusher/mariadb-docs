@@ -27,3 +27,6 @@ Statements containing the RANDOM_BYTES function are [unsafe for statement-based 
 
 An error occurs if *length* is outside the range 1 to 1024.
 
+
+CC BY-SA / Gnu FDL
+

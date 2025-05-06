@@ -108,3 +108,6 @@ EXISTS-to-IN doesn't handle
 * subqueries are UNIONs
 * a number of degenerate edge cases
 
+
+CC BY-SA / Gnu FDL
+

@@ -42,3 +42,6 @@ SELECT JSON_VALID('{"id": 1, "name": "Monty", "oddfield"}');
 
 * [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_VALID.
 
+
+CC BY-SA / Gnu FDL
+

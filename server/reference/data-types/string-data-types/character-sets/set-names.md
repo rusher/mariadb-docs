@@ -164,3 +164,6 @@ SELECT VARIABLE_NAME, SESSION_VALUE
 * [Setting Character Sets and Collations](setting-character-sets-and-collations.md)
 * [Character Sets and Collations](README.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -97,3 +97,7 @@ The source broker, the destination database and the message log file can be conf
 | dbuser | Database username |
 | dbpasswd | Database password |
 | logfile | Message log filename |
+
+
+CC BY-SA / Gnu FDL
+

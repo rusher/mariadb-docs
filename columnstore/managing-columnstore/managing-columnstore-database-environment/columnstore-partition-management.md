@@ -288,3 +288,7 @@ A bulk delete statement can be used to delete the remaining rows that do not fal
 ```
 delete from orders where orderdate <= '1998-12-31';
 ```
+
+
+CC BY-SA / Gnu FDL
+

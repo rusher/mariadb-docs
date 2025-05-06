@@ -22,3 +22,6 @@ Support for the UCA-14.0.0 collations was added in [MariaDB 10.10](https://app.g
 
 Support for the MySQL 8.0 UCA-9-0-0 (utf8mb4_0900_...) collations will be added to [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes)
 
+
+CC BY-SA / Gnu FDL
+

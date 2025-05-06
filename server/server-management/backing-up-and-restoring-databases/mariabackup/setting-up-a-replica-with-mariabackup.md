@@ -9,7 +9,7 @@ The terms *master* and *slave* have historically been used in replication, and M
 Mariabackup makes it very easy to set up a [replica](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) using a [full backup](full-backup-and-restore-with-mariabackup.md). This page documents how to set up a replica from a backup.
 
 
-If you are using [MariaDB Galera Cluster](/kb/en/galera/), then you may want to try one of the following pages instead:
+If you are using [MariaDB Galera Cluster](/en/galera/), then you may want to try one of the following pages instead:
 
 
 * [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](https://mariadb.com/kb/en/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/)
@@ -167,3 +167,7 @@ We should be done setting up the replica now, so we should check its status with
 ```
 SHOW SLAVE STATUS\G
 ```
+
+
+CC BY-SA / Gnu FDL
+

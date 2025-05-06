@@ -16,3 +16,6 @@ to the MariaDB project, then you need to give the code to the project under
 [BSD-NEW](https://en.wikipedia.org/wiki/BSD_licences#3-clause_license_.28.22New_BSD_License.22_or_.22Modified_BSD_License.22.29)
 or sign and email the [MariaDB Contributor Agreement](mca.md). See the [MCA FAQ](mariadb-contributor-agreement-faq.md) for more information on why we ask for copyright assignment.
 
+
+CC BY-SA / Gnu FDL
+

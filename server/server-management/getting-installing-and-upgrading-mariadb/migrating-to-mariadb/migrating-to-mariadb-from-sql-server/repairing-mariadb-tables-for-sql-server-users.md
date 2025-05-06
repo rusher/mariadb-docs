@@ -124,3 +124,6 @@ Notes on the different storage engines:
 * For [CSV](../../../../reference/storage-engines/csv/README.md), see [Checking and Rpairing CSV Tables](../../../../reference/storage-engines/csv/checking-and-repairing-csv-tables.md).
 * Some special storage engines, like [MEMORY](../../../../reference/storage-engines/memory-storage-engine.md) or [BLACKHOLE](../../../../reference/storage-engines/blackhole.md), do not support any form of check and repair.
 
+
+CC BY-SA / Gnu FDL
+

@@ -109,3 +109,6 @@ from t1;
 
 * [PERCENT_RANK()](percent_rank.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -1181,3 +1181,7 @@ The following metrics are available for `MaxScale` instances:
 | maxscale_up | Whether the Maxscale server is up. | GAUGE |
 | maxscale_uptime_seconds | Maxscale uptime in seconds | GAUGE |
 | maxscale_version | Maxscale Version | GAUGE |
+
+
+CC BY-SA / Gnu FDL
+

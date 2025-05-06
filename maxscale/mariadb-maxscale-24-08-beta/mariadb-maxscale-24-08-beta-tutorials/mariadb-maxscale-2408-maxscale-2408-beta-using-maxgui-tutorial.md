@@ -766,3 +766,7 @@ the diagram as follows:
 * Auto-arrange entities
 * Highlight relationship
 * Zoom control
+
+
+CC BY-SA / Gnu FDL
+

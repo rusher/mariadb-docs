@@ -31,3 +31,7 @@ SELECT AsText(GeometryN(GeomFromText(@gc),1));
 | POINT(1 1)                             |
 +----------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

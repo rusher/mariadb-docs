@@ -21,3 +21,6 @@ The following are the steps in the maintenance phase:
 1. Restore backups
 1. Change the design to meet new requirements
 
+
+CC BY-SA / Gnu FDL
+

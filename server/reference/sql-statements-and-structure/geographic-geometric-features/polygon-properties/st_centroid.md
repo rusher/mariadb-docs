@@ -30,3 +30,7 @@ SELECT ST_AsText(ST_Centroid(@poly)) AS center;
 | POINT(10 10) |
 +--------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -714,3 +714,7 @@ ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
 ) ;
 EOF
 ```
+
+
+CC BY-SA / Gnu FDL
+

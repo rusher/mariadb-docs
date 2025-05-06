@@ -88,3 +88,6 @@ If the [max_statement_time](../system-variables/server-system-variables.md#max_s
 * [Aborting statements that take longer than a certain time to execute](aborting-statements.md)
 * [lock_wait_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 
+
+CC BY-SA / Gnu FDL
+

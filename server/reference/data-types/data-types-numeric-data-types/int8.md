@@ -33,3 +33,7 @@ Create Table: CREATE TABLE `int8_example` (
   `example` bigint(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -519,3 +519,6 @@ show tables;
 
 You should see the tables.
 
+
+CC BY-SA / Gnu FDL
+

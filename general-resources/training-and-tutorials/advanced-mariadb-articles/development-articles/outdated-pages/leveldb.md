@@ -352,3 +352,6 @@ crash-proof slave. (note: this implies that semantics of operations over LevelDB
 
 * Milestone #2 is described at [leveldb-storage-engine-ms2](leveldb-storage-engine-ms2.md)
 
+
+CC BY-SA / Gnu FDL
+

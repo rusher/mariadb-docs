@@ -222,3 +222,7 @@ and in the [readwritesplit module documentation](../maxscale-22-routers/mariadb-
 
 More detail on the use of `maxadmin` can be found in the
 [MaxAdmin](../maxscale-22-reference/mariadb-maxscale-22-maxadmin-admin-interface.md) document.
+
+
+CC BY-SA / Gnu FDL
+

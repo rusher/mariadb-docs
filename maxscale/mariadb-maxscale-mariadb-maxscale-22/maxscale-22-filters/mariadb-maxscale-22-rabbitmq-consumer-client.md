@@ -104,3 +104,7 @@ configured into the separate `consumer.cnf` file.
 | dbuser | Database username |
 | dbpasswd | Database password |
 | logfile | Message log filename |
+
+
+CC BY-SA / Gnu FDL
+

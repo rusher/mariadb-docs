@@ -18,3 +18,6 @@ It will mostly work. It would need #ifdef's to adjust to MySQL-5.6 API, for exam
 
 Yes. You will need to recompile the storage engine against the exact version of MySQL or MariaDB you intend to run it on. This is due to the version of the server being stored in the storage engine binary, and the server will refuse to load it if it was compiled for a different version.
 
+
+CC BY-SA / Gnu FDL
+

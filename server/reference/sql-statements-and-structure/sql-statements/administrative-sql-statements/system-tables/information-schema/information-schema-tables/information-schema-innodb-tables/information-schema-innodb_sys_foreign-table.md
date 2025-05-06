@@ -51,3 +51,7 @@ REF_NAME: mysql/innodb_table_stats
     TYPE: 0
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

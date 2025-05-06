@@ -16,3 +16,6 @@ The [Information Schema](../README.md) `MROONGA_STATS` table only exists if the 
 
 This table always contains 1 row.
 
+
+CC BY-SA / Gnu FDL
+

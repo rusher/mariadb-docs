@@ -37,3 +37,7 @@ SELECT * FROM INNODB_SYS_DATAFILES;
 |    70 | ./test/t.ibd                   |
 +-------+--------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -79,3 +79,7 @@ SELECT * FROM csv_test;
 | 1 | 2013-07-08 | one |
 +---+------------+-----+
 ```
+
+
+CC BY-SA / Gnu FDL
+

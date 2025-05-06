@@ -36,3 +36,6 @@ It is rarely sufficient to rely on one level of management, or an individual, to
 
 Of course, although anything is possible given infinite time and money, this is (usually) never forthcoming. Determining scope, and formalizing it, is an important part of the project. If the budget is for one month's work but the ideal solution requires three, the designer must make clear these constraints and agree with the project owners on which facets are not going to be implemented.
 
+
+CC BY-SA / Gnu FDL
+

@@ -87,3 +87,7 @@ Here the `router_options` designates slaves as the only valid server type. With 
 
 
 For more complex examples of the readconnroute router, take a look at the examples in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.
+
+
+CC BY-SA / Gnu FDL
+

@@ -39,3 +39,6 @@ SHOW CREATE CATALOG def;
 * [CREATE CATALOG](create-catalog.md)
 * [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 
+
+CC BY-SA / Gnu FDL
+

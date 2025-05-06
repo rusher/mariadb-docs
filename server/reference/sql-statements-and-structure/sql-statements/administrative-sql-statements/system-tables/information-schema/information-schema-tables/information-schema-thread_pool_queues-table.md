@@ -26,3 +26,6 @@ Setting [thread_poll_exact_stats](../../../../../../../server-usage/replication-
 
 Setting [thread_pool_dedicated_listener](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#thread_pool_dedicated_listener) will give each group its own dedicated listener, and the listener thread will not pick up work items. As a result, the queueing time in the table will be more exact, since IO requests are immediately dequeued from poll, without delay.
 
+
+CC BY-SA / Gnu FDL
+

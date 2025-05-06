@@ -1237,3 +1237,7 @@ Invalid payload or missing connection token:
 
 
 `Status: 400 Bad Request`
+
+
+CC BY-SA / Gnu FDL
+

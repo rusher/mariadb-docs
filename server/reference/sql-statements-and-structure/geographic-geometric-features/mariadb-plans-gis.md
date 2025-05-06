@@ -27,3 +27,6 @@ Add possible III-rd coordinate (Attitude).
 
 Precise math coordinates instead of DOUBLE-s.
 
+
+CC BY-SA / Gnu FDL
+

@@ -275,3 +275,6 @@ Empty set (0.00 sec)
 * [Sometimes its the little things](https://mariadb.com/blog/sometimes-its-little-things) - Dean Ellis tries out the Sequence engine.
 * [MariaDB’s Sequence Storage Engine](https://falseisnotnull.wordpress.com/2013/06/23/mariadbs-sequence-storage-engine/) - Federico Razzoli writes more in-depth on the engine.
 
+
+CC BY-SA / Gnu FDL
+

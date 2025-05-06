@@ -145,3 +145,6 @@ If the documentation error relates to an existing bug/feature request in JIRA (f
 
 You don't have to set any tags, but if you want to use any for your convenience, feel free to do so. However, please don't put too generic values -- for example, the tag `mariadb` is meaningless, because everything there is `mariadb`. Don't be surprised if some tags are removed later during report processing.
 
+
+CC BY-SA / Gnu FDL
+

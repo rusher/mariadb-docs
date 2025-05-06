@@ -186,3 +186,7 @@ Benchmark
 	Number of clients running queries: 10
 	Average number of queries per client: 1
 ```
+
+
+CC BY-SA / Gnu FDL
+

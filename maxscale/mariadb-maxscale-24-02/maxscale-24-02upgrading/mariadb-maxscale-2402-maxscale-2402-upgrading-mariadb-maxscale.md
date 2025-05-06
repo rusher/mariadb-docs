@@ -898,3 +898,7 @@ paths with the new version.
 
 The MaxAdmin client's default password in MaxScale 1.1.0 is `mariadb`
 instead of `skysql`.
+
+
+CC BY-SA / Gnu FDL
+

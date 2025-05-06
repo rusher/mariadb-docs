@@ -68,3 +68,6 @@ Possible disadvantages of the conversion are are:
 
 [MDEV-12176](https://jira.mariadb.org/browse/MDEV-12176)
 
+
+CC BY-SA / Gnu FDL
+

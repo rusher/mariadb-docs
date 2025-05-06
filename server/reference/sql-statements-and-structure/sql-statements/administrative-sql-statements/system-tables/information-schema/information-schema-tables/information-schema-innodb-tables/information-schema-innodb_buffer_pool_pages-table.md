@@ -19,3 +19,7 @@ It has the following columns:
 | FLUSH_TYPE | Flush type of the most recent flush.0 (LRU), 2 (flush_list) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

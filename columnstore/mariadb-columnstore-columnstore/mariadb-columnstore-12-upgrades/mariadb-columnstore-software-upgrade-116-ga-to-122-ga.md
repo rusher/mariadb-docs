@@ -501,3 +501,6 @@ $ <CSROOT>/mariadb/columnstore/bin/postConfigure -u -i <CSROOT>/mariadb/columnst
 
 [mariadb-columnstore-software-upgrade-116-ga-to-122-ga.md](mariadb-columnstore-software-upgrade-116-ga-to-122-ga.md)
 
+
+CC BY-SA / Gnu FDL
+

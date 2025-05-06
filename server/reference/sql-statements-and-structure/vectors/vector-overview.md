@@ -166,3 +166,6 @@ MariaDB Vector is integrated in several frameworks, see [Vector Framework Integr
 * [MariaDB Vector: A storage engine for LLMs - Kaj Arnö and Jonah Harris](https://www.youtube.com/watch?v=3y-yWoH-CF8) (video)
 * [Try RAG with MariaDB Vector on your own MariaDB data!](https://mariadb.org/rag-with-mariadb-vector/)
 
+
+CC BY-SA / Gnu FDL
+

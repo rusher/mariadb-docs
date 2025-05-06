@@ -315,3 +315,6 @@ You may find the following PAM and user mapping-related tutorials helpful:
 * [Configuring PAM Group Mapping with MariaDB](https://mariadb.com/resources/blog/configuring-pam-group-mapping-with-mariadb/)
 * [Configuring LDAP Authentication and Group Mapping With MariaDB](https://www.geoffmontee.com/configuring-ldap-authentication-and-group-mapping-with-mariadb/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -403,3 +403,6 @@ that were defined `WITH COMPACT STORAGE` attribute.
 * [Cassandra Storage Engine - Issues](cassandra-storage-engine-issues.md)
 * [HBase Storage Engine](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/outdated-pages/hbase-storage-engine)
 
+
+CC BY-SA / Gnu FDL
+

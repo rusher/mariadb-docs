@@ -256,3 +256,7 @@ int encryption_crypt(const unsigned char *src, unsigned int slen,
                      const unsigned char *iv, unsigned int ivlen, int flags,
                      unsigned int key_id, unsigned int key_version);
 ```
+
+
+CC BY-SA / Gnu FDL
+

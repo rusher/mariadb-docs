@@ -21,3 +21,7 @@ It contains the following fields:
 | status | char(8) | NO | MUL |  |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -334,3 +334,6 @@ Some of the most advanced R resources for fully understanding the internals and 
 
 * [Chapman & Hall/CRC The R Series: Subject-specific Books](https://www.crcpress.com/Chapman--HallCRC-The-R-Series/book-series/crctherser)
 
+
+CC BY-SA / Gnu FDL
+

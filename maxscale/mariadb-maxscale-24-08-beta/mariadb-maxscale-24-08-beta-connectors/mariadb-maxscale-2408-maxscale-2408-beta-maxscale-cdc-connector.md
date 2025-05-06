@@ -106,3 +106,7 @@ sudo zypper install -y libjansson-devel openssl-devel cmake make gcc-c++ git
 To build and package the connector as a library, follow MaxScale build
 instructions with the exception of adding `-DTARGET_COMPONENT=devel` to the
 CMake call.
+
+
+CC BY-SA / Gnu FDL
+

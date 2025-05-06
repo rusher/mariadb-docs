@@ -352,3 +352,7 @@ The first INSERT query will be routed to the primary. The following SELECT query
 would normally be routed to the replica but with the added routing hint it will be
 routed to the primary. This way we can do an INSERT and a SELECT right after it
 and still get up-to-date data.
+
+
+CC BY-SA / Gnu FDL
+

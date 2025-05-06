@@ -29,3 +29,6 @@ Now, one can run the query and save the large trace.
 * [optimizer_trace_max_mem_size](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace_max_mem_size) system variable
 * [max_allowed_packet](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) system variable
 
+
+CC BY-SA / Gnu FDL
+

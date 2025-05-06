@@ -6,3 +6,6 @@ Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-c
 
 See [mariadbd-options](mariadbd-options.md) for details.
 
+
+CC BY-SA / Gnu FDL
+

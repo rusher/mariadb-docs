@@ -10,3 +10,6 @@ The release schedule for upcoming MariaDB releases can be found on the [MariaDB 
 
 See also the [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) page.
 
+
+CC BY-SA / Gnu FDL
+

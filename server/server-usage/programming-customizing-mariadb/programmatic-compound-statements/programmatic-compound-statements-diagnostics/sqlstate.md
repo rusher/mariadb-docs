@@ -33,3 +33,6 @@ For user-defined conditions, MariaDB and MySQL recommend the '45000' SQLSTATE cl
 
 A partial list of error codes and matching SQLSTATE values can be found in the page [MariaDB Error Codes](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
+
+CC BY-SA / Gnu FDL
+

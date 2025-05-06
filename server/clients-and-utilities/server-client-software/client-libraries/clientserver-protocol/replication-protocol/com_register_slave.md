@@ -60,3 +60,6 @@ We can see from the example:
 * rank [4] = 0
 * master server id = 0
 
+
+CC BY-SA / Gnu FDL
+

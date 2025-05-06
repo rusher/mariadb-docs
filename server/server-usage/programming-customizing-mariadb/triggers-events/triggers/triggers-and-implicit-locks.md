@@ -31,3 +31,6 @@ END;
 
 Not only is `table1` write locked, `table2` and `table3` are also write locked, due to the possible `[INSERT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md)` and `[UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)`, while `table4` is read locked due to the `[SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)`.
 
+
+CC BY-SA / Gnu FDL
+

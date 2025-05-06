@@ -112,3 +112,6 @@ sudo rsync -avP terrier.askmonty.org::kvm/vms/vm-rhel5-x86-build* /kvm/vms/
 
 1. Test the new VM with a build to make sure it works
 
+
+CC BY-SA / Gnu FDL
+

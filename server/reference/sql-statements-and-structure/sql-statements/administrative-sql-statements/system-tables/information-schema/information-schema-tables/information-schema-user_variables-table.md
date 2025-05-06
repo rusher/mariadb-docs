@@ -58,3 +58,6 @@ SHOW USER_VARIABLES;
 * [User-defined variables](../../../../../sql-language-structure/user-defined-variables.md)
 * [Performance Schema user_variables_by_thread Table](../../performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
 
+
+CC BY-SA / Gnu FDL
+

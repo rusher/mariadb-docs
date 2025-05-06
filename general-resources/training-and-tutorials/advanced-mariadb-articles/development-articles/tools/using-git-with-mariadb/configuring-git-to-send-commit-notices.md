@@ -30,3 +30,6 @@ The post-commit git trigger uses *sendmail* for sending emails. Some platforms d
 
 Also, the post-commit trigger is just one approach. You can also use git-email on at least Debian and Fedora to send commit emails to the MariaDB commits email list.
 
+
+CC BY-SA / Gnu FDL
+

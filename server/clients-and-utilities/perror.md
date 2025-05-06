@@ -56,3 +56,7 @@ MySQL error code 1006 (ER_CANT_CREATE_DB): Can't create database '%-.192s' (errn
 shell> perror --silent 1979
 You are not owner of query %lu
 ```
+
+
+CC BY-SA / Gnu FDL
+

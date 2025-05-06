@@ -623,3 +623,7 @@ Input file: /home/mariadb/maxscale/var/lib/maxscale/wcar/WCAR/capture_2024-06-11
 * The capture files are not necessarily compatible with different linux distributions and CPU
  architectures than the original capture server has. Different combinations will require further
  testing, and once done, this document will be updated.
+
+
+CC BY-SA / Gnu FDL
+

@@ -104,3 +104,6 @@ Number of transactions that changed data in multiple (transactional)
  Rpl_transactions_multi_engine, it indicates that setting
  `gtid_pos_auto_engines` could reduce the need for cross-engine transactions.
 
+
+CC BY-SA / Gnu FDL
+

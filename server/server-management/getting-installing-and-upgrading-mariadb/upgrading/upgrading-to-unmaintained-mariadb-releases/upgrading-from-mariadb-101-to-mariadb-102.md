@@ -191,3 +191,6 @@ You might consider using the following major new features in [MariaDB 10.2](http
 * [Upgrading from MariaDB 10.0 to MariaDB 10.1](upgrading-from-mariadb-100-to-mariadb-101.md)
 * [Upgrading from MariaDB 5.5 to MariaDB 10.0](../upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
+
+CC BY-SA / Gnu FDL
+

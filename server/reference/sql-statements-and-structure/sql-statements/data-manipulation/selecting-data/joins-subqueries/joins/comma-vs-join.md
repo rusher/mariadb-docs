@@ -60,3 +60,7 @@ form. Why?
 
 *The initial version of this article was copied, with permission, from [Comma_vs_JOIN](https://hashmysql.org/wiki/Comma_vs_JOIN) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

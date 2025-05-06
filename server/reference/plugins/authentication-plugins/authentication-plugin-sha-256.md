@@ -108,3 +108,6 @@ note: The version 3.x being a rewrite of the connector, only caching_sha2_passwo
 * [MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804) contains the plans to use if we ever decide to support these protocols.
 * [History of MySQL and MariaDB authentication protocols](https://mariadb.org/history-of-mysql-mariadb-authentication-protocols)
 
+
+CC BY-SA / Gnu FDL
+

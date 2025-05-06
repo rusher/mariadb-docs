@@ -372,3 +372,7 @@ For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](https://m
 * Notification service added.
 * Readconnrouter has a new "running" router_option. This allows it to use any running server as a valid backend server.
 * Database names can be stripped of escape characters with the `strip_db_esc` service parameter.
+
+
+CC BY-SA / Gnu FDL
+

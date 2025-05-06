@@ -58,3 +58,6 @@ when: timezone_info.changed and inventory_hostname == cluster_hosts[0].hostname
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

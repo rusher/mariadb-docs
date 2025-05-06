@@ -219,3 +219,6 @@ PARTITION partition_name DEFAULT
 
 For a complete list of partition types, see `[partitioning-types](../../../server-management/partitioning-tables/partitioning-types/README.md)`.
 
+
+CC BY-SA / Gnu FDL
+

@@ -109,3 +109,6 @@ from t1;
 
 * [CUME_DIST()](cume_dist.md)
 
+
+CC BY-SA / Gnu FDL
+

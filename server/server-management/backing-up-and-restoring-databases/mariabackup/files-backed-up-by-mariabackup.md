@@ -60,3 +60,6 @@ Mariabackup does **not** back up the files listed below.
 * [Binary logs](../../server-monitoring-logs/binary-log/README.md)
 * [Relay logs](../../server-monitoring-logs/binary-log/relay-log.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -128,3 +128,6 @@ See [MDEV-16774](https://jira.mariadb.org/browse/MDEV-16774) for more informatio
 * [ed25519](authentication-plugin-ed25519.md) secure connection plugin
 * [History of MySQL and MariaDB authentication protocols](https://mariadb.org/history-of-mysql-mariadb-authentication-protocols)
 
+
+CC BY-SA / Gnu FDL
+

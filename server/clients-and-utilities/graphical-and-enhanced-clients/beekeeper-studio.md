@@ -28,3 +28,6 @@ The Community Edition is [free and open source](https://github.com/beekeeper-stu
 * Homepage - [beekeeperstudio.io](https://beekeeperstudio.io)
 * GitHub - [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio)
 
+
+CC BY-SA / Gnu FDL
+

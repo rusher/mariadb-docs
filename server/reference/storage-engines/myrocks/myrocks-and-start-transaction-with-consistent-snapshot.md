@@ -30,3 +30,6 @@ After issuing the statement, one can examine the [binlog_snapshot_file](../../..
 * [START TRANSACTION](../../sql-statements-and-structure/sql-statements/transactions/start-transaction.md)
 * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../server-usage/replication-cluster-multi-master/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
 
+
+CC BY-SA / Gnu FDL
+

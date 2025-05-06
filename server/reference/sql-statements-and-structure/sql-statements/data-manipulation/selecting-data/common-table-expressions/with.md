@@ -173,3 +173,6 @@ SELECT * FROM cte;
 * [Non-Recursive Common Table Expressions Overview](non-recursive-common-table-expressions-overview.md)
 * [Recursive Common Table Expressions Overview](recursive-common-table-expressions-overview.md)
 
+
+CC BY-SA / Gnu FDL
+

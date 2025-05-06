@@ -34,3 +34,7 @@ SELECT ST_ISSIMPLE(GEOMFROMTEXT(@g));
 |                             1 |
 +-------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

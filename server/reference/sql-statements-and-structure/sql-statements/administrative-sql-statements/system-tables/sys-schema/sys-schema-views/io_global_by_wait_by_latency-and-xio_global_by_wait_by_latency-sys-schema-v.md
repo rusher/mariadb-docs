@@ -108,3 +108,7 @@ total_written: 82944
   avg_written: 1928.9302
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

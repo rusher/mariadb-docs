@@ -1048,3 +1048,6 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `numeric`
 
 
+
+CC BY-SA / Gnu FDL
+

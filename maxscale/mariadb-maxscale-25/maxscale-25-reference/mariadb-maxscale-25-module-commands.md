@@ -77,3 +77,7 @@ are interpreted as the types the command expects.
 When the module command is executed, the *argv* parameter for the
 *my_simple_cmd* contains the parsed arguments received from the caller of the
 command.
+
+
+CC BY-SA / Gnu FDL
+

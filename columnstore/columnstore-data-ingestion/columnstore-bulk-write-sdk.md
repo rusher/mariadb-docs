@@ -382,3 +382,6 @@ The following documents provide SDK documentation:
 * [Building "Building"](https://mariadb.com/kb/en/columnstore-bulk-write-sdk/+attachment/libmcsapi_building_1_1_1), [Usage "Usage"](https://mariadb.com/kb/en/columnstore-bulk-write-sdk/+attachment/libmcsapi_usage_1_1_1) for 1.1.1 RC
 * [Building "Building"](https://mariadb.com/kb/en/columnstore-bulk-write-sdk/+attachment/libmcsapi_building_1), [Usage "Usage"](https://mariadb.com/kb/en/columnstore-bulk-write-sdk/+attachment/libmcsapi_usage_1) for 1.1.0 Beta
 
+
+CC BY-SA / Gnu FDL
+

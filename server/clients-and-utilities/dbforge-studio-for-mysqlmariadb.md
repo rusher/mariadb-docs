@@ -36,3 +36,6 @@ The Express edition with basic features is offered *free of charge*. Also, a fre
 
 * [Download a 30-day free trial here](https://www.devart.com/dbforge/mysql/studio/download.html).
 
+
+CC BY-SA / Gnu FDL
+

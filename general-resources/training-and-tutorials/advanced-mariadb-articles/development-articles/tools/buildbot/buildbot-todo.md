@@ -152,3 +152,6 @@ conflict), it will send mail with details.
 * Staging tree per-captain
 * `mysqltest --require` not-staging to speed up Valgrind
 
+
+CC BY-SA / Gnu FDL
+

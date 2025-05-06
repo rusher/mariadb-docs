@@ -59,3 +59,7 @@ MERGE_THRESHOLD: 50
 MERGE_THRESHOLD: 50
 3 rows in set (0.00 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

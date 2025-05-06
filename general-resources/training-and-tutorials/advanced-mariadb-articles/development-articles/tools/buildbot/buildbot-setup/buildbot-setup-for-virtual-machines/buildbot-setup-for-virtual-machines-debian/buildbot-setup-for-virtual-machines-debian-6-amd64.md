@@ -103,3 +103,7 @@ kvm -m 2047 -hda /kvm/vms/vm-debian6-amd64-upgrade.qcow2 -redir 'tcp:2244::22' -
 sudo apt-get install mysql-server-5.1
 mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"
 ```
+
+
+CC BY-SA / Gnu FDL
+

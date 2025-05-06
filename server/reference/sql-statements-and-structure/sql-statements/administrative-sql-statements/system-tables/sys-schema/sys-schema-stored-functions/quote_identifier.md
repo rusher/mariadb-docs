@@ -39,3 +39,7 @@ SELECT sys.quote_identifier("Identifier` containing `backticks");
 | `Identifier`` containing ``backticks`                     |
 +-----------------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

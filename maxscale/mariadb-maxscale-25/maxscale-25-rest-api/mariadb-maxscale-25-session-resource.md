@@ -186,3 +186,7 @@ Get all sessions.
 }
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

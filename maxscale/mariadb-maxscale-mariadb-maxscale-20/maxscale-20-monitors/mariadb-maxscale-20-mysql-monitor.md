@@ -177,3 +177,7 @@ events=master_down,slave_down
 
 When a master or a slave server goes down, the script is executed, a mail is sent and the administrator will be immediately notified of any possible problems.
 This is just a simple example showing what you can do with MaxScale and monitor scripts.
+
+
+CC BY-SA / Gnu FDL
+

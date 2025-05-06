@@ -39,3 +39,6 @@ For system variables added since the previous long-term release, [MariaDB 10.11]
 
 * [Status Variables Added in MariaDB 11.4](status-variables-added-in-mariadb-11-4.md)
 
+
+CC BY-SA / Gnu FDL
+

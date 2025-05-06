@@ -125,3 +125,7 @@ Both RPM and Debian packages are available for MaxScale in addition to the tar b
 * CentOS/RedHat 5 RPM
 * CentOS/RedHat 6 RPM
 * Ubuntu 14.04 package
+
+
+CC BY-SA / Gnu FDL
+

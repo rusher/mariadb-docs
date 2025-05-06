@@ -53,3 +53,6 @@ SELECT ST_ASTEXT(ST_VALIDATE(ST_GeomFromText('POINT(1)')));
 * [Geometry Constructors](../geometry-constructors/README.md)
 * [ST_AsText](../wkt/st_astext.md)
 
+
+CC BY-SA / Gnu FDL
+

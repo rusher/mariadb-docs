@@ -85,3 +85,7 @@ DESCRIBE SilenceIsGolden;
 | f7    | tinyint(4)        | YES  |     | NULL    |       |
 +-------+-------------------+------+-----+---------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

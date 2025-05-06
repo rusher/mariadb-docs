@@ -35,3 +35,7 @@ These two SQL statements allow the temporary user to have the needed [SELECT](..
 ```
 mariadb --user admin_restore_temp --password --force < /data/backup/db1.sql
 ```
+
+
+CC BY-SA / Gnu FDL
+

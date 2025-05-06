@@ -16,3 +16,6 @@ Returns the [Global Transaction ID](../../../../../../server-usage/replication-c
 
 The result can be useful to determine the transaction to provide to [WSREP_SYNC_WAIT_UPTO_GTID](wsrep_sync_wait_upto_gtid.md) for waiting and unblocking purposes.
 
+
+CC BY-SA / Gnu FDL
+

@@ -27,3 +27,6 @@ MariaDB currently allows these aggregate functions to be used as window function
 * [VAR_SAMP](../../aggregate-functions/var_samp.md)
 * [VARIANCE](../../aggregate-functions/variance.md)
 
+
+CC BY-SA / Gnu FDL
+

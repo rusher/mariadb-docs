@@ -46,3 +46,7 @@ SELECT ST_WITHIN(@g2,ST_BUFFER(@g1,1));
 |                               0 |
 +---------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

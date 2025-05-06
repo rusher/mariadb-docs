@@ -112,3 +112,7 @@ case-insensitive by converting all names into their lowercase form.
 
 **Note:** The identifier names are converted using an ASCII-only function. This
  means that non-ASCII characters will retain their case-sensitivity.
+
+
+CC BY-SA / Gnu FDL
+

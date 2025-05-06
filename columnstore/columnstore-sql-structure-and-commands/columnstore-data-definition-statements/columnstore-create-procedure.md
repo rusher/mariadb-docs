@@ -56,3 +56,7 @@ CREATE PROCEDURE sp_complex_variable(in arg_key int, in arg_date date)
 
 call sp_complex_variable(1000, '1998-10-10');
 ```
+
+
+CC BY-SA / Gnu FDL
+

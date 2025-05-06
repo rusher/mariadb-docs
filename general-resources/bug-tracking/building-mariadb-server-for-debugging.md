@@ -63,3 +63,6 @@ ftp> quit
 * [Compiling MariaDB for debugging](../training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md)
 * [How to produce a stack trace from a core file](../training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md)
 
+
+CC BY-SA / Gnu FDL
+

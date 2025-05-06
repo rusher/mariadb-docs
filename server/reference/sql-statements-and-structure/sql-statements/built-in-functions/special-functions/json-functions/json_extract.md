@@ -57,3 +57,6 @@ SELECT JSON_EXTRACT(@json, '$[2][1]');
 
 * [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_EXTRACT.
 
+
+CC BY-SA / Gnu FDL
+

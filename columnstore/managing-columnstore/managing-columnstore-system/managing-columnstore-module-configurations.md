@@ -403,3 +403,7 @@ The above example requires a stopSystem to unassign the db root from the pm serv
 #mcsadmin addModule um 1 hostnameUm2 'password'
 #mcsadmin alterSystem-EnableModule um2
 ```
+
+
+CC BY-SA / Gnu FDL
+

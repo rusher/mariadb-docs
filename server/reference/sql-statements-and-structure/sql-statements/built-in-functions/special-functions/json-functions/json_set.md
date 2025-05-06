@@ -26,3 +26,7 @@ JSON_SET can update or insert data, while [JSON_REPLACE](json_replace.md) can on
 ```
 SELECT JSON_SET(Priv, '$.locked', 'true') FROM mysql.global_priv
 ```
+
+
+CC BY-SA / Gnu FDL
+

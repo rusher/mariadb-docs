@@ -50,3 +50,7 @@ SELECT JSON_QUERY(@json,'$.x[0]'), JSON_VALUE(@json,'$.x[0]');
 | NULL                       | 0                          |
 +----------------------------+----------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

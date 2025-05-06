@@ -88,3 +88,7 @@ monitor configuration.
 
 The default editing mode was changed from *vim* to *emacs* mode. To start
 maxadmin in the legacy mode, use the `-i` option.
+
+
+CC BY-SA / Gnu FDL
+

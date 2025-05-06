@@ -384,3 +384,7 @@ All major upgrades fail with [MDEV-14990](https://jira.mariadb.org/browse/MDEV-1
 | undo | 8 | 5.6.39 (inbuilt) |  | - | - | => | 10.3.4 (inbuilt) |  | - | - | - | FAIL | UPGRADE_FAILURE |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -147,3 +147,7 @@ The MaxScape parser treats them as any other function.
 However, as the parser is not aware of which JSON functions are strictly
 *read-only* any statement using a JSON function will always be routed to
 *master*.
+
+
+CC BY-SA / Gnu FDL
+

@@ -777,3 +777,6 @@ The gcs.fc_limit parameter is modified by the square root of the cluster size, t
 
 * [Galera parameters documentation from Codership](https://galeracluster.com/library/documentation/galera-parameters.html)
 
+
+CC BY-SA / Gnu FDL
+

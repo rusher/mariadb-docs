@@ -30,3 +30,6 @@ The following options from the [sys_config](../sys-schema-sys_config-table.md) t
 
 If the debug option is set (default OFF), the procedure will also produce debugging output.
 
+
+CC BY-SA / Gnu FDL
+

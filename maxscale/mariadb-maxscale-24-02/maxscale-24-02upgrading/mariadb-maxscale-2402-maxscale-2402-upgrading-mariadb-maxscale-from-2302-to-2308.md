@@ -14,3 +14,7 @@ For more information about MaxScale 23.08, refer to the
 
 Before starting the upgrade, any existing configuration files should be backed
 up.
+
+
+CC BY-SA / Gnu FDL
+

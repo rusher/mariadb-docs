@@ -288,3 +288,7 @@ syntax became available for use.
 
 *The initial version of this article was copied, with permission, from [Basic_Debugging](https://hashmysql.org/wiki/Basic_Debugging) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

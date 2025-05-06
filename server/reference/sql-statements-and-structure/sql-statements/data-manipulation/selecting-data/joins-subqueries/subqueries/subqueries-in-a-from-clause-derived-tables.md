@@ -74,3 +74,7 @@ CREATE OR REPLACE TABLE t1(c1 INT, c2 INT, c3 INT);
 
 SELECT a1, a2 FROM (SELECT c1, c2, c3 FROM t1 WHERE c2 > 0) AS dt (a1, a2, a3);
 ```
+
+
+CC BY-SA / Gnu FDL
+

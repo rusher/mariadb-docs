@@ -41,3 +41,7 @@ command_type: Query
     argument: SELECT * FROM mysql.general_log
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

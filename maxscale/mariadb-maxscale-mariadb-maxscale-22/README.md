@@ -36,3 +36,6 @@ MaxScale 2.2 reached end-of-life (EOL) in January, 2020.
 
 [Documentation for MariaDB MaxScale 2.2](https://id.mariadb.com/es-docs/pdf-download/pdfs/MariaDB%20MaxScale%202.2.pdf) is available as a downloadable PDF.
 
+
+CC BY-SA / Gnu FDL
+

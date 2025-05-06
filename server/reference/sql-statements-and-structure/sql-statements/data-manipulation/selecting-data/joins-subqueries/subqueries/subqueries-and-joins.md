@@ -146,3 +146,6 @@ WHERE  Bookcolumn_1.page_count >
  question didn't ask for "... longer than `ANY` book named Das Kapital"
  (it seems to contain a false assumption that there's only one edition).
 
+
+CC BY-SA / Gnu FDL
+

@@ -69,3 +69,6 @@ EXPLAIN: {
 
 `ANALYZE` shows that 39.2 seconds were spent in the subquery, which was executed 150K times (for every row of outer table).
 
+
+CC BY-SA / Gnu FDL
+

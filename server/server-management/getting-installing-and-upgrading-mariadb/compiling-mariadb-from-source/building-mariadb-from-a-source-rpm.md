@@ -55,3 +55,7 @@ sudo zypper in rpm-build
     zypper --pkg-cache-dir=`pwd` si --download-only MariaDB
     rpmbuild --rebuild mariadb/srpms/MariaDB-*.src.rpm
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -40,3 +40,7 @@ It contains the following fields:
 | failed_time | timestamp | NO |  | current_timestamp() |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -47,3 +47,6 @@ HeidiSQL can:
 
 More information, including [Screenshots of HeidiSQL](https://www.heidisql.com/screenshots.php) are available at the [HeidiSQL Website](https://www.heidisql.com/).
 
+
+CC BY-SA / Gnu FDL
+

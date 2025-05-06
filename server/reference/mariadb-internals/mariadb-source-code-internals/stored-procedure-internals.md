@@ -1265,3 +1265,7 @@ CREATE TABLE `proc` (
   PRIMARY KEY (`db`,`name`,`type`)
 ) ENGINE=Aria DEFAULT CHARSET=utf8 PAGE_CHECKSUM=1 TRANSACTIONAL=1 COMMENT='Stored Procedures'
 ```
+
+
+CC BY-SA / Gnu FDL
+

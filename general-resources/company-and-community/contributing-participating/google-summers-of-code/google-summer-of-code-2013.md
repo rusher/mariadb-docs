@@ -136,3 +136,6 @@ Mentor: Sergei Golubchik
 
 [suggested development](https://kb.askmonty.org/en/suggested-development/)
 
+
+CC BY-SA / Gnu FDL
+

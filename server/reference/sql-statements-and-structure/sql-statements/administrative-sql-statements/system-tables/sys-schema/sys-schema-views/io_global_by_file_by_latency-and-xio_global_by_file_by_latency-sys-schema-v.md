@@ -84,3 +84,7 @@ write_latency: 1310187820
  misc_latency: 163919791212
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

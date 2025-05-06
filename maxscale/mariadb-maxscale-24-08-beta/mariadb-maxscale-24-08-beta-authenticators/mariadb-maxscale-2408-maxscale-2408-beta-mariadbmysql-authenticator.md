@@ -77,3 +77,7 @@ Deprecated and ignored.
 
 
 Deprecated and ignored.
+
+
+CC BY-SA / Gnu FDL
+

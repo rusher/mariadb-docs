@@ -111,3 +111,6 @@ SELECT * FROM information_schema.METADATA_LOCK_INFO;
 * [Performance Schema metadata_locks table](../../performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md)
 * [GET_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)
 
+
+CC BY-SA / Gnu FDL
+

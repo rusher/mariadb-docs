@@ -50,3 +50,7 @@ WHERE DEFAULT_COLLATE_NAME LIKE '%chinese%';
 | gbk                |
 +--------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

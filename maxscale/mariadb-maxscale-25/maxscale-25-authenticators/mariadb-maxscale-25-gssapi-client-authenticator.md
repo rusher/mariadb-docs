@@ -104,3 +104,7 @@ See the [Limitations](../about-maxscale-25/mariadb-maxscale-25-limitations-and-k
 
 The GSSAPI authenticator modules require the GSSAPI development libraries
 (krb5-devel on CentOS 7).
+
+
+CC BY-SA / Gnu FDL
+

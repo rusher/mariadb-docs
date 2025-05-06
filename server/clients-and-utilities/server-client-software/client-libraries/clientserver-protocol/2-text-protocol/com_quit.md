@@ -17,3 +17,6 @@ Using the COM_QUIT command, the client tells the server that the connection shou
 
 Server terminates connection.
 
+
+CC BY-SA / Gnu FDL
+

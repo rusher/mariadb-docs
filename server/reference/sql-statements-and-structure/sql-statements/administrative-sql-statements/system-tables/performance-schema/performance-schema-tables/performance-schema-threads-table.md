@@ -68,3 +68,7 @@ PROCESSLIST_COMMAND: Query
                ROLE: NULL
        INSTRUMENTED: YES
 ```
+
+
+CC BY-SA / Gnu FDL
+

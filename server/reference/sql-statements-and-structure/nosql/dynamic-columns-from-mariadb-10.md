@@ -162,3 +162,6 @@ columns family (the table analog in cassandra).
 * [Dynamic Columns](dynamic-columns.md)
 * [Cassandra Storage Engine](../../storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview.md)
 
+
+CC BY-SA / Gnu FDL
+

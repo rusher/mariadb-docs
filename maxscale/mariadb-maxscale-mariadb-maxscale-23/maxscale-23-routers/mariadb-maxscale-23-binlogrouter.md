@@ -653,3 +653,7 @@ tutorial will show you how to configure and administrate a binlogrouter installa
 
 Tutorial also includes SSL communication setup to the master server and SSL
 client connections setup to MaxScale Binlog Server.
+
+
+CC BY-SA / Gnu FDL
+

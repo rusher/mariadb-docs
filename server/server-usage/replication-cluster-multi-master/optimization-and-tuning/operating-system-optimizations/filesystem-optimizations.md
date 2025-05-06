@@ -34,3 +34,6 @@ It's unlikely you'll need to record file access time on a database server, and m
 
 If you want to keep access time for [log files](../../../../server-management/server-monitoring-logs/README.md) or other system files, these can be stored on a separate drive.
 
+
+CC BY-SA / Gnu FDL
+

@@ -156,3 +156,7 @@ The `access` field contains the grants of the user which can be mapped to indivi
 | SHOW_CREATE_ROUTINE | (1ULL << 39) |
 
 
+
+
+CC BY-SA / Gnu FDL
+

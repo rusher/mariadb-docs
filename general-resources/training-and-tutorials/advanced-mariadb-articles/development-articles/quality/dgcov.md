@@ -114,3 +114,6 @@ Note that to be able to run gcov with the [mariadb-test](https://app.gitbook.com
 * dgcov was created by Kristian Nielsen and was first [announced here](https://kristiannielsen.livejournal.com/1885.html).
 * dgcov was re-implemented to aggregate the data and to work for git and cmake by Sergei Golubchik.
 
+
+CC BY-SA / Gnu FDL
+

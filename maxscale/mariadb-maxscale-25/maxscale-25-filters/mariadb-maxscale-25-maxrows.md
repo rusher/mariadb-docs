@@ -179,3 +179,7 @@ max_resultset_rows=10000
 max_resultset_size=256000
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

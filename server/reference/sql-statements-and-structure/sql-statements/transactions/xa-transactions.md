@@ -300,3 +300,6 @@ transactions in the PREPAREd state at disconnect. This is non-standard
 behaviour, and is not recommended for new applications. If
 rollback-at-disconnect is desired, it is better to use a normal (non-XA) transaction.
 
+
+CC BY-SA / Gnu FDL
+

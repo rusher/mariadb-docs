@@ -68,3 +68,7 @@ SHOW FULL TABLES FROM perf;
 | events_stages_history_long                           | VIEW       |
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

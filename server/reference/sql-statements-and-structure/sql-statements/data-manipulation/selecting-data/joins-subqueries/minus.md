@@ -20,3 +20,7 @@ SELECT i FROM seqs WHERE i <= 3 MINUS SELECT i FROM seqs WHERE i>=3;
 |    2 |
 +------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

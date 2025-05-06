@@ -5301,3 +5301,7 @@
 * Type: target
 * Mandatory: Yes
 * Dynamic: No
+
+
+CC BY-SA / Gnu FDL
+

@@ -104,3 +104,7 @@ for i in 'vm-maverick-amd64-install.qcow2 2246 qemu64' 'vm-maverick-i386-install
     'mysql -uroot -prootpass -e "create database mytest; use mytest; create table t(a int primary key); insert into t values (1); select * from t"' ;\
 done
 ```
+
+
+CC BY-SA / Gnu FDL
+

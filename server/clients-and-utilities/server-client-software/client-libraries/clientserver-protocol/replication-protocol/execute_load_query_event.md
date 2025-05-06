@@ -43,3 +43,6 @@ The number of bytes 'n' is the length of the status variable block (read in fixe
 
 TODO: Add an example
 
+
+CC BY-SA / Gnu FDL
+

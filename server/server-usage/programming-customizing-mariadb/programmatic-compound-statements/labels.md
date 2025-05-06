@@ -53,3 +53,7 @@ BEGIN
    DO something();
 END `my_label`;
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -197,3 +197,6 @@ Slave_SQL_Running: Yes
 * [Delayed Replication](delayed-replication.md)
 * [Replication Compatibility Between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/replication-compatibility-between-mariadb-and-mysql)
 
+
+CC BY-SA / Gnu FDL
+

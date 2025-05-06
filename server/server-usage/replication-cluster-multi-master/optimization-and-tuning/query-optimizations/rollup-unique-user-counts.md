@@ -72,3 +72,6 @@ optimizations, and debugging tips.
 
 Original source: [uniques](https://mysql.rjweb.org/doc.php/uniques)
 
+
+CC BY-SA / Gnu FDL
+

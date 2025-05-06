@@ -112,3 +112,6 @@ In-depth material:
 
 * [WL#3750: initial specification for FirstMatch](https://forge.mysql.com/worklog/task.php?id=3750)
 
+
+CC BY-SA / Gnu FDL
+

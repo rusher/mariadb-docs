@@ -22,3 +22,7 @@ Copyright MariaDB Corporation Ab 2013
 Tekniikantie 12 
 02150 Espoo 
 Finland
+
+
+CC BY-SA / Gnu FDL
+

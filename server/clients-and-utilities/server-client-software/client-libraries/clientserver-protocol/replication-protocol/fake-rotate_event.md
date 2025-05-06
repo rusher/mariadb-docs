@@ -37,3 +37,6 @@ If it is the first fake rotate event and global server variable @@binlog_checksu
 
 * crc32_checksum (4 Bytes)
 
+
+CC BY-SA / Gnu FDL
+

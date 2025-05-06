@@ -1766,3 +1766,7 @@ ERROR 1064 (42000): Routing query to backend failed. See the error log for furth
 Allow user variable modification in SELECT queries by setting
 `use_sql_variables_in=master`. This will route all queries that use user
 variables to the master.
+
+
+CC BY-SA / Gnu FDL
+

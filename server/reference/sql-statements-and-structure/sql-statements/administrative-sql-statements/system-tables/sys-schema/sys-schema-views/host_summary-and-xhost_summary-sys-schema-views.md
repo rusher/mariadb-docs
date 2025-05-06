@@ -68,3 +68,7 @@ SELECT * FROM sys.x$host_summary\G
         current_memory: -2672
 total_memory_allocated: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

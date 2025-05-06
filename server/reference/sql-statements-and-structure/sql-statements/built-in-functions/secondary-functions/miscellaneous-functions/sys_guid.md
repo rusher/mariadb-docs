@@ -38,3 +38,6 @@ SELECT SYS_GUID();
 * [UUID_SHORT](uuid_short.md)
 * [UUID data type](../../../../../data-types/string-data-types/uuid-data-type.md)
 
+
+CC BY-SA / Gnu FDL
+

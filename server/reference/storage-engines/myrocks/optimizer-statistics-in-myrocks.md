@@ -60,3 +60,6 @@ There are a few variables that will cause MyRocks to report certain pre-defined 
 * @@rocksdb_force_index_records_in_range - if not 0, and FORCE INDEX hint is used, report that any range has this many rows.
 * @@rocksdb_debug_optimizer_n_rows - if not 0, report that any MyRocks table has this many rows.
 
+
+CC BY-SA / Gnu FDL
+

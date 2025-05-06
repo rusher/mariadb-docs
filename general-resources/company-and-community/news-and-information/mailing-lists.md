@@ -26,3 +26,7 @@
 * [MySQL's future in Debian and Ubuntu](https://lists.ubuntu.com/archives/ubuntu-devel-discuss/2012-February/013242.html) - 7th February 2012 - Clint Byrum - on if MariaDB should be the default provides for MySQL in Debian and Ubuntu
 
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -12,3 +12,6 @@ Support for source RPMs in `[CPackRPM](https://cmake.org/cmake/help/v3.10/module
 
 See also [Building MariaDB from a Source RPM](../../compiling-mariadb-from-source/building-mariadb-from-a-source-rpm.md).
 
+
+CC BY-SA / Gnu FDL
+

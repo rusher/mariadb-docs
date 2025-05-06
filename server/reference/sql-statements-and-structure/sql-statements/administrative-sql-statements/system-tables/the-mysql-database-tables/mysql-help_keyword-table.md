@@ -42,3 +42,7 @@ SELECT * FROM help_keyword;
 |              12 | COMPLETION                    |
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

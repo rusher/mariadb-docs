@@ -45,3 +45,6 @@ The `mysql.db` table contains the following fields:
 
 The [Acl_database_grants](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#acl_database_grants) status variable, added in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), indicates how many rows the `mysql.db` table contains.
 
+
+CC BY-SA / Gnu FDL
+

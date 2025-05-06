@@ -84,3 +84,6 @@ The server can answer with 3 different responses:
 * 0x00: [OK_packet](../4-server-response-packets/ok_packet.md) when query execution works without resultset.
 * a resultset containing affected rows and auto-increment IDs when bulk flag SEND_UNIT_RESULTS is set
 
+
+CC BY-SA / Gnu FDL
+

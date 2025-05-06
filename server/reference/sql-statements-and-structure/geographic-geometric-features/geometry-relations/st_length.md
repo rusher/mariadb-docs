@@ -28,3 +28,7 @@ SELECT ST_LENGTH(ST_GeomFromText(@ls));
 |                2.82842712474619 |
 +---------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

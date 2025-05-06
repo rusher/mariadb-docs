@@ -56,3 +56,6 @@ Overview of Replication in MariaDB: [Replication](https://app.gitbook.com/s/Ssme
 * This preview also includes a small change to make mysqlbinlog omit redundatn use statements around BEGIN, SACEPOINT, COMMIT, and ROLLBACK events when reading MySQL 5.0 binlogs.
 * The preview included a feature `--innodb-release-locks-early`. However we decided to omit this feature from future MariaDB releases because of a fundamental design bug, [Bug #798213](https://bugs.launchpad.net/bugs/798213)
 
+
+CC BY-SA / Gnu FDL
+

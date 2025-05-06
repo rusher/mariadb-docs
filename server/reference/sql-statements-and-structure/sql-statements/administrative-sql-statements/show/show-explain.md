@@ -130,3 +130,6 @@ Running `SHOW EXPLAIN` requires the same permissions as running [SHOW PROCESSLIS
 * [SHOW ANALYZE](show-analyze.md)
 * It is also possible to [save EXPLAIN into the slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md).
 
+
+CC BY-SA / Gnu FDL
+

@@ -25,3 +25,6 @@ If you want to download the MariaDB Audit Plugin separately from the MariaDB ser
 
 * [MDEV-6124](https://jira.mariadb.org/browse/MDEV-6124) Audit plugin fails with the Percona-Server 5.6.
 
+
+CC BY-SA / Gnu FDL
+

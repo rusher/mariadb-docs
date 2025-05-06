@@ -24,3 +24,7 @@ SHOW LOCALES;
 |   3 | sv_SE | Swedish - Sweden                    | swedish                |
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

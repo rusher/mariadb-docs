@@ -13,3 +13,6 @@ expr REGEXP pat, expr RLIKE pat
 
 `RLIKE` is a synonym for [REGEXP](regexp.md).
 
+
+CC BY-SA / Gnu FDL
+

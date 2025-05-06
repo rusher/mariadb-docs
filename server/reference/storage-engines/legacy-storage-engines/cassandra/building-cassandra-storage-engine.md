@@ -64,3 +64,7 @@ There is a basic testsuite. In order to run it, one needs
 cd mysql-test
 ./mysql-test-run t/cassandra.test
 ```
+
+
+CC BY-SA / Gnu FDL
+

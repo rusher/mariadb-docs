@@ -401,3 +401,7 @@ error about database rights instead of a missing database.
 execution of a prepared statement is routed to the first available server or to
 the server pointed by a routing hint attached to the query. In practice this
 means that prepared statements aren't supported by the schemarouter.
+
+
+CC BY-SA / Gnu FDL
+

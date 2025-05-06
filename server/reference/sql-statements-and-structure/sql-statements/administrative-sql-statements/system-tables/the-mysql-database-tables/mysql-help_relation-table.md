@@ -43,3 +43,7 @@ The `mysql.help_relation` table contains the following fields:
 |           468 |             463 |
 +---------------+-----------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

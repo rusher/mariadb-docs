@@ -42,3 +42,7 @@ SELECT JSON_CONTAINS_PATH(@json, 'all', '$.A', '$.D');
 |                                              0 |
 +------------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

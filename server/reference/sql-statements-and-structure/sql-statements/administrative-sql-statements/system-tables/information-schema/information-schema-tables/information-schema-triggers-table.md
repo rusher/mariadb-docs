@@ -49,3 +49,6 @@ Queries to the `TRIGGERS` table will return information only for databases and t
 * `[SHOW CREATE TRIGGER](../../../show/show-create-trigger.md)`
 * [Trigger Limitations](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations.md)
 
+
+CC BY-SA / Gnu FDL
+

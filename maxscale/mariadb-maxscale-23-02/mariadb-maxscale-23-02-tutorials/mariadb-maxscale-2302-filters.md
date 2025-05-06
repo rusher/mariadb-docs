@@ -207,3 +207,7 @@ password=6628C50E07CCE1F0392EDEEB9D1203F3
 filters=HighScores
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

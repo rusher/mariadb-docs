@@ -59,3 +59,6 @@ It is possible to empty this table with a `TRUNCATE TABLE` statement.
 
 The related tables, [events_statements_history](performance-schema-events_statements_history-table.md) and [events_statements_history_long](performance-schema-events_statements_history_long-table.md) derive their values from the current events table.
 
+
+CC BY-SA / Gnu FDL
+

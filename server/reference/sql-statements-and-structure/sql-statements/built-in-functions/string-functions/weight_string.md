@@ -103,3 +103,7 @@ SELECT HEX(WEIGHT_STRING(0xaa22ee LEVEL 1 REVERSE));
 | EE22AA                                       |
 +----------------------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

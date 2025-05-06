@@ -656,3 +656,7 @@ ALTER TABLE `way_nodes`
 ALTER TABLE `way_tags`
   ADD CONSTRAINT `way_tags_ibfk_1` FOREIGN KEY (`id`, `version`) REFERENCES `ways` (`id`, `version`);
 ```
+
+
+CC BY-SA / Gnu FDL
+

@@ -88,3 +88,6 @@ shell> perldoc mariadb-hotcopy
 * [mariadb-ldump](mariadb-ldump)
 * [Mariabackup](../../server-management/backing-up-and-restoring-databases/mariabackup/README.md)
 
+
+CC BY-SA / Gnu FDL
+

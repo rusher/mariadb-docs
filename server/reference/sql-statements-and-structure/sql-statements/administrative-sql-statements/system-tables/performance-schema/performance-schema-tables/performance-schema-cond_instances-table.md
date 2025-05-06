@@ -18,3 +18,7 @@ The maximum number of conditions stored in the performance schema is determined 
 | OBJECT_INSTANCE_BEGIN | Address in memory of the instrumented condition. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

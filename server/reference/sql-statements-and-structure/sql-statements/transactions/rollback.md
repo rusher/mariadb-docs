@@ -53,3 +53,6 @@ ROLLBACK;
 
 The result will be that both the `INSERT` and the `DROP` will go through as separate transactions so the `ROLLBACK` will have no effect.
 
+
+CC BY-SA / Gnu FDL
+

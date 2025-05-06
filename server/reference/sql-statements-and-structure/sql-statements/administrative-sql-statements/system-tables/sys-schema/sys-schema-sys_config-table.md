@@ -53,3 +53,6 @@ Note, when functions check for configuration options, they first check whether a
 
 Some early versions of *sys_config* were stored in [InnoDB](../../../../../storage-engines/innodb/README.md) format.
 
+
+CC BY-SA / Gnu FDL
+

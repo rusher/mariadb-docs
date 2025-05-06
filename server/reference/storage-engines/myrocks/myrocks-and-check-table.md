@@ -13,3 +13,6 @@ If [log_warnings](../../../server-usage/replication-cluster-multi-master/optimiz
 
 Besides this, RocksDB has its own (low-level) log in `#rocksdb/LOG` file.
 
+
+CC BY-SA / Gnu FDL
+

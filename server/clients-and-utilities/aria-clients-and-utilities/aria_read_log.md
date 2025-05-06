@@ -50,3 +50,7 @@ The following variables can be set while passed as commandline options to aria_r
 | -V, --version | Print version and exit. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

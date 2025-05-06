@@ -35,3 +35,7 @@ myisamchk
   --write_buffer_size=64M
 ...
 ```
+
+
+CC BY-SA / Gnu FDL
+

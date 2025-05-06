@@ -90,3 +90,7 @@ Supported compression libraries are listed in [rocksdb_supported_compression_typ
 ```
 Snappy,Zlib,LZ4,LZ4HC
 ```
+
+
+CC BY-SA / Gnu FDL
+

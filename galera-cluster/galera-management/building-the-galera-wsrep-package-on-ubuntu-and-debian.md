@@ -41,3 +41,6 @@ When finished, you will have the Debian packages for galera library and arbitrat
 
 If you want to run the `galera` test suite (`mysql-test-run --suite=galera`), you need to install the galera library as either `/usr/lib/galera/libgalera_smm.so` or `/usr/lib64/galera/libgalera_smm.so`
 
+
+CC BY-SA / Gnu FDL
+

@@ -108,3 +108,6 @@ DROP TABLE innodb_table_monitor;
 
 The [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) statement can be used to obtain the standard InnoDB Monitor output when required, rather than sending it to the error log. It will also display the InnoDB Lock Monitor information if the [innodb_status_output_locks](innodb-system-variables.md) system variable is set to `1`.
 
+
+CC BY-SA / Gnu FDL
+

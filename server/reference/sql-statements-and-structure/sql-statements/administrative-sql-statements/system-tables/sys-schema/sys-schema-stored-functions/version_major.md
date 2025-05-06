@@ -38,3 +38,6 @@ SELECT VERSION(),
 * [version_minor](version_minor.md)
 * [version_patch](version_patch.md)
 
+
+CC BY-SA / Gnu FDL
+

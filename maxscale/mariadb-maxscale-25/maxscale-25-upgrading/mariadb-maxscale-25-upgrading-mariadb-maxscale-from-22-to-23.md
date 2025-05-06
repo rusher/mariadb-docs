@@ -90,3 +90,7 @@ password=some-monitor-password
 
 
 Authenticator options are now only used with listeners.
+
+
+CC BY-SA / Gnu FDL
+

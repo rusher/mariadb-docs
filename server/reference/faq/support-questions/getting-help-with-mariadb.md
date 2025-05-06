@@ -15,3 +15,6 @@ You can report and check on bugs which apply to MariaDB in [JIRA](https://app.gi
 
 [MariaDB plc](https://mariadb.com) offers [commercial support](https://mariadb.com/services/mariadb-mysql-subscription-services).
 
+
+CC BY-SA / Gnu FDL
+

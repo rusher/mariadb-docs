@@ -460,3 +460,6 @@ the first `.result` file is found. A `.rdiff` is applied to that
 This file defines valgrind suppressions, and it is used when mtr is started
 with a `--valgrind` option.
 
+
+CC BY-SA / Gnu FDL
+

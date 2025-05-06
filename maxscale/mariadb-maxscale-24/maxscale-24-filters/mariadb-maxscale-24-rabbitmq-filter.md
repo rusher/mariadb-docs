@@ -101,3 +101,7 @@ certain user from a certain network address.
 | ssl_CA_cert | Path to the CA certificate in PEM format |  |  |
 | ssl_client_cert | Path to the client certificate in PEM format |  |  |
 | ssl_client_key | Path to the client public key in PEM format |  |  |
+
+
+CC BY-SA / Gnu FDL
+

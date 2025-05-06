@@ -1558,3 +1558,6 @@ Not a vulnerability:
 * [CVE-2012-0583](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0583)
 * [CVE-2012-1696](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1696)
 
+
+CC BY-SA / Gnu FDL
+

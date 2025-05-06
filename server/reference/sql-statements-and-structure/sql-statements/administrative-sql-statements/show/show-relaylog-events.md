@@ -46,3 +46,7 @@ If there is only one nameless primary, or the default primary (as specified by t
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as
 using the channel_name directly after `SHOW RELAYLOG`.
 
+
+
+CC BY-SA / Gnu FDL
+

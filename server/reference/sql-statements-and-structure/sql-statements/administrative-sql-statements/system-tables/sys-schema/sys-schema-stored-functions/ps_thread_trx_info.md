@@ -37,3 +37,6 @@ The maximum length of the returned JSON object is determined by the value of the
 
 * [Sys Schema sys_config Table](../sys-schema-sys_config-table.md)
 
+
+CC BY-SA / Gnu FDL
+

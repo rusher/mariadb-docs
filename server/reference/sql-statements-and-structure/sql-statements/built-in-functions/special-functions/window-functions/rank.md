@@ -60,3 +60,6 @@ FROM student ORDER BY course, mark DESC;
 * [ROW_NUMBER()](row_number.md)
 * [ORDER BY](../../../data-manipulation/selecting-data/order-by.md)
 
+
+CC BY-SA / Gnu FDL
+

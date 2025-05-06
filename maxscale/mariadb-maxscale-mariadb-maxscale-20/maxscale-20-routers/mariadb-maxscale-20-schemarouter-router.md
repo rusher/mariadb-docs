@@ -126,3 +126,7 @@ For a list of schemarouter limitations, please read the [Limitations](../about-m
 
 
 [Here](../../mariadb-maxscale-21-06/README.md) is a small tutorial on how to set up a sharded database.
+
+
+CC BY-SA / Gnu FDL
+

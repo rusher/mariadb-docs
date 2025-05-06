@@ -26,3 +26,7 @@ It contains the following columns:
 | DISTINCT_KEYS_PREFIX |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

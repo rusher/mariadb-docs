@@ -102,3 +102,6 @@ ORDER BY plugin_name;
 
 
 
+
+CC BY-SA / Gnu FDL
+

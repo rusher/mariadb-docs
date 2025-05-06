@@ -244,3 +244,7 @@ Crash upgrade from 10.1.10 (4K, zlib, XtraDB, Barracuda) failed ([MDEV-14759](ht
 | undo | 8 | 5.6.38 (inbuilt) |  | - | - | => | 10.1.30 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

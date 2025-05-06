@@ -29,3 +29,7 @@ SELECT ASTEXT(ST_INTERSECTION(@g1,@g2));
 | POINT(2 1)                       |
 +----------------------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

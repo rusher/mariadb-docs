@@ -258,3 +258,6 @@ where the strategy is one of DUPSWEEDOUT, FIRSTMATCH, LOOSESCAN, MATERIALIZATION
 
 * [Use optimizer_switch to enable/disable specific optimizations](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md)
 
+
+CC BY-SA / Gnu FDL
+

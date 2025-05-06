@@ -709,3 +709,6 @@ support Batched Key Access right away?
 * Dynamic column format will support string column names (see [MDEV-377](https://jira.mariadb.org/browse/MDEV-377))
 * For the first milestone, forget about dynamic column concerns mentioned in "Efficient execution for per-row mapping". It is sufficient that all columns are returned as one blob that physically contains all columns.
 
+
+CC BY-SA / Gnu FDL
+

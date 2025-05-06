@@ -71,3 +71,7 @@ protocol=telnetd
 port=4242
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

@@ -54,3 +54,7 @@ mkdir build
 cd build
 #... run the build script above
 ```
+
+
+CC BY-SA / Gnu FDL
+

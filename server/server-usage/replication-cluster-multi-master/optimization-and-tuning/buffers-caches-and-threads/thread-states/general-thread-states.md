@@ -94,3 +94,7 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | Writing to net | Writing a packet to the network. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

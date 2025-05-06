@@ -87,3 +87,6 @@ server-cert.pem: OK
 
 You can add as many X509 certificates to check against the CA's X509 certificate as you want to verify. A value of `OK` indicates that you can use it was correctly generated and is ready for use with MariaDB.
 
+
+CC BY-SA / Gnu FDL
+

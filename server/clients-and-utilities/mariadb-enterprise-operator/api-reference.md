@@ -2760,3 +2760,7 @@ Refer to the Kubernetes docs: [#weightedpodaffinityterm-v1-core](https://kuberne
 | Field | Description | Default | Validation |
 | weight integer |  |  |  |
 | podAffinityTerm [PodAffinityTerm](#podaffinityterm) |  |  |  |
+
+
+CC BY-SA / Gnu FDL
+

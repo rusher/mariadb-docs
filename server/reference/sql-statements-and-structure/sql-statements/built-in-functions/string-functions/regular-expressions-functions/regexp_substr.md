@@ -55,3 +55,7 @@ SELECT REGEXP_SUBSTR('ABC','(?i)b');
 SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');
 -> B
 ```
+
+
+CC BY-SA / Gnu FDL
+

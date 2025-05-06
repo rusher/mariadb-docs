@@ -75,3 +75,7 @@ Both RPM and Debian packages are available for MaxScale in addition to the tar b
 * Fedora 19
 * Fedora 20
 * OpenSuSE 13
+
+
+CC BY-SA / Gnu FDL
+

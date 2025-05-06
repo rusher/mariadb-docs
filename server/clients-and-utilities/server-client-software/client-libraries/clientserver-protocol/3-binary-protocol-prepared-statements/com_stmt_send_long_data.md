@@ -23,3 +23,6 @@ Multiple COM_STMT_SEND_LONG_DATA commands with the same column id will append th
 
 Server doesn't send response.
 
+
+CC BY-SA / Gnu FDL
+

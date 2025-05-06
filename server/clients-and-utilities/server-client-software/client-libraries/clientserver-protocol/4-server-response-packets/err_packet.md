@@ -40,3 +40,6 @@ Note that the ERR packet is supposed to send a server error to the client. In pa
 
 ["Progress reporting"](../../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)
 
+
+CC BY-SA / Gnu FDL
+

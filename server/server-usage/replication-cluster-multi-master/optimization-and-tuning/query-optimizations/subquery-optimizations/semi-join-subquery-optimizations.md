@@ -105,3 +105,6 @@ MariaDB has five different semi-join execution strategies:
 * ["Observations about subquery use cases"](https://s.petrunia.net/blog/?p=35) blog post
 * [http:en.wikipedia.org/wiki/Semijoin](https://en.wikipedia.org/wiki/Semijoin)
 
+
+CC BY-SA / Gnu FDL
+

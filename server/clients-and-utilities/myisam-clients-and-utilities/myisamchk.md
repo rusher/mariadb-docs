@@ -198,3 +198,6 @@ myisamchk --silent --force --fast --update-state \
 
 * [Memory and Disk Use With myisamchk](memory-and-disk-use-with-myisamchk.md)
 
+
+CC BY-SA / Gnu FDL
+

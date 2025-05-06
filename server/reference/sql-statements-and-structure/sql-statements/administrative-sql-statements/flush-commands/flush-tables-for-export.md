@@ -83,3 +83,6 @@ For a full description, please see [copying MariaDB tables](../../../../../serve
 * [myisampack](../../../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.
 * [aria_pack](../../../../../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution
 
+
+CC BY-SA / Gnu FDL
+

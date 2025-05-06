@@ -11,3 +11,7 @@ cd cmake-2.8.8;./configure
 make
 sudo make install
 ```
+
+
+CC BY-SA / Gnu FDL
+

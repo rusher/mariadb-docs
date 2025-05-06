@@ -8,3 +8,6 @@ See the
 [MariaDB Development Plans](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/)
 page for plans for future versions of MariaDB.
 
+
+CC BY-SA / Gnu FDL
+

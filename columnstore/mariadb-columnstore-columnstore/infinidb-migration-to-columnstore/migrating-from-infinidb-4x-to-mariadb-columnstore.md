@@ -347,3 +347,6 @@ Now replace the data<N> directories with the backup on each PM as appropriate fo
 
 The system should start cleanly and the data should now be accessible in the database.
 
+
+CC BY-SA / Gnu FDL
+

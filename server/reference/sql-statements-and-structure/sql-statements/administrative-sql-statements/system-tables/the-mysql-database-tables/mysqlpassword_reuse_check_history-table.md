@@ -20,3 +20,7 @@ It contains the following fields:
 | time | timestamp | NO | MUL | current_timestamp() |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

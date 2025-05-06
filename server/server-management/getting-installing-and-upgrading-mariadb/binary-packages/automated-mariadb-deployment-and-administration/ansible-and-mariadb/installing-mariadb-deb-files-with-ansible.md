@@ -139,3 +139,6 @@ There is also a system-independent [package module](https://docs.ansible.com/ans
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
+
+CC BY-SA / Gnu FDL
+

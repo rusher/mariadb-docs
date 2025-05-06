@@ -171,3 +171,7 @@ MariaDB> select * from information_schema.optimizer_trace limit 1\G
 MISSING_BYTES_BEYOND_MAX_MEM_SIZE: 0
           INSUFFICIENT_PRIVILEGES: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

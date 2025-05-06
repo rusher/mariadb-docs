@@ -84,3 +84,6 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 * [Histogram-based Statistics](../query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md)
 * [Ignored Indexes](ignored-indexes.md)
 
+
+CC BY-SA / Gnu FDL
+

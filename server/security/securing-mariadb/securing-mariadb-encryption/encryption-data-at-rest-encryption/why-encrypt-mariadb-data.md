@@ -49,3 +49,6 @@ There are currently three options for key management:
 
 See [Encryption Key Management](key-management-and-encryption-plugins/encryption-key-management.md) for details.
 
+
+CC BY-SA / Gnu FDL
+

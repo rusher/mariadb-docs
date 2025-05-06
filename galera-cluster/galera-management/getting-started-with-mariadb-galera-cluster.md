@@ -352,3 +352,6 @@ The cluster nodes can be configured to invoke a command when cluster membership 
 
 
 
+
+CC BY-SA / Gnu FDL
+

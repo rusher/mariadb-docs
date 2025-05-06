@@ -45,3 +45,7 @@ SELECT ST_EQUALS(@g1,@g2);
 |                  0 |
 +--------------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

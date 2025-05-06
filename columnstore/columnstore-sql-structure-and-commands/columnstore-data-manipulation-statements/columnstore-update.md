@@ -36,3 +36,6 @@ UPDATE table_references
 Note: 
 It can only 1 table (but multiple columns) be updated from the table list in table_references.
 
+
+CC BY-SA / Gnu FDL
+

@@ -48,3 +48,6 @@ NO_AUTO_CREATE_USER |
 
 * [list_add](list_add.md)
 
+
+CC BY-SA / Gnu FDL
+

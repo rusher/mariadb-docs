@@ -257,3 +257,7 @@ port=3306
 * Data synchronization in dynamic environments (e.g. when replication is in use)
  is not guaranteed. This means that result mismatches can be reported when the
  data is only eventually consistent.
+
+
+CC BY-SA / Gnu FDL
+

@@ -27,3 +27,6 @@ Photos from the presentation:
 * [4FdXbFyu2DF](https://plus.google.com/b/102059736934609902389/102059736934609902389/posts/4FdXbFyu2DF)
 * [8mm6BNT8rfB](https://plus.google.com/b/102059736934609902389/102059736934609902389/posts/8mm6BNT8rfB)
 
+
+CC BY-SA / Gnu FDL
+

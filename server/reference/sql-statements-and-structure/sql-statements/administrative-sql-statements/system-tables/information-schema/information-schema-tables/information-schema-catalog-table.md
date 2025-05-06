@@ -55,3 +55,6 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 * [DROP CATALOG](../../../../../../../security/user-account-management/catalogs/drop-catalog.md)
 * [Character Sets and Collations](../../../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 
+
+CC BY-SA / Gnu FDL
+

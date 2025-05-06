@@ -47,3 +47,7 @@ Rows_changed_x_#indexes: 0
            Rows_changed: 0
 Rows_changed_x_#indexes: 0
 ```
+
+
+CC BY-SA / Gnu FDL
+

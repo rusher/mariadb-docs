@@ -467,3 +467,7 @@ standard library.
 
 The MaxScale REST API follows the JSON API specification and there exist
 libraries that are built specifically for these sorts of APIs
+
+
+CC BY-SA / Gnu FDL
+

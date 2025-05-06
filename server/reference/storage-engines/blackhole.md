@@ -118,3 +118,7 @@ INSERT INTO table_name VALUES (1, 'bob'),(2, 'jane');
 SELECT * FROM table_name;
 Empty set (0.001 sec)
 ```
+
+
+CC BY-SA / Gnu FDL
+

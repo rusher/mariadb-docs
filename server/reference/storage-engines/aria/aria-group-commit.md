@@ -71,3 +71,6 @@ Works like in `non group commit'` but the thread doesn't do any real sync(). If 
 
 The code for this can be found in storage/maria/ma_loghandler.c::translog_flush()
 
+
+CC BY-SA / Gnu FDL
+

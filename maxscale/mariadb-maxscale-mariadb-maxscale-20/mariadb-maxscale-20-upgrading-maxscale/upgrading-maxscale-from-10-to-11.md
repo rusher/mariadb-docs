@@ -29,3 +29,7 @@ The 1.1.0 version of MaxScale installs into `/usr/local/mariadb-maxscale` instea
 
 
 The MaxAdmin client's default password in MaxScale 1.1.0 is `mariadb` instead of `skysql`.
+
+
+CC BY-SA / Gnu FDL
+

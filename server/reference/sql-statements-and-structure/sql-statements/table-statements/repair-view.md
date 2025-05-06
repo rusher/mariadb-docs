@@ -26,3 +26,6 @@ By default, `REPAIR VIEW` statements are written to the [binary log](../../../..
 
 * [CHECK VIEW](check-view.md)
 
+
+CC BY-SA / Gnu FDL
+

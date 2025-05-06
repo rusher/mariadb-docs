@@ -28,3 +28,7 @@ SHOW WSREP_STATUS;
 |          0 | Synced      | Primary        |            3 |
 +------------+-------------+----------------+--------------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

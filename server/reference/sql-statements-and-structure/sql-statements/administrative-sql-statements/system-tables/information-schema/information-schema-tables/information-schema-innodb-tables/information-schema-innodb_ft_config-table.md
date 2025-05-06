@@ -39,3 +39,7 @@ SELECT * FROM INNODB_FT_CONFIG;
 | table_state               | 0     |
 +---------------------------+-------+
 ```
+
+
+CC BY-SA / Gnu FDL
+

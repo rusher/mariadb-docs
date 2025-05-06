@@ -117,3 +117,6 @@ Both UpgradeWizard and mysql_upgrade_service can also be used to upgrade
 database instances that were installed with the
 [ZIP installation](../binary-packages/installing-mariadb-windows-zip-packages.md).
 
+
+CC BY-SA / Gnu FDL
+

@@ -169,3 +169,6 @@ For compatibility reasons, the TLS system variables in MariaDB still use the `ss
 * [System Variables](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 * [Full list of MariaDB options, system and status variables](../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
 
+
+CC BY-SA / Gnu FDL
+

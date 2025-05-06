@@ -384,3 +384,7 @@ Known bug [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094). A few upgrad
 | undo | 8 | 5.6.41 (inbuilt) |  | - | - | => | 10.3.10 (inbuilt) |  | - | - | - | OK |  |
 
 
+
+
+CC BY-SA / Gnu FDL
+

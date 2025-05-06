@@ -211,3 +211,6 @@ The use of integer latches is controlled using the [oqgraph_allow_create_integer
 
 * [OQGRAPH Overview](oqgraph-overview.md)
 
+
+CC BY-SA / Gnu FDL
+

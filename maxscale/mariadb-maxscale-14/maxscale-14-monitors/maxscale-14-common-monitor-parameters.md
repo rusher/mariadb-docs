@@ -129,3 +129,7 @@ Here is a table of all possible event types and their descriptions that the moni
 | new_master | A new Master was detected |
 | new_slave | A new Slave was detected |
 | new_ndb | A new MySQL Cluster node was found |
+
+
+CC BY-SA / Gnu FDL
+

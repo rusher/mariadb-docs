@@ -105,3 +105,7 @@ RowKey: rowkey11
 3 Rows Returned.
 Elapsed time: 5 msec(s).
 ```
+
+
+CC BY-SA / Gnu FDL
+

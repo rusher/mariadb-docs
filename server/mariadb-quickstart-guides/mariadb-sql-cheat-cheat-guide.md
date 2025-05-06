@@ -59,3 +59,7 @@ SELECT count(1) from mytable; gives the number of records in the table
 
 *The first version of this article was copied, with permission, from [Basic_SQL_Statements](https://hashmysql.org/wiki/Basic_SQL_Statements) on 2012-10-05.*
 
+
+
+CC BY-SA / Gnu FDL
+

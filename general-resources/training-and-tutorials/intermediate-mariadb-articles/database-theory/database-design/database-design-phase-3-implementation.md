@@ -17,3 +17,6 @@ The following are steps in the implementation phase:
 1. Set up the users and security.
 1. Implement the backup regime.
 
+
+CC BY-SA / Gnu FDL
+

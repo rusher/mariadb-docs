@@ -257,3 +257,7 @@ navigation.
 
 The global search input located next to the *+ Create New* button can be
 used for searching for keywords in tables.
+
+
+CC BY-SA / Gnu FDL
+

@@ -71,3 +71,7 @@ END //
 
 DELIMITER ;
 ```
+
+
+CC BY-SA / Gnu FDL
+

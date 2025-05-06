@@ -18,3 +18,7 @@ It contains the following columns:
 | PASSWORD_EXPIRATION_TIME | A timestamp with the exact point in time calculated from password_last_changed and password_lifetime (i.e. days) stored for the user. |
 
 
+
+
+CC BY-SA / Gnu FDL
+

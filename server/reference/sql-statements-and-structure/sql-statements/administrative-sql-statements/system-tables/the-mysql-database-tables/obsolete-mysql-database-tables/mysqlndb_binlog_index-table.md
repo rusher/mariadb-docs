@@ -23,3 +23,7 @@ The table contains the following fields:
 | schemaops | bigint(20) unsigned | NO |  | NULL |
 
 
+
+
+CC BY-SA / Gnu FDL
+

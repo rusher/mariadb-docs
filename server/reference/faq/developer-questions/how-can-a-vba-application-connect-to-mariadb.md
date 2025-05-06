@@ -7,3 +7,6 @@ Tried several things but it does not work.
 Anyone knows how to do this?
 Thank you, Martin.
 
+
+CC BY-SA / Gnu FDL
+

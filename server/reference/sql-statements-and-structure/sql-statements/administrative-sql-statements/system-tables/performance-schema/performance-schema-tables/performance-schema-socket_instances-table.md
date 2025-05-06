@@ -20,3 +20,7 @@ The `socket_instances` table contains the following columns:
 | STATE | Socket status, either IDLE if waiting to receive a request from a client, or ACTIVE |
 
 
+
+
+CC BY-SA / Gnu FDL
+

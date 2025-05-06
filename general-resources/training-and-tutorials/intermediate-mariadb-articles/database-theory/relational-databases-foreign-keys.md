@@ -72,3 +72,6 @@ Foreign keys also allow *cascading* deletes and updates. For example, if Anne Co
 
 Foreign keys can also contain null values, indicating that no relationship exists.
 
+
+CC BY-SA / Gnu FDL
+

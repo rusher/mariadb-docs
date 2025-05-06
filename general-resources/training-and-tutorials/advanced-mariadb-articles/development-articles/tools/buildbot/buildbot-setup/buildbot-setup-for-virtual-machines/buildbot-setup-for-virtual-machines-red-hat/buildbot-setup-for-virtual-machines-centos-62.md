@@ -284,3 +284,7 @@ for i in '/kvm/vms/vm-centos6-amd64-serial.qcow2 22255 qemu64' '/kvm/vms/vm-cent
 done
 ```
 
+
+
+CC BY-SA / Gnu FDL
+

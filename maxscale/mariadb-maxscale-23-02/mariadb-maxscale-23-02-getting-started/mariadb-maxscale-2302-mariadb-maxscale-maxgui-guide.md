@@ -151,3 +151,7 @@ like CSV or JSON for further analysis and sharing.
 The "Data Migration" feature facilitates seamless transitions from PostgreSQL
 to MariaDB. Transfer data and database structures between the two systems while
 ensuring data integrity and consistency throughout the process.
+
+
+CC BY-SA / Gnu FDL
+

@@ -33,3 +33,7 @@ CREATE VIEW v_cust_orders (cust_name, order_number, order_status) as
 select c.cust_name, o.ordernum, o.status from customer c, orders o
 where c.custnum = o.custnum;
 ```
+
+
+CC BY-SA / Gnu FDL
+

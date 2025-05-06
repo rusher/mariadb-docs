@@ -104,3 +104,6 @@ FROM t1;
 
 * [LAST_VALUE](../../secondary-functions/information-functions/last_value.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -233,3 +233,6 @@ See the [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-fu
 * [INSERT IGNORE](insert-ignore.md)
 * [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md)
 
+
+CC BY-SA / Gnu FDL
+

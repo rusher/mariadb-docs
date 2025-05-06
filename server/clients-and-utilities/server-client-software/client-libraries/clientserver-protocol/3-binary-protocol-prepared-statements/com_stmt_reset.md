@@ -28,3 +28,7 @@ Resets a prepared statement on the client and server to state after preparing.
 ```
 
 
+
+
+CC BY-SA / Gnu FDL
+

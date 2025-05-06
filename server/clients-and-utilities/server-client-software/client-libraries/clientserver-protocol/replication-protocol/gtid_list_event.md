@@ -85,3 +85,6 @@ The content example with one GTID is 20 bytes + 4 bytes CRC32:
 * GTID[0] Sequence[8] = 00 0e 00 00 00 00 00 00 ===> 3584
 * crc32[4] = a8 f0 d8 b6 => b6 d8 f0 a8 => 0xb6d8f0a8
 
+
+CC BY-SA / Gnu FDL
+

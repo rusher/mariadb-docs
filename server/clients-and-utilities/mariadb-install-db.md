@@ -512,3 +512,6 @@ SELECT user,host FROM mysql.user;
 * [Installing system tables (mariadb-install-db)](../server-management/getting-installing-and-upgrading-mariadb/installing-system-tables-mariadb-install-db.md)
 * The Windows version of `mariadb-install-db`: `[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)`
 
+
+CC BY-SA / Gnu FDL
+

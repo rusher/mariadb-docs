@@ -9,3 +9,6 @@ Choose an option below to see the corresponding upgrade procedure:
 * [Upgrade a Multi-Node MariaDB ColumnStore 1.4](/en/deploy-mariadb-columnstore-with-mariadb-community-server/)
 [Deployment with MariaDB Enterprise Server 10.4](/en/enterprise-server/)
 
+
+CC BY-SA / Gnu FDL
+

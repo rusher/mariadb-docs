@@ -66,3 +66,6 @@ ERROR 1062 (23000): Duplicate entry '{"color":"blue","name":"alice"}' for key 'j
 
 * [JSON_EQUALS](json_equals.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -67,3 +67,6 @@ SELECT ST_EQUALS( (SELECT ST_COLLECT( location ) AS t FROM t1),
 * [Geometry Constructors](../geometry-constructors/README.md)
 * [ST_AsText](../wkt/st_astext.md)
 
+
+CC BY-SA / Gnu FDL
+
