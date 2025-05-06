@@ -1,2 +1,0 @@
-
-# ColumnStore Performance Tuning

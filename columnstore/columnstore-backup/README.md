@@ -1,2 +1,0 @@
-# columnstore-backup
-

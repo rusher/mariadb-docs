@@ -1,73 +1,51 @@
-
 # ColumnStore Multiple User Module Guide
 
- 
-1. [Introduction "Introduction"](#introduction)
-1. [ColumnStore user module "ColumnStore user module"](#columnstore-user-module)
-1. [ColumnStore user module configuration "ColumnStore user module configuration"](#columnstore-user-module-configuration)
-1. [ColumnStore user module status "ColumnStore user module status"](#columnstore-user-module-status)
-1. [ColumnStore multiple user module query execution "ColumnStore multiple user module query execution"](#columnstore-multiple-user-module-query-execution)
-1. [ColumnStore cross engine joins "ColumnStore cross engine joins"](#columnstore-cross-engine-joins) 
-
-  1. [Automatic query round-robin distribution "Automatic query round-robin distribution"](#automatic-query-round-robin-distribution)
-  1. [Localized query distribution "Localized query distribution"](#localized-query-distribution)
-1. [ColumnStore local performance module query "ColumnStore local performance module query"](#columnstore-local-performance-module-query)
-1. [ColumnStore user module replication "ColumnStore user module replication"](#columnstore-user-module-replication) 
-
-  1. [Enabling replication "Enabling replication"](#enabling-replication)
-  1. [Disabling replication "Disabling replication"](#disabling-replication)
-  1. [MariaDB Database password "MariaDB Database password"](#mariadb-database-password)
-
-
-
-
+1. [Introduction "Introduction"](columnstore-multiple-user-module-guide.md#introduction)
+2. [ColumnStore user module "ColumnStore user module"](columnstore-multiple-user-module-guide.md#columnstore-user-module)
+3. [ColumnStore user module configuration "ColumnStore user module configuration"](columnstore-multiple-user-module-guide.md#columnstore-user-module-configuration)
+4. [ColumnStore user module status "ColumnStore user module status"](columnstore-multiple-user-module-guide.md#columnstore-user-module-status)
+5. [ColumnStore multiple user module query execution "ColumnStore multiple user module query execution"](columnstore-multiple-user-module-guide.md#columnstore-multiple-user-module-query-execution)
+6. [ColumnStore cross engine joins "ColumnStore cross engine joins"](columnstore-multiple-user-module-guide.md#columnstore-cross-engine-joins)
+7. [Automatic query round-robin distribution "Automatic query round-robin distribution"](columnstore-multiple-user-module-guide.md#automatic-query-round-robin-distribution)
+8. [Localized query distribution "Localized query distribution"](columnstore-multiple-user-module-guide.md#localized-query-distribution)
+9. [ColumnStore local performance module query "ColumnStore local performance module query"](columnstore-multiple-user-module-guide.md#columnstore-local-performance-module-query)
+10. [ColumnStore user module replication "ColumnStore user module replication"](columnstore-multiple-user-module-guide.md#columnstore-user-module-replication)
+11. [Enabling replication "Enabling replication"](columnstore-multiple-user-module-guide.md#enabling-replication)
+12. [Disabling replication "Disabling replication"](columnstore-multiple-user-module-guide.md#disabling-replication)
+13. [MariaDB Database password "MariaDB Database password"](columnstore-multiple-user-module-guide.md#mariadb-database-password)
 
 ## Introduction
 
-
 This Document describes the setup and the functionality of the MariaDB ColumnStore User Module in a Multiple Node configuration. It will detail the different ways to configure how queries are processed with the Multiple Nodes and how the MariaDB ColumnStore Replication works.
-
 
 ## ColumnStore user module
 
-
 The ColumnStore User Module manages and controls the operation of end-user queries. For additional details on this can be found here:
-
 
 [columnstore-user-module.md](../../columnstore-architecture/columnstore-user-module.md)
 
-
 ## ColumnStore user module configuration
 
-
-A MariaDB ColumnStore system will have at least 1 User Module. It might reside on the same server as the MariaDB ColumnStore Performance Module or can reside on a separate server. A MariaDB ColumnStore system can also be configured to have more than 1 User Modules. 
+A MariaDB ColumnStore system will have at least 1 User Module. It might reside on the same server as the MariaDB ColumnStore Performance Module or can reside on a separate server. A MariaDB ColumnStore system can also be configured to have more than 1 User Modules.\
 The advantages of having Multiple User Modules:
-
 
 * Higher concurrency queries execution by distributing the queries across all User Modules
 * Higher Query Performance
 * Provides User Modules High Availability into the system
 * Provides support of MariaDB ColumnStore User Module Replication
 
-
-A MariaDB ColumnStore system can be configured with Multiple User Modules either during the install installation phase when running the configuration script postConfigure. 
+A MariaDB ColumnStore system can be configured with Multiple User Modules either during the install installation phase when running the configuration script postConfigure.\
 More details can be found here:
 
-
-[installing-and-configuring-a-multi-server-columnstore-system-10x.md](../../columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-a-multi-server-columnstore-system-10x.md)
-
+[installing-and-configuring-a-multi-server-columnstore-system-10x.md](../columnstore-getting-started/preparing-and-installing-mariadb-columnstore-10x/installing-and-configuring-a-multi-server-columnstore-system-10x.md)
 
 An existing MariaDB ColumnStore system can be scaled out by adding addition User Modules. More Details can be found here on adding addition modules to a system:
 
-
 ## ColumnStore user module status
-
 
 Use the 'mcsadmin getSystemInfo' to display the Module Status along with the current Master User Module, which is called "Primary Front-End MariaDB ColumnStore Module"
 
-
 Here is an example:
-
 
 ```
 # mcsadmin  getSystemInfo
@@ -123,52 +101,36 @@ Active Alarm Counts: Critical = 0, Major = 0, Minor = 0, Warning = 0, Info = 0
 
 [managing-columnstore-module-configurations.md](managing-columnstore-module-configurations.md)
 
-
 ## ColumnStore multiple user module query execution
 
-
-Each of the User Modules have a MariaDB server process (mysqld) that that receive a query request from the MariaDB console or from remote applications via the MariaDB Port interface (defaulted is 3306). The MariaDB server process will send that request to the MariaDB ColumnStore process ExeMgr for processing.
+Each of the User Modules have a MariaDB server process (mysqld) that that receive a query request from the MariaDB console or from remote applications via the MariaDB Port interface (defaulted is 3306). The MariaDB server process will send that request to the MariaDB ColumnStore process ExeMgr for processing.\
 More details about how this is processed can be found here:
-
 
 [columnstore-user-module.md](../../columnstore-architecture/columnstore-user-module.md)
 
-
 ## ColumnStore cross engine joins
-
 
 MariaDB ColumnStore allows columnstore tables to be joined with non-columnstore tables (e.g. InnoDB tables) within a query. The standard configuration is to process these on the local User Module where the request was made. So the Automatic Query Round-Robin Distribution functionality doesn't apply to this type of queries.
 
-
 More information on ColumnStore Cross Engine Joins can be found here:
-
 
 [configuring-columnstore-cross-engine-joins.md](../managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins.md)
 
-
 ### Automatic query round-robin distribution
-
 
 In a standard Multi-Node configuration install with more than 1 User Module, the query request are scaled-out across all User Modules using an automatic round-robin distribution functionality. This means that the MariaDB server process will distribute the query requests to all User Modules (ExeMgrs) in the MariaDB ColumnStore system. The ExeMgr will handle the processing of the query request and pass back the resulting data to the initial MariaDB server process, which will in turn provide that result set to the calling client. This round-robin distribution is handled on a session by sessions basis.
 
-
-![um-roundrobin-msg](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-roundrobin-msg.jpg "um-roundrobin-msg")
-
+![um-roundrobin-msg](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-roundrobin-msg.jpg)
 
 ### Localized query distribution
 
-
 It is also possible to override the default round-robin logic and route queries only to the ExeMgr on the same host as the MariaDB server. With large result sets this may be more optimal as it avoids remote data transfers when the ExeMgr is not local. So what this means that when a Query comes into the MariaDB server process on UM1, it will send it to the ExeMgr on UM1 only for process. And the same would apply to the other User Modules. UM2 MariaDB Server process will send to UM2 ExeMgr. So if the user has a reason to want to keep all or a certain group of queries being process on 1 node, like UM1 and then use UM2 for backup only or maybe to handle special queries, then would be a reason for this type of configuration.
-
 
 To do this, the ExeMgr(s) port addresses in the MariaDB Columnstore configuration file (Columnstore.xml) would need to be updated after the install to contain the loop back address of 127.0.0.1.
 
-
 Here is the steps to achieve that. Note this examples shows update a 2 User Module system with 2 ExeMgrs. If you had 3 or more, than you would run the setConfig command the additional times.
 
-
 Here is the steps, run from PM1: (reminder, all changes to the config file need to be made on PM1)
-
 
 ```
 # mcsadmin stopSystem y
@@ -179,47 +141,33 @@ Here is the steps, run from PM1: (reminder, all changes to the config file need 
 
 NOTE: The steps are assuming a root install directory, change for an non-root install where the directory is different.
 
-
-NOTE: To go from a Localized query distribution back to a query round-robin distribution, you would either need to run the same commands above, but replacing the 127.0.0.1 with the real IP Addresses of the 2 servers.
+NOTE: To go from a Localized query distribution back to a query round-robin distribution, you would either need to run the same commands above, but replacing the 127.0.0.1 with the real IP Addresses of the 2 servers.\
 Or do a shutdown and run postConfigure again from pm1.
 
-
-![um-local-msg](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-local-msg.jpg "um-local-msg")
-
+![um-local-msg](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/um-local-msg.jpg)
 
 ## ColumnStore local performance module query
 
-
 MariaDB ColumnStore support Local Performance Module Query where a query can be run locally on a Performance Module when a system is configured to have the User Module and the Performance Module on different servers. In this case, the Performance Module will have the User Module process running like the MariaDB Server Process and ExeMgr. But they are only there to process local queries. There will not process queries as part of the Automatic Query Round-Robin Distribution.
-
 
 More information on ColumnStore Local Performance Module Query can be found here:
 
-
 [configuring-columnstore-local-pm-query-mode.md](../managing-columnstore-database-environment/configuring-columnstore-local-pm-query-mode.md)
 
-
-![pm-local-query](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/pm-local-query.jpg "pm-local-query")
-
+![pm-local-query](../../.gitbook/assets/columnstore-multiple-user-module-guide/+image/pm-local-query.jpg)
 
 ## ColumnStore user module replication
 
-
 MariaDB Columnstore supports User Module Replication. This will synchronize the the User Module data, which consist of the MariaDB Columnstore Database Schemas and the non-columnstore engine schemas and data. When enabled, it will synchronize the data from the Master Data Replication module, default is User Module 1, to all of the other User Modules including the Local Performance Modules. It uses the standard MySQL Data replication functionality to do this from the MariaDB Server Process.
-
 
 Which the setup to distribute from the Master User Module, any DDL and non-columnstore table creation and population must be done from the Master User Module. This will keep all of the User Module Databases in-sync.
 
-
 MariaDB ColumnStore utilizing the same Standard Replication that is used in the MariaDB Server application though the use of binlogs.
-
 
 The Master User Module will be assigned in the my.cnf file with SERVER-ID of 1. User Module #1 is the default Master at system startup. In the case of a failover where UM1 goes offline and another User Modules takes over as the Master, that User Module will be updated as SERVER-ID of 1. When User Module #1 recovers, it will be assigned a non 1 ID.
 
-
-Default User for Replication is idbrep and will be created from the scripts 
+Default User for Replication is idbrep and will be created from the scripts\
 master-rep-columnstore.sh and slave-rep-columnstore.sh
-
 
 ```
 https://github.com/mariadb-corporation/mariadb-columnstore-engine/blob/develop-1.2/oam/install_scripts/master-rep-columnstore.sh
@@ -229,13 +177,10 @@ https://github.com/mariadb-corporation/mariadb-columnstore-engine/blob/develop-1
 
 ### Enabling replication
 
-
 The ColumnStore User Module Replication functionality can be enabled a couple of different ways:
-
 
 * During the initial configuration setup in postConfigure
 * Using the MariaDB ColumnStore Admin console
-
 
 ```
 # mcsadmin enableMySQLReplication
@@ -243,13 +188,10 @@ The ColumnStore User Module Replication functionality can be enabled a couple of
 
 ### Disabling replication
 
-
 The ColumnStore User Module Replication functionality can be disabled a couple of different ways:
-
 
 * During the initial configuration setup in postConfigure
 * Using the MariaDB ColumnStore Admin console
-
 
 ```
 # mcsadmin disableMySQLReplication
@@ -257,15 +199,10 @@ The ColumnStore User Module Replication functionality can be disabled a couple o
 
 The option to disable the MariaDB ColumnStore User Module Replication is available since there are additional third party tools that can be used to do the Data Replication.
 
-
 ### MariaDB Database password
-
 
 If you set a root password within the MariaDB Database, you will need to create a .my.cnf file as shown here and it will need to reside on all servers that have a User Module MariaDB running.
 
-
 [#mysql-root-user-password](https://mariadb.com/kb/en/library/mariadb-columnstore-system-usage/#mysql-root-user-password)
 
-
 CC BY-SA / Gnu FDL
-
