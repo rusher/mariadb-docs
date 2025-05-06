@@ -554,7 +554,7 @@
     * [Full List of MariaDB Options, System and Status Variables](server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
     * [OLD\_MODE](server-management/variables-and-modes/old-mode.md)
     * [SQL\_MODE](server-management/variables-and-modes/sql-mode.md)
-* [Server Security](security/README.md)
+* [Security](security/README.md)
   * [Security Vulnerabilities Fixed in Oracle MySQL That Did Not Exist in MariaDB](security/security-vulnerabilities-in-oracle-mysql-that-did-not-exist-in-mariadb.md)
   * [Security Vulnerabilities Fixed in MariaDB](security/security.md)
   * [Authentication with Enterprise Server](security/authentication-with-enterprise-server/README.md)
