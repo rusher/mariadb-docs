@@ -1,0 +1,2 @@
+# MaxScale Architecture
+
