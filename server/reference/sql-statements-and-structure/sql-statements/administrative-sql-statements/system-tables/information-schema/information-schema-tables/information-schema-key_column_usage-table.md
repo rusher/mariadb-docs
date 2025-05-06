@@ -1,33 +1,26 @@
+# Information Schema KEY\_COLUMN\_USAGE Table
 
-# Information Schema KEY_COLUMN_USAGE Table
-
-The [Information Schema](../README.md) `KEY_COLUMN_USAGE` table shows which key columns have constraints.
-
+The [Information Schema](../) `KEY_COLUMN_USAGE` table shows which key columns have constraints.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| CONSTRAINT_CATALOG | Always def. |
-| CONSTRAINT_SCHEMA | Database name of the constraint. |
-| CONSTRAINT_NAME | Name of the constraint (PRIMARY for the primary key). |
-| TABLE_CATALOG | Always #def. |
-| TABLE_SCHEMA | Database name of the column constraint. |
-| TABLE_NAME | Table name of the column constraint. |
-| COLUMN_NAME | Column name of the constraint. |
-| ORDINAL_POSITION | Position of the column within the constraint. |
-| POSITION_IN_UNIQUE_CONSTRAINT | For [foreign keys](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md), the position in the unique constraint. |
-| REFERENCED_TABLE_SCHEMA | For foreign keys, the referenced database name. |
-| REFERENCED_TABLE_NAME | For foreign keys, the referenced table name. |
-| REFERENCED_COLUMN_NAME | For foreign keys, the referenced column name. |
-
-
+| Column                           | Description                                                                                                                                                          |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                           | Description                                                                                                                                                          |
+| CONSTRAINT\_CATALOG              | Always def.                                                                                                                                                          |
+| CONSTRAINT\_SCHEMA               | Database name of the constraint.                                                                                                                                     |
+| CONSTRAINT\_NAME                 | Name of the constraint (PRIMARY for the primary key).                                                                                                                |
+| TABLE\_CATALOG                   | Always #def.                                                                                                                                                         |
+| TABLE\_SCHEMA                    | Database name of the column constraint.                                                                                                                              |
+| TABLE\_NAME                      | Table name of the column constraint.                                                                                                                                 |
+| COLUMN\_NAME                     | Column name of the constraint.                                                                                                                                       |
+| ORDINAL\_POSITION                | Position of the column within the constraint.                                                                                                                        |
+| POSITION\_IN\_UNIQUE\_CONSTRAINT | For [foreign keys](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md), the position in the unique constraint. |
+| REFERENCED\_TABLE\_SCHEMA        | For foreign keys, the referenced database name.                                                                                                                      |
+| REFERENCED\_TABLE\_NAME          | For foreign keys, the referenced table name.                                                                                                                         |
+| REFERENCED\_COLUMN\_NAME         | For foreign keys, the referenced column name.                                                                                                                        |
 
 ## Example
-
 
 ```
 SELECT * FROM information_schema.KEY_COLUMN_USAGE LIMIT 1 \G
@@ -47,9 +40,6 @@ POSITION_IN_UNIQUE_CONSTRAINT: NULL
 
 ## See Also
 
-
 * [Finding Tables Without Primary Keys](https://mariadb.com/kb/en/getting-started-with-indexes/#finding-tables-without-primary-keys)
 
-
 CC BY-SA / Gnu FDL
-

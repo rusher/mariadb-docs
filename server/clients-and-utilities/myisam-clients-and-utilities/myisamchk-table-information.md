@@ -1,11 +1,8 @@
-
 # myisamchk Table Information
 
-[myisamchk](myisamchk.md) can be used to obtain information about MyISAM tables, particularly with the *-d*, *-e*, *-i* and *-v* options.
-
+[myisamchk](myisamchk.md) can be used to obtain information about MyISAM tables, particularly with the _-d_, _-e_, _-i_ and _-v_ options.
 
 Common options for gathering information include:
-
 
 * myisamchk -d
 * myisamchk -dv
@@ -13,106 +10,90 @@ Common options for gathering information include:
 * myisamchk -ei
 * myisamchk -eiv
 
-
-The *-d* option returns a short description of the table and its keys. Running the option while the table is being updated, and with external locking disabled, may result in an error, but no damage will be done to the table. Each extra *v* adds more output. *-e* checks the table thoroughly (but slowly), and the *-i* options adds statistical information,
-
+The _-d_ option returns a short description of the table and its keys. Running the option while the table is being updated, and with external locking disabled, may result in an error, but no damage will be done to the table. Each extra _v_ adds more output. _-e_ checks the table thoroughly (but slowly), and the _-i_ options adds statistical information,
 
 ## -dvv output
 
+The following table describes the output from the running myisamchk with the _-dvv_ option:
 
-The following table describes the output from the running myisamchk with the *-dvv* option:
+| Heading             | Description                                                                                                                                                                                                             |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Heading             | Description                                                                                                                                                                                                             |
+| MyISAM file         | Name and path of the MyISAM index file (without the extension)                                                                                                                                                          |
+| Record format       | [Storage format](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md). One of packed (dynamic), fixed or compressed.                                                                        |
+| Chararacter set     | Default [character set](../../reference/data-types/string-data-types/character-sets/) for the table.                                                                                                                    |
+| File-version        | Always 1.                                                                                                                                                                                                               |
+| Creation time       | Time the data file was created                                                                                                                                                                                          |
+| Recover time        | Most recent time the file was reconstructed.                                                                                                                                                                            |
+| Status              | Table status. One or more of analyzed, changed, crashed, open, optimized keys and sorted index pages.                                                                                                                   |
+| Auto increment key  | Index number of the table's [auto-increment](https://mariadb.com/kb/en/auto-increment) column. Not shown if no auto-increment column exists.                                                                            |
+| Last value          | Most recently generated auto-increment value. Not shown if no auto-increment column exists.                                                                                                                             |
+| Data records        | Number of records in the table.                                                                                                                                                                                         |
+| Deleted blocks      | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment.                                      |
+| Datafile parts      | For [dynamic tables](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md), the number of data blocks. If the table is optimized, this will match the number of data records.                |
+| Deleted data        | Number of bytes of unreclaimed deleted data, Use [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to reclaim the space.                                           |
+| Datafile pointer    | Size in bytes of the data file pointer. The size of the data file pointer, in bytes.                                                                                                                                    |
+| Keyfile pointer     | Size in bytes of the index file pointer.                                                                                                                                                                                |
+| Max datafile length | Maximum length, in bytes, that the data file could become.                                                                                                                                                              |
+| Max keyfile length  | Maximum length, in bytes, that the index file could become.                                                                                                                                                             |
+| Recordlength        | Space, in bytes, that each row takes.                                                                                                                                                                                   |
+| table description   | Description of all indexes in the table, followed by all columns                                                                                                                                                        |
+| Key                 | Index number, starting with one. If not shown, the index is part of a multiple-column index.                                                                                                                            |
+| Start               | Where the index part starts in the row.                                                                                                                                                                                 |
+| Len                 | Length of the index or index part. The length of a multiple-column index is the sum of the component lengths. Indexes of string columns will be shorter than the full column length if only a string prefix is indexed. |
+| Index               | Whether an index value is unique or not. Either multip. or unique.                                                                                                                                                      |
+| Type                | Data type of the index of index part.                                                                                                                                                                                   |
+| Rec/key             | Record of the number of rows per value for the index or index part. Used by the optimizer to calculate query plans. Can be updated with [myisamchk-a](myisamchk.md). If not present, defaults to 30.                    |
+| Root                | Root index block address.                                                                                                                                                                                               |
+| Blocksize           | Index block size, in bytes.                                                                                                                                                                                             |
+| Field               | Column number, starting with one. The first line will contain the position and number of bytes used to store NULL flags, if any (see Nullpos and Nullbit, below).                                                       |
+| Start               | Column's byte position within the table row.                                                                                                                                                                            |
+| Length              | Column length, in bytes.                                                                                                                                                                                                |
+| Nullpos             | Byte containing the flag for NULL values. Empty if column cannot be NULL.                                                                                                                                               |
+| Nullbit             | Bit containing the flag for NULL values. Empty if column cannot be NULL.                                                                                                                                                |
+| Type                | Data type - see the table below for a list of possible values.                                                                                                                                                          |
+| Huff tree           | Only present for packed tables, contains the Huffman tree number associated with the column.                                                                                                                            |
+| Bits                | Only present for packed tables, contains the number of bits used in the Huffman tree.                                                                                                                                   |
 
-
-
-| Heading | Description |
-| --- | --- |
-| Heading | Description |
-| MyISAM file | Name and path of the MyISAM index file (without the extension) |
-| Record format | [Storage format](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md). One of packed (dynamic), fixed or compressed. |
-| Chararacter set | Default [character set](../../reference/data-types/string-data-types/character-sets/README.md) for the table. |
-| File-version | Always 1. |
-| Creation time | Time the data file was created |
-| Recover time | Most recent time the file was reconstructed. |
-| Status | Table status. One or more of analyzed, changed, crashed, open, optimized keys and sorted index pages. |
-| Auto increment key | Index number of the table's [auto-increment](https://mariadb.com/kb/en/auto-increment) column. Not shown if no auto-increment column exists. |
-| Last value | Most recently generated auto-increment value. Not shown if no auto-increment column exists. |
-| Data records | Number of records in the table. |
-| Deleted blocks | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment. |
-| Datafile parts | For [dynamic tables](../../reference/storage-engines/myisam-storage-engine/myisam-storage-formats.md), the number of data blocks. If the table is optimized, this will match the number of data records. |
-| Deleted data | Number of bytes of unreclaimed deleted data, Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to reclaim the space. |
-| Datafile pointer | Size in bytes of the data file pointer. The size of the data file pointer, in bytes. |
-| Keyfile pointer | Size in bytes of the index file pointer. |
-| Max datafile length | Maximum length, in bytes, that the data file could become. |
-| Max keyfile length | Maximum length, in bytes, that the index file could become. |
-| Recordlength | Space, in bytes, that each row takes. |
-| table description | Description of all indexes in the table, followed by all columns |
-| Key | Index number, starting with one. If not shown, the index is part of a multiple-column index. |
-| Start | Where the index part starts in the row. |
-| Len | Length of the index or index part. The length of a multiple-column index is the sum of the component lengths. Indexes of string columns will be shorter than the full column length if only a string prefix is indexed. |
-| Index | Whether an index value is unique or not. Either multip. or unique. |
-| Type | Data type of the index of index part. |
-| Rec/key | Record of the number of rows per value for the index or index part. Used by the optimizer to calculate query plans. Can be updated with [myisamchk-a](myisamchk.md). If not present, defaults to 30. |
-| Root | Root index block address. |
-| Blocksize | Index block size, in bytes. |
-| Field | Column number, starting with one. The first line will contain the position and number of bytes used to store NULL flags, if any (see Nullpos and Nullbit, below). |
-| Start | Column's byte position within the table row. |
-| Length | Column length, in bytes. |
-| Nullpos | Byte containing the flag for NULL values. Empty if column cannot be NULL. |
-| Nullbit | Bit containing the flag for NULL values. Empty if column cannot be NULL. |
-| Type | Data type - see the table below for a list of possible values. |
-| Huff tree | Only present for packed tables, contains the Huffman tree number associated with the column. |
-| Bits | Only present for packed tables, contains the number of bits used in the Huffman tree. |
-
-
-
-
-| Data type | Description |
-| --- | --- |
-| Data type | Description |
-| constant | All rows contain the same value. |
-| no endspace | No endspace is stored. |
-| no endspace, not_always | No endspace is stored, and endspace compression is not always performed for all values. |
-| no endspace, no empty | No endspace is stored, no empty values are stored. |
-| table-lookup | Column was converted to an [ENUM](../../reference/data-types/string-data-types/enum.md). |
-| zerofill(N) | Most significant N bytes of the value are not stored, as they are always zero. |
-| no zeros | Zeros are not stored. |
-| always zero | Zero values are stored with one bit. |
-
-
+| Data type                | Description                                                                              |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| Data type                | Description                                                                              |
+| constant                 | All rows contain the same value.                                                         |
+| no endspace              | No endspace is stored.                                                                   |
+| no endspace, not\_always | No endspace is stored, and endspace compression is not always performed for all values.  |
+| no endspace, no empty    | No endspace is stored, no empty values are stored.                                       |
+| table-lookup             | Column was converted to an [ENUM](../../reference/data-types/string-data-types/enum.md). |
+| zerofill(N)              | Most significant N bytes of the value are not stored, as they are always zero.           |
+| no zeros                 | Zeros are not stored.                                                                    |
+| always zero              | Zero values are stored with one bit.                                                     |
 
 ## -eiv output
 
+The following table describes the output from the running myisamchk with the _-eiv_ option:
 
-The following table describes the output from the running myisamchk with the *-eiv* option:
-
-
-
-| Heading | Description |
-| --- | --- |
-| Heading | Description |
-| Data records | Number of records in the table. |
-| Deleted blocks | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment. |
-| Key | Index number, starting with one. |
-| Keyblocks used | Percentage of the keyblocks that are used. Percentages will be higher for optimized tables. |
-| Packed | Percentage space saved from packing key values with a common suffix. |
-| Max levels | Depth of the [b-tree index](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#b-tree-indexes) for the key. Larger tables and longer key values result in higher values. |
-| Records | Number of records in the table. |
-| M.recordlength | Average row length. For fixed rows, will be the actual length of each row. |
-| Packed | Percentage saving from stripping spaces from the end of strings. |
-| Recordspace used | Percentage of the data file used. |
-| Empty space | Percentage of the data file unused. |
-| Blocks/Record | Average number of blocks per record. Values higher than one indicate fragmentation. Use [OPTIMIZE TABLE](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment. |
-| Recordblocks | Number of used blocks. Will match the number of rows for fixed or optimized tables. |
-| Deleteblocks | Number of deleted blocks |
-| Recorddata | Used bytes in the data file. |
-| Deleted data | Unused bytes in the data file. |
-| Lost space | Total bytes lost, such as when a row is updated to a shorter length. |
-| Linkdata | Sum of the bytes used for pointers linking disconnected blocks. Each is four to seven bytes in size. |
-
-
+| Heading          | Description                                                                                                                                                                                                                   |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Heading          | Description                                                                                                                                                                                                                   |
+| Data records     | Number of records in the table.                                                                                                                                                                                               |
+| Deleted blocks   | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment.                                            |
+| Key              | Index number, starting with one.                                                                                                                                                                                              |
+| Keyblocks used   | Percentage of the keyblocks that are used. Percentages will be higher for optimized tables.                                                                                                                                   |
+| Packed           | Percentage space saved from packing key values with a common suffix.                                                                                                                                                          |
+| Max levels       | Depth of the [b-tree index](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md#b-tree-indexes) for the key. Larger tables and longer key values result in higher values. |
+| Records          | Number of records in the table.                                                                                                                                                                                               |
+| M.recordlength   | Average row length. For fixed rows, will be the actual length of each row.                                                                                                                                                    |
+| Packed           | Percentage saving from stripping spaces from the end of strings.                                                                                                                                                              |
+| Recordspace used | Percentage of the data file used.                                                                                                                                                                                             |
+| Empty space      | Percentage of the data file unused.                                                                                                                                                                                           |
+| Blocks/Record    | Average number of blocks per record. Values higher than one indicate fragmentation. Use [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment.                 |
+| Recordblocks     | Number of used blocks. Will match the number of rows for fixed or optimized tables.                                                                                                                                           |
+| Deleteblocks     | Number of deleted blocks                                                                                                                                                                                                      |
+| Recorddata       | Used bytes in the data file.                                                                                                                                                                                                  |
+| Deleted data     | Unused bytes in the data file.                                                                                                                                                                                                |
+| Lost space       | Total bytes lost, such as when a row is updated to a shorter length.                                                                                                                                                          |
+| Linkdata         | Sum of the bytes used for pointers linking disconnected blocks. Each is four to seven bytes in size.                                                                                                                          |
 
 ## Examples
-
 
 ```
 myisamchk -d /var/lib/mysql/test/posts
@@ -233,6 +214,4 @@ Blocks in 0 out 0, Messages in 0 out 0, Signals 0
 Voluntary context switches 0, Involuntary context switches 74
 ```
 
-
 CC BY-SA / Gnu FDL
-

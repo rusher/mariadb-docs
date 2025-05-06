@@ -1,47 +1,35 @@
-
 # Information Schema PLUGINS Table
 
-The [Information Schema](../README.md) `PLUGINS` table contains information about [server plugins](../../../../../../plugins/README.md).
-
+The [Information Schema](../) `PLUGINS` table contains information about [server plugins](../../../../../../plugins/).
 
 It contains the following columns:
 
+| Column                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| PLUGIN\_NAME             | Name of the plugin.                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| PLUGIN\_VERSION          | Version from the plugin's general type descriptor.                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| PLUGIN\_STATUS           | Plugin status, one of ACTIVE, INACTIVE, DISABLED or DELETED.                                                                                                                                                                                                                                                                                                                                                                                                              |
+| PLUGIN\_TYPE             | Plugin type; STORAGE ENGINE, INFORMATION\_SCHEMA, AUTHENTICATION, REPLICATION, DAEMON or AUDIT.                                                                                                                                                                                                                                                                                                                                                                           |
+| PLUGIN\_TYPE\_VERSION    | Version from the plugin's type-specific descriptor.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| PLUGIN\_LIBRARY          | Plugin's shared object file name, located in the directory specified by the [plugin\_dir](../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir) system variable, and used by the [INSTALL PLUGIN](../../../plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../../../plugin-sql-statements/uninstall-plugin.md) statements. NULL if the plugin is complied in and cannot be uninstalled. |
+| PLUGIN\_LIBRARY\_VERSION | Version from the plugin's API interface.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| PLUGIN\_AUTHOR           | Author of the plugin.                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| PLUGIN\_DESCRIPTION      | Description.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| PLUGIN\_LICENSE          | Plugin's licence.                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| LOAD\_OPTION             | How the plugin was loaded; one of OFF, ON, FORCE or FORCE\_PLUS\_PERMANENT. See [Installing Plugins](../../../../../../plugins/plugin-overview.md#installing-plugins).                                                                                                                                                                                                                                                                                                    |
+| PLUGIN\_MATURITY         | Plugin's maturity level; one of Unknown, Experimental, Alpha, Beta,'Gamma, and Stable.                                                                                                                                                                                                                                                                                                                                                                                    |
+| PLUGIN\_AUTH\_VERSION    | Plugin's version as determined by the plugin author. An example would be '0.99 beta 1'.                                                                                                                                                                                                                                                                                                                                                                                   |
 
+It provides a superset of the information shown by the [SHOW PLUGINS](../../../show/show-plugins.md) statement. For specific information about storage engines (a particular type of plugins), see the [information\_schema.ENGINES](information-schema-engines-table.md) table and the [SHOW ENGINES](../../../show/show-engines.md) statement.
 
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| PLUGIN_NAME | Name of the plugin. |
-| PLUGIN_VERSION | Version from the plugin's general type descriptor. |
-| PLUGIN_STATUS | Plugin status, one of ACTIVE, INACTIVE, DISABLED or DELETED. |
-| PLUGIN_TYPE | Plugin type; STORAGE ENGINE, INFORMATION_SCHEMA, AUTHENTICATION, REPLICATION, DAEMON or AUDIT. |
-| PLUGIN_TYPE_VERSION | Version from the plugin's type-specific descriptor. |
-| PLUGIN_LIBRARY | Plugin's shared object file name, located in the directory specified by the [plugin_dir](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir) system variable, and used by the [INSTALL PLUGIN](../../../plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../../../plugin-sql-statements/uninstall-plugin.md) statements. NULL if the plugin is complied in and cannot be uninstalled. |
-| PLUGIN_LIBRARY_VERSION | Version from the plugin's API interface. |
-| PLUGIN_AUTHOR | Author of the plugin. |
-| PLUGIN_DESCRIPTION | Description. |
-| PLUGIN_LICENSE | Plugin's licence. |
-| LOAD_OPTION | How the plugin was loaded; one of OFF, ON, FORCE or FORCE_PLUS_PERMANENT. See [Installing Plugins](../../../../../../plugins/plugin-overview.md#installing-plugins). |
-| PLUGIN_MATURITY | Plugin's maturity level; one of Unknown, Experimental, Alpha, Beta,'Gamma, and Stable. |
-| PLUGIN_AUTH_VERSION | Plugin's version as determined by the plugin author. An example would be '0.99 beta 1'. |
-
-
-
-It provides a superset of the information shown by the [SHOW PLUGINS](../../../show/show-plugins.md) statement. For specific information about storage engines (a particular type of plugins), see the [information_schema.ENGINES](information-schema-engines-table.md) table and the [SHOW ENGINES](../../../show/show-engines.md) statement.
-
-
-This table provides a subset of the Information Schema [information_schema.ALL_PLUGINS](all-plugins-table-information-schema.md) table, which contains all available plugins, installed or not.
-
+This table provides a subset of the Information Schema [information\_schema.ALL\_PLUGINS](all-plugins-table-information-schema.md) table, which contains all available plugins, installed or not.
 
 The table is not a standard Information Schema table, and is a MariaDB extension.
 
-
 #### Examples
 
-
-The easiest way to get basic information on plugins is with
-[SHOW PLUGINS](../../../show/show-plugins.md):
-
+The easiest way to get basic information on plugins is with[SHOW PLUGINS](../../../show/show-plugins.md):
 
 ```
 SHOW PLUGINS;
@@ -103,7 +91,6 @@ Empty set
 
 The equivalent [SELECT](../../../../data-manipulation/selecting-data/select.md) query would be:
 
-
 ```
 SELECT PLUGIN_NAME, PLUGIN_STATUS, 
 PLUGIN_TYPE, PLUGIN_LIBRARY, PLUGIN_LICENSE
@@ -111,7 +98,6 @@ FROM INFORMATION_SCHEMA.PLUGINS;
 ```
 
 Other [SELECT](../../../../data-manipulation/selecting-data/select.md) queries can be used to see additional information. For example:
-
 
 ```
 SELECT PLUGIN_NAME, PLUGIN_DESCRIPTION, 
@@ -184,7 +170,6 @@ PLUGIN_AUTH_VERSION: 1.0
 
 Check if a given plugin is available:
 
-
 ```
 SELECT LOAD_OPTION 
 FROM INFORMATION_SCHEMA.PLUGINS 
@@ -193,7 +178,6 @@ Empty set
 ```
 
 Show authentication plugins:
-
 
 ```
 SELECT PLUGIN_NAME, LOAD_OPTION 
@@ -210,7 +194,6 @@ LOAD_OPTION: FORCE
 
 ## See Also
 
-
 * [List of Plugins](../../../../../../plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../../../../../../plugins/plugin-overview.md)
 * [SHOW PLUGINS](../../../show/show-plugins.md)
@@ -219,6 +202,4 @@ LOAD_OPTION: FORCE
 * [UNINSTALL PLUGIN](../../../plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../../../plugin-sql-statements/uninstall-soname.md)
 
-
 CC BY-SA / Gnu FDL
-

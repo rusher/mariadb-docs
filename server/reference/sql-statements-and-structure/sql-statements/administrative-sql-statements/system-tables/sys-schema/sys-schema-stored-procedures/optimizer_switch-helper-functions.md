@@ -1,8 +1,6 @@
-
-# optimizer_switch Helper Functions
+# optimizer\_switch Helper Functions
 
 ## Syntax
-
 
 ```
 optimizer_switch_on()
@@ -10,16 +8,12 @@ optimizer_switch_off()
 optimizer_switch_choice("on" | "off")
 ```
 
-
 ## Description
 
-
-The above procedures can be used to check which [optimizer_switch](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) options are `on` or `off`.
-The result set is sorted according to [optimizer_switch](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) option name.
-
+The above procedures can be used to check which [optimizer\_switch](../../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) options are `on` or `off`.\
+The result set is sorted according to [optimizer\_switch](../../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) option name.
 
 ## Example
-
 
 ```
 select @@optimizer_switch\G
@@ -87,16 +81,10 @@ call sys.optimizer_switch_off();
 
 ## Notes
 
-
-`sys.optimizer_switch_on()` is a shortcut for `sys.optimizer_switch_choice("on")`;
-`sys.optimizer_switch_off()` is a shortcut for `sys.optimizer_switch_choice("off")`;
-
+`sys.optimizer_switch_on()` is a shortcut for `sys.optimizer_switch_choice("on")`;`sys.optimizer_switch_off()` is a shortcut for `sys.optimizer_switch_choice("off")`;
 
 ## See Also
 
-
-* [optimizer-switch](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/optimizer-switch.md) Documentation for optimizer_switch
-
+* [optimizer-switch](../../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) Documentation for optimizer\_switch
 
 CC BY-SA / Gnu FDL
-

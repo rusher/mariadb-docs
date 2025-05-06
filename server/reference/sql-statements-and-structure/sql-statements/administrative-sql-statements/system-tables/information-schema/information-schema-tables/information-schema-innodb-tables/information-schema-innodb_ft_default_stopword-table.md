@@ -1,25 +1,17 @@
+# Information Schema INNODB\_FT\_DEFAULT\_STOPWORD Table
 
-# Information Schema INNODB_FT_DEFAULT_STOPWORD Table
-
-The [Information Schema](../../README.md) `INNODB_FT_DEFAULT_STOPWORD` table contains a list of default [stopwords](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) used when creating an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md).
-
+The [Information Schema](../../) `INNODB_FT_DEFAULT_STOPWORD` table contains a list of default [stopwords](../../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) used when creating an InnoDB [fulltext index](../../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
-
 It has the following column:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| VALUE | Default [stopword](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) for an InnoDB [fulltext index](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). Setting either the [innodb_ft_server_stopword_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) or the [innodb_ft_user_stopword_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable will override this. |
-
-
+| Column | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| VALUE  | Default [stopword](../../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) for an InnoDB [fulltext index](../../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). Setting either the [innodb\_ft\_server\_stopword\_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) or the [innodb\_ft\_user\_stopword\_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable will override this. |
 
 ## Example
-
 
 ```
 SELECT * FROM information_schema.INNODB_FT_DEFAULT_STOPWORD\G
@@ -36,6 +28,4 @@ value: are
 value: www
 ```
 
-
 CC BY-SA / Gnu FDL
-

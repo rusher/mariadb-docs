@@ -1,37 +1,25 @@
-
 # InnoDB Online DDL Operations with the INPLACE Alter Algorithm
-
 
 ## Supported Operations by Inheritance
 
-
 When the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause is set to `INPLACE`, the supported operations are a superset of the operations that are supported when the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause is set to `NOCOPY`. Similarly, when the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause is set to `NOCOPY`, the supported operations are a superset of the operations that are supported when the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause is set to `INSTANT`.
 
-
 Therefore, when the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause is set to `INPLACE`, some operations are supported by inheritance. See the following additional pages for more information about these supported operations:
-
 
 * [InnoDB Online DDL Operations with ALGORITHM=NOCOPY](innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md)
 * [InnoDB Online DDL Operations with ALGORITHM=INSTANT](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md)
 
-
 ## Column Operations
-
 
 ### `ALTER TABLE ... ADD COLUMN`
 
-
 InnoDB supports adding columns to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 With the exception of adding an [auto-increment](../../../data-types/auto_increment.md) column, this operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -44,23 +32,17 @@ ALTER TABLE tab ADD COLUMN c varchar(50);
 Query OK, 0 rows affected (0.006 sec)
 ```
 
-This applies to [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP COLUMN`
 
-
 InnoDB supports dropping columns from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -74,29 +56,21 @@ ALTER TABLE tab DROP COLUMN c;
 Query OK, 0 rows affected (0.021 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... MODIFY COLUMN`
 
-
-This applies to [ALTER TABLE ... MODIFY COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... MODIFY COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) for [InnoDB](../) tables.
 
 #### Reordering Columns
 
-
 InnoDB supports reordering columns within a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -112,21 +86,14 @@ Query OK, 0 rows affected (0.022 sec)
 
 #### Changing the Data Type of a Column
 
-
 InnoDB does **not** support modifying a column's data type with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE` in most cases. There are some exceptions:
 
-
 * In [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) and later, InnoDB supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, unless it would require changing the number of bytes requires to represent the column's length. A `VARCHAR` column that is between 0 and 255 bytes in size requires 1 byte to represent its length, while a `VARCHAR` column that is 256 bytes or longer requires 2 bytes to represent its length. This means that the length of a column cannot be increased with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE` if the original length was less than 256 bytes, and the new length is 256 bytes or more.
-
-
 * In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE` in the cases where the operation supports having the [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
-
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Changing the Data Type of a Column](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more information.
 
-
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -142,7 +109,6 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 But this succeeds in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) and later, because the original length of the column is less than 256 bytes, and the new length is still less than 256 bytes:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -156,7 +122,6 @@ Query OK, 0 rows affected (0.005 sec)
 ```
 
 But this fails in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) and later, because the original length of the column is less than 256 bytes, and the new length is greater than 256 bytes:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -172,18 +137,13 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 #### Changing a Column to NULL
 
-
 InnoDB supports modifying a column to allow [NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null) values with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -199,18 +159,13 @@ Query OK, 0 rows affected (0.021 sec)
 
 #### Changing a Column to NOT NULL
 
-
-InnoDB supports modifying a column to **not** allow [NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null) values with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. It is required for [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) to be enabled in [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md). The operation will fail if the column contains any `NULL` values. Changes that would interfere with referential integrity are also not permitted.
-
+InnoDB supports modifying a column to **not** allow [NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null) values with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. It is required for [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) to be enabled in [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md). The operation will fail if the column contains any `NULL` values. Changes that would interfere with referential integrity are also not permitted.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -226,22 +181,16 @@ Query OK, 0 rows affected (0.021 sec)
 
 #### Adding a New `ENUM` Option
 
-
 InnoDB supports adding a new [ENUM](../../../data-types/string-data-types/enum.md) option to a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order to add a new [ENUM](../../../data-types/string-data-types/enum.md) option with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, the following requirements must be met:
-
 
 * It must be added to the end of the list.
 * The storage requirements must not change.
 
-
 This operation only changes the table's metadata, so the table does not have to be rebuilt..
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -257,7 +206,6 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -272,22 +220,16 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 #### Adding a New `SET` Option
 
-
 InnoDB supports adding a new [SET](../../../data-types/string-data-types/set-data-type.md) option to a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order to add a new [SET](../../../data-types/string-data-types/set-data-type.md) option with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, the following requirements must be met:
-
 
 * It must be added to the end of the list.
 * The storage requirements must not change.
 
-
 This operation only changes the table's metadata, so the table does not have to be rebuilt..
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -303,7 +245,6 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -318,15 +259,11 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 #### Removing System Versioning from a Column
 
-
-In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order for this to work, the [system_versioning_alter_history](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
-
+In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order for this to work, the [system\_versioning\_alter\_history](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -343,22 +280,16 @@ Query OK, 0 rows affected (0.005 sec)
 
 ### `ALTER TABLE ... ALTER COLUMN`
 
-
-This applies to [ALTER TABLE ... ALTER COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alter-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ALTER COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alter-column) for [InnoDB](../) tables.
 
 #### Setting a Column's Default Value
 
-
 InnoDB supports modifying a column's [DEFAULT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default-column-option) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
-This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
+This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.\
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -374,18 +305,13 @@ Query OK, 0 rows affected (0.005 sec)
 
 #### Removing a Column's Default Value
 
-
 InnoDB supports removing a column's [DEFAULT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default-column-option) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -401,18 +327,13 @@ Query OK, 0 rows affected (0.005 sec)
 
 ### `ALTER TABLE ... CHANGE COLUMN`
 
-
 InnoDB supports renaming a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, unless the column's data type or attributes changed in addition to the name.
-
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -428,7 +349,6 @@ Query OK, 0 rows affected (0.006 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -441,29 +361,21 @@ ALTER TABLE tab CHANGE COLUMN c num int;
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
-This applies to [ALTER TABLE ... CHANGE COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#change-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... CHANGE COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#change-column) for [InnoDB](../) tables.
 
 ## Index Operations
 
-
 ### `ALTER TABLE ... ADD PRIMARY KEY`
-
 
 InnoDB supports adding a primary key to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
-
-If the new primary key column is not defined as [NOT NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null), then it is highly recommended for [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) to be enabled in [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md). Otherwise, `NULL` values will be silently converted to the default value for the given data type, which is probably not the desired behavior in this scenario.
-
+If the new primary key column is not defined as [NOT NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null), then it is highly recommended for [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) to be enabled in [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md). Otherwise, `NULL` values will be silently converted to the default value for the given data type, which is probably not the desired behavior in this scenario.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -479,7 +391,6 @@ Query OK, 0 rows affected (0.021 sec)
 ```
 
 But this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -498,7 +409,6 @@ ERROR 1265 (01000): Data truncated for column 'a' at row 1
 
 And this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int,
@@ -515,23 +425,17 @@ ALTER TABLE tab ADD PRIMARY KEY (a);
 ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
 ```
 
-This applies to [ALTER TABLE ... ADD PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-primary-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-primary-key) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP PRIMARY KEY`
 
-
 InnoDB does **not** support dropping a primary key with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE` in most cases.
 
-
-If you try to do so, then you will see an error. InnoDB only supports this operation with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `COPY`. Concurrent DML is *not* permitted.
-
+If you try to do so, then you will see an error. InnoDB only supports this operation with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `COPY`. Concurrent DML is _not_ permitted.
 
 However, there is an exception. If you are dropping a primary key, and adding a new one at the same time, then that operation can be performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -547,7 +451,6 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Dropping a prima
 
 But this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -561,26 +464,19 @@ ALTER TABLE tab DROP PRIMARY KEY, ADD PRIMARY KEY (b);
 Query OK, 0 rows affected (0.020 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-primary-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-primary-key) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ADD INDEX` and `CREATE INDEX`
 
-
-This applies to [ALTER TABLE ... ADD INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-index) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-index) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) for [InnoDB](../) tables.
 
 #### Adding a Plain Index
 
-
 InnoDB supports adding a plain index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. The table is not rebuilt.
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -596,7 +492,6 @@ Query OK, 0 rows affected (0.010 sec)
 
 And this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -611,30 +506,18 @@ Query OK, 0 rows affected (0.011 sec)
 
 #### Adding a Fulltext Index
 
-
-InnoDB supports adding a [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. The table is not rebuilt in some cases.
-
+InnoDB supports adding a [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. The table is not rebuilt in some cases.
 
 However, there are some limitations, such as:
 
-
-* Adding a [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index to a table that does not have a user-defined `FTS_DOC_ID` column will require the table to be rebuilt once. When the table is rebuilt, the system adds a hidden `FTS_DOC_ID` column. From that point forward, adding additional [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) indexes to the same table will not require the table to be rebuilt when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
-
-
-* Only one [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index may be added at a time when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
-
-
-* If a table has more than one [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
-
-
-* If a table has a [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
-
+* Adding a [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table that does not have a user-defined `FTS_DOC_ID` column will require the table to be rebuilt once. When the table is rebuilt, the system adds a hidden `FTS_DOC_ID` column. From that point forward, adding additional [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) indexes to the same table will not require the table to be rebuilt when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
+* Only one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index may be added at a time when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
+* If a table has more than one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
+* If a table has a [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
-
 For example, this succeeds, but requires the table to be rebuilt, so that the hidden `FTS_DOC_ID` column can be added:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -650,7 +533,6 @@ Query OK, 0 rows affected (0.055 sec)
 
 And this succeeds in the same way as above:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -664,7 +546,6 @@ Query OK, 0 rows affected (0.041 sec)
 ```
 
 And this succeeds, and the second command does not require the table to be rebuilt:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -681,8 +562,7 @@ ALTER TABLE tab ADD FULLTEXT INDEX c_index (c);
 Query OK, 0 rows affected (0.017 sec)
 ```
 
-But this second command fails, because only one [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index can be added at a time:
-
+But this second command fails, because only one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index can be added at a time:
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -700,8 +580,7 @@ ALTER TABLE tab ADD FULLTEXT INDEX c_index (c), ADD FULLTEXT INDEX d_index (d);
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: InnoDB presently supports one FULLTEXT index creation at a time. Try ALGORITHM=COPY
 ```
 
-And this third command fails, because a table cannot be rebuilt when it has more than one [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index:
-
+And this third command fails, because a table cannot be rebuilt when it has more than one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index:
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -723,21 +602,15 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: InnoDB presently
 
 #### Adding a Spatial Index
 
-
 InnoDB supports adding a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 However, there are some limitations, such as:
 
-
 * If a table has a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
-
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -753,7 +626,6 @@ Query OK, 0 rows affected (0.006 sec)
 
 And this succeeds in the same way as above:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -768,18 +640,13 @@ Query OK, 0 rows affected (0.006 sec)
 
 ### `ALTER TABLE ... DROP INDEX` and `DROP INDEX`
 
-
 InnoDB supports dropping indexes from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -795,7 +662,6 @@ ALTER TABLE tab DROP INDEX b_index;
 
 And this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -808,23 +674,17 @@ SET SESSION alter_algorithm='INPLACE';
 DROP INDEX b_index ON tab;
 ```
 
-This applies to [ALTER TABLE ... DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-index) and [DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-index) and [DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ADD FOREIGN KEY`
 
-
-InnoDB supports adding foreign key constraints to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order to add a new foreign key constraint to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, the [foreign_key_checks](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable needs to be set to `OFF`. If it is set to `ON`, then `ALGORITHM=COPY` is required.
-
+InnoDB supports adding foreign key constraints to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order to add a new foreign key constraint to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, the [foreign\_key\_checks](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable needs to be set to `OFF`. If it is set to `ON`, then `ALGORITHM=COPY` is required.
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab1 (
@@ -846,7 +706,6 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Adding foreign k
 
 But this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab1 (
    a int PRIMARY KEY,
@@ -866,23 +725,17 @@ ALTER TABLE tab1 ADD FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a);
 Query OK, 0 rows affected (0.011 sec)
 ```
 
-This applies to [ALTER TABLE ... ADD FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-foreign-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-foreign-key) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP FOREIGN KEY`
 
-
 InnoDB supports dropping foreign key constraints from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab2 (
@@ -903,23 +756,17 @@ ALTER TABLE tab1 DROP FOREIGN KEY tab2_fk;
 Query OK, 0 rows affected (0.005 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-foreign-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-foreign-key) for [InnoDB](../) tables.
 
 ## Table Operations
 
-
 ### `ALTER TABLE ... AUTO_INCREMENT=...`
 
-
-InnoDB supports changing a table's [AUTO_INCREMENT](../../../data-types/auto_increment.md) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. This operation should finish instantly. The table is not rebuilt.
-
+InnoDB supports changing a table's [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. This operation should finish instantly. The table is not rebuilt.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -933,23 +780,17 @@ ALTER TABLE tab AUTO_INCREMENT=100;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to [ALTER TABLE ... AUTO_INCREMENT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#auto_increment) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... AUTO\_INCREMENT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#auto_increment) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ROW_FORMAT=...`
 
-
 InnoDB supports changing a table's [row format](../innodb-row-formats/innodb-row-formats-overview.md) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -963,23 +804,17 @@ ALTER TABLE tab ROW_FORMAT=COMPRESSED;
 Query OK, 0 rows affected (0.025 sec)
 ```
 
-This applies to [ALTER TABLE ... ROW_FORMAT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ROW\_FORMAT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... KEY_BLOCK_SIZE=...`
 
-
-InnoDB supports changing a table's [KEY_BLOCK_SIZE](../innodb-row-formats/innodb-row-formats-overview.md) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
+InnoDB supports changing a table's [KEY\_BLOCK\_SIZE](../innodb-row-formats/innodb-row-formats-overview.md) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -994,26 +829,19 @@ ALTER TABLE tab KEY_BLOCK_SIZE=2;
 Query OK, 0 rows affected (0.021 sec)
 ```
 
-This applies to [KEY_BLOCK_SIZE=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#key_block_size) for [InnoDB](../README.md) tables.
-
+This applies to [KEY\_BLOCK\_SIZE=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#key_block_size) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... PAGE_COMPRESSED=...` and `ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...`
 
+In [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) and later, InnoDB supports setting a table's [PAGE\_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value to `1` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. InnoDB also supports changing a table's [PAGE\_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value from `1` to `0` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
-In [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) and later, InnoDB supports setting a table's [PAGE_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value to `1` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. InnoDB also supports changing a table's [PAGE_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value from `1` to `0` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
-
-In these versions, InnoDB also supports changing a table's [PAGE_COMPRESSION_LEVEL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
+In these versions, InnoDB also supports changing a table's [PAGE\_COMPRESSION\_LEVEL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 See [MDEV-16328](https://jira.mariadb.org/browse/MDEV-16328) for more information.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1029,7 +857,6 @@ Query OK, 0 rows affected (0.006 sec)
 
 And this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -1044,7 +871,6 @@ Query OK, 0 rows affected (0.020 sec)
 
 And this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -1058,20 +884,15 @@ ALTER TABLE tab PAGE_COMPRESSION_LEVEL=4;
 Query OK, 0 rows affected (0.006 sec)
 ```
 
-This applies to [PAGE_COMPRESSED=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) and [PAGE_COMPRESSION_LEVEL=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) for [InnoDB](../README.md) tables.
-
+This applies to [PAGE\_COMPRESSED=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) and [PAGE\_COMPRESSION\_LEVEL=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-
 InnoDB supports dropping [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 This operation supports the read-only locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1084,20 +905,15 @@ SET SESSION alter_algorithm='INPLACE';
 ALTER TABLE tab DROP SYSTEM VERSIONING;
 ```
 
-This applies to [ALTER TABLE ... DROP SYSTEM VERSIONING](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-system-versioning) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP SYSTEM VERSIONING](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-system-versioning) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP CONSTRAINT`
 
-
 In [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes) and later, InnoDB supports dropping a [CHECK](../../../sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraints) constraint from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. See [MDEV-16331](https://jira.mariadb.org/browse/MDEV-16331) for more information.
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1112,23 +928,17 @@ ALTER TABLE tab DROP CONSTRAINT b_not_empty;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP CONSTRAINT](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-constraint) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP CONSTRAINT](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-constraint) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... FORCE`
 
-
 InnoDB supports forcing a table rebuild with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1142,23 +952,17 @@ ALTER TABLE tab FORCE;
 Query OK, 0 rows affected (0.022 sec)
 ```
 
-This applies to [ALTER TABLE ... FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#force) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#force) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ENGINE=InnoDB`
 
-
 InnoDB supports forcing a table rebuild with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1172,26 +976,19 @@ ALTER TABLE tab ENGINE=InnoDB;
 Query OK, 0 rows affected (0.022 sec)
 ```
 
-This applies to [ALTER TABLE ... ENGINE=InnoDB](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ENGINE=InnoDB](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine) for [InnoDB](../) tables.
 
 ### `OPTIMIZE TABLE ...`
 
-
 InnoDB supports optimizing a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
-
-If the [innodb_defragment](../innodb-system-variables.md#innodb_defragment) system variable is set to `OFF`, and if the [innodb_optimize_fulltext_only](../innodb-system-variables.md#innodb_optimize_fulltext_only) system variable is also set to `OFF`, then `OPTIMIZE TABLE` will be equivalent to `ALTER TABLE … FORCE`.
-
+If the [innodb\_defragment](../innodb-system-variables.md#innodb_defragment) system variable is set to `OFF`, and if the [innodb\_optimize\_fulltext\_only](../innodb-system-variables.md#innodb_optimize_fulltext_only) system variable is also set to `OFF`, then `OPTIMIZE TABLE` will be equivalent to `ALTER TABLE … FORCE`.
 
 The table is rebuilt, which means that all of the data is reorganized substantially, and the indexes are rebuilt. As a result, the operation is quite expensive.
 
-
 If either of the previously mentioned system variables is set to `ON`, then `OPTIMIZE TABLE` will optimize some data without rebuilding the table. However, the file size will not be reduced.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1221,7 +1018,6 @@ OPTIMIZE TABLE tab;
 
 And this succeeds, but the table is not rebuilt:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -1248,23 +1044,17 @@ OPTIMIZE TABLE tab;
 1 row in set (0.004 sec)
 ```
 
-This applies to [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) for [InnoDB](../README.md) tables.
-
+This applies to [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... RENAME TO` and `RENAME TABLE ...`
 
-
 InnoDB supports renaming a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
-
 
 This operation only changes the table's metadata, so the table does not have to be rebuilt.
 
-
 This operation supports the exclusive locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `EXCLUSIVE`. When this strategy is used, concurrent DML is **not** permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1280,7 +1070,6 @@ Query OK, 0 rows affected (0.011 sec)
 
 And this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -1292,35 +1081,23 @@ SET SESSION alter_algorithm='INPLACE';
 RENAME TABLE tab TO old_tab;
 ```
 
-This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#rename-to) and [RENAME TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/rename-table.md) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#rename-to) and [RENAME TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/rename-table.md) for [InnoDB](../) tables.
 
 ## Limitations
 
-
 ### Limitations Related to Fulltext Indexes
 
-
-* If a table has more than one [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
-
-
-* If a table has a [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
-
+* If a table has more than one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) is set to `INPLACE`.
+* If a table has a [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
 
 ### Limitations Related to Spatial Indexes
 
-
 * If a table has a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
-
 
 ### Limitations Related to Generated (Virtual and Persistent/Stored) Columns
 
-
 [Generated columns](../../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) do not currently support online DDL for all of the same operations that are supported for "real" columns.
-
 
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](../../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md#statement-support) for more information on the limitations.
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,30 +1,22 @@
+# RELEASE\_ALL\_LOCKS
 
-# RELEASE_ALL_LOCKS
+**MariaDB until** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
 
-
-##### MariaDB until [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
-RELEASE_ALL_LOCKS was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
-
+RELEASE\_ALL\_LOCKS was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
 
 ## Syntax
-
 
 ```
 RELEASE_ALL_LOCKS()
 ```
 
-
 ## Description
-
 
 Releases all named locks held by the current session. Returns the number of locks released, or `0` if none were held.
 
-
-Statements using the `RELEASE_ALL_LOCKS` function are [not safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
-
+Statements using the `RELEASE_ALL_LOCKS` function are [not safe for statement-based replication](../../../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Examples
-
 
 ```
 SELECT RELEASE_ALL_LOCKS();
@@ -51,12 +43,9 @@ SELECT RELEASE_ALL_LOCKS();
 
 ## See Also
 
-
-* [GET_LOCK](get_lock.md)
-* [IS_FREE_LOCK](is_free_lock.md)
-* [IS_USED_LOCK](is_used_lock.md)
-* [RELEASE_LOCK](release_lock.md)
-
+* [GET\_LOCK](get_lock.md)
+* [IS\_FREE\_LOCK](is_free_lock.md)
+* [IS\_USED\_LOCK](is_used_lock.md)
+* [RELEASE\_LOCK](release_lock.md)
 
 CC BY-SA / Gnu FDL
-

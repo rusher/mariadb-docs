@@ -1,51 +1,43 @@
+# Information Schema USER\_STATISTICS Table
 
-# Information Schema USER_STATISTICS Table
-
-The [Information Schema](../README.md) `USER_STATISTICS` table holds statistics about user activity. This is part of the [User Statistics](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
-
+The [Information Schema](../) `USER_STATISTICS` table holds statistics about user activity. This is part of the [User Statistics](../../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
 
 You can use this table to find out such things as which user is causing the most load and which users are being abusive. You can also use this table to measure how close to capacity the server may be.
 
-
 It contains the following columns:
 
-
-
-| Field | Type | Notes |
-| --- | --- | --- |
-| Field | Type | Notes |
-| USER | varchar(48) | The username. The value '#mysql_system_user#' appears when there is no username (such as for the slave SQL thread). |
-| TOTAL_CONNECTIONS | int(11) | The number of connections created for this user. |
-| CONCURRENT_CONNECTIONS | int(11) | The number of concurrent connections for this user. |
-| CONNECTED_TIME | int(11) | The cumulative number of seconds elapsed while there were connections from this user. |
-| BUSY_TIME | double | The cumulative number of seconds there was activity on connections from this user. |
-| CPU_TIME | double | The cumulative CPU time elapsed while servicing this user's connections. |
-| BYTES_RECEIVED | bigint(21) | The number of bytes received from this user's connections. |
-| BYTES_SENT | bigint(21) | The number of bytes sent to this user's connections. |
-| BINLOG_BYTES_WRITTEN | bigint(21) | The number of bytes written to the [binary log](../../../../../../../server-management/server-monitoring-logs/binary-log/README.md) from this user's connections. |
-| ROWS_READ | bigint(21) | The number of rows read by this user's connections. |
-| ROWS_SENT | bigint(21) | The number of rows sent by this user's connections. |
-| ROWS_DELETED | int(21) | The number of rows deleted by this user's connections. |
-| ROWS_INSERTED | bigint(21) | The number of rows inserted by this user's connections. |
-| ROWS_UPDATED | bigint(21) | The number of rows updated by this user's connections. |
-| KEY_READ_HITS | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| KEY_READ_MISSES | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| SELECT_COMMANDS | bigint(21) | The number of [SELECT](../../../../data-manipulation/selecting-data/select.md) commands executed from this user's connections. |
-| UPDATE_COMMANDS | bigint(21) | The number of [UPDATE](../../../../data-manipulation/changing-deleting-data/update.md) commands executed from this user's connections. |
-| OTHER_COMMANDS | bigint(21) | The number of other commands executed from this user's connections. |
-| COMMIT_TRANSACTIONS | bigint(21) | The number committed transactions. Note that in autocommit mode every statement is a separate transaction. |
-| ROLLBACK_TRANSACTIONS | bigint(21) | The number of transactions that were rolled back. |
-| DENIED_CONNECTIONS | bigint(21) | The number of connections denied to this user. |
-| LOST_CONNECTIONS | bigint(21) | The number of this user's connections that were terminated uncleanly. |
-| ACCESS_DENIED | bigint(21) | The number of times this user's connections issued commands that were denied. |
-| EMPTY_QUERIES | bigint(21) | The number of times this user's connections sent queries to the server that did not return data to the client (a per-user aggregate of the [empty_queries](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#empty_queries) status variable). |
-| TOTAL_SSL_CONNECTIONS | bigint(21) | The number of [TLS connections](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/README.md) created for this user. |
-| MAX_STATEMENT_TIME_EXCEEDED | bigint(21) | The number of times a statement was aborted, because it was executed longer than its [MAX_STATEMENT_TIME](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md) threshold. |
-
-
+| Field                          | Type        | Notes                                                                                                                                                                                                                                                                                                    |
+| ------------------------------ | ----------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field                          | Type        | Notes                                                                                                                                                                                                                                                                                                    |
+| USER                           | varchar(48) | The username. The value '#mysql\_system\_user#' appears when there is no username (such as for the slave SQL thread).                                                                                                                                                                                    |
+| TOTAL\_CONNECTIONS             | int(11)     | The number of connections created for this user.                                                                                                                                                                                                                                                         |
+| CONCURRENT\_CONNECTIONS        | int(11)     | The number of concurrent connections for this user.                                                                                                                                                                                                                                                      |
+| CONNECTED\_TIME                | int(11)     | The cumulative number of seconds elapsed while there were connections from this user.                                                                                                                                                                                                                    |
+| BUSY\_TIME                     | double      | The cumulative number of seconds there was activity on connections from this user.                                                                                                                                                                                                                       |
+| CPU\_TIME                      | double      | The cumulative CPU time elapsed while servicing this user's connections.                                                                                                                                                                                                                                 |
+| BYTES\_RECEIVED                | bigint(21)  | The number of bytes received from this user's connections.                                                                                                                                                                                                                                               |
+| BYTES\_SENT                    | bigint(21)  | The number of bytes sent to this user's connections.                                                                                                                                                                                                                                                     |
+| BINLOG\_BYTES\_WRITTEN         | bigint(21)  | The number of bytes written to the [binary log](../../../../../../../server-management/server-monitoring-logs/binary-log/) from this user's connections.                                                                                                                                                 |
+| ROWS\_READ                     | bigint(21)  | The number of rows read by this user's connections.                                                                                                                                                                                                                                                      |
+| ROWS\_SENT                     | bigint(21)  | The number of rows sent by this user's connections.                                                                                                                                                                                                                                                      |
+| ROWS\_DELETED                  | int(21)     | The number of rows deleted by this user's connections.                                                                                                                                                                                                                                                   |
+| ROWS\_INSERTED                 | bigint(21)  | The number of rows inserted by this user's connections.                                                                                                                                                                                                                                                  |
+| ROWS\_UPDATED                  | bigint(21)  | The number of rows updated by this user's connections.                                                                                                                                                                                                                                                   |
+| KEY\_READ\_HITS                | bigint(21)  | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)                                                                                                                  |
+| KEY\_READ\_MISSES              | bigint(21)  | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)                                                                                                                  |
+| SELECT\_COMMANDS               | bigint(21)  | The number of [SELECT](../../../../data-manipulation/selecting-data/select.md) commands executed from this user's connections.                                                                                                                                                                           |
+| UPDATE\_COMMANDS               | bigint(21)  | The number of [UPDATE](../../../../data-manipulation/changing-deleting-data/update.md) commands executed from this user's connections.                                                                                                                                                                   |
+| OTHER\_COMMANDS                | bigint(21)  | The number of other commands executed from this user's connections.                                                                                                                                                                                                                                      |
+| COMMIT\_TRANSACTIONS           | bigint(21)  | The number committed transactions. Note that in autocommit mode every statement is a separate transaction.                                                                                                                                                                                               |
+| ROLLBACK\_TRANSACTIONS         | bigint(21)  | The number of transactions that were rolled back.                                                                                                                                                                                                                                                        |
+| DENIED\_CONNECTIONS            | bigint(21)  | The number of connections denied to this user.                                                                                                                                                                                                                                                           |
+| LOST\_CONNECTIONS              | bigint(21)  | The number of this user's connections that were terminated uncleanly.                                                                                                                                                                                                                                    |
+| ACCESS\_DENIED                 | bigint(21)  | The number of times this user's connections issued commands that were denied.                                                                                                                                                                                                                            |
+| EMPTY\_QUERIES                 | bigint(21)  | The number of times this user's connections sent queries to the server that did not return data to the client (a per-user aggregate of the [empty\_queries](../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#empty_queries) status variable). |
+| TOTAL\_SSL\_CONNECTIONS        | bigint(21)  | The number of [TLS connections](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/) created for this user.                                                                                                                                           |
+| MAX\_STATEMENT\_TIME\_EXCEEDED | bigint(21)  | The number of times a statement was aborted, because it was executed longer than its [MAX\_STATEMENT\_TIME](../../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/aborting-statements.md) threshold.                                                                       |
 
 ## Example
-
 
 ```
 SELECT * FROM information_schema.USER_STATISTICS\G
@@ -75,6 +67,4 @@ CONCURRENT_CONNECTIONS: 0
          EMPTY_QUERIES: 1
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,25 +1,18 @@
-
 # SHOW CREATE SEQUENCE
 
 ## Syntax
-
 
 ```
 SHOW CREATE SEQUENCE sequence_name;
 ```
 
-
 ## Description
 
+Shows the [CREATE SEQUENCE](../../../sequences/create-sequence.md) statement that creates the given [sequence](../../../sequences/). The statement requires the `SELECT` privilege for the table.
 
-Shows the [CREATE SEQUENCE](../../../sequences/create-sequence.md) statement that creates the given [sequence](../../../sequences/README.md). The statement requires the `SELECT` privilege for the table.
-
-
-`SHOW CREATE SEQUENCE` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
-
+`SHOW CREATE SEQUENCE` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 ## Example
-
 
 ```
 CREATE SEQUENCE s1 START WITH 50;
@@ -32,10 +25,8 @@ Create Table: CREATE SEQUENCE `s1` start with 50 minvalue 1 maxvalue 92233720368
 
 ## Notes
 
-
-If you want to see the underlying table structure used for the `SEQUENCE`
+If you want to see the underlying table structure used for the `SEQUENCE`\
 you can use [SHOW CREATE TABLE](show-create-table.md) on the `SEQUENCE`. You can also use `SELECT` to read the current recorded state of the `SEQUENCE`:
-
 
 ```
 SHOW CREATE TABLE s1\G
@@ -68,7 +59,6 @@ next_not_cached_value: 50
 
 The [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md) also provides information about available sequences:
 
-
 ```
 SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G
 *************************** 1. row ***************************
@@ -88,11 +78,8 @@ NUMERIC_PRECISION_RADIX: 2
 
 ## See Also
 
-
 * [CREATE SEQUENCE](../../../sequences/create-sequence.md)
 * [ALTER SEQUENCE](../../../sequences/alter-sequence.md)
 * [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
-
 CC BY-SA / Gnu FDL
-

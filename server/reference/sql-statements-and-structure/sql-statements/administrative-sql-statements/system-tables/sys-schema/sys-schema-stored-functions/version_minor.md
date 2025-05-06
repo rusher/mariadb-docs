@@ -1,8 +1,6 @@
-
-# version_minor
+# version\_minor
 
 ## Syntax
-
 
 ```
 sys.version_minor()
@@ -10,15 +8,11 @@ sys.version_minor()
 
 ## Description
 
-
-`version_minor` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
-
+`version_minor` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../).
 
 It returns the MariaDB Server minor release version.
 
-
 ## Examples
-
 
 ```
 SELECT VERSION(),
@@ -34,10 +28,7 @@ SELECT VERSION(),
 
 ## See Also
 
-
-* [version_major](version_major.md)
-* [version_patch](version_patch.md)
-
+* [version\_major](version_major.md)
+* [version\_patch](version_patch.md)
 
 CC BY-SA / Gnu FDL
-

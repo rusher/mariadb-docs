@@ -1,25 +1,18 @@
-
 # SHOW CREATE PACKAGE
 
 ## Syntax
-
 
 ```
 SHOW CREATE PACKAGE  [ db_name . ] package_name
 ```
 
-
 ## Description
 
+The `SHOW CREATE PACKAGE` statement can be used when [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set. It shows the `CREATE` statement that creates the given package specification.
 
-The `SHOW CREATE PACKAGE` statement can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set. It shows the `CREATE` statement that creates the given package specification.
-
-
-`SHOW CREATE PACKAGE` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
-
+`SHOW CREATE PACKAGE` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 ## Examples
-
 
 ```
 SHOW CREATE PACKAGE employee_tools\G
@@ -39,14 +32,11 @@ collation_connection: utf8_general_ci
 
 ## See Also
 
-
 * [CREATE PACKAGE](../../data-definition/create/create-package.md)
 * [DROP PACKAGE](../../data-definition/drop/drop-package.md)
 * [CREATE PACKAGE BODY](../../data-definition/create/create-package-body.md)
 * [SHOW CREATE PACKAGE BODY](show-create-package-body.md)
 * [DROP PACKAGE BODY](../../data-definition/drop/drop-package-body.md)
-* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
-
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 CC BY-SA / Gnu FDL
-

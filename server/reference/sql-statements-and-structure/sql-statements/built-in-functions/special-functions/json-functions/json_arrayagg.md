@@ -1,13 +1,10 @@
+# JSON\_ARRAYAGG
 
-# JSON_ARRAYAGG
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
-
-##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
-JSON_ARRAYAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
-
+JSON\_ARRAYAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 ## Syntax
-
 
 ```
 JSON_ARRAYAGG(column_or_expression)
@@ -15,21 +12,15 @@ JSON_ARRAYAGG(column_or_expression)
 
 ## Description
 
-
 `JSON_ARRAYAGG` returns a JSON array containing an element for each value in a given set of JSON or SQL values. It acts on a column or an expression that evaluates to a single value.
 
-
-The maximum returned length in bytes is determined by the [group_concat_max_len](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
-
+The maximum returned length in bytes is determined by the [group\_concat\_max\_len](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
 
 Returns NULL in the case of an error, or if the result contains no rows.
 
-
-`JSON_ARRAYAGG` cannot currently be used as a [window function](../window-functions/README.md).
-
+`JSON_ARRAYAGG` cannot currently be used as a [window function](../window-functions/).
 
 The full syntax is as follows:
-
 
 ```
 JSON_ARRAYAGG([DISTINCT] expr
@@ -39,7 +30,6 @@ JSON_ARRAYAGG([DISTINCT] expr
 ```
 
 ## Examples
-
 
 ```
 CREATE TABLE t1 (a INT, b INT);
@@ -62,6 +52,4 @@ SELECT JSON_ARRAYAGG(a), JSON_ARRAYAGG(b) FROM t1 GROUP BY b;
 +------------------+------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

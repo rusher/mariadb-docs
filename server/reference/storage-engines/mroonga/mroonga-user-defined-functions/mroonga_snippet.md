@@ -1,8 +1,6 @@
-
-# mroonga_snippet
+# mroonga\_snippet
 
 ## Syntax
-
 
 ```
 mroonga_snippet document,
@@ -18,15 +16,11 @@ mroonga_snippet document,
                 [wordN wordN_prefix wordN_suffix]
 ```
 
-
 ## Description
 
-
-`mroonga_snippet` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDF) included with the [Mroonga storage engine](../README.md). It provides a keyword with surrounding text, or the keyword in context. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
-
+`mroonga_snippet` is a [user-defined function](../../../../server-usage/user-defined-functions/) (UDF) included with the [Mroonga storage engine](../). It provides a keyword with surrounding text, or the keyword in context. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
 
 The required parameters include:
-
 
 * `document` - Column name or string value.
 * `max_length` - Maximum length of the snippet, in bytes.
@@ -37,33 +31,23 @@ The required parameters include:
 * `prefix` - Snippet start text.
 * `suffix` - Snippet end text.
 
-
 The optional parameters include:
-
 
 * `wordN` - A word.
 * `wordN_prefix` - wordN start text.
 * `wordN_suffix` - wordN end text
 
-
 It can be used in both storage and wrapper mode.
-
 
 Returns the snippet string.
 
-
 ## Example
 
-
 ```
-
 ```
 
 ## See Also
 
-
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
-
 CC BY-SA / Gnu FDL
-

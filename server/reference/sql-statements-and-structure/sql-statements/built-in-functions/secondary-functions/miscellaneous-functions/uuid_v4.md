@@ -1,41 +1,30 @@
+# UUID\_v4
 
-# UUID_v4
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-
-##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
 From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to generate UUIDv4 and UUIDv7, in addition to UUIDv1.
 
-
 ## Syntax
-
 
 ```
 UUID_v4()
 ```
 
-
 ## Description
-
 
 Returns a Universally Unique Identifier (UUID) version 4. To generate a version 1 UUID, see the [UUID](uuid.md) function. To generate a version 7 UUID, see [UUIDv7](uuid_v7.md).
 
-
 A UUID is designed as a number that is globally unique in space and time. Two calls to `UUID()` are expected to generate two different values, even if these calls are performed on two separate computers that are not connected to each other.
 
+UUID\_v4() results are intended to be unique, but cannot always be relied upon to be unpredictable and unguessable.
 
-UUID_v4() results are intended to be unique, but cannot always be relied upon to be unpredictable and unguessable.
-
-
-A UUID is a 128-bit number represented by a utf8 string of five
-hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`
+A UUID is a 128-bit number represented by a utf8 string of five\
+hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\
 format:
 
-
-Statements using the UUID_v4() function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
-
+Statements using the UUID\_v4() function are not [safe for statement-based replication](../../../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Examples
-
 
 ```
 SELECT UUID(),UUID_v4(),UUID_v7()\G 
@@ -49,15 +38,12 @@ CREATE TABLE t1 (a int primary key not null, u UUID DEFAULT UUID_v4(), unique ke
 
 ## See Also
 
-
 * [UUID()](uuid.md) v1
-* [UUID_v7()](uuid_v7.md)
-* [UUID_SHORT()](uuid_short.md) - Return short (64 bit) Universal Unique Identifier
-* [SYS_GUID](sys_guid.md) - UUID without the `-` character for Oracle compatibility
+* [UUID\_v7()](uuid_v7.md)
+* [UUID\_SHORT()](uuid_short.md) - Return short (64 bit) Universal Unique Identifier
+* [SYS\_GUID](sys_guid.md) - UUID without the `-` character for Oracle compatibility
 * [UUID data type](../../../../../data-types/string-data-types/uuid-data-type.md)
 * [MDEV-11339](https://jira.mariadb.org/browse/MDEV-11339) (Support UUID v4 generation)
 * [MDEV-32637](https://jira.mariadb.org/browse/MDEV-32637) (Implement native UUID7 function)
 
-
 CC BY-SA / Gnu FDL
-

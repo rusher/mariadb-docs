@@ -1,8 +1,6 @@
-
 # SHOW CREATE FUNCTION
 
 ## Syntax
-
 
 ```
 SHOW CREATE FUNCTION func_name
@@ -10,16 +8,11 @@ SHOW CREATE FUNCTION func_name
 
 ## Description
 
+This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) but for[stored functions](../../../../../server-usage/stored-routines/stored-functions/).
 
-This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) but for
-[stored functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
-
-
-`SHOW CREATE FUNCTION` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1065-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), the output of this statement was unreliably affected by the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
-
+`SHOW CREATE FUNCTION` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1065-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), the output of this statement was unreliably affected by the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 ## Example
-
 
 ```
 SHOW CREATE FUNCTION VatCents\G
@@ -40,10 +33,7 @@ collation_connection: utf8_general_ci
 
 ## See Also
 
-
-* [Stored Functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md)
+* [Stored Functions](../../../../../server-usage/stored-routines/stored-functions/)
 * `[CREATE FUNCTION](../../data-definition/create/create-function.md)`
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

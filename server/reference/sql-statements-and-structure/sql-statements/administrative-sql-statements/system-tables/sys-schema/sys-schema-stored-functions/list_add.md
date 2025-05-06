@@ -1,8 +1,6 @@
-
-# list_add
+# list\_add
 
 ## Syntax
-
 
 ```
 sys.list_add(list,value)
@@ -10,18 +8,13 @@ sys.list_add(list,value)
 
 ## Description
 
+`list_add` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../).
 
-`list_add` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
+It takes a _list_ to be be modified and a _value_ to be added to the list, returning the resulting value. This can be used, for example, to add a value to a system variable taking a comma-delimited list of options, such as [sql\_mode](../../../../../../../server-management/variables-and-modes/sql-mode.md).
 
-
-It takes a *list* to be be modified and a *value* to be added to the list, returning the resulting value. This can be used, for example, to add a value to a system variable taking a comma-delimited list of options, such as [sql_mode](../../../../../../../server-management/variables-and-modes/sql-mode.md).
-
-
-The related function [list_drop](list_drop.md) can be used to drop a value from a list.
-
+The related function [list\_drop](list_drop.md) can be used to drop a value from a list.
 
 ## Examples
-
 
 ```
 SELECT @@sql_mode;
@@ -45,9 +38,6 @@ NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION |
 
 ## See Also
 
-
-* [list_drop](list_drop.md)
-
+* [list\_drop](list_drop.md)
 
 CC BY-SA / Gnu FDL
-

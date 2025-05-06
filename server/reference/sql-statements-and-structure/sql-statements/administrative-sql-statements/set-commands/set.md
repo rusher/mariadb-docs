@@ -1,8 +1,6 @@
-
 # SET
 
 ## Syntax
-
 
 ```
 SET variable_assignment [, variable_assignment] ...
@@ -13,9 +11,7 @@ variable_assignment:
     | [@@global. | @@session. | @@]system_var_name = expr
 ```
 
-
 One can also set a user variable in any expression with this syntax:
-
 
 ```
 user_var_name:= expr
@@ -23,53 +19,38 @@ user_var_name:= expr
 
 ## Description
 
-
-The `SET` statement assigns values to different types of
-variables that affect the operation of the server or your client. Older
-versions of MySQL employed `SET OPTION`, but this syntax was
+The `SET` statement assigns values to different types of\
+variables that affect the operation of the server or your client. Older\
+versions of MySQL employed `SET OPTION`, but this syntax was\
 deprecated in favor of `SET` without `OPTION`, and was removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
-
 
 Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](../../../../../server-management/getting-installing-and-upgrading-mariadb/mariadbd-configuration-files-and-groups.md).
 
-
 For setting variables on a per-query basis, see [SET STATEMENT](set-statement.md).
-
 
 See [SHOW VARIABLES](../show/show-variables.md) for documentation on viewing server system variables.
 
-
-See [Server System Variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) for a list of all the system variables.
-
+See [Server System Variables](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a list of all the system variables.
 
 ### GLOBAL / SESSION
 
-
 When setting a system variable, the scope can be specified as either GLOBAL or SESSION.
-
 
 A global variable change affects all new sessions. It does not affect any currently open sessions, including the one that made the change.
 
-
 A session variable change affects the current session only.
-
 
 If the variable has a session value, not specifying either GLOBAL or SESSION will be the same as specifying SESSION. If the variable only has a global value, not specifying GLOBAL or SESSION will apply to the change to the global value.
 
-
 ### DEFAULT
-
 
 Setting a global variable to DEFAULT will restore it to the server default, and setting a session variable to DEFAULT will restore it to the current global value.
 
-
 ## Examples
 
-
-* [innodb_sync_spin_loops](../../../../storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops) is a global variable.
-* [skip_parallel_replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md) is a session variable.
-* [max_error_count](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) is both global and session.
-
+* [innodb\_sync\_spin\_loops](../../../../storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops) is a global variable.
+* [skip\_parallel\_replication](../../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) is a session variable.
+* [max\_error\_count](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) is both global and session.
 
 ```
 SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
@@ -85,7 +66,6 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 ```
 
 Setting the session values:
-
 
 ```
 SET max_error_count=128;Query OK, 0 rows affected (0.000 sec)
@@ -110,7 +90,6 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 
 Setting the global values:
 
-
 ```
 SET GLOBAL max_error_count=256;
 
@@ -133,7 +112,6 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 ```
 
 [SHOW VARIABLES](../show/show-variables.md) will by default return the session value unless the variable is global only.
-
 
 ```
 SHOW VARIABLES LIKE 'max_error_count';
@@ -160,7 +138,6 @@ SHOW VARIABLES LIKE 'innodb_sync_spin_loops';
 
 Using the inplace syntax:
 
-
 ```
 SELECT (@a:=1);
 +---------+
@@ -179,13 +156,10 @@ SELECT @a;
 
 ## See Also
 
-
-* [Using last_value() to return data of used rows](../../built-in-functions/secondary-functions/information-functions/last_value.md)
+* [Using last\_value() to return data of used rows](../../built-in-functions/secondary-functions/information-functions/last_value.md)
 * [SET STATEMENT](set-statement.md)
-* [SET Variable](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/set-variable.md)
+* [SET Variable](../../../../../server-usage/programmatic-compound-statements/set-variable.md)
 * [SET Data Type](../../../../data-types/string-data-types/set-data-type.md)
-* [DECLARE Variable](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md)
+* [DECLARE Variable](../../../../../server-usage/programmatic-compound-statements/declare-variable.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

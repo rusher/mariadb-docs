@@ -1,56 +1,40 @@
-
 # Spider Storage Engine Overview
-
 
 ## About
 
+![spider\_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png)
 
-![spider_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png "spider_overview")
-
-
-The Spider storage engine is a [storage engine](../README.md) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
-
+The Spider storage engine is a [storage engine](../) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
 
-
-The Spider documentation on the MariaDB Knowledge Base is currently incomplete. See the Spider website for more: [](https://spiderformysql.com/), as well as the [spider-1.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-1.0-doc/files) and [spider-2.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-2.0-doc/files) repositories.
-
+The Spider documentation on the MariaDB Knowledge Base is currently incomplete. See the Spider website for more:, as well as the [spider-1.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-1.0-doc/files) and [spider-2.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-2.0-doc/files) repositories.
 
 ## Spider Versions in MariaDB
 
-
-
-| Spider Version | Introduced | Maturity |
-| --- | --- | --- |
-| Spider Version | Introduced | Maturity |
-| Spider 3.3.15 | [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes) | Stable |
-| Spider 3.3.15 | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes) | Gamma |
-| Spider 3.3.14 | [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes) | Stable |
-| Spider 3.3.13 | [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes) | Stable |
-| Spider 3.3.13 | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) | Gamma |
-| Spider 3.2.37 | [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes), [MariaDB 10.0.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes) | Gamma |
-| Spider 3.2.21 | [MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes), [MariaDB 10.0.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes) | Gamma |
-| Spider 3.2.18 | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes) | Gamma |
-| Spider 3.2.11 | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes) | Gamma |
-| Spider 3.2.4 | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes) | Gamma |
-| Spider 3.2 | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) | Gamma |
-| Spider 3.0 | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) | Beta |
-
-
-
+| Spider Version | Introduced                                                                                                                                                                                                                                                                                                                                                               | Maturity |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
+| Spider Version | Introduced                                                                                                                                                                                                                                                                                                                                                               | Maturity |
+| Spider 3.3.15  | [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes)                  | Stable   |
+| Spider 3.3.15  | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes)                                                                                                                                                                                                     | Gamma    |
+| Spider 3.3.14  | [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes)   | Stable   |
+| Spider 3.3.13  | [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes)                                                                                                                                                                                        | Stable   |
+| Spider 3.3.13  | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes)                                                                                                                                                                                        | Gamma    |
+| Spider 3.2.37  | [MariaDB 10.1.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes), [MariaDB 10.0.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10023-release-notes) | Gamma    |
+| Spider 3.2.21  | [MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes), [MariaDB 10.0.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes) | Gamma    |
+| Spider 3.2.18  | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes)                                                                                                                                                                                      | Gamma    |
+| Spider 3.2.11  | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes)                                                                                                                                                                                      | Gamma    |
+| Spider 3.2.4   | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes)                                                                                                                                                                                      | Gamma    |
+| Spider 3.2     | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes)                                                                                                                                                                                      | Gamma    |
+| Spider 3.0     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                                                                                                                                                                                        | Beta     |
 
 ## Usage
 
-
 ### Basic Usage
-
 
 To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement are used to pass connection information about the remote server.
 
-
 For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](../../../clients-and-utilities/legacy-clients-and-utilities/mysql-sandbox.md) tool, an easy way to test with multiple installations)::
-
 
 ```
 node1 >CREATE TABLE s(
@@ -60,7 +44,6 @@ node1 >CREATE TABLE s(
 ```
 
 On the local server, a Spider table can be created as follows:
-
 
 ```
 CREATE TABLE s(
@@ -74,7 +57,6 @@ COMMENT='host "127.0.0.1", user "msandbox", password "msandbox", port "8607"';
 
 Records can now be inserted on the local server, and they will be stored on the remote server:
 
-
 ```
 INSERT INTO s(code) VALUES ('a');
 
@@ -86,8 +68,8 @@ node1 > SELECT * FROM s;
 +----+------+
 ```
 
+**MariaDB starting with** [**10.8.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 
-##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 Alternative to specifying the data node information in the COMMENT, certain information (server, database, table) can also be specified using Table Options, like so:
 
 ```
@@ -105,19 +87,15 @@ CREATE TABLE s(
 ENGINE=SPIDER REMOTE_SERVER="srv" REMOTE_DATABASE="db" REMOTE_TABLE="s";
 ```
 
-
 ### Further Examples
 
-
 Preparing 10M record table using the [sysbench](https://github.com/akopytov/sysbench) utility
-
 
 ```
 /usr/local/skysql/sysbench/bin/sysbench --test=oltp  --db-driver=mysql  --mysql-table-engine=innodb --mysql-user=skysql --mysql-password=skyvodka --mysql-host=192.168.0.202 --mysql-port=5054 --oltp-table-size=10000000  --mysql-db=test  prepare
 ```
 
 Make a first read only benchmark to check the initial single node performance.
-
 
 ```
 /usr/local/skysql/sysbench/bin/sysbench --test=oltp  --db-driver=mysql  --mysql-table-engine=innodb --mysql-user=skysql --mysql-password=skyvodka --mysql-host=192.168.0.202 --mysql-port=5054 --mysql-db=test --oltp-table-size=10000000 --num-threads=4 --max-requests=100000 --oltp-read-only=on run
@@ -167,7 +145,6 @@ Threads fairness:
 
 Define an easy way to access the nodes from the MariaDB or MySQL client.
 
-
 ```
 alias backend1='/usr/local/skysql/mysql-client/bin/mysql  --user=skysql --password=skyvodka --host=192.168.0.202 --port=5054'
 alias backend2='/usr/local/skysql/mysql-client/bin/mysql  --user=skysql --password=skyvodka --host=192.168.0.203 --port=5054' 
@@ -175,7 +152,6 @@ alias spider1='/usr/local/skysql/mysql-client/bin/mysql  --user=skysql --passwor
 ```
 
 Create the empty tables to hold the data and repeat for all available backend nodes.
-
 
 ```
 backend1 << EOF 
@@ -205,9 +181,7 @@ EOF
 
 #### Federation Setup
 
-
-![Spider7](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider7.png "Spider7")
-
+![Spider7](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider7.png)
 
 ```
 spider1 << EOF
@@ -234,20 +208,15 @@ SELECT * FROM test.sbtest LIMIT 10;
 EOF
 ```
 
-![spbench10](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench10.png "spbench10")
+![spbench10](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench10.png)
 
-
-Without connection pool or MariaDB thread pool, HaProxy and Spider have been protecting the tcp socket overflow without specific TCP tuning. In reality with a well tuned TCP stack or thread pool the curve should not decrease so abruptly to 0. Refer to the [MariaDB Thread Pool](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) to explore this feature.
-
+Without connection pool or MariaDB thread pool, HaProxy and Spider have been protecting the tcp socket overflow without specific TCP tuning. In reality with a well tuned TCP stack or thread pool the curve should not decrease so abruptly to 0. Refer to the [MariaDB Thread Pool](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) to explore this feature.
 
 #### Sharding Setup
 
-
-![spider8](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider8.png "spider8")
-
+![spider8](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider8.png)
 
 Create the spider table on the Spider Node
-
 
 ```
 #spider1 << EOF
@@ -289,7 +258,6 @@ EOF
 
 Copy the data from the original sysbench table to the spider table
 
-
 ```
 #/usr/local/skysql/mariadb/bin/mysqldump  --user=skysql --password=skyvodka --host=192.168.0.202 --port=5054 --no-create-info test sbtest | spider1 backend 
 
@@ -309,9 +277,7 @@ Copy the data from the original sysbench table to the spider table
 
 We observe a common issue with partitioning is a non uniform distribution of data between the backends. based on the partition key hashing algorithm.
 
-
 Rerun the Benchmark with less queries
-
 
 ```
 #/usr/local/skysql/sysbench/bin/sysbench --test=oltp  --db-driver=mysql  --mysql-table-engine=innodb --mysql-user=skysql --mysql-password=skyvodka --mysql-host=192.168.0.201 --mysql-port=5054 --mysql-db=backend --mysql-engine-trx=yes --oltp-table-size=10000000 --num-threads=4 --max-requests=100 --oltp-read-only=on run
@@ -344,27 +310,20 @@ Threads fairness:
     execution time (avg/stddev):   4.3240/0.04
 ```
 
-The response time decreases to 0.04.
+The response time decreases to 0.04.\
 This is expected because the query latency is increased from multiple network round trips and condition push down is not implemented yet. Sysbench doing a lot of range queries. Just consider for now that this range query can be a badly optimized query.
-
 
 We need to increase the concurrency to get better throughput.
 
-
-![spbench11](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench11.png "spbench11")
-
+![spbench11](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench11.png)
 
 #### Background Setup
 
-
 We have no background search available in MariaDB. It won't be available before [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), but the next table definition mainly enables improving the performance of a single complex query plan with background search that can be found via the upstream spiral binaries MariaDB branch.
-
 
 We have 4 cores per backend and 2 backends .
 
-
 On `backend1`
-
 
 ```
 #backend1 << EOF 
@@ -409,7 +368,6 @@ EOF
 
 On `backend2`
 
-
 ```
 #backend2 << EOF 
 CREATE DATABASE bsbackend5;
@@ -453,7 +411,6 @@ EOF
 
 On `Spider Node`
 
-
 ```
 #spider2 << EOF
 CREATE SERVER bsbackend1 FOREIGN DATA WRAPPER mysql OPTIONS( HOST '192.168.0.202', DATABASE 'bsbackend1',USER 'skysql', PASSWORD 'skyvodka',PORT 5054);
@@ -491,7 +448,6 @@ INSERT INTO  bsbackend.sbtest SELECT * FROM backend.sbtest;
 ```
 
 Now test the following query :
-
 
 ```
 select count(*) from sbtest;
@@ -531,19 +487,15 @@ mysql> select sum(k) from sbtest;
 1 row in set (12,56 sec)
 ```
 
-![spbench8](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench8.png "spbench8")
-
+![spbench8](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench8.png)
 
 #### High Availability Setup
 
+**MariaDB starting with** [**10.7.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
 
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](broken-reference) or [galera-cluster](../../../../kb/en/galera-cluster/).
 
-##### MariaDB starting with [10.7.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](/kb/en/galera-cluster/).
-
-
-![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png "spider9")
-
+![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png)
 
 ```
 #backend1 -e "CREATE DATABASE backend_rpl"
@@ -605,14 +557,12 @@ EOF
 
 What is happening if we stop one backend?
 
-
 ```
 #spider1 -e "SELECT * FROM backend.sbtest where id=10000001";
 ERROR 1429 (HY000) at line 1: Unable to connect to foreign data source: backend1
 ```
 
-Let's fix this with spider monitoring. Note that msi is the list of spider nodes @@server_id variable participating in the quorum.
-
+Let's fix this with spider monitoring. Note that msi is the list of spider nodes @@server\_id variable participating in the quorum.
 
 ```
 #spider1 << EOF
@@ -647,11 +597,9 @@ SELECT spider_flush_table_mon_cache();
 EOF
 ```
 
-Monitoring should be setup between Spider nodes participating in the cluster. We only have one `Spider Node` and spider_link_mon_servers represent the inter-connection of all Spider nodes in our setup.
+Monitoring should be setup between Spider nodes participating in the cluster. We only have one `Spider Node` and spider\_link\_mon\_servers represent the inter-connection of all Spider nodes in our setup.
 
-
-This simple setup does not bring HA in case the `Spider Node` is not available. In a production setup the number of `Spider Nodes` in the spider_link_mon_servers table should be at least 3 to get a majority consensus.
-
+This simple setup does not bring HA in case the `Spider Node` is not available. In a production setup the number of `Spider Nodes` in the spider\_link\_mon\_servers table should be at least 3 to get a majority consensus.
 
 ```
 #spider1 -e "SELECT * FROM backend.sbtest WHERE id=10000001"
@@ -664,7 +612,6 @@ This simple setup does not bring HA in case the `Spider Node` is not available. 
 
 Checking the state of the nodes:
 
-
 ```
 #spider1 -e "SELECT db_name, table_name,server  FROM mysql.spider_tables WHERE link_status=3"
 +---------+--------------+----------+
@@ -674,11 +621,9 @@ Checking the state of the nodes:
 +---------+--------------+----------+
 ```
 
-![spiderha](../../../.gitbook/assets/spider-storage-engine-overview/+image/spiderha.png "spiderha")
-
+![spiderha](../../../.gitbook/assets/spider-storage-engine-overview/+image/spiderha.png)
 
 No change has been made to cluster, so let's create a divergence:
-
 
 ```
 # spider1 -e "INSERT INTO backend.sbtest select 10000003, 0, '' ,'replicas test';"
@@ -692,7 +637,6 @@ No change has been made to cluster, so let's create a divergence:
 ```
 
 Reintroducing the failed backend1 in the cluster:
-
 
 ```
 #spider1 << EOF
@@ -715,6 +659,4 @@ ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
 EOF
 ```
 
-
 CC BY-SA / Gnu FDL
-

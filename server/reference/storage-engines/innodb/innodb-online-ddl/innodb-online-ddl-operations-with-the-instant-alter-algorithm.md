@@ -1,27 +1,18 @@
-
 # InnoDB Online DDL Operations with the INSTANT Alter Algorithm
-
 
 ## Column Operations
 
-
 ### `ALTER TABLE ... ADD COLUMN`
-
 
 In [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes) and later, InnoDB supports adding columns to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the new column is the last column in the table. See [MDEV-11369](https://jira.mariadb.org/browse/MDEV-11369) for more information. If the table has a hidden `FTS_DOC_ID` column is present, then this is not supported.
 
-
 In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, InnoDB supports adding columns to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, regardless of where in the column list the new column is added.
 
-
-When this operation is performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](#non-canonical-storage-format-caused-by-some-operations) for more information.
-
+When this operation is performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#non-canonical-storage-format-caused-by-some-operations) for more information.
 
 With the exception of adding an [auto-increment](../../../data-types/auto_increment.md) column, this operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -36,7 +27,6 @@ Query OK, 0 rows affected (0.004 sec)
 
 And this succeeds in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -48,26 +38,19 @@ ALTER TABLE tab ADD COLUMN c varchar(50) AFTER a;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-column) for [InnoDB](../) tables.
 
 See [Instant ADD COLUMN for InnoDB](instant-add-column-for-innodb.md) for more information.
 
-
 ### `ALTER TABLE ... DROP COLUMN`
-
 
 In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, InnoDB supports dropping columns from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. See [MDEV-15562](https://jira.mariadb.org/browse/MDEV-15562) for more information.
 
-
-When this operation is performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](#non-canonical-storage-format-caused-by-some-operations) for more information.
-
+When this operation is performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#non-canonical-storage-format-caused-by-some-operations) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -81,29 +64,21 @@ ALTER TABLE tab DROP COLUMN c;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-column) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... MODIFY COLUMN`
 
-
-This applies to [ALTER TABLE ... MODIFY COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... MODIFY COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) for [InnoDB](../) tables.
 
 #### Reordering Columns
 
-
 In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, InnoDB supports reordering columns within a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. See [MDEV-15562](https://jira.mariadb.org/browse/MDEV-15562) for more information.
 
-
-When this operation is performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](#non-canonical-storage-format-caused-by-some-operations) for more information.
-
+When this operation is performed with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the tablespace file will have a non-canonical storage format. See [Non-canonical Storage Format Caused by Some Operations](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#non-canonical-storage-format-caused-by-some-operations) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -119,30 +94,20 @@ Query OK, 0 rows affected (0.004 sec)
 
 #### Changing the Data Type of a Column
 
-
 InnoDB does **not** support modifying a column's data type with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` in most cases. There are some exceptions:
 
-
 * InnoDB supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, unless it would require changing the number of bytes requires to represent the column's length. A `VARCHAR` column that is between 0 and 255 bytes in size requires 1 byte to represent its length, while a `VARCHAR` column that is 256 bytes or longer requires 2 bytes to represent its length. This means that the length of a column cannot be increased with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the original length was less than 256 bytes, and the new length is 256 bytes or more.
-
-
-* In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` with no restrictions if the [ROW_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option is set to [REDUNDANT](../innodb-row-formats/innodb-row-formats-overview.md). See [MDEV-15563](https://jira.mariadb.org/browse/MDEV-15563) for more information.
-
-
-* In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB also supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` in a more limited manner if the [ROW_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option is set to [COMPACT](../innodb-row-formats/innodb-row-formats-overview.md), [DYNAMIC](../innodb-row-formats/innodb-row-formats-overview.md), or [COMPRESSED](../innodb-row-formats/innodb-row-formats-overview.md). In this scenario, the following limitations apply:
-
+* In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` with no restrictions if the [ROW\_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option is set to [REDUNDANT](../innodb-row-formats/innodb-row-formats-overview.md). See [MDEV-15563](https://jira.mariadb.org/browse/MDEV-15563) for more information.
+* In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB also supports increasing the length of `VARCHAR` columns with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` in a more limited manner if the [ROW\_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option is set to [COMPACT](../innodb-row-formats/innodb-row-formats-overview.md), [DYNAMIC](../innodb-row-formats/innodb-row-formats-overview.md), or [COMPRESSED](../innodb-row-formats/innodb-row-formats-overview.md). In this scenario, the following limitations apply:
   * The length can be increased with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the original length of the column is 127 bytes or less, and the new length of the column is 256 bytes or more.
   * The length can be increased with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the original length of the column is 255 bytes or less, and the new length of the column is still 255 bytes or less.
   * The length can be increased with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the original length of the column is 256 bytes or more, and the new length of the column is still 256 bytes or more.
   * The length can not be increased with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the original length was between 128 bytes and 255 bytes, and the new length is 256 bytes or more.
   * See [MDEV-15563](https://jira.mariadb.org/browse/MDEV-15563) for more information.
 
-
 The supported operations in this category support the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -158,7 +123,6 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 But this succeeds because the original length of the column is less than 256 bytes, and the new length is still less than 256 bytes:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -172,7 +136,6 @@ Query OK, 0 rows affected (0.005 sec)
 ```
 
 But this fails because the original length of the column is between 128 bytes and 255 bytes, and the new length is greater than 256 bytes:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -188,7 +151,6 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 But this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=REDUNDANT`:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -202,7 +164,6 @@ Query OK, 0 rows affected (0.004 sec)
 ```
 
 And this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=DYNAMIC` and the column's original length is 127 bytes or less:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -219,7 +180,6 @@ Query OK, 0 rows affected (0.003 sec)
 
 And this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=COMPRESSED` and the column's original length is 127 bytes or less:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -234,7 +194,6 @@ Query OK, 0 rows affected (0.003 sec)
 ```
 
 But this fails even in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=DYNAMIC` and the column's original length is between 128 bytes and 255 bytes:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -251,15 +210,11 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 #### Changing a Column to NULL
 
-
-In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB supports modifying a column to allow [NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null) values with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the [ROW_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option is set to [REDUNDANT](../innodb-row-formats/innodb-row-formats-overview.md). See [MDEV-15563](https://jira.mariadb.org/browse/MDEV-15563) for more information.
-
+In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, InnoDB supports modifying a column to allow [NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null) values with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT` if the [ROW\_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option is set to [REDUNDANT](../innodb-row-formats/innodb-row-formats-overview.md). See [MDEV-15563](https://jira.mariadb.org/browse/MDEV-15563) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -275,12 +230,9 @@ Query OK, 0 rows affected (0.004 sec)
 
 #### Changing a Column to NOT NULL
 
-
 InnoDB does **not** support modifying a column to **not** allow [NULL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#null-and-not-null) values with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -296,19 +248,14 @@ ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try A
 
 #### Adding a New `ENUM` Option
 
-
 InnoDB supports adding a new [ENUM](../../../data-types/string-data-types/enum.md) option to a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. In order to add a new [ENUM](../../../data-types/string-data-types/enum.md) option with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the following requirements must be met:
-
 
 * It must be added to the end of the list.
 * The storage requirements must not change.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -324,7 +271,6 @@ Query OK, 0 rows affected (0.002 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -339,19 +285,14 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 #### Adding a New `SET` Option
 
-
 InnoDB supports adding a new [SET](../../../data-types/string-data-types/set-data-type.md) option to a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. In order to add a new [SET](../../../data-types/string-data-types/set-data-type.md) option with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, the following requirements must be met:
-
 
 * It must be added to the end of the list.
 * The storage requirements must not change.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -367,7 +308,6 @@ Query OK, 0 rows affected (0.002 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -382,15 +322,11 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 #### Removing System Versioning from a Column
 
-
-In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. In order for this to work, the [system_versioning_alter_history](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
-
+In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. In order for this to work, the [system\_versioning\_alter\_history](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -407,21 +343,15 @@ Query OK, 0 rows affected (0.004 sec)
 
 ### `ALTER TABLE ... ALTER COLUMN`
 
-
-This applies to [ALTER TABLE ... ALTER COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alter-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ALTER COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alter-column) for [InnoDB](../) tables.
 
 #### Setting a Column's Default Value
 
-
 InnoDB supports modifying a column's [DEFAULT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default-column-option) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -437,12 +367,9 @@ Query OK, 0 rows affected (0.003 sec)
 
 #### Removing a Column's Default Value
 
-
 InnoDB supports removing a column's [DEFAULT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default-column-option) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -458,15 +385,11 @@ Query OK, 0 rows affected (0.002 sec)
 
 ### `ALTER TABLE ... CHANGE COLUMN`
 
-
 InnoDB supports renaming a column with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`, unless the column's data type or attributes changed in addition to the name.
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -482,7 +405,6 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -495,20 +417,15 @@ ALTER TABLE tab CHANGE COLUMN c num int;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
-This applies to [ALTER TABLE ... CHANGE COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#change-column) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... CHANGE COLUMN](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#change-column) for [InnoDB](../) tables.
 
 ## Index Operations
 
-
 ### `ALTER TABLE ... ADD PRIMARY KEY`
-
 
 InnoDB does **not** support adding a primary key to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -523,17 +440,13 @@ ALTER TABLE tab ADD PRIMARY KEY (a);
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to [ALTER TABLE ... ADD PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-primary-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-primary-key) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP PRIMARY KEY`
 
-
 InnoDB does **not** support dropping a primary key with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -547,23 +460,17 @@ ALTER TABLE tab DROP PRIMARY KEY;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Dropping a primary key is not allowed without also adding a new primary key. Try ALGORITHM=COPY
 ```
 
-This applies to [ALTER TABLE ... DROP PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-primary-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP PRIMARY KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-primary-key) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ADD INDEX` and `CREATE INDEX`
 
-
-This applies to [ALTER TABLE ... ADD INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-index) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-index) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) for [InnoDB](../) tables.
 
 #### Adding a Plain Index
 
-
 InnoDB does **not** support adding a plain index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -579,7 +486,6 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 And this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -594,12 +500,9 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 #### Adding a Fulltext Index
 
-
-InnoDB does **not** support adding a [FULLTEXT](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
+InnoDB does **not** support adding a [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -619,7 +522,6 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 And this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -638,12 +540,9 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 #### Adding a Spatial Index
 
-
 InnoDB does **not** support adding a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example, this fails:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -659,7 +558,6 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 And this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -674,12 +572,9 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 ### `ALTER TABLE ... ADD FOREIGN KEY`
 
-
 InnoDB does **not** support adding foreign key constraints to a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab1 (
@@ -700,20 +595,15 @@ ALTER TABLE tab1 ADD FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a);
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try ALGORITHM=NOCOPY
 ```
 
-This applies to [ALTER TABLE ... ADD FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-foreign-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ADD FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#add-foreign-key) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP FOREIGN KEY`
 
-
 InnoDB supports dropping foreign key constraints from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab2 (
@@ -734,23 +624,17 @@ ALTER TABLE tab1 DROP FOREIGN KEY tab2_fk;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-foreign-key) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP FOREIGN KEY](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-foreign-key) for [InnoDB](../) tables.
 
 ## Table Operations
 
-
 ### `ALTER TABLE ... AUTO_INCREMENT=...`
 
-
-InnoDB supports changing a table's [AUTO_INCREMENT](../../../data-types/auto_increment.md) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
+InnoDB supports changing a table's [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -764,17 +648,13 @@ ALTER TABLE tab AUTO_INCREMENT=100;
 Query OK, 0 rows affected (0.002 sec)
 ```
 
-This applies to [ALTER TABLE ... AUTO_INCREMENT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#auto_increment) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... AUTO\_INCREMENT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#auto_increment) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ROW_FORMAT=...`
 
-
 InnoDB does **not** support changing a table's [row format](../innodb-row-formats/innodb-row-formats-overview.md) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -788,17 +668,13 @@ ALTER TABLE tab ROW_FORMAT=COMPRESSED;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to [ALTER TABLE ... ROW_FORMAT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ROW\_FORMAT=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... KEY_BLOCK_SIZE=...`
 
-
-InnoDB does **not** support changing a table's [KEY_BLOCK_SIZE](../innodb-row-formats/innodb-row-formats-overview.md) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
+InnoDB does **not** support changing a table's [KEY\_BLOCK\_SIZE](../innodb-row-formats/innodb-row-formats-overview.md) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -813,26 +689,19 @@ ALTER TABLE tab KEY_BLOCK_SIZE=2;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to [KEY_BLOCK_SIZE=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#key_block_size) for [InnoDB](../README.md) tables.
-
+This applies to [KEY\_BLOCK\_SIZE=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#key_block_size) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... PAGE_COMPRESSED=1` and `ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...`
 
+In [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) and later, InnoDB supports setting a table's [PAGE\_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value to `1` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. InnoDB does **not** support changing a table's [PAGE\_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value from `1` to `0` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-In [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) and later, InnoDB supports setting a table's [PAGE_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value to `1` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. InnoDB does **not** support changing a table's [PAGE_COMPRESSED](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) value from `1` to `0` with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
-
-In these versions, InnoDB also supports changing a table's [PAGE_COMPRESSION_LEVEL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
+In these versions, InnoDB also supports changing a table's [PAGE\_COMPRESSION\_LEVEL](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) value with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 See [MDEV-16328](https://jira.mariadb.org/browse/MDEV-16328) for more information.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -847,7 +716,6 @@ Query OK, 0 rows affected (0.004 sec)
 ```
 
 And this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -864,7 +732,6 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -877,17 +744,13 @@ ALTER TABLE tab PAGE_COMPRESSED=0;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Changing table options requires the table to be rebuilt. Try ALGORITHM=INPLACE
 ```
 
-This applies to [ALTER TABLE ... PAGE_COMPRESSED=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) and [ALTER TABLE ... PAGE_COMPRESSION_LEVEL=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... PAGE\_COMPRESSED=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compressed) and [ALTER TABLE ... PAGE\_COMPRESSION\_LEVEL=...](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#page_compression_level) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-
 InnoDB does **not** support dropping [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -901,20 +764,15 @@ ALTER TABLE tab DROP SYSTEM VERSIONING;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to [ALTER TABLE ... DROP SYSTEM VERSIONING](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-system-versioning) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP SYSTEM VERSIONING](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-system-versioning) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... DROP CONSTRAINT`
 
-
 In [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes) and later, InnoDB supports dropping a [CHECK](../../../sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraints) constraint from a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. See [MDEV-16331](https://jira.mariadb.org/browse/MDEV-16331) for more information.
-
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -929,17 +787,13 @@ ALTER TABLE tab DROP CONSTRAINT b_not_empty;
 Query OK, 0 rows affected (0.002 sec)
 ```
 
-This applies to [ALTER TABLE ... DROP CONSTRAINT](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-constraint) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... DROP CONSTRAINT](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#drop-constraint) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... FORCE`
 
-
 InnoDB does **not** support forcing a table rebuild with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -953,17 +807,13 @@ ALTER TABLE tab FORCE;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to [ALTER TABLE ... FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#force) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#force) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... ENGINE=InnoDB`
 
-
 InnoDB does **not** support forcing a table rebuild with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -977,17 +827,13 @@ ALTER TABLE tab ENGINE=InnoDB;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
-This applies to [ALTER TABLE ... ENGINE=InnoDB](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... ENGINE=InnoDB](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine) for [InnoDB](../) tables.
 
 ### `OPTIMIZE TABLE ...`
 
-
 InnoDB does **not** support optimizing a table with with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
-
 For example:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1017,20 +863,15 @@ OPTIMIZE TABLE tab;
 3 rows in set, 1 warning (0.002 sec)
 ```
 
-This applies to [OPTIMIZE TABLE](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) for [InnoDB](../README.md) tables.
-
+This applies to [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) for [InnoDB](../) tables.
 
 ### `ALTER TABLE ... RENAME TO` and `RENAME TABLE ...`
 
-
 InnoDB supports renaming a table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
-
 
 This operation supports the exclusive locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#lock) clause to `EXCLUSIVE`. When this strategy is used, concurrent DML is **not** permitted.
 
-
 For example, this succeeds:
-
 
 ```
 CREATE OR REPLACE TABLE tab (
@@ -1046,7 +887,6 @@ Query OK, 0 rows affected (0.008 sec)
 
 And this succeeds:
 
-
 ```
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
@@ -1059,42 +899,31 @@ RENAME TABLE tab TO old_tab;
 Query OK, 0 rows affected (0.008 sec)
 ```
 
-This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#rename-to) and [RENAME TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/rename-table.md) for [InnoDB](../README.md) tables.
-
+This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#rename-to) and [RENAME TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/rename-table.md) for [InnoDB](../) tables.
 
 ## Limitations
 
-
 ### Limitations Related to Generated (Virtual and Persistent/Stored) Columns
-
 
 [Generated columns](../../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) do not currently support online DDL for all of the same operations that are supported for "real" columns.
 
-
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](../../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md#statement-support) for more information on the limitations.
-
 
 ### Non-canonical Storage Format Caused by Some Operations
 
-
 Some operations cause a table's tablespace file to use a non-canonical storage format when the `INSTANT` algorithm is used. The affected operations include:
 
-
-* [Adding a column.](#alter-table-add-column)
-* [Dropping a column.](#alter-table-drop-column)
-* [Reordering columns.](#reordering-columns)
-
+* [Adding a column.](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#alter-table-add-column)
+* [Dropping a column.](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#alter-table-drop-column)
+* [Reordering columns.](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#reordering-columns)
 
 These operations require the following non-canonical changes to the storage format:
-
 
 * A hidden metadata record at the start of the clustered index is used to store each column's [DEFAULT](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/default.md) value. This makes it possible to add new columns that have default values without rebuilding the table.
 * A [BLOB](../../../data-types/string-data-types/blob.md) in the hidden metadata record is used to store column mappings. This makes it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table.
 * If a column is dropped, old records will contain garbage in that column's former position, and new records will be written with [NULL](../../../data-types/null-values.md) values, empty strings, or dummy values.
 
-
 This non-canonical storage format has the potential to incur some performance or storage overhead for all subsequent DML operations. If you notice some issues like this and you want to normalize a table's storage format to avoid this problem, then you can do so by forcing a table rebuild by executing [ALTER TABLE ... FORCE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#force) with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. For example:
-
 
 ```
 SET SESSION alter_algorithm='INPLACE';
@@ -1104,18 +933,13 @@ Query OK, 0 rows affected (0.008 sec)
 
 However, keep in mind that there are certain scenarios where you may not be able to rebuild the table with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. See [InnoDB Online DDL Operations with ALGORITHM=INPLACE: Limitations](innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) for more information on those cases. If you hit one of those scenarios, but you still want to rebuild the table, then you would have to do so with [ALGORITHM](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `COPY`.
 
-
 ### Known Bugs
-
 
 There are some known bugs that could lead to issues when an InnoDB DDL operation is performed using the [INSTANT](innodb-online-ddl-overview.md#instant-algorithm) algorithm. This algorithm will usually be chosen by default if the operation supports the algorithm.
 
-
-The effect of many of these bugs is that the table seems to *forget* that its tablespace file is in the [non-canonical storage format](#non-canonical-storage-format-caused-by-some-operations).
-
+The effect of many of these bugs is that the table seems to _forget_ that its tablespace file is in the [non-canonical storage format](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#non-canonical-storage-format-caused-by-some-operations).
 
 If you are concerned that a table may be affected by one of these bugs, then your best option would be to normalize the table structure. This can be done by rebuilding the table. For example:
-
 
 ```
 SET SESSION alter_algorithm='INPLACE';
@@ -1125,14 +949,12 @@ Query OK, 0 rows affected (0.008 sec)
 
 If you are concerned about these bugs, and you want to perform an operation that supports the [INSTANT](innodb-online-ddl-overview.md#algorithminstant) algorithm, but you want to avoid using that algorithm, then you can set the algorithm to [INPLACE](innodb-online-ddl-overview.md#inplace-algorithm) and add the `FORCE` keyword to the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement:
 
-
 ```
 SET SESSION alter_algorithm='INPLACE';
 ALTER TABLE tab ADD COLUMN c varchar(50), FORCE;
 ```
 
 #### Closed Bugs
-
 
 * [MDEV-20066](https://jira.mariadb.org/browse/MDEV-20066): This bug could cause a table to become corrupt if a column was added instantly. It is fixed in [MariaDB 10.3.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10318-release-notes) and [MariaDB 10.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1048-release-notes).
 * [MDEV-20117](https://jira.mariadb.org/browse/MDEV-20117): This bug could cause a table to become corrupt if a column was dropped instantly. It is fixed in [MariaDB 10.4.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1049-release-notes).
@@ -1142,6 +964,4 @@ ALTER TABLE tab ADD COLUMN c varchar(50), FORCE;
 * [MDEV-18519](https://jira.mariadb.org/browse/MDEV-18519): This bug could cause a table to become corrupt if a column was added instantly. It is fixed in [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes), [MariaDB 10.7.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes), [MariaDB 10.8.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1084-release-notes) and [MariaDB 10.9.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1092-release-notes).
 * [MDEV-18519](https://jira.mariadb.org/browse/MDEV-18519): This bug could cause a table to become corrupt if a column was added instantly. This isn't and won't be fixed in versions less than [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
-
 CC BY-SA / Gnu FDL
-

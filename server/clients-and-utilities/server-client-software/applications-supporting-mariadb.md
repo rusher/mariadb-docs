@@ -1,24 +1,18 @@
-
 # Applications Supporting MariaDB
 
 This page lists projects which officially implement MariaDB's enhanced features, or state that they work with MariaDB. If you know of a project which officially supports MariaDB and it isn't listed here, please let us know in the comments.
 
-
 Note: Every project we know of which works with MySQL also works with MariaDB. This page is just to point out projects which officially support MariaDB (e.g. by mentioning MariaDB in their documentation or setup instructions).
-
 
 ## Supports Enhanced MariaDB Features
 
-
 * [dbForge Studio](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) is a versatile and feature-rich IDE designed for MySQL and MariaDB professionals. It fully supports all individual features of MariaDB, such as support for Packages and Sequences, and other specificities.
 * [Dynamic Active Record](https://github.com/tom--/yii2-dynamic-ar) - The yii2-dynamic-ar extension uses MariaDB dynamic columns to add NoSQL-like documents to Yii 2 Framework's Active Record ORM.
-* [ocelotgui](https://ocelot.ca/) - supports [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) [window functions](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/README.md).
+* [ocelotgui](https://ocelot.ca/) - supports [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) [window functions](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/).
 * [Shard-query](https://mariadb.com/kb/en/) has special support for [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) features
-* [SQL Maestro for MySQL](https://www.sqlmaestro.com/products/mysql/maestro/) is a database management tool that provides direct support for a number of MariaDB features like [roles](../../security/user-account-management/roles/README.md), [check constraints](../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraint-expressions), and [virtual columns](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md).
-
+* [SQL Maestro for MySQL](https://www.sqlmaestro.com/products/mysql/maestro/) is a database management tool that provides direct support for a number of MariaDB features like [roles](../../security/user-account-management/roles/), [check constraints](../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md#check-constraint-expressions), and [virtual columns](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md).
 
 ## Officially Supports MariaDB
-
 
 * [Alfresco](https://docs.alfresco.com/5.0/concepts/mariadb-config.html) - Alfresco is for Enterprise Content Management and Business Process Management and it supports running with MariaDB Server.
 * [Bitbucket by Atlassian](https://confluence.atlassian.com/bitbucketserver/supported-platforms-776640981.html)
@@ -78,15 +72,11 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 * [Wercker](https://devcenter.wercker.com/docs/services/mariadb)
 * [Yii](https://www.yiiframework.com/) ([Yii 1.1 guide](https://www.yiiframework.com/doc/guide/1.1/en/database.ar#establishing-db-connection) and [Yii 2.0 guide](https://www.yiiframework.com/doc-2.0/guide-db-dao.html))
 * [Zarafa](https://community.zarafa.com/) 7.2 onwards comes with MariaDB support [release notes](https://community.zarafa.com/pg/blog/read/28061/720-final-has-arrived)
-* [Zend Framework](https://framework.zend.com/) ([Zend_Db_Adapter](https://framework.zend.com/manual/1.11/en/zend.db.adapter.html))
-
+* [Zend Framework](https://framework.zend.com/) ([Zend\_Db\_Adapter](https://framework.zend.com/manual/1.11/en/zend.db.adapter.html))
 
 ## See Also
 
-
-* [Graphical clients](../graphical-and-enhanced-clients/README.md)
-* [Distributions which include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb)
-
+* [Graphical clients](../graphical-and-enhanced-clients/)
+* [Distributions which include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/)
 
 CC BY-SA / Gnu FDL
-

@@ -1,40 +1,28 @@
-
 # TIME
 
 ## Syntax
-
 
 ```
 TIME [(<microsecond precision>)]
 ```
 
-
 ## Description
-
 
 A time. The range is `'-838:59:59.999999'` to `'838:59:59.999999'`. [Microsecond precision](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md) can be from 0-6; if not specified 0 is used.
 
-
 MariaDB displays `TIME` values in `'HH:MM:SS.ssssss'` format, but allows assignment of times in looser formats, including 'D HH:MM:SS', 'HH:MM:SS', 'HH:MM', 'D HH:MM', 'D HH', 'SS', or 'HHMMSS', as well as permitting dropping of any leading zeros when a delimiter is provided, for example '3:9:10'. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
 
-
-The [--mysql56-temporal-format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store TIMEs using the same low-level format MySQL 5.6 uses.
-
+The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store TIMEs using the same low-level format MySQL 5.6 uses.
 
 ### Internal Format
 
+A new temporal format was introduced from MySQL 5.6 that alters how the `TIME`, `DATETIME` and `TIMESTAMP` columns operate at lower levels. These changes allow these temporal data types to have fractional parts and negative values. You can disable this feature using the [mysql56\_temporal\_format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable.
 
-A new temporal format was introduced from MySQL 5.6 that alters how the `TIME`, `DATETIME` and `TIMESTAMP` columns operate at lower levels. These changes allow these temporal data types to have fractional parts and negative values. You can disable this feature using the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable.
+Tables that include `TIMESTAMP` values that were created on an older version of MariaDB or that were created while the [mysql56\_temporal\_format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
 
-
-Tables that include `TIMESTAMP` values that were created on an older version of MariaDB or that were created while the [mysql56_temporal_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
-
-
-In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) statement that changes the column to the *same* data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `mysql56_temporal_format=ON` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
-
+In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) statement that changes the column to the _same_ data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `mysql56_temporal_format=ON` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
 
 For instance, if you have a `TIME` column in your table:
-
 
 ```
 SHOW VARIABLES LIKE 'mysql56_temporal_format';
@@ -50,12 +38,9 @@ ALTER TABLE example_table MODIFY ts_col TIME;
 
 When MariaDB executes the `[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement, it converts the data from the older temporal format to the newer one.
 
-
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mariadb-dump`. The columns using relevant temporal data types are restored using the new temporal format.
 
-
-Starting from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION_SCHEMA.COLUMNS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
-
+Starting from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
 
 ```
 SHOW CREATE TABLE mariadb5312_time\G
@@ -69,9 +54,7 @@ Create Table: CREATE TABLE `mariadb5312_time` (
 
 Note, columns with the current format are not marked with a comment.
 
-
 ## Examples
-
 
 ```
 INSERT INTO time VALUES ('90:00:00'), ('800:00:00'), (800), (22), (151413), ('9:6:3'), ('12 09');
@@ -90,8 +73,7 @@ SELECT * FROM time;
 +-----------+
 ```
 
-Time_Example:
-
+Time\_Example:
 
 ```
 CREATE TABLE time_example (
@@ -109,7 +91,6 @@ INSERT INTO time_example VALUES
 
 The resulting data would look like this:
 
-
 ```
 SELECT * FROM time_example;
 ```
@@ -126,9 +107,6 @@ SELECT * FROM time_example;
 
 ## See Also
 
-
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

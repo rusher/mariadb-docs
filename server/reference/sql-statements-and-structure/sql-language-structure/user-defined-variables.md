@@ -1,40 +1,30 @@
-
 # User-Defined Variables
 
-User-defined variables are variables which can be created by the user and exist in the session. This means that no one can access user-defined variables that have been set by another user, and when the session is closed these variables expire. However, these variables can be shared between several queries and [stored programs](../../../server-usage/programming-customizing-mariadb/stored-routines/README.md).
+User-defined variables are variables which can be created by the user and exist in the session. This means that no one can access user-defined variables that have been set by another user, and when the session is closed these variables expire. However, these variables can be shared between several queries and [stored programs](../../../server-usage/stored-routines/).
 
-
-User-defined variables names must be preceded by a single *at* character (`@`). While it is safe to use a reserved word as a user-variable name, the only allowed characters are ASCII letters, digits, dollar sign (`$`), underscore (`_`) and dot (`.`). If other characters are used, the name can be quoted in one of the following ways:
-
+User-defined variables names must be preceded by a single _at_ character (`@`). While it is safe to use a reserved word as a user-variable name, the only allowed characters are ASCII letters, digits, dollar sign (`$`), underscore (`_`) and dot (`.`). If other characters are used, the name can be quoted in one of the following ways:
 
 * @`var_name`
-* @'var_name'
-* @"var_name"
-
+* @'var\_name'
+* @"var\_name"
 
 These characters can be escaped as usual.
 
-
 User-variables names are case insensitive, though they were case sensitive in MySQL 4.1 and older versions.
-
 
 User-defined variables cannot be declared. They can be read even if no value has been set yet; in that case, they are NULL. To set a value for a user-defined variable you can use:
 
-
 * [SET](../sql-statements/administrative-sql-statements/set-commands/set.md) statement;
 * [:=](../operators/assignment-operators/assignment-operator.md) operator within a SQL statement;
-* [SELECT ... INTO](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/selectinto.md).
-
+* [SELECT ... INTO](../../../server-usage/programmatic-compound-statements/selectinto.md).
 
 Since user-defined variables type cannot be declared, the only way to force their type is using [CAST()](../sql-statements/built-in-functions/string-functions/cast.md) or [CONVERT()](../sql-statements/built-in-functions/string-functions/convert.md):
-
 
 ```
 SET @str = CAST(123 AS CHAR(5));
 ```
 
 If a variable has not been used yet, its value is NULL:
-
 
 ```
 SELECT @x IS NULL;
@@ -47,12 +37,9 @@ SELECT @x IS NULL;
 
 It is unsafe to read a user-defined variable and set its value in the same statement (unless the command is SET), because the order of these actions is undefined.
 
-
 User-defined variables can be used in most MariaDB's statements and clauses which accept an SQL expression. However there are some exceptions, like the [LIMIT](../sql-statements/data-manipulation/selecting-data/select.md#limit) clause.
 
-
 They must be used to [PREPARE](../sql-statements/prepared-statements/prepare-statement.md) a prepared statement:
-
 
 ```
 @sql = 'DELETE FROM my_table WHERE c>1;';
@@ -63,7 +50,6 @@ DEALLOCATE PREPARE stmt;
 
 Another common use is to include a counter in a query:
 
-
 ```
 SET @var = 0;
 SELECT a, b, c, (@var:=@var+1) AS counter FROM my_table;
@@ -71,18 +57,13 @@ SELECT a, b, c, (@var:=@var+1) AS counter FROM my_table;
 
 ## Viewing
 
-
-User-defined variables can be viewed by either querying the [USER_VARIABLES](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md), or by running `SHOW USER_VARIABLES`.
-
+User-defined variables can be viewed by either querying the [USER\_VARIABLES](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md), or by running `SHOW USER_VARIABLES`.
 
 ## Flushing User-Defined Variables
 
-
-User-defined variables are reset and the [Information Schema table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) emptied with the [FLUSH USER_VARIABLES](../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement.
-
+User-defined variables are reset and the [Information Schema table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) emptied with the [FLUSH USER\_VARIABLES](../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement.
 
 ## Examples
-
 
 ```
 SET @v1 = 0;
@@ -115,11 +96,8 @@ Empty set (0.000 sec)
 
 ## See Also
 
-
-* [DECLARE VARIABLE](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md)
-* [Performance Schema user_variables_by_thread Table](../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
-* [Information Schema USER_VARIABLES Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
-
+* [DECLARE VARIABLE](../../../server-usage/programmatic-compound-statements/declare-variable.md)
+* [Performance Schema user\_variables\_by\_thread Table](../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
+* [Information Schema USER\_VARIABLES Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
 
 CC BY-SA / Gnu FDL
-

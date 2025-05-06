@@ -1,33 +1,24 @@
+# Information Schema INNODB\_FT\_INDEX\_TABLE Table
 
-# Information Schema INNODB_FT_INDEX_TABLE Table
+The [Information Schema](../../) `INNODB_FT_INDEX_TABLE` table contains information about InnoDB [fulltext indexes](../../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) is run. See the [INNODB\_FT\_INDEX\_CACHE](information-schema-innodb_ft_index_cache-table.md) table.
 
-The [Information Schema](../../README.md) `INNODB_FT_INDEX_TABLE` table contains information about InnoDB [fulltext indexes](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimizing-tables/optimize-table.md) is run. See the [INNODB_FT_INDEX_CACHE](information-schema-innodb_ft_index_cache-table.md) table.
-
-
-The `SUPER` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb_ft_aux_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
-
+The `SUPER` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
 
 It has the following columns:
 
+| Column         | Description                                                                                                                                    |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                    |
+| WORD           | Word from the text of a column with a fulltext index. Words can appear multiple times in the table, once per DOC\_ID and POSITION combination. |
+| FIRST\_DOC\_ID | First document ID where this word appears in the index.                                                                                        |
+| LAST\_DOC\_ID  | Last document ID where this word appears in the index.                                                                                         |
+| DOC\_COUNT     | Number of rows containing this word in the index.                                                                                              |
+| DOC\_ID        | Document ID of the newly added row, either an appropriate ID column or an internal InnoDB value.                                               |
+| POSITION       | Position of this word instance within the DOC\_ID, as an offset added to the previous POSITION instance.                                       |
 
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| WORD | Word from the text of a column with a fulltext index. Words can appear multiple times in the table, once per DOC_ID and POSITION combination. |
-| FIRST_DOC_ID | First document ID where this word appears in the index. |
-| LAST_DOC_ID | Last document ID where this word appears in the index. |
-| DOC_COUNT | Number of rows containing this word in the index. |
-| DOC_ID | Document ID of the newly added row, either an appropriate ID column or an internal InnoDB value. |
-| POSITION | Position of this word instance within the DOC_ID, as an offset added to the previous POSITION instance. |
-
-
-
-Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb_optimize_fulltext_only](https://mariadb.com/kb/en/innodb-server-system-variables#innodb_optimize_fulltext_only) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the [INNODB_FT_INDEX_CACHE](information-schema-innodb_ft_index_cache-table.md) table will be emptied, and the `INNODB_FT_INDEX_TABLE` table will be updated.
-
+Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb\_optimize\_fulltext\_only](https://mariadb.com/kb/en/innodb-server-system-variables#innodb_optimize_fulltext_only) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the [INNODB\_FT\_INDEX\_CACHE](information-schema-innodb_ft_index_cache-table.md) table will be emptied, and the `INNODB_FT_INDEX_TABLE` table will be updated.
 
 ## Examples
-
 
 ```
 SELECT * FROM INNODB_FT_INDEX_TABLE;
@@ -62,6 +53,4 @@ SELECT * FROM INNODB_FT_INDEX_TABLE;
 +------------+--------------+-------------+-----------+--------+----------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

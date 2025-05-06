@@ -1,8 +1,6 @@
-
-# ps_truncate_all_tables
+# ps\_truncate\_all\_tables
 
 ## Syntax
-
 
 ```
 ps_truncate_all_tables(bool display)
@@ -10,15 +8,11 @@ ps_truncate_all_tables(bool display)
 
 ## Description
 
+`ps_truncate_all_tables` is a [stored procedure](../../../../../../../server-usage/stored-routines/stored-procedures/) available with the [Sys Schema](../).
 
-`ps_truncate_all_tables` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../README.md).
-
-
-The procedure resets all aggregated instrumentation as a snapshot, producing a result set indicating the number of truncated tables. The boolean parameter *display* specifies whether to display each [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) statement before execution.
-
+The procedure resets all aggregated instrumentation as a snapshot, producing a result set indicating the number of truncated tables. The boolean parameter _display_ specifies whether to display each [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) statement before execution.
 
 ## Examples
-
 
 ```
 CALL sys.ps_truncate_all_tables(false);
@@ -52,6 +46,4 @@ CALL sys.ps_truncate_all_tables(true);
 +---------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

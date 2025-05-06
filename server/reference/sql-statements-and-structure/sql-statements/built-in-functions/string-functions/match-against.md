@@ -1,8 +1,6 @@
-
 # MATCH AGAINST
 
 ## Syntax
-
 
 ```
 MATCH (col1,col2,...) AGAINST (expr [search_modifier])
@@ -10,15 +8,11 @@ MATCH (col1,col2,...) AGAINST (expr [search_modifier])
 
 ## Description
 
-
 A special construct used to perform a fulltext search on a fulltext index.
 
-
-See [Fulltext Index Overview](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-overview.md) for a full description, and [Full-text Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) for more articles on the topic.
-
+See [Fulltext Index Overview](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-overview.md) for a full description, and [Full-text Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more articles on the topic.
 
 ## Examples
-
 
 ```
 CREATE TABLE ft_myisam(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;
@@ -49,6 +43,4 @@ SELECT id, body, MATCH (title,body) AGAINST
 +----+-------------------------------------+-----------------+
 ```
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

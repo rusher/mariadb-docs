@@ -1,43 +1,34 @@
-
 # Information Schema PARAMETERS Table
 
-The [Information Schema](../README.md) `PARAMETERS` table stores information about [stored procedures](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) and [stored functions](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) parameters.
-
+The [Information Schema](../) `PARAMETERS` table stores information about [stored procedures](../../../../../../../server-usage/stored-routines/stored-procedures/) and [stored functions](../../../../../../../server-usage/stored-routines/stored-functions/) parameters.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| SPECIFIC_CATALOG | Always def. |
-| SPECIFIC_SCHEMA | Database name containing the stored routine parameter. |
-| SPECIFIC_NAME | Stored routine name. |
-| ORDINAL_POSITION | Ordinal position of the parameter, starting at 1. 0 for a function RETURNS clause. |
-| PARAMETER_MODE | One of IN, OUT, INOUT or NULL for RETURNS. |
-| PARAMETER_NAME | Name of the parameter, or NULL for RETURNS. |
-| DATA_TYPE | The column's [data type](../../../../../../data-types/README.md). |
-| CHARACTER_MAXIMUM_LENGTH | Maximum length. |
-| CHARACTER_OCTET_LENGTH | Same as the CHARACTER_MAXIMUM_LENGTH except for multi-byte [character sets](../../../../../../data-types/string-data-types/character-sets/README.md). |
-| NUMERIC_PRECISION | For numeric types, the precision (number of significant digits) for the column. NULL if not a numeric field. |
-| NUMERIC_SCALE | For numeric types, the scale (significant digits to the right of the decimal point). NULL if not a numeric field. |
-| DATETIME_PRECISION | Fractional-seconds precision, or NULL if not a [time data type](../../../../../../data-types/date-and-time-data-types/README.md). |
-| CHARACTER_SET_NAME | [Character set](../../../../../../data-types/string-data-types/character-sets/README.md) if a non-binary [string data type](../../../../../../data-types/string-data-types/README.md), otherwise NULL. |
-| COLLATION_NAME | [Collation](../../../../../../data-types/string-data-types/character-sets/README.md) if a non-binary [string data type](../../../../../../data-types/string-data-types/README.md), otherwise NULL. |
-| DTD_IDENTIFIER | Description of the data type. |
-| ROUTINE_TYPE | PROCEDURE or FUNCTION. |
-
-
+| Column                     | Description                                                                                                                                                                          |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column                     | Description                                                                                                                                                                          |
+| SPECIFIC\_CATALOG          | Always def.                                                                                                                                                                          |
+| SPECIFIC\_SCHEMA           | Database name containing the stored routine parameter.                                                                                                                               |
+| SPECIFIC\_NAME             | Stored routine name.                                                                                                                                                                 |
+| ORDINAL\_POSITION          | Ordinal position of the parameter, starting at 1. 0 for a function RETURNS clause.                                                                                                   |
+| PARAMETER\_MODE            | One of IN, OUT, INOUT or NULL for RETURNS.                                                                                                                                           |
+| PARAMETER\_NAME            | Name of the parameter, or NULL for RETURNS.                                                                                                                                          |
+| DATA\_TYPE                 | The column's [data type](../../../../../../data-types/).                                                                                                                             |
+| CHARACTER\_MAXIMUM\_LENGTH | Maximum length.                                                                                                                                                                      |
+| CHARACTER\_OCTET\_LENGTH   | Same as the CHARACTER\_MAXIMUM\_LENGTH except for multi-byte [character sets](../../../../../../data-types/string-data-types/character-sets/).                                       |
+| NUMERIC\_PRECISION         | For numeric types, the precision (number of significant digits) for the column. NULL if not a numeric field.                                                                         |
+| NUMERIC\_SCALE             | For numeric types, the scale (significant digits to the right of the decimal point). NULL if not a numeric field.                                                                    |
+| DATETIME\_PRECISION        | Fractional-seconds precision, or NULL if not a [time data type](../../../../../../data-types/date-and-time-data-types/).                                                             |
+| CHARACTER\_SET\_NAME       | [Character set](../../../../../../data-types/string-data-types/character-sets/) if a non-binary [string data type](../../../../../../data-types/string-data-types/), otherwise NULL. |
+| COLLATION\_NAME            | [Collation](../../../../../../data-types/string-data-types/character-sets/) if a non-binary [string data type](../../../../../../data-types/string-data-types/), otherwise NULL.     |
+| DTD\_IDENTIFIER            | Description of the data type.                                                                                                                                                        |
+| ROUTINE\_TYPE              | PROCEDURE or FUNCTION.                                                                                                                                                               |
 
 Information from this table is similar to that found in the `param_list` column in the [mysql.proc](../../the-mysql-database-tables/mysql-proc-table.md) table, and the output of the `[SHOW CREATE PROCEDURE](../../../show/show-create-procedure.md)` and `[SHOW CREATE FUNCTION](../../../show/show-create-function.md)` statements.
 
-
 To obtain information about the routine itself, you can query the [Information Schema ROUTINES table](information-schema-routines-table.md).
 
-
 ## Example
-
 
 ```
 SELECT * FROM information_schema.PARAMETERS
@@ -61,6 +52,4 @@ CHARACTER_MAXIMUM_LENGTH: 255
             ROUTINE_TYPE: PROCEDURE
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,8 +1,6 @@
-
 # SHOW PROCEDURE STATUS
 
 ## Syntax
-
 
 ```
 SHOW PROCEDURE STATUS
@@ -11,23 +9,17 @@ SHOW PROCEDURE STATUS
 
 ## Description
 
-
-This statement is a MariaDB extension. It returns characteristics of a stored
-procedure, such as the database, name, type, creator, creation and modification
-dates, and character set information. A similar statement, 
- `[SHOW FUNCTION STATUS](show-function-status.md)`, displays
+This statement is a MariaDB extension. It returns characteristics of a stored\
+procedure, such as the database, name, type, creator, creation and modification\
+dates, and character set information. A similar statement,`[SHOW FUNCTION STATUS](show-function-status.md)`, displays\
 information about stored functions.
 
-
-The `LIKE` clause, if present, indicates which procedure or
+The `LIKE` clause, if present, indicates which procedure or\
 function names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-
-The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database contains more detailed information.
-
+The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database contains more detailed information.
 
 ## Examples
-
 
 ```
 SHOW PROCEDURE STATUS LIKE 'p1'\G
@@ -47,15 +39,12 @@ collation_connection: latin1_swedish_ci
 
 ## See Also
 
-
-* [Stored Procedure Overview](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview.md)
-* [CREATE PROCEDURE](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md)
-* [ALTER PROCEDURE](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure.md)
-* [DROP PROCEDURE](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure.md)
+* [Stored Procedure Overview](../../../../../server-usage/stored-routines/stored-procedures/stored-procedure-overview.md)
+* [CREATE PROCEDURE](../../../../../server-usage/stored-routines/stored-procedures/create-procedure.md)
+* [ALTER PROCEDURE](../../../../../server-usage/stored-routines/stored-procedures/alter-procedure.md)
+* [DROP PROCEDURE](../../../../../server-usage/stored-routines/stored-procedures/drop-procedure.md)
 * [SHOW CREATE PROCEDURE](show-create-procedure.md)
-* [Stored Routine Privileges](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges.md)
+* [Stored Routine Privileges](../../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

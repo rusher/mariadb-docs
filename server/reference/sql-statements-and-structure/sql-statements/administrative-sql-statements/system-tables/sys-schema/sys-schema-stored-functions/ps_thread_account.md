@@ -1,8 +1,6 @@
-
-# ps_thread_account
+# ps\_thread\_account
 
 ## Syntax
-
 
 ```
 sys.ps_thread_account(thread_id)
@@ -10,15 +8,11 @@ sys.ps_thread_account(thread_id)
 
 ## Description
 
+`ps_thread_account` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../) that returns the account (username@hostname) associated with the given _thread\_id_.
 
-`ps_thread_account` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md) that returns the account (username@hostname) associated with the given *thread_id*.
-
-
-Returns `NULL` if the thread_id is not found.
-
+Returns `NULL` if the thread\_id is not found.
 
 ## Examples
-
 
 ```
 SELECT sys.ps_thread_account(sys.ps_thread_id(CONNECTION_ID()));
@@ -43,6 +37,4 @@ SELECT sys.ps_thread_account(sys.ps_thread_id(NULL));
 +-----------------------------------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

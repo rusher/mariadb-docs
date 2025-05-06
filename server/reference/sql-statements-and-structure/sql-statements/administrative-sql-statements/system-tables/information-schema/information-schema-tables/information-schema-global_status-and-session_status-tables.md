@@ -1,23 +1,16 @@
+# Information Schema GLOBAL\_STATUS and SESSION\_STATUS Tables
 
-# Information Schema GLOBAL_STATUS and SESSION_STATUS Tables
-
-The [Information Schema](../README.md) `GLOBAL_STATUS` and `SESSION_STATUS` tables store a record of all [status variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW STATUS](../../../show/show-status.md)` commands `SHOW GLOBAL STATUS` and `SHOW SESSION STATUS`.
-
+The [Information Schema](../) `GLOBAL_STATUS` and `SESSION_STATUS` tables store a record of all [status variables](../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW STATUS](../../../show/show-status.md)` commands `SHOW GLOBAL STATUS` and `SHOW SESSION STATUS`.
 
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| VARIABLE_NAME | Status variable name. |
-| VARIABLE_VALUE | Global or session value. |
-
-
+| Column          | Description              |
+| --------------- | ------------------------ |
+| Column          | Description              |
+| VARIABLE\_NAME  | Status variable name.    |
+| VARIABLE\_VALUE | Global or session value. |
 
 ## Example
-
 
 ```
 SELECT * FROM information_schema.GLOBAL_STATUS;
@@ -36,6 +29,4 @@ SELECT * FROM information_schema.GLOBAL_STATUS;
 +-----------------------------------------------+--------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

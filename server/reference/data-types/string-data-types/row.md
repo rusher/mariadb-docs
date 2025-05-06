@@ -1,9 +1,6 @@
-
 # ROW
 
-
 ## Syntax
-
 
 ```
 ROW (<field name> <data type> [{, <field name> <data type>}... ])
@@ -11,22 +8,16 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])
 
 ## Description
 
-
-`ROW` is a data type for [stored procedure](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) variables.
-
+`ROW` is a data type for [stored procedure](../../../server-usage/stored-routines/stored-procedures/) variables.
 
 ## Features
 
-
 ### ROW fields as normal variables
 
-
-`ROW` fields (members) act as normal variables, and are able to appear in all
+`ROW` fields (members) act as normal variables, and are able to appear in all\
 query parts where a stored procedure variable is allowed:
 
-
 * Assignment is using the `:=` operator and the [SET](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) command:
-
 
 ```
 a.x:= 10;
@@ -36,13 +27,11 @@ SET a.x= 10, a.y=20, a.z= b.z;
 
 * Passing to functions and operators:
 
-
 ```
 SELECT f1(rec.a), rec.a<10;
 ```
 
 * Clauses (select list, WHERE, HAVING, LIMIT, etc...,):
-
 
 ```
 SELECT var.a, t1.b FROM t1 WHERE t1.b=var.b LIMIT var.c;
@@ -50,13 +39,11 @@ SELECT var.a, t1.b FROM t1 WHERE t1.b=var.b LIMIT var.c;
 
 * `INSERT` values:
 
-
 ```
 INSERT INTO t1 VALUES (rec.a, rec.b, rec.c);
 ```
 
 * `SELECT .. INTO` targets
-
 
 ```
 SELECT a,b INTO rec.a, rec.b FROM t1 WHERE t1.id=10;
@@ -64,16 +51,13 @@ SELECT a,b INTO rec.a, rec.b FROM t1 WHERE t1.id=10;
 
 * Dynamic SQL out parameters ([EXECUTE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) and [EXECUTE IMMEDIATE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md))
 
-
 ```
 EXECUTE IMMEDIATE 'CALL proc_with_out_param(?)' USING rec.a;
 ```
 
 ### ROW type variables as FETCH targets
 
-
-`ROW` type variables are allowed as [FETCH](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) targets:
-
+`ROW` type variables are allowed as [FETCH](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) targets:
 
 ```
 FETCH cur INTO rec;
@@ -81,66 +65,44 @@ FETCH cur INTO rec;
 
 where `cur` is a `CURSOR` and `rec` is a `ROW` type stored procedure variable.
 
-
 Note, currently an attempt to use `FETCH` for a `ROW` type variable returns this error:
 
 ```
 ERROR 1328 (HY000): Incorrect number of FETCH variables
 ```
 
-
-
 `FETCH` from a cursor `cur` into a `ROW` variable `rec` works as follows:
 
+* The number of fields in `cur` must match the number of fields in `rec`.\
+  Otherwise, an error is reported.
+* Assignment is done from left to right. The first cursor field is assigned to\
+  the first variable field, the second cursor field is assigned to the second\
+  variable field, etc.
+* Field names in `rec` are not important and can differ from field names\
+  in `cur`.
 
-* The number of fields in `cur` must match the number of fields in `rec`.
- Otherwise, an error is reported.
-
-
-* Assignment is done from left to right. The first cursor field is assigned to
- the first variable field, the second cursor field is assigned to the second
- variable field, etc.
-
-
-* Field names in `rec` are not important and can differ from field names
- in `cur`.
-
-
-See [FETCH Examples](#fetch-examples) (below) for examples of using this with
-`sql_mode=ORACLE` and `sql_mode=DEFAULT`.
-
+See [FETCH Examples](row.md#fetch-examples) (below) for examples of using this with`sql_mode=ORACLE` and `sql_mode=DEFAULT`.
 
 ### ROW type variables as `SELECT...INTO` targets
 
-
-`ROW` type variables are allowed as `SELECT..INTO` targets with some
+`ROW` type variables are allowed as `SELECT..INTO` targets with some\
 differences depending on which `sql_mode` is in use.
 
+* When using `sql_mode=ORACLE`, `table%ROWTYPE` and `cursor%ROWTYPE`\
+  variables can be used as `SELECT...INTO` targets.
+* Using multiple `ROW` variables in the `SELECT..INTO` list will report an\
+  error.
+* Using `ROW` variables with a different column count than in\
+  the `SELECT..INTO` list will report an error.
 
-* When using `sql_mode=ORACLE`, `table%ROWTYPE` and `cursor%ROWTYPE`
- variables can be used as `SELECT...INTO` targets.
-
-
-* Using multiple `ROW` variables in the `SELECT..INTO` list will report an
- error.
-
-
-* Using `ROW` variables with a different column count than in
- the `SELECT..INTO` list will report an error.
-
-
-See [SELECT...INTO Examples](#selectinto-examples) (below) for examples of
+See [SELECT...INTO Examples](row.md#selectinto-examples) (below) for examples of\
 using this with `sql_mode=ORACLE` and `sql_mode=DEFAULT`.
-
 
 ## Features not implemented
 
-
 The following features are planned, but not implemented yet:
 
-
 * Returning a ROW type expression from a stored function (see [MDEV-12252](https://jira.mariadb.org/browse/MDEV-12252)). This will need some grammar change to support field names after parentheses:
-
 
 ```
 SELECT f1().x FROM DUAL;
@@ -149,12 +111,9 @@ SELECT f1().x FROM DUAL;
 * Returning a ROW type expression from a built-in hybrid type function, such as `CASE`, `IF`, etc.
 * ROW of ROWs
 
-
 ## Examples
 
-
 ### Declaring a ROW in a stored procedure
-
 
 ```
 DELIMITER $$
@@ -172,9 +131,7 @@ CALL p1();
 
 ### FETCH Examples
 
-
 A complete `FETCH` example for `sql_mode=ORACLE`:
-
 
 ```
 DROP TABLE IF EXISTS t1;
@@ -204,7 +161,6 @@ CALL p1();
 ```
 
 A complete `FETCH` example for `sql_mode=DEFAULT`:
-
 
 ```
 DROP TABLE IF EXISTS t1;
@@ -240,9 +196,7 @@ CALL p1();
 
 ### SELECT...INTO Examples
 
-
 A `SELECT...INTO` example for `sql_mode=DEFAULT`:
-
 
 ```
 SET sql_mode=DEFAULT;
@@ -264,7 +218,6 @@ CALL p1();
 
 The above example returns:
 
-
 ```
 +--------+--------+
 | rec1.a | rec1.b |
@@ -274,7 +227,6 @@ The above example returns:
 ```
 
 A `SELECT...INTO` example for `sql_mode=ORACLE`:
-
 
 ```
 SET sql_mode=ORACLE;
@@ -296,7 +248,6 @@ CALL p1();
 
 The above example returns:
 
-
 ```
 +--------+--------+
 | rec1.a | rec1.b |
@@ -306,7 +257,6 @@ The above example returns:
 ```
 
 An example for `sql_mode=ORACLE` using `table%ROWTYPE` variables as `SELECT..INTO` targets:
-
 
 ```
 SET sql_mode=ORACLE;
@@ -328,7 +278,6 @@ CALL p1();
 
 The above example returns:
 
-
 ```
 +--------+--------+
 | rec1.a | rec1.b |
@@ -338,7 +287,6 @@ The above example returns:
 ```
 
 An example for `sql_mode=ORACLE` using `cursor%ROWTYPE` variables as `SELECT..INTO` targets:
-
 
 ```
 SET sql_mode=ORACLE;
@@ -361,7 +309,6 @@ CALL p1();
 
 The above example returns:
 
-
 ```
 +--------+--------+
 | rec1.a | rec1.b |
@@ -370,8 +317,7 @@ The above example returns:
 +--------+--------+
 ```
 
-Row_Table Example:
-
+Row\_Table Example:
 
 ```
 CREATE TABLE row_table(
@@ -408,10 +354,7 @@ CALL row_proc();
 
 ## See Also
 
-
-* [STORED PROCEDURES](../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md)
-* [DECLARE Variable](../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md)
-
+* [STORED PROCEDURES](../../../server-usage/stored-routines/stored-procedures/)
+* [DECLARE Variable](../../../server-usage/programmatic-compound-statements/declare-variable.md)
 
 CC BY-SA / Gnu FDL
-

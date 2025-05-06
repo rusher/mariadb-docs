@@ -1,12 +1,8 @@
-
 # Spider Cluster Management
-
 
 ## Direct SQL
 
-
-Direct SQL is a way to map reduced execution on remote backends and store the results in a local table. This can either be sequential, using the UDF function [spider_direct_sql](spider-functions/spider_direct_sql.md), or concurrently, using [spider_bg_direct_sql](spider-functions/spider_bg_direct_sql.md).
-
+Direct SQL is a way to map reduced execution on remote backends and store the results in a local table. This can either be sequential, using the UDF function [spider\_direct\_sql](spider-functions/spider_direct_sql.md), or concurrently, using [spider\_bg\_direct\_sql](spider-functions/spider_bg_direct_sql.md).
 
 ```
 spider1 backend << EOF 
@@ -34,7 +30,6 @@ EOF
 
 Or if you are using a [SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md):
 
-
 ```
 SELECT spider_direct_sql( 
   'SELECT * FROM sbtest s  WHERE s.id IN(10,12,13)',
@@ -45,8 +40,7 @@ SELECT spider_direct_sql(
   WHERE db_name = 'backend' and table_name like 'sbtest#P#pt%' ;
 ```
 
-The default for [spider_bg_direct_sql](spider-functions/spider_bg_direct_sql.md) is to access concurrently all backends. If you have multiple partitions store inside a single backend, you still can increase parallelism affecting different channels to each partitions.
-
+The default for [spider\_bg\_direct\_sql](spider-functions/spider_bg_direct_sql.md) is to access concurrently all backends. If you have multiple partitions store inside a single backend, you still can increase parallelism affecting different channels to each partitions.
 
 ```
 CREATE TEMPORARY TABLE res
@@ -61,14 +55,11 @@ SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM
 
 ## Direct Handler Socket
 
+**MariaDB starting with** [**10.8.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 
-
-##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 The Spider Handler Socket support has been removed, see [MDEV-26858](https://jira.mariadb.org/browse/MDEV-26858).
 
-
-Check that [Handler Socket](../../sql-statements-and-structure/nosql/handlersocket/README.md) is running on the backend nodes
-
+Check that [Handler Socket](../../sql-statements-and-structure/nosql/handlersocket/) is running on the backend nodes
 
 ```
 :~# backend2 -e "show variables like 'handler%'"
@@ -109,27 +100,20 @@ SELECT spider_direct_sql('1\t=\t1\t2\t100000\t0','res', 'host "192.168.0.202", t
 
 ## Inter Nodes Copy Table
 
+**MariaDB starting with** [**10.8.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 
+The UDF spider\_copy\_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](broken-reference) or [galera-cluster](../../../../kb/en/galera-cluster/).
 
-##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
-The UDF spider_copy_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](/kb/en/galera-cluster/).
-
-
-The UDF function [spider_copy_tables](spider-functions/spider_copy_tables.md) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
-
+The UDF function [spider\_copy\_tables](spider-functions/spider_copy_tables.md) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
 
 `spider_copy_tables(Spider table name, source link ID, destination link ID list[, parameters])`
-
 
 * `Returns 1` if copying data succeeded.
 * `Returns 0` if copying data failed.
 
-
-If the Spider table is partitioned, you must set "Spider table name" with a part name such as "table_name#P#part_name".
-
+If the Spider table is partitioned, you must set "Spider table name" with a part name such as "table\_name#P#part\_name".
 
 You can check the table name and the link ID with the part name using the following SQL:
-
 
 ```
 SELECT table_name FROM mysql.spider_tables;
@@ -137,9 +121,7 @@ SELECT table_name FROM mysql.spider_tables;
 
 ## General Log
 
-
 To capture all queries sent to remote backends on a `Spider Node` :
-
 
 ```
 SET GLOBAL general_log=ON; 
@@ -150,36 +132,25 @@ SET GLOBAL spider_log_result_error_with_sql=3;
 
 ## Compiling in Debug Mode
 
-
 See [Compiling MariaDB for Debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) and [Creating a Trace File](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file).
-
 
 Report the issue in [MariaDB JIRA](https://jira.mariadb.org) (see [Reporting Bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs)) or to the MariaDB Corporation support center.
 
-
 ## Compiling in Static
-
 
 Available since version 3.1.14
 
-
-To activate spider as a static plugin change "MODULE_ONLY" to "MANDATORY" in storage/spider/CMakeList.txt before compiling
-
+To activate spider as a static plugin change "MODULE\_ONLY" to "MANDATORY" in storage/spider/CMakeList.txt before compiling
 
 Note that Spider UDF functions will not work with such settings.
 
-
 ## Status Variables
 
-
-A number of new [status variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md) have been introduced, see [Spider Status Variables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/spider-status-variables.md) for a complete list.
-
+A number of new [status variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) have been introduced, see [Spider Status Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) for a complete list.
 
 ## Information Schema Tables
 
-
-* A new [Information Schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) table is installed - [SPIDER_ALLOC_MEM](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
-
+* A new [Information Schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) table is installed - [SPIDER\_ALLOC\_MEM](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
 
 ```
 +-------------------+---------------------+------+-----+---------+-------+
@@ -196,24 +167,19 @@ A number of new [status variables](../../../server-usage/replication-cluster-mul
 +-------------------+---------------------+------+-----+---------+-------+
 ```
 
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), Spider installs another Information Schema table, [SPIDER_WRAPPER_PROTOCOLS](information-schema-spider_wrapper_protocols-table.md).
-
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), Spider installs another Information Schema table, [SPIDER\_WRAPPER\_PROTOCOLS](information-schema-spider_wrapper_protocols-table.md).
 
 ## Performance Schema
 
+The [Performance schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
 
-The [Performance schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/README.md) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
-
-
-To activate the performance schema, use the [performance_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md).
-
+To activate the performance schema, use the [performance\_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md).
 
 ```
 performance_schema=on
 ```
 
 Activate the Spider probes to be monitored.
-
 
 ```
 UPDATE performance_schema.setup_instruments SET 
@@ -222,9 +188,7 @@ UPDATE performance_schema.setup_instruments SET
 
 Run your queries ...
 
-
 And check the performance metrics. Remove specific Spider metrics to have a more global view.
-
 
 ```
 SELECT * FROM performance_schema.events_waits_summary_global_by_event_name 
@@ -232,6 +196,4 @@ SELECT * FROM performance_schema.events_waits_summary_global_by_event_name
   ORDER BY SUM_TIMER_WAIT DESC LIMIT 10;
 ```
 
-
 CC BY-SA / Gnu FDL
-

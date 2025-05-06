@@ -1,33 +1,24 @@
+# mysql.innodb\_table\_stats
 
-# mysql.innodb_table_stats
+The `mysql.innodb_table_stats` table stores data related to [InnoDB Persistent Statistics](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains one row per table.
 
-The `mysql.innodb_table_stats` table stores data related to [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains one row per table.
-
-
-This table, along with the related [mysql.innodb_index_stats](mysql-innodb_index_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb_table_stats](../../flush-commands/flush.md) is required to load the changes.
-
+This table, along with the related [mysql.innodb\_index\_stats](mysql-innodb_index_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb\_table\_stats](../../flush-commands/flush.md) is required to load the changes.
 
 `mysql.innodb_table_stats` is not replicated, although any [ANALYZE TABLE](../../../table-statements/analyze-table.md) statements on the table will be by default.
 
-
 It contains the following fields:
 
-
-
-| Field | Type | Null | Key | Default | Description |
-| --- | --- | --- | --- | --- | --- |
-| Field | Type | Null | Key | Default | Description |
-| database_name | varchar(64) | NO | PRI | NULL | Database name. |
-| table_name | varchar(64) | NO | PRI | NULL | Table, partition or subpartition name. |
-| last_update | timestamp | NO |  | current_timestamp() | Time that this row was last updated. |
-| n_rows | bigint(20) unsigned | NO |  | NULL | Number of rows in the table. |
-| clustered_index_size | bigint(20) unsigned | NO |  | NULL | Size, in pages, of the primary index. |
-| sum_of_other_index_sizes | bigint(20) unsigned | NO |  | NULL | Size, in pages, of non-primary indexes. |
-
-
+| Field                        | Type                | Null | Key | Default              | Description                             |
+| ---------------------------- | ------------------- | ---- | --- | -------------------- | --------------------------------------- |
+| Field                        | Type                | Null | Key | Default              | Description                             |
+| database\_name               | varchar(64)         | NO   | PRI | NULL                 | Database name.                          |
+| table\_name                  | varchar(64)         | NO   | PRI | NULL                 | Table, partition or subpartition name.  |
+| last\_update                 | timestamp           | NO   |     | current\_timestamp() | Time that this row was last updated.    |
+| n\_rows                      | bigint(20) unsigned | NO   |     | NULL                 | Number of rows in the table.            |
+| clustered\_index\_size       | bigint(20) unsigned | NO   |     | NULL                 | Size, in pages, of the primary index.   |
+| sum\_of\_other\_index\_sizes | bigint(20) unsigned | NO   |     | NULL                 | Size, in pages, of non-primary indexes. |
 
 ## Example
-
 
 ```
 SELECT * FROM mysql.innodb_table_stats\G
@@ -50,11 +41,8 @@ sum_of_other_index_sizes: 2
 
 ## See Also
 
-
-* [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
-* [mysql.innodb_index_stats](mysql-innodb_index_stats.md)
+* [InnoDB Persistent Statistics](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
+* [mysql.innodb\_index\_stats](mysql-innodb_index_stats.md)
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
-
 CC BY-SA / Gnu FDL
-

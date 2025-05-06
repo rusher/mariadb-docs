@@ -1,34 +1,23 @@
-
 # Kubernetes Operators for MariaDB
 
 Operators basically instruct Kubernetes about how to manage a certain technology. Kubernetes comes with some default operators, but it is possible to create custom operators. Operators created by the community can be found on [OperatorHub.io](https://operatorhub.io/).
 
-
-
 ## Custom Operators
 
-
-Kubernetes provides a declarative API. To support a specific (i.e. MariaDB) technology or implement a desired behavior (i.e. provisioning a [replica](../../../../../server-usage/replication-cluster-multi-master/standard-replication/README.md)), we extend Kubernetes API. This involves creating two main components:
-
+Kubernetes provides a declarative API. To support a specific (i.e. MariaDB) technology or implement a desired behavior (i.e. provisioning a [replica](../../../../../ha-and-performance/standard-replication/)), we extend Kubernetes API. This involves creating two main components:
 
 * A custom resource.
 * A custom controller.
 
-
 A custom resource adds an API endpoint, so the resource can be managed via the API server. It includes functionality to get information about the resource, like a list of the existing servers.
-
 
 A custom controller implements the checks that must be performed against the resource to check if its state should be corrected using the API. In the case of MariaDB, some reasonable checks would be verifying that it accepts connections, replication is running, and a server is (or is not) read only.
 
-
 ## MariaDB Operator
-
 
 [mariadb-operator](https://github.com/mariadb-operator/mariadb-operator) is a Kubernetes operator that allows you to run and operate MariaDB in a cloud native way. It aims to declaratively manage MariaDB instances using Kubernetes CRDs instead of imperative commands.
 
-
 It's available in both [Artifact Hub](https://artifacthub.io/packages/helm/mariadb-operator/mariadb-operator) and [Operator Hub](https://operatorhub.io/operator/mariadb-operator) and supports the following features:
-
 
 * [Easily provision](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/mariadb_minimal.yaml) and [configure](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/mariadb_full.yaml) MariaDB servers in Kubernetes.
 * Multiple [HA modes](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HA): Galera Cluster or MariaDB Replication.
@@ -60,13 +49,8 @@ It's available in both [Artifact Hub](https://artifacthub.io/packages/helm/maria
 * Multi-arch distroless [image](https://github.com/orgs/mariadb-operator/packages/container/package/mariadb-operator).
 * [GitOps](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/GITOPS) friendly.
 
-
 Please, refer to the [documentation](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/), the [API reference](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/API_REFERENCE) and the [example suite](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/) for further detail.
-
-
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/). Updated 11/6/24 by MariaDB.
 
-
 CC BY-SA / Gnu FDL
-

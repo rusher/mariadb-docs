@@ -1,16 +1,12 @@
+# JSON\_TABLE
 
-# JSON_TABLE
+**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
 
+JSON\_TABLE was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
 
-##### MariaDB starting with [10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
-JSON_TABLE was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
-
-
-JSON_TABLE is a table function that converts JSON data into a relational form.
-
+JSON\_TABLE is a table function that converts JSON data into a relational form.
 
 ## Syntax
-
 
 ```
 JSON_TABLE(json_doc, 
@@ -41,37 +37,27 @@ on_error:
     {NULL | DEFAULT string | ERROR} ON ERROR
 ```
 
-
 ## Description
 
+JSON\_TABLE can be used in contexts where a table reference can be used; in the FROM clause of a [SELECT](../../../data-manipulation/selecting-data/select.md) statement, and in multi-table [UPDATE](../../../data-manipulation/changing-deleting-data/update.md)/[DELETE](../../../data-manipulation/changing-deleting-data/delete.md) statements.
 
-JSON_TABLE can be used in contexts where a table reference can be used; in the FROM clause of a [SELECT](../../../data-manipulation/selecting-data/select.md) statement, and in multi-table [UPDATE](../../../data-manipulation/changing-deleting-data/update.md)/[DELETE](../../../data-manipulation/changing-deleting-data/delete.md) statements.
-
-
-`json_doc` is the JSON document to extract data from. In the simplest case, it is a string literal containing JSON. In more complex cases it can be an arbitrary expression returning JSON. The expression may have references to columns of other tables. However, one can only refer to tables that precede this JSON_TABLE invocation. For RIGHT JOIN, it is assumed that its outer side precedes the inner. All tables in outer selects are also considered preceding.
-
+`json_doc` is the JSON document to extract data from. In the simplest case, it is a string literal containing JSON. In more complex cases it can be an arbitrary expression returning JSON. The expression may have references to columns of other tables. However, one can only refer to tables that precede this JSON\_TABLE invocation. For RIGHT JOIN, it is assumed that its outer side precedes the inner. All tables in outer selects are also considered preceding.
 
 `context_path` is a [JSON Path](jsonpath-expressions.md) expression pointing to a collection of nodes in `json_doc` that will be used as the source of rows.
 
-
-The `COLUMNS` clause declares the names and types of the columns that JSON_TABLE returns, as well as how the values of the columns are produced.
-
+The `COLUMNS` clause declares the names and types of the columns that JSON\_TABLE returns, as well as how the values of the columns are produced.
 
 ### Column Definitions
 
-
 The following types of columns are supported:
 
-
 #### Path Columns
-
 
 ```
 name type PATH path_str [on_empty] [on_error]
 ```
 
-Locates the JSON node pointed to by `path_str` and returns its value. The path_str is evaluated using the current row source node as the context node.
-
+Locates the JSON node pointed to by `path_str` and returns its value. The path\_str is evaluated using the current row source node as the context node.
 
 ```
 set @json='
@@ -96,9 +82,7 @@ select * from json_table(@json, '$[*]'
 
 The `on_empty` and `on_error` clauses specify the actions to be performed when the value was not found or there was an error condition. See the ON EMPTY and ON ERROR clauses section for details.
 
-
 #### ORDINALITY Columns
-
 
 ```
 name FOR ORDINALITY
@@ -106,9 +90,7 @@ name FOR ORDINALITY
 
 Counts the rows, starting from 1.
 
-
 Example:
-
 
 ```
 set @json='
@@ -132,13 +114,11 @@ select * from json_table(@json, '$[*]'
 
 #### EXISTS PATH Columns
 
-
 ```
 name type EXISTS PATH path_str
 ```
 
 Checks whether the node pointed to by `value_path` exists. The `value_path` is evaluated using the current row source node as the context node.
-
 
 ```
 set @json='
@@ -162,9 +142,7 @@ select * from json_table(@json, '$[*]'
 
 #### NESTED PATHs
 
-
 NESTED PATH converts nested JSON structures into multiple rows.
-
 
 ```
 NESTED PATH path COLUMNS (column_list)
@@ -172,9 +150,7 @@ NESTED PATH path COLUMNS (column_list)
 
 It finds the sequence of JSON nodes pointed to by `path` and uses it to produce rows. For each found node, a row is generated with column values as specified by the NESTED PATH's COLUMNS clause. If `path` finds no nodes, only one row is generated with all columns having NULL values.
 
-
 For example, consider a JSON document that contains an array of items, and each item, in turn, is expected to have an array of its available sizes:
-
 
 ```
 set @json='
@@ -186,7 +162,6 @@ set @json='
 ```
 
 NESTED PATH allows one to produce a separate row for each size each item has:
-
 
 ```
 select * from json_table(@json, '$[*]' 
@@ -209,12 +184,10 @@ select * from json_table(@json, '$[*]'
 +-----------+--------+
 ```
 
-NESTED PATH clauses can be nested within one another.
+NESTED PATH clauses can be nested within one another.\
 They can also be located next to each other. In that case, the nested path clauses will produce records one at a time. The ones that are not producing records will have all columns set to NULL.
 
-
 Example:
-
 
 ```
 set @json='
@@ -247,9 +220,7 @@ select * from json_table(@json, '$[*]'
 
 ### ON EMPTY and ON ERROR Clauses
 
-
 The ON EMPTY clause specifies what will be done when the element specified by the search path is missing in the JSON document.
-
 
 ```
 on_empty:
@@ -258,36 +229,29 @@ on_empty:
 
 When `ON EMPTY` clause is not present, `NULL ON EMPTY` is implied.
 
-
 ```
 on_error:
     {NULL | DEFAULT string | ERROR} ON ERROR
 ```
 
-The ON ERROR clause specifies what should be done if a JSON structure error occurs when trying to extract the value pointed to by the path expression. A JSON structure error here occurs only when one attempts to convert a JSON non-scalar (array or object) into a scalar value.
+The ON ERROR clause specifies what should be done if a JSON structure error occurs when trying to extract the value pointed to by the path expression. A JSON structure error here occurs only when one attempts to convert a JSON non-scalar (array or object) into a scalar value.\
 When the `ON ERROR` clause is not present, `NULL ON ERROR` is implied.
-
 
 **Note**: A datatype conversion error (e.g. attempt to store a non-integer value into an [integer](../../../../../data-types/data-types-numeric-data-types/int.md) field, or a [varchar](../../../../../data-types/string-data-types/varchar.md) column being truncated) is not considered a JSON error and so will not trigger the `ON ERROR` behavior. It will produce warnings, in the same way as [CAST(value AS datatype)](../../string-functions/cast.md) would.
 
-
 ### Replication
 
-
-In the current code, evaluation of JSON_TABLE is deterministic, that is, for a given input string JSON_TABLE will always produce the same set of rows in the same order. However, one can think of JSON documents that one can consider identical which will produce different output. In order to be future-proof and withstand changes like:
-
+In the current code, evaluation of JSON\_TABLE is deterministic, that is, for a given input string JSON\_TABLE will always produce the same set of rows in the same order. However, one can think of JSON documents that one can consider identical which will produce different output. In order to be future-proof and withstand changes like:
 
 * sorting JSON object members by name (like MySQL does)
-* changing the way duplicate object members are handled
-the function is marked as [unsafe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
-
+* changing the way duplicate object members are handled\
+  the function is marked as [unsafe for statement-based replication](../../../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ### Extracting a Subdocument into a Column
 
+**MariaDB starting with** [**10.6.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes)
 
-
-##### MariaDB starting with [10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes)
-Prior to [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes), JSON_TABLE did not allow one to extract a JSON "subdocument" into a JSON column. 
+Prior to [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes), JSON\_TABLE did not allow one to extract a JSON "subdocument" into a JSON column.
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;
@@ -297,6 +261,7 @@ SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.fo
 | NULL  |
 +-------+
 ```
+
 This is supported from [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes):
 
 ```
@@ -308,12 +273,8 @@ SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.fo
 +-----------+
 ```
 
-
 ## See Also
-
 
 * [JSON Support](https://www.youtube.com/watch?v=ZkmwHPqA790) (video)
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,8 +1,6 @@
-
 # CASE OPERATOR
 
 ## Syntax
-
 
 ```
 CASE value WHEN [compare_value] THEN result [WHEN [compare_value] THEN
@@ -12,18 +10,13 @@ CASE WHEN [condition] THEN result [WHEN [condition] THEN result ...]
 [ELSE result] END
 ```
 
-
 ## Description
-
 
 The first version returns the result for the first `value=compare_value` comparison that is true. The second version returns the result for the first condition that is true. If there was no matching result value, the result after ELSE is returned, or NULL if there is no ELSE part.
 
-
-There is also a [CASE statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.
-
+There is also a [CASE statement](../../../../../server-usage/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.
 
 ## Examples
-
 
 ```
 SELECT CASE 1 WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'more' END;
@@ -51,7 +44,6 @@ SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
 
 Only the first matching condition is processed:
 
-
 ```
 SELECT 
   CASE true 
@@ -69,11 +61,8 @@ SELECT
 
 ## See Also
 
-
-* The [CASE statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described above.
+* The [CASE statement](../../../../../server-usage/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described above.
 * The [IF() function](if-function.md).
 * [Operator Precedence](../../../operators/operator-precedence.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

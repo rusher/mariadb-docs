@@ -1,8 +1,6 @@
-
 # SET CHARACTER SET
 
 ## Syntax
-
 
 ```
 SET {CHARACTER SET | CHARSET}
@@ -11,15 +9,11 @@ SET {CHARACTER SET | CHARSET}
 
 ## Description
 
-
-Sets the [character_set_client](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) and [character_set_results](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results) session system variables to the specified character set and [collation_connection](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) to the value of [collation_database](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_database), which implicitly sets [character_set_connection](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) to the value of [character_set_database](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database).
-
+Sets the [character\_set\_client](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) and [character\_set\_results](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results) session system variables to the specified character set and [collation\_connection](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) to the value of [collation\_database](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_database), which implicitly sets [character\_set\_connection](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection) to the value of [character\_set\_database](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database).
 
 This maps all strings sent between the current client and the server with the given mapping.
 
-
 ## Example
-
 
 ```
 SHOW VARIABLES LIKE 'character_set\_%';
@@ -71,10 +65,7 @@ SHOW VARIABLES LIKE 'collation%';
 
 ## See Also
 
-
 * [Setting Character Sets and Collations](setting-character-sets-and-collations.md)
 * [SET NAMES](set-names.md)
 
-
 CC BY-SA / Gnu FDL
-

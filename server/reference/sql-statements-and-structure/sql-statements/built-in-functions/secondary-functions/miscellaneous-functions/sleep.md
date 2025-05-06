@@ -1,8 +1,6 @@
-
 # SLEEP
 
 ## Syntax
-
 
 ```
 SLEEP(duration)
@@ -10,18 +8,14 @@ SLEEP(duration)
 
 ## Description
 
-
-Sleeps (pauses) for the number of seconds given by the duration argument, then
-returns `0`. If `SLEEP()` is interrupted, it
-returns `1`. The duration may have a fractional part given in
+Sleeps (pauses) for the number of seconds given by the duration argument, then\
+returns `0`. If `SLEEP()` is interrupted, it\
+returns `1`. The duration may have a fractional part given in\
 microseconds.
 
-
-Statements using the SLEEP() function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
-
+Statements using the SLEEP() function are not [safe for statement-based replication](../../../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Example
-
 
 ```
 SELECT SLEEP(5.5);
@@ -33,6 +27,4 @@ SELECT SLEEP(5.5);
 1 row in set (5.50 sec)
 ```
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

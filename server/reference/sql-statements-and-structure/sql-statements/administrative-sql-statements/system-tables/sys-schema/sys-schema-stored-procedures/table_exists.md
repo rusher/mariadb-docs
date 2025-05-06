@@ -1,8 +1,6 @@
-
-# table_exists
+# table\_exists
 
 ## Syntax
-
 
 ```
 table_exists(in_db_name,in_table_name, out_table_type)
@@ -14,21 +12,16 @@ table_exists(in_db_name,in_table_name, out_table_type)
 
 ## Description
 
+`table_exists` is a [stored procedure](../../../../../../../server-usage/stored-routines/stored-procedures/) available with the [Sys Schema](../).
 
-`table_exists` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../README.md).
-
-
-Given a database *in_db_name* and table name *in_table_name*, returns the table type in the OUT parameter *out_table_type*. The return value is an ENUM field containing one of:
-
+Given a database _in\_db\_name_ and table name _in\_table\_name_, returns the table type in the OUT parameter _out\_table\_type_. The return value is an ENUM field containing one of:
 
 * '' - the table does not exist
 * 'BASE TABLE' - a regular table
 * 'VIEW' - a view
 * 'TEMPORARY' - a temporary table
 
-
 ## Examples
-
 
 ```
 CALL sys.table_exists('mysql', 'time_zone', @table_type); SELECT @table_type;
@@ -46,6 +39,4 @@ CALL sys.table_exists('mysql', 'user', @table_type); SELECT @table_type;
 +-------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,8 +1,6 @@
-
-# SPIDER_COPY_TABLES
+# SPIDER\_COPY\_TABLES
 
 ## Syntax
-
 
 ```
 SPIDER_COPY_TABLES(spider_table_name, 
@@ -11,12 +9,9 @@ SPIDER_COPY_TABLES(spider_table_name,
 
 ## Description
 
-
-A [UDF](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) installed with the [Spider Storage Engine](../README.md), this function copies table data from `source_link_id` to `destination_link_id_list`. The service does not need to be stopped in order to copy.
-
+A [UDF](../../../../server-usage/user-defined-functions/) installed with the [Spider Storage Engine](../), this function copies table data from `source_link_id` to `destination_link_id_list`. The service does not need to be stopped in order to copy.
 
 If the Spider table is partitioned, the name must be of the format `table_name#P#partition_name`. The partition name can be viewed in the `mysql.spider_tables` table, for example:
-
 
 ```
 SELECT table_name FROM mysql.spider_tables;
@@ -31,6 +26,4 @@ SELECT table_name FROM mysql.spider_tables;
 
 Returns `1` if the data was copied successfully, or `0` if copying the data failed.
 
-
 CC BY-SA / Gnu FDL
-

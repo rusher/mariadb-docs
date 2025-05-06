@@ -1,29 +1,21 @@
-
 # SHOW CREATE TRIGGER
 
 ## Syntax
-
 
 ```
 SHOW CREATE TRIGGER trigger_name
 ```
 
-
 ## Description
 
-
-This statement shows a `[CREATE TRIGGER](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)`
-statement that creates the given trigger, as well as the [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) that was used when the trigger has been created and the character set used by the connection.
-
+This statement shows a `[CREATE TRIGGER](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)`\
+statement that creates the given trigger, as well as the [SQL\_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) that was used when the trigger has been created and the character set used by the connection.
 
 The `[TRIGGER](../../account-management-sql-commands/grant.md#table-privileges)` privilege is required on the table the trigger is defined for to execute this statement.
 
-
-`SHOW CREATE TRIGGER` quotes identifiers according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1065-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), the output of this statement was unreliably affected by the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
-
+`SHOW CREATE TRIGGER` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1065-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), the output of this statement was unreliably affected by the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
 ## Examples
-
 
 ```
 SHOW CREATE TRIGGER example\G
@@ -45,17 +37,13 @@ END
 
 The `Created` column was added in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) as part of introducing multiple trigger events per action.
 
-
 ## See Also
 
-
-* [Trigger Overview](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-overview.md)
-* [CREATE TRIGGER](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
+* [Trigger Overview](../../../../../server-usage/triggers-events/triggers/trigger-overview.md)
+* [CREATE TRIGGER](../../../../../server-usage/triggers-events/triggers/create-trigger.md)
 * [DROP TRIGGER](../../data-definition/drop/drop-trigger.md)
-* [information_schema.TRIGGERS Table](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [information\_schema.TRIGGERS Table](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
 * [SHOW TRIGGERS](show-triggers.md)
-* [Trigger Limitations](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations.md)
+* [Trigger Limitations](../../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

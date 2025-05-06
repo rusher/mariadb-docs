@@ -1,8 +1,6 @@
-
-# SHOW USER_STATISTICS
+# SHOW USER\_STATISTICS
 
 ## Syntax
-
 
 ```
 SHOW USER_STATISTICS
@@ -10,15 +8,11 @@ SHOW USER_STATISTICS
 
 ## Description
 
+The `SHOW USER_STATISTICS` statement is part of the [User Statistics](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature. It was removed as a separate statement in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), but effectively replaced by the generic [SHOW information\_schema\_table](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) statement. The [information\_schema.USER\_STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md) table holds statistics about user activity. You can use this table to find out such things as which user is causing the most load and which users are being abusive. You can also use this table to measure how close to capacity the server may be.
 
-The `SHOW USER_STATISTICS` statement is part of the [User Statistics](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature. It was removed as a separate statement in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), but effectively replaced by the generic [SHOW information_schema_table](../../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md) statement. The [information_schema.USER_STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md) table holds statistics about user activity. You can use this table to find out such things as which user is causing the most load and which users are being abusive. You can also use this table to measure how close to capacity the server may be.
-
-
-The [userstat](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#userstat) system variable must be set to 1 to activate this feature. See the [User Statistics](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) and [information_schema.USER_STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md) table for more information.
-
+The [userstat](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#userstat) system variable must be set to 1 to activate this feature. See the [User Statistics](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) and [information\_schema.USER\_STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md) table for more information.
 
 ## Example
-
 
 ```
 SHOW USER_STATISTICS\G
@@ -48,6 +42,4 @@ Concurrent_connections: 0
          Empty_queries: 7
 ```
 
-
 CC BY-SA / Gnu FDL
-

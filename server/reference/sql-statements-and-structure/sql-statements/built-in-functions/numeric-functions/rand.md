@@ -1,9 +1,6 @@
-
 # RAND
 
-
 ## Syntax
-
 
 ```
 RAND(), RAND(N)
@@ -11,24 +8,18 @@ RAND(), RAND(N)
 
 ## Description
 
-
-Returns a random `[DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)` precision floating point value v in the range 0 <= v < 1.0. If
-a constant integer argument N is specified, it is used as the seed
-value, which produces a repeatable sequence of column values. In the example below, note that the sequences of values produced by
+Returns a random `[DOUBLE](../../../../data-types/data-types-numeric-data-types/double.md)` precision floating point value v in the range 0 <= v < 1.0. If\
+a constant integer argument N is specified, it is used as the seed\
+value, which produces a repeatable sequence of column values. In the example below, note that the sequences of values produced by\
 RAND(3) is the same both places where it occurs.
-
 
 In a WHERE clause, RAND() is evaluated each time the WHERE is executed.
 
-
-Statements using the RAND() function are not [safe for statement-based replication](../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
-
+Statements using the RAND() function are not [safe for statement-based replication](../../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Practical uses
 
-
 The expression to get a random integer from a given range is the following:
-
 
 ```
 FLOOR(min_value + RAND() * (max_value - min_value +1))
@@ -36,16 +27,13 @@ FLOOR(min_value + RAND() * (max_value - min_value +1))
 
 RAND() is often used to read random rows from a table, as follows:
 
-
 ```
 SELECT * FROM my_table ORDER BY RAND() LIMIT 10;
 ```
 
 Note, however, that this technique should never be used on a large table as it will be extremely slow. MariaDB will read all rows in the table, generate a random value for each of them, order them, and finally will apply the LIMIT clause.
 
-
 ## Examples
-
 
 ```
 CREATE TABLE t (i INT);
@@ -82,7 +70,6 @@ SELECT i, RAND() FROM t;
 
 Using the same seed, the same sequence will be returned:
 
-
 ```
 SELECT i, RAND(3) FROM t;
 +------+-------------------+
@@ -96,17 +83,13 @@ SELECT i, RAND(3) FROM t;
 
 Generating a random number from 5 to 15:
 
-
 ```
 SELECT FLOOR(5 + (RAND() * 11));
 ```
 
 ## See Also
 
+* [Techniques for Efficiently Finding a Random Row](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/data-sampling-techniques-for-efficiently-finding-a-random-row.md)
+* [rand\_seed1 and rand\_seed2 system variables](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1)
 
-* [Techniques for Efficiently Finding a Random Row](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/data-sampling-techniques-for-efficiently-finding-a-random-row.md)
-* [rand_seed1 and rand_seed2 system variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1)
-
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

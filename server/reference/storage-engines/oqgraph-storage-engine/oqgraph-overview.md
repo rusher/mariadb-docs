@@ -1,33 +1,22 @@
-
 # OQGRAPH Overview
-
 
 The Open Query GRAPH computation engine, or OQGRAPH as the engine itself is called, allows you to handle hierarchies (tree structures) and complex graphs (nodes having many connections in several directions).
 
-
 OQGRAPH is unlike other storage engines, consisting of an entirely different architecture to a regular storage engine such as Aria, MyISAM or InnoDB.
-
 
 It is intended to be used for retrieving hierarchical information, such as those used for graphs, routes or social relationships, in plain SQL.
 
-
 ## Installing
 
-
-See [Installing OQGRAPH](installing-oqgraph.md). Note that if the [query cache](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is enabled, OQGRAPH will not use it.
-
+See [Installing OQGRAPH](installing-oqgraph.md). Note that if the [query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is enabled, OQGRAPH will not use it.
 
 ## Creating a Table
 
-
 The following documentation is based upon [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) and OQGRAPH v3.
-
 
 ## Example with origin and destination nodes only
 
-
 To create an OQGRAPH v3 table, a backing table must first be created. This backing table will store the actual data, and will be used for all INSERTs, UPDATEs and so on. It must be a regular table, not a view. Here's a simple example to start with:
-
 
 ```
 CREATE TABLE oq_backing (
@@ -40,14 +29,12 @@ CREATE TABLE oq_backing (
 
 Some data can be inserted into the backing table to test with later:
 
-
 ```
 INSERT INTO oq_backing(origid, destid) 
  VALUES (1,2), (2,3), (3,4), (4,5), (2,6), (5,6);
 ```
 
 Now the read-only OQGRAPH table is created. The CREATE statement must match the format below - any difference will result in an error.
-
 
 ```
 CREATE TABLE oq_graph (
@@ -66,7 +53,6 @@ data_table='oq_backing' origid='origid' destid='destid';
 
 An older format (prior to [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)) has the latch field as a SMALLINT rather than a VARCHAR. The format gives an error:
 
-
 ```
 CREATE TABLE oq_old (
   latch SMALLINT UNSIGNED NULL,
@@ -84,8 +70,7 @@ data_table='oq_backing' origid='origid' destid='destid';
 ERROR 1005 (HY000): Can't create table `test`.`oq_old` (errno: 140 "Wrong create options")
 ```
 
-The old, deprecated format can still be used prior to [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) if the value of the [oqgraph_allow_create_integer_latch](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `FALSE`, to `TRUE`.
-
+The old, deprecated format can still be used prior to [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) if the value of the [oqgraph\_allow\_create\_integer\_latch](../../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `FALSE`, to `TRUE`.
 
 ```
 SET GLOBAL oqgraph_allow_create_integer_latch=1;
@@ -114,9 +99,7 @@ SHOW WARNINGS;
 
 Data is only inserted into the backing table, not the OQGRAPH table.
 
-
 Now, having created the `oq_graph` table linked to a backing table, it is now possible to query the `oq_graph` table directly. The `weight` field, since it was not specified in this example, defaults to `1`.
-
 
 ```
 SELECT * FROM oq_graph;
@@ -134,12 +117,9 @@ SELECT * FROM oq_graph;
 
 The data here represents one-directional starting and ending nodes. So node 2 has paths to node 3 and node 6, while node 6 has no paths to any other node.
 
-
 ## Manipulating Weight
 
-
 There are three fields which can be manipulated: `origid`, `destid` (the example above uses these two), as well as `weight`. To create a backing table with a `weight` field as well, the following syntax can be used:
-
 
 ```
 CREATE TABLE oq2_backing (
@@ -187,6 +167,4 @@ SELECT * FROM oq2_graph;
 
 See [OQGRAPH Examples](oqgraph-examples.md) for OQGRAPH usage examples.
 
-
 CC BY-SA / Gnu FDL
-

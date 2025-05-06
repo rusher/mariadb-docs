@@ -1,11 +1,8 @@
-
 # UNION
 
 `UNION` is used to combine the results from multiple [SELECT](../select.md) statements into a single result set.
 
-
 ## Syntax
-
 
 ```
 SELECT ...
@@ -15,54 +12,37 @@ UNION [ALL | DISTINCT] SELECT ...
 [LIMIT {[offset,] row_count | row_count OFFSET offset}]
 ```
 
-
 ## Description
-
 
 `UNION` is used to combine the results from multiple [SELECT](../select.md) statements into a single result set.
 
-
 The column names from the first `SELECT` statement are used as the column names for the results returned. Selected columns listed in corresponding positions of each SELECT statement should have the same data type. (For example, the first column selected by the first statement should have the same type as the first column selected by the other statements.)
-
 
 If they don't, the type and length of the columns in the result take into account the values returned by all of the SELECTs, so there is no need for explicit casting. Note that currently this is not the case for [recursive CTEs](../common-table-expressions/recursive-common-table-expressions-overview.md) - see [MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325).
 
-
 Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNION`s which involve multiple databases. See [Identifier Qualifiers](../../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
 
-
-UNION queries cannot be used with [aggregate functions](../../../built-in-functions/aggregate-functions/README.md).
-
+UNION queries cannot be used with [aggregate functions](../../../built-in-functions/aggregate-functions/).
 
 `EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
 
-
 ### ALL/DISTINCT
-
 
 The `ALL` keyword causes duplicate rows to be preserved. The `DISTINCT` keyword (the default if the keyword is omitted) causes duplicate rows to be removed by the results.
 
-
 UNION ALL and UNION DISTINCT can both be present in a query. In this case, UNION DISTINCT will override any UNION ALLs to its left.
-
 
 The server can in most cases execute `UNION ALL` without creating a temporary table (see [MDEV-334](https://jira.mariadb.org/browse/MDEV-334)).
 
-
 ### ORDER BY and LIMIT
-
 
 Individual SELECTs can contain their own [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses. In this case, the individual queries need to be wrapped between parentheses. However, this does not affect the order of the UNION, so they only are useful to limit the record read by one SELECT.
 
-
 The UNION can have global [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses, which affect the whole resultset. If the columns retrieved by individual SELECT statements have an alias (AS), the ORDER BY must use that alias, not the real column names.
 
+### HIGH\_PRIORITY
 
-### HIGH_PRIORITY
-
-
-Specifying a query as [HIGH_PRIORITY](../select.md#high-priority) will not work inside a UNION. If applied to the first SELECT, it will be ignored. Applying to a later SELECT results in a syntax error:
-
+Specifying a query as [HIGH\_PRIORITY](../select.md#high-priority) will not work inside a UNION. If applied to the first SELECT, it will be ignored. Applying to a later SELECT results in a syntax error:
 
 ```
 ERROR 1234 (42000): Incorrect usage/placement of 'HIGH_PRIORITY'
@@ -70,24 +50,17 @@ ERROR 1234 (42000): Incorrect usage/placement of 'HIGH_PRIORITY'
 
 ### SELECT ... INTO ...
 
-
 Individual SELECTs cannot be written [INTO DUMPFILE](../select-into-dumpfile.md) or [INTO OUTFILE](../select-into-outfile.md). If the last SELECT statement specifies INTO DUMPFILE or INTO OUTFILE, the entire result of the UNION will be written. Placing the clause after any other SELECT will result in a syntax error.
 
-
-If the result is a single row, [SELECT ... INTO @var_name](../../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/selectinto.md) can also be used.
-
+If the result is a single row, [SELECT ... INTO @var\_name](../../../../../../server-usage/programmatic-compound-statements/selectinto.md) can also be used.
 
 ### Parentheses
 
-
 Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), a syntax error would be returned.
-
 
 ## Examples
 
-
 `UNION` between tables having different column names:
-
 
 ```
 (SELECT e_name AS name, email FROM employees)
@@ -96,7 +69,6 @@ UNION
 ```
 
 Specifying the `UNION`'s global order and limiting total rows:
-
 
 ```
 (SELECT name, email FROM employees)
@@ -107,7 +79,6 @@ ORDER BY name LIMIT 10;
 
 Adding a constant row:
 
-
 ```
 (SELECT 'John Doe' AS name, 'john.doe@example.net' AS email)
 UNION
@@ -115,7 +86,6 @@ UNION
 ```
 
 Differing types:
-
 
 ```
 SELECT CAST('x' AS CHAR(1)) UNION SELECT REPEAT('y',4);
@@ -129,7 +99,6 @@ SELECT CAST('x' AS CHAR(1)) UNION SELECT REPEAT('y',4);
 
 Returning the results in order of each individual SELECT by use of a sort column:
 
-
 ```
 (SELECT 1 AS sort_column, e_name AS name, email FROM employees)
 UNION
@@ -137,7 +106,6 @@ UNION
 ```
 
 Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
-
 
 ```
 CREATE TABLE seqs (i INT);
@@ -235,13 +203,10 @@ INSERT INTO t3 VALUES (1),(6);
 
 ## See Also
 
-
 * [SELECT](../select.md)
 * [EXCEPT](except.md)
 * [INTERSECT](intersect.md)
 * [Recursive Common Table Expressions Overview](../common-table-expressions/recursive-common-table-expressions-overview.md)
 * [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

@@ -1,44 +1,31 @@
-
 # SHOW CREATE TABLE
 
 ## Syntax
-
 
 ```
 SHOW CREATE TABLE tbl_name
 ```
 
-
 ## Description
 
+Shows the [CREATE TABLE](../../data-definition/create/create-table.md) statement that creates the given table. The statement requires the [SELECT privilege](../../data-manipulation/selecting-data/select.md) for the table. This statement also works with [views](../../../../../server-usage/views/) and [SEQUENCE](../../../sequences/create-sequence.md).
 
-Shows the [CREATE TABLE](../../data-definition/create/create-table.md) statement that creates the given table. The statement requires the [SELECT privilege](../../data-manipulation/selecting-data/select.md) for the table. This statement also works with [views](../../../../../server-usage/programming-customizing-mariadb/views/README.md) and [SEQUENCE](../../../sequences/create-sequence.md).
+`SHOW CREATE TABLE` quotes table and\
+column names according to the value of the [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
 
+Certain [SQL\_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) values can result in parts of the original CREATE statement not being included in the output. MariaDB-specific table options, column options, and index options are not included in the output of this statement if the [NO\_TABLE\_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#no_field_options) and [NO\_KEY\_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#no_key_options) [SQL\_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) flags are used. All MariaDB-specific table attributes are also not shown when a non-MariaDB/MySQL emulation mode is used, which includes [ANSI](../../../../../server-management/variables-and-modes/sql-mode.md#ansi), [DB2](../../../../../server-management/variables-and-modes/sql-mode.md#db2), [POSTGRESQL](../../../../../server-management/variables-and-modes/sql-mode.md#postgresql), [MSSQL](../../../../../server-management/variables-and-modes/sql-mode.md#mssql), [MAXDB](../../../../../server-management/variables-and-modes/sql-mode.md#maxdb) or [ORACLE](../../../../../server-management/variables-and-modes/sql-mode.md#oracle).
 
-`SHOW CREATE TABLE` quotes table and
-column names according to the value of the [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
-
-
-Certain [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) values can result in parts of the original CREATE statement not being included in the output. MariaDB-specific table options, column options, and index options are not included in the output of this statement if the [NO_TABLE_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#no_table_options), [NO_FIELD_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#no_field_options) and [NO_KEY_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#no_key_options) [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) flags are used. All MariaDB-specific table attributes are also not shown when a non-MariaDB/MySQL emulation mode is used, which includes [ANSI](../../../../../server-management/variables-and-modes/sql-mode.md#ansi), [DB2](../../../../../server-management/variables-and-modes/sql-mode.md#db2), [POSTGRESQL](../../../../../server-management/variables-and-modes/sql-mode.md#postgresql), [MSSQL](../../../../../server-management/variables-and-modes/sql-mode.md#mssql), [MAXDB](../../../../../server-management/variables-and-modes/sql-mode.md#maxdb) or [ORACLE](../../../../../server-management/variables-and-modes/sql-mode.md#oracle).
-
-
-Invalid table options, column options and index options are normally commented out (note, that it is possible to create a table with invalid options, by altering a table of a different engine, where these options were valid). To have them uncommented, enable the [IGNORE_BAD_TABLE_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#ignore_bad_table_options) [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md). Remember that replaying a [CREATE TABLE](../../data-definition/create/create-table.md) statement with uncommented invalid options will fail with an error, unless the [IGNORE_BAD_TABLE_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#ignore_bad_table_options) [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is in effect.
-
+Invalid table options, column options and index options are normally commented out (note, that it is possible to create a table with invalid options, by altering a table of a different engine, where these options were valid). To have them uncommented, enable the [IGNORE\_BAD\_TABLE\_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#ignore_bad_table_options) [SQL\_MODE](../../../../../server-management/variables-and-modes/sql-mode.md). Remember that replaying a [CREATE TABLE](../../data-definition/create/create-table.md) statement with uncommented invalid options will fail with an error, unless the [IGNORE\_BAD\_TABLE\_OPTIONS](../../../../../server-management/variables-and-modes/sql-mode.md#ignore_bad_table_options) [SQL\_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) is in effect.
 
 Note that `SHOW CREATE TABLE` is not meant to provide metadata about a table. It provides information about how the table was declared, but the real table structure could differ a bit. For example, if an index has been declared as `HASH`, the `CREATE TABLE` statement returned by `SHOW CREATE TABLE` will declare that index as `HASH`; however, it is possible that the index is in fact a `BTREE`, because the storage engine does not support `HASH`.
 
-
 MariaDB permits [TEXT](../../../../data-types/string-data-types/text.md) and [BLOB](../../../../data-types/string-data-types/blob.md) data types to be assigned a [DEFAULT](../../data-definition/create/create-table.md#default) value. As a result, `SHOW CREATE TABLE` will append a `DEFAULT NULL` to nullable TEXT or BLOB fields if no specific default is provided.
-
 
 Numbers are no longer quoted in the `DEFAULT` clause in `SHOW CREATE` statement. Prior to [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), MariaDB quoted numbers.
 
-
 ### Index Order
 
-
 Indexes are sorted and displayed in the following order, which may differ from the order of the CREATE TABLE statement.
-
 
 * PRIMARY KEY
 * UNIQUE keys where all column are NOT NULL
@@ -48,12 +35,9 @@ Indexes are sorted and displayed in the following order, which may differ from t
 * Normal keys
 * Fulltext keys
 
-
-See sql/sql_table.cc for details.
-
+See sql/sql\_table.cc for details.
 
 ## Examples
-
 
 ```
 SHOW CREATE TABLE t\G
@@ -66,8 +50,7 @@ Create Table: CREATE TABLE `t` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-With [sql_quote_show_create](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) off:
-
+With [sql\_quote\_show\_create](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) off:
 
 ```
 SHOW CREATE TABLE t\G
@@ -82,7 +65,6 @@ Create Table: CREATE TABLE t (
 
 Unquoted numeric DEFAULTs, from [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes):
 
-
 ```
 CREATE TABLE td (link TINYINT DEFAULT 1);
 
@@ -96,7 +78,6 @@ Create Table: CREATE TABLE `td` (
 
 Quoted numeric DEFAULTs, until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes):
 
-
 ```
 CREATE TABLE td (link TINYINT DEFAULT 1);
 
@@ -108,8 +89,7 @@ Create Table: CREATE TABLE `td` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-[SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) impacting the output:
-
+[SQL\_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) impacting the output:
 
 ```
 SELECT @@sql_mode;
@@ -148,10 +128,7 @@ Create Table: CREATE TABLE "t1" (
 
 ## See Also
 
-
 * [SHOW CREATE SEQUENCE](show-create-sequence.md)
 * [SHOW CREATE VIEW](show-create-view.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

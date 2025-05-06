@@ -1,22 +1,16 @@
-
-# last_insert_grn_id
+# last\_insert\_grn\_id
 
 ## Syntax
-
 
 ```
 last_insert_grn_id()
 ```
 
-
 ## Description
 
-
-`last_insert_grn_id` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDF) included with the [Mroonga storage engine](../README.md). It returns the unique Groonga id of the last-inserted record. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
-
+`last_insert_grn_id` is a [user-defined function](../../../../server-usage/user-defined-functions/) (UDF) included with the [Mroonga storage engine](../). It returns the unique Groonga id of the last-inserted record. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
 
 ## Examples
-
 
 ```
 SELECT last_insert_grn_id();
@@ -29,9 +23,6 @@ SELECT last_insert_grn_id();
 
 ## See Also
 
-
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,8 +1,6 @@
-
-# ps_thread_id
+# ps\_thread\_id
 
 ## Syntax
-
 
 ```
 sys.ps_thread_id(connection_id)
@@ -10,12 +8,9 @@ sys.ps_thread_id(connection_id)
 
 ## Description
 
-
-`ps_thread_id` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md) that returns the thread_id associated with the given *connection_id*. If the *connection_id* is NULL, returns the thread_id for the current connection.
-
+`ps_thread_id` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../) that returns the thread\_id associated with the given _connection\_id_. If the _connection\_id_ is NULL, returns the thread\_id for the current connection.
 
 ## Examples
-
 
 ```
 SELECT * FROM performance_schema.threads\G
@@ -54,6 +49,4 @@ SELECT sys.ps_thread_id(NULL);
 +------------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

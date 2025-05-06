@@ -1,8 +1,6 @@
-
 # SELECT
 
 ## Syntax
-
 
 ```
 SELECT
@@ -39,162 +37,112 @@ lock_option:
     [WAIT n | NOWAIT | SKIP LOCKED]
 ```
 
-
 ## Description
 
+`SELECT` is used to retrieve rows selected from one or more\
+tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/).
 
-`SELECT` is used to retrieve rows selected from one or more
-tables, and can include [UNION](joins-subqueries/union.md) statements and [subqueries](joins-subqueries/subqueries/README.md).
-
-
-* Each select_expr expression indicates a column or data that you want to retrieve. You
-must have at least one select expression. See [Select Expressions](#select-expressions) below.
-
-
-* The `FROM` clause indicates the table or tables from which to retrieve rows.
-Use either a single table name or a `JOIN` expression. See [JOIN](joins-subqueries/joins/join-syntax.md)
-for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
-
-
+* Each select\_expr expression indicates a column or data that you want to retrieve. You\
+  must have at least one select expression. See [Select Expressions](select.md#select-expressions) below.
+* The `FROM` clause indicates the table or tables from which to retrieve rows.\
+  Use either a single table name or a `JOIN` expression. See [JOIN](joins-subqueries/joins/join-syntax.md)\
+  for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
 * Each table can also be specified as `db_name`.`tabl_name`. Each column can also be specified as `tbl_name`.`col_name` or even `db_name`.`tbl_name`.`col_name`. This allows one to write queries which involve multiple databases. See [Identifier Qualifiers](../../../sql-language-structure/identifier-qualifiers.md) for syntax details.
-
-
-* The `WHERE` clause, if given, indicates the condition or
- conditions that rows must satisfy to be selected.
- `where_condition` is an expression that evaluates to true for
- each row to be selected. The statement selects all rows if there is no WHERE
- clause.
-
-  * In the `WHERE` clause, you can use any of the functions and
- operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../built-in-functions/README.md) and [Functions and Modifiers for use with GROUP BY](../../built-in-functions/aggregate-functions/README.md) (aggregate).
-
-
+* The `WHERE` clause, if given, indicates the condition or\
+  conditions that rows must satisfy to be selected.`where_condition` is an expression that evaluates to true for\
+  each row to be selected. The statement selects all rows if there is no WHERE\
+  clause.
+  * In the `WHERE` clause, you can use any of the functions and\
+    operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../built-in-functions/) and [Functions and Modifiers for use with GROUP BY](../../built-in-functions/aggregate-functions/) (aggregate).
 * Use the [ORDER BY](order-by.md) clause to order the results.
+* Use the [LIMIT](limit.md) clause allows you to restrict the results to only\
+  a certain number of rows, optionally with an offset.
+* Use the [GROUP BY](group-by.md) and `HAVING` clauses to group\
+  rows together when they have columns or computed values in common.
 
-
-* Use the [LIMIT](limit.md) clause allows you to restrict the results to only
-a certain number of rows, optionally with an offset.
-
-
-* Use the [GROUP BY](group-by.md) and `HAVING` clauses to group
-rows together when they have columns or computed values in common.
-
-
-SELECT can also be used to retrieve rows computed without reference to
+SELECT can also be used to retrieve rows computed without reference to\
 any table.
-
 
 ### Select Expressions
 
-
-A `SELECT` statement must contain one or more select expressions, separated
+A `SELECT` statement must contain one or more select expressions, separated\
 by commas. Each select expression can be one of the following:
 
-
 * The name of a column.
-* Any expression using [functions and operators](../../built-in-functions/README.md).
+* Any expression using [functions and operators](../../built-in-functions/).
 * `*` to select all columns from all tables in the `FROM` clause.
-* `tbl_name.*` to select all columns from just the table tbl_name.
+* `tbl_name.*` to select all columns from just the table tbl\_name.
 
-
-When specifying a column, you can either use just the column name or qualify the column
-name with the name of the table using `tbl_name.col_name`. The qualified form is
-useful if you are joining multiple tables in the `FROM` clause. If you do not qualify the
-column names when selecting from multiple tables, MariaDB will try to find the column in
+When specifying a column, you can either use just the column name or qualify the column\
+name with the name of the table using `tbl_name.col_name`. The qualified form is\
+useful if you are joining multiple tables in the `FROM` clause. If you do not qualify the\
+column names when selecting from multiple tables, MariaDB will try to find the column in\
 each table. It is an error if that column name exists in multiple tables.
 
-
-You can quote column names using backticks. If you are qualifying column names
+You can quote column names using backticks. If you are qualifying column names\
 with table names, quote each part separately as ``tbl_name`.`col_name``.
 
-
-If you use any [grouping functions](../../built-in-functions/aggregate-functions/README.md)
-in any of the select expressions, all rows in your results will be implicitly grouped, as if
-you had used `GROUP BY NULL`. `GROUP BY NULL` being an expression behaves specially
+If you use any [grouping functions](../../built-in-functions/aggregate-functions/)\
+in any of the select expressions, all rows in your results will be implicitly grouped, as if\
+you had used `GROUP BY NULL`. `GROUP BY NULL` being an expression behaves specially\
 such that the entire result set is treated as a group.
-
 
 ### DISTINCT
 
-
 A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../built-in-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
-
 
 ### INTO
 
-
 The `INTO` clause is used to specify that the query results should be written to a file or variable.
-
 
 * [SELECT INTO OUTFILE](select-into-outfile.md) - formatting and writing the result to an external file.
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
-* [SELECT INTO Variable](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/selectinto.md) - selecting and setting variables.
+* [SELECT INTO Variable](../../../../../server-usage/programmatic-compound-statements/selectinto.md) - selecting and setting variables.
 
-
-The reverse of `SELECT INTO OUTFILE` is [LOAD DATA](../inserting-loading-data/load-data-into-tables-or-index/README.md).
-
+The reverse of `SELECT INTO OUTFILE` is [LOAD DATA](../inserting-loading-data/load-data-into-tables-or-index/).
 
 ### LIMIT
 
-
-Restricts the number of returned rows. See [LIMIT](limit.md) and [LIMIT ROWS EXAMINED](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/limit-rows-examined.md) for details.
-
+Restricts the number of returned rows. See [LIMIT](limit.md) and [LIMIT ROWS EXAMINED](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined.md) for details.
 
 ### LOCK IN SHARE MODE/FOR UPDATE
 
-
 See [LOCK IN SHARE MODE](lock-in-share-mode.md) and [FOR UPDATE](for-update.md) for details on the respective locking clauses.
-
 
 ### OFFSET ... FETCH
 
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 See [SELECT ... OFFSET ... FETCH](select-offset-fetch.md).
-
 
 ### ORDER BY
 
-
 Order a resultset. See [ORDER BY](order-by.md) for details.
-
 
 ### PARTITION
 
-
 Specifies to the optimizer which partitions are relevant for the query. Other partitions will not be read. See [Partition Pruning and Selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
-
 
 ### PROCEDURE
 
-
 Passes the whole result set to a C Procedure. See [PROCEDURE](procedure.md) and [PROCEDURE ANALYSE](../../built-in-functions/secondary-functions/information-functions/procedure-analyse.md) (the only built-in procedure not requiring the server to be recompiled).
-
 
 ### SKIP LOCKED
 
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).
-This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../../storage-engines/innodb/README.md) tables and ignored otherwise.
-
+The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).\
+This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../../storage-engines/innodb/) tables and ignored otherwise.
 
 ### Optimizer Hints
 
-
-These include [HIGH_PRIORITY](optimizer-hints.md#high-priority), [STRAIGHT_JOIN](optimizer-hints.md#straight_join), [SQL_SMALL_RESULT | SQL_BIG_RESULT](optimizer-hints.md#sql_small_result-sql_big_result), [SQL_BUFFER_RESULT](optimizer-hints.md#sql_buffer_result), [SQL_CACHE | SQL_NO_CACHE](optimizer-hints.md#sql_cache-sql_no_cache), and [SQL_CALC_FOUND_ROWS](optimizer-hints.md#sql_calc_found_rows).
-
+These include [HIGH\_PRIORITY](optimizer-hints.md#high-priority), [STRAIGHT\_JOIN](optimizer-hints.md#straight_join), [SQL\_SMALL\_RESULT | SQL\_BIG\_RESULT](optimizer-hints.md#sql_small_result-sql_big_result), [SQL\_BUFFER\_RESULT](optimizer-hints.md#sql_buffer_result), [SQL\_CACHE | SQL\_NO\_CACHE](optimizer-hints.md#sql_cache-sql_no_cache), and [SQL\_CALC\_FOUND\_ROWS](optimizer-hints.md#sql_calc_found_rows).
 
 See [Optimizer Hints](optimizer-hints.md) for details.
 
+### max\_statement\_time clause
 
-### max_statement_time clause
-
-
-By using [max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) in conjunction with [SET STATEMENT](../../administrative-sql-statements/set-commands/set-statement.md), it is possible to limit the execution time of individual queries. For example:
-
+By using [max\_statement\_time](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) in conjunction with [SET STATEMENT](../../administrative-sql-statements/set-commands/set-statement.md), it is possible to limit the execution time of individual queries. For example:
 
 ```
 SET STATEMENT max_statement_time=100 FOR 
@@ -203,29 +151,24 @@ SET STATEMENT max_statement_time=100 FOR
 
 ### WAIT/NOWAIT
 
-
 Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-nowait.md).
 
-
 ## Examples
-
 
 ```
 SELECT f1,f2 FROM t1 WHERE (f3<=10) AND (f4='y');
 ```
 
-See [Getting Data from MariaDB](/kb/en/getting-data-from-mariadb/) (Beginner tutorial), or the various sub-articles, for more examples.
-
+See [Getting Data from MariaDB](../../../../../../kb/en/getting-data-from-mariadb/) (Beginner tutorial), or the various sub-articles, for more examples.
 
 ## See Also
 
-
-* [Getting Data from MariaDB](/kb/en/getting-data-from-mariadb/) (Beginner tutorial)
-* [Joins and Subqueries](joins-subqueries/README.md)
+* [Getting Data from MariaDB](../../../../../../kb/en/getting-data-from-mariadb/) (Beginner tutorial)
+* [Joins and Subqueries](joins-subqueries/)
 * [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
 * [GROUP BY](group-by.md)
-* [Common Table Expressions](common-table-expressions/README.md)
+* [Common Table Expressions](common-table-expressions/)
 * [SELECT WITH ROLLUP](select-with-rollup.md)
 * [SELECT INTO OUTFILE](select-into-outfile.md)
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
@@ -234,6 +177,4 @@ See [Getting Data from MariaDB](/kb/en/getting-data-from-mariadb/) (Beginner tut
 * [Optimizer Hints](optimizer-hints.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

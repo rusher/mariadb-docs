@@ -1,18 +1,12 @@
-
 # Non-Recursive Common Table Expressions Overview
 
 Common Table Expressions (CTEs) are a standard SQL feature, and are essentially temporary named result sets. There are two kinds of CTEs: Non-Recursive, which this article covers; and [Recursive](recursive-common-table-expressions-overview.md).
 
-
 ## Non-Recursive CTEs
 
-
-The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:
-![cte_syntax](../../../../../../.gitbook/assets/non-recursive-common-table-expressions-overview/+image/cte_syntax.png "cte_syntax")
-
+The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:![cte\_syntax](../../../../../../.gitbook/assets/non-recursive-common-table-expressions-overview/+image/cte_syntax.png)
 
 CTEs are similar to derived tables. For example
-
 
 ```
 WITH engineers AS 
@@ -31,15 +25,12 @@ WHERE
 ...
 ```
 
-A non-recursive CTE is basically a query-local [VIEW](../../../../../../server-usage/programming-customizing-mariadb/views/README.md). There are several advantages and caveats to them. The syntax is more readable than nested `FROM (SELECT ...)`.
+A non-recursive CTE is basically a query-local [VIEW](../../../../../../server-usage/views/). There are several advantages and caveats to them. The syntax is more readable than nested `FROM (SELECT ...)`.\
 A CTE can refer to another and it can be referenced from multiple places.
-
 
 ### A CTE referencing Another CTE
 
-
 Using this format makes for a more readable SQL than a nested `FROM(SELECT ...)` clause. Below is an example of this:
-
 
 ```
 WITH engineers AS (
@@ -53,9 +44,7 @@ FROM eu_engineers;
 
 ### Multiple Uses of a CTE
 
-
 This can be an 'anti-self join', for example:
-
 
 ```
 WITH engineers AS (
@@ -70,7 +59,6 @@ WHERE NOT EXISTS
 ```
 
 Or, for year-over-year comparisons, for example:
-
 
 ```
 WITH sales_product_year AS (
@@ -88,7 +76,6 @@ AND CUR.total_amt > PREV.total_amt
 ```
 
 Another use is to compare individuals against their group. Below is an example of how this might be executed:
-
 
 ```
 WITH sales_product_year AS (
@@ -108,6 +95,4 @@ total_amt >
      WHERE S2.year = S1.year)
 ```
 
-
 CC BY-SA / Gnu FDL
-

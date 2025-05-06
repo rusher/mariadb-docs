@@ -1,8 +1,6 @@
-
-# ps_is_instrument_default_timed
+# ps\_is\_instrument\_default\_timed
 
 ## Syntax
-
 
 ```
 sys.ps_is_instrument_default_timed(instrument)
@@ -10,15 +8,11 @@ sys.ps_is_instrument_default_timed(instrument)
 
 ## Description
 
+`ps_is_instrument_default_timed` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../).
 
-`ps_is_instrument_default_timed` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
-
-
-It returns `YES` if the given Performance Schema *instrument* is timed by default, and `NO` if it is not, does not exist, or is a NULL value.
-
+It returns `YES` if the given Performance Schema _instrument_ is timed by default, and `NO` if it is not, does not exist, or is a NULL value.
 
 ## Examples
-
 
 ```
 SELECT sys.ps_is_instrument_default_timed('statement/sql/select');
@@ -50,6 +44,4 @@ SELECT sys.ps_is_instrument_default_timed(NULL);
 +------------------------------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

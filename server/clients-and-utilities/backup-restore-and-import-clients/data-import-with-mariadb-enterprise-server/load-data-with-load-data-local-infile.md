@@ -1,28 +1,20 @@
+# load-data-with-load-data-local-infile
 
-# LOAD DATA With LOAD DATA LOCAL INFILE
+## LOAD DATA With LOAD DATA LOCAL INFILE
 
-
-# Overview
-
+## Overview
 
 MariaDB Enterprise Server users can import data into a database using the `LOAD DATA LOCAL INFILE` statement:
-
 
 * The `LOAD DATA LOCAL INFILE` statement can import data from TSV and CSV files
 * The `LOAD DATA LOCAL INFILE` statement can be executed by any client or connector
 
+## Compatibility
 
-# Compatibility
-
-
-# Import Schema
-
+## Import Schema
 
 1. Determine the [connection parameters](https://mariadb.com/kb/en/connection_parameters) for your MariaDB Enterprise Server database.
-
-
-2. Use [mariadb client](../../mariadb-client/README.md) with the connection information to import your schema into your MariaDB Enterprise Server database:
-
+2. Use [mariadb client](../../mariadb-client/) with the connection information to import your schema into your MariaDB Enterprise Server database:
 
 ```
 $ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
@@ -38,18 +30,12 @@ $ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 * Replace `DATABASE_USER` with the username for your database user account
 * If TLS is required, replace `/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file
 
-
 3. After the command is executed, you will be prompted for the password of your database user account.
 
-
-# Import Data
-
+## Import Data
 
 1. Determine the connection parameters for your MariaDB Enterprise Server database.
-
-
-2. Connect with the [mariadb client](../../mariadb-client/README.md) and specify the `--local-infile` option, which is needed by the next step:
-
+2. Connect with the [mariadb client](../../mariadb-client/) and specify the `--local-infile` option, which is needed by the next step:
 
 ```
 $ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
@@ -62,24 +48,16 @@ $ mariadb --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 
 **Replace `FULLY_QUALIFIED_DOMAIN_NAME` with the IP address or Fully Qualified Domain Name of your database**
 
-
 **Replace `TCP_PORT` with the TCP port of your database**
-
 
 **Replace `DATABASE_USER` with the username for your database user account**
 
-
 **If TLS is required, replace `/PATH_TO_PEM_FILE` with the path to the certificate authority chain (.pem) file**
 
-
 3. After the command is executed, you will be prompted for the password of your database user account.
-
-
 4. For each table that you want to import, execute the `LOAD DATA LOCAL INFILE` statement to import the data from the TSV or CSV file into your MariaDB Enterprise Server database.
 
-
 For a TSV file:
-
 
 ```
 LOAD DATA LOCAL INFILE 'contacts.tsv'
@@ -93,20 +71,15 @@ INTO TABLE accounts.contacts
 FIELDS TERMINATED BY ',';
 ```
 
-# MariaDB Connectors
-
+## MariaDB Connectors
 
 To execute the `LOAD DATA LOCAL INFILE` statement, most clients and connectors require a specific option to be enabled.
 
+The section above mentions that [mariadb client](../../mariadb-client/) requires the `--local-infile` option to be specified.
 
-The section above mentions that [mariadb client](../../mariadb-client/README.md) requires the `--local-infile` option to be specified.
+If you are using a [MariaDB Connector](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors) instead of the [mariadb client](../../mariadb-client/), then you must use a different method to enable support for the `LOAD DATA LOCAL INFILE` statement.
 
-
-If you are using a [MariaDB Connector](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/) instead of the [mariadb client](../../mariadb-client/README.md), then you must use a different method to enable support for the `LOAD DATA LOCAL INFILE` statement.
-
-
-If you are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/), the `MYSQL_OPT_LOCAL_INFILE` option can be set with the mysql_optionsv() function:
-
+If you are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), the `MYSQL_OPT_LOCAL_INFILE` option can be set with the mysql\_optionsv() function:
 
 ```
 /* enable local infile */
@@ -114,15 +87,13 @@ unsigned int enable_local_infile = 1;
 mysql_optionsv(mysql, MYSQL_OPT_LOCAL_INFILE, (void *) &enable_local_infile);
 ```
 
-If you are using [MariaDB Connector/J](/en/about-mariadb-connector-j/), the allowLocalInfile parameter can be set for the connection:
-
+If you are using [MariaDB Connector/J](../../../../en/about-mariadb-connector-j/), the allowLocalInfile parameter can be set for the connection:
 
 ```
 Connection connection = DriverManager.getConnection("jdbc:mariadb://FULLY_QUALIFIED_DOMAIN_NAME:TCP_PORT/test?user=DATABASE_USER&password=DATABASE_PASSWORD&allowLocalInfile=true");
 ```
 
 If you are using [MariaDB Connector/Node.js](https://mariadb.com/kb/en/nodejs-connector/), the permitLocalInfile parameter can be set for the connection:
-
 
 ```
 mariadb.createConnection({
@@ -134,8 +105,7 @@ mariadb.createConnection({
  });
 ```
 
-If you are using [MariaDB Connector/Python](/en/mariadb-connector-python/), the `local_infile` parameter can be set for the connection:
-
+If you are using [MariaDB Connector/Python](../../../../en/mariadb-connector-python/), the `local_infile` parameter can be set for the connection:
 
 ```
 conn = mariadb.connect(
@@ -146,6 +116,4 @@ conn = mariadb.connect(
    local_infile=true)
 ```
 
-
 Copyright © 2025 MariaDB
-

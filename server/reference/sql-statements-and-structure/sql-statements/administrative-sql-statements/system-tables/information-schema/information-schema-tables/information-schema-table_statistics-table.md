@@ -1,34 +1,26 @@
+# Information Schema TABLE\_STATISTICS Table
 
-# Information Schema TABLE_STATISTICS Table
+The [Information Schema](../) `TABLE_STATISTICS` table shows statistics on table usage.
 
-The [Information Schema](../README.md) `TABLE_STATISTICS` table shows statistics on table usage.
-
-
-This is part of the [User Statistics](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
-
+This is part of the [User Statistics](../../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) feature, which is not enabled by default.
 
 It contains the following columns:
 
-
-
-| Field | Type | Notes |
-| --- | --- | --- |
-| Field | Type | Notes |
-| TABLE_SCHEMA | varchar(192) | The schema (database) name. |
-| TABLE_NAME | varchar(192) | The table name. |
-| ROWS_READ | bigint(21) | The number of rows read from the table. |
-| ROWS_CHANGED | bigint(21) | The number of rows changed in the table. |
-| ROWS_CHANGED_X_INDEXES | bigint(21) | The number of rows changed in the table, multiplied by the number of indexes changed. |
-| ROWS_INSERTED | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| ROWS_UPDATED | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| ROWS_DELETED | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| KEY_READ_HITS | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-| KEY_READ_MISSES | bigint(21) | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
-
-
+| Field                     | Type         | Notes                                                                                                                                                                                   |
+| ------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field                     | Type         | Notes                                                                                                                                                                                   |
+| TABLE\_SCHEMA             | varchar(192) | The schema (database) name.                                                                                                                                                             |
+| TABLE\_NAME               | varchar(192) | The table name.                                                                                                                                                                         |
+| ROWS\_READ                | bigint(21)   | The number of rows read from the table.                                                                                                                                                 |
+| ROWS\_CHANGED             | bigint(21)   | The number of rows changed in the table.                                                                                                                                                |
+| ROWS\_CHANGED\_X\_INDEXES | bigint(21)   | The number of rows changed in the table, multiplied by the number of indexes changed.                                                                                                   |
+| ROWS\_INSERTED            | bigint(21)   | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| ROWS\_UPDATED             | bigint(21)   | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| ROWS\_DELETED             | bigint(21)   | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY\_READ\_HITS           | bigint(21)   | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
+| KEY\_READ\_MISSES         | bigint(21)   | From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) |
 
 #### Example
-
 
 ```
 SELECT * FROM INFORMATION_SCHEMA.TABLE_STATISTICS WHERE TABLE_NAME='user';
@@ -39,6 +31,4 @@ SELECT * FROM INFORMATION_SCHEMA.TABLE_STATISTICS WHERE TABLE_NAME='user';
 +--------------+------------+-----------+--------------+------------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

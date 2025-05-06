@@ -1,8 +1,6 @@
-
 # WEEK
 
 ## Syntax
-
 
 ```
 WEEK(date[,mode])
@@ -10,36 +8,27 @@ WEEK(date[,mode])
 
 ## Description
 
-
-This function returns the week number for `date`. The two-argument form of
-`WEEK()` allows you to specify whether the week starts on Sunday or Monday
-and whether the return value should be in the range from 0 to 53 or from 1 to
-53. If the `mode` argument is omitted, the value of the [default_week_format](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format) system variable is used.
-
+This function returns the week number for `date`. The two-argument form of`WEEK()` allows you to specify whether the week starts on Sunday or Monday\
+and whether the return value should be in the range from 0 to 53 or from 1 to\
+53\. If the `mode` argument is omitted, the value of the [default\_week\_format](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format) system variable is used.
 
 ### Modes
 
-
-
 | Mode | 1st day of week | Range | Week 1 is the 1st week with |
-| --- | --- | --- | --- |
+| ---- | --------------- | ----- | --------------------------- |
 | Mode | 1st day of week | Range | Week 1 is the 1st week with |
-| 0 | Sunday | 0-53 | a Sunday in this year |
-| 1 | Monday | 0-53 | more than 3 days this year |
-| 2 | Sunday | 1-53 | a Sunday in this year |
-| 3 | Monday | 1-53 | more than 3 days this year |
-| 4 | Sunday | 0-53 | more than 3 days this year |
-| 5 | Monday | 0-53 | a Monday in this year |
-| 6 | Sunday | 1-53 | more than 3 days this year |
-| 7 | Monday | 1-53 | a Monday in this year |
-
-
+| 0    | Sunday          | 0-53  | a Sunday in this year       |
+| 1    | Monday          | 0-53  | more than 3 days this year  |
+| 2    | Sunday          | 1-53  | a Sunday in this year       |
+| 3    | Monday          | 1-53  | more than 3 days this year  |
+| 4    | Sunday          | 0-53  | more than 3 days this year  |
+| 5    | Monday          | 0-53  | a Monday in this year       |
+| 6    | Sunday          | 1-53  | more than 3 days this year  |
+| 7    | Monday          | 1-53  | a Monday in this year       |
 
 With the mode value of 3, which means 'more than 3 days this year', weeks are numbered according to ISO 8601:1988.
 
-
 ## Examples
-
 
 ```
 SELECT WEEK('2008-02-20');
@@ -110,6 +99,4 @@ SELECT d, WEEK(d,0), WEEK(d,1) from t1;
 +---------------------+-----------+-----------+
 ```
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

@@ -1,8 +1,6 @@
-
 # SHOW INDEX
 
 ## Syntax
-
 
 ```
 SHOW {INDEX | INDEXES | KEYS} 
@@ -10,18 +8,13 @@ SHOW {INDEX | INDEXES | KEYS}
  [WHERE expr]
 ```
 
-
 ## Description
 
-
-`SHOW INDEX` returns table index information. The format
+`SHOW INDEX` returns table index information. The format\
 resembles that of the SQLStatistics call in ODBC.
 
-
-You can use `db_name.tbl_name` as an alternative to the
- `tbl_name FROM db_name` syntax. These two statements are
- equivalent:
-
+You can use `db_name.tbl_name` as an alternative to the`tbl_name FROM db_name` syntax. These two statements are\
+equivalent:
 
 ```
 SHOW INDEX FROM mytable FROM mydb;
@@ -30,46 +23,37 @@ SHOW INDEX FROM mydb.mytable;
 
 `SHOW KEYS` and `SHOW INDEXES` are synonyms for `SHOW INDEX`.
 
-
 You can also list a table's indexes with the [mariadb-show](../../../../../clients-and-utilities/mariadb-show.md) command:
-
 
 ```
 mariadb-show -k db_name tbl_name
 ```
 
-The [information_schema.STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) table stores similar information.
-
+The [information\_schema.STATISTICS](../system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) table stores similar information.
 
 The following fields are returned by `SHOW INDEX`.
 
-
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Table | Table name |
-| Non_unique | 1 if the index permits duplicate values, 0 if values must be unique. |
-| Key_name | Index name. The primary key is always named PRIMARY. |
-| Seq_in_index | The column's sequence in the index, beginning with 1. |
-| Column_name | Column name. |
-| Collation | Either A, if the column is sorted in ascending order in the index, or NULL if it's not sorted. |
-| Cardinality | Estimated number of unique values in the index. The cardinality statistics are calculated at various times, and can help the optimizer make improved decisions. |
-| Sub_part | NULL if the entire column is included in the index, or the number of included characters if not. |
-| Packed | NULL if the index is not packed, otherwise how the index is packed. |
-| Null | NULL if NULL values are permitted in the column, an empty string if NULLs are not permitted. |
-| Index_type | The index type, which can be BTREE, FULLTEXT, HASH or RTREE. See [Storage Engine Index Types](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md). |
-| Comment | Other information, such as whether the index is disabled. |
-| Index_comment | Contents of the COMMENT attribute when the index was created. |
-| Ignored | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
-
-
+| Field          | Description                                                                                                                                                                                                                                                                                                                                                        |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Field          | Description                                                                                                                                                                                                                                                                                                                                                        |
+| Table          | Table name                                                                                                                                                                                                                                                                                                                                                         |
+| Non\_unique    | 1 if the index permits duplicate values, 0 if values must be unique.                                                                                                                                                                                                                                                                                               |
+| Key\_name      | Index name. The primary key is always named PRIMARY.                                                                                                                                                                                                                                                                                                               |
+| Seq\_in\_index | The column's sequence in the index, beginning with 1.                                                                                                                                                                                                                                                                                                              |
+| Column\_name   | Column name.                                                                                                                                                                                                                                                                                                                                                       |
+| Collation      | Either A, if the column is sorted in ascending order in the index, or NULL if it's not sorted.                                                                                                                                                                                                                                                                     |
+| Cardinality    | Estimated number of unique values in the index. The cardinality statistics are calculated at various times, and can help the optimizer make improved decisions.                                                                                                                                                                                                    |
+| Sub\_part      | NULL if the entire column is included in the index, or the number of included characters if not.                                                                                                                                                                                                                                                                   |
+| Packed         | NULL if the index is not packed, otherwise how the index is packed.                                                                                                                                                                                                                                                                                                |
+| Null           | NULL if NULL values are permitted in the column, an empty string if NULLs are not permitted.                                                                                                                                                                                                                                                                       |
+| Index\_type    | The index type, which can be BTREE, FULLTEXT, HASH or RTREE. See [Storage Engine Index Types](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md).                                                                                                                                                   |
+| Comment        | Other information, such as whether the index is disabled.                                                                                                                                                                                                                                                                                                          |
+| Index\_comment | Contents of the COMMENT attribute when the index was created.                                                                                                                                                                                                                                                                                                      |
+| Ignored        | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
 
 The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-
 ## Examples
-
 
 ```
 CREATE TABLE IF NOT EXISTS `employees_example` (
@@ -161,10 +145,7 @@ Index_comment:
 
 ## See Also
 
+* [Ignored Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
+* [SHOW INDEX\_STATISTICS](show-index-statistics.md)
 
-* [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
-* [SHOW INDEX_STATISTICS](show-index-statistics.md)
-
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

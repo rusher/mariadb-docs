@@ -1,11 +1,10 @@
+# explain-in-the-slow-query-log
 
-# EXPLAIN in the Slow Query Log
+## EXPLAIN in the Slow Query Log
 
-## Switching it On
+### Switching it On
 
-
-[EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output can be switched on by specifying the "`explain`" keyword in the [log_slow_verbosity](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. Alternatively, you can set with the `log-slow-verbosity` command line argument.
-
+[EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output can be switched on by specifying the "`explain`" keyword in the [log\_slow\_verbosity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. Alternatively, you can set with the `log-slow-verbosity` command line argument.
 
 ```
 [mysqld]
@@ -14,12 +13,9 @@ log-slow-verbosity=query_plan,explain
 
 EXPLAIN output will only be recorded if the slow query log is written to a file (and not to a table - see [Writing logs into tables](../writing-logs-into-tables.md)). This limitation also applies to other extended statistics that are written into the slow query log.
 
-
-## What it Looks Like
-
+### What it Looks Like
 
 When explain recording is on, slow query log entries look like this:
-
 
 ```
 # Time: 131112 17:03:32
@@ -36,16 +32,12 @@ SET timestamp=1384261412;
 select count(*) from customer, orders, nation where c_custkey=o_custkey and c_nationkey=n_nationkey and n_name='GERMANY';
 ```
 
-EXPLAIN lines start with `
+EXPLAIN lines start with \`
 
-# explain:`.
+## explain:\`.
 
-
-## See Also
-
+### See Also
 
 * [MDEV-407](https://jira.mariadb.org/browse/MDEV-407)
 
-
 CC BY-SA / Gnu FDL
-

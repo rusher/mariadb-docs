@@ -1,28 +1,20 @@
-
 # IF Function
 
 ## Syntax
-
 
 ```
 IF(expr1,expr2,expr3)
 ```
 
-
 ## Description
 
-
-If `expr1` is `TRUE` (`expr1 <> 0` and `expr1 <> NULL`) then `IF()`
-returns `expr2`; otherwise it returns `expr3`. `IF()` returns a numeric
+If `expr1` is `TRUE` (`expr1 <> 0` and `expr1 <> NULL`) then `IF()`\
+returns `expr2`; otherwise it returns `expr3`. `IF()` returns a numeric\
 or string value, depending on the context in which it is used.
 
-
-**Note:** There is also an [IF statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/if.md) which differs from the
-`IF()` function described here.
-
+**Note:** There is also an [IF statement](../../../../../server-usage/programmatic-compound-statements/if.md) which differs from the`IF()` function described here.
 
 ## Examples
-
 
 ```
 SELECT IF(1>2,2,3);
@@ -53,9 +45,6 @@ SELECT IF(STRCMP('test','test1'),'no','yes');
 
 ## See Also
 
+There is also an [IF statement](../../../../../server-usage/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
 
-There is also an [IF statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
-
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

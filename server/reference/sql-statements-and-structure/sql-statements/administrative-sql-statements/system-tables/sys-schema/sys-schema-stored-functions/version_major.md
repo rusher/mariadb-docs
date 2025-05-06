@@ -1,8 +1,6 @@
-
-# version_major
+# version\_major
 
 ## Syntax
-
 
 ```
 sys.version_major()
@@ -10,15 +8,11 @@ sys.version_major()
 
 ## Description
 
-
-`version_major` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
-
+`version_major` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../).
 
 It returns the MariaDB Server major release version.
 
-
 ## Examples
-
 
 ```
 SELECT VERSION(),
@@ -34,10 +28,7 @@ SELECT VERSION(),
 
 ## See Also
 
-
-* [version_minor](version_minor.md)
-* [version_patch](version_patch.md)
-
+* [version\_minor](version_minor.md)
+* [version\_patch](version_patch.md)
 
 CC BY-SA / Gnu FDL
-

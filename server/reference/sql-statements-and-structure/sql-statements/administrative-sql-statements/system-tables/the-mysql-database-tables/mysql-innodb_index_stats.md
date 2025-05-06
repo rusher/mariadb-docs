@@ -1,35 +1,26 @@
+# mysql.innodb\_index\_stats
 
-# mysql.innodb_index_stats
+The `mysql.innodb_index_stats` table stores data related to particular [InnoDB Persistent Statistics](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains multiple rows for each index.
 
-The `mysql.innodb_index_stats` table stores data related to particular [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md), and contains multiple rows for each index.
-
-
-This table, along with the related [mysql.innodb_table_stats](mysql-innodb_table_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb_index_stats](../../flush-commands/flush.md) is required to load the changes.
-
+This table, along with the related [mysql.innodb\_table\_stats](mysql-innodb_table_stats.md) table, can be manually updated in order to force or test differing query optimization plans. After updating, [FLUSH TABLE innodb\_index\_stats](../../flush-commands/flush.md) is required to load the changes.
 
 `mysql.innodb_index_stats` is not replicated, although any [ANALYZE TABLE](../../../table-statements/analyze-table.md) statements on the table will be by default..
 
-
 It contains the following fields:
 
-
-
-| Field | Type | Null | Key | Default | Description |
-| --- | --- | --- | --- | --- | --- |
-| Field | Type | Null | Key | Default | Description |
-| database_name | varchar(64) | NO | PRI | NULL | Database name. |
-| table_name | varchar(64) | NO | PRI | NULL | Table, partition or subpartition name. |
-| index_name | varchar(64) | NO | PRI | NULL | Index name. |
-| last_update | timestamp | NO |  | current_timestamp() | Time that this row was last updated. |
-| stat_name | varchar(64) | NO | PRI | NULL | Statistic name. |
-| stat_value | bigint(20) unsigned | NO |  | NULL | Estimated statistic value. |
-| sample_size | bigint(20) unsigned | YES |  | NULL | Number of pages sampled for the estimated statistic value. |
-| stat_description | varchar(1024) | NO |  | NULL | Statistic description. |
-
-
+| Field             | Type                | Null | Key | Default              | Description                                                |
+| ----------------- | ------------------- | ---- | --- | -------------------- | ---------------------------------------------------------- |
+| Field             | Type                | Null | Key | Default              | Description                                                |
+| database\_name    | varchar(64)         | NO   | PRI | NULL                 | Database name.                                             |
+| table\_name       | varchar(64)         | NO   | PRI | NULL                 | Table, partition or subpartition name.                     |
+| index\_name       | varchar(64)         | NO   | PRI | NULL                 | Index name.                                                |
+| last\_update      | timestamp           | NO   |     | current\_timestamp() | Time that this row was last updated.                       |
+| stat\_name        | varchar(64)         | NO   | PRI | NULL                 | Statistic name.                                            |
+| stat\_value       | bigint(20) unsigned | NO   |     | NULL                 | Estimated statistic value.                                 |
+| sample\_size      | bigint(20) unsigned | YES  |     | NULL                 | Number of pages sampled for the estimated statistic value. |
+| stat\_description | varchar(1024)       | NO   |     | NULL                 | Statistic description.                                     |
 
 ## Example
-
 
 ```
 SELECT * FROM mysql.innodb_index_stats\G
@@ -92,11 +83,8 @@ stat_description: Number of leaf pages in the index
 
 ## See Also
 
-
-* [InnoDB Persistent Statistics](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
-* [mysql.innodb_table_stats](mysql-innodb_table_stats.md)
+* [InnoDB Persistent Statistics](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
+* [mysql.innodb\_table\_stats](mysql-innodb_table_stats.md)
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
-
 CC BY-SA / Gnu FDL
-

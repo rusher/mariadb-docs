@@ -1,28 +1,20 @@
-
-# mroonga_normalize
+# mroonga\_normalize
 
 ## Syntax
-
 
 ```
 mroonga_normalize(string[, normalizer_name])
 ```
 
-
 ## Description
 
-
-`mroonga_normalize` is a [user-defined function](../../../../server-usage/programming-customizing-mariadb/user-defined-functions/README.md) (UDF) included with the [Mroonga storage engine](../README.md). It uses Groonga's normalizer to normalize text. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
-
+`mroonga_normalize` is a [user-defined function](../../../../server-usage/user-defined-functions/) (UDF) included with the [Mroonga storage engine](../). It uses Groonga's normalizer to normalize text. See [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md) for details on creating this UDF if required.
 
 Given a string, returns the normalized text.
 
-
 See the [Groonga Normalizer Reference](https://groonga.org/docs/reference/normalizers.html) for details on the Groonga normalizers. The default if no normalizer is provided is `NormalizerAuto`.
 
-
 ## Examples
-
 
 ```
 SELECT mroonga_normalize("ABぃ㍑");
@@ -35,9 +27,6 @@ SELECT mroonga_normalize("ABぃ㍑");
 
 ## See Also
 
-
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 
-
 CC BY-SA / Gnu FDL
-

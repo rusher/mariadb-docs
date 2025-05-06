@@ -1,13 +1,10 @@
+# JSON\_OBJECTAGG
 
-# JSON_OBJECTAGG
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
-
-##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
-JSON_OBJECTAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
-
+JSON\_OBJECTAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes).
 
 ## Syntax
-
 
 ```
 JSON_OBJECTAGG(key, value)
@@ -15,21 +12,15 @@ JSON_OBJECTAGG(key, value)
 
 ## Description
 
-
 `JSON_OBJECTAGG` returns a JSON object containing key-value pairs. It takes two expressions that evaluate to a single value, or two column names, as arguments, the first used as a key, and the second as a value.
 
-
-The maximum returned length in bytes is determined by the [group_concat_max_len](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
-
+The maximum returned length in bytes is determined by the [group\_concat\_max\_len](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
 
 Returns NULL in the case of an error, or if the result contains no rows.
 
-
-`JSON_OBJECTAGG` cannot currently be used as a [window function](../window-functions/README.md).
-
+`JSON_OBJECTAGG` cannot currently be used as a [window function](../window-functions/).
 
 ## Examples
-
 
 ```
 select * from t1;
@@ -49,6 +40,4 @@ SELECT JSON_OBJECTAGG(a, b) FROM t1;
 +----------------------------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

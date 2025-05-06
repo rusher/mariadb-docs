@@ -1,8 +1,6 @@
-
-# version_patch
+# version\_patch
 
 ## Syntax
-
 
 ```
 sys.version_patch()
@@ -10,15 +8,11 @@ sys.version_patch()
 
 ## Description
 
-
-`version_patch` is a [stored function](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md) available with the [Sys Schema](../README.md).
-
+`version_patch` is a [stored function](../../../../../../../server-usage/stored-routines/stored-functions/) available with the [Sys Schema](../).
 
 It returns the MariaDB Server patch release version.
 
-
 ## Examples
-
 
 ```
 SELECT VERSION(),
@@ -34,10 +28,7 @@ SELECT VERSION(),
 
 ## See Also
 
-
-* [version_major](version_major.md)
-* [version_minor](version_minor.md)
-
+* [version\_major](version_major.md)
+* [version\_minor](version_minor.md)
 
 CC BY-SA / Gnu FDL
-

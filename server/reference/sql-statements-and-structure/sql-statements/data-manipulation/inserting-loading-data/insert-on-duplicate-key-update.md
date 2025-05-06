@@ -1,8 +1,6 @@
-
 # INSERT ON DUPLICATE KEY UPDATE
 
 ## Syntax
-
 
 ```
 INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
@@ -15,7 +13,6 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
 
 Or:
 
-
 ```
 INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [PARTITION (partition_list)]
@@ -27,7 +24,6 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
 
 Or:
 
-
 ```
 INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
@@ -37,39 +33,27 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
         [, col=expr] ... ]
 ```
 
-
 ## Description
 
-
-INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](insert.md) statement that, if it finds a duplicate unique or [primary key](/kb/en/getting-started-with-indexes/#primary-key), will instead perform an [UPDATE](../changing-deleting-data/update.md).
-
+INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](insert.md) statement that, if it finds a duplicate unique or [primary key](../../../../../../kb/en/getting-started-with-indexes/#primary-key), will instead perform an [UPDATE](../changing-deleting-data/update.md).
 
 The row/s affected value is reported as 1 if a row is inserted, and 2 if a row is updated, unless the API's `CLIENT_FOUND_ROWS` flag is set.
 
-
 If more than one unique index is matched, only the first is updated. It is not recommended to use this statement on tables with more than one unique index.
 
-
-If the table has an [AUTO_INCREMENT](../../../../data-types/auto_increment.md) [primary key](/kb/en/getting-started-with-indexes/#primary-key) and the statement inserts or updates a row, the [LAST_INSERT_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO_INCREMENT value.
-
+If the table has an [AUTO\_INCREMENT](../../../../data-types/auto_increment.md) [primary key](../../../../../../kb/en/getting-started-with-indexes/#primary-key) and the statement inserts or updates a row, the [LAST\_INSERT\_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO\_INCREMENT value.
 
 The [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `ON DUPLICATE KEY UPDATE` clause and has no meaning in any other context. It returns the column values from the `INSERT` portion of the statement. This function is particularly useful for multi-rows inserts.
 
-
 The [IGNORE](ignore.md) and [DELAYED](insert-delayed.md) options are ignored when you use `ON DUPLICATE KEY UPDATE`.
-
 
 See [Partition Pruning and Selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details on the PARTITION clause.
 
-
-This statement activates INSERT and UPDATE triggers. See [Trigger Overview](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-overview.md) for details.
-
+This statement activates INSERT and UPDATE triggers. See [Trigger Overview](../../../../../server-usage/triggers-events/triggers/trigger-overview.md) for details.
 
 See also a similar statement, [REPLACE](../changing-deleting-data/replace.md).
 
-
 ## Examples
-
 
 ```
 CREATE TABLE ins_duplicate (id INT PRIMARY KEY, animal VARCHAR(30));
@@ -77,7 +61,6 @@ INSERT INTO ins_duplicate VALUES (1,'Aardvark'), (2,'Cheetah'), (3,'Zebra');
 ```
 
 If there is no existing key, the statement runs as a regular INSERT:
-
 
 ```
 INSERT INTO ins_duplicate VALUES (4,'Gorilla') 
@@ -99,14 +82,12 @@ SELECT * FROM ins_duplicate;
 
 A regular INSERT with a primary key value of 1 will fail, due to the existing key:
 
-
 ```
 INSERT INTO ins_duplicate VALUES (1,'Antelope');
 ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
 ```
 
 However, we can use an INSERT ON DUPLICATE KEY UPDATE instead:
-
 
 ```
 INSERT INTO ins_duplicate VALUES (1,'Antelope') 
@@ -115,7 +96,6 @@ Query OK, 2 rows affected (0.09 sec)
 ```
 
 Note that there are two rows reported as affected, but this refers only to the UPDATE.
-
 
 ```
 SELECT * FROM ins_duplicate;
@@ -131,7 +111,6 @@ SELECT * FROM ins_duplicate;
 
 Adding a second unique column:
 
-
 ```
 ALTER TABLE ins_duplicate ADD id2 INT;
 UPDATE ins_duplicate SET id2=id+10;
@@ -139,7 +118,6 @@ ALTER TABLE ins_duplicate ADD UNIQUE KEY(id2);
 ```
 
 Where two rows match the unique keys match, only the first is updated. This can be unsafe and is not recommended unless you are certain what you are doing.
-
 
 ```
 INSERT INTO ins_duplicate VALUES (2,'Lion',13) 
@@ -159,9 +137,7 @@ SELECT * FROM ins_duplicate;
 
 Although the third row with an id of 3 has an id2 of 13, which also matched, it was not updated.
 
-
-Changing id to an auto_increment field. If a new row is added, the auto_increment is moved forward. If the row is updated, it remains the same.
-
+Changing id to an auto\_increment field. If a new row is added, the auto\_increment is moved forward. If the row is updated, it remains the same.
 
 ```
 ALTER TABLE `ins_duplicate` CHANGE `id` `id` INT( 11 ) NOT NULL AUTO_INCREMENT;
@@ -212,7 +188,6 @@ SELECT Auto_increment FROM INFORMATION_SCHEMA.TABLES
 
 Refering to column values from the INSERT portion of the statement:
 
-
 ```
 INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)
     ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);
@@ -220,19 +195,15 @@ INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)
 
 See the [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function for more.
 
-
 ## See Also
-
 
 * [INSERT](insert.md)
 * [INSERT DELAYED](insert-delayed.md)
 * [INSERT SELECT](insert-select.md)
-* [HIGH_PRIORITY and LOW_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)
+* [HIGH\_PRIORITY and LOW\_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md)
 * [Concurrent Inserts](concurrent-inserts.md)
 * [INSERT - Default & Duplicate Values](insert-default-duplicate-values.md)
 * [INSERT IGNORE](insert-ignore.md)
 * [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md)
 
-
 CC BY-SA / Gnu FDL
-

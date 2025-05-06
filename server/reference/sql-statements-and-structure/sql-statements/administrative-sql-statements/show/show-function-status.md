@@ -1,8 +1,6 @@
-
 # SHOW FUNCTION STATUS
 
 ## Syntax
-
 
 ```
 SHOW FUNCTION STATUS
@@ -11,26 +9,17 @@ SHOW FUNCTION STATUS
 
 ## Description
 
-
-This statement is similar to 
-`[SHOW PROCEDURE STATUS](show-procedure-status.md)` but for
-[stored functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
-
+This statement is similar to`[SHOW PROCEDURE STATUS](show-procedure-status.md)` but for[stored functions](../../../../../server-usage/stored-routines/stored-functions/).
 
 The LIKE clause, if present on its own, indicates which function names to match.
 
-
 The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
-
 
 The `[information_schema.ROUTINES](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)` table contains more detailed information.
 
-
 ## Examples
 
-
 Showing all stored functions:
-
 
 ```
 SHOW FUNCTION STATUS\G
@@ -50,7 +39,6 @@ collation_connection: utf8_general_ci
 
 Stored functions whose name starts with 'V':
 
-
 ```
 SHOW FUNCTION STATUS LIKE 'V%' \G
 *************************** 1. row ***************************
@@ -69,7 +57,6 @@ collation_connection: utf8_general_ci
 
 Stored functions with a security type of 'DEFINER':
 
-
 ```
 SHOW FUNCTION STATUS WHERE Security_type LIKE 'DEFINER' \G
 *************************** 1. row ***************************
@@ -86,6 +73,4 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

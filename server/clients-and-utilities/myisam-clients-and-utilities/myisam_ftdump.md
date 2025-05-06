@@ -1,24 +1,18 @@
+# myisam\_ftdump
 
-# myisam_ftdump
-
-myisam_ftdump is a utility for displaying information about [MyISAM](../../reference/storage-engines/myisam-storage-engine/README.md) [FULLTEXT](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/full-text-indexes/README.md) indexes. It will scan and dump the entire index, and can be a lengthy process.
-
+myisam\_ftdump is a utility for displaying information about [MyISAM](../../reference/storage-engines/myisam-storage-engine/) [FULLTEXT](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) indexes. It will scan and dump the entire index, and can be a lengthy process.
 
 If the server is running, make sure you run a [FLUSH TABLES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement first.
 
-
 ## Usage
-
 
 ```
 myisam_ftdump <table_name> <index_num>
 ```
 
-The table_name can be specified with or without the .MYI index extension.
-
+The table\_name can be specified with or without the .MYI index extension.
 
 The index number refers to the number of the index when the table was defined, starting at zero. For example, take the following table definition:
-
 
 ```
 CREATE TABLE IF NOT EXISTS `employees_example` (
@@ -38,9 +32,7 @@ CREATE TABLE IF NOT EXISTS `employees_example` (
 
 The fulltext index will be `2`. The primary key is index `0`, and the unique key index `1`.
 
-
-You can use *myisam_ftdump* to generate a list of index entries in order of frequency of occurrence as follows:
-
+You can use _myisam\_ftdump_ to generate a list of index entries in order of frequency of occurrence as follows:
 
 ```
 myisam_ftdump -c mytexttable 1 | sort -r
@@ -48,21 +40,15 @@ myisam_ftdump -c mytexttable 1 | sort -r
 
 ## Options
 
-
-
-| Option | Description |
-| --- | --- |
-| Option | Description |
-| -h, --help | Display help and exit. |
-| -?, --help | Synonym for -h. |
-| -c, --count | Calculate per-word stats (counts and global weights). |
-| -d, --dump | Dump index (incl. data offsets and word weights). |
-| -l, --length | Report length distribution. |
-| -s, --stats | Report global stats. |
-| -v, --verbose | Be verbose. |
-
-
-
+| Option        | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| Option        | Description                                           |
+| -h, --help    | Display help and exit.                                |
+| -?, --help    | Synonym for -h.                                       |
+| -c, --count   | Calculate per-word stats (counts and global weights). |
+| -d, --dump    | Dump index (incl. data offsets and word weights).     |
+| -l, --length  | Report length distribution.                           |
+| -s, --stats   | Report global stats.                                  |
+| -v, --verbose | Be verbose.                                           |
 
 CC BY-SA / Gnu FDL
-

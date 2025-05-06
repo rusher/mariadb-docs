@@ -1,8 +1,6 @@
-
-# statement_performance_analyzer
+# statement\_performance\_analyzer
 
 ## Syntax
-
 
 ```
 statement_performance_analyzer(in_action,in_table, in_views)
@@ -17,19 +15,13 @@ statement_performance_analyzer(in_action,in_table, in_views)
 
 ## Description
 
+`statement_performance_analyzer` is a [stored procedure](../../../../../../../server-usage/stored-routines/stored-procedures/) available with the [Sys Schema](../) which returns a report on running statements.
 
-`statement_performance_analyzer` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../README.md) which returns a report on running statements.
+The following options from the [sys\_config](../sys-schema-sys_config-table.md) table impact the output:
 
-
-The following options from the [sys_config](../sys-schema-sys_config-table.md) table impact the output:
-
-
-* statement_performance_analyzer.limit - maximum number of rows (default 100) returned for views that have no built-in limit.
-* statement_performance_analyzer.view - custom query/view to be used (default NULL). If the statement_performance_analyzer.limit configuration option is greater than 0, there can't be a LIMIT clause in the query/view definition
-
+* statement\_performance\_analyzer.limit - maximum number of rows (default 100) returned for views that have no built-in limit.
+* statement\_performance\_analyzer.view - custom query/view to be used (default NULL). If the statement\_performance\_analyzer.limit configuration option is greater than 0, there can't be a LIMIT clause in the query/view definition
 
 If the debug option is set (default OFF), the procedure will also produce debugging output.
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,38 +1,28 @@
-
 # SHOW PROCEDURE CODE
 
 ## Syntax
-
 
 ```
 SHOW PROCEDURE CODE proc_name
 ```
 
-
 ## Description
 
+This statement is a MariaDB extension that is available only for servers that\
+have been built with debugging support. It displays a representation of the\
+internal implementation of the named [stored procedure](../../../../../server-usage/stored-routines/stored-procedures/). A similar statement,`[SHOW FUNCTION CODE](show-function-code.md)`, displays\
+information about [stored functions](../../../../../server-usage/stored-routines/stored-functions/).
 
-This statement is a MariaDB extension that is available only for servers that
-have been built with debugging support. It displays a representation of the
-internal implementation of the named [stored procedure](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md). A similar statement,
- `[SHOW FUNCTION CODE](show-function-code.md)`, displays
-information about [stored functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
+Both statements require that you be the owner of the routine or have`[SELECT](../../account-management-sql-commands/grant.md)` access to the `[mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md)` table.
 
-
-Both statements require that you be the owner of the routine or have
- `[SELECT](../../account-management-sql-commands/grant.md)` access to the `[mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md)` table.
-
-
-If the named routine is available, each statement produces a result
-set. Each row in the result set corresponds to one "instruction" in
-the routine. The first column is Pos, which is an ordinal number
-beginning with 0. The second column is Instruction, which contains an
-SQL statement (usually changed from the original source), or a
+If the named routine is available, each statement produces a result\
+set. Each row in the result set corresponds to one "instruction" in\
+the routine. The first column is Pos, which is an ordinal number\
+beginning with 0. The second column is Instruction, which contains an\
+SQL statement (usually changed from the original source), or a\
 directive which has meaning only to the stored-routine handler.
 
-
 ## Examples
-
 
 ```
 DELIMITER //
@@ -60,16 +50,13 @@ SHOW PROCEDURE CODE p1//
 
 ## See Also
 
-
-* [Stored Procedure Overview](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/stored-procedure-overview.md)
-* [CREATE PROCEDURE](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md)
-* [ALTER PROCEDURE](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/alter-procedure.md)
-* [DROP PROCEDURE](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/drop-procedure.md)
+* [Stored Procedure Overview](../../../../../server-usage/stored-routines/stored-procedures/stored-procedure-overview.md)
+* [CREATE PROCEDURE](../../../../../server-usage/stored-routines/stored-procedures/create-procedure.md)
+* [ALTER PROCEDURE](../../../../../server-usage/stored-routines/stored-procedures/alter-procedure.md)
+* [DROP PROCEDURE](../../../../../server-usage/stored-routines/stored-procedures/drop-procedure.md)
 * [SHOW CREATE PROCEDURE](show-create-procedure.md)
 * [SHOW PROCEDURE STATUS](show-procedure-status.md)
-* [Stored Routine Privileges](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges.md)
+* [Stored Routine Privileges](../../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

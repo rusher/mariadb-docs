@@ -1,8 +1,6 @@
-
 # EXECUTE IMMEDIATE
 
 ## Syntax
-
 
 ```
 EXECUTE IMMEDIATE statement
@@ -14,19 +12,15 @@ param:
 
 ## Description
 
-
 `EXECUTE IMMEDIATE` executes a dynamic SQL statement created on the fly, which can reduce performance overhead.
 
-
 For example:
-
 
 ```
 EXECUTE IMMEDIATE 'SELECT 1'
 ```
 
 which is shorthand for:
-
 
 ```
 prepare stmt from "select 1";
@@ -36,16 +30,13 @@ deallocate prepare stmt;
 
 EXECUTE IMMEDIATE supports complex expressions as prepare source and parameters:
 
-
 ```
 EXECUTE IMMEDIATE CONCAT('SELECT COUNT(*) FROM ', 't1', ' WHERE a=?') USING 5+5;
 ```
 
 Limitations: subselects and stored function calls are not supported as a prepare source.
 
-
 The following examples return an error:
-
 
 ```
 CREATE OR REPLACE FUNCTION f1() RETURNS VARCHAR(64) RETURN 'SELECT * FROM t1';
@@ -69,7 +60,6 @@ ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
 
 One can use a user or an SP variable as a workaround:
 
-
 ```
 CREATE OR REPLACE FUNCTION f1() RETURNS VARCHAR(64) RETURN 'SELECT * FROM t1';
 SET @stmt=f1();
@@ -87,7 +77,6 @@ EXECUTE IMMEDIATE 'SELECT * FROM t1 WHERE a=?' USING @param;
 ```
 
 EXECUTE IMMEDIATE supports user variables and SP variables as OUT parameters
-
 
 ```
 DELIMITER $$
@@ -109,9 +98,7 @@ SELECT @a;
 
 Similar to PREPARE, EXECUTE IMMEDIATE is allowed in stored procedures but is not allowed in stored functions.
 
-
 This example uses EXECUTE IMMEDIATE inside a stored procedure:
-
 
 ```
 DELIMITER $$
@@ -131,7 +118,6 @@ CALL p1;
 
 This script returns an error:
 
-
 ```
 DELIMITER $$
 CREATE FUNCTION f1() RETURNS INT
@@ -145,7 +131,6 @@ ERROR 1336 (0A000): Dynamic SQL is not allowed in stored function or trigger
 
 EXECUTE IMMEDIATE can use DEFAULT and IGNORE indicators as bind parameters:
 
-
 ```
 CREATE OR REPLACE TABLE t1 (a INT DEFAULT 10);
 EXECUTE IMMEDIATE 'INSERT INTO t1 VALUES (?)' USING DEFAULT;
@@ -157,14 +142,11 @@ SELECT * FROM t1;
 +------+
 ```
 
-EXECUTE IMMEDIATE increments the [Com_execute_immediate](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_immediate) status variable, as well as the [Com_stmt_prepare](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_prepare), [Com_stmt_execute](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_execute) and [Com_stmt_close](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_close) status variables.
+EXECUTE IMMEDIATE increments the [Com\_execute\_immediate](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_immediate) status variable, as well as the [Com\_stmt\_prepare](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_prepare), [Com\_stmt\_execute](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_execute) and [Com\_stmt\_close](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_close) status variables.
 
-
-Note, EXECUTE IMMEDIATE does not increment the [Com_execute_sql](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_sql) status variable. *Com_execute_sql* is used only for [PREPARE](prepare-statement.md)..[EXECUTE](execute-statement.md).
-
+Note, EXECUTE IMMEDIATE does not increment the [Com\_execute\_sql](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_sql) status variable. _Com\_execute\_sql_ is used only for [PREPARE](prepare-statement.md)..[EXECUTE](execute-statement.md).
 
 This session screenshot demonstrates how EXECUTE IMMEDIATE affects status variables:
-
 
 ```
 SELECT * FROM INFORMATION_SCHEMA.SESSION_STATUS WHERE VARIABLE_NAME RLIKE 
@@ -200,6 +182,4 @@ SELECT * FROM INFORMATION_SCHEMA.SESSION_STATUS WHERE VARIABLE_NAME RLIKE
 +-----------------------+----------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

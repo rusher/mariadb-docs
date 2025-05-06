@@ -1,23 +1,16 @@
+# Information Schema GLOBAL\_VARIABLES and SESSION\_VARIABLES Tables
 
-# Information Schema GLOBAL_VARIABLES and SESSION_VARIABLES Tables
-
-The [Information Schema](../README.md) `GLOBAL_VARIABLES` and `SESSION_VARIABLES` tables stores a record of all [system variables](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW VARIABLES](../../../show/show-variables.md)` commands `SHOW GLOBAL VARIABLES` and `SHOW SESSION VARIABLES`.
-
+The [Information Schema](../) `GLOBAL_VARIABLES` and `SESSION_VARIABLES` tables stores a record of all [system variables](../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) and their global and session values respectively. This is the same information as displayed by the `[SHOW VARIABLES](../../../show/show-variables.md)` commands `SHOW GLOBAL VARIABLES` and `SHOW SESSION VARIABLES`.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| VARIABLE_NAME | System variable name. |
-| VARIABLE_VALUE | Global or session value. |
-
-
+| Column          | Description              |
+| --------------- | ------------------------ |
+| Column          | Description              |
+| VARIABLE\_NAME  | System variable name.    |
+| VARIABLE\_VALUE | Global or session value. |
 
 ## Example
-
 
 ```
 SELECT * FROM information_schema.GLOBAL_VARIABLES ORDER BY VARIABLE_NAME\G
@@ -42,6 +35,4 @@ VARIABLE_VALUE: debian-linux-gnu
 VARIABLE_VALUE: 600
 ```
 
-
 CC BY-SA / Gnu FDL
-

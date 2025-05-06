@@ -1,35 +1,25 @@
-
-# RELEASE_LOCK
+# RELEASE\_LOCK
 
 ## Syntax
-
 
 ```
 RELEASE_LOCK(str)
 ```
 
-
 ## Description
 
-
-Releases the lock named by the string `str` that was obtained with [GET_LOCK()](get_lock.md). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not
+Releases the lock named by the string `str` that was obtained with [GET\_LOCK()](get_lock.md). Returns 1 if the lock was released, 0 if the lock was not established by this thread (in which case the lock is not\
 released), and `NULL` if the named lock did not exist. The lock does not exist if it was never obtained by a call to `GET_LOCK()` or if it has previously been released.
-
 
 `str` is case insensitive. If `str` is an empty string or `NULL`, `RELEASE_LOCK()` returns `NULL` and does nothing.
 
-
-Statements using the `RELEASE_LOCK` function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
-
+Statements using the `RELEASE_LOCK` function are not [safe for statement-based replication](../../../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 The [DO statement](../../../stored-routine-statements/do.md) is convenient to use with `RELEASE_LOCK()`.
 
-
 ## Examples
 
-
 Connection1:
-
 
 ```
 SELECT GET_LOCK('lock1',10);
@@ -42,7 +32,6 @@ SELECT GET_LOCK('lock1',10);
 
 Connection 2:
 
-
 ```
 SELECT GET_LOCK('lock2',10);
 +----------------------+
@@ -54,7 +43,6 @@ SELECT GET_LOCK('lock2',10);
 
 Connection 1:
 
-
 ```
 SELECT RELEASE_LOCK('lock1'), RELEASE_LOCK('lock2'), RELEASE_LOCK('lock3');
 +-----------------------+-----------------------+-----------------------+
@@ -64,8 +52,7 @@ SELECT RELEASE_LOCK('lock1'), RELEASE_LOCK('lock2'), RELEASE_LOCK('lock3');
 +-----------------------+-----------------------+-----------------------+
 ```
 
-It is possible to hold the same lock recursively. This example is viewed using the [metadata_lock_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin:
-
+It is possible to hold the same lock recursively. This example is viewed using the [metadata\_lock\_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin:
 
 ```
 SELECT GET_LOCK('lock3',10);
@@ -116,12 +103,9 @@ Empty set (0.000 sec)
 
 ## See Also
 
+* [GET\_LOCK](get_lock.md)
+* [IS\_FREE\_LOCK](is_free_lock.md)
+* [IS\_USED\_LOCK](is_used_lock.md)
+* [RELEASE\_ALL\_LOCKS](release_all_locks.md)
 
-* [GET_LOCK](get_lock.md)
-* [IS_FREE_LOCK](is_free_lock.md)
-* [IS_USED_LOCK](is_used_lock.md)
-* [RELEASE_ALL_LOCKS](release_all_locks.md)
-
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

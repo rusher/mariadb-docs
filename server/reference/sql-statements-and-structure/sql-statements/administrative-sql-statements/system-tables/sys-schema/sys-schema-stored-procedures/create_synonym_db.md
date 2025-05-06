@@ -1,8 +1,6 @@
-
-# create_synonym_db
+# create\_synonym\_db
 
 ## Syntax
-
 
 ```
 create_synonym_db(db_name,synonym)
@@ -13,18 +11,13 @@ create_synonym_db(db_name,synonym)
 
 ## Description
 
+`create_synonym_db` is a [stored procedure](../../../../../../../server-usage/stored-routines/stored-procedures/) available with the [Sys Schema](../).
 
-`create_synonym_db` is a [stored procedure](../../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/README.md) available with the [Sys Schema](../README.md).
-
-
-Takes a source database name *db_name* and *synonym* name and creates a synonym database with views that point to all of the tables within the source database. Useful for example for creating a synonym for the [performance_schema](../../performance-schema/README.md) or [information_schema](../../information-schema/README.md) databases.
-
+Takes a source database name _db\_name_ and _synonym_ name and creates a synonym database with views that point to all of the tables within the source database. Useful for example for creating a synonym for the [performance\_schema](../../performance-schema/) or [information\_schema](../../information-schema/) databases.
 
 Returns an error if the source database doesn't exist, or the synonym already exists.
 
-
 ## Example
-
 
 ```
 SHOW DATABASES;
@@ -69,6 +62,4 @@ SHOW FULL TABLES FROM perf;
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-

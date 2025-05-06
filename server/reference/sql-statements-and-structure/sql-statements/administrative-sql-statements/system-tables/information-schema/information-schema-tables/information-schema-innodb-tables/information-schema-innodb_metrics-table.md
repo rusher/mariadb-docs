@@ -1,47 +1,37 @@
+# Information Schema INNODB\_METRICS Table
 
-# Information Schema INNODB_METRICS Table
-
-The [Information Schema](../../README.md) `INNODB_METRICS` table contains a list of useful InnoDB performance metrics. Each row in the table represents an instrumented counter that can be stopped, started and reset, and which can be grouped together by module.
-
+The [Information Schema](../../) `INNODB_METRICS` table contains a list of useful InnoDB performance metrics. Each row in the table represents an instrumented counter that can be stopped, started and reset, and which can be grouped together by module.
 
 The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
 
-
 It has the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| NAME | Unique counter name. |
-| SUBSYSTEM | InnoDB subsystem. See below for the matching module to use to enable/disable monitoring this subsytem with the [innodb_monitor_enable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) and [innodb_monitor_disable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) system variables. |
-| COUNT | Count since being enabled. |
-| MAX_COUNT | Maximum value since being enabled. |
-| MIN_COUNT | Minimum value since being enabled. |
-| AVG_COUNT | Average value since being enabled. |
-| COUNT_RESET | Count since last being reset. |
-| MAX_COUNT_RESET | Maximum value since last being reset. |
-| MIN_COUNT_RESET | Minimum value since last being reset. |
-| AVG_COUNT_RESET | Average value since last being reset. |
-| TIME_ENABLED | Time last enabled. |
-| TIME_DISABLED | Time last disabled |
-| TIME_ELAPSED | Time since enabled |
-| TIME_RESET | Time last reset. |
-| ENABLED | 1 if enabled, 0 otherwise |
-| TYPE | Item type; one of counter, value, status_counter, set_owner, set_member. |
-| COMMENT | Counter description. |
-
-
+| Column            | Description                                                                                                                                                                                                                                                                                                                                                                            |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column            | Description                                                                                                                                                                                                                                                                                                                                                                            |
+| NAME              | Unique counter name.                                                                                                                                                                                                                                                                                                                                                                   |
+| SUBSYSTEM         | InnoDB subsystem. See below for the matching module to use to enable/disable monitoring this subsytem with the [innodb\_monitor\_enable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) and [innodb\_monitor\_disable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) system variables. |
+| COUNT             | Count since being enabled.                                                                                                                                                                                                                                                                                                                                                             |
+| MAX\_COUNT        | Maximum value since being enabled.                                                                                                                                                                                                                                                                                                                                                     |
+| MIN\_COUNT        | Minimum value since being enabled.                                                                                                                                                                                                                                                                                                                                                     |
+| AVG\_COUNT        | Average value since being enabled.                                                                                                                                                                                                                                                                                                                                                     |
+| COUNT\_RESET      | Count since last being reset.                                                                                                                                                                                                                                                                                                                                                          |
+| MAX\_COUNT\_RESET | Maximum value since last being reset.                                                                                                                                                                                                                                                                                                                                                  |
+| MIN\_COUNT\_RESET | Minimum value since last being reset.                                                                                                                                                                                                                                                                                                                                                  |
+| AVG\_COUNT\_RESET | Average value since last being reset.                                                                                                                                                                                                                                                                                                                                                  |
+| TIME\_ENABLED     | Time last enabled.                                                                                                                                                                                                                                                                                                                                                                     |
+| TIME\_DISABLED    | Time last disabled                                                                                                                                                                                                                                                                                                                                                                     |
+| TIME\_ELAPSED     | Time since enabled                                                                                                                                                                                                                                                                                                                                                                     |
+| TIME\_RESET       | Time last reset.                                                                                                                                                                                                                                                                                                                                                                       |
+| ENABLED           | 1 if enabled, 0 otherwise                                                                                                                                                                                                                                                                                                                                                              |
+| TYPE              | Item type; one of counter, value, status\_counter, set\_owner, set\_member.                                                                                                                                                                                                                                                                                                            |
+| COMMENT           | Counter description.                                                                                                                                                                                                                                                                                                                                                                   |
 
 Note: In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and earlier the `ENABLED` column was called `STATUS`.
 
-
 ## Enabling and Disabling Counters
 
-
-Most of the counters are disabled by default. To enable them, use the [innodb_monitor_enable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) system variable. You can either enable a variable by its name, for example:
-
+Most of the counters are disabled by default. To enable them, use the [innodb\_monitor\_enable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_enable) system variable. You can either enable a variable by its name, for example:
 
 ```
 SET GLOBAL innodb_monitor_enable = icp_match;
@@ -49,33 +39,28 @@ SET GLOBAL innodb_monitor_enable = icp_match;
 
 or enable a number of counters grouped by module. The `SUBSYSTEM` field indicates which counters are grouped together, but the following module names need to be used:
 
-
-
-| Module Name | Subsytem Field |
-| --- | --- |
-| Module Name | Subsytem Field |
-| module_metadata | metadata |
-| module_lock | lock |
-| module_buffer | buffer |
-| module_buf_page | buffer_page_io |
-| module_os | os |
-| module_trx | transaction |
-| module_purge | purge |
-| module_compress | compression |
-| module_file | file_system |
-| module_index | index |
-| module_adaptive_hash | adaptive_hash_index From [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1062-release-notes), if [innodb_adaptive_hash_index](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is disabled (the default), adaptive_hash_index will not be updated. |
-| module_ibuf_system | change_buffer |
-| module_srv | server |
-| module_ddl | ddl |
-| module_dml | dml |
-| module_log | recovery |
-| module_icp | icp |
-
-
+| Module Name            | Subsytem Field                                                                                                                                                                                                                                                                                                                                                                                               |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Module Name            | Subsytem Field                                                                                                                                                                                                                                                                                                                                                                                               |
+| module\_metadata       | metadata                                                                                                                                                                                                                                                                                                                                                                                                     |
+| module\_lock           | lock                                                                                                                                                                                                                                                                                                                                                                                                         |
+| module\_buffer         | buffer                                                                                                                                                                                                                                                                                                                                                                                                       |
+| module\_buf\_page      | buffer\_page\_io                                                                                                                                                                                                                                                                                                                                                                                             |
+| module\_os             | os                                                                                                                                                                                                                                                                                                                                                                                                           |
+| module\_trx            | transaction                                                                                                                                                                                                                                                                                                                                                                                                  |
+| module\_purge          | purge                                                                                                                                                                                                                                                                                                                                                                                                        |
+| module\_compress       | compression                                                                                                                                                                                                                                                                                                                                                                                                  |
+| module\_file           | file\_system                                                                                                                                                                                                                                                                                                                                                                                                 |
+| module\_index          | index                                                                                                                                                                                                                                                                                                                                                                                                        |
+| module\_adaptive\_hash | adaptive\_hash\_index From [MariaDB 10.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1062-release-notes), if [innodb\_adaptive\_hash\_index](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index) is disabled (the default), adaptive\_hash\_index will not be updated. |
+| module\_ibuf\_system   | change\_buffer                                                                                                                                                                                                                                                                                                                                                                                               |
+| module\_srv            | server                                                                                                                                                                                                                                                                                                                                                                                                       |
+| module\_ddl            | ddl                                                                                                                                                                                                                                                                                                                                                                                                          |
+| module\_dml            | dml                                                                                                                                                                                                                                                                                                                                                                                                          |
+| module\_log            | recovery                                                                                                                                                                                                                                                                                                                                                                                                     |
+| module\_icp            | icp                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 There are four counters in the `icp` subsystem:
-
 
 ```
 SELECT NAME, SUBSYSTEM FROM INNODB_METRICS WHERE SUBSYSTEM='icp';
@@ -91,55 +76,45 @@ SELECT NAME, SUBSYSTEM FROM INNODB_METRICS WHERE SUBSYSTEM='icp';
 
 To enable them all, use the associated module name from the table above, `module_icp`.
 
-
 ```
 SET GLOBAL innodb_monitor_enable = module_icp;
 ```
 
 The `%` wildcard, used to represent any number of characters, can also be used when naming counters, for example:
 
-
 ```
 SET GLOBAL innodb_monitor_enable = 'buffer%'
 ```
 
-To disable counters, use the [innodb_monitor_disable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) system variable, using the same naming rules as described above for enabling.
-
+To disable counters, use the [innodb\_monitor\_disable](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) system variable, using the same naming rules as described above for enabling.
 
 Counter status is not persistent, and will be reset when the server restarts. It is possible to use the options on the command line, or the `innodb_monitor_enable` option only in a configuration file.
 
-
 ## Resetting Counters
 
-
-Counters can also be reset. Resetting sets all the `*_COUNT_RESET` values to zero, while leaving the `*_COUNT` values, which perform counts since the counter was enabled, untouched. Resetting is performed with the [innodb_monitor_reset](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) (for individual counters) and [innodb_monitor_reset_all](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) (for all counters) system variables.
-
+Counters can also be reset. Resetting sets all the `*_COUNT_RESET` values to zero, while leaving the `*_COUNT` values, which perform counts since the counter was enabled, untouched. Resetting is performed with the [innodb\_monitor\_reset](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) (for individual counters) and [innodb\_monitor\_reset\_all](../../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all) (for all counters) system variables.
 
 ## Simplifying from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
 From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the interface was simplified by removing the following:
 
-* buffer_LRU_batches_flush
-* buffer_LRU_batch_flush_pages
-* buffer_LRU_batches_evict
-* buffer_LRU_batch_evict_pages
+* buffer\_LRU\_batches\_flush
+* buffer\_LRU\_batch\_flush\_pages
+* buffer\_LRU\_batches\_evict
+* buffer\_LRU\_batch\_evict\_pages
 
 and by making the following reflect the status variables:
 
-* buffer_LRU_batch_flush_total_pages: [innodb_buffer_pool_pages_LRU_flushed](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_flushed)
-* buffer_LRU_batch_evict_total_pages: [innodb_buffer_pool_pages_LRU_freed](../../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed)
+* buffer\_LRU\_batch\_flush\_total\_pages: [innodb\_buffer\_pool\_pages\_LRU\_flushed](../../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_flushed)
+* buffer\_LRU\_batch\_evict\_total\_pages: [innodb\_buffer\_pool\_pages\_LRU\_freed](../../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed)
 
 The intention is to eventually remove the interface entirely (see [MDEV-15706](https://jira.mariadb.org/browse/MDEV-15706)).
 
-
 ## Examples
 
-
 [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
-
 
 ```
 SELECT name,subsystem,type,comment FROM INFORMATION_SCHEMA.INNODB_METRICS\G
@@ -218,6 +193,4 @@ subsystem: icp
   comment: Index push-down condition matches
 ```
 
-
 CC BY-SA / Gnu FDL
-

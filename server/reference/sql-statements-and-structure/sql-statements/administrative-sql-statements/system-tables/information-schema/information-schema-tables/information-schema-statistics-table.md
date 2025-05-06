@@ -1,40 +1,32 @@
-
 # Information Schema STATISTICS Table
 
-The [Information Schema](../README.md) `STATISTICS` table provides information about table indexes.
-
+The [Information Schema](../) `STATISTICS` table provides information about table indexes.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| TABLE_CATALOG | Always def. |
-| TABLE_SCHEMA | Database name. |
-| TABLE_NAME | Table name. |
-| NON_UNIQUE | 1 if the index can have duplicates, 0 if not. |
-| INDEX_SCHEMA | Database name. |
-| INDEX_NAME | Index name. The primary key is always named PRIMARY. |
-| SEQ_IN_INDEX | The column sequence number, starting at 1. |
-| COLUMN_NAME | Column name. |
-| COLLATION | A for sorted in ascending order, or NULL for unsorted. |
-| CARDINALITY | Estimate of the number of unique values stored in the index based on statistics stored as integers. Higher cardinalities usually mean a greater chance of the index being used in a join. Updated by the [ANALYZE TABLE](../../../../table-statements/analyze-table.md) statement or [myisamchk -a](../../../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md). |
-| SUB_PART | NULL if the whole column is indexed, or the number of indexed characters if partly indexed. |
-| PACKED | NULL if not packed, otherwise how the index is packed. |
-| NULLABLE | YES if the column may contain NULLs, empty string if not. |
-| INDEX_TYPE | Index type, one of BTREE, RTREE, HASH or FULLTEXT. See [Storage Engine Index Types](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md). |
-| COMMENT | Index comments from the [CREATE INDEX](../../../../data-definition/create/create-index.md) statement. |
-| IGNORED | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes). |
-
-
+| Column         | Description                                                                                                                                                                                                                                                                                                                                                                                |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column         | Description                                                                                                                                                                                                                                                                                                                                                                                |
+| TABLE\_CATALOG | Always def.                                                                                                                                                                                                                                                                                                                                                                                |
+| TABLE\_SCHEMA  | Database name.                                                                                                                                                                                                                                                                                                                                                                             |
+| TABLE\_NAME    | Table name.                                                                                                                                                                                                                                                                                                                                                                                |
+| NON\_UNIQUE    | 1 if the index can have duplicates, 0 if not.                                                                                                                                                                                                                                                                                                                                              |
+| INDEX\_SCHEMA  | Database name.                                                                                                                                                                                                                                                                                                                                                                             |
+| INDEX\_NAME    | Index name. The primary key is always named PRIMARY.                                                                                                                                                                                                                                                                                                                                       |
+| SEQ\_IN\_INDEX | The column sequence number, starting at 1.                                                                                                                                                                                                                                                                                                                                                 |
+| COLUMN\_NAME   | Column name.                                                                                                                                                                                                                                                                                                                                                                               |
+| COLLATION      | A for sorted in ascending order, or NULL for unsorted.                                                                                                                                                                                                                                                                                                                                     |
+| CARDINALITY    | Estimate of the number of unique values stored in the index based on statistics stored as integers. Higher cardinalities usually mean a greater chance of the index being used in a join. Updated by the [ANALYZE TABLE](../../../../table-statements/analyze-table.md) statement or [myisamchk -a](../../../../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md). |
+| SUB\_PART      | NULL if the whole column is indexed, or the number of indexed characters if partly indexed.                                                                                                                                                                                                                                                                                                |
+| PACKED         | NULL if not packed, otherwise how the index is packed.                                                                                                                                                                                                                                                                                                                                     |
+| NULLABLE       | YES if the column may contain NULLs, empty string if not.                                                                                                                                                                                                                                                                                                                                  |
+| INDEX\_TYPE    | Index type, one of BTREE, RTREE, HASH or FULLTEXT. See [Storage Engine Index Types](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md).                                                                                                                                                                               |
+| COMMENT        | Index comments from the [CREATE INDEX](../../../../data-definition/create/create-index.md) statement.                                                                                                                                                                                                                                                                                      |
+| IGNORED        | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes).                   |
 
 The `[SHOW INDEX](../../../show/show-index.md)` statement produces similar output.
 
-
 ## Example
-
 
 ```
 SELECT * FROM INFORMATION_SCHEMA.STATISTICS\G
@@ -59,6 +51,4 @@ INDEX_COMMENT:
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-
