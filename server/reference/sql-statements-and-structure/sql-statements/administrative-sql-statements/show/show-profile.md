@@ -157,3 +157,7 @@ SHOW PROFILE CPU FOR QUERY 5;
 | cleaning up          | 0.000003 | 0.000000 |   0.000000 |
 +----------------------+----------+----------+------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

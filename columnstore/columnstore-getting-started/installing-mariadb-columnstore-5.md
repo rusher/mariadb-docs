@@ -7,7 +7,7 @@ MariaDB Enterprise ColumnStore 5 is included with MariaDB Enterprise Server 10.5
 ## MariaDB Enterprise ColumnStore 5
 
 
-* [Deploy ColumnStore Object Storage Topology with MariaDB Enterprise Server 10.5](https://mariadb.com/kb/en/deploy-columnstore-object-storage-topology-with-mariadb-server/)
+* [Deploy ColumnStore Object Storage Topology with MariaDB Enterprise Server 10.5](/kb/en/deploy-columnstore-object-storage-topology-with-mariadb-server/)
 
 
 * [Deploy ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server 10.5](https://mariadb.com/kb/en/deploy-columnstore-shared-local-storage-topology/)
@@ -22,5 +22,5 @@ MariaDB Enterprise ColumnStore 5 is included with MariaDB Enterprise Server 10.5
 ## MariaDB ColumnStore 5
 
 
-* [Deploy MariaDB ColumnStore 5.5 with MariaDB Community Server 10.5](/en/deploy-mariadb-columnstore-with-mariadb-community-server/)
+* [Deploy MariaDB ColumnStore 5.5 with MariaDB Community Server 10.5](/kb/en/deploy-mariadb-columnstore-with-mariadb-community-server/)
 

@@ -125,3 +125,6 @@ SHOW TABLES;
 * [SHOW TABLE STATUS](show-table-status.md)
 * The [information_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table
 
+
+GPLv2 fill_help_tables.sql
+

@@ -44,3 +44,7 @@ SELECT @x//
 | 1001 |
 +------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

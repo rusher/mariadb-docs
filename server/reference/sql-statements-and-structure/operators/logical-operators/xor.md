@@ -60,3 +60,6 @@ SELECT 1 XOR 1 XOR 1;
 
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

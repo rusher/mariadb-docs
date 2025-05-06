@@ -91,3 +91,6 @@ SHOW WARNINGS;
 * [SHOW CREATE VIEWS](https://mariadb.com/kb/en/show-create-views)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

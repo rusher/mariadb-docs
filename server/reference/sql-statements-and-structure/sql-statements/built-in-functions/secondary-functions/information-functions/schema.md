@@ -13,3 +13,6 @@ SCHEMA()
 
 This function is a synonym for [DATABASE()](database.md).
 
+
+GPLv2 fill_help_tables.sql
+

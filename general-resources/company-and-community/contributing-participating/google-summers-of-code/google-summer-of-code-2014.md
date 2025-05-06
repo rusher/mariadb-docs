@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2014
 
-We participated in Google Summer of Code 2014. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes.
+We participated in Google Summer of Code 2014. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](/kb/en/galera/), which allows you to scale your reads & writes.
 
 
 

@@ -46,3 +46,6 @@ ALTER FUNCTION hello SQL SECURITY INVOKER;
 * [SHOW FUNCTION STATUS](../../administrative-sql-statements/show/show-function-status.md)
 * [Information Schema ROUTINES Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -35,3 +35,7 @@ SELECT ISNULL(1/0);
 |           1 |
 +-------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

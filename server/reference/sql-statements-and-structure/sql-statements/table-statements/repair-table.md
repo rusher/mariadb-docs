@@ -104,3 +104,6 @@ The [Aria](../../../storage-engines/aria/README.md) storage engine supports [pro
 * [aria_chk](../../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md)
 * [myisamchk](../../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md)
 
+
+GPLv2 fill_help_tables.sql
+

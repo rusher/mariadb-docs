@@ -260,3 +260,6 @@ ECT...RETURNING if the table in the RETURNING clause is not the same as the REPL
 * [HIGH_PRIORITY and LOW_PRIORITY clauses](high_priority-and-low_priority.md)
 * [INSERT DELAYED](../inserting-loading-data/insert-delayed.md) for details on the `DELAYED` clause
 
+
+GPLv2 fill_help_tables.sql
+

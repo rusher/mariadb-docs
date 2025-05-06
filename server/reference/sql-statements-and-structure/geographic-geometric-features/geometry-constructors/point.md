@@ -59,3 +59,7 @@ SELECT ST_AsWKT(p) FROM point_example;
 | POINT(4 4)  |
 +-------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

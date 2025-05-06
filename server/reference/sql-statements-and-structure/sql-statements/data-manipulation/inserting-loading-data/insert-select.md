@@ -48,3 +48,6 @@ If the new table has a primary key or UNIQUE indexes, you can use [IGNORE](ignor
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
+
+GPLv2 fill_help_tables.sql
+

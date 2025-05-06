@@ -58,3 +58,6 @@ SELECT LENGTH(COMPRESS(REPEAT('a',16)));
 
 * [Automatic compression of columns](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md)
 
+
+GPLv2 fill_help_tables.sql
+

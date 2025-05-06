@@ -109,3 +109,6 @@ SELECT name, test, score, SUM(score) OVER (PARTITION BY name) AS total_score FRO
 * [MAX](max.md) (maximum)
 * [MIN](min.md) (minimum)
 
+
+GPLv2 fill_help_tables.sql
+

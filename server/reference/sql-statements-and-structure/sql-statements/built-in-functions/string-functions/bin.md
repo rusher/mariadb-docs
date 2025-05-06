@@ -34,3 +34,6 @@ SELECT BIN(12);
 * [OCT()](../numeric-functions/oct.md)
 * [HEX()](hex.md)
 
+
+GPLv2 fill_help_tables.sql
+

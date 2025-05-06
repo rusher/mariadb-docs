@@ -20,3 +20,6 @@ Since MariaDB and MySQL do not support GIS EMPTY values such as POINT EMPTY, as 
 
 `ST_IsEmpty()` and `IsEmpty()` are synonyms.
 
+
+GPLv2 fill_help_tables.sql
+

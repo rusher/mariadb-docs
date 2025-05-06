@@ -47,3 +47,7 @@ SELECT ST_NumInteriorRings(ST_PolyFromText('POLYGON((0 0,10 0,10 10,0 10,0 0),
 |                1 |
 +------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -100,3 +100,6 @@ CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 * [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

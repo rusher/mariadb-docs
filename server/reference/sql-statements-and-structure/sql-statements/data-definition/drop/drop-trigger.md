@@ -65,3 +65,6 @@ SHOW WARNINGS;
 * [SHOW CREATE TRIGGER](../../administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations.md)
 
+
+GPLv2 fill_help_tables.sql
+

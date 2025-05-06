@@ -49,3 +49,6 @@ The arguments are optional and are used as follows:
 * [PROCEDURE](../../../data-manipulation/selecting-data/procedure.md)
 * [SELECT](../../../data-manipulation/selecting-data/select.md)
 
+
+GPLv2 fill_help_tables.sql
+

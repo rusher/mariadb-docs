@@ -42,3 +42,6 @@ The limitations for HANDLER READ with Memory|HEAP tables are:
 
 See also the the limitations listed in [HANDLER commands](handler-commands.md).
 
+
+CC BY-SA / Gnu FDL
+

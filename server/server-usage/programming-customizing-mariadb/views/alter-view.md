@@ -40,3 +40,6 @@ ALTER VIEW v AS SELECT a, a*3 AS a2 FROM t;
 * [SHOW CREATE VIEW](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-view.md)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

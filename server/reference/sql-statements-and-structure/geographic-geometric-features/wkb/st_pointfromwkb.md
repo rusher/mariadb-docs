@@ -31,3 +31,7 @@ SELECT ST_AsText(ST_PointFromWKB(@g)) AS p;
 | POINT(0 4) |
 +------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

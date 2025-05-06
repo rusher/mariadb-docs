@@ -25,7 +25,7 @@ In the default high availability setup #Spider Nodes
 
 
 ##### MariaDB starting with [10.7.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md).
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](/kb/en/galera-cluster/).
 
 
 ## Spider Storage Engine Federation

@@ -46,3 +46,7 @@ SHOW BINARY LOGS;
 | mariadb-bin.000016 |       314 |
 +--------------------+-----------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

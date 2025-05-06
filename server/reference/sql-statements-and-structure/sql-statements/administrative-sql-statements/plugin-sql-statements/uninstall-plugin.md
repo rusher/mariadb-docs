@@ -63,3 +63,6 @@ SHOW WARNINGS;
 * [INSTALL PLUGIN](install-plugin.md)
 * [List of Plugins](../../../../plugins/information-on-plugins/list-of-plugins.md)
 
+
+GPLv2 fill_help_tables.sql
+

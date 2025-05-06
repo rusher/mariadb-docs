@@ -224,3 +224,6 @@ Compare the definition of table *t2* to table *t3*. `CHAR_LENGTH(name)>2` is ver
 
 * [Foreign Keys](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/foreign-keys.md)
 
+
+GPLv2 fill_help_tables.sql
+

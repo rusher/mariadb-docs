@@ -875,3 +875,6 @@ START SLAVE;
 * [RESET SLAVE](reset-replica.md). Removes a connection created with `CHANGE MASTER TO`.
 * [Global Transaction ID](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md)
 
+
+GPLv2 fill_help_tables.sql
+

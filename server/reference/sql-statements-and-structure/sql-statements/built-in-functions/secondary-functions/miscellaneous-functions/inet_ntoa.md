@@ -36,3 +36,6 @@ SELECT INET_NTOA(3232235777);
 * [INET6_NTOA()](inet6_ntoa.md)
 * [INET_ATON()](inet_aton.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -54,3 +54,6 @@ SELECT COUNT(DISTINCT (name)) FROM student;
 * [SELECT](../../data-manipulation/selecting-data/select.md)
 * [COUNT](count.md)
 
+
+GPLv2 fill_help_tables.sql
+

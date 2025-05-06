@@ -29,3 +29,6 @@ The `connection_name` is used when you are using [multi-source-replication](../.
 
 Statements using the MASTER_POS_WAIT() function are not [safe for statement-based replication](../../../../../../server-usage/replication-cluster-multi-master/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
+
+GPLv2 fill_help_tables.sql
+

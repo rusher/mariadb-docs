@@ -34,3 +34,7 @@ SELECT ATAN2(PI(),0);
 | 1.5707963267948966 |
 +--------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

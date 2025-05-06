@@ -74,3 +74,6 @@ SELECT BIT_AND(NULL);
 * [BIT_OR](bit_or.md)
 * [BIT_XOR](bit_xor.md)
 
+
+GPLv2 fill_help_tables.sql
+

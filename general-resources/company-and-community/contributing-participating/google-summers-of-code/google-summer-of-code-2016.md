@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2016
 
-We participated in the [Google Summer of Code 2016](https://summerofcode.withgoogle.com/) (we have participated previously in [2015](google-summer-of-code-2015.md), [2014](google-summer-of-code-2014.md), and [2013](google-summer-of-code-2013.md)). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
+We participated in the [Google Summer of Code 2016](https://summerofcode.withgoogle.com/) (we have participated previously in [2015](google-summer-of-code-2015.md), [2014](google-summer-of-code-2014.md), and [2013](google-summer-of-code-2013.md)). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](/kb/en/galera/), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
 
 
 

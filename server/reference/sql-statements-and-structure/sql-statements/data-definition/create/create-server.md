@@ -78,7 +78,7 @@ are Server_name, Host, Db, Username, Password, Port and Socket.
 
 
 CREATE SERVER is not written to the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md), irrespective of
-the [binary log format](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](../../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
+the [binary log format](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](/en/galera/) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
 
 
 For valid identifiers to use as server names, see [Identifier Names](../../../sql-language-structure/identifier-names.md).
@@ -152,4 +152,7 @@ SHOW WARNINGS;
 * [Connect Storage Engine](../../../../storage-engines/connect/README.md)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 * [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md)
+
+
+GPLv2 fill_help_tables.sql
 

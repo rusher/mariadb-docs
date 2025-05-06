@@ -31,3 +31,7 @@ The different `RESET` options are:
 | QUERY CACHE | Removes all queries from [the query cache](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/query-cache.md). See also [FLUSH QUERY CACHE](flush-commands/flush-query-cache.md). |
 
 
+
+
+GPLv2 fill_help_tables.sql
+

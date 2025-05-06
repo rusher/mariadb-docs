@@ -48,7 +48,7 @@ We use the `shell` module to run the command. Running a command in this way is n
 ## Using Galera
 
 
-If we're using [MariaDB Galera Cluster](../../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) we'll want to only update the timezone tables in one node, because the other nodes will replicate the changes. For our convenience, we can run this operation on the first node. If the nodes hostnames are defined in a list called `cluster_hosts`, we can check if the current node is the first in this way:
+If we're using [MariaDB Galera Cluster](/en/galera-cluster/) we'll want to only update the timezone tables in one node, because the other nodes will replicate the changes. For our convenience, we can run this operation on the first node. If the nodes hostnames are defined in a list called `cluster_hosts`, we can check if the current node is the first in this way:
 
 
 ```

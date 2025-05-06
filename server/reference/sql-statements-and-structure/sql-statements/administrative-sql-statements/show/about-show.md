@@ -78,3 +78,6 @@ Several `SHOW` statements also accept a
 `WHERE` clause that provides more flexibility in specifying
 which rows to display. See [Extended Show](extended-show.md).
 
+
+GPLv2 fill_help_tables.sql
+

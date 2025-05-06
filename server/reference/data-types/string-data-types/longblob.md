@@ -85,3 +85,6 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

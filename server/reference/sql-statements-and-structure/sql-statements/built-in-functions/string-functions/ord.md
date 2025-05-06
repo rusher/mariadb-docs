@@ -44,3 +44,6 @@ SELECT ORD('2');
 * [ASCII()](ascii.md) - Return ASCII value of first character
 * [CHAR()](char-function.md) - Create a character from an integer value
 
+
+GPLv2 fill_help_tables.sql
+

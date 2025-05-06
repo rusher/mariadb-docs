@@ -253,3 +253,6 @@ SELECT *, example + 0 FROM mediumint_zerofill_example;
 * [INTEGER](int.md)
 * [BIGINT](bigint.md)
 
+
+GPLv2 fill_help_tables.sql
+

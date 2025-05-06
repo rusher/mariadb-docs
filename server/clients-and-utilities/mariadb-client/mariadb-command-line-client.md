@@ -652,7 +652,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`mariadb` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb` is linked with [MariaDB Connector/C](/kb/en/about-mariadb-connector-c/). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
@@ -974,6 +974,6 @@ the `--skip-reconnect` option.
 ## See Also
 
 
-* [Troubleshooting Connection Issues](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
+* [Troubleshooting Connection Issues](/kb/en/troubleshooting-connection-issues/)
 * [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
 

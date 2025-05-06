@@ -60,3 +60,6 @@ SHOW WARNINGS;
 * [SHOW PROCEDURE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

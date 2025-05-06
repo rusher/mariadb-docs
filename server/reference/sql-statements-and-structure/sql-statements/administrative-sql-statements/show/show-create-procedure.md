@@ -92,3 +92,6 @@ Error 1305 (42000): PROCEDURE prc1 does not exist
 * [Stored Routine Privileges](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -365,7 +365,7 @@ no longer be used.
 
 The credentials used by services now require additional grants. For a full list
 of required grants, refer to the
-[protocol documentation](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md).
+[protocol documentation](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#required-grants).
 
 
 ## MariaDB-Monitor

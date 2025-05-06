@@ -78,7 +78,7 @@ Mariabackup from MariaDB Community Server performs the following tasks in the `B
 
   * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../reference/storage-engines/innodb/README.md) tables.
 * Save the [binary log](../../server-monitoring-logs/binary-log/README.md) position to `[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)`.
-* Save the [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
+* Save the [Galera Cluster](/kb/en/galera/) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
 
 
 ### `BACKUP STAGE END` in MariaDB Community Server
@@ -183,7 +183,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
   * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../reference/storage-engines/innodb/README.md) tables.
   * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../../reference/storage-engines/aria/README.md) tables.
 * Save the [binary log](../../server-monitoring-logs/binary-log/README.md) position to `[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)`.
-* Save the [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
+* Save the [Galera Cluster](/kb/en/galera/) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
 
 
 ### `BACKUP STAGE END` in MariaDB Enterprise Server

@@ -37,3 +37,6 @@ the key for decrypting the message.
 If the `crypt_str` argument does not appear to be an encrypted string,
 MariaDB returns the given crypt_str.
 
+
+GPLv2 fill_help_tables.sql
+

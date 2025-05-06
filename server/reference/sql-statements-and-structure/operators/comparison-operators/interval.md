@@ -52,3 +52,7 @@ SELECT INTERVAL(10, 2, NULL);
 |                     2 |
 +-----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

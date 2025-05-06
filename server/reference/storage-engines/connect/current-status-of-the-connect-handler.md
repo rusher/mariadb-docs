@@ -14,5 +14,8 @@ The current CONNECT handler is a GA (stable) release. It was written starting bo
 1. Getting NOSQL data from the Net as answers from REST queries (done)
 
 
-No programs are bug free, especially new ones. Please [report all bugs](../../bug-tracking/reporting-bugs.md) or documentation errors using the means provided by MariaDB.
+No programs are bug free, especially new ones. Please [report all bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs) or documentation errors using the means provided by MariaDB.
+
+
+GPLv2
 

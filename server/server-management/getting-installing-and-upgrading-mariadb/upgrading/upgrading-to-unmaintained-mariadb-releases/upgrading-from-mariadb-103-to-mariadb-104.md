@@ -8,7 +8,7 @@
 For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md) instead.
 
 
-For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-10-3-to-mariadb-10-4-with-galera-cluster.md) instead.
+For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-3-to-mariadb-10-4-with-galera-cluster) instead.
 
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md).
@@ -61,8 +61,8 @@ On most servers upgrading from 10.3 should be painless. However, there are some 
 | --- | --- | --- |
 | Option | Old default value | New default value |
 | [slave_transaction_retry_errors](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#slave_transaction_retry_errors) | 1213,1205 | 1158,1159,1160,1161,1205,1213,1429,2013,12701 |
-| [wsrep_debug](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_debug) | OFF | NONE |
-| [wsrep_load_data_splitting](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_load_data_splitting) | ON | OFF |
+| [wsrep_debug](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) | OFF | NONE |
+| [wsrep_load_data_splitting](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_load_data_splitting) | ON | OFF |
 
 
 
@@ -93,7 +93,7 @@ The following options should be removed or renamed if you use them in your [opti
 You might consider using the following major new features in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 
-* [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) has been upgraded from [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 3 to [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4.
+* [Galera](/kb/en/galera-cluster/) has been upgraded from [Galera](/kb/en/galera-cluster/) 3 to [Galera](/kb/en/galera-cluster/) 4.
 * [System-versioning](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
 * [User password expiry](../../../../security/user-account-management/user-password-expiry.md)
 * [Account Locking](../../../../security/user-account-management/account-locking.md)
@@ -104,7 +104,7 @@ You might consider using the following major new features in [MariaDB 10.4](http
 
 
 * [The features in MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
-* [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/upgrading-from-mariadb-10-3-to-mariadb-10-4-with-galera-cluster.md)
+* [Upgrading from MariaDB 10.3 to MariaDB 10.4 with Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-3-to-mariadb-10-4-with-galera-cluster)
 * [Upgrading from MariaDB 10.2 to MariaDB 10.3](upgrading-from-mariadb-102-to-mariadb-103.md)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
 * [Upgrading from MariaDB 10.0 to MariaDB 10.1](upgrading-from-mariadb-100-to-mariadb-101.md)

@@ -264,5 +264,5 @@ The option to disable the MariaDB ColumnStore User Module Replication is availab
 If you set a root password within the MariaDB Database, you will need to create a .my.cnf file as shown here and it will need to reside on all servers that have a User Module MariaDB running.
 
 
-[mariadb-columnstore-system-usage.md](../../columnstore-getting-started/mariadb-columnstore-system-usage.md)
+[#mysql-root-user-password](https://mariadb.com/kb/en/library/mariadb-columnstore-system-usage/#mysql-root-user-password)
 

@@ -463,3 +463,6 @@ It is also possible to create or parse dynamic columns blobs on the client side.
 
 * [Dynamic Columns from MariaDB 10](dynamic-columns-from-mariadb-10.md)
 
+
+CC BY-SA / Gnu FDL
+

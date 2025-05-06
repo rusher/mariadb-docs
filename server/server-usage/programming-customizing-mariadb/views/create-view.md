@@ -359,3 +359,6 @@ SHOW WARNINGS;
 * [SHOW CREATE VIEWS](show-create-views)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

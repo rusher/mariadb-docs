@@ -61,19 +61,19 @@ The following table lists the various plugins included in MariaDB ordered by the
 | [TokuDB](../../storage-engines/tokudb/README.md) | 4.0 | Stable | Disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
 | [unix_socket](../authentication-plugins/authentication-plugin-unix-socket.md) | 1.0 | Stable |  |
 | [UUID](../../data-types/string-data-types/uuid-data-type.md) | 1.0 | Stable | [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes) |
-| [wsrep](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) | 1.0 | Stable |  |
+| [wsrep](/kb/en/galera/) | 1.0 | Stable |  |
 | [WSREP_INFO](../mariadb-replication-cluster-plugins/wsrep_info-plugin.md) | 1.0 | Stable |  |
 | Plugin | Version | Maturity | From |
 | [Federated](../../storage-engines/legacy-storage-engines/federated-storage-engine.md)[[2](#_note-1)] | 1.0 | Gamma |  |
 | [OQGraph](../../storage-engines/oqgraph-storage-engine/README.md) | 3.0 | Gamma |  |
 | [Sphinx](../../storage-engines/sphinx-storage-engine/README.md) | 2.0 | Gamma |  |
 | Plugin | Version | Maturity | From |
-| [Columnstore](/en/mariadb-columnstore/) | 1.0 | Beta | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes) |
+| [Columnstore](/kb/en/mariadb-columnstore/) | 1.0 | Beta | [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes) |
 | [handlersocket](../../sql-statements-and-structure/nosql/handlersocket/README.md) | 1.0 | Beta |  |
 | Plugin | Version | Maturity | From |
 | [Cassandra](../../storage-engines/legacy-storage-engines/cassandra/README.md) | 0.1 | Experimental | Removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106) |
-| [debug_key_management](../../mariadb-internals/encryption-plugin-api.md) | 1.0 | Experimental |  |
-| [example_key_management](../../mariadb-internals/encryption-plugin-api.md) | 1.0 | Experimental |  |
+| [debug_key_management](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins/) | 1.0 | Experimental |  |
+| [example_key_management](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins/) | 1.0 | Experimental |  |
 | Plugin | Version | Maturity | Version |
 
 

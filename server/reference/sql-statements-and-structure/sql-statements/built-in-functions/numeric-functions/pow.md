@@ -35,3 +35,7 @@ SELECT POW(2,-2);
 |      0.25 |
 +-----------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

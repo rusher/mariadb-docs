@@ -27,3 +27,6 @@ The Well-Known Text (WKT) representation of Geometry is designed to exchange geo
 
 * [Geometry Types](../geometry-types.md)
 
+
+GPLv2 fill_help_tables.sql
+

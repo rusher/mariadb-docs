@@ -31,3 +31,6 @@ SELECT 4 >> 2;
 
 * [Operator Precedence](../../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

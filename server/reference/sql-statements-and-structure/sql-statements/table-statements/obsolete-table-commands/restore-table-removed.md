@@ -37,3 +37,6 @@ them to rebuild the .MYI index file. Restoring takes longer than
 backing up due to the need to rebuild the indexes. The more indexes the
 table has, the longer it takes.
 
+
+GPLv2 fill_help_tables.sql
+

@@ -16,3 +16,6 @@ SHOW FUNCTION CODE func_name
 
 It is similar to `[SHOW PROCEDURE CODE](show-procedure-code.md)` but for [stored functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md).
 
+
+GPLv2 fill_help_tables.sql
+

@@ -98,3 +98,6 @@ SHOW GRANTS FOR public;
 * [SHOW PRIVILEGES](show-privileges.md) shows the privileges supported by MariaDB.
 * [Roles](../../../../../security/user-account-management/roles/README.md)
 
+
+GPLv2 fill_help_tables.sql
+

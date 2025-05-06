@@ -130,7 +130,7 @@ Note that explicit or implicit casts from MAX(string) to INT, DOUBLE or DECIMAL 
 You might consider using the following major new features in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1):
 
 
-* [Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) is now included by default.
+* [Galera Cluster](/en/galera/) is now included by default.
 * [Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
 * [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md)
 

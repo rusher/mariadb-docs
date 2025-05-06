@@ -117,7 +117,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`mariadb-import` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c). Therefore, it may be helpful to see [Configuring MariaDB Connector/C with Option Files](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files) for more information on how MariaDB Connector/C handles option files.
+`mariadb-import` is linked with [MariaDB Connector/C](/kb/en/about-mariadb-connector-c/). Therefore, it may be helpful to see [Configuring MariaDB Connector/C with Option Files](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/configuring-mariadb-connectorc-with-option-files) for more information on how MariaDB Connector/C handles option files.
 
 
 #### Option Groups

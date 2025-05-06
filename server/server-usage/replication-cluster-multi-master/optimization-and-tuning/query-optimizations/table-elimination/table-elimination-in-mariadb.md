@@ -48,3 +48,6 @@ nested outer joins and multi-table outer joins.
 * This page is based on the following blog post about table elimination:
  [?p=58](https://petrunia.net/blog/?p=58)
 
+
+CC BY-SA / Gnu FDL
+

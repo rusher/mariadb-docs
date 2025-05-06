@@ -70,3 +70,6 @@ SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');
 * [Date and Time Literals](../../../sql-language-structure/date-and-time-literals.md)
 * [HOUR()](hour.md)
 
+
+GPLv2 fill_help_tables.sql
+

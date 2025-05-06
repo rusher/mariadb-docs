@@ -85,3 +85,6 @@ SELECT LOWER(@x), LOWER(CONVERT (@x USING latin1));
 
 * [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/README.md)
 
+
+GPLv2 fill_help_tables.sql
+

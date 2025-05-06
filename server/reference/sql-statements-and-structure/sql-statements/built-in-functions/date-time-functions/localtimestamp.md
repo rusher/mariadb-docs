@@ -20,3 +20,6 @@ LOCALTIMESTAMP([precision])
 
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -1426,7 +1426,7 @@ Some options and system variables related to the [Performance Schema](../../../r
 ## Galera Cluster Options
 
 
-The options related to [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) are described below. Options that are also system variables are listed after:
+The options related to [Galera Cluster](/kb/en/galera/) are described below. Options that are also system variables are listed after:
 
 
 #### `--wsrep-new-cluster`
@@ -1440,58 +1440,58 @@ The options related to [Galera Cluster](../../../server-usage/replication-cluste
 ### Galera Cluster Options and System Variables
 
 
-Some options and system variables related to [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) can be found [here](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to [Galera Cluster](/kb/en/galera/) can be found [here](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables). Direct links to many of them can be found below.
 
 
-* [wsrep-allowlist](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_allowlist)
-* [wsrep-auto-increment-control](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_auto_increment_control)
-* [wsrep-causal-reads](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_causal_reads)
-* [wsrep-certify-nonPK](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_certify_nonpk)
-* [wsrep-cluster-address](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_cluster_address)
-* [wsrep-cluster-name](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_cluster_name)
-* [wsrep-convert-LOCK-to-trx](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_convert_lock_to_trx)
-* [wsrep-data-home-dir](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_data_home_dir)
-* [wsrep-dbug-option](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_dbug_option)
-* [wsrep-debug](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_debug)
-* [wsrep-desync](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_desync)
-* [wsrep-dirty-reads](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_dirty_reads)
-* [wsrep-drupal-282555-workaround](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_drupal_282555_workaround)
-* [wsrep-forced-binlog-format](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_forced_binlog_format)
-* [wsrep-gtid-domain-id](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_gtid_domain_id)
-* [wsrep-gtid-mode](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_gtid_mode)
-* [wsrep-ignore-apply-errors](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_ignore_apply_errors)
-* [wsrep-load-data-splitting](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_load_data_splitting)
-* [wsrep-log-conflicts](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_log_conflicts)
-* [wsrep-max-ws-rows](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_max_ws_rows)
-* [wsrep-max-ws-size](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_max_ws_size)
-* [wsrep-mode](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_mode)
-* [wsrep-mysql-replication-bundle](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_mysql_replication_bundle)
-* [wsrep-node-address](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_node_address)
-* [wsrep-node-incoming-address](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_node_incoming_address)
-* [wsrep-node-name](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_node_name)
-* [wsrep-notify-cmd](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_notify_cmd)
-* [wsrep-on](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_on)
-* [wsrep-OSU-method](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_osu_method)
-* [wsrep-provider](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_provider)
-* [wsrep-provider-options](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_provider_options)
-* [wsrep-recover](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_recover)
-* [wsrep-reject_queries](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_reject_queries)
-* [wsrep-retry-autocommit](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_retry_autocommit)
-* [wsrep-slave-FK-checks](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_slave_fk_checks)
-* [wsrep-slave-threads](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_slave_threads)
-* [wsrep-slave-UK-checks](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_slave_uk_checks)
-* [wsrep-sr-store](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sr_store)
-* [wsrep-sst-auth](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_auth)
-* [wsrep-sst-donor](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_donor)
-* [wsrep-sst-donor-rejects-queries](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_donor_rejects_queries)
-* [wsrep-sst-method](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_method)
-* [wsrep-sst-receive-address](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sst_receive_address)
-* [wsrep-start-position](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_start_position)
-* [wsrep-status-file](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_status_file)
-* [wsrep-strict-ddl](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_strict_ddl)
-* [wsrep-sync-wait](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sync_wait)
-* [wsrep-trx_fragment_size](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_trx_fragment_size)
-* [wsrep-trx_fragment_unit](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_trx_fragment_unit)
+* [wsrep-allowlist](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_allowlist)
+* [wsrep-auto-increment-control](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_auto_increment_control)
+* [wsrep-causal-reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_causal_reads)
+* [wsrep-certify-nonPK](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_certify_nonpk)
+* [wsrep-cluster-address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_cluster_address)
+* [wsrep-cluster-name](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_cluster_name)
+* [wsrep-convert-LOCK-to-trx](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_convert_lock_to_trx)
+* [wsrep-data-home-dir](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_data_home_dir)
+* [wsrep-dbug-option](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_dbug_option)
+* [wsrep-debug](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug)
+* [wsrep-desync](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_desync)
+* [wsrep-dirty-reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_dirty_reads)
+* [wsrep-drupal-282555-workaround](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_drupal_282555_workaround)
+* [wsrep-forced-binlog-format](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_forced_binlog_format)
+* [wsrep-gtid-domain-id](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_gtid_domain_id)
+* [wsrep-gtid-mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_gtid_mode)
+* [wsrep-ignore-apply-errors](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_ignore_apply_errors)
+* [wsrep-load-data-splitting](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_load_data_splitting)
+* [wsrep-log-conflicts](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_log_conflicts)
+* [wsrep-max-ws-rows](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_max_ws_rows)
+* [wsrep-max-ws-size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_max_ws_size)
+* [wsrep-mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode)
+* [wsrep-mysql-replication-bundle](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mysql_replication_bundle)
+* [wsrep-node-address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_address)
+* [wsrep-node-incoming-address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_incoming_address)
+* [wsrep-node-name](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_name)
+* [wsrep-notify-cmd](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_notify_cmd)
+* [wsrep-on](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_on)
+* [wsrep-OSU-method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method)
+* [wsrep-provider](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_provider)
+* [wsrep-provider-options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_provider_options)
+* [wsrep-recover](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_recover)
+* [wsrep-reject_queries](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_reject_queries)
+* [wsrep-retry-autocommit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_retry_autocommit)
+* [wsrep-slave-FK-checks](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_slave_fk_checks)
+* [wsrep-slave-threads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_slave_threads)
+* [wsrep-slave-UK-checks](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_slave_uk_checks)
+* [wsrep-sr-store](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sr_store)
+* [wsrep-sst-auth](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_auth)
+* [wsrep-sst-donor](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_donor)
+* [wsrep-sst-donor-rejects-queries](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_donor_rejects_queries)
+* [wsrep-sst-method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method)
+* [wsrep-sst-receive-address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_receive_address)
+* [wsrep-start-position](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_start_position)
+* [wsrep-status-file](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_status_file)
+* [wsrep-strict-ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl)
+* [wsrep-sync-wait](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sync_wait)
+* [wsrep-trx_fragment_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size)
+* [wsrep-trx_fragment_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit)
 
 
 ## Options When Debugging mariadbd
@@ -2325,3 +2325,7 @@ You can verify the default values for an option by doing:
 ```
 mariadbd --no-defaults --help --verbose
 ```
+
+
+GPLv2
+

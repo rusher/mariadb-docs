@@ -53,7 +53,7 @@ For valid identifiers to use as function names, see [Identifier Names](../../../
 
 
 The `RETURNS` clause indicates the type of the function's
-return value, and can be one of [string](https://mariadb.com/kb/en/string), [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](https://mariadb.com/kb/en/real/) or [DECIMAL](../../../reference/data-types/data-types-numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../../reference/data-types/string-data-types/README.md) functions.
+return value, and can be one of [string](https://mariadb.com/kb/en/string), [INTEGER](../../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](../../../reference/data-types/data-types-numeric-data-types/real.md) or [DECIMAL](../../../reference/data-types/data-types-numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../../reference/data-types/string-data-types/README.md) functions.
 
 
 #### shared_library_name
@@ -136,4 +136,7 @@ SHOW WARNINGS;
 * [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md)
 * [DROP FUNCTION](../stored-routines/stored-functions/drop-function.md)
 * [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
+
+
+GPLv2 fill_help_tables.sql
 

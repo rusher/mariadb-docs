@@ -49,3 +49,6 @@ SELECT 2 = TRUE, 2 IS TRUE;
 * [BOOLEAN Data Type](../../../data-types/data-types-numeric-data-types/boolean.md)
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

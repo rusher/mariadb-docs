@@ -10,14 +10,14 @@ The VECTOR data type was added in [MariaDB 11.7.1](https://app.gitbook.com/s/aEn
 
 
 ```
-VECTOR([M])
+VECTOR(N)
 ```
 
 
 ## Description
 
 
-The VECTOR data type was added as part of the [vectors](../../sql-statements-and-structure/vectors/README.md) feature, which permits MariaDB Server to perform as a relational vector database.
+The VECTOR data type was added as part of the [vectors](../../sql-statements-and-structure/vectors/README.md) feature, which permits MariaDB Server to perform as a relational vector database. `N` represents the fixed number of dimensions of the vector up to a maximum of 65532. The `N` dimension will be determined by the embedding algorithm.
 
 
 ## Example

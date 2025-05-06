@@ -32,3 +32,7 @@ SELECT FLOOR(-1.23);
 |           -2 |
 +--------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

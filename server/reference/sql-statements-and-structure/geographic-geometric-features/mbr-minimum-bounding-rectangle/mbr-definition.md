@@ -14,3 +14,7 @@ geometry, formed by the minimum and maximum (X,Y) coordinates:
 ```
 ((MINX MINY, MAXX MINY, MAXX MAXY, MINX MAXY, MINX MINY))
 ```
+
+
+GPLv2 fill_help_tables.sql
+

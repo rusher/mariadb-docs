@@ -45,3 +45,7 @@ SELECT GREATEST('B','A','C');
 | C                     |
 +-----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

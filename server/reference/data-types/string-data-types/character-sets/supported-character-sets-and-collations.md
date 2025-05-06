@@ -712,3 +712,6 @@ collations to MariaDB.
 * [Information Schema CHARACTER_SETS Table](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md)
 * [Information Schema COLLATIONS Table](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
 
+
+CC BY-SA / Gnu FDL
+

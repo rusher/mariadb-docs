@@ -45,3 +45,7 @@ SELECT TO_DAYS(950501);
 |          728779 |
 +-----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

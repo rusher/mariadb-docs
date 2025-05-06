@@ -167,3 +167,7 @@ INSERT into gis_geometry SELECT * FROM gis_multi_line;
 INSERT into gis_geometry SELECT * FROM gis_multi_polygon;
 INSERT into gis_geometry SELECT * FROM gis_geometrycollection;
 ```
+
+
+GPLv2 fill_help_tables.sql
+

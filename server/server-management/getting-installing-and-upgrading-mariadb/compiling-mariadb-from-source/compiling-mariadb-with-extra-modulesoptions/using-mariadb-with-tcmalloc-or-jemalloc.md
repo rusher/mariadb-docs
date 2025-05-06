@@ -1,7 +1,7 @@
 
 # Using MariaDB with TCMalloc or jemalloc
 
-Read the [Profiling Memory Usage](../../../../reference/bug-tracking/profiling-memory-usage.md) page for more information on how to debug high memory consumption.
+Read the [Profiling Memory Usage](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/profiling-memory-usage) page for more information on how to debug high memory consumption.
 
 
 ### Using tcmalloc or jemalloc
@@ -187,7 +187,7 @@ jeprof --show_bytes --pdf path-to-mariadbd  jeprof.19678.0.f.heap > /tmp/mariadb
 ### See Also
 
 
-* [Profiling memory usage](../../../../reference/bug-tracking/profiling-memory-usage.md)
-* [Debugging a running server on Linux](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux)
+* [Profiling memory usage](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/profiling-memory-usage)
+* [Debugging a running server on Linux](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/debugging-a-running-server-on-linux)
 * [Jemalloc leak checking](https://github.com/jemalloc/jemalloc/wiki/Use-Case:-Leak-Checking)
 

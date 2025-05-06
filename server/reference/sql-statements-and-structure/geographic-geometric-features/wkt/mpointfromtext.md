@@ -29,3 +29,7 @@ INSERT INTO gis_multi_point VALUES
     (MPointFromText('MULTIPOINT(1 1,11 11,11 21,21 21)')),
     (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

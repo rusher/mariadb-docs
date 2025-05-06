@@ -208,7 +208,7 @@ sudo dnf install MariaDB-server
 The process to install MariaDB Galera Cluster with the MariaDB `yum` repository is practically the same as installing standard MariaDB Server.
 
 
-You need to install the `galera-4` package to obtain the [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4 wsrep provider library.
+You need to install the `galera-4` package to obtain the [Galera](/kb/en/galera/) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, you could execute the following command:
@@ -222,13 +222,13 @@ If you haven't yet imported the MariaDB GPG public key, then `yum` will prompt y
 import it after it downloads the packages, but before it prompts you to install them.
 
 
-See [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](/kb/en/galera/) for more information on MariaDB Galera Cluster.
 
 
 ### Installing MariaDB Clients and Client Libraries with YUM
 
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c) has been included as the client library (staticly linked). However, the package name for the client library has not been changed.
+[MariaDB Connector/C](/kb/en/about-mariadb-connector-c/) has been included as the client library (staticly linked). However, the package name for the client library has not been changed.
 
 
 To Install the clients and client libraries, execute the following command:
@@ -238,7 +238,7 @@ To Install the clients and client libraries, execute the following command:
 sudo yum install MariaDB-client MariaDB-shared
 ```
 
-If you want compile your own programs against [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c), execute the following command:
+If you want compile your own programs against [MariaDB Connector/C](/kb/en/about-mariadb-connector-c/), execute the following command:
 
 
 ```
@@ -271,7 +271,7 @@ sudo yum install MariaDB-cracklib-password-check
 ### Installing Debug Info Packages with YUM
 
 
-The MariaDB `yum` repository also contains [debuginfo](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/developing_c_and_cpp_applications_in_rhel_9/debugging-applications_developing-applications#debuginfo-packages_enabling-debugging-with-debugging-information) packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
+The MariaDB `yum` repository also contains [debuginfo](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/developing_c_and_cpp_applications_in_rhel_9/debugging-applications_developing-applications#debuginfo-packages_enabling-debugging-with-debugging-information) packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
 
 
 #### Installing Debug Info for the Most Common Packages with YUM
@@ -354,5 +354,5 @@ The rest of the install and setup process is as normal.
 After the installation is complete, you can [start MariaDB](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md).
 
 
-If you are using [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](/kb/en/galera/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 

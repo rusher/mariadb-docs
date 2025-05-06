@@ -84,3 +84,7 @@ SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;
 |   85 | 55      | 125     | 1010101  |
 +------+---------+---------+----------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

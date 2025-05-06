@@ -34,3 +34,7 @@ SELECT ST_AsText(ST_GeomFromWKB(ST_AsWKB(@poly)));
 | POLYGON((0 0,0 1,1 1,1 0,0 0))             |
 +--------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

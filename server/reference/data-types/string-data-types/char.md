@@ -132,3 +132,6 @@ SELECT collation_name FROM information_schema.collations
 * [BINARY](binary.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -43,7 +43,7 @@ The *CREATE INDEX* statement is used to add indexes to a table. Indexes can be c
 
 The statement is mapped to an ALTER TABLE statement to create [indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/README.md).
 See [ALTER TABLE](../alter/alter-table.md). CREATE INDEX cannot be used to create a
-[PRIMARY KEY](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key); use ALTER TABLE instead.
+[PRIMARY KEY](/kb/en/getting-started-with-indexes/#primary-key); use ALTER TABLE instead.
 
 
 If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
@@ -183,8 +183,8 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 
 
 * [Identifier Names](../../../sql-language-structure/identifier-names.md)
-* [Getting Started with Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
-* [What is an Index?](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
+* [Getting Started with Indexes](/kb/en/getting-started-with-indexes/)
+* [What is an Index?](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/basic-mariadb-articles/the-essentials-of-an-index)
 * [ALTER TABLE](../alter/alter-table.md)
 * [DROP INDEX](../drop/drop-index.md)
 * [SHOW INDEX](../../administrative-sql-statements/show/show-index.md)
@@ -193,4 +193,7 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 * [WITHOUT OVERLAPS](../../../temporal-tables/application-time-periods.md#without-overlaps)
 * [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
 * [InnoDB Limitations](../../../../storage-engines/innodb/innodb-limitations.md)
+
+
+GPLv2 fill_help_tables.sql
 

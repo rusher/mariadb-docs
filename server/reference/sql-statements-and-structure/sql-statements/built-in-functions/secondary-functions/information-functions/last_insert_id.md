@@ -203,3 +203,6 @@ SELECT * FROM t;
 * [Sequences](../../../../sequences/README.md) - an alternative to auto_increment
 * [INSERT...RETURNING](../../../data-manipulation/inserting-loading-data/insertreturning.md)
 
+
+GPLv2 fill_help_tables.sql
+

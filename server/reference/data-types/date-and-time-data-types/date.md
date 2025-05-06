@@ -211,3 +211,6 @@ SELECT * FROM date_range_example;
 
 * [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
 
+
+GPLv2 fill_help_tables.sql
+

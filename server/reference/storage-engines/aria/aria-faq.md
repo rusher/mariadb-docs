@@ -102,7 +102,7 @@ If you want to know what happens or be part of developing Aria, you can subscrib
 [developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/), [docs](https://lists.mariadb.org/postorius/lists/docs.lists.mariadb.org/), or [discuss](https://lists.mariadb.org/postorius/lists/discuss.lists.mariadb.org/) mailing lists.
 
 
-To report and check bugs in Aria, see [Reporting Bugs](../../bug-tracking/reporting-bugs.md).
+To report and check bugs in Aria, see [Reporting Bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs).
 
 
 You can usually find some of the Maria developers on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) or on the [IRC](https://mariadb.com/kb/en/irc/) channel #maria at [](https://libera.chat/).
@@ -393,4 +393,7 @@ As part of zerofilling no vital data is removed.
 
 
 See [Aria Log Files](aria-storage-engine.md#aria-log-files) for details.
+
+
+CC BY-SA / Gnu FDL
 

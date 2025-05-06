@@ -90,3 +90,6 @@ SELECT name, test, score, COUNT(score) OVER (PARTITION BY name)
 * [COUNT DISTINCT](count-distinct.md)
 * [Window Functions](../special-functions/window-functions/README.md)
 
+
+GPLv2 fill_help_tables.sql
+

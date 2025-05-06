@@ -76,3 +76,6 @@ SELECT givenname, surname FROM users WHERE SOUNDEX(givenname) = SOUNDEX("robert"
 
 * [SOUNDS LIKE](sounds-like.md)()
 
+
+GPLv2 fill_help_tables.sql
+

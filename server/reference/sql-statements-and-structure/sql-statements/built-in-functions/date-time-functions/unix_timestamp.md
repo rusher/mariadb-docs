@@ -92,3 +92,6 @@ SELECT FROM_UNIXTIME(FLOOR(UNIX_TIMESTAMP('2007-11-30 10:30:19')));
 
 * [FROM_UNIXTIME()](from_unixtime.md)
 
+
+GPLv2 fill_help_tables.sql
+

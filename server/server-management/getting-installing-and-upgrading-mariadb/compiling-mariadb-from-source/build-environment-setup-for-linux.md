@@ -102,5 +102,8 @@ You should now have your build environment set up and can proceed to [Getting th
 ## See Also
 
 
-* [Installing Galera from source](../../../server-usage/replication-cluster-multi-master/galera-cluster/installing-galera-from-source.md)
+* [Installing Galera from source](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installing-galera-from-source)
+
+
+CC BY-SA / Gnu FDL
 

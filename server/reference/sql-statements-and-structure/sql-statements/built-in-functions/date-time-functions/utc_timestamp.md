@@ -50,3 +50,6 @@ SELECT UTC_TIMESTAMP(4);
 * [Time Zones](../../../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md)
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -51,3 +51,6 @@ CALL proc(0);
 
 * [ITERATE](iterate.md) - Repeats a loop execution
 
+
+GPLv2 fill_help_tables.sql
+

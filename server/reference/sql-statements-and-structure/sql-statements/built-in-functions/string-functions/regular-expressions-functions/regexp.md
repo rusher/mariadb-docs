@@ -128,3 +128,6 @@ SELECT 'a\nb\nc' RLIKE '^b$';
 
 * [Operator Precedence](../../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

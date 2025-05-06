@@ -327,7 +327,7 @@ SELECT * FROM t1;
 ## See Also
 
 
-* [Getting Started with Indexes](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
+* [Getting Started with Indexes](/kb/en/getting-started-with-indexes/)
 * [Sequences](../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [AUTO_INCREMENT FAQ](auto_increment-faq.md)
 * [LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
@@ -335,4 +335,7 @@ SELECT * FROM t1;
 * [BLACKHOLE and AUTO_INCREMENT](../storage-engines/blackhole.md#blackhole-and-auto_increment)
 * [UUID_SHORT()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) - Generate unique ids
 * [Generating Identifiers – from AUTO_INCREMENT to Sequence (percona.com)](https://www.percona.com/community-blog/2018/10/12/generating-identifiers-auto_increment-sequence/)
+
+
+GPLv2 fill_help_tables.sql
 

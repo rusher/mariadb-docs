@@ -31,3 +31,7 @@ SELECT AsText(ExteriorRing(GeomFromText(@poly)));
 | LINESTRING(0 0,0 3,3 3,3 0,0 0)           |
 +-------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

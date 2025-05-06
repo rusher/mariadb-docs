@@ -57,3 +57,6 @@ SELECT 1 = 1, NULL = NULL, 1 = NULL;
 
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

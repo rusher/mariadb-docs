@@ -227,3 +227,6 @@ SELECT *, example + 0 FROM int_zerofill_example;
 * [MEDIUMINT](mediumint.md)
 * [BIGINT](bigint.md)
 
+
+CC BY-SA / Gnu FDL
+

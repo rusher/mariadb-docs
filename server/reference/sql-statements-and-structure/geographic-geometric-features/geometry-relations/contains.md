@@ -16,3 +16,6 @@ Returns `1` or `0` to indicate whether a geometry `g1` completely contains geome
 
 This tests the opposite relationship to [Within()](within.md).
 
+
+GPLv2 fill_help_tables.sql
+

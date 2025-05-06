@@ -87,3 +87,6 @@ Plugin 'server_audit' is force_plus_permanent and can not be unloaded
 
 For more information on `FORCE_PLUS_PERMANENT` and other option values for the `[server_audit](mariadb-audit-plugin-options-and-system-variables.md)` option, see [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 
+
+CC BY-SA / Gnu FDL
+

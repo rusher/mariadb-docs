@@ -6,7 +6,7 @@ The full list of status variables are listed in the contents on this page; most 
 
 
 * [Aria Status Variables](../../../../reference/storage-engines/aria/aria-status-variables.md)
-* [Galera Status Variables](../../galera-cluster/galera-cluster-status-variables.md)
+* [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
 * [InnoDB Status Variables](innodb-status-variables.md)
 * [Mroonga Status Variables](../../../../reference/storage-engines/mroonga/mroonga-status-variables.md)
 * [MyRocks Status Variables](../../../../reference/storage-engines/myrocks/myrocks-status-variables.md)

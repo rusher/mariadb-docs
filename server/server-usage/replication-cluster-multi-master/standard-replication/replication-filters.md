@@ -589,7 +589,7 @@ Keep in mind that DDL statements are always logged to the [binary log](../../../
 ## Replication Filters and Galera Cluster
 
 
-When using Galera cluster, replication filters should be used with caution. See [Configuring MariaDB Galera Cluster: Replication Filters](../galera-cluster/configuring-mariadb-galera-cluster.md#replication-filters) for more details.
+When using Galera cluster, replication filters should be used with caution. See [Configuring MariaDB Galera Cluster: Replication Filters](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/configuring-mariadb-galera-cluster#replication-filters) for more details.
 
 
 ## See Also

@@ -20,7 +20,7 @@ If you are using a log of on-disk temporary tables, increase the above to as muc
 key-cache-segments=8
 ```
 
-If you use/have a lot of MyISAM files, increase the above to 4 or 8. See [Segmented Key Cache](segmented-key-cache.md) and [Segmented Key Cache Performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) for more information.
+If you use/have a lot of MyISAM files, increase the above to 4 or 8. See [Segmented Key Cache](segmented-key-cache.md) and [Segmented Key Cache Performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) for more information.
 
 
 ```

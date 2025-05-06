@@ -2166,13 +2166,13 @@
 ## Authenticators
 
 
-### [Authentication-Modules](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
+### [Authentication-Modules](/en/maxscale-25-01-authentication-modules/)
 
 
 #### Settings
 
 
-##### [lower_case_table_names](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
+##### [lower_case_table_names](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#lower_case_table_names)
 
 
 * Type: number
@@ -2181,7 +2181,7 @@
 * Default: `0`
 
 
-##### [match_host](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
+##### [match_host](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#match_host)
 
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
@@ -2190,7 +2190,7 @@
 * Default: `true`
 
 
-##### [skip_authentication](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
+##### [skip_authentication](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#skip_authentication)
 
 
 * Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)

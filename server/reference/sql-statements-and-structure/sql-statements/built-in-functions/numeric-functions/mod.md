@@ -65,3 +65,6 @@ SELECT 29 MOD 9;
 
 * [Operator Precedence](../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

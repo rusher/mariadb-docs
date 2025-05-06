@@ -33,3 +33,7 @@ SELECT ST_AsText(ST_LineFromWKB(@g)) AS l;
 | LINESTRING(0 4,4 6) |
 +---------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

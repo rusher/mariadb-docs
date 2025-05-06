@@ -31,3 +31,7 @@ SELECT ST_AsText(MLineFromWKB(@g));
 | MULTILINESTRING((10 48,10 21,10 0),(16 0,16 23,16 48)) |
 +--------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

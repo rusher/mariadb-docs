@@ -67,3 +67,6 @@ Note (Code 1008): Can't drop database 'bufg'; database doesn't exist
 * [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 * [SHOW CREATE DATABASE](../../administrative-sql-statements/show/show-create-database.md)
 
+
+GPLv2 fill_help_tables.sql
+

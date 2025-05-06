@@ -96,3 +96,6 @@ There are some limitations on the use of `DELAYED`:
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
+
+GPLv2 fill_help_tables.sql
+

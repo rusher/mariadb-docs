@@ -51,7 +51,7 @@ STATUS](../show/show-replica-status.md) ([SHOW REPLICA STATUS](../show/show-repl
 
 
 
-##### MariaDB starting with [11.3.0](/kb/en/mariadb-1130-release-notes/)
+##### MariaDB starting with [11.3.0](/en/mariadb-1130-release-notes/)
 
 ##### SQL_BEFORE_GTIDS|SQL_AFTER_GTIDS
 
@@ -89,4 +89,7 @@ using the channel_name directly after `START REPLICA`.
 * [CHANGE MASTER TO](change-master-to.md) is used to create and change connections.
 * [STOP REPLICA](stop-replica.md) is used to stop a running connection.
 * [RESET REPLICA](reset-replica.md) is used to reset parameters for a connection and also to permanently delete a primary connection.
+
+
+GPLv2 fill_help_tables.sql
 

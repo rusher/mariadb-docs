@@ -67,3 +67,7 @@ SELECT d, DATEDIFF(NOW(),d) FROM t1;
 | 2004-10-07 11:19:34 |              2419 |
 +---------------------+-------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

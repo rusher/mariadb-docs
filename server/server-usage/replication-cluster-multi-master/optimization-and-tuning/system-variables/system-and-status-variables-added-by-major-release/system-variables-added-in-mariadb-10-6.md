@@ -18,7 +18,7 @@ This is a list of [system variables](../server-system-variables.md) that have be
 | [optimizer_join_limit_pref_ratio](../server-system-variables.md#optimizer_join_limit_pref_ratio) | [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes) |
 | [optimizer_max_sel_args](../server-system-variables.md#optimizer_max_sel_args) | [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes) |
 | [server_uid](../server-system-variables.md#server_uid) | [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes) |
-| [wsrep_mode](../../../galera-cluster/galera-cluster-system-variables.md#wsrep_mode) | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
+| [wsrep_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) | [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) |
 
 
 

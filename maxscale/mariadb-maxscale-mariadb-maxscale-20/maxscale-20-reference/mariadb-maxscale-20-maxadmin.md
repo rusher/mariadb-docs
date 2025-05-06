@@ -652,7 +652,7 @@ The status bit that can be controlled are
 | slave | The server is a replication slave or is considered as a read only database. |
 | synced | The server is a fully fledged member of a Galera cluster |
 | maintenance | The server is in maintenance mode. In this mode no new connections will be established to the server. The monitors will also not monitor servers that are in maintenance mode. |
-| stale | The server is a stale master server. Read [MySQL Monitor](/en/mariadb-maxscale-20-mysql-monitor/) documentation for more details. |
+| stale | The server is a stale master server. Read [MySQL Monitor](/kb/en/mariadb-maxscale-20-mysql-monitor/) documentation for more details. |
 
 
 All status bits, with the exception of the maintenance bit, will be set by the monitors that are monitoring the server. If manual control is required the monitor should be stopped.

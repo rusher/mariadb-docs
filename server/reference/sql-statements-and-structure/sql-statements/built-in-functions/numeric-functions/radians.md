@@ -50,3 +50,7 @@ SELECT RADIANS(180);
 | 3.14159265358979 |
 +------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

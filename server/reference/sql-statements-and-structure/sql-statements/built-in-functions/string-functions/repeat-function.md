@@ -27,3 +27,7 @@ SELECT QUOTE(REPEAT('MariaDB ',4));
 | 'MariaDB MariaDB MariaDB MariaDB ' |
 +------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

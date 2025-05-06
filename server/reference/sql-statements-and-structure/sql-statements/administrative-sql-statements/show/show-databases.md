@@ -70,3 +70,6 @@ SHOW DATABASES LIKE 'm%';
 * [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Information Schema SCHEMATA Table](../system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -212,7 +212,7 @@ Not all global status variables support being reset by `FLUSH STATUS`. Currently
 
 
 
-##### MariaDB starting with [10.11.12](/kb/en/mariadb-101112-release-notes/)
+##### MariaDB starting with [10.11.12](/en/mariadb-101112-release-notes/)
 Prior to [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-12-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-6-release-notes) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/mariadb-11-8-2-release-notes), FLUSH TABLES caused [InnoDB statistics](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated. From [MariaDB 10.11.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-12-release-notes), [MariaDB 11.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-6-release-notes) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/mariadb-11-8-2-release-notes), this is no longer the case. [RENAME TABLE](../../data-definition/rename-table.md) is unaffected, and will continue to trigger a reload of the statistics.
 
 
@@ -346,3 +346,7 @@ FLUSH LOCAL HOSTS,
    INDEX_STATISTICS, 
    USER_STATISTICS;
 ```
+
+
+GPLv2 fill_help_tables.sql
+

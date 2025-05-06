@@ -69,3 +69,7 @@ SELECT ROUND(23.298, -1);
 |                20 |
 +-------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

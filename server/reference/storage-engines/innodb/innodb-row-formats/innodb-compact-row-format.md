@@ -1,9 +1,7 @@
 
 # InnoDB COMPACT Row Format
 
-
-#### Note
-
+**Note**
 `COMPACT` was the default row format in prior versions of MariaDB. MariaDB has since transitioned to `DYNAMIC` as the default row format. 
 
 
@@ -12,6 +10,13 @@ The `COMPACT` row format is similar to the `REDUNDANT` row format, but it stores
 
 
 ## Using the `COMPACT` Row Format
+
+
+
+* If you performed a physical upgrade from older version of MariaDB Server or MySQL to a newer MariaDB Server version, then some of your tables may still use COMPACT row format.
+* Compact row format does not store large columns as efficiently as the Dynamic row format.
+* Compact row format limits indexing column values to 767 bytes, which is significant smaller than the Dynamic row format.
+
 
 
 The easiest way to create an InnoDB table that uses the `COMPACT` row format is by setting the [ROW_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option to `COMPACT` in a [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement.

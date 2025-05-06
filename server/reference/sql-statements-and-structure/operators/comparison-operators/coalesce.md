@@ -108,3 +108,6 @@ SELECT COALESCE(SUM(score),0) FROM student;
 * [NULLIF function](../../sql-statements/built-in-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../../../storage-engines/connect/connect-data-types.md#null-handling)
 
+
+GPLv2 fill_help_tables.sql
+

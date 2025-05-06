@@ -27,3 +27,7 @@ SELECT NAME_CONST('myname', 14);
 |     14 |
 +--------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

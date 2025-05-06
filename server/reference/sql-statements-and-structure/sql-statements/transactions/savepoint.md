@@ -44,3 +44,7 @@ If SAVEPOINT is issued and no transaction was started, no error is reported but 
 ```
 ERROR 1305 (42000): SAVEPOINT svp_name does not exist
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -234,3 +234,6 @@ SELECT *, example + 0 FROM tinyint_zerofill_example;
 * [BIGINT](bigint.md)
 * [BOOLEAN](boolean.md)
 
+
+GPLv2 fill_help_tables.sql
+

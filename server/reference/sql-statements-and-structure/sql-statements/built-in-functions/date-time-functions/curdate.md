@@ -56,3 +56,7 @@ SELECT CURDATE() - INTERVAL 5 DAY;
 | 2019-02-28                 |
 +----------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

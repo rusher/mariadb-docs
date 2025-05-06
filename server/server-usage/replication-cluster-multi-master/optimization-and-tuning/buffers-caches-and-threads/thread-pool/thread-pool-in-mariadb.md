@@ -72,7 +72,7 @@ provide good performance out-of-the box. However, the system variable values can
 as you see fit.
 
 
-If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](../../../../../reference/bug-tracking/reporting-bugs.md).
+If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs).
 
 
 See [Thread Pool System and Status Variables](thread-pool-system-status-variables.md) for the full list of the thread pool's system variables.
@@ -350,6 +350,6 @@ The [thread_cache_size](../../system-variables/server-system-variables.md#thread
 
 
 * [Thread Pool System and Status Variables](thread-pool-system-status-variables.md)
-* [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
+* [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
 * [Thread Pool in MariaDB 5.1 - 5.3](thread-pool-in-mariadb-51-53.md)
 

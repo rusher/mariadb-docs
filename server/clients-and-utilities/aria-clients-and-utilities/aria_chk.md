@@ -189,3 +189,7 @@ In case you have a serious problem and have to use `--safe-recover`:
 ```
 aria_chk --safe-recover --zerofill --page_buffer_size=2G */*.MAI
 ```
+
+
+CC BY-SA / Gnu FDL
+

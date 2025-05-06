@@ -36,3 +36,6 @@ ERROR 1407 (42000): Bad SQLSTATE: '00000'
 For a list of SQLSTATE values and MariaDB error
 codes, see [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
+
+GPLv2 fill_help_tables.sql
+

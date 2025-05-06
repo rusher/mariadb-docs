@@ -12,7 +12,7 @@ See the following MariaDB knowledgebase articles for more information on setting
 primary-replica-cluster or a Galera-cluster:
 [Setting Up Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication)
  and
- [Getting Started With MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster)
+ [Getting Started With MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster)
 .
 
 

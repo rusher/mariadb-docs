@@ -73,3 +73,6 @@ select * from t1;
 * [SYS_GUID](sys_guid.md) - UUID without the `-` character for Oracle compatibility
 * [UUID data type](../../../../../data-types/string-data-types/uuid-data-type.md)
 
+
+GPLv2 fill_help_tables.sql
+

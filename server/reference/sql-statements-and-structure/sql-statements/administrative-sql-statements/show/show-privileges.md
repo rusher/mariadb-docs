@@ -79,3 +79,6 @@ SHOW PRIVILEGES;
 * [SHOW CREATE USER](show-create-user.md) shows how the user was created.
 * [SHOW GRANTS](show-grants.md) shows the `GRANTS/PRIVILEGES` for a user.
 
+
+GPLv2 fill_help_tables.sql
+

@@ -320,3 +320,6 @@ SELECT * FROM table_name
 * [SHOW EXPLAIN](../show/show-explain.md)
 * [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
 
+
+GPLv2 fill_help_tables.sql
+

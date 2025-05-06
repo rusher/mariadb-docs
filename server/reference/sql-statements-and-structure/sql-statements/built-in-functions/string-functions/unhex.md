@@ -67,3 +67,6 @@ SELECT HEX(UNHEX('1267'));
 * [HEX()](hex.md)
 * [CONV()](../numeric-functions/conv.md)
 
+
+GPLv2 fill_help_tables.sql
+

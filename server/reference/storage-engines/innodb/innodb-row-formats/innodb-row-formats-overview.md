@@ -231,6 +231,23 @@ These messages are raised in the following cases:
 For information on how to solve the problem, see [Troubleshooting Row Size Too Large Errors with InnoDB](troubleshooting-row-size-too-large-errors-with-innodb.md).
 
 
+## Feature Summary
+
+
+
+| Feature | [Dynamic](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-dynamic-row-format) | [Compressed](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-compressed-row-format) | [Compact](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-compact-row-format) | [Redundant](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-redundant-row-format) |
+| --- | --- | --- | --- | --- |
+| Feature | [Dynamic](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-dynamic-row-format) | [Compressed](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-compressed-row-format) | [Compact](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-compact-row-format) | [Redundant](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-redundant-row-format) |
+| Default | Yes | No | No | No |
+| Recommended | Yes | No | No | No |
+| Efficiently stores large columns | Yes | Yes | No | No |
+| Efficiently utilizes buffer pool | Yes | No | Yes | Yes |
+| Supported Page Sizes | • 64k • 32k • 16k • 8k • 4k | • 16k • 8k • 4k | • 64k • 32k • 16k • 8k • 4k | • 64k • 32k • 16k • 8k • 4k |
+| Maximum size of indexed column values | • 3072 bytes (innodb_page_size >= 16k) • 1536 bytes (innodb_page_size == 8k) • 768 bytes (innodb_page_size == 4k) | • 3072 bytes (innodb_page_size >= 16k) • 1536 bytes (innodb_page_size == 8k) • 768 bytes (innodb_page_size == 4k) | 767 bytes | 767 bytes |
+| Supports ADD/DROP column with INSTANT Algorithm | Yes | No | Yes | Yes |
+
+
+
 ## Known Issues
 
 

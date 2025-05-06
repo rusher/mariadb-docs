@@ -32,3 +32,6 @@ The return value is 16 bytes in length, or NULL if the argument was NULL.
 * [PASSWORD()](password.md)
 * [MySQL manual on password hashing](https://dev.mysql.com/doc/refman/5.1/en/password-hashing.html)
 
+
+GPLv2 fill_help_tables.sql
+

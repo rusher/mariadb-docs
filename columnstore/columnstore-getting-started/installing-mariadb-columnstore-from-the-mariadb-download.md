@@ -105,7 +105,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -194,7 +194,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -305,7 +305,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -422,7 +422,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -525,7 +525,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -613,7 +613,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -724,7 +724,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -841,7 +841,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -961,7 +961,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -1078,7 +1078,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -1198,7 +1198,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -1315,7 +1315,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -1435,7 +1435,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:
@@ -1552,7 +1552,7 @@ Follow the instructions for installing MariaDB Columnstore Tools
 How to Install the ODBC Connector:
 
 
-[about-mariadb-connector-odbc](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc)
+[](https://mariadb.com/kb/en/library/about-mariadb-connector-odbc/)
 
 
 Additional Information on the ODBC connector:

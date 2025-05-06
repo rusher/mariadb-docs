@@ -36,3 +36,6 @@ See [mariadb-install-db: Troubleshooting Issues](../../clients-and-utilities/mar
 * [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md)
 * The Windows version of `mariadb-install-db`: [mysql_install_db.exe](mariadb-install-db-exe.md)
 
+
+CC BY-SA / Gnu FDL
+

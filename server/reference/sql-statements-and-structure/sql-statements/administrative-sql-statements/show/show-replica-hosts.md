@@ -53,3 +53,6 @@ Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-commands/gr
 * [Replication threads](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-threads.md)
 * [SHOW PROCESSLIST](show-processlist.md). In `[SHOW PROCESSLIST](show-processlist.md)` output, replica threads are identified by `Binlog Dump`
 
+
+GPLv2 fill_help_tables.sql
+

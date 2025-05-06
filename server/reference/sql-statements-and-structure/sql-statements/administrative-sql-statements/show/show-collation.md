@@ -87,3 +87,6 @@ SHOW COLLATION WHERE Sortlen LIKE '8' AND Charset LIKE 'utf8mb4';
 * [Setting Character Sets and Collations](../../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
 * [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

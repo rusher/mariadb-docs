@@ -1,7 +1,6 @@
 
 # ColumnStore Architectural Overview
 
-
 MariaDB ColumnStore is a columnar storage engine designed for distributed massively parallel processing (MPP), such as for big data analysis. Deployments are composed of several MariaDB servers, operating as modules, working together to provide linear scalability and exceptional performance with real-time response to analytical queries. These modules include [User](#user-module), [Performance](#performance-module) and [Storage](#storage).
 
 
@@ -11,13 +10,14 @@ MariaDB ColumnStore is a columnar storage engine designed for distributed massiv
 It provides a highly available, fault tolerant, and performant columnar storage engine for MariaDB Enterprise Server. MariaDB Enterprise ColumnStore is designed for data warehousing, decision support systems (DSS), online analytical processing (OLAP), and hybrid transactional-analytical processing (HTAP).
 
 
+
 ## Benefits
 
 
 * Columnar storage engine that enables MariaDB Enterprise Server to perform new workloads
 * Optimized for online analytical process (OLAP) workloads including data warehousing, decision support systems, and business intelligence
 * Single-stack solution for hybrid transactional-analytical workloads to eliminate barriers and prevent data silos
-* Implements cross-engine JOINs to join Enterprise ColumnStore tables with tables using row-based storage engines, such as [InnoDB](https://mariadb.com/kb/en/storage-engines-overview-innodb-storage-engine/)
+* Implements cross-engine JOINs to join Enterprise ColumnStore tables with tables using row-based storage engines, such as [InnoDB](/kb/en/storage-engines-overview-innodb-storage-engine/)
 * Smart storage engine that plans and optimizes its own queries using a custom select handler
 * Scalable query execution using massively parallel processing (MPP) strategies, parallel query execution, and distributed function evaluation
 * S3-compatible object storage can be used for highly available, low-cost, multi-regional, resilient, scalable, secure, and virtually limitless data storage
@@ -65,8 +65,8 @@ The ColumnStore nodes:
 
 * Receive queries from MaxScale
 * Execute queries
-* Use [S3-compatible object storage](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) for data
-* Use [Shared Local Storage](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [Storage Manager directory](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory).
+* Use [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) for data
+* Use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory).
 
 
 ### Enterprise ColumnStore with Shared Local Storage
@@ -98,7 +98,7 @@ The ColumnStore nodes:
 
 * Receive queries from MaxScale
 * Execute queries
-* Use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [DB Root directories](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
+* Use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
 
 
 ## Software Architecture
@@ -111,7 +111,7 @@ The ColumnStore nodes:
 | [MariaDB Enterprise ColumnStore](/kb/en/mariadb-columnstore/) | • Columnar storage engine • Query execution • Data storage |
 | [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/) | Enterprise-grade database server |
 | [ColumnStore Storage Engine Plugin](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#columnstore-storage-engine-plugin) | • Storage engine plugin • Integrates MariaDB Enterprise ColumnStore into MariaDB Enterprise Server |
-| [Cluster Management API (CMAPI)](/kb/en/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Used for administrative tasks |
+| [Cluster Management API (CMAPI)](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Used for administrative tasks |
 | [MariaDB MaxScale](/kb/en/maxscale/) | • Database proxy • Accepts connections • Routes queries • Performs auto-failover |
 
 
@@ -162,13 +162,13 @@ The ColumnStore storage engine plugin is a smart storage engine that implements 
 As a smart storage engine, the ColumnStore storage engine plugin tightly integrates Enterprise ColumnStore with ES, but it has enough independence to efficiently execute analytical queries using a completely unique approach.
 
 
-For additional information, see "[ColumnStore Storage Engine](https://mariadb.com/kb/en/columnstore-storage-engine/)".
+For additional information, see "[ColumnStore Storage Engine](/kb/en/columnstore-storage-engine/)".
 
 
 ### Cluster Management API (CMAPI) Server
 
 
-The [Cluster Management API (CMAPI)](/kb/en/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) server provides a REST API that can be used to configure and manage Enterprise ColumnStore.
+The [Cluster Management API (CMAPI)](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) server provides a REST API that can be used to configure and manage Enterprise ColumnStore.
 
 
 CMAPI must run on every ColumnStore node in a multi-node deployment but is not required in a single-node deployment.
@@ -199,7 +199,7 @@ Multi-node Enterprise ColumnStore deployments must have one or more [MaxScale](/
 * Performing automatic failover if a node fails
 
 
-# Storage Architecture
+## Storage Architecture
 
 
 MariaDB Enterprise ColumnStore's storage architecture provides a columnar storage engine with high availability, fault tolerance, compression, and automatic partitioning for production analytics and data warehousing.
@@ -292,7 +292,7 @@ The most common shared local storage option for GCP (Google Cloud Platform) depl
 MariaDB Enterprise ColumnStore uses distributed query execution and massively parallel processing (MPP) techniques to achieve vertical and horizontal scalability for production analytics and data warehousing.
 
 
-For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluation](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-query-evaluation/)".
+For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluation](mariadb-enterprise-columnstore-query-evaluation.md)".
 
 
 ### Extent Elimination
@@ -354,16 +354,16 @@ As a smart storage engine, the ColumnStore storage engine plugin tightly integra
 ### Query Planning
 
 
-The ColumnStore storage engine plugin is a smart storage engine, so MariaDB Enterprise ColumnStore to plan its own queries using the [custom select handler](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-query-evaluation/#custom-select-handler).
+The ColumnStore storage engine plugin is a smart storage engine, so MariaDB Enterprise ColumnStore to plan its own queries using the [custom select handler](mariadb-enterprise-columnstore-query-evaluation.md#custom-select-handler).
 
 
 MariaDB Enterprise ColumnStore's query planning is divided into two steps:
 
 
-1. ES provides the query's SELECT_LEX object to the [custom select handler](/kb/en/mariadb-enterprise-columnstore-query-evaluation/#custom-select-handler). The custom select handler builds a [ColumnStore Execution Plan (CSEP)](https://mariadb.com/kb/en/columnstore-execution-plan-csep-for-mariadb-enterprise-columnstore/).
+1. ES provides the query's SELECT_LEX object to the [custom select handler](mariadb-enterprise-columnstore-query-evaluation.md#custom-select-handler). The custom select handler builds a [ColumnStore Execution Plan (CSEP)](../columnstore-performance-tuning/columnstore-query-tuning/query-plans-and-optimizer-trace/columnstore-execution-plan-csep-for-mariadb-enterprise-columnstore.md).
 
 
-2. The custom select handler provides the CSEP to the [ExeMgr process](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-query-evaluation/#exemgr-processfacility) on the same node. The ExeMgr process performs [extent elimination](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-query-evaluation/#extent-elimination) and creates a job list.
+2. The custom select handler provides the CSEP to the [ExeMgr process](mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) on the same node. The ExeMgr process performs [extent elimination](mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) and creates a job list.
 
 
 ### Job Steps
@@ -396,7 +396,7 @@ MariaDB Enterprise ColumnStore leverages common technologies to provide highly a
 | [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) | • With S3: HA for [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) • Without S3: HA for [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) |
 | [MariaDB Replication](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#mariadb-replication) | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication |
 | [MaxScale](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#maxscale) | • Monitoring • Automatic failover • Load balancing |
-| [Cluster Management API (CMAPI) Server](/kb/en/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Administration • Add nodes • Remove nodes |
+| [Cluster Management API (CMAPI) Server](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Administration • Add nodes • Remove nodes |
 
 
 
@@ -531,7 +531,7 @@ MariaDB Enterprise ColumnStore includes a bulk data loading tool called cpimport
 * Does not block read queries
 * Requires a write metadata lock on the table, which can be monitored with the [METADATA_LOCK_INFO plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/metadata-lock-info-plugin).
 * Appends the new data to the table. While the bulk load is in progress, the newly appended data is temporarily hidden from queries. After the bulk load is complete, the newly appended data is visible to queries.
-* Inserts each row in the order the rows are read from the source file. Users can optimize data loads for Enterprise ColumnStore's automatic partitioning by loading presorted data files. For additional information, see "[Load Ordered Data in Proper Order](https://mariadb.com/kb/en/query-tuning-recommendations-for-mariadb-enterprise-columnstore/#load-ordered-data-in-proper-order)".
+* Inserts each row in the order the rows are read from the source file. Users can optimize data loads for Enterprise ColumnStore's automatic partitioning by loading presorted data files. For additional information, see "[Load Ordered Data in Proper Order](../columnstore-performance-tuning/columnstore-query-tuning/query-tuning-recommendations-for-mariadb-enterprise-columnstore.md#load-ordered-data-in-proper-order)".
 * Supports parallel distributed bulk loads
 * Imports data from text files
 * Imports data from binary files

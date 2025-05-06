@@ -54,3 +54,6 @@ SHOW CONTRIBUTORS;
 * [SHOW AUTHORS](show-authors.md) list the authors of MariaDB (including documentation, QA etc).
 * [MariaDB Foundation page on contributing financially](https://mariadb.org/donate/)
 
+
+GPLv2 fill_help_tables.sql
+

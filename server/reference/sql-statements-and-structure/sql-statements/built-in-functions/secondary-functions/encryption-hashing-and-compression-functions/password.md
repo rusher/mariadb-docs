@@ -75,3 +75,6 @@ SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass');
 * [Password Validation Plugins](../../../../../plugins/password-validation-plugins/README.md) - permits the setting of basic criteria for passwords
 * [OLD_PASSWORD()](old_password.md) - pre-MySQL 4.1 password function
 
+
+GPLv2 fill_help_tables.sql
+

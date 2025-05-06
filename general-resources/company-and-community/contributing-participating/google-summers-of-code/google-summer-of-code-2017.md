@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2017
 
-We participated in the [Google Summer of Code 2017](https://summerofcode.withgoogle.com/) (we have participated previously in [2016](google-summer-of-code-2016.md), [2015](google-summer-of-code-2015.md), [2014](google-summer-of-code-2014.md), and [2013](google-summer-of-code-2013.md)). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently C, ODBC, Java) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. Lately, we also have [MariaDB ColumnStore](/kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+We participated in the [Google Summer of Code 2017](https://summerofcode.withgoogle.com/) (we have participated previously in [2016](google-summer-of-code-2016.md), [2015](google-summer-of-code-2015.md), [2014](google-summer-of-code-2014.md), and [2013](google-summer-of-code-2013.md)). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently C, ODBC, Java) and on [MariaDB Galera Cluster](/en/galera/), which allows you to scale your reads & writes. Lately, we also have [MariaDB ColumnStore](/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 
 

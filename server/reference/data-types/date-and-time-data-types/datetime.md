@@ -224,3 +224,6 @@ SELECT description, CONVERT(example, DATETIME) AS example
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 * [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
 
+
+GPLv2 fill_help_tables.sql
+

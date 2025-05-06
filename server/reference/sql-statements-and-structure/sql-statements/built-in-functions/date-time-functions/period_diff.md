@@ -43,3 +43,7 @@ SELECT PERIOD_DIFF(7002,6803);
 |                  -1177 |
 +------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

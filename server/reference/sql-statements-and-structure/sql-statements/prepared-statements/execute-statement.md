@@ -48,3 +48,6 @@ See [example in PREPARE](prepare-statement.md#example).
 
 * [EXECUTE IMMEDIATE](execute-immediate.md)
 
+
+GPLv2 fill_help_tables.sql
+

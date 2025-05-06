@@ -7,11 +7,11 @@ MariaDB Vector has integrations in several frameworks.
 ## AI framework integrations
 
 
-* [LangChain, MariaDB Vector Store](https://pypi.org/project/langchain-mariadb/) - python
-* [LangChain.js, MariaDB Vector Store](https://js.langchain.com/docs/integrations/vectorstores/mariadb/) - node.js
-* [LangChain4j, MariaDB Embedding Store](https://docs.langchain4j.dev/integrations/embedding-stores/mariadb/) - java
-* [LlamaIndex, MariaDB Vector Store](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/mariadb/) - python
-* [Spring AI, MariaDB Vector Store](https://docs.spring.io/spring-ai/reference/api/vectordbs/mariadb.html) - java
+* [LangChain, MariaDB Vector Store](https://pypi.org/project/langchain-mariadb/) - Python
+* [LangChain.js, MariaDB Vector Store](https://js.langchain.com/docs/integrations/vectorstores/mariadb/) - Node.js
+* [LangChain4j, MariaDB Embedding Store](https://docs.langchain4j.dev/integrations/embedding-stores/mariadb/) - Java
+* [LlamaIndex, MariaDB Vector Store](https://docs.llamaindex.ai/en/stable/api_reference/storage/vector_store/mariadb/) - Python
+* [Spring AI, MariaDB Vector Store](https://docs.spring.io/spring-ai/reference/api/vectordbs/mariadb.html) - Java
 * [VectorDBBench](https://github.com/zilliztech/VectorDBBench/pull/375) - benchmarking for vector databases
 
 

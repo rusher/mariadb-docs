@@ -73,3 +73,6 @@ SELECT TRUNCATE(10.28*100,0);
 
 * [TRUNCATE TABLE](../../table-statements/truncate-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

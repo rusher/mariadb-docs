@@ -79,3 +79,6 @@ SELECT TRIM(''),TRIM_ORACLE('');
 * [LTRIM](ltrim.md) - leading spaces removed
 * [RTRIM](rtrim.md) - trailing spaces removed
 
+
+GPLv2 fill_help_tables.sql
+

@@ -35,3 +35,6 @@ SELECT MBRContains(@g1,@g2), MBRContains(@g2,@g1);
 
 * [MBRWithin](mbrwithin.md)
 
+
+GPLv2 fill_help_tables.sql
+

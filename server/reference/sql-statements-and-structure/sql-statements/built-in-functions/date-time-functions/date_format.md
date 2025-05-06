@@ -145,3 +145,6 @@ SELECT DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z');
 * [STR_TO_DATE()](str_to_date.md)
 * [FROM_UNIXTIME()](from_unixtime.md)
 
+
+GPLv2 fill_help_tables.sql
+

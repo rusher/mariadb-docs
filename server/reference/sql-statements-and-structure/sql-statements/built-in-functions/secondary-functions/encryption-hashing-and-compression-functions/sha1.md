@@ -29,3 +29,7 @@ SELECT SHA1('some boring text');
 | af969fc2085b1bb6d31e517d5c456def5cdd7093 |
 +------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

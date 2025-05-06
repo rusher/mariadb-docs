@@ -188,3 +188,6 @@ SELECT * FROM t2 WHERE DAYNAME(d) LIKE "T%";
 * For more complex searches and operations on strings, you can use [regular expressions](regular-expressions-functions/README.md), which were enhanced in MariaDB 10 (see [PCRE Regular Expressions](regular-expressions-functions/pcre.md)).
 * [Operator Precedence](../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

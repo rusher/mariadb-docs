@@ -39,3 +39,7 @@ val4: <a><b>ccc</b><e>fff</e></a>
 val5: <a><d></d><b>ccc</b><d></d></a>
 1 row in set (0.00 sec)
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -20,3 +20,6 @@ faster when you do not care about the result.
 `DO` is useful primarily with functions that have side
  effects, such as `[RELEASE_LOCK()](../built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md)`.
 
+
+GPLv2 fill_help_tables.sql
+

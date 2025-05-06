@@ -33,3 +33,7 @@ SELECT ST_AsText(ST_PolyFromWKB(@g)) AS p;
 | POLYGON((1 1,1 5,4 9,6 9,9 3,7 2,1 1)) |
 +----------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

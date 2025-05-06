@@ -81,3 +81,6 @@ SELECT customer_address FROM customer_table
 
 * [DES_DECRYPT()](des_decrypt.md)
 
+
+GPLv2 fill_help_tables.sql
+

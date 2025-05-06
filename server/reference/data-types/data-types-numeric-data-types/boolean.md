@@ -117,3 +117,6 @@ to neither 1 nor 0.
 * [Boolean Literals](../../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md)
 * [IS operator](../../sql-statements-and-structure/operators/comparison-operators/is.md)
 
+
+GPLv2 fill_help_tables.sql
+

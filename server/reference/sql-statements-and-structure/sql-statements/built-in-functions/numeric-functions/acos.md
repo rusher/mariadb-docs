@@ -48,3 +48,7 @@ SELECT ACOS(0.234);
 | 1.33460644244679 |
 +------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

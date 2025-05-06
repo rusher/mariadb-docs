@@ -129,3 +129,6 @@ SELECT * FROM time_example;
 
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
+
+GPLv2 fill_help_tables.sql
+

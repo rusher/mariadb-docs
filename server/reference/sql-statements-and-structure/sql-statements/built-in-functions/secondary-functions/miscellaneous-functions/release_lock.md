@@ -122,3 +122,6 @@ Empty set (0.000 sec)
 * [IS_USED_LOCK](is_used_lock.md)
 * [RELEASE_ALL_LOCKS](release_all_locks.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -49,7 +49,7 @@ Once installed, make sure that the `maxlog` parameter is not disabled and then s
 ### Profiling Release Mode Binaries
 
 
-The instructions on the [profiling-memory-usage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/bug-tracking/profiling-memory-usage) page that are for the MariaDB server also apply to MaxScale. The following modifications to the commands must be done in order for them to work with MaxScale.
+The instructions on the [profiling-memory-usage](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/profiling-memory-usage) page that are for the MariaDB server also apply to MaxScale. The following modifications to the commands must be done in order for them to work with MaxScale.
 
 
 * Replace `/usr/sbin/mariadbd` with `/usr/bin/maxscale`
@@ -327,5 +327,5 @@ JournalSizeMax=1G
 #KeepFree=
 ```
 
-Read the MariaDB documentation for [enabling-core-dumps](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps) and [how-to-produce-a-full-stack-trace-for-mysqld](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd). Most of the operating system level documentation applies to MaxScale as well except that MaxScale is always run as a SystemD service and it only supports Linux as the platform.
+Read the MariaDB documentation for [enabling-core-dumps](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/enabling-core-dumps) and [how-to-produce-a-full-stack-trace-for-mysqld](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd). Most of the operating system level documentation applies to MaxScale as well except that MaxScale is always run as a SystemD service and it only supports Linux as the platform.
 

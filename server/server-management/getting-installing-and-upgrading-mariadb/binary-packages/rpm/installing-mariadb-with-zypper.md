@@ -179,7 +179,7 @@ The process to install MariaDB Galera Cluster with the MariaDB `zypper` reposito
 Galera Cluster support has been included in the standard MariaDB Server packages, so you will need to install the `MariaDB-server` package, as you normally would.
 
 
-You also need to install the `galera-4` package to obtain the [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](/kb/en/galera/) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, you could execute the following command:
@@ -193,13 +193,13 @@ If you haven't yet imported the MariaDB GPG public key, then `zypper` will promp
 import it after it downloads the packages, but before it prompts you to install them.
 
 
-See [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](/kb/en/galera/) for more information on MariaDB Galera Cluster.
 
 
 ### Installing MariaDB Clients and Client Libraries with ZYpp
 
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c) has been included as the client library. However, the package name for the client library has not been changed.
+[MariaDB Connector/C](/kb/en/about-mariadb-connector-c/) has been included as the client library. However, the package name for the client library has not been changed.
 
 
 To Install the clients and client libraries, execute the following command:
@@ -235,7 +235,7 @@ sudo zypper install MariaDB-cracklib-password-check
 ### Installing Debug Info Packages with ZYpp
 
 
-The MariaDB `zypper` repository also contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
+The MariaDB `zypper` repository also contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages. These package may be needed when [debugging a problem](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd).
 
 
 #### Installing Debug Info for the Most Common Packages with ZYpp
@@ -261,7 +261,7 @@ sudo zypper install MariaDB-server-debuginfo
 #### Installing Debug Info for MariaDB Clients and Client Libraries with ZYpp
 
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c) has been included as the client library. However, the package name for the client library has not been changed.
+[MariaDB Connector/C](/kb/en/about-mariadb-connector-c/) has been included as the client library. However, the package name for the client library has not been changed.
 
 
 To install `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` for the clients and client libraries, execute the following command:
@@ -334,5 +334,5 @@ The rest of the install and setup process is as normal.
 After the installation is complete, you can [start MariaDB](https://mariadb.com/kb/en/).
 
 
-If you are using [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](/kb/en/galera/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 

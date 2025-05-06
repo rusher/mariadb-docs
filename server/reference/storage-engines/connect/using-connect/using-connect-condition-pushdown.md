@@ -6,3 +6,6 @@ The [ODBC](../connect-table-types/connect-odbc-table-type-accessing-tables-from-
 
 The CONDITION_PUSHDOWN argument used in old versions of CONNECT is no longer needed because CONNECT uses condition pushdown unconditionally.
 
+
+GPLv2
+

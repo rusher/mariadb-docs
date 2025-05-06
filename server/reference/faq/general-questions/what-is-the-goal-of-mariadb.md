@@ -1,7 +1,7 @@
 
 # What is the Goal of MariaDB?
 
-To provide a [community](/kb/en/community/) developed, stable, and [always Free](../licensing-questions/mariadb-licenses.md) DBMS that is, on the user level, broadly compatible with MySQL.
+To provide a [community](/en/community/) developed, stable, and [always Free](../licensing-questions/mariadb-licenses.md) DBMS that is, on the user level, broadly compatible with MySQL.
 
 
 We strive for interoperability with both our own, and our upstream, communities.

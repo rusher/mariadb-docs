@@ -55,3 +55,6 @@ collation_connection: latin1_swedish_ci
 * [ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md)
 * [DROP EVENT](../../data-definition/drop/drop-event.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -30,3 +30,7 @@ The `VALUES()` function can still be used but only in `INSERT ... ON DUPLICATE K
 INSERT INTO t (a,b,c) VALUES (1,2,3),(4,5,6)
     ON DUPLICATE KEY UPDATE c=VALUE(a)+VALUE(b);
 ```
+
+
+GPLv2 fill_help_tables.sql
+

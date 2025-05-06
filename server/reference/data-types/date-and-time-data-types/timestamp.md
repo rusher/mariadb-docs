@@ -301,3 +301,6 @@ SELECT * FROM t4;
 
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
+
+CC BY-SA / Gnu FDL
+

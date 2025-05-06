@@ -42,3 +42,7 @@ SELECT ASCII('abc');
 |           97 |
 +--------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

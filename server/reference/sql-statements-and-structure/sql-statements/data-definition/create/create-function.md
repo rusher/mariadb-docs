@@ -325,3 +325,6 @@ CREATE FUNCTION hello2 (s CHAR(20))
 * [Stored Routine Privileges](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

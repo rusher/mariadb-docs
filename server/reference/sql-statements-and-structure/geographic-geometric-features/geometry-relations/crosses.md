@@ -28,3 +28,6 @@ given geometries that has the following properties:
 
 CROSSES() is based on the original MySQL implementation, and uses object bounding rectangles, while [ST_CROSSES()](st-crosses.md) uses object shapes.
 
+
+GPLv2 fill_help_tables.sql
+

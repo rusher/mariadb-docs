@@ -30,3 +30,7 @@ INSERT INTO gis_point VALUES
     (PointFromText('POINT(20 20)')),
     (PointFromWKB(AsWKB(PointFromText('POINT(10 20)'))));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

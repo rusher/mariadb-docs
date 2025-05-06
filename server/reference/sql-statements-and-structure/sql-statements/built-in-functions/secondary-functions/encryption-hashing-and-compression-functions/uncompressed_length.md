@@ -32,3 +32,7 @@ SELECT UNCOMPRESSED_LENGTH(COMPRESS(REPEAT('a',30)));
 |                                            30 |
 +-----------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

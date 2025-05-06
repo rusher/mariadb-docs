@@ -131,3 +131,7 @@ SELECT
 | ccc  | ddd  | ddd  |      | ddd eee |
 +------+------+------+------+---------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

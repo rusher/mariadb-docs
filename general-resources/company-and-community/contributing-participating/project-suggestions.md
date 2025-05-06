@@ -14,7 +14,7 @@ this page lists possible projects. The projects are picked to be
  concern that they could destabilize the codebase
 
 
-This list is by no means complete. You can find more open tasks in [our project planning tool, JIRA](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md).  You can also ask for tasks on the
+This list is by no means complete. You can find more open tasks in [our project planning tool, JIRA](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md).  You can also ask for tasks on the
 [MariaDB mailing list/IRC](../friends-of-mariadb/resources.md).
 
 

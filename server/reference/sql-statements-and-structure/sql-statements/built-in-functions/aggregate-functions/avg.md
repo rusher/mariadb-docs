@@ -114,3 +114,6 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY test)
 * [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
 
+
+GPLv2 fill_help_tables.sql
+

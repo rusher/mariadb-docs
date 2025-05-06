@@ -47,3 +47,6 @@ When calling `CURRENT_USER()` in a stored procedure, it returns the owner of the
 * [SESSION_USER()](session_user.md)
 * [CREATE PROCEDURE](../../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-procedures/create-procedure.md)
 
+
+GPLv2 fill_help_tables.sql
+

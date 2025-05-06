@@ -1034,3 +1034,7 @@ The following options can be given as comma-separated string to the `OPTION_LIST
 | UseDSN | false | Use pre-configured DSN |
 
 
+
+
+GPLv2
+

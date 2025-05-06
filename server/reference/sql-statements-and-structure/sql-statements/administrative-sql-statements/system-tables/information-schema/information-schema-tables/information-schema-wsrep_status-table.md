@@ -1,7 +1,7 @@
 
 # Information Schema WSREP_STATUS Table
 
-The WSREP_STATUS table makes [Galera](../../../../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node cluster status information available through the [Information Schema](../README.md). The same information can be returned using the [SHOW WSREP_STATUS](../../../show/show-wsrep_status.md) statement. Only users with the [SUPER](../../../../account-management-sql-commands/grant.md#super) privilege can access information from this table.
+The WSREP_STATUS table makes [Galera](/en/galera/) node cluster status information available through the [Information Schema](../README.md). The same information can be returned using the [SHOW WSREP_STATUS](../../../show/show-wsrep_status.md) statement. Only users with the [SUPER](../../../../account-management-sql-commands/grant.md#super) privilege can access information from this table.
 
 
 The `WSREP_STATUS` table is part of the [WSREP_INFO plugin](../../../../../../plugins/mariadb-replication-cluster-plugins/wsrep_info-plugin.md).

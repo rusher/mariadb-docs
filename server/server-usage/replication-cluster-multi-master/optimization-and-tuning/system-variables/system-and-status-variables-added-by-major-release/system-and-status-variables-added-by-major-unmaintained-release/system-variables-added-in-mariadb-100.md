@@ -8,7 +8,7 @@ The list excludes the following variables, related to storage engines and plugin
 
 
 * [Connect System Variables](../../../../../../reference/storage-engines/connect/connect-system-variables.md)
-* [Galera System Variables](../../../../galera-cluster/galera-cluster-system-variables.md)
+* [Galera System Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)
 * [Mroonga System Variables](../../../../../../reference/storage-engines/mroonga/mroonga-system-variables.md)
 * [Query Response Time Plugin Variables](../../../../../../reference/plugins/other-plugins/query-response-time-plugin.md)
 * [Spider System Variables](../../../../../../reference/storage-engines/spider/spider-system-variables.md)

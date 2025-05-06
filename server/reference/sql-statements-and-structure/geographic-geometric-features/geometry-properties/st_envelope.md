@@ -36,3 +36,7 @@ SELECT AsText(ST_ENVELOPE(GeomFromText('LineString(1 1,4 4)')));
 | POLYGON((1 1,4 1,4 4,1 4,1 1))                           |
 +----------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

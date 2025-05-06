@@ -84,7 +84,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 
 There are some limitations and known issues within this version of MaxScale.
-For more information, please refer to the [Limitations](../mariadb-maxscale-25-01-about/mariadb-maxscale-2501-maxscale-2501-limitations-and-known-issues-within-mariadb-maxscale.md) document.
+For more information, please refer to the [Limitations](/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/) document.
 
 
 ## Packaging

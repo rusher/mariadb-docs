@@ -36,3 +36,6 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [CLOSE cursor_name](close.md)
 * [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

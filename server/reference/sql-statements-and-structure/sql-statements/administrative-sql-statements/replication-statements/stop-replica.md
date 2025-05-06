@@ -67,3 +67,6 @@ using the channel_name directly after `STOP REPLICA`.
 * [START REPLICA](start-replica.md) is used to start a predefined connection.
 * [RESET REPLICA](reset-replica.md) is used to reset parameters for a connection and also to permanently delete a master connection.
 
+
+GPLv2 fill_help_tables.sql
+

@@ -3406,7 +3406,7 @@ password=Mhu87p2D
 
 
 
-See [MySQL protocol authentication documentation](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
+See [MySQL protocol authentication documentation](/kb/en/maxscale-25-01-authentication-modules/)
 for more information (such as required grants) and troubleshooting tips
 regarding user account management and client authentication.
 
@@ -3433,7 +3433,7 @@ password=Mhu87p2D
 
 
 
-See [MySQL protocol authentication documentation](../mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-authentication-modules.md)
+See [MySQL protocol authentication documentation](/kb/en/maxscale-25-01-authentication-modules/)
 for more information (such as required grants) and troubleshooting tips
 regarding user account management and client authentication.
 
@@ -6690,7 +6690,7 @@ error log file. By default, MariaDB MaxScale will log to a file in
 # Limitations
 
 
-The current limitations of MaxScale are listed in the [Limitations](../mariadb-maxscale-25-01-about/mariadb-maxscale-2501-maxscale-2501-limitations-and-known-issues-within-mariadb-maxscale.md) document.
+The current limitations of MaxScale are listed in the [Limitations](/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/) document.
 
 
 # Performance Optimization

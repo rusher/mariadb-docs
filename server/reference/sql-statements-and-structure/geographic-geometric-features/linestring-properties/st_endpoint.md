@@ -32,3 +32,7 @@ SELECT AsText(EndPoint(GeomFromText(@ls)));
 | POINT(3 3)                          |
 +-------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

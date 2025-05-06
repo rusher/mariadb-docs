@@ -44,3 +44,7 @@ SELECT MID('abcd',-2,4);
 | cd               |
 +------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

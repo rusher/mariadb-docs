@@ -32,3 +32,7 @@ SELECT AsText(PointN(GeomFromText(@ls),2));
 | POINT(2 2)                          |
 +-------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

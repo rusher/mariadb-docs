@@ -30,3 +30,6 @@ their subclasses and are included for extensibility.
 [Point](point-properties/README.md), [LineString](linestring-properties/README.md), [Polygon](polygon-properties/README.md), [GeometryCollection](geometry-constructors/geometrycollection.md), [MultiPoint](geometry-constructors/multipoint.md),
 [MultiLineString](geometry-constructors/multilinestring.md), and [MultiPolygon](geometry-constructors/multipolygon.md) are instantiable classes.
 
+
+GPLv2 fill_help_tables.sql
+

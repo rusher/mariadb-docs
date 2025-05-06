@@ -84,3 +84,6 @@ SHOW WARNINGS;
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
 * [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -120,7 +120,7 @@ spec:
 It is important to note that, the `ist.recv_addr` cannot be set by the user, as it is automatically configured to the `Pod` IP by the operator, something that an user won't be able to know beforehand.
 
 
-A list of the available options can be found in the [MariaDB documentation](../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md).
+A list of the available options can be found in the [MariaDB documentation](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options).
 
 
 ## IPv6 support

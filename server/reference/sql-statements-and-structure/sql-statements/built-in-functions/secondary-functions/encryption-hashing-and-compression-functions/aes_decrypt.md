@@ -49,3 +49,7 @@ SELECT AES_DECRYPT(x'C57C4B', 'bar', '0123456789abcdef', 'aes-128-ctr');
 | foo                                                              |
 +------------------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

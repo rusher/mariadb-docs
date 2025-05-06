@@ -7,7 +7,7 @@
 ## Preparing the ODBC Connection
 
 
-First, make sure to prepare MariaDB Connector/ODBC as explained in [MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/about-mariadb-connector-odbc).
+First, make sure to prepare MariaDB Connector/ODBC as explained in [MariaDB Connector/ODBC](https://mariadb.com/kb/en/about-mariadb-connector-odbc/).
 
 
 That includes:

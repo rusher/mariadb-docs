@@ -219,3 +219,6 @@ LOAD_OPTION: FORCE
 * [UNINSTALL PLUGIN](../../../plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../../../plugin-sql-statements/uninstall-soname.md)
 
+
+CC BY-SA / Gnu FDL
+

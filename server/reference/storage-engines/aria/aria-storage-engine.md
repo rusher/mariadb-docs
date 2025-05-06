@@ -124,7 +124,7 @@ recovery_failures: 0
 ### Missing valid id
 
 
-The error `Missing valid id at start of file. File is not a valid aria control file` means that something overwrote at least the first 4 bytes in the file. This can happen due to a problem with the file system (hardware or software), or a bug in which a thread inside MariaDB wrote on the wrong file descriptor (in which case you should [report the bug](../../bug-tracking/reporting-bugs.md), attaching a copy of the control file to assist).
+The error `Missing valid id at start of file. File is not a valid aria control file` means that something overwrote at least the first 4 bytes in the file. This can happen due to a problem with the file system (hardware or software), or a bug in which a thread inside MariaDB wrote on the wrong file descriptor (in which case you should [report the bug](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs), attaching a copy of the control file to assist).
 
 
 In the case of a corrupted log file, with the server shut down, one should be able to fix that by deleting all aria_log files.
@@ -136,4 +136,7 @@ The effect of this is that on table open of an Aria table, the server will think
 
 
 * [Aria FAQ](aria-faq.md)
+
+
+CC BY-SA / Gnu FDL
 

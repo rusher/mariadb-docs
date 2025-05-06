@@ -58,7 +58,7 @@ If you don't want to permit this operation (perhaps for security reasons), you c
 
 
 * The `LOAD DATA LOCAL INFILE` statement can be disabled on the server by setting the [local_infile](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) system variable to `0`.
-* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql_real_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
+* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](/kb/en/about-mariadb-connector-c/), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql_real_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
 
 
 * The `LOAD DATA LOCAL INFILE` strict modes like `STRICT_TRANS_TABLES` are disabled with keyword "local". ([MDEV-11235](https://jira.mariadb.org/browse/MDEV-11235))
@@ -85,7 +85,7 @@ The used command is not allowed because the MariaDB server or client
 ### `REPLACE` and `IGNORE`
 
 
-If you load data from a file into a table that already contains data and has a [primary key](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key), you may encounter issues where the statement attempts to insert a row with a primary key that already exists. When this happens, the statement fails with Error 1064, protecting the data already on the table. If you want MariaDB to overwrite duplicates, use the `REPLACE` keyword.
+If you load data from a file into a table that already contains data and has a [primary key](/kb/en/getting-started-with-indexes/#primary-key), you may encounter issues where the statement attempts to insert a row with a primary key that already exists. When this happens, the statement fails with Error 1064, protecting the data already on the table. If you want MariaDB to overwrite duplicates, use the `REPLACE` keyword.
 
 
 The `REPLACE` keyword works like the [REPLACE](../../changing-deleting-data/replace.md) statement. Here, the statement attempts to load the data from the file. If the row does not exist, it adds it to the table. If the row contains an existing primary key, it replaces the table data. That is, in the event of a conflict, it assumes the file contains the desired row.
@@ -218,4 +218,7 @@ SELECT * FROM ld;
 * [Character Sets and Collations](../../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SELECT ... INTO OUTFILE](../../selecting-data/select-into-outfile.md)
 * [mariadb-import](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md)
+
+
+GPLv2 fill_help_tables.sql
 

@@ -22,3 +22,6 @@ corresponding event. This statement requires the [SUPER](../account-management-s
 
 * [MariaDB replication](../../../../server-usage/replication-cluster-multi-master/standard-replication/README.md)
 
+
+GPLv2 fill_help_tables.sql
+

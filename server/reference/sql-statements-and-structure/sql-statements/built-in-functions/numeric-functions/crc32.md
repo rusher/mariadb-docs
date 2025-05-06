@@ -72,3 +72,6 @@ SELECT CRC32(CRC32('Maria'),'DB');
 
 * [CRC32C()](crc32c.md)
 
+
+GPLv2 fill_help_tables.sql
+

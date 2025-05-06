@@ -158,3 +158,6 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 * [CHAR](char.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
+
+GPLv2 fill_help_tables.sql
+

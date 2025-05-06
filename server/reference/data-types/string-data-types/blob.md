@@ -111,3 +111,6 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

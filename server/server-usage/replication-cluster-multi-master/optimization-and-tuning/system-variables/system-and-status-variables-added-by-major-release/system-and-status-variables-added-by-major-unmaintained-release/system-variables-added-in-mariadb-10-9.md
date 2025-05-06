@@ -9,7 +9,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | --- | --- |
 | Variable | Added |
 | [rocksdb_log_dir](../../../../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_log_dir) | [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes) |
-| [wsrep_status_file](../../../../galera-cluster/galera-cluster-system-variables.md#wsrep_status_file) | [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes) |
+| [wsrep_status_file](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_status_file) | [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes) |
 
 
 

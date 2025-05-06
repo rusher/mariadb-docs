@@ -52,3 +52,6 @@ automatically constructed by CONNECT when creating the table.
 
 When marked with a ‘$’ the file can be the result returned by a REST query.
 
+
+GPLv2
+

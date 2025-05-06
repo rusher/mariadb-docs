@@ -54,7 +54,7 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=CONN
 ### JDBC
 
 
-Connection attributes values are set using the option [connectionAttributes](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#infrequently-used-parameters).
+Connection attributes values are set using the option [connectionAttributes](https://mariadb.com/kb/en/about-mariadb-connector-j/#infrequently-used-parameters).
 
 
 Example using connection string `jdbc:mariadb://localhost/?connectionAttributes=test:test1,test2:test2Val,test3`

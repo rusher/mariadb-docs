@@ -222,3 +222,6 @@ SELECT *, example + 0 FROM bigint_zerofill_example;
 * [MEDIUMINT](mediumint.md)
 * [INTEGER](int.md)
 
+
+GPLv2 fill_help_tables.sql
+

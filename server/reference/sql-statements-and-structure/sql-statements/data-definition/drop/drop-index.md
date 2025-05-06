@@ -67,7 +67,10 @@ that support the new progress reporting protocol. For example, if you were using
 ## See Also
 
 
-* [Getting Started with Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md)
+* [Getting Started with Indexes](/kb/en/getting-started-with-indexes/)
 * [CREATE INDEX](../create/create-index.md)
 * [ALTER TABLE](../alter/alter-table.md)
+
+
+GPLv2 fill_help_tables.sql
 

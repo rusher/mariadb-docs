@@ -49,3 +49,7 @@ SELECT FORMAT(123456789,2,'rm_CH') AS 'Format';
 | 123'456'789,00 |
 +----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

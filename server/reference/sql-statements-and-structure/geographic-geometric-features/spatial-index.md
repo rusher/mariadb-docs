@@ -59,3 +59,6 @@ In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 See [MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026) for more information.
 
+
+GPLv2 fill_help_tables.sql
+

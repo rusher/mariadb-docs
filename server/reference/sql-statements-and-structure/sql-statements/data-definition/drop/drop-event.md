@@ -56,3 +56,6 @@ SHOW WARNINGS;
 * [SHOW CREATE EVENT](../../administrative-sql-statements/show/show-create-event.md)
 * [ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md)
 
+
+GPLv2 fill_help_tables.sql
+

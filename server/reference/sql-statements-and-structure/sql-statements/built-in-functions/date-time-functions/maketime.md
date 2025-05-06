@@ -57,3 +57,7 @@ SHOW WARNINGS;
 | Warning | 1292 | Truncated incorrect time value: '-1000:57:33' |
 +---------+------+-----------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -33,3 +33,7 @@ INSERT INTO gis_geometrycollection VALUES
     (GeomFromText('GeometryCollection()')),
     (GeomFromText('GeometryCollection EMPTY'));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

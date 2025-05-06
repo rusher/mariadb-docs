@@ -187,7 +187,7 @@ You should always perform a compete backup of your data prior to performing any 
 ## MariaDB Galera Cluster
 
 
-If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" it is worth mentioning that [Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) is included by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), there is no longer a need to install a separate `mariadb-galera-server` package.
+If you have been using MariaDB Galera Cluster 5.5 or 10.0 on Debian 8 "Jessie" it is worth mentioning that [Galera Cluster](/en/galera/) is included by default in [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), there is no longer a need to install a separate `mariadb-galera-server` package.
 
 
 ## Configuration options for advanced database users

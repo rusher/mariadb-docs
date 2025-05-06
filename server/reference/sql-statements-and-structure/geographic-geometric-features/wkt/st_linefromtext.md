@@ -31,3 +31,7 @@ INSERT INTO gis_line VALUES
     (LineStringFromText('LINESTRING(10 10,20 10,20 20,10 20,10 10)')),
     (LineStringFromWKB(AsWKB(LineString(Point(10, 10), Point(40, 10)))));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

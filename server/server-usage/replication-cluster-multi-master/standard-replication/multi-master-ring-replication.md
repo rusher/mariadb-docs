@@ -9,10 +9,10 @@ The terms *master* and *slave* have historically been used in replication, and M
 # What is Multi-Master Ring Replication
 
 
-Multi-Master "Ring" Replication means that you have two or more masters where each master is replicating its data to another master asynchronously. This is not to be confused with [MariaDB Galera Cluster](../galera-cluster/README.md) which is a [virtually synchronous](../galera-cluster/about-galera-replication.md) multi-primary cluster for MariaDB.
+Multi-Master "Ring" Replication means that you have two or more masters where each master is replicating its data to another master asynchronously. This is not to be confused with [MariaDB Galera Cluster](/kb/en/galera-cluster/) which is a [virtually synchronous](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/about-galera-replication) multi-primary cluster for MariaDB.
 
 
-The benefit of asynchronous replication compared to [Galera Cluster](../galera-cluster/README.md), is that Ring Replication is resilient against bad network connections between the master servers. If a connection goes down, all masters will continue to serve its clients locally and data will automatically be synced when the link is available again.
+The benefit of asynchronous replication compared to [Galera Cluster](/kb/en/galera-cluster/), is that Ring Replication is resilient against bad network connections between the master servers. If a connection goes down, all masters will continue to serve its clients locally and data will automatically be synced when the link is available again.
 
 
 The following picture shows one of the more advanced Multi-Master setups that is resilient against any master going down but can also handle 'human failures', like an accidental drop table, thanks to the addition of [delayed slaves](delayed-replication.md).

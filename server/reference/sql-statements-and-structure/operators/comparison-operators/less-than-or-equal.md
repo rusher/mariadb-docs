@@ -52,3 +52,6 @@ SELECT 'a'<='A';
 
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

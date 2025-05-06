@@ -31,3 +31,6 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [FETCH cursor_name](fetch.md)
 * [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

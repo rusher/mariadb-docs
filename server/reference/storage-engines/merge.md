@@ -138,3 +138,6 @@ Msg_text: Corrupt
 
 Now, we know that the problem is in `t3`'s definition.
 
+
+GPLv2 fill_help_tables.sql
+

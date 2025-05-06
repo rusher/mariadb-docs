@@ -138,3 +138,6 @@ SELECT name, test, score, MAX(score)
 * [MIN/MAX optimization](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
 * [GREATEST()](../../../operators/comparison-operators/greatest.md) returns the largest value from a list
 
+
+GPLv2 fill_help_tables.sql
+

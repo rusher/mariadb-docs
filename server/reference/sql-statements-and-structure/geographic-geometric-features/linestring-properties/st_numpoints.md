@@ -32,3 +32,7 @@ SELECT NumPoints(GeomFromText(@ls));
 |                            3 |
 +------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

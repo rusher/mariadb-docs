@@ -44,3 +44,6 @@ collation_connection: utf8_general_ci
 * [Stored Functions](../../../../../server-usage/programming-customizing-mariadb/stored-routines/stored-functions/README.md)
 * `[CREATE FUNCTION](../../data-definition/create/create-function.md)`
 
+
+GPLv2 fill_help_tables.sql
+

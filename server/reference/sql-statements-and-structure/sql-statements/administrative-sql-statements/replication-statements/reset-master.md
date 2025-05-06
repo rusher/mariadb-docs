@@ -20,3 +20,6 @@ This statement is for use only when the master is started for the first time, an
 
 * The [PURGE BINARY LOGS](../purge-binary-logs.md) statement is intended for use in active replication.
 
+
+GPLv2 fill_help_tables.sql
+

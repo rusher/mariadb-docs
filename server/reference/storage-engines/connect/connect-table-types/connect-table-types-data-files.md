@@ -156,3 +156,6 @@ The following NoSQL types are supported:
 
 
 
+
+GPLv2
+

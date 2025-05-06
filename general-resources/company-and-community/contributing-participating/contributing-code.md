@@ -20,7 +20,7 @@ There are many open development projects for MariaDB which you can contribute
 to (in addition to any ideas you may have yourself).
 
 
-* We are using [JIRA](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md) to manage the MariaDB project. Go to
+* We are using [JIRA](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md) to manage the MariaDB project. Go to
  [jira.mariadb.org](https://jira.mariadb.org) and click on "Projects" to get to the MariaDB project.
  Browse around the
  [unresolved and unassigned](https://jira.mariadb.org/secure/IssueNavigator.jspa?reset=true&jqlQuery=project+%3D+MDEV+AND+resolution+%3D+Unresolved+AND+assignee+is+EMPTY+ORDER+BY+priority+DESC&mode=hide)
@@ -31,7 +31,7 @@ to (in addition to any ideas you may have yourself).
 * A list of [beginner friendly](https://jira.mariadb.org/issues/?jql=resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20beginner-friendly%20ORDER%20BY%20updated%20DESC) tasks is also available.
 
 
-* Check the [development plans](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/README.md) for the next MariaDB
+* Check the [development plans](../../training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/development-plans/README.md) for the next MariaDB
  version.
 
 
@@ -49,7 +49,7 @@ to (in addition to any ideas you may have yourself).
 * Join #/maria on [](https://libera.chat/) [IRC](/kb/en/irc/) and ask for suggestions.
 
 
-If you have your own ideas, please submit them to [JIRA](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md) so other
+If you have your own ideas, please submit them to [JIRA](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md) so other
 MariaDB developers can comment on them and suggest how to implement them. You
 can of course also use the
 [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) list for this.
@@ -464,4 +464,8 @@ A couple of easy ways to get attention to your proposed merge are:
   Launchpad.
 <</nowiki>>
 ```
+
+
+
+CC BY-SA / Gnu FDL
 

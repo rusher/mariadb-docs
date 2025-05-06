@@ -134,3 +134,6 @@ ANALYZE TABLE tbl;
 * [Histogram-based Statistics](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md)
 * [ANALYZE Statement](../administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md)
 
+
+GPLv2 fill_help_tables.sql
+

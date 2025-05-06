@@ -146,3 +146,7 @@ SHOW VARIABLES LIKE 'innodb_sync_spin_loops';
 | innodb_sync_spin_loops | 30    |
 +------------------------+-------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

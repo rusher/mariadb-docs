@@ -53,3 +53,6 @@ On this page we list all the known differences between the TokuDB from [Tokutek]
 
 This is found on the [TokuDB](README.md) page.
 
+
+CC BY-SA / Gnu FDL
+

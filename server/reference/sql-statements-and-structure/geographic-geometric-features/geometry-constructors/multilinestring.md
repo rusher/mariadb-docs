@@ -72,3 +72,7 @@ SELECT ST_AsWKT(m) FROM mlstr_example;
 | MULTILINESTRING((0 40,0 20),(6 30,12 20,12 40))                                           |
 +-------------------------------------------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -585,13 +585,13 @@ $ mariabackup --backup \
 ### `--galera-info`
 
 
-Defines whether you want to back up information about a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node's state.
+Defines whether you want to back up information about a [Galera Cluster](/kb/en/galera/) node's state.
 
 
-When this option is used, Mariabackup creates an additional file called `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`, which records information about a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node's state. It records the values of the `[wsrep_local_state_uuid](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_state_uuid)` and `[wsrep_last_committed](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_last_committed)` status variables.
+When this option is used, Mariabackup creates an additional file called `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`, which records information about a [Galera Cluster](/kb/en/galera/) node's state. It records the values of the `[wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid)` and `[wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed)` status variables.
 
 
-You should only use this option when backing up a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node. If the server is not a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node, then this option has no effect.
+You should only use this option when backing up a [Galera Cluster](/kb/en/galera/) node. If the server is not a [Galera Cluster](/kb/en/galera/) node, then this option has no effect.
 
 
 This option, when enabled and used with [GTID replication](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md), will rotate the binary logs at backup time.

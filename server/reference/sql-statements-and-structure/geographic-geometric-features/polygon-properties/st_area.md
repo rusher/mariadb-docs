@@ -31,3 +31,7 @@ SELECT Area(GeomFromText(@poly));
 |                         4 |
 +---------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

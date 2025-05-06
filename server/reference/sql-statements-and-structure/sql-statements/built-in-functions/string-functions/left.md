@@ -26,3 +26,7 @@ SELECT LEFT('MariaDB', 5);
 | Maria              |
 +--------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

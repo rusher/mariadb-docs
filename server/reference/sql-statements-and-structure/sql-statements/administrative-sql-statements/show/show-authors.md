@@ -172,3 +172,6 @@ Location: Helsinki, Finland
 
 * [SHOW CONTRIBUTORS](show-contributors.md). This list [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
 
+
+GPLv2 fill_help_tables.sql
+

@@ -46,3 +46,7 @@ SELECT TAN(RADIANS(PI()));
 | 0.0548861508080033 |
 +--------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

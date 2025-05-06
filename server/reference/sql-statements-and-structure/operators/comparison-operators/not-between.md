@@ -49,3 +49,7 @@ SELECT 1 NOT BETWEEN 1 AND NULL;
 |                     NULL |
 +--------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

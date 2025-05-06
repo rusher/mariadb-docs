@@ -112,7 +112,7 @@ SELECT spider_direct_sql('1\t=\t1\t2\t100000\t0','res', 'host "192.168.0.202", t
 
 
 ##### MariaDB starting with [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
-The UDF spider_copy_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md).
+The UDF spider_copy_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../server-usage/replication-cluster-multi-master/README.md) or [galera-cluster](/kb/en/galera-cluster/).
 
 
 The UDF function [spider_copy_tables](spider-functions/spider_copy_tables.md) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
@@ -151,10 +151,10 @@ SET GLOBAL spider_log_result_error_with_sql=3;
 ## Compiling in Debug Mode
 
 
-See [Compiling MariaDB for Debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) and [Creating a Trace File](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file).
+See [Compiling MariaDB for Debugging](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging) and [Creating a Trace File](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/creating-a-trace-file).
 
 
-Report the issue in [MariaDB JIRA](https://jira.mariadb.org) (see [Reporting Bugs](../../bug-tracking/reporting-bugs.md)) or to the MariaDB Corporation support center.
+Report the issue in [MariaDB JIRA](https://jira.mariadb.org) (see [Reporting Bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs)) or to the MariaDB Corporation support center.
 
 
 ## Compiling in Static

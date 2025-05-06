@@ -85,3 +85,6 @@ SELECT 5 IN (1, 2, NULL);
 * [Conversion of Big IN Predicates Into Subqueries](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/subquery-optimizations/conversion-of-big-in-predicates-into-subqueries.md)
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

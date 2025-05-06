@@ -156,3 +156,7 @@ Another option is to point `mariadbd` to the storage engine directory:
 ```
 ./mariadbd --plugin-dir={build-dir-path}/storage/connect/.libs
 ```
+
+
+CC BY-SA / Gnu FDL
+

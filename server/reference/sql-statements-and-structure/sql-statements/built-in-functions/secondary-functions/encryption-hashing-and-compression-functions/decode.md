@@ -78,3 +78,7 @@ SELECT DECODE_ORACLE(NULL,NULL,'Nulls are equivalent','Nulls are not equivalent'
 | Nulls are equivalent                                                       |
 +----------------------------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

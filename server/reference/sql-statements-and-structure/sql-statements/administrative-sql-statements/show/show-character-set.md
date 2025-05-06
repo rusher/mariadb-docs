@@ -60,3 +60,6 @@ SHOW CHARACTER SET WHERE Maxlen LIKE '2';
 * [Setting Character Sets and Collations](../../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
 * [Information Schema CHARACTER_SETS](../system-tables/information-schema/information-schema-tables/information-schema-character_sets-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

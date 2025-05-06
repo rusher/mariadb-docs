@@ -26,3 +26,7 @@ BEGIN
    RETURN (SELECT COUNT(DISTINCT User) FROM mysql.user);
 END;
 ```
+
+
+GPLv2 fill_help_tables.sql
+

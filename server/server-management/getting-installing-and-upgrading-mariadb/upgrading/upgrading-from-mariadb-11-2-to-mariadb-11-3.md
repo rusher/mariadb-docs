@@ -82,7 +82,7 @@ The following options should be removed or renamed if you use them in your [opti
 | [datetime_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format) | Unused. |
 | [max_tmp_tables](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_tables) | Unused. |
 | [time_format](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#time_format) | Unused. |
-| [wsrep_causal_reads](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_causal_reads) | Deprecated by [wsrep_sync_wait=1](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_sync_wait). |
+| [wsrep_causal_reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_causal_reads) | Deprecated by [wsrep_sync_wait=1](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sync_wait). |
 
 
 

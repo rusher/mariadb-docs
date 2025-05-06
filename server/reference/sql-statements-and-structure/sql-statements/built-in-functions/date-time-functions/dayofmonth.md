@@ -52,3 +52,7 @@ SELECT d FROM t1 where DAYOFMONTH(d) = 30;
 | 2011-01-30 14:03:25 |
 +---------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

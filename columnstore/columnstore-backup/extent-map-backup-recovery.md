@@ -1,7 +1,10 @@
 
 # Extent Map Backup & Recovery
 
-The extent map is a critical component of MariaDB Enterprise ColumnStore. It provides a logical range for partitioning, eliminating the need for traditional database performance optimizations like indexing, manual table partitioning, materialized views, and summary tables. Therefore, regular backups of the extent map are crucial for system recovery. This document outlines the purpose, backup, and restore procedures for the extent map files when using shared local storage.
+MariaDB ColumnStore utilizes an Extent Map to manage data distribution across extents—logical blocks within physical segment files ranging from 8 to 64 MB. Each extent holds a consistent number of rows, with the Extent Map cataloging these extents, their corresponding block identifiers (LBIDs), and the minimum and maximum values for each column's data within the extent.​
+
+
+The primary node maintains the master copy of the Extent Map. Upon system startup, this map is loaded into memory and propagated to other nodes for redundancy and quick access. Corruption of the master Extent Map can render the system unusable and lead to data loss.​
 
 
 ## Purpose
@@ -16,127 +19,100 @@ The primary node in a ColumnStore cluster holds the master copy of the extent ma
 If the master copy of the extent map becomes corrupted, the entire system could become unusable, potentially leading to data loss. Having a recent backup of the extent map allows for a much faster recovery compared to reloading the entire database in such a scenario.
 
 
-## Backup
+## Backup Procedure
 
 
 **Note**: MariaDB recommends implementing regular backups to ensure data integrity and recovery. A common default is to back up every 3 hours and retain backups for at least 10 days.
 
 
-To backup the extent map files:
+To safeguard against potential Extent Map corruption, regularly back up the master copy:
 
 
-1. Stop ColumnStore:
+1. Lock Table: 
 ```
-$ mcs cluster stop
+mariadb -e "FLUSH TABLES WITH READ LOCK;"
 ```
-1. Copy the files:
+1. Save BRM: 
 ```
-$ rsync -av /var/lib/columnstore/data1/systemFiles/dbrm/ /BACKUP_PATH/extent_map/
+save_brm
 ```
-1. Restart ColumnStore:
+1. Create Backup Directory: 
 ```
-$ mcs cluster start
+mkdir -p /extent_map_backup
 ```
-
-
-## Restore
-
-
-To restore the extent map files:
-
-
-1. Find the active BRM file version by checking the `BRM_saves_current` file:
-
-
-
+1. Copy Extent Map: 
 ```
-$ cat /var/lib/columnstore/data1systemFiled/dbrm/BRM_saves_current
+cp -f /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /extent_map_backup
 ```
-
+1. Unlock Tables: 
 ```
-BRM_saves
+mariadb -e "UNLOCK TABLES;"
 ```
 
 
-If the output above is not `BRM_saves`, then it might have a suffix of `A` or `B`, which means that an alternate extent map file is being used.
-
-2. Compare the file sizes of each BRM file version:
+## Recovery Procedures
 
 
+### Single-Node System
 
+
+1. Stop ColumnStore: 
 ```
-$ ls -la /var/lib/columnstore/data1/systemFiles/dbrm/
+systemctl stop mariadb-columnstore
 ```
-
-
+1. Rename Corrupted Map: 
 ```
--rwxr-xr-t. 1 mysql mysql    4748 Dec 10 16:14 BRM_savesA_em
--rwxr-xr-t. 1 mysql mysql      12 Dec 10 16:14 BRM_savesA_vbbm
--rwxr-xr-t. 1 mysql mysql       8 Dec 10 16:14 BRM_savesA_vss
--rwxr-xr-t. 1 mysql mysql    4652 Dec 10 16:14 BRM_savesB_em
--rwxr-xr-t. 1 mysql mysql      12 Dec 10 16:14 BRM_savesB_vbbm
--rwxr-xr-t. 1 mysql mysql       8 Dec 10 16:14 BRM_savesB_vss
--rwxr-xr-t. 1 mysql mysql      10 Dec 30 15:34 BRM_saves_current
--rwxr-xr-t. 1 mysql mysql   33644 Dec 30 15:34 BRM_saves_em
--rwxr-xr-t. 1 mysql mysql     261 Dec 30 19:20 BRM_saves_journal
--rwxr-xr-t. 1 mysql mysql      36 Dec 30 15:34 BRM_saves_vbbm
--rwxr-xr.t. 1 mysql mysql       8 Dec 30 15:34 BRM_saves_vss
--rwxr-xr-t. 1 mysql mysql 2099204 Dec 28 16:21 oidbitmap
--rwxr-xr.t. 1 mysql mysql      12 Dec 30 19:20 SMTxnID
--rwxr-xr-t. 1 mysql mysql       4 Dec 30 19:20 tablelocks
+mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad
 ```
-
-If you compare the sizes of the three `_em` files (`BRM_saves_em, BRM_savesA_em, and BRM_savesB_em`), you can see that the base version (`BRM_saves_em`) is largest. This is also the version that was shown in the `BRM_saves_current` file, so this is the active one. This is what we expect as its being appended to with new object and summary information. If the A or B version is larger, then the system might have been using a backup copy of the extent map for some time.
-
-3. Determine which BRM file to restore:
-This depends on a lot of factors, such as the file sizes, file modification timestamps, and the specific issue being troubleshooted.
-Usually, you want to restore the active BRM files. If `BRM_saves_journal` is larger than 0 bytes and the `BRM_saves_current` file includes the `A` or `B` suffix, you might want to restore an alternate BRM file version. Ask MariaDB Support for assistance.
-
-
-4. Stop ColumnStore:
-
-
-
+1. Clear Versioning Files: 
 ```
-$ mcs cluster stop
+> /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss
+```
+1. Restore Backup: 
+```
+cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/
+```
+1. Set Ownership: 
+```
+chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm/
+```
+1. Start ColumnStore: 
+```
+systemctl start mariadb-columnstore
 ```
 
 
-5. Clear Shared Memory
+### Clustered System
 
 
-
+1. Shutdown Cluster: 
 ```
-$clearShm
+curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/shutdown \ --header 'Content-Type:application/json' \ --header 'x-api-key:your_api_key' \ --data '{"timeout":60}' -k
+```
+1. Rename Corrupted Map: 
+```
+mv /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em /tmp/BRM_saves_em.bad
+```
+1. Clear Versioning Files: 
+```
+> /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm > /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss
+```
+1. Restore Backup: 
+```
+mv cp -f /extent_map_backup/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/
+```
+1. Set Ownership: 
+```
+chown -R mysql:mysql /var/lib/columnstore/data1/systemFiles/dbrm
+```
+1. Start Cluster: 
+```
+curl -s -X PUT https://127.0.0.1:8640/cmapi/0.4.0/cluster/start \ --header 'Content-Type:application/json' \ --header 'x-api-key:your_api_key' \ --data '{"timeout":60}' -k
 ```
 
 
-6. Restore the BRM files:
+## Automation Recommendation
 
 
-
-```
-$ rsync -av /BACKUP_PATH/extent_map/BRM_saves_em /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_em
-$ rysnc -av /BACKUP_PATH/extent_map/BRM_saves_vbbm /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vbbm
-$ rysnc -av /BACKUP_PATH/extent_map/BRM_saves_vss /var/lib/columnstore/data1/systemFiles/dbrm/BRM_saves_vss
-```
-
-If you are restoring the A or B versions of the BRM files, remove the suffix during the restore.
-
-7. If the `BRM_saves_current` file contains the `A` or `B``suffix after ``BRM_saves`, edit the file so that it no longer has the suffix:
-
-
-
-```
-BRM_saves
-```
-
-
-8. Restart ColumnStore:
-
-
-
-```
-$ mcs cluster start
-```
+Incorporate the `save_brm` command into your data import scripts (e.g., those using `cpimport`) to automate Extent Map backups. This practice ensures regular backups without manual intervention. Refer to the MariaDB ColumnStore Backup Script for an example implementation.​
 

@@ -46,3 +46,6 @@ SELECT ABS(DATE '1994-01-01');
 
 * [SIGN()](sign.md)
 
+
+GPLv2 fill_help_tables.sql
+

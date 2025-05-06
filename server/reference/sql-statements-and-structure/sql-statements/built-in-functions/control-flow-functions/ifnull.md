@@ -64,3 +64,6 @@ SELECT IFNULL(1/0,'yes');
 * [NULLIF function](nullif.md)
 * [CONNECT data types](../../../../storage-engines/connect/connect-data-types.md#null-handling)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -46,3 +46,6 @@ SELECT SIGN(234);
 
 * [ABS()](abs.md)
 
+
+GPLv2 fill_help_tables.sql
+

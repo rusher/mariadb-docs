@@ -84,3 +84,6 @@ SELECT name, test, score, STDDEV_POP(score)
 * [VAR_POP](var_pop.md) (variance)
 * [STDDEV_SAMP](stddev_samp.md) (sample standard deviation)
 
+
+GPLv2 fill_help_tables.sql
+

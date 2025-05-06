@@ -91,3 +91,6 @@ SELECT CONCAT('Ma', 'ria', NULL, 'DB');
 * [GROUP_CONCAT()](../aggregate-functions/group_concat.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

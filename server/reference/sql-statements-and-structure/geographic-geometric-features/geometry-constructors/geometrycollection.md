@@ -53,3 +53,7 @@ SELECT ST_AsWKT(g) FROM geomcoll_example;
 | GEOMETRYCOLLECTION(POINT(0 0),LINESTRING(0 1,0 2))            |
 +---------------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

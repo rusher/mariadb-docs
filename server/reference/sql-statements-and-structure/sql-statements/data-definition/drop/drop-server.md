@@ -20,7 +20,7 @@ Dropping a server for a table does not affect any [FederatedX](../../../../stora
 
 
 DROP SERVER is not written to the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md), irrespective of
-the [binary log format](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](../../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) replicates the [CREATE SERVER](../create/create-server.md), [ALTER SERVER](../alter/alter-server.md) and DROP SERVER statements.
+the [binary log format](../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](/kb/en/galera/) replicates the [CREATE SERVER](../create/create-server.md), [ALTER SERVER](../alter/alter-server.md) and DROP SERVER statements.
 
 
 #### IF EXISTS
@@ -57,4 +57,7 @@ Query OK, 0 rows affected (0.00 sec)
 * [FederatedX Storage Engine](../../../../storage-engines/federatedx-storage-engine/README.md)
 * [Connect Storage Engine](../../../../storage-engines/connect/README.md)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
+
+
+GPLv2 fill_help_tables.sql
 

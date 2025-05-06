@@ -78,3 +78,6 @@ for which the user has some privilege. On the slave side, the user that
 issues `LOAD DATA FROM MASTER` must have privileges for
 dropping and creating the databases and tables that are copied.
 
+
+GPLv2 fill_help_tables.sql
+

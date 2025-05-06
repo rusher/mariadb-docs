@@ -32,3 +32,7 @@ SELECT QUARTER('2019-00-01');
 |                     0 |
 +-----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

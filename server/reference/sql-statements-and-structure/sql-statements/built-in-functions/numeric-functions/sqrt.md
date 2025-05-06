@@ -46,3 +46,7 @@ SELECT SQRT(1764);
 |         42 |
 +------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

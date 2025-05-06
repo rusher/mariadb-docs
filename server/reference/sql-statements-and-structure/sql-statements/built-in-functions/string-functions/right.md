@@ -26,3 +26,7 @@ SELECT RIGHT('MariaDB', 2);
 | DB                  |
 +---------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

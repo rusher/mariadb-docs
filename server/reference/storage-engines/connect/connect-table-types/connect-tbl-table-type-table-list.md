@@ -186,3 +186,6 @@ These options can be specified in the `OPTION_LIST`.
 
 
 
+
+GPLv2
+

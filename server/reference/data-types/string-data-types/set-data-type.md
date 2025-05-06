@@ -58,3 +58,6 @@ SELECT * FROM set_example;
 * [Character Sets and Collations](character-sets/supported-character-sets-and-collations.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
+
+GPLv2 fill_help_tables.sql
+

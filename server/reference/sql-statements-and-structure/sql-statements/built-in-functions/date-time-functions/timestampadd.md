@@ -42,3 +42,7 @@ SELECT TIMESTAMPADD(WEEK,1,'2003-01-02');
 | 2003-01-09                        |
 +-----------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

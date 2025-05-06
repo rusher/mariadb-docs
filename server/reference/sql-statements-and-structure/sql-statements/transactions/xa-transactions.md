@@ -274,10 +274,10 @@ xa rollback X'31320d3334093637763738',X'6162630a646566',3;
 ### MariaDB Galera Cluster
 
 
-[MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) does not support XA transactions.
+[MariaDB Galera Cluster](/kb/en/galera-cluster/) does not support XA transactions.
 
 
-However, [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../storage-engines/innodb/README.md). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/README.md) by default, which could have performance implications.
+However, [MariaDB Galera Cluster](/kb/en/galera-cluster/) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](/kb/en/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../storage-engines/innodb/README.md). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/README.md) by default, which could have performance implications.
 
 
 See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md#mariadb-galera-cluster) for more information.

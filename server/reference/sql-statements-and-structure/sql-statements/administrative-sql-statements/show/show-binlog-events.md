@@ -36,3 +36,7 @@ SHOW BINLOG EVENTS IN 'mysql_sandbox10019-bin.000002';
 | mysql_sandbox10019-bin.000002 | 484 | Query             |         1 |         571 | use `blog`; CREATE TABLE bb (id INT)           |
 +-------------------------------+-----+-------------------+-----------+-------------+------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

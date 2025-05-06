@@ -45,6 +45,23 @@ Of course read-only transactions do not write more entries in the undo log; howe
 Also, long transactions can more likely result in deadlocks, but this problem is not related to the undo log.
 
 
+## Feature Summary
+
+
+
+| Feature | Detail | Resources |
+| --- | --- | --- |
+| Feature | Detail | Resources |
+| Transaction Log | InnoDB Undo Log |  |
+| Storage Engine | InnoDB |  |
+| Purpose | Multi-Version Concurrency Control (MVCC) |  |
+| Availability | All ES and CS versions | [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/) |
+| Location | By default, located in InnoDB system tablespace When [innodb_undo_tablespaces](https://mariadb.com/kb/en/%5B%5Binnodb-system-variables/#innodb_undo_tablespaces) | innodb_undo_tablespaces]] is set, located in directory set by [innodb_undo_directory](innodb-system-variables.md#innodb_undo_directory) (Defaults to [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)) | [Configure the InnoDB Undo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-undo-log.md) |
+| Quantity | Set by [innodb_undo_tablespaces](innodb-system-variables.md#innodb_undo_tablespaces) | [Configure the InnoDB Undo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-undo-log.md) |
+| Size | 10 MB per tablespace by default (grows as needed) |  |
+
+
+
 ## Configuration
 
 

@@ -31,3 +31,7 @@ SELECT AsText(InteriorRingN(GeomFromText(@poly),1));
 | LINESTRING(1 1,1 2,2 2,2 1,1 1)              |
 +----------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

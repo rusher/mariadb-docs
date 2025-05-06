@@ -36,3 +36,6 @@ UPDATE t SET blob_col=LOAD_FILE('/tmp/picture') WHERE id=1;
 
 * [SELECT INTO DUMPFILE](../../data-manipulation/selecting-data/select-into-dumpfile.md)
 
+
+GPLv2 fill_help_tables.sql
+

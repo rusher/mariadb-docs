@@ -36,3 +36,7 @@ SELECT ST_AsText(ST_Boundary(ST_GeomFromText('POLYGON((3 3,0 0, -3 3, 3 3))')));
 | LINESTRING(3 3,0 0,-3 3,3 3)                                             |
 +--------------------------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

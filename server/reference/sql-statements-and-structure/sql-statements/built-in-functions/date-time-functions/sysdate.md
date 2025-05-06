@@ -75,3 +75,6 @@ SELECT SYSDATE(4);
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 * [timestamp server system variable](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)
 
+
+GPLv2 fill_help_tables.sql
+

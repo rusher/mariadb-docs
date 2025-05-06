@@ -234,3 +234,6 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 * [ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md)
 * [DROP EVENT](../drop/drop-event.md)
 
+
+GPLv2 fill_help_tables.sql
+

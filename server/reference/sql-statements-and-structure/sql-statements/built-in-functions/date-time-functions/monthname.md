@@ -39,3 +39,7 @@ SELECT MONTHNAME('2019-05-21');
 | mai                     |
 +-------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -40,3 +40,6 @@ This is calculated as follows: 192 x 2563 + 168 x 256 2 + 1 x 256 + 1
 * [INET6_ATON()](inet6_aton.md)
 * [INET_NTOA()](inet_ntoa.md)
 
+
+GPLv2 fill_help_tables.sql
+

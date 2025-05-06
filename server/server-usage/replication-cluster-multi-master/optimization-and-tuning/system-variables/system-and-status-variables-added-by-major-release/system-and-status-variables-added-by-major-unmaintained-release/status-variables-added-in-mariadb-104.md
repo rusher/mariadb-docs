@@ -12,8 +12,8 @@ This is a list of [status variables](../../server-status-variables.md) that were
 | [Com_backup](../../server-status-variables.md#com_backup) | [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes) |
 | [Com_backup_lock](../../server-status-variables.md#com_backup_lock) | [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes) |
 | [Feature_application_time_periods](../../server-status-variables.md#feature_application_time_periods) | [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes) |
-| [wsrep_applier_thread_count](../../../../galera-cluster/galera-cluster-status-variables.md#wsrep_applier_thread_count) | [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) |
-| [wsrep_rollbacker_thread_count](../../../../galera-cluster/galera-cluster-status-variables.md#wsrep_rollbacker_thread_count) | [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) |
+| [wsrep_applier_thread_count](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_applier_thread_count) | [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) |
+| [wsrep_rollbacker_thread_count](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_rollbacker_thread_count) | [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) |
 
 
 

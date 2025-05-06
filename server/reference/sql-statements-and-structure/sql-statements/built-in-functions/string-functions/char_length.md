@@ -66,3 +66,6 @@ SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 * [OCTET_LENGTH()](octet_length.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#simple-syntax-compatibility)
 
+
+GPLv2 fill_help_tables.sql
+

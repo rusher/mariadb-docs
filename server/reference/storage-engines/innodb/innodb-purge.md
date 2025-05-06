@@ -5,7 +5,37 @@
 When a transaction updates a row in an InnoDB table, InnoDB's MVCC implementation keeps old versions of the row in the [InnoDB undo log](innodb-undo-log.md). The old versions are kept at least until all transactions older than the transaction that updated the row are no longer open. At that point, the old versions can be deleted. InnoDB has purge process that is used to delete these old versions.
 
 
-## Optimizing Purge Performance
+## InnoDB Purge Threads
+
+
+In MariaDB Enterprise Server, the InnoDB storage engine uses Purge Threads to perform garbage collection in the background. The Purge Threads are related to multi-version concurrency control (MVCC).
+
+
+The Purge Threads perform garbage collection of various items:
+
+
+* The Purge Threads perform garbage collection of the [InnoDB Undo Log](https://mariadb.com/kb/en/mariadb-enterprise-server-innodb-undo-log). When a row is updated in the clustered index, InnoDB updates the values in the clustered index, and the old row version is added to the Undo Log. The Purge Threads scan the Undo Log for row versions that are not needed by open transactions and permanently delete them. In ES 10.5 and later, if the remaining clustered index record is the oldest possible row version, the Purge Thread resets the record's hidden `DB_TRX_ID` field to 0.
+
+
+* The Purge Threads perform garbage collection of index records. When an indexed column is updated, InnoDB creates a new index record for the updated value in each affected index, and the old index records are delete-marked. When the primary key column is updated, InnoDB creates a new index record for the updated value in every index, and each old index record is delete-marked. The Purge Threads scan for delete-marked index records and permanently delete them.
+
+
+* The Purge Threads perform garbage collection of freed overflow pages. [BLOB](data-types-blob), [CHAR](data-types-char), [TEXT](data-types-text), [VARCHAR](data-types-varchar), [VARBINARY](data-types-varbinary), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
+
+
+### Feature Summary
+
+
+
+| Feature | Detail | Resources |
+| --- | --- | --- |
+| Feature | Detail | Resources |
+| Thread | InnoDB Purge Threads |  |
+| Storage Engine | InnoDB |  |
+| Purpose | Garbage Collection of: • InnoDB Undo Log • Delete-marked secondary index records • Freed overflow pages |  |
+| Availability | All ES and CS versions | [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/) |
+| Quantity | Set by [innodb_purge_threads](innodb-system-variables.md#innodb_purge_threads) | [Configure the InnoDB Purge Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-purge-threads.md) |
+
 
 
 ### Configuring the Purge Threads
@@ -17,8 +47,26 @@ The number of purge threads can be set by configuring the [innodb_purge_threads]
 ```
 [mariadb]
 ...
-innodb_purge_threads = 6
+innodb_purge_threads=8
 ```
+
+```
+SET GLOBAL innodb_purge_threads=8;
+
+SHOW GLOBAL VARIABLES
+   LIKE 'innodb_purge_threads';
+```
+
+```
++----------------------+-------+
+| Variable_name        | Value |
++----------------------+-------+
+| innodb_purge_threads | 8     |
++----------------------+-------+
+```
+
+## Optimizing Purge Performance
+
 
 ### Configuring the Purge Batch Size
 
@@ -141,10 +189,7 @@ An InnoDB table's clustered index has three hidden system columns that are autom
 If a row's last [InnoDB undo log](innodb-undo-log.md) record is purged, this can obviously effect the value of the row's `DB_ROLL_PTR` column, because there would no longer be any [InnoDB undo log](innodb-undo-log.md) record for the pointer to reference.
 
 
-In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and before, the purge process wouldn't touch the value of the row's `DB_TRX_ID` column.
-
-
-However, in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, the purge process will set a row's `DB_TRX_ID` column to `0` after all of the row's associated [InnoDB undo log](innodb-undo-log.md) records have been deleted. This change allows InnoDB to perform an optimization: if a query wants to read a row, and if the row's `DB_TRX_ID` column is set to `0`, then it knows that no other transaction has the row locked. Usually, InnoDB needs to lock the transaction system's mutex in order to safely check whether a row is locked, but this optimization allows InnoDB to confirm that the row can be safely read without any heavy internal locking.
+The purge process will set a row's `DB_TRX_ID` column to `0` after all of the row's associated [InnoDB undo log](innodb-undo-log.md) records have been deleted. This change allows InnoDB to perform an optimization: if a query wants to read a row, and if the row's `DB_TRX_ID` column is set to `0`, then it knows that no other transaction has the row locked. Usually, InnoDB needs to lock the transaction system's mutex in order to safely check whether a row is locked, but this optimization allows InnoDB to confirm that the row can be safely read without any heavy internal locking.
 
 
 This optimization can speed up reads, but it come at a noticeable cost at other times. For example, it can cause the purge process to use more I/O after inserting a lot of rows, since the value of each row's `DB_TRX_ID` column will have to be reset.

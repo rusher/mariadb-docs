@@ -130,3 +130,6 @@ erase the corresponding data file and index files. Use `DELETE` or
 `TRUNCATE` to do so. This is contrary to data and index files of [inward
 tables](connect-table-types/inward-and-outward-tables.md#inward-tables) are erased on DROP like for other MariaDB engines.
 
+
+GPLv2
+

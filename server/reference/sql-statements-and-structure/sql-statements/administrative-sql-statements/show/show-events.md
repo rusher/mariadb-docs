@@ -57,3 +57,6 @@ The `LIKE` clause, if present, indicates which event names to
 match. The `WHERE` clause can be given to select rows using
 more general conditions, as discussed in [Extended Show](extended-show.md).
 
+
+GPLv2 fill_help_tables.sql
+

@@ -130,3 +130,6 @@ SELECT SUBSTR('abc',1,2);
 * [LOCATE()](locate.md) - Returns the position of a string within a string
 * [SUBSTRING_INDEX()](substring_index.md) - Returns a string based on substring
 
+
+GPLv2 fill_help_tables.sql
+

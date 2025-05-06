@@ -36,3 +36,7 @@ SELECT LN(-2);
 |   NULL |
 +--------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -186,7 +186,7 @@ SELECT /*+ NO_RANGE_OPTIMIZATION(tbl index1 index2) */  * FROM tbl ...
 
 #### NO_ICP
 
-Sn index-level hint that disables Index Condition Pushdown for the indexes. ICP+BKA is disabled as well.
+An index-level hint that disables Index Condition Pushdown for the indexes. ICP+BKA is disabled as well.
 
 ```
 SELECT /*+ NO_ICP(tbl index1 index2) */  * FROM tbl ...

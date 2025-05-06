@@ -31,3 +31,7 @@ SELECT MD5('testing');
 | ae2b1fca515949e5d54fb22b8ed95575 |
 +----------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -90,3 +90,7 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 | Tatiana | 1988-04-13    |   26 |
 +---------+---------------+------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

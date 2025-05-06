@@ -70,3 +70,6 @@ SELECT CONCAT_WS('', @a, @b, @c);
 
 * [GROUP_CONCAT()](../aggregate-functions/group_concat.md)
 
+
+GPLv2 fill_help_tables.sql
+

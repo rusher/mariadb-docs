@@ -39,3 +39,7 @@ SELECT LOG10(-100);
 |        NULL |
 +-------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -31,3 +31,6 @@ Statements using the `IS_USED_LOCK` function are [not safe for statement-based r
 * [IS_FREE_LOCK](is_free_lock.md)
 * [RELEASE_ALL_LOCKS](release_all_locks.md)
 
+
+GPLv2 fill_help_tables.sql
+

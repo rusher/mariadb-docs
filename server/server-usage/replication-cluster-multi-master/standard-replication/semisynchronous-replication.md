@@ -11,7 +11,7 @@
 With regular asynchronous replication, replicas request events from the primary's binary log whenever the replicas are ready. The primary does not wait for a replica to confirm that an event has been received.
 
 
-With fully synchronous replication, all replicas are required to respond that they have received the events. See [Galera Cluster](../galera-cluster/README.md).
+With fully synchronous replication, all replicas are required to respond that they have received the events. See [Galera Cluster](/kb/en/galera-cluster/).
 
 
 Semisynchronous replication waits for just one replica to acknowledge that it has received and logged the events.

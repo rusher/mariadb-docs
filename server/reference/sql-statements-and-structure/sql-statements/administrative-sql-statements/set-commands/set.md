@@ -186,3 +186,6 @@ SELECT @a;
 * [SET Data Type](../../../../data-types/string-data-types/set-data-type.md)
 * [DECLARE Variable](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/declare-variable.md)
 
+
+GPLv2 fill_help_tables.sql
+

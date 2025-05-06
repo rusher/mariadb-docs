@@ -90,3 +90,6 @@ shell> mariadb -u root -p -e "source /tmp/mariadb-bin.sql"
 * [mariadb-binlog](README.md)
 * [mariadb-binlog Options](mariadb-binlog-options.md)
 
+
+GPLv2 fill_help_tables.sql
+

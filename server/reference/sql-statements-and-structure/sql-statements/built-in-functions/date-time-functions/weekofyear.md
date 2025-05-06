@@ -66,3 +66,7 @@ SELECT d, WEEKOFYEAR(d), WEEK(d,3) from t1;
 | 2004-10-07 11:19:34 |            41 |        41 |
 +---------------------+---------------+-----------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

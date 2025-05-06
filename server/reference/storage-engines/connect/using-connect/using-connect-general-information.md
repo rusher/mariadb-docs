@@ -73,3 +73,6 @@ CONNECT can execute these commands using two different algorithms:
 
 The choice between these algorithms depends on the session variable [connect_use_tempfile](../connect-system-variables.md#connect_use_tempfile).
 
+
+GPLv2
+

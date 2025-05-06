@@ -65,3 +65,7 @@ SELECT ST_AsWKT(g) FROM linestring_example;
 | LINESTRING(10 10,40 10)                   |
 +-------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

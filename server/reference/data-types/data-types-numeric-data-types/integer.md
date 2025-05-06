@@ -32,3 +32,7 @@ Create Table: CREATE TABLE `integer_example` (
   `example` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
+
+
+GPLv2 fill_help_tables.sql
+

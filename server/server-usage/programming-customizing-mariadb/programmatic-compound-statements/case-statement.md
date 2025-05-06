@@ -86,3 +86,6 @@ terminated with `END CASE` instead of `END`.
 * The [CASE operator](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
 * The [IF statement](if.md).
 
+
+GPLv2 fill_help_tables.sql
+

@@ -19,3 +19,6 @@ BACKUP TABLE tbl_name [, tbl_name] ... TO '/path/to/backup/directory'
 
 For doing a backup of MariaDB use [mysqldump](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) or [MariaDB Backup](../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md). See [Backing Up and Restoring](../../../../../server-management/backing-up-and-restoring-databases/README.md).
 
+
+CC BY-SA / Gnu FDL
+

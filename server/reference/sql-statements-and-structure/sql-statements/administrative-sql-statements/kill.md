@@ -100,3 +100,6 @@ use `mariadb-admin processlist`. See [mariadb-admin](../../../../clients-and-uti
 * [Aborting statements that exceed a certain time to execute](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/aborting-statements.md)
 * [idle_transaction_timeout](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -41,7 +41,7 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 ## Description
 
 
-INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](insert.md) statement that, if it finds a duplicate unique or [primary key](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key), will instead perform an [UPDATE](../changing-deleting-data/update.md).
+INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](insert.md) statement that, if it finds a duplicate unique or [primary key](/kb/en/getting-started-with-indexes/#primary-key), will instead perform an [UPDATE](../changing-deleting-data/update.md).
 
 
 The row/s affected value is reported as 1 if a row is inserted, and 2 if a row is updated, unless the API's `CLIENT_FOUND_ROWS` flag is set.
@@ -50,7 +50,7 @@ The row/s affected value is reported as 1 if a row is inserted, and 2 if a row i
 If more than one unique index is matched, only the first is updated. It is not recommended to use this statement on tables with more than one unique index.
 
 
-If the table has an [AUTO_INCREMENT](../../../../data-types/auto_increment.md) [primary key](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key) and the statement inserts or updates a row, the [LAST_INSERT_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO_INCREMENT value.
+If the table has an [AUTO_INCREMENT](../../../../data-types/auto_increment.md) [primary key](/kb/en/getting-started-with-indexes/#primary-key) and the statement inserts or updates a row, the [LAST_INSERT_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO_INCREMENT value.
 
 
 The [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `ON DUPLICATE KEY UPDATE` clause and has no meaning in any other context. It returns the column values from the `INSERT` portion of the statement. This function is particularly useful for multi-rows inserts.

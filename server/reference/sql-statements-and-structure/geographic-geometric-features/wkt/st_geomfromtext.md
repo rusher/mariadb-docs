@@ -31,3 +31,7 @@ Constructs a geometry value of any type using its [WKT](wkt-definition.md) repre
 ```
 SET @g = ST_GEOMFROMTEXT('POLYGON((1 1,1 5,4 9,6 9,9 3,7 2,1 1))');
 ```
+
+
+GPLv2 fill_help_tables.sql
+

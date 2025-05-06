@@ -31,3 +31,6 @@ SELECT 1042 % 50;
 
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

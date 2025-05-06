@@ -354,7 +354,7 @@ The process to install MariaDB Galera Cluster with the MariaDB `apt-get` reposit
 Galera Cluster support is included in the standard MariaDB Server packages, so you will need to install the `mariadb-server` package, as you normally would.
 
 
-You also need to install the `galera-4` package to obtain the [Galera](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](/kb/en/galera/) 4 wsrep provider library.
 
 
 To install MariaDB Galera Cluster, first you would have to update the package cache by executing the following command:
@@ -384,13 +384,13 @@ sudo apt-get install galera-arbitrator-4
 <</product>>
 
 
-See [MariaDB Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](/kb/en/galera/) for more information on MariaDB Galera Cluster.
 
 
 #### Installing MariaDB Clients and Client Libraries with APT
 
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c) is included as the client library.
+[MariaDB Connector/C](/kb/en/about-mariadb-connector-c/) is included as the client library.
 
 
 To Install the clients and client libraries, first you would have to update the package cache by executing the following command:
@@ -509,7 +509,7 @@ sudo dpkg --install ./mariadb-server*.deb \
 After the installation is complete, you can [start MariaDB](https://mariadb.com/kb/en/).
 
 
-If you are using [MariaDB Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), then keep in mind that the first node will have to be [bootstrapped](../../../server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](/kb/en/galera/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 
 
 ## Available DEB Packages
@@ -528,7 +528,7 @@ For MariaDB, the following DEBs are available:
 | Package Name | Description |
 | --- | --- |
 | Package Name | Description |
-| galera-4 | The WSREP provider for [Galera](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4. |
+| galera-4 | The WSREP provider for [Galera](/kb/en/galera/) 4. |
 | libmariadb3 | Dynamic client libraries. |
 | libmariadb-dev | Development headers and static libraries. |
 | libmariadbclient18 | Virtual package to satisfy external depends |

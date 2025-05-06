@@ -141,3 +141,6 @@ SELECT GROUP_CONCAT(a, b) FROM t1;
 * [SELECT](../../data-manipulation/selecting-data/select.md)
 * [ORDER BY](../../data-manipulation/selecting-data/order-by.md)
 
+
+GPLv2 fill_help_tables.sql
+

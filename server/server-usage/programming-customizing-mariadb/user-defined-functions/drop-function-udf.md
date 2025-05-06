@@ -51,3 +51,7 @@ SHOW WARNINGS;
 | Note  | 1305 | FUNCTION test.jsoncontains_path does not exist |
 +-------+------+------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

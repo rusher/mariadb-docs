@@ -56,3 +56,6 @@ The `Created` column was added in [MariaDB 10.2.3](https://app.gitbook.com/s/aEn
 * [SHOW TRIGGERS](show-triggers.md)
 * [Trigger Limitations](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations.md)
 
+
+GPLv2 fill_help_tables.sql
+

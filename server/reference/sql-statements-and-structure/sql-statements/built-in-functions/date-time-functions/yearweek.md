@@ -65,3 +65,7 @@ SELECT YEARWEEK(d) FROM t1 WHERE YEAR(d) = 2011;
 +-------------+
 3 rows in set (0.03 sec)
 ```
+
+
+GPLv2 fill_help_tables.sql
+

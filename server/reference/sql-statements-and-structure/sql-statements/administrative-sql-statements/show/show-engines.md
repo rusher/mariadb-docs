@@ -112,3 +112,7 @@ Transactions: NO
   Savepoints: NO
 10 rows in set (0.00 sec)
 ```
+
+
+GPLv2 fill_help_tables.sql
+

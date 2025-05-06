@@ -542,7 +542,7 @@ only guaranteed to work if GTIDs have not become inconsistent within the cluster
 
 
 See
-[Wsrep GTID Mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster)
+[Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster)
 for more information.
 
 

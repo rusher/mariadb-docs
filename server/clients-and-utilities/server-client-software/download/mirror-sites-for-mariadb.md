@@ -174,7 +174,6 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 * AARNet (Brisbane)
 * Digital Pacific (Sydney)
 * Real World Group (Sydney)
-* Starburst Services (Sydney)
 
 
 **Austria**
@@ -283,7 +282,6 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 
 * Bharat Datacenter (New Delhi)
-* Starburst Services (Mumbai)
 * Indian Institute Of Technology Delhi (New Delhi)
 
 
@@ -385,6 +383,7 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 
 * PTISP (Lisbon)
+* WebHS (Lisbon)
 * Universidade do Porto
 
 
@@ -408,7 +407,6 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 * Daan van Gorkum
 * National University of Singapore
-* Starburst Services (Singapore)
 * vHost (Singapore)
 
 
@@ -545,4 +543,7 @@ rsync archive.mariadb.org::mariadb
 
 If you would like to become a full archive mirror of MariaDB and be listed
 here, just let us know via the [contact information above](#getting-added-to-the-mirror-list). Thanks!
+
+
+CC BY-SA / Gnu FDL
 

@@ -50,7 +50,7 @@ password = PASSWORD
 If there is a root user password in the MariaDB server Database, remember to setup the Password Configuration file on each User Module and Performance Module that has User Modules functionality.
 
 
-[mariadb-columnstore-system-usage.md](../../columnstore-getting-started/mariadb-columnstore-system-usage.md)
+[#logging-into-mariadb-columnstore-mariadb-console](https://mariadb.com/kb/en/library/mariadb-columnstore-system-usage/#logging-into-mariadb-columnstore-mariadb-console)
 
 
 Also make sure that the file .my.cnf doesn't exist if no password is setup.

@@ -19,3 +19,6 @@ INTERSECTS() is based on the original MySQL implementation and uses object bound
 
 INTERSECTS() tests the opposite relationship to [DISJOINT()](disjoint.md).
 
+
+GPLv2 fill_help_tables.sql
+

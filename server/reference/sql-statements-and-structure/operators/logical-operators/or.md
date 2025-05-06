@@ -91,3 +91,6 @@ SELECT 0 || NULL;
 * [Operator Precedence](../operator-precedence.md)
 * [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle#null-handling)
 
+
+GPLv2 fill_help_tables.sql
+

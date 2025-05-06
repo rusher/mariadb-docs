@@ -296,3 +296,7 @@ $ docker ps \
 ```
 CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 ```
+
+
+Copyright © 2025 MariaDB
+

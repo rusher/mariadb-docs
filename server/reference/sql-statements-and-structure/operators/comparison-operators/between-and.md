@@ -116,3 +116,6 @@ SELECT * FROM x WHERE c BETWEEN '2018-11-11' AND '2018-11-12';
 
 * [Operator Precedence](../operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

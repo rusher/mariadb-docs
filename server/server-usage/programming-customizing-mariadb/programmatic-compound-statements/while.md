@@ -37,3 +37,7 @@ BEGIN
   END WHILE;
 END
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -25,3 +25,7 @@ SELECT REVERSE('desserts');
 | stressed            |
 +---------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

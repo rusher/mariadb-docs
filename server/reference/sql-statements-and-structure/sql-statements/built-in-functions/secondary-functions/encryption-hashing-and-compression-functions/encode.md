@@ -33,3 +33,7 @@ It is not recommended to rely on the encryption performed by the ENCODE function
 ```
 ENCODE('not so secret text', CONCAT('random_salt','password'))
 ```
+
+
+GPLv2 fill_help_tables.sql
+

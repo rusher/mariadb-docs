@@ -103,7 +103,7 @@ to the thread option, making this query super-fast even on big tables placed on
 many remote machines.
 
 
-Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira).
+Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira).
 
 
 ## Providing a list of servers
@@ -153,4 +153,7 @@ MariaDB and a federated server named *server_one*.
 
 
 1. [↑](#_ref-0) To generate the columns from the `SRCDEF` query, CONNECT must execute it. This will make sure it is ok. However, if the remote server is not connected yet, or the remote table not existing yet, you can alternatively specify the columns in the create table statement.
+
+
+GPLv2
 

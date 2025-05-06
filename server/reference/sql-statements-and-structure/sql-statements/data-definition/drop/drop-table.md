@@ -172,3 +172,6 @@ Beware that `DROP TABLE` can drop both tables and [sequences](../../../sequences
 * [DROP SEQUENCE](../../../sequences/drop-sequence.md)
 * Variable [slave-ddl-exec-mode](../../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md).
 
+
+GPLv2 fill_help_tables.sql
+

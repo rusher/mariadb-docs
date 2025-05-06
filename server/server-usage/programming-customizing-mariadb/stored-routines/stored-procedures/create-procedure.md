@@ -288,3 +288,6 @@ Query OK, 0 rows affected (0.03 sec)
 * [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
+
+CC BY-SA / Gnu FDL
+

@@ -35,8 +35,8 @@ The redo log files are typically named `ib_logfileN`, where `N` is an integer. H
 | Purpose | Crash Safety |  |
 | Availability | All ES and CS versions | [MariaDB Enterprise Server](/kb/en/mariadb-enterprise-server/) |
 | Location | Set by [innodb_log_group_home_dir](innodb-system-variables.md#innodb_log_group_home_dir) (Defaults to [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)) |  |
-| Quantity | 1 (ES 10.5+, CS 10.5+) | [Configure the InnoDB Redo Log](https://mariadb.com/kb/en/configure-the-innodb-redo-log/) |
-| Size | Set by [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) (default varies) | [Configure the InnoDB Redo Log](/kb/en/configure-the-innodb-redo-log/) |
+| Quantity | 1 (ES 10.5+, CS 10.5+) | [Configure the InnoDB Redo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-redo-log.md) |
+| Size | Set by [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) (default varies) | [Configure the InnoDB Redo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-redo-log.md) |
 
 
 

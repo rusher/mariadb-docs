@@ -48,3 +48,7 @@ SELECT LOWER(@str), LOWER(CONVERT(@str USING latin1));
 | North Carolina | north carolina                    |
 +----------------+-----------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

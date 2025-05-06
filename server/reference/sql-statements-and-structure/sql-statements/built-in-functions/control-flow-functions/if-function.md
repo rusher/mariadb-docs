@@ -56,3 +56,6 @@ SELECT IF(STRCMP('test','test1'),'no','yes');
 
 There is also an [IF statement](../../../../../server-usage/programming-customizing-mariadb/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
 
+
+GPLv2 fill_help_tables.sql
+

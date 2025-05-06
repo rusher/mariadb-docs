@@ -935,7 +935,7 @@ from performing the binlog write for all transactions that are a part of the gro
 * Description: This system variable is used with [MariaDB replication](../README.md) to identify unique primary and replica servers in a topology. This system variable is also used with the [binary log](../../../server-management/server-monitoring-logs/binary-log/README.md) to determine which server a specific transaction originated on.
 
   * When [MariaDB replication](../README.md) is used with standalone MariaDB Server, each server in the replication topology must have a unique `server_id` value.
-  * When [MariaDB replication](../README.md) is used with [MariaDB Galera Cluster](../galera-cluster/README.md), see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](../galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md#setting-server_id-on-cluster-nodes) for more information on how to set the `server_id` values.
+  * When [MariaDB replication](../README.md) is used with [MariaDB Galera Cluster](/kb/en/galera/), see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server_id on Cluster Nodes](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica#setting-server_id-on-cluster-nodes) for more information on how to set the `server_id` values.
   * In [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and below, the default `server_id` value is `0`. If a replica's `server_id` value is `0`, then all primary's will refuse its connection attempts. If a primary's `server_id` value is `0`, then it will refuse all replica connection attempts.
 * Commandline: `--server-id =#`
 * Scope: Global, Session
@@ -1006,7 +1006,7 @@ files satisfying the above two parameters and the value that is set itself.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
-* Default Value: `1`
+* Default Value: `1`; `0` on Galera cluster nodes.
 * Range: `0` to `18446744073709551615`
 * Introduced: [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 

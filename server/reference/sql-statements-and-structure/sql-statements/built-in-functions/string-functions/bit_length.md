@@ -41,3 +41,6 @@ SELECT BIT_LENGTH('');
 
 PostgreSQL and Sybase support BIT_LENGTH().
 
+
+GPLv2 fill_help_tables.sql
+

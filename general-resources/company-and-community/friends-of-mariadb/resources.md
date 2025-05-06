@@ -50,7 +50,7 @@ You can also meet MariaDB people at many open source conferences. See the list o
 ## Feature Requests
 
 
-If you have a feature request, you can file it in [JIRA](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md). If you are
+If you have a feature request, you can file it in [JIRA](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md). If you are
 prepared to pay for the feature you can contact the
 [MariaDB Corporation](https://mariadb.com/) to get a quote. You can of course also fix it yourself and become a [MariaDB contributor/developer](../contributing-participating/contributing-to-the-mariadb-project.md).
 

@@ -58,3 +58,6 @@ SELECT LOCATE('bar', 'foobarbar', 5);
 * [INSTR()](instr.md) ; Returns the position of a string withing a string
 * [SUBSTRING_INDEX()](substring_index.md) ; Returns the substring from string before count occurrences of a delimiter
 
+
+GPLv2 fill_help_tables.sql
+

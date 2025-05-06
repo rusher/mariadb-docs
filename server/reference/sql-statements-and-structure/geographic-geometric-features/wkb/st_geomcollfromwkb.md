@@ -34,3 +34,7 @@ SELECT ST_AsText(ST_GeomCollFromWKB(@g));
 | GEOMETRYCOLLECTION(POLYGON((5 5,10 5,10 10,5 5)),POINT(10 10)) |
 +----------------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

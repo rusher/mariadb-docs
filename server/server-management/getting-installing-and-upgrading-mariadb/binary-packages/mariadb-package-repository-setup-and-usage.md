@@ -90,10 +90,102 @@ The distributions currently supported by the script include:
 * SUSE Linux Enterprise Server (SLES) 12 and 15
 
 
-To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](distributions-which-include-mariadb.md).
+To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb).
 
 
-## Using the MariaDB Package Repository Setup Script
+## Manual Configuration
+
+
+### Configure MariaDB Enterprise Repository
+
+
+MariaDB Corporation provides the MariaDB Enterprise Repository for customers of MariaDB Corporation to install MariaDB database products using the operating system's package manager.
+
+
+The MariaDB Enterprise Repository is configured using the mariadb_es_repo_setup script, which requires the [Customer Download Token](../deployment-general-installing-and-upgrading-instructions/token.md) to be provided via the --token option.
+
+
+Configure the MariaDB Enterprise Repository using the following procedure:
+
+
+1. [Retrieve your Customer Download Token.](../deployment-general-installing-and-upgrading-instructions/token.md#retrieve-customer-download-token)
+1. Install the prerequisites for downloading the software from the Web.Install on CentOS / RHEL / Rocky Linux (YUM):
+
+```
+$ sudo yum install curl
+```
+Install on Debian / Ubuntu (APT):
+```
+$ sudo apt install curl apt-transport-https
+```
+Install on SLES (ZYpp):
+```
+$ sudo zypper install curl
+```
+1. Configure the MariaDB Enterprise Repository using the mariadb_es_repo_setup script and provide the Customer Download Token using the --token option:
+
+
+```
+curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
+
+echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
+       | sha256sum -c -
+
+chmod +x mariadb_es_repo_setup
+
+sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply
+```
+
+To learn how to configure your system to install a specific product or version from the MariaDB Enterprise Repository, see the available mariadb_es_repo_setup command-line options.
+
+
+
+
+### Configure MariaDB Community Repository
+
+
+MariaDB Corporation provides the MariaDB Community Repository for any MariaDB user to install MariaDB products using the operating system's package manager.
+
+
+The MariaDB Community Repository is configured using the [mariadb_repo_setup](mariadb-package-repository-setup-and-usage.md) script.
+
+
+Configure the MariaDB Community Repository using the following procedure:
+
+
+1. Install the prerequisites for downloading the software from the Web.Install on CentOS / RHEL / Rocky Linux (YUM):
+
+```
+$ sudo yum install curl
+```
+Install on Debian / Ubuntu (APT):
+```
+$ sudo apt install curl apt-transport-https
+```
+Install on SLES (ZYpp):
+```
+$ sudo zypper install curl
+```
+1. Configure the MariaDB Community Repository using the [mariadb_repo_setup](mariadb-package-repository-setup-and-usage.md) script:
+
+
+```
+curl -LsSO https://r.mariadb.com/downloads/mariadb_repo_setup
+
+echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a  mariadb_repo_setup" \
+       | sha256sum -c -
+
+chmod +x mariadb_repo_setup
+
+sudo ./mariadb_repo_setup
+```
+
+To learn how to configure your system to install a specific product or version from the MariaDB Community Repository, see the available [mariadb_repo_setup](mariadb-package-repository-setup-and-usage.md) command-line options.
+
+
+
+
+## Configuration Using the MariaDB Package Repository Setup Script
 
 
 The script can be executed in the following way:

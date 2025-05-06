@@ -263,7 +263,7 @@ Add a primary key.
 For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`.
 
 
-See [Getting Started with Indexes: Primary Key](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key) for more information.
+See [Getting Started with Indexes: Primary Key](/kb/en/getting-started-with-indexes/#primary-key) for more information.
 
 
 ### DROP PRIMARY KEY
@@ -275,7 +275,7 @@ Drop a primary key.
 For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`.
 
 
-See [Getting Started with Indexes: Primary Key](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key) for more information.
+See [Getting Started with Indexes: Primary Key](/kb/en/getting-started-with-indexes/#primary-key) for more information.
 
 
 ### ADD FOREIGN KEY
@@ -324,7 +324,7 @@ Add a plain index.
 Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](InnoDB_Limitations).
 
 
-See [Getting Started with Indexes: Plain Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#plain-indexes) for more information.
+See [Getting Started with Indexes: Plain Indexes](/kb/en/getting-started-with-indexes/#plain-indexes) for more information.
 
 
 ### DROP INDEX
@@ -336,7 +336,7 @@ Drop a plain index.
 Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes.
 
 
-See [Getting Started with Indexes: Plain Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#plain-indexes) for more information.
+See [Getting Started with Indexes: Plain Indexes](/kb/en/getting-started-with-indexes/#plain-indexes) for more information.
 
 
 ### ADD UNIQUE INDEX
@@ -351,7 +351,7 @@ The `UNIQUE` keyword means that the index will not accept duplicated values, exc
 For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages.
 
 
-See [Getting Started with Indexes: Unique Index](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) for more information.
+See [Getting Started with Indexes: Unique Index](/kb/en/getting-started-with-indexes/#unique-index) for more information.
 
 
 ### DROP UNIQUE INDEX
@@ -366,7 +366,7 @@ The `UNIQUE` keyword means that the index will not accept duplicated values, exc
 For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages.
 
 
-See [Getting Started with Indexes: Unique Index](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) for more information.
+See [Getting Started with Indexes: Unique Index](/kb/en/getting-started-with-indexes/#unique-index) for more information.
 
 
 ### ADD FULLTEXT INDEX
@@ -1003,4 +1003,7 @@ of which the first one gets delivered to replicas before ALTER is taken to actua
 * [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [Instant ADD COLUMN for InnoDB](../../../../storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
+
+
+GPLv2 fill_help_tables.sql
 

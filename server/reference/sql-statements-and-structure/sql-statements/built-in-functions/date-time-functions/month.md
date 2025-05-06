@@ -34,3 +34,7 @@ SELECT MONTH('2019-00-03');
 |                   0 |
 +---------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

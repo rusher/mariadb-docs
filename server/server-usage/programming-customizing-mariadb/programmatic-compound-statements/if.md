@@ -27,3 +27,6 @@ is executed. Each statement_list consists of one or more statements.
 * [Changes in Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 * The [CASE statement](case-statement.md).
 
+
+GPLv2 fill_help_tables.sql
+

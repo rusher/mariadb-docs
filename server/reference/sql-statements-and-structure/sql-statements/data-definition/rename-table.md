@@ -95,3 +95,7 @@ This means that if there is a crash (server down or power outage) during `RENAME
 In older MariaDB version there was a small chance that, during a server crash happening in the middle of `RENAME TABLE`, some tables could have been renamed (in the worst case partly) while others would not be renamed.
 See [Atomic DDL](atomic-ddl.md) for more information.
 
+
+
+GPLv2 fill_help_tables.sql
+

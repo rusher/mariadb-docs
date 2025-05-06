@@ -41,3 +41,7 @@ SELECT Dimension(GeomFromText('LineString(1 1,2 2)'));
 |                                              1 |
 +------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

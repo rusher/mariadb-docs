@@ -73,3 +73,6 @@ SELECT HEX(AES_ENCRYPT('foo', 'bar', '0123456789abcdef', 'aes-256-cbc')) AS x;
 * [RANDOM_BYTES()](https://mariadb.com/kb/en/random-bytes) - is a function for generating good encryption keys for AES_ENCRYPT
 * [KDF()](kdf.md) - key derivation function is useful if an authentication validation against the value is required without data being able to be decrypted.
 
+
+GPLv2 fill_help_tables.sql
+

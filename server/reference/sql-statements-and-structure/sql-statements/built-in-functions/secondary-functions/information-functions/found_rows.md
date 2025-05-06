@@ -89,3 +89,6 @@ SELECT FOUND_ROWS();
 
 * [ROW_COUNT()](row_count.md)
 
+
+GPLv2 fill_help_tables.sql
+

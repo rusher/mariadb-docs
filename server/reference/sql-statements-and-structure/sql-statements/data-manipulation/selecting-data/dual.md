@@ -37,3 +37,6 @@ Empty set (0.00 sec)
 
 * [SELECT](select.md)
 
+
+GPLv2 fill_help_tables.sql
+

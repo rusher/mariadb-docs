@@ -132,7 +132,7 @@ spec:
 In the case of `MaxScale`, you can also do this via the `kubernetesService` field.
 
 
-Refer to the [High Availability documentation](high-availability.md) to know more about the `Service` fields and `MaxScale`.
+Refer to the [High Availability documentation](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/) to know more about the `Service` fields and `MaxScale`.
 
 
 ## `PVC` metadata

@@ -134,3 +134,6 @@ SELECT * FROM t WHERE m <=> DEFAULT(m);
 
 * [CREATE TABLE DEFAULT Clause](../../../data-definition/create/create-table.md#default-column-option)
 
+
+GPLv2 fill_help_tables.sql
+

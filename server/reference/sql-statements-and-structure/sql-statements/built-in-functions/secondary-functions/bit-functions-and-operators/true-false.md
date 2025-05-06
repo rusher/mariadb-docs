@@ -19,3 +19,7 @@ SELECT TRUE, true, FALSE, false;
 |    1 |    1 |     0 |     0 |
 +------+------+-------+-------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

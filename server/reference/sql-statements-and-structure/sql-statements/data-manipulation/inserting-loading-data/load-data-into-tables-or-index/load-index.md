@@ -26,3 +26,6 @@ statement, or into the default key cache otherwise.
 The `IGNORE LEAVES` modifier causes only blocks for the nonleaf nodes of
 the index to be preloaded.
 
+
+GPLv2 fill_help_tables.sql
+

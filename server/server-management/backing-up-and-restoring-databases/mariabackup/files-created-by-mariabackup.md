@@ -271,10 +271,10 @@ Mariabackup does **not** check if [GTIDs](../../../server-usage/replication-clus
 ## `xtrabackup_galera_info`
 
 
-If the `[--galera-info](mariabackup-options.md#-galera-info)` option is provided, then this file contains information about a [Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) node's state.
+If the `[--galera-info](mariabackup-options.md#-galera-info)` option is provided, then this file contains information about a [Galera Cluster](/en/galera/) node's state.
 
 
-The file contains the values of the `[wsrep_local_state_uuid](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_state_uuid)` and `[wsrep_last_committed](../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_last_committed)` status variables.
+The file contains the values of the `[wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid)` and `[wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed)` status variables.
 
 
 The values are written in the following format:

@@ -48,3 +48,7 @@ SELECT id, body, MATCH (title,body) AGAINST
 |  6 | When configured properly, MySQL ... | 1.3114095926285 |
 +----+-------------------------------------+-----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -25,3 +25,7 @@ SELECT DAYOFYEAR('2018-02-16');
 |                      47 |
 +-------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

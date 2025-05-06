@@ -21,7 +21,7 @@ JSON is an alias for LONGTEXT. See [JSON Data Type](json.md) for details.
 ## Oracle Mode
 
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CLOB](https://mariadb.com/kb/en/clob/) is a synonym for `LONGTEXT`.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CLOB](clob.md) is a synonym for `LONGTEXT`.
 
 
 ## EXAMPLES
@@ -87,4 +87,7 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [JSON Data Type](json.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+
+
+GPLv2 fill_help_tables.sql
 

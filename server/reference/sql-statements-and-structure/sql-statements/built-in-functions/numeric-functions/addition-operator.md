@@ -42,3 +42,6 @@ SELECT 3+5;
 * [Division Operator (/)](division-operator.md)
 * [Operator Precedence](../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

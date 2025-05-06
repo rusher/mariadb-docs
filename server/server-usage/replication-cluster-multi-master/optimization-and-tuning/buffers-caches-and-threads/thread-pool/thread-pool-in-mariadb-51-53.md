@@ -82,3 +82,6 @@ connection/thread model.
 * [Thread-handling and thread-pool-size variables](thread-pool-system-status-variables.md)
 * [How MySQL Uses Threads for Client Connections](https://dev.mysql.com/doc/refman/5.6/en/connection-threads.html)
 
+
+CC BY-SA / Gnu FDL
+

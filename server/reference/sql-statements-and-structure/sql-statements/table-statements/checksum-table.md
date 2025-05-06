@@ -66,3 +66,6 @@ versions should calculate checksums the same way as MariaDB). You can get the
 using this old mode, the `CHECKSUM` command will be
 slower as it needs to calculate the checksum row by row.
 
+
+GPLv2 fill_help_tables.sql
+

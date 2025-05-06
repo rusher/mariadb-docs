@@ -48,3 +48,6 @@ more information about the output columns.
 * [INFORMATION_SCHEMA.COLUMNS Table](system-tables/information-schema/information-schema-tables/information-schema-columns-table.md)
 * [mysqlshow](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqlshow.md)
 
+
+GPLv2 fill_help_tables.sql
+

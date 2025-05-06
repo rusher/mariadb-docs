@@ -47,3 +47,6 @@ Some good blog rolls:
 
 * [Planet MySQL](https://planet.mysql.com)
 
+
+CC BY-SA / Gnu FDL
+

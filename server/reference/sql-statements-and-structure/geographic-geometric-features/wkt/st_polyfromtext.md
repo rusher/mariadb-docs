@@ -29,3 +29,7 @@ INSERT INTO gis_polygon VALUES
     (PolygonFromText('POLYGON((10 10,20 10,20 20,10 20,10 10))')),
     (PolyFromText('POLYGON((0 0,50 0,50 50,0 50,0 0), (10 10,20 10,20 20,10 20,10 10))'));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

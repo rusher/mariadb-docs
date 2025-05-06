@@ -60,3 +60,6 @@ GRANT SHOW VIEW,SELECT ON test_database.test_view TO 'test'@'localhost';
 
 * [Grant privileges to tables, views etc](../../account-management-sql-commands/grant.md)
 
+
+GPLv2 fill_help_tables.sql
+

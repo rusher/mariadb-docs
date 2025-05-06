@@ -119,3 +119,6 @@ SET PASSWORD FOR 'bob'@localhost = PASSWORD("");
 * [Password Validation Plugins](../../../plugins/password-validation-plugins/README.md) - permits the setting of basic criteria for passwords
 * [ALTER USER](alter-user.md)
 
+
+GPLv2 fill_help_tables.sql
+

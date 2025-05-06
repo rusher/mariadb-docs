@@ -4,7 +4,7 @@
 This refers to the index_type definition when creating an index, i.e. BTREE, HASH or RTREE.
 
 
-For more information on general types of indexes, such as primary keys, unique indexes etc, go to [Getting Started with Indexes](getting-started-with-indexes.md).
+For more information on general types of indexes, such as primary keys, unique indexes etc, go to [Getting Started with Indexes](https://mariadb.com/kb/en/getting-started-with-indexes/).
 
 
 

@@ -69,3 +69,6 @@ In order to skip transactions in cases like this, you will have to manually chan
 
 * [Selectively Skipping Replication of Binlog Events](../../../../../server-usage/replication-cluster-multi-master/standard-replication/selectively-skipping-replication-of-binlog-events.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -39,3 +39,6 @@ END
 
 * [LEAVE](leave.md) - Exits a loop (or any labeled code block)
 
+
+GPLv2 fill_help_tables.sql
+

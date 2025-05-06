@@ -246,3 +246,7 @@ or, if you prefer WinDBG
 ```
 perl mysql-test-run.pl  <test_name> --windbg
 ```
+
+
+CC BY-SA / Gnu FDL
+

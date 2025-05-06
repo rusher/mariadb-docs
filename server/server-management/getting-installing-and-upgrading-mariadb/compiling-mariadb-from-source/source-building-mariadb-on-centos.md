@@ -150,3 +150,6 @@ When CMake runs through the tests again, it should now find the packages it need
 
 See also [building RPM packages from source](building-rpm-packages-from-source.md)
 
+
+CC BY-SA / Gnu FDL
+

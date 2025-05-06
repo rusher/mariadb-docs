@@ -42,3 +42,6 @@ SELECT ELT(4, 'ej', 'Heja', 'hej', 'foo');
 * [FIND_IN_SET()](find_in_set.md) function. Returns the position of a string in a set of strings.
 * [FIELD()](field.md) function. Returns the index position of a string in a list.
 
+
+GPLv2 fill_help_tables.sql
+

@@ -29,3 +29,7 @@ SELECT BENCHMARK(1000000,ENCODE('hello','goodbye'));
 +----------------------------------------------+
 1 row in set (0.21 sec)
 ```
+
+
+GPLv2 fill_help_tables.sql
+

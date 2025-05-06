@@ -9,11 +9,11 @@ The terms *master* and *slave* have historically been used in replication, and M
 Mariabackup makes it very easy to set up a [replica](../../../server-usage/replication-cluster-multi-master/standard-replication/README.md) using a [full backup](full-backup-and-restore-with-mariabackup.md). This page documents how to set up a replica from a backup.
 
 
-If you are using [MariaDB Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), then you may want to try one of the following pages instead:
+If you are using [MariaDB Galera Cluster](/kb/en/galera/), then you may want to try one of the following pages instead:
 
 
-* [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](/kb/en/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/)
-* [Configuring MariaDB Replication between Two MariaDB Galera Clusters](../../../server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters.md)
+* [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](https://mariadb.com/kb/en/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/)
+* [Configuring MariaDB Replication between Two MariaDB Galera Clusters](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters)
 
 
 ## Backup the Database and Prepare It

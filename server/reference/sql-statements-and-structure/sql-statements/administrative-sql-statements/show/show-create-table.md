@@ -152,3 +152,6 @@ Create Table: CREATE TABLE "t1" (
 * [SHOW CREATE SEQUENCE](show-create-sequence.md)
 * [SHOW CREATE VIEW](show-create-view.md)
 
+
+GPLv2 fill_help_tables.sql
+

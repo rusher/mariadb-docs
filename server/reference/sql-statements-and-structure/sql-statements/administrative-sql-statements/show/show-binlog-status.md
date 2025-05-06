@@ -50,3 +50,6 @@ SELECT @@global.gtid_binlog_pos;
 * [Using and Maintaining the Binary Log](../../../../../server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log.md)
 * [The gtid_binlog_pos variable](../../../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md)
 
+
+GPLv2 fill_help_tables.sql
+

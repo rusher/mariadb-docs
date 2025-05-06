@@ -44,3 +44,7 @@ SELECT INSERT('Quadratic', 3, 100, 'What');
 | QuWhat                              |
 +-------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

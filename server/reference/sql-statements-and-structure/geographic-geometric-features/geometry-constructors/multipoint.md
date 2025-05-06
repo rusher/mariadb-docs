@@ -63,3 +63,7 @@ SELECT ST_AsWKT(m) FROM multipoint_example;
 | MULTIPOINT(0 0,1 1)         |
 +-----------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

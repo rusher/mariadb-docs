@@ -72,3 +72,6 @@ SELECT UUID();
 * [MDEV-11339](https://jira.mariadb.org/browse/MDEV-11339) (Support UUID v4 generation)
 * [MDEV-32637](https://jira.mariadb.org/browse/MDEV-32637) (Implement native UUID7 function)
 
+
+GPLv2 fill_help_tables.sql
+

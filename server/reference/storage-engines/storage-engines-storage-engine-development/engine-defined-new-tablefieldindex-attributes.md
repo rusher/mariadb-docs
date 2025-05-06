@@ -146,3 +146,6 @@ With the `IGNORE_BAD_TABLE_OPTIONS` [sql mode](../../../server-management/variab
 * [Storage Engines](../README.md)
 * [Storage Engine Development](README.md)
 
+
+CC BY-SA / Gnu FDL
+

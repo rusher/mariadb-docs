@@ -32,3 +32,7 @@ SELECT AsText(StartPoint(GeomFromText(@ls)));
 | POINT(1 1)                            |
 +---------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

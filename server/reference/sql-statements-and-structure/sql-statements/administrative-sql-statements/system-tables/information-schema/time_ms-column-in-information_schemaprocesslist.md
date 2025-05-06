@@ -45,3 +45,6 @@ if a slave is lagging behind. For this, use instead the
 The addition of the TIME_MS column is based on the microsec_process patch,
 developed by [Percona](https://www.percona.com/).
 
+
+CC BY-SA / Gnu FDL
+

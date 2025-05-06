@@ -171,3 +171,6 @@ SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 * [Extended SHOW](extended-show.md)
 * [Silent Column Changes](../../data-definition/create/silent-column-changes.md)
 
+
+GPLv2 fill_help_tables.sql
+

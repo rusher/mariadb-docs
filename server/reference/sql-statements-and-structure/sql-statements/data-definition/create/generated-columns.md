@@ -435,11 +435,14 @@ SELECT * FROM table2;
 1 row in set (0.00 sec)
 ```
 
-You can also use virtual columns to implement a "poor man's partial index". See example at the end of [Unique Index](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index).
+You can also use virtual columns to implement a "poor man's partial index". See example at the end of [Unique Index](/kb/en/getting-started-with-indexes/#unique-index).
 
 
 ## See Also
 
 
 * [Putting Virtual Columns to good use](https://mariadb.com/blog/putting-virtual-columns-good-use) on the mariadb.com blog.
+
+
+CC BY-SA / Gnu FDL
 

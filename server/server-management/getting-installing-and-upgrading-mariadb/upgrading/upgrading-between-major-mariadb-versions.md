@@ -16,7 +16,7 @@ Upgrades are normally easy because:
 MariaDB Corporation regularly runs tests to check that one can upgrade from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) to the latest MariaDB version without any trouble. All older versions should work too (as long as the storage engines you were using are still around).
 
 
-Note that if you are using [MariaDB Galera Cluster](../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md), you have to follow the [Galera upgrading instructions](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/README.md)!
+Note that if you are using [MariaDB Galera Cluster](/kb/en/galera-cluster/), you have to follow the [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/)!
 
 
 ## Requirements for Doing an Upgrade Between Major Versions
@@ -83,7 +83,7 @@ The common warnings/errors are:
 
 * First, check the [MariaDB error log](../../server-monitoring-logs/error-log.md) to see if you are using configure options that are not supported anymore.
 * Check the upgrade notices for the MariaDB release that you are upgrading to.
-* File an issue in the [MariaDB bug tracker](../../../reference/bug-tracking/README.md) so that we know about the issue and can provide a fix to make upgrades even better.
+* File an issue in the [MariaDB bug tracker](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/) so that we know about the issue and can provide a fix to make upgrades even better.
 * Add a comment to this manual entry for how we can improve it.
 
 
@@ -130,6 +130,6 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 * [Upgrading from MariaDB 10.4 to MariaDB 10.5](upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
 
-* [Galera upgrading instructions](../../../server-usage/replication-cluster-multi-master/galera-cluster/upgrading-galera-cluster/README.md)
+* [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster/)
 * [innodb_fast_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 

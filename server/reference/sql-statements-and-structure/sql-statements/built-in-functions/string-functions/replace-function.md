@@ -27,3 +27,7 @@ SELECT REPLACE('www.mariadb.org', 'w', 'Ww');
 | WwWwWw.mariadb.org                    |
 +---------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

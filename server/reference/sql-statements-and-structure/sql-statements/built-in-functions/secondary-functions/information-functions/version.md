@@ -51,3 +51,6 @@ string like Joomla til API17, see [MDEV-7780](https://jira.mariadb.org/browse/MD
 
 One can fool these applications by setting the version string from the command line or the my.cnf files with [--version=...](../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#version).
 
+
+GPLv2 fill_help_tables.sql
+

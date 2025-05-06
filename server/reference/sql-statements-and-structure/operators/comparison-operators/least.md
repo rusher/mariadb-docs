@@ -53,3 +53,7 @@ SELECT LEAST('B','A','C');
 | A                  |
 +--------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

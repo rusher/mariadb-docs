@@ -46,3 +46,6 @@ SELECT 300 DIV 0;
 * [Division operator](division-operator.md)
 * [Operator Precedence](../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

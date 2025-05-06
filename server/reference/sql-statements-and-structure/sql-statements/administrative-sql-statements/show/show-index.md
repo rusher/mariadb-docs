@@ -165,3 +165,6 @@ Index_comment:
 * [Ignored Indexes](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
 * [SHOW INDEX_STATISTICS](show-index-statistics.md)
 
+
+GPLv2 fill_help_tables.sql
+

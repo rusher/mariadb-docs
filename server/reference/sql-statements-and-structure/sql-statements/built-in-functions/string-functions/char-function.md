@@ -56,3 +56,6 @@ Warning (Code 1292): Truncated incorrect INTEGER value: '77.3'
 * [ORD()](ord.md) - Return value for character in single or multi-byte character sets
 * [CHR](chr.md) - Similar, Oracle-compatible, function
 
+
+GPLv2 fill_help_tables.sql
+

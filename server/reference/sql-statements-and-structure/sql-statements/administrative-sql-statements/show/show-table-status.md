@@ -88,3 +88,7 @@ Max_data_length: 0
  Create_options: 
         Comment:
 ```
+
+
+GPLv2 fill_help_tables.sql
+

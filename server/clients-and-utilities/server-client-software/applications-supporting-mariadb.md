@@ -85,5 +85,5 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 
 
 * [Graphical clients](../graphical-and-enhanced-clients/README.md)
-* [Distributions which include MariaDB](../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/distributions-which-include-mariadb.md)
+* [Distributions which include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb)
 

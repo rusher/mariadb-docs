@@ -4,7 +4,7 @@
 How to generate binary tar.gz files.
 
 
-* [Setup your build environment](/kb/en/Linux_Build_Environment_Setup/).
+* [Setup your build environment](/en/Linux_Build_Environment_Setup/).
 * [Build binaries](https://kb.askmonty.org/en/generic-build-instructions) with your preferred options/plugins.
 
 
@@ -39,3 +39,7 @@ cd bakery_{number}
 bakery/tarbake51.sh last:1 $MARIA_WORK
 bakery/autobake51-bintar.sh mariadb-{version_num}-maria-beta-ourdelta{number}.tar.gz
 ```
+
+
+CC BY-SA / Gnu FDL
+

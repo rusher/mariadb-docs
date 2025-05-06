@@ -69,3 +69,7 @@ SELECT 5 NOT IN (1, 2, NULL);
 |                  NULL |
 +-----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -136,3 +136,6 @@ SHOW WARNINGS;
 
 * [SHOW ERRORS](show-errors.md)
 
+
+GPLv2 fill_help_tables.sql
+

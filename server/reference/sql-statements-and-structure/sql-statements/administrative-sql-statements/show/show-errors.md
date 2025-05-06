@@ -58,3 +58,7 @@ SHOW ERRORS;
 | Error | 1305 | FUNCTION f does not exist |
 +-------+------+---------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

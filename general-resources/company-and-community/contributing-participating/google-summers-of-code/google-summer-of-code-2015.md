@@ -1,7 +1,7 @@
 
 # Google Summer of Code 2015
 
-We participated in the Google Summer of Code 2015. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
+We participated in the Google Summer of Code 2015. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](/kb/en/galera/), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
 
 
 

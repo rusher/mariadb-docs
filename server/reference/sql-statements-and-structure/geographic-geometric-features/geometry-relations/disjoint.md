@@ -20,3 +20,6 @@ DISJOINT() tests the opposite relationship to [INTERSECTS()](intersects.md).
 
 DISJOINT() is based on the original MySQL implementation and uses object bounding rectangles, while [ST_DISJOINT()](st_disjoint.md) uses object shapes.
 
+
+GPLv2 fill_help_tables.sql
+

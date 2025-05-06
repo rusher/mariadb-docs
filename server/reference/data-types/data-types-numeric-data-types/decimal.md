@@ -288,3 +288,6 @@ SELECT * FROM decimal_zerofill_example;
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -220,3 +220,6 @@ Query OK, 0 rows affected (0.00 sec)
 * [INSERT ... RETURNING](../inserting-loading-data/insertreturning.md)
 * [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)
 
+
+GPLv2 fill_help_tables.sql
+

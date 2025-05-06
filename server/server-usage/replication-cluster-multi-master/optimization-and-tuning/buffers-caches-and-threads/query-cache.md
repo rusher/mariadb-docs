@@ -291,7 +291,7 @@ Setting either [query_cache_type](../system-variables/server-system-variables.md
 
 * The query cache needs to be disabled in order to use [OQGRAPH](../../../../reference/storage-engines/oqgraph-storage-engine/README.md).
 * The query cache is not used by the [Spider](../../../../reference/storage-engines/spider/README.md) storage engine (amongst others).
-* The query cache also needs to be disabled for MariaDB [Galera](../../galera-cluster/README.md) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
+* The query cache also needs to be disabled for MariaDB [Galera](/kb/en/galera/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 
 ## LOCK TABLES and the Query Cache

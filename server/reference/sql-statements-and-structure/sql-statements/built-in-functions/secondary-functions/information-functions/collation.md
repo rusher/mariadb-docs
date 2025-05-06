@@ -44,3 +44,6 @@ SELECT COLLATION(_utf8'abc');
 * [CAST()](../../string-functions/cast.md)
 * [CONVERT()](../../string-functions/convert.md)
 
+
+GPLv2 fill_help_tables.sql
+

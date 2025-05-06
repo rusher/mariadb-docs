@@ -38,7 +38,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | [thread_pool_priority](../../../buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) | [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) |
 | [tmp_disk_table_size](../../server-system-variables.md#tmp_disk_table_size) | [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) |
 | [tmp_memory_table_size](../../server-system-variables.md#tmp_memory_table_size) | [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes) |
-| [wsrep_certification_rules](../../../../galera-cluster/galera-cluster-system-variables.md#wsrep_certification_rules) | [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes) |
+| [wsrep_certification_rules](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_certification_rules) | [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes) |
 
 
 

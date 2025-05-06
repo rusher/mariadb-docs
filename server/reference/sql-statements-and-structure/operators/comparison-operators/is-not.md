@@ -35,3 +35,7 @@ SELECT NULL IS NOT TRUE, NULL IS NOT FALSE;
 |                1 |                 1 |
 +------------------+-------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

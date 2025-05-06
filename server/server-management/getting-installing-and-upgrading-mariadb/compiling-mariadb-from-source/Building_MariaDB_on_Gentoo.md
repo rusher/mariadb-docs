@@ -13,3 +13,6 @@ emerge --sync
 emerge mariadb
 ```
 
+
+CC BY-SA / Gnu FDL
+

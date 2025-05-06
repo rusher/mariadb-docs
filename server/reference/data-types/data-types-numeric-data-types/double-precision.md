@@ -41,3 +41,7 @@ Create Table: CREATE TABLE `double_precision_example` (
   `example` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
+
+
+GPLv2 fill_help_tables.sql
+

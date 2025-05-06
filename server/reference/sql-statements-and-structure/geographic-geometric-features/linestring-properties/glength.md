@@ -34,3 +34,6 @@ SELECT GLength(GeomFromText(@ls));
 
 * [ST_LENGTH()](../geometry-relations/st_length.md) is the OpenGIS equivalent.
 
+
+GPLv2 fill_help_tables.sql
+

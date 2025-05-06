@@ -19,3 +19,6 @@ interior of the other.
 
 TOUCHES() is based on the original MySQL implementation and uses object bounding rectangles, while [ST_TOUCHES()](st-touches.md) uses object shapes.
 
+
+GPLv2 fill_help_tables.sql
+

@@ -59,3 +59,6 @@ SELECT SUBSTRING_INDEX('www.mariadb.org', '.', -2);
 * [LOCATE()](locate.md) - Returns the position of a string within a string
 * [SUBSTRING()](substring.md) - Returns a string based on position
 
+
+GPLv2 fill_help_tables.sql
+

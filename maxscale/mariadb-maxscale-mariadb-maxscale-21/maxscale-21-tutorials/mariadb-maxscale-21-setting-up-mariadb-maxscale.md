@@ -15,7 +15,7 @@ will not be covered nor will any discussion of installation management tools
 to handle automated or semi-automated failover of the replication cluster.
 The [Setting Up Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/setting-up-replication)
 article on the MariaDB knowledgebase can help you get started with replication clusters
-and the [Getting Started With Mariadb Galera Cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/getting-started-with-mariadb-galera-cluster) article will help you set up a Galera cluster.
+and the [Getting Started With Mariadb Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) article will help you set up a Galera cluster.
 
 
 This tutorial will assume the user is running from one of the binary distributions

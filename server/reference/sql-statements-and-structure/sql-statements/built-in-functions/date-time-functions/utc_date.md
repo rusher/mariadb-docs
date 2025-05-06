@@ -26,3 +26,7 @@ SELECT UTC_DATE(), UTC_DATE() + 0;
 | 2010-03-27 |       20100327 |
 +------------+----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

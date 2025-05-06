@@ -92,3 +92,7 @@ SHOW STATUS LIKE 'Key%';
 +------------------------+--------+
 8 rows in set (0.00 sec)
 ```
+
+
+GPLv2 fill_help_tables.sql
+

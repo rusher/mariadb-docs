@@ -42,3 +42,7 @@ SELECT DEGREES(45);
 | 2578.3100780887 |
 +-----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

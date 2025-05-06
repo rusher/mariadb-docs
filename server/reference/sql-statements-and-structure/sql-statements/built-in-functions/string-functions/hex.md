@@ -76,3 +76,6 @@ SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));
 * [BIN()](bin.md)
 * [OCT()](../numeric-functions/oct.md)
 
+
+GPLv2 fill_help_tables.sql
+

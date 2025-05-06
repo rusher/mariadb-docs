@@ -107,3 +107,6 @@ SELECT FLOOR(5 + (RAND() * 11));
 * [Techniques for Efficiently Finding a Random Row](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/data-sampling-techniques-for-efficiently-finding-a-random-row.md)
 * [rand_seed1 and rand_seed2 system variables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1)
 
+
+GPLv2 fill_help_tables.sql
+

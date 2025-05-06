@@ -51,3 +51,6 @@ SELECT LTRIM(''),LTRIM_ORACLE('');
 * [RTRIM](rtrim.md) - trailing spaces removed
 * [TRIM](trim.md) - removes all given prefixes or suffixes
 
+
+GPLv2 fill_help_tables.sql
+

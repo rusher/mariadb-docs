@@ -65,3 +65,6 @@ Of course, the mongo (dll or so) exporting the GetREST and colREST functions mus
 
 How to implement an OEM handler is out of the scope of this document.
 
+
+GPLv2
+

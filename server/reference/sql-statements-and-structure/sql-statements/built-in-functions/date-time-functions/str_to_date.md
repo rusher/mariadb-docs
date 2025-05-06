@@ -115,3 +115,6 @@ SELECT STR_TO_DATE('Wednesday23423, June 2, 2014', '%W%#, %M %e, %Y');
 * [DATE_FORMAT()](date_format.md)
 * [FROM_UNIXTIME()](from_unixtime.md)
 
+
+GPLv2 fill_help_tables.sql
+

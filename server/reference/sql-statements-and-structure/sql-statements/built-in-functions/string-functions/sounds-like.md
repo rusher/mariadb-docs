@@ -25,3 +25,7 @@ SELECT givenname, surname FROM users WHERE givenname SOUNDS LIKE "robert";
 | Roberto   | Castro  |
 +-----------+---------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -8,7 +8,7 @@ MariaDB Enterprise Operator is able to configure [Prometheus operator](https://p
 
 
 * [Operator metrics](#operator-metrics)
-* [Exporter](#exporter)
+* [Exporters](#exporters)
 * [ServiceMonitor](#servicemonitor)
 * [Configuration](#configuration)
 * [Grafana dashboards](#grafana-dashboards)

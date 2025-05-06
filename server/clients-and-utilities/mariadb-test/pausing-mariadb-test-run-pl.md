@@ -53,3 +53,7 @@ export MTR_STOP_FILE="/path/to/stop/file"
 export MTR_STOP_KEEP_ALIVE=120
 mariadb-test-run.pl
 ```
+
+
+CC BY-SA / Gnu FDL
+

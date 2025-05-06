@@ -31,3 +31,7 @@ SELECT ST_AsText(MPointFromWKB(@g));
 | MULTIPOINT(1 1,2 2,5 3,7 2,9 3,8 4,6 6,6 9,4 9,1 5) |
 +-----------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

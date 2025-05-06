@@ -77,3 +77,6 @@ SELECT 300/7;
 * [Operator Precedence](../../../operators/operator-precedence.md)
 * [DIV function](div.md)
 
+
+GPLv2 fill_help_tables.sql
+

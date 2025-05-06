@@ -31,3 +31,7 @@ SELECT FROM_DAYS(730669);
 | 2000-07-03        |
 +-------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -14,7 +14,7 @@ This is a list of [system variables](../../server-system-variables.md) that have
 | [optimizer_max_sel_args](../../server-system-variables.md#optimizer_max_sel_args) | [MariaDB 10.10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes) |
 | [skip_grant_tables](../../server-system-variables.md#skip_grant_tables) | [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes) |
 | [slave_max_statement_time](../../../../standard-replication/replication-and-binary-log-system-variables.md#slave_max_statement_time) | [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes) |
-| [wsrep_allowlist](../../../../galera-cluster/galera-cluster-system-variables.md#wsrep_allowlist) | [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes) |
+| [wsrep_allowlist](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_allowlist) | [MariaDB 10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes) |
 
 
 

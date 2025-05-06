@@ -22,3 +22,6 @@ STDDEV_SAMP() can be used as a [window function](../special-functions/window-fun
 
 STDDEV_SAMP() returns `NULL` if there were no matching rows.
 
+
+GPLv2 fill_help_tables.sql
+

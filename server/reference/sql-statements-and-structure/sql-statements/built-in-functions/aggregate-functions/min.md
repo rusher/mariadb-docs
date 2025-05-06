@@ -139,3 +139,6 @@ SELECT name, test, score, MIN(score)
 * [MIN/MAX optimization](../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
 * [LEAST()](../../../operators/comparison-operators/least.md) returns the smallest value from a list.
 
+
+GPLv2 fill_help_tables.sql
+

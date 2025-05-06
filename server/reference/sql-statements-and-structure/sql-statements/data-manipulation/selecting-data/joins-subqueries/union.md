@@ -242,3 +242,6 @@ INSERT INTO t3 VALUES (1),(6);
 * [Recursive Common Table Expressions Overview](../common-table-expressions/recursive-common-table-expressions-overview.md)
 * [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
 
+
+GPLv2 fill_help_tables.sql
+

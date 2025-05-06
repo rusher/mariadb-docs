@@ -153,3 +153,7 @@ SELECT left_tbl.*
   FROM left_tbl LEFT JOIN right_tbl ON left_tbl.id = right_tbl.id
   WHERE right_tbl.id IS NULL;
 ```
+
+
+GPLv2 fill_help_tables.sql
+

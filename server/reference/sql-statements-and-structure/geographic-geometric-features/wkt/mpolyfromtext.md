@@ -34,3 +34,7 @@ INSERT INTO gis_multi_polygon VALUES
     (MPolyFromWKB(AsWKB(MultiPolygon(Polygon(
        LineString(Point(0, 3), Point(3, 3), Point(3, 0), Point(0, 3)))))));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

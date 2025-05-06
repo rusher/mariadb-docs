@@ -207,3 +207,7 @@ START TRANSACTION;
 SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
 ERROR 1568 (25001): Transaction characteristics can't be changed while a transaction is in progress
 ```
+
+
+GPLv2 fill_help_tables.sql
+

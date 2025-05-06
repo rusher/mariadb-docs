@@ -512,11 +512,14 @@ From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 * [CREATE ROLE](create-role.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [Troubleshooting Connection Issues](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/basic-mariadb-articles/troubleshooting-connection-issues)
+* [Troubleshooting Connection Issues](/kb/en/troubleshooting-connection-issues/)
 * [Authentication from MariaDB 10.4](../../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Identifier Names](../../sql-language-structure/identifier-names.md)
 * [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
 * [mysql.global_priv_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md)
 * [Password Validation Plugins](../../../plugins/password-validation-plugins/README.md) - permits the setting of basic criteria for passwords
 * [Authentication Plugins](../../../plugins/authentication-plugins/README.md) - allow various authentication methods to be used, and new ones to be developed.
+
+
+GPLv2 fill_help_tables.sql
 

@@ -125,7 +125,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 
 
-`mariadb-slap` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/about-mariadb-connector-c). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-slap` is linked with [MariaDB Connector/C](/kb/en/about-mariadb-connector-c/). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 
 #### Option Groups
@@ -140,9 +140,9 @@ The following options relate to how MariaDB command-line tools handles option fi
 | Group | Description |
 | [mysqlslap] | Options read by mariadb-slap, which includes both MariaDB Server and MySQL Server. |
 | [mariadb-slap] | Options read by mariadb-slap. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
-| [client] | Options read by all MariaDB and MySQL [client programs](/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
-| [client-server] | Options read by all MariaDB [client programs](/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
-| [client-mariadb] | Options read by all MariaDB [client programs](/en/clients-utilities/). |
+| [client] | Options read by all MariaDB and MySQL [client programs](/kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
+| [client-server] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
+| [client-mariadb] | Options read by all MariaDB [client programs](/kb/en/clients-utilities/). |
 
 
 

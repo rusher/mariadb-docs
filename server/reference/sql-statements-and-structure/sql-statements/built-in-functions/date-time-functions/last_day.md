@@ -50,3 +50,7 @@ SELECT LAST_DAY('2003-03-32');
 
 Warning (Code 1292): Incorrect datetime value: '2003-03-32'
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -81,3 +81,6 @@ It's highly likely that, for any job to which you apply or take as a database de
 * [What is in the different MariaDB releases](/kb/en/what-is-in-the-different-mariadb-releases/)
 * [MariaDB Release Notes](/kb/en/release-notes/)
 
+
+CC BY-SA / Gnu FDL
+

@@ -33,3 +33,7 @@ SELECT ST_AsText(ST_GeomFromText(@g));
 | LINESTRING(1 1,4 4,6 6)        |
 +--------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

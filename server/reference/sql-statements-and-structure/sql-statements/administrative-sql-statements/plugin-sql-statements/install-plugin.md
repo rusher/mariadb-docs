@@ -132,3 +132,6 @@ SHOW WARNINGS;
 * [UNINSTALL PLUGIN](uninstall-plugin.md)
 * [UNINSTALL SONAME](uninstall-soname.md)
 
+
+GPLv2 fill_help_tables.sql
+

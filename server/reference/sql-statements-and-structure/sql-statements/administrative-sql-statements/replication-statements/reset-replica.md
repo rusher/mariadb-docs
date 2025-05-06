@@ -76,3 +76,6 @@ From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 * [STOP REPLICA](stop-replica.md) stops the replica, but it can be restarted with [START REPLICA](start-replica.md) or after next MariaDB server restart.
 
+
+GPLv2 fill_help_tables.sql
+

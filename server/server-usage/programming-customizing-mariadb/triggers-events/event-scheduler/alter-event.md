@@ -65,3 +65,6 @@ ALTER EVENT myevent
 * [SHOW CREATE EVENT](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-event.md)
 * [DROP EVENT](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-event.md)
 
+
+GPLv2 fill_help_tables.sql
+

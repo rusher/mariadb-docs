@@ -25,3 +25,7 @@ SELECT BIT_COUNT(29), BIT_COUNT(b'101010');
 |             4 |                    3 |
 +---------------+----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

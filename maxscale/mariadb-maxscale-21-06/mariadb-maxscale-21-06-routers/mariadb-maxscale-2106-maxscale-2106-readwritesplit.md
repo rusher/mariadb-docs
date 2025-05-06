@@ -980,7 +980,7 @@ modifications done by the client itself.
 
 **Note:** This feature also enables multi-statement execution of SQL in the
  protocol. This is equivalent to using `allowMultiQueries=true` in
- [Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#allowmultiqueries)
+ [Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/#allowmultiqueries)
  or using `CLIENT_MULTI_STATEMENTS` and `CLIENT_MULTI_RESULTS` in the
  Connector/C. The *Implementation of causal_reads* section explains why this is
  necessary.

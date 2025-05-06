@@ -60,3 +60,6 @@ INSTALL SONAME 'ha_oqgraph';
 
 More information on this engine is found on the OpenQuery website: [graph-engine](https://openquery.com.au/products/graph-engine)
 
+
+CC BY-SA / Gnu FDL
+

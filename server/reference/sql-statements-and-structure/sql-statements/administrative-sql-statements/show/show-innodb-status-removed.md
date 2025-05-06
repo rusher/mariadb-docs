@@ -14,3 +14,6 @@ SHOW INNODB STATUS
 This was a deprecated synonym for 
  `[SHOW ENGINE INNODB STATUS](show-engine.md)`. It was removed in MariaDB and MySQL 5.5.
 
+
+GPLv2 fill_help_tables.sql
+

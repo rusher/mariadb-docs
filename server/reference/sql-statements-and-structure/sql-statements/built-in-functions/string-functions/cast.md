@@ -160,3 +160,6 @@ SELECT CAST(2019-01-04 AS INTERVAL DAY_SECOND(2)) AS "Cast";
 * [COLLATION()](../secondary-functions/information-functions/collation.md)
 * [CONVERT()](convert.md)
 
+
+GPLv2 fill_help_tables.sql
+

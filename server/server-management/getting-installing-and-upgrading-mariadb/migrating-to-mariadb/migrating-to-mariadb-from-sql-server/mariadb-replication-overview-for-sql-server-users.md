@@ -309,7 +309,7 @@ The timeout is set via the [rpl_semi_sync_master_timeout](../../../../server-usa
 ## Galera Cluster
 
 
-[Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) is a technology that implements virtually synchronous, primary-primary replication for a cluster of MariaDB servers.
+[Galera](/kb/en/galera-cluster/) is a technology that implements virtually synchronous, primary-primary replication for a cluster of MariaDB servers.
 
 
 ### Raft and the Primary Cluster
@@ -336,7 +336,7 @@ It is desirable to write data on only one node (unless it fails), or write diffe
 Data changes applied are recorded for some time in the *Galera cache*. This is an on-disk cache, written in a circularly written file.
 
 
-The size of Galera cache can be tuned using the [wsrep_provider_options](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md) system variable, which contains many flags. We need to tune [gcache.size](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcachesize). To tune it, add a line similar to the following to a configuration file:
+The size of Galera cache can be tuned using the [wsrep_provider_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options) system variable, which contains many flags. We need to tune [gcache.size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcachesize). To tune it, add a line similar to the following to a configuration file:
 
 
 ```
@@ -346,45 +346,45 @@ wsrep_provider_options = 'gcache.size=2G';
 If a single transaction is bigger than half of the Galera cache, it needs to be written in a separate file, as *on-demand pages*. On-demand pages are regularly replaced. Whether a new page replaces an old one depends on another wsrep_provider_options flag: `wsrep_provider_options#gcachekeep_pages_size|gcache.keep_pages_size`, which limits the total size of on-demand pages.
 
 
-When a node is restarted (after a crash or for maintenance reasons), it will need to receive all the changes that were written by other nodes since the moment it was unreachable. A node is therefore chosen as a donor, possibly using the [gcssync_donor](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcssync_donor) wsrep_provider_options flag.
+When a node is restarted (after a crash or for maintenance reasons), it will need to receive all the changes that were written by other nodes since the moment it was unreachable. A node is therefore chosen as a donor, possibly using the [gcssync_donor](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcssync_donor) wsrep_provider_options flag.
 
 
-If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/README.md) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariabackup method](../../../../server-usage/replication-cluster-multi-master/galera-cluster/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md).
+If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariabackup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method).
 
 
 ### Flow Control
 
 
-While transaction certification is synchronous, certified transactions are applied locally in asynchronous fashion. However, a node should never lag too much behind others. To avoid that, a node may occasionally trigger a mechanism called *flow control* to ask other nodes to stop replication until its situation improves. Several [wsrep_provider_options](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md) flags affect flow control.
+While transaction certification is synchronous, certified transactions are applied locally in asynchronous fashion. However, a node should never lag too much behind others. To avoid that, a node may occasionally trigger a mechanism called *flow control* to ask other nodes to stop replication until its situation improves. Several [wsrep_provider_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options) flags affect flow control.
 
 
-[gcs.fc_master_slave](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcsfc_master_slave) should normally be set to 1 if all writes are sent to a single node.
+[gcs.fc_master_slave](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcsfc_master_slave) should normally be set to 1 if all writes are sent to a single node.
 
 
-[gcs.fc_limit](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcsfc_limit) is tuned automatically, unless [gcs.fc_master_slave](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcsfc_master_slave) is set to 0. The *receive queue* (the transactions received and not yet applied) should not exceed this limit. When this happens, flow control is triggered by the node to pause other node's replication.
+[gcs.fc_limit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcsfc_limit) is tuned automatically, unless [gcs.fc_master_slave](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcsfc_master_slave) is set to 0. The *receive queue* (the transactions received and not yet applied) should not exceed this limit. When this happens, flow control is triggered by the node to pause other node's replication.
 
 
-Once flow control is activated, [gcs.fc_factor](../../../../server-usage/replication-cluster-multi-master/galera-cluster/wsrep_provider_options.md#gcsfc_factor) determines when it is released. It is a number from 0 to 1, and it represents a fraction. When the receive queue is below this fraction, the flow control is released.
+Once flow control is activated, [gcs.fc_factor](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcsfc_factor) determines when it is released. It is a number from 0 to 1, and it represents a fraction. When the receive queue is below this fraction, the flow control is released.
 
 
 Flow control and the receive queue can and should be monitored. The most useful metrics are:
 
 
-* [wsrep_flow_control_paused](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_flow_control_paused) indicates how many times the replication has been paused as requested by other nodes, since the last `FLUSH STATUS`.
-* [wsrep_flow_control_sent](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_flow_control_sent) indicates how many times this node requested other nodes to pause replication.
-* [wsrep_local_recv_queue](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-status-variables.md#wsrep_local_recv_queue) is the size of the receive queue.
+* [wsrep_flow_control_paused](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_flow_control_paused) indicates how many times the replication has been paused as requested by other nodes, since the last `FLUSH STATUS`.
+* [wsrep_flow_control_sent](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_flow_control_sent) indicates how many times this node requested other nodes to pause replication.
+* [wsrep_local_recv_queue](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_recv_queue) is the size of the receive queue.
 
 
 ### Configuration
 
 
-Galera is implemented as a plugin. Starting from version 10.1, MariaDB comes with Galera pre-installed, but not in use by default. To enable it one has to set the [wsrep_on](../../../../server-usage/replication-cluster-multi-master/galera-cluster/galera-cluster-system-variables.md#wsrep_on) system variable.
+Galera is implemented as a plugin. Starting from version 10.1, MariaDB comes with Galera pre-installed, but not in use by default. To enable it one has to set the [wsrep_on](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_on) system variable.
 
 
 Like asynchronous replication, Galera uses the binary log. It also requires that data changes are logged in the `ROW` format.
 
 
-For other required settings, see [Mandatory Options](../../../../server-usage/replication-cluster-multi-master/galera-cluster/configuring-mariadb-galera-cluster.md#mandatory-options).
+For other required settings, see [Mandatory Options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/configuring-mariadb-galera-cluster#mandatory-options).
 
 
 ## Galera Limitations

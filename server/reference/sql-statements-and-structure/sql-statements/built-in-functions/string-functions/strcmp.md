@@ -41,3 +41,7 @@ SELECT STRCMP('text', 'text');
 |                      0 |
 +------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

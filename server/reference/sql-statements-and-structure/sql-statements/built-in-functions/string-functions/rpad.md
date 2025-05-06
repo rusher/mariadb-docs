@@ -74,3 +74,6 @@ SELECT RPAD('',0),RPAD_ORACLE('',0);
 
 * [LPAD](lpad.md) - Left-padding instead of right-padding.
 
+
+GPLv2 fill_help_tables.sql
+

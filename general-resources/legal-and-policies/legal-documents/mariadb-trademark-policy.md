@@ -129,3 +129,6 @@ Any future owners or managers of the trademarks shall themselves be bound by thi
 This document is distributed under a [CC-BY-SA](https://creativecommons.org/licenses/by-sa/2.0/) license.
 Substantial portions of this document are based upon the trademark agreements of [Ubuntu](https://www.ubuntu.com/aboutus/trademarkpolicy) and [WordPress](https://wordpressfoundation.org/trademark-policy/). Our thanks to both for the ability to copy and paste.
 
+
+CC-BY-SA
+

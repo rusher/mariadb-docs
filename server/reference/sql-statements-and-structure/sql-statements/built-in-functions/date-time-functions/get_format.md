@@ -73,3 +73,7 @@ SELECT STR_TO_DATE('10.31.2003',GET_FORMAT(DATE,'USA'));
 | 2003-10-31                                       |
 +--------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

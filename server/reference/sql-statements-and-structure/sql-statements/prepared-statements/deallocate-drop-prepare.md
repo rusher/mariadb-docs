@@ -47,3 +47,6 @@ See [example in PREPARE](prepare-statement.md#example).
 * [EXECUTE Statement](execute-statement.md)
 * [EXECUTE IMMEDIATE](execute-immediate.md)
 
+
+GPLv2 fill_help_tables.sql
+

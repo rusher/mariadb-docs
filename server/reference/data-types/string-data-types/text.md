@@ -110,7 +110,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## Indexing
 
 
-A [unique index](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+A [unique index](/en/getting-started-with-indexes/#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 
 Internally, this uses hash indexing to quickly check the values and if a hash collision is found, the actual stored values are compared in order to retain the uniqueness.
@@ -136,4 +136,7 @@ Internally, this uses hash indexing to quickly check the values and if a hash co
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [MEDIUMTEXT](mediumtext.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
+
+
+GPLv2 fill_help_tables.sql
 

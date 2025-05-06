@@ -184,3 +184,6 @@ As stated above, consult your distribution's documentation for more information 
 
 See [mariadbd startup options](https://mariadb.com/kb/en/mariadbd-startup-options) for information on configuration options for `mariadbd`.
 
+
+GPLv2
+

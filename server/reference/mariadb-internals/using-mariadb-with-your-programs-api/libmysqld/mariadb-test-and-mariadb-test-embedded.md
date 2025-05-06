@@ -116,3 +116,6 @@ mariadb-test supports the following options:
 
 * [New Features for mysqltest in MariaDB](../../../../clients-and-utilities/mariadb-test/new-features-for-mysqltest-in-mariadb.md)
 
+
+GPLv2
+

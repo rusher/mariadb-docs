@@ -4,7 +4,7 @@
 When a [CREATE TABLE](create-table.md) or [ALTER TABLE](../alter/alter-table.md) command is issued, MariaDB will silently change a column specification in the following cases:
 
 
-* [PRIMARY KEY](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#primary-key) columns are always NOT NULL.
+* [PRIMARY KEY](/en/getting-started-with-indexes/#primary-key) columns are always NOT NULL.
 * Any trailing spaces from [SET](../../../../data-types/string-data-types/set-data-type.md) and [ENUM](../../../../data-types/string-data-types/enum.md) values are discarded.
 * [TIMESTAMP](../../../../data-types/date-and-time-data-types/timestamp.md) columns are always NOT NULL, and display sizes are discarded
 * A row-size limit of 65535 bytes applies

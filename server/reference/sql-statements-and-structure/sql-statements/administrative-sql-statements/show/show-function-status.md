@@ -85,3 +85,7 @@ character_set_client: utf8
 collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
+
+
+GPLv2 fill_help_tables.sql
+

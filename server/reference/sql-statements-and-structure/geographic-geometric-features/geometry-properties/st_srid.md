@@ -35,3 +35,7 @@ SELECT SRID(GeomFromText('LineString(1 1,2 2)',101));
 |                                           101 |
 +-----------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

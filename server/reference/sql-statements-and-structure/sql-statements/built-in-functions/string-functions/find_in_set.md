@@ -34,3 +34,6 @@ SELECT FIND_IN_SET('b','a,b,c,d') AS "Found Results";
 
 * [ELT()](elt.md) function. Returns the N'th element from a set of strings.
 
+
+GPLv2 fill_help_tables.sql
+

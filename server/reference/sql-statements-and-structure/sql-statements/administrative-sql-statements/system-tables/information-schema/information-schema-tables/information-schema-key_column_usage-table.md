@@ -48,5 +48,5 @@ POSITION_IN_UNIQUE_CONSTRAINT: NULL
 ## See Also
 
 
-* [Finding Tables Without Primary Keys](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/getting-started-with-indexes.md#finding-tables-without-primary-keys)
+* [Finding Tables Without Primary Keys](https://mariadb.com/kb/en/getting-started-with-indexes/#finding-tables-without-primary-keys)
 

@@ -46,3 +46,6 @@ For example, `LOAD TABLE FROM MASTER` works only for MyISAM
 tables. The timeout notes for `LOAD DATA FROM MASTER` apply as
 well.
 
+
+GPLv2 fill_help_tables.sql
+

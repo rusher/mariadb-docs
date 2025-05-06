@@ -18,7 +18,7 @@ The following RPMs are available in current versions of MariaDB:
 | Package Name | Description |
 | --- | --- |
 | Package Name | Description |
-| galera-4 | The WSREP provider for [Galera](../../../../server-usage/replication-cluster-multi-master/galera-cluster/README.md) 4. |
+| galera-4 | The WSREP provider for [Galera](/kb/en/galera/) 4. |
 | MariaDB-backup | [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md) |
 | MariaDB-backup-debuginfo | Debuginfo for [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/README.md) |
 | MariaDB-client | Client tools like [mariadb CLI](../../../../clients-and-utilities/mariadb-client/README.md), [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), and others. |

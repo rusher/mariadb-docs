@@ -37,3 +37,6 @@ See [Delimiters](../../../clients-and-utilities/mariadb-client/delimiters.md) in
 * [LEAVE](leave.md)
 * [FOR Loops](for.md)
 
+
+GPLv2 fill_help_tables.sql
+

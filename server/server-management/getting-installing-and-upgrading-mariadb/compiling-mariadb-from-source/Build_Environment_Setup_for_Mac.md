@@ -36,3 +36,6 @@ Your Mac should now have everything it needs to get, compile, and otherwise work
 
 When building with Mac, you'll need `-DOPENSSL_ROOT_DIR=/usr/local/openssl` passed as a `cmake` argument to build against openssl correctly.
 
+
+CC BY-SA / Gnu FDL
+

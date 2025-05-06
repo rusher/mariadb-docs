@@ -75,3 +75,7 @@ SELECT ST_AsWKT(p) FROM polygon_example;
 | POLYGON((0 0,0 1,1 1,1 0,0 0))                       |
 +------------------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

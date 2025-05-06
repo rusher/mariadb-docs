@@ -13,10 +13,10 @@ There are several ways to contribute besides [Contributing Code](contributing-co
 strong C/C++ skills. Areas for non-developers include:
 
 
-* [Reporting Bugs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/bug-tracking/reporting-bugs)
+* [Reporting Bugs](../../bug-tracking/reporting-bugs.md)
 
   * To report a bug you'll need to sign up for an account by clicking on the Create an account link below the login fields
-* [Suggesting Features](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md)
+* [Suggesting Features](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md)
 * [Answering questions](https://mariadb.com/kb/en/+questions/) in the Knowledge Base
 * Helping other people answering problems or even fixing their bugs on [IRC](/kb/en/irc/) in the #maria channel on [Libera.Chat](/kb/en/irc/) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
 * Testing and Benchmarking
@@ -25,7 +25,7 @@ strong C/C++ skills. Areas for non-developers include:
 * Creating [documentation and KB articles](https://mariadb.com/kb/en/meta/writing-and-editing-knowledge-base-articles) for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
-* Running a [BuildBot](../../learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/README.md) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
+* Running a [BuildBot](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/README.md) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
 * [Donate](donate-to-the-foundation.md) time or money to the MariaDB project.
 * Ask your company to [sponsor a feature](sponsoring-the-mariadb-project.md).
 * [MariaDB Foundation page on getting involved](https://mariadb.org/get-involved/)
@@ -69,4 +69,7 @@ See also the pages for new developers on the MariaDB Foundation website:
 * [Get the Code, Build It, Test It](https://mariadb.org/get-involved/getting-started-for-developers/get-code-build-test/)
 * [Writing Good Test Cases for MariaDB Server](https://mariadb.org/get-involved/getting-started-for-developers/writing-good-test-cases-mariadb-server/)
 * [Submitting a Pull Request](https://mariadb.org/get-involved/getting-started-for-developers/submitting-pull-request/)
+
+
+CC BY-SA / Gnu FDL
 

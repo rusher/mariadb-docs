@@ -73,3 +73,6 @@ a `ROWID` special column will do the job of a column auto incremented by 1.
 
 
 
+
+GPLv2
+

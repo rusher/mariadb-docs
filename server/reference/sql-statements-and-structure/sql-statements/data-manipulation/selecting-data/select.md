@@ -214,13 +214,13 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 SELECT f1,f2 FROM t1 WHERE (f3<=10) AND (f4='y');
 ```
 
-See [Getting Data from MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/beginner-mariadb-articles/getting-data-from-mariadb) (Beginner tutorial), or the various sub-articles, for more examples.
+See [Getting Data from MariaDB](/kb/en/getting-data-from-mariadb/) (Beginner tutorial), or the various sub-articles, for more examples.
 
 
 ## See Also
 
 
-* [Getting Data from MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/beginner-mariadb-articles/getting-data-from-mariadb) (Beginner tutorial)
+* [Getting Data from MariaDB](/kb/en/getting-data-from-mariadb/) (Beginner tutorial)
 * [Joins and Subqueries](joins-subqueries/README.md)
 * [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
@@ -233,4 +233,7 @@ See [Getting Data from MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/l
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
 * [Optimizer Hints](optimizer-hints.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+
+
+GPLv2 fill_help_tables.sql
 

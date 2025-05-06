@@ -238,7 +238,7 @@ Every option from the above accepts an optional argument. It can be used to spec
 | --stop-keep-alive=sec | Works with --stop-file, print messages every sec seconds when mariadb-test is waiting to remove the file (for buildbot) (also MTR_STOP_KEEP_ALIVE environment variable). |
 | --sleep=SECONDS | Passed to [mariadb-test](README.md); will be used as fixed sleep time. |
 | --debug-sync-timeout=NUM | Set default timeout for WAIT_FOR debug sync actions. Disable facility with NUM=0. |
-| --gcov | Collect coverage information after the test. The result is a [dgcov](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/learning-and-training/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/dgcov) file per source and header file and a last_changes.dgcov file in the vardir with the coverage for the uncommitted changes if any (or the last commit). |
+| --gcov | Collect coverage information after the test. The result is a [dgcov](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/dgcov) file per source and header file and a last_changes.dgcov file in the vardir with the coverage for the uncommitted changes if any (or the last commit). |
 | --gprof | Collect profiling information using the gprof profiling tool. |
 | --experimental=<file> | Specify a file that contains a list of test cases that should be displayed with the [ exp-fail ] code rather than [ fail ] if they fail. For an example of a file that might be specified via this option, see mariadb-test/collections/default.experimental. |
 | --report-features | First run a "test" that reports MariaDB features, displaying the output of [SHOW ENGINES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) and [SHOW VARIABLES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md). This can be used to verify that binaries are built with all required features. |
@@ -251,4 +251,8 @@ Every option from the above accepts an optional argument. It can be used to spec
 | xml-report=<file> | Output jUnit xml file of the results. From [MariaDB 10.1.45](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10145-release-notes), [MariaDB 10.2.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10232-release-notes), [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes), [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes) |
 | tail-lines=N | Number of lines of the result to include in a failure report. From [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes). |
 
+
+
+
+GPLv2
 

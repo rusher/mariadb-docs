@@ -148,3 +148,6 @@ SELECT YEAR(y),YEAR(y2) FROM y2;
 
 * [YEAR() function](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md)
 
+
+GPLv2 fill_help_tables.sql
+

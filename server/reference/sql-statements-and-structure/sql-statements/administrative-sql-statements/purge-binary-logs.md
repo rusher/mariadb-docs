@@ -63,3 +63,6 @@ PURGE BINARY LOGS BEFORE '2013-04-22 09:55:22';
 * [Using and Maintaining the Binary Log](../../../../server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log.md)
 * [FLUSH LOGS](flush-commands/flush.md).
 
+
+GPLv2 fill_help_tables.sql
+

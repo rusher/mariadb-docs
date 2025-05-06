@@ -39,3 +39,7 @@ SELECT CHARSET(USER());
 | utf8            |
 +-----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

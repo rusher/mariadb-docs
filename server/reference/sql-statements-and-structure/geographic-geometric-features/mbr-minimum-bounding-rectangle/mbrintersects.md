@@ -36,3 +36,7 @@ SELECT mbrintersects(@g1,@g2);
 |                      0 |
 +------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

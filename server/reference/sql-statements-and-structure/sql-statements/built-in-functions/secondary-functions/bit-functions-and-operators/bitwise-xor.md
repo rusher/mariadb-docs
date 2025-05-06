@@ -45,3 +45,6 @@ SELECT 11 ^ 3;
 
 * [Operator Precedence](../../../../operators/operator-precedence.md)
 
+
+GPLv2 fill_help_tables.sql
+

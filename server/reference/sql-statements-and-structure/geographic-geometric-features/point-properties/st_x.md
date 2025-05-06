@@ -31,3 +31,7 @@ SELECT X(GeomFromText(@pt));
 |                 56.7 |
 +----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

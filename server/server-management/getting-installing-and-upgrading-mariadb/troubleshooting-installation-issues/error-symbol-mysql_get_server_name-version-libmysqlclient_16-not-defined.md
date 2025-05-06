@@ -86,3 +86,6 @@ If the library that the system tries to use is not from a MariaDB
 package, the remedy is to remove the offending package (and possibly install or re-install
 the correct package) so that the correct library can be used.
 
+
+CC BY-SA / Gnu FDL
+

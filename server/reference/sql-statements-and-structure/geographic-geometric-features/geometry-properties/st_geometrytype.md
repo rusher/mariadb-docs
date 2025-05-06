@@ -31,3 +31,7 @@ SELECT GeometryType(GeomFromText('POINT(1 1)'));
 | POINT                                    |
 +------------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

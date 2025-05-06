@@ -65,3 +65,7 @@ SELECT DAYNAME('2013-04-01');
 | lundi                 |
 +-----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

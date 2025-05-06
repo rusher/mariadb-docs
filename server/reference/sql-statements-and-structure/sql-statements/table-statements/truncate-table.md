@@ -115,3 +115,6 @@ Setting [innodb_adaptive_hash_index=OFF](../../../storage-engines/innodb/innodb-
 * [innodb_safe_truncate](../../../storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) system variable
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
+
+GPLv2 fill_help_tables.sql
+

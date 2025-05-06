@@ -122,3 +122,6 @@ Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](https://app.gitbook.c
 * [SHOW CREATE TRIGGER](show-create-trigger.md)
 * [Trigger Limitations](../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/trigger-limitations.md)
 
+
+GPLv2 fill_help_tables.sql
+

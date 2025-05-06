@@ -451,7 +451,7 @@ Power8 optimization
 * [MariaDB Foundation](https://mariadb.org)
 
 
-Reviews for [replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/), compression, [Galera](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect/) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/mroonga/) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/) etc.
+Reviews for [replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/), compression, [Galera](/en/mariadb-galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect/) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/mroonga/) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/) etc.
 
 
 * [MariaDB Foundation](https://mariadb.org)
@@ -463,7 +463,7 @@ Reviews for [replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-
 * Google
 
 
-Table level [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/), [plugin for secure encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/encryption-plugin-api)
+Table level [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/), [plugin for secure encryption](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins/)
 
 
 * [Eperi GmbH](https://eperi.de/)
@@ -475,7 +475,7 @@ Table level [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security
 * [Kakao Inc](https://www.kakao.com)
 
 
-[Galera (wsrep patches)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/)
+[Galera (wsrep patches)](/en/mariadb-galera-cluster/)
 
 
 * [Codership](https://galeracluster.com/)
@@ -811,4 +811,7 @@ Facebook has sponsored many features, including:
 
 * [SHOW CONTRIBUTORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-contributors) lists [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
 * [SHOW AUTHORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-authors) lists the authors of MariaDB (including documentation, QA etc).
+
+
+CC BY-SA / Gnu FDL
 

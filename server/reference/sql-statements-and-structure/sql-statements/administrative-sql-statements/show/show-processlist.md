@@ -70,3 +70,6 @@ SHOW PROCESSLIST;
 
 [CONNECTION_ID()](../../built-in-functions/secondary-functions/information-functions/connection_id.md)
 
+
+GPLv2 fill_help_tables.sql
+

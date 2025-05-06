@@ -110,3 +110,6 @@ SELECT DATE_ADD('1992-12-31 23:59:59.000002', INTERVAL '1.999999' SECOND_MICROSE
 * [DATE_SUB](date_sub.md)
 * [ADD_MONTHS](add_months.md)
 
+
+GPLv2 fill_help_tables.sql
+

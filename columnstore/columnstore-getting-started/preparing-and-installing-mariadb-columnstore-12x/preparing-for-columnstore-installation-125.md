@@ -496,7 +496,7 @@ The default package installation directory is the home directory of the user acc
 #### Root user installation and unprivileged user execution
 
 
-MariaDB ColumnStore is installed by root user and the MariaDB ColumnStore commands are run by an unprivileged user. This document will show how to configure the system to run commands as an unprivileged user: [mariadb-columnstore-system-usage.md](../mariadb-columnstore-system-usage.md)
+MariaDB ColumnStore is installed by root user and the MariaDB ColumnStore commands are run by an unprivileged user. This document will show how to configure the system to run commands as an unprivileged user: [#non-root-user-mariadb-columnstore-admin-console](https://mariadb.com/kb/en/library/mariadb-columnstore-system-usage/#non-root-user-mariadb-columnstore-admin-console)
 
 
 With this installation type, you have the option of install using rpm, deb or binary packages, which you can install with the standard tools yum, apt, zypper.
@@ -1178,7 +1178,7 @@ Depending on the OS installation, rc.local could be in a different location.
 If you plan to setup a root user password in the MariaDB server Database, remember to setup the Password Configuration file on each User Module and Performance Module that has User Modules functionality.
 
 
-[mariadb-columnstore-system-usage.md](../mariadb-columnstore-system-usage.md)
+[#logging-into-mariadb-columnstore-mariadb-console](https://mariadb.com/kb/en/library/mariadb-columnstore-system-usage/#logging-into-mariadb-columnstore-mariadb-console)
 
 
 ### ColumnStore Cluster Test Tool

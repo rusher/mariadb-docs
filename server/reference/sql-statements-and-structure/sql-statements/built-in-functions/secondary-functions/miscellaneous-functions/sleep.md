@@ -32,3 +32,7 @@ SELECT SLEEP(5.5);
 +------------+
 1 row in set (5.50 sec)
 ```
+
+
+GPLv2 fill_help_tables.sql
+

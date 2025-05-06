@@ -42,3 +42,7 @@ SELECT DATABASE();
 | test       |
 +------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -532,7 +532,7 @@ set to true, and the servers must be monitored by the
 Configuring binlogrouter is the same as described above.
 
 
-The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
+The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).
 
 
 The MariaDB version must be 10.5.1 or higher.

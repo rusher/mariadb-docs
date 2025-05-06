@@ -67,3 +67,6 @@ to native function 'field'
 
 * [ELT()](elt.md) function. Returns the N'th element from a set of strings.
 
+
+GPLv2 fill_help_tables.sql
+

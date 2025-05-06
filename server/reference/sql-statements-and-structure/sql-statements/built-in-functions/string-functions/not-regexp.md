@@ -13,3 +13,6 @@ expr NOT REGEXP pat, expr NOT RLIKE pat
 
 This is the same as [NOT (expr REGEXP pat)](../../../operators/logical-operators/not.md).
 
+
+GPLv2 fill_help_tables.sql
+

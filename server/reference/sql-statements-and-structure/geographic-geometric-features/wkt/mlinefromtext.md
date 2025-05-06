@@ -31,3 +31,7 @@ INSERT INTO gis_multi_line VALUES
       LineString(Point(1, 2), Point(3, 5)), 
       LineString(Point(2, 5), Point(5, 8), Point(21, 7))))));
 ```
+
+
+GPLv2 fill_help_tables.sql
+

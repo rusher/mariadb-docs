@@ -40,3 +40,7 @@ SELECT within(@g2,@g3);
 |               0 |
 +-----------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

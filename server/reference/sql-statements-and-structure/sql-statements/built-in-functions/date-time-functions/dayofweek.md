@@ -55,3 +55,7 @@ SELECT d, DAYNAME(d), DAYOFWEEK(d), WEEKDAY(d) from t1;
 | 2004-10-07 11:19:34 | Thursday   |            5 |          3 |
 +---------------------+------------+--------------+------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

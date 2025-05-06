@@ -34,3 +34,7 @@ SELECT ENCRYPT('encrypt me');
 | 4I5BsEx0lqTDk         |
 +-----------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

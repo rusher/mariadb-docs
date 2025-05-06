@@ -78,3 +78,6 @@ The following differences exists between "mysql_upgrade" in MariaDB and MySQL (a
 * MariaDB will convert old archive tables to the new 5.1 format (note: new feature in testing).
 * "mysql_upgrade --verbose" will run "mysqlcheck --verbose" so that you get more information of what is happening.
 
+
+CC BY-SA / Gnu FDL
+

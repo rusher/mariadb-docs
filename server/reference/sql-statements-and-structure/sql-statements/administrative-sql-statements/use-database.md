@@ -47,3 +47,6 @@ a user with no privileges to a database should not be able to know if a database
 * [Identifier Qualifiers](../../sql-language-structure/identifier-qualifiers.md)
 * [USE CATALOG](../../../../security/user-account-management/catalogs/use-catalog.md)
 
+
+GPLv2 fill_help_tables.sql
+

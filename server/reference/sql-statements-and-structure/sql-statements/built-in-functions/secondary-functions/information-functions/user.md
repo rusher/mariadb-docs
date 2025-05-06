@@ -54,3 +54,6 @@ SELECT SUBSTRING_INDEX(USER(), '@', -1);
 
 * [CURRENT_USER()](current_user.md)
 
+
+GPLv2 fill_help_tables.sql
+

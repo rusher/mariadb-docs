@@ -45,3 +45,6 @@ It is possible to set a unique index on columns that use the BLOB or TEXT data t
 
 * [Store a column as compressed](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#compressed)
 
+
+GPLv2 fill_help_tables.sql
+

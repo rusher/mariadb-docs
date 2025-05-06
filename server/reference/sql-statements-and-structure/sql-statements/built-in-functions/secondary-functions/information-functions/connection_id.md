@@ -35,3 +35,6 @@ SELECT CONNECTION_ID();
 * [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md)
 * [INFORMATION_SCHEMA.PROCESSLIST](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)
 
+
+GPLv2 fill_help_tables.sql
+

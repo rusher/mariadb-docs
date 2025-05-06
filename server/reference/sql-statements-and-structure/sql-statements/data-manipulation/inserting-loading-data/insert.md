@@ -202,3 +202,6 @@ Aggregate functions cannot be used in the RETURNING clause. Since aggregate func
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 * [How to quickly insert data into MariaDB](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md)
 
+
+GPLv2 fill_help_tables.sql
+

@@ -87,3 +87,7 @@ Before [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-
 ```
 REVOKE journalist FROM hulda
 ```
+
+
+GPLv2 fill_help_tables.sql
+

@@ -41,3 +41,7 @@ SHOW WARNINGS;
 | Warning | 1292 | Truncated incorrect DOUBLE value: 'foo' |
 +---------+------+-----------------------------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

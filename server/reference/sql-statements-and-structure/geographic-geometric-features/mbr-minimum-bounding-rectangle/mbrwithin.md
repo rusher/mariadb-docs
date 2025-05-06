@@ -27,3 +27,7 @@ SELECT MBRWithin(@g1,@g2), MBRWithin(@g2,@g1);
 |                  1 |                  0 |
 +--------------------+--------------------+
 ```
+
+
+GPLv2 fill_help_tables.sql
+

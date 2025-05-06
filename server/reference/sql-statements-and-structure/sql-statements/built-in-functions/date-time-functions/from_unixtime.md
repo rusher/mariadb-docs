@@ -124,3 +124,6 @@ SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(), '%Y %D %M %h:%i:%s %x');
 * [DATE_FORMAT()](date_format.md)
 * [STR_TO_DATE()](str_to_date.md)
 
+
+GPLv2 fill_help_tables.sql
+
