@@ -1,20 +1,14 @@
-
 # Extracting Entries from the Binary Log
 
 This article is relevant if the problem is on a replication slave.
 
+_**Note: this text has been extracted into a separate article from**_ [_**Reporting bugs**_](reporting-bugs.md)_**, see its full history there.**_
 
-***Note: this text has been extracted into a separate article from [Reporting bugs](reporting-bugs.md), see its full history there.***
-
-
-Sometimes a [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/) event causes an error of some sort. A whole binary log file is sometimes impractical due to size or sensitivity reasons.
-
+Sometimes a [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) event causes an error of some sort. A whole binary log file is sometimes impractical due to size or sensitivity reasons.
 
 **Step 1: Copy the binary log locally**
 
-
 This is just in case you don't quite extract the right information first. If the binlog expired off and you haven't got the right information, your bug report may not easily be reproducible.
-
 
 ```
 sudo cp /var/lib/mysql/mysql-bin.000687 ~/
@@ -23,12 +17,9 @@ sudo chown $USER: ~/mysql-bin.000687
 
 **Step 2: Create an extract header**
 
-
-Binary logs have a header portion. Without the header [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog/) won't be able to read it. The header also contains valuable session information
-
+Binary logs have a header portion. Without the header [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog) won't be able to read it. The header also contains valuable session information
 
 We look at the binary log to see how big the header and session information is:
-
 
 ```
 mariadb-binlog --base64-output=decode-rows --verbose mysql-bin.000687 | more
@@ -57,13 +48,11 @@ BEGIN
 
 We see that the session information ends at 328 because of the last line, so we extract to that point.
 
-
 ```
 dd if=mysql-bin.000687 of=mysql-bin.000687-extract-offset-129619 bs=1 count=328
 ```
 
 We need to find out at what offset the entry at 129619 ends and it might be useful to extract some previous entries as well.
-
 
 ```
 mariadb-binlog --base64-output=decode-rows --verbose mysql-bin.000687 | grep  '^# at ' |  grep -C 10 '^# at 129619$'
@@ -92,13 +81,11 @@ mariadb-binlog --base64-output=decode-rows --verbose mysql-bin.000687 | grep  '^
 
 Take a look at those entries with:
 
-
 ```
 mariadb-binlog --base64-output=decode-rows --verbose --start-position 129006  --stop-position 130168  mysql-bin.000687 | more
 ```
 
 Now let's assume we want to start at our original 129619 and finish before 130168
-
 
 ```
 dd if=mysql-bin.000687 bs=1 skip=129619 count=$(( 130168 - 129619 ))  >> mysql-bin.000687-extract-offset-129619
@@ -106,13 +93,10 @@ dd if=mysql-bin.000687 bs=1 skip=129619 count=$(( 130168 - 129619 ))  >> mysql-b
 
 Check the extract:
 
-
 ```
 mariadb-binlog mysql-bin.000687-extract-offset-129619
 ```
 
 Upload this to the [private uploads](https://mariadb.com/kb/en/ftp/) or attach to the public bug report if nothing sensitive there.
 
-
 CC BY-SA / Gnu FDL
-

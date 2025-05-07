@@ -1,39 +1,26 @@
-
 # Segmented Key Cache Performance
-
 
 ## Testing method for segmented key cache performance
 
-
-We used [SysBench v0.5](https://launchpad.net/sysbench) from Launchpad to test the [segmented key cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/segmented-key-cache) performance for the MyISAM storage engine of [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes)-gamma.
-
+We used [SysBench v0.5](https://launchpad.net/sysbench) from Launchpad to test the [segmented key cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache) performance for the MyISAM storage engine of [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes)-gamma.
 
 As wrapper scripts for automated running of SysBench we used the `sysbench/` directory from [MariaDB Tools](https://launchpad.net/mariadb-tools).
 
-
 To test that splitting the key cache's global mutex into several mutex helps under multi user load, we wrote a new SysBench test called `select_random_points.lua`. We used one big table and selected random points with increasing number of concurrent users.
-
 
 ## Main testing outcomes
 
-
 We see up to 250% performance gain depending on the amount of concurrent users.
-
 
 ## Detailed testing outcomes
 
-
 ### On our machine pitbull
-
 
 #### On pitbull with --random-points=10
 
-
-![pitbull_rp10](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp10.png "pitbull_rp10")
-
+![pitbull\_rp10](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp10.png)
 
 In relative numbers:
-
 
 ```
 Threads	               1      4      8      16      32      64      128
@@ -45,12 +32,9 @@ select_random_points.lua --random-points=10
 
 #### On pitbull with --random-points=50
 
-
-![pitbull_rp50](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp50.png "pitbull_rp50")
-
+![pitbull\_rp50](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp50.png)
 
 In relative numbers:
-
 
 ```
 Threads	               1      4      8      16      32      64      128
@@ -62,12 +46,9 @@ select_random_points.lua --random-points=50
 
 #### On pitbull with --random-points=100
 
-
-![pitbull_rp100](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp100.png "pitbull_rp100")
-
+![pitbull\_rp100](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp100.png)
 
 In relative numbers:
-
 
 ```
 Threads	               1      4      8      16      32      64      128
@@ -79,21 +60,15 @@ select_random_points.lua --random-points=100
 
 #### Detailed numbers of all runs on pitbull
 
-
-You can find the absolute and relative numbers in our OpenOffice.org spread sheet here: [SysBench v0.5 select_random_points on pitbull](https://askmonty.org/w/images/4/47/Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods)
-
+You can find the absolute and relative numbers in our OpenOffice.org spread sheet here: [SysBench v0.5 select\_random\_points on pitbull](https://askmonty.org/w/images/4/47/Sysbench_v0.5_select_random_points_10_50_100_pitbull.ods)
 
 ### On our machine perro
 
-
 #### On perro with --random-points=10
 
-
-![perro_rp10](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp10.png "perro_rp10")
-
+![perro\_rp10](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp10.png)
 
 In relative numbers:
-
 
 ```
 Threads	               1      4      8      16      32      64      128
@@ -105,12 +80,9 @@ select_random_points.lua --random-points=10
 
 #### On perro with --random-points=50
 
-
-![perro_rp50](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp50.png "perro_rp50")
-
+![perro\_rp50](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp50.png)
 
 In relative numbers:
-
 
 ```
 Threads	               1      4      8      16      32      64      128
@@ -122,12 +94,9 @@ select_random_points.lua --random-points=50
 
 #### On perro with --random-points=100
 
-
-![perro_rp100](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp100.png "perro_rp100")
-
+![perro\_rp100](../../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp100.png)
 
 In relative numbers:
-
 
 ```
 Threads	               1      4      8      16      32      64      128
@@ -139,15 +108,11 @@ select_random_points.lua --random-points=100
 
 #### Detailed numbers of all runs on perro
 
-
-You can find the absolute and relative numbers in our OpenOffice.org spread sheet here: [SysBench v0.5 select_random_points on perro](https://askmonty.org/w/images/f/fb/Sysbench_v0.5_select_random_points_10_50_100_perro.ods)
-
+You can find the absolute and relative numbers in our OpenOffice.org spread sheet here: [SysBench v0.5 select\_random\_points on perro](https://askmonty.org/w/images/f/fb/Sysbench_v0.5_select_random_points_10_50_100_perro.ods)
 
 ## Table and query used
 
-
 Table definition:
-
 
 ```
 CREATE TABLE sbtest (
@@ -162,7 +127,6 @@ CREATE TABLE sbtest (
 
 Query used:
 
-
 ```
 SELECT id, k, c, pad
     FROM sbtest
@@ -171,9 +135,7 @@ SELECT id, k, c, pad
 
 The `?` parameters were replaced by random numbers when running the SysBench test. We used 10, 50, and 100 random points in our tests.
 
-
 We inserted 20 million rows using random data, which gave us a data and index file size of:
-
 
 ```
 3.6G    sbtest.MYD
@@ -182,15 +144,11 @@ We inserted 20 million rows using random data, which gave us a data and index fi
 
 We chose our key buffer size to be big enough to hold the index file.
 
-
 ## Testing environment
-
 
 ### MariaDB sources
 
-
-We used [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes)-gamma with following revision from our launchpad repository [Revision #2878](https://bazaar.launchpad.net/%7Emaria-captains/maria/5.2/revision/2878)
-
+We used [MariaDB 5.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-522-release-notes)-gamma with following revision from our launchpad repository [Revision #2878](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2878)
 
 ```
 revno: 2878
@@ -203,9 +161,7 @@ message:
 
 ### Compiling MariaDB
 
-
 We compiled MariaDB using this line:
-
 
 ```
 BUILD/compile-amd64-max
@@ -213,9 +169,7 @@ BUILD/compile-amd64-max
 
 ### MariaDB runtime options
 
-
 We used following configuration for running MariaDB
-
 
 ```
 MYSQLD_OPTIONS="--no-defaults \
@@ -234,11 +188,9 @@ MYSQLD_OPTIONS="--no-defaults \
   --tmpdir=$TEMP_DIR"
 ```
 
-### SysBench v0.5 select_random_points.lua options
+### SysBench v0.5 select\_random\_points.lua options
 
-
-We run the SysBench v0.5 select_random_points.lua test with following options:
-
+We run the SysBench v0.5 select\_random\_points.lua test with following options:
 
 ```
 # 20 million rows.
@@ -255,7 +207,6 @@ SYSBENCH_OPTIONS="--oltp-table-size=$TABLE_SIZE \
 
 We tested with increasing number of concurrent users with a warm up time of 8 minutes and a run time of 20 minutes:
 
-
 ```
 NUM_THREADS="1 4 8 16 32 64 128"
 ...
@@ -263,7 +214,6 @@ NUM_THREADS="1 4 8 16 32 64 128"
 ```
 
 We also tested an increasing number of random points:
-
 
 ```
 # Default option is --random-points=10.
@@ -274,19 +224,15 @@ SYSBENCH_TESTS[2]="select_random_points.lua --random-points=100"
 
 ### Kernel parameters
 
-
 #### IO scheduler
 
-
 For optimal IO performance running a database we are using the noop scheduler. You can check your scheduler setting with:
-
 
 ```
 cat /sys/block/${DEVICE}/queue/scheduler
 ```
 
 For instance, it should look like this output:
-
 
 ```
 cat /sys/block/sda/queue/scheduler
@@ -295,19 +241,15 @@ cat /sys/block/sda/queue/scheduler
 
 You can find detailed notes about Linux schedulers here: [Linux schedulers in TPCC like benchmark](https://www.mysqlperformanceblog.com/2009/01/30/linux-schedulers-in-tpcc-like-benchmark/).
 
-
 #### Open file limits
 
-
 Having a lot of concurrent connections can hit the open file limit on your system. On most Linux systems the open file limit is at 1024, which can be not enough. Please set your open file limit higher by editing
-
 
 ```
 $EDITOR /etc/security/limits.conf
 ```
 
 and adding a line like
-
 
 ```
 #ftp             hard    nproc           0
@@ -318,7 +260,6 @@ and adding a line like
 ```
 
 Your `ulimit -a` output should look like this afterwards:
-
 
 ```
 ulimit -a
@@ -334,9 +275,7 @@ open files                      (-n) 16384
 
 ### Machines used for testing
 
-
 #### perro
-
 
 ```
 # OS: openSUSE 11.1 (x86_64)
@@ -348,7 +287,6 @@ open files                      (-n) 16384
 
 #### pitbull
 
-
 ```
 # OS: Ubuntu 10.10
 # Platform: x86_64
@@ -357,6 +295,4 @@ open files                      (-n) 16384
 # Disk(s): 1 x ST3500320NS S-ATA
 ```
 
-
 CC BY-SA / Gnu FDL
-

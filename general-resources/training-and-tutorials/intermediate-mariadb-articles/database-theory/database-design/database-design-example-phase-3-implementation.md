@@ -1,11 +1,8 @@
-
 # Database Design Example Phase 3: Implementation
 
 This article follows on from [Database Design Example Phase 2: Design](database-design-example-phase-2-design.md).
 
-
-With the design complete, it's time to [install MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/) and run the [CREATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/) statements, as follows:
-
+With the design complete, it's time to [install MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb) and run the [CREATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create) statements, as follows:
 
 ```
 CREATE DATABASE poets_circle;
@@ -73,6 +70,4 @@ CREATE TABLE sale(
 );
 ```
 
-
 CC BY-SA / Gnu FDL
-
