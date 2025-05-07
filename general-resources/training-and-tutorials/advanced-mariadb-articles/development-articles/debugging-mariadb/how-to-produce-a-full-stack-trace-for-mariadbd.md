@@ -98,7 +98,7 @@ stack_bottom = 0x7ff4dc62ccc8 thread_stack 0x49000
 /lib/x86_64-linux-gnu/libc.so.6(clone+0x3f)[0x7ffa09b6dd0f]
 ```
 
-If you plan to [report a bug](../../../../bug-tracking/reporting-bugs.md) about the problem, then this information can be very useful for MariaDB's developers to track down the root cause. However, notice that some of the function names in the call stack are missing. In some cases, this partial stack trace may not be enough to find out exactly where the problem is.
+If you plan to [report a bug](../../../../company-and-community/bug-tracking/reporting-bugs.md) about the problem, then this information can be very useful for MariaDB's developers to track down the root cause. However, notice that some of the function names in the call stack are missing. In some cases, this partial stack trace may not be enough to find out exactly where the problem is.
 
 A full stack trace can only be produced if you have debugging symbols for your `mariadbd` binary.
 
@@ -442,7 +442,7 @@ skip_stack_trace
 
 ## Reporting the Problem
 
-If you encounter some problem in MariaDB, then MariaDB's developers would appreciate if you would [report a bug](../../../../bug-tracking/reporting-bugs.md) at the [MariaDB JIRA bug tracker](https://jira.mariadb.org). Please include the following information:
+If you encounter some problem in MariaDB, then MariaDB's developers would appreciate if you would [report a bug](../../../../company-and-community/bug-tracking/reporting-bugs.md) at the [MariaDB JIRA bug tracker](https://jira.mariadb.org). Please include the following information:
 
 * Your full stack trace.
 * Your [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log).
@@ -458,7 +458,7 @@ For very difficult or critical errors, you should consider uploading the followi
 * Your build of `mariadbd` (if you compiled it), otherwise version information on the mariadb-server package.
 * Your core file.
 * Your contact information.
-* The associated [JIRA issue identifier](https://jira.mariadb.org) for the bug, if you [reported a bug](../../../../bug-tracking/reporting-bugs.md).
+* The associated [JIRA issue identifier](https://jira.mariadb.org) for the bug, if you [reported a bug](../../../../company-and-community/bug-tracking/reporting-bugs.md).
 
 This information will allow the MariaDB developers at the MariaDB Corporation to analyze it and try to\
 create a fix.

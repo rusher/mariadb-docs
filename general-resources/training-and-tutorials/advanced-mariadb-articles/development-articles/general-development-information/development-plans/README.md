@@ -1,5 +1,0 @@
-
-# Plans
-
-MariaDB Development Plans
-

@@ -1,75 +1,54 @@
-
 # Contributing to the MariaDB Project
 
-The success of [MariaDB](/kb/en/mariadb/) depends on the participation of the
-[community](/kb/en/community/). MariaDB would not be as good as it is today without the
-participation of the entire [MariaDB community](/kb/en/community/).
-
+The success of [MariaDB](../../../kb/en/mariadb/) depends on the participation of the[community](../../../kb/en/community/). MariaDB would not be as good as it is today without the\
+participation of the entire [MariaDB community](../../../kb/en/community/).
 
 ## Getting Started
 
-
-There are several ways to contribute besides [Contributing Code](contributing-code.md), and not all of them require
+There are several ways to contribute besides [Contributing Code](contributing-code.md), and not all of them require\
 strong C/C++ skills. Areas for non-developers include:
 
-
-* [Reporting Bugs](../../bug-tracking/reporting-bugs.md)
-
+* [Reporting Bugs](../bug-tracking/reporting-bugs.md)
   * To report a bug you'll need to sign up for an account by clicking on the Create an account link below the login fields
-* [Suggesting Features](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/jira.md)
+* [Suggesting Features](../../training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/tools/jira.md)
 * [Answering questions](https://mariadb.com/kb/en/+questions/) in the Knowledge Base
-* Helping other people answering problems or even fixing their bugs on [IRC](/kb/en/irc/) in the #maria channel on [Libera.Chat](/kb/en/irc/) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
+* Helping other people answering problems or even fixing their bugs on [IRC](../../../kb/en/irc/) in the #maria channel on [Libera.Chat](../../../kb/en/irc/) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
 * Testing and Benchmarking
-
-  * Bug tests can be uploaded to the 'private' directory of our [FTP](/kb/en/ftp/) server.
+  * Bug tests can be uploaded to the 'private' directory of our [FTP](../../../kb/en/ftp/) server.
 * Creating [documentation and KB articles](https://mariadb.com/kb/en/meta/writing-and-editing-knowledge-base-articles) for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
-* Running a [BuildBot](../../training-and-tutorials/advanced-mariadb-articles/development-articles/tools/buildbot/README.md) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
+* Running a [BuildBot](../../training-and-tutorials/advanced-mariadb-articles/development-articles/general-development-information/tools/buildbot/) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
 * [Donate](donate-to-the-foundation.md) time or money to the MariaDB project.
 * Ask your company to [sponsor a feature](sponsoring-the-mariadb-project.md).
 * [MariaDB Foundation page on getting involved](https://mariadb.org/get-involved/)
 
-
-**[Contributing to the Knowledge Base](https://mariadb.com/kb/en/contributing-to-the-askmonty-knowledgebase/)** is a great way to help improve MariaDB.
-
+[**Contributing to the Knowledge Base**](https://mariadb.com/kb/en/contributing-to-the-askmonty-knowledgebase/) is a great way to help improve MariaDB.
 
 ### MariaDB Email Lists
 
-
-A great way to get started in MariaDB is to participate in e-mail discussions
+A great way to get started in MariaDB is to participate in e-mail discussions\
 via our mailing lists (whichever list best matches your interests):
-
 
 * [developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/)
 * [discuss](https://lists.mariadb.org/postorius/lists/discuss.lists.mariadb.org)
 * [docs](https://lists.mariadb.org/postorius/lists/docs.lists.mariadb.org)
 
-
-Sensitive security issues can be sent directly to the persons responsible for MariaDB security: security [AT] mariadb (dot) org.
-
+Sensitive security issues can be sent directly to the persons responsible for MariaDB security: security \[AT] mariadb (dot) org.
 
 You can find additional email address, email archives and ways to connect with MariaDB people [here](../friends-of-mariadb/resources.md).
 
-
-All MariaDB contributors are expected to follow the
-[Ubuntu Code Of Conduct](https://www.ubuntu.com/community/conduct).
-
+All MariaDB contributors are expected to follow the[Ubuntu Code Of Conduct](https://www.ubuntu.com/community/conduct).
 
 ## Getting Started for Developers
 
-
 * [Contributing Code](contributing-code.md)
 
-
 See also the pages for new developers on the MariaDB Foundation website:
-
 
 * [Getting Started For Developers](https://mariadb.org/get-involved/getting-started-for-developers/)
 * [Get the Code, Build It, Test It](https://mariadb.org/get-involved/getting-started-for-developers/get-code-build-test/)
 * [Writing Good Test Cases for MariaDB Server](https://mariadb.org/get-involved/getting-started-for-developers/writing-good-test-cases-mariadb-server/)
 * [Submitting a Pull Request](https://mariadb.org/get-involved/getting-started-for-developers/submitting-pull-request/)
 
-
 CC BY-SA / Gnu FDL
-
