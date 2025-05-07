@@ -1,4 +1,0 @@
-
-
-# Research & Case Studies
-
