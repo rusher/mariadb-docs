@@ -1,5 +1,9 @@
+---
+description: Tools for MariaDB
+---
 
 # Tools
 
-Tools for MariaDB
-
+{% content-ref url="mariadb-enterprise-operator/" %}
+[mariadb-enterprise-operator](mariadb-enterprise-operator/)
+{% endcontent-ref %}
