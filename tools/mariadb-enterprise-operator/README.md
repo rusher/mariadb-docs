@@ -103,3 +103,6 @@ layout:
 [mariadb-enterprise-operator-migrations](mariadb-enterprise-operator-migrations/)
 {% endcontent-ref %}
 
+{% content-ref url="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator-release-notes" %}
+[MariaDB Enterprise Operator Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator-release-notes)
+{% endcontent-ref %}
