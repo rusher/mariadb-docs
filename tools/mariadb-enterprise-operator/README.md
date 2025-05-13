@@ -23,6 +23,8 @@ layout:
 [mariadb-enterprise-operator-introduction.md](mariadb-enterprise-operator-introduction.md)
 {% endcontent-ref %}
 
+MariaDB Enterprise Operator streamlines the management of MariaDB database clusters in Kubernetes environments. It automates complex tasks such as scaling, failover, backup, and restore operations to ensure seamless database operation. Ideal for DevOps teams, it facilitates easy deployment and management, promoting agility and efficiency in dynamic, cloud-native applications. With robust security features and integration capabilities, MariaDB Enterprise Operator empowers organizations to maintain high-performance and resilient database systems.
+
 {% content-ref url="customer-access-to-docker-mariadb-com.md" %}
 [customer-access-to-docker-mariadb-com.md](customer-access-to-docker-mariadb-com.md)
 {% endcontent-ref %}

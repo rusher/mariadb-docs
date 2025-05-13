@@ -18,3 +18,5 @@ layout:
 {% content-ref url="mariadb-enterprise-operator/" %}
 [mariadb-enterprise-operator](mariadb-enterprise-operator/)
 {% endcontent-ref %}
+
+MariaDB Enterprise Operator (quick intro/summary, to be fleshed out)
