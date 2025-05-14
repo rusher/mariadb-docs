@@ -1,5 +1,9 @@
 # What is Galera Replication?
 
+### Summary
+
+_In MariaDB Cluster, transactions are replicated using the wsrep API, synchronously ensuring consistency across nodes. Synchronous replication offers high availability and consistency but is complex and potentially slower compared to asynchronous replication. Due to these challenges, asynchronous replication is often preferred for database performance and scalability, as seen in popular systems like MySQL and PostgreSQL, which typically favor asynchronous or semi-synchronous solutions._
+
 In MariaDB Cluster, the Server replicates a transaction at commit time by broadcasting the write set associated with the transaction to every node in the cluster. The client connects directly to the DBMS and experiences behavior that is similar to native MariaDB in most cases. The wsrep API (write set replication API) defines the interface between Galera replication and MariaDB.
 
 ## Synchronous vs. Asynchronous Replication
