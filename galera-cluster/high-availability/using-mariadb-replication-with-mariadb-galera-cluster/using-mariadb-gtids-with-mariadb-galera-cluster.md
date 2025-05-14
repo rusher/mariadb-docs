@@ -45,7 +45,7 @@ A known issue (fixed in [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzq
 
 * Implicitly dropped temporary tables can make GTIDs inconsistent. See [MDEV-14153](https://jira.mariadb.org/browse/MDEV-14153) and [MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720).
 
-This does not necessarily imply that wsrep GTID mode works perfectly in all other situations. If you discover any other issues with it, please [report a bug](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs).
+This does not necessarily imply that wsrep GTID mode works perfectly in all other situations. If you discover any other issues with it, please [report a bug](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/company-and-community/bug-tracking/reporting-bugs).
 
 ### GTIDs for Transactions Applied by Slave Thread
 
