@@ -217,5 +217,14 @@ You should be done setting up the circular replication on the node in the first 
 ```
 SHOW SLAVE STATUS\G
 ```
+Let's see how
+line breaks
+render in the brower
+(my guess is no line breaks in the browser)
+
+Here are more<br/>
+line breaks<br/>
+each of them with a br tag
+
 
 CC BY-SA / Gnu FDL
