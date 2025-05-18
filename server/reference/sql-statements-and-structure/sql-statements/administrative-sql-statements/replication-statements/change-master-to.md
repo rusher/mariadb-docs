@@ -1,6 +1,8 @@
 # CHANGE MASTER TO
 
+{% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
+{% endhint %}
 
 ## Syntax
 
@@ -109,7 +111,9 @@ START SLAVE;
 
 The maximum length of the `MASTER_PASSWORD` string is 32 characters. The effective maximum length of the string depends on how many bytes are used per character and can be up to 96 characters.
 
+{% hint style="warning" %}
 Due to [MDEV-29994](https://jira.mariadb.org/browse/MDEV-29994), the password can be silently truncated to 41 characters when MariaDB is restarted. For this reason it is recommended to use a password that is shorter than this.
+{% endhint %}
 
 #### MASTER\_HOST
 
@@ -129,10 +133,14 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 If you set the value of the `MASTER_HOST` option in a `CHANGE MASTER` command, then the replica assumes that the primary is different from before, even if you set the value of this option to the same value it had previously. In this scenario, the replica will consider the old values for the primary's [binary\
 log](../../../../../server-management/server-monitoring-logs/binary-log/) file name and position to be invalid for the new primary. As a side effect, if you do not explicitly set the values of the [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options in the statement, then the statement will be implicitly appended with `MASTER_LOG_FILE=''` and `MASTER_LOG_POS=4`. However, if you enable [GTID](../../../../../ha-and-performance/standard-replication/gtid.md) mode for replication by setting the [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option to some value other than `no` in the statement, then these values will effectively be ignored anyway.
+{% endhint %}
 
+{% hint style="info" %}
 Replicas cannot connect to primaries using Unix socket files or Windows named pipes. The replica must connect to the primary using TCP/IP.
+{% endhint %}
 
 The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), and 255 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
 
@@ -153,10 +161,14 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 If you set the value of the `MASTER_PORT` option in a `CHANGE MASTER` command, then the replica assumes that the primary is different from before, even if you set the value of this option to the same value it had previously. In this scenario, the replica will consider the old values for the primary's [binary\
 log](../../../../../server-management/server-monitoring-logs/binary-log/) file name and position to be invalid for the new primary. As a side effect, if you do not explicitly set the values of the [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options in the statement, then the statement will be implicitly appended with `MASTER_LOG_FILE=''` and `MASTER_LOG_POS=4`. However, if you enable [GTID](../../../../../ha-and-performance/standard-replication/gtid.md) mode for replication by setting the [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option to some value other than `no` in the statement, then these values will effectively be ignored anyway.
+{% endhint %}
 
+{% hint style="info" %}
 Replicas cannot connect to primaries using Unix socket files or Windows named pipes. The replica must connect to the primary using TCP/IP.
+{% endhint %}
 
 #### MASTER\_CONNECT\_RETRY
 
@@ -179,7 +191,9 @@ master_retry_count=4294967295
 
 #### MASTER\_BIND
 
+{% hint style="warning" %}
 The `MASTER_BIND` option for `CHANGE MASTER` is only supported by MySQL 5.6.2 and later and by MySQL NDB Cluster 7.3.1 and later. This option is not supported by MariaDB. See [MDEV-19248](https://jira.mariadb.org/browse/MDEV-19248) for more information.
+{% endhint %}
 
 The `MASTER_BIND` option for `CHANGE MASTER` can be used on replicas that have multiple network interfaces to choose which network interface the replica will use to connect to the primary.
 
@@ -199,7 +213,9 @@ Heartbeats are sent by the primary only if there are no unsent events in the bin
 
 If the [RESET SLAVE](reset-replica.md) statement is executed, then the heartbeat interval is reset to the default.
 
+{% hint style="info" %}
 If the [slave\_net\_timeout](../../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable is set to a value that is lower than the current heartbeat interval, then a warning will be issued.
+{% endhint %}
 
 ### TLS Options
 
@@ -397,9 +413,13 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 The [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options cannot be specified if the [RELAY\_LOG\_FILE](change-master-to.md#relay_log_file) and [RELAY\_LOG\_POS](change-master-to.md#relay_log_pos) options were also specified.
+{% endhint %}
 
+{% hint style="info" %}
 The [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options are effectively ignored if you enable [GTID](../../../../../ha-and-performance/standard-replication/gtid.md) mode for replication by setting the [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option to some value other than `no` in the statement.
+{% endhint %}
 
 #### MASTER\_LOG\_POS
 
@@ -415,9 +435,13 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 The [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options cannot be specified if the [RELAY\_LOG\_FILE](change-master-to.md#relay_log_file) and [RELAY\_LOG\_POS](change-master-to.md#relay_log_pos) options were also specified.
+{% endhint %}
 
+{% hint style="info" %}
 The [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options are effectively ignored if you enable [GTID](../../../../../ha-and-performance/standard-replication/gtid.md) mode for replication by setting the [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option to some value other than `no` in the statement.
+{% endhint %}
 
 ### Relay Log Options
 
@@ -441,7 +465,9 @@ START SLAVE SQL_THREAD;
 
 When the value of this option is changed, the metadata about the [replica's SQL thread's](../../../../../ha-and-performance/standard-replication/replication-threads.md#slave-sql-thread) position in the [relay logs](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md) will also be changed in the `relay-log.info` file or the file that is configured by the [relay\_log\_info\_file](../../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 
+{% hint style="info" %}
 The [RELAY\_LOG\_FILE](change-master-to.md#relay_log_file) and [RELAY\_LOG\_POS](change-master-to.md#relay_log_pos) options cannot be specified if the [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options were also specified.
+{% endhint %}
 
 #### RELAY\_LOG\_POS
 
@@ -461,7 +487,9 @@ START SLAVE SQL_THREAD;
 
 When the value of this option is changed, the metadata about the [replica's SQL thread's](../../../../../ha-and-performance/standard-replication/replication-threads.md#slave-sql-thread) position in the [relay logs](../../../../../server-management/server-monitoring-logs/binary-log/relay-log.md) will also be changed in the `relay-log.info` file or the file that is configured by the [relay\_log\_info\_file](../../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 
+{% hint style="info" %}
 The [RELAY\_LOG\_FILE](change-master-to.md#relay_log_file) and [RELAY\_LOG\_POS](change-master-to.md#relay_log_pos) options cannot be specified if the [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options were also specified.
+{% endhint %}
 
 ### GTID Options
 
@@ -556,7 +584,9 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 The [DO\_DOMAIN\_IDS](change-master-to.md#do_domain_ids) option and the [IGNORE\_DOMAIN\_IDS](change-master-to.md#ignore_domain_ids) option cannot both be set to non-empty values at the same time. If you want to set the [DO\_DOMAIN\_IDS](change-master-to.md#do_domain_ids) option, and the [IGNORE\_DOMAIN\_IDS](change-master-to.md#ignore_domain_ids) option was previously set, then you need to clear the value of the [IGNORE\_DOMAIN\_IDS](change-master-to.md#ignore_domain_ids) option. For example:
+{% endhint %}
 
 ```
 STOP SLAVE;
@@ -566,7 +596,9 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 The `DO_DOMAIN_IDS` option can only be specified if the replica is replicating in [GTID](../../../../../ha-and-performance/standard-replication/gtid.md) mode. Therefore, the [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option must also be set to some value other than `no` in order to use this option.
+{% endhint %}
 
 #### IGNORE\_DOMAIN\_IDS
 
@@ -590,7 +622,9 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 The [DO\_DOMAIN\_IDS](change-master-to.md#do_domain_ids) option and the [IGNORE\_DOMAIN\_IDS](change-master-to.md#ignore_domain_ids) option cannot both be set to non-empty values at the same time. If you want to set the [IGNORE\_DOMAIN\_IDS](change-master-to.md#ignore_domain_ids) option, and the [DO\_DOMAIN\_IDS](change-master-to.md#do_domain_ids) option was previously set, then you need to clear the value of the [DO\_DOMAIN\_IDS](change-master-to.md#do_domain_ids) option. For example:
+{% endhint %}
 
 ```
 STOP SLAVE;
@@ -600,7 +634,9 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
+{% hint style="info" %}
 The `IGNORE_DOMAIN_IDS` option can only be specified if the replica is replicating in [GTID](../../../../../ha-and-performance/standard-replication/gtid.md) mode. Therefore, the [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option must also be set to some value other than `no` in order to use this option.
+{% endhint %}
 
 ### Delayed Replication Options
 
