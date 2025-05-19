@@ -2672,7 +2672,7 @@
           * [SET GLOBAL SQL\_SLAVE\_SKIP\_COUNTER](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md)
           * [START REPLICA](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)
           * [STOP REPLICA](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)
-          * [Legacy replication statements](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/README.md)
+          * [Legacy Replication Statements](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/README.md)
             * [RESET SLAVE](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-reset-slave.md)
             * [SHOW SLAVE HOSTS](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-hosts.md)
             * [SHOW SLAVE STATUS](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-status.md)
