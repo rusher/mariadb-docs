@@ -1,47 +1,35 @@
+# columnstore-system-monitoring-configuration
 
-# ColumnStore System Monitoring Configuration
+## ColumnStore System Monitoring Configuration
 
- 
-1. [Introduction "Introduction"](#introduction)
-1. [System monitoring configuration "System monitoring configuration"](#system-monitoring-configuration) 
+1. [Introduction "Introduction"](columnstore-system-monitoring-configuration.md#introduction)
+2. [System monitoring configuration "System monitoring configuration"](columnstore-system-monitoring-configuration.md#system-monitoring-configuration)
+3. [Module heartbeats "Module heartbeats"](columnstore-system-monitoring-configuration.md#module-heartbeats)
+4. [Disk threshold "Disk threshold"](columnstore-system-monitoring-configuration.md#disk-threshold)
+5. [Memory utilization "Memory utilization"](columnstore-system-monitoring-configuration.md#memory-utilization)
+6. [Viewing storage configuration "Viewing storage configuration"](columnstore-system-monitoring-configuration.md#viewing-storage-configuration)
+7. [Module monitoring configuration "Module monitoring configuration"](columnstore-system-monitoring-configuration.md#module-monitoring-configuration)
+8. [Alarm trigger count threshold "Alarm trigger count threshold"](columnstore-system-monitoring-configuration.md#alarm-trigger-count-threshold)
+9. [Clearing alarms "Clearing alarms"](columnstore-system-monitoring-configuration.md#clearing-alarms)
+10. [Automated restart based on excessive swapping "Automated restart based on excessive swapping"](columnstore-system-monitoring-configuration.md#automated-restart-based-on-excessive-swapping)
+11. [Logging level management "Logging level management"](columnstore-system-monitoring-configuration.md#logging-level-management)
 
-  1. [Module heartbeats "Module heartbeats"](#module-heartbeats)
-  1. [Disk threshold "Disk threshold"](#disk-threshold)
-  1. [Memory utilization "Memory utilization"](#memory-utilization)
-1. [Viewing storage configuration "Viewing storage configuration"](#viewing-storage-configuration)
-1. [Module monitoring configuration "Module monitoring configuration"](#module-monitoring-configuration) 
-
-  1. [Alarm trigger count threshold "Alarm trigger count threshold"](#alarm-trigger-count-threshold)
-  1. [Clearing alarms "Clearing alarms"](#clearing-alarms)
-  1. [Automated restart based on excessive swapping "Automated restart based on excessive swapping"](#automated-restart-based-on-excessive-swapping)
-1. [Logging level management "Logging level management"](#logging-level-management)
-
-
-
-# Introduction
-
+## Introduction
 
 ColumnStore is designed to be somewhat self managing and healing. The following 2 processes help achieve this:
-
 
 * ProcMon runs on each node and is responsible for ensuring that the other required ColumnStore processes are started and automatically restarted as appropriate on that server. This in turn is started and monitored by the run.sh shell script which ensures it is restarted should it be killed. The run.sh script is invoked and automatically started by the columnstore systemd service at bootup time. This can also be utilized to restart the service on an individual node though generally it is preferred to use the mcsadmin stop, shutdown, and start commands from the PM1 node.
 * ProcMgr runs on each PM node with only one taking an active role at a time, the others remaining in warm standby mode. This process manager is responsible for overall system health, resource monitoring, and PM node failover management.
 
-
 To provide additional monitoring guarantees, an external monitoring tool should monitor the health of these 3 processes and potentially all. If the run.sh process fails then the system is at potential risk of not being able to self heal.
 
-
-# System monitoring configuration
-
+## System monitoring configuration
 
 A number of system configuration variables exist to allow fine tuning of the system monitoring capabilities. In general the default values will work relatively well for many cases.
 
-
 The configuration parameters are maintained in the /usr/local/mariadb/columnstore/etc/Columnstore.xml file. In a multiple server deployment these should only be edited on the PM1 server as this will be automatically replicated to other servers by the system. A system restart will be required for the configuration change to take affect.
 
-
-Convenience utility programs *getConfig* and *setConfig* are available to safely update the Columnstore.xml without needing to be comfortable with editing XML files. The -h argument will display usage information. The section value will be *SystemConfig* for all settings in this document. For example:
-
+Convenience utility programs _getConfig_ and _setConfig_ are available to safely update the Columnstore.xml without needing to be comfortable with editing XML files. The -h argument will display usage information. The section value will be _SystemConfig_ for all settings in this document. For example:
 
 ```
 # ./setConfig SystemConfig ModuleHeartbeatPeriod 5
@@ -49,36 +37,27 @@ Convenience utility programs *getConfig* and *setConfig* are available to safely
 5
 ```
 
-## Module heartbeats
+### Module heartbeats
 
-
-Heartbeat monitoring occurs between modules (both [UM](../../columnstore-architecture/columnstore-user-module.md) and [PM](../../columnstore-architecture/columnstore-performance-module.md)) to determine the module is up and functioning. The module heartbeat settings are the same for all modules.
-
+Heartbeat monitoring occurs between modules (both [UM](../../columnstore-architecture/columnstore-user-module/) and [PM](../../columnstore-architecture/columnstore-performance-module.md)) to determine the module is up and functioning. The module heartbeat settings are the same for all modules.
 
 1. ModuleHeartbeatPeriod refers to how often the heartbeat test is performed. For example, if you set the period to 5, then the heartbeat test is performed every 5 seconds. The initial default value is 1. To disable heartbeat monitoring set the value to -1.
-1. ModuleHeartbeatCount refers to how many failures in a row must take place before a fault is processed. The initial default value is 3.
+2. ModuleHeartbeatCount refers to how many failures in a row must take place before a fault is processed. The initial default value is 3.
 
+### Disk threshold
 
-## Disk threshold
-
-
-Thresholds can be set to trigger a local alert when file system usage crosses a specified percentage of a file system on a server. Critical, Major or Minor thresholds can be set for the disk usage for each server. However it is recommend to use an external system monitoring tool configured to monitor for free disk space to perform proactive external alerting or paging. Actual columnstore data is stored within the *data<N>* directories of the installation and mariadb db files are stored under the *mysql/db* directory.
-
+Thresholds can be set to trigger a local alert when file system usage crosses a specified percentage of a file system on a server. Critical, Major or Minor thresholds can be set for the disk usage for each server. However it is recommend to use an external system monitoring tool configured to monitor for free disk space to perform proactive external alerting or paging. Actual columnstore data is stored within the _data_ directories of the installation and mariadb db files are stored under the _mysql/db_ directory.
 
 1. ExternalMinorThreshold - Percentage threshold for when a minor local alarm is triggered. Default value is 70.
-1. ExternalMajorThreshold - Percentage threshold for when a minor local alarm is triggered. Default value is 80.
-1. ExternalCriticalThreshold - Percentage threshold for when a minor local alarm is triggered. Default value is 90.
+2. ExternalMajorThreshold - Percentage threshold for when a minor local alarm is triggered. Default value is 80.
+3. ExternalCriticalThreshold - Percentage threshold for when a minor local alarm is triggered. Default value is 90.
 
-
-The value is a numeric percentage value between 0 and 100. To disable a particular threshold use value 0.
+The value is a numeric percentage value between 0 and 100. To disable a particular threshold use value 0.\
 To disable a threshold alarm, set it to 0.
 
+### Memory utilization
 
-## Memory utilization
-
-
-A couple of mcsadmin commands provide convenience functions for monitoring memory utilization across nodes. *getSystemMemory* returns server level memory statistics and *getSystemMemoryUsers* shows the the top 5 processes by server. The following examples are for a 2 server combined setup:
-
+A couple of mcsadmin commands provide convenience functions for monitoring memory utilization across nodes. _getSystemMemory_ returns server level memory statistics and _getSystemMemoryUsers_ shows the the top 5 processes by server. The following examples are for a 2 server combined setup:
 
 ```
 mcsadmin> getSystemMemory
@@ -117,14 +96,11 @@ workernode          1806               1
 WriteEngineServ     1507               1
 ```
 
-# Viewing storage configuration
+## Viewing storage configuration
 
-
-To view the storage configuration, use the *getStorageConfig* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *getStorageConfig* from the operating system prompt. This will provide information on DBRoots and which PM they are assigned to, if any.
-
+To view the storage configuration, use the _getStorageConfig_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _getStorageConfig_ from the operating system prompt. This will provide information on DBRoots and which PM they are assigned to, if any.
 
 Example:
-
 
 ```
 # mcsadmin getstorageconfig Wed Mar 28 10:40:34 2016
@@ -141,33 +117,24 @@ DBRoot IDs assigned to 'pm5' = 5
 DBRoot IDs assigned to 'pm6' = 6
 ```
 
-# Module monitoring configuration
-
+## Module monitoring configuration
 
 An internal alarm system is used to keep track of internal notable events as a convenience or reference point. It is recommended to use a dedicated system monitoring tool for more proactive alerting of critical CPU, memory, or disk utilization issues for each of the servers.
 
-
-Alarms are logged to the */var/log/mariadb/columnstore/alarm.log* file and a summary is displayed in mcsadmin. The *getActiveAlarms* command in mcsadmin can be used to retrieve current alarm conditions.
-
+Alarms are logged to the _/var/log/mariadb/columnstore/alarm.log_ file and a summary is displayed in mcsadmin. The _getActiveAlarms_ command in mcsadmin can be used to retrieve current alarm conditions.
 
 For each module (PM and UM), the following resource monitoring parameters can be configured:
 
-
-
-| Resource Monitoring Parameter | mcsadmin command |
-| --- | --- |
-| Resource Monitoring Parameter | mcsadmin command |
-| CPU thresholds | setModuleTypeConfig (module name) ModuleCPU(Clear/ Minor/Major/Critical)Threshold n (where n= percentage of CPU usage) |
+| Resource Monitoring Parameter  | mcsadmin command                                                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Resource Monitoring Parameter  | mcsadmin command                                                                                                         |
+| CPU thresholds                 | setModuleTypeConfig (module name) ModuleCPU(Clear/ Minor/Major/Critical)Threshold n (where n= percentage of CPU usage)   |
 | Disk file system use threshold | setModuleTypeConfig (module name) ModuleDisk(Minor/ Major/Critical)Threshold n (where n= percentage of disk system used) |
-| Module swap thresholds | setModuleTypeConfig (module name) ModuleSwap(Minor/ Major/Crictical)Threshold n (where n= percentage of swap space used) |
+| Module swap thresholds         | setModuleTypeConfig (module name) ModuleSwap(Minor/ Major/Crictical)Threshold n (where n= percentage of swap space used) |
 
-
-
-## Alarm trigger count threshold
-
+### Alarm trigger count threshold
 
 For an alarm, a threshold can be set for how many times the alarm can be triggered in 30 minutes. The default threshold is 100.
-
 
 ```
 setAlarmConfig (alarmID#) Threshold n
@@ -175,35 +142,27 @@ setAlarmConfig (alarmID#) Threshold n
 
 (where n= maximum number of times an alarm can be triggered in 30 minutes),
 
-
 Example to change Alarm ID 22's threshold to 50:
-
 
 ```
 # mcsadmin setAlarmConfig 22 Threshold 50
 ```
 
-## Clearing alarms
+### Clearing alarms
 
+The _resetAlarm_ command is used to clear and acknowledge the issue is resolved. The _resetAlarm_ command can be invoked with the argument ALL to clear all outstanding local alarms.
 
-The *resetAlarm* command is used to clear and acknowledge the issue is resolved. The *resetAlarm* command can be invoked with the argument ALL to clear all outstanding local alarms.
+### Automated restart based on excessive swapping
 
-
-## Automated restart based on excessive swapping
-
-
-ColumnStore by default has behavior that will restart a server should swap space utilization exceed the configured module swap major threshold (default is 80%). At this point the system will likely be near unusable and so this is an attempt to recover from very large queries or data loads. The behavior of this is configured by the *SystemConfig* section configuration variable *SwapAction* which contains the oam command to be run if the threshold is exceeded. The default value is *'restartSystem'* but it can be set to *'none'* to disable this behavior. The fact that this has happened can be determined by the following log entry:
-
+ColumnStore by default has behavior that will restart a server should swap space utilization exceed the configured module swap major threshold (default is 80%). At this point the system will likely be near unusable and so this is an attempt to recover from very large queries or data loads. The behavior of this is configured by the _SystemConfig_ section configuration variable _SwapAction_ which contains the oam command to be run if the threshold is exceeded. The default value is _'restartSystem'_ but it can be set to _'none'_ to disable this behavior. The fact that this has happened can be determined by the following log entry:
 
 ```
 Nov 01 11:23:13 [ServerMonitor] 13.306324 |0|0|0| C 09 CAL0000: Swap Space usage over Major threashold, perform OAM command restartSystem
 ```
 
-# Logging level management
-
+## Logging level management
 
 There are five levels of logging in MariaDB ColumnStore.
-
 
 * Critical
 * Error
@@ -211,12 +170,9 @@ There are five levels of logging in MariaDB ColumnStore.
 * Info
 * Debug
 
-
-Application log files are written to */var/log/mariadb/columnstore* on each server and log rotation / archiving is configured to manage these automatically.
-
+Application log files are written to _/var/log/mariadb/columnstore_ on each server and log rotation / archiving is configured to manage these automatically.
 
 To get details about current logging configuration:
-
 
 ```
 # mcsadmin getlogconfig
@@ -233,7 +189,6 @@ pm1       Critical Error Warning Info
 
 The system logging configuration file referenced is a standard syslog configuration file and may be edited to enable and or disable specific levels, for example to disable debug logging and to only log at the specific level in each file:
 
-
 ```
 # cat /etc/rsyslog.d/49-columnstore.conf
 # MariaDb Columnstore Database Platform Logging
@@ -245,13 +200,10 @@ local1.=info -/var/log/mariadb/columnstore/info.log
 
 After making changes to this restart the syslog process, e.g:
 
-
 ```
 # systemctl restart rsyslog
 ```
 
-Log rotation and archiving are also configured by the installer and the settings for this may be found and managed similarly in the file */etc/logrotate.d/columnstore*. If the current log files are manually deleted restart the syslog process to resume logging.
-
+Log rotation and archiving are also configured by the installer and the settings for this may be found and managed similarly in the file _/etc/logrotate.d/columnstore_. If the current log files are manually deleted restart the syslog process to resume logging.
 
 CC BY-SA / Gnu FDL
-

@@ -4,7 +4,7 @@
 
 ## Configuring modules
 
-A Module ([UM](../../columnstore-architecture/columnstore-user-module.md) or [PM](../../columnstore-architecture/columnstore-performance-module.md)) can be added or removed from MariaDB ColumnStore.
+A Module ([UM](../../columnstore-architecture/columnstore-user-module/) or [PM](../../columnstore-architecture/columnstore-performance-module.md)) can be added or removed from MariaDB ColumnStore.
 
 ### Before adding modules or DBRoots
 

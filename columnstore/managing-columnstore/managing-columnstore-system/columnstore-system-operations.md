@@ -1,42 +1,29 @@
-
 # ColumnStore System Operations
 
- 
-1. [System status "System status"](#system-status) 
-
-  1. [Viewing system status "Viewing system status"](#viewing-system-status)
-  1. [Simple external monitoring script "Simple external monitoring script"](#simple-external-monitoring-script)
-  1. [Viewing process status "Viewing process status"](#viewing-process-status)
-1. [System operations "System operations"](#system-operations) 
-
-  1. [Stopping the system "Stopping the system"](#stopping-the-system)
-  1. [Starting the system or modules "Starting the system or modules"](#starting-the-system-or-modules)
-  1. [Restarting the system "Restarting the system"](#restarting-the-system)
-  1. [Shutting down the system "Shutting down the system"](#shutting-down-the-system)
-  1. [Disabling system modules "Disabling system modules"](#disabling-system-modules)
-  1. [Enabling System Modules "Enabling System Modules"](#enabling-system-modules)
-  1. [Switch Parent OAM Module "Switch Parent OAM Module"](#switch-parent-oam-module)
-1. [System configuraiton "System configuraiton"](#system-configuraiton) 
-
-  1. [Viewing network configuration "Viewing network configuration"](#viewing-network-configuration)
-  1. [Viewing module configuration "Viewing module configuration"](#viewing-module-configuration)
-
-
-
-
+1. [System status "System status"](columnstore-system-operations.md#system-status)
+2. [Viewing system status "Viewing system status"](columnstore-system-operations.md#viewing-system-status)
+3. [Simple external monitoring script "Simple external monitoring script"](columnstore-system-operations.md#simple-external-monitoring-script)
+4. [Viewing process status "Viewing process status"](columnstore-system-operations.md#viewing-process-status)
+5. [System operations "System operations"](columnstore-system-operations.md#system-operations)
+6. [Stopping the system "Stopping the system"](columnstore-system-operations.md#stopping-the-system)
+7. [Starting the system or modules "Starting the system or modules"](columnstore-system-operations.md#starting-the-system-or-modules)
+8. [Restarting the system "Restarting the system"](columnstore-system-operations.md#restarting-the-system)
+9. [Shutting down the system "Shutting down the system"](columnstore-system-operations.md#shutting-down-the-system)
+10. [Disabling system modules "Disabling system modules"](columnstore-system-operations.md#disabling-system-modules)
+11. [Enabling System Modules "Enabling System Modules"](columnstore-system-operations.md#enabling-system-modules)
+12. [Switch Parent OAM Module "Switch Parent OAM Module"](columnstore-system-operations.md#switch-parent-oam-module)
+13. [System configuraiton "System configuraiton"](columnstore-system-operations.md#system-configuraiton)
+14. [Viewing network configuration "Viewing network configuration"](columnstore-system-operations.md#viewing-network-configuration)
+15. [Viewing module configuration "Viewing module configuration"](columnstore-system-operations.md#viewing-module-configuration)
 
 ## System status
 
-
 ### Viewing system status
 
-
-The system status shows the status of the system and all equipped servers. 
-To view the system status, use the *getSystemStatus* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *getSystemStatus* from the operating system prompt.
-
+The system status shows the status of the system and all equipped servers.\
+To view the system status, use the _getSystemStatus_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _getSystemStatus_ from the operating system prompt.
 
 Example:
-
 
 ```
 # mcsadmin getSystemStatus
@@ -55,35 +42,28 @@ Module pm1    ACTIVE                       Fri Jun 10 01:50:43 2016
 
 The table below shows the available system and server statuses.
 
-
-
-| Status | Definition |
-| --- | --- |
-| Status | Definition |
-| Active | The system, server, or Network Interface Card (NIC) is available to process database requests |
-| Auto Disabled | Disabled as a result of a server failure. |
-| Auto Init | Auto initialization mode during a fault recovery. |
-| Auto Offline | The system or server is offline due to a fault. |
-| Busy_Init | The module/system is performing an initialization task at startup time before going to the ACTIVE state. |
-| Degraded | The server is active, but the performance is degraded. A server is degraded when a NIC is not working. |
-| Down | Communication failure. |
-| Failed | A stop/start/restart request for the system or a server failed. |
-| Initial | Initial state after a system reboot or install and before any action is taken. |
-| Man Disabled | Disabled as a result of executing the altersystem-disableModule command. |
-| Man Init | Manual initialization mode during a start or restart command. |
-| Man Offline | The system or server was taken offline with the stop or shutdown command. |
-| Up | Successfully communicating. |
-
-
+| Status        | Definition                                                                                               |
+| ------------- | -------------------------------------------------------------------------------------------------------- |
+| Status        | Definition                                                                                               |
+| Active        | The system, server, or Network Interface Card (NIC) is available to process database requests            |
+| Auto Disabled | Disabled as a result of a server failure.                                                                |
+| Auto Init     | Auto initialization mode during a fault recovery.                                                        |
+| Auto Offline  | The system or server is offline due to a fault.                                                          |
+| Busy\_Init    | The module/system is performing an initialization task at startup time before going to the ACTIVE state. |
+| Degraded      | The server is active, but the performance is degraded. A server is degraded when a NIC is not working.   |
+| Down          | Communication failure.                                                                                   |
+| Failed        | A stop/start/restart request for the system or a server failed.                                          |
+| Initial       | Initial state after a system reboot or install and before any action is taken.                           |
+| Man Disabled  | Disabled as a result of executing the altersystem-disableModule command.                                 |
+| Man Init      | Manual initialization mode during a start or restart command.                                            |
+| Man Offline   | The system or server was taken offline with the stop or shutdown command.                                |
+| Up            | Successfully communicating.                                                                              |
 
 When all servers are active, then the system status is active. If one or more servers are Man Offline and the others are active, the system is Man Offline. All equipped servers must be active before the system is shown as active.
 
-
 ### Simple external monitoring script
 
-
 The following starter / reference shell script will wrap an mcsadmin call and produce output / return codes matching the nagios plugin specification. Most monitoring tools can easily integrate this and it typically requires configuring an agent on a columnstore node to periodically invoke this to determine current status.
-
 
 ```
 #!/bin/bash
@@ -109,13 +89,10 @@ fi
 
 ### Viewing process status
 
-
-To view the process status, use the *getProcessStatus* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *getProcessStatus* from the operating system prompt.
+To view the process status, use the _getProcessStatus_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _getProcessStatus_ from the operating system prompt.\
 The table below shows the available system and server statuses.
 
-
 Example:
-
 
 ```
 [myusr@srv1 ~]# mcsadmin getProcessStatus
@@ -142,62 +119,45 @@ mysqld              pm1       ACTIVE            Fri Jun 10 01:50:22 2016        
 
 The table below shows the supported process states.
 
-
-
-| Status | Definition |
-| --- | --- |
-| Status | Definition |
-| Active | The process is fully functional. |
-| Auto Init | Auto initialization mode during a fault recovery |
-| Auto Offline | The process is offline due to a fault. |
-| Busy Init | The process is performing an initialization task at startup time before going to the ACTIVE state. |
-| Failed | A stop/start/restart request for a process failed. |
-| Hot Standby | The process is functional in a standby/ready state in case a failover occurs. |
-| Initial | State after a system reboot or install and before any action is taken |
-| Man Init | Manual initialization mode during a start or restart command |
-| Man Offline | The process was taken offline with the stop or shutdown command. |
-| Standby Init | Manual initialization mode during a start or restart command of a Hot Standby process. |
-
-
+| Status       | Definition                                                                                         |
+| ------------ | -------------------------------------------------------------------------------------------------- |
+| Status       | Definition                                                                                         |
+| Active       | The process is fully functional.                                                                   |
+| Auto Init    | Auto initialization mode during a fault recovery                                                   |
+| Auto Offline | The process is offline due to a fault.                                                             |
+| Busy Init    | The process is performing an initialization task at startup time before going to the ACTIVE state. |
+| Failed       | A stop/start/restart request for a process failed.                                                 |
+| Hot Standby  | The process is functional in a standby/ready state in case a failover occurs.                      |
+| Initial      | State after a system reboot or install and before any action is taken                              |
+| Man Init     | Manual initialization mode during a start or restart command                                       |
+| Man Offline  | The process was taken offline with the stop or shutdown command.                                   |
+| Standby Init | Manual initialization mode during a start or restart command of a Hot Standby process.             |
 
 ## System operations
 
-
 ### Stopping the system
 
-
-To stop the system, use the *stopSystem* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *stopSystem* from the operating system prompt.
-
+To stop the system, use the _stopSystem_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _stopSystem_ from the operating system prompt.
 
 Stopping the system stops the storage engine database processes. The process that supports the Management Console and System Alarms remains active.
 
-
 ### Starting the system or modules
 
-
-To start the system, use the *startSystem* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *startSystem* from the operating system prompt
-
+To start the system, use the _startSystem_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _startSystem_ from the operating system prompt
 
 ### Restarting the system
 
-
-To restart the system, use the *restartSystem* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *restartSystem* from the operating system prompt
-
+To restart the system, use the _restartSystem_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _restartSystem_ from the operating system prompt
 
 ### Shutting down the system
 
-
-To shut down the system completely including storage engine database processes as well as the process that supports management console and system alarms, use the *shutdownSystem* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *shutdownSystem* from the operating system prompt
-
+To shut down the system completely including storage engine database processes as well as the process that supports management console and system alarms, use the _shutdownSystem_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _shutdownSystem_ from the operating system prompt
 
 ### Disabling system modules
 
-
-A System Module can be disabled when the system is ACTIVE or OFFLINE. To disable a module, use the *alterSystem-disableModule module_id* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *alterSystem-disableModule module_id* from the operating system prompt.
-
+A System Module can be disabled when the system is ACTIVE or OFFLINE. To disable a module, use the _alterSystem-disableModule module\_id_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _alterSystem-disableModule module\_id_ from the operating system prompt.
 
 Example:
-
 
 ```
 mcsadmin alterSystem-disablemodule PM2, PM3
@@ -205,18 +165,13 @@ mcsadmin alterSystem-disablemodule PM2, PM3
 
 The modules PM2 and PM3 will be stopped and disabled.
 
-
 _Note_: Disabling a module may result in data loss if the data is local to the [PM](../../columnstore-architecture/columnstore-performance-module.md). If the data is SAN mounted, the dbroots would need to be moved to other PMs. Please see “Moving DBRoots” of this guide for more information on moving DBRoots.
-
 
 ### Enabling System Modules
 
-
-To enable a module, use the *alterSystem-enableModule module_id* command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *alterSystem-enableModule module_id* from the operating system prompt.
-
+To enable a module, use the _alterSystem-enableModule module\_id_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _alterSystem-enableModule module\_id_ from the operating system prompt.
 
 Example:
-
 
 ```
 mcsadmin alterSystem-enablemodule PM2, PM3
@@ -224,23 +179,17 @@ mcsadmin alterSystem-enablemodule PM2, PM3
 
 The modules PM2 and PM3 will be enabled and started.
 
-
 ### Switch Parent OAM Module
 
+Parent OAM Module is the Performance Module that monitors the overall system including all the [UM](../../columnstore-architecture/columnstore-user-module/) and [PM](../../columnstore-architecture/columnstore-performance-module.md) nodes and their status, as well as handles PM node failover. In a running system with more than 1 PM node there will be 2 Parent OAM Modules - an Active Parent and a Standby Parent.
 
-Parent OAM Module is the Performance Module that monitors the overall system including all the [UM](../../columnstore-architecture/columnstore-user-module.md) and [PM](../../columnstore-architecture/columnstore-performance-module.md) nodes and their status, as well as handles PM node failover. In a running system with more than 1 PM node there will be 2 Parent OAM Modules - an Active Parent and a Standby Parent.
-
-
-To switch a module to the Standby Parent, use *switchParentOAMModule* in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *switchParentOAMModule* from the operating system prompt.
+To switch a module to the Standby Parent, use _switchParentOAMModule_ in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _switchParentOAMModule_ from the operating system prompt.\
 The Standby Parent OAM Module will become active.
 
-
-To switch a module to a specific module:
-use *switchParentOAMModule module_id* on [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *switchParentOAMModule module_id* from the operating system prompt.
-
+To switch a module to a specific module:\
+use _switchParentOAMModule module\_id_ on [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _switchParentOAMModule module\_id_ from the operating system prompt.
 
 Example:
-
 
 ```
 switchParentOAMModule pm3
@@ -248,18 +197,13 @@ switchParentOAMModule pm3
 
 The Performance-Module 3 will become the active Parent OAM Module
 
-
 ## System configuraiton
-
 
 ### Viewing network configuration
 
-
-To view the network configuration of all nodes and their statuses use *getSystemNetworkConfig* on [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *getSystemNetworkConfig* from the operating system prompt.
-
+To view the network configuration of all nodes and their statuses use _getSystemNetworkConfig_ on [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _getSystemNetworkConfig_ from the operating system prompt.
 
 Example:
-
 
 ```
 [myusr@srv1 ~]mcsadmin getSystemNetworkConfig
@@ -273,9 +217,7 @@ pm1            Performance Module #1            1      localhost     127.0.0.1  
 
 ### Viewing module configuration
 
-
-To view the module configuration of all nodes and their statuses use *getModuleConfig* on [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) *getModuleConfig* from the operating system prompt.
-
+To view the module configuration of all nodes and their statuses use _getModuleConfig_ on [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _getModuleConfig_ from the operating system prompt.
 
 ```
 [myusr@srv1 ~]mcsadmin getModuleConfig
@@ -298,6 +240,4 @@ ModuleHostName NIC ID 1 = srvhst1
 DBRootIDs assigned  = 1
 ```
 
-
 CC BY-SA / Gnu FDL
-

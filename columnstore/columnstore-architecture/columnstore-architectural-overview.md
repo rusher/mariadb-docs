@@ -1,8 +1,6 @@
 # ColumnStore Architectural Overview
 
-MariaDB ColumnStore is a columnar storage engine designed for distributed massively parallel processing (MPP), such as for big data analysis. Deployments are composed of several MariaDB servers, operating as modules, working together to provide linear scalability and exceptional performance with real-time response to analytical queries. These modules include [User](columnstore-architectural-overview.md#user-module), [Performance](columnstore-architectural-overview.md#performance-module) and [Storage](columnstore-architectural-overview.md#storage).
-
-![columnstore-arch-diagram](../.gitbook/assets/columnstore-architectural-overview/+image/columnstore-arch-diagram.png)
+MariaDB ColumnStore is a columnar storage engine designed for distributed massively parallel processing (MPP), such as for big data analysis. Deployments can be composed of several MariaDB servers or just one, each running several subprocess working together to provide linear scalability and exceptional performance with real-time response to analytical queries.&#x20;
 
 It provides a highly available, fault tolerant, and performant columnar storage engine for MariaDB Enterprise Server. MariaDB Enterprise ColumnStore is designed for data warehousing, decision support systems (DSS), online analytical processing (OLAP), and hybrid transactional-analytical processing (HTAP).
 
@@ -282,26 +280,6 @@ MariaDB Enterprise ColumnStore leverages common technologies to provide highly a
 | [MariaDB Replication](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#mariadb-replication)         | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication                                                                                                                     |
 | [MaxScale](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#maxscale)                               | • Monitoring • Automatic failover • Load balancing                                                                                                                                                                                                 |
 | [Cluster Management API (CMAPI) Server](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Administration • Add nodes • Remove nodes                                                                                                                                                                                             |
-
-### S3-Compatible Object Storage
-
-MariaDB Enterprise ColumnStore supports S3-compatible object storage.
-
-S3-compatible object storage is optional, but highly recommended. If S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) (such as NFS) for high availability.
-
-S3-compatible object storage is:
-
-* Compatible: Many object storage services are compatible with the Amazon S3 API.
-* Economical: S3-compatible object storage is often very low cost.
-* Flexible: S3-compatible object storage is available for both cloud and on-premises deployments.
-* Limitless: S3-compatible object storage is often virtually limitless.
-* Resilient: S3-compatible object storage is often low maintenance and highly available, since many services use resilient cloud infrastructure.
-* Scalable: S3-compatible object storage is often highly optimized for read and write scaling.
-* Secure: S3-compatible object storage is often encrypted-at-rest.
-
-Many S3-compatible object storage services exist. MariaDB Corporation cannot make guarantees about all S3-compatible object storage services, because different services provide different functionality.
-
-If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, contact us.
 
 ### Shared Local Storage
 

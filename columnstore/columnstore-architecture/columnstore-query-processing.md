@@ -1,20 +1,36 @@
-
 # ColumnStore Query Processing
 
-MariaDB ColumnStore processes an end user query from the user to User and Performance modules.
+Clients issue a query to the MariaDB Server, which has the ColumnStore storage engine installed. MariaDB Server parses the SQL, identifies the involved ColumnStore tables, and creates an initial logical query execution plan.
+
+\
+Using the ColumnStore storage engine interface (ha\_columnstore), MariaDB Server converts involved table references into ColumnStore internal objects. These are then handed off to the ExeMgr, which is responsible for managing and orchestrating query execution across the cluster.
+
+The ExeMgr analyzes the query plan and translates it into a distributed ColumnStore execution plan. It determines the necessary query steps and the execution order, including any required parallelization.
+
+The ExeMgr then references the extent map to identify which PrimProc instances hold the relevant data segments. It applies extent elimination to exclude any PrimProc nodes whose extents do not match the query’s filter criteria.\
 
 
-1. Clients issue a query to the MariaDB Server running on the User Module. The server performs a table operation for all tables needed to fulfill the request and obtains the initial query execution plan.
-1. Using the MariaDB storage engine interface, ColumnStore converts the server table object into ColumnStore objects. These objects are then sent to the User Module processes.
-1. The User Module converts the MariaDB execution plan and optimizes the given objects into a ColumnStore execution plan. It then determines the steps needed to run the query and the order in which they need to be run.
-1. The User Module then consults the Extent Map to determine which Performance Modules to consult for the data it needs, it then performs Extent Elimination, eliminating any Performance Modules from the list that only contain data outside the range of what the query requires.
-1. The User Module then sends commands to one or more Performance Modules to perform block I/O operations.
-1. The Performance Module or Modules carry out predicate filtering, join processing, initial aggregation of data from local or external storage, then send the data back to the User Module.
-1. The User Module performs the final result-set aggregation and composes the result-set for the query.
-1. The User Module / ExeMgr implements any window function calculations, as well as any necessary sorting on the result-set. It then returns the result-set to the server.
-1. The MariaDB Server performs any select list functions, `ORDER BY` and `LIMIT` operations on the result-set.
-1. The MariaDB Server returns the result-set to the client.
+The ExeMgr dispatches commands to the selected PrimProc instances to perform data block I/O operations.
+
+The PrimProc components perform operations such as
 
 
-CC BY-SA / Gnu FDL
 
+* Predicate filtering
+* Join processing
+* Initial aggregation
+* Data retrieval from local disk or external storage (e.g., S3 or cloud object storage)
+
+They then return intermediate result sets back to the ExeMgr.
+
+The ExeMgr handles:\
+
+
+* Final-stage aggregation
+* Window function evaluation
+* Result-set sorting and shaping
+
+The completed result set is returned to the MariaDB Server, which performs any remaining SQL operations like ORDER BY, LIMIT, or computed expressions in the SELECT list.
+
+\
+Finally, the MariaDB Server returns the result set to the client.

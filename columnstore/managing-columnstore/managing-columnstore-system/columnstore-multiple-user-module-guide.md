@@ -22,7 +22,7 @@ This Document describes the setup and the functionality of the MariaDB ColumnSto
 
 The ColumnStore User Module manages and controls the operation of end-user queries. For additional details on this can be found here:
 
-[columnstore-user-module.md](../../columnstore-architecture/columnstore-user-module.md)
+[columnstore-user-module.md](../../columnstore-architecture/columnstore-user-module/)
 
 ## ColumnStore user module configuration
 
@@ -106,7 +106,7 @@ Active Alarm Counts: Critical = 0, Major = 0, Minor = 0, Warning = 0, Info = 0
 Each of the User Modules have a MariaDB server process (mysqld) that that receive a query request from the MariaDB console or from remote applications via the MariaDB Port interface (defaulted is 3306). The MariaDB server process will send that request to the MariaDB ColumnStore process ExeMgr for processing.\
 More details about how this is processed can be found here:
 
-[columnstore-user-module.md](../../columnstore-architecture/columnstore-user-module.md)
+[columnstore-user-module.md](../../columnstore-architecture/columnstore-user-module/)
 
 ## ColumnStore cross engine joins
 

@@ -1,21 +1,14 @@
-
 # ColumnStore Administrative Console
 
- 
-1. [Help command "Help command"](#help-command)
-1. [Case sensitivity "Case sensitivity"](#case-sensitivity)
-1. [Recall command history "Recall command history"](#recall-command-history)
-1. [Command repeat option "Command repeat option"](#command-repeat-option)
-1. [Unix Command Line entry "Unix Command Line entry"](#unix-command-line-entry)
-1. [Command Name Short-cutting "Command Name Short-cutting"](#command-name-short-cutting)
+1. [Help command "Help command"](columnstore-administrative-console.md#help-command)
+2. [Case sensitivity "Case sensitivity"](columnstore-administrative-console.md#case-sensitivity)
+3. [Recall command history "Recall command history"](columnstore-administrative-console.md#recall-command-history)
+4. [Command repeat option "Command repeat option"](columnstore-administrative-console.md#command-repeat-option)
+5. [Unix Command Line entry "Unix Command Line entry"](columnstore-administrative-console.md#unix-command-line-entry)
+6. [Command Name Short-cutting "Command Name Short-cutting"](columnstore-administrative-console.md#command-name-short-cutting)
 
-
-
-
-
-The MariaDB ColumnStore Management Console allows you to configure, monitor, and manage the MariaDB ColumnStore system and servers. 
-Once you have a running ColumnStore cluster, you can invoke the console from any of the [UM](../../columnstore-architecture/columnstore-user-module.md) or [PM](../../columnstore-architecture/columnstore-performance-module.md) nodes. The console utility is called mcsadmin
-
+The MariaDB ColumnStore Management Console allows you to configure, monitor, and manage the MariaDB ColumnStore system and servers.\
+Once you have a running ColumnStore cluster, you can invoke the console from any of the [UM](../../columnstore-architecture/columnstore-user-module/) or [PM](../../columnstore-architecture/columnstore-performance-module.md) nodes. The console utility is called mcsadmin
 
 ```
 [myuser@srv1~]# mcsadmin
@@ -30,7 +23,6 @@ mcsadmin> quit
 ```
 
 You can use one of the following commands in the console
-
 
 ```
 Command                           Description
@@ -103,12 +95,9 @@ unassignElasticIPAddress          Unassign Amazon Elastic IP Address
 
 ### Help command
 
-
 The help command displays supported commands. You can view brief help definitions or verbose definitions. You can also enter partial command names with the help command to view verbose definitions.
 
-
-For example, type help *enableLog* to get the verbose definition of the *enableLog* command as shown below.
-
+For example, type help _enableLog_ to get the verbose definition of the _enableLog_ command as shown below.
 
 ```
 mcsadmin> 
@@ -128,26 +117,19 @@ mcsadmin>
 
 ### Case sensitivity
 
-
-Commands are not case sensitive; however parameters and device names, like server and processes, are
+Commands are not case sensitive; however parameters and device names, like server and processes, are\
 case sensitive.
-
 
 ### Recall command history
 
-
 Use the up and down arrow keys on your keyboard to scroll through the command history.
-
 
 ### Command repeat option
 
-
-Commands can be run continuously using the “-r” option. 
+Commands can be run continuously using the “-r” option.\
 The repeat option repeats a command every 5 seconds. You can change the repeat interval to be between 1 and 60 seconds by adding the number of seconds after the command.
 
-
-This is useful to check status in real-time mode. For example to repeat the *GetProcessStatus* command every 2 seconds:
-
+This is useful to check status in real-time mode. For example to repeat the _GetProcessStatus_ command every 2 seconds:
 
 ```
 mcsadmin> getProcessStatus -r2
@@ -176,9 +158,7 @@ mysqld              pm1       ACTIVE            Fri Jun 10 01:50:22 2016        
 
 ### Unix Command Line entry
 
-
 mcsadmin commands can be run from the linux command line prompt
-
 
 ```
 # mcsadmin getSystemInfo
@@ -186,14 +166,10 @@ mcsadmin commands can be run from the linux command line prompt
 
 ### Command Name Short-cutting
 
-
 mcsadmin commands can be short-cutted. This example would execute getSystemInfo. The is the first command it would find alphabetically with 'getsystemi'
-
 
 ```
 # mcsadmin getsystemi
 ```
 
-
 CC BY-SA / Gnu FDL
-

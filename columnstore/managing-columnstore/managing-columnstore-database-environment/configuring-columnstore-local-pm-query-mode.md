@@ -1,6 +1,6 @@
 # Configuring ColumnStore Local PM Query Mode
 
-MariaDB ColumnStore has the ability to query data from just a single [PM](../../columnstore-architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../../columnstore-architecture/columnstore-user-module.md). In order to accomplish this, the infinidb\_local\_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
+MariaDB ColumnStore has the ability to query data from just a single [PM](../../columnstore-architecture/columnstore-performance-module.md) instead of the whole database through the [UM](../../columnstore-architecture/columnstore-user-module/). In order to accomplish this, the infinidb\_local\_query variable in the my.cnf configuration file is used and maybe set as a default at system wide or set at the session level.
 
 1. [Enable local PM query during installation "Enable local PM query during installation"](configuring-columnstore-local-pm-query-mode.md#enable-local-pm-query-during-installation)
 2. [Enable local PM query systemwide "Enable local PM query systemwide"](configuring-columnstore-local-pm-query-mode.md#enable-local-pm-query-systemwide)
@@ -37,7 +37,7 @@ where n is:
 * 1 (enabled)
 ```
 
-At the session level, this variable applies only to executing a query on an individual [PM](../../columnstore-architecture/columnstore-performance-module.md) and will error if executed on the [UM](../../columnstore-architecture/columnstore-user-module.md). The PM must be set up with the local query option during installation.
+At the session level, this variable applies only to executing a query on an individual [PM](../../columnstore-architecture/columnstore-performance-module.md) and will error if executed on the [UM](../../columnstore-architecture/columnstore-user-module/). The PM must be set up with the local query option during installation.
 
 ### Local PM Query Examples
 
