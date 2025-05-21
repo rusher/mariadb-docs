@@ -1,6 +1,7 @@
 # Table of contents
 
 * [MariaDB MaxScale](README.md)
+  * [MaxScale Trial](readme/maxscale-trial.md)
 * [Quickstart Guides](maxscale-quickstart-guides/README.md)
   * [mariadb-maxscale-overview](maxscale-quickstart-guides/mariadb-maxscale-overview.md)
   * [Authentication Modules](maxscale-quickstart-guides/mariadb-maxscale-authentication-modules-guide.md)
