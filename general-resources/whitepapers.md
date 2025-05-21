@@ -1,8 +1,13 @@
+---
+description: >-
+  Redirect to
+  https://mariadb.com/resources/?datatype=null&value=white-paper-contentType.
+  Keep the page in the nav, though.
+---
 
 # Whitepapers
 
 Whitepapers are available on the following topics:
-
 
 * [High availability](https://mariadb.com/resources/white-papers/high-availability-with-mariadb-tx-the-definitive-guide/)
 * [Security](https://mariadb.com/resources/white-papers/mariadb-tx-security-overview/)
@@ -11,6 +16,4 @@ Whitepapers are available on the following topics:
 * [MariaDB vs. Oracle/Microsoft/IBM](https://mariadb.com/resources/white-papers/enterprise-database-comparison-mariadb-vs-oracle-microsoft-and-ibm/)
 * [MariaDB vs. MySQL/Postgres](https://mariadb.com/resources/white-papers/mariadb-vs-oracle-mysql-vs-enterprisedb/)
 
-
 CC BY-SA / Gnu FDL
-

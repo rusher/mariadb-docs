@@ -1,3 +1,7 @@
+---
+description: Leave page. We'll optimize it later.
+---
+
 # Tutorials
 
 Here are some links to external MariaDB, MySQL and SQL tutorials that may be of interest

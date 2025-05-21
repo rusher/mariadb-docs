@@ -1,3 +1,7 @@
+---
+description: Move contents to Joining the Community
+---
+
 # MariaDB Users & Developers
 
 ## GitHub and Mailing Lists

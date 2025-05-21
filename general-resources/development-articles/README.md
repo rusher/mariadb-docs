@@ -1,5 +1,7 @@
+---
+description: Review with Max, move to MariaDB Community section
+---
 
-# Development Articles
+# Product Development
 
 Articles of interest to MariaDB Developers
-

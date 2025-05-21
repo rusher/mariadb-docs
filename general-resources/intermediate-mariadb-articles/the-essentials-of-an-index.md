@@ -1,8 +1,10 @@
+---
+description: Move to Server space, somewhere near "indexes"
+---
 
 # The Essentials of an Index
 
 Imagine you've created a table with the following rows (this is the same table as used in the [More Advanced Joins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins) tutorial).
-
 
 ```
 +----+------------+-----------+-------------------------+---------------------------+--------------+
@@ -19,12 +21,9 @@ Imagine you've created a table with the following rows (this is the same table a
 
 Now, imagine you've been asked to return the home phone of Fanny Crowne. Without indexes, the only way to do it is to go through every row until you find the matching first name and surname. Now imagine there are millions of records and you can see that, even for a speedy database server, this is highly inefficient.
 
-
 The answer is to sort the records. If they were stored in alphabetical order by surname, even a human could quickly find a record amongst a large number. But we can't sort the entire record by surname. What if we want to also look a record by ID, or by first name? The answer is to create separate indexes for each column we wish to sort by. An index simply contains the sorted data (such as surname), and a link to the original record.
 
-
-For example, an index on Last_Name:
-
+For example, an index on Last\_Name:
 
 ```
 +-----------+----+
@@ -41,7 +40,6 @@ For example, an index on Last_Name:
 
 and an index on Position
 
-
 ```
 +-------------------------+----+
 | Position                | ID |
@@ -57,12 +55,8 @@ and an index on Position
 
 would allow you to quickly find the phone numbers of all the cashiers, or the phone number of the employee with the surname Marx, very quickly.
 
-
 Where possible, you should create an index for each column that you search for records by, to avoid having the server read every row of a table.
 
-
-See [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index) and [Getting Started with Indexes](/kb/en/getting-started-with-indexes/) for more information.
-
+See [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index) and [Getting Started with Indexes](../../kb/en/getting-started-with-indexes/) for more information.
 
 CC BY-SA / Gnu FDL
-

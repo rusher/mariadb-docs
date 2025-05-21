@@ -68,7 +68,7 @@
 
 ## Additional Resources
 
-* [Videos & Screencasts](additional-resources/video-presentations-and-screencasts/README.md)
+* [Videos](additional-resources/video-presentations-and-screencasts/README.md)
   * [High Availability](additional-resources/video-presentations-and-screencasts/high-availability-videos.md)
   * [Optimization & Performance Tuning](additional-resources/video-presentations-and-screencasts/optimizer-and-performance-tuning-videos.md)
   * [Storage Engines & Plugins](additional-resources/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md)

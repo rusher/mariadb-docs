@@ -1,14 +1,14 @@
+---
+description: Discuss with Max
+---
 
-# Distributions Which Include MariaDB
+# Distributions Including MariaDB
 
 The following is a partial list of distributions which include MariaDB in their package repositories. For these you can use the distribution's management system to install MariaDB.
 
-
 The term "default" in the list below refers to the distribution's default relational or MySQL-type database.
 
-
 ## Linux Distributions
-
 
 * [AlmaLinux](https://almalinux.org/) — [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) was included since 8.8.
 * [Alpine Linux](https://www.alpinelinux.org/) — Defaults to MariaDB. [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106) has been available 3.12.11 and [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) since 3.18.2.
@@ -24,7 +24,7 @@ The term "default" in the list below refers to the distribution's default relati
 * [Debian](https://www.debian.org/) — Debian 10 "Buster" includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), Debian 11 "Bullseye" [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), Debian 12 "Bookworm" [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) as default.
 * [Elastix](https://www.elastix.org/) —Defaulted to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) in 4.0.76
 * [Exherbo](https://exherbo.org/) —Includes [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
-* [Fedora](https://getfedora.org/) — [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) became the default relational database in Fedora 19. Fedora 30 [includes MariaDB 10.3](https://bodhi.fedoraproject.org/updates/?packages=mariadb&page=1), Fedora 34 [includes MariaDB 10.5](https://fedoraproject.org/wiki/Releases/34/ChangeSet#MariaDB_10.5).
+* [Fedora](https://getfedora.org/) — [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) became the default relational database in Fedora 19. Fedora 30 [includes MariaDB 10.3](https://bodhi.fedoraproject.org/updates/?packages=mariadb\&page=1), Fedora 34 [includes MariaDB 10.5](https://fedoraproject.org/wiki/Releases/34/ChangeSet#MariaDB_10.5).
 * [Funtoo](https://www.funtoo.org/) —Includes [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * [Gentoo Linux](https://packages.gentoo.org/packages/dev-db/mariadb)
 * [Guix](https://www.gnu.org/software/guix/)—11.2.0 includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)
@@ -48,7 +48,7 @@ The term "default" in the list below refers to the distribution's default relati
 * [Paldo](https://www.paldo.org/) —Defaults to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) in Stable
 * [Parabola GNU/Linux](https://www.parabola.nu/packages/?q=mariadb) —Includes [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) since 3.7
 * [Parrot Security](https://www.parrotsec.org/) —Based on Debian's testing branch (stretch), Parrot Security switched from MySQL to [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) in 3.1, 4.7 includes [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
-* [Parted Magic](https://partedmagic.com/) —Defaulted to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) in 2015_11_13
+* [Parted Magic](https://partedmagic.com/) —Defaulted to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) in 2015\_11\_13
 * [PCLinuxOS](https://www.pclinuxos.com/forum/index.php?topic=140029.0) —Replaced MySQL with [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) in 2017.03
 * [Pisi Linux](https://www.pisilinux.org/) —Defaulted to [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) in 1.1
 * [Plamo](https://www.plamolinux.org/) —Defaulted to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) in 5.3.1, 7.3 includes [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
@@ -68,24 +68,17 @@ The term "default" in the list below refers to the distribution's default relati
 * [Void](https://www.voidlinux.eu/) — [Includes MariaDB 10.5 in current](https://voidlinux.org/packages/)
 * [Wifislax](https://www.wifislax.com/) — Defaulted to [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) in 4.11.1
 
-
 ## BSD Distributions
-
 
 * [Dragonfly BSD](https://www.dragonflybsd.org/) — 3.8 included [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). 5.8.0 includes [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104).
 * [FreeBSD](https://svnweb.freebsd.org/ports/head/databases/#mariadb100-client) — MariaDB is available in the ports tree and the FreeBSD Manual has instructions on [Installing Applications: Packages and Ports](https://www.freebsd.org/doc/en/books/handbook/ports.html). [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) is included in 12.2
-
   * [MariaDB on FreshPorts](https://www.freshports.org/search.php?query=mariadb)
 * [NetBSD](https://www.netbsd.org/) — 6.1 and 7.0 include [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 * [OpenBSD](https://marc.info/?m=141063182731679) — [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) was included in 5.7, 6.8 includes [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105).
 
-
 ## macOS
-
 
 * [Homebrew](https://brew.sh/) — If you have Homebrew installed, you can install MariaDB Server by executing `brew install mariadb`. Find out more at [Installing MariaDB Server on macOS Using Homebrew](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-on-macos-using-homebrew).
 * [MacPorts](https://www.macports.org/) —This provides [mariadb and mariadb-server](https://trac.macports.org/browser/trunk/dports/databases/mariadb/Portfile). A [quick guide](https://yosun.me/2012/04/13/mariadb-via-macports-on-mac-os-x-10-6/) on how to install it.
 
-
 CC BY-SA / Gnu FDL
-

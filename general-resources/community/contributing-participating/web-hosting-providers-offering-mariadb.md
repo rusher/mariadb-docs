@@ -1,17 +1,18 @@
+---
+description: Discuss with Max
+---
 
 # Web Hosting Providers Offering MariaDB
 
 Here is an incomplete list of web hosting providers offering MariaDB for their hosting/shared hosting/cloud hosting customers. It is organized in alphabetical order. Feel free to add your hosting provider to this list, and if you would like to encourage your hosting provider to follow the example of others, this can also serve as a good list.
 
-
 ### English
-
 
 * [1uhost.com](https://www.1uhost.com/mariadb-hosting)
 * [A2 Hosting](https://www.a2hosting.com/mariadb-hosting)
 * [ApisCP](https://apiscp.com/)
 * [Axcension](https://www.axcension.com/database-hosting.htm)
-* [CloudHulk](https://cloudhulk.com/cloud-shared-hosting.html?utm_source=mariadb&utm_medium=link)
+* [CloudHulk](https://cloudhulk.com/cloud-shared-hosting.html?utm_source=mariadb\&utm_medium=link)
 * [Cloudways](https://www.cloudways.com/en/mariadb-hosting.php)
 * [Crown Hosting](https://www.crownhosting.co.uk/mariadb-hosting)
 * [dcensy](https://www.dcensy.com/)
@@ -52,32 +53,24 @@ Here is an incomplete list of web hosting providers offering MariaDB for their h
 * [Vero Servers](https://www.veroservers.com/)
 * [XenServ Hosting](https://xenserv.net/)
 * [xneelo](https://xneelo.co.za/insights/mysql-to-mariadb-upgrade/)
-* [WebhostUK LTD](https://www.WebhostUK.Co.UK/)
+* [WebhostUK LTD](https://www.webhostuk.co.uk/)
 * [Web Hosting World](https://www.webhostingworld.net/)
 
-
 ### Bulgarian
-
 
 * [Host Bulgaria](https://www.hostbulgaria.com/)
 * [Jump.BG](https://www.jump.bg/)
 
-
 ### Dutch
-
 
 * [Nexxwave](https://www.nexxwave.be/)
 
-
 ### French
-
 
 * [PHPNET](https://www.phpnet.org/)
 * [Free-H](https://www.free-h.org/)
 
-
 ### German
-
 
 * [1&1 Internet AG](https://www.1und1.de)
 * [ispOne Business](https://www.ispone-business.de/webhosting.php)
@@ -85,32 +78,22 @@ Here is an incomplete list of web hosting providers offering MariaDB for their h
 * [Variomedia](https://www.variomedia.de/hosting/easy/)
 * [WebGo24](https://webgo24.de/webhosting-guenstig)
 
-
 ### Italian
-
 
 * [ilbello.com](https://ilbello.com/)
 * [Colt Engine - joomlahost.it](https://joomlahost.it/)
 
-
 ### Norwegian
-
 
 * [MinHost webhotell](https://minhost.no/)
 
-
 ### Portuguese
-
 
 * [Hoo.st](https://hoo.st/pt-br/hospedagem-mariadb)
 
-
 ### Spanish
-
 
 * [Hoo.st](https://hoo.st/es/alojamiento-mariadb)
 * [miHosting.com](https://mihosting.com/)
 
-
 CC BY-SA / Gnu FDL
-

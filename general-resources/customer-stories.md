@@ -1,5 +1,5 @@
 ---
-description: Merge with Success Stories?
+description: Redirect to ... see link, keep page in the nav, though
 ---
 
 # Customer Stories

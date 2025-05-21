@@ -1,3 +1,9 @@
+---
+description: >-
+  Redirect to company newsroom page, https://mariadb.com/newsroom/ , then remove
+  this page
+---
+
 # News Articles about MariaDB
 
 Here are links to news reports and articles related to MariaDB, organized in reverse chronological order. You might also look at the [Case Studies](../../../mariadb-success-stories.md) section.
