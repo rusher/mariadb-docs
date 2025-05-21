@@ -2,7 +2,7 @@
 
 * [MariaDB Server Documentation](README.md)
 * [Quickstart Guides](mariadb-quickstart-guides/README.md)
-  * [Adding and Changing Data in MariaDB](mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide.md)
+  * [Adding & Changing Data Guide](mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide.md)
   * [Useful MariaDB Queries](mariadb-quickstart-guides/mariadb-advanced-sql-guide.md)
   * [MariaDB Basics](mariadb-quickstart-guides/mariadb-advanced-usage-guide.md)
   * [Altering Tables in MariaDB](mariadb-quickstart-guides/mariadb-alter-table-guide.md)
@@ -22,6 +22,7 @@
   * [Changing Times in MariaDB](mariadb-quickstart-guides/mariadb-time-guide.md)
   * [A MariaDB Primer](mariadb-quickstart-guides/mariadb-usage-guide.md)
   * [Creating & Using Views](mariadb-quickstart-guides/mariadb-views-guide.md)
+  * [Adding and Changing Data in MariaDB](mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide-1.md)
 * [Server Usage](server-usage/README.md)
   * [Programmatic & Compound Statements](server-usage/programmatic-compound-statements/README.md)
     * [BEGIN END](server-usage/programmatic-compound-statements/begin-end.md)

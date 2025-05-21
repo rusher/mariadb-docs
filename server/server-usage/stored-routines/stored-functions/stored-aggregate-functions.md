@@ -22,7 +22,7 @@ BEGIN
 END
 ```
 
-Stored aggregate functions were a [2016 Google Summer of Code](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/company-and-community/contributing-participating/google-summers-of-code/google-summer-of-code-2016) project by Varun Gupta.
+Stored aggregate functions were a [2016 Google Summer of Code](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/contributing-participating/google-summers-of-code/google-summer-of-code-2016) project by Varun Gupta.
 
 ### Using SQL/PL
 

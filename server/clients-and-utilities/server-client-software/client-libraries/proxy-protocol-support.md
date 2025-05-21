@@ -50,7 +50,7 @@ mysql_optionsv(mysql, MARIADB_OPT_PROXY_HEADER, hdr,  strlen(hdr));
 If you want to use proxy protocol with MaxScale:
 
 * Add the IP address of the MaxScale server to [proxy-protocol-networks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks)
-* In `maxscale.cnf`, add the [proxy\_protocol](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide#proxy_protocol) parameter for all configured servers
+* In `maxscale.cnf`, add the [proxy\_protocol](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide#proxy_protocol) parameter for all configured servers
 
 Once configured, MaxScale will proxy the credentials from the client to the server.
 

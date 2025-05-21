@@ -50,7 +50,7 @@ Generally, there is no need to tweak many of these system variables. The goal of
 provide good performance out-of-the box. However, the system variable values can be changed, and we intended to expose as many knobs from the underlying implementation as we could. Feel free to tweak them\
 as you see fit.
 
-If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking/reporting-bugs).
+If you find any issues with any of the default behavior, then we encourage you to [submit a bug report](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/company-and-community/bug-tracking/reporting-bugs).
 
 See [Thread Pool System and Status Variables](thread-pool-system-status-variables.md) for the full list of the thread pool's system variables.
 
@@ -251,7 +251,7 @@ The [thread\_cache\_size](../../system-variables/server-system-variables.md#thre
 ## See Also
 
 * [Thread Pool System and Status Variables](thread-pool-system-status-variables.md)
-* [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
+* [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
 * [Thread Pool in MariaDB 5.1 - 5.3](thread-pool-in-mariadb-51-53.md)
 
 CC BY-SA / Gnu FDL

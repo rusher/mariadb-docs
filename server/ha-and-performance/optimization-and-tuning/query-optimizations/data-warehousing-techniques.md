@@ -5,7 +5,7 @@
 This document discusses techniques for improving performance for data-warehouse-like tables in MariaDB and MySQL.
 
 * How to load large tables.
-* [Normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization).
+* [Normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/intermediate-mariadb-articles/database-theory/database-normalization).
 * Developing 'summary tables' to make 'reports' efficient.
 * Purging old data.
 
@@ -260,7 +260,7 @@ Let's say your insert rate is only one-tenth of your disk IOPs (eg, 10 rows/sec 
 
 Note that 10 rows/sec (300M/year) implies maybe 30GB for data + indexes + normalization tables + summary tables for 1 year. I would call this "not so big".
 
-Still, the [normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/intermediate-mariadb-articles/database-theory/database-normalization) and summarization are important. Normalization keeps the data from being, say, twice as big. Summarization speeds up the reports by orders of magnitude.
+Still, the [normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/intermediate-mariadb-articles/database-theory/database-normalization) and summarization are important. Normalization keeps the data from being, say, twice as big. Summarization speeds up the reports by orders of magnitude.
 
 Let's design and analyse a "simple ingestion scheme" for 10 rows/second, without 'batching'.
 

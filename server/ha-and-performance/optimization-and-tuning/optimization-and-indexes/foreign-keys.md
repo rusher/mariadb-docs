@@ -2,7 +2,7 @@
 
 ## Overview
 
-A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/intermediate-mariadb-articles/database-theory/relational-databases-foreign-keys).
+A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/intermediate-mariadb-articles/database-theory/relational-databases-foreign-keys).
 
 Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../reference/storage-engines/innodb/) and the obsolete [PBXT](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/) support foreign keys.
 

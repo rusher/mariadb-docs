@@ -40,6 +40,6 @@ SET max_heap_table_size = @@max_heap_table_size;
 
 ## See Also
 
-* [Performance of MEMORY tables](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmarks/performance-of-memory-tables)
+* [Performance of MEMORY tables](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/quality/benchmarks-and-long-running-tests/benchmarks/performance-of-memory-tables)
 
 CC BY-SA / Gnu FDL

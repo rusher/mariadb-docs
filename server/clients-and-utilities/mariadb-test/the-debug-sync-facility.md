@@ -149,7 +149,7 @@ separated by '&|' must be present or both of them.
 
 ### Activation/Deactivation
 
-With a [MariaDB for debug build](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/debugging-mariadb/compiling-mariadb-for-debugging), it can be enabled by a mysqld command line option:
+With a [MariaDB for debug build](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/debugging-mariadb/compiling-mariadb-for-debugging), it can be enabled by a mysqld command line option:
 
 ```
 --debug-sync-timeout[=default_wait_timeout_value_in_seconds]

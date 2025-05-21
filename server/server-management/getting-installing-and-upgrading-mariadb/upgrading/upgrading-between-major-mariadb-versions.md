@@ -57,7 +57,7 @@ The common warnings/errors are:
 
 * First, check the [MariaDB error log](../../server-monitoring-logs/error-log.md) to see if you are using configure options that are not supported anymore.
 * Check the upgrade notices for the MariaDB release that you are upgrading to.
-* File an issue in the [MariaDB bug tracker](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/bug-tracking) so that we know about the issue and can provide a fix to make upgrades even better.
+* File an issue in the [MariaDB bug tracker](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/company-and-community/bug-tracking) so that we know about the issue and can provide a fix to make upgrades even better.
 * Add a comment to this manual entry for how we can improve it.
 
 ### Disaster Recovery

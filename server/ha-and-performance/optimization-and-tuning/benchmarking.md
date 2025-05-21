@@ -2,7 +2,7 @@
 
 ## Published Results
 
-* [Benchmark Results](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/training-and-tutorials/advanced-mariadb-articles/development-articles/quality/benchmarks-and-long-running-tests/benchmark-results)
+* [Benchmark Results](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/quality/benchmarks-and-long-running-tests/benchmark-results)
 
 ## Systemtap
 

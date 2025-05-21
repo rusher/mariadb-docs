@@ -77,6 +77,6 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 ## See Also
 
 * [Graphical clients](../graphical-and-enhanced-clients/)
-* [Distributions which include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/)
+* [Distributions which include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb)
 
 CC BY-SA / Gnu FDL
