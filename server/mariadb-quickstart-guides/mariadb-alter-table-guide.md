@@ -1,18 +1,20 @@
+# Table Alteration Guide
 
-# Altering Tables in MariaDB
+This guide provides essential instructions for modifying existing table structures. Learn how to add, drop, and change columns, manage indexes and default values, and rename tables, along with key precautions for these operations when working with your database.
 
-Despite a MariaDB developer's best planning, occasionally one needs to change the structure or other aspects of tables. This is not very difficult, but some developers are unfamiliar with the syntax for the functions used in MariaDB to accomplish this. And some changes can be very frustrating. In this article we'll explore the ways to alter tables in MariaDB and we'll give some precautions about related potential data problems.
+### Before You Begin: Backup Your Tables
 
+Before making any structural changes to a table, especially if it contains data, **always create a backup**. The `mariadb-dump` utility is a common and effective tool for this.
 
-#### Before Beginning
+Example: Backing up a single table
 
-
-For the examples in this article, we will refer to a database called `db1` containing a table called `clients`. The `clients` table is for keeping track of client names and addresses. To start off, we'll enter a [DESCRIBE](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statement to see what the table looks like:
-
+Suppose you have a database db1 and a table clients. Its initial structure is:
 
 ```
-DESCRIBE clients; 
+DESCRIBE clients;
+```
 
+```
 +-------------+-------------+------+-----+---------+-------+
 | Field       | Type        | Null | Key | Default | Extra |
 +-------------+-------------+------+-----+---------+-------+
@@ -26,57 +28,67 @@ DESCRIBE clients;
 +-------------+-------------+------+-----+---------+-------+
 ```
 
-This is a very simple table that will hold very little information. However, it's sufficient for the examples here in which we will change several of its columns. Before doing any structural changes to a table in MariaDB, especially if it contains data, one should make a backup of the table to be changed. There are a few ways to do this, but some choices may not be permitted by your web hosting company. Even if your database is on your own server, though, the [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) utility is typically the best tool for making and restoring backups in MariaDB, and it's generally permitted by web hosting companies. To backup the clients table with [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), we will enter the following from the command-line:
-
-
-```
-mariadb-dump --user='username' --password='password' --add-locks db1 clients > clients.sql
-```
-
-As you can see, the username and password are given on the first line. On the next line, the `--add-locks` option is used to lock the table before backing up and to unlock automatically it when the backup is finished. There are many other options in [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) that could be used, but for our purposes this one is all that's necessary. Incidentally, this statement can be entered in one line from the shell (i.e., not from the `mariadb` client), or it can be entered on multiple lines as shown here by using the back-slash (i.e., `/`) to let the shell know that more is to follow. On the third line above, the database name is given, followed by the table name. The redirect (i.e., `>`) tells the shell to send the results of the dump to a text file called `clients.sql` in the current directory. A directory path could be put in front of the file name to create the file elsewhere. If the table should need to be restored, the following can be run from the shell:
-
+To back up the `clients` table from the command-line:
 
 ```
-mariadb --user='username' --password='password' db1 < clients.sql
+mariadb-dump --user='your_username' --password='your_password' --add-locks db1 clients > clients.sql
 ```
 
-Notice that this line does not use the `mariadb-dump` utility. It uses the `mariadb` client from the outside, so to speak. When the dump file (`clients.sql`) is read into the database, it will delete the `clients` table and it's data in MariaDB before restoring the backup copy with its data. So be sure that users haven't added data in the interim. In the examples in this article, we are assuming that there isn't any data in the tables yet.
+* Replace `'your_username'` and `'your_password'` with your actual MariaDB credentials.
+* `--add-locks`: Locks the table during the backup and unlocks it afterward.
+* `db1 clients`: Specifies the database and then the table.
+* `> clients.sql`: Redirects the output to a file named `clients.sql`.
 
+Restoring from a backup
 
-#### Basic Addition and More
-
-
-In order to add a column to an existing MariaDB table, one would use the [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. To demonstrate, suppose that it has been decided that there should be a column for the client's account status (i.e., active or inactive). To make this change, the following is entered:
-
+If you need to restore the table:
 
 ```
-ALTER TABLE clients 
+mariadb --user='your_username' --password='your_password' db1 < clients.sql
+```
+
+This command uses the `mariadb` client to execute the SQL in `clients.sql`, which will typically drop the existing table (if it exists) and recreate it from the backup. Ensure no critical data has been added to the live table since the backup if you intend to overwrite it.
+
+For the examples that follow, we'll assume structural changes are being made, sometimes on an empty table for simplicity, but the backup step is always recommended for tables with data.
+
+### Adding Columns
+
+Use the `ALTER TABLE` statement with the `ADD COLUMN` clause.
+
+Add a column to the end of the table:
+
+To add a status column with a fixed width of two characters:
+
+```
+ALTER TABLE clients
 ADD COLUMN status CHAR(2);
 ```
 
-This will add the column `status` to the end with a fixed width of two characters (i.e., *AC* for active and *IA* for inactive). In looking over the table again, it's decided that another field for client apartment numbers or the like needs to be added. That data could be stored in the address column, but it would better for it to be in a separate column. An [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement could be entered like above, but it will look tidier if the new column is located right after the address column. To do this, we'll use the `AFTER` option:
+Add a column after a specific existing column:
 
-
-```
-ALTER TABLE clients 
-ADD COLUMN address2 varchar(25) 
-AFTER address;
-```
-
-By the way, to add a column to the first position, you would replace the last line of the SQL statement above to read like this:
-
+To add address2 (varchar 25) after the address column:
 
 ```
-...
-FIRST;
+ALTER TABLE clients
+ADD COLUMN address2 VARCHAR(25) AFTER address;
 ```
 
-Before moving on, let's take a look at the table's structure so far:
+**Add a column to the beginning of the table:**
 
+```
+ALTER TABLE clients
+ADD COLUMN new_first_column VARCHAR(50) FIRST;
+```
+
+_(Assuming `new_first_column` is the one to be added at the beginning)._
+
+After additions, the table structure might look like (excluding `new_first_column` for consistency with original example flow):
 
 ```
 DESCRIBE clients;
+```
 
+```
 +-------------+-------------+------+-----+---------+-------+
 | Field       | Type        | Null | Key | Default | Extra |
 +-------------+-------------+------+-----+---------+-------+
@@ -92,36 +104,58 @@ DESCRIBE clients;
 +-------------+-------------+------+-----+---------+-------+
 ```
 
-#### Changing One's Mind
+### Changing Column Definitions
 
+Use `ALTER TABLE` with `CHANGE` or `MODIFY`.
 
-After looking over the above table display, it's decided that it might be better if the status column has the choices of 'AC' and 'IA' enumerated. To make this change, we'll enter the following SQL statement:
+Change column type (e.g., to ENUM):
 
+The status column name is specified twice even if not changing the name itself when using CHANGE.
 
 ```
-ALTER TABLE clients 
-CHANGE status status enum('AC','IA');
+ALTER TABLE clients
+CHANGE status status ENUM('AC','IA');
 ```
 
-Notice that the column name status is specified twice. Although the column name isn't being changed, it still must be respecified. To change the column name (from `status` to `active`), while leaving the enumerated list the same, we specify the new column name in the second position:
+Change column name and keep type:
 
+To change status to active while keeping the ENUM definition:
 
 ```
 ALTER TABLE clients
 CHANGE status active ENUM('AC','IA');
 ```
 
-Here we have the current column name and then the new column name, along with the data type specifications (i.e., `ENUM`), even though the result is only a name change. With the `CHANGE` clause everything must be stated, even items that are not to be changed.
+When using `CHANGE`, the current column name is followed by the new column name and the complete type definition.
 
+Modify column type or attributes without renaming:
 
-In checking the table structure again, more changes are decided on: The column address is to be renamed to address1 and changed to forty characters wide. Also, the enumeration of active is to have 'yes' and 'no' choices. The problem with changing enumerations is that data can be clobbered in the change if one isn't careful. We've glossed over this possibility before because we are assuming that clients is empty. Let's take a look at how the modifications suggested could be made with the table containing data:
-
+Use MODIFY if you are only changing the data type or attributes, not the name.
 
 ```
 ALTER TABLE clients
-CHANGE address address1 varchar(40),
-MODIFY active enum('yes','no','AC','IA');
+MODIFY address1 VARCHAR(40); -- Assuming 'address1' is an existing column
+```
 
+Complex Changes (e.g., ENUM migration with data):
+
+Changing ENUM values in a table with existing data requires careful steps to prevent data loss. This typically involves:
+
+1. Temporarily modifying the ENUM to include both old and new values.
+2. Updating existing rows to use the new values.
+3. Modifying the ENUM again to remove the old values.
+
+Example of changing `address` to `address1` (40 chars) and preparing `active` ENUM for new values 'yes','no' from 'AC','IA':
+
+```
+ALTER TABLE clients
+    CHANGE address address1 VARCHAR(40),
+    MODIFY active ENUM('yes','no','AC','IA'); -- Temporarily include all
+```
+
+Then, update the data:
+
+```
 UPDATE clients
 SET active = 'yes'
 WHERE active = 'AC';
@@ -129,67 +163,61 @@ WHERE active = 'AC';
 UPDATE clients
 SET active = 'no'
 WHERE active = 'IA';
-
-ALTER TABLE clients
-MODIFY active enum('yes','no');
 ```
 
-The first SQL statement above changes address and modifies active in preparation for the transition. Notice the use of a `MODIFY` clause. It works the same as `CHANGE`, but it is only used for changing data types and not column names. Therefore, the column name isn't respecified. Notice also that there is a comma after the CHANGE clause. You can string several `CHANGE` and `MODIFY` clauses together with comma separators. We've enumerated both the new choices and the old ones to be able to migrate the data. The two [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statements are designed to adjust the data accordingly and the last [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement is to remove the old enumerated choices for the status column.
-
-
-In talking to the boss, we find out that the `client_type` column isn't going to be used. So we enter the following in MariaDB:
-
+Finally, restrict the ENUM to new values:
 
 ```
 ALTER TABLE clients
-DROP client_type;
+MODIFY active ENUM('yes','no');
 ```
 
-This deletes `client_type` and its data, but not the whole table, obviously. Nevertheless, it is a permanent and non-reversible action; there won't be a confirmation request when using the mariadb client. This is how it is with all MariaDB DROP statements and clauses. So be sure that you want to delete an element and its data before using a `DROP.` As mentioned earlier, be sure that you have a backup of your tables before doing any structured changes.
+### Dropping Columns
 
+To remove a column and its data (this action is permanent and irreversible without a backup):
 
-#### The Default
+```
+ALTER TABLE clients
+DROP COLUMN client_type;
+```
 
+### Managing Default Values
 
-You may have noticed that the results of the [DESCRIBE](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/describe.md) statements shown before have a heading called 'Default' and just about all of the fields have a default value of NULL. This means that there are no default values and a null value is allowed and will be used if a value isn't specified when a row is created. To be able to specify a default value other than NULL, an [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement can be entered with a `SET` clause. Suppose we're located in Louisiana and we want a default value of 'LA' for state since that's where our clients are usually located. We would enter the following to set the default:
+Set a default value for a column:
 
+If most clients are in 'LA', set it as the default for the state column:
 
 ```
 ALTER TABLE clients
 ALTER state SET DEFAULT 'LA';
 ```
 
-Notice that the second line starts with `ALTER` and not `CHANGE`. If we change our mind about having a default value for state, we would enter the following to reset it back to NULL (or whatever the initial default value would be based on the data type):
+Remove a default value from a column:
 
+This reverts the default to its standard (e.g., NULL if nullable, or determined by data type).
 
 ```
 ALTER TABLE clients
 ALTER state DROP DEFAULT;
 ```
 
-This particular `DROP` doesn't delete data, by the way.
+This `DROP DEFAULT` does not delete existing data in the column.
 
+### Managing Indexes
 
-#### Indexes
+Indexes are separate objects from columns. Modifying an indexed column often requires managing its index.
 
+View existing indexes on a table:
 
-One of the most irritating tasks in making changes to a table for newcomers is dealing with indexes. If they try to rename a column that is indexed by only using an [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement like we used earlier, they will get a frustrating and confusing error message:
-
-
-```
-ALTER TABLE clients
-CHANGE cust_id client_id INT
-PRIMARY KEY;
- 
-ERROR 1068: Multiple primary key defined
-```
-
-If they're typing this column change from memory, they will wear themselves out trying different deviations thinking that they remembered the syntax wrong. What most newcomers to MariaDB don't seem to realize is that the index is separate from the indexed column. To illustrate, let's take a look at the index for clients by using the [SHOW INDEX](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) statement:
-
+The \G displays results in a vertical format, which can be easier to read for wide output.
 
 ```
 SHOW INDEX FROM clients\G
+```
 
+Example output:
+
+```
 *************************** 1. row ***************************
            Table: clients
       Non_unique: 0
@@ -201,80 +229,83 @@ SHOW INDEX FROM clients\G
         Sub_part: NULL
           Packed: NULL
          Comment:
-1 row in set (0.00 sec)
 ```
 
-The text above shows that behind the scenes there is an index associated with `cust_id`. The column `cust_id` is not the index. Incidentally, the G at the end of the [SHOW INDEX](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) statement is to display the results in portrait instead of landscape format. Before the name of an indexed column can be changed, the index related to it must be eliminated. The index is not automatically changed or deleted. Therefore, in the example above, MariaDB thinks that the developer is trying to create another primary key index. So, a `DROP` clause for the index must be entered first and then a `CHANGE` for the column name can be made along with the establishing of a new index:
+Changing an indexed column (e.g., Primary Key):
 
-
-```
-ALTER TABLE clients
-DROP PRIMARY KEY,
-CHANGE cust_id
-client_id INT PRIMARY KEY;
-```
-
-The order of these clauses is necessary. The index must be dropped before the column can be renamed. The syntax here is for a `PRIMARY KEY`. There are other types of indexes, of course. To change a column that has an index type other than a `PRIMARY KEY`. Assuming for a moment that `cust_id` has a `UNIQUE` index, this is what we would enter to change its name:
-
+Attempting to CHANGE a column that is part of a PRIMARY KEY without addressing the key might result in an error like "Multiple primary key defined". The index must be dropped first, then the column changed, and the key re-added.
 
 ```
 ALTER TABLE clients
-DROP UNIQUE cust_id
-CHANGE cust_id
-client_id INT UNIQUE;
+    DROP PRIMARY KEY,
+    CHANGE cust_id client_id INT PRIMARY KEY;
 ```
 
-Although the index type can be changed easily, MariaDB won't permit you to do so when there are duplicate rows of data and when going from an index that allows duplicates (e.g., `INDEX`) to one that doesn't (e.g., `UNIQUE`). If you actually do want to eliminate the duplicates, though, you can add the `IGNORE` flag to force the duplicates to be deleted:
+The order is important: `DROP PRIMARY KEY` first.
 
+Changing a column with another index type (e.g., UNIQUE):
+
+If cust\_id had a UNIQUE index named cust\_id\_unique\_idx (Key\_name from SHOW INDEX):
+
+```
+ALTER TABLE clients
+    DROP INDEX cust_id_unique_idx, -- Use the actual Key_name
+    CHANGE cust_id client_id INT UNIQUE;
+```
+
+If the `Key_name` is the same as the `Column_name` (e.g. for a single column `UNIQUE` key defined on `cust_id` where `cust_id` is also its `Key_name`):
+
+```
+ALTER TABLE clients
+    DROP INDEX cust_id, -- If cust_id is the Key_name
+    CHANGE cust_id client_id INT UNIQUE;
+```
+
+Changing index type and handling duplicates (e.g., INDEX to UNIQUE):
+
+If changing from an index type that allows duplicates (like a plain INDEX) to one that doesn't (UNIQUE), and duplicate data exists, the operation will fail. To force the change and remove duplicates (use with extreme caution):
 
 ```
 ALTER IGNORE TABLE clients
-DROP INDEX cust_id
-CHANGE cust_id
-client_id INT UNIQUE;
+    DROP INDEX cust_id_idx, -- Assuming cust_id_idx is the name of the old INDEX
+    CHANGE cust_id client_id INT UNIQUE;
 ```
 
-In this example, we're not only changing the indexed column's name, but we're also changing the index type from `INDEX` to `UNIQUE`. And, again, the `IGNORE` flag tells MariaDB to ignore any records with duplicate values for `cust_id`.
+The `IGNORE` keyword causes rows with duplicate key values (for the new `UNIQUE` key) to be deleted. Only the first encountered row is kept.
 
+### Renaming and Shifting Tables
 
-#### Renaming & Shifting Tables
+Rename a table:
 
-
-The previous sections covered how to make changes to columns in a table. Sometimes you may want to rename a table. To change the name of the `clients` table to client_addresses we enter this:
-
-
-```
-RENAME TABLE clients 
-TO client_addresses;
-```
-
-The RENAME TABLE statement will also allows a table to be moved to another database just by adding the receiving database's name in front of the new table name, separated by a dot. Of course, you can move a table without renaming it. To move the newly named `client_addresses` table to the database db2, we enter this:
-
+To change the name of clients to client\_addresses:
 
 ```
-RENAME TABLE client_addresses
-TO db2.client_addresses;
+RENAME TABLE clients TO client_addresses;
 ```
 
-Finally, with tables that contain data (excluding [InnoDB](../reference/storage-engines/innodb/README.md) tables), occasionally it's desirable to resort the data within the table. Although the [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause in a [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement can do this on the fly as needed, sometimes developers want to do this somewhat permanently to the data within the table based on a particular column or columns. It can be done by entering the following:
+Move a table to another database (can be combined with renaming):
 
+To move client\_addresses to a database named db2:
+
+```
+RENAME TABLE client_addresses TO db2.client_addresses;
+```
+
+Re-sort data within a table (MyRocks/Aria, not typically InnoDB):
+
+For some storage engines (excluding InnoDB where tables are ordered by the primary key), you can physically reorder rows. This does not usually apply to InnoDB unless the ORDER BY columns form the primary key.
 
 ```
 ALTER TABLE client_addresses
 ORDER BY city, name;
 ```
 
-Notice that we're sorting by the city first and then by the client's name. Now when the developer enters a [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement without an [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause, the results are already ordered by the default of city and then name, at least until more data is added to the table.
+After this, `SELECT * FROM client_addresses` (without an `ORDER BY` clause) might return rows in this new physical order, until further data modifications occur.
 
+### Key Considerations
 
-This is not applicable to [InnoDB](../reference/storage-engines/innodb/README.md) tables, the default, which are ordered according to the clustered index, unless the primary key is defined on the specific columns.
-
-
-#### Summation
-
-
-Good planning is certainly important in developing a MariaDB database. However, as you can see, MariaDB is malleable enough that it can be reshaped without much trouble. Just be sure to make a backup before restructuring a table and be sure to check your work and the data when you're finished. With all of this in mind, you should feel comfortable in creating tables since they don't have to be perfect from the beginning.
-
-
-CC BY-SA / Gnu FDL
-
+* **Backup First:** Always back up tables before making structural alterations, especially on production systems.
+* **Data Integrity:** Be mindful of how changes (e.g., type changes, ENUM modifications, dropping columns) can affect existing data. Test changes in a development environment.
+* **Irreversible Actions:** Operations like `DROP COLUMN` or `DROP TABLE` are generally irreversible without restoring from a backup. There's typically no confirmation prompt.
+* **Indexes:** Understand that indexes are distinct from columns. Modifying indexed columns often requires separate steps to manage the associated indexes.
+* **Performance:** `ALTER TABLE` operations on large tables can be time-consuming and resource-intensive, potentially locking the table and impacting application performance. Plan these operations during maintenance windows if possible.
