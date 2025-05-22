@@ -23,7 +23,7 @@
   * [A MariaDB Primer](mariadb-quickstart-guides/mariadb-usage-guide.md)
   * [Creating & Using Views](mariadb-quickstart-guides/mariadb-views-guide.md)
   * [Adding and Changing Data in MariaDB](mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide.md)
-  * [Useful MariaDB Queries](mariadb-quickstart-guides/mariadb-advanced-sql-guide-1.md)
+  * [Useful MariaDB Queries](<mariadb-quickstart-guides/mariadb-advanced-sql-guide (1).md>)
 * [Server Usage](server-usage/README.md)
   * [Programmatic & Compound Statements](server-usage/programmatic-compound-statements/README.md)
     * [BEGIN END](server-usage/programmatic-compound-statements/begin-end.md)

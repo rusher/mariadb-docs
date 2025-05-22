@@ -1,12 +1,8 @@
-
 # Useful MariaDB Queries
-
 
 This page is intended to be a quick reference of commonly-used and/or useful queries in MariaDB.
 
-
 ## Creating a Table
-
 
 ```
 CREATE TABLE t1 ( a INT );
@@ -19,9 +15,7 @@ CREATE TABLE student_tests (
 
 See [CREATE TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) for more.
 
-
 ## Inserting Records
-
 
 ```
 INSERT INTO t1 VALUES (1), (2), (3);
@@ -41,12 +35,9 @@ INSERT INTO student_tests
 
 See [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) for more.
 
+## Using AUTO\_INCREMENT
 
-## Using AUTO_INCREMENT
-
-
-The AUTO_INCREMENT attribute is used to automatically generate a unique identity for new rows.
-
+The AUTO\_INCREMENT attribute is used to automatically generate a unique identity for new rows.
 
 ```
 CREATE TABLE student_details (
@@ -56,7 +47,6 @@ CREATE TABLE student_details (
 ```
 
 When inserting, the id field can be omitted, and is automatically created.
-
 
 ```
 INSERT INTO student_details (name,date_of_birth) VALUES 
@@ -76,21 +66,17 @@ SELECT * FROM student_details;
 +----+---------+---------------+
 ```
 
-See [AUTO_INCREMENT](../reference/data-types/auto_increment.md) for more.
-
+See [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) for more.
 
 ## Querying from two tables on a common value
-
 
 ```
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
-This kind of query is called a join - see [JOINS](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/README.md) for more.
-
+This kind of query is called a join - see [JOINS](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/) for more.
 
 ## Finding the Maximum Value
-
 
 ```
 SELECT MAX(a) FROM t1;
@@ -101,11 +87,9 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](#finding-the-maximum-value-and-grouping-the-results) below for a more practical example.
-
+See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](<mariadb-advanced-sql-guide (1).md#finding-the-maximum-value-and-grouping-the-results>) below for a more practical example.
 
 ## Finding the Minimum Value
-
 
 ```
 SELECT MIN(a) FROM t1;
@@ -118,9 +102,7 @@ SELECT MIN(a) FROM t1;
 
 See the [MIN() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md) for more.
 
-
 ## Finding the Average Value
-
 
 ```
 SELECT AVG(a) FROM t1;
@@ -133,9 +115,7 @@ SELECT AVG(a) FROM t1;
 
 See the [AVG() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) for more.
 
-
 ## Finding the Maximum Value and Grouping the Results
-
 
 ```
 SELECT name, MAX(score) FROM student_tests GROUP BY name;
@@ -151,9 +131,7 @@ SELECT name, MAX(score) FROM student_tests GROUP BY name;
 
 See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more.
 
-
 ## Ordering Results
-
 
 ```
 SELECT name, test, score FROM student_tests ORDER BY score DESC;
@@ -173,12 +151,9 @@ SELECT name, test, score FROM student_tests ORDER BY score DESC;
 
 See [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
 
-
 ## Finding the Row with the Minimum of a Particular Column
 
-
 In this example, we want to find the lowest test score for any student.
-
 
 ```
 SELECT name,test, score FROM student_tests WHERE score=(SELECT MIN(score) FROM student);
@@ -191,9 +166,7 @@ SELECT name,test, score FROM student_tests WHERE score=(SELECT MIN(score) FROM s
 
 ## Finding Rows with the Maximum Value of a Column by Group
 
-
 This example returns the best test results of each student:
-
 
 ```
 SELECT name, test, score FROM student_tests st1 WHERE score = (
@@ -211,9 +184,7 @@ SELECT name, test, score FROM student_tests st1 WHERE score = (
 
 ## Calculating Age
 
-
 The [TIMESTAMPDIFF](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
-
 
 ```
 SELECT CURDATE() AS today;
@@ -237,12 +208,9 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 
 See [TIMESTAMPDIFF()](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) for more.
 
-
 ## Using User-defined Variables
 
-
 This example sets a [user-defined variable](../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
-
 
 ```
 SELECT @avg_score:= AVG(score) FROM student_tests;
@@ -266,7 +234,6 @@ SELECT * FROM student_tests WHERE score > @avg_score;
 
 User-defined variables can also be used to add an incremental counter to a resultset:
 
-
 ```
 SET @count = 0;
 
@@ -283,12 +250,9 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 
 See [User-defined Variables](../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) for more.
 
-
 ## View Tables in Order of Size
 
-
 Returns a list of all tables in the database, ordered by size:
-
 
 ```
 SELECT table_schema as `DB`, table_name AS `Table`, 
@@ -310,9 +274,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
 
 ## Removing Duplicates
 
-
 This example assumes there's a unique ID, but that all other fields are identical. In the example below, there are 4 records, 3 of which are duplicates, so two of the three duplicates need to be removed. The intermediate SELECT is not necessary, but demonstrates what is being returned.
-
 
 ```
 CREATE TABLE t (id INT, f1 VARCHAR(2));
@@ -345,6 +307,4 @@ SELECT * FROM t;
 +------+------
 ```
 
-
 CC BY-SA / Gnu FDL
-
