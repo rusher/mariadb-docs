@@ -28,7 +28,3 @@ MariaDB developers and community members can be found on these chat channels:
 
 * The [maria-captains](https://launchpad.net/~maria-captains) team is for trusted developers who merge code into official trees.
 
-## Old Mailing Lists
-
-* [databases/mariadb -- should we have several versions?](https://lists.freebsd.org/pipermail/freebsd-ports/2012-March/073698.html) - 7th March 2012 - Mark Felder - FreeBSD related on how to deal with the multiple stable/GA releases of MariaDB
-* [MySQL's future in Debian and Ubuntu](https://lists.ubuntu.com/archives/ubuntu-devel-discuss/2012-February/013242.html) - 7th February 2012 - Clint Byrum - on if MariaDB should be the default provides for MySQL in Debian and Ubuntu
