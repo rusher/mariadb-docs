@@ -5,10 +5,7 @@
 * [About MariaDB Documentation](README.md)
   * [Contributing Documentation](about/about-mariadb-documentation/contributing-documentation.md)
   * [Documentation Style Guide](about/about-mariadb-documentation/documentation-style-guide.md)
-* [About MariaDB](about/about-mariadb/README.md)
-  * [MariaDB Server](about/about-mariadb/mariadb-server.md)
-  * [MariaDB plc](about/about-mariadb/mariadb-plc.md)
-  * [MariaDB Foundation](about/about-mariadb/mariadb-foundation.md)
+* [About MariaDB](about/about-mariadb.md)
 * [Contact Us](about/contact-us.md)
 
 ## Community
