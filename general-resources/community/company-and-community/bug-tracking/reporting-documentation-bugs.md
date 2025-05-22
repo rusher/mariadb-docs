@@ -1,6 +1,6 @@
 # Reporting Documentation Bugs
 
-## Bug Report
+## Bug Reports
 
 If you find issues in the documentation, please report them:
 
@@ -23,7 +23,7 @@ This is a super quick way to provide feedback or report issues in the documentat
 
 ### MariaDB Community Slack
 
-Join the #documentation channel in MariaDB Community Slack. This allows for more detailed feedback or reports, and naturally provides two-way communication.
+Join the `#documentation` channel in [MariaDB Community Slack](https://r.mariadb.com/join-community-slack). This allows for more detailed feedback or reports, and naturally provides two-way communication.
 
 <div align="left"><figure><img src="../../../.gitbook/assets/image (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
