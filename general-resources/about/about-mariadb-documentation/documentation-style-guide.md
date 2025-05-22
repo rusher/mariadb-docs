@@ -1,7 +1,3 @@
----
-description: Fill in from Confluence
----
-
 # Documentation Style Guide
 
 We adhere to the [Google developer documentation style guide](https://developers.google.com/style/). Here are some links to valuable resources from that style guide:
@@ -9,7 +5,7 @@ We adhere to the [Google developer documentation style guide](https://developers
 * [Word list](https://developers.google.com/style/word-list) – an alphabetically ordered list that allows you to quickly find words to use, or not to use, and recommendations of words and terms to use.
 * [Accessibility](https://developers.google.com/style/accessibility) – write inclusive documentation for a global audience.
 * [Timeless documentation](https://developers.google.com/style/timeless-documentation) – avoid words and terms like _currently_, _existing_, _in the future_, _now_, or _soon_.
-* [Capitalization](https://developers.google.com/style/capitalization) – when to use the Shift key, and how to format [headings and titles](https://developers.google.com/style/headings). We use sentence case for headings.
+* [Capitalization](https://developers.google.com/style/capitalization) – when to use the Shift key, and how to format [headings and titles](https://developers.google.com/style/headings). We use sentence case for headings, except for page titles which are all-captialized.
 * [Abbreviations](https://developers.google.com/style/abbreviations) – how to use acronyms and initialisms.
 * [Punctuation](https://developers.google.com/style/colons) – how to properly use colons, commas, dashes, etc.
 * [Formatting and organization](https://developers.google.com/style/dates-times) – how to write dates and times, headings and titles, when to use [lists](https://developers.google.com/style/lists) or rather [tables](https://developers.google.com/style/tables).
