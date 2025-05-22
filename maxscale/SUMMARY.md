@@ -74,7 +74,7 @@
     * [mariadb-maxscale-2501-maxscale-2501-throttle](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-throttle.md)
     * [mariadb-maxscale-2501-maxscale-2501-top-filter](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-top-filter.md)
     * [mariadb-maxscale-2501-maxscale-2501-transaction-performance-monitoring-filter](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-transaction-performance-monitoring-filter.md)
-    * [mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md)
+    * [MaxScale 25.01 Workload Capture and Replay](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md)
   * [mariadb-maxscale-25-01-getting-started](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/README.md)
     * [mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)
     * [mariadb-maxscale-2501-maxscale-2501-installing-mariadb-maxscale-using-a-tarball](other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-installing-mariadb-maxscale-using-a-tarball.md)
