@@ -24,7 +24,5 @@ MariaDB developers and community members can be found on these chat channels:
 * The [commits](https://mariadb.com/kb/en/lists.mariadb.org/postorius/lists/commits.lists.mariadb.org) mailing list is for commit messages and patch. The archive can be found [here](https://lists.mariadb.org/hyperkitty/list/commits@lists.mariadb.org/).
 * The [packagers](https://lists.mariadb.org/postorius/lists/packagers.lists.mariadb.org) mailing list for those packaging MariaDB in distros (private list).
 
-## Old mailing Lists
 
-* The [maria-captains](https://launchpad.net/~maria-captains) team is for trusted developers who merge code into official trees.
 
