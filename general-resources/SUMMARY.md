@@ -38,6 +38,7 @@
   * [Donate to the Foundation](community/contributing-participating/donate-to-the-foundation.md)
   * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)
   * [Project Suggestions](community/contributing-participating/project-suggestions.md)
+  * [MariaDB Public FTP Server](community/contributing-participating/mariadb-public-ftp-server.md)
   * [Sponsoring the MariaDB Project](community/contributing-participating/sponsoring-the-mariadb-project.md)
   * [Web Hosting Providers Offering MariaDB](community/contributing-participating/web-hosting-providers-offering-mariadb.md)
   * [Google Season of Docs](community/contributing-participating/google-season-of-docs/README.md)
