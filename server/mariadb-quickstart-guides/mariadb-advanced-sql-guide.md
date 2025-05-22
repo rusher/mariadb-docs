@@ -1,71 +1,85 @@
+# Essential Queries Guide
 
-# Useful MariaDB Queries
+This quick reference outlines commonly-used and useful queries in MariaDB.
 
+### Creating a Table
 
-This page is intended to be a quick reference of commonly-used and/or useful queries in MariaDB.
-
-
-## Creating a Table
-
+To create new tables:
 
 ```
 CREATE TABLE t1 ( a INT );
+```
+
+```
 CREATE TABLE t2 ( b INT );
+```
+
+```
 CREATE TABLE student_tests (
- name CHAR(10), test CHAR(10), 
+ name CHAR(10), test CHAR(10),
  score TINYINT, test_date DATE
 );
 ```
 
-See [CREATE TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) for more.
+For more details, see the official [CREATE TABLE](https://www.google.com/search?q=link_to_CREATE_TABLE_documentation) documentation.
 
+### Inserting Records
 
-## Inserting Records
-
+To add data into your tables:
 
 ```
 INSERT INTO t1 VALUES (1), (2), (3);
-INSERT INTO t2 VALUES (2), (4);
+```
 
-INSERT INTO student_tests 
+```
+INSERT INTO t2 VALUES (2), (4);
+```
+
+```
+INSERT INTO student_tests
  (name, test, score, test_date) VALUES
- ('Chun', 'SQL', 75, '2012-11-05'), 
+ ('Chun', 'SQL', 75, '2012-11-05'),
  ('Chun', 'Tuning', 73, '2013-06-14'),
- ('Esben', 'SQL', 43, '2014-02-11'), 
- ('Esben', 'Tuning', 31, '2014-02-09'), 
+ ('Esben', 'SQL', 43, '2014-02-11'),
+ ('Esben', 'Tuning', 31, '2014-02-09'),
  ('Kaolin', 'SQL', 56, '2014-01-01'),
- ('Kaolin', 'Tuning', 88, '2013-12-29'), 
- ('Tatiana', 'SQL', 87, '2012-04-28'), 
+ ('Kaolin', 'Tuning', 88, '2013-12-29'),
+ ('Tatiana', 'SQL', 87, '2012-04-28'),
  ('Tatiana', 'Tuning', 83, '2013-09-30');
 ```
 
-See [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) for more.
+For more information, see the official [INSERT](https://www.google.com/search?q=link_to_INSERT_documentation) documentation.
 
+### Using AUTO\_INCREMENT
 
-## Using AUTO_INCREMENT
+The `AUTO_INCREMENT` attribute automatically generates a unique identity for new rows.
 
-
-The AUTO_INCREMENT attribute is used to automatically generate a unique identity for new rows.
-
+Create a table with an `AUTO_INCREMENT` column:
 
 ```
 CREATE TABLE student_details (
- id INT NOT NULL AUTO_INCREMENT, name CHAR(10), 
+ id INT NOT NULL AUTO_INCREMENT, name CHAR(10),
  date_of_birth DATE, PRIMARY KEY (id)
 );
 ```
 
-When inserting, the id field can be omitted, and is automatically created.
-
+When inserting, omit the `id` field; it will be automatically generated:
 
 ```
-INSERT INTO student_details (name,date_of_birth) VALUES 
- ('Chun', '1993-12-31'), 
+INSERT INTO student_details (name,date_of_birth) VALUES
+ ('Chun', '1993-12-31'),
  ('Esben','1946-01-01'),
  ('Kaolin','1996-07-16'),
  ('Tatiana', '1988-04-13');
+```
 
+Verify the inserted records:
+
+```
 SELECT * FROM student_details;
+```
+
+```
 +----+---------+---------------+
 | id | name    | date_of_birth |
 +----+---------+---------------+
@@ -76,24 +90,27 @@ SELECT * FROM student_details;
 +----+---------+---------------+
 ```
 
-See [AUTO_INCREMENT](../reference/data-types/auto_increment.md) for more.
+For more details, see the [AUTO\_INCREMENT](https://www.google.com/search?q=link_to_AUTO_INCREMENT_documentation) documentation.
 
+### Querying from two tables on a common value (JOIN)
 
-## Querying from two tables on a common value
-
+To combine rows from two tables based on a related column:
 
 ```
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
-This kind of query is called a join - see [JOINS](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/README.md) for more.
+This type of query is a join. For more details, consult the documentation on [JOINS](https://www.google.com/search?q=link_to_JOINS_documentation).
 
+### Finding the Maximum Value
 
-## Finding the Maximum Value
-
+To find the maximum value in a column:
 
 ```
 SELECT MAX(a) FROM t1;
+```
+
+```
 +--------+
 | MAX(a) |
 +--------+
@@ -101,14 +118,17 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](#finding-the-maximum-value-and-grouping-the-results) below for a more practical example.
+See the [MAX() function](https://www.google.com/search?q=link_to_MAX_function_documentation) documentation. For a grouped example, refer to _Finding the Maximum Value and Grouping the Results_ below.
 
+### Finding the Minimum Value
 
-## Finding the Minimum Value
-
+To find the minimum value in a column:
 
 ```
 SELECT MIN(a) FROM t1;
+```
+
+```
 +--------+
 | MIN(a) |
 +--------+
@@ -116,14 +136,17 @@ SELECT MIN(a) FROM t1;
 +--------+
 ```
 
-See the [MIN() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md) for more.
+See the [MIN() function](https://www.google.com/search?q=link_to_MIN_function_documentation) documentation.
 
+### Finding the Average Value
 
-## Finding the Average Value
-
+To calculate the average value of a column:
 
 ```
 SELECT AVG(a) FROM t1;
+```
+
+```
 +--------+
 | AVG(a) |
 +--------+
@@ -131,14 +154,17 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) for more.
+See the [AVG() function](https://www.google.com/search?q=link_to_AVG_function_documentation) documentation.
 
+### Finding the Maximum Value and Grouping the Results
 
-## Finding the Maximum Value and Grouping the Results
-
+To find the maximum value within groups:
 
 ```
 SELECT name, MAX(score) FROM student_tests GROUP BY name;
+```
+
+```
 +---------+------------+
 | name    | MAX(score) |
 +---------+------------+
@@ -149,14 +175,17 @@ SELECT name, MAX(score) FROM student_tests GROUP BY name;
 +---------+------------+
 ```
 
-See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more.
+Further details are available in the MAX() function documentation.
 
+### Ordering Results
 
-## Ordering Results
-
+To sort your query results (e.g., in descending order):
 
 ```
-SELECT name, test, score FROM student_tests ORDER BY score DESC;
+SELECT name, test, score FROM student_tests ORDER BY score DESC; -- Use ASC for ascending order
+```
+
+```
 +---------+--------+-------+
 | name    | test   | score |
 +---------+--------+-------+
@@ -171,17 +200,17 @@ SELECT name, test, score FROM student_tests ORDER BY score DESC;
 +---------+--------+-------+
 ```
 
-See [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
+For more options, see the [ORDER BY](https://www.google.com/search?q=link_to_ORDER_BY_documentation) documentation.
 
+### Finding the Row with the Minimum of a Particular Column
 
-## Finding the Row with the Minimum of a Particular Column
-
-
-In this example, we want to find the lowest test score for any student.
-
+To find the entire row containing the minimum value of a specific column across all records:
 
 ```
-SELECT name,test, score FROM student_tests WHERE score=(SELECT MIN(score) FROM student);
+SELECT name, test, score FROM student_tests WHERE score = (SELECT MIN(score) FROM student_tests);
+```
+
+```
 +-------+--------+-------+
 | name  | test   | score |
 +-------+--------+-------+
@@ -189,16 +218,16 @@ SELECT name,test, score FROM student_tests WHERE score=(SELECT MIN(score) FROM s
 +-------+--------+-------+
 ```
 
-## Finding Rows with the Maximum Value of a Column by Group
+### Finding Rows with the Maximum Value of a Column by Group
 
-
-This example returns the best test results of each student:
-
+To retrieve the full record for the maximum value within each group (e.g., highest score per student):
 
 ```
-SELECT name, test, score FROM student_tests st1 WHERE score = (
-  SELECT MAX(score) FROM student st2 WHERE st1.name = st2.name
-); 
+SELECT name, test, score FROM student_tests st1
+WHERE score = (SELECT MAX(st2.score) FROM student_tests st2 WHERE st1.name = st2.name);
+```
+
+```
 +---------+--------+-------+
 | name    | test   | score |
 +---------+--------+-------+
@@ -209,22 +238,32 @@ SELECT name, test, score FROM student_tests st1 WHERE score = (
 +---------+--------+-------+
 ```
 
-## Calculating Age
+### Calculating Age
 
+Use the `TIMESTAMPDIFF` function to calculate age from a birth date.
 
-The [TIMESTAMPDIFF](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
-
+To see the current date (optional, for reference):
 
 ```
 SELECT CURDATE() AS today;
+```
+
+```
 +------------+
 | today      |
 +------------+
-| 2014-02-17 |
+| 2014-02-17 | -- Example output; actual date will vary
 +------------+
+```
 
-SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS age 
+To calculate age as of a specific date (e.g., '2014-08-02'):
+
+```
+SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, '2014-08-02') AS age
   FROM student_details;
+```
+
+```
 +---------+---------------+------+
 | name    | date_of_birth | age  |
 +---------+---------------+------+
@@ -235,24 +274,33 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 +---------+---------------+------+
 ```
 
-See [TIMESTAMPDIFF()](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) for more.
+To calculate current age, replace the specific date string (e.g., '2014-08-02') with CURDATE().
 
+See the TIMESTAMPDIFF() documentation for more.
 
-## Using User-defined Variables
+### Using User-defined Variables
 
+[User-defined variables](https://www.google.com/search?q=link_to_User_defined_V%3C28%3Eariables_documentation) can store values for use in subsequent queries within the same session.
 
-This example sets a [user-defined variable](../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
-
+Example: Set a variable for the average score and use it to filter results.
 
 ```
-SELECT @avg_score:= AVG(score) FROM student_tests;
+SELECT @avg_score := AVG(score) FROM student_tests;
+```
+
+```
 +-------------------------+
 | @avg_score:= AVG(score) |
 +-------------------------+
 |            67.000000000 |
 +-------------------------+
+```
 
+```
 SELECT * FROM student_tests WHERE score > @avg_score;
+```
+
+```
 +---------+--------+-------+------------+
 | name    | test   | score | test_date  |
 +---------+--------+-------+------------+
@@ -264,13 +312,17 @@ SELECT * FROM student_tests WHERE score > @avg_score;
 +---------+--------+-------+------------+
 ```
 
-User-defined variables can also be used to add an incremental counter to a resultset:
-
+Example: Add an incremental counter to a result set.
 
 ```
 SET @count = 0;
+```
 
+```
 SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details;
+```
+
+```
 +---------+---------+---------------+
 | counter | name    | date_of_birth |
 +---------+---------+---------------+
@@ -281,70 +333,75 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 +---------+---------+---------------+
 ```
 
-See [User-defined Variables](../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) for more.
+See [User-defined Variables](https://www.google.com/search?q=link_to_User_defined_Variables_documentation) for more.
 
+### View Tables in Order of Size
 
-## View Tables in Order of Size
-
-
-Returns a list of all tables in the database, ordered by size:
-
+To list all tables in the current database, ordered by their size (data + index) in megabytes:
 
 ```
-SELECT table_schema as `DB`, table_name AS `Table`, 
-  ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)` 
-  FROM information_schema.TABLES 
+SELECT table_schema as `DB`, table_name AS `Table`,
+  ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)`
+  FROM information_schema.TABLES
+  WHERE table_schema = DATABASE() -- This clause restricts results to the current database
   ORDER BY (data_length + index_length) DESC;
-
-+--------------------+---------------------------------------+-----------+
-| DB                 | Table                                 | Size (MB) |
-+--------------------+---------------------------------------+-----------+
-| wordpress          | wp_simple_history_contexts            |      7.05 |
-| wordpress          | wp_posts                              |      6.59 |
-| wordpress          | wp_simple_history                     |      3.05 |
-| wordpress          | wp_comments                           |      2.73 |
-| wordpress          | wp_commentmeta                        |      2.47 |
-| wordpress          | wp_simple_login_log                   |      2.03 |
-...
 ```
 
-## Removing Duplicates
+```
++--------------------+---------------------------------------+-----------+
+| DB                 | Table                                 | Size (MB) | -- Example Output
++--------------------+---------------------------------------+-----------+
+| your_db_name       | some_large_table                      |      7.05 |
+| your_db_name       | another_table                         |      6.59 |
+...
++--------------------+---------------------------------------+-----------+
+```
 
+### Removing Duplicates
 
-This example assumes there's a unique ID, but that all other fields are identical. In the example below, there are 4 records, 3 of which are duplicates, so two of the three duplicates need to be removed. The intermediate SELECT is not necessary, but demonstrates what is being returned.
+To remove duplicate rows based on specific column values, while keeping one instance (e.g., the instance with the highest `id`).
 
+This example assumes `id` is a unique primary key and duplicates are identified by the values in column `f1`. It keeps the row with the maximum `id` for each distinct `f1` value.
+
+Setup sample table and data:
 
 ```
 CREATE TABLE t (id INT, f1 VARCHAR(2));
+```
 
+```
 INSERT INTO t VALUES (1,'a'), (2,'a'), (3,'b'), (4,'a');
+```
 
-SELECT * FROM t t1, t t2 WHERE t1.f1=t2.f1 AND t1.id<>t2.id AND t1.id=(
-  SELECT MAX(id) FROM t tab WHERE tab.f1=t1.f1
-);
-+------+------+------+------+
-| id   | f1   | id   | f1   |
-+------+------+------+------+
-|    4 | a    |    1 | a    |
-|    4 | a    |    2 | a    |
-+------+------+------+------+
+To delete duplicate rows, keeping the one with the highest `id` for each group of `f1` values:
 
-DELETE FROM t WHERE id IN (
-  SELECT t2.id FROM t t1, t t2 WHERE t1.f1=t2.f1 AND t1.id<>t2.id AND t1.id=(
-    SELECT MAX(id) FROM t tab WHERE tab.f1=t1.f1
-  )
-);
-Query OK, 2 rows affected (0.120 sec)
+```
+DELETE t_del FROM t AS t_del
+INNER JOIN (
+    SELECT f1, MAX(id) AS max_id
+    FROM t
+    GROUP BY f1
+    HAVING COUNT(*) > 1 -- Identify groups with actual duplicates
+) AS t_keep ON t_del.f1 = t_keep.f1 AND t_del.id < t_keep.max_id;
+```
 
+This query targets rows for deletion (`t_del`) where their `f1` value matches an `f1` in a subquery (`t_keep`) that has duplicates, and their `id` is less than the maximum `id` found for that `f1` group.
+
+Verify results after deletion:
+
+```
 SELECT * FROM t;
+```
+
+```
 +------+------+
 | id   | f1   |
 +------+------+
 |    3 | b    |
 |    4 | a    |
-+------+------
++------+------+
 ```
 
+***
 
 CC BY-SA / Gnu FDL
-
