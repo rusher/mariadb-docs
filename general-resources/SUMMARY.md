@@ -11,10 +11,6 @@
 ## Community
 
 * [MariaDB Community](community/company-and-community/README.md)
-  * [News & Information](community/company-and-community/news-and-information/README.md)
-    * [News Articles about MariaDB](community/company-and-community/news-and-information/news-and-articles-related-to-mariadb.md)
-    * [Web Log Posts on MariaDB](community/company-and-community/news-and-information/web-log-posts-on-mariadb.md)
-    * [Web Logs on MariaDB](community/company-and-community/news-and-information/web-logs-on-mariadb.md)
   * [Bug Tracking](community/company-and-community/bug-tracking/README.md)
     * [Building MariaDB Server for Debugging](community/company-and-community/bug-tracking/building-mariadb-server-for-debugging.md)
     * [Extracting Entries from the Binary Log](community/company-and-community/bug-tracking/extracting-entries-from-the-binary-log.md)
@@ -81,7 +77,6 @@
 * [Whitepapers](whitepapers.md)
 * [Tutorials](external-tutorials.md)
 * [Quickstart Guides](quickstart-guides.md)
-* [Webinars](webinars.md)
 * [Customer Stories](customer-stories.md)
 * [Success Stories](mariadb-success-stories.md)
 * [Events](events.md)

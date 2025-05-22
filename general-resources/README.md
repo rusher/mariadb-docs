@@ -6,5 +6,5 @@ The documentation for MariaDB products is
 * using Markdown format,
 * stored in Git.
 
-It is maintained by a team of technical writers from MariaDB plc and the MariaDB Foundation.
+It is maintained by a team of technical writers from [MariaDB plc](https://mariadb.com/) and the [MariaDB Foundation](https://mariadb.org/).
 
