@@ -1,3 +1,7 @@
+---
+description: Discuss with Max
+---
+
 # Contributing Documentation
 
 Instructions for contributing to documentation.
