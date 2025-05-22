@@ -6,7 +6,7 @@ This year we are again participating in the [Google Summer of Code](https://summ
 
 ## Where to Start
 
-Please join us on [Zulip](../../../../kb/en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You should also subscribe to the [developers mailing list](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org) (this is the main list where we discuss development - there are also [other mailing lists](../../company-and-community/news-and-information/mailing-lists.md)).
+Please join us on [Zulip](../../../../kb/en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You should also subscribe to the [developers mailing list](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org) (this is the main list where we discuss development - there are also [other mailing lists](broken-reference)).
 
 To improve your chances of being accepted, it is a good idea to submit a pull request with a bug fix to the server.
 

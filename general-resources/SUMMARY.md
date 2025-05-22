@@ -12,7 +12,6 @@
 
 * [MariaDB Community](community/company-and-community/README.md)
   * [News & Information](community/company-and-community/news-and-information/README.md)
-    * [Mailing Lists](community/company-and-community/news-and-information/mailing-lists.md)
     * [News Articles about MariaDB](community/company-and-community/news-and-information/news-and-articles-related-to-mariadb.md)
     * [Web Log Posts on MariaDB](community/company-and-community/news-and-information/web-log-posts-on-mariadb.md)
     * [Web Logs on MariaDB](community/company-and-community/news-and-information/web-logs-on-mariadb.md)
