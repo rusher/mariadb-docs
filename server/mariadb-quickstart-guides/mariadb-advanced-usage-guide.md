@@ -1,62 +1,70 @@
+# Basics Guide
 
-# MariaDB Basics
+The quickstart guide walks you through connecting to a MariaDB server, creating your initial database and table structures, and performing fundamental data operations. It's designed for new users or anyone needing a quick refresher on essential MariaDB commands and basic syntax.
 
+### Connecting to MariaDB Server
 
-#### Connecting to MariaDB
+To interact with the MariaDB server, use a client program. The default command-line client is `mariadb`.
 
-
-MariaDB is a database system, a database server. To interface with the MariaDB server, you can use a client program, or you can write a program or script with one of the popular programming languages (e.g., PHP) using an API (Application Programming Interface) to interface with the MariaDB server. For the purposes of this article, we will focus on using the default client that comes with MariaDB called `mariadb`. With this client, you can either enter queries from the command-line, or you can switch to a terminal, that is to say, monitor mode. To start, we'll use the latter.
-
-
-From the Linux command-line, you would enter the following to log in as the root user and to enter monitor mode:
-
+Connect to MariaDB in monitor mode from the Linux command-line:
 
 ```
 mariadb -u root -p -h localhost
 ```
 
-The `-u` option is for specifying the user name. You would replace `root` here if you want to use a different user name. This is the MariaDB user name, not the Linux user name. The password for the MariaDB user `root` will probably be different from the Linux user `root`. Incidentally, it's not a good security practice to use the `root` user unless you have a specific administrative task to perform for which only `root` has the needed privileges.
+Common options:
 
+* `-u username`: Specifies the MariaDB user (e.g., `root`). This is not the OS user.
+* `-p`: Prompts for the password. If no password is set, press \[Enter].
+* `-h hostname_or_IP`: Specifies the server's hostname or IP address if the client is on a different machine than the server. Often not needed if connecting locally.
 
-The `-p` option above instructs the `mariadb` client to prompt you for the password. If the password for the `root` user hasn't been set yet, then the password is blank and you would just hit [Enter] when prompted. The `-h` option is for specifying the host name or the IP address of the server. This would be necessary if the client is running on a different machine than the server. If you've secure-shelled into the server machine, you probably won't need to use the host option. In fact, if you're logged into Linux as `root`, you won't need the user option—the `-p` is all you'll need. Once you've entered the line above along with the password when prompted, you will be logged into MariaDB through the client. To exit, type quit or exit and press [Enter].
+If logged into Linux as `root`, you might only need:
 
+```
+mariadb -p
+```
 
-#### Creating a Structure
+To exit the `mariadb` monitor, type `quit` or `exit` and press \[Enter].
 
+### Creating a Database Structure
 
-In order to be able to add and to manipulate data, you first have to create a database structure. Creating a database is simple. You would enter something like the following from within the [mariadb client](../clients-and-utilities/mariadb-client/mariadb-command-line-client.md):
-
+First, create and select a database.
 
 ```
 CREATE DATABASE bookstore;
-
 USE bookstore;
 ```
 
-This very minimal, first SQL statement will create a sub-directory called bookstore on the Linux filesystem in the directory which holds your MariaDB data files. It won't create any data, obviously. It'll just set up a place to add tables, which will in turn hold data. The second SQL statement above will set this new database as the default database. It will remain your default until you change it to a different one or until you log out of MariaDB.
+This creates a database named `bookstore` and sets it as the default for subsequent operations.
 
-
-The next step is to begin creating tables. This is only a little more complicated. To create a simple table that will hold basic data on books, we could enter something like the following:
-
+Next, create tables to hold data.
 
 ```
 CREATE TABLE books (
-isbn CHAR(20) PRIMARY KEY, 
-title VARCHAR(50),
-author_id INT,
-publisher_id INT,
-year_pub CHAR(4),
-description TEXT );
+    isbn CHAR(20) PRIMARY KEY,
+    title VARCHAR(50),
+    author_id INT,
+    publisher_id INT,
+    year_pub CHAR(4),
+    description TEXT
+);
 ```
 
-This SQL statement creates the table books with six fields, or rather columns. The first column (isbn) is an identification number for each row—this name relates to the unique identifier used in the book publishing business. It has a fixed-width character type of 20 characters. It will be the primary key column on which data will be indexed. The column data type for the book title is a variable width character column of fifty characters at most. The third and fourth columns will be used for identification numbers for the author and the publisher. They are integer data types. The fifth column is used for the publication year of each book. The last column is for entering a description of each book. It's a [TEXT](../reference/data-types/string-data-types/text.md) data type, which means that it's a variable width column and it can hold up to 65535 bytes of data for each row. There are several other data types that may be used for columns, but this gives you a good sampling.
+This statement creates a `books` table with six columns:
 
+* `isbn`: `CHAR(20)`, the primary key for unique identification.
+* `title`: `VARCHAR(50)`, a variable-width string for the book title.
+* `author_id`, `publisher_id`: `INT`, for storing numeric IDs.
+* `year_pub`: `CHAR(4)`, a fixed-width string for the publication year.
+* `description`: `TEXT`, for longer descriptive text (up to 65,535 bytes).
 
-To see how the table we created looks, enter the following SQL statement:
-
+To view the structure of a created table:
 
 ```
 DESCRIBE books;
+```
+
+```
 +--------------+-------------+------+-----+---------+-------+
 | Field        | Type        | Null | Key | Default | Extra |
 +--------------+-------------+------+-----+---------+-------+
@@ -69,111 +77,91 @@ DESCRIBE books;
 +--------------+-------------+------+-----+---------+-------+
 ```
 
-To change the settings of a table, you can use the [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) statement, followed by the table name. Be careful with this statement since it's not reversible.
+To modify an existing table, use the `ALTER TABLE` statement (see [ALTER TABLE documentation](https://www.google.com/search?q=link_to_ALTER_TABLE_documentation)). To delete a table and all its data (irreversibly), use `DROP TABLE table_name;` (see [DROP TABLE documentation](https://www.google.com/search?q=link_to_DROP_TABLE_documentati%3C43%3Eon)).
 
-
-The next table we'll create for our examples is the authors table to hold author information. This table will save us from having to enter the author's name and other related data for each book written by each author. It also helps to ensure consistency of data: there's less chance of inadvertent spelling deviations.
-
+Example of another table, `authors`, using `AUTO_INCREMENT` for the primary key:
 
 ```
-CREATE TABLE authors
-(author_id INT AUTO_INCREMENT PRIMARY KEY,
-name_last VARCHAR(50),
-name_first VARCHAR(50),
-country VARCHAR(50) );
+CREATE TABLE authors (
+    author_id INT AUTO_INCREMENT PRIMARY KEY,
+    name_last VARCHAR(50),
+    name_first VARCHAR(50),
+    country VARCHAR(50)
+);
 ```
 
-We'll join this table to the books table as needed. For instance, we would use it when we want a list of books along with their corresponding authors' names. For a real bookstore's database, both of these tables would probably have more columns. There would also be several more tables. For the examples that follow, these two tables as they are will be enough.
+The `author_id` will automatically generate a unique number for each new author.
 
+### SQL Syntax Notes
 
-#### Minor Items
+* SQL statements typically end with a semicolon (`;`) or `\G`.
+* Statements can span multiple lines; execution occurs after the terminating character and \[Enter].
+* To cancel a partially typed statement in the `mariadb` client, enter `\c` and press \[Enter].
+* SQL reserved words (e.g., `CREATE`, `SELECT`) are often written in uppercase for readability but are case-insensitive in MariaDB.
+* Database and table names are case-sensitive on Linux systems (as they map to directories and files) but generally not on Windows. Column names are case-insensitive.
+* Using lowercase for table and column names is a common convention.
 
+### Entering Data
 
-Before moving on to the next step of adding data to the tables, let me point out a few minor items that I've omitted mentioning. SQL statements end with a semi-colon (or a \G). You can spread an SQL statement over multiple lines. However, it won't be passed to the server by the client until you terminate it with a semi-colon and hit [Enter]. To cancel an SQL statement once you've started typing it, enter `\c` and press [Enter].
-
-
-As a basic convention, reserved words are printed in all capital letters. This isn't necessary, though. MariaDB is case-insensitive with regards to reserved words. Database and table names, however, are case-sensitive on Linux. This is because they reference the related directories and files on the filesystem. Column names aren't case sensitive since they're not affected by the filesystem, per se. As another convention, we use lower-case letters for structural names (e.g., table names). It's a matter of preference for deciding on names.
-
-
-#### Entering Data
-
-
-The primary method for entering data into a table is to use the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. As an example, let's enter some information about an author into the authors table. We'll do that like so:
-
+Use the `INSERT` statement (see [INSERT documentation](https://www.google.com/search?q=link_to_INSERT_documentation)) to add new rows to a table.
 
 ```
-INSERT INTO authors
-(name_last, name_first, country)
+INSERT INTO authors (name_last, name_first, country)
 VALUES('Kafka', 'Franz', 'Czech Republic');
 ```
 
-This will add the name and country of the author Franz Kafka to the authors table. We don't need to give a value for the author_id since that column was created with the [AUTO_INCREMENT](../reference/data-types/auto_increment.md) option. MariaDB will automatically assign an identification number. You can manually assign one, especially if you want to start the count at a higher number than 1 (e.g., 1000). Since we are not providing data for all of the columns in the table, we have to list the columns for which we are giving data and in the order that the data is given in the set following the VALUES keyword. This means that we could give the data in a different order.
+Since `author_id` in the `authors` table is `AUTO_INCREMENT` (see [AUTO\_INCREMENT documentation](https://www.google.com/search?q=link_to_AUTO_INCREMENT_documentation)), its value is assigned automatically. If not all columns are being supplied with data, the column names must be listed, followed by their corresponding values in the `VALUES` clause.
 
-
-For an actual database, we would probably enter data for many authors. We'll assume that we've done that and move on to entering data for some books. Below is an entry for one of Kafka's books:
-
+To insert data for a book, referencing `author_id` `1` (assuming Kafka's `author_id` became `1`):
 
 ```
-INSERT INTO books
-(title, author_id, isbn, year_pub)
+INSERT INTO books (title, author_id, isbn, year_pub)
 VALUES('The Castle', '1', '0805211063', '1998');
 ```
 
-This adds a record for Kafka's book, *The Castle*. Notice that we mixed up the order of the columns, but it still works because both sets agree. We indicate that the author is Kafka by giving a value of 1 for the author_id. This is the value that was assigned by MariaDB when we entered the row for Kafka earlier. Let's enter a few more books for Kafka, but by a different method:
-
+Multiple rows can be inserted with a single `INSERT` statement:
 
 ```
-INSERT INTO books
-(title, author_id, isbn, year_pub)
+INSERT INTO books (title, author_id, isbn, year_pub)
 VALUES('The Trial', '1', '0805210407', '1995'),
-('The Metamorphosis', '1', '0553213695', '1995'),
-('America', '1', '0805210644', '1995');
+      ('The Metamorphosis', '1', '0553213695', '1995'),
+      ('America', '1', '0805210644', '1995');
 ```
 
-In this example, we've added three books in one statement. This allows us to give the list of column names once. We also give the keyword `VALUES` only once, followed by a separate set of values for each book, each contained in parentheses and separated by commas. This cuts down on typing and speeds up the process. Either method is fine and both have their advantages. To be able to continue with our examples, let's assume that data on thousands of books has been entered. With that behind us, let's look at how to retrieve data from tables.
+### Retrieving Data
 
+Use the SELECT statement (see SELECT documentation) to query data from tables.
 
-#### Retrieving Data
-
-
-The primary method of retrieving data from tables is to use a [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement. There are many options available with the [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement, but you can start simply. As an example, let's retrieve a list of book titles from the books table:
-
+To retrieve all book titles:
 
 ```
-SELECT title 
-FROM books;
+SELECT title FROM books;
 ```
 
-This will display all of the rows of books in the table. If the table has thousands of rows, MariaDB will display thousands. To limit the number of rows retrieved, we could add a [LIMIT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause to the [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement like so:
-
+To limit the number of rows returned (e.g., to 5) using `LIMIT` (see [LIMIT documentation](https://www.google.com/search?q=link_to_LIMIT_documentation)):
 
 ```
-SELECT title 
+SELECT title FROM books LIMIT 5;
+```
+
+To retrieve data from multiple tables, use a `JOIN` (see [JOIN documentation](https://www.google.com/search?q=link_to_JOIN_documentation)). This example lists book titles and author last names by joining `books` and `authors` on their common `author_id` column:
+
+```
+SELECT title, name_last
 FROM books
-LIMIT 5;
-```
-
-This will limit the number of rows displayed to five. To be able to list the author's name for each book along with the title, you will have to join the books table with the authors table. To do this, we can use the [JOIN](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause like so:
-
-
-```
-SELECT title, name_last 
-FROM books 
 JOIN authors USING (author_id);
 ```
 
-Notice that the primary table from which we're drawing data is given in the `FROM` clause. The table to which we're joining is given in the [JOIN](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause along with the commonly named column (i.e., author_id) that we're using for the join.
-
-
-To retrieve the titles of only books written by Kafka based on his name (not the author_id), we would use the `WHERE` clause with the [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement. This would be entered like the following:
-
+To filter results, use the `WHERE` clause (see [WHERE documentation](https://www.google.com/search?q=link_to_WHERE_documentation)). This example finds books by 'Kafka' and renames the `title` column<sup>1</sup> in the output to 'Kafka Books' using `AS` (an alias):
 
 ```
 SELECT title AS 'Kafka Books'
-FROM books 
+FROM books
 JOIN authors USING (author_id)
 WHERE name_last = 'Kafka';
+```
 
+```
 +-------------------+
 | Kafka Books       |
 +-------------------+
@@ -184,14 +172,9 @@ WHERE name_last = 'Kafka';
 +-------------------+
 ```
 
-This statement will list the titles of Kafka books stored in the database. Notice that I've added the `AS` parameter next to the column name title to change the column heading in the results set to Kafka Books. This is known as an alias. Looking at the results here, we can see that the title for one of Kafka's books is incorrect. His book Amerika is spelled above with a "c" in the table instead of a "k". This leads to the next section on changing data.
+### Changing & Deleting Data
 
-
-#### Changing & Deleting Data
-
-
-In order to change existing data, a common method is to use the [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. When changing data, though, we need to be sure that we change the correct rows. In our example, there could be another book with the title *America* written by a different author. Since the key column isbn has only unique numbers and we know the ISBN number for the book that we want to change, we can use it to specify the row.
-
+To modify existing data, use the `UPDATE` statement (see [UPDATE documentation](https://www.google.com/search?q=link_to_UPDATE_documentation)). Always use a `WHERE` clause to specify which rows to update.
 
 ```
 UPDATE books
@@ -199,25 +182,15 @@ SET title = 'Amerika'
 WHERE isbn = '0805210644';
 ```
 
-This will change the value of the title column for the row specified. We could change the value of other columns for the same row by giving the column = value for each, separated by commas.
+This changes the `title` for the book with the specified `isbn`. Multiple columns can be updated by separating `column = value` assignments with commas within the `SET` clause.
 
-
-If we want to delete a row of data, we can use the [DELETE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement. For instance, suppose that our fictitious bookstore has decided no longer to carry books by John Grisham. By first running a [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement, we determine the identification number for the author to be 2034. Using this author identification number, we could enter the following:
-
+To remove rows from a table, use the `DELETE` statement (see [DELETE documentation](https://www.google.com/search?q=link_to_DELETE_documentation)). Use `WHERE` to specify which rows to delete.
 
 ```
 DELETE FROM books
-WHERE author_id = '2034';
+WHERE author_id = '2034'; -- Assuming '2034' is the author_id to be deleted
 ```
 
-This statement will delete all rows from the table books for the author_id given. To do a clean job of it, we'll have to do the same for the authors table. We would just replace the table name in the statement above; everything else would be the same.
-
-
-#### Conclusion
-
-
-This is a very basic primer for using MariaDB. Hopefully, it gives you the idea of how to get started with MariaDB. Each of the SQL statements mentioned here have several more options and clauses each. We will cover these statements and others in greater detail in other articles. For now, though, you can learn more about them from experimenting and by further reading of the Knowledge Base online documentation. A downloadable PDF of much of the documentation is [available here](https://downloads.mariadb.org).
-
+This deletes all books associated with `author_id` '2034'.
 
 CC BY-SA / Gnu FDL
-
