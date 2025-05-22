@@ -17,11 +17,11 @@ The documentation for MariaDB products is
 * using Markdown format,
 * stored in Git.
 
-Being stored in Git, it allows anyone to contribute to the documentation. You need [a GitHub account](https://github.com/), [a basic knowledge of Markdown](https://www.writethedocs.org/guide/writing/markdown/), and some expertise in what you’re writing about. You also have to agree to our contribution agreement.
+Being stored in Git, it allows anyone to contribute to the documentation. You need [a GitHub account](https://github.com/), [a basic knowledge of Markdown](https://www.writethedocs.org/guide/writing/markdown/), and some expertise in what you’re writing about. You also have to agree to our [contributor agreement](#user-content-fn-1)[^1].
 
 Contributing is as simple as this:
 
-* Access [this repository](#user-content-fn-1)[^1], log in with your GitHub account.
+* Access [this repository](#user-content-fn-2)[^2], log in with your GitHub account.
 * Find the page in the documentation that you want to edit, correct, or amend.
 * Make a pull request, edit, and submit.
 
@@ -33,4 +33,6 @@ The source format of pages is Markdown. How to format text is [on this GitBook p
 
 Read our [style guide](documentation-style-guide.md), too. (It's short!)
 
-[^1]: Provide GitHub link
+[^1]: Provide link (either in this space or on the Legal section of the website)
+
+[^2]: Provide GitHub link

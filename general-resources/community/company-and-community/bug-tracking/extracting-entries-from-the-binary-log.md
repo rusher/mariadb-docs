@@ -1,6 +1,6 @@
 # Extracting Entries from the Binary Log
 
-This article is relevant if the problem is on a replication slave.
+This article is relevant if the problem is on a replication replica.
 
 _**Note: this text has been extracted into a separate article from**_ [_**Reporting bugs**_](reporting-bugs.md)_**, see its full history there.**_
 
