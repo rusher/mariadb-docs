@@ -1,7 +1,7 @@
 # Contributing Code
 
 This page contains general guidelines and procedures for contributing code. If\
-you have any questions we invite you to ask on the[maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) mailing list, on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com), or on the #maria [IRC](../../../en/irc/) channel on. Other email lists and places to find MariaDB can be found[here](../company-and-community/friends-of-mariadb/resources.md).
+you have any questions we invite you to ask on the[maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) mailing list, on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com), or on the #maria [IRC](../../../en/irc/) channel on. Other email lists and places to find MariaDB can be found[here](broken-reference).
 
 General information about contributing to MariaDB (for developers and\
 non-developers) is found on the[Contributing to the MariaDB Project](contributing-to-the-mariadb-project.md)\

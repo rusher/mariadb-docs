@@ -1,10 +1,10 @@
-# MariaDB Community Bug Reports and Feature Requests
+# Reporting Software Bugs
 
 For reporting documentation bugs specifically, see [Reporting Documentation Bugs](reporting-documentation-bugs.md).
 
 MariaDB's bug and feature tracker is found at [jira.mariadb.org](https://jira.mariadb.org).
 
-This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](../friends-of-mariadb/resources.md).
+This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](broken-reference).
 
 ## Known Issues
 

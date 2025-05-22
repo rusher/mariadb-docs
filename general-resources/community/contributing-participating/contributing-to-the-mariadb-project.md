@@ -36,7 +36,7 @@ via our mailing lists (whichever list best matches your interests):
 
 Sensitive security issues can be sent directly to the persons responsible for MariaDB security: security \[AT] mariadb (dot) org.
 
-You can find additional email address, email archives and ways to connect with MariaDB people [here](../company-and-community/friends-of-mariadb/resources.md).
+You can find additional email address, email archives and ways to connect with MariaDB people [here](broken-reference).
 
 All MariaDB contributors are expected to follow the[Ubuntu Code Of Conduct](https://www.ubuntu.com/community/conduct).
 

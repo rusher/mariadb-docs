@@ -9,7 +9,7 @@ this page lists possible projects. The projects are picked to be
   of the code and/or make high-risk changes that could be rejected out of\
   concern that they could destabilize the codebase
 
-This list is by no means complete. You can find more open tasks in [our project planning tool, JIRA](../../development-articles/general-development-information/tools/jira.md). You can also ask for tasks on the[MariaDB mailing list/IRC](../company-and-community/friends-of-mariadb/resources.md).
+This list is by no means complete. You can find more open tasks in [our project planning tool, JIRA](../../development-articles/general-development-information/tools/jira.md). You can also ask for tasks on the[MariaDB mailing list/IRC](broken-reference).
 
 ## Progress reporting for ALTER TABLE ... ADD INDEX
 
