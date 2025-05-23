@@ -24,7 +24,7 @@
   * [Creating & Using Views](mariadb-quickstart-guides/mariadb-views-guide.md)
   * [Adding and Changing Data in MariaDB](mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide.md)
   * [Useful MariaDB Queries](<mariadb-quickstart-guides/mariadb-advanced-sql-guide (1).md>)
-  * [Basics Guides](mariadb-quickstart-guides/mariadb-advanced-usage-guide-1.md)
+  * [MariaDB Basics](mariadb-quickstart-guides/mariadb-advanced-usage-guide-1.md)
   * [Altering Tables in MariaDB](mariadb-quickstart-guides/mariadb-alter-table-guide.md)
   * [Restoring Data from Dump Files](mariadb-quickstart-guides/mariadb-restore-guide.md)
   * [Connecting to MariaDB](mariadb-quickstart-guides/mariadb-connecting-guide-1.md)
