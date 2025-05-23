@@ -18,10 +18,10 @@ MariaDB Connectors are available for many popular programming languages.
 | C                                | [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/)       |
 | C++                              | [MariaDB Connector/C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/)   |
 | Java - JDBC                      | [MariaDB Connector/J](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/)       |
-| Java - R2DBC                     | MariaDB Connector/R2DBC                                                                          |
-| JavaScript                       | [MariaDB Connector/Node.js](https://mariadb.com/kb/en/nodejs-connector/)                         |
+| Java - R2DBC                     | [MariaDB Connector/R2DBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-r2dbc) |
+| JavaScript                       | [MariaDB Connector/Node.js](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs) |
 | ODBC                             | [MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/) |
-| Python                           | MariaDB Connector/Python                                                                         |
+| Python                           | [MariaDB Connector/Python](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python) |
 
 ## MariaDB Client
 
