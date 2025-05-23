@@ -36,17 +36,20 @@ If you have a feature request, you can file it in [JIRA](https://mariadb.net/doc
 
 A list of MariaDB-related social media links and pages. Note that many of them are community groups not officially affiliated with MariaDB.
 
-### Mastodon <a href="#mastodon" id="mastodon"></a>
-
-* [@mariadb\_org](https://fosstodon.org/@mariadb_org) - official MariaDB Foundation account on fosstodon.
-
 ### YouTube <a href="#youtube" id="youtube"></a>
 
-* [Official MariaDB Foundation YouTube channel](https://www.youtube.com/c/MariaDBFoundation)
+* [MariaDB plc](https://www.youtube.com/c/mariadb)
+* [MariaDB Foundation](https://www.youtube.com/c/MariaDBFoundation)
 
 ### LinkedIn <a href="#linkedin" id="linkedin"></a>
 
-* [Official MariaDB Foundation LinkedIn page](https://www.linkedin.com/company/mariadb-foundation)
+* [MariaDB plc ](https://www.linkedin.com/company/mariadb-corporation?trk=docs)
+* [MariaDB Foundation](https://www.linkedin.com/company/mariadb-foundation)
+
+### X <a href="#x" id="x"></a>
+
+* MariaDB plc: [@mariadb](https://x.com/mariadb)&#x20;
+* MariaDB Foundation: [@mariadb\_org](https://x.com/mariadb_org)&#x20;
 
 ### Reddit <a href="#reddit" id="reddit"></a>
 
@@ -54,19 +57,24 @@ A list of MariaDB-related social media links and pages. Note that many of them a
 
 ### Facebook <a href="#facebook" id="facebook"></a>
 
-* [Official MariaDB Foundation Facebook page](https://www.facebook.com/mariadb.org/)
-* [Official MariaDB plc Facebook page](https://www.facebook.com/MariaDB.dbms)
-* [MariaDB Users Philippines](https://www.facebook.com/groups/mariadbph)
-* [MariaDB Indonesia](https://www.facebook.com/groups/mariadb)
-* [MariaDB Korea](https://www.facebook.com/groups/mariadbkorea)
+* [MariaDB plc](https://www.facebook.com/MariaDB.dbms)
+* [MariaDB Foundation](https://www.facebook.com/mariadb.org/)
+
+
+
+* Unaffiliated MariaDB user groups:
+  * [MariaDB Users Philippines](https://www.facebook.com/groups/mariadbph)
+  * [MariaDB Indonesia](https://www.facebook.com/groups/mariadb)
+  * [MariaDB Korea](https://www.facebook.com/groups/mariadbkorea)
 
 ### Instagram <a href="#instagram" id="instagram"></a>
 
-* [Official MariaDB Foundation Instagram account](https://www.instagram.com/mariadb_org)
+* [MariaDB Foundation](https://www.instagram.com/mariadb_org)
 
-### X <a href="#x" id="x"></a>
+### Fosstodon <a href="#mastodon" id="mastodon"></a>
 
-* [@mariadb\_org](https://x.com/mariadb_org) - official MariaDB Foundation X account
-* [@mariadb](https://x.com/mariadb) - official MariaDB plc X account
+* MariaDB Foundation: [@mariadb\_org](https://fosstodon.org/@mariadb_org)&#x20;
+
+
 
 \
