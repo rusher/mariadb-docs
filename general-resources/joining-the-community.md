@@ -60,13 +60,6 @@ A list of MariaDB-related social media links and pages. Note that many of them a
 * [MariaDB plc](https://www.facebook.com/MariaDB.dbms)
 * [MariaDB Foundation](https://www.facebook.com/mariadb.org/)
 
-
-
-* Unaffiliated MariaDB user groups:
-  * [MariaDB Users Philippines](https://www.facebook.com/groups/mariadbph)
-  * [MariaDB Indonesia](https://www.facebook.com/groups/mariadb)
-  * [MariaDB Korea](https://www.facebook.com/groups/mariadbkorea)
-
 ### Instagram <a href="#instagram" id="instagram"></a>
 
 * [MariaDB Foundation](https://www.instagram.com/mariadb_org)
