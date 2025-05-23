@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # columnstore-audit-plugin
 
 ## ColumnStore Audit Plugin

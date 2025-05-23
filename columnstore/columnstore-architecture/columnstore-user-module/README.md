@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # ColumnStore User Module
 
 The User Module manages and controls the operation of end user queries. It maintains the state of each query, issues requests to one or more Performance Modules to process the query, and resolves the query by aggregating the various result-sets from all participating Performance Modules into the one returned to the end user.

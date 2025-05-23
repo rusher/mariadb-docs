@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # ColumnStore Performance Module
 
 The Performance Module performs I/O operations in support of read and write processing. It doesn't see the query itself, but only a set of instructions given to it by a [User Module](columnstore-user-module/).

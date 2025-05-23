@@ -1,2 +1,0 @@
-
-# InfiniDB Migration to ColumnStore

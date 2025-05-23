@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # ColumnStore Batch Insert Mode
 
 ### Introduction

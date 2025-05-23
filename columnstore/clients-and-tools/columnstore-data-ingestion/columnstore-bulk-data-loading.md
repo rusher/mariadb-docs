@@ -156,16 +156,6 @@ aws s3 cp --quiet s3://dthompson-test/trades_bulk.csv - | cpimport test trades -
 
 For troubleshooting connectivity problems remove the --quiet option which suppresses client logging including permission errors.
 
-## Bulk loading data from S3 bucket directly into SkySQL
-
-SInce SkySQL is a managed service, the normal command line utility (cpimport) is not exposed to end users. However, cpimport is still invoked on the database when using LOAD DATA LOCAL INFILE. The following example shows a method for pulling data from an S3 bucket and pushing to a SkySQL Columnstore table.
-
-Example:
-
-```
-aws s3 cp --quiet s3://my-s3-bucket/flights.csv - | mariadb -e "LOAD DATA LOCAL INFILE '/dev/stdin' INTO TABLE bts.flights FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\n';"
-```
-
 ## Bulk loading output of SELECT FROM Table(s)
 
 Standard in can also be used to directly pipe the output from an arbitrary SELECT statement into cpimport. The select statement may select from non-columnstore tables such as [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) or [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb). In the example below, the db2.source\_table is selected from, using the -N flag to remove non-data formatting. The -q flag tells the mysql client to not cache results which will avoid possible timeouts causing the load to fail.

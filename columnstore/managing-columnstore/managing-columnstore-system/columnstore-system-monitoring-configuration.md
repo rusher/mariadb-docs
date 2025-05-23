@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # columnstore-system-monitoring-configuration
 
 ## ColumnStore System Monitoring Configuration
@@ -98,7 +102,7 @@ WriteEngineServ     1507               1
 
 ## Viewing storage configuration
 
-To view the storage configuration, use the _getStorageConfig_ command in [mcsadmin](columnstore-administrative-console.md), or simply use [mcsadmin](columnstore-administrative-console.md) _getStorageConfig_ from the operating system prompt. This will provide information on DBRoots and which PM they are assigned to, if any.
+To view the storage configuration, use the _getStorageConfig_ command in [mcsadmin](broken-reference), or simply use [mcsadmin](broken-reference) _getStorageConfig_ from the operating system prompt. This will provide information on DBRoots and which PM they are assigned to, if any.
 
 Example:
 

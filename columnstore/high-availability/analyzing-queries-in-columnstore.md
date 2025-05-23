@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Analyzing Queries
 
 ## Determining active queries

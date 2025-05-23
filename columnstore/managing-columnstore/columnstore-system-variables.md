@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # ColumnStore System Variables
 
 1. [Variables "Variables"](columnstore-system-variables.md#variables)
@@ -195,7 +199,7 @@ NOTE: Local Query Feature allows the ability to query data from a single Perform
 Enable Local Query feature? [y,n] (n) >
 ```
 
-[installing-and-configuring-a-multi-server-columnstore-system-11x.md](columnstore-getting-started/preparing-and-installing-mariadb-columnstore-11x/installing-and-configuring-a-multi-server-columnstore-system-11x.md)
+[installing-and-configuring-a-multi-server-columnstore-system-11x.md](broken-reference)
 
 ### Enable local PM query systemwide
 

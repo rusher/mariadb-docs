@@ -1,6 +1,6 @@
 # ColumnStore Streaming Data Adapters
 
-The [ColumnStore Bulk Data API](columnstore-bulk-write-sdk.md) enables the creation of higher performance adapters for ETL integration and data ingestions. The Streaming Data Adapters are out of box adapters using these API for specific data sources and use cases.
+The [ColumnStore Bulk Data API](broken-reference) enables the creation of higher performance adapters for ETL integration and data ingestions. The Streaming Data Adapters are out of box adapters using these API for specific data sources and use cases.
 
 * MaxScale CDC Data Adapter is integration of the MaxScale CDC streams into MariaDB ColumnStore.
 * Kafka Data Adapter is integration of the Kafka streams into MariaDB ColumnStore.
@@ -10,14 +10,14 @@ The [ColumnStore Bulk Data API](columnstore-bulk-write-sdk.md) enables the creat
 The MaxScale CDC Data Adapter has been deprecated.
 
 The MaxScale CDC Data Adapter allows to stream change data events(binary log events) from MariaDB Master hosting non-columnstore engines(InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/maxscale-cdc-adapter.jpg)\
-It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the [MariaDB ColumnStore bulk write SDK](columnstore-bulk-write-sdk.md), converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
+It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the [MariaDB ColumnStore bulk write SDK](broken-reference), converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
 
 ### Installation
 
 #### Pre-requisite:
 
 * Download and install MaxScale CDC Connector API from [connector](https://mariadb.com/downloads/mariadb-ax/connector)
-* Download and install MariaDB ColumnStore bulk write SDK from [columnstore-bulk-write-sdk.md](columnstore-bulk-write-sdk.md)
+* Download and install MariaDB ColumnStore bulk write SDK from [columnstore-bulk-write-sdk.md](broken-reference)
 
 #### CentOS 7
 
@@ -115,13 +115,13 @@ The `-c` flag is optional if you are running the adapter on the server where Col
 
 ## Kafka to ColumnStore Adapter
 
-The Kafka data adapter streams all messages published to Apache Kafka topics in Avro format to MariaDB AX automatically and continuously - enabling data from many sources to be streamed and collected for analysis without complex code. The Kafka adapter is built using [librdkafka](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-C/C++) and the [MariaDB ColumnStore bulk write SDK](columnstore-bulk-write-sdk.md)![kafka-data-adapter](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/kafka-data-adapter.jpg)
+The Kafka data adapter streams all messages published to Apache Kafka topics in Avro format to MariaDB AX automatically and continuously - enabling data from many sources to be streamed and collected for analysis without complex code. The Kafka adapter is built using [librdkafka](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-C/C++) and the [MariaDB ColumnStore bulk write SDK](broken-reference)![kafka-data-adapter](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/kafka-data-adapter.jpg)
 
 A tutorial for the Kafka adapter for ingesting Avro formatted data can be found in the [kafka-to-columnstore-data-adapter](https://mariadb.com/kb/en/kafka-to-columnstore-data-adapter/) document.
 
 ## ColumnStore - Pentaho Data Integration - Data Adapter
 
-Starting with MariaDB ColumnStore 1.1.4, a data adapter for Pentaho Data Integration (PDI) / Kettle is available to import data directly into ColumnStore’s WriteEngine. It is build on MariaDB’s rapid paced [Bulk Write SDK](columnstore-bulk-write-sdk.md).
+Starting with MariaDB ColumnStore 1.1.4, a data adapter for Pentaho Data Integration (PDI) / Kettle is available to import data directly into ColumnStore’s WriteEngine. It is build on MariaDB’s rapid paced [Bulk Write SDK](broken-reference).
 
 ![PDI Plugin Block info graphic](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/cs_pdi_diagram.png)
 
@@ -177,7 +177,7 @@ The database connection configuration follows PDI’s default schema.
 
 By default the plugin tries to use ColumnStore's default configuration _/usr/local/mariadb/columnstore/etc/Columnstore.xml_ to connect to the ColumnStore instance through the Bulk Write SDK. In addition, individual paths or variables can be used too.
 
-Information on how to prepare the _Columnstore.xml_ configuration file can be found [here](columnstore-bulk-write-sdk.md).
+Information on how to prepare the _Columnstore.xml_ configuration file can be found [here](broken-reference).
 
 ### Usage
 

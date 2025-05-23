@@ -1,14 +1,14 @@
+---
+hidden: true
+---
 
 # Building ColumnStore in MariaDB
 
 This is a description of how to build and start a local ColumnStore installation, for debugging purposes.
 
-
 ## Install the dependencies
 
-
 For CentOS:
-
 
 ```
 yum -y groupinstall "Development Tools" \
@@ -19,7 +19,6 @@ yum -y groupinstall "Development Tools" \
 
 ## Get the source code
 
-
 ```
 git clone https://github.com/mariadb-corporation/mariadb-columnstore-server.git
 cd mariadb-columnstore-server/
@@ -28,7 +27,6 @@ git clone https://github.com/mariadb-corporation/mariadb-columnstore-engine.git
 
 ## Compile
 
-
 ```
 cmake . -DCMAKE_BUILD_TYPE=Debug \
   -DWITHOUT_MROONGA:bool=1 -DWITHOUT_TOKUDB:bool=1 \
@@ -36,7 +34,6 @@ cmake . -DCMAKE_BUILD_TYPE=Debug \
 make -j10
 sudo make install
 ```
-
 
 ```
 cd mariadb-columnstore-engine/
@@ -48,9 +45,7 @@ cd /usr/local/mariadb/columnstore/bin/
 
 ## Configure
 
-
 Make sure you do NOT have `/etc/my.cnf` or `/.my.cnf`.
-
 
 ```
 sudo ./postConfigure
@@ -58,22 +53,17 @@ sudo ./postConfigure
 
 Answer "Enter" to all questions, except:
 
-
 ```
 Select the type of System Server install [1=single, 2=multi] (2) >
 ```
 
 Here, answer `1`.
 
-
 Access the server
-
 
 ```
 source /usr/local/mariadb/columnstore/bin/columnstoreAlias
 mcsmysql
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Configuring ColumnStore Cross-Engine Joins
 
 MariaDB ColumnStore allows columnstore tables to be joined with non-columnstore tables (e.g. [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) tables) within a query. The non-columnstore table may be on the MariaDB ColumnStore system OR on an external server that supports MariaDB client connections.
