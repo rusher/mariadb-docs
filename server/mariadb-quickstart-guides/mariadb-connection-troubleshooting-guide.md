@@ -1,164 +1,210 @@
+# Troubleshooting Connection Issues Guide
 
-# Troubleshooting Connection Issues
+The guide helps diagnose and resolve common issues encountered when connecting to a MariaDB server. Identify causes for errors like 'Can't connect to local server' or access denied messages, and learn steps to effectively troubleshoot these connection problems.
 
-If you are completely new to MariaDB and relational databases, you may want to start with the [MariaDB Primer](/kb/en/a-mariadb-primer/). Also, make sure you understand the connection parameters discussed in the [Connecting to MariaDB](https://mariadb.com/kb/en/connecting-to-mariadb/) article.
+If you are completely new to MariaDB and relational databases, you may want to start with [A MariaDB Primer](https://www.google.com/search?q=link_to_MariaDB_Primer). Also, ensure you understand the connection parameters discussed in the [Connection Parameters Guide](https://www.google.com/search?q=link_to_Connection_Parameters_Guide).
 
-There are a number of common problems that can occur when connecting to MariaDB.
+### Server Not Running or Incorrect Location
 
+Symptoms:
 
-### Server Not Running in Specified Location
-
-
-If the error you get is something like:
-
+You receive errors similar to:
 
 ```
-mariadb -uname -p -uname -p
-ERROR 2002 (HY000): Can't connect to local MySQL server through 
+ERROR 2002 (HY000): Can't connect to local MySQL server through
   socket '/var/run/mysqld/mysqld.sock' (2 "No such file or directory")
 ```
 
 or
 
-
 ```
-mariadb -uname -p --port=3307 --protocol=tcp
-ERROR 2003 (HY000): Can't connect to MySQL server on  'localhost' 
+mariadb -u someuser -p --port=3307 --protocol=tcp
+ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost'
   (111 "Connection refused")
 ```
 
-the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct [host](https://mariadb.com/kb/en/connecting-to-mariadb/#host), [port](https://mariadb.com/kb/en/connecting-to-mariadb/#port), [pipe](https://mariadb.com/kb/en/connecting-to-mariadb/#pipe), [socket](https://mariadb.com/kb/en/connecting-to-mariadb/#socket) and [protocol](https://mariadb.com/kb/en/connecting-to-mariadb/#protocol) options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../server-management/getting-installing-and-upgrading-mariadb/README.md), [Starting and Stopping MariaDB](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/README.md) or [Troubleshooting Installation Issues](../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/README.md).
+**Causes & Solutions:**
 
+* **Server Not Running:** The MariaDB server process may not be running.
+  * See: [Getting, Installing and Upgrading MariaDB](https://www.google.com/search?q=link_to_Install_Upgrade_Docs), [Starting and Stopping MariaDB](https://www.google.com/search?q=link_to_Start_Stop_Docs).
+* **Incorrect Parameters:** The server is running, but not on the specified [host](https://www.google.com/search?q=link_to_host_param), [port](https://www.google.com/search?q=link_to_port_param), [socket](https://www.google.com/search?q=link_to_socket_param), [pipe](https://www.google.com/search?q=link_to_pipe_param), or [protocol](https://www.google.com/search?q=link_to_protocol_param). Verify your connection parameters.
+* **Socket File Mismatch (Unix):** The socket file path might be non-standard or inconsistent between server and client configurations.
+  * Check your `my.cnf` (or `my.ini`) configuration file. Ensure the `socket` option has the identical value in both the `[mysqld]` (server) section and the `[client]` (or `[mysql]`) section.
+  *   To find the running Unix socket file, you can try commands like:
 
-The socket file can be in a non-standard path. In this case, the `socket` option is probably written in the my.cnf file. Check that its value is identical in the [mysqld] and [client] sections; if not, the client will look for a socket in a wrong place.
+      ```
+      netstat -ln | grep mysqld
+      ```
 
+      Example output:
 
-If unsure where the Unix socket file is running, it's possible to find this out, for example:
-
-
-```
-netstat -ln | grep mysqld
-unix  2      [ ACC ]     STREAM     LISTENING     33209505 /var/run/mysqld/mysqld.sock
-```
+      ```
+      unix  2      [ ACC ]     STREAM     LISTENING     33209505 /var/run/mysqld/mysqld.sock
+      ```
+* See also: [Troubleshooting Installation Issues](https://www.google.com/search?q=link_to_Troubleshoot_Install).
 
 ### Unable to Connect from a Remote Location
 
+Symptoms:
 
-Usually, the MariaDB server does not by default accept connections from a remote client or connecting with tcp and a hostname and has to be configured to permit these.
-
+You can connect locally, but not from a remote machine, possibly seeing errors like:
 
 ```
-(/my/maria-10.4) ./client/mysql --host=myhost --protocol=tcp --port=3306 test
+./client/mysql --host=myhost --protocol=tcp --port=3306 test
 ERROR 2002 (HY000): Can't connect to MySQL server on 'myhost' (115)
-(/my/maria-10.4) telnet myhost 3306
-Trying 192.168.0.11...
-telnet: connect to address 192.168.0.11: Connection refused
-(/my/maria-10.4) perror 115
-OS error code 115:  Operation now in progress
 ```
 
-To solve this, see [Configuring MariaDB for Remote Client Access](/kb/en/configuring-mariadb-for-remote-client-access/)
+You can use `telnet` (if available) to test basic network connectivity to the port:
 
+```
+telnet myhost 3306
+```
+
+A "Connection refused" message from telnet indicates a network or firewall issue, or that MariaDB is not listening for TCP/IP connections or on that specific interface/port.
+
+The perror utility can interpret OS error codes:
+
+```
+perror 115
+```
+
+Example output:
+
+```
+OS error code 115: Operation now in progress
+```
+
+**Causes & Solutions:**
+
+* By default, MariaDB often does not accept remote TCP/IP connections or is bound only to `localhost` (`127.0.0.1`).
+* **Solution:** See [Configuring MariaDB for Remote Client Access](https://www.google.com/search?q=link_to_Configuring_Remote_Access) for detailed instructions on how to enable remote connections by adjusting the `bind-address` server variable and ensuring user accounts are configured correctly for remote hosts.
 
 ### Authentication Problems
 
+Symptoms:
 
-Note that from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), the [unix_socket authentication plugin](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix_socket authentication plugin](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) changes..
+Connection is established, but authentication fails (e.g., "Access denied for user...").
 
+**Causes & Solutions:**
 
-Authentication is granted to a particular username/host combination. `user1'@'localhost'`, for example, is not the same as `user1'@'166.78.144.191'`. See the [GRANT](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article for details on granting permissions.
+* **Unix Socket Authentication (MariaDB 10.4.3+):** On Unix-like systems, the `unix_socket` authentication plugin is enabled by default for local connections via the Unix socket file. This plugin uses operating system user credentials.
+  * See the [`unix_socket` authentication plugin documentation](https://www.google.com/search?q=link_to_unix_socket_plugin_docs) for connection instructions and how to switch to password-based authentication if needed.
+  * For an overview of authentication changes in MariaDB 10.4, see [Authentication from MariaDB 10.4](https://www.google.com/search?q=link_to_Auth_10_4_Changes).
+* **Incorrect Username/Host Combination:** Authentication is specific to a `username@host` combination. For example, `'user1'@'localhost'` is distinct from `'user1'@'166.78.144.191'`. Ensure the user account exists for the host from which you are connecting.
+  * See the [GRANT](https://www.google.com/search?q=link_to_GRANT_docs) article for details on granting permissions.
+* **Password Hashing:** When setting or changing passwords using `SET PASSWORD`, ensure the `PASSWORD()` function is used if the server expects hashed passwords.
+  * Example: `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass');`
+  * Rather than: `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass';` (which might store the password as plain text, potentially leading to issues depending on the authentication plugin).
 
+### Problems Exporting Query Results or Loading Data
 
-Passwords are hashed with [PASSWORD](../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. If you have set a password with the [SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement, the [PASSWORD](../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function must be used at the same time. For example, `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')` rather than just `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'`;
+Symptoms:
 
+You can run regular queries but get authentication or permission errors when using SELECT ... INTO OUTFILE, SELECT ... INTO DUMPFILE, or LOAD DATA INFILE.
 
-#### Problems Exporting Query Results
+**Causes & Solutions:**
 
+* These operations require the `FILE` privilege on the server.
+* **Solution:** Grant the necessary `FILE` privilege to the user. See the [GRANT](https://www.google.com/search?q=link_to_GRANT_docs) article.
 
-If you can run regular queries, but get an authentication error when running the [SELECT ... INTO OUTFILE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md), [SELECT ... INTO DUMPFILE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md) or [LOAD DATA INFILE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements, you do not have permission to write files to the server. This requires the FILE privilege. See the [GRANT](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article.
+### Access Denied to a Specific Database
 
+Symptoms:
 
-#### Access to the Server, but not to a Database
-
-
-If you can connect to the server, but not to a database, for example:
-
+You can connect to the MariaDB server, but attempting to USE or query a specific database results in an error:
 
 ```
 USE test;
-ERROR 1044 (42000): Access denied for user 'ian'@'localhost' to database 'test'
+ERROR 1044 (42000): Access denied for user 'youruser'@'yourhost' to database 'test'
 ```
 
-or can connect to a particular database, but not another, for example
-`mariadb -uname -p -u name db1` works but not `mariadb -uname -p -u name db2`, you have not been granted permission for the particular database. See the [GRANT](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) article.
+Or, connecting with `mariadb -u user -p db1` works, but `mariadb -u user -p db2` fails for `db2`.
 
+**Causes & Solutions:**
 
-#### Option Files and Environment Variables
+* The user account has not been granted sufficient privileges for that particular database.
+* **Solution:** Grant the required privileges (e.g., `SELECT`, `INSERT`, etc.) on the specific database to the user. See the [GRANT](https://www.google.com/search?q=link_to_GRANT_docs) article.
 
+### Issues Due to Option Files or Environment Variables
 
-It's possible that option files or environment variables may be providing incorrect connection parameters. Check the values provided in any option files read by the client you are using (see [mariadbd Configuration Files and Groups](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the particular client you're using - see [Clients and Utilities](../clients-and-utilities/README.md)).
+Symptoms:
 
+Unexpected connection behavior or parameter usage that you didn't explicitly provide on the command line.
 
-Option files can usually be suppressed with `no-defaults` option, for example:
+**Causes & Solutions:**
 
+* Option files (e.g., `my.cnf`, `.my.cnf`) or environment variables (e.g., `MYSQL_HOST`) might be supplying incorrect or overriding connection parameters.
+* **Troubleshooting:**
+  * Check the values in any option files read by your client. See [MariaDB Configuration Files and Groups](https://www.google.com/search?q=link_to_Config_Files_Groups) and the documentation for the specific client you are using (listed under [Clients and Utilities](https://www.google.com/search?q=link_to_Clients_Utilities)).
+  *   You can often suppress the reading of default option files by using a `--no-defaults` option (if supported by the client):Bash
+
+      ```
+      mariadb-import --no-defaults ...
+      ```
+
+### Unable to Connect / Lost Root Password
+
+Symptoms:
+
+You cannot connect to a running server, often because the root (or other administrative) password is lost or unknown.
+
+**Causes & Solutions:**
+
+* **Solution:** You can start the MariaDB server with the `--skip-grant-tables` option. This bypasses the privilege system, granting full access. **Use this with extreme caution and only temporarily.**
+  1. Stop the MariaDB server.
+  2. Restart the server manually from the command line, adding the `--skip-grant-tables` option.
+  3. Connect to the server (no password will be required for `root@localhost`).
+  4. Execute `FLUSH PRIVILEGES;` to reload the grant tables (they are now active again).
+  5.  Change the password for the necessary account, e.g.:SQL
+
+      ```
+      SET PASSWORD FOR 'root'@'localhost' = PASSWORD('your_new_strong_password');
+      ```
+  6. Stop the server and restart it normally (without `--skip-grant-tables`).
+
+### `localhost` vs. `%` Wildcard Host Issues
+
+Symptoms:
+
+You've created a user like 'melisa'@'%' but cannot log in as melisa when connecting from localhost.
 
 ```
-mariadb-import --no-defaults ...
+-- User created with '%' host
+CREATE USER 'melisa'@'%' IDENTIFIED BY 'password';
+
+-- Checking users in mysql.user table
+SELECT user, host FROM mysql.user WHERE user='melisa' OR user='';
 ```
 
-#### Unable to Connect to a Running Server / Lost root Password
-
-
-If you are unable to connect to a server, for example because you have lost the root password, you can start the server without using the privilege tables by running the [--skip-grant-tables](mariadb-options/#-skip-grant-tables) option, which gives users full access to all tables. You can then run [FLUSH PRIVILEGES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables, followed by [SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) to change the password for an account.
-
-
-#### localhost and %
-
-
-You may have created a user with something like:
-
+Example output showing the problem:
 
 ```
-CREATE USER melisa identified by 'password';
-```
-
-This creates a user with the '%' wildcard host.
-
-
-```
-select user,host from mysql.user where user='melisa';
-+--------+------+
-| user   | host |
-+--------+------+
-| melisa | %    |
-+--------+------+
-```
-
-However, you may still be failing to login from localhost. Some setups create anonymous users, including localhost. So the following records exist in the user table:
-
-
-```
-select user,host from mysql.user where user='melisa' or user='';
 +--------+-----------+
 | user   | host      |
 +--------+-----------+
 | melisa | %         |
-|        | localhost |
+|        | localhost | -- An anonymous user for localhost
 +--------+-----------+
 ```
 
-Since you are connecting from localhost, the anonymous credentials, rather than those for the 'melisa' user, are used. The solution is either to add a new user specific to localhost, or to remove the anonymous localhost user.
+**Causes & Solutions:**
 
+* MariaDB's user authentication prioritizes more specific host matches. If an anonymous user (`''@'localhost'`) exists, it can take precedence over `'melisa'@'%'` when connecting from `localhost`.
+* **Solutions:**
+  1.  **Create a specific user for localhost:**&#x53;QL
 
-### See Also
+      ```
+      CREATE USER 'melisa'@'localhost' IDENTIFIED BY 'password_for_melisa_localhost';
+      GRANT ALL PRIVILEGES ON yourdatabase.* TO 'melisa'@'localhost'; -- Grant necessary privileges
+      FLUSH PRIVILEGES;
+      ```
+  2.  **Remove the anonymous user for localhost (use with caution):**&#x53;QL
 
+      ```
+      DROP USER ''@'localhost';
+      FLUSH PRIVILEGES;
+      ```
 
-* [CREATE USER](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md)
-* [GRANT](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)
-* [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md)
-* [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
-* [Error 1698: Access denied for user](../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1600-to-1699/e1698.md)
-
+      Ensure this doesn't break other intended anonymous access if any.
 
 CC BY-SA / Gnu FDL
-

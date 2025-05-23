@@ -1,6 +1,6 @@
 # Getting Help With MariaDB
 
-If you can't find help in the [MariaDB documentation](../../../../kb/en/mariadb-documentation/), you can also subscribe to the [mailing lists](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/company-and-community/friends-of-mariadb/resources) or [Zulip](https://mariadb.zulipchat.com) to communicate with MariaDB users and developers.
+If you can't find help in the [MariaDB documentation](../../../../kb/en/mariadb-documentation/), you can also subscribe to the [mailing lists](broken-reference) or [Zulip](https://mariadb.zulipchat.com) to communicate with MariaDB users and developers.
 
 There's an active help community on [StackOverflow](https://stackoverflow.com/) for programming with SQL and indexing questions, and [DBA StackExchange](https://dba.stackexchange.com/) for non-programming questions for example tuning/backups/architecture/migration/replication etc. Use the _mariadb_ tag so questions are searchable by those that can help you.
 
