@@ -101,3 +101,4 @@
     * [ColumnStore LOAD DATA INFILE](columnstore-sql-structure-and-commands/columnstore-data-manipulation-statements/columnstore-load-data-infile.md)
     * [ColumnStore Select](columnstore-sql-structure-and-commands/columnstore-data-manipulation-statements/columnstore-select.md)
     * [ColumnStore Update](columnstore-sql-structure-and-commands/columnstore-data-manipulation-statements/columnstore-update.md)
+* [Test Page](test-page.md)
