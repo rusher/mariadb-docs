@@ -54,6 +54,7 @@
 ***
 
 * [Joining the Community](joining-the-community.md)
+* [Test Page](test-page.md)
 
 ## Additional Resources
 
