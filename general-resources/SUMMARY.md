@@ -96,8 +96,6 @@
     * [Database Normalization: Boyce-Codd Normal Form](database-theory/database-normalization/database-normalization-boyce-codd-normal-form.md)
     * [Database Normalization Overview](database-theory/database-normalization/database-normalization-overview.md)
     * [Understanding Denormalization](database-theory/database-normalization/understanding-denormalization.md)
-* [Learning Materials](intermediate-mariadb-articles/README.md)
-  * [The Essentials of an Index](intermediate-mariadb-articles/the-essentials-of-an-index.md)
 * [MariaDB for Universities Program](mariadb-for-universities-program.md)
 * [Distributions Including MariaDB](<README (1).md>)
 * [Product Development](development-articles/README.md)
