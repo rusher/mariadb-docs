@@ -5,14 +5,12 @@ icon: question
 
 # Quickstart Guides
 
-Quickstart guides covering
+This section provides a list of Quickstart Guides from other sections of the MariaDB documentation.
 
-* Product overviews
-* MariaDB Server
-* MariaDB Connectors
-* MariaDB MaxScale
-* MariaDB ColumnStore
-* MariaDB Galera Cluster
+## MariaDB Enterprise Platform
 
-[https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/mariadb-platform-quickstart-guides/mariadb-overview](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/mariadb-platform-quickstart-guides/mariadb-overview)
+{% embed url="https://mariadb.net/docs/mariadb-platform-quickstart-guides/mariadb-overview-guide" %}
 
+{% embed url="https://mariadb.net/docs/mariadb-platform-quickstart-guides/mariadb-best-practices-guide" %}
+
+{% embed url="https://mariadb.net/docs/mariadb-platform-quickstart-guides/security" %}
