@@ -143,8 +143,7 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 ## See Also
 
 * [Identifier Names](../../../sql-language-structure/identifier-names.md)
-* [Getting Started with Indexes](../../../../../../kb/en/getting-started-with-indexes/)
-* [What is an Index?](broken-reference)
+* [Getting Started with Indexes](../../../../../../kb/en/getting-started-with-indexes/)[?](broken-reference)
 * [ALTER TABLE](../alter/alter-table.md)
 * [DROP INDEX](../drop/drop-index.md)
 * [SHOW INDEX](../../administrative-sql-statements/show/show-index.md)
