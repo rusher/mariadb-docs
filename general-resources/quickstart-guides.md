@@ -14,3 +14,5 @@ Quickstart guides covering
 * MariaDB ColumnStore
 * MariaDB Galera Cluster
 
+[https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/mariadb-platform-quickstart-guides/mariadb-overview](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/mariadb-platform-quickstart-guides/mariadb-overview)
+
