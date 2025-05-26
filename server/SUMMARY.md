@@ -2,6 +2,7 @@
 
 * [MariaDB Server Documentation](README.md)
 * [Quickstart Guides](mariadb-quickstart-guides/README.md)
+  * [Installing MariaDB Server Guide](mariadb-quickstart-guides/installing-mariadb-server-guide.md)
   * [Adding & Changing Data Guide](<mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide (1).md>)
   * [Essential Queries Guide](mariadb-quickstart-guides/mariadb-advanced-sql-guide.md)
   * [Basics Guide](mariadb-quickstart-guides/mariadb-advanced-usage-guide.md)
