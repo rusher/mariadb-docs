@@ -51,12 +51,7 @@
 
 ## Additional Resources
 
-* [Videos](additional-resources/videos/README.md)
-  * [Storage Engines & Plugins](additional-resources/videos/storage-engines-and-plugins-videos.md)
-  * [DBA Topics](additional-resources/videos/videos-for-dbas.md)
-  * [Miscellaneous Topics 1](additional-resources/videos/mariadb-developer-videos.md)
-  * [Miscellaneous Topics 2](additional-resources/videos/videos-on-mariadb.md)
-  * [Interviews](additional-resources/videos/interviews-related-to-mariadb.md)
+* [Videos](additional-resources/videos.md)
 * [Blogs](additional-resources/blogs.md)
 
 ***

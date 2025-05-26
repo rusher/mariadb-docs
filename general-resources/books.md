@@ -1,4 +1,12 @@
+---
+icon: check
+---
+
 # Books
+
+#### Summary
+
+This page lists several books that cover both general and advanced topics related to building and managing database-driven websites with PHP 7, MySQL 8, and MariaDB. Key titles include practical guides for those new to MariaDB, such as "Getting Started with MariaDB" by Daniel Bartholomew, and advanced resources like "Migrating to MariaDB" by William Wood for those looking to transition from proprietary systems to open-source solutions. Authors like Stéphane Combaudon, Adrian W. West, and Adam Aspin provide detailed manuals and insights into both beginners' and advanced use cases, ensuring there is something for every level of expertise.
 
 ## General Topics
 

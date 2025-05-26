@@ -1,5 +1,6 @@
 ---
-description: Links to quickstart guides available in other spaces.
+description: Add links (or copy over Cards)
+icon: question
 ---
 
 # Quickstart Guides

@@ -1,10 +1,12 @@
 ---
-description: Leave page. We'll optimize it later.
+icon: check
 ---
 
 # Tutorials
 
-Here are some links to external MariaDB, MySQL and SQL tutorials that may be of interest
+To enhance your understanding of MariaDB and MySQL, explore these tutorials. For MariaDB, resources include detailed guides from Tutorialspoint, Tech on the Net, Tecmint, Javatpoint, MariaDBTutorial, and Devart. These are designed for hands-on practice and introductory learning. MySQL tutorials are also compatible with MariaDB, providing versatile learning opportunities.
+
+
 
 ## MariaDB-Focused Tutorials
 
