@@ -4,7 +4,7 @@ description: Move to Server space, somewhere near "indexes"
 
 # The Essentials of an Index
 
-Imagine you've created a table with the following rows (this is the same table as used in the [More Advanced Joins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins) tutorial).
+Imagine you've created a table with the following rows:
 
 ```
 +----+------------+-----------+-------------------------+---------------------------+--------------+

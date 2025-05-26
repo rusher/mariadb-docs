@@ -1,5 +1,5 @@
 ---
-description: Redirect to ... see link, keep page in the nav, though
+icon: check
 ---
 
 # Customer Stories
