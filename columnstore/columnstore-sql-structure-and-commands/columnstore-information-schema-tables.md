@@ -9,15 +9,11 @@
 7. [table\_usage() "table\_usage()"](columnstore-information-schema-tables.md#table_usage)
 8. [compression\_ratio() "compression\_ratio()"](columnstore-information-schema-tables.md#compression_ratio)
 
-MariaDB ColumnStore has four Information Schema tables that expose information about the table and column storage. The tables were added in version 1.0.5 of ColumnStore and were heavily modified for 1.0.6.
+MariaDB ColumnStore has four information schema tables that expose information about the table and column storage. The tables were added in version 1.0.5 of ColumnStore and were heavily modified for 1.0.6.
 
 ## COLUMNSTORE\_TABLES
 
-The first table is the INFORMATION\_SCHEMA.COLUMNSTORE\_TABLES. It contains information about the tables inside ColumnStore. The table layout is as follows:
-
-<table><thead><tr><th>Column</th><th width="249">Description</th></tr></thead><tbody><tr><td>Column</td><td>Description</td></tr><tr><td>TABLE_SCHEMA</td><td>The database schema for the table</td></tr><tr><td>TABLE_NAME</td><td>The table name</td></tr><tr><td>OBJECT_ID</td><td>The ColumnStore object ID for the table</td></tr><tr><td>CREATION_DATE</td><td>The date the table was created</td></tr><tr><td>COLUMN_COUNT</td><td>The number of columns in the table</td></tr><tr><td>AUTOINCREMENT</td><td>The start autoincrement value for the table is set during CREATE TABLE</td></tr></tbody></table>
-
-**Note:** Tables created with ColumnStore 1.0.4 or lower will have the year field of the creation data set incorrectly by 1900 years.
+The first table is the INFORMATION\_SCHEMA.COLUMNSTORE\_TABLES. It contains information about the tables inside ColumnStore.&#x20;
 
 ## COLUMNSTORE\_COLUMNS
 
@@ -49,16 +45,16 @@ This table displays the extent map in a user-consumable form. An extent is a col
 
 **Notes:**
 
-1. The state is "Valid" for a normal state, "Invalid" if a cpimport has completed but the table has not yet been accessed (min/max values will be invalid) or "Updating" if there is a DML statement writing to the column
+1. The state is "Valid" for a normal state, "Invalid" if a cpimport has completed but the table has not yet been accessed (min/max values will be invalid)or "Updating" if there is a DML statement writing to the column
 2. In ColumnStore the block size is 8192 bytes
-3. By default ColumnStore will write create an extent file of 25&#x36;_&#x31;02&#x34;_&#x57;IDTH bytes for the first partition, if this is too small then for uncompressed data it will create a file of the maximum size for the extent (MAX\_BLOCKS \* BLOCK\_SIZE). Snappy always compression adds a header block.
+3. By default, ColumnStore will write and create an extent file of 25&#x36;_&#x31;02&#x34;_&#x57;IDTH bytes for the first partition; if this is too small, then for uncompressed data, it will create a file of the maximum size for the extent (MAX\_BLOCKS \* BLOCK\_SIZE). Snappy always compression adds a header block.
 4. Object IDs of less than 3000 are for internal tables and will not appear in any of the information schema tables
-5. HWM is set to zero for the lower segments when there are multiple segments in an extent file, these can be observed when BLOCK\_OFFSET > 0
-6. When HWM is 0 the DATA\_SIZE will show 0 instead of 8192 to avoid confusion when there is multiple segments in an extent file
+5. HWM is set to zero for the lower segments when there are multiple segments in an extent file; these can be observed when BLOCK\_OFFSET > 0
+6. When HWM is 0, the DATA\_SIZE will show 0 instead of 8192 to avoid confusion when there is multiple segments in an extent file
 
 ## COLUMNSTORE\_FILES
 
-The columnstore\_files table provides information about each file associated with extensions. Each extension can reuse a file at different block offsets so this is not a 1:1 relationship to the columnstore\_extents table.
+The columnstore\_files table provides information about each file associated with extensions. Each extension can reuse a file at different block offsets, so this is not a 1:1 relationship to the columnstore\_extents table.
 
 | Column                 | Description                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -80,7 +76,7 @@ The total\_usage() procedure gives a total disk usage summary for all the column
 
 ### table\_usage()
 
-The table\_usage() procedure gives a the total data disk usage, dictionary disk usage and grand total disk usage per-table. It can be called in several ways, the first gives a total for each table:
+The table\_usage() procedure gives the total data disk usage, dictionary disk usage, and grand total disk usage per table. It can be called in several ways; the first gives a total for each table:
 
 ```
 > call columnstore_info.table_usage(NULL, NULL);
