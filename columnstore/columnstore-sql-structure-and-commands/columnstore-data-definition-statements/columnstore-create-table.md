@@ -1,19 +1,11 @@
-
 # ColumnStore Create Table
 
- 
-1. [Syntax "Syntax"](#syntax)
-1. [Notes: "Notes:"](#notes)
+1. [Syntax "Syntax"](columnstore-create-table.md#syntax)
+2. [Notes: "Notes:"](columnstore-create-table.md#notes)
 
-
-
-
-
-A database consists of tables that store user data. You can create multiple columns with the create table statement. The data type follows the column name when adding columns.
-
+A database consists of tables that store user data. You can create multiple columns with the CREATE TABLE statement. The data type follows the column name when adding columns.
 
 ## Syntax
-
 
 ```
 CREATE TABLE [IF NOT EXISTS] tbl_name
@@ -34,27 +26,20 @@ column_definition:
 
 images here
 
-
 ## Notes:
 
-
-* ColumnStore tables should not be created in the mysql, information_schema, calpontsys or test databases.
-* ColumnStore stores all object names in lower case.
-* CREATE TABLE LIKE is supported starting from version MariaDB CoumnStore 1.2 and higher
-* CREATE TABLE AS SELECT is not supported, and will instead create the table in the default storage engine.
-* Compression level (0 for no compression, 1 for compression) can be set at the system level. If a session default exists, this will override the system default. In turn, this can be overridden by the table level compression comment, and finally a compression comment at the column level.
-* A table can be created in the front end only by using a ‘schema sync only’ comment. This could be useful when the table has been created on one user module, and needs to be synced to others.
+* ColumnStore tables should not be created in the mysql, information\_schema, calpontsys, or test databases.
+* ColumnStore stores all object names in lowercase.
+* CREATE TABLE AS SELECT is not supported and will instead create the table in the default storage engine.
+* Compression level (0 for no compression, 1 for compression) is set at the system level. If a session default exists, it will override the system default. In turn, it can be overridden by the table-level compression comment and, finally, a compression comment at the column level.
+* A table is created in the front end only by using a ‘schema sync only’ comment.
 * The column DEFAULT value can be a maximum of 64 characters.
-* For maximum compatibility with external tools MariaDB ColumnStore will accept the following table attributes, however these are not implemented within MariaDB ColumnStore:
+* For maximum compatibility with external tools, MariaDB ColumnStore will accept the following table attributes; however, these are not implemented within MariaDB ColumnStore:
+  * MIN\_ROWS
+  * MAX\_ROWS
+  * AUTO\_INCREMENT
 
-  * MIN_ROWS
-  * MAX_ROWS
-  * AUTO_INCREMENT
-* Datatype timestamp is not supported for Columnstore below 1.4. Caused a "The syntax or the data type(s) is not supported by Columnstore" error.
-
-
-All of these are ignored by ColumnStore.The following statement creates a table called orders with two columns: *orderkey* with datatype integer and *customer* with datatype varchar:
-
+All of these are ignored by ColumnStore.The following statement creates a table called orders with two columns: _orderkey_ with datatype integer and _customer_ with datatype varchar:
 
 ```
 CREATE TABLE orders (
@@ -63,6 +48,4 @@ CREATE TABLE orders (
 ) ENGINE=ColumnStore
 ```
 
-
 CC BY-SA / Gnu FDL
-
