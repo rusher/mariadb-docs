@@ -22,29 +22,3 @@ MariaDB ColumnStore Information Functions are selectable pseudo functions that r
 | idbSegmentDir(column)        | The lowest level directory id for the column file containing the physical row                                          |
 | idbSegment(column)           | The number of the segment file containing the physical row                                                             |
 
-## Example
-
-SELECT involving a join between a fact table on the PM node and dimension table across all the nodes to import back on local PM:
-
-With the [infinidb\_local\_query](broken-reference) variable set to 0 (default with [local PM Query](broken-reference) ):
-
-Create a script (i.e., extract\_query\_script.sql in our example) similar to the following:
-
-```
-set infinidb_local_query=0;
-select fact.column1, dim.column2 
-from fact join dim using (key) 
-where idbPm(fact.key) = idbLocalPm();
-```
-
-The [infinidb\_local\_query](broken-reference) is set to 0 to allow query across all PMs.
-
-The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the idbLocalPm() function), while the dimension table data is extracted from all the PM nodes.
-
-Then you can execute the script to pipe it directly into cpimport:
-
-```
-mcsmysql source_schema -N < extract_query_script.sql | /usr/local/mariadb/columnstore/bin/cpimport target_schema target_table -s '\t' –n1
-```
-
-CC BY-SA / Gnu FDL
