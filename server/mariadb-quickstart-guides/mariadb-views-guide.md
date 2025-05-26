@@ -302,7 +302,7 @@ ensure that they won't cause a significant performance hit unnecessarily.
 
 When we re-engineer our application, we sometimes need to change the database\
 to optimize or accommodate new or removed features. We may, for example, want\
-to [normalize](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/intermediate-mariadb-articles/database-theory/database-normalization) our tables when they start getting too large and queries start\
+to [normalize](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/database-normalization) our tables when they start getting too large and queries start\
 taking too long. Alternately, we may be installing a new application with\
 different requirements alongside a legacy application. Unfortunately, database\
 redesign will tend to break backwards-compatibility with previous applications,\

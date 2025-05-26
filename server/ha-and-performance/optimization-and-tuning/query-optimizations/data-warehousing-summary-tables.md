@@ -4,7 +4,7 @@
 
 This document discusses the creation and maintenance of "Summary Tables". It is a companion to the document on [Data Warehousing Techniques](data-warehousing-techniques.md).
 
-The basic terminology ("Fact Table", "[Normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/intermediate-mariadb-articles/database-theory/database-normalization)", etc) is covered in that document.
+The basic terminology ("Fact Table", "[Normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/database-normalization)", etc) is covered in that document.
 
 ## Summary tables for data warehouse "reports"
 

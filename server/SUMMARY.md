@@ -10,6 +10,7 @@
   * [Troubleshooting Connection Issues Guide](mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
   * [Doing Time with MariaDB](mariadb-quickstart-guides/mariadb-datetime-guide.md)
   * [Importing Data into MariaDB](mariadb-quickstart-guides/mariadb-importing-data-guide.md)
+  * [Essentials of an Index Guide](mariadb-quickstart-guides/essentials-of-an-index-guide.md)
   * [Getting Started with Indexes](mariadb-quickstart-guides/mariadb-indexes-guide.md)
   * [Joining Tables with JOIN Clauses](mariadb-quickstart-guides/mariadb-join-guide.md)
   * [Configuring MariaDB for Remote Client Access](mariadb-quickstart-guides/mariadb-remote-connection-guide.md)
