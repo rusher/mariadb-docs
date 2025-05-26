@@ -1,5 +1,5 @@
 ---
-icon: check
+icon: question
 ---
 
 # MariaDB Community
