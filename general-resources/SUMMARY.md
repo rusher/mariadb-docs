@@ -51,14 +51,12 @@
 
 ## Additional Resources
 
-* [Videos](additional-resources/video-presentations-and-screencasts/README.md)
-  * [High Availability](additional-resources/video-presentations-and-screencasts/high-availability-videos.md)
-  * [Optimization & Performance Tuning](additional-resources/video-presentations-and-screencasts/optimizer-and-performance-tuning-videos.md)
-  * [Storage Engines & Plugins](additional-resources/video-presentations-and-screencasts/storage-engines-and-plugins-videos.md)
-  * [DBA Topics](additional-resources/video-presentations-and-screencasts/videos-for-dbas.md)
-  * [Miscellaneous Topics 1](additional-resources/video-presentations-and-screencasts/mariadb-developer-videos.md)
-  * [Miscellaneous Topics 2](additional-resources/video-presentations-and-screencasts/videos-on-mariadb.md)
-  * [Interviews](additional-resources/video-presentations-and-screencasts/interviews-related-to-mariadb.md)
+* [Videos](additional-resources/videos/README.md)
+  * [Storage Engines & Plugins](additional-resources/videos/storage-engines-and-plugins-videos.md)
+  * [DBA Topics](additional-resources/videos/videos-for-dbas.md)
+  * [Miscellaneous Topics 1](additional-resources/videos/mariadb-developer-videos.md)
+  * [Miscellaneous Topics 2](additional-resources/videos/videos-on-mariadb.md)
+  * [Interviews](additional-resources/videos/interviews-related-to-mariadb.md)
 * [Blogs](additional-resources/blogs.md)
 
 ***
