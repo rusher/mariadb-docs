@@ -1,7 +1,10 @@
+---
+icon: check
+---
+
 # Building MariaDB Server for Debugging
 
-Instructions on how to build a mysqld that contains all the information we need to fix the problem:\
-(A more detailed explanation can be found [here](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).)
+Instructions on how to build a mysqld that contains all the information we need to fix problems you encounter. (A more detailed explanation can be found [here](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).)
 
 _**Note: this text has been extracted into a separate article from**_ [_**Reporting bugs**_](reporting-bugs.md)_**, see its full history there.**_
 

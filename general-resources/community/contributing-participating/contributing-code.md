@@ -1,10 +1,13 @@
+---
+icon: check
+---
+
 # Contributing Code
 
-This page contains general guidelines and procedures for contributing code. If\
-you have any questions we invite you to ask on the[maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) mailing list, on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com), or on the #maria [IRC](../../../en/irc/) channel on. Other email lists and places to find MariaDB can be found[here](broken-reference).
+_For contributors interested in MariaDB development, explore open projects via_ [_JIRA_](https://jira.mariadb.org) _and check for_ [_beginner-friendly tasks_](https://jira.mariadb.org/issues/?jql=resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20beginner-friendly%20ORDER%20BY%20updated%20DESC)_. Engage with the community on the_ [_maria-developers_](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) _mailing list,_ [_Slack_](https://r.mariadb.com/join-community-slack) _,_ [_Zulip_](https://mariadb.zulipchat.com)_, or_ [_IRC_](../../../en/irc/) _channel for guidance._
 
 General information about contributing to MariaDB (for developers and\
-non-developers) is found on the[Contributing to the MariaDB Project](contributing-to-the-mariadb-project.md)\
+non-developers) can be found on the [Contributing to the MariaDB Project](contributing-to-the-mariadb-project.md)\
 page.
 
 ## Finding Development Projects to Work on

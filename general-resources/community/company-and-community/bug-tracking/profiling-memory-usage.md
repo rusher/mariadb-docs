@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # Profiling Memory Usage
 
 Profiling the memory usage can be useful for finding out why a program appears to use more memory than it should. It is especially helpful for analyzing OOM situations or other cases where the memory grows linearly and causes problems.

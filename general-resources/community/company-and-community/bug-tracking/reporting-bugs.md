@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # Reporting Software Bugs
 
 For reporting documentation bugs specifically, see [Reporting Documentation Bugs](reporting-documentation-bugs.md).

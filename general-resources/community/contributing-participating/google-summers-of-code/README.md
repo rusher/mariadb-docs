@@ -1,3 +1,8 @@
+---
+description: Discuss those pages with Max. Keep them?
+icon: question
+---
+
 # Google Summers of Code
 
 MariaDB has participated in [Google Summer of Code](https://summerofcode.withgoogle.com/) since 2013. Below is a list of links to pages providing information for each year.

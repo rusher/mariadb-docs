@@ -10,6 +10,7 @@
 
 ## Community
 
+* [Joining the Community](community/joining-the-community.md)
 * [MariaDB Community](community/company-and-community/README.md)
   * [Bug Tracking](community/company-and-community/bug-tracking/README.md)
     * [Reporting Documentation Bugs](community/company-and-community/bug-tracking/reporting-documentation-bugs.md)
@@ -22,16 +23,13 @@
   * [Legal Documents](community/company-and-community/legal-documents/README.md)
     * [MariaDB Contributor Agreement](community/company-and-community/legal-documents/mca.md)
     * [MariaDB Contributor Agreement FAQ](community/company-and-community/legal-documents/mariadb-contributor-agreement-faq.md)
-    * [MariaDB Trademark Policy](community/company-and-community/legal-documents/mariadb-trademark-policy.md)
-    * [Branding Guidelines](community/company-and-community/legal-documents/branding-guidelines.md)
 * [Contributing & Participating](community/contributing-participating/README.md)
   * [Contributing Code](community/contributing-participating/contributing-code.md)
   * [Contributing to the MariaDB Project](community/contributing-participating/contributing-to-the-mariadb-project.md)
-  * [Donate to the Foundation](community/contributing-participating/donate-to-the-foundation.md)
-  * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)
   * [Project Suggestions](community/contributing-participating/project-suggestions.md)
   * [MariaDB Public FTP Server](community/contributing-participating/mariadb-public-ftp-server.md)
   * [Sponsoring the MariaDB Project](community/contributing-participating/sponsoring-the-mariadb-project.md)
+  * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)
   * [Web Hosting Providers Offering MariaDB](community/contributing-participating/web-hosting-providers-offering-mariadb.md)
   * [Google Season of Docs](community/contributing-participating/google-season-of-docs/README.md)
     * [google-season-of-docs-2019](community/contributing-participating/google-season-of-docs/google-season-of-docs-2019.md)
@@ -50,11 +48,6 @@
     * [google-summer-of-code-2023](community/contributing-participating/google-summers-of-code/google-summer-of-code-2023.md)
     * [google-summer-of-code-2024](community/contributing-participating/google-summers-of-code/google-summer-of-code-2024.md)
     * [google-summer-of-code-2025](community/contributing-participating/google-summers-of-code/google-summer-of-code-2025.md)
-
-***
-
-* [Joining the Community](joining-the-community.md)
-* [Test Page](test-page.md)
 
 ## Additional Resources
 

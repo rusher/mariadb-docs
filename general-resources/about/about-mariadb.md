@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # About MariaDB
 
 ## About MariaDB Server

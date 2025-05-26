@@ -1,5 +1,6 @@
 ---
 description: Discuss with Max
+icon: check
 ---
 
 # Web Hosting Providers Offering MariaDB

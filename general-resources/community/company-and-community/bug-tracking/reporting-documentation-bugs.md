@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # Reporting Documentation Bugs
 
 ## Bug Reports

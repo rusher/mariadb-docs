@@ -1,3 +1,8 @@
+---
+description: Discuss with Max - is this page up to date? Should we mention developer names?
+icon: question
+---
+
 # Project Suggestions
 
 If you want to contribute to MariaDB but have a doubt about what to work on,\

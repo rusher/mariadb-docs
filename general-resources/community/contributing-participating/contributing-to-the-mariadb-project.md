@@ -1,7 +1,23 @@
+---
+icon: check
+---
+
 # Contributing to the MariaDB Project
 
-The success of [MariaDB](../../../kb/en/mariadb/) depends on the participation of the[community](../../../kb/en/community/). MariaDB would not be as good as it is today without the\
-participation of the entire [MariaDB community](../../../kb/en/community/).
+#### How to Contribute to MariaDB
+
+_The success of MariaDB relies heavily on community involvement. You can contribute in various ways, even if you are not a developer:_
+
+* _**Bug Reporting**: Create an account to report bugs._
+* _**Knowledge Sharing**: Answer questions in the Knowledge Base or on IRC and Zulip._
+* _**Testing**: Upload bug tests to the FTP server for private testing._
+* _**Documentation**: Write or translate articles and documentation for MariaDB._
+* _**Advocacy**: Promote MariaDB and participate in open source events._
+* _**Support**: Donate time or resources, or engage your company in supporting MariaDB._
+
+_Explore more ways to get involved on the_ [_MariaDB Foundation page_](https://mariadb.org/get-involved/)_._
+
+The success of [MariaDB](../../../kb/en/mariadb/) depends on the participation of the[community](../../../kb/en/community/). MariaDB would not be as good as it is today without the participation of the entire [MariaDB community](../../../kb/en/community/).
 
 ## Getting Started
 
@@ -19,11 +35,9 @@ strong C/C++ skills. Areas for non-developers include:
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
 * Running a [BuildBot](../../development-articles/general-development-information/tools/buildbot/) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
-* [Donate](donate-to-the-foundation.md) time or money to the MariaDB project.
+* [Donate](https://mariadb.org/donate/) time or money to the MariaDB project.
 * Ask your company to [sponsor a feature](sponsoring-the-mariadb-project.md).
 * [MariaDB Foundation page on getting involved](https://mariadb.org/get-involved/)
-
-[**Contributing to the Knowledge Base**](https://mariadb.com/kb/en/contributing-to-the-askmonty-knowledgebase/) is a great way to help improve MariaDB.
 
 ### MariaDB Email Lists
 

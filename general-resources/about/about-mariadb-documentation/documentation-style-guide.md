@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # Documentation Style Guide
 
 We adhere to the [Google developer documentation style guide](https://developers.google.com/style/). Here are some links to valuable resources from that style guide:

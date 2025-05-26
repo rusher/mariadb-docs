@@ -1,5 +1,6 @@
 ---
 description: Discuss with Max. Check the links.
+icon: question
 ---
 
 # Contributing Documentation

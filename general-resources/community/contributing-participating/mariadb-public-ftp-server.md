@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # MariaDB Public FTP Server
 
 MariaDB provides a secure [FTP](http://en.wikipedia.org/wiki/File_Transfer_Protocol), [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) and [WebDAV](https://en.wikipedia.org/wiki/WebDAV) server where you can upload files to be used by MariaDB developers, for example table structures and data for bug reports.

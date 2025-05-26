@@ -1,3 +1,8 @@
+---
+description: Discuss with Max and/or Daniel
+icon: question
+---
+
 # Log of MariaDB Contributions
 
 ### How to Document Contributions

@@ -1,7 +1,5 @@
 ---
-description: >-
-  See above for what to merge in to this page. And Monique will provide a list
-  of social channels.
+icon: check
 ---
 
 # Joining the Community
@@ -67,7 +65,5 @@ A list of MariaDB-related social media links and pages. Note that many of them a
 ### Fosstodon <a href="#mastodon" id="mastodon"></a>
 
 * MariaDB Foundation: [@mariadb\_org](https://fosstodon.org/@mariadb_org)&#x20;
-
-
 
 \

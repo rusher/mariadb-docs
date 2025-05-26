@@ -1,3 +1,7 @@
+---
+icon: check
+---
+
 # About MariaDB Documentation
 
 The documentation for MariaDB products is
