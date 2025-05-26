@@ -19,11 +19,10 @@ LOAD DATA [LOCAL] INFILE 'file_name'
 
 * ColumnStore ignores the ON DUPLICATE KEY clause.
 * Non-transactional LOAD DATA INFILE is directed to ColumnStores cpimport tool by default, which significantly increases performance.
-* Transactional LOAD DATA INFILE statements (that is with AUTOCOMMIT off or after a START TRANSACTION) are processed through normal DML processes.
-* When using LOAD DATA LOCAL INFILE with the mcsmysql utility , use the [--local-infile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#local_infile) command-line option.
+* Transactional LOAD DATA INFILE statements (that is, with AUTOCOMMIT off or after a START TRANSACTION) are processed through normal DML processes.
 * Use cpimport for importing UTF-8 data that contains multi-byte values
 
-The following example loads data into the a simple 5 column table: A file named /simpletable.tb&#x6C;_&#x68;as the following data in it._
+The following example loads data into a simple 5- column table: A file named /simpletable.tb&#x6C;_&#x68;as the following data in it._
 
 ```
 1|100|1000|10000|Test Number 1|
@@ -37,7 +36,7 @@ The data can then be loaded into the simpletable table with the following syntax
 LOAD DATA INFILE 'simpletable.tbl' INTO TABLE simpletable FIELDS TERMINATED BY '|'
 ```
 
-If the default mode is set to use cpimport internally any output error files will be written to /usr/local/mariadb/columnstore/mysql/db directory (or equivalent directory for non root install). These can be consulted for troubleshooting any errors reported.
+If the default mode is set to use cpimport internally, any output error files will be written to /var/log/mariadb/columnstore/cpimport/ directory. It can be consulted for troubleshooting any errors reported.
 
 ### See Also
 
