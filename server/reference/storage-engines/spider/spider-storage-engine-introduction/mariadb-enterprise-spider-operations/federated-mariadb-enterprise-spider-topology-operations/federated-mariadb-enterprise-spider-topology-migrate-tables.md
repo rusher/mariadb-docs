@@ -1,6 +1,4 @@
-# federated-mariadb-enterprise-spider-topology-migrate-tables
-
-## Federated MariaDB Enterprise Spider Topology Migrate Tables
+# Federated MariaDB Enterprise Spider Topology Migrate Tables
 
 ## Overview
 

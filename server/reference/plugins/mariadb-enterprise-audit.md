@@ -1,6 +1,4 @@
-# mariadb-enterprise-audit
-
-## MariaDB Enterprise Audit
+# MariaDB Enterprise Audit
 
 ## Overview
 

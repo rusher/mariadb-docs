@@ -1,6 +1,4 @@
-# data-in-transit-encryption-requiring-tls-on-mariadb-server
-
-## Requiring TLS on MariaDB Server
+# Requiring TLS on MariaDB Server
 
 ## Overview
 

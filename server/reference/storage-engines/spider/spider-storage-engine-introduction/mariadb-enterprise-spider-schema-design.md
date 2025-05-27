@@ -1,6 +1,4 @@
-# mariadb-enterprise-spider-schema-design
-
-## MariaDB Enterprise Spider Schema Design
+# MariaDB Enterprise Spider Schema Design
 
 ## Create Tables
 

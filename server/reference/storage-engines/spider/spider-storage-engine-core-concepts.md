@@ -1,6 +1,8 @@
-# spider-storage-engine-core-concepts
+---
+icon: question
+---
 
-## Spider Storage Engine Core Concepts
+# Spider Storage Engine Core Concepts
 
 A typical Spider deployment has a shared-nothing clustered architecture. The system works with any inexpensive hardware, and with a minimum of specific requirements for hardware or software. It consists of a set of computers, with one or more MariaDB processes known as nodes.
 

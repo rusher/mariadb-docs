@@ -1,6 +1,4 @@
-# explain-in-the-slow-query-log
-
-## EXPLAIN in the Slow Query Log
+# EXPLAIN in the Slow Query Log
 
 ### Switching it On
 

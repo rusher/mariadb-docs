@@ -1,6 +1,4 @@
-# federated-mariadb-enterprise-spider-topology-operations
-
-## Federated MariaDB Enterprise Spider Topology Operations
+# Federated MariaDB Enterprise Spider Topology Operations
 
 ## Overview
 

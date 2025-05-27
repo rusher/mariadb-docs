@@ -1,6 +1,4 @@
-# mariadb-memory-allocation
-
-## MariaDB Memory Allocation
+# MariaDB Memory Allocation
 
 ### Allocating RAM for MariaDB - The Short Answer
 

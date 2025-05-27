@@ -1,6 +1,4 @@
-# mariadb-enterprise-backup
-
-## MariaDB Enterprise Backup
+# MariaDB Enterprise Backup
 
 ## Overview
 

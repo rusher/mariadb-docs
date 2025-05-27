@@ -1,6 +1,4 @@
-# federated-mariadb-enterprise-spider-topology-backup-and-restore
-
-## Federated MariaDB Enterprise Spider Topology Backup and Restore
+# Federated MariaDB Enterprise Spider Topology Backup and Restore
 
 ## Overview
 

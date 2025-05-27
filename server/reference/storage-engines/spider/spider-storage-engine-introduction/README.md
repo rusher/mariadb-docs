@@ -1,6 +1,4 @@
-# spider-storage-engine-introduction
-
-## Spider Storage Engine Introduction
+# Spider Storage Engine Introduction
 
 ## Overview
 

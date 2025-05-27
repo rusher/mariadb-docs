@@ -1,6 +1,4 @@
-# sharded-mariadb-enterprise-spider-topology-operations
-
-## Sharded MariaDB Enterprise Spider Topology Operations
+# Sharded MariaDB Enterprise Spider Topology Operations
 
 ## Overview
 

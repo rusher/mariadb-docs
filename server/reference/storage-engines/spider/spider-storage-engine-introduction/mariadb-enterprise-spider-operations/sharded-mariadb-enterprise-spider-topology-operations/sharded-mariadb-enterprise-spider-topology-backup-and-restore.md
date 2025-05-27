@@ -1,6 +1,4 @@
-# sharded-mariadb-enterprise-spider-topology-backup-and-restore
-
-## Sharded MariaDB Enterprise Spider Topology Backup and Restore
+# Sharded MariaDB Enterprise Spider Topology Backup and Restore
 
 ## Overview
 

@@ -1,6 +1,4 @@
-# sharded-mariadb-enterprise-spider-topology-add-a-shard
-
-## Sharded MariaDB Enterprise Spider Topology Add a Shard
+# Sharded MariaDB Enterprise Spider Topology Add a Shard
 
 ## Overview
 

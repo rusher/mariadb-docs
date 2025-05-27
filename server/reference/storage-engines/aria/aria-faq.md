@@ -1,6 +1,4 @@
-# aria-faq
-
-## Aria FAQ
+# Aria FAQ
 
 This FAQ provides information on the [Aria](./) storage engine.
 

@@ -1,6 +1,4 @@
-# alter-sequence
-
-## ALTER SEQUENCE
+# ALTER SEQUENCE
 
 ### Syntax
 

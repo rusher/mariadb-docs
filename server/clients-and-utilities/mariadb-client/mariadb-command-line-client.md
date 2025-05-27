@@ -1,6 +1,4 @@
-# mariadb-command-line-client
-
-## mariadb Command-Line Client
+# mariadb Command-Line Client
 
 **mariadb** is a simple SQL shell (with GNU readline capabilities).
 

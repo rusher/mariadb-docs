@@ -1,6 +1,4 @@
-# spider-use-cases
-
-## Spider Use Cases
+# Spider Use Cases
 
 ## Introduction
 

@@ -1,6 +1,4 @@
-# configuring-mariadb-with-option-files
-
-## Configuring MariaDB with Option Files
+# Configuring MariaDB with Option Files
 
 You can configure MariaDB to run the way you want by configuring the server with MariaDB's option files. The default MariaDB option file is called `my.cnf` (or `mariadb.cnf`) on Unix-like operating systems and `my.ini` on Windows. Depending on how you've [installed](./) MariaDB, the default option file may be in a number of places, or it may not exist at all.
 
