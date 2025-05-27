@@ -41,9 +41,9 @@ The row/s affected value is reported as 1 if a row is inserted, and 2 if a row i
 
 If more than one unique index is matched, only the first is updated. It is not recommended to use this statement on tables with more than one unique index.
 
-If the table has an [AUTO\_INCREMENT](../../../data-types/auto_increment.md) [primary key](../../../../../kb/en/getting-started-with-indexes/#primary-key) and the statement inserts or updates a row, the [LAST\_INSERT\_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO\_INCREMENT value.
+If the table has an [AUTO\_INCREMENT](../../../data-types/auto_increment.md) [primary key](../../../../../kb/en/getting-started-with-indexes/#primary-key) and the statement inserts or updates a row, the [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO\_INCREMENT value.
 
-The [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `ON DUPLICATE KEY UPDATE` clause and has no meaning in any other context. It returns the column values from the `INSERT` portion of the statement. This function is particularly useful for multi-rows inserts.
+The [VALUES()](../../../sql-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `ON DUPLICATE KEY UPDATE` clause and has no meaning in any other context. It returns the column values from the `INSERT` portion of the statement. This function is particularly useful for multi-rows inserts.
 
 The [IGNORE](ignore.md) and [DELAYED](insert-delayed.md) options are ignored when you use `ON DUPLICATE KEY UPDATE`.
 
@@ -193,7 +193,7 @@ INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)
     ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);
 ```
 
-See the [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) function for more.
+See the [VALUES()](../../../sql-functions/secondary-functions/miscellaneous-functions/values-value.md) function for more.
 
 ## See Also
 
@@ -204,6 +204,6 @@ See the [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-fu
 * [Concurrent Inserts](concurrent-inserts.md)
 * [INSERT - Default & Duplicate Values](insert-default-duplicate-values.md)
 * [INSERT IGNORE](insert-ignore.md)
-* [VALUES()](../../built-in-functions/secondary-functions/miscellaneous-functions/values-value.md)
+* [VALUES()](../../../sql-functions/secondary-functions/miscellaneous-functions/values-value.md)
 
 CC BY-SA / Gnu FDL

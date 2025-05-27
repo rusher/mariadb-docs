@@ -69,7 +69,7 @@ The following options should be removed or renamed if you use them in your [opti
 You might consider using the following major new features in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
 * [Galera](../../../../../kb/en/galera-cluster/) has been upgraded from [Galera](../../../../../kb/en/galera-cluster/) 3 to [Galera](../../../../../kb/en/galera-cluster/) 4.
-* [System-versioning](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+* [System-versioning](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md).
 * [User password expiry](../../../../security/user-account-management/user-password-expiry.md)
 * [Account Locking](../../../../security/user-account-management/account-locking.md)
 * See also [System Variables Added in MariaDB 10.4](../../../../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-4.md).

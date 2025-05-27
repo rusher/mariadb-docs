@@ -36,7 +36,7 @@ REPLACE [LOW_PRIORITY | DELAYED]
 has the same value as a new row for a `PRIMARY KEY` or a`UNIQUE` index, the old row is deleted before the new row is\
 inserted. If the table has more than one `UNIQUE` keys, it is possible that the new row conflicts with more than one row. In this case, all conflicting rows will be deleted.
 
-The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use `[REPLACE ... SELECT](../inserting-loading-data/insert-select.md)` to copy rows between different databases.
+The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use `[REPLACE ... SELECT](../inserting-loading-data/insert-select.md)` to copy rows between different databases.
 
 **MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
 
@@ -74,7 +74,7 @@ to values from the current row and use them in the new row. If you use an\
 assignment such as `'SET col = col + 1'`, the\
 reference to the column name on the right hand side is treated as`DEFAULT(col)`, so the assignment is equivalent to`'SET col = DEFAULT(col) + 1'`.
 
-To use `REPLACE`, you must have both the`INSERT` and `DELETE` [privileges](../../account-management-sql-commands/grant.md)\
+To use `REPLACE`, you must have both the`INSERT` and `DELETE` [privileges](../../account-management-sql-statements/grant.md)\
 for the table.
 
 There are some gotchas you should be aware of, before using `REPLACE`:

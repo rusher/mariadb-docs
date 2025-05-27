@@ -11,7 +11,7 @@ MariaDB's generated columns syntax is designed to be similar to the syntax for [
 
 ## Description
 
-A generated column is a column in a table that cannot explicitly be set to a specific value in a [DML query](../../data-manipulation/). Instead, its value is automatically generated based on an expression. This expression might generate the value based on the values of other columns in the table, or it might generate the value by calling [built-in functions](../../built-in-functions/) or [user-defined functions (UDFs)](../../../../server-usage/user-defined-functions/).
+A generated column is a column in a table that cannot explicitly be set to a specific value in a [DML query](../../data-manipulation/). Instead, its value is automatically generated based on an expression. This expression might generate the value based on the values of other columns in the table, or it might generate the value by calling [built-in functions](../../../sql-functions/) or [user-defined functions (UDFs)](../../../../server-usage/user-defined-functions/).
 
 There are two types of generated columns:
 
@@ -68,11 +68,11 @@ ERROR 1905 (HY000): Cannot define foreign key with ON UPDATE SET NULL clause on 
     * Values for `VIRTUAL` generated columns are not stored in the table. Instead, the value is generated dynamically whenever the column is queried. If other columns in a row are queried, but the `VIRTUAL` generated column is not one of the queried columns, then the column's value is not generated.
 * The [SELECT](../../data-manipulation/selecting-data/select.md) statement supports generated columns.
 * Generated columns can be referenced in the [INSERT](../../data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../data-manipulation/changing-deleting-data/update.md), and [DELETE](../../data-manipulation/changing-deleting-data/delete.md) statements.
-  * However, `VIRTUAL` or `PERSISTENT` generated columns cannot be explicitly set to any other values than `NULL` or [DEFAULT](../../built-in-functions/secondary-functions/information-functions/default.md). If a generated column is explicitly set to any other value, then the outcome depends on whether [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). If it is not enabled, then a warning will be raised and the default generated value will be used instead. If it is enabled, then an error will be raised instead.
+  * However, `VIRTUAL` or `PERSISTENT` generated columns cannot be explicitly set to any other values than `NULL` or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md). If a generated column is explicitly set to any other value, then the outcome depends on whether [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). If it is not enabled, then a warning will be raised and the default generated value will be used instead. If it is enabled, then an error will be raised instead.
 * The [CREATE TABLE](create-table.md) statement has limited support for generated columns.
   * It supports defining generated columns in a new table.
   * It supports using generated columns to [partition tables](../../../../server-management/partitioning-tables/).
-  * It does not support using the [versioning clauses](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) with generated columns.
+  * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
 * The [ALTER TABLE](../alter/alter-table.md) statement has limited support for generated columns.
   * It supports the `MODIFY` and `CHANGE` clauses for `PERSISTENT` generated columns.
   * It does not support the `MODIFY` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-15476](https://jira.mariadb.org/browse/MDEV-15476) for more information.
@@ -81,7 +81,7 @@ ERROR 1905 (HY000): Cannot define foreign key with ON UPDATE SET NULL clause on 
   * It does not support adding a `VIRTUAL` generated column with the `ADD` clause if the same statement is also adding other columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17468](https://jira.mariadb.org/browse/MDEV-17468) for more information.
   * It also does not support altering an existing column into a `VIRTUAL` generated column.
   * It supports using generated columns to [partition tables](../../../../server-management/partitioning-tables/).
-  * It does not support using the [versioning clauses](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) with generated columns.
+  * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
 * The [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md) statement supports generated columns.
 * The [DESCRIBE](../../administrative-sql-statements/describe.md) statement can be used to check whether a table has generated columns.
   * You can tell which columns are generated by looking for the ones where the `Extra` column is set to either `VIRTUAL` or `PERSISTENT`. For example:
@@ -100,13 +100,13 @@ DESCRIBE table1;
 
 * Generated columns can be properly referenced in the `NEW` and `OLD` rows in [triggers](../../../../server-usage/triggers-events/triggers/).
 * [Stored procedures](../../../../server-usage/stored-routines/stored-procedures/) support generated columns.
-* The [HANDLER](../../../sql-statements-and-structure/nosql/handler/handler-commands.md) statement supports generated columns.
+* The [HANDLER](../../../sql-structure/nosql/handler/handler-commands.md) statement supports generated columns.
 
 ### Expression Support
 
 * Most legal, deterministic expressions which can be calculated are supported in expressions for generated columns.
-* Most [built-in functions](../../built-in-functions/) are supported in expressions for generated columns.
-  * However, some [built-in functions](../../built-in-functions/) can't be supported for technical reasons. For example, If you try to use an unsupported function in an expression, an error is generated similar to the following:
+* Most [built-in functions](../../../sql-functions/) are supported in expressions for generated columns.
+  * However, some [built-in functions](../../../sql-functions/) can't be supported for technical reasons. For example, If you try to use an unsupported function in an expression, an error is generated similar to the following:
 
 ```
 ERROR 1901 (HY000): Function or expression 'dayname()' cannot be used in the GENERATED ALWAYS AS clause of `v`
@@ -115,8 +115,8 @@ ERROR 1901 (HY000): Function or expression 'dayname()' cannot be used in the GEN
 * [Subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/) are not supported in expressions for generated columns because the underlying data can change.
 * Using anything that depends on data outside the row is not supported in expressions for generated columns.
 * [Stored functions](../../../../server-usage/stored-routines/stored-functions/) are not supported in expressions for generated columns. See [MDEV-17587](https://jira.mariadb.org/browse/MDEV-17587) for more information.
-* Non-deterministic [built-in functions](../../built-in-functions/) are supported in expressions for not indexed `VIRTUAL` generated columns.
-* Non-deterministic [built-in functions](../../built-in-functions/) are not supported in expressions for `PERSISTENT` or indexed `VIRTUAL` generated columns.
+* Non-deterministic [built-in functions](../../../sql-functions/) are supported in expressions for not indexed `VIRTUAL` generated columns.
+* Non-deterministic [built-in functions](../../../sql-functions/) are not supported in expressions for `PERSISTENT` or indexed `VIRTUAL` generated columns.
 * [User-defined functions (UDFs)](../../../../server-usage/user-defined-functions/) are supported in expressions for generated columns.
   * However, MariaDB can't check whether a UDF is deterministic, so it is up to the user to be sure that they do not use non-deterministic UDFs with `VIRTUAL` generated columns.
 * Defining a generated column based on other generated columns defined before it in the table definition is supported. For example:
@@ -140,7 +140,7 @@ When a generated column is `PERSISTENT` or indexed, the value of the expression 
 There are currently two affected classes of inconsistencies: character padding and unsigned subtraction:
 
 * For a `VARCHAR` or `TEXT` generated column the length of the value returned can vary depending on the PAD\_CHAR\_TO\_FULL\_LENGTH [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md) flag. To make the value consistent, create the generated column using an RTRIM() or RPAD() function. Alternately, create the generated column as a `CHAR` column so that its data is always fully padded.
-* If a `SIGNED` generated column is based on the subtraction of an `UNSIGNED` value, the resulting value can vary depending on how large the value is and the NO\_UNSIGNED\_SUBTRACTION [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md) flag. To make the value consistent, use [CAST()](../../built-in-functions/string-functions/cast.md) to ensure that each `UNSIGNED` operand is `SIGNED` before the subtraction.
+* If a `SIGNED` generated column is based on the subtraction of an `UNSIGNED` value, the resulting value can vary depending on how large the value is and the NO\_UNSIGNED\_SUBTRACTION [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md) flag. To make the value consistent, use [CAST()](../../../sql-functions/string-functions/cast.md) to ensure that each `UNSIGNED` operand is `SIGNED` before the subtraction.
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 
@@ -213,8 +213,8 @@ MariaDB's generated columns implementation does not enforce the following\
 restrictions that are present in [Microsoft SQL Server's computed columns](https://docs.microsoft.com/en-us/sql/relational-databases/tables/specify-computed-columns-in-a-table?view=sql-server-2017) implementation:
 
 * MariaDB allows [server variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/) in generated column expressions, including those that change dynamically, such as [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count).
-* MariaDB allows the [CONVERT\_TZ()](../../built-in-functions/date-time-functions/convert_tz.md) function to be called with a named [time zone](../../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) as an argument, even though time zone names and time offsets are configurable.
-* MariaDB allows the [CAST()](../../built-in-functions/string-functions/cast.md) function to be used with non-unicode [character sets](../../../data-types/string-data-types/character-sets/), even though character sets are configurable and differ between binaries/versions.
+* MariaDB allows the [CONVERT\_TZ()](../../../sql-functions/date-time-functions/convert_tz.md) function to be called with a named [time zone](../../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) as an argument, even though time zone names and time offsets are configurable.
+* MariaDB allows the [CAST()](../../../sql-functions/string-functions/cast.md) function to be used with non-unicode [character sets](../../../data-types/string-data-types/character-sets/), even though character sets are configurable and differ between binaries/versions.
 * MariaDB allows [FLOAT](../../../data-types/data-types-numeric-data-types/float.md) expressions to be used in generated columns. Microsoft SQL Server considers these expressions to be "imprecise" due to potential cross-platform differences in floating-point implementations and precision.
 * Microsoft SQL Server requires the [ARITHABORT](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-arithabort-transact-sql?view=sql-server-2017) mode to be set, so that division by zero returns an error, and not a NULL.
 * Microsoft SQL Server requires `QUOTED_IDENTIFIER` to be set in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). In MariaDB, if data is inserted without `ANSI_QUOTES` set in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md), then it will be processed and stored differently in a generated column that contains quoted identifiers.

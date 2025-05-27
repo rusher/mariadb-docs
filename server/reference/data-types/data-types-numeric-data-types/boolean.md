@@ -1,8 +1,6 @@
-
 # BOOLEAN
 
 ## Syntax
-
 
 ```
 BOOL, BOOLEAN
@@ -10,16 +8,12 @@ BOOL, BOOLEAN
 
 ## Description
 
-
-These types are synonyms for [TINYINT(1)](tinyint.md). 
+These types are synonyms for [TINYINT(1)](tinyint.md).\
 A value of zero is considered false. Non-zero values are considered true.
 
-
-However, the values TRUE and FALSE are merely aliases for 1 and 0. See [Boolean Literals](../../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md), as well as the [IS operator](../../sql-statements-and-structure/operators/comparison-operators/is.md) for testing values against a boolean.
-
+However, the values TRUE and FALSE are merely aliases for 1 and 0. See [Boolean Literals](../../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md), as well as the [IS operator](../../sql-structure/operators/comparison-operators/is.md) for testing values against a boolean.
 
 ## Examples
-
 
 ```
 CREATE TABLE boolean_example (
@@ -75,7 +69,6 @@ SELECT IF(2, 'true', 'false');
 
 TRUE and FALSE as aliases for 1 and 0:
 
-
 ```
 SELECT IF(0 = FALSE, 'true', 'false');
 
@@ -107,16 +100,12 @@ SELECT IF(2 = FALSE, 'true', 'false');
 +--------------------------------+
 ```
 
-The last two statements display the results shown because 2 is equal
+The last two statements display the results shown because 2 is equal\
 to neither 1 nor 0.
-
 
 ## See Also
 
+* [Boolean Literals](../../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md)
+* [IS operator](../../sql-structure/operators/comparison-operators/is.md)
 
-* [Boolean Literals](../../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md)
-* [IS operator](../../sql-statements-and-structure/operators/comparison-operators/is.md)
-
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

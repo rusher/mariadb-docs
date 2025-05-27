@@ -1,6 +1,6 @@
 # CHAR
 
-This article covers the CHAR data type. See [CHAR Function](../../sql-statements/built-in-functions/string-functions/char-function.md) for the function.
+This article covers the CHAR data type. See [CHAR Function](../../sql-functions/string-functions/char-function.md) for the function.
 
 ## Syntax
 
@@ -109,7 +109,7 @@ SELECT collation_name FROM information_schema.collations
 
 ## See Also
 
-* [CHAR Function](../../sql-statements/built-in-functions/string-functions/char-function.md)
+* [CHAR Function](../../sql-functions/string-functions/char-function.md)
 * [VARCHAR](varchar.md)
 * [BINARY](binary.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)

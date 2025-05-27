@@ -4,7 +4,7 @@
 
 Account locking is available for all current versions of MariaDB. Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected).
 
-User accounts can be locked at creation, with the [CREATE USER](../../reference/sql-statements/account-management-sql-commands/create-user.md) statement, or modified after creation with the [ALTER USER](../../reference/sql-statements/account-management-sql-commands/alter-user.md) statement. For example:
+User accounts can be locked at creation, with the [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md) statement, or modified after creation with the [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement. For example:
 
 ```
 CREATE USER 'lorin'@'localhost' ACCOUNT LOCK;
@@ -23,7 +23,7 @@ mariadb -ulorin
   ERROR 4151 (HY000): Access denied, this account is locked
 ```
 
-The [ALTER USER](../../reference/sql-statements/account-management-sql-commands/alter-user.md) statement is also used to unlock a user:
+The [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement is also used to unlock a user:
 
 ```
 ALTER USER 'lorin'@'localhost' ACCOUNT UNLOCK;

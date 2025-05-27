@@ -1,6 +1,6 @@
 # Information Schema METADATA\_LOCK\_INFO Table
 
-The [Information Schema](../) `METADATA_LOCK_INFO` table is created by the [metadata\_lock\_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET\_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
+The [Information Schema](../) `METADATA_LOCK_INFO` table is created by the [metadata\_lock\_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET\_LOCK](../../../../../sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
 
 It has the following columns:
 
@@ -91,6 +91,6 @@ SELECT * FROM information_schema.METADATA_LOCK_INFO;
 
 * [metadata locks](../../../../transactions/metadata-locking.md)
 * [Performance Schema metadata\_locks table](../../performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md)
-* [GET\_LOCK](../../../../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)
+* [GET\_LOCK](../../../../../sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)
 
 CC BY-SA / Gnu FDL

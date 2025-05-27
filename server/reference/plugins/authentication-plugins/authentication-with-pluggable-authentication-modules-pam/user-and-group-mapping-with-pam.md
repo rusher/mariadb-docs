@@ -127,9 +127,9 @@ GRANT PROXY ON 'bar'@'%' TO ''@'%';
 GRANT PROXY ON 'dba'@'%' TO ''@'%';
 ```
 
-Note that the `''@'%'` account is a special catch-all [anonymous account](../../../sql-statements/account-management-sql-commands/create-user.md#anonymous-accounts). Any login by a user that has no more specific account match in the system will be matched by this anonymous account.
+Note that the `''@'%'` account is a special catch-all [anonymous account](../../../sql-statements/account-management-sql-statements/create-user.md#anonymous-accounts). Any login by a user that has no more specific account match in the system will be matched by this anonymous account.
 
-Also note that you might not be able to create the `''@'%'` anonymous account by default on some systems without doing some extra steps first. See [Fixing a Legacy Default Anonymous Account](../../../sql-statements/account-management-sql-commands/create-user.md#fixing-a-legacy-default-anonymous-account) for more information.
+Also note that you might not be able to create the `''@'%'` anonymous account by default on some systems without doing some extra steps first. See [Fixing a Legacy Default Anonymous Account](../../../sql-statements/account-management-sql-statements/create-user.md#fixing-a-legacy-default-anonymous-account) for more information.
 
 ### Verifying that Mapping is Occurring
 

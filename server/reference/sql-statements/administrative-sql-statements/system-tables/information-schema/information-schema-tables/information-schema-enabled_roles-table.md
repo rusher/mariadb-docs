@@ -13,7 +13,7 @@ This table lists all roles that are currently enabled, one role per row — the 
 
 The roles that the current user can enable are listed in the [APPLICABLE\_ROLES](information-schema-applicable_roles-table.md) Information Schema table.
 
-See also [CURRENT\_ROLE()](../../../../built-in-functions/secondary-functions/information-functions/current_role.md).
+See also [CURRENT\_ROLE()](../../../../../sql-functions/secondary-functions/information-functions/current_role.md).
 
 ## Examples
 

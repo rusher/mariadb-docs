@@ -39,7 +39,7 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 The `INSERT` statement is used to insert new rows into an existing table. The `INSERT ... VALUES`\
 and `INSERT ... SET` forms of the statement insert rows based on explicitly specified values. The `INSERT ... SELECT` form inserts rows selected from another table or tables. `INSERT ... SELECT` is discussed further in the `[INSERT ... SELECT](insert-select.md)` article.
 
-The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use [INSERT ... SELECT](insert-select.md) to copy rows between different databases.
+The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use [INSERT ... SELECT](insert-select.md) to copy rows between different databases.
 
 The PARTITION clause can be used in both the INSERT and the SELECT part. See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
 

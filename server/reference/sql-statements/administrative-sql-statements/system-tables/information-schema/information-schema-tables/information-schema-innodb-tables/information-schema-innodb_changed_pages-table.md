@@ -4,7 +4,7 @@ The [Information Schema](../../) `INNODB_CHANGED_PAGES` Table contains data abou
 
 The number of records is limited by the value of the [innodb\_max\_changed\_pages](../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable.
 
-The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
 It has the following columns:
 

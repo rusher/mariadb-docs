@@ -156,7 +156,7 @@ SELECT @a;
 
 ## See Also
 
-* [Using last\_value() to return data of used rows](../../built-in-functions/secondary-functions/information-functions/last_value.md)
+* [Using last\_value() to return data of used rows](../../../sql-functions/secondary-functions/information-functions/last_value.md)
 * [SET STATEMENT](set-statement.md)
 * [SET Variable](../../../../server-usage/programmatic-compound-statements/set-variable.md)
 * [SET Data Type](../../../data-types/string-data-types/set-data-type.md)

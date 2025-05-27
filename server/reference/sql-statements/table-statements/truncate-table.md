@@ -9,9 +9,9 @@ TRUNCATE [TABLE] tbl_name
 
 ## Description
 
-`TRUNCATE TABLE` empties a table completely. It requires the `DROP` privilege. See [GRANT](../account-management-sql-commands/grant.md).
+`TRUNCATE TABLE` empties a table completely. It requires the `DROP` privilege. See [GRANT](../account-management-sql-statements/grant.md).
 
-`tbl_name` can also be specified in the form `db_name`.`tbl_name` (see [Identifier Qualifiers](../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md)).
+`tbl_name` can also be specified in the form `db_name`.`tbl_name` (see [Identifier Qualifiers](../../sql-structure/sql-language-structure/identifier-qualifiers.md)).
 
 Logically, `TRUNCATE TABLE` is equivalent to a [DELETE](../data-manipulation/changing-deleting-data/delete.md) statement that deletes all rows, but there are practical differences under some circumstances.
 
@@ -56,7 +56,7 @@ For other storage engines, `TRUNCATE TABLE` differs from`DELETE` in the followin
 
 For the purposes of binary logging and [replication](broken-reference), `TRUNCATE TABLE` is treated as [DROP TABLE](../data-definition/drop/drop-table.md) followed by [CREATE TABLE](../data-definition/create/create-table.md) (DDL rather than DML).
 
-`TRUNCATE TABLE` does not work on [views](../../../server-usage/views/). Currently, `TRUNCATE TABLE` drops all historical records from a [system-versioned table](../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+`TRUNCATE TABLE` does not work on [views](../../../server-usage/views/). Currently, `TRUNCATE TABLE` drops all historical records from a [system-versioned table](../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 #### WAIT/NOWAIT
 
@@ -84,7 +84,7 @@ Setting [innodb\_adaptive\_hash\_index=OFF](../../storage-engines/innodb/innodb-
 
 ## See Also
 
-* [TRUNCATE function](../built-in-functions/numeric-functions/truncate.md)
+* [TRUNCATE function](../../sql-functions/numeric-functions/truncate.md)
 * [innodb\_safe\_truncate](../../storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) system variable
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

@@ -11,12 +11,12 @@ CREATE [OR REPLACE] [AGGREGATE] FUNCTION [IF NOT EXISTS] function_name
 ## Description
 
 A user-defined function (UDF) is a way to extend MariaDB with a new function\
-that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-statements/built-in-functions/numeric-functions/abs.md) or[CONCAT()](../../reference/sql-statements/built-in-functions/string-functions/concat.md).
+that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-functions/numeric-functions/abs.md) or[CONCAT()](../../reference/sql-functions/string-functions/concat.md).
 
 `function_name` is the name that should be used in SQL statements to invoke\
 the function.
 
-To create a function, you must have the [INSERT privilege](../../reference/sql-statements/account-management-sql-commands/grant.md) for the\
+To create a function, you must have the [INSERT privilege](../../reference/sql-statements/account-management-sql-statements/grant.md) for the\
 mysql database. This is necessary because`CREATE FUNCTION` adds a row to the[mysql.func system table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) that records the function's name,\
 type, and shared library name. If you do not have this table, you should run\
 the [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md) command to create it.
@@ -31,7 +31,7 @@ Statements making use of user-defined functions are not[safe for replication](..
 
 For creating a stored function as opposed to a user-defined function, see[CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md).
 
-For valid identifiers to use as function names, see [Identifier Names](../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as function names, see [Identifier Names](../../reference/sql-structure/sql-language-structure/identifier-names.md).
 
 #### RETURNS
 
@@ -48,8 +48,8 @@ that was searched by your system's dynamic linker.
 
 #### AGGREGATE
 
-Aggregate functions are summary functions such as [SUM()](../../reference/sql-statements/built-in-functions/aggregate-functions/sum.md) and[AVG()](../../reference/sql-statements/built-in-functions/aggregate-functions/avg.md).\
-Aggregate UDF functions can be used as [window functions](../../reference/sql-statements/built-in-functions/special-functions/window-functions/).
+Aggregate functions are summary functions such as [SUM()](../../reference/sql-functions/aggregate-functions/sum.md) and[AVG()](../../reference/sql-functions/aggregate-functions/avg.md).\
+Aggregate UDF functions can be used as [window functions](../../reference/sql-functions/special-functions/window-functions/).
 
 #### OR REPLACE
 
@@ -99,7 +99,7 @@ SHOW WARNINGS;
 
 ## See Also
 
-* [Identifier Names](../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../reference/sql-structure/sql-language-structure/identifier-names.md)
 * [DROP FUNCTION](../stored-routines/stored-functions/drop-function.md)
 * [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md)
 

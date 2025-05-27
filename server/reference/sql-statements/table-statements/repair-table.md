@@ -37,7 +37,7 @@ See [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_c
 
 `REPAIR TABLE` works for [Archive](../../storage-engines/archive/), [Aria](../../storage-engines/aria/), [CSV](../../storage-engines/csv/) and [MyISAM](../../storage-engines/myisam-storage-engine/) tables. For [InnoDB](../../storage-engines/innodb/), see [recovery modes](../../storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md). For CSV, see also [Checking and Repairing CSV Tables](../../storage-engines/csv/checking-and-repairing-csv-tables.md). For Archive, this statement also improves compression. If the storage engine does not support this statement, a warning is issued.
 
-This statement requires [SELECT and INSERT privileges](../account-management-sql-commands/grant.md) for the table.
+This statement requires [SELECT and INSERT privileges](../account-management-sql-statements/grant.md) for the table.
 
 By default, `REPAIR TABLE` statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 

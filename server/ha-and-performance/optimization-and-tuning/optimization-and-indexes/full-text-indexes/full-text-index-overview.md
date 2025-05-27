@@ -11,7 +11,7 @@ MariaDB has support for full-text indexing and searching:
   has no FULLTEXT index and then create the index after that, than to load data\
   into a table that has an existing FULLTEXT index.
 
-Full-text searching is performed using [MATCH() ... AGAINST](../../../../reference/sql-statements/built-in-functions/string-functions/match-against.md) syntax.\
+Full-text searching is performed using [MATCH() ... AGAINST](../../../../reference/sql-functions/string-functions/match-against.md) syntax.\
 MATCH() takes a comma-separated list that names the columns to be\
 searched. AGAINST takes a string to search for, and an optional\
 modifier that indicates what type of search to perform. The search\
@@ -203,6 +203,6 @@ SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('+MariaDB -database'
 
 ## See Also
 
-* For simpler searches of a substring in text columns, see the [LIKE](../../../../reference/sql-statements/built-in-functions/string-functions/like.md) operator.
+* For simpler searches of a substring in text columns, see the [LIKE](../../../../reference/sql-functions/string-functions/like.md) operator.
 
 CC BY-SA / Gnu FDL

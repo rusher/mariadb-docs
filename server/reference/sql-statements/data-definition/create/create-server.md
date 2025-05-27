@@ -32,7 +32,7 @@ option: >= MariaDB 11.7
 
 This statement creates the definition of a server for use with the [Spider](../../../storage-engines/spider/), [Connect](../../../storage-engines/connect/),[FEDERATED](../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../storage-engines/federatedx-storage-engine/) storage\
 engine. The CREATE SERVER statement creates a new row within the[servers](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) table within the mysql database. This statement\
-requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-commands/grant.md#federated-admin) privilege.
+requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
 
 The server\_name should be a unique reference to the server. Server definitions\
 are global within the scope of the server, it is not possible to qualify the\
@@ -64,7 +64,7 @@ are Server\_name, Host, Db, Username, Password, Port and Socket.
 CREATE SERVER is not written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/), irrespective of\
 the [binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](../../../../../en/galera/) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
 
-For valid identifiers to use as server names, see [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as server names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 **MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
@@ -119,7 +119,7 @@ SHOW WARNINGS;
 
 ## See Also
 
-* [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [ALTER SERVER](../alter/alter-server.md)
 * [DROP SERVER](../drop/drop-server.md)
 * [Spider Storage Engine](../../../storage-engines/spider/)

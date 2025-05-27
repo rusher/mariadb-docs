@@ -140,7 +140,7 @@ MariaDB. The types must also match, they are covered below.
 Cassandra also allows individual rows to have their own sets of columns. In\
 other words, each row can have its own unique columns.
 
-These columns can be accessed through MariaDB's[Dynamic Columns](../../../sql-statements-and-structure/nosql/dynamic-columns.md) feature. To do so, one must define a\
+These columns can be accessed through MariaDB's[Dynamic Columns](../../../sql-structure/nosql/dynamic-columns.md) feature. To do so, one must define a\
 column:
 
 * with an arbitrary name
@@ -153,7 +153,7 @@ Here is an example:
 dynamic_cols blob DYNAMIC_COLUMN_STORAGE=yes
 ```
 
-Once define, one can access individual columns with the[new variant](../../../sql-statements-and-structure/nosql/dynamic-columns-from-mariadb-10.md) of the Dynamic Column functions,\
+Once define, one can access individual columns with the[new variant](../../../sql-structure/nosql/dynamic-columns-from-mariadb-10.md) of the Dynamic Column functions,\
 which now support string names (they used to support integers only).
 
 ### Super columns

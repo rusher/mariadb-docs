@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_SYS_FOREIGN` table contains information about InnoDB [foreign keys](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md).
 
-The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
 It has the following columns:
 

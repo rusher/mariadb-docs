@@ -20,8 +20,8 @@ thread with the `KILL thread_id` statement.`KILL` allows the optional `CONNECTIO
 
 If a connection is terminated that has an active transaction, the transaction will be rolled back. If only a query is killed, the current transaction will stay active. See also [idle\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout).
 
-If you have the [PROCESS](../account-management-sql-commands/grant.md#process) privilege, you can see all threads. If\
-you have the [SUPER](../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-commands/grant.md#connection-admin) privilege, you can kill all threads and\
+If you have the [PROCESS](../account-management-sql-statements/grant.md#process) privilege, you can see all threads. If\
+you have the [SUPER](../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-statements/grant.md#connection-admin) privilege, you can kill all threads and\
 statements. Otherwise, you can see and kill only your own threads and\
 statements.
 
@@ -35,7 +35,7 @@ given user. `USER` can be specified one of the following ways:
 
 * username (Kill without regard to hostname)
 * username@hostname
-* [CURRENT\_USER](../built-in-functions/secondary-functions/information-functions/current_user.md) or [CURRENT\_USER()](../built-in-functions/secondary-functions/information-functions/current_user.md)
+* [CURRENT\_USER](../../sql-functions/secondary-functions/information-functions/current_user.md) or [CURRENT\_USER()](../../sql-functions/secondary-functions/information-functions/current_user.md)
 
 If you specify a thread id and that thread does not exist, you get the following error:
 
@@ -49,7 +49,7 @@ If you specify a query id that doesn't exist, you get the following error:
 ERROR 1957 (HY000): Unknown query id: <query_id>
 ```
 
-However, if you specify a user name, no error is issued for non-connected (or even non-existing) users. To check if the connection/query has been killed, you can use the [ROW\_COUNT()](../built-in-functions/secondary-functions/information-functions/row_count.md) function.
+However, if you specify a user name, no error is issued for non-connected (or even non-existing) users. To check if the connection/query has been killed, you can use the [ROW\_COUNT()](../../sql-functions/secondary-functions/information-functions/row_count.md) function.
 
 A client whose connection is killed receives the following error:
 

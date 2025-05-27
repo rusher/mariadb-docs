@@ -75,7 +75,7 @@ You have included the most important fields to search on -- date, category, etc.
 
 Posted Jan, 2014; Refreshed Feb, 2016.
 
-* MariaDB's [Dynamic Columns](../../../reference/sql-statements-and-structure/nosql/dynamic-columns.md)
+* MariaDB's [Dynamic Columns](../../../reference/sql-structure/nosql/dynamic-columns.md)
 * [MySQL 5.7's JSON](https://dev.mysql.com/doc/refman/5.7/en/json.html)
 
 This looks very promising; I will need to do more research to see how much of this article is obviated by it: [Using MySQL as a Document Store in 5.7](https://dev.mysql.com/doc/refman/5.7/en/document-store.html),[more DocStore discussion](https://mysqlserverteam.com/mysql-5-7-12-part-6-mysql-document-store-a-new-chapter-in-the-mysql-story/)

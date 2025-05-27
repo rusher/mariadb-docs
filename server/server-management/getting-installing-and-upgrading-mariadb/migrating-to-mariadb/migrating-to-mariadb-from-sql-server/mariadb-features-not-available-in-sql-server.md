@@ -25,9 +25,9 @@ This page has a list of MariaDB features that are not supported in SQL Server. T
 * [PL/SQL support](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) (only for stored procedures and stored functions).
 * Row constructors.
 * `BEFORE` [triggers](../../../../server-usage/triggers-events/triggers/).
-* [HANDLER](../../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) statements, to scroll table rows ordered by an index or in their physical order.
+* [HANDLER](../../../../reference/sql-structure/nosql/handler/handler-commands.md) statements, to scroll table rows ordered by an index or in their physical order.
 * [DO](../../../../reference/sql-statements/stored-routine-statements/do.md) statement, to call functions without returning a result set.
-* [BENCHMARK()](../../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/benchmark.md) function, to measure the speed of an SQL expression.
+* [BENCHMARK()](../../../../reference/sql-functions/secondary-functions/information-functions/benchmark.md) function, to measure the speed of an SQL expression.
 
 See also [Syntax Differences between MariaDB and SQL Server](syntax-differences-between-mariadb-and-sql-server.md).
 
@@ -36,7 +36,7 @@ See also [Syntax Differences between MariaDB and SQL Server](syntax-differences-
 * [Character sets and collations](../../../../reference/data-types/string-data-types/character-sets/) don't depend on column type. They can be set globally, or at database, table or column level.
 * Columns may use non-constant expressions as the [DEFAULT](../../../../reference/sql-statements/data-definition/create/create-table.md#default-column-option) value. [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) columns may have a `DEFAULT` value.
 * [UNSIGNED](../../../../reference/data-types/data-types-numeric-data-types/numeric-data-type-overview.md#signed-unsigned-and-zerofill) numeric types.
-* [Dynamic columns](../../../../reference/sql-statements-and-structure/nosql/dynamic-columns.md) (note that JSON is usually preferred to this feature).
+* [Dynamic columns](../../../../reference/sql-structure/nosql/dynamic-columns.md) (note that JSON is usually preferred to this feature).
 
 See also [SQL Server and MariaDB Types Comparison](sql-server-and-mariadb-types-comparison.md).
 
@@ -46,7 +46,7 @@ For compatibility with some other database systems, MariaDB supports the [JSON](
 
 `LONGTEXT CHECK (JSON_VALID(column_name))`
 
-[JSON\_VALID()](../../../../reference/sql-statements/built-in-functions/special-functions/json-functions/json_valid.md) is the MariaDB equivalent of SQL Server's `ISJSON()`.
+[JSON\_VALID()](../../../../reference/sql-functions/special-functions/json-functions/json_valid.md) is the MariaDB equivalent of SQL Server's `ISJSON()`.
 
 ## Features
 

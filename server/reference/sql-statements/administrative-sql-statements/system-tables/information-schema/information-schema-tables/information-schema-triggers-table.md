@@ -30,7 +30,7 @@ It has the following columns:
 | COLLATION\_CONNECTION         | The client [collation](../../../../../data-types/string-data-types/character-sets/) when the trigger was created, from the session value of the [collation\_connection](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable.                                                                                                                                                                                                   |
 | DATABASE\_COLLATION           | [Collation](../../../../../data-types/string-data-types/character-sets/) of the associated database.                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
-Queries to the `TRIGGERS` table will return information only for databases and tables for which you have the `TRIGGER` [privilege](../../../../account-management-sql-commands/grant.md#table-privileges). Similar information is returned by the `[SHOW TRIGGERS](../../../show/show-triggers.md)` statement.
+Queries to the `TRIGGERS` table will return information only for databases and tables for which you have the `TRIGGER` [privilege](../../../../account-management-sql-statements/grant.md#table-privileges). Similar information is returned by the `[SHOW TRIGGERS](../../../show/show-triggers.md)` statement.
 
 ## See also
 

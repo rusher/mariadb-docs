@@ -47,13 +47,13 @@ tables, and can include [UNION](joins-subqueries/union.md) statements and [subqu
 * The `FROM` clause indicates the table or tables from which to retrieve rows.\
   Use either a single table name or a `JOIN` expression. See [JOIN](joins-subqueries/joins/join-syntax.md)\
   for details. If no table is involved, [FROM DUAL](dual.md) can be specified.
-* Each table can also be specified as `db_name`.`tabl_name`. Each column can also be specified as `tbl_name`.`col_name` or even `db_name`.`tbl_name`.`col_name`. This allows one to write queries which involve multiple databases. See [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
+* Each table can also be specified as `db_name`.`tabl_name`. Each column can also be specified as `tbl_name`.`col_name` or even `db_name`.`tbl_name`.`col_name`. This allows one to write queries which involve multiple databases. See [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
 * The `WHERE` clause, if given, indicates the condition or\
   conditions that rows must satisfy to be selected.`where_condition` is an expression that evaluates to true for\
   each row to be selected. The statement selects all rows if there is no WHERE\
   clause.
   * In the `WHERE` clause, you can use any of the functions and\
-    operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../built-in-functions/) and [Functions and Modifiers for use with GROUP BY](../../built-in-functions/aggregate-functions/) (aggregate).
+    operators that MariaDB supports, except for aggregate (summary) functions. See [Functions and Operators](../../../sql-functions/) and [Functions and Modifiers for use with GROUP BY](../../../sql-functions/aggregate-functions/) (aggregate).
 * Use the [ORDER BY](order-by.md) clause to order the results.
 * Use the [LIMIT](limit.md) clause allows you to restrict the results to only\
   a certain number of rows, optionally with an offset.
@@ -69,7 +69,7 @@ A `SELECT` statement must contain one or more select expressions, separated\
 by commas. Each select expression can be one of the following:
 
 * The name of a column.
-* Any expression using [functions and operators](../../built-in-functions/).
+* Any expression using [functions and operators](../../../sql-functions/).
 * `*` to select all columns from all tables in the `FROM` clause.
 * `tbl_name.*` to select all columns from just the table tbl\_name.
 
@@ -82,14 +82,14 @@ each table. It is an error if that column name exists in multiple tables.
 You can quote column names using backticks. If you are qualifying column names\
 with table names, quote each part separately as ``tbl_name`.`col_name``.
 
-If you use any [grouping functions](../../built-in-functions/aggregate-functions/)\
+If you use any [grouping functions](../../../sql-functions/aggregate-functions/)\
 in any of the select expressions, all rows in your results will be implicitly grouped, as if\
 you had used `GROUP BY NULL`. `GROUP BY NULL` being an expression behaves specially\
 such that the entire result set is treated as a group.
 
 ### DISTINCT
 
-A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../built-in-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
+A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../../sql-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
 ### INTO
 
@@ -125,7 +125,7 @@ Specifies to the optimizer which partitions are relevant for the query. Other pa
 
 ### PROCEDURE
 
-Passes the whole result set to a C Procedure. See [PROCEDURE](procedure.md) and [PROCEDURE ANALYSE](../../built-in-functions/secondary-functions/information-functions/procedure-analyse.md) (the only built-in procedure not requiring the server to be recompiled).
+Passes the whole result set to a C Procedure. See [PROCEDURE](procedure.md) and [PROCEDURE ANALYSE](../../../sql-functions/secondary-functions/information-functions/procedure-analyse.md) (the only built-in procedure not requiring the server to be recompiled).
 
 ### SKIP LOCKED
 

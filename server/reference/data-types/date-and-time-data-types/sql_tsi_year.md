@@ -4,7 +4,7 @@
 
 ## Overview
 
-See [YEAR](../../sql-statements/built-in-functions/date-time-functions/year.md).
+See [YEAR](../../sql-functions/date-time-functions/year.md).
 
 ## EXAMPLES
 

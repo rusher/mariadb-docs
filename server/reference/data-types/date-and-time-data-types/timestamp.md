@@ -1,6 +1,6 @@
 # TIMESTAMP
 
-This page is about the TIMESTAMP data type. For the timestamp function, see [TIMESTAMP FUNCTION](../../sql-statements/built-in-functions/date-time-functions/timestamp-function.md).
+This page is about the TIMESTAMP data type. For the timestamp function, see [TIMESTAMP FUNCTION](../../sql-functions/date-time-functions/timestamp-function.md).
 
 ## Syntax
 
@@ -22,7 +22,7 @@ For more information, see [Internal Format](timestamp.md#internal-format).
 
 MariaDB stores values that use the `TIMESTAMP` data type as the number of seconds since '1970-01-01 00:00:00' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)). This means that the `TIMESTAMP` data type can hold values between '1970-01-01 00:00:01' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) and '2038-01-19 03:14:07' ([UTC](../string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) ([MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114) and earlier, 32-bit platforms ) or '2106-02-07 06:28:15 UTC' (from [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), 64-bit platforms only).
 
-MariaDB can also store [microseconds](../../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
+MariaDB can also store [microseconds](../../sql-functions/date-time-functions/microseconds-in-mariadb.md) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
 
 ## Automatic Values
 
@@ -33,7 +33,7 @@ MariaDB has special behavior for the first column that uses the `TIMESTAMP` data
 
 This means that if the column is not explicitly assigned a value in an `INSERT` or `UPDATE` query, then MariaDB will automatically initialize the column's value with the current date and time.
 
-This automatic initialization for `INSERT` and `UPDATE` queries can also be **explicitly enabled** for a column that uses the `TIMESTAMP` data type by specifying the `DEFAULT CURRENT_TIMESTAMP` and `ON UPDATE CURRENT_TIMESTAMP` clauses for the column. In these clauses, any synonym of [CURRENT\_TIMESTAMP](../../sql-statements/built-in-functions/date-time-functions/now.md) is accepted, including `CURRENT_TIMESTAMP()`, `NOW()`, `LOCALTIME`, `LOCALTIME()`, `LOCALTIMESTAMP`, and `LOCALTIMESTAMP()`.
+This automatic initialization for `INSERT` and `UPDATE` queries can also be **explicitly enabled** for a column that uses the `TIMESTAMP` data type by specifying the `DEFAULT CURRENT_TIMESTAMP` and `ON UPDATE CURRENT_TIMESTAMP` clauses for the column. In these clauses, any synonym of [CURRENT\_TIMESTAMP](../../sql-functions/date-time-functions/now.md) is accepted, including `CURRENT_TIMESTAMP()`, `NOW()`, `LOCALTIME`, `LOCALTIME()`, `LOCALTIMESTAMP`, and `LOCALTIMESTAMP()`.
 
 This automatic initialization for `INSERT` queries can also be **explicitly disabled** for a column that uses the `TIMESTAMP` data type by specifying a constant `DEFAULT` value. For example, `DEFAULT 0`.
 
@@ -223,7 +223,7 @@ DESC t3;
 +-------+-----------+------+-----+---------------------+-----------------------------+
 ```
 
-Explicitly setting a timestamp with the [CURRENT\_TIMESTAMP](../../sql-statements/built-in-functions/date-time-functions/current_timestamp.md) function:
+Explicitly setting a timestamp with the [CURRENT\_TIMESTAMP](../../sql-functions/date-time-functions/current_timestamp.md) function:
 
 ```
 INSERT INTO t3(id,ts2)  VALUES (3,CURRENT_TIMESTAMP());

@@ -170,7 +170,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_alter_sequence`
 
-* Description: Number of [ALTER SEQUENCE](../../../reference/sql-statements-and-structure/sequences/alter-sequence.md) commands executed.
+* Description: Number of [ALTER SEQUENCE](../../../reference/sql-structure/sequences/alter-sequence.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -195,7 +195,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_alter_user`
 
-* Description: Number of [ALTER USER](../../../reference/sql-statements/account-management-sql-commands/alter-user.md) commands executed.
+* Description: Number of [ALTER USER](../../../reference/sql-statements/account-management-sql-statements/alter-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -324,13 +324,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_create_role`
 
-* Description: Number of [CREATE ROLE](../../../reference/sql-statements/account-management-sql-commands/create-role.md) commands executed.
+* Description: Number of [CREATE ROLE](../../../reference/sql-statements/account-management-sql-statements/create-role.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_create_sequence`
 
-* Description: Number of [CREATE SEQUENCE](../../../reference/sql-statements-and-structure/sequences/create-sequence.md) commands executed.
+* Description: Number of [CREATE SEQUENCE](../../../reference/sql-structure/sequences/create-sequence.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -366,7 +366,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_create_user`
 
-* Description: Number of [CREATE USER](../../../reference/sql-statements/account-management-sql-commands/create-user.md) commands executed.
+* Description: Number of [CREATE USER](../../../reference/sql-statements/account-management-sql-statements/create-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -444,13 +444,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_drop_role`
 
-* Description: Number of [DROP ROLE](../../../reference/sql-statements/account-management-sql-commands/drop-role.md) commands executed.
+* Description: Number of [DROP ROLE](../../../reference/sql-statements/account-management-sql-statements/drop-role.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_sequence`
 
-* Description: Number of [DROP SEQUENCE](../../../reference/sql-statements-and-structure/sequences/drop-sequence.md) commands executed.
+* Description: Number of [DROP SEQUENCE](../../../reference/sql-structure/sequences/drop-sequence.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -480,7 +480,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_drop_user`
 
-* Description: Number of [DROP USER](../../../reference/sql-statements/account-management-sql-commands/drop-user.md) commands executed.
+* Description: Number of [DROP USER](../../../reference/sql-statements/account-management-sql-statements/drop-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -522,31 +522,31 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_grant`
 
-* Description: Number of [GRANT](../../../reference/sql-statements/account-management-sql-commands/grant.md) commands executed.
+* Description: Number of [GRANT](../../../reference/sql-statements/account-management-sql-statements/grant.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_grant_role`
 
-* Description: Number of [GRANT](../../../reference/sql-statements/account-management-sql-commands/grant.md#roles) role commands executed.
+* Description: Number of [GRANT](../../../reference/sql-statements/account-management-sql-statements/grant.md#roles) role commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_ha_close`
 
-* Description: Number of [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) table\_name CLOSE commands executed.
+* Description: Number of [HANDLER](../../../reference/sql-structure/nosql/handler/handler-commands.md) table\_name CLOSE commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_ha_open`
 
-* Description: Number of [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) table\_name OPEN commands executed.
+* Description: Number of [HANDLER](../../../reference/sql-structure/nosql/handler/handler-commands.md) table\_name OPEN commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_ha_read`
 
-* Description: Number of [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/handler-commands.md) table\_name READ commands executed.
+* Description: Number of [HANDLER](../../../reference/sql-structure/nosql/handler/handler-commands.md) table\_name READ commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -656,7 +656,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_rename_user`
 
-* Description: Number of [RENAME USER](../../../reference/sql-statements/account-management-sql-commands/rename-user.md) commands executed.
+* Description: Number of [RENAME USER](../../../reference/sql-statements/account-management-sql-statements/rename-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -699,19 +699,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_revoke`
 
-* Description: Number of [REVOKE](../../../reference/sql-statements/account-management-sql-commands/revoke.md) commands executed.
+* Description: Number of [REVOKE](../../../reference/sql-statements/account-management-sql-statements/revoke.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_revoke_all`
 
-* Description: Number of [REVOKE ALL](../../../reference/sql-statements/account-management-sql-commands/revoke.md) commands executed.
+* Description: Number of [REVOKE ALL](../../../reference/sql-statements/account-management-sql-statements/revoke.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_revoke_grant`
 
-* Description: Number of [REVOKE](../../../reference/sql-statements/account-management-sql-commands/revoke.md#roles) role commands executed.
+* Description: Number of [REVOKE](../../../reference/sql-statements/account-management-sql-statements/revoke.md#roles) role commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1100,7 +1100,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_truncate`
 
-* Description: Number of [TRUNCATE](../../../reference/sql-statements/built-in-functions/numeric-functions/truncate.md) commands executed.
+* Description: Number of [TRUNCATE](../../../reference/sql-functions/numeric-functions/truncate.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1304,19 +1304,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_dynamic_columns`
 
-* Description: Number of times the [COLUMN\_CREATE()](../../../reference/sql-statements/built-in-functions/special-functions/dynamic-columns-functions/column_create.md) function was used.
+* Description: Number of times the [COLUMN\_CREATE()](../../../reference/sql-functions/special-functions/dynamic-columns-functions/column_create.md) function was used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Feature_fulltext`
 
-* Description: Number of times the [MATCH … AGAINST()](../../../reference/sql-statements/built-in-functions/string-functions/match-against.md) function was used.
+* Description: Number of times the [MATCH … AGAINST()](../../../reference/sql-functions/string-functions/match-against.md) function was used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Feature_gis`
 
-* Description: Number of times a table with a any of the [geometry](../../../reference/sql-statements-and-structure/geographic-geometric-features/geometry-types.md) columns was opened.
+* Description: Number of times a table with a any of the [geometry](../../../reference/sql-structure/geometry/geometry-types.md) columns was opened.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1335,7 +1335,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_json`
 
-* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-statements/built-in-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
+* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1353,7 +1353,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_system_versioning`
 
-* Description: Number of times [system versioning](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) functionality has been used (opening a table WITH SYSTEM VERSIONING).
+* Description: Number of times [system versioning](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) functionality has been used (opening a table WITH SYSTEM VERSIONING).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1371,13 +1371,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_window_functions`
 
-* Description: Number of times [window functions](../../../reference/sql-statements/built-in-functions/special-functions/window-functions/) were used.
+* Description: Number of times [window functions](../../../reference/sql-functions/special-functions/window-functions/) were used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Feature_xml`
 
-* Description: Number of times XML functions ([EXTRACTVALUE()](../../../reference/sql-statements/built-in-functions/string-functions/extractvalue.md) and [UPDATEXML()](../../../reference/sql-statements/built-in-functions/string-functions/updatexml.md)) were used.
+* Description: Number of times XML functions ([EXTRACTVALUE()](../../../reference/sql-functions/string-functions/extractvalue.md) and [UPDATEXML()](../../../reference/sql-functions/string-functions/updatexml.md)) were used.
 * Scope: Global, Session
 * Data Type: `numeric`
 

@@ -90,9 +90,9 @@ We are grateful to these companies for their support of MariaDB!
 
 ## See Also
 
-* [Encryption functions](../../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/)
-* [DES\_DECRYPT()](../../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt.md)
-* [DES\_ENCRYPT()](../../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md)
+* [Encryption functions](../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/)
+* [DES\_DECRYPT()](../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/des_decrypt.md)
+* [DES\_ENCRYPT()](../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md)
 * A [blog post about table encryption](https://mariadb.com/blog/table-and-tablespace-encryption-mariadb-101/) with benchmark results
 
 CC BY-SA / Gnu FDL

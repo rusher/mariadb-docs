@@ -4,7 +4,7 @@
 
 The table is not a standard Information Schema table, and is a MariaDB extension.
 
-The `QUERY_CACHE_INFO` table is created by the [QUERY\_CACHE\_INFO](../../../../../plugins/other-plugins/query-cache-information-plugin.md) plugin, and allows you to see the contents of the [query cache](../../../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md). It creates a table in the [information\_schema](../) database that shows all queries that are in the cache. You must have the `PROCESS` privilege (see [GRANT](../../../../account-management-sql-commands/grant.md)) to use this table.
+The `QUERY_CACHE_INFO` table is created by the [QUERY\_CACHE\_INFO](../../../../../plugins/other-plugins/query-cache-information-plugin.md) plugin, and allows you to see the contents of the [query cache](../../../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md). It creates a table in the [information\_schema](../) database that shows all queries that are in the cache. You must have the `PROCESS` privilege (see [GRANT](../../../../account-management-sql-statements/grant.md)) to use this table.
 
 It contains the following columns:
 

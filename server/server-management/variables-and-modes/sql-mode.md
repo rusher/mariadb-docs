@@ -46,7 +46,7 @@ Changes the SQL syntax to be closer to ANSI SQL.
 
 Sets: [REAL\_AS\_FLOAT](sql-mode.md#real_as_float), [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space).
 
-It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../reference/sql-statements/built-in-functions/aggregate-functions/) with a reference to a column from an outer query in a way that cannot be resolved.
+It also adds a restriction: an error will be returned if a subquery uses an [aggregating function](../../reference/sql-functions/aggregate-functions/) with a reference to a column from an outer query in a way that cannot be resolved.
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
@@ -78,7 +78,7 @@ If this is set generate a warning (not an error) for wrong table option in CREAT
 
 #### IGNORE\_SPACE
 
-Allow one to have spaces (including tab characters and new line characters) between function name and '('. The drawback is that this causes built in functions to become [reserved words](../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md).
+Allow one to have spaces (including tab characters and new line characters) between function name and '('. The drawback is that this causes built in functions to become [reserved words](../../reference/sql-structure/sql-language-structure/reserved-words.md).
 
 #### MAXDB
 
@@ -150,7 +150,7 @@ Don't allow dates where the year is not zero but the month or day parts of the d
 
 #### ONLY\_FULL\_GROUP\_BY
 
-For [SELECT ... GROUP BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#group-by) queries, disallow [SELECTing](../../reference/sql-statements/data-manipulation/selecting-data/select.md) columns which are not referred to in the GROUP BY clause, unless they are passed to an aggregate function like [COUNT()](../../reference/sql-statements/built-in-functions/aggregate-functions/count.md) or [MAX()](../../reference/sql-statements/built-in-functions/aggregate-functions/max.md). Produce a 1055 error.
+For [SELECT ... GROUP BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#group-by) queries, disallow [SELECTing](../../reference/sql-statements/data-manipulation/selecting-data/select.md) columns which are not referred to in the GROUP BY clause, unless they are passed to an aggregate function like [COUNT()](../../reference/sql-functions/aggregate-functions/count.md) or [MAX()](../../reference/sql-functions/aggregate-functions/max.md). Produce a 1055 error.
 
 #### ORACLE
 

@@ -148,7 +148,7 @@ INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
 INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
 ```
 
-[LAST\_INSERT\_ID()](../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last`auto_increment` value inserted.
+[LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last`auto_increment` value inserted.
 
 By default, the command line `mariadb` client will send the above as\
 multiple statements.

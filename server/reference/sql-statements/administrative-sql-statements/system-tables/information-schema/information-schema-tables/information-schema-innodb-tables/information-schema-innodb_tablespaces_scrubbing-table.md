@@ -4,7 +4,7 @@ The table was removed in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJz
 
 The [Information Schema](../../) `INNODB_TABLESPACES_SCRUBBING` table contains [data scrubbing](../../../../../../storage-engines/innodb/innodb-data-scrubbing.md) information.
 
-The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
 It has the following columns:
 

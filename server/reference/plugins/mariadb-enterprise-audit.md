@@ -481,7 +481,7 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
 
 This example Audit Filter configures audit logging for all Connection Events and Write Table Events.
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 4. Reload the Audit Filters by setting the server\_audit\_reload\_filters system variable to ON:
 
@@ -573,7 +573,7 @@ There are two system tables for Audit Filters:
 
 You can query Audit Filters by querying the mysql.server\_audit\_filters system table.
 
-The JSON objects can be made more human-readable by passing them to the [JSON\_DETAILED()](../sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) or [JSON\_LOOSE()](../sql-statements/built-in-functions/special-functions/json-functions/json_loose.md) functions:
+The JSON objects can be made more human-readable by passing them to the [JSON\_DETAILED()](../sql-functions/special-functions/json-functions/json_detailed.md) or [JSON\_LOOSE()](../sql-functions/special-functions/json-functions/json_loose.md) functions:
 
 ```
 SELECT filtername,
@@ -608,7 +608,7 @@ JSON_DETAILED(rule): {
 
 You can query user assignments for Named Audit Filters by joining the mysql.server\_audit\_filters and mysql.server\_audit\_users system tables.
 
-The JSON objects can be made more human-readable by passing them to the [JSON\_DETAILED()](../sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) or [JSON\_LOOSE()](../sql-statements/built-in-functions/special-functions/json-functions/json_loose.md) functions:
+The JSON objects can be made more human-readable by passing them to the [JSON\_DETAILED()](../sql-functions/special-functions/json-functions/json_detailed.md) or [JSON\_LOOSE()](../sql-functions/special-functions/json-functions/json_loose.md) functions:
 
 ```
 SELECT sau.host, sau.user, saf.filtername,
@@ -765,7 +765,7 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
       ));
 ```
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 ### Query Events
 
@@ -818,7 +818,7 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
     );
 ```
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 MariaDB Enterprise Audit also supports [Object Filters](mariadb-enterprise-audit.md#object-filters) for Query Events. Support for Object Filters was added in MariaDB Enterprise Server 10.6. Support for Object Filters was backported to ES 10.4.21-13 and ES 10.5.12-8.
 
@@ -897,7 +897,7 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
     );
 ```
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 MariaDB Enterprise Audit also supports [Object Filters](mariadb-enterprise-audit.md#object-filters) for Table Events. Support for Object Filters was added in MariaDB Enterprise Server 10.6. Support for Object Filters was backported to ES 10.4.21-13 and ES 10.5.12-8.
 
@@ -927,7 +927,7 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
     );
 ```
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 ## Object Filters
 
@@ -991,7 +991,7 @@ Object Filters are supported by the following Events:
 
 To create an Object Filter for a single Event Filter, specify the Object Filter's JSON object as part of the JSON object for the Event Filter.
 
-The examples below pass the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The examples below pass the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 In the following example, the reporting Audit Filter specifies an Event Filter for Table Events with an embedded Object Filter that includes all tables in the production and reporting databases:
 
@@ -1025,7 +1025,7 @@ An Object Filter can be specified for an entire Audit Filter.
 
 To create an Object Filter at Audit Filter scope, specify the Object Filter's JSON object as part of the root JSON object for the Audit Filter.
 
-The examples below pass the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The examples below pass the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 In the following example, the reporting Audit Filter specifies an Object Filter that includes all tables in the production and reporting databases:
 
@@ -1085,7 +1085,7 @@ When an Object Filter is specified at Audit Filter scope with embedded Event Fil
 
 To create Object Filters at Audit Filter and Event Type scope, specify the JSON object for the Object Filter at Audit Filter scope as part of the root JSON object for the Audit Filter and specify the JSON object for the Object Filter at Event Type scope as part of the JSON object for the Event Filter.
 
-The examples below pass the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The examples below pass the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 In the following example, the reporting Audit Filter specifies an Event Filter for Table Events with an embedded Object Filter that includes all tables in the production and reporting databases, but it excludes Query Events that target specific tables that store Personally Identifiable Information (PII), so that the sensitive information does not appear in the audit log:
 
@@ -1353,7 +1353,7 @@ INSERT INTO mysql.server_audit_filters
       ));
 ```
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 ### Migrate Users
 
@@ -1400,7 +1400,7 @@ INSERT INTO mysql.server_audit_users (host, user, filtername)
    VALUES ('%', 'root', 'root_filter');
 ```
 
-The example passes the JSON object to the [JSON\_COMPACT()](../sql-statements/built-in-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 3. For any user account previously mentioned in the [server\_audit\_excl\_users](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_excl_users) system variable, create a [Named Audit Filter](mariadb-enterprise-audit.md#named-audit-filters) that acts as an exclusion filter.
 

@@ -16,7 +16,7 @@ CREATE TABLE customer (
 )
 ```
 
-[User-defined variables](../sql-statements-and-structure/sql-language-structure/user-defined-variables.md) are NULL until a value is explicitly assigned.
+[User-defined variables](../sql-structure/sql-language-structure/user-defined-variables.md) are NULL until a value is explicitly assigned.
 
 [Stored routines](../../server-usage/stored-routines/) parameters and [local variables](../../server-usage/programmatic-compound-statements/declare-variable.md) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
 
@@ -24,11 +24,11 @@ CREATE TABLE customer (
 
 The case of `NULL` is not relevant.  (uppercase) is an alias for `NULL`.
 
-The `[IS](../sql-statements-and-structure/operators/comparison-operators/is.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-statements-and-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
+The `[IS](../sql-statements-and-structure/operators/comparison-operators/is.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
 
 ## Comparison Operators
 
-NULL values cannot be used with most [comparison operators](../sql-statements-and-structure/operators/comparison-operators/). For example, [=](../sql-statements-and-structure/operators/comparison-operators/equal.md), [>](../sql-statements-and-structure/operators/comparison-operators/greater-than.md), [>=](../sql-statements-and-structure/operators/comparison-operators/greater-than-or-equal.md), [<=](../sql-statements-and-structure/operators/comparison-operators/less-than-or-equal.md), [<](../sql-statements-and-structure/operators/comparison-operators/less-than.md), or [!=](../sql-statements-and-structure/operators/comparison-operators/not-equal.md) cannot be used, as any comparison with a NULL always returns a NULL value, never true (1) or false (0).
+NULL values cannot be used with most [comparison operators](../sql-structure/operators/comparison-operators/). For example, [=](../sql-structure/operators/comparison-operators/equal.md), [>](../sql-structure/operators/comparison-operators/greater-than.md), [>=](../sql-structure/operators/comparison-operators/greater-than-or-equal.md), [<=](../sql-structure/operators/comparison-operators/less-than-or-equal.md), [<](../sql-structure/operators/comparison-operators/less-than.md), or [!=](../sql-structure/operators/comparison-operators/not-equal.md) cannot be used, as any comparison with a NULL always returns a NULL value, never true (1) or false (0).
 
 ```
 SELECT NULL = NULL;
@@ -46,7 +46,7 @@ SELECT 99 = NULL;
 +-----------+
 ```
 
-To overcome this, certain operators are specifically designed for use with NULL values. To cater for testing equality between two values that may contain NULLs, there's [<=>](../sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md), NULL-safe equal.
+To overcome this, certain operators are specifically designed for use with NULL values. To cater for testing equality between two values that may contain NULLs, there's [<=>](../sql-structure/operators/comparison-operators/null-safe-equal.md), NULL-safe equal.
 
 ```
 SELECT 99 <=> NULL, NULL <=> NULL;
@@ -57,7 +57,7 @@ SELECT 99 <=> NULL, NULL <=> NULL;
 +-------------+---------------+
 ```
 
-Other operators for working with NULLs include [IS NULL](../sql-statements-and-structure/operators/comparison-operators/is-null.md) and [IS NOT NULL](../sql-statements-and-structure/operators/comparison-operators/is-not-null.md), [ISNULL](../sql-statements-and-structure/operators/comparison-operators/isnull.md) (for testing an expression) and [COALESCE](../sql-statements-and-structure/operators/comparison-operators/coalesce.md) (for returning the first non-NULL parameter).
+Other operators for working with NULLs include [IS NULL](../sql-structure/operators/comparison-operators/is-null.md) and [IS NOT NULL](../sql-structure/operators/comparison-operators/is-not-null.md), [ISNULL](../sql-structure/operators/comparison-operators/isnull.md) (for testing an expression) and [COALESCE](../sql-structure/operators/comparison-operators/coalesce.md) (for returning the first non-NULL parameter).
 
 ## Ordering
 
@@ -77,7 +77,7 @@ All NULL values are also regarded as equivalent for the purposes of the DISTINCT
 
 ## Functions
 
-In most cases, functions will return NULL if any of the parameters are NULL. There are also functions specifically for handling NULLs. These include [IFNULL()](../sql-statements/built-in-functions/control-flow-functions/ifnull.md), [NULLIF()](../sql-statements/built-in-functions/control-flow-functions/nullif.md) and [COALESCE()](../sql-statements-and-structure/operators/comparison-operators/coalesce.md).
+In most cases, functions will return NULL if any of the parameters are NULL. There are also functions specifically for handling NULLs. These include [IFNULL()](../sql-functions/control-flow-functions/ifnull.md), [NULLIF()](../sql-functions/control-flow-functions/nullif.md) and [COALESCE()](../sql-structure/operators/comparison-operators/coalesce.md).
 
 ```
 SELECT IFNULL(1,0); 
@@ -102,7 +102,7 @@ SELECT COALESCE(NULL,NULL,1);
 +-----------------------+
 ```
 
-Aggregate functions, such as [SUM](../sql-statements/built-in-functions/aggregate-functions/sum.md) and [AVG](../sql-statements/built-in-functions/aggregate-functions/avg.md) ignore NULLs.
+Aggregate functions, such as [SUM](../sql-functions/aggregate-functions/sum.md) and [AVG](../sql-functions/aggregate-functions/avg.md) ignore NULLs.
 
 ```
 CREATE TABLE t(x INT);
@@ -124,7 +124,7 @@ SELECT AVG(x) FROM t;
 +--------+
 ```
 
-The one exception is [COUNT(\*)](../sql-statements/built-in-functions/aggregate-functions/count.md), which counts rows, and doesn't look at whether a value is NULL or not. Compare for example, COUNT(x), which ignores the NULL, and COUNT(\*), which counts it:
+The one exception is [COUNT(\*)](../sql-functions/aggregate-functions/count.md), which counts rows, and doesn't look at whether a value is NULL or not. Compare for example, COUNT(x), which ignores the NULL, and COUNT(\*), which counts it:
 
 ```
 SELECT COUNT(x) FROM t;
@@ -264,7 +264,7 @@ In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-an
 IF a=10 THEN NULL; ELSE NULL; END IF
 ```
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CONCAT](../sql-statements/built-in-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-statements-and-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CONCAT](../sql-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
 
 When setting [sql\_mode=EMPTY\_STRING\_IS\_NULL](../../server-management/variables-and-modes/sql-mode.md), empty strings and NULLs are the same thing. For example:
 
@@ -277,12 +277,12 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 ## See Also
 
 * [Primary Keys with Nullable Columns](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/primary-keys-with-nullable-columns.md)
-* [IS NULL operator](../sql-statements-and-structure/operators/comparison-operators/is-null.md)
-* [IS NOT NULL operator](../sql-statements-and-structure/operators/comparison-operators/is-not-null.md)
-* [ISNULL function](../sql-statements-and-structure/operators/comparison-operators/isnull.md)
-* [COALESCE function](../sql-statements-and-structure/operators/comparison-operators/coalesce.md)
-* [IFNULL function](../sql-statements/built-in-functions/control-flow-functions/ifnull.md)
-* [NULLIF function](../sql-statements/built-in-functions/control-flow-functions/nullif.md)
+* [IS NULL operator](../sql-structure/operators/comparison-operators/is-null.md)
+* [IS NOT NULL operator](../sql-structure/operators/comparison-operators/is-not-null.md)
+* [ISNULL function](../sql-structure/operators/comparison-operators/isnull.md)
+* [COALESCE function](../sql-structure/operators/comparison-operators/coalesce.md)
+* [IFNULL function](../sql-functions/control-flow-functions/ifnull.md)
+* [NULLIF function](../sql-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../storage-engines/connect/connect-data-types.md#null-handling)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

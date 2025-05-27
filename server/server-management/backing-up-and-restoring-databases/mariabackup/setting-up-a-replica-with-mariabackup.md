@@ -60,7 +60,7 @@ $ chown -R mysql:mysql /var/lib/mysql/
 
 ## Create a Replication User on the Primary
 
-Before the new replica can begin replicating from the primary, we need to [create a user account](../../../reference/sql-statements/account-management-sql-commands/create-user.md) on the primary that the replica can use to connect, and we need to [grant](../../../reference/sql-statements/account-management-sql-commands/grant.md) the user account the [REPLICATION SLAVE](../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege. For example:
+Before the new replica can begin replicating from the primary, we need to [create a user account](../../../reference/sql-statements/account-management-sql-statements/create-user.md) on the primary that the replica can use to connect, and we need to [grant](../../../reference/sql-statements/account-management-sql-statements/grant.md) the user account the [REPLICATION SLAVE](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege. For example:
 
 ```
 CREATE USER 'repl'@'dbserver2' IDENTIFIED BY 'password';

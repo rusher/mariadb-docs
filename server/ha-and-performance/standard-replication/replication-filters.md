@@ -251,7 +251,7 @@ See [Configuring Replication Filter Options with Multi-Source Replication](repli
 
 The [replicate\_wild\_do\_table](replication-and-binary-log-system-variables.md) system variable allows you to configure a [replica](broken-reference) to apply statements and transactions that affect tables that match a specified wildcard pattern.
 
-The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements/built-in-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
+The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
 
 * `_` - The `_` character matches any single character.
 * `%` - The `%` character matches zero or more characters.
@@ -298,7 +298,7 @@ See [Configuring Replication Filter Options with Multi-Source Replication](repli
 
 The [replicate\_wild\_ignore\_table](replication-and-binary-log-system-variables.md) system variable allows you to configure a [replica](broken-reference) to ignore statements and transactions that affect tables that match a specified wildcard pattern.
 
-The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements/built-in-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
+The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
 
 * `_` - The `_` character matches any single character.
 * `%` - The `%` character matches zero or more characters.

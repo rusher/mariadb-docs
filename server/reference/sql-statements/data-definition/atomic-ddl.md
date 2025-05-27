@@ -25,12 +25,12 @@ Before 10.6, in case of a crash, there was a small possibility that one of the f
 * [CREATE TABLE](create/create-table.md), except when used with [CREATE OR REPLACE](create/create-table.md), which is only crash safe.
 * [RENAME TABLE](rename-table.md) and [RENAME TABLES](rename-table.md).
 * [CREATE VIEW](../../../server-usage/views/create-view.md)
-* [CREATE SEQUENCE](../../sql-statements-and-structure/sequences/create-sequence.md)
+* [CREATE SEQUENCE](../../sql-structure/sequences/create-sequence.md)
 * [CREATE TRIGGER](../../../server-usage/triggers-events/triggers/create-trigger.md)
 * [DROP TRIGGER](drop/drop-trigger.md)
 * [DROP TABLE](drop/drop-table.md) and [DROP VIEW](../../../server-usage/views/drop-view.md). Dropping multiple tables is only crash safe.
 * [ALTER TABLE](alter/alter-table.md)
-* [ALTER SEQUENCE](../../sql-statements-and-structure/sequences/alter-sequence.md) is not listed above as it is internally implemented as a DML.
+* [ALTER SEQUENCE](../../sql-structure/sequences/alter-sequence.md) is not listed above as it is internally implemented as a DML.
 
 ## Which DDL Operations are Now Crash Safe
 

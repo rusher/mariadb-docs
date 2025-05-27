@@ -35,6 +35,6 @@ Hash indexes do not permit leftmost prefixing - only the whole index can be used
 
 ## R-tree Indexes
 
-See [SPATIAL](../../../reference/sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
+See [SPATIAL](../../../reference/sql-structure/geometry/spatial-index.md) for more information.
 
 CC BY-SA / Gnu FDL

@@ -25,7 +25,7 @@ If neither `QUICK` nor `EXTENDED` is\
 specified, MariaDB returns a live checksum if the table storage engine supports\
 it and scans the table otherwise.
 
-`CHECKSUM TABLE` requires the [SELECT privilege](../account-management-sql-commands/grant.md#table-privileges) for the table.
+`CHECKSUM TABLE` requires the [SELECT privilege](../account-management-sql-statements/grant.md#table-privileges) for the table.
 
 For a nonexistent table, `CHECKSUM TABLE` returns`NULL` and generates a warning.
 

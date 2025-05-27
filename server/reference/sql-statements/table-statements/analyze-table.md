@@ -23,7 +23,7 @@ tables should be joined when you perform a join on something other than\
 a constant. In addition, key distributions can be used when deciding\
 which indexes to use for a specific table within a query.
 
-This statement requires [SELECT and INSERT privileges](../account-management-sql-commands/grant.md) for the table.
+This statement requires [SELECT and INSERT privileges](../account-management-sql-statements/grant.md) for the table.
 
 By default, ANALYZE TABLE statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 

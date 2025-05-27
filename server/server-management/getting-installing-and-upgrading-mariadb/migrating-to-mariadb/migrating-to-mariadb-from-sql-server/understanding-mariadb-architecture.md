@@ -166,7 +166,7 @@ SELECT m.*
         ON m.xyz = y.xyz;
 ```
 
-MariaDB has the [DATABASE()](../../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/database.md) function to determine the current database:
+MariaDB has the [DATABASE()](../../../../reference/sql-functions/secondary-functions/information-functions/database.md) function to determine the current database:
 
 ```
 SELECT DATABASE();
@@ -237,7 +237,7 @@ control the server behavior. These can be set up when starting mysqld ([mysqld o
 * Dynamic or static;
 * Global, session, or both.
 
-Note that server system variables are not to be confused with [user-defined variables](../../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md). The latter are not used for MariaDB configuration.
+Note that server system variables are not to be confused with [user-defined variables](../../../../reference/sql-structure/sql-language-structure/user-defined-variables.md). The latter are not used for MariaDB configuration.
 
 ### Configuration Files
 
@@ -263,7 +263,7 @@ A variable could exist in both the global and session scopes. In this case, the 
 
 The [Server System Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) page states the scope of each variable.
 
-Global variables and some session variables can only be modified by a user with the [SUPER](../../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege (typically root).
+Global variables and some session variables can only be modified by a user with the [SUPER](../../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege (typically root).
 
 ### Syntax
 
@@ -278,7 +278,7 @@ SELECT @@session.variable_name;
 SELECT @@variable_name;
 ```
 
-A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](../../../../reference/sql-statements/built-in-functions/string-functions/like.md) operator:
+A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](../../../../reference/sql-functions/string-functions/like.md) operator:
 
 ```
 -- global variables whose name starts with 'innodb':

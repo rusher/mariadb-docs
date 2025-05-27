@@ -38,7 +38,7 @@ FROM information_schema.INNODB_TABLESPACES_ENCRYPTION
 WHERE ROTATING_OR_FLUSHING = 1;
 ```
 
-And to see how many InnoDB tablespaces are currently being decrypted or encrypted by background encryption threads, you can call the [COUNT()](../../../../../reference/sql-statements/built-in-functions/aggregate-functions/count.md) aggregate function.
+And to see how many InnoDB tablespaces are currently being decrypted or encrypted by background encryption threads, you can call the [COUNT()](../../../../../reference/sql-functions/aggregate-functions/count.md) aggregate function.
 
 ```
 SELECT COUNT(*) AS 'encrypting' 

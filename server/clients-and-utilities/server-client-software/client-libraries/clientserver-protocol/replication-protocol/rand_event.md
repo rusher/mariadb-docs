@@ -1,6 +1,6 @@
 # RAND\_EVENT
 
-The SQL function [RAND()](../../../../../reference/sql-statements/built-in-functions/numeric-functions/rand.md) generates a random number.
+The SQL function [RAND()](../../../../../reference/sql-functions/numeric-functions/rand.md) generates a random number.
 
 A RAND\_EVENT contains two seed values that set the [rand\_seed1](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1) and [rand\_seed2](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed2) system variables that are used to compute the random number.
 

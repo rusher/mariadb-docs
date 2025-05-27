@@ -12,9 +12,9 @@ A date and time combination.
 
 MariaDB displays `DATETIME` values in '`YYYY-MM-DD HH:MM:SS.ffffff`' format, but\
 allows assignment of values to `DATETIME` columns using either strings or\
-numbers. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
+numbers. For details, see [date and time literals](../../sql-structure/sql-language-structure/date-and-time-literals.md).
 
-DATETIME columns also accept [CURRENT\_TIMESTAMP](../../sql-statements/built-in-functions/date-time-functions/now.md) as the default value.
+DATETIME columns also accept [CURRENT\_TIMESTAMP](../../sql-functions/date-time-functions/now.md) as the default value.
 
 The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store DATETMEs using the same low-level format MySQL 5.6 uses. For more information, see [Internal Format](datetime.md#internal-format), below.
 
@@ -24,7 +24,7 @@ For storage requirements, see [Data Type Storage Requirements](../data-type-stor
 
 MariaDB stores values that use the `DATETIME` data type in a format that supports values between `1000-01-01 00:00:00.000000` and `9999-12-31 23:59:59.999999`.
 
-MariaDB can also store [microseconds](../../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
+MariaDB can also store [microseconds](../../sql-functions/date-time-functions/microseconds-in-mariadb.md) with a precision between 0 and 6. If no microsecond precision is specified, then 0 is used by default.
 
 MariaDB also supports '`0000-00-00`' as a special _zero-date_ value, unless [NO\_ZERO\_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) is specified in the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md). Similarly, individual components of a date can be set to `0` (for example: '`2015-00-12`'), unless [NO\_ZERO\_IN\_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) is specified in the [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md). In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW\_INVALID\_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL\_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
 
@@ -104,7 +104,7 @@ SELECT * FROM t2;
 +----------------------------++
 ```
 
-Strings used in datetime context are automatically converted to datetime(6). If you want to have a datetime without seconds, you should use [CONVERT(..,datetime)](../../sql-statements/built-in-functions/string-functions/convert.md).
+Strings used in datetime context are automatically converted to datetime(6). If you want to have a datetime without seconds, you should use [CONVERT(..,datetime)](../../sql-functions/string-functions/convert.md).
 
 ```
 SELECT CONVERT('2007-11-30 10:30:19',datetime);
@@ -191,7 +191,7 @@ SELECT description, CONVERT(example, DATETIME) AS example
 ## See Also
 
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [CONVERT()](../../sql-statements/built-in-functions/string-functions/convert.md)
+* [CONVERT()](../../sql-functions/string-functions/convert.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 * [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
 

@@ -22,7 +22,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../../reference/sql-statemen
 rows (tables that have [VARCHAR](../../../reference/data-types/string-data-types/varchar.md), [VARBINARY](../../../reference/data-types/string-data-types/varbinary.md), [BLOB](../../../reference/data-types/string-data-types/blob.md), or [TEXT](../../../reference/data-types/string-data-types/text.md) columns). Deleted rows are maintained in a\
 linked list and subsequent `INSERT` operations reuse old row positions.
 
-This statement requires [SELECT and INSERT privileges](../../../reference/sql-statements/account-management-sql-commands/grant.md) for the table.
+This statement requires [SELECT and INSERT privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md) for the table.
 
 By default, `OPTIMIZE TABLE` statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 

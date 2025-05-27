@@ -12,12 +12,12 @@ The `SHOW GRANTS` statement lists privileges granted to a particular user or rol
 
 ### Users
 
-The statement lists the [GRANT](../../account-management-sql-commands/grant.md) statement or\
+The statement lists the [GRANT](../../account-management-sql-statements/grant.md) statement or\
 statements that must be issued to duplicate the privileges that are granted to\
 a MariaDB user account. The account is named using the same format as for the`GRANT` statement; for example,\
 '`jeffrey'@'localhost`'. If you specify only the user name part\
 of the account name, a host name part of '`%`' is used. For\
-additional information about specifying account names, see[GRANT](../../account-management-sql-commands/grant.md).
+additional information about specifying account names, see[GRANT](../../account-management-sql-statements/grant.md).
 
 ```
 SHOW GRANTS FOR 'root'@'localhost';
@@ -62,7 +62,7 @@ SHOW GRANTS FOR journalist;
 
 **MariaDB starting with** [**10.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
 
-[GRANT ... TO PUBLIC](../../account-management-sql-commands/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
+[GRANT ... TO PUBLIC](../../account-management-sql-statements/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 
 ```
 SHOW GRANTS FOR public;

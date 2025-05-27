@@ -10,7 +10,7 @@ In a Sharded MariaDB Enterprise Spider topology, new shards can be added using t
 
 Each data node requires a user account that the Spider Node uses to connect.
 
-On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../sql-statements/account-management-sql-commands/create-user.md) statement:
+On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) statement:
 
 ```
 CREATE USER spider_user@192.0.2.1 IDENTIFIED BY "password";

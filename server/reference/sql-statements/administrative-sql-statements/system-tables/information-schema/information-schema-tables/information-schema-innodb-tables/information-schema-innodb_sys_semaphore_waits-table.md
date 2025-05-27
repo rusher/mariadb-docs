@@ -1,44 +1,35 @@
+# Information Schema INNODB\_SYS\_SEMAPHORE\_WAITS Table
 
-# Information Schema INNODB_SYS_SEMAPHORE_WAITS Table
+The [Information Schema](../../) INNODB\_SYS\_SEMAPHORE\_WAITS table is meant to contain information about current semaphore waits. At present it is not correctly populated. See [MDEV-21330](https://jira.mariadb.org/browse/MDEV-21330).
 
-The [Information Schema](../../README.md) INNODB_SYS_SEMAPHORE_WAITS table is meant to contain information about current semaphore waits. At present it is not correctly populated. See [MDEV-21330](https://jira.mariadb.org/browse/MDEV-21330).
-
-
-The [PROCESS privilege](../../../../../account-management-sql-commands/grant.md#process) is required to view the table.
-
+The [PROCESS privilege](../../../../../account-management-sql-statements/grant.md#process) is required to view the table.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| THREAD_ID | Thread id waiting for semaphore |
-| OBJECT_NAME | Semaphore name |
-| FILE | File name where semaphore was requested |
-| LINE | Line number on above file |
-| WAIT_TIME | Wait time |
-| WAIT_OBJECT |  |
-| WAIT_TYPE | Object type (mutex, rw-lock) |
-| HOLDER_THREAD_ID | Holder thread id |
-| HOLDER_FILE | File name where semaphore was acquired |
-| HOLDER_LINE | Line number for above |
-| CREATED_FILE | Creation file name |
-| CREATED_LINE | Line number for above |
-| WRITER_THREAD | Last write request thread id |
-| RESERVATION_MODE | Reservation mode (shared, exclusive) |
-| READERS | Number of readers if only shared mode |
-| WAITERS_FLAG | Flags |
-| LOCK_WORD | Lock word (for developers) |
-| LAST_READER_FILE | Removed |
-| LAST_READER_LINE | Removed |
-| LAST_WRITER_FILE | Last writer file name |
-| LAST_WRITER_LINE | Above line number |
-| OS_WAIT_COUNT | Wait count |
-
-
-
+| Column             | Description                             |
+| ------------------ | --------------------------------------- |
+| Column             | Description                             |
+| THREAD\_ID         | Thread id waiting for semaphore         |
+| OBJECT\_NAME       | Semaphore name                          |
+| FILE               | File name where semaphore was requested |
+| LINE               | Line number on above file               |
+| WAIT\_TIME         | Wait time                               |
+| WAIT\_OBJECT       |                                         |
+| WAIT\_TYPE         | Object type (mutex, rw-lock)            |
+| HOLDER\_THREAD\_ID | Holder thread id                        |
+| HOLDER\_FILE       | File name where semaphore was acquired  |
+| HOLDER\_LINE       | Line number for above                   |
+| CREATED\_FILE      | Creation file name                      |
+| CREATED\_LINE      | Line number for above                   |
+| WRITER\_THREAD     | Last write request thread id            |
+| RESERVATION\_MODE  | Reservation mode (shared, exclusive)    |
+| READERS            | Number of readers if only shared mode   |
+| WAITERS\_FLAG      | Flags                                   |
+| LOCK\_WORD         | Lock word (for developers)              |
+| LAST\_READER\_FILE | Removed                                 |
+| LAST\_READER\_LINE | Removed                                 |
+| LAST\_WRITER\_FILE | Last writer file name                   |
+| LAST\_WRITER\_LINE | Above line number                       |
+| OS\_WAIT\_COUNT    | Wait count                              |
 
 CC BY-SA / Gnu FDL
-

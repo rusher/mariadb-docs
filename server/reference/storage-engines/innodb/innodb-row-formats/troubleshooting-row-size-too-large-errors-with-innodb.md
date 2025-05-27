@@ -1021,7 +1021,7 @@ This workaround can even work if your table is so wide that the previous solutio
 
 A _safe_ workaround is to refactor some of the columns into a JSON document.
 
-The JSON document can be queried and manipulated using MariaDB's [JSON functions](../../../sql-statements/built-in-functions/special-functions/json-functions/).
+The JSON document can be queried and manipulated using MariaDB's [JSON functions](../../../sql-functions/special-functions/json-functions/).
 
 The JSON document can be stored in a column that uses one of the following data types:
 

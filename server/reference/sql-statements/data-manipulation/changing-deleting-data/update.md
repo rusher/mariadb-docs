@@ -34,7 +34,7 @@ places a limit on the number of rows that can be updated.
 
 Both clauses can be used with multiple-table updates. Prior to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), for the multiple-table syntax, `UPDATE` updates rows in each table named in table\_references that satisfy the conditions. In this case,[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md) could not be used.
 
-An `UPDATE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for the syntax.
+An `UPDATE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for the syntax.
 
 `where_condition` is an expression that evaluates to true for\
 each row to be updated.
@@ -46,7 +46,7 @@ For single-table updates, assignments are evaluated in left-to-right order, whil
 
 You need the `UPDATE` privilege only for columns referenced in\
 an `UPDATE` that are actually updated. You need only the[SELECT](../selecting-data/select.md) privilege for any columns that are read but\
-not modified. See [GRANT](../../account-management-sql-commands/grant.md).
+not modified. See [GRANT](../../account-management-sql-statements/grant.md).
 
 The `UPDATE` statement supports the following modifiers:
 
@@ -66,7 +66,7 @@ See [Partition Pruning and Selection](../../../../server-management/partitioning
 
 ### FOR PORTION OF
 
-See [Application Time Periods - Updating by Portion](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md#updating-by-portion).
+See [Application Time Periods - Updating by Portion](../../../sql-structure/temporal-tables/application-time-periods.md#updating-by-portion).
 
 ### UPDATE Statements With the Same Source and Target
 
@@ -109,6 +109,6 @@ UPDATE tab1, tab2 SET tab1.column1 = value1, tab1.column2 = value2 WHERE tab1.id
 * [SELECT](../selecting-data/select.md)
 * [ORDER BY](../selecting-data/order-by.md)
 * [LIMIT](../selecting-data/limit.md)
-* [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md)
+* [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)
 
 GPLv2 fill\_help\_tables.sql

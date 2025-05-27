@@ -13,7 +13,7 @@ The feature was based upon a patch by Davi Arnaut.
 
 ## User [max\_statement\_time](../system-variables/server-system-variables.md#max_statement_time)
 
-[max\_statement\_time](../system-variables/server-system-variables.md#max_statement_time) can be stored per user with the [GRANT ... MAX\_STATEMENT\_TIME](../../../reference/sql-statements/account-management-sql-commands/grant.md) syntax.
+[max\_statement\_time](../system-variables/server-system-variables.md#max_statement_time) can be stored per user with the [GRANT ... MAX\_STATEMENT\_TIME](../../../reference/sql-statements/account-management-sql-statements/grant.md) syntax.
 
 ## Per-query [max\_statement\_time](../system-variables/server-system-variables.md#max_statement_time)
 

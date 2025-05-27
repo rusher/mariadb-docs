@@ -329,7 +329,7 @@ The following types can't be used:
 * [TINYTEXT](../../../data-types/string-data-types/tinytext.md), [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md), [LONGTEXT](../../../data-types/string-data-types/longtext.md)
 * [ENUM](../../../data-types/string-data-types/enum.md)
 * [SET](../../../sql-statements/administrative-sql-statements/set-commands/set.md)
-* [Geometry types](../../../sql-statements-and-structure/geographic-geometric-features/geometry-types.md)
+* [Geometry types](../../../sql-structure/geometry/geometry-types.md)
 
 Note: [TEXT](../../../data-types/string-data-types/text.md) is allowed. However, the handling depends on the values given to the [connect\_type\_conv](../connect-system-variables.md#connect_type_conv) and [connect\_conv\_size](../connect-system-variables.md#connect_conv_size) system variables, and by default no conversion of TEXT columns is permitted.
 

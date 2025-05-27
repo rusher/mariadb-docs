@@ -43,7 +43,7 @@ If you installed the plugin by providing the `[--plugin-load](../../../server-ma
 * Data is slow the select, as it needs to be uncompressed, and, besides the [query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md), there is no cache.
 * Supports AUTO\_INCREMENT (since MariaDB/MySQL 5.1.6), which can be a unique or a non-unique index.
 * Since MariaDB/MySQL 5.1.6, selects scan past BLOB columns unless they are specifically requested, making these queries much more efficient.
-* Does not support [spatial](../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) data types.
+* Does not support [spatial](../../sql-structure/geometry/spatial-index.md) data types.
 * Does not support [transactions](../../sql-statements/transactions/).
 * Does not support foreign keys.
 * Does not support [virtual columns](../../sql-statements/data-definition/create/generated-columns.md).

@@ -23,12 +23,12 @@ characteristics of an existing [event](events.md) without the need to drop and r
 The syntax for each of the `DEFINER`, `ON SCHEDULE`, `ON COMPLETION`,`COMMENT`, `ENABLE` `/` `DISABLE`, and `DO` clauses is exactly the\
 same as when used with [CREATE EVENT](../../../reference/sql-statements/data-definition/create/create-event.md).
 
-This statement requires the [EVENT](../../../reference/sql-statements/account-management-sql-commands/grant.md#database-privileges) privilege.\
+This statement requires the [EVENT](../../../reference/sql-statements/account-management-sql-statements/grant.md#database-privileges) privilege.\
 When a user executes a successful `ALTER EVENT` statement, that user becomes\
 the definer for the affected event.
 
 (In MySQL 5.1.11 and earlier, an event could be altered only by its definer, or\
-by a user having the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege.)
+by a user having the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege.)
 
 `ALTER EVENT` works only with an existing event:
 

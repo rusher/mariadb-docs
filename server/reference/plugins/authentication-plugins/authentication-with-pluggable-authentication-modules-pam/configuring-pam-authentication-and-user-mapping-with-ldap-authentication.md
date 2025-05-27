@@ -461,7 +461,7 @@ CREATE USER 'dba'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' ;
 ```
 
-And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `PROXY` as the `bar` and `dba` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements/account-management-sql-commands/create-user.md#fixing-a-legacy-default-anonymous-account):
+And then to allow for the user and group mapping, we need to [create an anonymous user that authenticates with the pam authentication plugin](user-and-group-mapping-with-pam.md#creating-users) that is also able to `PROXY` as the `bar` and `dba` users. Before we can create the proxy user, we might need to [clean up some defaults](../../../sql-statements/account-management-sql-statements/create-user.md#fixing-a-legacy-default-anonymous-account):
 
 ```
 DELETE FROM mysql.db WHERE User='' AND Host='%';

@@ -2,7 +2,7 @@
 
 ## Description
 
-The `USER_VARIABLES` table is created when the [user\_variables](../../../../../plugins/other-plugins/user-variables-plugin.md) plugin is enabled, and contains information about [user-defined variables](../../../../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+The `USER_VARIABLES` table is created when the [user\_variables](../../../../../plugins/other-plugins/user-variables-plugin.md) plugin is enabled, and contains information about [user-defined variables](../../../../../sql-structure/sql-language-structure/user-defined-variables.md).
 
 The table contains the following columns:
 
@@ -44,7 +44,7 @@ SHOW USER_VARIABLES;
 
 ## See Also
 
-* [User-defined variables](../../../../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md)
+* [User-defined variables](../../../../../sql-structure/sql-language-structure/user-defined-variables.md)
 * [Performance Schema user\_variables\_by\_thread Table](../../performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
 
 CC BY-SA / Gnu FDL

@@ -53,13 +53,13 @@ DELETE HISTORY
 
 For the single-table syntax, the `DELETE` statement deletes rows\
 from tbl\_name and returns a count of the number of deleted rows. This count can\
-be obtained by calling the [ROW\_COUNT()](../../built-in-functions/secondary-functions/information-functions/row_count.md) function. The`WHERE` clause, if given, specifies the conditions that identify\
+be obtained by calling the [ROW\_COUNT()](../../../sql-functions/secondary-functions/information-functions/row_count.md) function. The`WHERE` clause, if given, specifies the conditions that identify\
 which rows to delete. With no `WHERE` clause, all rows are\
 deleted. If the [ORDER BY](../selecting-data/order-by.md) clause is specified, the rows are\
 deleted in the order that is specified. The [LIMIT](../selecting-data/limit.md) clause\
 places a limit on the number of rows that can be deleted.
 
-For the multiple-table syntax, `DELETE` deletes from each`tbl_name` the rows that satisfy the conditions. In this case,[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md)> cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for the syntax.
+For the multiple-table syntax, `DELETE` deletes from each`tbl_name` the rows that satisfy the conditions. In this case,[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md)> cannot be used. A `DELETE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for the syntax.
 
 `where_condition` is an expression that evaluates to true for\
 each row to be deleted. It is specified as described in [SELECT](../selecting-data/select.md).
@@ -69,7 +69,7 @@ table in a subquery.
 
 You need the `DELETE` privilege on a table to delete rows from\
 it. You need only the `SELECT` privilege for any columns that\
-are only read, such as those named in the `WHERE` clause. See[GRANT](../../account-management-sql-commands/grant.md).
+are only read, such as those named in the `WHERE` clause. See[GRANT](../../account-management-sql-statements/grant.md).
 
 As stated, a `DELETE` statement with no `WHERE`\
 clause deletes all rows. A faster way to do this, when you do not need to know\
@@ -96,7 +96,7 @@ See [Partition Pruning and Selection](../../../../server-management/partitioning
 
 ### FOR PORTION OF
 
-See [Application Time Periods - Deletion by Portion](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md#deletion-by-portion).
+See [Application Time Periods - Deletion by Portion](../../../sql-structure/temporal-tables/application-time-periods.md#deletion-by-portion).
 
 ### RETURNING
 
@@ -116,7 +116,7 @@ DELETE FROM t1 WHERE c1 IN (SELECT b.c1 FROM t1 b WHERE b.c2=0);
 
 ### DELETE HISTORY
 
-One can use `DELETE HISTORY` to delete historical information from [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+One can use `DELETE HISTORY` to delete historical information from [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ## Examples
 

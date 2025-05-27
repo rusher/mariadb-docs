@@ -223,7 +223,7 @@ ha_federatedx::reset
 * Prepared statements will not be used in the first implementation, it remains to to be seen whether the limited subset of the client API for the server supports this.
 * This uses SELECT, INSERT, UPDATE, DELETE and not HANDLER for its implementation.
 * This will not work with the query cache.
-* FederatedX does not support [GEOMETRY](../../sql-statements-and-structure/geographic-geometric-features/geometry-types.md) types. Such tables cannot be created explicitly, nor discovered.
+* FederatedX does not support [GEOMETRY](../../sql-structure/geometry/geometry-types.md) types. Such tables cannot be created explicitly, nor discovered.
 
 ## How do you use FederatedX?
 

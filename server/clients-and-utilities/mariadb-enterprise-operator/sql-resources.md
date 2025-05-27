@@ -16,7 +16,7 @@ The key advantage of this approach is that, unlike executing SQL statements manu
 
 ## `User` CR
 
-By creating this resource, you are declaring an intent to create an user in the referred `MariaDB` instance, just like a [CREATE USER](../../reference/sql-statements/account-management-sql-commands/create-user.md) statement would do:
+By creating this resource, you are declaring an intent to create an user in the referred `MariaDB` instance, just like a [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md) statement would do:
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -53,7 +53,7 @@ spec:
 
 ## `Grant` CR
 
-By creating this resource, you are declaring an intent to grant permissions to a given user in the referred `MariaDB` instance, just like a [GRANT](../../reference/sql-statements/account-management-sql-commands/grant.md) statement would do.
+By creating this resource, you are declaring an intent to grant permissions to a given user in the referred `MariaDB` instance, just like a [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md) statement would do.
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -74,7 +74,7 @@ spec:
   host: "%"
 ```
 
-You may provide any set of [privileges supported by MariaDB](../../reference/sql-statements/account-management-sql-commands/grant.md#privilege-levels).
+You may provide any set of [privileges supported by MariaDB](../../reference/sql-statements/account-management-sql-statements/grant.md#privilege-levels).
 
 Refer to the [API reference](api-reference.md) for more detailed information about every field.
 
@@ -139,7 +139,7 @@ Alternatively, you can use [MariaDB authentication plugins](../../reference/plug
 
 #### Password hash
 
-Provide the password hashed using the [MariaDB PASSWORD](../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)function:
+Provide the password hashed using the [MariaDB PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)function:
 
 ```
 apiVersion: v1

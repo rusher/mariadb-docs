@@ -151,7 +151,7 @@ In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 
 This is as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes):
 
-* MariaDB will convert long [table names](../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) properly.
+* MariaDB will convert long [table names](../reference/sql-structure/sql-language-structure/identifier-names.md) properly.
 * MariaDB will convert [InnoDB](../reference/storage-engines/innodb/) tables (no need to do a dump/restore or `[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`).
 * MariaDB will convert old archive tables to the new 5.1 format.
 * "mysql\_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) print out all CHECK, RENAME and ALTER TABLE commands executed.

@@ -29,27 +29,27 @@ The following statements are regarded as unsafe:
 * [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statements that use [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit), since the order of the returned rows is unspecified. This applies even to statements using an ORDER BY clause, which are deterministic (a known bug). However, since [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes), `LIMIT 0` is an exception to this rule (see [MDEV-6170](https://jira.mariadb.org/browse/MDEV-6170)), and these statements are safe for replication.
 * When using a [user-defined function](../../server-usage/user-defined-functions/).
 * Statements using using any of the following functions, which can return different results on the replica:
-  * [CURRENT\_ROLE()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/current_role.md)
-  * [CURRENT\_USER()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)
-  * [FOUND\_ROWS()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/found_rows.md)
-  * [GET\_LOCK()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md)
-  * [IS\_FREE\_LOCK()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_free_lock.md)
-  * [IS\_USED\_LOCK()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/is_used_lock.md)
-  * [JSON\_TABLE()](../../reference/sql-statements/built-in-functions/special-functions/json-functions/json_table.md)
-  * [LOAD\_FILE()](../../reference/sql-statements/built-in-functions/string-functions/load_file.md)
-  * [MASTER\_POS\_WAIT()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)
-  * [RAND()](../../reference/sql-statements/built-in-functions/numeric-functions/rand.md)
-  * [RANDOM\_BYTES()](../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/random_bytes.md)
-  * [RELEASE\_ALL\_LOCKS()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_all_locks.md)
-  * [RELEASE\_LOCK()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/release_lock.md)
-  * [ROW\_COUNT()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md)
-  * [SESSION\_USER()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md)
-  * [SLEEP()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/sleep.md)
-  * [SYSDATE()](../../reference/sql-statements/built-in-functions/date-time-functions/sysdate.md)
-  * [SYSTEM\_USER()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/system_user.md)
-  * [USER()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/user.md)
-  * [UUID()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md)
-  * [UUID\_SHORT()](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md).
+  * [CURRENT\_ROLE()](../../reference/sql-functions/secondary-functions/information-functions/current_role.md)
+  * [CURRENT\_USER()](../../reference/sql-functions/secondary-functions/information-functions/current_user.md)
+  * [FOUND\_ROWS()](../../reference/sql-functions/secondary-functions/information-functions/found_rows.md)
+  * [GET\_LOCK()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)
+  * [IS\_FREE\_LOCK()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/is_free_lock.md)
+  * [IS\_USED\_LOCK()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/is_used_lock.md)
+  * [JSON\_TABLE()](../../reference/sql-functions/special-functions/json-functions/json_table.md)
+  * [LOAD\_FILE()](../../reference/sql-functions/string-functions/load_file.md)
+  * [MASTER\_POS\_WAIT()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)
+  * [RAND()](../../reference/sql-functions/numeric-functions/rand.md)
+  * [RANDOM\_BYTES()](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/random_bytes.md)
+  * [RELEASE\_ALL\_LOCKS()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/release_all_locks.md)
+  * [RELEASE\_LOCK()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/release_lock.md)
+  * [ROW\_COUNT()](../../reference/sql-functions/secondary-functions/information-functions/row_count.md)
+  * [SESSION\_USER()](../../reference/sql-functions/secondary-functions/information-functions/session_user.md)
+  * [SLEEP()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/sleep.md)
+  * [SYSDATE()](../../reference/sql-functions/date-time-functions/sysdate.md)
+  * [SYSTEM\_USER()](../../reference/sql-functions/secondary-functions/information-functions/system_user.md)
+  * [USER()](../../reference/sql-functions/secondary-functions/information-functions/user.md)
+  * [UUID()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid.md)
+  * [UUID\_SHORT()](../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md).
 * Statements which refer to log tables, since these may differ across servers.
 * Statements which refer to self-logging tables. Statements following a read or write to a self-logging table within a transaction are also considered unsafe.
 * Statements which refer to [system variables](../optimization-and-tuning/system-variables/server-system-variables.md) (there are a few exceptions).
@@ -61,20 +61,20 @@ The following statements are regarded as unsafe:
 
 The following statements are not deterministic, but are considered safe for binary logging and replication:
 
-* [CONNECTION\_ID()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/connection_id.md)
-* [CURDATE()](../../reference/sql-statements/built-in-functions/date-time-functions/curdate.md)
-* [CURRENT\_DATE()](../../reference/sql-statements/built-in-functions/date-time-functions/current_date.md)
-* [CURRENT\_TIME()](../../reference/sql-statements/built-in-functions/date-time-functions/current_time.md)
-* [CURRENT\_TIMESTAMP()](../../reference/sql-statements/built-in-functions/date-time-functions/current_timestamp.md)
-* [CURTIME()](../../reference/sql-statements/built-in-functions/date-time-functions/curtime.md)
-* [LAST\_INSERT\_ID()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
-* [LOCALTIME()](../../reference/sql-statements/built-in-functions/date-time-functions/localtime.md)
-* [LOCALTIMESTAMP()](../../reference/sql-statements/built-in-functions/date-time-functions/localtimestamp.md)
-* [NOW()](../../reference/sql-statements/built-in-functions/date-time-functions/now.md)
-* [UNIX\_TIMESTAMP()](../../reference/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md)
-* [UTC\_DATE()](../../reference/sql-statements/built-in-functions/date-time-functions/utc_date.md)
-* [UTC\_TIME()](../../reference/sql-statements/built-in-functions/date-time-functions/utc_time.md)
-* [UTC\_TIMESTAMP()](../../reference/sql-statements/built-in-functions/date-time-functions/utc_timestamp.md)
+* [CONNECTION\_ID()](../../reference/sql-functions/secondary-functions/information-functions/connection_id.md)
+* [CURDATE()](../../reference/sql-functions/date-time-functions/curdate.md)
+* [CURRENT\_DATE()](../../reference/sql-functions/date-time-functions/current_date.md)
+* [CURRENT\_TIME()](../../reference/sql-functions/date-time-functions/current_time.md)
+* [CURRENT\_TIMESTAMP()](../../reference/sql-functions/date-time-functions/current_timestamp.md)
+* [CURTIME()](../../reference/sql-functions/date-time-functions/curtime.md)
+* [LAST\_INSERT\_ID()](../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md)
+* [LOCALTIME()](../../reference/sql-functions/date-time-functions/localtime.md)
+* [LOCALTIMESTAMP()](../../reference/sql-functions/date-time-functions/localtimestamp.md)
+* [NOW()](../../reference/sql-functions/date-time-functions/now.md)
+* [UNIX\_TIMESTAMP()](../../reference/sql-functions/date-time-functions/unix_timestamp.md)
+* [UTC\_DATE()](../../reference/sql-functions/date-time-functions/utc_date.md)
+* [UTC\_TIME()](../../reference/sql-functions/date-time-functions/utc_time.md)
+* [UTC\_TIMESTAMP()](../../reference/sql-functions/date-time-functions/utc_timestamp.md)
 
 ## Isolation Levels
 

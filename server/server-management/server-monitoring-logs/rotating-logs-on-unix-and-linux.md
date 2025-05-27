@@ -57,7 +57,7 @@ The easiest way to allow the `[logrotate](https://linux.die.net/man/8/logrotate)
 
 The `root@localhost` user account is configured to use unix\_socket authentication by default
 
-The `root@localhost` user account can be altered to use [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication with the [ALTER USER](../../reference/sql-statements/account-management-sql-commands/alter-user.md) statement. For example:
+The `root@localhost` user account can be altered to use [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication with the [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement. For example:
 
 ```
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;

@@ -188,7 +188,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%'
 
 (% is a wildcard)
 
-For more information about how to use GRANT, please see the [GRANT](../reference/sql-statements/account-management-sql-commands/grant.md)\
+For more information about how to use GRANT, please see the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md)\
 page.
 
 At this point we have accomplished our goal and we have a user 'root' that can\

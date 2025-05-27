@@ -46,7 +46,7 @@ see ([MDEV-27745](https://jira.mariadb.org/browse/MDEV-27745))
 
 #### Reserved Word
 
-* New [reserved word](../../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md): OFFSET. This can no longer be used as an [identifier](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) without being quoted.
+* New [reserved word](../../../reference/sql-structure/sql-language-structure/reserved-words.md): OFFSET. This can no longer be used as an [identifier](../../../reference/sql-structure/sql-language-structure/identifier-names.md) without being quoted.
 
 #### InnoDB COMPRESSED Row Format
 

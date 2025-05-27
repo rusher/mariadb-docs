@@ -2,7 +2,7 @@
 
 **MariaDB starting with** [**11.4.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-1-release-notes)
 
-The [Information Schema](../) `KEY_PERIOD_USAGE` table shows information about [Application-Time Periods](../../../../../sql-statements-and-structure/temporal-tables/application-time-periods.md).
+The [Information Schema](../) `KEY_PERIOD_USAGE` table shows information about [Application-Time Periods](../../../../../sql-structure/temporal-tables/application-time-periods.md).
 
 It contains the following columns:
 

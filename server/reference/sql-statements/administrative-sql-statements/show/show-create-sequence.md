@@ -8,7 +8,7 @@ SHOW CREATE SEQUENCE sequence_name;
 
 ## Description
 
-Shows the [CREATE SEQUENCE](../../../sql-statements-and-structure/sequences/create-sequence.md) statement that creates the given [sequence](../../../sql-statements-and-structure/sequences/). The statement requires the `SELECT` privilege for the table.
+Shows the [CREATE SEQUENCE](../../../sql-structure/sequences/create-sequence.md) statement that creates the given [sequence](../../../sql-structure/sequences/). The statement requires the `SELECT` privilege for the table.
 
 `SHOW CREATE SEQUENCE` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 
@@ -78,8 +78,8 @@ NUMERIC_PRECISION_RADIX: 2
 
 ## See Also
 
-* [CREATE SEQUENCE](../../../sql-statements-and-structure/sequences/create-sequence.md)
-* [ALTER SEQUENCE](../../../sql-statements-and-structure/sequences/alter-sequence.md)
+* [CREATE SEQUENCE](../../../sql-structure/sequences/create-sequence.md)
+* [ALTER SEQUENCE](../../../sql-structure/sequences/alter-sequence.md)
 * [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 CC BY-SA / Gnu FDL

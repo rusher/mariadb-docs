@@ -19,7 +19,7 @@ it was unable to drop, but it also drops all of the tables in the list that do\
 exist.
 
 **Important**: When a table is dropped, user privileges on the table are not\
-automatically dropped. See [GRANT](../../account-management-sql-commands/grant.md).
+automatically dropped. See [GRANT](../../account-management-sql-statements/grant.md).
 
 If another thread is using the table in an explicit transaction or an autocommit transaction, then the thread acquires a [metadata lock (MDL)](../../transactions/metadata-locking.md) on the table. The `DROP TABLE` statement will wait in the "Waiting for table metadata lock" [thread state](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/) until the MDL is released. MDLs are released in the following cases:
 
@@ -43,9 +43,9 @@ If a [foreign key](../../../../ha-and-performance/optimization-and-tuning/optimi
 
 The comment before the table names (`/*COMMENT TO SAVE*/`) is stored in the [binary log](../../../../server-management/server-monitoring-logs/binary-log/). That feature can be used by replication tools to send their internal messages.
 
-It is possible to specify table names as `db_name`.`tab_name`. This is useful to delete tables from multiple databases with one statement. See [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for details.
+It is possible to specify table names as `db_name`.`tab_name`. This is useful to delete tables from multiple databases with one statement. See [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for details.
 
-The [DROP privilege](../../account-management-sql-commands/grant.md#table-privileges) is required to use `DROP TABLE` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
+The [DROP privilege](../../account-management-sql-statements/grant.md#table-privileges) is required to use `DROP TABLE` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
 
 **Note:** `DROP TABLE` automatically commits the current active transaction,\
 unless you use the `TEMPORARY` keyword.
@@ -121,14 +121,14 @@ DROP TABLE Employees, Customers;
 
 ## Notes
 
-Beware that `DROP TABLE` can drop both tables and [sequences](../../../sql-statements-and-structure/sequences/create-sequence.md). This is mainly done to allow old tools like [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) to work with sequences.
+Beware that `DROP TABLE` can drop both tables and [sequences](../../../sql-structure/sequences/create-sequence.md). This is mainly done to allow old tools like [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) to work with sequences.
 
 ## See Also
 
 * [CREATE TABLE](../create/create-table.md)
 * [ALTER TABLE](../alter/alter-table.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
-* [DROP SEQUENCE](../../../sql-statements-and-structure/sequences/drop-sequence.md)
+* [DROP SEQUENCE](../../../sql-structure/sequences/drop-sequence.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).
 
 GPLv2 fill\_help\_tables.sql

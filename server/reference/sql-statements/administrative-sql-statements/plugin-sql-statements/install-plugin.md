@@ -51,7 +51,7 @@ make the plugin available for use. A plugin is initialized by executing its\
 initialization function, which handles any setup that the plugin must perform\
 before it can be used.
 
-To use `INSTALL PLUGIN`, you must have the[INSERT privilege](../../account-management-sql-commands/grant.md) for the `mysql.plugin` table.
+To use `INSTALL PLUGIN`, you must have the[INSERT privilege](../../account-management-sql-statements/grant.md) for the `mysql.plugin` table.
 
 At server startup, the server loads and initializes any plugin that is\
 listed in the `mysql.plugin` table. This means that a plugin is installed\

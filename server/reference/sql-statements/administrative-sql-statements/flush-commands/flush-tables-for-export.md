@@ -30,7 +30,7 @@ If any of the following statements is in effect in the session, attempting `FLUS
 
 `FLUSH FOR EXPORT` is not written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/).
 
-This statement requires the [RELOAD](../../account-management-sql-commands/grant.md#global-privileges) and the [LOCK TABLES](../../account-management-sql-commands/grant.md#database-privileges) privileges.
+This statement requires the [RELOAD](../../account-management-sql-statements/grant.md#global-privileges) and the [LOCK TABLES](../../account-management-sql-statements/grant.md#database-privileges) privileges.
 
 If one of the specified tables cannot be locked, none of the tables will be locked.
 

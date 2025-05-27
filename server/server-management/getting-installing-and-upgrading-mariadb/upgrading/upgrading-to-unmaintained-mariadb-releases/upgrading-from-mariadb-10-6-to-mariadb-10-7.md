@@ -45,7 +45,7 @@ On most servers upgrading from 10.6 should be painless. However, there are some 
 
 #### Reserved Words
 
-* ROW\_NUMBER is now a [reserved word](../../../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md).
+* ROW\_NUMBER is now a [reserved word](../../../../reference/sql-structure/sql-language-structure/reserved-words.md).
 
 #### Compression
 

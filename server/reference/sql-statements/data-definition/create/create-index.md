@@ -43,7 +43,7 @@ If another connection is using the table, a [metadata lock](../../transactions/m
 
 Another shortcut, [DROP INDEX](../drop/drop-index.md), allows the removal of an index.
 
-For valid identifiers to use as index names, see [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as index names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 For limits on InnoDB indexes, see [InnoDB Limitations](../../../storage-engines/innodb/innodb-limitations.md).
 
@@ -101,7 +101,7 @@ See [Progress Reporting](../../../mariadb-internals/using-mariadb-with-your-prog
 
 **MariaDB starting with** [**10.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes)
 
-The [WITHOUT OVERLAPS](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md#without-overlaps) clause allows one to constrain a primary or unique index such that [application-time periods](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md) cannot overlap.
+The [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) clause allows one to constrain a primary or unique index such that [application-time periods](../../../sql-structure/temporal-tables/application-time-periods.md) cannot overlap.
 
 ## Examples
 
@@ -134,7 +134,7 @@ SHOW WARNINGS;
 +-------+------+-------------------------+
 ```
 
-From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), creating a unique index for an [application-time period table](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
+From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), creating a unique index for an [application-time period table](../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 ```
 CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
@@ -142,14 +142,14 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 
 ## See Also
 
-* [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [Getting Started with Indexes](../../../../../kb/en/getting-started-with-indexes/)[?](broken-reference)
 * [ALTER TABLE](../alter/alter-table.md)
 * [DROP INDEX](../drop/drop-index.md)
 * [SHOW INDEX](../../administrative-sql-statements/show/show-index.md)
-* [SPATIAL INDEX](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md)
+* [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md)
 * [Full-text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/)
-* [WITHOUT OVERLAPS](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md#without-overlaps)
+* [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps)
 * [Ignored Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
 * [InnoDB Limitations](../../../storage-engines/innodb/innodb-limitations.md)
 

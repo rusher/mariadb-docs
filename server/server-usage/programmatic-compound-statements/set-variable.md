@@ -17,7 +17,7 @@ mixed. This also allows combinations of local variables and some\
 options that make sense only for system variables; in that case, the\
 options are recognized but ignored.
 
-`SET` can be used with both [local variables](declare-variable.md) and [user-defined variables](../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+`SET` can be used with both [local variables](declare-variable.md) and [user-defined variables](../../reference/sql-structure/sql-language-structure/user-defined-variables.md).
 
 When setting several variables using the columns returned by a query, `[SELECT INTO](selectinto.md)` should be preferred.
 

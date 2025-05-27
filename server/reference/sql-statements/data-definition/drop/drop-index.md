@@ -19,7 +19,7 @@ See [ALTER TABLE](../alter/alter-table.md).
 
 Another shortcut, [CREATE INDEX](../create/create-index.md), allows the creation of an index.
 
-To remove the primary key, `PRIMARY` must be specified as index\_name. Note that [the quotes](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) are necessary, because `PRIMARY` is a keyword.
+To remove the primary key, `PRIMARY` must be specified as index\_name. Note that [the quotes](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) are necessary, because `PRIMARY` is a keyword.
 
 ## Privileges
 

@@ -62,12 +62,12 @@ qualified with the name of a database schema. An event is associated\
 with both a MariaDB user (the definer) and a schema, and its name must\
 be unique among names of events within that schema. In general, the\
 rules governing event names are the same as those for names of stored\
-routines. See [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+routines. See [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 If no schema is indicated as part of event\_name, the default (current)\
 schema is assumed.
 
-For valid identifiers to use as event names, see [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as event names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 #### OR REPLACE
 
@@ -188,7 +188,7 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 ## See Also
 
 * [Event Limitations](../../../../server-usage/triggers-events/event-scheduler/event-limitations.md)
-* [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [Events Overview](../../../../server-usage/triggers-events/event-scheduler/events.md)
 * [SHOW CREATE EVENT](../../administrative-sql-statements/show/show-create-event.md)
 * [ALTER EVENT](../../../../server-usage/triggers-events/event-scheduler/alter-event.md)

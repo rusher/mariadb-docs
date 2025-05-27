@@ -9,7 +9,7 @@ PREPARE stmt_name FROM preparable_stmt
 ## Description
 
 The `PREPARE` statement prepares a statement and assigns it a name,`stmt_name`, by which to refer to the statement later. Statement names\
-are not case sensitive. `preparable_stmt` is either a string literal or a [user variable](../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md) (not a [local variable](../../../server-usage/programmatic-compound-statements/declare-variable.md), an SQL expression or a subquery) that contains the text of the statement. The text must\
+are not case sensitive. `preparable_stmt` is either a string literal or a [user variable](../../sql-structure/sql-language-structure/user-defined-variables.md) (not a [local variable](../../../server-usage/programmatic-compound-statements/declare-variable.md), an SQL expression or a subquery) that contains the text of the statement. The text must\
 represent a single SQL statement, not multiple statements. Within the\
 statement, "?" characters can be used as parameter markers to indicate\
 where data values are to be bound to the query later when you execute\
@@ -28,7 +28,7 @@ error is returned and no statement with the given name exists.
 
 Prepared statements can be PREPAREd and [EXECUTEd](execute-statement.md) in a stored procedure, but not in a stored function or trigger. Also, even if the statement is PREPAREd in a procedure, it will not be deallocated when the procedure execution ends.
 
-A prepared statement can access [user-defined variables](../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md), but not [local variables](../../../server-usage/programmatic-compound-statements/declare-variable.md) or procedure's parameters.
+A prepared statement can access [user-defined variables](../../sql-structure/sql-language-structure/user-defined-variables.md), but not [local variables](../../../server-usage/programmatic-compound-statements/declare-variable.md) or procedure's parameters.
 
 If the prepared statement contains a syntax error, PREPARE will fail. As a side effect, stored procedures can use it to check if a statement is valid. For example:
 
@@ -45,7 +45,7 @@ BEGIN
 END;
 ```
 
-The [FOUND\_ROWS()](../built-in-functions/secondary-functions/information-functions/found_rows.md) and [ROW\_COUNT()](../built-in-functions/secondary-functions/information-functions/row_count.md) functions, if called immediatly after EXECUTE, return the number of rows read or affected by the prepared statements; however, if they are called after DEALLOCATE PREPARE, they provide information about this statement. If the prepared statement produces errors or warnings, [GET DIAGNOSTICS](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) return information about them. DEALLOCATE PREPARE shouldn't clear the [diagnostics area](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md), unless it produces an error.
+The [FOUND\_ROWS()](../../sql-functions/secondary-functions/information-functions/found_rows.md) and [ROW\_COUNT()](../../sql-functions/secondary-functions/information-functions/row_count.md) functions, if called immediatly after EXECUTE, return the number of rows read or affected by the prepared statements; however, if they are called after DEALLOCATE PREPARE, they provide information about this statement. If the prepared statement produces errors or warnings, [GET DIAGNOSTICS](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) return information about them. DEALLOCATE PREPARE shouldn't clear the [diagnostics area](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md), unless it produces an error.
 
 A prepared statement is executed with `[EXECUTE](execute-statement.md)` and released\
 with `[DEALLOCATE PREPARE](deallocate-drop-prepare.md)`.
@@ -80,7 +80,7 @@ Prior to this, not all statements can be prepared. Only the following SQL comman
 * {[CREATE](../data-definition/create/create-database.md) | [DROP](../data-definition/drop/drop-database.md)} DATABASE
 * {[CREATE](../data-definition/create/create-index.md) | [DROP](../data-definition/drop/drop-index.md)} INDEX
 * {[CREATE](../data-definition/create/create-table.md) | [RENAME](../data-definition/rename-table.md) | [DROP](../data-definition/drop/drop-table.md)} TABLE
-* {[CREATE](../account-management-sql-commands/create-user.md) | [RENAME](../account-management-sql-commands/rename-user.md) | [DROP](../account-management-sql-commands/drop-user.md)} USER
+* {[CREATE](../account-management-sql-statements/create-user.md) | [RENAME](../account-management-sql-statements/rename-user.md) | [DROP](../account-management-sql-statements/drop-user.md)} USER
 * {[CREATE](../../../server-usage/views/create-view.md) | [DROP](../../../server-usage/views/drop-view.md)} VIEW
 * [DELETE](../data-manipulation/changing-deleting-data/delete.md)
 * [DESCRIBE](../administrative-sql-statements/describe.md)
@@ -89,22 +89,22 @@ Prior to this, not all statements can be prepared. Only the following SQL comman
 * [FLUSH](../administrative-sql-statements/flush-commands/flush.md) {TABLE | TABLES | TABLES WITH READ LOCK | HOSTS | PRIVILEGES | LOGS | STATUS |\
   MASTER | SLAVE | DES\_KEY\_FILE | USER\_RESOURCES | [QUERY CACHE](../administrative-sql-statements/flush-commands/flush-query-cache.md) | TABLE\_STATISTICS |\
   INDEX\_STATISTICS | USER\_STATISTICS | CLIENT\_STATISTICS}
-* [GRANT](../account-management-sql-commands/grant.md)
+* [GRANT](../account-management-sql-statements/grant.md)
 * [INSERT](../data-manipulation/inserting-loading-data/insert.md)
 * INSTALL {[PLUGIN](../administrative-sql-statements/plugin-sql-statements/install-plugin.md) | [SONAME](../administrative-sql-statements/plugin-sql-statements/install-soname.md)}
-* [HANDLER READ](../../sql-statements-and-structure/nosql/handler/handler-commands.md)
+* [HANDLER READ](../../sql-structure/nosql/handler/handler-commands.md)
 * [KILL](../administrative-sql-statements/kill.md)
 * [LOAD INDEX INTO CACHE](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)
 * [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md)
 * [REPAIR TABLE](../table-statements/repair-table.md)
 * [REPLACE](../data-manipulation/changing-deleting-data/replace.md)
 * [RESET](../administrative-sql-statements/reset.md) {[MASTER](../administrative-sql-statements/replication-statements/reset-master.md) | [SLAVE](../administrative-sql-statements/replication-statements/reset-replica.md) | [QUERY CACHE](../administrative-sql-statements/reset.md)}
-* [REVOKE](../account-management-sql-commands/revoke.md)
+* [REVOKE](../account-management-sql-statements/revoke.md)
 * [ROLLBACK](../transactions/rollback.md)
 * [SELECT](../data-manipulation/selecting-data/select.md)
 * [SET](../administrative-sql-statements/set-commands/set.md)
 * [SET GLOBAL SQL\_SLAVE\_SKIP\_COUNTER](../administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md)
-* [SET ROLE](../account-management-sql-commands/set-role.md)
+* [SET ROLE](../account-management-sql-statements/set-role.md)
 * [SET SQL\_LOG\_BIN](../administrative-sql-statements/set-commands/set-sql_log_bin.md)
 * [SET TRANSACTION ISOLATION LEVEL](../transactions/set-transaction.md)
 * [SHOW EXPLAIN](../administrative-sql-statements/show/show-explain.md)

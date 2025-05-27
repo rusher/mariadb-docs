@@ -20,7 +20,7 @@ If your table does not have a column or a set of columns that could act as a nat
 
 ## Using a Sequence-backed Column as the Primary Key
 
-If your table does not have a column or a set of columns that could act as a natural primary key, then you can use a sequence to generate an integer value to use as the table's primary key. Sequences were first added in MariaDB Enterprise Server 10.3 and MariaDB Community Server 10.3. See [InnoDB Sequences](../../../sql-statements-and-structure/sequences/) for more details.
+If your table does not have a column or a set of columns that could act as a natural primary key, then you can use a sequence to generate an integer value to use as the table's primary key. Sequences were first added in MariaDB Enterprise Server 10.3 and MariaDB Community Server 10.3. See [InnoDB Sequences](../../../sql-structure/sequences/) for more details.
 
 ## Creating an InnoDB Table with a Single Column Primary Key
 
@@ -305,6 +305,6 @@ VALUES
 To easily generate unique values for a primary key, consider using one of the following options:
 
 * [InnoDB AUTO\_INCREMENT Columns](auto_increment-constraints.md#creating-an-innodb-table-with-an-auto_increment-column)
-* [|InnoDB Sequences](../../../sql-statements-and-structure/sequences/)
+* [|InnoDB Sequences](../../../sql-structure/sequences/)
 
 Copyright © 2025 MariaDB

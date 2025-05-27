@@ -324,7 +324,7 @@ The following options are related to [replication](broken-reference) and the [bi
 #### `--sysdate-is-now`
 
 * Commandline: `--sysdate-is-now`
-* Description: Non-default option to alias [SYSDATE()](../../../reference/sql-statements/built-in-functions/date-time-functions/sysdate.md) to [NOW()](../../../reference/sql-statements/built-in-functions/date-time-functions/now.md) to make it safe for [replication](broken-reference). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
+* Description: Non-default option to alias [SYSDATE()](../../../reference/sql-functions/date-time-functions/sysdate.md) to [NOW()](../../../reference/sql-functions/date-time-functions/now.md) to make it safe for [replication](broken-reference). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
 
 ### Replication and Binary Logging Options and System Variables
 
@@ -960,7 +960,7 @@ The options and system variables related to the [TokuDB](../../../reference/stor
 
 ### Vector Options
 
-The options and system variables related to [Vectors](../../../reference/sql-statements-and-structure/vectors/) storage engine (beginning with `mhnsw`) can be found [here](../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md).
+The options and system variables related to [Vectors](../../../reference/sql-structure/vectors/) storage engine (beginning with `mhnsw`) can be found [here](../../../reference/sql-structure/vectors/vector-system-variables.md).
 
 ## Performance Schema Options
 
@@ -1209,7 +1209,7 @@ Options that are also system variables are listed after:
 #### `--des-key-file`
 
 * Commandline: `--des-key-file=name`
-* Description: Load keys for [des\_encrypt()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des\_encrypt from given file.
+* Description: Load keys for [des\_encrypt()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des\_encrypt from given file.
 
 #### `--exit-info`
 
@@ -1573,10 +1573,10 @@ Because the [Event Scheduler](../../../server-usage/triggers-events/event-schedu
 * [stored-program-cache](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#stored_program_cache)
 * [strict\_password\_validation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation)
 * [sync-frm](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sync_frm)
-* [system-versioning-alter-history](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history)
-* [system-versioning-asof](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof)
-* [system-versioning-innodb-algorithm-simple](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple)
-* [system-versioning-insert-history](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history)
+* [system-versioning-alter-history](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history)
+* [system-versioning-asof](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof)
+* [system-versioning-innodb-algorithm-simple](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple)
+* [system-versioning-insert-history](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history)
 * [table-lock-wait-timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_lock_wait_timeout)
 * [tcp-keepalive-interval](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_interval)
 * [tcp-keepalive-probes](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_probes)
@@ -1681,7 +1681,7 @@ The options related to the `[QUERY_RESPONSE_TIME_AUDIT](../../../reference/plugi
 
 ### Daemon Plugin - `handlersocket`
 
-The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](../../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md) page.
+The options for the HandlerSocket plugin are all described on the [HandlerSocket Configuration Option](../../../reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options.md) page.
 
 ## Information Schema Plugins - Options and System Variables
 

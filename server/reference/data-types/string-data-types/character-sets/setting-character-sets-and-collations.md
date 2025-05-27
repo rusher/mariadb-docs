@@ -203,7 +203,7 @@ Since [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 * SELECT INTO OUTFILE
 * [LOAD DATA INFILE](../../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
 * [LOAD XML](../../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md)
-* [LOAD\_FILE()](../../../sql-statements/built-in-functions/string-functions/load_file.md)
+* [LOAD\_FILE()](../../../sql-functions/string-functions/load_file.md)
 
 ## Literals
 
@@ -456,9 +456,9 @@ Note that the `default-character-set` option is a client option, not a server op
 
 ## See Also
 
-* [String literals](../../../sql-statements-and-structure/sql-language-structure/string-literals.md)
-* [CAST()](../../../sql-statements/built-in-functions/string-functions/cast.md)
-* [CONVERT()](../../../sql-statements/built-in-functions/string-functions/convert.md)
-* [Operator Precedence](../../../sql-statements-and-structure/operators/operator-precedence.md)
+* [String literals](../../../sql-structure/sql-language-structure/string-literals.md)
+* [CAST()](../../../sql-functions/string-functions/cast.md)
+* [CONVERT()](../../../sql-functions/string-functions/convert.md)
+* [Operator Precedence](../../../sql-structure/operators/operator-precedence.md)
 
 CC BY-SA / Gnu FDL

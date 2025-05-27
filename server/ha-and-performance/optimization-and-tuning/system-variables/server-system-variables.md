@@ -12,7 +12,7 @@ The full list of server variables are listed in the contents on this page, and m
 * [CONNECT System Variables](../../../reference/storage-engines/connect/connect-system-variables.md)
 * [Galera System Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)
 * [Global Transaction ID System Variables](../../standard-replication/gtid.md#system-variables-for-global-transaction-id)
-* [HandlerSocket Plugin System Variables](../../../reference/sql-statements-and-structure/nosql/handlersocket/handlersocket-configuration-options.md)
+* [HandlerSocket Plugin System Variables](../../../reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options.md)
 * [InnoDB System Variables](../../../reference/storage-engines/innodb/innodb-system-variables.md)
 * [Mroonga System Variables](../../../reference/storage-engines/mroonga/mroonga-system-variables.md)
 * [MyRocks System Variables](../../../reference/storage-engines/myrocks/myrocks-system-variables.md)
@@ -26,7 +26,7 @@ The full list of server variables are listed in the contents on this page, and m
 * [SSL System Variables](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)
 * [Threadpool System Variables](../buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)
 * [TokuDB System Variables](../../../reference/storage-engines/tokudb/tokudb-system-variables.md)
-* [Vector System Variables](../../../reference/sql-statements-and-structure/vectors/vector-system-variables.md)
+* [Vector System Variables](../../../reference/sql-structure/vectors/vector-system-variables.md)
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -192,7 +192,7 @@ The suffix can be upper or lower-case.
 
 **`block_encryption_mode`**
 
-* Description: Default block encryption mode for [AES\_ENCRYPT()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_encrypt.md) and [AES\_DECRYPT()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_decrypt.md) functions.
+* Description: Default block encryption mode for [AES\_ENCRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_encrypt.md) and [AES\_DECRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/aes_decrypt.md) functions.
 * Commandline: `--block-encryption-mode=val`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -260,7 +260,7 @@ The suffix can be upper or lower-case.
 
 **`character_set_filesystem`**
 
-* Description: The [character set](../../../reference/data-types/string-data-types/character-sets/) for the filesystem. Used for converting file names specified as a string literal from [character\_set\_client](server-system-variables.md#character_set_client) to character\_set\_filesystem before opening the file. By default set to `binary`, so no conversion takes place. This could be useful for statements such as [LOAD\_FILE()](../../../reference/sql-statements/built-in-functions/string-functions/load_file.md) or [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) on system where multi-byte file names are use.
+* Description: The [character set](../../../reference/data-types/string-data-types/character-sets/) for the filesystem. Used for converting file names specified as a string literal from [character\_set\_client](server-system-variables.md#character_set_client) to character\_set\_filesystem before opening the file. By default set to `binary`, so no conversion takes place. This could be useful for statements such as [LOAD\_FILE()](../../../reference/sql-functions/string-functions/load_file.md) or [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) on system where multi-byte file names are use.
 * Commandline: `--character-set-filesystem=name`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -425,7 +425,7 @@ The suffix can be upper or lower-case.
 
 **`default_password_lifetime`**
 
-* Description: This defines the global [password expiration policy](../../../security/user-account-management/user-password-expiry.md). 0 means automatic password expiration is disabled. If the value is a positive integer N, the passwords must be changed every N days. This behavior can be overridden using the password expiration options in [ALTER USER](../../../reference/sql-statements/account-management-sql-commands/alter-user.md).
+* Description: This defines the global [password expiration policy](../../../security/user-account-management/user-password-expiry.md). 0 means automatic password expiration is disabled. If the value is a positive integer N, the passwords must be changed every N days. This behavior can be overridden using the password expiration options in [ALTER USER](../../../reference/sql-statements/account-management-sql-statements/alter-user.md).
 * Commandline: `--default-password-lifetime=#`
 * Scope: Global
 * Dynamic: Yes
@@ -435,7 +435,7 @@ The suffix can be upper or lower-case.
 
 **`default_regex_flags`**
 
-* Description: Introduced to address remaining incompatibilities between [PCRE](../../../reference/sql-statements/built-in-functions/string-functions/regular-expressions-functions/pcre.md) and the old regex library. Accepts a comma-separated list of zero or more of the following values:
+* Description: Introduced to address remaining incompatibilities between [PCRE](../../../reference/sql-functions/string-functions/regular-expressions-functions/pcre.md) and the old regex library. Accepts a comma-separated list of zero or more of the following values:
 
 |          |                    |                                       |
 | -------- | ------------------ | ------------------------------------- |
@@ -485,7 +485,7 @@ The suffix can be upper or lower-case.
 
 **`default_week_format`**
 
-* Description: Default mode for the [WEEK()](../../../reference/sql-statements/built-in-functions/date-time-functions/week.md) function. See that page for details on the different modes
+* Description: Default mode for the [WEEK()](../../../reference/sql-functions/date-time-functions/week.md) function. See that page for details on the different modes
 * Commandline: `--default-week-format=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -787,7 +787,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`group_concat_max_len`**
 
-* Description: Maximum length in bytes of the returned result for the functions [GROUP\_CONCAT()](../../../reference/sql-statements/built-in-functions/aggregate-functions/group_concat.md), [JSON\_OBJECTAGG](../../../reference/sql-statements/built-in-functions/special-functions/json-functions/json_objectagg.md) and [JSON\_ARRAYAGG](../../../reference/sql-statements/built-in-functions/special-functions/json-functions/json_arrayagg.md).
+* Description: Maximum length in bytes of the returned result for the functions [GROUP\_CONCAT()](../../../reference/sql-functions/aggregate-functions/group_concat.md), [JSON\_OBJECTAGG](../../../reference/sql-functions/special-functions/json-functions/json_objectagg.md) and [JSON\_ARRAYAGG](../../../reference/sql-functions/special-functions/json-functions/json_arrayagg.md).
 * Commandline: `--group-concat-max-len=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -800,13 +800,13 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`have_compress`**
 
-* Description: If the zlib compression library is accessible to the server, this will be set to `YES`, otherwise it will be `NO`. The [COMPRESS()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/compress.md) and [UNCOMPRESS()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompress.md) functions will only be available if set to `YES`.
+* Description: If the zlib compression library is accessible to the server, this will be set to `YES`, otherwise it will be `NO`. The [COMPRESS()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/compress.md) and [UNCOMPRESS()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/uncompress.md) functions will only be available if set to `YES`.
 * Scope: Global
 * Dynamic: No
 
 **`have_crypt`**
 
-* Description: If the crypt() system call is available this variable will be set to `YES`, otherwise it will be set to `NO`. If set to `NO`, the [ENCRYPT()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) function cannot be used.
+* Description: If the crypt() system call is available this variable will be set to `YES`, otherwise it will be set to `NO`. If set to `NO`, the [ENCRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) function cannot be used.
 * Scope: Global
 * Dynamic: No
 
@@ -857,7 +857,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`have_rtree_keys`**
 
-* Description: If RTREE indexes (used for [spatial indexes](../../../reference/sql-statements-and-structure/geographic-geometric-features/spatial-index.md)) are available, will be set to `YES`, otherwise will be set to `NO`.
+* Description: If RTREE indexes (used for [spatial indexes](../../../reference/sql-structure/geometry/spatial-index.md)) are available, will be set to `YES`, otherwise will be set to `NO`.
 * Scope: Global
 * Dynamic: No
 
@@ -975,7 +975,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`init_connect`**
 
-* Description: String containing one or more SQL statements, separated by semicolons, that will be executed by the server for each client connecting. If there's a syntax error in the one of the statements, the client will fail to connect. For this reason, the statements are not executed for users with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#connection-admin) privilege, who can then still connect and correct the error. See also [init\_file](server-system-variables.md#init_file).
+* Description: String containing one or more SQL statements, separated by semicolons, that will be executed by the server for each client connecting. If there's a syntax error in the one of the statements, the client will fail to connect. For this reason, the statements are not executed for users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege, who can then still connect and correct the error. See also [init\_file](server-system-variables.md#init_file).
 * Commandline: `--init-connect=name`
 * Scope: Global
 * Dynamic: Yes
@@ -1082,7 +1082,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`last_insert_id`**
 
-* Description: Contains the same value as that returned by [LAST\_INSERT\_ID()](../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md). Note that setting this variable doen't update the value returned by the underlying function.
+* Description: Contains the same value as that returned by [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md). Note that setting this variable doen't update the value returned by the underlying function.
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1113,7 +1113,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`lc_time_names`**
 
-* Description: The locale that determines the language used for the date and time functions [DAYNAME()](../../../reference/sql-statements/built-in-functions/date-time-functions/dayname.md), [MONTHNAME()](../../../reference/sql-statements/built-in-functions/date-time-functions/monthname.md) and [DATE\_FORMAT()](https://mariadb.com/kb/en/date-format). Locale names are language and region subtags, for example 'en\_ZA' (English - South Africa) or 'es\_US: Spanish - United States'. The default is always 'en-US' regardless of the system's locale setting. See [server locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a full list of supported locales.
+* Description: The locale that determines the language used for the date and time functions [DAYNAME()](../../../reference/sql-functions/date-time-functions/dayname.md), [MONTHNAME()](../../../reference/sql-functions/date-time-functions/monthname.md) and [DATE\_FORMAT()](https://mariadb.com/kb/en/date-format). Locale names are language and region subtags, for example 'en\_ZA' (English - South Africa) or 'es\_US: Spanish - United States'. The default is always 'en-US' regardless of the system's locale setting. See [server locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a full list of supported locales.
 * Commandline: `--lc-time-names=name`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1559,7 +1559,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 **`max_password_errors`**
 
-* Description: The maximum permitted number of failed connection attempts due to an invalid password before a user is blocked from further connections. [FLUSH\_PRIVILEGES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) will permit the user to connect again. This limit is not applicable for users with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#connection-admin) privilege, with a hostname of localhost, 127.0.0.1 or ::1. See also the [Information Schema USERS table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-users-table.md).
+* Description: The maximum permitted number of failed connection attempts due to an invalid password before a user is blocked from further connections. [FLUSH\_PRIVILEGES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) will permit the user to connect again. This limit is not applicable for users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege, with a hostname of localhost, 127.0.0.1 or ::1. See also the [Information Schema USERS table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-users-table.md).
 * Commandline: `--max-password-errors=#`
 * Scope: Global
 * Dynamic: Yes
@@ -1657,7 +1657,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 **`max_user_connections`**
 
 * Description:\
-  Maximum simultaneous connections permitted for each user account. When set to `0`, there is no per user limit. Setting it to `-1` stops users without the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#connection-admin) privilege, from connecting to the server. The session variable is always read-only and only privileged users can modify user limits. The session variable defaults to the global `max_user_connections` variable, unless the user's specific `[MAX_USER_CONNECTIONS](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#max_user_connections)` resource option is non-zero. When both global variable and the user resource option are set, the user's [MAX\_USER\_CONNECTIONS](../../../reference/sql-statements/account-management-sql-commands/create-user.md#max_user_connections) is used. Note: This variable does not affect users with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#connection-admin) privilege.
+  Maximum simultaneous connections permitted for each user account. When set to `0`, there is no per user limit. Setting it to `-1` stops users without the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege, from connecting to the server. The session variable is always read-only and only privileged users can modify user limits. The session variable defaults to the global `max_user_connections` variable, unless the user's specific `[MAX_USER_CONNECTIONS](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#max_user_connections)` resource option is non-zero. When both global variable and the user resource option are set, the user's [MAX\_USER\_CONNECTIONS](../../../reference/sql-statements/account-management-sql-statements/create-user.md#max_user_connections) is used. Note: This variable does not affect users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege.
 * Commandline: `--max-user-connections=#`
 * Scope: Global, Session
 * Dynamic: Yes, (except when globally set to `0` or `-1`)
@@ -2220,7 +2220,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 **`rand_seed1`**
 
-* Description: `rand_seed1` and `rand_seed2` facilitate replication of the [RAND()](../../../reference/sql-statements/built-in-functions/numeric-functions/rand.md) function. The master passes the value of these to the slaves so that the random number generator is seeded in the same way, and generates the same value, on the slave as on the master. Until [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), the variable value could not be viewed, with the [SHOW VARIABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) output always displaying zero.
+* Description: `rand_seed1` and `rand_seed2` facilitate replication of the [RAND()](../../../reference/sql-functions/numeric-functions/rand.md) function. The master passes the value of these to the slaves so that the random number generator is seeded in the same way, and generates the same value, on the slave as on the master. Until [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), the variable value could not be viewed, with the [SHOW VARIABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) output always displaying zero.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
@@ -2255,7 +2255,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 **`read_only`**
 
-* Description: When set to `1` (`0` is default), no updates are permitted except from users with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [READ ONLY ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#read_only-admin) privilege, or replica servers updating from a primary. The `read_only` variable is useful for replica servers to ensure no updates are accidentally made outside of what are performed on the primary. Inserting rows to log tables, updates to temporary tables and [OPTIMIZE TABLE](../optimizing-tables/optimize-table.md) or [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) statements are excluded from this limitation. If `read_only` is set to `1`, then the [SET PASSWORD](../../../reference/sql-statements/account-management-sql-commands/set-password.md) statement is limited only to users with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)) or [READ ONLY ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#read_only-admin) privilege (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)). Attempting to set this variable to `1` will fail if the current session has table locks or transactions pending, while if other sessions hold table locks, the statement will wait until these locks are released before completing. While the attempt to set `read_only` is waiting, other requests for table locks or transactions will also wait until `read_only` has been set. See [Read-Only Replicas](../../standard-replication/read-only-replicas.md) for more. From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [READ\_ONLY ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#read_only-admin) privilege will allow users granted that privilege to perform writes, even if the `read_only` variable is set. In earlier versions, and until [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes), users with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) can perform writes while this variable is set.
+* Description: When set to `1` (`0` is default), no updates are permitted except from users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [READ ONLY ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#read_only-admin) privilege, or replica servers updating from a primary. The `read_only` variable is useful for replica servers to ensure no updates are accidentally made outside of what are performed on the primary. Inserting rows to log tables, updates to temporary tables and [OPTIMIZE TABLE](../optimizing-tables/optimize-table.md) or [ANALYZE TABLE](../../../reference/sql-statements/table-statements/analyze-table.md) statements are excluded from this limitation. If `read_only` is set to `1`, then the [SET PASSWORD](../../../reference/sql-statements/account-management-sql-statements/set-password.md) statement is limited only to users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)) or [READ ONLY ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#read_only-admin) privilege (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)). Attempting to set this variable to `1` will fail if the current session has table locks or transactions pending, while if other sessions hold table locks, the statement will wait until these locks are released before completing. While the attempt to set `read_only` is waiting, other requests for table locks or transactions will also wait until `read_only` has been set. See [Read-Only Replicas](../../standard-replication/read-only-replicas.md) for more. From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [READ\_ONLY ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#read_only-admin) privilege will allow users granted that privilege to perform writes, even if the `read_only` variable is set. In earlier versions, and until [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes), users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) can perform writes while this variable is set.
 * Commandline: `--read-only`
 * Scope: Global
 * Dynamic: Yes
@@ -2329,7 +2329,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 **`secure_file_priv`**
 
-* Description: [LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT ... INTO](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#into) and [LOAD FILE()](../../../reference/sql-statements/built-in-functions/string-functions/load_file.md) will only work with files in the specified path. If not set, the default, or set to empty string, the statements will work with any files that can be accessed.
+* Description: [LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT ... INTO](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#into) and [LOAD FILE()](../../../reference/sql-functions/string-functions/load_file.md) will only work with files in the specified path. If not set, the default, or set to empty string, the statements will work with any files that can be accessed.
 * Commandline: `--secure-file-priv=path`
 * Scope: Global
 * Dynamic: No
@@ -2339,7 +2339,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 **`secure_timestamp`**
 
 * Description: Restricts direct setting of a session timestamp. Possible levels are:
-  * YES - timestamp cannot deviate from the system clock. Intended to prevent tampering with [system versioning](../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) history. Should not be used on replicas, as when a value based on the timestamp is inserted in [statement mode](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging), discrepancies can occur.
+  * YES - timestamp cannot deviate from the system clock. Intended to prevent tampering with [system versioning](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) history. Should not be used on replicas, as when a value based on the timestamp is inserted in [statement mode](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging), discrepancies can occur.
   * REPLICATION - replication thread can adjust timestamp to match the primary's
   * SUPER - a user with this privilege and a replication thread can adjust timestamp
   * NO - historical behavior, anyone can modify session timestamp
@@ -2555,7 +2555,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 **`sql_log_off`**
 
-* Description: If set to 1 (0 is the default), no logging to the [general query log](../../../server-management/server-monitoring-logs/general-query-log.md) is done for the client. Only clients with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege can update this variable.
+* Description: If set to 1 (0 is the default), no logging to the [general query log](../../../server-management/server-monitoring-logs/general-query-log.md) is done for the client. Only clients with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege can update this variable.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -2833,7 +2833,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 **`timestamp`**
 
-* Description: Sets the time for the client. This will affect the result returned by the [NOW()](../../../reference/sql-statements/built-in-functions/date-time-functions/now.md) function, not the [SYSDATE()](../../../reference/sql-statements/built-in-functions/date-time-functions/sysdate.md) function, unless the server is started with the [--sysdate-is-now](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, in which case SYSDATE becomes an alias of NOW, and will also be affected. Also used to get the original timestamp when restoring rows from the [binary log](../../../server-management/server-monitoring-logs/binary-log/).
+* Description: Sets the time for the client. This will affect the result returned by the [NOW()](../../../reference/sql-functions/date-time-functions/now.md) function, not the [SYSDATE()](../../../reference/sql-functions/date-time-functions/sysdate.md) function, unless the server is started with the [--sysdate-is-now](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, in which case SYSDATE becomes an alias of NOW, and will also be affected. Also used to get the original timestamp when restoring rows from the [binary log](../../../server-management/server-monitoring-logs/binary-log/).
 * Scope: Session
 * Dynamic: Yes
 * Valid Values: `timestamp_value` (Unix epoch timestamp, not MariaDB timestamp), `DEFAULT`

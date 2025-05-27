@@ -11,7 +11,7 @@ FETCH cursor_name INTO var_name [, var_name] ...
 This statement fetches the next row (if a row exists) using the\
 specified [open](open.md) [cursor](./), and advances the cursor pointer.
 
-`var_name` can be a [local variable](../declare-variable.md), but _not_ a [user-defined variable](../../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+`var_name` can be a [local variable](../declare-variable.md), but _not_ a [user-defined variable](../../../reference/sql-structure/sql-language-structure/user-defined-variables.md).
 
 If no more rows are available, a No Data condition occurs with`SQLSTATE` value `02000`. To detect this condition, you can set up a\
 handler for it (or for a `NOT FOUND` condition).

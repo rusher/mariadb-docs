@@ -82,7 +82,7 @@ START SLAVE 'gandalf';
 
 The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](broken-reference) will use to connect to the [primary](broken-reference).
 
-This user account will need the [REPLICATION SLAVE](../../account-management-sql-commands/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-commands/grant.md#replication-replica) on the primary.
+This user account will need the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-statements/grant.md#replication-replica) on the primary.
 
 For example:
 

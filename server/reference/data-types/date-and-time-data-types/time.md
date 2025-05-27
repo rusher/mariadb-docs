@@ -8,9 +8,9 @@ TIME [(<microsecond precision>)]
 
 ## Description
 
-A time. The range is `'-838:59:59.999999'` to `'838:59:59.999999'`. [Microsecond precision](../../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md) can be from 0-6; if not specified 0 is used.
+A time. The range is `'-838:59:59.999999'` to `'838:59:59.999999'`. [Microsecond precision](../../sql-functions/date-time-functions/microseconds-in-mariadb.md) can be from 0-6; if not specified 0 is used.
 
-MariaDB displays `TIME` values in `'HH:MM:SS.ssssss'` format, but allows assignment of times in looser formats, including 'D HH:MM:SS', 'HH:MM:SS', 'HH:MM', 'D HH:MM', 'D HH', 'SS', or 'HHMMSS', as well as permitting dropping of any leading zeros when a delimiter is provided, for example '3:9:10'. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
+MariaDB displays `TIME` values in `'HH:MM:SS.ssssss'` format, but allows assignment of times in looser formats, including 'D HH:MM:SS', 'HH:MM:SS', 'HH:MM', 'D HH:MM', 'D HH', 'SS', or 'HHMMSS', as well as permitting dropping of any leading zeros when a delimiter is provided, for example '3:9:10'. For details, see [date and time literals](../../sql-structure/sql-language-structure/date-and-time-literals.md).
 
 The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store TIMEs using the same low-level format MySQL 5.6 uses.
 

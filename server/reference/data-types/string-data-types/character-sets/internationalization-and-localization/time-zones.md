@@ -22,7 +22,7 @@ The global server time zone can be changed at server startup by setting the `--d
 default_time_zone = 'America/New_York'
 ```
 
-The global server time zone can also be changed dynamically by setting the [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable as a user account that has the [SUPER](../../../../sql-statements/account-management-sql-commands/grant.md#super) privilege. For example:
+The global server time zone can also be changed dynamically by setting the [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable as a user account that has the [SUPER](../../../../sql-statements/account-management-sql-statements/grant.md#super) privilege. For example:
 
 ```
 SET GLOBAL time_zone = 'America/New_York';
@@ -103,17 +103,17 @@ sudo timedatectl set-timezone America/New_York
 
 Some functions are affected by the time zone settings. These include:
 
-* [NOW()](../../../../sql-statements/built-in-functions/date-time-functions/now.md)
-* [SYSDATE()](../../../../sql-statements/built-in-functions/date-time-functions/sysdate.md)
-* [CURDATE()](../../../../sql-statements/built-in-functions/date-time-functions/curdate.md)
-* [CURTIME()](../../../../sql-statements/built-in-functions/date-time-functions/curtime.md)
-* [UNIX\_TIMESTAMP()](../../../../sql-statements/built-in-functions/date-time-functions/unix_timestamp.md)
+* [NOW()](../../../../sql-functions/date-time-functions/now.md)
+* [SYSDATE()](../../../../sql-functions/date-time-functions/sysdate.md)
+* [CURDATE()](../../../../sql-functions/date-time-functions/curdate.md)
+* [CURTIME()](../../../../sql-functions/date-time-functions/curtime.md)
+* [UNIX\_TIMESTAMP()](../../../../sql-functions/date-time-functions/unix_timestamp.md)
 
 Some functions are not affected. These include:
 
-* [UTC\_DATE()](../../../../sql-statements/built-in-functions/date-time-functions/utc_date.md)
-* [UTC\_TIME()](../../../../sql-statements/built-in-functions/date-time-functions/utc_time.md)
-* [UTC\_TIMESTAMP()](../../../../sql-statements/built-in-functions/date-time-functions/utc_timestamp.md)
+* [UTC\_DATE()](../../../../sql-functions/date-time-functions/utc_date.md)
+* [UTC\_TIME()](../../../../sql-functions/date-time-functions/utc_time.md)
+* [UTC\_TIMESTAMP()](../../../../sql-functions/date-time-functions/utc_timestamp.md)
 
 ### Time Zone Effects on Data Types
 

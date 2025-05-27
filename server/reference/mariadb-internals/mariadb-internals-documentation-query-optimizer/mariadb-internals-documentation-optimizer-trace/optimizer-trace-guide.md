@@ -80,8 +80,8 @@ The above steps are for just one SELECT. If the query has subqueries, each SELEC
 
 If you are interested in some particular part of the trace, MariaDB has two functions that come in handy:
 
-* [JSON\_EXTRACT](../../../sql-statements/built-in-functions/special-functions/json-functions/json_extract.md) extracts a part of JSON document
-* [JSON\_DETAILED](../../../sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) presents it in a user-readable way.
+* [JSON\_EXTRACT](../../../sql-functions/special-functions/json-functions/json_extract.md) extracts a part of JSON document
+* [JSON\_DETAILED](../../../sql-functions/special-functions/json-functions/json_detailed.md) presents it in a user-readable way.
 
 For example, the contents of the `analyzing_range_alternatives` node can be extracted like so:
 

@@ -13,7 +13,7 @@ A MyISAM table is stored in three files on disk. There's a table definition file
 * Does not support [transactions](../../sql-statements/transactions/).
 * Does not support foreign keys.
 * Supports [FULLTEXT indexes](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
-* Supports [GIS](../../sql-statements-and-structure/geographic-geometric-features/) data types.
+* Supports [GIS](../../sql-structure/geometry/) data types.
 * Storage limit of 256TB.
 * Maximum of 64 indexes per table.
 * Maximum of 32 columns per index.

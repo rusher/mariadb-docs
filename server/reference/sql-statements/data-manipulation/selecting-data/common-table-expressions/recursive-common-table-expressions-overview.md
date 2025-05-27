@@ -55,7 +55,7 @@ select ...
 
 ### CAST to avoid truncating data
 
-As currently implemented by MariaDB and by the SQL Standard, data may be truncated if not correctly cast. It is necessary to [CAST](../../../built-in-functions/string-functions/cast.md) the column to the correct width if the CTE's recursive part produces wider values for a column than the CTE's nonrecursive part. Some other DBMS give an error in this situation, and MariaDB's behavior may change in future - see [MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325). See the [examples below](recursive-common-table-expressions-overview.md#cast-to-avoid-data-truncation).
+As currently implemented by MariaDB and by the SQL Standard, data may be truncated if not correctly cast. It is necessary to [CAST](../../../../sql-functions/string-functions/cast.md) the column to the correct width if the CTE's recursive part produces wider values for a column than the CTE's nonrecursive part. Some other DBMS give an error in this situation, and MariaDB's behavior may change in future - see [MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325). See the [examples below](recursive-common-table-expressions-overview.md#cast-to-avoid-data-truncation).
 
 ### Examples
 
@@ -154,7 +154,7 @@ SELECT col FROM tbl
 +------+
 ```
 
-Explicitly use [CAST](../../../built-in-functions/string-functions/cast.md) to overcome this:
+Explicitly use [CAST](../../../../sql-functions/string-functions/cast.md) to overcome this:
 
 ```
 WITH RECURSIVE tbl AS (

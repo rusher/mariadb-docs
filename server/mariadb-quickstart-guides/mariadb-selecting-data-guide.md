@@ -215,9 +215,9 @@ JOIN authors ON author_id = row_id
 
 This excerpt is based on the assumption that the key field in the authors table is not called author\_id, but row\_id instead. There's much more that can be said about joins, but that would make for a much longer article. If you want to learn more on joins, look at MariaDB's documentation page on [JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) syntax.
 
-Looking again at the last full SQL statement above, you must have spotted the [CONCAT()](../reference/sql-statements/built-in-functions/string-functions/concat.md) function that we added to the on-going example statement. This string function takes the values of the columns and strings given and pastes them together, to give one neat field in the results. We also employed the AS parameter to change the heading of the results set for the field to author. This is much tidier. Since we joined the books and the authors tables together, we were able to search for books based on the author's last name rather than having to look up the author ID first. This is a much friendlier method, albeit more complicated. Incidentally, we can have MariaDB check columns from both tables to narrow our search. We would just add _column = value_ pairs, separated by commas in the WHERE clause. Notice that the string containing the author's name is wrapped in quotes—otherwise, the string would be considered a column name and we'd get an error.
+Looking again at the last full SQL statement above, you must have spotted the [CONCAT()](../reference/sql-functions/string-functions/concat.md) function that we added to the on-going example statement. This string function takes the values of the columns and strings given and pastes them together, to give one neat field in the results. We also employed the AS parameter to change the heading of the results set for the field to author. This is much tidier. Since we joined the books and the authors tables together, we were able to search for books based on the author's last name rather than having to look up the author ID first. This is a much friendlier method, albeit more complicated. Incidentally, we can have MariaDB check columns from both tables to narrow our search. We would just add _column = value_ pairs, separated by commas in the WHERE clause. Notice that the string containing the author's name is wrapped in quotes—otherwise, the string would be considered a column name and we'd get an error.
 
-The name Dostoevsky is sometimes spelled Dostoevskii, as well as a few other ways. If we're not sure how it's spelled in the authors table, we could use the [LIKE](../reference/sql-statements/built-in-functions/string-functions/like.md) operator instead of the equal sign, along with a wildcard. If we think the author's name is probably spelled either of the two ways mentioned, we could enter something like this:
+The name Dostoevsky is sometimes spelled Dostoevskii, as well as a few other ways. If we're not sure how it's spelled in the authors table, we could use the [LIKE](../reference/sql-functions/string-functions/like.md) operator instead of the equal sign, along with a wildcard. If we think the author's name is probably spelled either of the two ways mentioned, we could enter something like this:
 
 ```
 SELECT isbn, title, 
@@ -317,7 +317,7 @@ LIMIT 5;
 5 rows in set (0.001 sec)
 ```
 
-To retrieve this information, though, we will have to use the [FOUND\_ROWS()](../reference/sql-statements/built-in-functions/secondary-functions/information-functions/found_rows.md) function like so:
+To retrieve this information, though, we will have to use the [FOUND\_ROWS()](../reference/sql-functions/secondary-functions/information-functions/found_rows.md) function like so:
 
 ```
 SELECT FOUND_ROWS();

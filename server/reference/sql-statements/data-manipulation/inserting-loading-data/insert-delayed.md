@@ -52,7 +52,7 @@ There are some limitations on the use of `DELAYED`:
   before the rows are inserted, you cannot use`LAST_INSERT_ID()` to get the`AUTO_INCREMENT` value that the statement might generate.
 * `DELAYED` rows are not visible to `SELECT`\
   statements until they actually have been inserted.
-* After `INSERT DELAYED`, [ROW\_COUNT()](../../built-in-functions/secondary-functions/information-functions/row_count.md) returns the number of the rows you tried to insert, not the number of the successful writes.
+* After `INSERT DELAYED`, [ROW\_COUNT()](../../../sql-functions/secondary-functions/information-functions/row_count.md) returns the number of the rows you tried to insert, not the number of the successful writes.
 * `DELAYED` is ignored on slave replication servers, so that`INSERT DELAYED` is treated as a normal`INSERT` on slaves. This is because`DELAYED` could cause the slave to have different data than\
   the master. `INSERT DELAYED` statements are not [safe for replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 * Pending `INSERT DELAYED` statements are lost if a table is\

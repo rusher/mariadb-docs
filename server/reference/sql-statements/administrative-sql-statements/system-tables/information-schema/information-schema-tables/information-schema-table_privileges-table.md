@@ -1,39 +1,27 @@
+# Information Schema TABLE\_PRIVILEGES Table
 
-# Information Schema TABLE_PRIVILEGES Table
-
-The [Information Schema](../README.md) `TABLE_PRIVILEGES` table contains table privilege information derived from the [mysql.tables_priv](../../the-mysql-database-tables/mysql-tables_priv-table.md) grant table.
-
+The [Information Schema](../) `TABLE_PRIVILEGES` table contains table privilege information derived from the [mysql.tables\_priv](../../the-mysql-database-tables/mysql-tables_priv-table.md) grant table.
 
 It has the following columns:
 
+| Column          | Description                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column          | Description                                                                                                                                    |
+| GRANTEE         | In the format user\_name@host\_name.                                                                                                           |
+| TABLE\_CATALOG  | Always def.                                                                                                                                    |
+| TABLE\_SCHEMA   | Database name.                                                                                                                                 |
+| TABLE\_NAME     | Table name.                                                                                                                                    |
+| PRIVILEGE\_TYPE | One of SELECT, INSERT, UPDATE, REFERENCES, ALTER, INDEX, DROP or CREATE VIEW.                                                                  |
+| IS\_GRANTABLE   | Whether the user has the [GRANT OPTION](../../../../account-management-sql-statements/grant.md#the-grant-option-privilege) for this privilege. |
 
+Similar information can be accessed with the [SHOW GRANTS](../../../show/show-grants.md) statement. See the [GRANT](../../../../account-management-sql-statements/grant.md) article for more about privileges.
 
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| GRANTEE | In the format user_name@host_name. |
-| TABLE_CATALOG | Always def. |
-| TABLE_SCHEMA | Database name. |
-| TABLE_NAME | Table name. |
-| PRIVILEGE_TYPE | One of SELECT, INSERT, UPDATE, REFERENCES, ALTER, INDEX, DROP or CREATE VIEW. |
-| IS_GRANTABLE | Whether the user has the [GRANT OPTION](../../../../account-management-sql-commands/grant.md#the-grant-option-privilege) for this privilege. |
+The table only shows privileges granted on the table level. This differs from the Sys Schema [privileges\_by\_table\_by\_level view](../../sys-schema/sys-schema-views/privileges_by_table_by_level-sys-schema-view.md), which shows all privileges, broken down by table.
 
-
-
-Similar information can be accessed with the [SHOW GRANTS](../../../show/show-grants.md) statement. See the [GRANT](../../../../account-management-sql-commands/grant.md) article for more about privileges.
-
-
-The table only shows privileges granted on the table level. This differs from the Sys Schema [privileges_by_table_by_level view](../../sys-schema/sys-schema-views/privileges_by_table_by_level-sys-schema-view.md), which shows all privileges, broken down by table.
-
-
-For a description of the privileges that are shown in this table, see [table privileges](../../../../account-management-sql-commands/grant.md#table-privileges).
-
+For a description of the privileges that are shown in this table, see [table privileges](../../../../account-management-sql-statements/grant.md#table-privileges).
 
 ## See Also
 
-
-* [sys.privileges_by_table_by_level](../../sys-schema/sys-schema-views/privileges_by_table_by_level-sys-schema-view.md)
-
+* [sys.privileges\_by\_table\_by\_level](../../sys-schema/sys-schema-views/privileges_by_table_by_level-sys-schema-view.md)
 
 CC BY-SA / Gnu FDL
-

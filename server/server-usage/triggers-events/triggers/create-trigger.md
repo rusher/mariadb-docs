@@ -28,12 +28,12 @@ particular event occurs for the table. The trigger becomes associated\
 with the table named `tbl_name`, which must refer to a permanent table.\
 You cannot associate a trigger with a `TEMPORARY` table or a view.
 
-`CREATE TRIGGER` requires the [TRIGGER](../../../reference/sql-statements/account-management-sql-commands/grant.md#table-privileges) privilege for the table associated\
+`CREATE TRIGGER` requires the [TRIGGER](../../../reference/sql-statements/account-management-sql-statements/grant.md#table-privileges) privilege for the table associated\
 with the trigger.
 
 You can have multiple triggers for the same `trigger_time` and `trigger_event`.
 
-For valid identifiers to use as trigger names, see [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as trigger names, see [Identifier Names](../../../reference/sql-structure/sql-language-structure/identifier-names.md).
 
 ### OR REPLACE
 
@@ -42,7 +42,7 @@ If used and the trigger already exists, instead of an error being returned, the 
 ### DEFINER
 
 The `DEFINER` clause determines the security context to be used when\
-checking access privileges at trigger activation time. Usage requires the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../reference/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
+checking access privileges at trigger activation time. Usage requires the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege.
 
 ### IF NOT EXISTS
 
@@ -121,7 +121,7 @@ SHOW WARNINGS;
 
 ## See Also
 
-* [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../reference/sql-structure/sql-language-structure/identifier-names.md)
 * [Trigger Overview](trigger-overview.md)
 * [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md)
 * [Information Schema TRIGGERS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)

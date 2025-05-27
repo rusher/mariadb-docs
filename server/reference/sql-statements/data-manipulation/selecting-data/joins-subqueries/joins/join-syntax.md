@@ -68,7 +68,7 @@ index_list:
 
 A table reference is also known as a join expression.
 
-Each table can also be specified as `db_name`.`tabl_name`. This allows to write queries which involve multiple databases. See [Identifier Qualifiers](../../../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
+Each table can also be specified as `db_name`.`tabl_name`. This allows to write queries which involve multiple databases. See [Identifier Qualifiers](../../../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
 
 The syntax of `table_factor` is extended in comparison with the\
 SQL Standard. The latter accepts only `table_reference`, not a\
@@ -116,7 +116,7 @@ See also [Subqueries in a FROM Clause (Derived Tables)#Correlation Column List](
 
 ### System-Versioned Tabled
 
-See [System-versioned tables](../../../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) for more information\
+See [System-versioned tables](../../../../../sql-structure/temporal-tables/system-versioned-tables.md) for more information\
 about `FOR SYSTEM_TIME` syntax.
 
 ### Index Hints

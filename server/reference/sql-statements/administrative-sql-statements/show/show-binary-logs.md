@@ -13,7 +13,7 @@ Lists the [binary log](../../../../server-management/server-monitoring-logs/bina
 procedure described in `[PURGE BINARY LOGS](../purge-binary-logs.md)`, that shows how to\
 determine which logs can be purged.
 
-This statement requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-commands/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG MONITOR](../../account-management-sql-commands/grant.md#binlog-monitor) privilege.
+This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG MONITOR](../../account-management-sql-statements/grant.md#binlog-monitor) privilege.
 
 ## Examples
 

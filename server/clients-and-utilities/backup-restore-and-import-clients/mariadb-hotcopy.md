@@ -8,7 +8,7 @@ It is a fast way to make a backup of the database or single tables, but it can b
 directories are located. `mariadb-hotcopy`> works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/) and [ARCHIVE](../../reference/storage-engines/archive/) tables. It runs on Unix and NetWare.
 
 To use `mariadb-hotcopy`, you must have read access to the files\
-for the tables that you are backing up, the SELECT [privilege](../../reference/sql-statements/account-management-sql-commands/grant.md) for\
+for the tables that you are backing up, the SELECT [privilege](../../reference/sql-statements/account-management-sql-statements/grant.md) for\
 those tables, the RELOAD privilege (to be able to execute FLUSH TABLES), and\
 the LOCK TABLES privilege (to be able to lock the tables).
 

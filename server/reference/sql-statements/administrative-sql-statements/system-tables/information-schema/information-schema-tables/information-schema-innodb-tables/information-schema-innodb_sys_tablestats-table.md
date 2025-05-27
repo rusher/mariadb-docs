@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_SYS_TABLESTATS` table contains InnoDB status information. It can be used for developing new performance-related extensions, or high-level performance monitoring.
 
-The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
 Note that the MySQL InnoDB and Percona XtraDB versions of the tables differ (see [XtraDB and InnoDB](../../../../../../storage-engines/innodb/)).
 

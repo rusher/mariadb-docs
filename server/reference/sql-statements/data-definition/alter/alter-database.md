@@ -40,7 +40,7 @@ the statement applies to the default database.
 The syntax that includes the `UPGRADE DATA DIRECTORY NAME` clause was\
 added in MySQL 5.1.23. It updates the name of the directory associated\
 with the database to use the encoding implemented in MySQL 5.1 for\
-mapping database names to database directory names (see[Identifier to File Name Mapping](../../../sql-statements-and-structure/sql-language-structure/identifier-to-file-name-mapping.md)). This\
+mapping database names to database directory names (see[Identifier to File Name Mapping](../../../sql-structure/sql-language-structure/identifier-to-file-name-mapping.md)). This\
 clause is for use under these conditions:
 
 * It is intended when upgrading MySQL to 5.1 or later from older versions.

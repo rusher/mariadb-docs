@@ -18,7 +18,7 @@ by default.
 You can also use a single integer as the ordering expression. If you use an integer _n_,\
 the results will be ordered by the _&#x6E;_&#x74;h column in the select expression.
 
-When string values are compared, they are compared as if by the [STRCMP](../../built-in-functions/string-functions/strcmp.md)\
+When string values are compared, they are compared as if by the [STRCMP](../../../sql-functions/string-functions/strcmp.md)\
 function. `STRCMP` ignores trailing whitespace and may normalize\
 characters and ignore case, depending on the [collation](../../../data-types/string-data-types/character-sets/) in use.
 

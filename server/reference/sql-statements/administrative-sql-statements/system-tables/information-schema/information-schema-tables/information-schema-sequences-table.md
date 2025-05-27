@@ -2,9 +2,9 @@
 
 **MariaDB starting with** [**11.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
-The [Information Schema](../) `SEQUENCES` table stores information about [sequences](../../../../../sql-statements-and-structure/sequences/) on the server.
+The [Information Schema](../) `SEQUENCES` table stores information about [sequences](../../../../../sql-structure/sequences/) on the server.
 
-It contains the following columns. See [CREATE SEQUENCE](../../../../../sql-statements-and-structure/sequences/create-sequence.md) for details.
+It contains the following columns. See [CREATE SEQUENCE](../../../../../sql-structure/sequences/create-sequence.md) for details.
 
 | Column                    | Description                                       |
 | ------------------------- | ------------------------------------------------- |
@@ -45,13 +45,13 @@ NUMERIC_PRECISION_RADIX: 2
 
 ## See Also
 
-* [Sequence Overview](../../../../../sql-statements-and-structure/sequences/sequence-overview.md)
-* [CREATE SEQUENCE](../../../../../sql-statements-and-structure/sequences/create-sequence.md)
-* [ALTER SEQUENCE](../../../../../sql-statements-and-structure/sequences/alter-sequence.md)
-* [DROP SEQUENCE](../../../../../sql-statements-and-structure/sequences/drop-sequence.md)
-* [NEXT VALUE FOR](../../../../../sql-statements-and-structure/sequences/sequence-functions/next-value-for-sequence_name.md)
-* [PREVIOUS VALUE FOR](../../../../../sql-statements-and-structure/sequences/sequence-functions/previous-value-for-sequence_name.md)
-* [SETVAL()](../../../../../sql-statements-and-structure/sequences/sequence-functions/setval.md). Set next value for the sequence.
+* [Sequence Overview](../../../../../sql-structure/sequences/sequence-overview.md)
+* [CREATE SEQUENCE](../../../../../sql-structure/sequences/create-sequence.md)
+* [ALTER SEQUENCE](../../../../../sql-structure/sequences/alter-sequence.md)
+* [DROP SEQUENCE](../../../../../sql-structure/sequences/drop-sequence.md)
+* [NEXT VALUE FOR](../../../../../sql-structure/sequences/sequence-functions/next-value-for-sequence_name.md)
+* [PREVIOUS VALUE FOR](../../../../../sql-structure/sequences/sequence-functions/previous-value-for-sequence_name.md)
+* [SETVAL()](../../../../../sql-structure/sequences/sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../../../../data-types/auto_increment.md)
 * [Sequence Storage Engine](../../../../../storage-engines/sequence-storage-engine.md)
 

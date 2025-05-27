@@ -12,7 +12,7 @@ Again, this is not using [mariadb-dump](../clients-and-utilities/backup-restore-
 
 The problem with restoring from a dump file is that you may overwrite tables or databases that you wish you hadn't. For instance, your dump file might be a few days old and only one table may have been lost. If you restore all of the databases or all of the tables in a database, you would be restoring the data back to it's state at the time of the backup, a few days before. This could be quite a disaster. This is why dumping by database and table can be handy. However, that could be cumbersome.
 
-A simple and easy method of limiting a restoration would be to create temporarily a user who only has privileges for the table you want to restore. You would enter a [GRANT](../reference/sql-statements/account-management-sql-commands/grant.md) statement like this:
+A simple and easy method of limiting a restoration would be to create temporarily a user who only has privileges for the table you want to restore. You would enter a [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md) statement like this:
 
 ```
 GRANT SELECT

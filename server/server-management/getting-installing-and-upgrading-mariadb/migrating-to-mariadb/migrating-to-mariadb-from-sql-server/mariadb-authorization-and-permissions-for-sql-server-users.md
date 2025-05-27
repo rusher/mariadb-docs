@@ -2,7 +2,7 @@
 
 ## Understanding Accounts and Users
 
-MariaDB authorizes access and check permissions on accounts, rather than users. Even if MariaDB supports standard SQL commands like [CREATE USER](../../../../reference/sql-statements/account-management-sql-commands/create-user.md) and [DROP USER](../../../../reference/sql-statements/account-management-sql-commands/drop-user.md), it is important to remember that it actually works with accounts.
+MariaDB authorizes access and check permissions on accounts, rather than users. Even if MariaDB supports standard SQL commands like [CREATE USER](../../../../reference/sql-statements/account-management-sql-statements/create-user.md) and [DROP USER](../../../../reference/sql-statements/account-management-sql-statements/drop-user.md), it is important to remember that it actually works with accounts.
 
 An account is specified in the format `'user'@'host'`. The quotes are optional and allow one to include special characters, like dots. The host part can actually be a pattern, which follows the same syntax used in `LIKE` comparisons. Patterns are often convenient because they can match several hostnames.
 
@@ -19,9 +19,9 @@ However, such accounts may be unable to connect from localhost if an anonymous u
 
 Accounts are not bound to a specific database. They are global. Once an account is created, it is possible to assign it permissions on any existing or non existing database.
 
-The [sql\_mode](../../../variables-and-modes/sql-mode.md) system variable has a [NO\_AUTO\_CREATE\_USER](../../../variables-and-modes/sql-mode.md#no_auto_create_user) flag. In recent MariaDB versions it is enabled by default. If it is not enabled, a [GRANT](../../../../reference/sql-statements/account-management-sql-commands/grant.md) statement specifying privileges for a non-existent account will automatically create that account.
+The [sql\_mode](../../../variables-and-modes/sql-mode.md) system variable has a [NO\_AUTO\_CREATE\_USER](../../../variables-and-modes/sql-mode.md#no_auto_create_user) flag. In recent MariaDB versions it is enabled by default. If it is not enabled, a [GRANT](../../../../reference/sql-statements/account-management-sql-statements/grant.md) statement specifying privileges for a non-existent account will automatically create that account.
 
-For more information: [Account Management SQL Commands](../../../../reference/sql-statements/account-management-sql-commands/).
+For more information: [Account Management SQL Commands](../../../../reference/sql-statements/account-management-sql-statements/).
 
 ### Setting or Changing Passwords
 
@@ -29,9 +29,9 @@ Accounts with the same username can have different passwords.
 
 By default, an account has no password. A password can be set, or changed, in the following way:
 
-* By specifying it in [CREATE USER](../../../../reference/sql-statements/account-management-sql-commands/create-user.md).
-* By the user, with [SET PASSWORD](../../../../reference/sql-statements/account-management-sql-commands/set-password.md).
-* By root, with `SET PASSWORD` or [ALTER USER](../../../../reference/sql-statements/account-management-sql-commands/alter-user.md).
+* By specifying it in [CREATE USER](../../../../reference/sql-statements/account-management-sql-statements/create-user.md).
+* By the user, with [SET PASSWORD](../../../../reference/sql-statements/account-management-sql-statements/set-password.md).
+* By root, with `SET PASSWORD` or [ALTER USER](../../../../reference/sql-statements/account-management-sql-statements/alter-user.md).
 
 With all these statements (`CREATE USER`, `ALTER USER`, `SET PASSWORD`) it is possible to specify the password in plain or as a hash:
 
@@ -46,7 +46,7 @@ ALTER USER tom@'%.example.com' IDENTIFIED BY PASSWORD 'secret hash';
 SET PASSWORD = PASSWORD('secret hash');
 ```
 
-The [PASSWORD()](../../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
+The [PASSWORD()](../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function uses the same algorithm used internally by MariaDB to generate hashes. Therefore it can be used to get a hash from a plain password. Note that this function should not be used by applications, as its output may depend on MariaDB version and configuration.
 
 `SET PASSWORD` applies to the current account, by default. Superusers can change other accounts passwords in this way:
 
@@ -102,7 +102,7 @@ A particular user can be required to use TLS connections. Additional requirement
 * A particular certificate subject can be required.
 * A particular certificate cipher suite can be required.
 
-These requirements can be set with `CREATE USER`, `ALTER USER` or `GRANT`. For the syntax, see [CREATE USER](../../../../reference/sql-statements/account-management-sql-commands/create-user.md#tls-options).
+These requirements can be set with `CREATE USER`, `ALTER USER` or `GRANT`. For the syntax, see [CREATE USER](../../../../reference/sql-statements/account-management-sql-statements/create-user.md#tls-options).
 
 MariaDB can be bundled with several cryptography libraries, depending on its version. For more information about the libraries, see [TLS and Cryptography Libraries Used by MariaDB](../../../../security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb.md).
 
@@ -121,17 +121,17 @@ GRANT USAGE ON *.* TO tom@'%';
 
 The following permission levels exist in MariaDB:
 
-* [Global privileges](../../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges);
-* [Database privileges](../../../../reference/sql-statements/account-management-sql-commands/grant.md#database-privileges);
-* [Table privileges](../../../../reference/sql-statements/account-management-sql-commands/grant.md#table-privileges);
-* [Column privileges](../../../../reference/sql-statements/account-management-sql-commands/grant.md#column-privileges);
-* [Function](../../../../reference/sql-statements/account-management-sql-commands/grant.md#function-privileges) and [procedure privileges](../../../../reference/sql-statements/account-management-sql-commands/grant.md#procedure-privileges).
+* [Global privileges](../../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges);
+* [Database privileges](../../../../reference/sql-statements/account-management-sql-statements/grant.md#database-privileges);
+* [Table privileges](../../../../reference/sql-statements/account-management-sql-statements/grant.md#table-privileges);
+* [Column privileges](../../../../reference/sql-statements/account-management-sql-statements/grant.md#column-privileges);
+* [Function](../../../../reference/sql-statements/account-management-sql-statements/grant.md#function-privileges) and [procedure privileges](../../../../reference/sql-statements/account-management-sql-statements/grant.md#procedure-privileges).
 
 Note that database and schema are synonymous in MariaDB.
 
 Permissions can be granted for non-existent objects that could exist in the future.
 
-The list of supported privileges can be found in the [GRANT](../../../../reference/sql-statements/account-management-sql-commands/grant.md) page. Some highlights can be useful for SQL Server users:
+The list of supported privileges can be found in the [GRANT](../../../../reference/sql-statements/account-management-sql-statements/grant.md) page. Some highlights can be useful for SQL Server users:
 
 * `USAGE` privilege has no effect. The `GRANT` command fails if we don't grant at least one privilege; but sometimes we want to run it for other purposes, for example to require a user to use TLS connections. In such cases, it is useful to grant `USAGE`.
 * Normally we can obtain a list of all databases for which we have at least one permission. The `SHOW DATABASES` permission allows getting a list of all databases.

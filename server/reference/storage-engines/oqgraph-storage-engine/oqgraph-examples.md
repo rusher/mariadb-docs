@@ -84,7 +84,7 @@ SELECT * FROM oq_graph WHERE latch='dijkstras' AND origid=6 AND destid=1;
 Empty set (0.00 sec)
 ```
 
-Using the [GROUP\_CONCAT](../../sql-statements/built-in-functions/aggregate-functions/group_concat.md) function can produce more readable results, for example:
+Using the [GROUP\_CONCAT](../../sql-functions/aggregate-functions/group_concat.md) function can produce more readable results, for example:
 
 ```
 SELECT GROUP_CONCAT(linkid ORDER BY seq) AS path FROM oq_graph 

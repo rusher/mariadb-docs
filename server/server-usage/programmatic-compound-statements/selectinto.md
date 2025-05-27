@@ -24,7 +24,7 @@ executed by the Event Scheduler, diagnostics messages (not only\
 errors, but also warnings) are written to the error log, and, on\
 Windows, to the application event log.
 
-This statement can be used with both [local variables](declare-variable.md) and [user-defined variables](../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+This statement can be used with both [local variables](declare-variable.md) and [user-defined variables](../../reference/sql-structure/sql-language-structure/user-defined-variables.md).
 
 For the complete syntax, see [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md).
 

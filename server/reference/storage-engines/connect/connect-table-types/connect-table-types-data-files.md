@@ -103,7 +103,7 @@ These are based on files that do not match the relational format but often repre
 
 The way it is done is different from what PostgreSQL does. In addition to including in a table some column values of a specific data format (JSON, XML) to be handled by specific functions, CONNECT can directly use JSON, XML or INI files that can be produced by other applications and this is the table definition that describes where and how the contained information must be retrieved.
 
-This is also different from what MariaDB does with [dynamic columns](../../../sql-statements-and-structure/nosql/dynamic-columns.md), which is close to what MySQL and PostgreSQL do with the JSON column type.
+This is also different from what MariaDB does with [dynamic columns](../../../sql-structure/nosql/dynamic-columns.md), which is close to what MySQL and PostgreSQL do with the JSON column type.
 
 The following NoSQL types are supported:
 

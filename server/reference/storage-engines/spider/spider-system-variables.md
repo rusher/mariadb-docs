@@ -1458,13 +1458,13 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_use_handler`
 
-* Description: Converts [HANDLER](../../sql-statements-and-structure/nosql/handler/) SQL statements.\
-  When the [spider\_sync\_trx\_isolation](spider-system-variables.md#spider_sync_trx_isolation) system variable is set to `0`, Spider disables [HANDLER](../../sql-statements-and-structure/nosql/handler/) conversions to prevent use of the statement on the [SERIALIZABLE](../../sql-statements/transactions/set-transaction.md#serializable) isolation level.
+* Description: Converts [HANDLER](../../sql-structure/nosql/handler/) SQL statements.\
+  When the [spider\_sync\_trx\_isolation](spider-system-variables.md#spider_sync_trx_isolation) system variable is set to `0`, Spider disables [HANDLER](../../sql-structure/nosql/handler/) conversions to prevent use of the statement on the [SERIALIZABLE](../../sql-statements/transactions/set-transaction.md#serializable) isolation level.
   * `-1` Falls back to the default value, if the [table parameter](spider-table-parameters.md) is not set.
-  * `0` Converts [HANDLER](../../sql-statements-and-structure/nosql/handler/) statements into [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) statements.
-  * `1` Passes [HANDLER](../../sql-statements-and-structure/nosql/handler/) to the remote backend server.
-  * `2` Converts SQL statements to [HANDLER](../../sql-statements-and-structure/nosql/handler/) statements.
-  * `3` Converts SQL statements to [HANDLER](../../sql-statements-and-structure/nosql/handler/) statements and [HANDLER](../../sql-statements-and-structure/nosql/handler/) statements to SQL statements.
+  * `0` Converts [HANDLER](../../sql-structure/nosql/handler/) statements into [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) statements.
+  * `1` Passes [HANDLER](../../sql-structure/nosql/handler/) to the remote backend server.
+  * `2` Converts SQL statements to [HANDLER](../../sql-structure/nosql/handler/) statements.
+  * `3` Converts SQL statements to [HANDLER](../../sql-structure/nosql/handler/) statements and [HANDLER](../../sql-structure/nosql/handler/) statements to SQL statements.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`

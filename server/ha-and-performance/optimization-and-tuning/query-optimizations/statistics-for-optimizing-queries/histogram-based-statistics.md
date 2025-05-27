@@ -228,7 +228,7 @@ set join_buffer_space_limit=1024*1024*32;
 
 ## See Also
 
-* [DECODE\_HISTOGRAM()](../../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/decode_histogram.md)
+* [DECODE\_HISTOGRAM()](../../../../reference/sql-functions/secondary-functions/information-functions/decode_histogram.md)
 * [Index Statistics](../../optimization-and-indexes/index-statistics.md)
 * [InnoDB Persistent Statistics](innodb-persistent-statistics.md)
 * [Engine-independent Statistics](engine-independent-table-statistics.md)

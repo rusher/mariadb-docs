@@ -60,7 +60,7 @@ From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 ### SESSION\_USER\_IS\_USER
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), restores the pre-[MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) behavior of [SESSION\_USER](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md).
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), restores the pre-[MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) behavior of [SESSION\_USER](../../reference/sql-functions/secondary-functions/information-functions/session_user.md).
 
 ### UTF8\_IS\_UTF8MB3
 
@@ -68,7 +68,7 @@ From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 ### ZERO\_DATE\_TIME\_CAST
 
-When a [TIME](../../reference/data-types/date-and-time-data-types/time.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT\_DATE](../../reference/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
+When a [TIME](../../reference/data-types/date-and-time-data-types/time.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT\_DATE](../../reference/sql-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
 
 ## OLD\_MODE and Stored Programs
 

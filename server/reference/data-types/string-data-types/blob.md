@@ -15,7 +15,7 @@ An optional length `M` can be given for this type. If this is done,\
 MariaDB creates the column as the smallest `BLOB` type large enough to\
 hold values _`M`_ bytes long.
 
-BLOBS can also be used to store [dynamic columns](../../sql-statements-and-structure/nosql/dynamic-columns.md).
+BLOBS can also be used to store [dynamic columns](../../sql-structure/nosql/dynamic-columns.md).
 
 `BLOB` and `TEXT` columns can both be assigned a [DEFAULT](../../sql-statements/data-definition/create/create-table.md#default) value.
 

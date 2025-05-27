@@ -44,7 +44,7 @@ Possible disadvantages of the conversion are are:
 
 ## See Also
 
-* [IN operator](../../../../reference/sql-statements-and-structure/operators/comparison-operators/in.md)
+* [IN operator](../../../../reference/sql-structure/operators/comparison-operators/in.md)
 
 ## Links
 

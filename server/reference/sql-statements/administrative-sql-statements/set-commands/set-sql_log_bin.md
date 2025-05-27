@@ -8,7 +8,7 @@ SET [SESSION] sql_log_bin = {0|1}
 
 ## Description
 
-Sets the [sql\_log\_bin](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sql_log_bin) system variable, which disables or enables [binary logging](../../../../server-management/server-monitoring-logs/binary-log/) for the current connection, if the client has the `SUPER` [privilege](../../account-management-sql-commands/grant.md). The statement is refused with an error if the client does not have that privilege.
+Sets the [sql\_log\_bin](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sql_log_bin) system variable, which disables or enables [binary logging](../../../../server-management/server-monitoring-logs/binary-log/) for the current connection, if the client has the `SUPER` [privilege](../../account-management-sql-statements/grant.md). The statement is refused with an error if the client does not have that privilege.
 
 Note that setting `sql_log_bin=1` has no effect if [log\_bin](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin) variable, which enables global binary logging, is not set.
 

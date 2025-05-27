@@ -77,7 +77,7 @@ The `BACKUP STAGE` commands are a set of commands to make it possible to make an
 
 ## Privileges
 
-`BACKUP STAGE` requires the [RELOAD](../../account-management-sql-commands/grant.md) privilege.
+`BACKUP STAGE` requires the [RELOAD](../../account-management-sql-statements/grant.md) privilege.
 
 ## Notes
 

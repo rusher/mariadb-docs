@@ -20,7 +20,7 @@ CREATE USER mindsdb@localhost;
 SET PASSWORD for mindsdb@localhost=PASSWORD("password");
 ```
 
-The user must be granted the global [FILE](../sql-statements/account-management-sql-commands/grant.md#file) privilege and all privileges on the `mindsdb` database.
+The user must be granted the global [FILE](../sql-statements/account-management-sql-statements/grant.md#file) privilege and all privileges on the `mindsdb` database.
 
 ```
 GRANT FILE on *.* to mindsdb@localhost;

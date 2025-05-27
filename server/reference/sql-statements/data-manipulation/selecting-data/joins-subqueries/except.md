@@ -27,7 +27,7 @@ Please note:
 
 MariaDB supports `EXCEPT` and [INTERSECT](intersect.md) in addition to [UNION](union.md).
 
-The queries before and after `EXCEPT` must be [SELECT](../select.md) or [VALUES](../../../../sql-statements-and-structure/sql-language-structure/table-value-constructors.md) statements.
+The queries before and after `EXCEPT` must be [SELECT](../select.md) or [VALUES](../../../../sql-structure/sql-language-structure/table-value-constructors.md) statements.
 
 All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNION](union.md). Note that the alternative [SELECT ... OFFSET ... FETCH](../select-offset-fetch.md) syntax is only supported. This allows us to use the `WITH TIES` clause.
 
@@ -157,7 +157,7 @@ INSERT INTO t3 VALUES (1),(6);
 +------+
 ```
 
-Here is an example that makes use of the [SEQUENCE](../../../../storage-engines/sequence-storage-engine.md) storage engine and the [VALUES](../../../../sql-statements-and-structure/sql-language-structure/table-value-constructors.md) statement, to generate a numeric sequence and remove some arbitrary numbers from it:
+Here is an example that makes use of the [SEQUENCE](../../../../storage-engines/sequence-storage-engine.md) storage engine and the [VALUES](../../../../sql-structure/sql-language-structure/table-value-constructors.md) statement, to generate a numeric sequence and remove some arbitrary numbers from it:
 
 ```
 (SELECT seq FROM seq_1_to_10) EXCEPT VALUES (2), (3), (4);

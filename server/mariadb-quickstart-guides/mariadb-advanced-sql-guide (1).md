@@ -87,7 +87,7 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](../reference/sql-statements/built-in-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](<mariadb-advanced-sql-guide (1).md#finding-the-maximum-value-and-grouping-the-results>) below for a more practical example.
+See the [MAX() function](../reference/sql-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](<mariadb-advanced-sql-guide (1).md#finding-the-maximum-value-and-grouping-the-results>) below for a more practical example.
 
 ## Finding the Minimum Value
 
@@ -100,7 +100,7 @@ SELECT MIN(a) FROM t1;
 +--------+
 ```
 
-See the [MIN() function](../reference/sql-statements/built-in-functions/aggregate-functions/min.md) for more.
+See the [MIN() function](../reference/sql-functions/aggregate-functions/min.md) for more.
 
 ## Finding the Average Value
 
@@ -113,7 +113,7 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](../reference/sql-statements/built-in-functions/aggregate-functions/avg.md) for more.
+See the [AVG() function](../reference/sql-functions/aggregate-functions/avg.md) for more.
 
 ## Finding the Maximum Value and Grouping the Results
 
@@ -129,7 +129,7 @@ SELECT name, MAX(score) FROM student_tests GROUP BY name;
 +---------+------------+
 ```
 
-See the [MAX() function](../reference/sql-statements/built-in-functions/aggregate-functions/max.md) for more.
+See the [MAX() function](../reference/sql-functions/aggregate-functions/max.md) for more.
 
 ## Ordering Results
 
@@ -184,7 +184,7 @@ SELECT name, test, score FROM student_tests st1 WHERE score = (
 
 ## Calculating Age
 
-The [TIMESTAMPDIFF](../reference/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
+The [TIMESTAMPDIFF](../reference/sql-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
 
 ```
 SELECT CURDATE() AS today;
@@ -206,11 +206,11 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 +---------+---------------+------+
 ```
 
-See [TIMESTAMPDIFF()](../reference/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) for more.
+See [TIMESTAMPDIFF()](../reference/sql-functions/date-time-functions/timestampdiff.md) for more.
 
 ## Using User-defined Variables
 
-This example sets a [user-defined variable](../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
+This example sets a [user-defined variable](../reference/sql-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
 
 ```
 SELECT @avg_score:= AVG(score) FROM student_tests;
@@ -248,7 +248,7 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 +---------+---------+---------------+
 ```
 
-See [User-defined Variables](../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md) for more.
+See [User-defined Variables](../reference/sql-structure/sql-language-structure/user-defined-variables.md) for more.
 
 ## View Tables in Order of Size
 

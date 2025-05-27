@@ -2,7 +2,7 @@
 
 ## How do I get the last inserted auto\_increment value?
 
-Use the [LAST\_INSERT\_ID()](../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) function:
+Use the [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md) function:
 
 ```
 SELECT LAST_INSERT_ID();
@@ -10,11 +10,11 @@ SELECT LAST_INSERT_ID();
 
 ## What if someone else inserts before I select my id?
 
-[LAST\_INSERT\_ID()](../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is connection specific, so there is no problem from race conditions.
+[LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md) is connection specific, so there is no problem from race conditions.
 
 ## How do I get the next value to be inserted?
 
-You don't. Insert, then find out what you did with [LAST\_INSERT\_ID()](../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md).
+You don't. Insert, then find out what you did with [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md).
 
 ## How do I change what number auto\_increment starts with?
 
@@ -123,9 +123,9 @@ SELECT * FROM autoinc_test;
 
 * [AUTO\_INCREMENT](auto_increment.md)
 * [AUTO\_INCREMENT handling in XtraDB/InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)
-* [LAST\_INSERT\_ID()](../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
+* [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md)
 * [BLACKHOLE and AUTO\_INCREMENT](../storage-engines/blackhole.md#blackhole-and-auto_increment)
-* [Sequences](../sql-statements-and-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [Sequences](../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 _The initial version of this article was copied, with permission, from_ [_Autoincrement\_FAQ_](https://hashmysql.org/wiki/Autoincrement_FAQ) _on 2012-10-05._
 

@@ -9,7 +9,7 @@
 ## Description
 
 Use the `CREATE FUNCTION` statement to create a new [stored function](../../../../server-usage/stored-routines/stored-functions/). You must have\
-the [CREATE ROUTINE](../../account-management-sql-commands/grant.md#database-privileges) database privilege to use `CREATE FUNCTION`.\
+the [CREATE ROUTINE](../../account-management-sql-statements/grant.md#database-privileges) database privilege to use `CREATE FUNCTION`.\
 A function takes any number of arguments and returns a value from the function body. The\
 function body can be any valid SQL expression as you would use, for example, in any select\
 expression. If you have the appropriate privileges, you can call the function exactly as you\
@@ -42,7 +42,7 @@ used. Parameter names are not case sensitive.
 Each parameter can be declared to use any valid data type, except that\
 the COLLATE attribute cannot be used.
 
-For valid identifiers to use as function names, see [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as function names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 #### IN | OUT | INOUT | IN OUT
 
@@ -118,7 +118,7 @@ force, regardless of the server SQL mode in effect when the routine is invoked.
 
 `LANGUAGE SQL` is a standard SQL clause, and it can be used in MariaDB for portability. However that clause has no meaning, because SQL is the only supported language for stored functions.
 
-A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses non-deterministic functions like [NOW()](../../built-in-functions/date-time-functions/now.md) or [CURRENT\_TIMESTAMP()](../../built-in-functions/date-time-functions/current_timestamp.md). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the `DETERMINISTIC` keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the `NOT DETERMINISTIC` keywords.
+A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses non-deterministic functions like [NOW()](../../../sql-functions/date-time-functions/now.md) or [CURRENT\_TIMESTAMP()](../../../sql-functions/date-time-functions/current_timestamp.md). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the `DETERMINISTIC` keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the `NOT DETERMINISTIC` keywords.
 
 If you declare a non-deterministic function as `DETERMINISTIC`, you may get incorrect results. If you declare a deterministic function as `NOT DETERMINISTIC`, in some cases the queries will be slower.
 
@@ -165,14 +165,14 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 
 ## Security
 
-You must have the [EXECUTE](../../account-management-sql-commands/grant.md#function-privileges) privilege on a function to call it.\
+You must have the [EXECUTE](../../account-management-sql-statements/grant.md#function-privileges) privilege on a function to call it.\
 MariaDB automatically grants the `EXECUTE` and `ALTER ROUTINE` privileges to the\
 account that called `CREATE FUNCTION`, even if the `DEFINER` clause was used.
 
 Each function has an account associated as the definer. By default, the definer is the account\
 that created the function. Use the `DEFINER` clause to specify a different account as the\
-definer. You must have the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-commands/grant.md#set-user) privilege, to use the `DEFINER`\
-clause. See [Account Names](../../account-management-sql-commands/create-user.md#account-names) for details on specifying accounts.
+definer. You must have the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-statements/grant.md#set-user) privilege, to use the `DEFINER`\
+clause. See [Account Names](../../account-management-sql-statements/create-user.md#account-names) for details on specifying accounts.
 
 The `SQL SECURITY` clause specifies what privileges are used when a function is called.\
 If `SQL SECURITY` is `INVOKER`, the function body will be evaluated using the privileges\
@@ -181,7 +181,7 @@ always evaluated using the privileges of the definer account. `DEFINER` is the d
 
 This allows you to create functions that grant limited access to certain data. For example, say\
 you have a table that stores some employee information, and that you've granted `SELECT`\
-privileges [only on certain columns](../../account-management-sql-commands/grant.md#column-privileges) to the user account `roger`.
+privileges [only on certain columns](../../account-management-sql-statements/grant.md#column-privileges) to the user account `roger`.
 
 ```
 CREATE TABLE employees (name TINYTEXT, dept TINYTEXT, salary INT);
@@ -255,7 +255,7 @@ CREATE FUNCTION hello2 (s CHAR(20))
 
 ## See Also
 
-* [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [Stored Aggregate Functions](../../../../server-usage/stored-routines/stored-functions/stored-aggregate-functions.md)
 * [CREATE FUNCTION (UDF)](../../../../server-usage/user-defined-functions/create-function-udf.md)
 * [SHOW CREATE FUNCTION](../../administrative-sql-statements/show/show-create-function.md)

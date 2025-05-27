@@ -1,6 +1,6 @@
 # Information Schema VIEWS Table
 
-The [Information Schema](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) `VIEWS` table contains information about [views](./). The `SHOW VIEW` [privilege](../../reference/sql-statements/account-management-sql-commands/grant.md) is required to view the table.
+The [Information Schema](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) `VIEWS` table contains information about [views](./). The `SHOW VIEW` [privilege](../../reference/sql-statements/account-management-sql-statements/grant.md) is required to view the table.
 
 It has the following columns:
 

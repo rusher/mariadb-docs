@@ -80,7 +80,7 @@ See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Adding a New SET Optio
 
 #### Removing System Versioning from a Column
 
-In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY` in the cases where the operation supports having the [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
+In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY` in the cases where the operation supports having the [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Removing System Versioning from a Column](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more information.
 
@@ -257,7 +257,7 @@ ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: InnoDB presently 
 
 #### Adding a Spatial Index
 
-InnoDB supports adding a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY`.
+InnoDB supports adding a [SPATIAL](../../../sql-structure/geometry/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -419,7 +419,7 @@ This applies to [ALTER TABLE ... PAGE\_COMPRESSED=...](../../../sql-statements/d
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-InnoDB does **not** support dropping [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY`.
+InnoDB does **not** support dropping [system versioning](../../../sql-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY`.
 
 For example:
 

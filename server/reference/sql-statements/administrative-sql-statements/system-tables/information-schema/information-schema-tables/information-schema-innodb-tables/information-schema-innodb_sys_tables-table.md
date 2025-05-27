@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_SYS_TABLES` table contains information about InnoDB tables.
 
-The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
 It has the following columns:
 

@@ -14,8 +14,8 @@ can be used to re-create the named [stored procedure](../../../../server-usage/s
 Both statements require that:
 
 * you are the owner of the routine;
-* you have the [SHOW CREATE ROUTINE](../../account-management-sql-commands/grant.md#database-privileges) privilege (from [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)); or
-* have the [SELECT](../../account-management-sql-commands/grant.md) privilege on the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
+* you have the [SHOW CREATE ROUTINE](../../account-management-sql-statements/grant.md#database-privileges) privilege (from [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)); or
+* have the [SELECT](../../account-management-sql-statements/grant.md) privilege on the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
 
 When none of the above statements are true, the statements display `NULL` for the `Create Procedure` or `Create Function` field.
 
@@ -60,7 +60,7 @@ Error 1370 (42000): execute command denied to
   user 'test_user'@'localhost' for routine 'test'.'prc1'
 ```
 
-If the user neither has privilege to the routine nor the [SELECT](../../account-management-sql-commands/grant.md) privilege on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table, it raises Error 1305, informing them that the procedure does not exist.
+If the user neither has privilege to the routine nor the [SELECT](../../account-management-sql-statements/grant.md) privilege on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table, it raises Error 1305, informing them that the procedure does not exist.
 
 ```
 SHOW CREATE TABLES test.prc1\G

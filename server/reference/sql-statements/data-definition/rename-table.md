@@ -27,7 +27,7 @@ CREATE TABLE new_table (...);
 RENAME TABLE old_table TO backup_table, new_table TO old_table;
 ```
 
-`tbl_name` can optionally be specified as `db_name`.`tbl_name`. See [Identifier Qualifiers](../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md). This allows to use `RENAME` to move a table from a database to another (as long as they are on the same filesystem):
+`tbl_name` can optionally be specified as `db_name`.`tbl_name`. See [Identifier Qualifiers](../../sql-structure/sql-language-structure/identifier-qualifiers.md). This allows to use `RENAME` to move a table from a database to another (as long as they are on the same filesystem):
 
 ```
 RENAME TABLE db1.t TO db2.t;
@@ -63,7 +63,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../transactions/wait-and-nowait
 
 ### Privileges
 
-Executing the `RENAME TABLE` statement requires the [DROP](../account-management-sql-commands/grant.md#table-privileges), [CREATE](../account-management-sql-commands/grant.md#table-privileges) and [INSERT](../account-management-sql-commands/grant.md#table-privileges) privileges for the table or the database.
+Executing the `RENAME TABLE` statement requires the [DROP](../account-management-sql-statements/grant.md#table-privileges), [CREATE](../account-management-sql-statements/grant.md#table-privileges) and [INSERT](../account-management-sql-statements/grant.md#table-privileges) privileges for the table or the database.
 
 ### Atomic RENAME TABLE
 

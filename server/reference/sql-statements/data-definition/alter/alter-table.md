@@ -24,9 +24,9 @@ When an index is created, the storage engine may use a configurable buffer in th
 
 ## Privileges
 
-Executing the `ALTER TABLE` statement generally requires at least the [ALTER](../../account-management-sql-commands/grant.md#table-privileges) privilege for the table or the database..
+Executing the `ALTER TABLE` statement generally requires at least the [ALTER](../../account-management-sql-statements/grant.md#table-privileges) privilege for the table or the database..
 
-If you are renaming a table, then it also requires the [DROP](../../account-management-sql-commands/grant.md#table-privileges), [CREATE](../../account-management-sql-commands/grant.md#table-privileges) and [INSERT](../../account-management-sql-commands/grant.md#table-privileges) privileges for the table or the database as well.
+If you are renaming a table, then it also requires the [DROP](../../account-management-sql-statements/grant.md#table-privileges), [CREATE](../../account-management-sql-statements/grant.md#table-privileges) and [INSERT](../../account-management-sql-statements/grant.md#table-privileges) privileges for the table or the database as well.
 
 ## Online DDL
 
@@ -293,13 +293,13 @@ See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/o
 
 Add a SPATIAL index.
 
-See [SPATIAL INDEX](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
+See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### DROP SPATIAL INDEX
 
 Drop a SPATIAL index.
 
-See [SPATIAL INDEX](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
+See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### ENABLE/ DISABLE KEYS
 
@@ -396,15 +396,15 @@ ALTER TABLE t DROP CONSTRAINT is_unique;
 
 ### ADD SYSTEM VERSIONING
 
-Add system versioning. See [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+Add system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ### DROP SYSTEM VERSIONING
 
-Drop system versioning. See [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+Drop system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ### ADD PERIOD FOR
 
-See [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md), [Application-time-period tables](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md) or [Bitemporal Tables](../../../sql-statements-and-structure/temporal-tables/bitemporal-tables.md).
+See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md), [Application-time-period tables](../../../sql-structure/temporal-tables/application-time-periods.md) or [Bitemporal Tables](../../../sql-structure/temporal-tables/bitemporal-tables.md).
 
 ### FORCE
 
@@ -731,7 +731,7 @@ Adding a unique index:
 ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 ```
 
-From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), adding a primary key for an [application-time period table](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
+From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), adding a primary key for an [application-time period table](../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 ```
 ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);

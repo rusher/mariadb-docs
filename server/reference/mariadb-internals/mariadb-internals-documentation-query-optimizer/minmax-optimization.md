@@ -2,7 +2,7 @@
 
 ## Min/Max optimization without GROUP BY
 
-MariaDB and MySQL can optimize the [MIN()](../../sql-statements/built-in-functions/aggregate-functions/min.md) and [MAX()](../../sql-statements/built-in-functions/aggregate-functions/max.md) functions to be a single row lookup in the following cases:
+MariaDB and MySQL can optimize the [MIN()](../../sql-functions/aggregate-functions/min.md) and [MAX()](../../sql-functions/aggregate-functions/max.md) functions to be a single row lookup in the following cases:
 
 * There is only one table used in the `SELECT`.
 * You only have constants, `MIN()` and `MAX()` in the `SELECT` part.
@@ -60,8 +60,8 @@ SELECT a, b, MIN(c),MAX(c) FROM t1 GROUP BY a,b
 
 ## See also
 
-* [MIN()](../../sql-statements/built-in-functions/aggregate-functions/min.md)
-* [MAX()](../../sql-statements/built-in-functions/aggregate-functions/max.md)
+* [MIN()](../../sql-functions/aggregate-functions/min.md)
+* [MAX()](../../sql-functions/aggregate-functions/max.md)
 * [MySQL manual on loose index scans](https://dev.mysql.com/doc/refman/5.7/en/group-by-optimization.html)
 
 CC BY-SA / Gnu FDL

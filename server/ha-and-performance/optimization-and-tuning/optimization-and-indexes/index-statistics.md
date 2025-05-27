@@ -24,7 +24,7 @@ The default approaches can be changed by setting the [aria\_stats\_method](../..
 
 ## Null-Safe and Regular Comparisons
 
-The comparison operator used plays an important role. If two values are compared with <=> (see the [null-safe-equal](../../../reference/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](../../../reference/sql-statements-and-structure/operators/comparison-operators/equal.md) comparison operator) null is returned. For example:
+The comparison operator used plays an important role. If two values are compared with <=> (see the [null-safe-equal](../../../reference/sql-structure/operators/comparison-operators/null-safe-equal.md) comparison operator), and both are null, 1 is returned. If the same values are compared with = (see the [equal](../../../reference/sql-structure/operators/comparison-operators/equal.md) comparison operator) null is returned. For example:
 
 ```
 SELECT 1 <=> 1, NULL <=> NULL, 1 <=> NULL;

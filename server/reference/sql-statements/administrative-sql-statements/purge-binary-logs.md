@@ -28,7 +28,7 @@ To move to a new log file (for example if you want to remove the current log fil
 
 If the [expire\_logs\_days](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#expire_logs_days) server system variable is not set to 0, the server automatically deletes binary log files after the given number of days. From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the [binlog\_expire\_logs\_seconds](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) variable allows more precise control over binlog deletion, and takes precedence if both are non-zero.
 
-Requires the [super](https://mariadb.com/kb/en/super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../account-management-sql-commands/grant.md#binlog-admin) privilege, to run.
+Requires the [super](https://mariadb.com/kb/en/super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../account-management-sql-statements/grant.md#binlog-admin) privilege, to run.
 
 ## Examples
 

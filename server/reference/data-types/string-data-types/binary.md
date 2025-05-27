@@ -1,6 +1,6 @@
 # BINARY
 
-This page describes the BINARY data type. For details about the operator, see [Binary Operator](../../sql-statements/built-in-functions/string-functions/binary-operator.md).
+This page describes the BINARY data type. For details about the operator, see [Binary Operator](../../sql-functions/string-functions/binary-operator.md).
 
 ## Syntax
 
@@ -61,7 +61,7 @@ SELECT * FROM bins ORDER BY a;
 +------+
 ```
 
-Using [CAST](../../sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
+Using [CAST](../../sql-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
 ```
 SELECT * FROM bins ORDER BY CAST(a AS CHAR);

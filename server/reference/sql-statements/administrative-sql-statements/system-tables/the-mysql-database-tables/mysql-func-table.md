@@ -6,13 +6,13 @@ This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.func` table contains the following fields:
 
-| Field | Type                         | Null | Key | Default | Description                                                                                                                                                                                                                |
-| ----- | ---------------------------- | ---- | --- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field | Type                         | Null | Key | Default | Description                                                                                                                                                                                                                |
-| name  | char(64)                     | NO   | PRI |         | UDF name                                                                                                                                                                                                                   |
-| ret   | tinyint(1)                   | NO   |     | 0       |                                                                                                                                                                                                                            |
-| dl    | char(128)                    | NO   |     |         | Shared library name                                                                                                                                                                                                        |
-| type  | enum('function','aggregate') | NO   |     | NULL    | Type, either function or aggregate. Aggregate functions are summary functions such as [SUM()](../../../built-in-functions/aggregate-functions/sum.md) and [AVG()](../../../built-in-functions/aggregate-functions/avg.md). |
+| Field | Type                         | Null | Key | Default | Description                                                                                                                                                                                                            |
+| ----- | ---------------------------- | ---- | --- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field | Type                         | Null | Key | Default | Description                                                                                                                                                                                                            |
+| name  | char(64)                     | NO   | PRI |         | UDF name                                                                                                                                                                                                               |
+| ret   | tinyint(1)                   | NO   |     | 0       |                                                                                                                                                                                                                        |
+| dl    | char(128)                    | NO   |     |         | Shared library name                                                                                                                                                                                                    |
+| type  | enum('function','aggregate') | NO   |     | NULL    | Type, either function or aggregate. Aggregate functions are summary functions such as [SUM()](../../../../sql-functions/aggregate-functions/sum.md) and [AVG()](../../../../sql-functions/aggregate-functions/avg.md). |
 
 ## Example
 

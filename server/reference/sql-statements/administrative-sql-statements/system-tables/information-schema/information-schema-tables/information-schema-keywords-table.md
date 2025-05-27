@@ -724,6 +724,6 @@ SELECT * FROM INFORMATION_SCHEMA.KEYWORDS;
 
 ## See Also
 
-* [Reserved Words](../../../../../sql-statements-and-structure/sql-language-structure/reserved-words.md)
+* [Reserved Words](../../../../../sql-structure/sql-language-structure/reserved-words.md)
 
 CC BY-SA / Gnu FDL

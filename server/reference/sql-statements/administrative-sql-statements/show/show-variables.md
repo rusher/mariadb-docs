@@ -9,7 +9,7 @@ SHOW [GLOBAL | SESSION] VARIABLES
 
 ## Description
 
-`SHOW VARIABLES` shows the values of MariaDB [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md). This does not include user-defined variables - see [here](../../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md#viewing) for details on viewing those.
+`SHOW VARIABLES` shows the values of MariaDB [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md). This does not include user-defined variables - see [here](../../../sql-structure/sql-language-structure/user-defined-variables.md#viewing) for details on viewing those.
 
 System variable information can also be obtained using the [mariadb-admin variables](../../../../clients-and-utilities/mariadb-admin.md)\
 command. The `LIKE` clause, if present, indicates which variable names\

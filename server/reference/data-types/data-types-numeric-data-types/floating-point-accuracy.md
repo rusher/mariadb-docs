@@ -1,20 +1,14 @@
-
 # Floating-point Accuracy
 
 Due to their nature, not all floating-point numbers can be stored with exact precision. Hardware architecture, the CPU or even the compiler version and optimization level may affect the precision.
 
-
-If you are comparing [DOUBLEs](double.md) or [FLOATs](float.md) with numeric decimals, it is not safe to use the [equality](../../sql-statements-and-structure/operators/comparison-operators/equal.md) operator.
-
+If you are comparing [DOUBLEs](double.md) or [FLOATs](float.md) with numeric decimals, it is not safe to use the [equality](../../sql-structure/operators/comparison-operators/equal.md) operator.
 
 Sometimes, changing a floating-point number from single-precision (FLOAT) to double-precision (DOUBLE) will fix the problem.
 
-
 ## Example
 
-
 f1, f2 and f3 have seemingly identical values across each row, but due to floating point accuracy, the results may be unexpected.
-
 
 ```
 CREATE TABLE fpn (id INT, f1 FLOAT, f2 DOUBLE, f3 DECIMAL (10,3));
@@ -30,7 +24,6 @@ SELECT * FROM fpn WHERE f1*f1 = f2*f2;
 
 The reason why only one instead of two rows was returned becomes clear when we see how the floating point squares were evaluated.
 
-
 ```
 SELECT f1*f1, f2*f2, f3*f3 FROM fpn;
 +----------------------+----------------------+----------+
@@ -41,6 +34,4 @@ SELECT f1*f1, f2*f2, f3*f3 FROM fpn;
 +----------------------+----------------------+----------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

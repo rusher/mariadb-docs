@@ -22,7 +22,7 @@ INSTALL SONAME 'ha_spider';
 
 ### Setting the SUPER privilege for the Spider user on data nodes or alternatives to avoid privilege issues
 
-When explicitly setting the [spider\_internal\_sql\_log\_off](spider-system-variables.md#spider_internal_sql_log_off) system variable, please note that Spider will execute matching [SET SQL\_LOG\_OFF](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) statements on each of the data nodes. It will attempt to do this on the data nodes using the [SUPER](../../sql-statements/account-management-sql-commands/grant.md#super) privilege, which thus requires one to grant this privilege to the Spider user on the data nodes.
+When explicitly setting the [spider\_internal\_sql\_log\_off](spider-system-variables.md#spider_internal_sql_log_off) system variable, please note that Spider will execute matching [SET SQL\_LOG\_OFF](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) statements on each of the data nodes. It will attempt to do this on the data nodes using the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#super) privilege, which thus requires one to grant this privilege to the Spider user on the data nodes.
 
 If the Spider user on the data note is not configured with the SUPER privilege, you may encounter issues when working with Spider tables like ERROR 1227 (42000): Access denied for the missing SUPER privilege. To avoid this, don't explicitly set spider\_internal\_sql\_log\_off, or set it to -1, or grant the SUPER privilege to the Spider user on the data node.
 

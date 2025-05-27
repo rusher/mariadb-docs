@@ -20,7 +20,7 @@ INSERT INTO tbl_temp2 (fld_id)
   FROM tbl_temp1 WHERE tbl_temp1.fld_order_id > 100;
 ```
 
-`tbl_name` can also be specified in the form `db_name`.`tbl_name` (see [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md)). This allows to copy rows between different databases.
+`tbl_name` can also be specified in the form `db_name`.`tbl_name` (see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)). This allows to copy rows between different databases.
 
 If the new table has a primary key or UNIQUE indexes, you can use [IGNORE](ignore.md) to handle duplicate key errors during the query. The newer values will not be inserted if an identical value already exists.
 

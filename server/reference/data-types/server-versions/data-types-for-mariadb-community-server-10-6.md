@@ -92,30 +92,30 @@ Each column in a table has a specified data type that defines what kind of data 
 
 ## Date & Time Types
 
-| Data Type                                                                   | Class     | Description                                                                                                    |
-| --------------------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------- |
-| Data Type                                                                   | Class     | Description                                                                                                    |
-| [DATE](../date-and-time-data-types/date.md)                                 | Date      | Year, month, day                                                                                               |
-| [DATE (with time portion)](date-with-time-portion/)                         | SQL/PL    | See [DATETIME](../date-and-time-data-types/datetime.md)                                                        |
-| [DATETIME](../date-and-time-data-types/datetime.md)                         | Date/Time | Year (1000-9999), month, day, hours, minutes, seconds                                                          |
-| [SQL\_TSI\_YEAR](../date-and-time-data-types/sql_tsi_year.md)               | Date      | See [YEAR](../../sql-statements/built-in-functions/date-time-functions/year.md)                                |
-| [TIME](../date-and-time-data-types/time.md)                                 | Time      | Hours, minutes, seconds                                                                                        |
-| [TIMESTAMP](timestamp-type/)                                                | Date/Time | Accepts a datetime value consisting of year (1970-2038), month, day, hours, minutes, seconds, and microseconds |
-| [YEAR](../../sql-statements/built-in-functions/date-time-functions/year.md) | Date      | Two-digit or four-digit year                                                                                   |
+| Data Type                                                     | Class     | Description                                                                                                    |
+| ------------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------- |
+| Data Type                                                     | Class     | Description                                                                                                    |
+| [DATE](../date-and-time-data-types/date.md)                   | Date      | Year, month, day                                                                                               |
+| [DATE (with time portion)](date-with-time-portion/)           | SQL/PL    | See [DATETIME](../date-and-time-data-types/datetime.md)                                                        |
+| [DATETIME](../date-and-time-data-types/datetime.md)           | Date/Time | Year (1000-9999), month, day, hours, minutes, seconds                                                          |
+| [SQL\_TSI\_YEAR](../date-and-time-data-types/sql_tsi_year.md) | Date      | See [YEAR](../../sql-functions/date-time-functions/year.md)                                                    |
+| [TIME](../date-and-time-data-types/time.md)                   | Time      | Hours, minutes, seconds                                                                                        |
+| [TIMESTAMP](timestamp-type/)                                  | Date/Time | Accepts a datetime value consisting of year (1970-2038), month, day, hours, minutes, seconds, and microseconds |
+| [YEAR](../../sql-functions/date-time-functions/year.md)       | Date      | Two-digit or four-digit year                                                                                   |
 
 ## Geometry Types
 
-| Data Type                                                                                                                          | Class    | Description                                                       |
-| ---------------------------------------------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
-| Data Type                                                                                                                          | Class    | Description                                                       |
-| [GEOMETRY](../../sql-statements-and-structure/geographic-geometric-features/geometry-types.md)                                     | Geometry | Accepts collection data; and point, line, polygon single or multi |
-| [GEOMETRYCOLLECTION](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/geometrycollection.md) | Geometry | WKB Geometry Collection                                           |
-| [LINESTRING](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/linestring.md)                 | Geometry | WKB LineString from WKB Point coordinate data                     |
-| [MULTILINESTRING](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/multilinestring.md)       | Geometry | WKB MultiLineString from WKB LineString data                      |
-| [MULTIPOINT](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/multipoint.md)                 | Geometry | WKB MultiPoint from WKB Point coordinate data                     |
-| [MULTIPOLYGON](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/multipolygon.md)             | Geometry | WKB MultiPolygon from WKB Polygon data                            |
-| [POINT](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/point.md)                           | Geometry | WKB Point coordinate data                                         |
-| [POLYGON](../../sql-statements-and-structure/geographic-geometric-features/geometry-constructors/polygon.md)                       | Geometry | WKB Polygon from WKB LineString data                              |
+| Data Type                                                                                      | Class    | Description                                                       |
+| ---------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
+| Data Type                                                                                      | Class    | Description                                                       |
+| [GEOMETRY](../../sql-structure/geometry/geometry-types.md)                                     | Geometry | Accepts collection data; and point, line, polygon single or multi |
+| [GEOMETRYCOLLECTION](../../sql-structure/geometry/geometry-constructors/geometrycollection.md) | Geometry | WKB Geometry Collection                                           |
+| [LINESTRING](../../sql-structure/geometry/geometry-constructors/linestring.md)                 | Geometry | WKB LineString from WKB Point coordinate data                     |
+| [MULTILINESTRING](../../sql-structure/geometry/geometry-constructors/multilinestring.md)       | Geometry | WKB MultiLineString from WKB LineString data                      |
+| [MULTIPOINT](../../sql-structure/geometry/geometry-constructors/multipoint.md)                 | Geometry | WKB MultiPoint from WKB Point coordinate data                     |
+| [MULTIPOLYGON](../../sql-structure/geometry/geometry-constructors/multipolygon.md)             | Geometry | WKB MultiPolygon from WKB Polygon data                            |
+| [POINT](../../sql-structure/geometry/geometry-constructors/point.md)                           | Geometry | WKB Point coordinate data                                         |
+| [POLYGON](../../sql-structure/geometry/geometry-constructors/polygon.md)                       | Geometry | WKB Polygon from WKB LineString data                              |
 
 ## Other Types
 

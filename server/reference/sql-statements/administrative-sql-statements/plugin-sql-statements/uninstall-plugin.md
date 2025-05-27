@@ -17,7 +17,7 @@ table, so that subsequent server restarts will not load and initialize\
 the plugin. `UNINSTALL PLUGIN` does not remove the plugin's\
 shared library file.
 
-To use `UNINSTALL PLUGIN`, you must have the[DELETE](../../account-management-sql-commands/grant.md) privilege for the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+To use `UNINSTALL PLUGIN`, you must have the[DELETE](../../account-management-sql-statements/grant.md) privilege for the [mysql.plugin](../system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
 #### IF EXISTS
 

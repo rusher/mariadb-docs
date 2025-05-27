@@ -75,7 +75,7 @@ PARTITION BY RANGE (UNIX_TIMESTAMP(ts))
 );
 ```
 
-As you can see, we used the [UNIX\_TIMESTAMP](../../../reference/sql-statements/built-in-functions/date-time-functions/unix_timestamp.md) function to accomplish the purpose. Also, the first two partitions cover longer periods of time (probably because the logged activities were less intensive).
+As you can see, we used the [UNIX\_TIMESTAMP](../../../reference/sql-functions/date-time-functions/unix_timestamp.md) function to accomplish the purpose. Also, the first two partitions cover longer periods of time (probably because the logged activities were less intensive).
 
 In both cases, when our tables become huge and we don't need to store all historical data any more, we can drop the oldest partitions in this way:
 

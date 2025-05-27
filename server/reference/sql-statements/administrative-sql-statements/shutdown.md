@@ -28,7 +28,7 @@ See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../.
 
 ## Required Permissions
 
-One must have a `SHUTDOWN` privilege (see [GRANT](../account-management-sql-commands/grant.md)) to use this command. It is the same privilege one needs to use the [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md#mariadb-admin-commands) command.
+One must have a `SHUTDOWN` privilege (see [GRANT](../account-management-sql-statements/grant.md)) to use this command. It is the same privilege one needs to use the [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md#mariadb-admin-commands) command.
 
 ## Shutdown for Upgrades
 

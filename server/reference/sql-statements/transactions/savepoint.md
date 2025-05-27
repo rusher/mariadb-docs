@@ -13,7 +13,7 @@ RELEASE SAVEPOINT identifier
 InnoDB supports the SQL statements `SAVEPOINT`,`ROLLBACK TO SAVEPOINT`, `RELEASE SAVEPOINT`\
 and the optional `WORK` keyword for`ROLLBACK`.
 
-Each savepoint must have a legal [MariaDB identifier](../../sql-statements-and-structure/sql-language-structure/identifier-names.md). A savepoint is a named sub-transaction.
+Each savepoint must have a legal [MariaDB identifier](../../sql-structure/sql-language-structure/identifier-names.md). A savepoint is a named sub-transaction.
 
 Normally [ROLLBACK](rollback.md) undoes the changes performed by the whole transaction. When used with the TO clause, it undoes the changes performed after the specified savepoint, and erases all subsequent savepoints. However, all locks that have been acquired after the save point will survive. RELEASE SAVEPOINT does not rollback or commit any changes, but removes the specified savepoint.
 

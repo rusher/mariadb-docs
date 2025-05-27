@@ -59,7 +59,7 @@ SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM
 
 The Spider Handler Socket support has been removed, see [MDEV-26858](https://jira.mariadb.org/browse/MDEV-26858).
 
-Check that [Handler Socket](../../sql-statements-and-structure/nosql/handlersocket/) is running on the backend nodes
+Check that [Handler Socket](../../sql-structure/nosql/handlersocket/) is running on the backend nodes
 
 ```
 :~# backend2 -e "show variables like 'handler%'"

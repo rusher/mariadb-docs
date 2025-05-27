@@ -16,7 +16,7 @@ SHOW ALL { SLAVES | REPLICAS } STATUS
 
 This statement is to be run on a replica and provides status information on essential parameters of the [replica](broken-reference) threads.
 
-This statement requires the [SUPER](../../account-management-sql-commands/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-commands/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-commands/grant.md#binlog-monitor) privilege, or, from [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), the [REPLICA MONITOR](../../account-management-sql-commands/grant.md#replica-monitor) privilege.
+This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#binlog-monitor) privilege, or, from [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), the [REPLICA MONITOR](../../account-management-sql-statements/grant.md#replica-monitor) privilege.
 
 ### Multi-Source
 

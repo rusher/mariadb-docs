@@ -296,7 +296,7 @@ See the description of the specific backup tool to determine how to get the bina
 
 Once the current binary log position for the backup has been obtained, in the form\
 of a binary log file name and position, the corresponding GTID position can be\
-obtained from [BINLOG\_GTID\_POS()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/binlog_gtid_pos.md) on the server that was backed up:
+obtained from [BINLOG\_GTID\_POS()](../../reference/sql-functions/secondary-functions/information-functions/binlog_gtid_pos.md) on the server that was backed up:
 
 ```
 SELECT BINLOG_GTID_POS("master-bin.000001", 600);
@@ -613,12 +613,12 @@ However, if a replica is started with `SQL_AFTER_GTIDS`, i.e. `START SLAVE UNTIL
 
 ### BINLOG\_GTID\_POS().
 
-The [BINLOG\_GTID\_POS()](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/binlog_gtid_pos.md) function takes as input an old-style [binary log](../../server-management/server-monitoring-logs/binary-log/) position in the form of a file name and a file offset. It looks up the position in the current binlog, and returns a string representation of the corresponding GTID\
+The [BINLOG\_GTID\_POS()](../../reference/sql-functions/secondary-functions/information-functions/binlog_gtid_pos.md) function takes as input an old-style [binary log](../../server-management/server-monitoring-logs/binary-log/) position in the form of a file name and a file offset. It looks up the position in the current binlog, and returns a string representation of the corresponding GTID\
 position. If the position is not found in the current binlog, NULL is returned.
 
 ### MASTER\_GTID\_WAIT
 
-The [MASTER\_GTID\_WAIT](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md) function is useful in replication for controlling primary/replica synchronization, and blocks until the replica has read and applied all updates up to the specified position in the primary log. See [MASTER\_GTID\_WAIT](../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md) for details.
+The [MASTER\_GTID\_WAIT](../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md) function is useful in replication for controlling primary/replica synchronization, and blocks until the replica has read and applied all updates up to the specified position in the primary log. See [MASTER\_GTID\_WAIT](../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait.md) for details.
 
 ## Binlog Indexing
 

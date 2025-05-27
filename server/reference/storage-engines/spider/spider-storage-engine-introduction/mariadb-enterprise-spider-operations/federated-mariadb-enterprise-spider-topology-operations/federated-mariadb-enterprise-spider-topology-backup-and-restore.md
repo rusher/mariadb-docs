@@ -28,7 +28,7 @@ The backup of the Data Node contains:
 
 The following procedure shows how to take a consistent backup of a Spider Node and a Data Node deployed in a Spider Federated MariaDB Enterprise Spider topology.
 
-1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-commands/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-commands/grant.md) statements:
+1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
 
 ```
 CREATE USER 'mariadb-backup'@'localhost'
@@ -39,7 +39,7 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR
    TO 'mariadb-backup'@'localhost';
 ```
 
-2. On the Data Node, grant the user account Spider uses to operate on the Data Node sufficient privileges to lock the Data Tables using the [GRANT](../../../../../sql-statements/account-management-sql-commands/grant.md) statement.
+2. On the Data Node, grant the user account Spider uses to operate on the Data Node sufficient privileges to lock the Data Tables using the [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statement.
 
 For example, on the hq\_server Data Node:
 
@@ -165,7 +165,7 @@ The backup of the Data Node contains:
 
 The following procedure shows how to take a consistent backup of a Spider Node and a Data Node deployed in a Federated MariaDB Enterprise Spider topology.
 
-1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-commands/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-commands/grant.md) statements:
+1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
 
 ```
 CREATE USER 'mariadb-dump'@'localhost'

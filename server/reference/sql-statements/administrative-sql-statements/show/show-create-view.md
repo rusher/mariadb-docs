@@ -40,7 +40,7 @@ collation_connection: cp850_general_ci
 
 ## Grants
 
-To be able to see a view, you need to have the [SHOW VIEW](../../account-management-sql-commands/grant.md#table-privileges) and the [SELECT](../../account-management-sql-commands/grant.md#table-privileges) privilege on the view:
+To be able to see a view, you need to have the [SHOW VIEW](../../account-management-sql-statements/grant.md#table-privileges) and the [SELECT](../../account-management-sql-statements/grant.md#table-privileges) privilege on the view:
 
 ```
 GRANT SHOW VIEW,SELECT ON test_database.test_view TO 'test'@'localhost';
@@ -48,6 +48,6 @@ GRANT SHOW VIEW,SELECT ON test_database.test_view TO 'test'@'localhost';
 
 ## See Also
 
-* [Grant privileges to tables, views etc](../../account-management-sql-commands/grant.md)
+* [Grant privileges to tables, views etc](../../account-management-sql-statements/grant.md)
 
 GPLv2 fill\_help\_tables.sql

@@ -1,34 +1,25 @@
+# privileges\_by\_table\_by\_level Sys Schema View
 
-# privileges_by_table_by_level Sys Schema View
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
 
-
-##### MariaDB starting with [11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
-This [Sys Schema](../README.md) view was introduced in [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes).
-
+This [Sys Schema](../) view was introduced in [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes).
 
 ## Description
 
-
 Shows granted privileges broken down by table on which they allow access and level on which they were granted.
 
+For example, if a user `x` has `SELECT` privilege granted `ON db.*`, this view will list all tables in the `db` schema with the user `x` having `SELECT` privilege on them. This is different from [INFORMATION\_SCHEMA.TABLE\_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md), which only lists privileges granted on the table level.
 
-For example, if a user `x` has `SELECT` privilege granted `ON db.*`, this view will list all tables in the `db` schema with the user `x` having `SELECT` privilege on them. This is different from [INFORMATION_SCHEMA.TABLE_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md), which only lists privileges granted on the table level.
-
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| TABLE_SCHEMA | Database name. |
-| TABLE_NAME | Table name. |
-| GRANTEE | [Account name](../../../../account-management-sql-commands/create-user.md#account-names) that was [granted](../../../../account-management-sql-commands/grant.md) the privilege. |
-| PRIVILEGE | [Privilege](../../../../account-management-sql-commands/grant.md), such as SELECT or DROP. |
-| LEVEL | [Privilege level](../../../../account-management-sql-commands/grant.md), such as GLOBAL or SCHEMA. |
-
-
+| Column        | Description                                                                                                                                                                          |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column        | Description                                                                                                                                                                          |
+| TABLE\_SCHEMA | Database name.                                                                                                                                                                       |
+| TABLE\_NAME   | Table name.                                                                                                                                                                          |
+| GRANTEE       | [Account name](../../../../account-management-sql-statements/create-user.md#account-names) that was [granted](../../../../account-management-sql-statements/grant.md) the privilege. |
+| PRIVILEGE     | [Privilege](../../../../account-management-sql-statements/grant.md), such as SELECT or DROP.                                                                                         |
+| LEVEL         | [Privilege level](../../../../account-management-sql-statements/grant.md), such as GLOBAL or SCHEMA.                                                                                 |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.privileges_by_table_by_level;
@@ -113,11 +104,8 @@ SELECT * FROM sys.privileges_by_table_by_level;
 
 ## See Also
 
-
-* [GRANT](../../../../account-management-sql-commands/grant.md) (description of the privileges and how to grant them)
-* [INFORMATION_SCHEMA.TABLE_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md)
+* [GRANT](../../../../account-management-sql-statements/grant.md) (description of the privileges and how to grant them)
+* [INFORMATION\_SCHEMA.TABLE\_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md)
 * [MDEV-24486](https://jira.mariadb.org/browse/MDEV-24486)
 
-
 CC BY-SA / Gnu FDL
-

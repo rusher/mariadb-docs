@@ -142,13 +142,13 @@ The `pam` authentication plugin uses a [setuid](https://linux.die.net/man/2/setu
 
 ## Creating Users
 
-Similar to all other [authentication plugins](../), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](../../../sql-statements/account-management-sql-commands/create-user.md) while specifying the name of the plugin in the [IDENTIFIED VIA](../../../sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause. For example:
+Similar to all other [authentication plugins](../), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](../../../sql-statements/account-management-sql-statements/create-user.md) while specifying the name of the plugin in the [IDENTIFIED VIA](../../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause. For example:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA pam;
 ```
 
-If [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](../../../sql-statements/account-management-sql-commands/grant.md). For example:
+If [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](../../../sql-statements/account-management-sql-statements/grant.md). For example:
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA pam;

@@ -6,7 +6,7 @@ The `SQL_FUNCTIONS` table was added in [MariaDB 10.2.40](https://app.gitbook.com
 
 ## Description
 
-The [Information Schema](../) `SQL_FUNCTIONS` table contains the list of [MariaDB functions](../../../../built-in-functions/).
+The [Information Schema](../) `SQL_FUNCTIONS` table contains the list of [MariaDB functions](../../../../../sql-functions/).
 
 It contains a single column:
 
@@ -264,6 +264,6 @@ SELECT * FROM INFORMATION_SCHEMA.SQL_FUNCTIONS;
 
 ## See Also
 
-* [Reserved Words](../../../../../sql-statements-and-structure/sql-language-structure/reserved-words.md)
+* [Reserved Words](../../../../../sql-structure/sql-language-structure/reserved-words.md)
 
 CC BY-SA / Gnu FDL

@@ -6,7 +6,7 @@ From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 Additionally, internal on-disk tables are in the Aria table format instead of\
 the [MyISAM](../myisam-storage-engine/) table format. This should speed up some [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md)\
-and [DISTINCT](../../sql-statements/built-in-functions/aggregate-functions/count-distinct.md) queries because Aria has better caching than\
+and [DISTINCT](../../sql-functions/aggregate-functions/count-distinct.md) queries because Aria has better caching than\
 MyISAM.
 
 Note: The _**Aria**_ storage engine was previously called _Maria_ (see[The Aria Name](the-aria-name.md) for details on the\

@@ -14,9 +14,9 @@ create_specification:
 
 ## Description
 
-`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](../../account-management-sql-commands/grant.md) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
+`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](../../account-management-sql-statements/grant.md) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
 
-For valid identifiers to use as database names, see [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as database names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 #### OR REPLACE
 
@@ -76,7 +76,7 @@ CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 
 ## See Also
 
-* [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [DROP DATABASE](../drop/drop-database.md)
 * [SHOW CREATE DATABASE](../../administrative-sql-statements/show/show-create-database.md)
 * [ALTER DATABASE](../alter/alter-database.md)

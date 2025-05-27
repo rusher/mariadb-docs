@@ -322,7 +322,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 #### Removing System Versioning from a Column
 
-In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. In order for this to work, the [system\_versioning\_alter\_history](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
+In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`. In order for this to work, the [system\_versioning\_alter\_history](../../../sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
@@ -540,7 +540,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 #### Adding a Spatial Index
 
-InnoDB does **not** support adding a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
+InnoDB does **not** support adding a [SPATIAL](../../../sql-structure/geometry/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
 For example, this fails:
 
@@ -748,7 +748,7 @@ This applies to [ALTER TABLE ... PAGE\_COMPRESSED=...](../../../sql-statements/d
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-InnoDB does **not** support dropping [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
+InnoDB does **not** support dropping [system versioning](../../../sql-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INSTANT`.
 
 For example:
 
@@ -919,7 +919,7 @@ Some operations cause a table's tablespace file to use a non-canonical storage f
 
 These operations require the following non-canonical changes to the storage format:
 
-* A hidden metadata record at the start of the clustered index is used to store each column's [DEFAULT](../../../sql-statements/built-in-functions/secondary-functions/information-functions/default.md) value. This makes it possible to add new columns that have default values without rebuilding the table.
+* A hidden metadata record at the start of the clustered index is used to store each column's [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md) value. This makes it possible to add new columns that have default values without rebuilding the table.
 * A [BLOB](../../../data-types/string-data-types/blob.md) in the hidden metadata record is used to store column mappings. This makes it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table.
 * If a column is dropped, old records will contain garbage in that column's former position, and new records will be written with [NULL](../../../data-types/null-values.md) values, empty strings, or dummy values.
 

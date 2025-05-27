@@ -186,7 +186,7 @@ Verify server's "Common Name" in its cert against hostname used when connecting.
 -u name
 ```
 
-The MariaDB user name to use when connecting to the server. The default is either your Unix login name, or `ODBC` on Windows. See the [GRANT](../reference/sql-statements/account-management-sql-commands/grant.md) command for details on creating MariaDB user accounts.
+The MariaDB user name to use when connecting to the server. The default is either your Unix login name, or `ODBC` on Windows. See the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md) command for details on creating MariaDB user accounts.
 
 ## Option Files
 

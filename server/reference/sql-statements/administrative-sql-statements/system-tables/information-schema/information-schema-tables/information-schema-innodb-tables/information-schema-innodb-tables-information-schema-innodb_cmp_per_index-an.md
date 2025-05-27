@@ -2,7 +2,7 @@
 
 The `INNODB_CMP_PER_INDEX` and `INNODB_CMP_PER_INDEX_RESET` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md), grouped by individual indexes. These tables are only populated if the [innodb\_cmp\_per\_index\_enabled](../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_cmp_per_index_enabled) system variable is set to `ON`.
 
-The [PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege is required to query this table.
+The [PROCESS](../../../../../account-management-sql-statements/grant.md#global-privileges) privilege is required to query this table.
 
 These tables contains the following columns:
 

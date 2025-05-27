@@ -8,7 +8,7 @@ SHOW CREATE TABLE tbl_name
 
 ## Description
 
-Shows the [CREATE TABLE](../../data-definition/create/create-table.md) statement that creates the given table. The statement requires the [SELECT privilege](../../data-manipulation/selecting-data/select.md) for the table. This statement also works with [views](../../../../server-usage/views/) and [SEQUENCE](../../../sql-statements-and-structure/sequences/create-sequence.md).
+Shows the [CREATE TABLE](../../data-definition/create/create-table.md) statement that creates the given table. The statement requires the [SELECT privilege](../../data-manipulation/selecting-data/select.md) for the table. This statement also works with [views](../../../../server-usage/views/) and [SEQUENCE](../../../sql-structure/sequences/create-sequence.md).
 
 `SHOW CREATE TABLE` quotes table and\
 column names according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.

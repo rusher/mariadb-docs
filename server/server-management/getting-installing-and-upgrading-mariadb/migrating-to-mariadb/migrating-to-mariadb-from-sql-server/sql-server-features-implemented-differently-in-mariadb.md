@@ -25,7 +25,7 @@ This page has a list of SQL Server features that MariaDB implements in a differe
 ## Tables
 
 * Computed columns are called [generated columns](../../../../reference/sql-statements/data-definition/create/generated-columns.md) in MariaDB and are created with a different syntax. See also [Implementation Differences Compared to Microsoft SQL Server](../../../../reference/sql-statements/data-definition/create/generated-columns.md#implementation-differences-compared-to-microsoft-sql-server).
-* [Temporal tables](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) use a different (more standard) syntax on MariaDB. In MariaDB, the history is stored in the same table as current data (but optionally in different partitions). MariaDB supports both [SYSTEM\_TIME](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md) and [APPLICATION\_TIME](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+* [Temporal tables](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) use a different (more standard) syntax on MariaDB. In MariaDB, the history is stored in the same table as current data (but optionally in different partitions). MariaDB supports both [SYSTEM\_TIME](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) and [APPLICATION\_TIME](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md).
 * Hidden columns are [Invisible columns](../../../../reference/sql-statements/data-definition/create/invisible-columns.md) in MariaDB.
 * [Temporary tables](../../../../reference/sql-statements/data-definition/create/create-table.md#create-temporary-table) are implemented and used differently.
 
@@ -44,7 +44,7 @@ This page has a list of SQL Server features that MariaDB implements in a differe
 
 ## Security
 
-* The list of [permissions](../../../../reference/sql-statements/account-management-sql-commands/grant.md#privilege-levels) is different.
+* The list of [permissions](../../../../reference/sql-statements/account-management-sql-statements/grant.md#privilege-levels) is different.
 * Security policies. MariaDB allows one to achieve the same results by assigning permissions on views and stored procedures. However, this is not a common practice and it's more complicated than defining security policies. See [Other Uses of Views](https://mariadb.com/kb/en/creating-using-views/#other-uses-of-views).
 * MariaDB does not support an `OUTPUT` clause. Instead, we can use [DELETE RETURNING](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) and, since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), [INSERT RETURNING](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insertreturning.md) and [REPLACE RETURNING](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/replacereturning.md).
 

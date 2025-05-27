@@ -1,6 +1,6 @@
 # User Variables Plugin
 
-The `user_variables` plugin creates the [USER\_VARIABLES](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. This table contains information about [user-defined variables](../../sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
+The `user_variables` plugin creates the [USER\_VARIABLES](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. This table contains information about [user-defined variables](../../sql-structure/sql-language-structure/user-defined-variables.md).
 
 ## Viewing
 

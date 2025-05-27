@@ -1,6 +1,6 @@
 # GROUP BY
 
-Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any[functions and operators](../../built-in-functions/) except[grouping functions](../../built-in-functions/aggregate-functions/). When you\
+Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any[functions and operators](../../../sql-functions/) except[grouping functions](../../../sql-functions/aggregate-functions/). When you\
 use a `GROUP BY` clause, you will get a single result row for each group of rows\
 that have the same value for the expression given in `GROUP BY`.
 
@@ -76,7 +76,7 @@ SELECT (wins / plays) AS winavg, COUNT(*) FROM plays GROUP BY winavg;
 3 rows in set (0.00 sec)
 ```
 
-You can use any [grouping function](../../built-in-functions/aggregate-functions/)\
+You can use any [grouping function](../../../sql-functions/aggregate-functions/)\
 in the select expression. For each win average as above, get a list of the average play\
 count taken to get that average:
 

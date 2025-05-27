@@ -7,7 +7,7 @@ The diagnostics area contains information about the error conditions which were 
 The statement information area contains the following data:
 
 * NUMBER is the number of conditions which are present in the diagnostics area.
-* ROW\_COUNT has the same value as the [ROW\_COUNT()](../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md) function for the statement that produced the conditions.
+* ROW\_COUNT has the same value as the [ROW\_COUNT()](../../../reference/sql-functions/secondary-functions/information-functions/row_count.md) function for the statement that produced the conditions.
 
 ## Condition Information
 
@@ -110,7 +110,7 @@ All these statements can also be executed inside a stored routine. However, only
 
 * [RESIGNAL](../resignal.md)
 * [SIGNAL](../signal.md)
-* [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/)
+* [HANDLER](../../../reference/sql-structure/nosql/handler/)
 * [GET DIAGNOSTICS](get-diagnostics.md)
 * [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md)
 * [SHOW ERRORS](../../../reference/sql-statements/administrative-sql-statements/show/show-errors.md)

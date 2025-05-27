@@ -29,9 +29,9 @@ error_property_name:
   | CURSOR_NAME
 ```
 
-`SIGNAL` empties the [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md) and produces a custom error. This statement can be used anywhere, but is generally useful when used inside a [stored program](../stored-routines/). When the error is produced, it can be caught by a [HANDLER](../../reference/sql-statements-and-structure/nosql/handler/). If not, the current stored program, or the current statement, will terminate with the specified error.
+`SIGNAL` empties the [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md) and produces a custom error. This statement can be used anywhere, but is generally useful when used inside a [stored program](../stored-routines/). When the error is produced, it can be caught by a [HANDLER](../../reference/sql-structure/nosql/handler/). If not, the current stored program, or the current statement, will terminate with the specified error.
 
-Sometimes an error [HANDLER](../../reference/sql-statements-and-structure/nosql/handler/) just needs to [SIGNAL](signal.md) the same error it received, optionally with some changes. Usually the [RESIGNAL](resignal.md) statement is the most convenient way to do this.
+Sometimes an error [HANDLER](../../reference/sql-structure/nosql/handler/) just needs to [SIGNAL](signal.md) the same error it received, optionally with some changes. Usually the [RESIGNAL](resignal.md) statement is the most convenient way to do this.
 
 `error_condition` can be an [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) value or a named error condition defined via [DECLARE CONDITION](declare-condition.md). [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) must be a constant string consisting of five characters. These codes are standard to ODBC and ANSI SQL. For customized errors, the recommended [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) is '45000'. For a list of SQLSTATE values used by MariaDB, see the [MariaDB Error Codes](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) page. The [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) can be read via the API method `mysql_sqlstate( )`.
 
@@ -126,7 +126,7 @@ BEGIN
 END;
 ```
 
-In this example, we'll define a [HANDLER](../../reference/sql-statements-and-structure/nosql/handler/) for an error code. When the error occurs, we [SIGNAL](signal.md) a more informative error which makes sense for our procedure:
+In this example, we'll define a [HANDLER](../../reference/sql-structure/nosql/handler/) for an error code. When the error occurs, we [SIGNAL](signal.md) a more informative error which makes sense for our procedure:
 
 ```
 CREATE PROCEDURE test_error()

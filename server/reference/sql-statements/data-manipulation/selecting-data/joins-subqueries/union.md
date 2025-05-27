@@ -20,9 +20,9 @@ The column names from the first `SELECT` statement are used as the column names 
 
 If they don't, the type and length of the columns in the result take into account the values returned by all of the SELECTs, so there is no need for explicit casting. Note that currently this is not the case for [recursive CTEs](../common-table-expressions/recursive-common-table-expressions-overview.md) - see [MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325).
 
-Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNION`s which involve multiple databases. See [Identifier Qualifiers](../../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
+Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNION`s which involve multiple databases. See [Identifier Qualifiers](../../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for syntax details.
 
-UNION queries cannot be used with [aggregate functions](../../../built-in-functions/aggregate-functions/).
+UNION queries cannot be used with [aggregate functions](../../../../sql-functions/aggregate-functions/).
 
 `EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
 

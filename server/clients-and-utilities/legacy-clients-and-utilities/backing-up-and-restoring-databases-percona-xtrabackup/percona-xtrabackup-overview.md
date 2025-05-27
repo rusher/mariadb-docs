@@ -125,7 +125,7 @@ Percona XtraBackup reads client options from the following [option groups](../..
 
 ### Authentication and Privileges
 
-Percona XtraBackup needs to authenticate with the database server when it performs a backup operation (i.e. when the `--backup` option is specified). The user account that performs the backup needs to have the `RELOAD` , `PROCESS`, `LOCK TABLES` and `REPLICATION CLIENT` [global privileges](../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) on the database server. For example:
+Percona XtraBackup needs to authenticate with the database server when it performs a backup operation (i.e. when the `--backup` option is specified). The user account that performs the backup needs to have the `RELOAD` , `PROCESS`, `LOCK TABLES` and `REPLICATION CLIENT` [global privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) on the database server. For example:
 
 ```
 CREATE USER 'xtrabackup'@'localhost' IDENTIFIED BY 'mypassword';

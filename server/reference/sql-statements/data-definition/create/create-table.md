@@ -14,7 +14,7 @@ In its most basic form, the `CREATE TABLE` statement provides a table name\
 followed by a list of columns, indexes, and constraints. By default, the table\
 is created in the default database. Specify a database with `db_name.tbl_name`.\
 If you quote the table name, you must quote the database name and table name\
-separately as ``db_name`.`tbl_name``. This is particularly useful for [CREATE TABLE ... SELECT](create-table.md#create-table-select), because it allows to create a table into a database, which contains data from other databases. See [Identifier Qualifiers](../../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md).
+separately as ``db_name`.`tbl_name``. This is particularly useful for [CREATE TABLE ... SELECT](create-table.md#create-table-select), because it allows to create a table into a database, which contains data from other databases. See [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md).
 
 If a table with the same name exists, error 1050 results. Use [IF NOT EXISTS](create-table.md#create-table-if-not-exists)\
 to suppress this error and issue a note instead. Use [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md)\
@@ -23,15 +23,15 @@ to see notes.
 The `CREATE TABLE` statement automatically commits the current transaction,\
 except when using the [TEMPORARY](create-table.md#create-temporary-table) keyword.
 
-For valid identifiers to use as table names, see [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as table names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
 **Note:** if the default\_storage\_engine is set to ColumnStore then it needs setting on all UMs. Otherwise when the tables using the default engine are replicated across UMs they will use the wrong engine. You should therefore not use this option as a session variable with ColumnStore.
 
-[Microsecond precision](../../built-in-functions/date-time-functions/microseconds-in-mariadb.md) can be between 0-6. If no precision is specified it is assumed to be 0, for backward compatibility reasons.
+[Microsecond precision](../../../sql-functions/date-time-functions/microseconds-in-mariadb.md) can be between 0-6. If no precision is specified it is assumed to be 0, for backward compatibility reasons.
 
 ## Privileges
 
-Executing the `CREATE TABLE` statement requires the [CREATE](../../account-management-sql-commands/grant.md#table-privileges) privilege for the table or the database.
+Executing the `CREATE TABLE` statement requires the [CREATE](../../account-management-sql-statements/grant.md#table-privileges) privilege for the table or the database.
 
 ## CREATE OR REPLACE
 
@@ -67,7 +67,7 @@ If the `IF NOT EXISTS` clause is used, then the table will only be created if a 
 
 ## CREATE TEMPORARY TABLE
 
-Use the `TEMPORARY` keyword to create a temporary table that is only available to the current session. Temporary tables are dropped when the session ends. Temporary table names are specific to the session. They will not conflict with other temporary tables from other sessions even if they share the same name. They will shadow names of non-temporary tables or views, if they are identical. A temporary table can have the same name as a non-temporary table which is located in the same database. In that case, their name will reference the temporary table when used in SQL statements. You must have the [CREATE TEMPORARY TABLES](../../account-management-sql-commands/grant.md#database-privileges) privilege on the database to create temporary tables. If no storage engine is specified, the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) setting will determine the engine.
+Use the `TEMPORARY` keyword to create a temporary table that is only available to the current session. Temporary tables are dropped when the session ends. Temporary table names are specific to the session. They will not conflict with other temporary tables from other sessions even if they share the same name. They will shadow names of non-temporary tables or views, if they are identical. A temporary table can have the same name as a non-temporary table which is located in the same database. In that case, their name will reference the temporary table when used in SQL statements. You must have the [CREATE TEMPORARY TABLES](../../account-management-sql-statements/grant.md#database-privileges) privilege on the database to create temporary tables. If no storage engine is specified, the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) setting will determine the engine.
 
 [ROCKSDB](../../../storage-engines/myrocks/) temporary tables cannot be created by setting the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) system variable, or using `CREATE TEMPORARY TABLE LIKE`. Before [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), they could be specified, but would silently fail, and a MyISAM table would be created instead. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107) an error is returned. Explicitly creating a temporary table with `ENGINE=ROCKSDB` has never been permitted.
 
@@ -110,7 +110,7 @@ CREATE TABLE test (a INT NOT NULL, b CHAR(10)) ENGINE=MyISAM
     SELECT 5 AS b, c, d FROM another_table;
 ```
 
-Remember that the query just returns data. If you want to use the same indexes, or the same columns attributes (`[NOT] NULL`, `DEFAULT`, `AUTO_INCREMENT`) in the new table, you need to specify them manually. Types and sizes are not automatically preserved if no data returned by the `SELECT` requires the full size, and `VARCHAR` could be converted into `CHAR`. The [CAST()](../../built-in-functions/string-functions/cast.md) function can be used to forcee the new table to use certain types.
+Remember that the query just returns data. If you want to use the same indexes, or the same columns attributes (`[NOT] NULL`, `DEFAULT`, `AUTO_INCREMENT`) in the new table, you need to specify them manually. Types and sizes are not automatically preserved if no data returned by the `SELECT` requires the full size, and `VARCHAR` could be converted into `CHAR`. The [CAST()](../../../sql-functions/string-functions/cast.md) function can be used to forcee the new table to use certain types.
 
 Aliases (`AS`) are taken into account, and they should always be used when you `SELECT` an expression (function, arithmetical operation, etc).
 
@@ -168,9 +168,9 @@ Specify a default value using the `DEFAULT` clause. If you don't specify `DEFAUL
 * If the column is not defined with `NOT NULL`, `AUTO_INCREMENT` or `TIMESTAMP`, an explicit `DEFAULT NULL` will be added.\
   Note that in MySQL, you may get an explicit `DEFAULT` for primary key parts, if not specified with NOT NULL.
 
-The default value will be used if you [INSERT](../../data-manipulation/inserting-loading-data/insert.md) a row without specifying a value for that column, or if you specify [DEFAULT](../../built-in-functions/secondary-functions/information-functions/default.md) for that column.
+The default value will be used if you [INSERT](../../data-manipulation/inserting-loading-data/insert.md) a row without specifying a value for that column, or if you specify [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md) for that column.
 
-[CURRENT\_TIMESTAMP](../../built-in-functions/date-time-functions/now.md) may also be used as\
+[CURRENT\_TIMESTAMP](../../../sql-functions/date-time-functions/now.md) may also be used as\
 the default value for a [DATETIME](../../../data-types/date-and-time-data-types/datetime.md)
 
 You can use most functions in `DEFAULT`. Expressions should have parentheses around them. If you use a non deterministic function in `DEFAULT` then all inserts to the table will be [replicated](broken-reference) in [row mode](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based). You can even refer to earlier columns in the `DEFAULT` expression (excluding `AUTO_INCREMENT` columns):
@@ -184,7 +184,7 @@ The `DEFAULT` clause cannot contain any [stored functions](../../../../server-us
 
 It is possible to assign [BLOB](../../../data-types/string-data-types/blob.md) or [TEXT](../../../data-types/string-data-types/text.md) columns a `DEFAULT` value.
 
-You can also use DEFAULT ([NEXT VALUE FOR sequence](../../../sql-statements-and-structure/sequences/sequence-functions/next-value-for-sequence_name.md))
+You can also use DEFAULT ([NEXT VALUE FOR sequence](../../../sql-structure/sequences/sequence-functions/next-value-for-sequence_name.md))
 
 ### AUTO\_INCREMENT Column Option
 
@@ -192,12 +192,12 @@ Use [AUTO\_INCREMENT](../../../data-types/auto_increment.md) to create a column 
 can be set automatically from a simple counter. You can only use `AUTO_INCREMENT`\
 on a column with an integer type. The column must be a key, and there can only be\
 one `AUTO_INCREMENT` column in a table. If you insert a row without specifying\
-a value for that column (or if you specify `0`, `NULL`, or [DEFAULT](../../built-in-functions/secondary-functions/information-functions/default.md)\
+a value for that column (or if you specify `0`, `NULL`, or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md)\
 as the value), the actual value will be taken from the counter, with each insertion\
 incrementing the counter by one. You can still insert a value explicitly. If you\
 insert a value that is greater than the current counter value, the counter is\
 set based on the new value. An `AUTO_INCREMENT` column is implicitly `NOT NULL`.\
-Use [LAST\_INSERT\_ID](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) to get the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value\
+Use [LAST\_INSERT\_ID](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) to get the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value\
 most recently used by an [INSERT](../../data-manipulation/inserting-loading-data/insert.md) statement.
 
 ### ZEROFILL Column Option
@@ -235,7 +235,7 @@ CREATE TABLE t1(g GEOMETRY(9,4) REF_SYSTEM_ID=101);
 
 ### Generated Columns
 
-A generated column is a column in a table that cannot explicitly be set to a specific value in a [DML query](../../data-manipulation/). Instead, its value is automatically generated based on an expression. This expression might generate the value based on the values of other columns in the table, or it might generate the value by calling [built-in functions](../../built-in-functions/) or [user-defined functions (UDFs)](../../../../server-usage/user-defined-functions/).
+A generated column is a column in a table that cannot explicitly be set to a specific value in a [DML query](../../data-manipulation/). Instead, its value is automatically generated based on an expression. This expression might generate the value based on the values of other columns in the table, or it might generate the value by calling [built-in functions](../../../sql-functions/) or [user-defined functions (UDFs)](../../../../server-usage/user-defined-functions/).
 
 There are two types of generated columns:
 
@@ -256,11 +256,11 @@ Columns may be made invisible, and hidden in certain contexts. See [Invisible Co
 
 ### WITH SYSTEM VERSIONING Column Option
 
-Columns may be explicitly marked as included from system versioning. See [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) for details.
+Columns may be explicitly marked as included from system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md) for details.
 
 ### WITHOUT SYSTEM VERSIONING Column Option
 
-Columns may be explicitly marked as excluded from system versioning. See [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) for details.
+Columns may be explicitly marked as excluded from system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md) for details.
 
 ## Index Definitions
 
@@ -357,7 +357,7 @@ See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/o
 
 Use the `SPATIAL` keyword to create geometric indexes.
 
-See [SPATIAL INDEX](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) for more information.
+See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### Index Options
 
@@ -377,9 +377,9 @@ Different index types are optimized for different kind of operations:
 
 * `BTREE` is the default type, and normally is the best choice. It is supported by all storage engines. It can be used to compare a column's value with a value using the =, >, >=, <, <=, `BETWEEN`, and `LIKE` operators. `BTREE` can also be used to find `NULL` values. Searches against an index prefix are possible.
 * `HASH` is only supported by the MEMORY storage engine. `HASH` indexes can only be used for =, <=, and >= comparisons. It can not be used for the `ORDER BY` clause. Searches against an index prefix are not possible.
-* `RTREE` is the default for [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) indexes, but if the storage engine does not support it `BTREE` can be used.
+* `RTREE` is the default for [SPATIAL](../../../sql-structure/geometry/spatial-index.md) indexes, but if the storage engine does not support it `BTREE` can be used.
 
-Index columns names are listed between parenthesis. After each column, a prefix length can be specified. If no length is specified, the whole column will be indexed. `ASC` and `DESC` can be specified. Prior to [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), this was only for compatibility with other DBMSs, but had no meaning in MariaDB. From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), individual columns in the index can now be explicitly sorted in ascending or descending order. This can be useful for optimizing certain ORDER BY cases ([MDEV-13756](https://jira.mariadb.org/browse/MDEV-13756), [MDEV-26938](https://jira.mariadb.org/browse/MDEV-26938), [MDEV-26939](https://jira.mariadb.org/browse/MDEV-26939), [MDEV-26996](https://jira.mariadb.org/browse/MDEV-26996)). From [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes), not only ascending, but also descending, indexes can now be used to optimize [MIN()](../../built-in-functions/aggregate-functions/min.md) and [MAX()](../../built-in-functions/aggregate-functions/max.md) ([MDEV-27576](https://jira.mariadb.org/browse/MDEV-27576)).
+Index columns names are listed between parenthesis. After each column, a prefix length can be specified. If no length is specified, the whole column will be indexed. `ASC` and `DESC` can be specified. Prior to [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), this was only for compatibility with other DBMSs, but had no meaning in MariaDB. From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108), individual columns in the index can now be explicitly sorted in ascending or descending order. This can be useful for optimizing certain ORDER BY cases ([MDEV-13756](https://jira.mariadb.org/browse/MDEV-13756), [MDEV-26938](https://jira.mariadb.org/browse/MDEV-26938), [MDEV-26939](https://jira.mariadb.org/browse/MDEV-26939), [MDEV-26996](https://jira.mariadb.org/browse/MDEV-26996)). From [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes), not only ascending, but also descending, indexes can now be used to optimize [MIN()](../../../sql-functions/aggregate-functions/min.md) and [MAX()](../../../sql-functions/aggregate-functions/max.md) ([MDEV-27576](https://jira.mariadb.org/browse/MDEV-27576)).
 
 The maximum number of parts in an index is 32.
 
@@ -416,7 +416,7 @@ period_definition:
     PERIOD FOR [time_period_name | SYSTEM_TIME] (start_column_name, end_column_name)
 ```
 
-MariaDB supports [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md), [Application-time-period tables](../../../sql-statements-and-structure/temporal-tables/application-time-periods.md) or [Bitemporal Tables](../../../sql-statements-and-structure/temporal-tables/bitemporal-tables.md).
+MariaDB supports [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md), [Application-time-period tables](../../../sql-structure/temporal-tables/application-time-periods.md) or [Bitemporal Tables](../../../sql-structure/temporal-tables/bitemporal-tables.md).
 
 ## Constraint Expressions
 
@@ -603,7 +603,7 @@ Other storage engines do not support the `ROW_FORMAT` table option.
 
 ### SEQUENCE
 
-If the table is a [sequence](../../../sql-statements-and-structure/sequences/), then it will have the `SEQUENCE` set to `1`.
+If the table is a [sequence](../../../sql-structure/sequences/), then it will have the `SEQUENCE` set to `1`.
 
 ### STATS\_AUTO\_RECALC
 
@@ -628,7 +628,7 @@ If set to `1`, statistics will be recalculated when more than 10% of the data ha
 
 ### WITH SYSTEM VERSIONING
 
-`WITH SYSTEM VERSIONING` is used for creating [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md).
+`WITH SYSTEM VERSIONING` is used for creating [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ## Partitions
 
@@ -650,7 +650,7 @@ CREATE TABLE t1 (a INT, b CHAR(5), c DATETIME)
 * `[LINEAR] [KEY](../../../../../server-management/partitioning-tables/partitioning-types/key-partitioning-type.md)` is similar to [HASH](../../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md), but the index has an even distribution of data. Also, the expression can only be a column or a list of columns. `VALUES LESS THAN` and `VALUES IN` clauses can not be used with [KEY](../../../../server-management/partitioning-tables/partitioning-types/key-partitioning-type.md).
 * [RANGE](../../../../server-management/partitioning-tables/partitioning-types/range-partitioning-type.md) partitions the rows using on a range of values, using the `VALUES LESS THAN` operator. `VALUES IN` is not allowed with `RANGE`. The partition function can be any valid SQL expression which returns a single value.
 * [LIST](../../../../server-management/partitioning-tables/partitioning-types/list-partitioning-type.md) assigns partitions based on a table's column with a restricted set of possible values. It is similar to `RANGE`, but `VALUES IN` must be used for at least 1 columns, and `VALUES LESS THAN` is disallowed.
-* `SYSTEM_TIME` partitioning is used for [System-versioned tables](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) to store historical data separately from current data.
+* `SYSTEM_TIME` partitioning is used for [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md) to store historical data separately from current data.
 
 Only [HASH](../../../../server-management/partitioning-tables/partitioning-types/hash-partitioning-type.md) and [KEY](../../../../server-management/partitioning-tables/partitioning-types/key-partitioning-type.md) can be used for subpartitions, and they can be `[LINEAR]`.
 
@@ -690,7 +690,7 @@ create or replace table t1 (x int)
 
 ## Sequences
 
-`CREATE TABLE` can also be used to create a [SEQUENCE](../../../sql-statements-and-structure/sequences/). See [CREATE SEQUENCE](../../../sql-statements-and-structure/sequences/create-sequence.md) and [Sequence Overview](../../../sql-statements-and-structure/sequences/sequence-overview.md).
+`CREATE TABLE` can also be used to create a [SEQUENCE](../../../sql-structure/sequences/). See [CREATE SEQUENCE](../../../sql-structure/sequences/create-sequence.md) and [Sequence Overview](../../../sql-structure/sequences/sequence-overview.md).
 
 ## Atomic DDL
 
@@ -728,12 +728,12 @@ CREATE TABLE t1(
 
 ## See Also
 
-* [Identifier Names](../../../sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [ALTER TABLE](../alter/alter-table.md)
 * [DROP TABLE](../drop/drop-table.md)
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
-* [CREATE TABLE with Vectors](../../../sql-statements-and-structure/vectors/create-table-with-vectors.md)
+* [CREATE TABLE with Vectors](../../../sql-structure/vectors/create-table-with-vectors.md)
 * Storage engines can add their own [attributes for columns, indexes and tables](../../../storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * [InnoDB Limitations](https://mariadb.com/kb/en/InnoDB_Limitations)

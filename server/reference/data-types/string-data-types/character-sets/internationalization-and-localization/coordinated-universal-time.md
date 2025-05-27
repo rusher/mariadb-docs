@@ -10,8 +10,8 @@ In general terms it is equivalent to Greenwich Mean Time (GMT), but UTC is used 
 
 ## See Also
 
-* [UTC\_DATE](../../../../sql-statements/built-in-functions/date-time-functions/utc_date.md)
-* [UTC\_TIME](../../../../sql-statements/built-in-functions/date-time-functions/utc_time.md)
-* [UTC\_TIMESTAMP](../../../../sql-statements/built-in-functions/date-time-functions/utc_timestamp.md)
+* [UTC\_DATE](../../../../sql-functions/date-time-functions/utc_date.md)
+* [UTC\_TIME](../../../../sql-functions/date-time-functions/utc_time.md)
+* [UTC\_TIMESTAMP](../../../../sql-functions/date-time-functions/utc_timestamp.md)
 
 CC BY-SA / Gnu FDL

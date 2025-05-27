@@ -25,7 +25,7 @@ USE db2;
 SELECT COUNT(*) FROM mytable;   # selects from db2.mytable
 ```
 
-The [DATABASE()](../built-in-functions/secondary-functions/information-functions/database.md) function ([SCHEMA()](../built-in-functions/secondary-functions/information-functions/schema.md) is a synonym) returns the default database.
+The [DATABASE()](../../sql-functions/secondary-functions/information-functions/database.md) function ([SCHEMA()](../../sql-functions/secondary-functions/information-functions/schema.md) is a synonym) returns the default database.
 
 Another way to set the default database is specifying its name at [mariadb](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command line client startup.
 
@@ -34,7 +34,7 @@ a user with no privileges to a database should not be able to know if a database
 
 ## See Also
 
-* [Identifier Qualifiers](../../sql-statements-and-structure/sql-language-structure/identifier-qualifiers.md)
+* [Identifier Qualifiers](../../sql-structure/sql-language-structure/identifier-qualifiers.md)
 * [USE CATALOG](../../../security/user-account-management/catalogs/use-catalog.md)
 
 GPLv2 fill\_help\_tables.sql

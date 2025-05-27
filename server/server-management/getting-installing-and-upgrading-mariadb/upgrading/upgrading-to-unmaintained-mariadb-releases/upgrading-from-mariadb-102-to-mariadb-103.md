@@ -89,7 +89,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Reserved Words
 
-* New [reserved words](../../../../reference/sql-statements-and-structure/sql-language-structure/reserved-words.md): EXCEPT and INTERSECT. These can no longer be used as [identifiers](../../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) without being quoted.
+* New [reserved words](../../../../reference/sql-structure/sql-language-structure/reserved-words.md): EXCEPT and INTERSECT. These can no longer be used as [identifiers](../../../../reference/sql-structure/sql-language-structure/identifier-names.md) without being quoted.
 
 #### SQL\_MODE=ORACLE
 
@@ -97,7 +97,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Functions
 
-* As a result of implementing Table Value Constructors, the [VALUES function](../../../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) has been renamed to VALUE().
+* As a result of implementing Table Value Constructors, the [VALUES function](../../../../reference/sql-functions/secondary-functions/miscellaneous-functions/values-value.md) has been renamed to VALUE().
 * Functions that used to only return 64-bit now can return 32-bit results ([MDEV-12619](https://jira.mariadb.org/browse/MDEV-12619)). This could cause incompatibilities with strongly-typed clients.
 
 #### mysqldump
@@ -110,14 +110,14 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Privileges
 
-* If a user has the [SUPER privilege](../../../../reference/sql-statements/account-management-sql-commands/grant.md) but not the `DELETE HISTORY` privilege, running [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) will grant `DELETE HISTORY` as well.
+* If a user has the [SUPER privilege](../../../../reference/sql-statements/account-management-sql-statements/grant.md) but not the `DELETE HISTORY` privilege, running [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) will grant `DELETE HISTORY` as well.
 
 ### Major New Features To Consider
 
 You might consider using the following major new features in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
 
-* [System-versioned tables](../../../../reference/sql-statements-and-structure/temporal-tables/system-versioned-tables.md)
-* [Sequences](../../../../reference/sql-statements-and-structure/sequences/)
+* [System-versioned tables](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md)
+* [Sequences](../../../../reference/sql-structure/sequences/)
 * See also [System Variables Added in MariaDB 10.3](../../../../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-3.md).
 
 ### See Also

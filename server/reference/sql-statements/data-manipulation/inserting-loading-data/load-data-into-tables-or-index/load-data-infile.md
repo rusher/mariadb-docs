@@ -31,7 +31,7 @@ Files are written to disk using the [SELECT INTO OUTFILE](../../selecting-data/s
 
 Executing this statement activates `INSERT` [triggers](../../../../../server-usage/triggers-events/triggers/).
 
-One must have the [FILE](../../../account-management-sql-commands/grant.md#file) privilege to be able to execute LOAD DATA INFILE. This is to ensure normal users cannot read system files. LOAD DATA LOCAL INFILE does not have this requirement.
+One must have the [FILE](../../../account-management-sql-statements/grant.md#file) privilege to be able to execute LOAD DATA INFILE. This is to ensure normal users cannot read system files. LOAD DATA LOCAL INFILE does not have this requirement.
 
 If the [secure\_file\_priv](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) system variable is set (by default it is not), the loaded file must be present in the specified directory.
 

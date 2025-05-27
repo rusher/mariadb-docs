@@ -84,7 +84,7 @@ Create Table: CREATE TABLE `t1` (
 
 * [AUTO\_INCREMENT](../../data-types/auto_increment.md)
 * [AUTO\_INCREMENT FAQ](../../data-types/auto_increment-faq.md)
-* [LAST\_INSERT\_ID](../../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
-* [Sequences](../../sql-statements-and-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [LAST\_INSERT\_ID](../../sql-functions/secondary-functions/information-functions/last_insert_id.md)
+* [Sequences](../../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 CC BY-SA / Gnu FDL

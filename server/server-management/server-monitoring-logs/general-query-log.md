@@ -127,7 +127,7 @@ See [Writing logs into tables](writing-logs-into-tables.md) for more information
 
 ## Disabling the General Query Log for a Session
 
-A user with the [SUPER](../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege can disable logging to the general query log for a connection by setting the [SQL\_LOG\_OFF](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) system variable to `1`. For example:
+A user with the [SUPER](../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege can disable logging to the general query log for a connection by setting the [SQL\_LOG\_OFF](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) system variable to `1`. For example:
 
 ```
 SET SESSION SQL_LOG_OFF=1;

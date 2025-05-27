@@ -9,7 +9,7 @@ DROP PROCEDURE [IF EXISTS] sp_name
 ## Description
 
 This statement is used to drop a [stored procedure](./). That is, the\
-specified routine is removed from the server along with all privileges specific to the [procedure](../../../reference/sql-statements/account-management-sql-commands/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the `[automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)` server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
+specified routine is removed from the server along with all privileges specific to the [procedure](../../../reference/sql-statements/account-management-sql-statements/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the `[automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)` server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
 The `IF EXISTS` clause is a MySQL/MariaDB extension. It\
 prevents an error from occurring if the procedure or function does not exist. A`NOTE` is produced that can be viewed with `[SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)`.

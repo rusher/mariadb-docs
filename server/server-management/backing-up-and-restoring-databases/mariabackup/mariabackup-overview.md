@@ -190,7 +190,7 @@ Mariabackup reads client options from the following [option groups](../../gettin
 
 ### Authentication and Privileges
 
-Mariabackup needs to authenticate with the database server when it performs a backup operation (i.e. when the `[--backup](mariabackup-options.md#-backup)` option is specified). For most use cases, the user account that performs the backup needs to have the following [global privileges](../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) on the database server.
+Mariabackup needs to authenticate with the database server when it performs a backup operation (i.e. when the `[--backup](mariabackup-options.md#-backup)` option is specified). For most use cases, the user account that performs the backup needs to have the following [global privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) on the database server.
 
 In 10.5 and later the required privileges are:
 
@@ -206,7 +206,7 @@ CREATE USER 'mariabackup'@'localhost' IDENTIFIED BY 'mypassword';
 GRANT RELOAD, PROCESS, LOCK TABLES, REPLICATION CLIENT ON *.* TO 'mariabackup'@'localhost';
 ```
 
-If your database server is also using the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine, then the user account that performs the backup will also need the `SUPER` [global privilege](../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges). This is because Mariabackup creates a checkpoint of this data by setting the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable, which requires this privilege. See [MDEV-20577](https://jira.mariadb.org/browse/MDEV-20577) for more information.
+If your database server is also using the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine, then the user account that performs the backup will also need the `SUPER` [global privilege](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges). This is because Mariabackup creates a checkpoint of this data by setting the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable, which requires this privilege. See [MDEV-20577](https://jira.mariadb.org/browse/MDEV-20577) for more information.
 
 `CONNECTION ADMIN` is also required where `[-kill-long-queries-timeout](mariabackup-options.md#-kill-long-queries-timeout)` is greater than 0, and `[--no-lock](mariabackup-options.md#-no-lock)` isn't applied in order to `[KILL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill.md)` queries. Prior to 10.5 a `SUPER` privilege is required instead of `CONNECTION ADMIN`.
 

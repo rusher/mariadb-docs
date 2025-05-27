@@ -102,7 +102,7 @@ void x_remove(UDF_INIT* initid, UDF_ARGS* args,
                char* is_null, char *error );
 ```
 
-It adds more efficient support of aggregate UDFs as [window functions](../../reference/sql-statements/built-in-functions/special-functions/window-functions/). _x\_remove()_ should "subtract" the row (reverse _x\_add()_). In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) aggregate UDFs will work as WINDOW functions without _x\_remove()_ but it will not be so efficient.
+It adds more efficient support of aggregate UDFs as [window functions](../../reference/sql-functions/special-functions/window-functions/). _x\_remove()_ should "subtract" the row (reverse _x\_add()_). In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) aggregate UDFs will work as WINDOW functions without _x\_remove()_ but it will not be so efficient.
 
 If _x\_remove()_ supported (defined) detected automatically.
 

@@ -259,7 +259,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 #### Removing System Versioning from a Column
 
-In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order for this to work, the [system\_versioning\_alter\_history](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
+In [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes) and later, InnoDB supports removing [system versioning](../../../sql-structure/temporal-tables/system-versioned-tables.md) from a column with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. In order for this to work, the [system\_versioning\_alter\_history](../../../sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) system variable must be set to `KEEP`. See [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) for more information.
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
@@ -602,11 +602,11 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: InnoDB presently
 
 #### Adding a Spatial Index
 
-InnoDB supports adding a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
+InnoDB supports adding a [SPATIAL](../../../sql-structure/geometry/spatial-index.md) index to a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
 However, there are some limitations, such as:
 
-* If a table has a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
+* If a table has a [SPATIAL](../../../sql-structure/geometry/spatial-index.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
 
 This operation supports a read-only locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -888,7 +888,7 @@ This applies to [PAGE\_COMPRESSED=...](../../../sql-statements/data-definition/c
 
 ### `ALTER TABLE ... DROP SYSTEM VERSIONING`
 
-InnoDB supports dropping [system versioning](../../../sql-statements-and-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
+InnoDB supports dropping [system versioning](../../../sql-structure/temporal-tables/system-versioned-tables.md) from a table with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`.
 
 This operation supports the read-only locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `SHARED`. When this strategy is used, read-only concurrent DML is permitted.
 
@@ -1092,7 +1092,7 @@ This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements/data-definit
 
 ### Limitations Related to Spatial Indexes
 
-* If a table has a [SPATIAL](../../../sql-statements-and-structure/geographic-geometric-features/spatial-index.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
+* If a table has a [SPATIAL](../../../sql-structure/geometry/spatial-index.md) index, then it cannot be rebuilt by any [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operations when the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause is set to `NONE`.
 
 ### Limitations Related to Generated (Virtual and Persistent/Stored) Columns
 

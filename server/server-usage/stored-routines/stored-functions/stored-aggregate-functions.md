@@ -1,6 +1,6 @@
 # Stored Aggregate Functions
 
-[Aggregate functions](../../../reference/sql-statements/built-in-functions/aggregate-functions/) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
+[Aggregate functions](../../../reference/sql-functions/aggregate-functions/) are functions that are computed over a sequence of rows and return one result for the sequence of rows.
 
 Creating a custom aggregate function is done using the [CREATE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md) statement with two main differences:
 

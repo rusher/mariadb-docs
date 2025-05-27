@@ -9,7 +9,7 @@ The `WSREP_MEMBERSHIP` plugin creates the [WSREP\_MEMBERSHIP](../../sql-statemen
 
 The `WSREP_STATUS` plugin creates the [WSREP\_STATUS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. The plugin also adds the [SHOW WSREP\_STATUS](../../sql-statements/administrative-sql-statements/show/show-wsrep_status.md) statement.
 
-These tables and statements provide information about [Galera](../../../../kb/en/galera/). Only users with the [SUPER](../../sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege can access this information.
+These tables and statements provide information about [Galera](../../../../kb/en/galera/). Only users with the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege can access this information.
 
 ## Installing the Plugin
 

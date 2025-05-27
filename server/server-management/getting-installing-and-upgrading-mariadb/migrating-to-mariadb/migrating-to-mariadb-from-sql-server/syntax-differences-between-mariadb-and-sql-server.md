@@ -99,7 +99,7 @@ DELIMITER ;
 
 ### Names
 
-In MariaDB, most [names](../../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md) have a maximum length of 64 characters. When migrating an SQL Server database to MariaDB, check if some names exceed this limit (SQL Server maximum length is 128).
+In MariaDB, most [names](../../../../reference/sql-structure/sql-language-structure/identifier-names.md) have a maximum length of 64 characters. When migrating an SQL Server database to MariaDB, check if some names exceed this limit (SQL Server maximum length is 128).
 
 By default, MariaDB names are case-sensitive if the operating system has case-sensitive file names (Linux), and case-insensitive if the operating system is case-insensitive (Windows). SQL Server is case-insensitive by default on all operating systems.
 
@@ -125,15 +125,15 @@ The default semantics of [NULL](../../../../reference/data-types/null-values.md)
 
 However, SQL Server allows one to change it globally with [SET ANSI\_NULLS OFF](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql), or at database level with [ALTER DATABASE](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql).
 
-There is no way to achieve exactly the same result in MariaDB. To perform NULL-safe comparisons in MariaDB, one should replace the [=](../../../../reference/sql-statements-and-structure/operators/comparison-operators/equal.md) operator with the [<=>](../../../../reference/sql-statements-and-structure/operators/comparison-operators/null-safe-equal.md) operator.
+There is no way to achieve exactly the same result in MariaDB. To perform NULL-safe comparisons in MariaDB, one should replace the [=](../../../../reference/sql-structure/operators/comparison-operators/equal.md) operator with the [<=>](../../../../reference/sql-structure/operators/comparison-operators/null-safe-equal.md) operator.
 
 Also, note that MariaDB doesn't support the `UNKNOWN` pseudo-value. An expression like `NULL OR 0` returns `NULL` in MariaDB.
 
 ### LIKE
 
-In MariaDB, [LIKE](../../../../reference/sql-statements/built-in-functions/string-functions/like.md) expressions only have two characters with special meanings: `%` and `_`. These two characters have the same meanings they have in SQL Server.
+In MariaDB, [LIKE](../../../../reference/sql-functions/string-functions/like.md) expressions only have two characters with special meanings: `%` and `_`. These two characters have the same meanings they have in SQL Server.
 
-The additional characters recognized by SQL Server (`[`, `]` and `^`) are part of regular expressions. MariaDB supports the [REGEXP](../../../../reference/sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md) operator, that supports the full regular expressions syntax.
+The additional characters recognized by SQL Server (`[`, `]` and `^`) are part of regular expressions. MariaDB supports the [REGEXP](../../../../reference/sql-functions/string-functions/regular-expressions-functions/regexp.md) operator, that supports the full regular expressions syntax.
 
 ## Data Definition Language
 

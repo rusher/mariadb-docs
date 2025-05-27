@@ -2,12 +2,12 @@
 
 When a user attempts to log in, the authentication plugin controls how MariaDB Server determines whether the connection is from a legitimate user.
 
-When creating or altering a user account with the [GRANT](../../sql-statements/account-management-sql-commands/grant.md), [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md) or [ALTER USER](../../sql-statements/account-management-sql-commands/alter-user.md) statements, you can specify the authentication plugin you want the user account to use by providing the `IDENTIFIED VIA` clause. By default, when you create a user account without specifying an authentication plugin, MariaDB uses the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) plugin.
+When creating or altering a user account with the [GRANT](../../sql-statements/account-management-sql-statements/grant.md), [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md) or [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statements, you can specify the authentication plugin you want the user account to use by providing the `IDENTIFIED VIA` clause. By default, when you create a user account without specifying an authentication plugin, MariaDB uses the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) plugin.
 
 #### Note
 
 * You can specify multiple authentication plugins for each user account.
-* The `root@localhost` user created by [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) is created with the ability to use two authentication plugins. First, it is configured to try to use the [unix\_socket](authentication-plugin-unix-socket.md) authentication plugin. This allows the the `root@localhost` user to login without a password via the local Unix socket file defined by the [socket](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `root` user account. Second, if authentication fails with the [unix\_socket](authentication-plugin-unix-socket.md) authentication plugin, then it is configured to try to use the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin. However, an invalid password is initially set, so in order to authenticate this way, a password must be set with [SET PASSWORD](../../sql-statements/account-management-sql-commands/set-password.md).
+* The `root@localhost` user created by [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) is created with the ability to use two authentication plugins. First, it is configured to try to use the [unix\_socket](authentication-plugin-unix-socket.md) authentication plugin. This allows the the `root@localhost` user to login without a password via the local Unix socket file defined by the [socket](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#socket) system variable, as long as the login is attempted from a process owned by the operating system `root` user account. Second, if authentication fails with the [unix\_socket](authentication-plugin-unix-socket.md) authentication plugin, then it is configured to try to use the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin. However, an invalid password is initially set, so in order to authenticate this way, a password must be set with [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md).
 
 ## Supported Authentication Plugins
 
@@ -84,31 +84,31 @@ mysql_optionsv(mysql, MYSQL_SECURE_AUTH, 1);
 
 [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) supports the following installation options related to authentication plugins:
 
-| Installation Option                       | Description                                                                                                                                                                                                                                                                                                                     |
-| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Installation Option                       | Description                                                                                                                                                                                                                                                                                                                     |
-| --auth-root-authentication-method={normal | socket}                                                                                                                                                                                                                                                                                                                         |
-| --auth-root-socket-user=USER              | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../../sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user. |
+| Installation Option                       | Description                                                                                                                                                                                                                                                                                                                       |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Installation Option                       | Description                                                                                                                                                                                                                                                                                                                       |
+| --auth-root-authentication-method={normal | socket}                                                                                                                                                                                                                                                                                                                           |
+| --auth-root-socket-user=USER              | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../../sql-statements/account-management-sql-statements/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user. |
 
 ## Extended SQL Syntax
 
-MariaDB has extended the SQL standard [GRANT](../../sql-statements/account-management-sql-commands/grant.md), [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md), and [ALTER USER](../../sql-statements/account-management-sql-commands/alter-user.md) statements, so that they support specifying different authentication plugins for specific users. An authentication plugin can be specified with these statements by providing the `IDENTIFIED VIA` clause.
+MariaDB has extended the SQL standard [GRANT](../../sql-statements/account-management-sql-statements/grant.md), [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md), and [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statements, so that they support specifying different authentication plugins for specific users. An authentication plugin can be specified with these statements by providing the `IDENTIFIED VIA` clause.
 
-For example, the [GRANT](../../sql-statements/account-management-sql-commands/grant.md) syntax is:
+For example, the [GRANT](../../sql-statements/account-management-sql-statements/grant.md) syntax is:
 
 ```
 GRANT <privileges> ON <level> TO <user> 
    IDENTIFIED VIA <plugin> [ USING <string> ]
 ```
 
-And the [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md) syntax is:
+And the [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md) syntax is:
 
 ```
 CREATE USER <user> 
    IDENTIFIED VIA <plugin> [ USING <string> ]
 ```
 
-And the [ALTER USER](../../sql-statements/account-management-sql-commands/alter-user.md) syntax is:
+And the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) syntax is:
 
 ```
 ALTER USER <user> 
@@ -205,7 +205,7 @@ If the client uses either the `libmysqlclient` or [MariaDB Connector/C](https://
 
 The [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin is currently the default authentication plugin in all versions of MariaDB if the [old\_passwords](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) system variable is set to `0`, which is the default.
 
-On a system with the [old\_passwords](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) system variable set to `0`, this means that if you create a user account with either the [GRANT](../../sql-statements/account-management-sql-commands/grant.md) or [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md)`statements, and if you do not specify an authentication plugin with the`IDENTIFIED VIA`clause, then MariaDB will use the [mysql_native_password](authentication-plugin-mysql_native_password.md) authentication plugin for the user account.`
+On a system with the [old\_passwords](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) system variable set to `0`, this means that if you create a user account with either the [GRANT](../../sql-statements/account-management-sql-statements/grant.md) or [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md)`statements, and if you do not specify an authentication plugin with the`IDENTIFIED VIA`clause, then MariaDB will use the [mysql_native_password](authentication-plugin-mysql_native_password.md) authentication plugin for the user account.`
 
 For example, this user account will use the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin:
 
@@ -287,11 +287,11 @@ This means that, if you know what client authentication plugin your user account
 
 #### `mysql_native_password`
 
-The [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin uses the password hashing algorithm introduced in MySQL 4.1, which is also used by the [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)`function when [old_passwords=0](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) is set. This hashing algorithm is based on [SHA-1](https://en.wikipedia.org/wiki/SHA-1).`
+The [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin uses the password hashing algorithm introduced in MySQL 4.1, which is also used by the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)`function when [old_passwords=0](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) is set. This hashing algorithm is based on [SHA-1](https://en.wikipedia.org/wiki/SHA-1).`
 
 #### `mysql_old_password`
 
-The [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin uses the pre-MySQL 4.1 password hashing algorithm, which is also used by the [OLD\_PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md) function and by the [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function when [old\_passwords=1](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) is set.
+The [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin uses the pre-MySQL 4.1 password hashing algorithm, which is also used by the [OLD\_PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/old_password.md) function and by the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function when [old\_passwords=1](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords) is set.
 
 #### `ed25519`
 
@@ -424,9 +424,9 @@ Providing this callback is particularly important on Windows, because Windows GU
 
 ## See Also
 
-* [GRANT](../../sql-statements/account-management-sql-commands/grant.md)
-* [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md)
-* [ALTER USER](../../sql-statements/account-management-sql-commands/alter-user.md)
+* [GRANT](../../sql-statements/account-management-sql-statements/grant.md)
+* [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md)
+* [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md)
 * [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Who are you? The history of MySQL and MariaDB authentication protocols from 1997 to 2017](https://mariadb.org/history-of-mysql-mariadb-authentication-protocols/)
 * [MySQL 5.6 Reference Manual: Pluggable Authentication](https://dev.mysql.com/doc/refman/5.6/en/pluggable-authentication.html)

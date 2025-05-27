@@ -66,7 +66,7 @@ All these statements cause an implicit commit before execution. This means that,
 
 If you are not sure whether a statement has implicitly committed the current transaction, you can query the [in\_transaction](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) server system variable.
 
-Note that when a transaction starts (not in autocommit mode), all locks acquired with [LOCK TABLES](lock-tables.md) are released. And acquiring such locks always commits the current transaction. To preserve the data integrity between transactional and non-transactional tables, the [GET\_LOCK()](../built-in-functions/secondary-functions/miscellaneous-functions/get_lock.md) function can be used.
+Note that when a transaction starts (not in autocommit mode), all locks acquired with [LOCK TABLES](lock-tables.md) are released. And acquiring such locks always commits the current transaction. To preserve the data integrity between transactional and non-transactional tables, the [GET\_LOCK()](../../sql-functions/secondary-functions/miscellaneous-functions/get_lock.md) function can be used.
 
 ## Exceptions
 

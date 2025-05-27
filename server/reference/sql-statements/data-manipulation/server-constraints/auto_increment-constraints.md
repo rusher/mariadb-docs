@@ -10,7 +10,7 @@ MariaDB Enterprise Server supports `AUTO_INCREMENT` constraints:
 * Generated values for auto-increment columns are guaranteed to be unique and monotonically increasing
 * Auto-increment columns provide compatibility with schemas designed for MariaDB Enterprise Server and MySQL
 
-Alternatively, MariaDB Enterprise Server can use [sequences](../../../sql-statements-and-structure/sequences/sequence-overview.md) as the primary key instead of columns with `AUTO_INCREMENT` constraints. Sequences are compliant with the SQL standard, while `AUTO_INCREMENT` constraints are not, so sequences are the better option for applications that require standard-compliant features.
+Alternatively, MariaDB Enterprise Server can use [sequences](../../../sql-structure/sequences/sequence-overview.md) as the primary key instead of columns with `AUTO_INCREMENT` constraints. Sequences are compliant with the SQL standard, while `AUTO_INCREMENT` constraints are not, so sequences are the better option for applications that require standard-compliant features.
 
 ## Choosing a Data Type for an `AUTO_INCREMENT` Column
 
@@ -230,9 +230,9 @@ AND invoice_date = '2020-05-10 14:25:16';
 
 ## Getting the Last Inserted AUTO\_INCREMENT Value
 
-After InnoDB inserts an automatically generated value into an `AUTO_INCREMENT` column, the application sometimes needs to know what value it inserted. For example, the application may need to use the value to insert a foreign key column in a dependent table. The [LAST\_INSERT\_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function can be used to get the lasted inserted value for an `AUTO_INCREMENT` column without re-reading the row from the table.
+After InnoDB inserts an automatically generated value into an `AUTO_INCREMENT` column, the application sometimes needs to know what value it inserted. For example, the application may need to use the value to insert a foreign key column in a dependent table. The [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function can be used to get the lasted inserted value for an `AUTO_INCREMENT` column without re-reading the row from the table.
 
-Let's insert a row into the table created in the [Creating an InnoDB Table with an AUTO\_INCREMENT Column](auto_increment-constraints.md#creating-an-innodb-table-with-an-auto_increment-column) section and then use the [LAST\_INSERT\_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function:
+Let's insert a row into the table created in the [Creating an InnoDB Table with an AUTO\_INCREMENT Column](auto_increment-constraints.md#creating-an-innodb-table-with-an-auto_increment-column) section and then use the [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function:
 
 1. Connect to the server using MariaDB Client:
 
@@ -249,7 +249,7 @@ VALUES
    (1, 4, '2020-05-10 12:37:22', 104.19, 'CREDIT_CARD');
 ```
 
-3. Execute the [LAST\_INSERT\_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function to get the `AUTO_INCREMENT` value for the new row:
+3. Execute the [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function to get the `AUTO_INCREMENT` value for the new row:
 
 ```
 SELECT LAST_INSERT_ID();
@@ -357,7 +357,7 @@ VALUES
    (1, 5, '2020-05-10 12:43:19', 1105.98, 'CREDIT_CARD');
 ```
 
-4. Execute the [LAST\_INSERT\_ID()](../../built-in-functions/secondary-functions/information-functions/last_insert_id.md) function to get the `AUTO_INCREMENT` value for the new row:
+4. Execute the [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function to get the `AUTO_INCREMENT` value for the new row:
 
 ```
 SELECT LAST_INSERT_ID();

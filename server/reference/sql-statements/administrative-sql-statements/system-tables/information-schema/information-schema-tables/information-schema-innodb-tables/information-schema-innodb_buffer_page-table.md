@@ -4,7 +4,7 @@ The [Information Schema](../../) `INNODB_BUFFER_PAGE` table contains information
 
 Querying this table can have a noticeable performance impact on a production server.
 
-The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
 It has the following columns:
 

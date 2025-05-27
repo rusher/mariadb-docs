@@ -4,7 +4,7 @@
 
 They function very similarly to the Windows Task Scheduler or Unix cron jobs.
 
-Creating, modifying or deleting events requires the [EVENT privilege](../../../reference/sql-statements/account-management-sql-commands/grant.md#database-privileges).
+Creating, modifying or deleting events requires the [EVENT privilege](../../../reference/sql-statements/account-management-sql-statements/grant.md#database-privileges).
 
 ## Creating Events
 

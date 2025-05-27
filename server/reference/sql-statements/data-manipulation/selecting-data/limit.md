@@ -27,7 +27,7 @@ Until [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-co
 
 ### GROUP\_CONCAT
 
-Starting from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), it is possible to use `LIMIT` with [GROUP\_CONCAT()](../../built-in-functions/aggregate-functions/group_concat.md).
+Starting from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), it is possible to use `LIMIT` with [GROUP\_CONCAT()](../../../sql-functions/aggregate-functions/group_concat.md).
 
 ## Examples
 
@@ -129,7 +129,7 @@ SELECT * FROM store;
 +------------+------+
 ```
 
-From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), `LIMIT` can be used with [GROUP\_CONCAT](../../built-in-functions/aggregate-functions/group_concat.md), so, for example, given the following table:
+From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), `LIMIT` can be used with [GROUP\_CONCAT](../../../sql-functions/aggregate-functions/group_concat.md), so, for example, given the following table:
 
 ```
 CREATE TABLE d (dd DATE, cc INT);
@@ -164,7 +164,7 @@ SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
 ## See Also
 
 * [OFFSET ... FETCH](select-offset-fetch.md) Like limit, but also support `WITH TIES`
-* [ROWNUM() function](../../built-in-functions/secondary-functions/information-functions/rownum.md)
+* [ROWNUM() function](../../../sql-functions/secondary-functions/information-functions/rownum.md)
 * [SELECT](select.md)
 * [UPDATE](../changing-deleting-data/update.md)
 * [DELETE](../changing-deleting-data/delete.md)

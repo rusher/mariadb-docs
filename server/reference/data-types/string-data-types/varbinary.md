@@ -61,7 +61,7 @@ SELECT * FROM varbins ORDER BY a;
 +------+
 ```
 
-Using [CAST](../../sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
+Using [CAST](../../sql-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
 ```
 SELECT * FROM varbins ORDER BY CAST(a AS CHAR);

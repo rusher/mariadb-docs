@@ -48,7 +48,7 @@ routine creator. See also [Stored Routine Privileges](../stored-functions/stored
 
 The `DEFINER` and SQL SECURITY clauses specify the security context to\
 be used when checking access privileges at routine execution time, as\
-described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../reference/sql-statements/account-management-sql-commands/grant.md#set-user) privilege.
+described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege.
 
 If the routine name is the same as the name of a built-in SQL\
 function, you must use a space between the name and the following\
@@ -68,7 +68,7 @@ used. Parameter names are not case sensitive.
 Each parameter can be declared to use any valid data type, except that\
 the COLLATE attribute cannot be used.
 
-For valid identifiers to use as procedure names, see [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as procedure names, see [Identifier Names](../../../reference/sql-structure/sql-language-structure/identifier-names.md).
 
 ### Things to be Aware of With CREATE OR REPLACE
 
@@ -229,7 +229,7 @@ Query OK, 0 rows affected (0.03 sec)
 
 ## See Also
 
-* [Identifier Names](../../../reference/sql-statements-and-structure/sql-language-structure/identifier-names.md)
+* [Identifier Names](../../../reference/sql-structure/sql-language-structure/identifier-names.md)
 * [Stored Procedure Overview](stored-procedure-overview.md)
 * [ALTER PROCEDURE](alter-procedure.md)
 * [DROP PROCEDURE](drop-procedure.md)

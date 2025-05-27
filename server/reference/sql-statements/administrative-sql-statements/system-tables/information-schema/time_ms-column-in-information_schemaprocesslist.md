@@ -3,7 +3,7 @@
 In MariaDB, an extra column `TIME_MS` has been added to the[INFORMATION\_SCHEMA.PROCESSLIST](information-schema-tables/information-schema-processlist-table.md) table. This column shows the same information as the column '`TIME`', but in units of\
 milliseconds with microsecond precision (the unit and precision of the`TIME` column is one second).
 
-For details about microseconds support in MariaDB, see [microseconds in MariaDB](../../../built-in-functions/date-time-functions/microseconds-in-mariadb.md).
+For details about microseconds support in MariaDB, see [microseconds in MariaDB](../../../../sql-functions/date-time-functions/microseconds-in-mariadb.md).
 
 The value displayed in the `TIME` and`TIME_MS` columns is the period of time that the given\
 thread has been in its current state. Thus it can be used to check for example\

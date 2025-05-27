@@ -36,13 +36,13 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ## Creating Users
 
-You can create a user account by executing the [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md) statement and providing the [IDENTIFIED VIA](../../sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause followied by the the name of the plugin, which is `ed25519`, and providing the the `USING` clause followed by the [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function with the plain-text password as an argument. For example:
+You can create a user account by executing the [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md) statement and providing the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause followied by the the name of the plugin, which is `ed25519`, and providing the the `USING` clause followed by the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function with the plain-text password as an argument. For example:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('secret');
 ```
 
-If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements/account-management-sql-commands/grant.md). For example:
+If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements/account-management-sql-statements/grant.md). For example:
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('secret');
@@ -50,7 +50,7 @@ GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING PASSWORD(
 
 <>
 
-The [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements/account-management-sql-commands/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
+The [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
 
 ```
 CREATE FUNCTION ed25519_password RETURNS STRING SONAME "auth_ed25519.so";
@@ -70,14 +70,14 @@ SELECT ed25519_password("secret");
 Now you can use it to create the user account using the new password hash.\
 As with any password, you should always use a complex password that no one can guess. If not, if anyone gets access to the stored passwords in the mysql.user table, they could use rainbow tables to figure out the original password.
 
-To create a user account via [CREATE USER](../../sql-statements/account-management-sql-commands/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause while providing the password hash as the `USING` clause. For example:
+To create a user account via [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause while providing the password hash as the `USING` clause. For example:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA ed25519 
   USING 'ZIgUREUg5PVgQ6LskhXmO+eZLS0nC8be6HPjYWR4YJY';
 ```
 
-If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements/account-management-sql-commands/grant.md). For example:
+If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements/account-management-sql-statements/grant.md). For example:
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 
@@ -90,19 +90,19 @@ Note that users require a password in order to be able to connect. It is possibl
 
 ## Changing User Passwords
 
-You can change a user account's password by executing the [SET PASSWORD](../../sql-statements/account-management-sql-commands/set-password.md) statement followed by the [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and providing the plain-text password as an argument. For example:
+You can change a user account's password by executing the [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement followed by the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and providing the plain-text password as an argument. For example:
 
 ```
 SET PASSWORD =  PASSWORD('new_secret')
 ```
 
-You can also change the user account's password with the [ALTER USER](../../sql-statements/account-management-sql-commands/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-commands/alter-user.md#identified-viawith-authentication_plugin) clause while providing the plain-text password as an argument to the [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function in the `USING` clause. For example:
+You can also change the user account's password with the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-viawith-authentication_plugin) clause while providing the plain-text password as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function in the `USING` clause. For example:
 
 ```
 ALTER USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('new_secret');
 ```
 
-The [PASSWORD()](../../sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements/account-management-sql-commands/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
+The [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
 
 ```
 CREATE FUNCTION ed25519_password RETURNS STRING SONAME "auth_ed25519.so";
@@ -121,7 +121,7 @@ SELECT ed25519_password("secret");
 
 Now you can change the user account's password using the new password hash.
 
-You can change the user account's password with the [ALTER USER](../../sql-statements/account-management-sql-commands/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-commands/alter-user.md#identified-viawith-authentication_plugin) clause while providing the password hash as the `USING` clause. For example:
+You can change the user account's password with the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-viawith-authentication_plugin) clause while providing the password hash as the `USING` clause. For example:
 
 ```
 ALTER USER username@hostname IDENTIFIED VIA ed25519 

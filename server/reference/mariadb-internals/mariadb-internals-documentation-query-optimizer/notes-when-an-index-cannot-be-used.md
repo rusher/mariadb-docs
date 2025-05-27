@@ -68,6 +68,6 @@ As a server variable:
 
 ## See Also
 
-* [Type conversions](../../sql-statements/built-in-functions/string-functions/type-conversion.md)
+* [Type conversions](../../sql-functions/string-functions/type-conversion.md)
 
 CC BY-SA / Gnu FDL
