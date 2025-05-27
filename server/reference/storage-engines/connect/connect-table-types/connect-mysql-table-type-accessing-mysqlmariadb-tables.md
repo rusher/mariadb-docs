@@ -129,7 +129,7 @@ where f.salary > 10000;
 If the _id_ column of the remote table addressed by the _cnc\_tab_ MYSQL table is indexed (which is likely\
 if it is a key) you should also index the _id_ column of the MYSQL _cnc\_tab_ table. If so, using “remote”\
 indexing as does FEDERATED, only the useful rows of the remote table will be retrieved during the\
-join process. However, because these rows are retrieved by separate [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements, this will be\
+join process. However, because these rows are retrieved by separate [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) statements, this will be\
 useful only when retrieving a few rows of a big table.
 
 In particular, you should not specify an index for columns not used for joining and above all DO NOT\
@@ -138,13 +138,13 @@ remote table to retrieve the joined rows one by one.
 
 ## Data Modifying Operations
 
-The CONNECT MYSQL type supports [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) and [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) and a somewhat limited form\
-of [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md). These are described below.
+The CONNECT MYSQL type supports [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) and [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) and a somewhat limited form\
+of [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md). These are described below.
 
-The MYSQL type uses similar methods than the ODBC type to implement the [INSERT](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md),[UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands. Refer to the ODBC chapter for the restrictions\
+The MYSQL type uses similar methods than the ODBC type to implement the [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md),[UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md) commands. Refer to the ODBC chapter for the restrictions\
 concerning them.
 
-For the [UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands, there are fewer restrictions because the\
+For the [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md) commands, there are fewer restrictions because the\
 remote server being a MySQL server, the syntax of the command will be always\
 acceptable by the remote server.
 
@@ -328,7 +328,7 @@ The following types can't be used:
 * [TINYBLOB](../../../data-types/string-data-types/tinyblob.md), [BLOB](../../../data-types/string-data-types/blob.md), [MEDIUMBLOB](../../../data-types/string-data-types/mediumblob.md), [LONGBLOB](../../../data-types/string-data-types/longblob.md)
 * [TINYTEXT](../../../data-types/string-data-types/tinytext.md), [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md), [LONGTEXT](../../../data-types/string-data-types/longtext.md)
 * [ENUM](../../../data-types/string-data-types/enum.md)
-* [SET](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md)
+* [SET](../../../sql-statements/administrative-sql-statements/set-commands/set.md)
 * [Geometry types](../../../sql-statements-and-structure/geographic-geometric-features/geometry-types.md)
 
 Note: [TEXT](../../../data-types/string-data-types/text.md) is allowed. However, the handling depends on the values given to the [connect\_type\_conv](../connect-system-variables.md#connect_type_conv) and [connect\_conv\_size](../connect-system-variables.md#connect_conv_size) system variables, and by default no conversion of TEXT columns is permitted.
@@ -337,8 +337,8 @@ Note: [TEXT](../../../data-types/string-data-types/text.md) is allowed. However,
 
 The following SQL queries are not supported
 
-* [REPLACE INTO](../../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md)
-* [INSERT ... ON DUPLICATE KEY UPDATE](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md)
+* [REPLACE INTO](../../../sql-statements/data-manipulation/changing-deleting-data/replace.md)
+* [INSERT ... ON DUPLICATE KEY UPDATE](../../../sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md)
 
 ## CONNECT MYSQL versus FEDERATED
 

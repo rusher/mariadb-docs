@@ -27,7 +27,7 @@ The replicas have an [I/O thread](../../../../ha-and-performance/standard-replic
 
 When a replica cannot apply an event to the local data, the SQL thread stops. This happens, for example, if the event is a row deletion but that row doesn't exist on the replica. There can be several reasons for this, for example non-deterministic statements, or a user deleted the row in the replica. To reduce the risk, it is recommended to set [read\_only](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) to 1 in the replicas.
 
-[SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has columns named `Slave_SQL_State` and `Slave_IO_State` that show, respectively, if the SQL thread and the IO thread are running. If they are not, the column `Last_IO_Errno` and `Last_IO_Error` (for the IO thread) or `Last_SQL_Errno` and `Last_SQL_Error` (for the SQL thread) show what the problem is.
+[SHOW SLAVE STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) has columns named `Slave_SQL_State` and `Slave_IO_State` that show, respectively, if the SQL thread and the IO thread are running. If they are not, the column `Last_IO_Errno` and `Last_IO_Error` (for the IO thread) or `Last_SQL_Errno` and `Last_SQL_Error` (for the SQL thread) show what the problem is.
 
 In a replication chain, every server must have a unique [server\_id](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id).
 
@@ -35,9 +35,9 @@ For more information on replication, see [standard replication](../../../../ha-a
 
 ### Binary Log Coordinates, Relay Log Coordinates and GTID
 
-The binary log coordinates provide a way to identify a certain data change made by a server. Coordinates consist of a file name and the position of the latest event, expressed as an integer. The last event coordinates can be seen with the [SHOW MASTER STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) columns `File` and `Position`. [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) includes them in a dump if the `--master-data` option is used.
+The binary log coordinates provide a way to identify a certain data change made by a server. Coordinates consist of a file name and the position of the latest event, expressed as an integer. The last event coordinates can be seen with the [SHOW MASTER STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) columns `File` and `Position`. [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) includes them in a dump if the `--master-data` option is used.
 
-A replica uses primary binary log coordinates to identify the last event it read. This can be seen with the [SHOW SLAVE STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) columns `Master_Log_File` and `Read_Master_Log_Pos`.
+A replica uses primary binary log coordinates to identify the last event it read. This can be seen with the [SHOW SLAVE STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) columns `Master_Log_File` and `Read_Master_Log_Pos`.
 
 The columns `Relay_Master_Log_File` and `Exec_Master_Log_Pos` identify the primary event that corresponds to the last event applied by the SQL thread.
 
@@ -45,7 +45,7 @@ The replica relay log also has coordinates. The coordinates of the last applied 
 
 To easily find out how far the replica is lagging behind the primary, we can look at `Seconds_Behind_Master`.
 
-Coordinates represented in this way have a problem: they are different on each server. Each server can use files with different (or the same) names, depending on its configuration. And files can be rotated at different times, including when a user runs [FLUSH LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md). By enabling the GTID (global transaction id) an event will have the same id on the primary and on all the replicas.
+Coordinates represented in this way have a problem: they are different on each server. Each server can use files with different (or the same) names, depending on its configuration. And files can be rotated at different times, including when a user runs [FLUSH LOGS](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md). By enabling the GTID (global transaction id) an event will have the same id on the primary and on all the replicas.
 
 When [GTID](../../../../ha-and-performance/standard-replication/gtid.md) is enabled, `SHOW SLAVE STATUS` shows two GTIDs: `Gtid_IO_Pos` is the last event written into the relay log, and `Gtid_Slave_Pos` is the last event applied by the SQL thread. There is no need for a column identifying the same event in the primary, because the id is the same.
 
@@ -56,7 +56,7 @@ MariaDB does not have an equivalent to SQL Server's snapshot replication.
 To setup a replica, it is necessary to manually provision it. It can be provisioned from the primary in this way:
 
 * A backup from the primary must be restored on the new replica;
-* The binary log coordinates at the moment of the backup should be set as replication coordinates in the replica, via [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
+* The binary log coordinates at the moment of the backup should be set as replication coordinates in the replica, via [CHANGE MASTER TO](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
 
 However, if there is at least one existing replica, it is better to use it to provision the new replica:
 
@@ -67,7 +67,7 @@ For more information see [Setting Up Replication](../../../../ha-and-performance
 
 ### Replication and Permissions
 
-A replica connects to a primary using its credentials. See [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
+A replica connects to a primary using its credentials. See [CHANGE MASTER TO](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
 
 The appropriate account must be created in the primary, and it needs to have the `REPLICATION SLAVE` permission.
 
@@ -97,9 +97,9 @@ There are different parallel replication styles available: in-order and out-of-o
 
 Out-of-order replication cannot be enabled automatically by changing a variable in the replica. Instead, it must be enabled by the applications that run transactions in the primary. They can do this if the GTID is enabled. They can set different values for the [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#gtid_domain_id) variable in different transactions. This shifts a lot of responsibility to the application layer; however, if the application is aware of which transactions are not going to conflict and this information allows one to sensibly increase the parallelism, and using out-of-order replication can be a good idea.
 
-Even if out-of-order replication is not normally used, it can be a good idea to use it for long running transactions or [ALTER TABLEs](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), so they can be applied at the same time as normal operations that are not conflicting.
+Even if out-of-order replication is not normally used, it can be a good idea to use it for long running transactions or [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table.md), so they can be applied at the same time as normal operations that are not conflicting.
 
-The impact of the number of threads and mode on performance can be partly seen with [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md), which shows the state of all threads. This includes the replication worker threads, and shows if they are blocking each other.
+The impact of the number of threads and mode on performance can be partly seen with [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md), which shows the state of all threads. This includes the replication worker threads, and shows if they are blocking each other.
 
 ### Differences Between the Primary and the Replicas
 
@@ -115,7 +115,7 @@ Another cause of inconsistencies include MariaDB bugs and failover in case the p
 
 An open source third party tool is available to check if the primary and a replica are consistent. It is called pt-table-checksum. Another tool, pt-table-sync, can be used to eliminate the differences. Both are part of Percona Toolkit. The advice is to run pt-table-checksum periodically, and use pt-table-sync if inconsistencies are found.
 
-If a replication outage occurs because an inconsistency is found, sometimes we want to quickly bring the replica up again as quickly as possible, and solve the core problem later. If GTID is not used, a way to do this is to run [SET GLOBAL SQL\_SLAVE\_SKIP\_COUNTER = 1](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md), which skips the problematic replication event.
+If a replication outage occurs because an inconsistency is found, sometimes we want to quickly bring the replica up again as quickly as possible, and solve the core problem later. If GTID is not used, a way to do this is to run [SET GLOBAL SQL\_SLAVE\_SKIP\_COUNTER = 1](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md), which skips the problematic replication event.
 
 If GTID is used, the [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) variable can be used instead. See the link for an explanation of how it works.
 
@@ -129,7 +129,7 @@ There are ways to have different data on the replicas. For example:
 
 MariaDB supports delayed replication. This is the equivalent of setting a `pollinginterval` in SQL Server.
 
-To delay replication in a MariaDB replica, use [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) to specify a delay in seconds.
+To delay replication in a MariaDB replica, use [CHANGE MASTER TO](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) to specify a delay in seconds.
 
 For more information, see [Delayed Replication](../../../../ha-and-performance/standard-replication/delayed-replication.md).
 
@@ -141,7 +141,7 @@ A MariaDB replica can replicate from any number of primaries. It is very importa
 
 In multi-source replication different channels exist, one for each primary.
 
-This changed the way [SQL replication statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/) work. [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) returns a different row for each channel. Several statements, like [CHANGE MASTER TO](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) or [STOP SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md). accept a parameter which specifies which replication channel they should affect. For example, to stop a channel called `wp1`:
+This changed the way [SQL replication statements](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/) work. [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) returns a different row for each channel. Several statements, like [CHANGE MASTER TO](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) or [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md). accept a parameter which specifies which replication channel they should affect. For example, to stop a channel called `wp1`:
 
 ```
 STOP SLAVE "wp1";

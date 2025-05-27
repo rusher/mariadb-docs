@@ -39,7 +39,7 @@ There are two kind of buffers in MariaDB:
   * Internal ones used during engine index creation\
     ([myisam\_sort\_buffer\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), [aria\_sort\_buffer\_size).](../../reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
   * Internal buffers for storing blobs.
-    * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information\_schema.processlist](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`show global status like "memory_used"`).
+    * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information\_schema.processlist](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`show global status like "memory_used"`).
   * Buffers and caches used during query execution:
 
 | Variable                                                                                  | Description                                                                                                                     |
@@ -100,7 +100,7 @@ From [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commun
 
 This will set the main cache settings to the minimum; it could be important to systems with lots of other processes and/or RAM is 2GB or smaller.
 
-Do [SHOW TABLE STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) for all the tables in all the databases.
+Do [SHOW TABLE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) for all the tables in all the databases.
 
 Add up Index\_length for all the MyISAM tables. Set [key\_buffer\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) no larger than that size.
 
@@ -194,7 +194,7 @@ In \*nix, ulimit tells you what the file limit is. The maximum value is in the t
 
 (This paragraph is in disputed.) On the other side, the table cache is (was) inefficiently implemented -- lookups were done with a linear scan. Hence, setting table\_cache in the thousands could actually slow down mysql. (Benchmarks have shown this.)
 
-You can see how well your system is performing via [SHOW GLOBAL STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md); and computing the opens/second via [Opened\_files](system-variables/server-status-variables.md#opened_files) / [Uptime](system-variables/server-status-variables.md#uptime) If this is more than, say, 5, [table\_open\_cache](system-variables/server-system-variables.md#table_open_cache) should be increased. If it is less than, say, 1, you might get improvement by decreasing [table\_open\_cache](system-variables/server-system-variables.md#table_open_cache).
+You can see how well your system is performing via [SHOW GLOBAL STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-status.md); and computing the opens/second via [Opened\_files](system-variables/server-status-variables.md#opened_files) / [Uptime](system-variables/server-status-variables.md#uptime) If this is more than, say, 5, [table\_open\_cache](system-variables/server-system-variables.md#table_open_cache) should be increased. If it is less than, say, 1, you might get improvement by decreasing [table\_open\_cache](system-variables/server-system-variables.md#table_open_cache).
 
 From [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [table\_open\_cache](system-variables/server-system-variables.md#table_open_cache) defaults to 2000.
 

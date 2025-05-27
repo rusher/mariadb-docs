@@ -11,7 +11,7 @@ The Change Buffer is an optimization that allows some data to be modified even t
 
 The Change Buffer only contains changes to secondary index leaf pages.
 
-Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), only inserted rows could be buffered, so this buffer was called Insert Buffer. The old name still appears in several places, for example in the output of [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
+Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), only inserted rows could be buffered, so this buffer was called Insert Buffer. The old name still appears in several places, for example in the output of [SHOW ENGINE INNODB STATUS](../../sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
 
 Inserts to UNIQUE secondary indexes cannot be buffered unless [unique\_checks=0](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#unique_checks) is used. This may sometimes allow duplicates to be inserted into the UNIQUE secondary index. Much of the time, the UNIQUE constraint would be checked because the change buffer could only be used if the index page is not located in the buffer pool.
 

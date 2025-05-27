@@ -1,61 +1,42 @@
+# AUTO\_INCREMENT Handling in InnoDB
 
-# AUTO_INCREMENT Handling in InnoDB
+## AUTO\_INCREMENT Lock Modes
 
+The [innodb\_autoinc\_lock\_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) system variable determines the lock mode when generating [AUTO\_INCREMENT](../../data-types/auto_increment.md) values for [InnoDB](./) tables. These modes allow [InnoDB](./) to make significant performance optimizations in certain circumstances.
 
-## AUTO_INCREMENT Lock Modes
-
-
-The [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) system variable determines the lock mode when generating [AUTO_INCREMENT](../../data-types/auto_increment.md) values for [InnoDB](README.md) tables. These modes allow [InnoDB](README.md) to make significant performance optimizations in certain circumstances.
-
-
-The [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) system variable may be removed in a future release. See [MDEV-19577](https://jira.mariadb.org/browse/MDEV-19577) for more information.
-
+The [innodb\_autoinc\_lock\_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) system variable may be removed in a future release. See [MDEV-19577](https://jira.mariadb.org/browse/MDEV-19577) for more information.
 
 ### Traditional Lock Mode
 
+When [innodb\_autoinc\_lock\_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `0`, [InnoDB](./) uses the traditional lock mode.
 
-When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `0`, [InnoDB](README.md) uses the traditional lock mode.
-
-
-In this mode, [InnoDB](README.md) holds a table-level lock for all [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements until the statement completes.
-
+In this mode, [InnoDB](./) holds a table-level lock for all [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statements until the statement completes.
 
 ### Consecutive Lock Mode
 
+When [innodb\_autoinc\_lock\_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `1`, [InnoDB](./) uses the consecutive lock mode.
 
-When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `1`, [InnoDB](README.md) uses the consecutive lock mode.
-
-
-In this mode, [InnoDB](README.md) holds a table-level lock for all bulk [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements (such as [LOAD DATA](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) or [INSERT ... SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md)) until the end of the statement. For simple [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements, no table-level lock is held. Instead, a lightweight mutex is used which scales significantly better. This is the default setting.
-
+In this mode, [InnoDB](./) holds a table-level lock for all bulk [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statements (such as [LOAD DATA](../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) or [INSERT ... SELECT](../../sql-statements/data-manipulation/inserting-loading-data/insert-select.md)) until the end of the statement. For simple [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statements, no table-level lock is held. Instead, a lightweight mutex is used which scales significantly better. This is the default setting.
 
 ### Interleaved Lock Mode
 
+When [innodb\_autoinc\_lock\_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `2`, [InnoDB](./) uses the interleaved lock mode.
 
-When [innodb_autoinc_lock_mode](innodb-system-variables.md#innodb_autoinc_lock_mode) is set to `2`, [InnoDB](README.md) uses the interleaved lock mode.
+In this mode, [InnoDB](./) does not hold any table-level locks at all. This is the fastest and most scalable mode, but is not safe for [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication.
 
+## Setting AUTO\_INCREMENT Values
 
-In this mode, [InnoDB](README.md) does not hold any table-level locks at all. This is the fastest and most scalable mode, but is not safe for [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication.
-
-
-## Setting AUTO_INCREMENT Values
-
-
-The [AUTO_INCREMENT](../../data-types/auto_increment.md) value for an [InnoDB](README.md) table can be set for a table by executing the [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement and specifying the [AUTO_INCREMENT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#auto_increment) table option. For example:
-
+The [AUTO\_INCREMENT](../../data-types/auto_increment.md) value for an [InnoDB](./) table can be set for a table by executing the [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) statement and specifying the [AUTO\_INCREMENT](../../sql-statements/data-definition/create/create-table.md#auto_increment) table option. For example:
 
 ```
 ALTER TABLE tab AUTO_INCREMENT=100;
 ```
 
-However, in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, [InnoDB](README.md) stores the table's [AUTO_INCREMENT](../../data-types/auto_increment.md) counter in memory. In these versions, when the server restarts, the counter is re-initialized to the highest value found in the table. This means that the above operation can be undone if the server is restarted before any rows are written to the table.
+However, in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, [InnoDB](./) stores the table's [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter in memory. In these versions, when the server restarts, the counter is re-initialized to the highest value found in the table. This means that the above operation can be undone if the server is restarted before any rows are written to the table.
 
-
-In [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and later, the [AUTO_INCREMENT](../../data-types/auto_increment.md) counter is persistent, so this restriction is no longer present. Persistent, however, does not mean transactional. Gaps may still occur in some cases, such as if a [INSERT IGNORE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md) statement fails, or if a user executes [ROLLBACK](../../sql-statements-and-structure/sql-statements/transactions/rollback.md) or [ROLLBACK TO SAVEPOINT](../../sql-statements-and-structure/sql-statements/transactions/savepoint.md).
-
+In [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and later, the [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter is persistent, so this restriction is no longer present. Persistent, however, does not mean transactional. Gaps may still occur in some cases, such as if a [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md) statement fails, or if a user executes [ROLLBACK](../../sql-statements/transactions/rollback.md) or [ROLLBACK TO SAVEPOINT](../../sql-statements/transactions/savepoint.md).
 
 For example:
-
 
 ```
 CREATE TABLE t1 (pk INT AUTO_INCREMENT PRIMARY KEY, i INT, UNIQUE (i)) ENGINE=InnoDB;
@@ -84,8 +65,7 @@ Create Table: CREATE TABLE `t1` (
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1
 ```
 
-If the server is restarted at this point, then the [AUTO_INCREMENT](../../data-types/auto_increment.md) counter will revert to `101`, which is the persistent value set as part of the failed [INSERT IGNORE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md).
-
+If the server is restarted at this point, then the [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter will revert to `101`, which is the persistent value set as part of the failed [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md).
 
 ```
 # Restart server
@@ -102,12 +82,9 @@ Create Table: CREATE TABLE `t1` (
 
 ## See Also
 
-
-* [AUTO_INCREMENT](../../data-types/auto_increment.md)
-* [AUTO_INCREMENT FAQ](../../data-types/auto_increment-faq.md)
-* [LAST_INSERT_ID](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
-* [Sequences](../../sql-statements-and-structure/sequences/README.md) - an alternative to auto_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
-
+* [AUTO\_INCREMENT](../../data-types/auto_increment.md)
+* [AUTO\_INCREMENT FAQ](../../data-types/auto_increment-faq.md)
+* [LAST\_INSERT\_ID](../../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
+* [Sequences](../../sql-statements-and-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 CC BY-SA / Gnu FDL
-

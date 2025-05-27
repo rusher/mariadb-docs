@@ -6,16 +6,16 @@ A trigger, as its name suggests, is a set of statements that run, or are trigger
 
 The event can be an INSERT, an UPDATE or a DELETE. The trigger can be executed BEFORE or AFTER the event. Until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), a table could have only one trigger defined for each event/timing combination: for example, a table could only have one BEFORE INSERT trigger.
 
-The [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [LOAD XML](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) statements invoke INSERT triggers for each row that is being inserted.
+The [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) and [LOAD XML](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) statements invoke INSERT triggers for each row that is being inserted.
 
-The [REPLACE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) statement is executed with the following workflow:
+The [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statement is executed with the following workflow:
 
 * BEFORE INSERT;
 * BEFORE DELETE (only if a row is being deleted);
 * AFTER DELETE (only if a row is being deleted);
 * AFTER INSERT.
 
-The [INSERT ... ON DUPLICATE KEY UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statement, when a row already exists, follows the following workflow:
+The [INSERT ... ON DUPLICATE KEY UPDATE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md) statement, when a row already exists, follows the following workflow:
 
 * BEFORE INSERT;
 * BEFORE UPDATE;
@@ -23,7 +23,7 @@ The [INSERT ... ON DUPLICATE KEY UPDATE](../../../reference/sql-statements-and-s
 
 Otherwise, it works like a normal INSERT statement.
 
-Note that [TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) does not activate any triggers.
+Note that [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md) does not activate any triggers.
 
 ## Triggers and Errors
 
@@ -94,7 +94,7 @@ For more details on the syntax, see [CREATE TRIGGER](create-trigger.md).
 
 ## Dropping Triggers
 
-To drop a trigger, use the [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md) statement. Triggers are also dropped if the table with which they are associated is also dropped.
+To drop a trigger, use the [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md) statement. Triggers are also dropped if the table with which they are associated is also dropped.
 
 ```
 DROP TRIGGER increment_animal;
@@ -102,11 +102,11 @@ DROP TRIGGER increment_animal;
 
 ## Triggers Metadata
 
-The [Information Schema TRIGGERS Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) stores information about triggers.
+The [Information Schema TRIGGERS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) stores information about triggers.
 
-The [SHOW TRIGGERS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md) statement returns similar information.
+The [SHOW TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/show/show-triggers.md) statement returns similar information.
 
-The [SHOW CREATE TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md) statement returns a CREATE TRIGGER statement that creates the given trigger.
+The [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-trigger.md) statement returns a CREATE TRIGGER statement that creates the given trigger.
 
 ## More Complex Triggers
 
@@ -239,10 +239,10 @@ Empty set (0.00 sec)
 ## See Also
 
 * [CREATE TRIGGER](create-trigger.md)
-* [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
-* [Information Schema TRIGGERS Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
-* [SHOW TRIGGERS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md)
-* [SHOW CREATE TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
+* [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md)
+* [Information Schema TRIGGERS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [SHOW TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/show/show-triggers.md)
+* [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](trigger-limitations.md)
 * [Creative uses of triggers: Things you people wouldn't believe](https://www.youtube.com/watch?v=-O2up6Fr9M0) (video)
 

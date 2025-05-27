@@ -2,9 +2,9 @@
 
 The [MyISAM](./) storage engine supports three different table storage formats.
 
-These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
+These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
 
-The [SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
+The [SHOW TABLE STATUS](../../sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
 
 ## Fixed-length
 
@@ -41,7 +41,7 @@ Compressed tables are a read-only format, created with the [myisampack](../../..
 
 Compressed tables have a number of characteristics:
 
-* while the data is read-only, DDL statements such as [DROP TABLE](../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) and [TRUNCATE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) will still function.
+* while the data is read-only, DDL statements such as [DROP TABLE](../../sql-statements/data-definition/drop/drop-table.md) and [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md) will still function.
 * take much less space than fixed or dynamic tables. Each data has usually a 40-70% compression ratio
 * rows are compressed separately, reducing access overhead.
 * row headers will be from one to three bytes.

@@ -12,7 +12,7 @@ Again, this is not using [mariadb-dump](../clients-and-utilities/backup-restore-
 
 The problem with restoring from a dump file is that you may overwrite tables or databases that you wish you hadn't. For instance, your dump file might be a few days old and only one table may have been lost. If you restore all of the databases or all of the tables in a database, you would be restoring the data back to it's state at the time of the backup, a few days before. This could be quite a disaster. This is why dumping by database and table can be handy. However, that could be cumbersome.
 
-A simple and easy method of limiting a restoration would be to create temporarily a user who only has privileges for the table you want to restore. You would enter a [GRANT](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statement like this:
+A simple and easy method of limiting a restoration would be to create temporarily a user who only has privileges for the table you want to restore. You would enter a [GRANT](../reference/sql-statements/account-management-sql-commands/grant.md) statement like this:
 
 ```
 GRANT SELECT
@@ -23,7 +23,7 @@ GRANT ALL ON db1.table1
 TO 'admin_restore_temp'@'localhost';
 ```
 
-These two SQL statements allow the temporary user to have the needed [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) privileges on all of the tables of `db1` and `ALL` privileges for the `table1` table. Now when you restore the dump file containing the whole `db1` database, only `table1` will be replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `table1`), use the `--force` option. Here's what you would enter at the command-line for this situation:
+These two SQL statements allow the temporary user to have the needed [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) privileges on all of the tables of `db1` and `ALL` privileges for the `table1` table. Now when you restore the dump file containing the whole `db1` database, only `table1` will be replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `table1`), use the `--force` option. Here's what you would enter at the command-line for this situation:
 
 ```
 mariadb --user admin_restore_temp --password --force < /data/backup/db1.sql

@@ -4,13 +4,13 @@
 For the Windows specific tool of similar name and purpose see [mysql\_install\_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md).\
 The Windows version shares the common theme (creating system tables), yet has a lot of functionality specific to Windows systems, for example creating a Windows service. The Windows version does _not_ share command line parameters with the Unix shell script.
 
-`mariadb-install-db` initializes the MariaDB data directory and creates the[system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database, if they do not exist.
+`mariadb-install-db` initializes the MariaDB data directory and creates the[system tables](../reference/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database, if they do not exist.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-MariaDB uses these tables to manage [privileges](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/), and [plugins](../reference/plugins/). It also uses them to provide the data for the [help](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
+MariaDB uses these tables to manage [privileges](../reference/sql-statements/account-management-sql-commands/grant.md#privilege-levels), [roles](../security/user-account-management/roles/), and [plugins](../reference/plugins/). It also uses them to provide the data for the [help](../reference/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
 
-`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/) and their content.
+`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/) and their content.
 
 ## Using mariadb-install-db
 
@@ -40,7 +40,7 @@ $ scripts/mariadb-install-db --user=mysql \
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Option                                    | Description                                                                                                                                                                                                                                                                                                                                                                                    |
 | --auth-root-authentication-method={normal | socket}                                                                                                                                                                                                                                                                                                                                                                                        |
-| --auth-root-socket-user=USER              | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user.                            |
+| --auth-root-socket-user=USER              | Used with --auth-root-authentication-method=socket. It specifies the name of the second account to create with [SUPER](../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges in addition to root, as well as of the system account allowed to access it. Defaults to the value of --user.                                                         |
 | --basedir=path                            | The path to the MariaDB installation directory.                                                                                                                                                                                                                                                                                                                                                |
 | --builddir=path                           | If using --srcdir with out-of-directory builds, you will need to set this to the location of the build directory where built files reside.                                                                                                                                                                                                                                                     |
 | --catalogs=\["list"]                      | Initialize MariaDB for [catalogs](../security/user-account-management/catalogs/). Argument is a list, separated with space or ',', of the catalogs to create. The def catalog is created automatically. Likely added in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117). |
@@ -188,13 +188,13 @@ data directory, which is the directory specified with `--datadir` option. This s
 
 ### Testing With mariadbd
 
-You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
+You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
 
 ```
 mariadbd --skip-grant-tables --general-log
 ```
 
-At this point, you can use the [mariadb](mariadb-client/mariadb-command-line-client.md) client to connect to the [mysql](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database and look at the [system tables](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/). For example:
+At this point, you can use the [mariadb](mariadb-client/mariadb-command-line-client.md) client to connect to the [mysql](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database and look at the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/). For example:
 
 ```
 $ /usr/local/mysql/bin/mysql -u root mysql
@@ -243,7 +243,7 @@ SHOW DATABASES;
 ```
 
 Shown are the `information_schema` as well as `test` databases that are built in databases.\
-But looking from [SHOW GRANTS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md) appears to be a paradox; how can the current user see something if they don't have privileges for that?
+But looking from [SHOW GRANTS](../reference/sql-statements/administrative-sql-statements/show/show-grants.md) appears to be a paradox; how can the current user see something if they don't have privileges for that?
 
 Let's go a step further.\
 Now, use the `root`/`unix` user, which has all rights, in order to create a new database with the prefix `test_` , something like:
@@ -253,7 +253,7 @@ CREATE DATABASE test_electricity;
 ```
 
 With the above change, a new directory will be created in the data directory.\
-Now login again with the anonymous user and run [SHOW DATABASES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md):
+Now login again with the anonymous user and run [SHOW DATABASES](../reference/sql-statements/administrative-sql-statements/show/show-databases.md):
 
 ```
 SHOW DATABASES
@@ -323,10 +323,10 @@ Create_tablespace_priv: N
     max_statement_time: 0.000000
 ```
 
-As seen above from the [mysql.user](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.\
+As seen above from the [mysql.user](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, the anonymous user doesn't have any global privileges.\
 Still, the anonymous user can see databases, so there must be a way so that anonymous user can see the `test` and `test_electricity` databases.
 
-Let's check for grants on the database level. That information can be found in the [mysql.db](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table.\
+Let's check for grants on the database level. That information can be found in the [mysql.db](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table.\
 Looking at the `mysql.db` table, it already contains 2 rows created when the `mariadb-install-db` script was invoked.
 
 The anonymous user has database privileges (without `grant`, `alter_routine` and `execute`) on `test` and `test_%` databases:

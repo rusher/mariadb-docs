@@ -22,7 +22,7 @@ If a server needs to be able to switch between acting as a primary and a replica
 
 ### Enabling Semisynchronous Replication on the Primary
 
-Semisynchronous replication can be enabled on the primary by setting the [rpl\_semi\_sync\_master\_enabled](semisynchronous-replication.md#rpl_semi_sync_master_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+Semisynchronous replication can be enabled on the primary by setting the [rpl\_semi\_sync\_master\_enabled](semisynchronous-replication.md#rpl_semi_sync_master_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL rpl_semi_sync_master_enabled=ON;
@@ -38,7 +38,7 @@ rpl_semi_sync_master_enabled=ON
 
 ### Enabling Semisynchronous Replication on the Replica
 
-Semisynchronous replication can be enabled on the replica by setting the [rpl\_semi\_sync\_slave\_enabled](semisynchronous-replication.md#rpl_semi_sync_slave_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+Semisynchronous replication can be enabled on the replica by setting the [rpl\_semi\_sync\_slave\_enabled](semisynchronous-replication.md#rpl_semi_sync_slave_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL rpl_semi_sync_slave_enabled=ON;
@@ -82,7 +82,7 @@ When this occurs, the [Rpl\_semi\_sync\_master\_status](../optimization-and-tuni
 
 The number of times that semisynchronous replication has been switched off can be checked by looking at the value of the [Rpl\_semi\_sync\_master\_no\_times](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) status variable.
 
-If you see a lot of timeouts like this in your environment, then you may want to change the timeout period. The timeout period can be changed by setting the [rpl\_semi\_sync\_master\_timeout](semisynchronous-replication.md#rpl_semi_sync_master_timeout) system variable. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+If you see a lot of timeouts like this in your environment, then you may want to change the timeout period. The timeout period can be changed by setting the [rpl\_semi\_sync\_master\_timeout](semisynchronous-replication.md#rpl_semi_sync_master_timeout) system variable. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL rpl_semi_sync_master_timeout=20000;
@@ -107,7 +107,7 @@ The wait point is configured by the [rpl\_semi\_sync\_master\_wait\_point](semis
 * `AFTER_SYNC`
 * `AFTER_COMMIT`
 
-It can be set dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL rpl_semi_sync_master_wait_point='AFTER_SYNC';
@@ -285,10 +285,10 @@ The effects of the `AFTER_COMMIT` wait point are:
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--rpl-semi-sync-master=value`
 * Data Type: `enumerated`
@@ -300,10 +300,10 @@ The effects of the `AFTER_COMMIT` wait point are:
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--rpl-semi-sync-slave=value`
 * Data Type: `enumerated`

@@ -4,7 +4,7 @@
 
 GUIDs/UUIDs (Globally/Universally Unique Identifiers) are very random. Therefore, INSERTing into an index means jumping around a lot. Once the index is too big to be cached, most INSERTs involve a disk hit. Even on a beefy system, this limits you to a few hundred INSERTs per second.
 
-[MariaDB's UUID function](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md).
+[MariaDB's UUID function](../../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md).
 
 This blog is mostly eliminated in MySQL 8.0 with the advent of the following function:[UUID\_TO\_BIN(str, swap\_flag)](https://dev.mysql.com/doc/refman/8.0/en/miscellaneous-functions.html#function_uuid-to-bin).
 
@@ -31,7 +31,7 @@ To compress
 
 * utf8 is unnecessary (ascii would do); but this is obviated by the next two steps
 * Toss dashes
-* [UNHEX](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/unhex.md)\
+* [UNHEX](../../../reference/sql-statements/built-in-functions/string-functions/unhex.md)\
   Now it will fit in 16 bytes: [BINARY(16)](../../../reference/data-types/string-data-types/binary.md)
 
 ## Combining the problems and crafting a solution

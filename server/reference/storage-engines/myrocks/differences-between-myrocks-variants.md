@@ -80,8 +80,8 @@ or rewrite to single-table, single-statement transaction.  Query: insert into tb
 
 ## Generated Columns
 
-* Both MariaDB and Percona Server support [generated columns](../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md), but neither one supports them for the MyRocks storage engine (attempts to create a table will produce an error).
-* [Invisible columns](../../sql-statements-and-structure/sql-statements/data-definition/create/invisible-columns.md) in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) are supported (as they are an SQL layer feature).
+* Both MariaDB and Percona Server support [generated columns](../../sql-statements/data-definition/create/generated-columns.md), but neither one supports them for the MyRocks storage engine (attempts to create a table will produce an error).
+* [Invisible columns](../../sql-statements/data-definition/create/invisible-columns.md) in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) are supported (as they are an SQL layer feature).
 
 ## rpl\_skip\_tx\_api
 

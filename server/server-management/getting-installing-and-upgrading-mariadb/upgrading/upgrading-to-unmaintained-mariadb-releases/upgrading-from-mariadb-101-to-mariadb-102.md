@@ -128,7 +128,7 @@ New [reserved words](../../../../reference/sql-statements-and-structure/sql-lang
 
 #### Auto\_increment
 
-[Auto\_increment](../../../../reference/data-types/auto_increment.md) columns are no longer permitted in [CHECK constraints](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted in earlier versions, but did not work correctly.
+[Auto\_increment](../../../../reference/data-types/auto_increment.md) columns are no longer permitted in [CHECK constraints](../../../../reference/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../../../../reference/sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../../../../reference/sql-statements/data-definition/create/generated-columns.md). They were permitted in earlier versions, but did not work correctly.
 
 #### TLS
 
@@ -138,10 +138,10 @@ Starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mari
 
 You might consider using the following major new features in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102):
 
-* [Window Functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/)
+* [Window Functions](../../../../reference/sql-statements/built-in-functions/special-functions/window-functions/)
 * [mysqlbinlog](../../../../clients-and-utilities/mariadb-binlog/) now supports continuous binary log backups
-* [Recursive Common Table Expressions](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview.md)
-* [JSON functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/)
+* [Recursive Common Table Expressions](../../../../reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview.md)
+* [JSON functions](../../../../reference/sql-statements/built-in-functions/special-functions/json-functions/)
 * See also [System Variables Added in MariaDB 10.2](../../../../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-102.md).
 
 ### See Also

@@ -47,7 +47,7 @@ For all of the above storage engines (Archive, Aria, CSV, MyISAM and MERGE), one
 * You have done a `FLUSH TABLES` or `FLUSH TABLE table_name` for the specific table.
 * The server is not accessing the tables during the copy process.
 
-The advantage of [FLUSH TABLES table\_name FOR EXPORT](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is that the table is read locked until [UNLOCK TABLES](../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) is executed.
+The advantage of [FLUSH TABLES table\_name FOR EXPORT](../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) is that the table is read locked until [UNLOCK TABLES](../reference/sql-statements/transactions/lock-tables.md) is executed.
 
 **Warning**: If you do the above live copy, you are doing this on **your own risk** as if you do something wrong, the copied table is very likely to be corrupted. The original table will of course be fine.
 
@@ -108,12 +108,12 @@ InnoDB's file-per-table tablespaces are transportable, which means that you can 
 
 Tables that use most storage engines are immediately usable when their files are copied to the new `[datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`.
 
-However, this is not true for tables that use [InnoDB](../reference/storage-engines/innodb/). InnoDB tables have to be imported with [ALTER TABLE ... IMPORT TABLESPACE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#import-tablespace). See [Copying Transportable Tablespaces](../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
+However, this is not true for tables that use [InnoDB](../reference/storage-engines/innodb/). InnoDB tables have to be imported with [ALTER TABLE ... IMPORT TABLESPACE](../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace). See [Copying Transportable Tablespaces](../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 
 ## See Also
 
-* [FLUSH TABLES FOR EXPORT](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
-* [FLUSH TABLES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)
+* [FLUSH TABLES FOR EXPORT](../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
+* [FLUSH TABLES](../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md)
 * [myisampack](../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.
 * [aria\_pack](../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution
 * [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) - Copying tables to other SQL servers. You can use the `--tab` to create a CSV file of your table content.

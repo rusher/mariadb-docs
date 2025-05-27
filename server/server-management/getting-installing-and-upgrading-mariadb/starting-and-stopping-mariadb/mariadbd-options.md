@@ -75,7 +75,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 
 #### `-a, --ansi`
 
-* Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md) [serializable](../../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md).
+* Description: Use ANSI SQL syntax instead of MariaDB syntax. This mode will also set [transaction isolation level](../../../reference/sql-statements/transactions/set-transaction.md) [serializable](../../../reference/sql-statements/transactions/set-transaction.md).
 
 #### `--new`
 
@@ -87,7 +87,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 
 #### `--safe-mode`
 
-* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam\_recover\_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is disabled. For [Aria](../../../reference/storage-engines/aria/) tables, disable bulk insert optimization to enable one to use [aria\_read\_log](../../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
+* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam\_recover\_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is disabled. For [Aria](../../../reference/storage-engines/aria/) tables, disable bulk insert optimization to enable one to use [aria\_read\_log](../../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
 
 #### `--skip-new`
 
@@ -250,8 +250,8 @@ The following options are related to [replication](broken-reference) and the [bi
 #### `--master-info-file`
 
 * Commandline: `--master-info-file=name`
-* Description: Name and location of the file on the replica where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](../../server-monitoring-logs/binary-log/) position on the primary) and most other [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../../ha-and-performance/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../../server-monitoring-logs/binary-log/) position updated as it downloads events.
-  * See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
+* Description: Name and location of the file on the replica where the `MASTER_LOG_FILE` and `MASTER_LOG_POS` options (i.e. the [binary log](../../server-monitoring-logs/binary-log/) position on the primary) and most other [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) options are written. The [replica's I/O thread](../../../ha-and-performance/standard-replication/replication-threads.md#replica-io-thread) keeps this [binary log](../../server-monitoring-logs/binary-log/) position updated as it downloads events.
+  * See [CHANGE MASTER TO: Option Persistence](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 
 #### `--master-password`
 
@@ -324,7 +324,7 @@ The following options are related to [replication](broken-reference) and the [bi
 #### `--sysdate-is-now`
 
 * Commandline: `--sysdate-is-now`
-* Description: Non-default option to alias [SYSDATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/sysdate.md) to [NOW()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/now.md) to make it safe for [replication](broken-reference). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
+* Description: Non-default option to alias [SYSDATE()](../../../reference/sql-statements/built-in-functions/date-time-functions/sysdate.md) to [NOW()](../../../reference/sql-statements/built-in-functions/date-time-functions/now.md) to make it safe for [replication](broken-reference). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
 
 ### Replication and Binary Logging Options and System Variables
 
@@ -964,60 +964,60 @@ The options and system variables related to [Vectors](../../../reference/sql-sta
 
 ## Performance Schema Options
 
-The options related to the [Performance Schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) are described below. Options that are also system variables are listed after:
+The options related to the [Performance Schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) are described below. Options that are also system variables are listed after:
 
 #### `--performance-schema-consumer-events-stages-current`
 
 * Commandline: `--performance-schema-consumer-events-stages-current`
-* Description: Enable the [events-stages-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table.md) consumer.
+* Description: Enable the [events-stages-current](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_current-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-stages-history`
 
 * Commandline: `--performance-schema-consumer-events-stages-history`
-* Description: Enable the [events-stages-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table.md) consumer.
+* Description: Enable the [events-stages-history](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-stages-history-long`
 
 * Commandline: `--performance-schema-consumer-events-stages-history-long`
-* Description: Enable the [events-stages-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table.md) consumer.
+* Description: Enable the [events-stages-history-long](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_stages_history_long-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-statements-current`
 
 * Commandline: `--performance-schema-consumer-events-statements-current`
-* Description: Enable the [events-statements-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
+* Description: Enable the [events-statements-current](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_current-table.md) consumer. Use `--skip-performance-schema-consumer-events-statements-current` to disable.
 * Default: `ON`
 
 #### `--performance-schema-consumer-events-statements-history`
 
 * Commandline: `--performance-schema-consumer-events-statements-history`
-* Description: Enable the [events-statements-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table.md) consumer.
+* Description: Enable the [events-statements-history](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-statements-history-long`
 
 * Commandline: `--performance-schema-consumer-events-statements-history-long`
-* Description: Enable the [events-statements-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table.md) consumer.
+* Description: Enable the [events-statements-history-long](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_statements_history_long-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-waits-current`
 
 * Commandline: `--performance-schema-consumer-events-waits-current`
-* Description: Enable the [events-waits-current](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table.md) consumer.
+* Description: Enable the [events-waits-current](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_current-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-waits-history`
 
 * Commandline: `--performance-schema-consumer-events-waits-history`
-* Description: Enable the [events-waits-history](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table.md) consumer.
+* Description: Enable the [events-waits-history](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-events-waits-history-long`
 
 * Commandline: `--performance-schema-consumer-events-waits-history-long`
-* Description: Enable the [events-waits-history-long](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table.md) consumer.
+* Description: Enable the [events-waits-history-long](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_history_long-table.md) consumer.
 * Default: `OFF`
 
 #### `--performance-schema-consumer-global-instrumentation`
@@ -1040,40 +1040,40 @@ The options related to the [Performance Schema](../../../reference/sql-statement
 
 ### Performance Schema Options and System Variables
 
-Some options and system variables related to the [Performance Schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) can be found [here](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [Performance Schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) can be found [here](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md). Direct links to many of them can be found below.
 
-* [performance-schema](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema)
-* [performance-schema-accounts-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size)
-* [performance-schema-digests-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size)
-* [performance-schema-events-stages-history-long-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size)
-* [performance-schema-events-stages-history-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size)
-* [performance-schema-events-statements-history-long-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size)
-* [performance-schema-events-statements-history-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size)
-* [performance-schema-events-waits-history-long-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size)
-* [performance-schema-events-waits-history-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size)
-* [performance-schema-hosts-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size)
-* [performance-schema-max-cond-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes)
-* [performance-schema-max-cond-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances)
-* [performance-schema-max-digest-length](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length)
-* [performance-schema-max-file-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes)
-* [performance-schema-max-file-handles](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles)
-* [performance-schema-max-file-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances)
-* [performance-schema-max-mutex-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes)
-* [performance-schema-max-mutex-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances)
-* [performance-schema-max-rwlock-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes)
-* [performance-schema-max-rwlock-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances)
-* [performance-schema-max-socket-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes)
-* [performance-schema-max-socket-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances)
-* [performance-schema-max-stage-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes)
-* [performance-schema-max-statement-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes)
-* [performance-schema-max-table-handles](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles)
-* [performance-schema-max-table-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances)
-* [performance-schema-max-thread-classes](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes)
-* [performance-schema-max-thread-instances](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances)
-* [performance-schema-session-connect-attrs-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size)
-* [performance-schema-setup-actors-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size)
-* [performance-schema-setup-objects-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size)
-* [performance-schema-users-size](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size)
+* [performance-schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema)
+* [performance-schema-accounts-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size)
+* [performance-schema-digests-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_digests_size)
+* [performance-schema-events-stages-history-long-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_long_size)
+* [performance-schema-events-stages-history-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_stages_history_size)
+* [performance-schema-events-statements-history-long-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_long_size)
+* [performance-schema-events-statements-history-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_statements_history_size)
+* [performance-schema-events-waits-history-long-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_long_size)
+* [performance-schema-events-waits-history-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_events_waits_history_size)
+* [performance-schema-hosts-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_hosts_size)
+* [performance-schema-max-cond-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_classes)
+* [performance-schema-max-cond-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_cond_instances)
+* [performance-schema-max-digest-length](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_digest_length)
+* [performance-schema-max-file-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_classes)
+* [performance-schema-max-file-handles](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_handles)
+* [performance-schema-max-file-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_file_instances)
+* [performance-schema-max-mutex-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_classes)
+* [performance-schema-max-mutex-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_mutex_instances)
+* [performance-schema-max-rwlock-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_classes)
+* [performance-schema-max-rwlock-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_rwlock_instances)
+* [performance-schema-max-socket-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_classes)
+* [performance-schema-max-socket-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_socket_instances)
+* [performance-schema-max-stage-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes)
+* [performance-schema-max-statement-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_statement_classes)
+* [performance-schema-max-table-handles](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_handles)
+* [performance-schema-max-table-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_table_instances)
+* [performance-schema-max-thread-classes](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_classes)
+* [performance-schema-max-thread-instances](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_thread_instances)
+* [performance-schema-session-connect-attrs-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_session_connect_attrs_size)
+* [performance-schema-setup-actors-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_actors_size)
+* [performance-schema-setup-objects-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_setup_objects_size)
+* [performance-schema-users-size](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size)
 
 ## Galera Cluster Options
 
@@ -1209,7 +1209,7 @@ Options that are also system variables are listed after:
 #### `--des-key-file`
 
 * Commandline: `--des-key-file=name`
-* Description: Load keys for [des\_encrypt()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des\_encrypt from given file.
+* Description: Load keys for [des\_encrypt()](../../../reference/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md) and des\_encrypt from given file.
 
 #### `--exit-info`
 
@@ -1305,7 +1305,7 @@ Options that are also system variables are listed after:
 #### `--safe-user-create`
 
 * Commandline: `--safe-user-create`
-* Description: Don't allow new user creation by the user who has no write privileges to the [mysql.user](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
+* Description: Don't allow new user creation by the user who has no write privileges to the [mysql.user](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 #### `--safemalloc-mem-limit`
 
@@ -1320,7 +1320,7 @@ Options that are also system variables are listed after:
 #### `--skip-grant-tables`
 
 * Commandline: `--skip-grant-tables`
-* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../../clients-and-utilities/mariadb-admin.md), [mariadb-admin reload](../../../clients-and-utilities/mariadb-admin.md) or [FLUSH PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
+* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../../clients-and-utilities/mariadb-admin.md), [mariadb-admin reload](../../../clients-and-utilities/mariadb-admin.md) or [FLUSH PRIVILEGES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
 
 Because the [Event Scheduler](../../../server-usage/triggers-events/event-scheduler/) also depends on the grant tables for its functionality, it is automatically disabled when running with `--skip-grant-tables`.
 
@@ -1332,7 +1332,7 @@ Because the [Event Scheduler](../../../server-usage/triggers-events/event-schedu
 #### `--skip-partition`
 
 * Commandline: `--skip-partition`, `--disable-partition`
-* Description: Disables user-defined [partitioning](../../partitioning-tables/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION\_SCHEMA.TABLES table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
+* Description: Disables user-defined [partitioning](../../partitioning-tables/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION\_SCHEMA.TABLES table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
 
 #### `--skip-slave-start`
 

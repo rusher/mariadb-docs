@@ -105,7 +105,7 @@ If the above don't help, check also if your system is set to [write to syslog](.
 
 The default value of the [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) system variable is `2`.
 
-The [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) system variable can be used to configure the verbosity of the error log. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) system variable can be used to configure the verbosity of the error log. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL log_warnings=3;
@@ -212,7 +212,7 @@ Default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mar
 [Warning] Update locks cannot be acquired during a READ UNCOMMITTED transaction.
 ```
 
-* Messages related to the files used to [persist replication state](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
+* Messages related to the files used to [persist replication state](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
   * Either the default `master.info` file or the file that is configured by the [master\_info\_file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
   * Either the default `relay-log.info` file or the file that is configured by the [relay\_log\_info\_file](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 

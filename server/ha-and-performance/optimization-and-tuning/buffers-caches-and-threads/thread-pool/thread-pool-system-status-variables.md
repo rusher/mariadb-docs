@@ -42,7 +42,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 #### `thread_pool_dedicated_listener`
 
-* Description: If set to 1, then each group will have its own dedicated listener, and the listener thread will not pick up work items. As a result, the queueing time in the [Information Schema Threadpool\_Queues](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md) and the actual queue size in the [Information Schema Threadpool\_Groups](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md) table will be more exact, since\
+* Description: If set to 1, then each group will have its own dedicated listener, and the listener thread will not pick up work items. As a result, the queueing time in the [Information Schema Threadpool\_Queues](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md) and the actual queue size in the [Information Schema Threadpool\_Groups](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_groups-table.md) table will be more exact, since\
   IO requests are immediately dequeued from poll, without delay.
   * This system variable is only meaningful on Unix.
 * Commandline: `thread-pool-dedicated-listener={0|1}`
@@ -55,7 +55,7 @@ This article describes the system and status variables used by the MariaDB threa
 #### `thread_pool_exact_stats`
 
 * Description: If set to 1, provides better queueing time statistics by using a high precision timestamp, at a small performance cost, for the time when the connection was added to the queue. This timestamp helps\
-  calculate the queuing time shown in the [Information Schema Threadpool\_Queues](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md) table.
+  calculate the queuing time shown in the [Information Schema Threadpool\_Queues](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_queues-table.md) table.
   * This system variable is only meaningful on Unix.
 * Commandline: `thread-pool-exact-stats={0|1}`
 * Scope:

@@ -23,9 +23,9 @@ Query OK, 0 rows affected, 2 warnings (0.00 sec)
 Note, that using compound statements this way is subject to following limitations:
 
 * Only [BEGIN](begin-end.md), [IF](if.md), [CASE](case-statement.md), [LOOP](loop.md), [WHILE](while.md), [REPEAT](repeat-loop.md) statements may start a compound statement outside of stored programs.
-* [BEGIN](begin-end.md) must use the `BEGIN NOT ATOMIC` syntax (otherwise it'll be confused with [BEGIN](../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) that starts a transaction).
+* [BEGIN](begin-end.md) must use the `BEGIN NOT ATOMIC` syntax (otherwise it'll be confused with [BEGIN](../../reference/sql-statements/transactions/start-transaction.md) that starts a transaction).
 * A compound statement might not start with a label.
-* A compound statement is parsed completely—note "2 warnings" in the above example, even if the condition was false (InnoDB was, indeed, disabled), and the [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement was not executed, it was still parsed and the parser produced "Unknown storage engine" warning.
+* A compound statement is parsed completely—note "2 warnings" in the above example, even if the condition was false (InnoDB was, indeed, disabled), and the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement was not executed, it was still parsed and the parser produced "Unknown storage engine" warning.
 
 Inside a compound block first three limitations do not apply, one can use anything that can be used inside a stored program — including labels, condition handlers, variables, and so on:
 

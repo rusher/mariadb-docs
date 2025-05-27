@@ -1,6 +1,6 @@
 # Spider Status Variables
 
-The following status variables are associated with the [Spider storage engine](../../../reference/storage-engines/spider/). See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md).
+The following status variables are associated with the [Spider storage engine](../../../reference/storage-engines/spider/). See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 

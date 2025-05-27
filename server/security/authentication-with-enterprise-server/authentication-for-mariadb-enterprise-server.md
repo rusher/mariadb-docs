@@ -6,7 +6,7 @@
 
 ## Change Password
 
-The password for a [database user account](https://mariadb.com/kb/en/database_user_account) can be changed using the [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), [ALTER USER](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md), and [SET PASSWORD](../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statements.
+The password for a [database user account](https://mariadb.com/kb/en/database_user_account) can be changed using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), [ALTER USER](../../reference/sql-statements/account-management-sql-commands/alter-user.md), and [SET PASSWORD](../../reference/sql-statements/account-management-sql-commands/set-password.md) statements.
 
 ```
 With ALTER USER:

@@ -1,14 +1,12 @@
+# optimizer-trace-guide
 
-# Optimizer Trace Guide
+## Optimizer Trace Guide
 
 Optimizer trace uses the JSON format. It is basically a structured log file showing what actions were taken by the query optimizer.
 
-
-## A Basic Example
-
+### A Basic Example
 
 Let's take a simple query:
-
 
 ```
 MariaDB> explain select * from t1 where a<10;
@@ -20,7 +18,6 @@ MariaDB> explain select * from t1 where a<10;
 ```
 
 One can see the full trace [here](basic-optimizer-trace-example.md). Taking only the component names, one gets:
-
 
 ```
 MariaDB> select * from information_schema.optimizer_trace limit 1\G
@@ -62,41 +59,31 @@ MariaDB> select * from information_schema.optimizer_trace limit 1\G
 }
 ```
 
-## Trace Structure
-
+### Trace Structure
 
 For each SELECT, there are two "Steps":
-
 
 * `join_preparation`
 * `join_optimization`
 
-
 Join preparation shows early query rewrites. `join_optmization` is where most of the query optimizations are done. They are:
 
-
 * `condition_processing` - basic rewrites in WHERE/ON conditions.
-* `ref_optimizer_key_uses` - Construction of possible ways to do ref and eq_ref accesses.
-* `rows_estimation` - Consideration of range and index_merge accesses.
+* `ref_optimizer_key_uses` - Construction of possible ways to do ref and eq\_ref accesses.
+* `rows_estimation` - Consideration of range and index\_merge accesses.
 * `considered_execution_plans` - Join optimization itself, that is, choice of the join order.
 * `attaching_conditions_to_tables` - Once the join order is fixed, parts of the WHERE clause are "attached" to tables to filter out rows as early as possible.
 
-
 The above steps are for just one SELECT. If the query has subqueries, each SELECT will have these steps, and there will be extra steps/rewrites to handle the subquery construct itself.
 
-
-## Extracting Trace Components
-
+### Extracting Trace Components
 
 If you are interested in some particular part of the trace, MariaDB has two functions that come in handy:
 
-
-* [JSON_EXTRACT](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_extract.md) extracts a part of JSON document
-* [JSON_DETAILED](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) presents it in a user-readable way.
-
+* [JSON\_EXTRACT](../../../sql-statements/built-in-functions/special-functions/json-functions/json_extract.md) extracts a part of JSON document
+* [JSON\_DETAILED](../../../sql-statements/built-in-functions/special-functions/json-functions/json_detailed.md) presents it in a user-readable way.
 
 For example, the contents of the `analyzing_range_alternatives` node can be extracted like so:
-
 
 ```
 MariaDB> select JSON_DETAILED(JSON_EXTRACT(trace, '$**.analyzing_range_alternatives')) 
@@ -129,21 +116,17 @@ JSON_DETAILED(JSON_EXTRACT(trace, '$**.analyzing_range_alternatives')): [
 ]
 ```
 
-## Examples of Various Information in the Trace
+### Examples of Various Information in the Trace
 
-
-### Basic Rewrites
-
+#### Basic Rewrites
 
 A lot of applications construct database query text on the fly, which sometimes means that the query has constructs that are repetitive or redundant. In most cases, the optimizer will be able to remove them. One can check the trace to be sure:
-
 
 ```
 explain select * from t1 where not (col1 >= 3);
 ```
 
 Optimizer trace will show:
-
 
 ```
 "steps": [
@@ -158,16 +141,13 @@ Optimizer trace will show:
 
 Here, one can see that `NOT` was removed.
 
-
 Similarly, one can also see that `IN(...)` with one element is the same as equality:
-
 
 ```
 explain select * from t1 where col1  in (1);
 ```
 
 will show
-
 
 ```
 "join_preparation": {
@@ -179,13 +159,11 @@ will show
 
 On the other hand, converting an UTF-8 column to UTF-8 is not removed:
 
-
 ```
 explain select * from t1 where convert(utf8_col using utf8) = 'hello';
 ```
 
 will show
-
 
 ```
 "join_preparation": {
@@ -198,12 +176,9 @@ will show
 
 so redundant `CONVERT` calls should be used with caution.
 
-
-### VIEW Processing
-
+#### VIEW Processing
 
 MariaDB has two algorithms to handle VIEWs: merging and materialization. If you run a query that uses a VIEW, the trace will have either
-
 
 ```
 "view": {
@@ -214,7 +189,6 @@ MariaDB has two algorithms to handle VIEWs: merging and materialization. If you 
 ```
 
 or
-
 
 ```
 {
@@ -228,15 +202,11 @@ or
 
 depending on which algorithm was used.
 
-
-### Range Optimizer - What Ranges Will Be Scanned
-
+#### Range Optimizer - What Ranges Will Be Scanned
 
 The MariaDB optimizer has a complex part called the Range Optimizer. This is a module that examines WHERE (and ON) clauses and constructs index ranges that need to be scanned to answer the query. The rules for constructing the ranges are quite complex.
 
-
 An example: Consider a table
-
 
 ```
 create table some_events ( 
@@ -249,7 +219,6 @@ create table some_events (
 
 and a query:
 
-
 ```
 explain select * from some_events where start_date >= '2019-09-10' and end_date <= '2019-09-14';
 +------+-------------+-------------+------+---------------+------+---------+------+------+-------------+
@@ -259,8 +228,7 @@ explain select * from some_events where start_date >= '2019-09-10' and end_date 
 +------+-------------+-------------+------+---------------+------+---------+------+------+-------------+
 ```
 
-One might think that the optimizer would be able to use the restrictions on both *start_date* and *end_date* to construct a narrow range to be scanned. But this is not so, one of the restrictions creates a left-endpoint range and the other one creates a right-endpoint range, hence they cannot be combined.
-
+One might think that the optimizer would be able to use the restrictions on both _start\_date_ and _end\_date_ to construct a narrow range to be scanned. But this is not so, one of the restrictions creates a left-endpoint range and the other one creates a right-endpoint range, hence they cannot be combined.
 
 ```
 select 
@@ -282,28 +250,20 @@ trace: [
 
 the potential range only uses one of the bounds.
 
-
-### Ref Access Options
-
+#### Ref Access Options
 
 Index-based Nested-loops joins are called "ref access" in the MariaDB optimizer.
 
-
 The optimizer analyzes the WHERE/ON conditions and collects all equality conditions that can be used by ref access using some index.
 
-
-The list of conditions can be found in the `ref_optimizer_key_uses` node.
+The list of conditions can be found in the `ref_optimizer_key_uses` node.\
 (TODO example)
 
-
-### Join Optimization
-
+#### Join Optimization
 
 The join optimizer's node is named `considered_execution_plans`.
 
-
 The optimizer constructs the join orders in a left-to-right fashion. That is, if the query is a join of three tables:
-
 
 ```
 select * from t1, t2, t3 where ...
@@ -311,16 +271,13 @@ select * from t1, t2, t3 where ...
 
 then the optimizer will
 
-
 * Pick the first table (say, it is t1),
 * consider adding another table (say, t2), and construct a prefix "t1, t2"
-* consider adding the third table (t3), and constructing a prefix "t1, t2, t3", which is a complete join plan
-Other join orders will be considered as well.
+* consider adding the third table (t3), and constructing a prefix "t1, t2, t3", which is a complete join plan\
+  Other join orders will be considered as well.
 
-
-The basic operation here is: "given a join prefix of tables A,B,C ..., try adding table X to it". 
+The basic operation here is: "given a join prefix of tables A,B,C ..., try adding table X to it".\
 In JSON, it looks like this:
-
 
 ```
 {
@@ -338,16 +295,12 @@ In JSON, it looks like this:
 
 (search for `plan_prefix` followed by `table`).
 
-
 If you are interested in how the join order of #t1,t2,t3
 
-# was constructed (or not constructed), you need to search for these patterns:
-
+## was constructed (or not constructed), you need to search for these patterns:
 
 * `"plan_prefix":[], "table":"t1"`
 * `"plan_prefix":["t1"], "table":"t2"`
 * `"plan_prefix":["t1", "t2"], "table":"t3"`
 
-
 CC BY-SA / Gnu FDL
-

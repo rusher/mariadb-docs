@@ -1,26 +1,18 @@
-
 # Aria Storage Formats
 
-The [Aria](README.md) storage engine supports three different table storage formats.
+The [Aria](./) storage engine supports three different table storage formats.
 
+These are FIXED, DYNAMIC and PAGE, and they can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement. PAGE is the default format, while FIXED and DYNAMIC are essentially the same as the [MyISAM formats](../myisam-storage-engine/myisam-storage-formats.md).
 
-These are FIXED, DYNAMIC and PAGE, and they can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement. PAGE is the default format, while FIXED and DYNAMIC are essentially the same as the [MyISAM formats](../myisam-storage-engine/myisam-storage-formats.md).
-
-
-The [SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table.
-
+The [SHOW TABLE STATUS](../../sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table.
 
 ## Fixed-length
 
-
-Fixed-length (or static) tables contain records of a fixed-length. Each column is the same length for all records, regardless of the actual contents. It is the default format if a table has no BLOB, TEXT, VARCHAR or VARBINARY fields, and no ROW FORMAT is provided. You can also specify a fixed table with ROW_FORMAT=FIXED in the table definition.
-
+Fixed-length (or static) tables contain records of a fixed-length. Each column is the same length for all records, regardless of the actual contents. It is the default format if a table has no BLOB, TEXT, VARCHAR or VARBINARY fields, and no ROW FORMAT is provided. You can also specify a fixed table with ROW\_FORMAT=FIXED in the table definition.
 
 Tables containing BLOB or TEXT fields cannot be FIXED, as by design these are both dynamic fields.
 
-
 Fixed-length tables have a number of characteristics
-
 
 * fast, since MariaDB will always know where a record begins
 * easy to cache
@@ -28,15 +20,11 @@ Fixed-length tables have a number of characteristics
 * reconstructing after a crash is uncomplicated due to the fixed positions
 * no fragmentation or need to re-organize, unless records have been deleted and you want to free the space up.
 
-
 ## Dynamic
 
-
-Dynamic tables contain records of a variable length. It is the default format if a table has any BLOB, TEXT, VARCHAR or VARBINARY fields, and no ROW FORMAT is provided. You can also specify a DYNAMIC table with ROW_FORMAT=DYNAMIC in the table definition.
-
+Dynamic tables contain records of a variable length. It is the default format if a table has any BLOB, TEXT, VARCHAR or VARBINARY fields, and no ROW FORMAT is provided. You can also specify a DYNAMIC table with ROW\_FORMAT=DYNAMIC in the table definition.
 
 Dynamic tables have a number of characteristics
-
 
 * Each row contains a header indicating the length of the row.
 * Rows tend to become fragmented easily. UPDATING a record to be longer will likely ensure it is stored in different places on the disk.
@@ -44,15 +32,11 @@ Dynamic tables have a number of characteristics
 * They require much less space than fixed-length tables.
 * Restoring after a crash is more complicated than with FIXED tables.
 
-
 ## Page
-
 
 Page format is the default format for Aria tables, and is the only format that can be used if TRANSACTIONAL=1.
 
-
 Page tables have a number of characteristics:
-
 
 * It's cached by the page cache, which gives better random performance as it uses fewer system calls.
 * Does not fragment as easily easily as the DYNAMIC format during UPDATES. The maximum number of fragments are very low.
@@ -61,12 +45,8 @@ Page tables have a number of characteristics:
 * Slower to perform a full table scan
 * Slower if there are multiple duplicated keys, as Aria will first write a row, then keys, and only then check for duplicates
 
-
 ## Transactional
-
 
 See [Aria Storage Engine](aria-storage-engine.md) for the impact of the TRANSACTIONAL option on the row format.
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,20 +1,14 @@
-
 # EXPLAIN Analyzer
 
 The EXPLAIN Analyzer is no longer active.
 
-
-The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) was an online tool for analyzing and optionally sharing the output of both [EXPLAIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) and `EXPLAIN EXTENDED`.
-
+The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) was an online tool for analyzing and optionally sharing the output of both [EXPLAIN](../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) and `EXPLAIN EXTENDED`.
 
 ## Using the Analyzer
 
-
 Using the analyzer is very simple.
 
-
 1. In the mariadb client, run `EXPLAIN` on a query and copy the output. For example:
-
 
 ```
 EXPLAIN SELECT * FROM t1 INNER JOIN t2 INNER JOIN t3 WHERE t1.a=t2.a AND t2.a=t3.a;
@@ -29,33 +23,22 @@ EXPLAIN SELECT * FROM t1 INNER JOIN t2 INNER JOIN t3 WHERE t1.a=t2.a AND t2.a=t3
 ```
 
 1. Paste the output into the [EXPLAIN Analyzer input box](https://mariadb.org/explain_analyzer/analyze/) and click the "Analyze Explain" button.
-
-
-1. The formatted `EXPLAIN` will be shown. You can now click on various part to get more information about them.
-
+2. The formatted `EXPLAIN` will be shown. You can now click on various part to get more information about them.
 
 ### Some Notes:
 
-
 * As you can see in the example above, you don't need to chop off the query line or the command prompt.
-* To save the EXPLAIN, so you can share it, or just for future reference, click the "Save Explain for analysis and sharing" button and then click the "Analyze Explain" button. You will be given a link which leads to your saved `EXPLAIN`. For example, the above explain can be viewed here: [](https://mariadb.org/explain_analyzer/analyze/)
+* To save the EXPLAIN, so you can share it, or just for future reference, click the "Save Explain for analysis and sharing" button and then click the "Analyze Explain" button. You will be given a link which leads to your saved `EXPLAIN`. For example, the above explain can be viewed here:
 * Some of the elements in the formatted `EXPLAIN` are clickable. Clicking on them will show pop-up help related to that element.
-
 
 ## Clients which integrate with the Explain Analyzer
 
-
 The Analyzer has an API that client programs can use to send EXPLAINs. If you are a client application developer, see the [EXPLAIN Analyzer API](explain-analyzer-api.md) page for details.
-
 
 The following clients have support for the EXPLAIN Analyzer built in:
 
-
 ### HeidiSQL
-
 
 [HeidiSQL](https://www.heidisql.com/) has a button when viewing a query that sends the query to the explain analyzer.
 
-
 CC BY-SA / Gnu FDL
-

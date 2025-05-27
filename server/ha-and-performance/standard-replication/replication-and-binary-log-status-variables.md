@@ -2,7 +2,7 @@
 
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-The following status variables are useful in [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](broken-reference). See [Server Status Variables](../optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md).
+The following status variables are useful in [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](broken-reference). See [Server Status Variables](../optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
 See also the [Full list of MariaDB options, system and status variables](../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -77,13 +77,13 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `Binlog_snapshot_file`
 
-* Description: The binary log file. Unlike [SHOW MASTER STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](enhancements-for-start-transaction-with-consistent-snapshot.md).
+* Description: The binary log file. Unlike [SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](enhancements-for-start-transaction-with-consistent-snapshot.md).
 * Scope: Global
 * Data Type: `string`
 
 #### `Binlog_snapshot_position`
 
-* Description: The binary log position. Unlike [SHOW MASTER STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](enhancements-for-start-transaction-with-consistent-snapshot.md).
+* Description: The binary log position. Unlike [SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md), can be queried in a transactionally consistent way, irrespective of which other transactions have been committed since the snapshot was taken. See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](enhancements-for-start-transaction-with-consistent-snapshot.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -101,7 +101,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `Com_change_master`
 
-* Description: Number of [CHANGE MASTER TO](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statements executed.
+* Description: Number of [CHANGE MASTER TO](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -114,7 +114,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `Com_show_master_status`
 
-* Description: Number of [SHOW MASTER STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md) commands executed.
+* Description: Number of [SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
@@ -128,51 +128,51 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `Com_show_slave_hosts`
 
-* Description: Number of [SHOW SLAVE HOSTS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) commands executed.
+* Description: Number of [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_slave_status`
 
-* Description: Number of [SHOW SLAVE STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) commands executed.
+* Description: Number of [SHOW SLAVE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_slave_start`
 
-* Description: Number of [START SLAVE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) commands executed. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), see [Com\_start\_slave](replication-and-binary-log-status-variables.md#com_start_slave).
+* Description: Number of [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) commands executed. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), see [Com\_start\_slave](replication-and-binary-log-status-variables.md#com_start_slave).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: `[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)`
 
 #### `Com_slave_stop`
 
-* Description: Number of [STOP SLAVE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) commands executed. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), see [Com\_stop\_slave](replication-and-binary-log-status-variables.md#com_stop_slave).
+* Description: Number of [STOP SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) commands executed. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), see [Com\_stop\_slave](replication-and-binary-log-status-variables.md#com_stop_slave).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: `[MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)`
 
 #### `Com_start_all_slaves`
 
-* Description: Number of [START ALL SLAVES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) commands executed.
+* Description: Number of [START ALL SLAVES](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_start_slave`
 
-* Description: Number of [START SLAVE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) commands executed. Replaces the old [Com\_slave\_start](replication-and-binary-log-status-variables.md#com_slave_start).
+* Description: Number of [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) commands executed. Replaces the old [Com\_slave\_start](replication-and-binary-log-status-variables.md#com_slave_start).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stop_all_slaves`
 
-* Description: Number of [STOP ALL SLAVES](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) commands executed.
+* Description: Number of [STOP ALL SLAVES](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stop_slave`
 
-* Description: Number of [STOP SLAVE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) commands executed. Replaces the old [Com\_slave\_stop](replication-and-binary-log-status-variables.md#com_slave_stop).
+* Description: Number of [STOP SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) commands executed. Replaces the old [Com\_slave\_stop](replication-and-binary-log-status-variables.md#com_slave_stop).
 * Scope: Global, Session
 * Data Type: `numeric`
 

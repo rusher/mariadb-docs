@@ -22,7 +22,7 @@ END CASE
 
 ## Description
 
-The text on this page describes the `CASE` statement for [stored programs](../stored-routines/). See the [CASE OPERATOR](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md) for details on the CASE operator outside of [stored programs](../stored-routines/).
+The text on this page describes the `CASE` statement for [stored programs](../stored-routines/). See the [CASE OPERATOR](../../reference/sql-statements/built-in-functions/control-flow-functions/case-operator.md) for details on the CASE operator outside of [stored programs](../stored-routines/).
 
 The `CASE` statement for [stored programs](../stored-routines/) implements a complex conditional\
 construct. If a `search_condition` evaluates to true, the corresponding SQL\
@@ -63,13 +63,13 @@ The indentation used here in the `ELSE` clause is for purposes of clarity only,\
 and is not otherwise significant. See [Delimiters in the mariadb client](../../clients-and-utilities/mariadb-client/delimiters.md) for more on the use of the delimiter command.
 
 **Note:** The syntax of the `CASE` statement used inside stored programs\
-differs slightly from that of the SQL CASE expression described in[CASE OPERATOR](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md).\
+differs slightly from that of the SQL CASE expression described in[CASE OPERATOR](../../reference/sql-statements/built-in-functions/control-flow-functions/case-operator.md).\
 The `CASE` statement cannot have an `ELSE NULL` clause, and it is\
 terminated with `END CASE` instead of `END`.
 
 ## See Also
 
-* The [CASE operator](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
+* The [CASE operator](../../reference/sql-statements/built-in-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
 * The [IF statement](if.md).
 
 GPLv2 fill\_help\_tables.sql

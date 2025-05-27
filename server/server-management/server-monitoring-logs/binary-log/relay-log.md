@@ -11,7 +11,7 @@ Events are read from the primary's binary log and written to the replica's relay
 New relay log files are created by the replica at the following times:
 
 * when the IO thread starts
-* when the logs are flushed, with [FLUSH LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin flush-logs](../../../clients-and-utilities/mariadb-admin.md).
+* when the logs are flushed, with [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin flush-logs](../../../clients-and-utilities/mariadb-admin.md).
 * when the maximum size, determined by the [max\_relay\_log\_size](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable, has been reached
 
 ## Relay Log Names
@@ -31,20 +31,20 @@ shell> mv OLD_relay_log_name.index NEW_relay_log_name.index
 
 ## Viewing Relay Logs
 
-The [SHOW RELAYLOG EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md) shows events in the relay log, and, since relay log files are the same format as binary log files, they can be read with the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) utility.
+The [SHOW RELAYLOG EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-relaylog-events.md) shows events in the relay log, and, since relay log files are the same format as binary log files, they can be read with the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) utility.
 
 ## Removing Old Relay Logs
 
 Old relay logs are automatically removed once all events have been implemented on the replica, and the relay log file is no longer needed. This behavior can be changed by adjusting the [relay\_log\_purge](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable from its default of `1` to `0`, in which case the relay logs will be left on the server.
 
-Relay logs are also removed by the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement unless a [relay log option](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#relay_log_options) is used.
+Relay logs are also removed by the [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement unless a [relay log option](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#relay_log_options) is used.
 
-One can also flush the logs with the [FLUSH RELAY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) commands.
+One can also flush the logs with the [FLUSH RELAY LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) commands.
 
 If the relay logs are taking up too much space on the replica, the [relay\_log\_space\_limit](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable can be set to limit the size. The IO thread will stop until the SQL thread has cleared the backlog. By default there is no limit.
 
 ## See also
 
-* [FLUSH RELAY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)
+* [FLUSH RELAY LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md)
 
 CC BY-SA / Gnu FDL

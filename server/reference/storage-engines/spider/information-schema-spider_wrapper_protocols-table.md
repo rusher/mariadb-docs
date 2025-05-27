@@ -1,25 +1,17 @@
+# Information Schema SPIDER\_WRAPPER\_PROTOCOLS Table
 
-# Information Schema SPIDER_WRAPPER_PROTOCOLS Table
+**MariaDB starting with** [**10.5.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes)
 
-
-##### MariaDB starting with [10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes)
-The [Information Schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) `SPIDER_WRAPPER_PROTOCOLS` table is installed along with the [Spider](README.md) storage engine from [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes). 
-
+The [Information Schema](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) `SPIDER_WRAPPER_PROTOCOLS` table is installed along with the [Spider](./) storage engine from [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
 
 It contains the following columns:
 
-
-
-| Column | Type | Description |
-| --- | --- | --- |
-| Column | Type | Description |
-| WRAPPER_NAME | varchar(64) |  |
-| WRAPPER_VERSION | varchar(20) |  |
-| WRAPPER_DESCRIPTION | longtext |  |
-| WRAPPER_MATURITY | varchar(12) |
-
-
-
+| Column               | Type        | Description |
+| -------------------- | ----------- | ----------- |
+| Column               | Type        | Description |
+| WRAPPER\_NAME        | varchar(64) |             |
+| WRAPPER\_VERSION     | varchar(20) |             |
+| WRAPPER\_DESCRIPTION | longtext    |             |
+| WRAPPER\_MATURITY    | varchar(12) |             |
 
 CC BY-SA / Gnu FDL
-

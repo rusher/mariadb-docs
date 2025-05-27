@@ -13,7 +13,7 @@ CREATE TABLE student_tests (
 );
 ```
 
-See [CREATE TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) for more.
+See [CREATE TABLE](../reference/sql-statements/data-definition/create/create-table.md) for more.
 
 ## Inserting Records
 
@@ -33,7 +33,7 @@ INSERT INTO student_tests
  ('Tatiana', 'Tuning', 83, '2013-09-30');
 ```
 
-See [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) for more.
+See [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) for more.
 
 ## Using AUTO\_INCREMENT
 
@@ -74,7 +74,7 @@ See [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) for more.
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
-This kind of query is called a join - see [JOINS](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/) for more.
+This kind of query is called a join - see [JOINS](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/) for more.
 
 ## Finding the Maximum Value
 
@@ -87,7 +87,7 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](<mariadb-advanced-sql-guide (1).md#finding-the-maximum-value-and-grouping-the-results>) below for a more practical example.
+See the [MAX() function](../reference/sql-statements/built-in-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](<mariadb-advanced-sql-guide (1).md#finding-the-maximum-value-and-grouping-the-results>) below for a more practical example.
 
 ## Finding the Minimum Value
 
@@ -100,7 +100,7 @@ SELECT MIN(a) FROM t1;
 +--------+
 ```
 
-See the [MIN() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/min.md) for more.
+See the [MIN() function](../reference/sql-statements/built-in-functions/aggregate-functions/min.md) for more.
 
 ## Finding the Average Value
 
@@ -113,7 +113,7 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) for more.
+See the [AVG() function](../reference/sql-statements/built-in-functions/aggregate-functions/avg.md) for more.
 
 ## Finding the Maximum Value and Grouping the Results
 
@@ -129,7 +129,7 @@ SELECT name, MAX(score) FROM student_tests GROUP BY name;
 +---------+------------+
 ```
 
-See the [MAX() function](../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/max.md) for more.
+See the [MAX() function](../reference/sql-statements/built-in-functions/aggregate-functions/max.md) for more.
 
 ## Ordering Results
 
@@ -149,7 +149,7 @@ SELECT name, test, score FROM student_tests ORDER BY score DESC;
 +---------+--------+-------+
 ```
 
-See [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
+See [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
 
 ## Finding the Row with the Minimum of a Particular Column
 
@@ -184,7 +184,7 @@ SELECT name, test, score FROM student_tests st1 WHERE score = (
 
 ## Calculating Age
 
-The [TIMESTAMPDIFF](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
+The [TIMESTAMPDIFF](../reference/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
 
 ```
 SELECT CURDATE() AS today;
@@ -206,7 +206,7 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 +---------+---------------+------+
 ```
 
-See [TIMESTAMPDIFF()](../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) for more.
+See [TIMESTAMPDIFF()](../reference/sql-statements/built-in-functions/date-time-functions/timestampdiff.md) for more.
 
 ## Using User-defined Variables
 

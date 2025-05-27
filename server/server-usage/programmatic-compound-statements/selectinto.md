@@ -26,7 +26,7 @@ Windows, to the application event log.
 
 This statement can be used with both [local variables](declare-variable.md) and [user-defined variables](../../reference/sql-statements-and-structure/sql-language-structure/user-defined-variables.md).
 
-For the complete syntax, see [SELECT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md).
+For the complete syntax, see [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md).
 
 Another way to set a variable's value is the [SET](set-variable.md) statement.
 
@@ -48,8 +48,8 @@ SELECT  * INTO @x FROM (SELECT t1.a FROM t1 UNION SELECT t2.a FROM t2) dt;
 
 ## See Also
 
-* [SELECT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) - full SELECT syntax.
-* [SELECT INTO OUTFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) - formatting and writing the result to an external file.
-* [SELECT INTO DUMPFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
+* [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) - full SELECT syntax.
+* [SELECT INTO OUTFILE](../../reference/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) - formatting and writing the result to an external file.
+* [SELECT INTO DUMPFILE](../../reference/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
 
 GPLv2 fill\_help\_tables.sql

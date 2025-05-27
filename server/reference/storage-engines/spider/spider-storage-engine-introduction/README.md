@@ -84,7 +84,7 @@ To deploy the Enterprise Spider storage engine with MariaDB Enterprise Server, c
 
 ### ES Information Schema Reference
 
-* [SPIDER\_ALLOC\_MEM](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md)
+* [SPIDER\_ALLOC\_MEM](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md)
 * [SPIDER\_WRAPPER\_PROTOCOLS](../information-schema-spider_wrapper_protocols-table.md)
 
 ### ES Plugin Reference
@@ -93,9 +93,9 @@ To deploy the Enterprise Spider storage engine with MariaDB Enterprise Server, c
 
 ### ES SQL Statement Reference
 
-* [ALTER SERVER](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-server.md)
-* [CREATE SERVER](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)
-* [DROP SERVER](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-server.md)
+* [ALTER SERVER](../../../sql-statements/data-definition/alter/alter-server.md)
+* [CREATE SERVER](../../../sql-statements/data-definition/create/create-server.md)
+* [DROP SERVER](../../../sql-statements/data-definition/drop/drop-server.md)
 
 ### ES System Table Reference
 

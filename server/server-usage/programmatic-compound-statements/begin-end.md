@@ -17,7 +17,7 @@ terminated by a semicolon (i.e., `;`) statement delimiter. statement\_list is\
 optional, which means that the empty compound statement (`BEGIN END`) is\
 legal.
 
-Note that `END` will perform a commit. If you are running in [autocommit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) mode, every statement will be committed separately. If you are not running in `autocommit` mode, you must execute a [COMMIT](../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) or [ROLLBACK](../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) after `END` to get the database up to date.
+Note that `END` will perform a commit. If you are running in [autocommit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) mode, every statement will be committed separately. If you are not running in `autocommit` mode, you must execute a [COMMIT](../../reference/sql-statements/transactions/commit.md) or [ROLLBACK](../../reference/sql-statements/transactions/rollback.md) after `END` to get the database up to date.
 
 Use of multiple statements requires that a client is able to send statement strings containing the ; statement delimiter. This is handled in the [mysql](https://mariadb.com/kb/en/mysql-command-line_client) command-line client with the [DELIMITER](../../clients-and-utilities/mariadb-client/delimiters.md) command.\
 Changing the `;` end-of-statement delimiter (for example, to`//`) allows `;` to be used in a program body.
@@ -59,7 +59,7 @@ BEGIN
 END;
 ```
 
-In this example, a [TINYINT](../../reference/data-types/data-types-numeric-data-types/tinyint.md) variable, `x` is declared in the outter block. But in the inner block `x` is re-declared as a [CHAR](../../reference/data-types/string-data-types/char.md) and an `y` variable is declared. The inner [SELECT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) shows the "new" value of `x`, and the value of `y`. But when x is selected in the outer block, the "old" value is returned. The final [SELECT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) doesn't try to read `y`, because it doesn't exist in that context.
+In this example, a [TINYINT](../../reference/data-types/data-types-numeric-data-types/tinyint.md) variable, `x` is declared in the outter block. But in the inner block `x` is re-declared as a [CHAR](../../reference/data-types/string-data-types/char.md) and an `y` variable is declared. The inner [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) shows the "new" value of `x`, and the value of `y`. But when x is selected in the outer block, the "old" value is returned. The final [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) doesn't try to read `y`, because it doesn't exist in that context.
 
 ## See Also
 

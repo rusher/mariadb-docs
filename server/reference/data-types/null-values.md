@@ -2,7 +2,7 @@
 
 NULL represents an unknown value. It is _not_ an empty string (by default), or a zero value. These are all valid values, and are not NULLs.
 
-When a table is [created](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or the format [altered](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
+When a table is [created](../sql-statements/data-definition/create/create-table.md) or the format [altered](../sql-statements/data-definition/alter/alter-table.md), columns can be specified as accepting NULL values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
 
 For example, a customer table could contain dates of birth. For some customers, this information is unknown, so the value could be NULL.
 
@@ -77,7 +77,7 @@ All NULL values are also regarded as equivalent for the purposes of the DISTINCT
 
 ## Functions
 
-In most cases, functions will return NULL if any of the parameters are NULL. There are also functions specifically for handling NULLs. These include [IFNULL()](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md), [NULLIF()](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/nullif.md) and [COALESCE()](../sql-statements-and-structure/operators/comparison-operators/coalesce.md).
+In most cases, functions will return NULL if any of the parameters are NULL. There are also functions specifically for handling NULLs. These include [IFNULL()](../sql-statements/built-in-functions/control-flow-functions/ifnull.md), [NULLIF()](../sql-statements/built-in-functions/control-flow-functions/nullif.md) and [COALESCE()](../sql-statements-and-structure/operators/comparison-operators/coalesce.md).
 
 ```
 SELECT IFNULL(1,0); 
@@ -102,7 +102,7 @@ SELECT COALESCE(NULL,NULL,1);
 +-----------------------+
 ```
 
-Aggregate functions, such as [SUM](../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) and [AVG](../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) ignore NULLs.
+Aggregate functions, such as [SUM](../sql-statements/built-in-functions/aggregate-functions/sum.md) and [AVG](../sql-statements/built-in-functions/aggregate-functions/avg.md) ignore NULLs.
 
 ```
 CREATE TABLE t(x INT);
@@ -124,7 +124,7 @@ SELECT AVG(x) FROM t;
 +--------+
 ```
 
-The one exception is [COUNT(\*)](../sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/count.md), which counts rows, and doesn't look at whether a value is NULL or not. Compare for example, COUNT(x), which ignores the NULL, and COUNT(\*), which counts it:
+The one exception is [COUNT(\*)](../sql-statements/built-in-functions/aggregate-functions/count.md), which counts rows, and doesn't look at whether a value is NULL or not. Compare for example, COUNT(x), which ignores the NULL, and COUNT(\*), which counts it:
 
 ```
 SELECT COUNT(x) FROM t;
@@ -144,7 +144,7 @@ SELECT COUNT(*) FROM t;
 
 ## AUTO\_INCREMENT, TIMESTAMP and Virtual Columns
 
-MariaDB handles NULL values in a special way if the field is an [AUTO\_INCREMENT](auto_increment.md), a [TIMESTAMP](date-and-time-data-types/timestamp.md) or a [virtual column](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). Inserting a NULL value into a numeric AUTO\_INCREMENT column will result in the next number in the auto increment sequence being inserted instead. This technique is frequently used with AUTO\_INCREMENT fields, which are left to take care of themselves.
+MariaDB handles NULL values in a special way if the field is an [AUTO\_INCREMENT](auto_increment.md), a [TIMESTAMP](date-and-time-data-types/timestamp.md) or a [virtual column](../sql-statements/data-definition/create/generated-columns.md). Inserting a NULL value into a numeric AUTO\_INCREMENT column will result in the next number in the auto increment sequence being inserted instead. This technique is frequently used with AUTO\_INCREMENT fields, which are left to take care of themselves.
 
 ```
 CREATE TABLE t2(id INT PRIMARY KEY AUTO_INCREMENT, letter CHAR(1));
@@ -264,7 +264,7 @@ In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-an
 IF a=10 THEN NULL; ELSE NULL; END IF
 ```
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CONCAT](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-statements-and-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CONCAT](../sql-statements/built-in-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-statements-and-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
 
 When setting [sql\_mode=EMPTY\_STRING\_IS\_NULL](../../server-management/variables-and-modes/sql-mode.md), empty strings and NULLs are the same thing. For example:
 
@@ -281,8 +281,8 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [IS NOT NULL operator](../sql-statements-and-structure/operators/comparison-operators/is-not-null.md)
 * [ISNULL function](../sql-statements-and-structure/operators/comparison-operators/isnull.md)
 * [COALESCE function](../sql-statements-and-structure/operators/comparison-operators/coalesce.md)
-* [IFNULL function](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/ifnull.md)
-* [NULLIF function](../sql-statements-and-structure/sql-statements/built-in-functions/control-flow-functions/nullif.md)
+* [IFNULL function](../sql-statements/built-in-functions/control-flow-functions/ifnull.md)
+* [NULLIF function](../sql-statements/built-in-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../storage-engines/connect/connect-data-types.md#null-handling)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 

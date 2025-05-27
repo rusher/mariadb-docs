@@ -17,7 +17,7 @@ ROW (<field name> <data type> [{, <field name> <data type>}... ])
 `ROW` fields (members) act as normal variables, and are able to appear in all\
 query parts where a stored procedure variable is allowed:
 
-* Assignment is using the `:=` operator and the [SET](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) command:
+* Assignment is using the `:=` operator and the [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) command:
 
 ```
 a.x:= 10;
@@ -49,7 +49,7 @@ INSERT INTO t1 VALUES (rec.a, rec.b, rec.c);
 SELECT a,b INTO rec.a, rec.b FROM t1 WHERE t1.id=10;
 ```
 
-* Dynamic SQL out parameters ([EXECUTE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) and [EXECUTE IMMEDIATE](../../sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md))
+* Dynamic SQL out parameters ([EXECUTE](../../sql-statements/prepared-statements/execute-statement.md) and [EXECUTE IMMEDIATE](../../sql-statements/prepared-statements/execute-immediate.md))
 
 ```
 EXECUTE IMMEDIATE 'CALL proc_with_out_param(?)' USING rec.a;

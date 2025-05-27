@@ -17,7 +17,7 @@ See [Storage Engine Development](../storage-engines/storage-engines-storage-engi
 
 ## Information Schema Plugins
 
-Information Schema plugins can have their own [FLUSH](../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) and [SHOW](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/) statements. See[FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
+Information Schema plugins can have their own [FLUSH](../sql-statements/administrative-sql-statements/flush-commands/flush.md) and [SHOW](../sql-statements/administrative-sql-statements/show/) statements. See[FLUSH and SHOW for Information Schema plugins](information-schema-plugins-show-and-flush-statements.md).
 
 ## Encryption Plugins
 
@@ -36,7 +36,7 @@ the MySQL plugin declaration in the following ways:
 2. it has a 'maturity' declaration
 3. it has a field for a text representation of the version field
 
-MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the[INFORMATION\_SCHEMA.PLUGINS table](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md).
+MariaDB can load plugins that only have the MySQL plugin declaration but both `PLUGIN_MATURITY` and `PLUGIN_AUTH_VERSION` will show up as 'Unknown' in the[INFORMATION\_SCHEMA.PLUGINS table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md).
 
 For compiled-in (not dynamically loaded) plugins, the presence of the MariaDB plugin declaration is mandatory.
 

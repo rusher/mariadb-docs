@@ -14,7 +14,7 @@ The maximum total size of MEMORY tables cannot exceed the [max\_heap\_table\_siz
 
 The `MAX_ROWS` table option provides a hint about the number of rows you plan to store in them. This is not a hard limit that cannot be exceeded, and does not allow to exceed `max_heap_table_size`. The storage engine uses max\_heap\_table\_size and MAX\_ROWS to calculate the maximum memory that could be allocated for the table.
 
-Memory allocated to a MEMORY table is freed by running [DROP TABLE](../sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) or [TRUNCATE TABLE](../sql-statements-and-structure/sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl\_name ENGINE = MEMORY](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md). When rows are deleted, space is not automatically freed.
+Memory allocated to a MEMORY table is freed by running [DROP TABLE](../sql-statements/data-definition/drop/drop-table.md) or [TRUNCATE TABLE](../sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl\_name ENGINE = MEMORY](../sql-statements/data-definition/alter/alter-table.md). When rows are deleted, space is not automatically freed.
 
 ## Index Type
 

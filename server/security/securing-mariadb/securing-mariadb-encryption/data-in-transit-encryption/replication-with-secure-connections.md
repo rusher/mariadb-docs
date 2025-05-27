@@ -28,30 +28,30 @@ And then [restart the server](https://mariadb.com/kb/en/) to make the changes pe
 
 At this point, you can reconfigure the replicas to use TLS to encrypt replicated data in transit. There are two methods available to do this:
 
-* Executing the [CHANGE MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to set the relevant TLS options.
+* Executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to set the relevant TLS options.
 * Setting TLS client options in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md).
 
 ### Executing CHANGE MASTER
 
-TLS can be enabled on a replication replica by executing the [CHANGE MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. In order to do so, there are a number of options that you would need to set. The specific options that you would need to set would depend on whether you want one-way TLS or two-way TLS, and whether you want to verify the server certificate.
+TLS can be enabled on a replication replica by executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. In order to do so, there are a number of options that you would need to set. The specific options that you would need to set would depend on whether you want one-way TLS or two-way TLS, and whether you want to verify the server certificate.
 
 #### Enabling Two-Way TLS with CHANGE MASTER
 
 Two-way TLS means that both the client and server provide a private key and an X509 certificate. It is called "two-way" TLS because both the client and server can be authenticated. In this case, the "client" is the replica. To configure two-way TLS, you would need to set the following options:
 
-* You need to set the path to the server's certificate by setting the [MASTER\_SSL\_CERT](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cert) option.
-* You need to set the path to the server's private key by setting the [MASTER\_SSL\_KEY](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_key) option.
-* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting either the [MASTER\_SSL\_CA](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_ca) or the [MASTER\_SSL\_CAPATH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_capath) options.
+* You need to set the path to the server's certificate by setting the [MASTER\_SSL\_CERT](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cert) option.
+* You need to set the path to the server's private key by setting the [MASTER\_SSL\_KEY](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_key) option.
+* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting either the [MASTER\_SSL\_CA](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_ca) or the [MASTER\_SSL\_CAPATH](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_capath) options.
 * If you want [server certificate verification](secure-connections-overview.md#server-certificate-verification), then you also need to set the `[MASTER_SSL_VERIFY_SERVER_CERT](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_verify_server_cert)` option (enabled by default from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)).
-* If you want to restrict the server to certain ciphers, then you also need to set the [MASTER\_SSL\_CIPHER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cipher) option.
+* If you want to restrict the server to certain ciphers, then you also need to set the [MASTER\_SSL\_CIPHER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cipher) option.
 
-If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
+If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
 
 ```
 STOP SLAVE;
 ```
 
-Then, execute the [CHANGE MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
+Then, execute the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
 
 ```
 CHANGE MASTER TO
@@ -61,7 +61,7 @@ CHANGE MASTER TO
    MASTER_SSL_VERIFY_SERVER_CERT=1;
 ```
 
-At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
+At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
 
 ```
 START SLAVE;
@@ -75,17 +75,17 @@ The replica now uses TLS to encrypt data in transit as it replicates it from the
 
 One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so authentication is only possible in one direction. However, encryption is still possible in both directions. [Server certificate verification](secure-connections-overview.md#server-certificate-verification) means that the client verifies that the certificate belongs to the server. In this case, the "client" is the replica. This mode is enabled by default starting from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113). To configure one-way TLS in earlier versions, you would need to set the following options:
 
-* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting either the [MASTER\_SSL\_CA](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_ca) or the [MASTER\_SSL\_CAPATH](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_capath) options.
-* You need to set the [MASTER\_SSL\_VERIFY\_SERVER\_CERT](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_verify_server_cert) option.
-* If you want to restrict the server to certain ciphers, then you also need to set the [MASTER\_SSL\_CIPHER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cipher) option.
+* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting either the [MASTER\_SSL\_CA](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_ca) or the [MASTER\_SSL\_CAPATH](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_capath) options.
+* You need to set the [MASTER\_SSL\_VERIFY\_SERVER\_CERT](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_verify_server_cert) option.
+* If you want to restrict the server to certain ciphers, then you also need to set the [MASTER\_SSL\_CIPHER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cipher) option.
 
-If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
+If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
 
 ```
 STOP SLAVE;
 ```
 
-Then, execute the [CHANGE MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
+Then, execute the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
 
 ```
 CHANGE MASTER TO
@@ -93,7 +93,7 @@ CHANGE MASTER TO
    MASTER_SSL_VERIFY_SERVER_CERT=1;
 ```
 
-At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
+At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
 
 ```
 START SLAVE;
@@ -105,24 +105,24 @@ The replica now uses TLS to encrypt data in transit as it replicates it from the
 
 One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so authentication is only possible in one direction. However, encryption is still possible in both directions. In this case, the "client" is the replica. To configure two-way TLS without server certificate verification, you would need to set the following options:
 
-* You need to configure the replica to use TLS by setting the [MASTER\_SSL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option.
-* If you want to restrict the server to certain ciphers, then you also need to set the [MASTER\_SSL\_CIPHER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cipher) option.
-* Starting from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) you need to disable the [MASTER\_SSL\_VERIFY\_SERVER\_CERT](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_verify_server_cert) option.
+* You need to configure the replica to use TLS by setting the [MASTER\_SSL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option.
+* If you want to restrict the server to certain ciphers, then you also need to set the [MASTER\_SSL\_CIPHER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_cipher) option.
+* Starting from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) you need to disable the [MASTER\_SSL\_VERIFY\_SERVER\_CERT](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl_verify_server_cert) option.
 
-If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
+If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
 
 ```
 STOP SLAVE;
 ```
 
-Then, execute the [CHANGE MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
+Then, execute the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
 
 ```
 CHANGE MASTER TO
    MASTER_SSL=1, MASTER_SSL_VERIFY_SERVER_CERT=0;
 ```
 
-At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
+At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
 
 ```
 START SLAVE;
@@ -146,7 +146,7 @@ ssl-verify-server-cert
 
 Before you restart the server, you may also want to set the [--skip-slave-start](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-slave-start) option in a server [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md). This option prevents the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) from restarting automatically when the server starts. Instead, they will have to be restarted manually.\
 After these changes have been made, you can [restart the server](https://mariadb.com/kb/en/).\
-Once the server is back online, set the [MASTER\_SSL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option by executing the [CHANGE MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. This will enable TLS. For example:
+Once the server is back online, set the [MASTER\_SSL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option by executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. This will enable TLS. For example:
 
 ```
 CHANGE MASTER TO
@@ -154,7 +154,7 @@ CHANGE MASTER TO
 ```
 
 The certificate and keys will be read from the option file.\
-At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement.
+At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement.
 
 ```
 START SLAVE;

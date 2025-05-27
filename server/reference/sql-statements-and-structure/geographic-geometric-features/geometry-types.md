@@ -1,44 +1,34 @@
-
 # Geometry Types
-
 
 ## Description
 
-
-MariaDB provides a standard way of creating spatial columns for geometry types,
-for example, with [CREATE TABLE](../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md).
-Currently, spatial columns are supported for [MyISAM](../../storage-engines/myisam-storage-engine/README.md), [InnoDB](../../storage-engines/innodb/README.md) and [ARCHIVE](../../storage-engines/archive/README.md)
+MariaDB provides a standard way of creating spatial columns for geometry types,\
+for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).\
+Currently, spatial columns are supported for [MyISAM](../../storage-engines/myisam-storage-engine/), [InnoDB](../../storage-engines/innodb/) and [ARCHIVE](../../storage-engines/archive/)\
 tables. See also [SPATIAL INDEX](spatial-index.md).
-
 
 The basic geometry type is `GEOMETRY`. But the type can be more specific. The following types are supported:
 
-
-
-| Geometry Types |
-| --- |
-| Geometry Types |
-| [POINT](geometry-constructors/point.md) |
-| [LINESTRING](geometry-constructors/linestring.md) |
-| [POLYGON](geometry-constructors/polygon.md) |
-| [MULTIPOINT](geometry-constructors/multipoint.md) |
-| [MULTILINESTRING](geometry-constructors/multilinestring.md) |
-| [MULTIPOLYGON](geometry-constructors/multipolygon.md) |
+| Geometry Types                                                    |
+| ----------------------------------------------------------------- |
+| Geometry Types                                                    |
+| [POINT](geometry-constructors/point.md)                           |
+| [LINESTRING](geometry-constructors/linestring.md)                 |
+| [POLYGON](geometry-constructors/polygon.md)                       |
+| [MULTIPOINT](geometry-constructors/multipoint.md)                 |
+| [MULTILINESTRING](geometry-constructors/multilinestring.md)       |
+| [MULTIPOLYGON](geometry-constructors/multipolygon.md)             |
 | [GEOMETRYCOLLECTION](geometry-constructors/geometrycollection.md) |
-| GEOMETRY |
-
-
+| GEOMETRY                                                          |
 
 ## Examples
 
-
-**Note:** For clarity, only one type is listed per table in the examples below, but a table
+**Note:** For clarity, only one type is listed per table in the examples below, but a table\
 row can contain multiple types. For example:
 
 ```
 CREATE TABLE object (shapeA POLYGON, shapeB LINESTRING);
 ```
-
 
 ```
 INSERT INTO geometry_example VALUES
@@ -71,7 +61,6 @@ SELECT ST_AsWKT(g) FROM geometry_example;
 
 ### [POINT](geometry-constructors/point.md)
 
-
 ```
 CREATE TABLE gis_point  (g POINT);
 SHOW FIELDS FROM gis_point;
@@ -94,7 +83,6 @@ INSERT INTO gis_line VALUES
 
 ### [POLYGON](geometry-constructors/polygon.md)
 
-
 ```
 CREATE TABLE gis_polygon   (g POLYGON);
 SHOW FIELDS FROM gis_polygon;
@@ -105,7 +93,6 @@ INSERT INTO gis_polygon VALUES
 ```
 
 ### [MULTIPOINT](geometry-constructors/multipoint.md)
-
 
 ```
 CREATE TABLE gis_multi_point (g MULTIPOINT);
@@ -118,7 +105,6 @@ INSERT INTO gis_multi_point VALUES
 
 ### [MULTILINESTRING](geometry-constructors/multilinestring.md)
 
-
 ```
 CREATE TABLE gis_multi_line (g MULTILINESTRING);
 SHOW FIELDS FROM gis_multi_line;
@@ -130,7 +116,6 @@ INSERT INTO gis_multi_line VALUES
 
 ### [MULTIPOLYGON](geometry-constructors/multipolygon.md)
 
-
 ```
 CREATE TABLE gis_multi_polygon  (g MULTIPOLYGON);
 SHOW FIELDS FROM gis_multi_polygon;
@@ -141,7 +126,6 @@ INSERT INTO gis_multi_polygon VALUES
 ```
 
 ### [GEOMETRYCOLLECTION](geometry-constructors/geometrycollection.md)
-
 
 ```
 CREATE TABLE gis_geometrycollection  (g GEOMETRYCOLLECTION);
@@ -155,7 +139,6 @@ INSERT INTO gis_geometrycollection VALUES
 
 ### [GEOMETRY](geometry-types.md)
 
-
 ```
 CREATE TABLE gis_geometry (g GEOMETRY);
 SHOW FIELDS FROM gis_geometry;
@@ -168,6 +151,4 @@ INSERT into gis_geometry SELECT * FROM gis_multi_polygon;
 INSERT into gis_geometry SELECT * FROM gis_geometrycollection;
 ```
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

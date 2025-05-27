@@ -1,4 +1,4 @@
-# Basics Guides
+# MariaDB Basics
 
 #### Connecting to MariaDB
 
@@ -56,7 +56,7 @@ DESCRIBE books;
 +--------------+-------------+------+-----+---------+-------+
 ```
 
-To change the settings of a table, you can use the [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) statement, followed by the table name. Be careful with this statement since it's not reversible.
+To change the settings of a table, you can use the [ALTER TABLE](../reference/sql-statements/data-definition/alter/alter-table.md) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](../reference/sql-statements/data-definition/drop/drop-table.md) statement, followed by the table name. Be careful with this statement since it's not reversible.
 
 The next table we'll create for our examples is the authors table to hold author information. This table will save us from having to enter the author's name and other related data for each book written by each author. It also helps to ensure consistency of data: there's less chance of inadvertent spelling deviations.
 
@@ -78,7 +78,7 @@ As a basic convention, reserved words are printed in all capital letters. This i
 
 #### Entering Data
 
-The primary method for entering data into a table is to use the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. As an example, let's enter some information about an author into the authors table. We'll do that like so:
+The primary method for entering data into a table is to use the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. As an example, let's enter some information about an author into the authors table. We'll do that like so:
 
 ```
 INSERT INTO authors
@@ -110,14 +110,14 @@ In this example, we've added three books in one statement. This allows us to giv
 
 #### Retrieving Data
 
-The primary method of retrieving data from tables is to use a [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement. There are many options available with the [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement, but you can start simply. As an example, let's retrieve a list of book titles from the books table:
+The primary method of retrieving data from tables is to use a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. There are many options available with the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement, but you can start simply. As an example, let's retrieve a list of book titles from the books table:
 
 ```
 SELECT title 
 FROM books;
 ```
 
-This will display all of the rows of books in the table. If the table has thousands of rows, MariaDB will display thousands. To limit the number of rows retrieved, we could add a [LIMIT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause to the [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement like so:
+This will display all of the rows of books in the table. If the table has thousands of rows, MariaDB will display thousands. To limit the number of rows retrieved, we could add a [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause to the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement like so:
 
 ```
 SELECT title 
@@ -125,7 +125,7 @@ FROM books
 LIMIT 5;
 ```
 
-This will limit the number of rows displayed to five. To be able to list the author's name for each book along with the title, you will have to join the books table with the authors table. To do this, we can use the [JOIN](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause like so:
+This will limit the number of rows displayed to five. To be able to list the author's name for each book along with the title, you will have to join the books table with the authors table. To do this, we can use the [JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause like so:
 
 ```
 SELECT title, name_last 
@@ -133,9 +133,9 @@ FROM books
 JOIN authors USING (author_id);
 ```
 
-Notice that the primary table from which we're drawing data is given in the `FROM` clause. The table to which we're joining is given in the [JOIN](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause along with the commonly named column (i.e., author\_id) that we're using for the join.
+Notice that the primary table from which we're drawing data is given in the `FROM` clause. The table to which we're joining is given in the [JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause along with the commonly named column (i.e., author\_id) that we're using for the join.
 
-To retrieve the titles of only books written by Kafka based on his name (not the author\_id), we would use the `WHERE` clause with the [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement. This would be entered like the following:
+To retrieve the titles of only books written by Kafka based on his name (not the author\_id), we would use the `WHERE` clause with the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. This would be entered like the following:
 
 ```
 SELECT title AS 'Kafka Books'
@@ -157,7 +157,7 @@ This statement will list the titles of Kafka books stored in the database. Notic
 
 #### Changing & Deleting Data
 
-In order to change existing data, a common method is to use the [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. When changing data, though, we need to be sure that we change the correct rows. In our example, there could be another book with the title _America_ written by a different author. Since the key column isbn has only unique numbers and we know the ISBN number for the book that we want to change, we can use it to specify the row.
+In order to change existing data, a common method is to use the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. When changing data, though, we need to be sure that we change the correct rows. In our example, there could be another book with the title _America_ written by a different author. Since the key column isbn has only unique numbers and we know the ISBN number for the book that we want to change, we can use it to specify the row.
 
 ```
 UPDATE books
@@ -167,7 +167,7 @@ WHERE isbn = '0805210644';
 
 This will change the value of the title column for the row specified. We could change the value of other columns for the same row by giving the column = value for each, separated by commas.
 
-If we want to delete a row of data, we can use the [DELETE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement. For instance, suppose that our fictitious bookstore has decided no longer to carry books by John Grisham. By first running a [SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement, we determine the identification number for the author to be 2034. Using this author identification number, we could enter the following:
+If we want to delete a row of data, we can use the [DELETE](../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement. For instance, suppose that our fictitious bookstore has decided no longer to carry books by John Grisham. By first running a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement, we determine the identification number for the author to be 2034. Using this author identification number, we could enter the following:
 
 ```
 DELETE FROM books

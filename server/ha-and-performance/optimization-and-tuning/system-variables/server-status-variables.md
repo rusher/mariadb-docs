@@ -7,7 +7,7 @@ The full list of status variables are listed in the contents on this page; most 
 * [InnoDB Status Variables](innodb-status-variables.md)
 * [Mroonga Status Variables](../../../reference/storage-engines/mroonga/mroonga-status-variables.md)
 * [MyRocks Status Variables](../../../reference/storage-engines/myrocks/myrocks-status-variables.md)
-* [Performance Scheme Status Variables](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md)
+* [Performance Scheme Status Variables](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md)
 * [Replication and Binary Log Status Variables](../../standard-replication/replication-and-binary-log-status-variables.md)
 * [S3 Storage Engine Status Variables](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
 * [Server\_Audit Status Variables](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md)
@@ -17,10 +17,10 @@ The full list of status variables are listed in the contents on this page; most 
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
-Use the [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement to view status variables. This\
-information also can be obtained using the [mariadb-admin extended-status](../../../clients-and-utilities/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
+Use the [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement to view status variables. This\
+information also can be obtained using the [mariadb-admin extended-status](../../../clients-and-utilities/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.
 
-Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) will reset many status variables to zero.
+Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) will reset many status variables to zero.
 
 ## List of Server Status Variables
 
@@ -50,19 +50,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Acl_column_grants`
 
-* Description: Number of column permissions granted (rows in the [mysql.columns\_priv table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-columns_priv-table.md)).
+* Description: Number of column permissions granted (rows in the [mysql.columns\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-columns_priv-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_database_grants`
 
-* Description: Number of database permissions granted (rows in the [mysql.db table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md)).
+* Description: Number of database permissions granted (rows in the [mysql.db table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_function_grants`
 
-* Description: Number of function permissions granted (rows in the [mysql.procs\_priv table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `FUNCTION`).
+* Description: Number of function permissions granted (rows in the [mysql.procs\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `FUNCTION`).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -80,25 +80,25 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Acl_procedure_grants`
 
-* Description: Number of procedure permissions granted (rows in the [mysql.procs\_priv table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `PROCEDURE`).
+* Description: Number of procedure permissions granted (rows in the [mysql.procs\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-procs_priv-table.md) with a routine type of `PROCEDURE`).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_proxy_users`
 
-* Description: Number of proxy permissions granted (rows in the [mysql.proxies\_priv table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proxies_priv-table.md)).
+* Description: Number of proxy permissions granted (rows in the [mysql.proxies\_priv table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proxies_priv-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_role_grants`
 
-* Description: Number of role permissions granted (rows in the [mysql.roles\_mapping table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md)).
+* Description: Number of role permissions granted (rows in the [mysql.roles\_mapping table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md)).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Acl_roles`
 
-* Description: Number of roles (rows in the [mysql.user table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='Y'`).
+* Description: Number of roles (rows in the [mysql.user table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='Y'`).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -110,7 +110,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Acl_users`
 
-* Description: Number of users (rows in the [mysql.user table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='N'`).
+* Description: Number of users (rows in the [mysql.user table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) where `is_role='N'`).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -140,13 +140,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_alter_db`
 
-* Description: Number of [ALTER DATABASE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md) commands executed.
+* Description: Number of [ALTER DATABASE](../../../reference/sql-statements/data-definition/alter/alter-database.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_alter_db_upgrade`
 
-* Description: Number of [ALTER DATABASE ... UPGRADE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md) commands executed.
+* Description: Number of [ALTER DATABASE ... UPGRADE](../../../reference/sql-statements/data-definition/alter/alter-database.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -158,7 +158,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_alter_function`
 
-* Description: Number of [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) commands executed.
+* Description: Number of [ALTER FUNCTION](../../../reference/sql-statements/data-definition/alter/alter-function.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -176,32 +176,32 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_alter_server`
 
-* Description: Number of [ALTER SERVER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-server.md) commands executed.
+* Description: Number of [ALTER SERVER](../../../reference/sql-statements/data-definition/alter/alter-server.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_alter_table`
 
-* Description: Number of [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) commands executed.
+* Description: Number of [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_alter_tablespace`
 
-* Description: Number of [ALTER TABLESPACE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-tablespace.md) commands executed (unsupported by MariaDB).
+* Description: Number of [ALTER TABLESPACE](../../../reference/sql-statements/data-definition/alter/alter-tablespace.md) commands executed (unsupported by MariaDB).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 #### `Com_alter_user`
 
-* Description: Number of [ALTER USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) commands executed.
+* Description: Number of [ALTER USER](../../../reference/sql-statements/account-management-sql-commands/alter-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_analyze`
 
-* Description: Number of [ANALYZE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) commands executed.
+* Description: Number of [ANALYZE](../../../reference/sql-statements/table-statements/analyze-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -227,50 +227,50 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_backup_table`
 
-* Description: Removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). In older versions, Com\_backup\_table contains the number of [BACKUP TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md) commands executed.
+* Description: Removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). In older versions, Com\_backup\_table contains the number of [BACKUP TABLE](../../../reference/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `Com_begin`
 
-* Description: Number of [BEGIN](../../../server-usage/programmatic-compound-statements/begin-end.md) or [START TRANSACTION](../../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md) statements executed.
+* Description: Number of [BEGIN](../../../server-usage/programmatic-compound-statements/begin-end.md) or [START TRANSACTION](../../../reference/sql-statements/transactions/start-transaction.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_binlog`
 
-* Description: Number of [BINLOG](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/binlog.md) commands executed.
+* Description: Number of [BINLOG](../../../reference/sql-statements/administrative-sql-statements/binlog.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_call_procedure`
 
-* Description: Number of [CALL](../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/call.md) procedure\_name statements executed.
+* Description: Number of [CALL](../../../reference/sql-statements/stored-routine-statements/call.md) procedure\_name statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_change_db`
 
-* Description: Number of [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) database\_name commands executed.
+* Description: Number of [USE](../../../reference/sql-statements/administrative-sql-statements/use-database.md) database\_name commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_check`
 
-* Description: Number of [CHECK TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands executed.
+* Description: Number of [CHECK TABLE](../../../reference/sql-statements/table-statements/check-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_checksum`
 
-* Description: Number of [CHECKSUM TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/checksum-table.md) commands executed.
+* Description: Number of [CHECKSUM TABLE](../../../reference/sql-statements/table-statements/checksum-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_commit`
 
-* Description: Number of [COMMIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) commands executed. Differs from [Handler\_commit](server-status-variables.md#handler_commit), which counts internal commit statements.
+* Description: Number of [COMMIT](../../../reference/sql-statements/transactions/commit.md) commands executed. Differs from [Handler\_commit](server-status-variables.md#handler_commit), which counts internal commit statements.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -282,25 +282,25 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_create_db`
 
-* Description: Number of [CREATE DATABASE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md) commands executed.
+* Description: Number of [CREATE DATABASE](../../../reference/sql-statements/data-definition/create/create-database.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_create_event`
 
-* Description: Number of [CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-event.md) commands executed. Differs from [Executed\_events](server-status-variables.md#executed_events) in that it is incremented when the CREATE EVENT is run, and not when the event executes.
+* Description: Number of [CREATE EVENT](../../../reference/sql-statements/data-definition/create/create-event.md) commands executed. Differs from [Executed\_events](server-status-variables.md#executed_events) in that it is incremented when the CREATE EVENT is run, and not when the event executes.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_create_function`
 
-* Description: Number of [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) commands executed.
+* Description: Number of [CREATE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_create_index`
 
-* Description: Number of [CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) commands executed.
+* Description: Number of [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -324,7 +324,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_create_role`
 
-* Description: Number of [CREATE ROLE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-role.md) commands executed.
+* Description: Number of [CREATE ROLE](../../../reference/sql-statements/account-management-sql-commands/create-role.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -336,19 +336,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_create_server`
 
-* Description: Number of [CREATE SERVER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-server.md) commands executed.
+* Description: Number of [CREATE SERVER](../../../reference/sql-statements/data-definition/create/create-server.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_create_table`
 
-* Description: Number of [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) commands executed.
+* Description: Number of [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_create_temporary_table`
 
-* Description: Number of [CREATE TEMPORARY TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) commands executed.
+* Description: Number of [CREATE TEMPORARY TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -366,7 +366,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_create_user`
 
-* Description: Number of [CREATE USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) commands executed.
+* Description: Number of [CREATE USER](../../../reference/sql-statements/account-management-sql-commands/create-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -378,37 +378,37 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_dealloc_sql`
 
-* Description: Number of [DEALLOCATE](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/deallocate-drop-prepare.md) commands executed.
+* Description: Number of [DEALLOCATE](../../../reference/sql-statements/prepared-statements/deallocate-drop-prepare.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_delete`
 
-* Description: Number of [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands executed. Differs from [Handler\_delete](server-status-variables.md#handler_delete), which counts the number of times rows have been deleted from tables.
+* Description: Number of [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands executed. Differs from [Handler\_delete](server-status-variables.md#handler_delete), which counts the number of times rows have been deleted from tables.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_delete_multi`
 
-* Description: Number of multi-table [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands executed.
+* Description: Number of multi-table [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_do`
 
-* Description: Number of [DO](../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/do.md) commands executed.
+* Description: Number of [DO](../../../reference/sql-statements/stored-routine-statements/do.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_db`
 
-* Description: Number of [DROP DATABASE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md) commands executed.
+* Description: Number of [DROP DATABASE](../../../reference/sql-statements/data-definition/drop/drop-database.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_event`
 
-* Description: Number of [DROP EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-event.md) commands executed.
+* Description: Number of [DROP EVENT](../../../reference/sql-statements/data-definition/drop/drop-event.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -420,7 +420,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_drop_index`
 
-* Description: Number of [DROP INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) commands executed.
+* Description: Number of [DROP INDEX](../../../reference/sql-statements/data-definition/drop/drop-index.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -444,7 +444,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_drop_role`
 
-* Description: Number of [DROP ROLE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-role.md) commands executed.
+* Description: Number of [DROP ROLE](../../../reference/sql-statements/account-management-sql-commands/drop-role.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -456,31 +456,31 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_drop_server`
 
-* Description: Number of [DROP SERVER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-server.md) commands executed.
+* Description: Number of [DROP SERVER](../../../reference/sql-statements/data-definition/drop/drop-server.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_table`
 
-* Description: Number of [DROP TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) commands executed.
+* Description: Number of [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_temporary_table`
 
-* Description: Number of [DROP TEMPORARY TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) commands executed.
+* Description: Number of [DROP TEMPORARY TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_trigger`
 
-* Description: Number of [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md) commands executed.
+* Description: Number of [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_drop_user`
 
-* Description: Number of [DROP USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/drop-user.md) commands executed.
+* Description: Number of [DROP USER](../../../reference/sql-statements/account-management-sql-commands/drop-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -498,19 +498,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_execute_immediate`
 
-* Description: Number of [EXECUTE IMMEDIATE](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-immediate.md) statements executed.
+* Description: Number of [EXECUTE IMMEDIATE](../../../reference/sql-statements/prepared-statements/execute-immediate.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_execute_sql`
 
-* Description: Number of [EXECUTE](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) statements executed.
+* Description: Number of [EXECUTE](../../../reference/sql-statements/prepared-statements/execute-statement.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_flush`
 
-* Description: Number of [FLUSH](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) commands executed. This differs from [Flush\_commands](server-status-variables.md#flush_commands), which also counts internal server flush requests.
+* Description: Number of [FLUSH](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) commands executed. This differs from [Flush\_commands](server-status-variables.md#flush_commands), which also counts internal server flush requests.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -522,13 +522,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_grant`
 
-* Description: Number of [GRANT](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) commands executed.
+* Description: Number of [GRANT](../../../reference/sql-statements/account-management-sql-commands/grant.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_grant_role`
 
-* Description: Number of [GRANT](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#roles) role commands executed.
+* Description: Number of [GRANT](../../../reference/sql-statements/account-management-sql-commands/grant.md#roles) role commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -552,31 +552,31 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_help`
 
-* Description: Number of [HELP](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/help-command.md) commands executed.
+* Description: Number of [HELP](../../../reference/sql-statements/administrative-sql-statements/help-command.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_insert`
 
-* Description: Number of [INSERT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) commands executed.
+* Description: Number of [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_insert_select`
 
-* Description: Number of [INSERT ... SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md) commands executed.
+* Description: Number of [INSERT ... SELECT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-select.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_install_plugin`
 
-* Description: Number of [INSTALL PLUGIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) commands executed.
+* Description: Number of [INSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_kill`
 
-* Description: Number of [KILL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill.md) commands executed.
+* Description: Number of [KILL](../../../reference/sql-statements/administrative-sql-statements/kill.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -626,61 +626,61 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_prepare_sql`
 
-* Description: Number of [PREPARE](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md) statements executed.
+* Description: Number of [PREPARE](../../../reference/sql-statements/prepared-statements/prepare-statement.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_purge`
 
-* Description: Number of [PURGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md) commands executed.
+* Description: Number of [PURGE](../../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_purge_before_date`
 
-* Description: Number of [PURGE BEFORE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md) commands executed.
+* Description: Number of [PURGE BEFORE](../../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_release_savepoint`
 
-* Description: Number of [RELEASE SAVEPOINT](../../../reference/sql-statements-and-structure/sql-statements/transactions/savepoint.md) commands executed.
+* Description: Number of [RELEASE SAVEPOINT](../../../reference/sql-statements/transactions/savepoint.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_rename_table`
 
-* Description: Number of [RENAME TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md) commands executed.
+* Description: Number of [RENAME TABLE](../../../reference/sql-statements/data-definition/rename-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_rename_user`
 
-* Description: Number of [RENAME USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/rename-user.md) commands executed.
+* Description: Number of [RENAME USER](../../../reference/sql-statements/account-management-sql-commands/rename-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_repair`
 
-* Description: Number of [REPAIR TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md) commands executed.
+* Description: Number of [REPAIR TABLE](../../../reference/sql-statements/table-statements/repair-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_replace`
 
-* Description: Number of [REPLACE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) commands executed.
+* Description: Number of [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_replace_select`
 
-* Description: Number of [REPLACE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) ... [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) commands executed.
+* Description: Number of [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) ... [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_reset`
 
-* Description: Number of [RESET](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/reset.md) commands executed.
+* Description: Number of [RESET](../../../reference/sql-statements/administrative-sql-statements/reset.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -692,56 +692,56 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_restore_table`
 
-* Description: Removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). In older versions, Com\_restore\_table contains the number of [RESTORE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md) commands executed.
+* Description: Removed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). In older versions, Com\_restore\_table contains the number of [RESTORE TABLE](../../../reference/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 #### `Com_revoke`
 
-* Description: Number of [REVOKE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/revoke.md) commands executed.
+* Description: Number of [REVOKE](../../../reference/sql-statements/account-management-sql-commands/revoke.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_revoke_all`
 
-* Description: Number of [REVOKE ALL](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/revoke.md) commands executed.
+* Description: Number of [REVOKE ALL](../../../reference/sql-statements/account-management-sql-commands/revoke.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_revoke_grant`
 
-* Description: Number of [REVOKE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/revoke.md#roles) role commands executed.
+* Description: Number of [REVOKE](../../../reference/sql-statements/account-management-sql-commands/revoke.md#roles) role commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_rollback`
 
-* Description: Number of [ROLLBACK](../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) commands executed. Differs from [Handler\_rollback](server-status-variables.md#handler_rollback), which is the number of transaction rollback requests given to a storage engine.
+* Description: Number of [ROLLBACK](../../../reference/sql-statements/transactions/rollback.md) commands executed. Differs from [Handler\_rollback](server-status-variables.md#handler_rollback), which is the number of transaction rollback requests given to a storage engine.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_rollback_to_savepoint`
 
-* Description: Number of [ROLLBACK ... TO SAVEPOINT](../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) commands executed.
+* Description: Number of [ROLLBACK ... TO SAVEPOINT](../../../reference/sql-statements/transactions/rollback.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_savepoint`
 
-* Description: Number of [SAVEPOINT](../../../reference/sql-statements-and-structure/sql-statements/transactions/savepoint.md) commands executed. Differs from [Handler\_savepoint](server-status-variables.md#handler_savepoint), which is the number of transaction savepoint creation requests.
+* Description: Number of [SAVEPOINT](../../../reference/sql-statements/transactions/savepoint.md) commands executed. Differs from [Handler\_savepoint](server-status-variables.md#handler_savepoint), which is the number of transaction savepoint creation requests.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_select`
 
-* Description: Number of [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) commands executed. Also includes queries that make use of the [query cache](../buffers-caches-and-threads/query-cache.md).
+* Description: Number of [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) commands executed. Also includes queries that make use of the [query cache](../buffers-caches-and-threads/query-cache.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_set_option`
 
-* Description: Number of [SET OPTION](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) commands executed.
+* Description: Number of [SET OPTION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -753,38 +753,38 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_show_authors`
 
-* Description: Number of [SHOW AUTHORS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-authors.md) commands executed.
+* Description: Number of [SHOW AUTHORS](../../../reference/sql-statements/administrative-sql-statements/show/show-authors.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_binlog_events`
 
-* Description: Number of [SHOW BINLOG EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-events.md) statements executed.
+* Description: Number of [SHOW BINLOG EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_binlogs`
 
-* Description: Number of [SHOW BINARY LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binary-logs.md) commands executed.
+* Description: Number of [SHOW BINARY LOGS](../../../reference/sql-statements/administrative-sql-statements/show/show-binary-logs.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_charsets`
 
-* Description: Number of [SHOW CHARACTER SET](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-character-set.md) commands executed.
+* Description: Number of [SHOW CHARACTER SET](../../../reference/sql-statements/administrative-sql-statements/show/show-character-set.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_client_statistics`
 
-* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Com_show_collations`
 
-* Description: Number of [SHOW COLLATION](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation.md) commands executed.
+* Description: Number of [SHOW COLLATION](../../../reference/sql-statements/administrative-sql-statements/show/show-collation.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -797,25 +797,25 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_show_contributors`
 
-* Description: Number of [SHOW CONTRIBUTORS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-contributors.md) commands executed.
+* Description: Number of [SHOW CONTRIBUTORS](../../../reference/sql-statements/administrative-sql-statements/show/show-contributors.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_create_db`
 
-* Description: Number of [SHOW CREATE DATABASE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-database.md) commands executed.
+* Description: Number of [SHOW CREATE DATABASE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-database.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_create_event`
 
-* Description: Number of [SHOW CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-event.md) commands executed.
+* Description: Number of [SHOW CREATE EVENT](../../../reference/sql-statements/administrative-sql-statements/show/show-create-event.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_create_func`
 
-* Description: Number of [SHOW CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md) commands executed.
+* Description: Number of [SHOW CREATE FUNCTION](../../../reference/sql-statements/administrative-sql-statements/show/show-create-function.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -833,110 +833,110 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_show_create_proc`
 
-* Description: Number of [SHOW CREATE PROCEDURE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-procedure.md) commands executed.
+* Description: Number of [SHOW CREATE PROCEDURE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-procedure.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_create_table`
 
-* Description: Number of [SHOW CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) commands executed.
+* Description: Number of [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_create_trigger`
 
-* Description: Number of [SHOW CREATE TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) commands executed.
+* Description: Number of [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_create_user`
 
-* Description: Number of [SHOW CREATE USER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-user.md) commands executed.
+* Description: Number of [SHOW CREATE USER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-user.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_databases`
 
-* Description: Number of [SHOW DATABASES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md) commands executed.
+* Description: Number of [SHOW DATABASES](../../../reference/sql-statements/administrative-sql-statements/show/show-databases.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_engine_logs`
 
-* Description: Number of [SHOW ENGINE LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
+* Description: Number of [SHOW ENGINE LOGS](../../../reference/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_engine_mutex`
 
-* Description: Number of [SHOW ENGINE MUTEX](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
+* Description: Number of [SHOW ENGINE MUTEX](../../../reference/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_engine_status`
 
-* Description: Number of [SHOW ENGINE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
+* Description: Number of [SHOW ENGINE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-engine.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_events`
 
-* Description: Number of [SHOW EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-events.md) commands executed.
+* Description: Number of [SHOW EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-events.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_errors`
 
-* Description: Number of [SHOW ERRORS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) commands executed.
+* Description: Number of [SHOW ERRORS](../../../reference/sql-statements/administrative-sql-statements/show/show-errors.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_explain`
 
-* Description: Number of [SHOW EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) commands executed.
+* Description: Number of [SHOW EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/show/show-explain.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_fields`
 
-* Description: Number of [SHOW COLUMNS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-columns.md) or SHOW FIELDS commands executed.
+* Description: Number of [SHOW COLUMNS](../../../reference/sql-statements/administrative-sql-statements/show/show-columns.md) or SHOW FIELDS commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_function_status`
 
-* Description: Number of [SHOW FUNCTION STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md) commands executed.
+* Description: Number of [SHOW FUNCTION STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-function-status.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_generic`
 
-* Description: Number of generic [SHOW](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/) commands executed, such as [SHOW INDEX\_STATISTICS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md) and [SHOW TABLE\_STATISTICS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md)
+* Description: Number of generic [SHOW](../../../reference/sql-statements/administrative-sql-statements/show/) commands executed, such as [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) and [SHOW TABLE\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md)
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_grants`
 
-* Description: Number of [SHOW GRANTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-grants.md) commands executed.
+* Description: Number of [SHOW GRANTS](../../../reference/sql-statements/administrative-sql-statements/show/show-grants.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_keys`
 
-* Description: Number of [SHOW INDEX](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) or SHOW KEYS commands executed.
+* Description: Number of [SHOW INDEX](../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) or SHOW KEYS commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_index_statistics`
 
-* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Com_show_open_tables`
 
-* Description: Number of [SHOW OPEN TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-open-tables.md) commands executed.
+* Description: Number of [SHOW OPEN TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-open-tables.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -954,177 +954,177 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Com_show_plugins`
 
-* Description: Number of [SHOW PLUGINS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md) commands executed.
+* Description: Number of [SHOW PLUGINS](../../../reference/sql-statements/administrative-sql-statements/show/show-plugins.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_privileges`
 
-* Description: Number of [SHOW PRIVILEGES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-privileges.md) commands executed.
+* Description: Number of [SHOW PRIVILEGES](../../../reference/sql-statements/administrative-sql-statements/show/show-privileges.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_procedure_status`
 
-* Description: Number of [SHOW PROCEDURE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-procedure-status.md) commands executed.
+* Description: Number of [SHOW PROCEDURE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-procedure-status.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_processlist`
 
-* Description: Number of [SHOW PROCESSLIST](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) commands executed.
+* Description: Number of [SHOW PROCESSLIST](../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_profile`
 
-* Description: Number of [SHOW PROFILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-profile.md) commands executed.
+* Description: Number of [SHOW PROFILE](../../../reference/sql-statements/administrative-sql-statements/show/show-profile.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_profiles`
 
-* Description: Number of [SHOW PROFILES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-profiles.md) commands executed.
+* Description: Number of [SHOW PROFILES](../../../reference/sql-statements/administrative-sql-statements/show/show-profiles.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_relaylog_events`
 
-* Description: Number of [SHOW RELAYLOG EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md) commands executed.
+* Description: Number of [SHOW RELAYLOG EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-relaylog-events.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_status`
 
-* Description: Number of [SHOW STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) commands executed.
+* Description: Number of [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`st
 
 #### `Com_show_storage_engines`
 
-* Description: Number of [SHOW STORAGE ENGINES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) - or `SHOW ENGINES` - commands executed.
+* Description: Number of [SHOW STORAGE ENGINES](../../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) - or `SHOW ENGINES` - commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_table_statistics`
 
-* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Com_show_table_status`
 
-* Description: Number of [SHOW TABLE STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) commands executed.
+* Description: Number of [SHOW TABLE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_tables`
 
-* Description: Number of [SHOW TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-tables.md) commands executed.
+* Description: Number of [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_triggers`
 
-* Description: Number of [SHOW TRIGGERS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md) commands executed.
+* Description: Number of [SHOW TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/show/show-triggers.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_user_statistics`
 
-* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Com_show_variable`
 
-* Description: Number of [SHOW VARIABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) commands executed.
+* Description: Number of [SHOW VARIABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_show_warnings`
 
-* Description: Number of [SHOW WARNINGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) commands executed.
+* Description: Number of [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_shutdown`
 
-* Description: Number of [SHUTDOWN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/shutdown.md) commands executed.
+* Description: Number of [SHUTDOWN](../../../reference/sql-statements/administrative-sql-statements/shutdown.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_close`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) closed ([deallocated or dropped](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/deallocate-drop-prepare.md)).
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) closed ([deallocated or dropped](../../../reference/sql-statements/prepared-statements/deallocate-drop-prepare.md)).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_execute`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) [executed](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md).
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) [executed](../../../reference/sql-statements/prepared-statements/execute-statement.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_fetch`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) fetched.
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) fetched.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_prepare`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) [prepared](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement.md).
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) [prepared](../../../reference/sql-statements/prepared-statements/prepare-statement.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_reprepare`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) reprepared.
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) reprepared.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_reset`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) where the data of a prepared statement which was accumulated in chunks by sending long data has been reset.
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) where the data of a prepared statement which was accumulated in chunks by sending long data has been reset.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_stmt_send_long_data`
 
-* Description: Number of [prepared statements](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/) where the parameter data has been sent in chunks (long data).
+* Description: Number of [prepared statements](../../../reference/sql-statements/prepared-statements/) where the parameter data has been sent in chunks (long data).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_truncate`
 
-* Description: Number of [TRUNCATE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate.md) commands executed.
+* Description: Number of [TRUNCATE](../../../reference/sql-statements/built-in-functions/numeric-functions/truncate.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_uninstall_plugin`
 
-* Description: Number of [UNINSTALL PLUGIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) commands executed.
+* Description: Number of [UNINSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_unlock_tables`
 
-* Description: Number of [UNLOCK TABLES](../../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md) commands executed.
+* Description: Number of [UNLOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_update`
 
-* Description: Number of [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) commands executed.
+* Description: Number of [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Com_update_multi`
 
-* Description: Number of multi-table [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) commands executed.
+* Description: Number of multi-table [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1238,25 +1238,25 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Delayed_errors`
 
-* Description: Number of errors which occurred while doing [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of errors which occurred while doing [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Delayed_insert_threads`
 
-* Description: Number of [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) threads.
+* Description: Number of [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) threads.
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Delayed_writes`
 
-* Description: Number of [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows written. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows written. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Delete_scan`
 
-* Description: Number of [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)s that required a full table scan.
+* Description: Number of [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md)s that required a full table scan.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1268,7 +1268,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Executed_events`
 
-* Description: Number of times events created with [CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-event.md) have executed. This differs from [Com\_create\_event](server-status-variables.md#com_create_event) in that it is only incremented when the event has run, not when it executes.
+* Description: Number of times events created with [CREATE EVENT](../../../reference/sql-statements/data-definition/create/create-event.md) have executed. This differs from [Com\_create\_event](server-status-variables.md#com_create_event) in that it is only incremented when the event has run, not when it executes.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1280,13 +1280,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Feature_application_time_periods`
 
-* Description: Number of times a table created with [periods](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#periods) has been opened.
+* Description: Number of times a table created with [periods](../../../reference/sql-statements/data-definition/create/create-table.md#periods) has been opened.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Feature_check_constraint`
 
-* Description: Number of times [constraints](../../../reference/sql-statements-and-structure/sql-statements/data-definition/constraint.md) were checked. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of times [constraints](../../../reference/sql-statements/data-definition/constraint.md) were checked. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1304,13 +1304,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Feature_dynamic_columns`
 
-* Description: Number of times the [COLUMN\_CREATE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/dynamic-columns-functions/column_create.md) function was used.
+* Description: Number of times the [COLUMN\_CREATE()](../../../reference/sql-statements/built-in-functions/special-functions/dynamic-columns-functions/column_create.md) function was used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Feature_fulltext`
 
-* Description: Number of times the [MATCH … AGAINST()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/match-against.md) function was used.
+* Description: Number of times the [MATCH … AGAINST()](../../../reference/sql-statements/built-in-functions/string-functions/match-against.md) function was used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1335,7 +1335,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Feature_json`
 
-* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
+* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-statements/built-in-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1371,32 +1371,32 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Feature_window_functions`
 
-* Description: Number of times [window functions](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/) were used.
+* Description: Number of times [window functions](../../../reference/sql-statements/built-in-functions/special-functions/window-functions/) were used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Feature_xml`
 
-* Description: Number of times XML functions ([EXTRACTVALUE()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/extractvalue.md) and [UPDATEXML()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/updatexml.md)) were used.
+* Description: Number of times XML functions ([EXTRACTVALUE()](../../../reference/sql-statements/built-in-functions/string-functions/extractvalue.md) and [UPDATEXML()](../../../reference/sql-statements/built-in-functions/string-functions/updatexml.md)) were used.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Flush_commands`
 
-* Description: Number of [FLUSH](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements executed, as well as due to internal server flush requests. This differs from [Com\_flush](server-status-variables.md#com_flush), which simply counts FLUSH statements, not internal server flush operations.
+* Description: Number of [FLUSH](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements executed, as well as due to internal server flush requests. This differs from [Com\_flush](server-status-variables.md#com_flush), which simply counts FLUSH statements, not internal server flush operations.
 * Scope: Global
 * Data Type: `numeric`
 * Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `Handler_commit`
 
-* Description: Number of internal [COMMIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) requests. Differs from [Com\_commit](server-status-variables.md#com_commit), which counts the number of [COMMIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/commit.md) statements executed.
+* Description: Number of internal [COMMIT](../../../reference/sql-statements/transactions/commit.md) requests. Differs from [Com\_commit](server-status-variables.md#com_commit), which counts the number of [COMMIT](../../../reference/sql-statements/transactions/commit.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Handler_delete`
 
-* Description: Number of times rows have been deleted from tables. Differs from [Com\_delete](server-status-variables.md#com_delete), which counts [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements.
+* Description: Number of times rows have been deleted from tables. Differs from [Com\_delete](server-status-variables.md#com_delete), which counts [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statements.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1462,7 +1462,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Handler_read_last`
 
-* Description: Number of requests to read the last row from an index. [ORDER BY DESC](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) results in a last-key request followed by several previous-key requests.
+* Description: Number of requests to read the last row from an index. [ORDER BY DESC](../../../reference/sql-statements/data-manipulation/selecting-data/order-by.md) results in a last-key request followed by several previous-key requests.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1474,7 +1474,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Handler_read_prev`
 
-* Description: Number of requests to read the previous row from an index (in order). Mostly used with [ORDER BY DESC](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#order-by).
+* Description: Number of requests to read the previous row from an index (in order). Mostly used with [ORDER BY DESC](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1504,19 +1504,19 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Handler_rollback`
 
-* Description: Number of transaction rollback requests given to a storage engine. Differs from [Com\_rollback](server-status-variables.md#com_rollback), which is the number of [ROLLBACK](../../../reference/sql-statements-and-structure/sql-statements/transactions/rollback.md) commands executed.
+* Description: Number of transaction rollback requests given to a storage engine. Differs from [Com\_rollback](server-status-variables.md#com_rollback), which is the number of [ROLLBACK](../../../reference/sql-statements/transactions/rollback.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Handler_savepoint`
 
-* Description: Number of transaction savepoint creation requests. Differs from [Com\_savepoint](server-status-variables.md#com_savepoint) which is the number of [SAVEPOINT](../../../reference/sql-statements-and-structure/sql-statements/transactions/savepoint.md) commands executed.
+* Description: Number of transaction savepoint creation requests. Differs from [Com\_savepoint](server-status-variables.md#com_savepoint) which is the number of [SAVEPOINT](../../../reference/sql-statements/transactions/savepoint.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Handler_savepoint_rollback`
 
-* Description: Number of requests to rollback to a transaction [savepoint](../../../reference/sql-statements-and-structure/sql-statements/transactions/savepoint.md).
+* Description: Number of requests to rollback to a transaction [savepoint](../../../reference/sql-statements/transactions/savepoint.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1629,13 +1629,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Max_used_connections`
 
-* Description: Max number of connections ever open at the same time. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Max number of connections ever open at the same time. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Max_used_connections_time`
 
-* Description: The time at which the last change of [max\_used\_connections](server-status-variables.md#max_used_connections) occured. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: The time at which the last change of [max\_used\_connections](server-status-variables.md#max_used_connections) occured. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `datetime`
 * Introduced: [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes), [MariaDB 11.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-1-release-notes)
@@ -1654,7 +1654,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Not_flushed_delayed_rows`
 
-* Description: Number of [INSERT DELAYED](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows waiting to be written.
+* Description: Number of [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows waiting to be written.
 * Scope: Global
 * Data Type: `numeric`
 
@@ -2002,7 +2002,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-sta
 
 #### `Uptime_since_flush_status`
 
-* Description: Number of seconds since the last [FLUSH STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of seconds since the last [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 

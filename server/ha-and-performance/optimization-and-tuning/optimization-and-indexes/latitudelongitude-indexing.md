@@ -10,7 +10,7 @@ You might have tried
 * INDEX(lat,lon) -- but it still had to work too hard
 * Sometimes you ended up with a full table scan -- Yuck.
 
-WHERE [SQRT(...)](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/sqrt.md)< ... -- No chance of using any index.
+WHERE [SQRT(...)](../../../reference/sql-statements/built-in-functions/numeric-functions/sqrt.md)< ... -- No chance of using any index.
 
 WHERE lat BETWEEN ... AND lng BETWEEN... -- This has some chance of using such indexes.
 

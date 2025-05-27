@@ -81,7 +81,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `mroonga_enable_operations_recording`
 
-* Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) after changing the variable.
+* Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) after changing the variable.
 * Commandline: `--mroonga-enable-operations-recording={0|1}`
 * Scope: Global
 * Dynamic: Yes

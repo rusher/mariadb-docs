@@ -1,0 +1,34 @@
+# mysql.spider\_xa\_member Table
+
+The `mysql.spider_xa_member` table is installed by the [Spider storage engine](../../../../../storage-engines/spider/).
+
+In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, this table uses the [Aria](../../../../../storage-engines/aria/) storage engine.
+
+It contains the following fields:
+
+| Field                     | Type        | Null | Key | Default | Description |
+| ------------------------- | ----------- | ---- | --- | ------- | ----------- |
+| Field                     | Type        | Null | Key | Default | Description |
+| format\_id                | int(11)     | NO   |     | 0       |             |
+| gtrid\_length             | int(11)     | NO   |     | 0       |             |
+| bqual\_length             | int(11)     | NO   |     | 0       |             |
+| data                      | binary(128) | NO   | MUL |         |             |
+| scheme                    | char(64)    | NO   |     |         |             |
+| host                      | char(64)    | NO   |     |         |             |
+| port                      | char(5)     | NO   |     |         |             |
+| socket                    | text        | NO   |     | NULL    |             |
+| username                  | char(64)    | NO   |     |         |             |
+| password                  | char(64)    | NO   |     |         |             |
+| ssl\_ca                   | text        | YES  |     | NULL    |             |
+| ssl\_capath               | text        | YES  |     | NULL    |             |
+| ssl\_cert                 | text        | YES  |     | NULL    |             |
+| ssl\_cipher               | char(64)    | YES  |     | NULL    |             |
+| ssl\_key                  | text        | YES  |     | NULL    |             |
+| ssl\_verify\_server\_cert | tinyint(4)  | NO   |     | 0       |             |
+| default\_file             | text        | YES  |     | NULL    |             |
+| default\_group            | char(64)    | YES  |     | NULL    |             |
+| dsn                       | char(64)    | YES  |     | NULL    |             |
+| filedsn                   | text        | YES  |     | NULL    |             |
+| driver                    | char(64)    | YES  |     | NULL    |             |
+
+CC BY-SA / Gnu FDL

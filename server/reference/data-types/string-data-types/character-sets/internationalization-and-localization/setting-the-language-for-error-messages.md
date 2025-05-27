@@ -53,7 +53,7 @@ This system variable can be specified as command-line arguments to [mariadbd](..
 lc_messages=fr_CA
 ```
 
-The [lc\_messages](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) system variable can also be changed dynamically with [SET GLOBAL](../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The [lc\_messages](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) system variable can also be changed dynamically with [SET GLOBAL](../../../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL lc_messages='fr_CA';

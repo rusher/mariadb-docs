@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 3. Run [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md).
 
 * `mariadb-upgrade` does two things:
-  1. Ensures that the system tables in the [mysql](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are fully compatible with the new version.
+  1. Ensures that the system tables in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are fully compatible with the new version.
   2. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 ### Incompatible Changes Between 10.5 and 10.6

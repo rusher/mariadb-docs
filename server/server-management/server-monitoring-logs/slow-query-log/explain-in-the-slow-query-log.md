@@ -4,7 +4,7 @@
 
 ### Switching it On
 
-[EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output can be switched on by specifying the "`explain`" keyword in the [log\_slow\_verbosity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. Alternatively, you can set with the `log-slow-verbosity` command line argument.
+[EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output can be switched on by specifying the "`explain`" keyword in the [log\_slow\_verbosity](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity) system variable. Alternatively, you can set with the `log-slow-verbosity` command line argument.
 
 ```
 [mysqld]

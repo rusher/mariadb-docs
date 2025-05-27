@@ -1,21 +1,14 @@
-
 # Sequence Storage Engine
 
-
-This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](../sql-statements-and-structure/sequences/README.md).
-
+This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](../sql-statements-and-structure/sequences/).
 
 A **Sequence** engine allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment.
 
-
-It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../sql-statements-and-structure/sql-statements/transactions/README.md), and [support XA](../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md).
-
+It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../sql-statements/transactions/), and [support XA](../sql-statements/transactions/xa-transactions.md).
 
 ## Installing
 
-
-The Sequence engine is installed by default, and [SHOW ENGINES](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) will list the Sequence storage engine as supported:
-
+The Sequence engine is installed by default, and [SHOW ENGINES](../sql-statements/administrative-sql-statements/show/show-engines.md) will list the Sequence storage engine as supported:
 
 ```
 SHOW ENGINES\G
@@ -47,9 +40,7 @@ Transactions: NO
 
 ## Usage and Examples
 
-
 To use a Sequence table, you simply select from it, as in
-
 
 ```
 SELECT * FROM seq_1_to_5;
@@ -64,11 +55,9 @@ SELECT * FROM seq_1_to_5;
 +-----+
 ```
 
-To use a sequence in a statement, you select from the table named by a pattern **seq_**`FROM`**_to_**`TO` or **seq_**`FROM`**_to_**`TO`**_step_**`STEP`.
-
+To use a sequence in a statement, you select from the table named by a pattern **seq\_**`FROM`_**to**_`TO` or **seq\_**`FROM`_**to**_`TO`_**step**_`STEP`.
 
 In the case of an odd step, the sequence will commence with the `FROM`, and end at the final result before `TO`.
-
 
 ```
 SELECT * FROM seq_1_to_15_step_3;
@@ -84,7 +73,6 @@ SELECT * FROM seq_1_to_15_step_3;
 ```
 
 A sequence can go backwards too. In this case the final value will always be the `TO` value, so that a descending sequence has the same values as an ascending sequence:
-
 
 ```
 SELECT * FROM seq_5_to_1_step_2;
@@ -125,7 +113,6 @@ SELECT * FROM seq_15_to_2_step_3;
 
 This engine is particularly useful with joins and subqueries. For example, this query finds all prime numbers below 50:
 
-
 ```
 SELECT seq FROM seq_2_to_50 s1 WHERE 0 NOT IN
      (SELECT s1.seq % s2.seq FROM seq_2_to_50 s2 WHERE s2.seq <= sqrt(s1.seq));
@@ -151,7 +138,6 @@ SELECT seq FROM seq_2_to_50 s1 WHERE 0 NOT IN
 ```
 
 And almost (without 2, the only even prime number) the same result with joins:
-
 
 ```
 SELECT s1.seq FROM seq_2_to_50 s1 JOIN seq_2_to_50 s2 
@@ -179,7 +165,6 @@ SELECT s1.seq FROM seq_2_to_50 s1 JOIN seq_2_to_50 s2
 
 Sequence tables can also be useful in date calculations. For example, to find the day of the week that a particular date has fallen on over a 40 year period (perhaps for birthday planning ahead!):
 
-
 ```
 SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
     '1980-12-05' + INTERVAL (seq) YEAR date FROM seq_0_to_40;
@@ -200,8 +185,7 @@ SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
 +-----------+------------+
 ```
 
-Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) statement. For example:
-
+Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../sql-statements/built-in-functions/string-functions/cast.md) statement. For example:
 
 ```
 SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
@@ -216,17 +200,13 @@ SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 +----+
 ```
 
-[CAST](../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
+[CAST](../sql-statements/built-in-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
 
-
-Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information_schema](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/README.md) database cannot be used as the default for a Sequence table.
-
+Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information\_schema](../sql-statements/administrative-sql-statements/system-tables/information-schema/) database cannot be used as the default for a Sequence table.
 
 ## Table Name Conflicts
 
-
 If the SEQUENCE storage engine is installed, it is not possible to create a table with a name which follows the SEQUENCE pattern:
-
 
 ```
 CREATE TABLE seq_1_to_100 (col INT) ENGINE = InnoDB;
@@ -234,7 +214,6 @@ ERROR 1050 (42S01): Table 'seq_1_to_100' already exists
 ```
 
 However, a SEQUENCE table can be converted to another engine and the new table can be referred in any statement:
-
 
 ```
 ALTER TABLE seq_1_to_100 ENGINE = BLACKHOLE;
@@ -244,7 +223,6 @@ Empty set (0.00 sec)
 ```
 
 While a SEQUENCE table cannot be dropped, it is possible to drop the converted table. The SEQUENCE table with the same name will still exist:
-
 
 ```
 DROP TABLE seq_1_to_100;
@@ -260,7 +238,6 @@ SELECT COUNT(*) FROM seq_1_to_100;
 
 A temporary table with a SEQUENCE-like name can always be created and used:
 
-
 ```
 CREATE TEMPORARY TABLE seq_1_to_100 (col INT) ENGINE = InnoDB;
 
@@ -270,11 +247,8 @@ Empty set (0.00 sec)
 
 ## See Also
 
-
-* For details about sequence objects, see [Sequences](../sql-statements-and-structure/sequences/README.md).
+* For details about sequence objects, see [Sequences](../sql-statements-and-structure/sequences/).
 * [Sometimes its the little things](https://mariadb.com/blog/sometimes-its-little-things) - Dean Ellis tries out the Sequence engine.
 * [MariaDB’s Sequence Storage Engine](https://falseisnotnull.wordpress.com/2013/06/23/mariadbs-sequence-storage-engine/) - Federico Razzoli writes more in-depth on the engine.
 
-
 CC BY-SA / Gnu FDL
-

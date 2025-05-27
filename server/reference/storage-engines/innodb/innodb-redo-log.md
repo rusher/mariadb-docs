@@ -113,7 +113,7 @@ The checkpoint age can also be determined by the process shown below.
 
 To determine the InnoDB checkpoint age, do the following:
 
-* Query [SHOW ENGINE INNODB STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
+* Query [SHOW ENGINE INNODB STATUS](../../sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
 * Find the `LOG` section. For example:
 
 ```

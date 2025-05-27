@@ -84,7 +84,7 @@ SHOW MASTER STATUS;
 * Record the File and Position details. If binary logging has just been enabled, these will be blank.
 * Now, with the lock still in place, copy the data from the master to the slave. See [Backup, Restore and Import](../../clients-and-utilities/backup-restore-and-import-clients/) for details on how to do this.
 * Note for live databases: You just need to make a local copy of the data, you don't need to keep the master locked until the slave has imported the data.
-* Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
+* Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../reference/sql-statements/transactions/lock-tables.md).
 
 ```
 UNLOCK TABLES;
@@ -92,7 +92,7 @@ UNLOCK TABLES;
 
 ### Start the Slave
 
-* Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that MASTER\_LOG\_FILE matches the file and MASTER\_LOG\_POS the position returned by the earlier SHOW MASTER STATUS. For example:
+* Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that MASTER\_LOG\_FILE matches the file and MASTER\_LOG\_POS the position returned by the earlier SHOW MASTER STATUS. For example:
 
 ```
 CHANGE MASTER TO
@@ -118,13 +118,13 @@ CHANGE MASTER TO MASTER_USE_GTID = slave_pos
 See [Global Transaction ID](gtid.md) for a full description.\
 <>
 
-* Now start the slave with the [START SLAVE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command:
+* Now start the slave with the [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command:
 
 ```
 START SLAVE;
 ```
 
-* Check that the replication is working by executing the [SHOW SLAVE STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) command:
+* Check that the replication is working by executing the [SHOW SLAVE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) command:
 
 ```
 SHOW SLAVE STATUS \G

@@ -5,7 +5,7 @@ any query. However in some cases it does not have enough information to choose\
 a perfect plan and in these cases you may have to provide hints to force the\
 optimizer to use another plan.
 
-You can examine the query plan for a [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) by writing[EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) before the statement. [SHOW EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `EXPLAIN`.
+You can examine the query plan for a [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) by writing[EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) before the statement. [SHOW EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/show/show-explain.md) shows the output of a running query. In some cases, its output can be closer to reality than `EXPLAIN`.
 
 For the following queries, we will use the world database for\
 the examples.
@@ -31,8 +31,8 @@ gunzip world.sql.gz
 
 ## Forcing Join Order
 
-You can force the join order by using [STRAIGHT\_JOIN](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) either in\
-the [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) or [JOIN](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) part.
+You can force the join order by using [STRAIGHT\_JOIN](../../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) either in\
+the [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) or [JOIN](../../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) part.
 
 The simplest way to force the join order is to put the tables in the correct\
 order in the `FROM` clause and use `SELECT STRAIGHT_JOIN` like so:
@@ -55,7 +55,7 @@ matching country (one in this case) all rows in `City` will be checked for a\
 match. As there is only one matching country this will be faster than the\
 original query.
 
-The output of [EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for the above cases is:
+The output of [EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for the above cases is:
 
 | id | select\_type | table   | type | possible\_keys | key  | key\_len | ref  | rows | Extra                                           |
 | -- | ------------ | ------- | ---- | -------------- | ---- | -------- | ---- | ---- | ----------------------------------------------- |
@@ -165,7 +165,7 @@ When using index hints (USE, FORCE or [IGNORE INDEX](ignore-index.md)), the inde
 
 ## Forcing an Index to be Used for ORDER BY or GROUP BY
 
-The optimizer will try to use indexes to resolve [ORDER BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) and [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md).
+The optimizer will try to use indexes to resolve [ORDER BY](../../../reference/sql-statements/data-manipulation/selecting-data/order-by.md) and [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md).
 
 You can use [USE INDEX](use-index.md), [IGNORE INDEX](ignore-index.md) and[FORCE INDEX](force-index.md) as in the `WHERE` clause above\
 to ensure that some specific index used:
@@ -199,18 +199,18 @@ table and sort it.
 
 ### Help the Optimizer Optimize GROUP BY and ORDER BY
 
-The optimizer uses several strategies to optimize [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)\
-and [ORDER BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md):
+The optimizer uses several strategies to optimize [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md)\
+and [ORDER BY](../../../reference/sql-statements/data-manipulation/selecting-data/order-by.md):
 
 * Resolve with an index:
   * Scan the table in index order and output data as we go. (This only works if\
-    the [ORDER BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md) / [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) can be\
+    the [ORDER BY](../../../reference/sql-statements/data-manipulation/selecting-data/order-by.md) / [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) can be\
     resolved by an index after constant propagation is done).
 * Filesort:
   * Scan the table to be sorted and collect the sort keys in a temporary file.
   * Sort the keys + reference to row (with filesort)
   * Scan the table in sorted order
-* Use a temporary table for [ORDER BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/order-by.md):
+* Use a temporary table for [ORDER BY](../../../reference/sql-statements/data-manipulation/selecting-data/order-by.md):
   * Create a temporary (in memory) table for the 'to-be-sorted' data. (If this\
     gets bigger than `max_heap_table_size` or contains blobs\
     then an [Aria](../../../reference/storage-engines/aria/) or [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) disk based table will be used)
@@ -218,20 +218,20 @@ and [ORDER BY](../../../reference/sql-statements-and-structure/sql-statements/da
   * Scan the table in sorted order
 
 A temporary table will always be used if the fields which will be sorted are\
-not from the first table in the [JOIN](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) order.
+not from the first table in the [JOIN](../../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) order.
 
-* Use a temporary table for [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md):
-  * Create a temporary table to hold the [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) result with\
-    an index that matches the [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) fields.
+* Use a temporary table for [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md):
+  * Create a temporary table to hold the [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) result with\
+    an index that matches the [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) fields.
   * Produce a result row
-  * If a row with the [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) key exists in the temporary\
+  * If a row with the [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) key exists in the temporary\
     table, add the new result row to it. If not, create a new row.
   * Before sending the results to the user, sort the rows with filesort to get\
-    the results in the [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) order.
+    the results in the [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) order.
 
 ### Forcing/Disallowing TemporaryTables to be Used for GROUP BY:
 
-Using an in-memory table (as described above) is usually the fastest option for[GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) if the result set is small. It is not optimal if\
+Using an in-memory table (as described above) is usually the fastest option for[GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) if the result set is small. It is not optimal if\
 the result set is very big. You can tell the optimizer this by using`SELECT SQL_SMALL_RESULT`\
 or `SELECT SQL_BIG_RESULT`.
 
@@ -302,7 +302,7 @@ algorithms which are used.
 * [FORCE INDEX](force-index.md)
 * [USE INDEX](use-index.md)
 * [IGNORE INDEX](ignore-index.md)
-* [GROUP BY](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md)
+* [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
 CC BY-SA / Gnu FDL

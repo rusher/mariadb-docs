@@ -10,7 +10,7 @@ replica will reflect the state of the primary some time back in the past.
 
 The default is zero, or no delay, and the maximum value is 2147483647, or about 68 years.
 
-Delayed replication is enabled using the MASTER\_DELAY option to [CHANGE MASTER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md):
+Delayed replication is enabled using the MASTER\_DELAY option to [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md):
 
 ```
 CHANGE MASTER TO master_delay=3600;
@@ -18,7 +18,7 @@ CHANGE MASTER TO master_delay=3600;
 
 A zero delay disables delayed replication. The replica must be stopped when changing the delay value.
 
-## Fields in [SHOW SLAVE STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) are associated with delayed replication
+## Fields in [SHOW SLAVE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) are associated with delayed replication
 
 1. `SQL_Delay`: This is the value specified by MASTER\_DELAY in CHANGE MASTER\
    (or 0 if none).
@@ -37,7 +37,7 @@ A zero delay disables delayed replication. The replica must be stopped when chan
 * If not using parallel replication the value is updated when starting to execute an event. The value is set to: `clock_time_on_slave - clock_when_started_execution_of_the_event_on_master - clock_difference_between_master_and_slave`. Note that in this case the clock is at start of event, not at end of event like in parallel replication.
 
 1. `Slave_SQL_Running_State`: This shows the state of the SQL driver threads,\
-   same as in [SHOW PROCESSLIST](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). When the replica is delaying the execution of an\
+   same as in [SHOW PROCESSLIST](../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md). When the replica is delaying the execution of an\
    event due to MASTER\_DELAY, this fields displays: "Waiting until MASTER\_DELAY\
    seconds after master executed event".
 

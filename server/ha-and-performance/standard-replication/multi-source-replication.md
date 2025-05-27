@@ -34,8 +34,8 @@ The new syntax introduced to handle many connections:
 The original old-style connection is an empty string `''`.\
 You don't have to use this connection if you don't want to.
 
-You create new primary connections with [CHANGE MASTER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).\
-You delete the connection permanently with [RESET SLAVE 'connection\_name' ALL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md).
+You create new primary connections with [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).\
+You delete the connection permanently with [RESET SLAVE 'connection\_name' ALL](../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md).
 
 ## Replication Variables for Multi-Source
 
@@ -144,7 +144,7 @@ with this as a prefix.
 * There is no conflict resolution. The assumption is that there are no conflicts in data between the different primaries.
 * All executed commands are stored in the normal binary log (nothing new here).
 * If the server variable `log_warnings` > 1 then you will get some information in the log about how the multi-master-info file is updated (mainly for debugging).
-* The output of [SHOW ALL SLAVES STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `SHOW SLAVE STATUS`, since it includes the `connection_name` column.
+* The output of [SHOW ALL SLAVES STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `SHOW SLAVE STATUS`, since it includes the `connection_name` column.
 * `[RESET SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)` now deletes all relay-log files.
 
 ## replicate-... Variables

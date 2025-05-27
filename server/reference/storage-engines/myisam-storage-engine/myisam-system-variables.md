@@ -77,7 +77,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `myisam_data_pointer_size`
 
-* Description: Size in bytes of the default pointer, used in a [MyISAM](./) [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) with no MAX\_ROWS option.
+* Description: Size in bytes of the default pointer, used in a [MyISAM](./) [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) with no MAX\_ROWS option.
 * Commandline: `--myisam-data-pointer-size=#`
 * Scope: Global
 * Dynamic: Yes

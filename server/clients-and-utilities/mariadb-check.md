@@ -6,7 +6,7 @@
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-It is essentially a commandline interface to the [CHECK TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk.md) and [aria\_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
+It is essentially a commandline interface to the [CHECK TABLE](../reference/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../reference/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../reference/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](myisam-clients-and-utilities/myisamchk.md) and [aria\_chk](aria-clients-and-utilities/aria_chk.md), requires the server to be running.
 
 This tool does not work with partitioned tables.
 
@@ -85,7 +85,7 @@ copying it somewhere with another name, the alternatives are:
 \| --plugin-dir | Directory for client-side plugins. |\
 \| -P num, --port=num | Port number to use for connection or 0 for default to, in order of preference, my.cnf, $MYSQL\_TCP\_PORT, /etc/services, built-in default (3306). |\
 \| --process-tables | Perform the requested operation (check, repair, analyze, optimize) on tables. Enabled by default. Use --skip-process-tables to disable. |\
-\| --process-views\[=val] | Perform the requested operation (only [CHECK VIEW](../reference/sql-statements-and-structure/sql-statements/table-statements/check-view.md) or [REPAIR VIEW](../reference/sql-statements-and-structure/sql-statements/table-statements/repair-view.md)). Possible values are NO, YES (correct the checksum, if necessary, add the mariadb-version field), UPGRADE\_FROM\_MYSQL (same as YES and toggle the algorithm MERGE<->TEMPTABLE. |\
+\| --process-views\[=val] | Perform the requested operation (only [CHECK VIEW](../reference/sql-statements/table-statements/check-view.md) or [REPAIR VIEW](../reference/sql-statements/table-statements/repair-view.md)). Possible values are NO, YES (correct the checksum, if necessary, add the mariadb-version field), UPGRADE\_FROM\_MYSQL (same as YES and toggle the algorithm MERGE<->TEMPTABLE. |\
 \| --protocol=name | The connection protocol (tcp, socket, pipe, memory) to use for connecting to the server. Useful when other connection parameters would cause a protocol to be used other than the one you want. |\
 \| -q, --quick | If you are using this option with CHECK TABLE, it prevents the check from scanning the rows to check for wrong links. This is the fastest check. If you are using this option with REPAIR TABLE, it will try to repair only the index tree. This is the fastest repair method for a table. |\
 \| -r, --repair | Can fix almost anything except unique keys that aren't unique. |\
@@ -159,7 +159,7 @@ check.
 
 #### mariadb-check and all-databases
 
-`mariadb-check --all-databases` will ignore the internal log tables [general\_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) and [slow\_log](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) as these can't be checked, repaired or optimized.
+`mariadb-check --all-databases` will ignore the internal log tables [general\_log](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) and [slow\_log](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) as these can't be checked, repaired or optimized.
 
 #### mariadb-check and verbose
 
@@ -167,6 +167,6 @@ Using one `--verbose` option will give you more information about what mariadb-c
 
 Using two `--verbose` options will also give you connection information.
 
-If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), [RENAME](../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements/data-definition/alter/alter-table.md), [RENAME](../reference/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
 
 CC BY-SA / Gnu FDL

@@ -14,7 +14,7 @@ Unlike the [= operator](assignment-operators-assignment-operator.md), `:=` can a
 
 This operator works with both [user-defined variables](../../sql-language-structure/user-defined-variables.md) and [local variables](../../../../server-usage/programmatic-compound-statements/declare-variable.md).
 
-When assigning the same value to several variables, [LAST\_VALUE()](../../sql-statements/built-in-functions/secondary-functions/information-functions/last_value.md) can be useful.
+When assigning the same value to several variables, [LAST\_VALUE()](../../../sql-statements/built-in-functions/secondary-functions/information-functions/last_value.md) can be useful.
 
 ## Examples
 

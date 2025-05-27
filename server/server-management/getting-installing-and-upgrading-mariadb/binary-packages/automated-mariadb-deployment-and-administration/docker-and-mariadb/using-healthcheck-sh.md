@@ -54,7 +54,7 @@ This is active when a external user can connect to the TCP port of MariaDB Serve
 
 This test is true when InnoDB has completed initializing. This includes any rollback or crash recovery that may be occurring in the background as MariaDB is starting.
 
-The connecting user must have [USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
+The connecting user must have [USAGE](../../../../../reference/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
 
 ### --innodb\_buffer\_pool\_loaded
 
@@ -62,13 +62,13 @@ This indicates that the buffer pool dump previously saved has been completed loa
 
 This test doesn't check if [innodb-system-variables/#innodb\_buffer\_pool\_load\_at\_startupinnodb\_buffer\_pool\_load\_at\_startup](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup) is set at startup.
 
-The connecting user must have [USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
+The connecting user must have [USAGE](../../../../../reference/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
 
 ### --galera\_online
 
 This indicates that the galera node is online by the [wsrep\_local\_state](https://galeracluster.com/library/documentation/node-states.html#node-state-changes) variable. This includes states like "joining" and "donor" where it cannot serve SQL queries.
 
-The connecting user must have [USAGE](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
+The connecting user must have [USAGE](../../../../../reference/sql-statements/account-management-sql-commands/grant.md#the-usage-privilege) privileges to perform this test.
 
 ### --replication
 
@@ -81,7 +81,7 @@ This tests a replica based on the `--replication_*` parameters. The replica test
 
 These are tested for all connections, if `--replication_all` is set (default), or `--replication_name`.
 
-The connecting user must have [REPLICATION\_CLIENT](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) or later.
+The connecting user must have [REPLICATION\_CLIENT](../../../../../reference/sql-statements/account-management-sql-commands/grant.md#replication-client) if using a version less than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), or [REPLICA MONITOR](../../../../../reference/sql-statements/account-management-sql-commands/grant.md#replica-monitor) for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) or later.
 
 ### --mariadbupgrade
 

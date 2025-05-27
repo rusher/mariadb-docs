@@ -70,11 +70,11 @@ The following options and system variables are available, and they are evaluated
 
 #### `replicate_rewrite_db`
 
-The [replicate\_rewrite\_db](replication-and-binary-log-system-variables.md#replicate_rewrite_db) option (and, from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), system variable), allows you to configure a [replica](broken-reference) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the [USE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
+The [replicate\_rewrite\_db](replication-and-binary-log-system-variables.md#replicate_rewrite_db) option (and, from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), system variable), allows you to configure a [replica](broken-reference) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
 
 This option will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 
-This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
+This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
 
 This option's rewrites are evaluated _before_ any other replication filters configured by the `replicate_*` system variables.
 
@@ -105,7 +105,7 @@ The [replicate\_do\_db](replication-and-binary-log-system-variables.md) system v
 This system variable will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging) or when using [mixed-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging) and the statement is logged statement based. For statement-based replication, only the default database (that is, the one selected by USE) is considered, not any explicitly mentioned tables in the query.\
 See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 
-When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
 
 When setting it dynamically, it is not possible to specify database names that contain commas. If you need to specify database names that contain commas, then you will need to specify them by either providing the command-line options or configuring them in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) when the server is [started](https://mariadb.com/kb/en/).
 
@@ -141,7 +141,7 @@ The [replicate\_ignore\_db](replication-and-binary-log-system-variables.md) syst
 This system variable will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging) or when using [mixed-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging) and the statement is logged statement based. For statement-based replication, only the default database (that is, the one selected by USE) is considered, not any explicitly mentioned tables in the query.\
 See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 
-When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
 
 When setting it dynamically, it is not possible to specify database names that contain commas. If you need to specify names or patterns that contain commas, then you will need to specify them by either providing the command-line options or configuring them in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) when the server is [started](https://mariadb.com/kb/en/).
 
@@ -178,9 +178,9 @@ The [replicate\_do\_table](replication-and-binary-log-system-variables.md) syste
 
 This system variable will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 
-This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
+This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
 
-When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
 
 When setting it dynamically, it is not possible to specify database or table names\
 or patterns that contain commas. If you need to specify database or table names that contain commas, then you will need to specify them by either providing the command-line options or configuring them in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) when the server is [started](https://mariadb.com/kb/en/).
@@ -216,7 +216,7 @@ The [replicate\_ignore\_table](replication-and-binary-log-system-variables.md) s
 
 This system variable will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 
-When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
 
 When setting it dynamically, it is not possible to specify database or table names that contain commas. If you need to specify database or table names that contain commas, then you will need to specify them by either providing the command-line options or configuring them in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) when the server is [started](https://mariadb.com/kb/en/).
 
@@ -251,7 +251,7 @@ See [Configuring Replication Filter Options with Multi-Source Replication](repli
 
 The [replicate\_wild\_do\_table](replication-and-binary-log-system-variables.md) system variable allows you to configure a [replica](broken-reference) to apply statements and transactions that affect tables that match a specified wildcard pattern.
 
-The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
+The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements/built-in-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
 
 * `_` - The `_` character matches any single character.
 * `%` - The `%` character matches zero or more characters.
@@ -263,9 +263,9 @@ The system variable does filter databases, tables, [views](../../server-usage/vi
 
 The system variable does not filter [stored procedures](../../server-usage/stored-routines/stored-procedures/), [stored functions](../../server-usage/stored-routines/stored-functions/), and [events](../../server-usage/triggers-events/event-scheduler/). The [replicate\_do\_db](replication-and-binary-log-system-variables.md) system variable will need to be used to filter those.
 
-If the table name pattern for a filter is just specified as `%`, then all tables in the database will be matched. In this case, the filter will also affect certain database-level statements, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md) and [DROP DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
+If the table name pattern for a filter is just specified as `%`, then all tables in the database will be matched. In this case, the filter will also affect certain database-level statements, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md) and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
 
-When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
 
 When setting it dynamically, it is not possible to specify database or table names or patterns that contain commas. If you need to specify database or table names or patterns that contain commas, then you will need to specify them by either providing the command-line options or configuring them in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) when the server is [started](https://mariadb.com/kb/en/).
 
@@ -298,7 +298,7 @@ See [Configuring Replication Filter Options with Multi-Source Replication](repli
 
 The [replicate\_wild\_ignore\_table](replication-and-binary-log-system-variables.md) system variable allows you to configure a [replica](broken-reference) to ignore statements and transactions that affect tables that match a specified wildcard pattern.
 
-The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
+The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements/built-in-functions/string-functions/like.md) operator. This means that the the following characters have a special meaning:
 
 * `_` - The `_` character matches any single character.
 * `%` - The `%` character matches zero or more characters.
@@ -310,9 +310,9 @@ The system variable does filter databases, tables, [views](../../server-usage/vi
 
 The system variable does not filter [stored procedures](../../server-usage/stored-routines/stored-procedures/), [stored functions](../../server-usage/stored-routines/stored-functions/), and [events](../../server-usage/triggers-events/event-scheduler/). The [replicate\_ignore\_db](replication-and-binary-log-system-variables.md) system variable will need to be used to filter those.
 
-If the table name pattern for a filter is just specified as `%`, then all tables in the database will be matched. In this case, the filter will also affect certain database-level statements, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md) and [DROP DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
+If the table name pattern for a filter is just specified as `%`, then all tables in the database will be matched. In this case, the filter will also affect certain database-level statements, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md) and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
 
-When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
 
 When setting it dynamically, it is not possible to specify database or table names or patterns that contain commas. If you need to specify database or table names or patterns that contain commas, then you will need to specify them by either providing the command-line options or configuring them in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) when the server is [started](https://mariadb.com/kb/en/).
 
@@ -385,19 +385,19 @@ saruman.replicate_do_db=database2
 
 ### CHANGE MASTER Options
 
-The [CHANGE MASTER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement has a few options that can be used to filter certain types of [binary log](../../server-management/server-monitoring-logs/binary-log/) events.
+The [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement has a few options that can be used to filter certain types of [binary log](../../server-management/server-monitoring-logs/binary-log/) events.
 
 #### `IGNORE_SERVER_IDS`
 
-The [IGNORE\_SERVER\_IDS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#ignore_server_ids) option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to ignore [binary log](https://mariadb.com/kb/en/binary_log) events that originated from certain servers. Filtered [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events will not get logged to the replica’s [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The [IGNORE\_SERVER\_IDS](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#ignore_server_ids) option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to ignore [binary log](https://mariadb.com/kb/en/binary_log) events that originated from certain servers. Filtered [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events will not get logged to the replica’s [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 #### `DO_DOMAIN_IDS`
 
-The [DO\_DOMAIN\_IDS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#do_domain_ids) option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to only apply [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events if the transaction's [GTID](gtid.md) is in a specific [gtid\_domain\_id](gtid.md#gtid_domain_id) value. Filtered [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events will not get logged to the replica’s [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The [DO\_DOMAIN\_IDS](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#do_domain_ids) option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to only apply [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events if the transaction's [GTID](gtid.md) is in a specific [gtid\_domain\_id](gtid.md#gtid_domain_id) value. Filtered [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events will not get logged to the replica’s [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 #### `IGNORE_DOMAIN_IDS`
 
-The [IGNORE\_DOMAIN\_IDS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#ignore_domain_ids) option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to ignore [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events if the transaction's [GTID](gtid.md) is in a specific [gtid\_domain\_id](gtid.md#gtid_domain_id) value. Filtered [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events will not get logged to the replica’s [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The [IGNORE\_DOMAIN\_IDS](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#ignore_domain_ids) option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to ignore [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events if the transaction's [GTID](gtid.md) is in a specific [gtid\_domain\_id](gtid.md#gtid_domain_id) value. Filtered [binary log](../../server-usage/replication-cluster-multi-master/standard-replication/binary_log/) events will not get logged to the replica’s [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 ## Replication Filters and Binary Log Formats
 
@@ -405,7 +405,7 @@ The way that a replication filter is interpreted can depend on the [binary log f
 
 ### Statement-Based Logging
 
-When an event is logged in its statement-based format, many replication filters that affect a database will test the filter against the default database (i.e. the one selected by the [USE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement). This applies to the following replication filters:
+When an event is logged in its statement-based format, many replication filters that affect a database will test the filter against the default database (i.e. the one selected by the [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) statement). This applies to the following replication filters:
 
 * [binlog\_do\_db](replication-filters.md#binlog_do_db)
 * [binlog\_ignore\_db](replication-filters.md#binlog_ignore_db)
@@ -413,7 +413,7 @@ When an event is logged in its statement-based format, many replication filters 
 * [replicate\_do\_db](replication-filters.md#replicate_do_db)
 * [replicate\_ignore\_db](replication-filters.md#replicate_ignore_db)
 
-When an event is logged in its statement-based format, many replication filters that affect a table will test the filter against the table in the default database (i.e. the one selected by the [USE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement). This applies to the following replication filters:
+When an event is logged in its statement-based format, many replication filters that affect a table will test the filter against the table in the default database (i.e. the one selected by the [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) statement). This applies to the following replication filters:
 
 * [replicate\_do\_table](replication-filters.md#replicate_do_table)
 * [replicate\_ignore\_table](replication-filters.md#replicate_ignore_table)

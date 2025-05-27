@@ -4,7 +4,7 @@ This article briefly discusses the main ways to backup MariaDB. For detailed des
 
 ## Logical vs Physical Backups
 
-Logical backups consist of the SQL statements necessary to restore the data, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [INSERT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md).
+Logical backups consist of the SQL statements necessary to restore the data, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) and [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md).
 
 Physical backups are performed by copying the individual data files or directories.
 
@@ -30,7 +30,7 @@ For large datasets, the backup file can be large, and the restore time lengthy.
 
 mariadb-dump dumps the data into SQL format (it can also dump into other formats, such as CSV or XML) which can then easily be imported into another database. The data can be imported into other versions of MariaDB, MySQL, or even another DBMS entirely, assuming there are no version or DBMS-specific statements in the dump.
 
-mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/stored-routines/stored-procedures/), [views](../../server-usage/views/), and [events](../../server-usage/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](functions/) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
+mariadb-dump dumps triggers along with tables, as these are part of the table definition. However, [stored procedures](../../server-usage/stored-routines/stored-procedures/), [views](../../server-usage/views/), and [events](../../server-usage/triggers-events/event-scheduler/events.md) are not, and need extra parameters to be recreated explicitly (for example, `--routines` and `--events`). [Procedures](../../server-usage/stored-routines/stored-procedures/) and [functions](functions/) are however also part of the system tables (for example [mysql.proc](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-proc-table.md)).
 
 #### InnoDB Logical Backups
 
@@ -77,9 +77,9 @@ Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](mariabackup/) 
 
 Some filesystems, like Veritas, support snapshots. During the snapshot, the table must be locked. The proper steps to obtain a snapshot are:
 
-* From the mariadb client, execute [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md). The client must remain open.
+* From the mariadb client, execute [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md). The client must remain open.
 * From a shell, execute `mount vxfs snapshot`
-* The client can execute [UNLOCK TABLES](../../reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md).
+* The client can execute [UNLOCK TABLES](../../reference/sql-statements/transactions/lock-tables.md).
 * Copy the snapshot files.
 * From a shell, unmount the snapshot with `umount snapshot`.
 

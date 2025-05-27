@@ -1,39 +1,28 @@
-
 # BINARY
 
-This page describes the BINARY data type. For details about the operator, see [Binary Operator](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/binary-operator.md).
-
+This page describes the BINARY data type. For details about the operator, see [Binary Operator](../../sql-statements/built-in-functions/string-functions/binary-operator.md).
 
 ## Syntax
-
 
 ```
 BINARY(M)
 ```
 
-
 ## Description
 
-
-The `BINARY` type is similar to the `[CHAR](char.md)` type, but stores binary
-byte strings rather than non-binary character strings. `M` represents the
+The `BINARY` type is similar to the `[CHAR](char.md)` type, but stores binary\
+byte strings rather than non-binary character strings. `M` represents the\
 column length in bytes.
-
 
 It contains no character set, and comparison and sorting are based on the numeric value of the bytes.
 
-
 If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
-
-BINARY values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is *not* removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
-
+BINARY values are right-padded with `0x00` (the zero byte) to the specified length when inserted. The padding is _not_ removed on select, so this needs to be taken into account when sorting and comparing, where all bytes are significant. The zero byte, `0x00` is less than a space for comparison purposes.
 
 ## Examples
 
-
 Inserting too many characters, first with strict mode off, then with it on:
-
 
 ```
 CREATE TABLE bins (a BINARY(10));
@@ -56,7 +45,6 @@ ERROR 1406 (22001): Data too long for column 'a' at row 1
 
 Sorting is performed with the byte value:
 
-
 ```
 TRUNCATE bins;
 
@@ -73,8 +61,7 @@ SELECT * FROM bins ORDER BY a;
 +------+
 ```
 
-Using [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
-
+Using [CAST](../../sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
 ```
 SELECT * FROM bins ORDER BY CAST(a AS CHAR);
@@ -90,7 +77,6 @@ SELECT * FROM bins ORDER BY CAST(a AS CHAR);
 
 The field is a BINARY(10), so padding of two '\0's are inserted, causing comparisons that don't take this into account to fail:
 
-
 ```
 TRUNCATE bins;
 
@@ -105,7 +91,6 @@ SELECT a = '12345678', a = '12345678\0\0' from bins;
 ```
 
 Example of BINARY:
-
 
 ```
 CREATE TABLE binary_example (
@@ -136,12 +121,9 @@ SELECT description, LENGTH(example) AS length
 
 ### Data Too Long
 
-
-When SQL_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
-
+When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
 Example of data too long behavior for BINARY:
-
 
 ```
 TRUNCATE binary_example;
@@ -154,10 +136,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## See Also
 
-
 * [CHAR](char.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

@@ -23,10 +23,10 @@ CONNECT standard indexes are created and used as the ones of other storage engin
 have a specific internal format. The CONNECT handler supports the use of standard indexes for most\
 of the file based table types.
 
-You can define them in the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement, or either using the CREATE\
-INDEX statement or the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement. In all cases, the index files are\
-automatically made. They can be dropped either using the [DROP INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/drop/drop-index.md) statement\
-or the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, and this erases the index files.
+You can define them in the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement, or either using the CREATE\
+INDEX statement or the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement. In all cases, the index files are\
+automatically made. They can be dropped either using the [DROP INDEX](../../../sql-statements/data-definition/drop/drop-index.md) statement\
+or the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement, and this erases the index files.
 
 Indexes are automatically reconstructed when the table is created, modified by\
 INSERT, UPDATE or DELETE commands, or when the SEPINDEX option is changed.\
@@ -142,7 +142,7 @@ only for clustered and sorted columns.
 
 Remote indexing is specific to the [MYSQL](../connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md) table type. It is equivalent to what the [FEDERATED](../../federatedx-storage-engine/)\
 storage does. A MYSQL table does not support indexes per se. Because access to the table is handled\
-remotely, it is the remote table that supports the indexes. What the MYSQL table does is just to add a WHERE clause to the [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) command sent to the remote server allowing the remote server to use\
+remotely, it is the remote table that supports the indexes. What the MYSQL table does is just to add a WHERE clause to the [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) command sent to the remote server allowing the remote server to use\
 indexing when applicable.\
 Note however that because CONNECT adds when possible all or part of the where clause of the\
 original query, this happens often even if the remote indexed column is not declared locally indexed.\
@@ -192,7 +192,7 @@ alter table patients drop primary key;
 alter table patients add primary key (pnb) comment 'DYNAMIC' dynam=1;
 ```
 
-Note 1: The comment is not mandatory here but useful to see that the index is dynamic if you use the[SHOW INDEX](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) command.
+Note 1: The comment is not mandatory here but useful to see that the index is dynamic if you use the[SHOW INDEX](../../../sql-statements/administrative-sql-statements/show/show-index.md) command.
 
 Note 2: There is currently no way to just change the DYNAM option without dropping and adding the\
 index. This is unfortunate because it takes time.

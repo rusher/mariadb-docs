@@ -88,9 +88,9 @@ Below is a list of all _optimizer\_switch_ flags available in MariaDB:
 
 ## See Also
 
-* [Quickly finding optimizer\_switch values that are on or off](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-procedures/optimizer_switch-helper-functions.md)
+* [Quickly finding optimizer\_switch values that are on or off](../../../reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-procedures/optimizer_switch-helper-functions.md)
 * [The optimizer converts certain big IN predicates into IN subqueries](subquery-optimizations/conversion-of-big-in-predicates-into-subqueries.md)
 * [optimizer\_adjust\_secondary\_key\_cost](optimizer_adjust_secondary_key_costs.md)
-* [Optimizer hints in SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/optimizer-hints.md)
+* [Optimizer hints in SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md)
 
 CC BY-SA / Gnu FDL

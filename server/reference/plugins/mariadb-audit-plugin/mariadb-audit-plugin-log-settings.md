@@ -109,7 +109,7 @@ Below is an example with both `TABLE` and `QUERY` events logging. For this scena
 'SELECT * FROM employee_pay WHERE title LIKE \'%Executive%\'  OR title LIKE \'%Manager%\'',0
 ```
 
-Although the user executed only one [SELECT](../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement, there are multiple entries to the log: one for each table accessed and one entry for the query on the view, (i.e., `employee_pay`). We know primarily this is all for one query because they all have the same connection and query identification numbers (i.e., `29` and `913`).
+Although the user executed only one [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) statement, there are multiple entries to the log: one for each table accessed and one entry for the query on the view, (i.e., `employee_pay`). We know primarily this is all for one query because they all have the same connection and query identification numbers (i.e., `29` and `913`).
 
 ## Logging User Activities
 

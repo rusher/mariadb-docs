@@ -2,7 +2,7 @@
 
 This article describes the different methods MariaDB provides to limit/timeout a query:
 
-## [LIMIT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit)
+## [LIMIT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit)
 
 ```
 SELECT ... LIMIT row_count
@@ -12,7 +12,7 @@ or
 SELECT ... LIMIT row_count OFFSET offset
 ```
 
-The [LIMIT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause restricts the number of returned rows.
+The [LIMIT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause restricts the number of returned rows.
 
 ## [LIMIT ROWS EXAMINED](limit-rows-examined.md)
 
@@ -24,7 +24,7 @@ Stops the query after 'rows\_limit' number of rows have been examined.
 
 ## sql\_safe\_updates
 
-If the [sql\_safe\_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)\
+If the [sql\_safe\_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md)\
 statement unless one specifies a key constraint in the `WHERE` clause or provide a `LIMIT` clause (or both).
 
 ```
@@ -36,7 +36,7 @@ UPDATE tbl_name SET not_key_column=val;
 
 ## sql\_select\_limit
 
-[sql\_select\_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `LIMIT row_count` to any [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) query.
+[sql\_select\_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `LIMIT row_count` to any [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) query.
 
 ```
 SET @@SQL_SELECT_LIMIT=1000
@@ -67,7 +67,7 @@ If the [max\_statement\_time](../system-variables/server-system-variables.md#max
 
 ## See Also
 
-* [WAIT and NOWAIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md)
+* [WAIT and NOWAIT](../../../reference/sql-statements/transactions/wait-and-nowait.md)
 * [Aborting statements that take longer than a certain time to execute](aborting-statements.md)
 * [lock\_wait\_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 

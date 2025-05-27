@@ -1,64 +1,47 @@
-
 # SETVAL
 
 ## Syntax
-
 
 ```
 SETVAL(sequence_name, next_value, [is_used, [round]])
 ```
 
-
 ## Description
-
 
 Set the next value to be returned for a `SEQUENCE`.
 
-
-This function is compatible with PostgreSQL syntax, extended
+This function is compatible with PostgreSQL syntax, extended\
 with the `round` argument.
 
-
-If the `is_used` argument is not given or is `1` or `true`, then the next used value will
-one after the given value. If `is_used` is `0` or `false` then the next generated value
+If the `is_used` argument is not given or is `1` or `true`, then the next used value will\
+one after the given value. If `is_used` is `0` or `false` then the next generated value\
 will be the given value.
 
-
-If `round` is used then it will set the `round` value (or the internal cycle count, starting at zero) for the sequence.
+If `round` is used then it will set the `round` value (or the internal cycle count, starting at zero) for the sequence.\
 If `round` is not used, it's assumed to be 0.
-
 
 `next_value` must be an integer literal.
 
-
-For `SEQUENCE` tables defined with `CYCLE` (see [CREATE SEQUENCE](../create-sequence.md)) one should use both `next_value` and `round` to define the next value. In this case the
+For `SEQUENCE` tables defined with `CYCLE` (see [CREATE SEQUENCE](../create-sequence.md)) one should use both `next_value` and `round` to define the next value. In this case the\
 current sequence value is defined to be `round`, `next_value`.
-
 
 The result returned by `SETVAL()` is `next_value` or NULL if the given `next_value` and `round` is smaller than the current value.
 
-
-`SETVAL()` will not set the `SEQUENCE` value to a something that is less than
-its current value. This is needed to ensure that `SETVAL()`
-is replication safe. If you want to set the SEQUENCE to a smaller number
+`SETVAL()` will not set the `SEQUENCE` value to a something that is less than\
+its current value. This is needed to ensure that `SETVAL()`\
+is replication safe. If you want to set the SEQUENCE to a smaller number\
 use [ALTER SEQUENCE](../alter-sequence.md).
 
-
-If `CYCLE` is used, first `round` and then `next_value` are compared
+If `CYCLE` is used, first `round` and then `next_value` are compared\
 to see if the value is bigger than the current value.
 
-
-Internally, in the MariaDB server, `SETVAL()` is used to inform
-replicas that a `SEQUENCE` has changed value. The replica may get
-`SETVAL()` statements out of order, but this is ok as only the
+Internally, in the MariaDB server, `SETVAL()` is used to inform\
+replicas that a `SEQUENCE` has changed value. The replica may get`SETVAL()` statements out of order, but this is ok as only the\
 biggest one will have an effect.
 
-
-`SETVAL` requires the [INSERT privilege](../../sql-statements/account-management-sql-commands/grant.md).
-
+`SETVAL` requires the [INSERT privilege](../../../sql-statements/account-management-sql-commands/grant.md).
 
 ## Examples
-
 
 ```
 SELECT setval(foo, 42);           -- Next nextval will return 43
@@ -67,7 +50,6 @@ SELECT setval(foo, 42, false);    -- Next nextval will return 42
 ```
 
 SETVAL setting higher and lower values on a sequence with an increment of 10:
-
 
 ```
 SELECT NEXTVAL(s);
@@ -108,7 +90,6 @@ SELECT NEXTVAL(s);
 
 Example demonstrating `round`:
 
-
 ```
 CREATE OR REPLACE SEQUENCE s1
   START WITH 1
@@ -135,7 +116,6 @@ SELECT NEXTVAL(s1);
 
 The following statement returns NULL, as the given `next_value` and `round` is smaller than the current value.
 
-
 ```
 SELECT SETVAL(s1, 99, 1, 0);
 +----------------------+
@@ -153,7 +133,6 @@ SELECT NEXTVAL(s1);
 ```
 
 Increasing the round from zero to 1 will allow `next_value` to be returned.
-
 
 ```
 SELECT SETVAL(s1, 99, 1, 1);
@@ -173,15 +152,12 @@ SELECT NEXTVAL(s1);
 
 ## See Also
 
-
 * [Sequence Overview](../sequence-overview.md)
 * [ALTER SEQUENCE](../alter-sequence.md)
 * [CREATE SEQUENCE](../create-sequence.md)
 * [NEXT VALUE FOR](next-value-for-sequence_name.md)
 * [PREVIOUS VALUE FOR](previous-value-for-sequence_name.md)
-* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
 
-
 CC BY-SA / Gnu FDL
-

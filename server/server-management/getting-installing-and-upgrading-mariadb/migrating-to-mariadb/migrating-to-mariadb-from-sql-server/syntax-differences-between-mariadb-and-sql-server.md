@@ -30,7 +30,7 @@ SET SESSION sql_mode = CONCAT(sql_mode, ',MSSQL');
 
 ### Executable Comments
 
-MariaDB supports [executable comments](../../../../reference/sql-statements-and-structure/sql-statements/comment-syntax.md#executable-comment-syntax). These are designed to write generic queries that are only executed by MariaDB, and optionally only certain versions.
+MariaDB supports [executable comments](../../../../reference/sql-statements/comment-syntax.md#executable-comment-syntax). These are designed to write generic queries that are only executed by MariaDB, and optionally only certain versions.
 
 The following examples show how to insert SQL code that will be ignored by SQL Server but executed by MariaDB, or some of its versions.
 
@@ -131,15 +131,15 @@ Also, note that MariaDB doesn't support the `UNKNOWN` pseudo-value. An expressio
 
 ### LIKE
 
-In MariaDB, [LIKE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) expressions only have two characters with special meanings: `%` and `_`. These two characters have the same meanings they have in SQL Server.
+In MariaDB, [LIKE](../../../../reference/sql-statements/built-in-functions/string-functions/like.md) expressions only have two characters with special meanings: `%` and `_`. These two characters have the same meanings they have in SQL Server.
 
-The additional characters recognized by SQL Server (`[`, `]` and `^`) are part of regular expressions. MariaDB supports the [REGEXP](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md) operator, that supports the full regular expressions syntax.
+The additional characters recognized by SQL Server (`[`, `]` and `^`) are part of regular expressions. MariaDB supports the [REGEXP](../../../../reference/sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md) operator, that supports the full regular expressions syntax.
 
 ## Data Definition Language
 
 Here we discuss some DDL differences that database administrators will want to be aware of.
 
-While this section is meant to highlight the most noticeable DDL differences between MariaDB and SQL Server, there are many others, both in the syntax and in the semantics. See the [ALTER](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/) statement documentation.
+While this section is meant to highlight the most noticeable DDL differences between MariaDB and SQL Server, there are many others, both in the syntax and in the semantics. See the [ALTER](../../../../reference/sql-statements/data-definition/alter/) statement documentation.
 
 ### Altering Tables Online
 
@@ -147,18 +147,18 @@ Altering tables online can be a problem, especially when the tables are big and 
 
 MariaDB offers the following solutions to help:
 
-* The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error.
-* The [ALTER TABLE ... LOCK](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
+* The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error.
+* The [ALTER TABLE ... LOCK](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
 
 To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
 
-An `ALTER TABLE` can be queued because a long-running statement (even a `SELECT`) required a [metadata lock](../../../../reference/sql-statements-and-structure/sql-statements/transactions/metadata-locking.md). Since this may cause troubles, sometimes we want the operation to simply fail if the wait is too long. This can be achieved with the [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) clauses, whose syntax is a bit different from SQL Server.
+An `ALTER TABLE` can be queued because a long-running statement (even a `SELECT`) required a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md). Since this may cause troubles, sometimes we want the operation to simply fail if the wait is too long. This can be achieved with the [WAIT and NOWAIT](../../../../reference/sql-statements/transactions/wait-and-nowait.md) clauses, whose syntax is a bit different from SQL Server.
 
 SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, note that [most ALTER TABLE statements](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `ALGORITHM = INSTANT`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
 
 ### IF EXISTS, IF NOT EXISTS, OR REPLACE
 
-Most DDL statements, including [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), support the following syntax:
+Most DDL statements, including [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md), support the following syntax:
 
 * `DROP IF EXISTS`: A warning (not an error) is produced if the object does not exist.
 * `OR REPLACE`: If the object exists, it is dropped and recreated; otherwise it is created. This operation is atomic, so at no point in time does the object not exist.
@@ -180,12 +180,12 @@ go
 
 ### Altering Columns
 
-With SQL Server, the only syntax to alter a table column is `ALTER TABLE ... ALTER COLUMN`. MariaDB provides more [ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) commands to obtain the same result:
+With SQL Server, the only syntax to alter a table column is `ALTER TABLE ... ALTER COLUMN`. MariaDB provides more [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) commands to obtain the same result:
 
-* [CHANGE COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#change-column) allows one to perform any change by specifying a new column definition, including the name.
-* [MODIFY COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#modify-column) allows any change, except renaming the column. This is a slightly simpler syntax that we can use when we don't want to change a column name.
-* [ALTER COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#alter-column) allows one to change or drop the `DEFAULT` value.
-* [RENAME COLUMN](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#rename-column) allows one to only change the column name.
+* [CHANGE COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#change-column) allows one to perform any change by specifying a new column definition, including the name.
+* [MODIFY COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#modify-column) allows any change, except renaming the column. This is a slightly simpler syntax that we can use when we don't want to change a column name.
+* [ALTER COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alter-column) allows one to change or drop the `DEFAULT` value.
+* [RENAME COLUMN](../../../../reference/sql-statements/data-definition/alter/alter-table.md#rename-column) allows one to only change the column name.
 
 Using a more specific syntax is less error-prone. For example, by using `ALTER TABLE ... ALTER COLUMN` we will not accidentally change the data type.
 
@@ -193,7 +193,7 @@ The word `COLUMN` is usually optional, except in the case of `RENAME COLUMN`.
 
 ### SHOW Statements
 
-MariaDB supports [SHOW](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/) statements to quickly list all objects of a certain type (tables, views, triggers...). Most `SHOW` statements support a `LIKE` clause to filter data. For example, to list the tables in the current database whose name begins with 'wp\_':
+MariaDB supports [SHOW](../../../../reference/sql-statements/administrative-sql-statements/show/) statements to quickly list all objects of a certain type (tables, views, triggers...). Most `SHOW` statements support a `LIKE` clause to filter data. For example, to list the tables in the current database whose name begins with 'wp\_':
 
 ```
 SHOW TABLES LIKE 'wp\_%';
@@ -209,13 +209,13 @@ SELECT TABLE_SCHEMA, TABLE_NAME
 
 ### SHOW CREATE Statements
 
-In general, for each `CREATE` statement MariaDB also supports a `SHOW CREATE` statement. For example there is a [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) that returns the [CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement that can be used to recreate a table.
+In general, for each `CREATE` statement MariaDB also supports a `SHOW CREATE` statement. For example there is a [SHOW CREATE TABLE](../../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) that returns the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement that can be used to recreate a table.
 
 Though SQL Server has no way to show the DDL statement to recreate an object, `SHOW CREATE` statements are functionally similar to `sp_helptext()`.
 
 ### Database Comments
 
-MariaDB does not support extended properties. Instead, it supports a `COMMENT` clause for most [CREATE](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/) and [ALTER](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/) statements.
+MariaDB does not support extended properties. Instead, it supports a `COMMENT` clause for most [CREATE](../../../../reference/sql-statements/data-definition/create/) and [ALTER](../../../../reference/sql-statements/data-definition/alter/) statements.
 
 For example, to create and then change a table comment:
 
@@ -244,7 +244,7 @@ SELECT TABLE_COMMENT
 
 ### Error Handling
 
-MariaDB [SHOW ERRORS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) and [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) statements can be used to show errors, or warning and errors. This is convenient for clients, but stored procedures cannot work with the output of these commands.
+MariaDB [SHOW ERRORS](../../../../reference/sql-statements/administrative-sql-statements/show/show-errors.md) and [SHOW WARNINGS](../../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) statements can be used to show errors, or warning and errors. This is convenient for clients, but stored procedures cannot work with the output of these commands.
 
 Instead, inside stored procedures you can:
 
@@ -256,15 +256,15 @@ Instead, inside stored procedures you can:
 
 Administration and maintenance commands in MariaDB use different syntax to SQL Server.
 
-* [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) rebuilds table data and indexes. It can be considered as the MariaDB equivalent of SQL Server's `ALTER INDEX REBUILD`. See [Defragmenting InnoDB Tablespaces](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) for more information. This statement is always locking. It supports [WAIT and NOWAIT](../../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md) syntax,
-* MariaDB has an [ANALYZE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) command, which is an equivalent of `UPDATE STATISTICS`.
+* [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) rebuilds table data and indexes. It can be considered as the MariaDB equivalent of SQL Server's `ALTER INDEX REBUILD`. See [Defragmenting InnoDB Tablespaces](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md) for more information. This statement is always locking. It supports [WAIT and NOWAIT](../../../../reference/sql-statements/transactions/wait-and-nowait.md) syntax,
+* MariaDB has an [ANALYZE TABLE](../../../../reference/sql-statements/table-statements/analyze-table.md) command, which is an equivalent of `UPDATE STATISTICS`.
 
 ## BULK INSERT
 
 MariaDB has no `BULK INSERT` statement. Instead, it supports:
 
-* [LOAD DATA INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to load data from files in CSV or similar formats;
-* [LOAD XML INFILE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) to load data from XML files.
+* [LOAD DATA INFILE](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to load data from files in CSV or similar formats;
+* [LOAD XML INFILE](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md) to load data from XML files.
 
 See also [How to Quickly Insert Data Into MariaDB](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md).
 

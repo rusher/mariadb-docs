@@ -1,14 +1,10 @@
-
 # Checking and Repairing CSV Tables
 
-[CSV tables](README.md) support the [CHECK TABLE](../../sql-statements-and-structure/sql-statements/table-statements/check-table.md) and [REPAIR TABLE](../../sql-statements-and-structure/sql-statements/table-statements/repair-table.md) statements.
-
+[CSV tables](./) support the [CHECK TABLE](../../sql-statements/table-statements/check-table.md) and [REPAIR TABLE](../../sql-statements/table-statements/repair-table.md) statements.
 
 CHECK TABLE will mark the table as corrupt if it finds a problem, while REPAIR TABLE will restore rows until the first corrupted row, discarding the rest.
 
-
 ## Examples
-
 
 ```
 CREATE TABLE csv_test (
@@ -34,7 +30,6 @@ SELECT * FROM csv_test;
 
 Using an editor, the actual file will look as follows
 
-
 ```
 $ cat csv_test.CSV
 1,"2013-07-08","one"
@@ -43,7 +38,6 @@ $ cat csv_test.CSV
 ```
 
 Let's introduce some corruption with an unwanted quote in the 2nd row:
-
 
 ```
 1,"2013-07-08","one"
@@ -62,7 +56,6 @@ CHECK TABLE csv_test;
 
 We can repair this, but all rows from the corrupt row onwards will be lost:
 
-
 ```
 REPAIR TABLE csv_test;
 +---------------+--------+----------+----------------------------------------+
@@ -80,6 +73,4 @@ SELECT * FROM csv_test;
 +---+------------+-----+
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -15,7 +15,7 @@ System-versioned tables were first introduced in the SQL:2011 standard.
 
 ### Creating a System-Versioned Table
 
-The [CREATE TABLE](../sql-statements/data-definition/create/create-table.md) syntax has been extended to permit creating a system-versioned table. To be system-versioned, according to SQL:2011, a table must have two generated columns, a period, and a special table option clause:
+The [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) syntax has been extended to permit creating a system-versioned table. To be system-versioned, according to SQL:2011, a table must have two generated columns, a period, and a special table option clause:
 
 ```
 CREATE TABLE t(
@@ -42,7 +42,7 @@ SELECT x, ROW_START, ROW_END FROM t;
 
 ### Adding or Removing System Versioning To/From a Table
 
-An existing table can be [altered](../sql-statements/data-definition/alter/alter-table.md) to enable system versioning for it.
+An existing table can be [altered](../../sql-statements/data-definition/alter/alter-table.md) to enable system versioning for it.
 
 ```
 CREATE TABLE t(
@@ -127,7 +127,7 @@ ERROR 4134 (HY000): Duplicate ROW START column `rs`
 
 ### Inserting Data
 
-When data is inserted into a system-versioned table, it is given a _row\_start_ value of the current timestamp, and a _row\_end_ value of [FROM\_UNIXTIME](../sql-statements/built-in-functions/date-time-functions/from_unixtime.md)(2147483647.999999). The current timestamp can be adjusted by setting the [timestamp system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp), for example:
+When data is inserted into a system-versioned table, it is given a _row\_start_ value of the current timestamp, and a _row\_end_ value of [FROM\_UNIXTIME](../../sql-statements/built-in-functions/date-time-functions/from_unixtime.md)(2147483647.999999). The current timestamp can be adjusted by setting the [timestamp system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp), for example:
 
 ```
 SELECT NOW();
@@ -277,7 +277,7 @@ CREATE TABLE t(
 ) WITH SYSTEM VERSIONING;
 ```
 
-These columns must be specified explicitly, but they can be made [INVISIBLE](../sql-statements/data-definition/create/invisible-columns.md) to avoid cluttering `SELECT *` output.
+These columns must be specified explicitly, but they can be made [INVISIBLE](../../sql-statements/data-definition/create/invisible-columns.md) to avoid cluttering `SELECT *` output.
 
 Note that if you are using an engine that does not support system versioning with transaction ids, you will get an error like "`start_trxid` must be of type TIMESTAMP(6) for system-versioned table `t`".
 
@@ -289,7 +289,7 @@ SELECT * FROM t FOR SYSTEM_TIME AS OF TRANSACTION 12345;
 
 This will show the data, exactly as it was seen by the transaction with the identifier 12345.
 
-Data for this feature is stored in the [mysql.transaction\_registry table](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
+Data for this feature is stored in the [mysql.transaction\_registry table](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md).
 
 ### Storing the History Separately
 
@@ -334,7 +334,7 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
   );
 ```
 
-This means that the history for the first week after the table was created will be stored in `p0`. The history for the second week — in `p1`, and all later history will go into `p2`. One can see the exact rotation time for each partition in the [INFORMATION\_SCHEMA.PARTITIONS](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) table.
+This means that the history for the first week after the table was created will be stored in `p0`. The history for the second week — in `p1`, and all later history will go into `p2`. One can see the exact rotation time for each partition in the [INFORMATION\_SCHEMA.PARTITIONS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) table.
 
 It is possible to combine partitioning by `SYSTEM_TIME` and subpartitions:
 
@@ -459,7 +459,7 @@ ALTER TABLE t DROP PARTITION p0;
 
 Note, that one cannot drop a current partition or the only historical partition.
 
-And the third option; one can use a variant of the [DELETE](../sql-statements/data-manipulation/changing-deleting-data/delete.md) statement to prune the history:
+And the third option; one can use a variant of the [DELETE](../../sql-statements/data-manipulation/changing-deleting-data/delete.md) statement to prune the history:
 
 ```
 DELETE HISTORY FROM t;
@@ -473,11 +473,11 @@ DELETE HISTORY FROM t BEFORE SYSTEM_TIME '2016-10-09 08:07:06';
 
 or to a specific transaction (with `BEFORE SYSTEM_TIME TRANSACTION xxx`).
 
-To protect the integrity of the history, this statement requires a special [DELETE HISTORY](../sql-statements/account-management-sql-commands/grant.md#table-privileges) privilege.
+To protect the integrity of the history, this statement requires a special [DELETE HISTORY](../../sql-statements/account-management-sql-commands/grant.md#table-privileges) privilege.
 
 Currently, using the DELETE HISTORY statement with a BEFORE SYSTEM\_TIME greater than the ROW\_END of the active records (as a [TIMESTAMP](../../data-types/date-and-time-data-types/timestamp.md), this has a maximum value of '2038-01-19 03:14:07' [UTC](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)) will result in the historical records being dropped, and the active records being deleted and moved to history. See [MDEV-25468](https://jira.mariadb.org/browse/MDEV-25468).
 
-The [TRUNCATE TABLE](../sql-statements/table-statements/truncate-table.md) statement drops all historical records from a system-versioned-table.
+The [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md) statement drops all historical records from a system-versioned-table.
 
 Historic data is protected from TRUNCATE statements, as per the SQL standard, and an Error 4137 is instead raised:
 
@@ -506,7 +506,7 @@ CREATE TABLE t (
 );
 ```
 
-Changes in other sections:[create-table.md](../sql-statements/data-definition/create/create-table.md)[alter-table.md](../sql-statements/data-definition/alter/alter-table.md)[join-syntax.md](../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)[partitioning-types-overview.md](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)[date-and-time-units.md](../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)[delete.md](../sql-statements/data-manipulation/changing-deleting-data/delete.md)[grant.md](../sql-statements/account-management-sql-commands/grant.md)\
+Changes in other sections:[create-table.md](../../sql-statements/data-definition/create/create-table.md)[alter-table.md](../../sql-statements/data-definition/alter/alter-table.md)[join-syntax.md](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)[partitioning-types-overview.md](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)[date-and-time-units.md](../../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)[delete.md](../../sql-statements/data-manipulation/changing-deleting-data/delete.md)[grant.md](../../sql-statements/account-management-sql-commands/grant.md)\
 they all reference back to this page\
 Also, TODO:
 
@@ -518,7 +518,7 @@ There are a number of system variables related to system-versioned tables:
 
 #### system\_versioning\_alter\_history
 
-* Description: SQL:2011 does not allow [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
+* Description: SQL:2011 does not allow [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) on system-versioned tables. When this variable is set to `ERROR`, an attempt to alter a system-versioned table will result in an error. When this variable is set to `KEEP`, ALTER TABLE will be allowed, but the history will become incorrect — querying historical data will show the new table structure. This mode is still useful, for example, when adding new columns to a table. Note that if historical data contains or would contain nulls, attempting to ALTER these columns to be `NOT NULL` will return an error (or warning if [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is not set).
 * Commandline: `--system-versioning-alter-history=value`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -528,7 +528,7 @@ There are a number of system variables related to system-versioned tables:
 
 #### `system_versioning_asof`
 
-* Description: If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `'DEFAULT'` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](../sql-statements/data-manipulation/inserting-loading-data/insert-select.md) and [REPLACE .. SELECT](../sql-statements/data-manipulation/changing-deleting-data/replace.md) need to state AS OF explicitly.
+* Description: If set to a specific timestamp value, an implicit `FOR SYSTEM_TIME AS OF` clause will be applied to all queries. This is useful if one wants to do many queries for history at the specific point in time. Set it to `'DEFAULT'` to restore the default behavior. Has no effect on DML, so queries such as [INSERT .. SELECT](../../sql-statements/data-manipulation/inserting-loading-data/insert-select.md) and [REPLACE .. SELECT](../../sql-statements/data-manipulation/changing-deleting-data/replace.md) need to state AS OF explicitly.
 
 **Note**: You need to use quotes around the name `'DEFAULT'` when setting the session value, unquoted literal `DEFAULT` will restore the current global value instead.
 
@@ -561,14 +561,14 @@ There are a number of system variables related to system-versioned tables:
 
 ## Limitations
 
-* Versioning clauses can not be applied to [generated (virtual and persistent) columns](../sql-statements/data-definition/create/generated-columns.md).
+* Versioning clauses can not be applied to [generated (virtual and persistent) columns](../../sql-statements/data-definition/create/generated-columns.md).
 * [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), use the `-H` or `--dump-history` options to include the history.
 
 ## See Also
 
 * [Application-Time Periods](application-time-periods.md)
 * [Bitemporal Tables](bitemporal-tables.md)
-* [mysql.transaction\_registry Table](../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md)
+* [mysql.transaction\_registry Table](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md)
 * [MariaDB Temporal Tables](https://youtu.be/uBoUlTsU1Tk) (video)
 
 CC BY-SA / Gnu FDL

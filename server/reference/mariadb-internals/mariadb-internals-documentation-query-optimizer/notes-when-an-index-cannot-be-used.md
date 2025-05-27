@@ -30,7 +30,7 @@ Note that in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/maria
 
 ## Enabling the Note
 
-By default, the warning is only shown when executing [EXPLAIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) on a query.\
+By default, the warning is only shown when executing [EXPLAIN](../../sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) on a query.\
 To enable for all queries, use the option/server variable:
 
 ```
@@ -68,6 +68,6 @@ As a server variable:
 
 ## See Also
 
-* [Type conversions](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/type-conversion.md)
+* [Type conversions](../../sql-statements/built-in-functions/string-functions/type-conversion.md)
 
 CC BY-SA / Gnu FDL

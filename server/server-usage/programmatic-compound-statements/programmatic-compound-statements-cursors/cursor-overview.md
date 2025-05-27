@@ -20,7 +20,7 @@ ERROR 1329 (02000): No data - zero rows fetched, selected, or processed
 
 To avoid problems, a [DECLARE HANDLER](../declare-handler.md) statement is generally used. The HANDLER should handler the 1329 error, or the '02000' [SQLSTATE](../programmatic-compound-statements-diagnostics/sqlstate.md), or the NOT FOUND error class.
 
-Only [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements are allowed for cursors, and they cannot be contained in a variable - so, they cannot be composed dynamically. However, it is possible to SELECT from a view. Since the [CREATE VIEW](../../views/create-view.md) statement can be executed as a prepared statement, it is possible to dynamically create the view that is queried by the cursor.
+Only [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements are allowed for cursors, and they cannot be contained in a variable - so, they cannot be composed dynamically. However, it is possible to SELECT from a view. Since the [CREATE VIEW](../../views/create-view.md) statement can be executed as a prepared statement, it is possible to dynamically create the view that is queried by the cursor.
 
 From [MariaDB 10.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1030-release-notes), cursors can have parameters. Cursor parameters can appear in any part of the [DECLARE CURSOR](declare-cursor.md) select\_statement where a stored procedure variable is allowed (select list, WHERE, HAVING, LIMIT etc). See [DECLARE CURSOR](declare-cursor.md) and [OPEN](open.md) for syntax, and below for an example:
 

@@ -1,9 +1,6 @@
-
 # BIT
 
-
 ## Syntax
-
 
 ```
 BIT[(M)]
@@ -11,25 +8,17 @@ BIT[(M)]
 
 ## Description
 
-
-A bit-field type. `M` indicates the number of bits per value, from `1` to
-`64`. The default is `1` if `M` is omitted.
-
+A bit-field type. `M` indicates the number of bits per value, from `1` to`64`. The default is `1` if `M` is omitted.
 
 Bit values can be inserted with `b'value'` notation, where `value` is the bit value in 0's and 1's.
 
-
 Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a BIT(4) field, '10' is equivalent to '0010'.
 
-
-Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/hex.md), [OCT](../../sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/oct.md) or [BIN](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/bin.md) to convert them.
-
+Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](../../sql-statements/built-in-functions/string-functions/hex.md), [OCT](../../sql-statements/built-in-functions/numeric-functions/oct.md) or [BIN](../../sql-statements/built-in-functions/string-functions/bin.md) to convert them.
 
 ## Examples
 
-
 Example of BIT:
-
 
 ```
 CREATE TABLE bit_example (
@@ -61,8 +50,7 @@ SELECT description, b1+0, LPAD(BIN(b4), 4, 0) AS b4, HEX(b16)
 +-------------+------+------+----------+
 ```
 
-### With [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
-
+### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
 
 ```
 CREATE TABLE b ( b1 BIT(8) );
@@ -85,6 +73,4 @@ SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;
 +------+---------+---------+----------+
 ```
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

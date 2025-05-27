@@ -2,7 +2,7 @@
 
 When a WHERE clause is related to the partitioning expression, the optimizer knows which partitions are relevant for the query. Other partitions will not be read. This optimization is called _partition pruning_.
 
-[EXPLAIN PARTITIONS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) can be used to know which partitions will be read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
+[EXPLAIN PARTITIONS](../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) can be used to know which partitions will be read for a given query. A column called `partitions` will contain a comma-separated list of the accessed partitions. For example:
 
 ```
 EXPLAIN PARTITIONS SELECT * FROM orders WHERE id < 15000000;
@@ -22,11 +22,11 @@ SELECT * FROM orders PARTITION (p2,p3) WHERE user_id >= 40;
 
 The PARTITION clause is supported for all DML statements:
 
-* [SELECT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)
-* [INSERT](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md)
-* [UPDATE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)
-* [DELETE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)
-* [REPLACE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md)
+* [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md)
+* [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md)
+* [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md)
+* [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md)
+* [REPLACE](../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md)
 
 ## Partition Pruning and Triggers
 

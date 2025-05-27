@@ -1,21 +1,16 @@
+# sharded-mariadb-enterprise-spider-topology-add-a-shard
 
-# Sharded MariaDB Enterprise Spider Topology Add a Shard
+## Sharded MariaDB Enterprise Spider Topology Add a Shard
 
-
-# Overview
-
+## Overview
 
 In a Sharded MariaDB Enterprise Spider topology, new shards can be added using the following procedure.
 
-
-# Create Spider User
-
+## Create Spider User
 
 Each data node requires a user account that the Spider Node uses to connect.
 
-
-On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement:
-
+On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../sql-statements/account-management-sql-commands/create-user.md) statement:
 
 ```
 CREATE USER spider_user@192.0.2.1 IDENTIFIED BY "password";
@@ -23,25 +18,19 @@ CREATE USER spider_user@192.0.2.1 IDENTIFIED BY "password";
 
 Privileges will be granted to the user account in a later step.
 
+## Test Spider User
 
-# Test Spider User
-
-
-On the Spider Node, confirm that the Spider user account can connect to the Data Node using [MariaDB Client](../../../../../../clients-and-utilities/mariadb-client/README.md):
-
+On the Spider Node, confirm that the Spider user account can connect to the Data Node using [MariaDB Client](../../../../../../clients-and-utilities/mariadb-client/):
 
 ```
 $ mariadb --user spider_user --host 192.0.2.2 --password
 ```
 
-# Configure Connection Details
-
+## Configure Connection Details
 
 The Spider Node requires connection details for each Data Node.
 
-
-On the Spider Node, create a server object to configure the connection details for the Data Node hosting the new shard using the [CREATE SERVER](../../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md) statement:
-
+On the Spider Node, create a server object to configure the connection details for the Data Node hosting the new shard using the [CREATE SERVER](../../../../../sql-statements/data-definition/create/create-server.md) statement:
 
 ```
 CREATE SERVER southern_server
@@ -57,21 +46,15 @@ OPTIONS (
 
 The Data Node runs MariaDB Enterprise Server, so the `FOREIGN DATA WRAPPER` is set to mariadb.
 
+Using a server object for connection details is optional. Alternatively, the connection details for the Data Node can be specified in the `COMMENT` table option of the [CREATE TABLE](../../../../../sql-statements/data-definition/create/create-table.md) statement when creating the Spider Table.
 
-Using a server object for connection details is optional. Alternatively, the connection details for the Data Node can be specified in the `COMMENT` table option of the [CREATE TABLE](../../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement when creating the Spider Table.
-
-
-# Create the Data Table
-
+## Create the Data Table
 
 When queries read and write to a Spider Table, Spider reads and writes to the Data Tables for each partition on the Data Nodes. The Data Tables must be created on the Data Nodes with the same structure as the Spider Table.
 
-
 If your Data Tables already exist, grant privileges on the tables to the Spider user.
 
-
 On the Data Node hosting the new shard, create the Data Tables:
-
 
 ```
 CREATE DATABASE southern_sales;
@@ -98,51 +81,38 @@ VALUES
 
 The Spider Node reads and writes to the Data Table using the server and user account configured previously. The user account must have privileges on the table.
 
-
-# Grant Privileges
-
+## Grant Privileges
 
 The Spider Node connects to the Data Nodes with the user account configured previously.
 
-
 On the Data Node hosting the new shard, grant the Spider user sufficient privileges to operate on the Data Table:
-
 
 ```
 GRANT ALL PRIVILEGES ON southern_sales.invoices TO 'spider_user'@'192.0.2.1';
 ```
 
-## Privileges for Spider BKA Mode
+### Privileges for Spider BKA Mode
 
-
-By default, the Spider user also requires the [CREATE TEMPORARY TABLES](../../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) privilege on the database containing the Data Table. The [CREATE TEMPORARY TABLES](../../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) privilege is required, because Spider uses temporary tables to optimize read queries when Spider BKA Mode is 1.
-
+By default, the Spider user also requires the [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege on the database containing the Data Table. The [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege is required, because Spider uses temporary tables to optimize read queries when Spider BKA Mode is 1.
 
 Spider BKA Mode is configured using the following methods:
 
-
 * The session value is configured by setting the [Spider BKA Mode](../../../spider-system-variables.md#spider_bka_mode) system variable on the Spider Node. The default value is -1. When the session value is -1, the value for each Spider Table is used.
-* The value for each Spider Table is configured by setting the [bka_mode](../../../spider-system-variables.md#spider_bka_mode) option in the COMMENT table option. When the bka_mode option is not set, the implicit value is 1.
+* The value for each Spider Table is configured by setting the [bka\_mode](../../../spider-system-variables.md#spider_bka_mode) option in the COMMENT table option. When the bka\_mode option is not set, the implicit value is 1.
 
+The default spider\_bka\_mode value is -1, and the implicit Spider Table value is 1, so the default [Spider BKA Mode](../../../spider-system-variables.md#spider_bka_mode) is 1.
 
-The default spider_bka_mode value is -1, and the implicit Spider Table value is 1, so the default [Spider BKA Mode](../../../spider-system-variables.md#spider_bka_mode) is 1.
-
-
-On the Data Node hosting the new shard, grant the Spider user the [CREATE TEMPORARY TABLES](../../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) privilege on the database:
-
+On the Data Node hosting the new shard, grant the Spider user the [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege on the database:
 
 ```
 GRANT CREATE TEMPORARY TABLES ON southern_sales.* TO 'spider_user'@'192.0.2.1';
 ```
 
-# Alter the Spider Table
-
+## Alter the Spider Table
 
 A partition for the new shard must be added to the Spider Table on the Spider Node.
 
-
 On the Spider Node, alter the Spider Table to add the partition and reference the name of the Data Node hosting the new shard in the COMMENT partition option:
-
 
 ```
 ALTER TABLE spider_sharded_sales.invoices
@@ -151,11 +121,9 @@ ALTER TABLE spider_sharded_sales.invoices
    );
 ```
 
-# Test Read Operations
+## Test Read Operations
 
-
-On the Spider Node, read from the Spider Table using a [SELECT](../../../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement:
-
+On the Spider Node, read from the Spider Table using a [SELECT](../../../../../sql-statements/data-manipulation/selecting-data/select.md) statement:
 
 ```
 SELECT * FROM spider_sharded_sales.invoices;
@@ -180,6 +148,4 @@ SELECT * FROM spider_sharded_sales.invoices;
 +-----------+------------+-------------+----------------------------+---------------+----------------+
 ```
 
-
 Copyright © 2025 MariaDB
-

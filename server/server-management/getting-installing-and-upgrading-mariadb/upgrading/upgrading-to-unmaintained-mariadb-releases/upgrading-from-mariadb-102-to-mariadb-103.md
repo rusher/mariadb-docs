@@ -43,13 +43,13 @@ On most servers upgrading from 10.2 should be painless. However, there are some 
 
 #### Options That Have Changed Default Values
 
-| Option                                                                                                                                                                                                                                                   | Old default value | New default value                 |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | --------------------------------- |
-| Option                                                                                                                                                                                                                                                   | Old default value | New default value                 |
-| [innodb\_flush\_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)                                                                                                                                     | (empty)           | fsync                             |
-| [innodb\_spin\_wait\_delay](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay)                                                                                                                              | 6                 | 4                                 |
-| [performance\_schema\_max\_stage\_classes](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes) | 150               | 160                               |
-| [plugin\_maturity](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)                                                                                                                   | unknown           | One less than the server maturity |
+| Option                                                                                                                                                                                                                      | Old default value | New default value                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | --------------------------------- |
+| Option                                                                                                                                                                                                                      | Old default value | New default value                 |
+| [innodb\_flush\_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_flush_method)                                                                                                        | (empty)           | fsync                             |
+| [innodb\_spin\_wait\_delay](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_spin_wait_delay)                                                                                                 | 6                 | 4                                 |
+| [performance\_schema\_max\_stage\_classes](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_max_stage_classes) | 150               | 160                               |
+| [plugin\_maturity](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)                                                                                      | unknown           | One less than the server maturity |
 
 #### Options That Have Been Removed or Renamed
 
@@ -97,12 +97,12 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Functions
 
-* As a result of implementing Table Value Constructors, the [VALUES function](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) has been renamed to VALUE().
+* As a result of implementing Table Value Constructors, the [VALUES function](../../../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/values-value.md) has been renamed to VALUE().
 * Functions that used to only return 64-bit now can return 32-bit results ([MDEV-12619](https://jira.mariadb.org/browse/MDEV-12619)). This could cause incompatibilities with strongly-typed clients.
 
 #### mysqldump
 
-* [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) includes logic to cater for the [mysql.transaction\_registry table](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and beyond.
+* [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) in [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) includes logic to cater for the [mysql.transaction\_registry table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-transaction_registry-table.md). `mysqldump` from an earlier MariaDB release cannot be used on [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and beyond.
 
 #### MariaDB Backup and Percona XtraBackup
 
@@ -110,7 +110,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### Privileges
 
-* If a user has the [SUPER privilege](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) but not the `DELETE HISTORY` privilege, running [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) will grant `DELETE HISTORY` as well.
+* If a user has the [SUPER privilege](../../../../reference/sql-statements/account-management-sql-commands/grant.md) but not the `DELETE HISTORY` privilege, running [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) will grant `DELETE HISTORY` as well.
 
 ### Major New Features To Consider
 

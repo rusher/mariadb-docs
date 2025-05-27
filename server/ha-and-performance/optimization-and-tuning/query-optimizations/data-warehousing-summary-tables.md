@@ -124,7 +124,7 @@ FROM Fact
 ## Summarizing when using a staging table
 
 Load the data (via INSERTs or \[LOAD DATA) en masse into a "staging table". Then perform batch summarization from the Staging table. And batch copy from the Staging table to the Fact table. Note that the Staging table is handy for batching "normalization" during ingestion.\
-See also \[[data-warehousing-high-speed-ingestion|High Speed Ingestion](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
+See also \[[data-warehousing-high-speed-ingestion|High Speed Ingestion](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
 
 ## Summary table: PK or not?
 
@@ -136,7 +136,7 @@ This case is clean and simple -- until you get to endcases. How will you handle 
 
 Case 2: (foo, dy) is a non-UNIQUE INDEX.
 
-This case is clean and simple, but it can clutter the summary table because multiple rows can occur for a given (foo, dy) pair. The report will always have to [SUM()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md) up values because it cannot assume there is only one row, even when it is reporting on a single `foo` for a single `dy`. This forced-SUM is not really bad -- you should do it anyway; that way all your reports are written with one pattern.
+This case is clean and simple, but it can clutter the summary table because multiple rows can occur for a given (foo, dy) pair. The report will always have to [SUM()](../../../reference/sql-statements/built-in-functions/aggregate-functions/sum.md) up values because it cannot assume there is only one row, even when it is reporting on a single `foo` for a single `dy`. This forced-SUM is not really bad -- you should do it anyway; that way all your reports are written with one pattern.
 
 Case 3: PRIMARY KEY (foo, dy) and summarization can happen anytime.
 

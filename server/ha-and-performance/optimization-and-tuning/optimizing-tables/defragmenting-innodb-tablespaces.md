@@ -6,9 +6,9 @@ When rows are deleted from an [InnoDB](../../../reference/storage-engines/innodb
 
 The purge thread will physically delete index keys and rows, but the free space introduced is still not returned to operating system. This can lead to gaps in the pages. If you have variable length rows, new rows may be larger than old rows and cannot make use of the available space.
 
-You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
+You can run [OPTIMIZE TABLE](optimize-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md)
 
-[ENGINE=InnoDB](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
+[ENGINE=InnoDB](../../../reference/sql-statements/data-definition/alter/alter-table.md) to reconstruct the table. Unfortunately running `OPTIMIZE TABLE` against an InnoDB table stored in the shared table-space file `ibdata1` does two things:
 
 * Makes the table’s data and indexes contiguous inside `ibdata1`.
 * Increases the size of `ibdata1` because the contiguous data and index pages are appended to `ibdata1`.

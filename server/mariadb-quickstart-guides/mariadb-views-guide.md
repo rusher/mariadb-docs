@@ -18,7 +18,7 @@ and CREATE VIEW privileges on this table.
 ## The Employee Database
 
 First, we need some data we can perform our optimizations on, so we'll recreate\
-the tables from the [More Advanced Joins](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial, to\
+the tables from the [More Advanced Joins](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial, to\
 provide us with a starting point. If you have already completed that tutorial\
 and have this database already, you can skip ahead.
 

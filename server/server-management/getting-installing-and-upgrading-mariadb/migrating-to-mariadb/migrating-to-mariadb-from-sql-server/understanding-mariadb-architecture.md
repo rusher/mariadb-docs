@@ -83,7 +83,7 @@ A part of the buffer pool is called the [change buffer](../../../../reference/st
 
 InnoDB has background threads that take care of flushing dirty pages from the change buffer to the tablespaces. They don't directly affect the latency of queries, but they are very important for performance.
 
-[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance\_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/).
+[SHOW ENGINE InnoDB STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) shows information about them in the `BACKGROUND THREAD` section. They can also be seen using the [threads](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md) table, in the [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/).
 
 InnoDB flushing is similar to _lazy writes_ and _checkpoints_ in SQL Server. It has no equivalent for _eager writing_.
 
@@ -135,13 +135,13 @@ A database is a container for database objects like tables and views. A database
 
 MariaDB has the following system databases:
 
-* [mysql](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) is for internal use only, and should not be read or written directly.
-* [information\_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) contains all information that can be found in SQL Server's information\_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
-* [performance\_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance\_schema](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
+* [mysql](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) is for internal use only, and should not be read or written directly.
+* [information\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) contains all information that can be found in SQL Server's information\_schema and more. However, while SQL Server's `information_schema` is a schema containing information about the local database, MariaDB's `information_schema` is a database that contains information about all databases.
+* [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) contains information about MariaDB runtime. It is disabled by default. Enabling it requires setting the [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable to 1 and restarting MariaDB.
 
 ### Default Database
 
-When a user connects to MariaDB, they can optionally specify a default database. A default database can also be specified or changed later, with the [USE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) command.
+When a user connects to MariaDB, they can optionally specify a default database. A default database can also be specified or changed later, with the [USE](../../../../reference/sql-statements/administrative-sql-statements/use-database.md) command.
 
 Having a default database specified allows one to specify tables without specifying the name of the database where they are located. If no default database is specified, all table names must be fully qualified.
 
@@ -166,7 +166,7 @@ SELECT m.*
         ON m.xyz = y.xyz;
 ```
 
-MariaDB has the [DATABASE()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/database.md) function to determine the current database:
+MariaDB has the [DATABASE()](../../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/database.md) function to determine the current database:
 
 ```
 SELECT DATABASE();
@@ -211,7 +211,7 @@ Storage engines are a special type of [plugin](../../../../reference/plugins/). 
 
 A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb\_buffer\_pool\_size to configure the size of its buffer pool, and a status variable called Innodb\_pages\_read which indicates the number of memory pages read from the buffer pool. The category [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/) of the MariaDB Knowledge Base has specific pages for system and status variables associated with various plugins.
 
-Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/). 3rd party plugins can be made available for installation by simply copying them to the [plugin\_dir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
+Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/). 3rd party plugins can be made available for installation by simply copying them to the [plugin\_dir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
 
 It is important to note that different plugins may have different maturity levels. It is possible to prevent the installation of plugins we don’t consider production-ready by setting the [plugin\_maturity](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity) system variable. For plugins that are distributed with MariaDB, the maturity level is determined by the MariaDB team based on the bugs reported and fixed.
 
@@ -251,7 +251,7 @@ The contents of each configuration file are organized by _option groups_. MariaD
 
 ### Dynamic and Static Variables
 
-Dynamic variables have a value that can be changed at runtime, using the [SET](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) SQL statement. Static variables have a value that is decided at startup (see below) and cannot be changed without a restart.
+Dynamic variables have a value that can be changed at runtime, using the [SET](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) SQL statement. Static variables have a value that is decided at startup (see below) and cannot be changed without a restart.
 
 The [Server System Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) page states if variables are dynamic or static.
 
@@ -263,7 +263,7 @@ A variable could exist in both the global and session scopes. In this case, the 
 
 The [Server System Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) page states the scope of each variable.
 
-Global variables and some session variables can only be modified by a user with the [SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege (typically root).
+Global variables and some session variables can only be modified by a user with the [SUPER](../../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege (typically root).
 
 ### Syntax
 
@@ -278,7 +278,7 @@ SELECT @@session.variable_name;
 SELECT @@variable_name;
 ```
 
-A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator:
+A longer syntax, which is mostly useful to get multiple variables, makes use of the same pattern syntax that is used by the [LIKE](../../../../reference/sql-statements/built-in-functions/string-functions/like.md) operator:
 
 ```
 -- global variables whose name starts with 'innodb':
@@ -299,8 +299,8 @@ Notice that if we modify a global variable in this way, the new value will be lo
 
 For further information see:
 
-* The [SET](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
-* The [SHOW VARIABLES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
+* The [SET](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+* The [SHOW VARIABLES](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
 
 ### Setting System Variables with Startup Parameters
 
@@ -337,7 +337,7 @@ Many status variables exist in both scopes. For example,[Cpu\_time](../../../../
 
 The status variables created by a plugin, usually, use the plugin name as a prefix.
 
-The [SHOW STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) statement prints the values of the status variables that match a certain pattern.
+The [SHOW STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement prints the values of the status variables that match a certain pattern.
 
 ```
 -- Show all InnoDB global status variables
@@ -349,7 +349,7 @@ SHOW STATUS LIKE 'innodb%';
 SHOW GLOBAL STATUS LIKE '%size%';
 ```
 
-Some status variables values are reset when [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-status) is executed. A possible use:
+Some status variables values are reset when [FLUSH STATUS](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-status) is executed. A possible use:
 
 ```
 DELIMITER ||

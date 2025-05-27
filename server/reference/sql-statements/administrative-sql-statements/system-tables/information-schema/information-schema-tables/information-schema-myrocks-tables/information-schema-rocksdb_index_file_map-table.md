@@ -1,0 +1,23 @@
+# Information Schema ROCKSDB\_INDEX\_FILE\_MAP Table
+
+The [Information Schema](../../) `ROCKSDB_INDEX_FILE_MAP` table is included as part of the [MyRocks](../../../../../../storage-engines/myrocks/) storage engine.
+
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+
+It contains the following columns:
+
+| Column                 | Description |
+| ---------------------- | ----------- |
+| Column                 | Description |
+| COLUMN\_FAMILY         |             |
+| INDEX\_NUMBER          |             |
+| SST\_NAME              |             |
+| NUM\_ROWS              |             |
+| DATA\_SIZE             |             |
+| ENTRY\_DELETES         |             |
+| ENTRY\_SINGLEDELETES   |             |
+| ENTRY\_MERGES          |             |
+| ENTRY\_OTHERS          |             |
+| DISTINCT\_KEYS\_PREFIX |             |
+
+CC BY-SA / Gnu FDL

@@ -1,23 +1,16 @@
-
 # CONNECT - Files Retrieved Using Rest Queries
 
-Starting with [CONNECT version 1.07.0001](../README.md), JSON, XML and possibly CSV data files can be retrieved as results from REST queries when creating or querying such tables. This is done internally by CONNECT using the CURL program generally available on all systems (if not just install it).
-
+Starting with [CONNECT version 1.07.0001](../), JSON, XML and possibly CSV data files can be retrieved as results from REST queries when creating or querying such tables. This is done internally by CONNECT using the CURL program generally available on all systems (if not just install it).
 
 This can also be done using the Microsoft Casablanca (cpprestsdk) package. To enable it, first, install the package as explained in [cpprestsdk](https://github.com/microsoft/cpprestsdk). Then make the GetRest library (dll or so) as explained in [Making the GetRest Library](../connect-making-the-getrest-library.md).
 
-
 Note: If both are available, cpprestsdk is used preferably because it is faster. This can be changed by specifying ‘curl=1’ in the option list.
-
 
 Note: If you want to use this feature with an older distributed version of MariaDB not featuring REST, it is possible to add it as an OEM module as explained in [Adding the REST Feature as a Library Called by an OEM Table](../connect-making-the-getrest-library.md).
 
-
 ### Creating Tables using REST
 
-
-To do so, specify the HTTP of the web client and eventually the URI of the request in the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement. For example, for a query returning JSON data:
-
+To do so, specify the HTTP of the web client and eventually the URI of the request in the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement. For example, for a query returning JSON data:
 
 ```
 CREATE TABLE webusers (
@@ -35,7 +28,6 @@ TABLE_TYPE=JSON FILE_NAME='users.json' HTTP='http://jsonplaceholder.typicode.com
 
 As with standard JSON tables, discovery is possible, meaning that you can leave CONNECT to define the columns by analyzing the JSON file. Here you could just do:
 
-
 ```
 CREATE TABLE webusers
 ENGINE=CONNECT DEFAULT CHARSET=utf8
@@ -45,24 +37,18 @@ HTTP='http://jsonplaceholder.typicode.com' URI='/users';
 
 For example, executing:
 
-
 ```
 SELECT name, address FROM webusers2 LIMIT 1;
 ```
 
 returns:
 
-
-
-| name | address |
-| --- | --- |
-| name | address |
+| name          | address                                                      |
+| ------------- | ------------------------------------------------------------ |
+| name          | address                                                      |
 | Leanne Graham | Kulas Light Apt. 556 Gwenborough 92998-3874 -37.3159 81.1496 |
 
-
-
-Here we see that for some complex elements such as *address*, which is a Json object containing values and objects, CONNECT by default has just listed their texts separated by blanks. But it is possible to ask it to analyze in more depth the json result by adding the DEPTH option. For instance:
-
+Here we see that for some complex elements such as _address_, which is a Json object containing values and objects, CONNECT by default has just listed their texts separated by blanks. But it is possible to ask it to analyze in more depth the json result by adding the DEPTH option. For instance:
 
 ```
 CREATE OR REPLACE TABLE webusers
@@ -73,7 +59,6 @@ OPTION_LIST='Depth=2';
 ```
 
 Then the table will be created as:
-
 
 ```
 CREATE TABLE `webusers3` (
@@ -97,42 +82,32 @@ CREATE TABLE `webusers3` (
 
 Allowing one to get all the values of the Json result, for example:
 
-
 ```
 SELECT name, address_city city, company_name company FROM webusers3;
 ```
 
 That results in:
 
-
-
-| name | city | company |
-| --- | --- | --- |
-| name | city | company |
-| Leanne Graham | Gwenborough | Romaguera-Crona |
-| Ervin Howell | Wisokyburgh | Deckow-Crist |
-| Clementine Bauch McKenziehaven | Romaguera-Jacobson |
-| Patricia Lebsack | South Elvis | Robel-Corkery |
-| Chelsey Dietrich | Roscoeview | Keebler LLC |
-| Mrs. Dennis Schulist | South Christy | Considine-Lockman |
-| Kurtis Weissnat | Howemouth | Johns Group |
-| Nicholas Runolfsdottir V | Aliyaview | Abernathy Group |
-| Glenna Reichert | Bartholomebury | Yost and Sons |
-| Clementina DuBuque | Lebsackbury | Hoeger LLC |
-
-
+| name                           | city               | company           |
+| ------------------------------ | ------------------ | ----------------- |
+| name                           | city               | company           |
+| Leanne Graham                  | Gwenborough        | Romaguera-Crona   |
+| Ervin Howell                   | Wisokyburgh        | Deckow-Crist      |
+| Clementine Bauch McKenziehaven | Romaguera-Jacobson |                   |
+| Patricia Lebsack               | South Elvis        | Robel-Corkery     |
+| Chelsey Dietrich               | Roscoeview         | Keebler LLC       |
+| Mrs. Dennis Schulist           | South Christy      | Considine-Lockman |
+| Kurtis Weissnat                | Howemouth          | Johns Group       |
+| Nicholas Runolfsdottir V       | Aliyaview          | Abernathy Group   |
+| Glenna Reichert                | Bartholomebury     | Yost and Sons     |
+| Clementina DuBuque             | Lebsackbury        | Hoeger LLC        |
 
 Of course, the complete create table (obtained by SHOW CREATE TABLE) can later be edited to make your table return exactly what you want to get. See the [JSON table type](connect-json-table-type.md) for details about what and how to specify these.
 
-
-Note that such tables are read only. In addition, the data will be retrieved from the web each time you query the table with a [SELECT](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statement. This is fine if the result varies each time, such as when you query a weather forecasting site. But if you want to use the retrieved file many times without reloading it, just create another table on the same file without specifying the HTTP option.
-
+Note that such tables are read only. In addition, the data will be retrieved from the web each time you query the table with a [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) statement. This is fine if the result varies each time, such as when you query a weather forecasting site. But if you want to use the retrieved file many times without reloading it, just create another table on the same file without specifying the HTTP option.
 
 Note: For JSON tables, specifying the file name is optional and defaults to tabname.type. However, you should specify it if you want to use the file later for other tables.
 
-
 See the [JSON table type](connect-json-table-type.md) for changes that will occur in the new CONNECT versions (distributed in early 2021).
 
-
 CC BY-SA / Gnu FDL
-

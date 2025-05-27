@@ -35,7 +35,7 @@ MariaDB supports the following partitioning types:
 
 ## Enabling Partitioning
 
-By default, MariaDB permits partitioning. You can determine this by using the [SHOW PLUGINS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-plugins.md) statement, for example:
+By default, MariaDB permits partitioning. You can determine this by using the [SHOW PLUGINS](../../reference/sql-statements/administrative-sql-statements/show/show-plugins.md) statement, for example:
 
 ```
 SHOW PLUGINS;
@@ -65,9 +65,9 @@ and you will not be able to create partitions.
 
 ## Using Partitions
 
-It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md).
+It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md).
 
-[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) allows one to:
+[ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) allows one to:
 
 * Partition an existing table;
 * Remove partitions from a partitioned table (with all data in the partition);
@@ -691,7 +691,7 @@ SELECT * FROM t1;
 
 ### Analyzing Partitions
 
-Similar to [ANALYZE TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/analyze-table.md), key distributions for specific partitions can also be analyzed and stored, for example:
+Similar to [ANALYZE TABLE](../../reference/sql-statements/table-statements/analyze-table.md), key distributions for specific partitions can also be analyzed and stored, for example:
 
 ```
 ALTER TABLE t1 ANALYZE PARTITION p0,p1,p3;
@@ -708,7 +708,7 @@ ALTER TABLE t1 ANALYZE PARTITION p0,p1,p3;
 CHECK PARTITION {ALL | partition [,partition2 ...]}
 ```
 
-Similar to [CHECK TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/check-table.md), specific partitions can be checked for errors, for example:
+Similar to [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md), specific partitions can be checked for errors, for example:
 
 ```
 ALTER TABLE t1 CHECK PARTITION p1,p3;
@@ -727,7 +727,7 @@ The `ALL` keyword can be used in place of the list of partition names, and the c
 REPAIR PARTITION {ALL | partition [,partition2 ...]} [QUICK] [EXTENDED]
 ```
 
-Similar to [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), specific partitions can be repaired, for example:
+Similar to [REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md), specific partitions can be repaired, for example:
 
 ```
 ALTER TABLE t1 REPAIR PARTITION p0,p3;
@@ -738,7 +738,7 @@ ALTER TABLE t1 REPAIR PARTITION p0,p3;
 +---------+--------+----------+----------+
 ```
 
-As with [REPAIR TABLE](../../reference/sql-statements-and-structure/sql-statements/table-statements/repair-table.md), the `QUICK` and `EXTENDED` options are available. However, the `USE_FRM` option cannot be used with this statement on a partitioned table.
+As with [REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md), the `QUICK` and `EXTENDED` options are available. However, the `USE_FRM` option cannot be used with this statement on a partitioned table.
 
 `REPAIR PARTITION` will fail if there are duplicate key errors. `ALTER IGNORE TABLE ... REPAIR PARTITION` can be used in this case.
 
@@ -788,8 +788,8 @@ See also: [Using CONNECT - Partitioning and Sharding](../../reference/storage-en
 
 ## See Also
 
-* [ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)
-* [INFORMATION\_SCHEMA.PARTITIONS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
+* [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md)
+* [INFORMATION\_SCHEMA.PARTITIONS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 
 CC BY-SA / Gnu FDL

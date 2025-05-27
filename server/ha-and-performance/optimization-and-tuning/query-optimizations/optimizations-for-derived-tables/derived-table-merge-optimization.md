@@ -15,7 +15,7 @@ WHERE
   big_city.Country='DEU'
 ```
 
-For MySQL, using such syntax was taboo. If you run [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for\
+For MySQL, using such syntax was taboo. If you run [EXPLAIN](../../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for\
 this query, you can see why:
 
 ```

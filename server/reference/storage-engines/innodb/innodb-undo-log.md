@@ -2,7 +2,7 @@
 
 ## Overview
 
-When a [transaction](../../sql-statements-and-structure/sql-statements/transactions/) writes data, it always inserts them in the table indexes or data (in the buffer pool or in physical files). No private copies are created. The old versions of data being modified by active [InnoDB](./) transactions are stored in the undo log. The original data can then be restored, or viewed by a consistent read.
+When a [transaction](../../sql-statements/transactions/) writes data, it always inserts them in the table indexes or data (in the buffer pool or in physical files). No private copies are created. The old versions of data being modified by active [InnoDB](./) transactions are stored in the undo log. The original data can then be restored, or viewed by a consistent read.
 
 ## Implementation Details
 
@@ -10,7 +10,7 @@ Before a row is modified, a diff is copied into the undo log. Each normal row co
 
 Rows are never physically deleted until a transaction ends. If they were deleted, the restore in ROLLBACK would be impossible. Thus, rows are simply marked for deletion.
 
-Each transaction uses a _view_ of the records. The [transaction isolation level](../../sql-statements-and-structure/sql-statements/transactions/set-transaction.md#isolation-levels) determines how this view is created. For example, READ UNCOMMITTED usually uses the current version of rows, even if they are not committed (_dirty reads_). Other isolation levels require that the most recent committed version of rows is searched in the undo log. READ COMMITTED uses a different view for each table, while REPEATABLE READ and SERIALIZABLE use the same view for all tables.
+Each transaction uses a _view_ of the records. The [transaction isolation level](../../sql-statements/transactions/set-transaction.md#isolation-levels) determines how this view is created. For example, READ UNCOMMITTED usually uses the current version of rows, even if they are not committed (_dirty reads_). Other isolation levels require that the most recent committed version of rows is searched in the undo log. READ COMMITTED uses a different view for each table, while REPEATABLE READ and SERIALIZABLE use the same view for all tables.
 
 There is also a global history list of the data. When a transaction is committed, its history is added to this history list. The order of the list is the chronological order of the commits.
 

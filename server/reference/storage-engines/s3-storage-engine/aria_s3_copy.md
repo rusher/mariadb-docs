@@ -1,67 +1,51 @@
+# aria\_s3\_copy
 
-# aria_s3_copy
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 
+The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
 
-##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
-The [S3 storage engine](README.md) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
+`aria_s3_copy` is a tool for copying an [Aria](../aria/) table to and from [S3](./).
 
+The Aria table must be non transactional and have [ROW\_FORMAT=PAGE](../aria/aria-storage-formats.md#page).
 
-
-`aria_s3_copy` is a tool for copying an [Aria](../aria/README.md) table to and from [S3](README.md).
-
-
-The Aria table must be non transactional and have [ROW_FORMAT=PAGE](../aria/aria-storage-formats.md#page).
-
-
-For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure that the table is properly closed.
-
+For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure that the table is properly closed.
 
 Example of properly created Aria table:
-
 
 ```
 create table test1 (a int) transactional=0 row_format=PAGE engine=aria;
 ```
 
-Note that [ALTER TABLE table_name ENGINE=S3](using-the-s3-storage-engine.md) will work for any kind of table. This internally converts the table to an Aria table and then moves it to S3 storage.
-
+Note that [ALTER TABLE table\_name ENGINE=S3](using-the-s3-storage-engine.md) will work for any kind of table. This internally converts the table to an Aria table and then moves it to S3 storage.
 
 ### Main Arguments
 
+| Option                         | Description                                                                                      |
+| ------------------------------ | ------------------------------------------------------------------------------------------------ |
+| Option                         | Description                                                                                      |
+| -?, --help                     | Display this help and exit.                                                                      |
+| -k, --s3-access-key=name       | AWS access key ID                                                                                |
+| -r, --s3-region=name           | AWS region                                                                                       |
+| -K, --s3-secret-key=name       | AWS secret access key ID                                                                         |
+| -b, --s3-bucket=name           | AWS prefix for tables                                                                            |
+| -h, --s3-host-name=name        | Host name to S3 provider                                                                         |
+| -c, --compress                 | Use compression                                                                                  |
+| -o, --op=name                  | Operation to execute. One of 'from\_s3', 'to\_s3' or 'delete\_from\_s3'                          |
+| -d, --database=name            | Database for copied table (second prefix). If not given, the directory of the table file is used |
+| -B, --s3-block-size=#          | Block size for data/index blocks in s3                                                           |
+| -L, --s3-protocol-version=name | Protocol used to communication with S3. One of "Amazon" or "Original".                           |
+| -f, --force                    | Force copy even if target exists                                                                 |
+| -v, --verbose                  | Write more information                                                                           |
+| -V, --version                  | Print version and exit.                                                                          |
+| -#, --debug\[=name]            | Output debug log. Often this is 'd:t:o,filename'.                                                |
+| --s3-debug                     | Output debug log from marias3 to stdout                                                          |
 
-
-| Option | Description |
-| --- | --- |
-| Option | Description |
-| -?, --help | Display this help and exit. |
-| -k, --s3-access-key=name | AWS access key ID |
-| -r, --s3-region=name | AWS region |
-| -K, --s3-secret-key=name | AWS secret access key ID |
-| -b, --s3-bucket=name | AWS prefix for tables |
-| -h, --s3-host-name=name | Host name to S3 provider |
-| -c, --compress | Use compression |
-| -o, --op=name | Operation to execute. One of 'from_s3', 'to_s3' or 'delete_from_s3' |
-| -d, --database=name | Database for copied table (second prefix). If not given, the directory of the table file is used |
-| -B, --s3-block-size=# | Block size for data/index blocks in s3 |
-| -L, --s3-protocol-version=name | Protocol used to communication with S3. One of "Amazon" or "Original". |
-| -f, --force | Force copy even if target exists |
-| -v, --verbose | Write more information |
-| -V, --version | Print version and exit. |
-| -#, --debug[=name] | Output debug log. Often this is 'd:t:o,filename'. |
-| --s3-debug | Output debug log from marias3 to stdout |
-
-
-
-
-|   |   |
-| --- | --- |
-| -p, --s3-port=# | Port number to connect to (0 means use default) |
-| -P, --s3-use-http | If true, force use of HTTP protocol |
-
-
+|                   |                                                 |
+| ----------------- | ----------------------------------------------- |
+| -p, --s3-port=#   | Port number to connect to (0 means use default) |
+| -P, --s3-use-http | If true, force use of HTTP protocol             |
 
 ### Typical Configuration in a my.cnf File
-
 
 ```
 [aria_s3_copy]
@@ -77,10 +61,8 @@ op=to
 
 ### Example Usage
 
-
-The following code will copy an existing Aria table named `test1` to S3.
+The following code will copy an existing Aria table named `test1` to S3.\
 If the `--database` option is not given, then the directory name where the table files exist will be used as the database.
-
 
 ```
 shell> aria_s3_copy --force --op=to --database=foo --compress --verbose --s3_block_size=4M test1
@@ -99,12 +81,8 @@ Copying data information foo/test1/data
 
 When using `--verbose`, `aria_s3_copy` will write a dot for each #/79 part of the file copied.
 
-
 ## See Also
-
 
 [Using the S3 storage engine](using-the-s3-storage-engine.md#aria_s3_copy). This pages has examples of .my.cnf entries for using `aria_s3_copy`.
 
-
 CC BY-SA / Gnu FDL
-

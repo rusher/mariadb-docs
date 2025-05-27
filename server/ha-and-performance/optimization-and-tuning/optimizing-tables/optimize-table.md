@@ -14,7 +14,7 @@ OPTIMIZE [NO_WRITE_TO_BINLOG | LOCAL] TABLE
 
 #### WAIT/NOWAIT
 
-Set the lock wait timeout. See [WAIT and NOWAIT](../../../reference/sql-statements-and-structure/sql-statements/transactions/wait-and-nowait.md).
+Set the lock wait timeout. See [WAIT and NOWAIT](../../../reference/sql-statements/transactions/wait-and-nowait.md).
 
 ### Defragmenting
 
@@ -22,7 +22,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../../reference/sql-statemen
 rows (tables that have [VARCHAR](../../../reference/data-types/string-data-types/varchar.md), [VARBINARY](../../../reference/data-types/string-data-types/varbinary.md), [BLOB](../../../reference/data-types/string-data-types/blob.md), or [TEXT](../../../reference/data-types/string-data-types/text.md) columns). Deleted rows are maintained in a\
 linked list and subsequent `INSERT` operations reuse old row positions.
 
-This statement requires [SELECT and INSERT privileges](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for the table.
+This statement requires [SELECT and INSERT privileges](../../../reference/sql-statements/account-management-sql-commands/grant.md) for the table.
 
 By default, `OPTIMIZE TABLE` statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
@@ -33,11 +33,11 @@ can use`[ALTER TABLE](../../../../reference/sql-statements-and-structure/sql-sta
 to optimize one or more partitions.
 
 You can use `OPTIMIZE TABLE` to reclaim the unused\
-space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), and recreates the table. This operation frees the unused space and updates index statistics.
+space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md), and recreates the table. This operation frees the unused space and updates index statistics.
 
 The [Aria](../../../reference/storage-engines/aria/) storage engine supports [progress reporting](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for this statement.
 
-If a [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) table is fragmented, [concurrent inserts](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) will not be performed until an `OPTIMIZE TABLE` statement is executed on that table, unless the [concurrent\_insert](../system-variables/server-system-variables.md#concurrent_insert) server system variable is set to `ALWAYS`.
+If a [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) table is fragmented, [concurrent inserts](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) will not be performed until an `OPTIMIZE TABLE` statement is executed on that table, unless the [concurrent\_insert](../system-variables/server-system-variables.md#concurrent_insert) server system variable is set to `ALWAYS`.
 
 ### Updating an InnoDB fulltext index
 

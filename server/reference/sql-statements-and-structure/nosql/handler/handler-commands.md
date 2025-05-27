@@ -22,7 +22,7 @@ storage engine interfaces for key lookups and key or table scans. It is availabl
 
 The table object is only closed when `HANDLER ... CLOSE` is called by the session, or the session closes, and is not shared by other sessions.
 
-[Prepared statements](../../sql-statements/prepared-statements/) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
+[Prepared statements](../../../sql-statements/prepared-statements/) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
 
 The HANDLER command does not work with [partitioned tables](../../../../server-management/partitioning-tables/).
 
@@ -87,7 +87,7 @@ You may also find rows committed since the scan originally started.
 
 ### Invisible Columns
 
-`HANDLER ... READ` also reads the data of [invisible-columns](../../sql-statements/data-definition/create/invisible-columns.md).
+`HANDLER ... READ` also reads the data of [invisible-columns](../../../sql-statements/data-definition/create/invisible-columns.md).
 
 ### System-Versioned Tables
 
@@ -95,7 +95,7 @@ You may also find rows committed since the scan originally started.
 
 ### Other Limitations
 
-* If you do an [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md), all your HANDLERs for that table are automatically closed.
+* If you do an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md), all your HANDLERs for that table are automatically closed.
 * If you do an ALTER TABLE for a table that is used by some other connection with HANDLER, the ALTER TABLE will wait for the HANDLER to be closed.
 * For HASH keys, you must use all key parts when searching for a row.
 * For HASH keys, you can't do a key scan of all values. You can only find all rows with the same key value.

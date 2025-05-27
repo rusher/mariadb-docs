@@ -6,7 +6,7 @@
 
 ## Description
 
-The plugin is used to prevent a user from reusing a password, which can be a requirement in some security policies. The [password\_reuse\_check\_interval](password_reuse_check_interval.md) system variable determines the retention period, in days, for a password. By default this is zero, meaning unlimited retention. Old passwords are stored in the [mysql.password\_reuse\_check\_history table](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlpassword_reuse_check_history-table.md).
+The plugin is used to prevent a user from reusing a password, which can be a requirement in some security policies. The [password\_reuse\_check\_interval](password_reuse_check_interval.md) system variable determines the retention period, in days, for a password. By default this is zero, meaning unlimited retention. Old passwords are stored in the [mysql.password\_reuse\_check\_history table](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlpassword_reuse_check_history-table.md).
 
 Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict\_password\_validation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
@@ -14,7 +14,7 @@ Note that passwords can be directly set as a hash, bypassing the password valida
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default.
 
-You can install the plugin dynamically, without restarting the server, by executing [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+You can install the plugin dynamically, without restarting the server, by executing [INSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
 ```
 INSTALL SONAME 'password_reuse_check';
@@ -30,7 +30,7 @@ plugin_load_add = password_reuse_check
 
 ### Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
 ```
 UNINSTALL SONAME 'password_reuse_check';

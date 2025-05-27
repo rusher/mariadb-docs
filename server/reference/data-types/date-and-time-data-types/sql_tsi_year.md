@@ -1,15 +1,12 @@
+# sql\_tsi\_year
 
-# SQL_TSI_YEAR
+## SQL\_TSI\_YEAR
 
+## Overview
 
-# Overview
+See [YEAR](../../sql-statements/built-in-functions/date-time-functions/year.md).
 
-
-See [YEAR](../../sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md).
-
-
-# EXAMPLES
-
+## EXAMPLES
 
 ```
 CREATE TABLE sql_tsi_year_example (
@@ -29,6 +26,4 @@ Create Table: CREATE TABLE `sql_tsi_year_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 Copyright © 2025 MariaDB
-

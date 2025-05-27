@@ -9,7 +9,7 @@ UPPER(key_col) IN (constant-list)
 
 are sargable if `key_col` uses either the `utf8mb3_general_ci` or `utf8mb4_general_ci` collation.
 
-`UCASE` is a synonym for [UPPER](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/upper.md) so is covered as well.
+`UCASE` is a synonym for [UPPER](../../../reference/sql-statements/built-in-functions/string-functions/upper.md) so is covered as well.
 
 Sargable means that the optimizer is able to use such conditions to construct access methods, estimate their selectivity, or perform partition pruning.
 
@@ -71,6 +71,6 @@ The optimization is implemented as a rewrite for a query's WHERE/ON conditions. 
 ## References
 
 * [MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496): Make optimizer handle UCASE(varchar\_col)=...
-* An analog for [LCASE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/lcase.md) is not possible. See [MDEV-31955](https://jira.mariadb.org/browse/MDEV-31955): Make optimizer handle LCASE(varchar\_col)=... for details.
+* An analog for [LCASE](../../../reference/sql-statements/built-in-functions/string-functions/lcase.md) is not possible. See [MDEV-31955](https://jira.mariadb.org/browse/MDEV-31955): Make optimizer handle LCASE(varchar\_col)=... for details.
 
 CC BY-SA / Gnu FDL

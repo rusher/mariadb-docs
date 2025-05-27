@@ -43,8 +43,8 @@ SELECT * FROM t1 WHERE auto_increment_column IS NULL;
 * [NULL values](../../../data-types/null-values.md)
 * [IS NOT NULL operator](is-not-null.md)
 * [COALESCE function](coalesce.md)
-* [IFNULL function](../../sql-statements/built-in-functions/control-flow-functions/ifnull.md)
-* [NULLIF function](../../sql-statements/built-in-functions/control-flow-functions/nullif.md)
+* [IFNULL function](../../../sql-statements/built-in-functions/control-flow-functions/ifnull.md)
+* [NULLIF function](../../../sql-statements/built-in-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../../../storage-engines/connect/connect-data-types.md#null-handling)
 
 GPLv2 fill\_help\_tables.sql

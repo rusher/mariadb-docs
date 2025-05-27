@@ -11,8 +11,8 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 * `MERGE` statement.
 * In MariaDB, indexes are always ascending. Defining them as `ASC` or `DESC` has no effect.
   * For single-column indexes, the performance difference between an `ORDER BY ... ASC` and `DESC` is negligible.
-  * For multiple-column indexes, an index may be unusable for certain queries because `DESC` is not supported. In some cases, a [generated column](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) can be used to invert the order of an index (for example, the expression `0 - price` can be indexed to index the prices in a descending order).
-* The [WITH](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/with.md) syntax is currently only supported for the `SELECT` statement.
+  * For multiple-column indexes, an index may be unusable for certain queries because `DESC` is not supported. In some cases, a [generated column](../../../../reference/sql-statements/data-definition/create/generated-columns.md) can be used to invert the order of an index (for example, the expression `0 - price` can be indexed to index the prices in a descending order).
+* The [WITH](../../../../reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/with.md) syntax is currently only supported for the `SELECT` statement.
 * Filtered indexes (`CREATE INDEX ... WHERE`).
 * Autonomous transactions.
 * User-defined types.

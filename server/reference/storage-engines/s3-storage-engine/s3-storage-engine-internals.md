@@ -1,68 +1,50 @@
-
 # S3 Storage Engine Internals
 
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
 
-##### MariaDB starting with [10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
-The [S3 storage engine](README.md) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
+The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes).
 
-
-
-The [S3 storage engine](README.md) is based on the [Aria](../aria/aria-storage-engine.md) code.
-Internally the S3 storage inherits from the Aria code, with hooks
-that change reads, so that instead of reading data from the local disk it
+The [S3 storage engine](./) is based on the [Aria](../aria/aria-storage-engine.md) code.\
+Internally the S3 storage inherits from the Aria code, with hooks\
+that change reads, so that instead of reading data from the local disk it\
 reads things from S3.
-
 
 The S3 engine uses it's own page cache, modified to be able to handle reading blocks from S3 (of size `s3_block_size`). Internally the S3 page cache uses pages of [aria-block-size](../aria/aria-system-variables.md#aria_block_size) for splitting the blocks read from S3.
 
-
 ## ALTER TABLE
 
-
-[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) will first create a local table in the normal Aria on disk
-format and then move both index and data to S3 in buckets of S3_BLOCK_SIZE.
-The .frm file is also copied to S3 for discovery to support discovery for
-other MariaDB servers.
+[ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) will first create a local table in the normal Aria on disk\
+format and then move both index and data to S3 in buckets of S3\_BLOCK\_SIZE.\
+The .frm file is also copied to S3 for discovery to support discovery for\
+other MariaDB servers.\
 One can also use ALTER TABLE to change the structure of an S3 table.
-
 
 ## Partitioning Tables
 
-
-Starting from [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), S3 tables can also be used with [Partitioning tables](../../../server-management/partitioning-tables/README.md).
-All [ALTER PARTITION](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) operations are supported except:
-
+Starting from [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1053-release-notes), S3 tables can also be used with [Partitioning tables](../../../server-management/partitioning-tables/).\
+All [ALTER PARTITION](../../sql-statements/data-definition/alter/alter-table.md) operations are supported except:
 
 * REBUILD PARTITION
 * TRUNCATE PARTITION
 * REORGANIZE PARTITION
 
-
 ## Big Reads
 
-
-One of the properties of many S3 implementations is that they favor large
-reads. It's said that 4M gives the best performance, which is why the
+One of the properties of many S3 implementations is that they favor large\
+reads. It's said that 4M gives the best performance, which is why the\
 default value for `S3_BLOCK_SIZE` is 4M.
-
 
 ## Compression
 
-
 If compression (`COMPRESSION_ALGORITHM=zlib`) is used, then all index blocks and data blocks are compressed. The `.frm` file and Aria definition header (first page/pages in the index file) are not compressed as these are used by discovery/open.
-
 
 If compression is used, then the local block size is `S3_BLOCK_SIZE`, but the block stored in S3 will be the size of the compressed block.
 
-
 Typical compression we have seen is in the range of 80% saved space.
-
 
 ## Structure Stored on S3
 
-
 The table will be copied in S3 into the following locations:
-
 
 ```
 frm file (for discovery):
@@ -78,15 +60,12 @@ Data file:
 s3_bucket/database/table/data/block_number
 ```
 
-block_number is a 6-digit decimal number, prefixed with 0
+block\_number is a 6-digit decimal number, prefixed with 0\
 (Can be larger than 6 numbers, the prefix is just for nice output)
-
 
 ## Using the awsctl Python Tool to Examine Data
 
-
 ### Installing awsctl on Linux
-
 
 ```
 # install python-pip (on an OpenSuse distribution)
@@ -104,9 +83,7 @@ aws configure
 
 ### Using the awsctl Tool
 
-
 One can use the `aws` python tool to see how things are stored on S3:
-
 
 ```
 shell> aws s3 ls --recursive s3://mariadb-bucket/
@@ -118,7 +95,6 @@ shell> aws s3 ls --recursive s3://mariadb-bucket/
 
 To delete an obsolete table `foo.test1` one can do:
 
-
 ```
 shell> ~/.local/bin/aws s3 rm --recursive s3://mariadb-bucket/foo/test1
 delete: s3://mariadb-bucket/foo/test1/aria
@@ -129,9 +105,6 @@ delete: s3://mariadb-bucket/foo/test1/index/000001
 
 ## See Also
 
-
 * [Using the S3 storage engine](using-the-s3-storage-engine.md)
 
-
 CC BY-SA / Gnu FDL
-

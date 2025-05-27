@@ -1,8 +1,6 @@
-
-# PREVIOUS VALUE FOR sequence_name
+# PREVIOUS VALUE FOR sequence\_name
 
 ## Syntax
-
 
 ```
 PREVIOUS VALUE FOR sequence_name
@@ -10,38 +8,30 @@ PREVIOUS VALUE FOR sequence_name
 
 or
 
-
 ```
 LASTVAL(sequence_name)
 ```
 
-or in Oracle mode ([SQL_MODE=ORACLE](../../../../server-management/variables-and-modes/sql-mode.md))
-
+or in Oracle mode ([SQL\_MODE=ORACLE](../../../../server-management/variables-and-modes/sql-mode.md))
 
 ```
 sequence_name.currval
 ```
 
-
 `PREVIOUS VALUE FOR` is IBM DB2 syntax while `LASTVAL()` is PostgreSQL syntax.
-
 
 ## Description
 
-
 Gets the most recent value in the current connection generated from a sequence.
-
 
 * If the sequence has not yet been used by the connection, `PREVIOUS VALUE FOR` returns `NULL` (the same thing applies with a new connection which doesn't see a last value for an existing sequence).
 * If a `SEQUENCE` has been dropped and re-created then it's treated as a new `SEQUENCE` and `PREVIOUS VALUE FOR` will return `NULL`.
 * Returns `NULL` if the sequence is complete
-* [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) has no effect on `PREVIOUS VALUE FOR`.
+* [FLUSH TABLES](../../../sql-statements/administrative-sql-statements/flush-commands/flush.md) has no effect on `PREVIOUS VALUE FOR`.
 * Previous values for all used sequences are stored per connection until connection ends.
-* `PREVIOUS VALUE FOR` requires the [SELECT privilege](../../sql-statements/account-management-sql-commands/grant.md).
-
+* `PREVIOUS VALUE FOR` requires the [SELECT privilege](../../../sql-statements/account-management-sql-commands/grant.md).
 
 ## Examples
-
 
 ```
 CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;
@@ -75,8 +65,6 @@ SELECT PREVIOUS VALUE FOR s;
 
 Now try to start the new connection and check that the last value is still NULL, before updating the value in the new connection after the output of the new connection gets current value (110 in the example below). Note that first connection cannot see this change and the result of last value still remains the same (100 in the example above).
 
-
-
 ```
 $ .mysql -uroot test -e"SELECT PREVIOUS VALUE FOR s; SELECT NEXT VALUE FOR s; SELECT PREVIOUS VALUE FOR s;"
 +----------------------+
@@ -96,9 +84,7 @@ $ .mysql -uroot test -e"SELECT PREVIOUS VALUE FOR s; SELECT NEXT VALUE FOR s; SE
 +----------------------+
 ```
 
-
 Returns NULL if the sequence has run out:
-
 
 ```
 CREATE OR REPLACE SEQUENCE s MAXVALUE=2;
@@ -130,16 +116,13 @@ SELECT LASTVAL(s);
 
 ## See Also
 
-
 * [Sequence Overview](../sequence-overview.md)
 * [CREATE SEQUENCE](../create-sequence.md)
 * [ALTER SEQUENCE](../alter-sequence.md)
 * [NEXT VALUE FOR](next-value-for-sequence_name.md)
 * [SETVAL()](setval.md). Set next value for the sequence.
-* [AUTO_INCREMENT](../../../data-types/auto_increment.md)
-* [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
+* [AUTO\_INCREMENT](../../../data-types/auto_increment.md)
+* [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
 
-
 CC BY-SA / Gnu FDL
-

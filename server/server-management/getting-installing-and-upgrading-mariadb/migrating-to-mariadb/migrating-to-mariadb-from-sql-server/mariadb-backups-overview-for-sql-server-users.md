@@ -11,7 +11,7 @@ MariaDB has the following types of backups:
 
 A _dump_, also called a _logical backup_, consists of the SQL statements needed to recreate MariaDB databases and their data into another server. A dump is the slowest form of backup to restore, because it implies executing all the SQL statements needed to recreate data. However it is also the most flexible, because restoring will work on any MariaDB version, because the SQL syntax is usually compatible. It is even possible to restore a dump into an older version, though the incompatible syntax (new features) will be ignored. Under certain conditions, MariaDB dumps may also be restored on other DBMSs, including SQL Server.
 
-The compatibility between different versions and technologies is achieved by using [executable comments](../../../../reference/sql-statements-and-structure/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
+The compatibility between different versions and technologies is achieved by using [executable comments](../../../../reference/sql-statements/comment-syntax.md), but we should be aware of how they work. If we use a feature introduced in version 11.1, for example, it will be included in the dump inside an executable comment. If we restore that backup on a server with [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), the 11.1 feature will be ignored. This is the only way to restore backups in older MariaDB versions.
 
 ### mariadb-dump
 
@@ -23,7 +23,7 @@ For consistency reasons, when using the default storage engine [InnoDB](understa
 
 The `--master-data` option adds the statements to setup a slave to the dump.
 
-MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
+MariaDB also supports statements which make easy to write applications to obtain custom types of dumps. For most `CREATE <object_type>` statement, a corresponding `SHOW CREATE <object_type>` exists. For example, [SHOW CREATE TABLE](../../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) returns the `CREATE TABLE` statement that can be used to recreate a certain table, without data.
 
 ### mydumper
 
@@ -92,7 +92,7 @@ With the [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/) 
 
 For more information, see [InnoDB File-Per-Table Tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
 
-By default. all table files are located in the _data directory_, which is defined by the system variable [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#data-directoryindex-directory) options in `CREATE TABLE`.
+By default. all table files are located in the _data directory_, which is defined by the system variable [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements/data-definition/create/create-table.md#data-directoryindex-directory) options in `CREATE TABLE`.
 
 Regardless of the storage engine used, each table's structure is generally stored in a file with the `.frm` extension.
 

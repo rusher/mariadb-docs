@@ -1,22 +1,16 @@
-
 # RANGE COLUMNS and LIST COLUMNS Partitioning Types
 
 RANGE COLUMNS and LIST COLUMNS are variants of, respectively, [RANGE](range-partitioning-type.md) and [LIST](list-partitioning-type.md). With these partitioning types there is not a single partitioning expression; instead, a list of one or more columns is accepted. The following rules apply:
 
-
 * The list can contain one or more columns.
-* Columns can be of any [integer](../../../reference/data-types/data-types-numeric-data-types/int.md), [string](../../../reference/data-types/string-data-types/README.md), [DATE](../../../reference/data-types/date-and-time-data-types/date.md), and [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) types.
+* Columns can be of any [integer](../../../reference/data-types/data-types-numeric-data-types/int.md), [string](../../../reference/data-types/string-data-types/), [DATE](../../../reference/data-types/date-and-time-data-types/date.md), and [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) types.
 * Only bare columns are permitted; no expressions.
-
 
 All the specified columns are compared to the specified values to determine which partition should contain a specific row. See below for details.
 
-
 ## Syntax
 
-
-The last part of a [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement can be definition of the new table's partitions. In the case of RANGE COLUMNS partitioning, the syntax is the following:
-
+The last part of a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement can be definition of the new table's partitions. In the case of RANGE COLUMNS partitioning, the syntax is the following:
 
 ```
 PARTITION BY RANGE COLUMNS (col1, col2, ...)
@@ -27,7 +21,6 @@ PARTITION BY RANGE COLUMNS (col1, col2, ...)
 ```
 
 The syntax for LIST COLUMNS is the following:
-
 
 ```
 PARTITION BY LIST COLUMNS (partitioning_expression)
@@ -40,27 +33,19 @@ PARTITION BY LIST COLUMNS (partitioning_expression)
 
 `partition_name` is the name of a partition.
 
-
 ## Comparisons
-
 
 To determine which partition should contain a row, all specified columns will be compared to each partition definition.
 
-
 With LIST COLUMNS, a row matches a partition if all row values are identical to the specified values. At most one partition can match the row.
-
 
 With RANGE COLUMNS, a row matches a partition if all row values are less than the specified values. The first partition that matches the row values will be used.
 
-
 The `DEFAULT` partition catches all records which do not fit in other partitions. Only one `DEFAULT` partition is allowed.
-
 
 ## Examples
 
-
 RANGE COLUMNS partition:
-
 
 ```
 CREATE OR REPLACE TABLE t1 (
@@ -77,7 +62,6 @@ CREATE OR REPLACE TABLE t1 (
 
 LIST COLUMNS partition:
 
-
 ```
 CREATE OR REPLACE TABLE t1 (
   num TINYINT(1) NOT NULL
@@ -90,6 +74,4 @@ CREATE OR REPLACE TABLE t1 (
   );
 ```
 
-
 CC BY-SA / Gnu FDL
-

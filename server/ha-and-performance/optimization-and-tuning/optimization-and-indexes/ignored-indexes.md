@@ -8,13 +8,13 @@ Ignored indexes are indexes that are visible and maintained, but which are not u
 
 ## Syntax
 
-By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement:
+By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
 
 ```
 ALTER TABLE table_name ALTER {KEY|INDEX} [IF EXISTS] key_name [NOT] IGNORED;
 ```
 
-It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md), or [CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statement:
+It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md), or [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) statement:
 
 ```
 CREATE TABLE table_name (
@@ -34,7 +34,7 @@ table's primary key cannot be ignored. This applies to both explicitly defined p
 The optimizer will treats ignored indexes as if they didn't exist. They will not be used in the query plans, or as a source of statistical information.\
 Also, an attempt to use an ignored index in a `USE INDEX`, `FORCE INDEX`, or `IGNORE INDEX` hint will result in an error - the same what would have if one used a name of a non-existent index.
 
-Information about whether or not indexes are ignored can be viewed in the IGNORED column in the [Information Schema STATISTICS table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) or the [SHOW INDEX](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) statement.
+Information about whether or not indexes are ignored can be viewed in the IGNORED column in the [Information Schema STATISTICS table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-statistics-table.md) or the [SHOW INDEX](../../../reference/sql-statements/administrative-sql-statements/show/show-index.md) statement.
 
 ## Intended Usage
 
@@ -135,7 +135,7 @@ Index_comment:
       Ignored: YES
 ```
 
-The optimizer does not make use of an index when it is ignored, while if the index is not ignored (the default), the optimizer will consider it in the optimizer plan, as shown in the [EXPLAIN](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output.
+The optimizer does not make use of an index when it is ignored, while if the index is not ignored (the default), the optimizer will consider it in the optimizer plan, as shown in the [EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output.
 
 ```
 CREATE OR REPLACE TABLE t1 (id INT PRIMARY KEY, b INT, KEY k1(b) IGNORED);

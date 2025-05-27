@@ -1,0 +1,20 @@
+# mysql.spider\_table\_position\_for\_recovery Table
+
+The `mysql.spider_table_position_for_recovery` table is installed by the [Spider storage engine](../../../../../storage-engines/spider/).
+
+This table uses the [Aria](../../../../../storage-engines/aria/) storage engine.
+
+It contains the following fields:
+
+| Field            | Type      | Null | Key | Default | Description |
+| ---------------- | --------- | ---- | --- | ------- | ----------- |
+| Field            | Type      | Null | Key | Default | Description |
+| db\_name         | char(64)  | NO   | PRI |         |             |
+| table\_name      | char(199) | NO   | PRI |         |             |
+| failed\_link\_id | int(11)   | NO   | PRI | 0       |             |
+| source\_link\_id | int(11)   | NO   | PRI | 0       |             |
+| file             | text      | YES  |     | NULL    |             |
+| position         | text      | YES  |     | NULL    |             |
+| gtid             | text      | YES  |     | NULL    |             |
+
+CC BY-SA / Gnu FDL

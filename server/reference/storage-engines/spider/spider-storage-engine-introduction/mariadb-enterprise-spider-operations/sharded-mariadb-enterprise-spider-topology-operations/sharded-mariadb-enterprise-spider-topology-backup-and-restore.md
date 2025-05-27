@@ -1,49 +1,36 @@
+# sharded-mariadb-enterprise-spider-topology-backup-and-restore
 
-# Sharded MariaDB Enterprise Spider Topology Backup and Restore
+## Sharded MariaDB Enterprise Spider Topology Backup and Restore
 
+## Overview
 
-# Overview
+When using Spider in the Sharded MariaDB Enterprise Spider topology, backup and restore operations can be performed using [MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/) or [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). These operations must be performed on the Spider Node as well as on each Data Node.
 
-
-When using Spider in the Sharded MariaDB Enterprise Spider topology, backup and restore operations can be performed using [MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) or [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). These operations must be performed on the Spider Node as well as on each Data Node.
-
-
-# MariaDB Backup
-
+## MariaDB Backup
 
 MariaDB Backup can be used to perform backup operations on Spider deployments.
 
+### Backup Spider with MariaDB Backup
 
-## Backup Spider with MariaDB Backup
-
-
-[MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) can be used to create a physical backup of a Sharded MariaDB Enterprise Spider topology. MariaDB Backup must be used to backup the Spider Node and all Data Nodes. The Spider Node and Data Nodes must be locked to guarantee that the backups of the Spider Node and Data Nodes are consistent.
-
+[MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/) can be used to create a physical backup of a Sharded MariaDB Enterprise Spider topology. MariaDB Backup must be used to backup the Spider Node and all Data Nodes. The Spider Node and Data Nodes must be locked to guarantee that the backups of the Spider Node and Data Nodes are consistent.
 
 The backup of the Spider Node contains:
-
 
 * Physical backup for Spider Tables
 * Physical backup for tables that use InnoDB, Aria, MyISAM, and MyRocks
 * Physical backup for any other database objects on the Spider Node
 
-
 The backups of the Data Nodes contain:
-
 
 * Physical backup for Data Tables
 * Physical backup for tables that use InnoDB, Aria, MyISAM, and MyRocks
 * Physical backup for any other database objects on the Data Node
 
-
 The following procedure shows how to take a consistent backup of a Spider Node and Data Nodes deployed in a Sharded MariaDB Enterprise Spider topology.
 
-
-1. On the Spider Node and on each Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) and [GRANT](../../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statements.
-
+1. On the Spider Node and on each Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-commands/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-commands/grant.md) statements.
 
 For MariaDB Enterprise Server 10.5 and later:
-
 
 ```
 CREATE USER 'mariadb-backup'@'localhost'
@@ -54,25 +41,21 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR
    TO 'mariadb-backup'@'localhost';
 ```
 
-2. On each Data Node, grant the user account Spider uses when operating on Data Nodes sufficient privileges to lock any Data Tables using the [GRANT](../../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statement.
+2. On each Data Node, grant the user account Spider uses when operating on Data Nodes sufficient privileges to lock any Data Tables using the [GRANT](../../../../../sql-statements/account-management-sql-commands/grant.md) statement.
 
-
-For example, on the hq_server Data Node:
-
+For example, on the hq\_server Data Node:
 
 ```
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
-On the eastern_server Data Node:
-
+On the eastern\_server Data Node:
 
 ```
 GRANT LOCK TABLES ON eastern_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
-On the western_server Data Node:
-
+On the western\_server Data Node:
 
 ```
 GRANT LOCK TABLES ON western_sales.* TO 'spider_user'@'192.0.2.2';
@@ -80,22 +63,17 @@ GRANT LOCK TABLES ON western_sales.* TO 'spider_user'@'192.0.2.2';
 
 3. On the Spider Node, acquire a read lock on Spider Tables using the LOCK TABLES statement:
 
-
 ```
 LOCK TABLES spider_sharded_sales.invoices READ;
 ```
 
 Keep this session open during the rest of the procedure.
 
-
 The read lock will propagate to the Data Tables on each Data Node as well. The read locks will prevent the Data Tables from changing during the backup, so the backups on the Spider Node and Data Nodes are consistent.
 
-
-4. On each Data Node, perform the backup using [MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) .
-
+4. On each Data Node, perform the backup using [MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/) .
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
-
 
 ```
 $ sudo mariadb-backup --backup \
@@ -104,11 +82,9 @@ $ sudo mariadb-backup --backup \
    --password='mb_passwd'
 ```
 
-5. On the Spider Node, after backing up each Data Node, perform a backup with [MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) .
-
+5. On the Spider Node, after backing up each Data Node, perform a backup with [MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/) .
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
-
 
 ```
 $ sudo mariadb-backup --backup \
@@ -117,8 +93,7 @@ $ sudo mariadb-backup --backup \
    --password='mb_passwd'
 ```
 
-6. On the Spider Node, after the backup is complete, in your original session, use the [UNLOCK TABLES](../../../../../sql-statements-and-structure/sql-statements/transactions/transactions-unlock-tables.md) statement to release the table locks:
-
+6. On the Spider Node, after the backup is complete, in your original session, use the [UNLOCK TABLES](../../../../../sql-statements/transactions/transactions-unlock-tables.md) statement to release the table locks:
 
 ```
 UNLOCK TABLES;
@@ -126,9 +101,7 @@ UNLOCK TABLES;
 
 7. On the Spider Node and each of the Data Nodes, prepare each of the backups using MariaDB Backup.
 
-
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
-
 
 ```
 $ sudo mariadb-backup --prepare \
@@ -137,15 +110,11 @@ $ sudo mariadb-backup --prepare \
 
 The Spider Node and Data Nodes now each have a complete backup of the data directory. Backups should be tested to confirm they are complete and consistent.
 
+## Restore Spider with MariaDB Backup
 
-# Restore Spider with MariaDB Backup
-
-
-[MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/README.md) can restore a Sharded MariaDB Enterprise Spider topology from a backup taken with MariaDB Backup.
-
+[MariaDB Backup](../../../../../../server-management/backing-up-and-restoring-databases/mariabackup/) can restore a Sharded MariaDB Enterprise Spider topology from a backup taken with MariaDB Backup.
 
 1. On the Spider Node and on each Data Node, stop the MariaDB Server process:
-
 
 ```
 $ sudo systemctl stop mariadb
@@ -153,16 +122,13 @@ $ sudo systemctl stop mariadb
 
 2. On the Spider Node and on each Data Node, empty the data directory:
 
-
 ```
 $ sudo rm -fr /var/lib/mysql/*
 ```
 
 3. On the Spider Node and on each Data Node, restore the backup for that server using MariaDB Backup.
 
-
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
-
 
 ```
 $ sudo mariadb-backup --copy-back \
@@ -171,20 +137,17 @@ $ sudo mariadb-backup --copy-back \
 
 4. On the Spider Node and on each Data Node, confirm that the restored files are owned by the user that owns the MariaDB Server process:
 
-
 ```
 $ sudo chown -R mysql:mysql /var/lib/mysql
 ```
 
 5. On the Spider Node and on each Data Node, start the MariaDB Server process:
 
-
 ```
 $ sudo systemctl start mariadb
 ```
 
 6. On the Spider Node, query a Spider Table to test it:
-
 
 ```
 SELECT * FROM spider_sharded_sales.invoices;
@@ -206,41 +169,31 @@ SELECT * FROM spider_sharded_sales.invoices;
 +-----------+------------+-------------+----------------------------+---------------+----------------+
 ```
 
-# MariaDB Dump
-
+## MariaDB Dump
 
 [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) generates backup files containing the SQL statements necessary to recreate the database. MariaDB Dump is included with MariaDB Server and can be used to backup databases in Spider deployments. The MariaDB Client can then be used to restore databases from a MariaDB Dump backup.
 
-
-## Backup Spider with MariaDB Dump
-
+### Backup Spider with MariaDB Dump
 
 [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) can be used to create a logical backup of a Sharded MariaDB Enterprise Spider topology. MariaDB Dump must be used to backup the Spider Node and all Data Nodes. The Spider Node and Data Nodes must be locked to guarantee that the backups of the Spider Node and Data Nodes are consistent.
 
-
 The backup of the Spider Node contains:
-
 
 * Table definitions for Spider Tables
 * Table definitions for all tables
 * Table data for tables that use InnoDB, Aria, MyISAM, and MyRocks
 * Definitions for any other user accounts, privileges, views, and triggers on the Spider Node
 
-
 The backups of the Data Nodes contain:
-
 
 * Table definitions for Data Tables
 * Table definitions for all tables
 * Table data for tables that use InnoDB, Aria, MyISAM, and MyRocks
 * Definitions for any other user accounts, privileges, views, and triggers on the Data Node
 
-
 The following procedure shows how to take a consistent backup of a Spider Node and Data Nodes deployed in a Sharded MariaDB Enterprise Spider topology.
 
-
-1. On the Spider Node and on each Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) and [GRANT](../../../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statements:
-
+1. On the Spider Node and on each Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-commands/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-commands/grant.md) statements:
 
 ```
 CREATE USER 'mariadb-dump'@'localhost'
@@ -253,9 +206,7 @@ GRANT SELECT, INSERT, SHOW VIEW, TRIGGER, CREATE, ALTER, EVENT, RELOAD, LOCK TAB
 
 2. On each Data Node, grant the user account Spider uses to operate on the Data Nodes sufficient privileges to lock any Data Tables using the GRANT statement.
 
-
-For example, on the hq_server Data Node:
-
+For example, on the hq\_server Data Node:
 
 ```
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
@@ -263,20 +214,17 @@ GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 
 On the `eastern_server` Data Node:
 
-
 ```
 GRANT LOCK TABLES ON eastern_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 On the `western_server` Data Node:
 
-
 ```
 GRANT LOCK TABLES ON western_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
-3. On the Spider Node, acquire a read lock on Spider Tables using the [LOCK TABLES](../../../../../sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statement:
-
+3. On the Spider Node, acquire a read lock on Spider Tables using the [LOCK TABLES](../../../../../sql-statements/transactions/lock-tables.md) statement:
 
 ```
 LOCK TABLES spider_sharded_sales.invoices READ;
@@ -284,13 +232,10 @@ LOCK TABLES spider_sharded_sales.invoices READ;
 
 Keep this session open during the rest of the procedure.
 
-
 The read lock will propagate to the Data Tables on each Data Node as well. The read locks will prevent the Data Tables from changing during the backup, so the backups of the Spider Node and Data Nodes are consistent.
 
-
-4. On each Data Node, perform the backup using MariaDB Dump.
-With MariaDB Dump 10.5 and later, use the mariadb-dump command:
-
+4. On each Data Node, perform the backup using MariaDB Dump.\
+   With MariaDB Dump 10.5 and later, use the mariadb-dump command:
 
 ```
 $ mariadb-dump \
@@ -306,9 +251,7 @@ $ mariadb-dump \
 
 5. On the Spider Node, once the Data Nodes are backed up, perform a backup using MariaDB Dump.
 
-
 With MariaDB Dump 10.5 and later, use the mariadb-dump command:
-
 
 ```
 $ mariadb-dump \
@@ -322,30 +265,22 @@ $ mariadb-dump \
    > mariadb_dump.sql
 ```
 
-6. On the Spider Node, after the backups are complete, in your original session use the [UNLOCK TABLES](../../../../../sql-statements-and-structure/sql-statements/transactions/transactions-unlock-tables.md) statement to release the table locks:
-
+6. On the Spider Node, after the backups are complete, in your original session use the [UNLOCK TABLES](../../../../../sql-statements/transactions/transactions-unlock-tables.md) statement to release the table locks:
 
 ```
 UNLOCK TABLES;
 ```
 
-The Spider Node and the Data Node now each have a mariadb_dump.sql backup file. This backup file contains the SQL statements needed to recreate the schema on the Spider Node and the schema and data on the Data Nodes. Backups should be tested to confirm they are complete and consistent.
+The Spider Node and the Data Node now each have a mariadb\_dump.sql backup file. This backup file contains the SQL statements needed to recreate the schema on the Spider Node and the schema and data on the Data Nodes. Backups should be tested to confirm they are complete and consistent.
 
-
-# Restore Spider from MariaDB Dump
-
+## Restore Spider from MariaDB Dump
 
 MariaDB Client can restore a Sharded MariaDB Enterprise Spider topology from a backup taken with [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) backup.
 
-
 1. Stop all traffic to the Spider Node and each Data Node.
-
-
 2. On the Spider Node, restore the backup for that server using MariaDB Client.
 
-
 With MariaDB Client 10.5 and later, use the mariadb command:
-
 
 ```
 $ mariadb \
@@ -359,9 +294,7 @@ $ mariadb \
 
 3. On the Data Node, restore the backup for that server using MariaDB Client.
 
-
 With MariaDB Client 10.5 and later, use the mariadb command:
-
 
 ```
 $ mariadb \
@@ -374,7 +307,6 @@ $ mariadb \
 ```
 
 4. On the Spider Node, query a Spider Table to test it:
-
 
 ```
 SELECT * FROM spider_sharded_sales.invoices;
@@ -396,6 +328,4 @@ SELECT * FROM spider_sharded_sales.invoices;
 +-----------+------------+-------------+----------------------------+---------------+----------------+
 ```
 
-
 Copyright © 2025 MariaDB
-

@@ -42,7 +42,7 @@ Encryption of binary logs can be enabled by doing the following process.
 * Then, set `[encrypt_binlog=ON](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#encrypt_binlog)` in the MariaDB configuration file.
 * Then, start the server.
 
-From that point forward, any new [binary logs](../../../../server-management/server-monitoring-logs/binary-log/) will be encrypted. To delete old unencrypted [binary logs](../../../../server-management/server-monitoring-logs/binary-log/), you can use [RESET MASTER](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) or [PURGE BINARY LOGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md).
+From that point forward, any new [binary logs](../../../../server-management/server-monitoring-logs/binary-log/) will be encrypted. To delete old unencrypted [binary logs](../../../../server-management/server-monitoring-logs/binary-log/), you can use [RESET MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-master.md) or [PURGE BINARY LOGS](../../../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md).
 
 ## Disabling Encryption
 

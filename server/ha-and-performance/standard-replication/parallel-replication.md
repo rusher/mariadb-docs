@@ -233,7 +233,7 @@ Out-of-order parallel replication is disabled when[--slave-parallel-mode=minimal
 
 ## Checking Worker Thread Status in SHOW PROCESSLIST
 
-The worker threads will be listed as "system user" in [SHOW PROCESSLIST](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md). Their\
+The worker threads will be listed as "system user" in [SHOW PROCESSLIST](../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md). Their\
 state will show the query they are currently working on, or it can show one of\
 these:
 

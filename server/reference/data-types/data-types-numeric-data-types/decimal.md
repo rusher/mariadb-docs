@@ -1,9 +1,6 @@
-
 # DECIMAL
 
-
 ## Syntax
-
 
 ```
 DECIMAL[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
@@ -11,40 +8,31 @@ DECIMAL[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 
 ## Description
 
-
-A packed "exact" fixed-point number. `M` is the total number of digits (the
-precision) and `D` is the number of digits after the decimal point (the
+A packed "exact" fixed-point number. `M` is the total number of digits (the\
+precision) and `D` is the number of digits after the decimal point (the\
 scale).
 
-
-* The decimal point and (for negative numbers) the "-" sign are not
-counted in `M`.
-* If `D` is `0`, values have no decimal point or fractional
-part and on [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) the value will be rounded to the nearest `DECIMAL`.
+* The decimal point and (for negative numbers) the "-" sign are not\
+  counted in `M`.
+* If `D` is `0`, values have no decimal point or fractional\
+  part and on [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) the value will be rounded to the nearest `DECIMAL`.
 * The maximum number of digits (`M`) for `DECIMAL` is 65.
 * The maximum number of supported decimals (`D`) is `30` before [MariadB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and `38` afterwards.
 * If `D` is omitted, the default is `0`. If `M` is omitted, the default is `10`.
 
-
 `UNSIGNED`, if specified, disallows negative values.
 
-
-`ZEROFILL`, if specified, pads the number with zeros, up to the total number
+`ZEROFILL`, if specified, pads the number with zeros, up to the total number\
 of digits specified by `M`.
 
-
-All basic calculations (+, -, *, /) with `DECIMAL` columns are done with
+All basic calculations (+, -, \*, /) with `DECIMAL` columns are done with\
 a precision of 65 digits.
-
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
-
 `DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
 
-
 ## Examples
-
 
 ```
 CREATE TABLE t1 (d DECIMAL UNSIGNED ZEROFILL);
@@ -69,8 +57,7 @@ SELECT * FROM t1;
 +------------+
 ```
 
-### With [strict_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set:
-
+### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set:
 
 ```
 INSERT INTO t1 VALUES (-7);
@@ -79,12 +66,9 @@ ERROR 1264 (22003): Out of range value for column 'd' at row 1
 
 ### SIGNED and UNSIGNED
 
-
 The DECIMAL data type may be SIGNED (allowing negative values) or UNSIGNED (not allowing negative values).
 
-
 Example of DECIMAL SIGNED (SIGNED is the default):
-
 
 ```
 CREATE TABLE decimal_signed_example (
@@ -122,7 +106,6 @@ SELECT * FROM decimal_signed_example;
 
 Example of DECIMAL UNSIGNED:
 
-
 ```
 CREATE TABLE decimal_unsigned_example (
   description VARCHAR(20),
@@ -157,12 +140,9 @@ SELECT * FROM decimal_unsigned_example;
 
 ### Out-of-Range
 
-
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. The size specified when creating the column is the strict limit for what values can be represented. When SQL_MODE is strict (the default), an out-of-range value generates an error and the operation fails. If strict mode is not in effect, the value is rounded to the nearest valid value, and a warning is generated (which might be hidden, depending on your warning settings).
-
+A value is considered "out-of-range" when it is too small or too large to be stored in a data type. The size specified when creating the column is the strict limit for what values can be represented. When SQL\_MODE is strict (the default), an out-of-range value generates an error and the operation fails. If strict mode is not in effect, the value is rounded to the nearest valid value, and a warning is generated (which might be hidden, depending on your warning settings).
 
 A value whose significant digits must be rounded to fit only generates a warning note about data truncation since it is only an out-of-range value if the rounding causes the value to overflow.
-
 
 ```
 TRUNCATE decimal_signed_example;
@@ -243,12 +223,9 @@ SELECT * FROM decimal_signed_example;
 
 ### DECIMAL ZEROFILL
 
-
 A special type of DECIMAL UNSIGNED is DECIMAL ZEROFILL, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's field size (not counting the decimal place), but the zeros are not included in an expression result or in a UNION SELECT column.
 
-
 Using DECIMAL ZEROFILL works the same way as DECIMAL UNSIGNED for most operations except a simple SELECT. For example, with the following test table setup:
-
 
 ```
 CREATE TABLE decimal_zerofill_example (
@@ -284,10 +261,7 @@ SELECT * FROM decimal_zerofill_example;
 
 ## See Also
 
-
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

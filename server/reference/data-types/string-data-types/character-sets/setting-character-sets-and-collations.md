@@ -7,7 +7,7 @@ The character sets and the collations can be specified from the server right dow
 
 Character sets and collations always cascade down, so a column without a specified collation will look for the table default, the table for the database, and the database for the server. It's therefore possible to have extremely fine-grained control over all the character sets and collations used in your data.
 
-Default collations for each character set can be viewed with the [SHOW COLLATION](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation.md) statement, for example, to find the default collation for the latin2 character set:
+Default collations for each character set can be viewed with the [SHOW COLLATION](../../../sql-statements/administrative-sql-statements/show/show-collation.md) statement, for example, to find the default collation for the latin2 character set:
 
 ```
 SHOW COLLATION LIKE 'latin2%';
@@ -24,7 +24,7 @@ SHOW COLLATION LIKE 'latin2%';
 
 ## Server Level
 
-The [character\_set\_server](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) system variable can be used to change the default server character set. It can be set both on startup or dynamically, with the [SET](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) command:
+The [character\_set\_server](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server) system variable can be used to change the default server character set. It can be set both on startup or dynamically, with the [SET](../../../sql-statements/administrative-sql-statements/set-commands/set.md) command:
 
 ```
 SET character_set_server = 'latin2';
@@ -38,7 +38,7 @@ SET collation_server = 'latin2_czech_cs';
 
 ## Database Level
 
-The [CREATE DATABASE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-database.md) and [ALTER DATABASE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md) statements have optional character set and collation clauses. If these are left out, the server defaults are used.
+The [CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) and [ALTER DATABASE](../../../sql-statements/data-definition/alter/alter-database.md) statements have optional character set and collation clauses. If these are left out, the server defaults are used.
 
 ```
 CREATE DATABASE czech_slovak_names 
@@ -93,7 +93,7 @@ Although there are [character\_set\_database](../../../../ha-and-performance/opt
 
 ## Table Level
 
-The [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses, a MariaDB and MySQL extension to standard SQL.
+The [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses, a MariaDB and MySQL extension to standard SQL.
 
 ```
 CREATE TABLE english_names (id INT, name VARCHAR(40)) 
@@ -125,7 +125,7 @@ ALTER TABLE table_name MODIFY ascii_varchar_column VARCHAR(M) CHARACTER SET utf8
 
 ## Column Level
 
-Character sets and collations can also be specified for columns that are character types CHAR, TEXT or VARCHAR. The [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses for this purpose - unlike those at the table level, the column level definitions are standard SQL.
+Character sets and collations can also be specified for columns that are character types CHAR, TEXT or VARCHAR. The [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses for this purpose - unlike those at the table level, the column level definitions are standard SQL.
 
 ```
 CREATE TABLE european_names (
@@ -135,9 +135,9 @@ CREATE TABLE european_names (
 
 If neither collation nor character set is provided, the table default is used. If only the character set is specified, that character set's default collation is used, while if only the collation is specified, the associated character set is used.
 
-When using [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) to change a column's character set, you need to ensure the character sets are compatible with your data. MariaDB will map the data as best it can, but it's possible to lose data if care is not taken.
+When using [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) to change a column's character set, you need to ensure the character sets are compatible with your data. MariaDB will map the data as best it can, but it's possible to lose data if care is not taken.
 
-The [SHOW CREATE TABLE](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) statement or INFORMATION SCHEMA database can be used to determine column character sets and collations.
+The [SHOW CREATE TABLE](../../../sql-statements/administrative-sql-statements/show/show-create-table.md) statement or INFORMATION SCHEMA database can be used to determine column character sets and collations.
 
 ```
 SHOW CREATE TABLE european_names\G
@@ -199,11 +199,11 @@ CHARACTER_MAXIMUM_LENGTH: 40
 
 Since [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1), the [character\_set\_filesystem](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem) system variable has controlled interpretation of file names that are given as literal strings. This affects the following statements and functions:
 
-* [SELECT INTO DUMPFILE](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md)
+* [SELECT INTO DUMPFILE](../../../sql-statements/data-manipulation/selecting-data/select-into-dumpfile.md)
 * SELECT INTO OUTFILE
-* [LOAD DATA INFILE](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
-* [LOAD XML](../../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md)
-* [LOAD\_FILE()](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/load_file.md)
+* [LOAD DATA INFILE](../../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
+* [LOAD XML](../../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-xml.md)
+* [LOAD\_FILE()](../../../sql-statements/built-in-functions/string-functions/load_file.md)
 
 ## Literals
 
@@ -457,8 +457,8 @@ Note that the `default-character-set` option is a client option, not a server op
 ## See Also
 
 * [String literals](../../../sql-statements-and-structure/sql-language-structure/string-literals.md)
-* [CAST()](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md)
-* [CONVERT()](../../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/convert.md)
+* [CAST()](../../../sql-statements/built-in-functions/string-functions/cast.md)
+* [CONVERT()](../../../sql-statements/built-in-functions/string-functions/convert.md)
 * [Operator Precedence](../../../sql-statements-and-structure/operators/operator-precedence.md)
 
 CC BY-SA / Gnu FDL

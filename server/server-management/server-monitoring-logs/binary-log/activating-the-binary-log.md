@@ -35,7 +35,7 @@ total 100
 
 The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `--log-bin-index[=filename]` [option](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
 
-Clients with the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#super) privilege (or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) variable.
+Clients with the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#super) privilege (or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../../../reference/sql-statements/account-management-sql-commands/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) variable.
 
 ```
 SET sql_log_bin = 0;
@@ -49,9 +49,9 @@ There are three formats for the binary log. The default is [mixed logging](binar
 
 ## See Also
 
-* [Setting sql\_log\_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)
-* [PURGE LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md) - Delete logs
-* [FLUSH LOGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) - Close and rotate logs
+* [Setting sql\_log\_bin](../../../reference/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)
+* [PURGE LOGS](../../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md) - Delete logs
+* [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) - Close and rotate logs
 * [GTID binlog indexing](../../../ha-and-performance/standard-replication/gtid.md#binlog-indexing)
 
 CC BY-SA / Gnu FDL

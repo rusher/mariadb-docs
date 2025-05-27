@@ -1,22 +1,16 @@
-
 # MyRocks Performance Troubleshooting
 
 MyRocks exposes its performance metrics through several interfaces:
-
 
 * Status variables
 * SHOW ENGINE ROCKSDB STATUS
 * RocksDB's perf context
 
-
 the contents slightly overlap, but each source has its own unique information, so be sure to check all three.
-
 
 ### Status Variables
 
-
 Check the output of
-
 
 ```
 SHOW STATUS like 'Rocksdb%'
@@ -24,15 +18,11 @@ SHOW STATUS like 'Rocksdb%'
 
 See [MyRocks Status Variables](myrocks-status-variables.md) for more information.
 
-
 ### SHOW ENGINE ROCKSDB STATUS
-
 
 This produces a lot of information.
 
-
 One particularly interesting part is compaction statistics. It shows the amount of data on each SST level and other details:
-
 
 ```
 *************************** 4. row ***************************
@@ -52,16 +42,11 @@ Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Mov
 
 ### Performance Context
 
-
 RocksDB has an internal mechanism called "perf context". The counter values are exposed through two tables:
 
+* [INFORMATION\_SCHEMA.ROCKSDB\_PERF\_CONTEXT\_GLOBAL](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context_global-table.md) - global counters
+* [INFORMATION\_SCHEMA.ROCKSDB\_PERF\_CONTEXT](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context-table.md) - Per-table/partition counters
 
-* [INFORMATION_SCHEMA.ROCKSDB_PERF_CONTEXT_GLOBAL](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context_global-table.md) - global counters
-* [INFORMATION_SCHEMA.ROCKSDB_PERF_CONTEXT](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context-table.md) - Per-table/partition counters
-
-
-By default statistics are NOT collected. One needs to set [rocksdb_perf_context_level](myrocks-system-variables.md#rocksdb_perf_context_level) to some value (e.g. 3) to enable collection.
-
+By default statistics are NOT collected. One needs to set [rocksdb\_perf\_context\_level](myrocks-system-variables.md#rocksdb_perf_context_level) to some value (e.g. 3) to enable collection.
 
 CC BY-SA / Gnu FDL
-

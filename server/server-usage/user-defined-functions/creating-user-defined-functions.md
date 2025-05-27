@@ -1,6 +1,6 @@
 # Creating User-Defined Functions
 
-[User-defined functions](./) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/abs.md) or [CONCAT()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../reference/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/).
+[User-defined functions](./) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-statements/built-in-functions/numeric-functions/abs.md) or [CONCAT()](../../reference/sql-statements/built-in-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../reference/mariadb-internals/development-writing-plugins-for-mariadb.md#function-plugins); or a [stored function](../stored-routines/stored-functions/).
 
 Statements making use of user-defined functions are not [safe for replication](../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
@@ -51,7 +51,7 @@ Each time the SQL function _X()_ is called:
 
 ## Aggregate Functions
 
-The following functions are required for aggregate functions, such as [AVG()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg.md) and [SUM()](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum.md). When using [CREATE FUNCTION](create-function-udf.md), the [AGGREGATE](create-function-udf.md#aggregate) keyword is required.
+The following functions are required for aggregate functions, such as [AVG()](../../reference/sql-statements/built-in-functions/aggregate-functions/avg.md) and [SUM()](../../reference/sql-statements/built-in-functions/aggregate-functions/sum.md). When using [CREATE FUNCTION](create-function-udf.md), the [AGGREGATE](create-function-udf.md#aggregate) keyword is required.
 
 ### x\_clear()
 
@@ -63,7 +63,7 @@ Used to add the argument to the current aggregate.
 
 ### x\_remove()
 
-Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../reference/sql-statements/built-in-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 ### Description
 
@@ -73,7 +73,7 @@ Each time the aggregate SQL function _X()_ is called:
 * If there is no x\_init() function, or it has been called and did not return an error, x() is then called once per row.
 * After all rows have finished processing, x\_deinit() is called, if present, to clean up by de-allocating any memory that was allocated in x\_init().
 * MariaDB will first call the C/C++ initialization function, x\_init(), assuming it exists. All setup will be performed, and if it returns an error, the SQL statement is aborted and no further functions are called.
-* The table is sorted according to the [GROUP BY](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/group-by.md) expression.
+* The table is sorted according to the [GROUP BY](../../reference/sql-statements/data-manipulation/selecting-data/group-by.md) expression.
 * x\_clear() is called for the first row of each new group.
 * x\_add() is called once per row for each row in the same group.
 * x() is called when the group changes, or after the last row, to get the aggregate result.

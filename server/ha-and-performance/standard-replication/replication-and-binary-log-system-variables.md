@@ -320,7 +320,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `expire_logs_days`
 
-* Description: Number of days after which the [binary log](../../server-management/server-monitoring-logs/binary-log/) can be automatically removed. By default 0, or no automatic removal. When using [replication](broken-reference), should always be set higher than the maximum lag by any replica. Removals take place when the server starts up, when the binary log is flushed, when the next binary log is created after the previous one reaches the maximum size, or when running [PURGE BINARY LOGS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/purge-binary-logs.md). Units are whole days (integer) until [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes), or 1/1000000 precision (double) from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes).Starting from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), `expire_logs_days` and [binlog\_expire\_logs\_seconds](replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) are forms of aliases, such that changes to one automatically reflect in the other.
+* Description: Number of days after which the [binary log](../../server-management/server-monitoring-logs/binary-log/) can be automatically removed. By default 0, or no automatic removal. When using [replication](broken-reference), should always be set higher than the maximum lag by any replica. Removals take place when the server starts up, when the binary log is flushed, when the next binary log is created after the previous one reaches the maximum size, or when running [PURGE BINARY LOGS](../../reference/sql-statements/administrative-sql-statements/purge-binary-logs.md). Units are whole days (integer) until [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes), or 1/1000000 precision (double) from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes).Starting from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), `expire_logs_days` and [binlog\_expire\_logs\_seconds](replication-and-binary-log-system-variables.md#binlog_expire_logs_seconds) are forms of aliases, such that changes to one automatically reflect in the other.
 * Commandline: `--expire-logs-days=#`
 * Scope: Global
 * Dynamic: Yes
@@ -330,7 +330,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `init_slave`
 
-* Description: Similar to [init\_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect), but the string contains one or more SQL statements, separated by semicolons, that will be executed by a replica server each time the SQL thread starts. These statements are only executed after the acknowledgement is sent to the replica and [START SLAVE](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) completes.
+* Description: Similar to [init\_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect), but the string contains one or more SQL statements, separated by semicolons, that will be executed by a replica server each time the SQL thread starts. These statements are only executed after the acknowledgement is sent to the replica and [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) completes.
 * Commandline: `--init-slave=name`
 * Scope: Global
 * Dynamic: Yes
@@ -522,8 +522,8 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `relay_log_info_file`
 
-* Description: Name and location of the file where the `RELAY_LOG_FILE` and `RELAY_LOG_POS` options (i.e. the [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) position) for the [CHANGE MASTER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement are written. The [replica's SQL thread](replication-threads.md#slave-sql-thread) keeps this [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) position updated as it applies events.
-  * See [CHANGE MASTER TO: Option Persistence](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
+* Description: Name and location of the file where the `RELAY_LOG_FILE` and `RELAY_LOG_POS` options (i.e. the [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) position) for the [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement are written. The [replica's SQL thread](replication-threads.md#slave-sql-thread) keeps this [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) position updated as it applies events.
+  * See [CHANGE MASTER TO: Option Persistence](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence) for more information.
 * Commandline: `--relay-log-info-file=file_name`
 * Scope: Global
 * Dynamic: No
@@ -538,7 +538,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `ON`
-* Note: In MySQL and in MariaDB before version 10.0.8 this variable was silently changed if you did [CHANGE MASTER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
+* Note: In MySQL and in MariaDB before version 10.0.8 this variable was silently changed if you did [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md).
 
 #### `relay_log_recovery`
 
@@ -637,7 +637,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 * Description: This option allows you to configure a [replica](broken-reference) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the `[USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md)` statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
   * This option will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-database.md).
+  * This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
   * When setting it on the command-line or in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
   * Before [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), `replicate_rewrite_db` was not available as a system variable, only as a mariadbd option, and could not be set dynamically. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011) it is available as a dynamic system variable
@@ -663,9 +663,9 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `replicate_wild_ignore_table`
 
-* Description: This system variable allows you to configure a [replica](broken-reference) to ignore statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator.
+* Description: This system variable allows you to configure a [replica](broken-reference) to ignore statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-statements/built-in-functions/string-functions/like.md) operator.
   * This system variable will work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-wild-ignore-table=name`
@@ -676,7 +676,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `report_host`
 
-* Description: The host name or IP address the replica reports to the primary when it registers. If left unset, the replica will not register itself. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md). Note that it is not sufficient for the primary to simply read the IP of the replica from the socket once the replica connects. Due to NAT and other routing issues, that IP may not be valid for connecting to the replica from the primary or other hosts.
+* Description: The host name or IP address the replica reports to the primary when it registers. If left unset, the replica will not register itself. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md). Note that it is not sufficient for the primary to simply read the IP of the replica from the socket once the replica connects. Due to NAT and other routing issues, that IP may not be valid for connecting to the replica from the primary or other hosts.
 * Commandline: `--report-host=host_name`
 * Scope: Global
 * Dynamic: No
@@ -684,7 +684,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `report_password`
 
-* Description: Replica password reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This password has no connection with user privileges or with the [replication](broken-reference) user account password.
+* Description: Replica password reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This password has no connection with user privileges or with the [replication](broken-reference) user account password.
 * Commandline: `--report-password=password`
 * Scope: Global
 * Dynamic: No
@@ -702,7 +702,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `report_user`
 
-* Description: Replica's account user name reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This username has no connection with user privileges or with the [replication](broken-reference) user account.
+* Description: Replica's account user name reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This username has no connection with user privileges or with the [replication](broken-reference) user account.
 * Commandline: `--report-user=name`
 * Scope: Global
 * Dynamic: No
@@ -774,7 +774,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `slave_ddl_exec_mode`
 
-* Description: Modes for how [replication](broken-reference) of DDL events should be executed. Legal values are `STRICT` and `IDEMPOTENT` (default). In `IDEMPOTENT` mode, the replica will not stop for failed DDL operations that would not cause a difference between the primary and the replica. In particular [CREATE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) is treated as [CREATE OR REPLACE TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#create-or-replace) and [DROP TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table.md) is treated as `DROP TABLE IF EXISTS`.
+* Description: Modes for how [replication](broken-reference) of DDL events should be executed. Legal values are `STRICT` and `IDEMPOTENT` (default). In `IDEMPOTENT` mode, the replica will not stop for failed DDL operations that would not cause a difference between the primary and the replica. In particular [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) is treated as [CREATE OR REPLACE TABLE](../../reference/sql-statements/data-definition/create/create-table.md#create-or-replace) and [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) is treated as `DROP TABLE IF EXISTS`.
 * Commandline: `--slave-ddl-exec-mode=name`
 * Scope: Global
 * Dynamic: Yes
@@ -804,7 +804,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `slave_load_tmpdir`
 
-* Description: Directory where the replica stores temporary files for [replicating](broken-reference) [LOAD DATA INFILE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements. If not set, the replica will use [tmpdir](../optimization-and-tuning/system-variables/server-system-variables.md#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
+* Description: Directory where the replica stores temporary files for [replicating](broken-reference) [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements. If not set, the replica will use [tmpdir](../optimization-and-tuning/system-variables/server-system-variables.md#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
 * Commandline: `--slave-load-tmpdir=path`
 * Scope: Global
 * Dynamic: No
@@ -834,7 +834,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `slave_net_timeout`
 
-* Description: Time in seconds for the replica to wait for more data from the primary before considering the connection broken, after which it will abort the read and attempt to reconnect. The retry interval is determined by the MASTER\_CONNECT\_RETRY open for the [CHANGE MASTER](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement, while the maximum number of reconnection attempts is set by the [master-retry-count](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-master-retry-count) option. The first reconnect attempt takes place immediately.
+* Description: Time in seconds for the replica to wait for more data from the primary before considering the connection broken, after which it will abort the read and attempt to reconnect. The retry interval is determined by the MASTER\_CONNECT\_RETRY open for the [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement, while the maximum number of reconnection attempts is set by the [master-retry-count](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-master-retry-count) option. The first reconnect attempt takes place immediately.
 * Commandline: `--slave-net-timeout=#`
 * Scope: Global
 * Dynamic: Yes
@@ -879,7 +879,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 * Description: This system variable is used to configure [parallel replication](parallel-replication.md).
   * If this system variable is set to a value greater than `0`, then its value will determine how many replica [worker threads](replication-threads.md#worker-threads) will be created to apply [binary log](../../server-management/server-monitoring-logs/binary-log/) events in parallel.
   * If this system variable is set to `0` (which is the default value), then no replica [worker threads](replication-threads.md#worker-threads) will be created. Instead, when replication is enabled, [binary log](../../server-management/server-monitoring-logs/binary-log/) events are applied by the replica's [SQL thread](replication-threads.md#slave-sql-thread).
-  * The [replica threads](replication-threads.md#threads-on-the-slave) must be [stopped](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) in order to change this option's value dynamically.
+  * The [replica threads](replication-threads.md#threads-on-the-slave) must be [stopped](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) in order to change this option's value dynamically.
   * Events that were logged with [GTIDs](gtid.md) with different `[gtid_domain_id](gtid.md#gtid_domain_id)` values can be applied in parallel in an [out-of-order](parallel-replication.md#out-of-order-parallel-replication) manner. Each `[gtid_domain_id](gtid.md#gtid_domain_id)` can use the number of threads configured by `[slave_domain_parallel_threads](#slave_domain_parallel_threads)`.
   * Events that were [group-committed](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary can be applied in parallel in an [in-order](parallel-replication.md#what-can-be-run-in-parallel) manner, and the specific behavior can be configured by setting `[slave_parallel_mode](#slave_parallel_mode)`.
 * Commandline: `--slave-parallel-threads=#`
@@ -982,7 +982,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `sql_slave_skip_counter`
 
-* Description: Number of events that a replica skips from the primary. If this would cause the replica to begin in the middle of an event group, the replica will instead begin from the beginning of the next event group. See [SET GLOBAL sql\_slave\_skip\_counter](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md).
+* Description: Number of events that a replica skips from the primary. If this would cause the replica to begin in the middle of an event group, the replica will instead begin from the beginning of the next event group. See [SET GLOBAL sql\_slave\_skip\_counter](../../reference/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md).
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`

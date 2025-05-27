@@ -513,7 +513,7 @@ CREATE TABLE `jsample` (
 
 It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. For columns that are json arrays or objects, the column is specified as a varchar string of length 256, supposedly big enough to contain the sub-object's concatenated values. Nullable is set to true if the column is null or missing in some rows or if its JPATH contains arrays.
 
-If a more complex definition is desired, you can ask CONNECT to analyse the JPATH up to a given depth using the DEPTH or LEVEL option in the option list. Its default value is 0 but can be changed setting the [connect\_default\_depth](../connect-system-variables.md#connect_default_depth) session variable (in future versions the default will be 5). The depth value is the number of sub-objects that are taken in the JPATH2 (this is different from what is defined and returned by the native [Json\_Depth](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_depth.md) function).
+If a more complex definition is desired, you can ask CONNECT to analyse the JPATH up to a given depth using the DEPTH or LEVEL option in the option list. Its default value is 0 but can be changed setting the [connect\_default\_depth](../connect-system-variables.md#connect_default_depth) session variable (in future versions the default will be 5). The depth value is the number of sub-objects that are taken in the JPATH2 (this is different from what is defined and returned by the native [Json\_Depth](../../../sql-statements/built-in-functions/special-functions/json-functions/json_depth.md) function).
 
 For instance:
 
@@ -2757,7 +2757,7 @@ Variables used with Json tables are:
 ## Notes
 
 1. [↑](connect-json-table-type.md#_ref-0) The value n can be 0 based or 1 based depending on the base table option. The default is 0 to match what is the current usage in the Json world but it can be set to 1 for tables created in old versions.
-2. [↑](connect-json-table-type.md#_ref-1) See for instance: [json-functions](../../../sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/), [lib\_mysqludf\_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [json\_udf\_functions\_version\_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
+2. [↑](connect-json-table-type.md#_ref-1) See for instance: [json-functions](../../../sql-statements/built-in-functions/special-functions/json-functions/), [lib\_mysqludf\_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [json\_udf\_functions\_version\_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
 3. [↑](connect-json-table-type.md#_ref-2) This will not work when CONNECT is compiled embedded
 
 CC BY-SA / Gnu FDL

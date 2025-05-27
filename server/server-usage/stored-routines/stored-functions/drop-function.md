@@ -8,12 +8,12 @@ DROP FUNCTION [IF EXISTS] f_name
 
 ## Description
 
-The DROP FUNCTION statement is used to drop a [stored function](./) or a user-defined function (UDF). That is, the specified routine is removed from the server, along with all privileges specific to the function. You must have the `ALTER ROUTINE` [privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) for the routine in order to drop it. If the [automatic\_sp\_privileges](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) server system variable is set, both the `ALTER ROUTINE` and `EXECUTE` privileges are granted automatically to the routine creator - see [Stored Routine Privileges](stored-routine-privileges.md).
+The DROP FUNCTION statement is used to drop a [stored function](./) or a user-defined function (UDF). That is, the specified routine is removed from the server, along with all privileges specific to the function. You must have the `ALTER ROUTINE` [privilege](../../../reference/sql-statements/account-management-sql-commands/grant.md) for the routine in order to drop it. If the [automatic\_sp\_privileges](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) server system variable is set, both the `ALTER ROUTINE` and `EXECUTE` privileges are granted automatically to the routine creator - see [Stored Routine Privileges](stored-routine-privileges.md).
 
 #### IF EXISTS
 
 The `IF EXISTS` clause is a MySQL/MariaDB extension. It\
-prevents an error from occurring if the function does not exist. A`NOTE` is produced that can be viewed with [SHOW WARNINGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md).
+prevents an error from occurring if the function does not exist. A`NOTE` is produced that can be viewed with [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md).
 
 For dropping a [user-defined functions](../../user-defined-functions/) (UDF), see [DROP FUNCTION UDF](../../user-defined-functions/drop-function-udf.md).
 
@@ -41,12 +41,12 @@ SHOW WARNINGS;
 
 * [DROP PROCEDURE](../stored-procedures/drop-procedure.md)
 * [Stored Function Overview](stored-function-overview.md)
-* [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
+* [CREATE FUNCTION](../../../reference/sql-statements/data-definition/create/create-function.md)
 * [CREATE FUNCTION UDF](../../user-defined-functions/create-function-udf.md)
-* [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)
-* [SHOW CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-function.md)
-* [SHOW FUNCTION STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-function-status.md)
+* [ALTER FUNCTION](../../../reference/sql-statements/data-definition/alter/alter-function.md)
+* [SHOW CREATE FUNCTION](../../../reference/sql-statements/administrative-sql-statements/show/show-create-function.md)
+* [SHOW FUNCTION STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-function-status.md)
 * [Stored Routine Privileges](stored-routine-privileges.md)
-* [INFORMATION\_SCHEMA ROUTINES Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
+* [INFORMATION\_SCHEMA ROUTINES Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
 GPLv2 fill\_help\_tables.sql

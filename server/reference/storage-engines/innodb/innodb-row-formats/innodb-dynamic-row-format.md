@@ -17,7 +17,7 @@ The limit for indexing column values depends on the [innodb\_page\_size](../inno
 
 ## Using the DYNAMIC Row Format
 
-The default row format is `DYNAMIC`, as long as the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable has not been modified. Therefore, in these versions, the easiest way to create an InnoDB table that uses the `DYNAMIC` row format is by **not** setting the [ROW\_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option at all in a [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement.
+The default row format is `DYNAMIC`, as long as the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable has not been modified. Therefore, in these versions, the easiest way to create an InnoDB table that uses the `DYNAMIC` row format is by **not** setting the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option at all in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement.
 
 It is recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 
@@ -46,7 +46,7 @@ Let's create an InnoDB table after confirming that the default storage engine is
 $ mariadb --user=root
 ```
 
-2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```
 SHOW SESSION VARIABLES
@@ -61,7 +61,7 @@ SHOW SESSION VARIABLES
 +------------------------+--------+
 ```
 
-3. Confirm that InnoDB's default row format is Dynamic by checking the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+3. Confirm that InnoDB's default row format is Dynamic by checking the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```
 SHOW GLOBAL VARIABLES
@@ -76,13 +76,13 @@ SHOW GLOBAL VARIABLES
 +---------------------------+---------+
 ```
 
-4. If the database does not exist, then create the database for the table using the [CREATE DATABASE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-database.md) statement:
+4. If the database does not exist, then create the database for the table using the [CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) statement:
 
 ```
 CREATE DATABASE hq_sales;
 ```
 
-5. Create the table using the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement:
+5. Create the table using the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement:
 
 ```
 CREATE TABLE hq_sales.invoices (
@@ -96,7 +96,7 @@ CREATE TABLE hq_sales.invoices (
 );
 ```
 
-6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```
 SELECT NAME, ROW_FORMAT
@@ -124,7 +124,7 @@ Let's create an InnoDB table after confirming that the default storage engine is
 $ mariadb --user=root
 ```
 
-2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```
 SHOW SESSION VARIABLES
@@ -139,7 +139,7 @@ SHOW SESSION VARIABLES
 +------------------------+--------+
 ```
 
-3. Confirm that InnoDB's default row format is not Dynamic by checking the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+3. Confirm that InnoDB's default row format is not Dynamic by checking the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```
 SHOW GLOBAL VARIABLES
@@ -154,13 +154,13 @@ SHOW GLOBAL VARIABLES
 +---------------------------+---------+
 ```
 
-4. If the database does not exist, then create the database for the table using the [CREATE DATABASE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-database.md) statement:
+4. If the database does not exist, then create the database for the table using the [CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) statement:
 
 ```
 CREATE DATABASE hq_sales;
 ```
 
-5. Create the table using the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
+5. Create the table using the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
 
 ```
 CREATE TABLE hq_sales.invoices (
@@ -174,7 +174,7 @@ CREATE TABLE hq_sales.invoices (
 ) ROW_FORMAT = Dynamic;
 ```
 
-6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```
 SELECT NAME, ROW_FORMAT
@@ -202,7 +202,7 @@ Let's convert some InnoDB tables to the Dynamic row format:
 $ mariadb --user=root
 ```
 
-2. Search for InnoDB tables that do not use the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+2. Search for InnoDB tables that do not use the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```
 SELECT NAME, ROW_FORMAT
@@ -219,14 +219,14 @@ AND ROW_FORMAT != 'Dynamic';
 +-------------------+------------+
 ```
 
-3. Alter the table using the [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
+3. Alter the table using the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
 
 ```
 ALTER TABLE hq_sales.invoices
    ROW_FORMAT = Dynamic;
 ```
 
-4. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table again:
+4. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table again:
 
 ```
 SELECT NAME, ROW_FORMAT

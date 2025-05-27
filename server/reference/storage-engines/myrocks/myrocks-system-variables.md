@@ -516,7 +516,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_enable_insert_with_update_caching`
 
-* Description: Whether to enable optimization where we cache the read from a failed insertion attempt in [INSERT ON DUPLICATE KEY UPDATE](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md).
+* Description: Whether to enable optimization where we cache the read from a failed insertion attempt in [INSERT ON DUPLICATE KEY UPDATE](../../sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md).
 * Commandline: `--rocksdb-enable-insert-with-update-caching={0|1}`
 * Scope: Global
 * Dynamic: Yes

@@ -36,7 +36,7 @@ sorting them, and then creating the index blocks. This is an order of magnitude\
 faster than creating the index one row at a time and it also uses less key\
 buffer memory.
 
-**Note:** When you insert into an **empty table** with [INSERT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) or[LOAD DATA](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a[DISABLE KEYS](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) before and an [ENABLE KEYS](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)\
+**Note:** When you insert into an **empty table** with [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) or[LOAD DATA](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), MariaDB **automatically** does a[DISABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table.md) before and an [ENABLE KEYS](../../../reference/sql-statements/data-definition/alter/alter-table.md)\
 afterwards.
 
 When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique\_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
@@ -52,11 +52,11 @@ For InnoDB tables, the [AUTO\_INCREMENT lock mode](../../../reference/storage-en
 SET @@global.innodb_autoinc_lock_mode = 2;
 ```
 
-Also, if the table has [INSERT triggers](../../../server-usage/triggers-events/triggers/) or [PERSISTENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
+Also, if the table has [INSERT triggers](../../../server-usage/triggers-events/triggers/) or [PERSISTENT](../../../reference/sql-statements/data-definition/create/generated-columns.md) columns, you may want to drop them, insert all data, and recreate them.
 
 ## Loading Text Files
 
-The **fastest way** to insert data into MariaDB is through the[LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
+The **fastest way** to insert data into MariaDB is through the[LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) command.
 
 The simplest form of the command is:
 
@@ -84,7 +84,7 @@ is not that big.
    least MyISAM and Aria support this).
 5. for empty tables, some transactional engines (like Aria) do not log the\
    inserted data in the transaction log because one can rollback the operation\
-   by just doing a [TRUNCATE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) on the table.
+   by just doing a [TRUNCATE](../../../reference/sql-statements/table-statements/truncate-table.md) on the table.
 
 Because of the above speed advantages there are many cases, when you need to\
 insert **many** rows at a time, where it may be faster to create a file\
@@ -101,7 +101,7 @@ You can import many files in parallel with [mariadb-import](../../../clients-and
 mariadb-import --use-threads=10 database text-file-name [text-file-name...]
 ```
 
-Internally [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) uses [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to read\
+Internally [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) uses [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to read\
 in the data.
 
 ## Inserting Data with INSERT Statements
@@ -148,7 +148,7 @@ INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
 INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
 ```
 
-[LAST\_INSERT\_ID()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last`auto_increment` value inserted.
+[LAST\_INSERT\_ID()](../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last`auto_increment` value inserted.
 
 By default, the command line `mariadb` client will send the above as\
 multiple statements.

@@ -309,19 +309,19 @@ particular dynamic column value is stored together with its datatype.
 
 The set of possible datatypes is mostly the same as that used by the SQL`[CAST](../sql-statements/built-in-functions/string-functions/cast.md)` and `[CONVERT](../sql-statements/built-in-functions/string-functions/convert.md)` functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
 
-| type                | dynamic column internal type | description                                                                                                                                  |
-| ------------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| type                | dynamic column internal type | description                                                                                                                                  |
-| BINARY\[(N)]        | DYN\_COL\_STRING             | (variable length string with binary charset)                                                                                                 |
-| CHAR\[(N)]          | DYN\_COL\_STRING             | (variable length string with charset)                                                                                                        |
-| DATE                | DYN\_COL\_DATE               | (date - 3 bytes)                                                                                                                             |
-| DATETIME\[(D)]      | DYN\_COL\_DATETIME           | (date and time (with [microseconds](../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md)) - 9 bytes)         |
-| DECIMAL\[(M\[,D])]  | DYN\_COL\_DECIMAL            | (variable length binary decimal representation with MariaDB limitation)                                                                      |
-| DOUBLE\[(M,D)]      | DYN\_COL\_DOUBLE             | (64 bit double-precision floating point)                                                                                                     |
-| INTEGER             | DYN\_COL\_INT                | (variable length, up to 64 bit signed integer)                                                                                               |
-| SIGNED \[INTEGER]   | DYN\_COL\_INT                | (variable length, up to 64 bit signed integer)                                                                                               |
-| TIME\[(D)]          | DYN\_COL\_TIME               | (time (with [microseconds](../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md), may be negative) - 6 bytes) |
-| UNSIGNED \[INTEGER] | DYN\_COL\_UINT               | (variable length, up to 64bit unsigned integer)                                                                                              |
+| type                | dynamic column internal type | description                                                                                                                                     |
+| ------------------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| type                | dynamic column internal type | description                                                                                                                                     |
+| BINARY\[(N)]        | DYN\_COL\_STRING             | (variable length string with binary charset)                                                                                                    |
+| CHAR\[(N)]          | DYN\_COL\_STRING             | (variable length string with charset)                                                                                                           |
+| DATE                | DYN\_COL\_DATE               | (date - 3 bytes)                                                                                                                                |
+| DATETIME\[(D)]      | DYN\_COL\_DATETIME           | (date and time (with [microseconds](../../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md)) - 9 bytes)         |
+| DECIMAL\[(M\[,D])]  | DYN\_COL\_DECIMAL            | (variable length binary decimal representation with MariaDB limitation)                                                                         |
+| DOUBLE\[(M,D)]      | DYN\_COL\_DOUBLE             | (64 bit double-precision floating point)                                                                                                        |
+| INTEGER             | DYN\_COL\_INT                | (variable length, up to 64 bit signed integer)                                                                                                  |
+| SIGNED \[INTEGER]   | DYN\_COL\_INT                | (variable length, up to 64 bit signed integer)                                                                                                  |
+| TIME\[(D)]          | DYN\_COL\_TIME               | (time (with [microseconds](../../sql-statements/built-in-functions/date-time-functions/microseconds-in-mariadb.md), may be negative) - 6 bytes) |
+| UNSIGNED \[INTEGER] | DYN\_COL\_UINT               | (variable length, up to 64bit unsigned integer)                                                                                                 |
 
 #### A Note About Lengths
 

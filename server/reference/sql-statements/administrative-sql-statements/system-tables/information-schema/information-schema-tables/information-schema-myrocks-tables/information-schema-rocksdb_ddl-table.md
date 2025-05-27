@@ -1,0 +1,25 @@
+# Information Schema ROCKSDB\_DDL Table
+
+The [Information Schema](../../) `ROCKSDB_DDL` table is included as part of the [MyRocks](../../../../../../storage-engines/myrocks/) storage engine.
+
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+
+It contains the following columns:
+
+| Column              | Description |
+| ------------------- | ----------- |
+| Column              | Description |
+| TABLE\_SCHEMA       |             |
+| TABLE\_NAME         |             |
+| PARTITION\_NAME     |             |
+| INDEX\_NAME         |             |
+| COLUMN\_FAMILY      |             |
+| INDEX\_NUMBER       |             |
+| INDEX\_TYPE         |             |
+| KV\_FORMAT\_VERSION |             |
+| TTL\_DURATION       |             |
+| INDEX\_FLAGS        |             |
+| CF                  |             |
+| AUTO\_INCREMENT     |             |
+
+CC BY-SA / Gnu FDL

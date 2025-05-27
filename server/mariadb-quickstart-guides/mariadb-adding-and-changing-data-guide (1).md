@@ -4,7 +4,7 @@ There are several ways to add and to change data in MariaDB. There are a few SQL
 
 #### Adding Data
 
-To add data to a table in MariaDB, you will need to use the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. Its basic, minimal syntax is the command [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) followed by the table name and then the keyword VALUES with a comma separated list of values contained in parentheses:
+To add data to a table in MariaDB, you will need to use the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. Its basic, minimal syntax is the command [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) followed by the table name and then the keyword VALUES with a comma separated list of values contained in parentheses:
 
 ```
 INSERT table1
@@ -35,7 +35,7 @@ Notice that the keyword VALUES is used only once and each row is contained in it
 
 #### Priority
 
-An [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement takes priority over read statements (i.e., SELECT statements). An [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) will lock the table and force other clients to wait until it's finished. On a busy MariaDB server that has many simultaneous requests for data, this could cause users to experience delays when you run a script that performs a series of [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements. If you don't want user requests to be put on hold and you can wait to insert the data, you could use the `LOW_PRIORITY` flag:
+An [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement takes priority over read statements (i.e., SELECT statements). An [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) will lock the table and force other clients to wait until it's finished. On a busy MariaDB server that has many simultaneous requests for data, this could cause users to experience delays when you run a script that performs a series of [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements. If you don't want user requests to be put on hold and you can wait to insert the data, you could use the `LOW_PRIORITY` flag:
 
 ```
 INSERT LOW_PRIORITY
@@ -43,7 +43,7 @@ INTO table1
 VALUES('text1','text2','text3');
 ```
 
-The `LOW_PRIORITY` flag will put the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement in queue, waiting for all current and pending requests to be completed before it's performed. If new requests are made while a low priority statement is waiting, then they are put ahead of it in the queue. MariaDB does not begin to execute a low priority statement until there are no other requests waiting. Once the transaction begins, though, the table is locked and any other requests for data from the table that come in after it starts must wait until it's completed. Because it locks the table, low priority statements will prevent simultaneous insertions from other clients even if you're dealing with a MyISAM table. Incidentally, notice that the `LOW_PRIORITY` flag comes before the `INTO`.
+The `LOW_PRIORITY` flag will put the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement in queue, waiting for all current and pending requests to be completed before it's performed. If new requests are made while a low priority statement is waiting, then they are put ahead of it in the queue. MariaDB does not begin to execute a low priority statement until there are no other requests waiting. Once the transaction begins, though, the table is locked and any other requests for data from the table that come in after it starts must wait until it's completed. Because it locks the table, low priority statements will prevent simultaneous insertions from other clients even if you're dealing with a MyISAM table. Incidentally, notice that the `LOW_PRIORITY` flag comes before the `INTO`.
 
 One potential inconvenience with an `INSERT LOW_PRIORITY` statement is that the client will be tied up waiting for the statement to be completed successfully. So if you're inserting data into a busy server with a low priority setting using the mariadb client, your client could be locked up for minutes, maybe hours depending on how busy your server is at the time. As an alternative either to making other clients with read requests wait or to having your client wait, you can use the DELAYED flag instead of the `LOW_PRIORITY` flag:
 
@@ -57,7 +57,7 @@ MariaDB will take the request as a low priority one and put it on its list of ta
 
 #### Contingent Additions
 
-As an added twist to [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md), you can combine it with a SELECT statement. Suppose that you have a table called employees which contains employee information for your company. Suppose further that you have a column to indicate whether an employee is on the company's softball team. However, you one day decide to create a separate database and table for the softball team's data that someone else will administer. To get the database ready for the new administrator, you have to copy some data for team members to the new table. Here's one way you can accomplish this task:
+As an added twist to [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), you can combine it with a SELECT statement. Suppose that you have a table called employees which contains employee information for your company. Suppose further that you have a column to indicate whether an employee is on the company's softball team. However, you one day decide to create a separate database and table for the softball team's data that someone else will administer. To get the database ready for the new administrator, you have to copy some data for team members to the new table. Here's one way you can accomplish this task:
 
 ```
 INSERT INTO softball_team 
@@ -67,11 +67,11 @@ FROM company.employees
 WHERE softball='Y';
 ```
 
-In this SQL statement the columns in which data is to be inserted into are listed, then the complete SELECT statement follows with the appropriate WHERE clause to determine if an employee is on the softball team. Since we're executing this statement from the new database and since the table employees is in a separate database called company, we have to specify it as you see here. By the way, [INSERT...SELECT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-select.md) statements cannot be performed on the same table.
+In this SQL statement the columns in which data is to be inserted into are listed, then the complete SELECT statement follows with the appropriate WHERE clause to determine if an employee is on the softball team. Since we're executing this statement from the new database and since the table employees is in a separate database called company, we have to specify it as you see here. By the way, [INSERT...SELECT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert-select.md) statements cannot be performed on the same table.
 
 #### Replacement Data
 
-When you're adding massive amounts of data to a table that has a key field, as mentioned earlier, you can use the `IGNORE` flag to prevent duplicates from being inserted, but still allow unique rows to be entered. However, there may be times when you actually want to replace the rows with the same key fields with the new ones. In such a situation, instead of using [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) you can use a [REPLACE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) statement:
+When you're adding massive amounts of data to a table that has a key field, as mentioned earlier, you can use the `IGNORE` flag to prevent duplicates from being inserted, but still allow unique rows to be entered. However, there may be times when you actually want to replace the rows with the same key fields with the new ones. In such a situation, instead of using [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) you can use a [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statement:
 
 ```
 REPLACE LOW_PRIORITY
@@ -81,11 +81,11 @@ VALUES('id1','text','text'),
 ('id3','text','text');
 ```
 
-Notice that the syntax is the same as an [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. The flags all have the same effect, as well. Also, multiple rows may be inserted, but there's no need for the `IGNORE` flag since duplicates won't happen—the originals are just overwritten. Actually, when a row is replaced, it's first deleted completely and the new row is then inserted. Any columns without values in the new row will be given the default values for the columns. None of the values of the old row are kept. Incidentally, [REPLACE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) will also allow you to combine it with a SELECT statement as we saw with the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement earlier.
+Notice that the syntax is the same as an [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. The flags all have the same effect, as well. Also, multiple rows may be inserted, but there's no need for the `IGNORE` flag since duplicates won't happen—the originals are just overwritten. Actually, when a row is replaced, it's first deleted completely and the new row is then inserted. Any columns without values in the new row will be given the default values for the columns. None of the values of the old row are kept. Incidentally, [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) will also allow you to combine it with a SELECT statement as we saw with the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement earlier.
 
 #### Updating Data
 
-If you want to change the data contained in existing records, but only for certain columns, then you would need to use an [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. The syntax for [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) is a little bit different from the syntax shown before for [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [REPLACE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) statements:
+If you want to change the data contained in existing records, but only for certain columns, then you would need to use an [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. The syntax for [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) is a little bit different from the syntax shown before for [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statements:
 
 ```
 UPDATE LOW_PRIORITY table3
@@ -93,9 +93,9 @@ SET col1 = 'text-a', col2='text-b'
 WHERE id < 100;
 ```
 
-In the SQL statement here, we are changing the value of the two columns named individually using the `SET` clause. Incidentally, the `SET` clause optionally can be used in [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [REPLACE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md) statements, but it eliminates the multiple row option. In the statement above, we're also using a `WHERE` clause to determine which records are changed: only rows with an id that has a value less than 100 are updated. Notice that the `LOW_PRIORITY` flag can be used with this statement, too. The `IGNORE` flag can be used, as well.
+In the SQL statement here, we are changing the value of the two columns named individually using the `SET` clause. Incidentally, the `SET` clause optionally can be used in [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statements, but it eliminates the multiple row option. In the statement above, we're also using a `WHERE` clause to determine which records are changed: only rows with an id that has a value less than 100 are updated. Notice that the `LOW_PRIORITY` flag can be used with this statement, too. The `IGNORE` flag can be used, as well.
 
-A useful feature of the [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement is that it allows the use of the current value of a column to update the same column. For instance, suppose you want to add one day to the value of a date column where the date is a Sunday. You could do the following:
+A useful feature of the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement is that it allows the use of the current value of a column to update the same column. For instance, suppose you want to add one day to the value of a date column where the date is a Sunday. You could do the following:
 
 ```
 UPDATE table5
@@ -105,7 +105,7 @@ WHERE DAYOFWEEK(col_date) = 1;
 
 For rows where the day of the week is Sunday, the DATE\_ADD() function will take the value of col\_date before it's updated and add one day to it. MariaDB will then take this sum and set col\_date to it.
 
-There are a couple more twists that you can now do with the [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement: if you want to update the rows in a specific order, you can add an [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause. You can also limit the number of rows that are updated with a [LIMIT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Below is an example of both of these clauses:
+There are a couple more twists that you can now do with the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement: if you want to update the rows in a specific order, you can add an [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause. You can also limit the number of rows that are updated with a [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Below is an example of both of these clauses:
 
 ```
 UPDATE LOW_PRIORITY table3
@@ -115,9 +115,9 @@ ORDER BY col3 DESC
 LIMIT 10;
 ```
 
-The ordering can be descending as indicated here by the `DESC` flag, or ascending with either the ASC flag or by just leaving it out, as ascending is the default. The [LIMIT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause, of course, limits the number of rows affected to ten here.
+The ordering can be descending as indicated here by the `DESC` flag, or ascending with either the ASC flag or by just leaving it out, as ascending is the default. The [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause, of course, limits the number of rows affected to ten here.
 
-If you want to refer to multiple tables in one [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement, you can do so like this:
+If you want to refer to multiple tables in one [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement, you can do so like this:
 
 ```
 UPDATE table3, table4
@@ -125,9 +125,9 @@ SET table3.col1 = table4.col1
 WHERE table3.id = table4.id;
 ```
 
-Here we see a join between the two tables named. In table3, the value of col1 is set to the value of the same column in table4 where the values of id from each match. We're not updating both tables here; we're just accessing both. We must specify the table name for each column to prevent an ambiguity error. Incidentally, [ORDER BY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#order-by) and [LIMIT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clauses aren't allowed with multiple table updates.
+Here we see a join between the two tables named. In table3, the value of col1 is set to the value of the same column in table4 where the values of id from each match. We're not updating both tables here; we're just accessing both. We must specify the table name for each column to prevent an ambiguity error. Incidentally, [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) and [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clauses aren't allowed with multiple table updates.
 
-There's another combination that you can do with the [INSERT](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement that we didn't mention earlier. It involves the [UPDATE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. When inserting multiple rows of data, if you want to note which rows had potentially duplicate entries and which ones are new, you could add a column called status and change it's value accordingly with a statement like this one:
+There's another combination that you can do with the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement that we didn't mention earlier. It involves the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. When inserting multiple rows of data, if you want to note which rows had potentially duplicate entries and which ones are new, you could add a column called status and change it's value accordingly with a statement like this one:
 
 ```
 INSERT IGNORE INTO table1 
@@ -139,10 +139,10 @@ ON DUPLICATE KEY
 UPDATE status = 'old';
 ```
 
-Because of the `IGNORE` flag, errors will not be generated, duplicates won't be inserted or replaced, but the rest will be added. Because of the [ON DUPLICATE KEY](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), the column status of the original row will be set to old when there are duplicate entry attempts. The rest will be inserted and their status set to new.
+Because of the `IGNORE` flag, errors will not be generated, duplicates won't be inserted or replaced, but the rest will be added. Because of the [ON DUPLICATE KEY](../reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), the column status of the original row will be set to old when there are duplicate entry attempts. The rest will be inserted and their status set to new.
 
 #### Conclusion
 
-As you can see from some of these SQL statements, MariaDB offers you quite a few ways to add and to change data. In addition to these methods, there are also some bulk methods of adding and changing data in a table. You could use the [LOAD DATA INFILE](../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement and the [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) command-line utility. These methods are covered in another article on [Importing Data into MariaDB](https://mariadb.com/kb/en/importing-data-into-mariadb/).
+As you can see from some of these SQL statements, MariaDB offers you quite a few ways to add and to change data. In addition to these methods, there are also some bulk methods of adding and changing data in a table. You could use the [LOAD DATA INFILE](../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement and the [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) command-line utility. These methods are covered in another article on [Importing Data into MariaDB](https://mariadb.com/kb/en/importing-data-into-mariadb/).
 
 CC BY-SA / Gnu FDL

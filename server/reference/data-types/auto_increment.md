@@ -2,7 +2,7 @@
 
 ## Description
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement), and the auto\_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement), and the auto\_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
 
 `AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than 0.
 
@@ -246,7 +246,7 @@ SELECT * FROM t4;
 
 ## CHECK Constraints, DEFAULT Values and Virtual Columns
 
-auto\_increment columns are not permitted in [CHECK constraints](../sql-statements-and-structure/sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+auto\_increment columns are not permitted in [CHECK constraints](../sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
 
 ## Generating Auto\_Increment Values When Adding the Attribute
 
@@ -300,10 +300,10 @@ SELECT * FROM t1;
 * [Getting Started with Indexes](../../../kb/en/getting-started-with-indexes/)
 * [Sequences](../sql-statements-and-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [AUTO\_INCREMENT FAQ](auto_increment-faq.md)
-* [LAST\_INSERT\_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
+* [LAST\_INSERT\_ID()](../sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)
 * [AUTO\_INCREMENT handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [BLACKHOLE and AUTO\_INCREMENT](../storage-engines/blackhole.md#blackhole-and-auto_increment)
-* [UUID\_SHORT()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) - Generate unique ids
+* [UUID\_SHORT()](../sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) - Generate unique ids
 * [Generating Identifiers – from AUTO\_INCREMENT to Sequence (percona.com)](https://www.percona.com/community-blog/2018/10/12/generating-identifiers-auto_increment-sequence/)
 
 GPLv2 fill\_help\_tables.sql

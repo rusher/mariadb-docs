@@ -1,9 +1,6 @@
-
 # DATE
 
-
 ## Syntax
-
 
 ```
 DATE
@@ -11,22 +8,16 @@ DATE
 
 ## Description
 
-
-A date. The supported range is '`1000-01-01`' to '`9999-12-31`'. MariaDB
+A date. The supported range is '`1000-01-01`' to '`9999-12-31`'. MariaDB\
 displays `DATE` values in '`YYYY-MM-DD`' format, but can be assigned dates in looser formats, including strings or numbers, as long as they make sense. These include a short year, `YY-MM-DD`, no delimiters, `YYMMDD`, or any other acceptable delimiter, for example `YYYY/MM/DD`. For details, see [date and time literals](../../sql-statements-and-structure/sql-language-structure/date-and-time-literals.md).
 
-
-'`0000-00-00`' is a permitted special value (zero-date), unless the [NO_ZERO_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. Also, individual components of a date can be set to 0 (for example: '`2015-00-12`'), unless the [NO_ZERO_IN_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW_INVALID_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
-
+'`0000-00-00`' is a permitted special value (zero-date), unless the [NO\_ZERO\_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_date) [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. Also, individual components of a date can be set to 0 (for example: '`2015-00-12`'), unless the [NO\_ZERO\_IN\_DATE](../../../server-management/variables-and-modes/sql-mode.md#no_zero_in_date) [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used. In many cases, the result of en expression involving a zero-date, or a date with zero-parts, is `NULL`. If the [ALLOW\_INVALID\_DATES](../../../server-management/variables-and-modes/sql-mode.md#allow_invalid_dates) SQL\_MODE is enabled, if the day part is in the range between 1 and 31, the date does not produce any error, even for months that have less than 31 days.
 
 ### Oracle Mode
 
-
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
-
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
 
 ## Examples
-
 
 ```
 CREATE TABLE t1 (d DATE);
@@ -45,7 +36,6 @@ SELECT * FROM t1;
 ```
 
 ### DATE Format
-
 
 ```
 CREATE TABLE date_formats_example (
@@ -69,7 +59,6 @@ INSERT INTO date_formats_example VALUES
 
 The resulting data would look like this:
 
-
 ```
 SELECT * FROM date_formats_example;
 ```
@@ -92,7 +81,6 @@ SELECT * FROM date_formats_example;
 
 ### DATE Range
 
-
 ```
 CREATE TABLE date_range_example (
    description VARCHAR(30),
@@ -108,22 +96,19 @@ INSERT INTO date_range_example VALUES
    ('Above maximum range', '10000,12,31');
 ```
 
-If SQL_MODE is strict (the default), the example above generates the following error and no values are inserted:
-
+If SQL\_MODE is strict (the default), the example above generates the following error and no values are inserted:
 
 ```
 ERROR 1292 (22007): Incorrect date value: '10000,12,31' for column `test`.`date_range_example`.`example` at row 4
 ```
 
-If SQL_MODE is not strict, the example above generates a warning and (possibly modified) values are inserted. The Below minimum range value is accepted because it contains a zero component. The Above maximum range value is truncated since it is an unacceptable date.
-
+If SQL\_MODE is not strict, the example above generates a warning and (possibly modified) values are inserted. The Below minimum range value is accepted because it contains a zero component. The Above maximum range value is truncated since it is an unacceptable date.
 
 ```
 Warning (Code 1265): Data truncated for column 'example' at row 4
 ```
 
 The resulting data would look like this:
-
 
 ```
 SELECT * FROM date_range_example;
@@ -142,9 +127,7 @@ SELECT * FROM date_range_example;
 
 ### Date Expressions
 
-
-When using a date value in an expression, such as DATE_ADD(), the following illustrates that a NULL is generated when a date value is not a real date and when a real date overflows:
-
+When using a date value in an expression, such as DATE\_ADD(), the following illustrates that a NULL is generated when a date value is not a real date and when a real date overflows:
 
 ```
 SELECT example, DATE_ADD(example, INTERVAL 1 DAY)
@@ -170,9 +153,7 @@ Warning (Code 1292): Incorrect datetime value: '0000-00-00'
 
 ### Invalid Dates
 
-
-The following example enhances the SQL_MODE to ensure that ALLOW_INVALID_DATES is set and illustrates the difference between a day that is outside the range of 1 to 31 and one that is just too large for its month:
-
+The following example enhances the SQL\_MODE to ensure that ALLOW\_INVALID\_DATES is set and illustrates the difference between a day that is outside the range of 1 to 31 and one that is just too large for its month:
 
 ```
 -- Disable STRICT_TRANS_TABLES and enable ALLOW_INVALID_DATES
@@ -192,7 +173,6 @@ Warning (Code 1265): Data truncated for column 'example' at row 1
 
 The resulting data would look like this:
 
-
 ```
 SELECT * FROM date_range_example;
 ```
@@ -208,9 +188,6 @@ SELECT * FROM date_range_example;
 
 ## See Also
 
+* [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
 
-* [mariadb_schema](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
-
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

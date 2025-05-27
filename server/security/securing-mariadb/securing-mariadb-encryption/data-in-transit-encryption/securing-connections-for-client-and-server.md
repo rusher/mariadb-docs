@@ -54,7 +54,7 @@ SHOW VARIABLES LIKE 'have_ssl';
 
 The `FLUSH SSL` command can be used to dynamically reinitialize the server's [TLS](./) context.
 
-See [FLUSH SSL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-ssl) for more information.
+See [FLUSH SSL](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-ssl) for more information.
 
 ### Enabling TLS for MariaDB Clients
 
@@ -153,7 +153,7 @@ From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 ### Requiring TLS for Specific User Accounts
 
-You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md), [ALTER USER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md), or [GRANT](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statements. For example:
+You can set certain TLS-related restrictions for specific user accounts. For instance, you might use this with user accounts that require access to sensitive data while sending it across networks that you do not control. These restrictions can be enabled for a user account with the [CREATE USER](../../../../reference/sql-statements/account-management-sql-commands/create-user.md), [ALTER USER](../../../../reference/sql-statements/account-management-sql-commands/alter-user.md), or [GRANT](../../../../reference/sql-statements/account-management-sql-commands/grant.md) statements. For example:
 
 * A user account must connect via TLS if the user account is defined with the `REQUIRE SSL` clause.
 

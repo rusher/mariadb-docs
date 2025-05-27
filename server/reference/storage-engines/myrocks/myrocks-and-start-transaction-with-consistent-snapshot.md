@@ -20,7 +20,7 @@ After issuing the statement, one can examine the [binlog\_snapshot\_file](../../
 
 ## See Also
 
-* [START TRANSACTION](../../sql-statements-and-structure/sql-statements/transactions/start-transaction.md)
+* [START TRANSACTION](../../sql-statements/transactions/start-transaction.md)
 * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
 
 CC BY-SA / Gnu FDL

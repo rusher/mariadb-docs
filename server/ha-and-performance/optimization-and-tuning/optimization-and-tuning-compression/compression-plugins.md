@@ -24,7 +24,7 @@ Depending on how MariaDB was installed, the libraries may already be available f
 apt-get install mariadb-plugin-provider-lz4
 ```
 
-Once available, [install as a plugin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), for example:
+Once available, [install as a plugin](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), for example:
 
 ```
 INSTALL SONAME 'provider_lz4';

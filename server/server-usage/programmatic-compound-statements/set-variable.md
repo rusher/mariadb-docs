@@ -11,7 +11,7 @@ SET var_name = expr [, var_name = expr] ...
 The `SET` statement in [stored programs](../stored-routines/) is an extended version of the general `[SET](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md)` statement. Referenced variables may be ones declared inside a stored program, global system variables, or user-defined variables.
 
 The `SET` statement in stored programs is implemented as part of the\
-pre-existing [SET](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md) syntax. This allows an extended syntax of `SET a=x, b=y, ...` where different variable types (locally declared variables,\
+pre-existing [SET](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) syntax. This allows an extended syntax of `SET a=x, b=y, ...` where different variable types (locally declared variables,\
 global and session server variables, user-defined variables) can be\
 mixed. This also allows combinations of local variables and some\
 options that make sense only for system variables; in that case, the\
@@ -31,8 +31,8 @@ SET @x = 1;
 
 ## See Also
 
-* [SET](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md)
-* [SET STATEMENT](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
+* [SET](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md)
+* [SET STATEMENT](../../reference/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
 * [DECLARE Variable](declare-variable.md)
 
 GPLv2 fill\_help\_tables.sql

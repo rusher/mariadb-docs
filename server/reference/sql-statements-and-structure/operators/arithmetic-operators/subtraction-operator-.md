@@ -1,8 +1,6 @@
-
 # Subtraction Operator (-)
 
 ## Syntax
-
 
 ```
 -
@@ -10,18 +8,13 @@
 
 ## Description
 
-
 Subtraction. The operator is also used as the unary minus for changing sign.
 
-
-If both operands are integers, the result is calculated with [BIGINT](../../../data-types/data-types-numeric-data-types/bigint.md) precision. If either integer is unsigned, the result is also an unsigned integer, unless the NO_UNSIGNED_SUBTRACTION [SQL_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled, in which case the result is always signed.
-
+If both operands are integers, the result is calculated with [BIGINT](../../../data-types/data-types-numeric-data-types/bigint.md) precision. If either integer is unsigned, the result is also an unsigned integer, unless the NO\_UNSIGNED\_SUBTRACTION [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled, in which case the result is always signed.
 
 For real or string operands, the operand with the highest precision determines the result precision.
 
-
 ## Examples
-
 
 ```
 SELECT 96-9;
@@ -48,7 +41,6 @@ SELECT 3.66 + 1.333;
 
 Unary minus:
 
-
 ```
 SELECT - (3+5);
 +---------+
@@ -60,13 +52,10 @@ SELECT - (3+5);
 
 ## See Also
 
-
-* [Type Conversion](../../sql-statements/built-in-functions/string-functions/type-conversion.md)
-* [Addition Operator (+)](../../sql-statements/built-in-functions/numeric-functions/addition-operator.md)
-* [Multiplication Operator (*)](../../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md)
-* [Division Operator (/)](../../sql-statements/built-in-functions/numeric-functions/division-operator.md)
+* [Type Conversion](../../../sql-statements/built-in-functions/string-functions/type-conversion.md)
+* [Addition Operator (+)](../../../sql-statements/built-in-functions/numeric-functions/addition-operator.md)
+* [Multiplication Operator (\*)](../../../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md)
+* [Division Operator (/)](../../../sql-statements/built-in-functions/numeric-functions/division-operator.md)
 * [Operator Precedence](../operator-precedence.md)
 
-
 CC BY-SA / Gnu FDL
-

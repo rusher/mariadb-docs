@@ -4,7 +4,7 @@ The [InnoDB storage engine](./) has the following limitations.
 
 ## Limitations on Schema
 
-* InnoDB tables can have a maximum of 1,017 columns. This includes [virtual generated columns](../../sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md).
+* InnoDB tables can have a maximum of 1,017 columns. This includes [virtual generated columns](../../sql-statements/data-definition/create/generated-columns.md).
 * InnoDB tables can have a maximum of 64 secondary indexes.
 * A multicolumn index on InnoDB can use a maximum of 32 columns. If you attempt to create a multicolumn index that uses more than 32 columns, MariaDB returns an Error 1070.
 
@@ -44,17 +44,17 @@ Using the [innodb\_page\_size](innodb-system-variables.md#innodb_page_size) syst
 
 InnoDB has the following table-specific limitations.
 
-* When you issue a [DELETE](../../sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement, InnoDB doesn't regenerate the table, rather it deletes each row from the table one by one.
+* When you issue a [DELETE](../../sql-statements/data-manipulation/changing-deleting-data/delete.md) statement, InnoDB doesn't regenerate the table, rather it deletes each row from the table one by one.
 * When running MariaDB on Windows, InnoDB stores databases and tables in lowercase. When moving databases and tables in a binary format from Windows to a Unix-like system or from a Unix system to Windows, you need to rename these to use lowercase.
 * When using cascading [foreign keys](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md), operations in the cascade don't activate triggers.
 
 ### Table Analysis
 
-When running [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) twice on a table in which statements or transactions are running, MariaDB blocks the second [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) until the statement or transaction is complete. This occurs because the statement or transaction blocks the second [ANALYZE TABLE](../../sql-statements-and-structure/sql-statements/table-statements/analyze-table.md) statement from reloading the table definition, which it must do since the old one was marked as obsolete after the first statement.
+When running [ANALYZE TABLE](../../sql-statements/table-statements/analyze-table.md) twice on a table in which statements or transactions are running, MariaDB blocks the second [ANALYZE TABLE](../../sql-statements/table-statements/analyze-table.md) until the statement or transaction is complete. This occurs because the statement or transaction blocks the second [ANALYZE TABLE](../../sql-statements/table-statements/analyze-table.md) statement from reloading the table definition, which it must do since the old one was marked as obsolete after the first statement.
 
 ### Table Status
 
-[SHOW TABLE STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-table-status.md) statements do not provide accurate statistics for InnoDB, except for the physical table size.
+[SHOW TABLE STATUS](../../sql-statements/administrative-sql-statements/show/show-table-status.md) statements do not provide accurate statistics for InnoDB, except for the physical table size.
 
 The InnoDB storage engine does not maintain internal row counts. Transactions isolate writes, which means that concurrent transactions will not have the same row counts.
 
@@ -62,14 +62,14 @@ The InnoDB storage engine does not maintain internal row counts. Transactions is
 
 * When defining an index on an auto-incrementing column, it must be defined in a way that allows the equivalent of `SELECT MAX(col)` lookups on the table.
 * Restarting MariaDB may cause InnoDB to reuse old auto-increment values, such as in the case of a transaction that was rolled back.
-* When auto-incrementing columns run out of values, [INSERT](../../sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements generate duplicate-key errors.
+* When auto-incrementing columns run out of values, [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statements generate duplicate-key errors.
 
 ## Transactions and Locks
 
 * You can modify data on a maximum of 96 \* 1023 concurrent transactions that generate undo records.
 * Of the 128 rollback segments, InnoDB assigns 32 to non-redo logs for transactions that modify temporary tables and related objects, reducing the maximum number of concurrent data-modifying transactions to 96,000, from 128.000.
 * The limit is 32,000 concurrent transactions when all data-modifying transactions also modify temporary tables.
-* Issuing a [LOCK TABLES](../../sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statement sets two locks on each table when the [innodb\_table\_locks](innodb-system-variables.md#innodb_table_locks) system variable is enabled (the default).
-* When you commit or roll back a transaction, any locks set in the transaction are released. You don't need to issue [LOCK TABLES](../../sql-statements-and-structure/sql-statements/transactions/lock-tables.md) statements when the [autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) variable is enabled, as InnoDB would immediately release the table locks.
+* Issuing a [LOCK TABLES](../../sql-statements/transactions/lock-tables.md) statement sets two locks on each table when the [innodb\_table\_locks](innodb-system-variables.md#innodb_table_locks) system variable is enabled (the default).
+* When you commit or roll back a transaction, any locks set in the transaction are released. You don't need to issue [LOCK TABLES](../../sql-statements/transactions/lock-tables.md) statements when the [autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) variable is enabled, as InnoDB would immediately release the table locks.
 
 CC BY-SA / Gnu FDL

@@ -7,7 +7,7 @@ The following list shows the SQL operator precedence. Operators that appear firs
 * `[INTERVAL](../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)`
 * `[BINARY](../sql-statements/built-in-functions/string-functions/binary-operator.md)`, `[COLLATE](../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md#literals)`
 * `[!](logical-operators/not.md)`
-* `[-](arithmetic-operators/subtraction-operator-.md)` (unary minus), [bitwise not](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-not.md) () (unary bit inversion)
+* `[-](arithmetic-operators/subtraction-operator-.md)` (unary minus), [bitwise not](../../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-not.md) () (unary bit inversion)
 * `||` (string concatenation)
 * `[^](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-xor.md)`
 * `[*](../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md)`, `[/](../sql-statements/built-in-functions/numeric-functions/division-operator.md)`, `[DIV](../sql-statements/built-in-functions/numeric-functions/div.md)`, `[%](arithmetic-operators/modulo-operator.md)`, `[MOD](../sql-statements/built-in-functions/numeric-functions/mod.md)`
@@ -26,15 +26,15 @@ The following list shows the SQL operator precedence. Operators that appear firs
 
 Functions precedence is always higher than operators precedence.
 
-In this page `CASE` refers to the [CASE operator](../sql-statements/built-in-functions/control-flow-functions/case-operator.md), not to the [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md)`.`
+In this page `CASE` refers to the [CASE operator](../../sql-statements/built-in-functions/control-flow-functions/case-operator.md), not to the [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md)`.`
 
 If the `HIGH_NOT_PRECEDENCE` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set, `NOT` has the same precedence as `!`.
 
-The `||` operator's precedence, as well as its meaning, depends on the `PIPES_AS_CONCAT` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) flag: if it is on, `||` can be used to concatenate strings (like the [CONCAT()](../sql-statements/built-in-functions/string-functions/concat.md) function) and has a higher precedence.
+The `||` operator's precedence, as well as its meaning, depends on the `PIPES_AS_CONCAT` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) flag: if it is on, `||` can be used to concatenate strings (like the [CONCAT()](../../sql-statements/built-in-functions/string-functions/concat.md) function) and has a higher precedence.
 
 The `=` operator's precedence depends on the context - it is higher when `=` is used as a comparison operator.
 
-[Parenthesis](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/parentheses.md) can be used to modify the operators precedence in an expression.
+[Parenthesis](../../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/parentheses.md) can be used to modify the operators precedence in an expression.
 
 ## Short-circuit evaluation
 

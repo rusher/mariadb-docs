@@ -7,7 +7,7 @@ The diagnostics area contains information about the error conditions which were 
 The statement information area contains the following data:
 
 * NUMBER is the number of conditions which are present in the diagnostics area.
-* ROW\_COUNT has the same value as the [ROW\_COUNT()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md) function for the statement that produced the conditions.
+* ROW\_COUNT has the same value as the [ROW\_COUNT()](../../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/row_count.md) function for the statement that produced the conditions.
 
 ## Condition Information
 
@@ -97,14 +97,14 @@ The following statements explicitly add conditions to the diagnostics area:
 The following statements read contents from the diagnostics area:
 
 * [GET DIAGNOSTICS](get-diagnostics.md) is the only way to read all information
-* [SHOW WARNINGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md) shows a summary of errors, warnings and notes
-* [SHOW ERRORS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md) shows a summary of errors
+* [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) shows a summary of errors, warnings and notes
+* [SHOW ERRORS](../../../reference/sql-statements/administrative-sql-statements/show/show-errors.md) shows a summary of errors
 
 [DECLARE HANDLER](../declare-handler.md) can be used to handle error conditions within stored programs.
 
 [DECLARE CONDITION](../declare-condition.md) can be used to associate an SQLSTATE or an error code to a name. That name can be referenced in DECLARE HANDLER, SIGNAL and RESIGNAL statements.
 
-All these statements can also be executed inside a stored routine. However, only SHOW WARNINGS and SHOW ERRORS can be executed as a prepared statement. After an [EXECUTE](../../../reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement.md) statement, the diagnostics area contains information about the prepared statement, if it produces error conditions.
+All these statements can also be executed inside a stored routine. However, only SHOW WARNINGS and SHOW ERRORS can be executed as a prepared statement. After an [EXECUTE](../../../reference/sql-statements/prepared-statements/execute-statement.md) statement, the diagnostics area contains information about the prepared statement, if it produces error conditions.
 
 ## See Also
 
@@ -112,8 +112,8 @@ All these statements can also be executed inside a stored routine. However, only
 * [SIGNAL](../signal.md)
 * [HANDLER](../../../reference/sql-statements-and-structure/nosql/handler/)
 * [GET DIAGNOSTICS](get-diagnostics.md)
-* [SHOW WARNINGS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md)
-* [SHOW ERRORS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-errors.md)
+* [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md)
+* [SHOW ERRORS](../../../reference/sql-statements/administrative-sql-statements/show/show-errors.md)
 * [DECLARE HANDLER](../declare-handler.md)
 * [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
 

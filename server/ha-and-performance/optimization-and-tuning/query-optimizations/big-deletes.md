@@ -2,7 +2,7 @@
 
 ## The problem
 
-How to [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) lots of rows from a large table? Here is an example of purging items older than 30 days:
+How to [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) lots of rows from a large table? Here is an example of purging items older than 30 days:
 
 ```
 DELETE FROM tbl WHERE 

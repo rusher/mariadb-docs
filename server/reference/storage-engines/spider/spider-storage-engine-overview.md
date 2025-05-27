@@ -4,7 +4,7 @@
 
 ![spider\_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png)
 
-The Spider storage engine is a [storage engine](../) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements-and-structure/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
+The Spider storage engine is a [storage engine](../) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
 
@@ -32,7 +32,7 @@ The Spider documentation on the MariaDB Knowledge Base is currently incomplete. 
 
 ### Basic Usage
 
-To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement are used to pass connection information about the remote server.
+To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement are used to pass connection information about the remote server.
 
 For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](../../../clients-and-utilities/legacy-clients-and-utilities/mysql-sandbox.md) tool, an easy way to test with multiple installations)::
 

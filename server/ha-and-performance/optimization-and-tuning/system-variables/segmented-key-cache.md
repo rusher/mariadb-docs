@@ -44,7 +44,7 @@ apply to segmented key caches: [key\_buffer\_size](../../../reference/storage-en
 
 ## Segmented Key Cache Statistics
 
-Statistics about the key cache can be found by looking at the[KEY\_CACHES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_caches-table.md) table in the [INFORMATION\_SCHEMA](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/)\
+Statistics about the key cache can be found by looking at the[KEY\_CACHES](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_caches-table.md) table in the [INFORMATION\_SCHEMA](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/)\
 database. Columns in this table are:
 
 | Column Name      | Description                                                                                                                     |

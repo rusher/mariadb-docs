@@ -1,27 +1,21 @@
-
 # BETWEEN AND
 
 ## Syntax
-
 
 ```
 expr BETWEEN min AND max
 ```
 
-
 ## Description
 
-
-If expr is greater than or equal to min and expr is less than or equal
-to max, BETWEEN returns 1, otherwise it returns 0. This is equivalent
-to the expression (min <= expr AND expr <= max) if all the arguments
-are of the same type. Otherwise type conversion takes place according
-to the rules described at [Type Conversion](../../sql-statements/built-in-functions/string-functions/type-conversion.md), but
+If expr is greater than or equal to min and expr is less than or equal\
+to max, BETWEEN returns 1, otherwise it returns 0. This is equivalent\
+to the expression (min <= expr AND expr <= max) if all the arguments\
+are of the same type. Otherwise type conversion takes place according\
+to the rules described at [Type Conversion](../../../sql-statements/built-in-functions/string-functions/type-conversion.md), but\
 applied to all the three arguments.
 
-
 ## Examples
-
 
 ```
 SELECT 1 BETWEEN 2 AND 3;
@@ -64,7 +58,6 @@ Warning (Code 1292): Truncated incorrect DOUBLE value: 'x-3'
 
 NULL:
 
-
 ```
 SELECT 1 BETWEEN 1 AND NULL;
 +----------------------+
@@ -75,7 +68,6 @@ SELECT 1 BETWEEN 1 AND NULL;
 ```
 
 DATE, DATETIME and TIMESTAMP examples. Omitting the time component compares against `00:00`, so later times on the same date are not returned:
-
 
 ```
 CREATE TABLE `x` (
@@ -113,9 +105,6 @@ SELECT * FROM x WHERE c BETWEEN '2018-11-11' AND '2018-11-12';
 
 ## See Also
 
-
 * [Operator Precedence](../operator-precedence.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

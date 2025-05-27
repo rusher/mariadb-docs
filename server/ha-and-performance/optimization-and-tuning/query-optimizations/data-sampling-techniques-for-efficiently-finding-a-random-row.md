@@ -7,7 +7,7 @@
 One would like to do "SELECT ... ORDER BY RAND() LIMIT 10" to get 10 rows at random. But this is slow. The optimizer does
 
 * Fetch all the rows -- this is costly
-* Append [RAND()](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/rand.md) to the rows
+* Append [RAND()](../../../reference/sql-statements/built-in-functions/numeric-functions/rand.md) to the rows
 * Sort the rows -- also costly
 * Pick the first 10.
 

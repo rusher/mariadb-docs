@@ -1,20 +1,14 @@
-
 # Information Schema plugins: SHOW and FLUSH statements
 
-Information Schema plugins can support [SHOW](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/README.md) and [FLUSH](../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
-
+Information Schema plugins can support [SHOW](../sql-statements/administrative-sql-statements/show/) and [FLUSH](../sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
 
 ## SHOW
 
-
 `SHOW` statements support is enabled automatically. A plugin only needs to specify column names for the `SHOW` statement in the `old_name` member of the field declaration structure. Columns with the `old_name` set to 0 will be hidden from the `SHOW` statement. If all columns are hidden, the `SHOW` statement will not work for this plugin.
-
 
 Note that `SHOW` statement is a user-friendly shortcut; it's easier to type and should be easier to view — if the Information Schema table contains many columns, the `SHOW` statement is supposed to display only most important columns and fit nicely on the 80x25 terminal screen.
 
-
 Consider an example, [LOCALES plugin](../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
-
 
 ```
 static ST_FIELD_INFO locale_info_locale_fields_info[]=
@@ -31,8 +25,7 @@ static ST_FIELD_INFO locale_info_locale_fields_info[]=
 };
 ```
 
-While the the [INFORMATION_SCHEMA.LOCALES](../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table has 8 columns, the [SHOW LOCALES](../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-locales.md) statement will only display 4 of them:
-
+While the the [INFORMATION\_SCHEMA.LOCALES](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table has 8 columns, the [SHOW LOCALES](../sql-statements/administrative-sql-statements/show/show-locales.md) statement will only display 4 of them:
 
 ```
 MariaDB [test]> show locales;
@@ -48,9 +41,7 @@ MariaDB [test]> show locales;
 
 ## FLUSH
 
-
-To support the `FLUSH` statement a plugin must declare the `reset_table` callback. For example, in the [QUERY_RESPONSE_TIME](../plugins/other-plugins/query-response-time-plugin.md) plugin:
-
+To support the `FLUSH` statement a plugin must declare the `reset_table` callback. For example, in the [QUERY\_RESPONSE\_TIME](../plugins/other-plugins/query-response-time-plugin.md) plugin:
 
 ```
 static int query_response_time_info_init(void *p)
@@ -64,6 +55,4 @@ static int query_response_time_info_init(void *p)
 }
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -4,13 +4,13 @@ When you create a table using the [InnoDB storage engine](../), data written to 
 
 When [innodb\_file\_per\_table=ON](../innodb-system-variables.md#innodb_file_per_table) is set, InnoDB uses one tablespace file per InnoDB table. These tablespace files have the `.ibd` extension. When [innodb\_file\_per\_table=OFF](../innodb-system-variables.md#innodb_file_per_table) is set, InnoDB stores all tables in the [InnoDB system tablespace](innodb-system-tablespaces.md).
 
-InnoDB versions in MySQL 5.7 and above also support an additional type of tablespace called [general tablespaces](https://dev.mysql.com/doc/refman/5.7/en/general-tablespaces.html) that are created with [CREATE TABLESPACE](https://dev.mysql.com/doc/refman/5.7/en/create-tablespace.html). However, InnoDB versions in MariaDB Server do not support general tablespaces or [CREATE TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-tablespace.md).
+InnoDB versions in MySQL 5.7 and above also support an additional type of tablespace called [general tablespaces](https://dev.mysql.com/doc/refman/5.7/en/general-tablespaces.html) that are created with [CREATE TABLESPACE](https://dev.mysql.com/doc/refman/5.7/en/create-tablespace.html). However, InnoDB versions in MariaDB Server do not support general tablespaces or [CREATE TABLESPACE](../../../sql-statements/data-definition/create/create-tablespace.md).
 
 ## File-Per-Table Tablespace Locations
 
 By default, InnoDB's file-per-table tablespaces are created in the system's data directory, which is defined by the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable. The system variable [innodb\_data\_home\_dir](../innodb-system-variables.md#innodb_data_home_dir) will not change the location of file-per-table tablespaces.
 
-In the event that you have a specific tablespace that you need stored in a dedicated path, you can set the location using the [DATA DIRECTORY](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#data-directoryindex-directory) table option when you create the table.
+In the event that you have a specific tablespace that you need stored in a dedicated path, you can set the location using the [DATA DIRECTORY](../../../sql-statements/data-definition/create/create-table.md#data-directoryindex-directory) table option when you create the table.
 
 For instance,
 
@@ -63,7 +63,7 @@ ALTER TABLE t1 IMPORT TABLESPACE;
 
 You can export a non-partitioned table by locking the table and copying the table's `.ibd` and `.cfg` files from the relevant [tablespace location](innodb-file-per-table-tablespaces.md#file-per-table-tablespace-locations) for the table to a backup location. For example, the process would go like this:
 
-* First, use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
+* First, use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
 
 ```
 FLUSH TABLES test.t1 FOR EXPORT;
@@ -78,7 +78,7 @@ This forces the server to close the table and provides your connection with a re
 # cp /data/contacts/test/t1.cfg /data/saved-tablespaces/
 ```
 
-* Then, once you've copied the files, you can release the lock with [UNLOCK TABLES](../../../sql-statements-and-structure/sql-statements/transactions/lock-tables.md):
+* Then, once you've copied the files, you can release the lock with [UNLOCK TABLES](../../../sql-statements/transactions/lock-tables.md):
 
 ```
 UNLOCK TABLES;
@@ -90,7 +90,7 @@ You can import a non-partitioned table by discarding the table's original tables
 
 For example, the process would go like this:
 
-* First, on the destination server, you need to create a copy of the table. Use the same [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) statement that was used to create the table on the original server.
+* First, on the destination server, you need to create a copy of the table. Use the same [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement that was used to create the table on the original server.
 
 ```
 CREATE TABLE test.t1 (
@@ -99,7 +99,7 @@ CREATE TABLE test.t1 (
 ) ENGINE=InnoDB;
 ```
 
-* Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the new table's tablespace:
+* Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the new table's tablespace:
 
 ```
 ALTER TABLE test.t1 DISCARD TABLESPACE;
@@ -114,7 +114,7 @@ ALTER TABLE test.t1 DISCARD TABLESPACE;
 
 File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablespace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
-* Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
+* Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
 
 ```
 ALTER TABLE test.t1 IMPORT TABLESPACE;
@@ -149,7 +149,7 @@ INSERT INTO test.t2 (name, employee_id) VALUES
    ('Will Fong', 16);
 ```
 
-* Then, we need to export the partitioned tablespace from the original server, which follows the same process as exporting non-partitioned tablespaces. That means that we need to use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
+* Then, we need to export the partitioned tablespace from the original server, which follows the same process as exporting non-partitioned tablespaces. That means that we need to use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
 
 ```
 FLUSH TABLES test.t2 FOR EXPORT;
@@ -182,7 +182,7 @@ $ sudo cp /var/lib/mysql/test/t2*.ibd /tmp/backup
 $ sudo cp /var/lib/mysql/test/t2*.cfg /tmp/backup
 ```
 
-* Then, once we've copied the files, we can release the lock with [UNLOCK TABLES](../../../sql-statements-and-structure/sql-statements/transactions/lock-tables.md):
+* Then, once we've copied the files, we can release the lock with [UNLOCK TABLES](../../../sql-statements/transactions/lock-tables.md):
 
 ```
 UNLOCK TABLES;
@@ -213,7 +213,7 @@ PARTITION BY RANGE (employee_id) (
 );
 ```
 
-* Then, using this table as a model, we need to create a placeholder of this table with the same structure that does not use partitioning. This can be done with a [CREATE TABLE... AS SELECT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#create-select) statement:
+* Then, using this table as a model, we need to create a placeholder of this table with the same structure that does not use partitioning. This can be done with a [CREATE TABLE... AS SELECT](../../../sql-statements/data-definition/create/create-table.md#create-select) statement:
 
 ```
 CREATE TABLE test.t2_placeholder LIKE test.t2;
@@ -226,7 +226,7 @@ This statement will create a new table called `t2_placeholder` that has the same
 
 From this point forward, the rest of our steps need to happen for each individual partition. For each partition, we need to do the following process:
 
-* First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the placeholder table's tablespace:
+* First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the placeholder table's tablespace:
 
 ```
 ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
@@ -242,7 +242,7 @@ ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
 
 File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablepace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
-* Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
+* Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
 
 ```
 ALTER TABLE test.t2_placeholder IMPORT TABLESPACE;
@@ -260,7 +260,7 @@ SELECT * FROM test.t2_placeholder;
 +-------------+--------------+
 ```
 
-* Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md#exchange-partition) statement:
+* Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../sql-statements/data-definition/alter/alter-table.md#exchange-partition) statement:
 
 ```
 ALTER TABLE test.t2 EXCHANGE PARTITION p0 WITH TABLE test.t2_placeholder;
@@ -320,7 +320,7 @@ See the pages for the [TIME](../../../data-types/date-and-time-data-types/time.m
 
 #### Differing ROW\_FORMAT Values
 
-InnoDB file-per-table tablespaces can use different [row formats](../innodb-row-formats/innodb-row-formats-overview.md). A specific row format can be specified when creating a table either by setting the [ROW\_FORMAT](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option or by the setting the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable. See [Setting a Table's Row Format](../innodb-row-formats/innodb-row-formats-overview.md) for more information on how to set an InnoDB table's row format.
+InnoDB file-per-table tablespaces can use different [row formats](../innodb-row-formats/innodb-row-formats-overview.md). A specific row format can be specified when creating a table either by setting the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option or by the setting the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable. See [Setting a Table's Row Format](../innodb-row-formats/innodb-row-formats-overview.md) for more information on how to set an InnoDB table's row format.
 
 If a file-per-tablespace file was created with a certain row format, then the tablespace file can only be imported into tables that were created with the same row format as the original table. Otherwise, you will see errors like the following:
 

@@ -33,7 +33,7 @@ sudo apt-get install mariadb-plugin-mroonga
 
 See [Plugin overview](../../plugins/plugin-overview.md) for details on installing and uninstalling plugins.
 
-[SHOW ENGINES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-engines.md) can be used to check whether Mroonga is installed correctly:
+[SHOW ENGINES](../../sql-statements/administrative-sql-statements/show/show-engines.md) can be used to check whether Mroonga is installed correctly:
 
 ```
 SHOW ENGINES;

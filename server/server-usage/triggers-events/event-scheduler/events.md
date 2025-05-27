@@ -4,11 +4,11 @@
 
 They function very similarly to the Windows Task Scheduler or Unix cron jobs.
 
-Creating, modifying or deleting events requires the [EVENT privilege](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#database-privileges).
+Creating, modifying or deleting events requires the [EVENT privilege](../../../reference/sql-statements/account-management-sql-commands/grant.md#database-privileges).
 
 ## Creating Events
 
-Events are created with the [CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-event.md) statement.
+Events are created with the [CREATE EVENT](../../../reference/sql-statements/data-definition/create/create-event.md) statement.
 
 ### Example
 
@@ -43,13 +43,13 @@ SET GLOBAL event_scheduler = ON;
 
 to activate it. If `event_scheduler` has been set to `Disabled`, you cannot change the value at runtime. Changing the value of the `event_scheduler` variable requires the SUPER privilege.
 
-Since [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes), setting the [event\_scheduler](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.
+Since [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes), setting the [event\_scheduler](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) system variable will also try to reload the [mysql.event table](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) if it was not properly loaded at startup.
 
 ## Viewing Current Events
 
-A list of current events can be obtained with the [SHOW EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-events.md) statement. This only shows the event name and interval - the full event details, including the SQL, can be seen by querying the [Information Schema EVENTS table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table.md), or with [SHOW CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-event.md).
+A list of current events can be obtained with the [SHOW EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-events.md) statement. This only shows the event name and interval - the full event details, including the SQL, can be seen by querying the [Information Schema EVENTS table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-events-table.md), or with [SHOW CREATE EVENT](../../../reference/sql-statements/administrative-sql-statements/show/show-create-event.md).
 
-If an event is currently being executed, it can be seen by querying the [Information Schema PROCESSLIST table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md), or with the [SHOW PROCESSLIST](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement.
+If an event is currently being executed, it can be seen by querying the [Information Schema PROCESSLIST table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md), or with the [SHOW PROCESSLIST](../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) statement.
 
 ### Example
 
@@ -97,7 +97,7 @@ ALTER EVENT test_event ON SCHEDULE EVERY '2:3' DAY_HOUR;
 
 ## Dropping Events
 
-Events are dropped with the [DROP EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-event.md) statement. Events are also also automatically dropped once they have run for the final time according to their schedule, unless the ON COMPLETION PRESERVE clause has been specified.
+Events are dropped with the [DROP EVENT](../../../reference/sql-statements/data-definition/drop/drop-event.md) statement. Events are also also automatically dropped once they have run for the final time according to their schedule, unless the ON COMPLETION PRESERVE clause has been specified.
 
 ### Example
 
@@ -108,10 +108,10 @@ Query OK, 0 rows affected (0.00 sec)
 
 ## See Also
 
-* [CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-event.md)
-* [SHOW CREATE EVENT](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-event.md)
+* [CREATE EVENT](../../../reference/sql-statements/data-definition/create/create-event.md)
+* [SHOW CREATE EVENT](../../../reference/sql-statements/administrative-sql-statements/show/show-create-event.md)
 * [ALTER EVENT](alter-event.md)
-* [DROP EVENT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-event.md)
+* [DROP EVENT](../../../reference/sql-statements/data-definition/drop/drop-event.md)
 * [Event Limitations](event-limitations.md)
 * [Automating MariaDB Tasks with Events](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/automated-mariadb-deployment-and-administration/automating-mariadb-tasks-with-events.md)
 

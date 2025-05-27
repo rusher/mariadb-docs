@@ -44,23 +44,23 @@ From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 ### NO\_DUP\_KEY\_WARNINGS\_WITH\_IGNORE
 
-Don't print duplicate key warnings when using INSERT [IGNORE](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/ignore.md).
+Don't print duplicate key warnings when using INSERT [IGNORE](../../reference/sql-statements/data-manipulation/inserting-loading-data/ignore.md).
 
 ### NO\_NULL\_COLLATION\_IDS
 
-A compatibility setting to support connectors (in particular MySQL Connector/NET) that give an exception when collation ids returned by [SHOW COLLATION](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-collation.md) are NULL. It is automatically set when a MySQL Connector/NET connection is determined. From [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes).
+A compatibility setting to support connectors (in particular MySQL Connector/NET) that give an exception when collation ids returned by [SHOW COLLATION](../../reference/sql-statements/administrative-sql-statements/show/show-collation.md) are NULL. It is automatically set when a MySQL Connector/NET connection is determined. From [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes).
 
 ### NO\_PROGRESS\_INFO
 
-Don't show progress information in [SHOW PROCESSLIST](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md).
+Don't show progress information in [SHOW PROCESSLIST](../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md).
 
 ### OLD\_FLUSH\_STATUS
 
-From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), restores the pre-[MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) behavior of [FLUSH STATUS](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-status).
+From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), restores the pre-[MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) behavior of [FLUSH STATUS](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-status).
 
 ### SESSION\_USER\_IS\_USER
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), restores the pre-[MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) behavior of [SESSION\_USER](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md).
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), restores the pre-[MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117) behavior of [SESSION\_USER](../../reference/sql-statements/built-in-functions/secondary-functions/information-functions/session_user.md).
 
 ### UTF8\_IS\_UTF8MB3
 
@@ -68,7 +68,7 @@ From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 ### ZERO\_DATE\_TIME\_CAST
 
-When a [TIME](../../reference/data-types/date-and-time-data-types/time.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT\_DATE](../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
+When a [TIME](../../reference/data-types/date-and-time-data-types/time.md) value is cast to a [DATETIME](../../reference/data-types/date-and-time-data-types/datetime.md), the date part will be `0000-00-00`, not [CURRENT\_DATE](../../reference/sql-statements/built-in-functions/date-time-functions/curdate.md) (as dictated by the SQL standard).
 
 ## OLD\_MODE and Stored Programs
 

@@ -1,9 +1,6 @@
-
 # VARBINARY
 
-
 ## Syntax
-
 
 ```
 VARBINARY(M)
@@ -11,30 +8,21 @@ VARBINARY(M)
 
 ## Description
 
-
 The VARBINARY type is similar to the [VARCHAR](varchar.md) type, but stores binary byte strings rather than non-binary character strings. `M` represents the maximum column length in bytes.
 
-
-It contains no [character set](character-sets/README.md), and comparison and sorting are based on the numeric value of the bytes.
-
+It contains no [character set](character-sets/), and comparison and sorting are based on the numeric value of the bytes.
 
 If the maximum length is exceeded, and [SQL strict mode](../../../server-management/variables-and-modes/sql-mode.md) is not enabled , the extra characters will be dropped with a warning. If strict mode is enabled, an error will occur.
 
-
 Unlike [BINARY](binary.md) values, VARBINARYs are not right-padded when inserting.
-
 
 ### Oracle Mode
 
-
 In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `RAW` is a synonym for `VARBINARY`.
-
 
 ## Examples
 
-
 Inserting too many characters, first with strict mode off, then with it on:
-
 
 ```
 CREATE TABLE varbins (a VARBINARY(10));
@@ -57,7 +45,6 @@ ERROR 1406 (22001): Data too long for column 'a' at row 1
 
 Sorting is performed with the byte value:
 
-
 ```
 TRUNCATE varbins;
 
@@ -74,8 +61,7 @@ SELECT * FROM varbins ORDER BY a;
 +------+
 ```
 
-Using [CAST](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
-
+Using [CAST](../../sql-statements/built-in-functions/string-functions/cast.md) to sort as a [CHAR](char.md) instead:
 
 ```
 SELECT * FROM varbins ORDER BY CAST(a AS CHAR);
@@ -91,12 +77,9 @@ SELECT * FROM varbins ORDER BY CAST(a AS CHAR);
 
 ### VARBINARY
 
-
-For our example of VARBINARY we picked a maximum size that avoids overflowing the maximum row size (65535). Keep in mind that a multi-byte character set would need more space in the row than a single-byte character set. We also avoid the auto-conversion of a VARBINARY into a BLOB, MEDIUMBLOB, or LONGBLOB that can happen when STRICT_TRANS_TABLES is not set in the SQL_MODE.
-
+For our example of VARBINARY we picked a maximum size that avoids overflowing the maximum row size (65535). Keep in mind that a multi-byte character set would need more space in the row than a single-byte character set. We also avoid the auto-conversion of a VARBINARY into a BLOB, MEDIUMBLOB, or LONGBLOB that can happen when STRICT\_TRANS\_TABLES is not set in the SQL\_MODE.
 
 The example:
-
 
 ```
 CREATE TABLE varbinary_example (
@@ -133,12 +116,9 @@ SELECT description, LENGTH(example) AS length
 
 ### Data Too Long
 
-
-When SQL_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
-
+When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
 Example of data too long behavior for VARBINARY:
-
 
 ```
 TRUNCATE varbinary_example;
@@ -153,11 +133,8 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## See Also
 
-
 * [VARCHAR](varchar.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

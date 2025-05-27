@@ -14,7 +14,7 @@ In [InnoDB](../reference/storage-engines/innodb/) tables, all indexes contain th
 
 Many tables use a numeric ID field as a primary key. The [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) attribute can be used to generate a unique identity for new rows, and is commonly-used with primary keys.
 
-Primary keys are usually added when the table is created with the [CREATE TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#indexes) statement. For example, the following creates a primary key on the ID field. Note that the ID field had to be defined as NOT NULL, otherwise the index could not have been created.
+Primary keys are usually added when the table is created with the [CREATE TABLE](../reference/sql-statements/data-definition/create/create-table.md#indexes) statement. For example, the following creates a primary key on the ID field. Note that the ID field had to be defined as NOT NULL, otherwise the index could not have been created.
 
 ```
 CREATE TABLE `Employees` (
@@ -28,7 +28,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-You cannot create a primary key with the [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md), for example:
+You cannot create a primary key with the [CREATE INDEX](../reference/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../reference/sql-statements/data-definition/alter/alter-table.md), for example:
 
 ```
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
@@ -36,7 +36,7 @@ ALTER TABLE Employees ADD PRIMARY KEY(ID);
 
 ### Finding Tables Without Primary Keys
 
-Tables in the `[information_schema](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/README.md)` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY\_COLUMN\_USAGE](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
+Tables in the `[information_schema](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/README.md)` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY\_COLUMN\_USAGE](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
 
 ```
 SELECT t.TABLE_SCHEMA, t.TABLE_NAME
@@ -75,7 +75,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-Unique keys can also be added after the table is created with the [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) command, for example:
+Unique keys can also be added after the table is created with the [CREATE INDEX](../reference/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../reference/sql-statements/data-definition/alter/alter-table.md) command, for example:
 
 ```
 ALTER TABLE Employees ADD UNIQUE `EmpCode`(`Employee_Code`);
@@ -149,7 +149,7 @@ SELECT (3, NULL) = (3, NULL);
 +---------------------- +
 ```
 
-In MariaDB you can combine this with [virtual columns](../reference/sql-statements-and-structure/sql-statements/data-definition/create/generated-columns.md) to\
+In MariaDB you can combine this with [virtual columns](../reference/sql-statements/data-definition/create/generated-columns.md) to\
 enforce uniqueness over a subset of rows in a table:
 
 ```
@@ -242,7 +242,7 @@ uses. Any extra will waste resources. In an application with very small tables,\
 indexes will not make much difference but as soon as your tables are larger\
 than your buffer sizes the indexes will start to speed things up dramatically.
 
-Using the [EXPLAIN](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) statement on your queries can help you decide which columns need indexing.
+Using the [EXPLAIN](../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) statement on your queries can help you decide which columns need indexing.
 
 If you query contains something like `LIKE '%word%'`, without a fulltext index you are using a full table scan every time, which is very slow.
 
@@ -250,7 +250,7 @@ If your table has a large number of reads and writes, consider using delayed\
 writes. This uses the db engine in a "batch" write mode, which cuts down on\
 disk io, therefore increasing performance.
 
-Use the [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command to create an index.
+Use the [CREATE INDEX](../reference/sql-statements/data-definition/create/create-index.md) command to create an index.
 
 If you are building a large table then for best performance add the index after\
 the table is populated with data. This is to increase the insert performance\
@@ -258,7 +258,7 @@ and remove the index overhead during inserts.
 
 ## Viewing Indexes
 
-You can view which indexes are present on a table, as well as details about them, with the [SHOW INDEX](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-index.md) statement.
+You can view which indexes are present on a table, as well as details about them, with the [SHOW INDEX](../reference/sql-statements/administrative-sql-statements/show/show-index.md) statement.
 
 If you want to know how to re-create an index, run `[SHOW CREATE TABLE](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)`.
 
@@ -267,7 +267,7 @@ If you want to know how to re-create an index, run `[SHOW CREATE TABLE](../refer
 If an index is rarely used (or not used at all) then remove it to increase INSERT,\
 and UPDATE performance.
 
-If [user statistics](../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, the [Information Schema](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/) [INDEX\_STATISTICS](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md) table stores the index usage.
+If [user statistics](../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, the [Information Schema](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) [INDEX\_STATISTICS](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md) table stores the index usage.
 
 If the [slow query log](../server-management/server-monitoring-logs/slow-query-log/) is enabled and the `[log_queries_not_using_indexes](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_queries_not_using_indexes)` server system variable is `ON`, the queries which do not use indexes are logged.
 

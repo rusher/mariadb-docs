@@ -79,7 +79,7 @@ In MariaDB, binary values can be written in one of the following ways:
 * `0value`\
   where `value` is a sequence of 0 and 1 digits. Hexadecimal syntax can also be used. For more details, see [Binary Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/binary-literals.md) and [Hexadecimal Literals](../../../../reference/sql-statements-and-structure/sql-language-structure/hexadecimal-literals.md).
 
-MariaDB and SQL Server have different sets of bitwise operators. See [Bit Functions and Operators](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/).
+MariaDB and SQL Server have different sets of bitwise operators. See [Bit Functions and Operators](../../../../reference/sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/).
 
 ## BOOLEAN Pseudo-Type
 
@@ -104,7 +104,7 @@ In MariaDB `'True'` and `'False'` are always strings.
 You may also consider the following MariaDB types:
 
 * [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) has little to do with SQL Server's `timestamp`. In MariaDB it is the number of seconds elapsed since the beginning of 1970-01-01, with a decimal precision up to 6 digits (0 by default). The maximum allowed value is '2038-01-19 03:14:07'. Values are always stored in UTC. A TIMESTAMP column can optionally be automatically set to the current timestamp on insert, on update, or both. It is not meant to be a unique row identifier. Also, in MariaDB the range of TIMESTAMP values is
-* [YEAR](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/date-time-functions/year.md) is a 1-byte type representing years between 1901 and 2155, as well as 0000.
+* [YEAR](../../../../reference/sql-statements/built-in-functions/date-time-functions/year.md) is a 1-byte type representing years between 1901 and 2155, as well as 0000.
 
 ### Zero Values
 
@@ -177,7 +177,7 @@ A way to preserve much more information is to use a [temporal table](../../../..
 
 MariaDB does not support the `sql_variant` type.
 
-MariaDB is quite flexible about implicit and explicit [type conversions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/type-conversion.md). Therefore, for most cases storing the values as a string should be equivalent to using `sql_variant`.
+MariaDB is quite flexible about implicit and explicit [type conversions](../../../../reference/sql-statements/built-in-functions/string-functions/type-conversion.md). Therefore, for most cases storing the values as a string should be equivalent to using `sql_variant`.
 
 Be aware that the maximum length of an `sql_variant` value is 8,000 bytes. In MariaDB, you may need to use `TINYBLOB`.
 
@@ -187,7 +187,7 @@ While MariaDB does not support the `uniqueidentifier` type, the [UUID](../../../
 
 `uniqueidentifier` columns contain 16-bit GUIDs. MariaDB UUID columns store UUIDv1 values (128 bits).
 
-The UUID type was implemented in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107). On older versions, you can generate unique values with the [UUID()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) or [UUID\_SHORT()](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) functions, and store them in `BIT(128)` or `BIT(64)` columns, respectively.
+The UUID type was implemented in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107). On older versions, you can generate unique values with the [UUID()](../../../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid.md) or [UUID\_SHORT()](../../../../reference/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/uuid_short.md) functions, and store them in `BIT(128)` or `BIT(64)` columns, respectively.
 
 ### xml
 
@@ -201,7 +201,7 @@ With SQL Server, typically JSON documents are stored in `nvarchar` columns in a 
 
 MariaDB has a [JSON](../../../../reference/data-types/string-data-types/json.md) pseudo-type that maps to [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md). However, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) the `JSON` pseudo-type also checks that the value is valid a JSON document.
 
-MariaDB supports different JSON functions than SQL Server. MariaDB currently has more functions, and SQL Server syntax will not work. See [JSON functions](../../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/) for more information.
+MariaDB supports different JSON functions than SQL Server. MariaDB currently has more functions, and SQL Server syntax will not work. See [JSON functions](../../../../reference/sql-statements/built-in-functions/special-functions/json-functions/) for more information.
 
 ## MariaDB Specific Types
 

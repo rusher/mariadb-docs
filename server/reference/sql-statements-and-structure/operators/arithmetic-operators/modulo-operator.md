@@ -1,8 +1,6 @@
-
 # Modulo Operator (%)
 
 ## Syntax
-
 
 ```
 N % M
@@ -10,12 +8,9 @@ N % M
 
 ## Description
 
-
-Modulo operator. Returns the remainder of `N` divided by `M`. See also [MOD](../../sql-statements/built-in-functions/numeric-functions/mod.md).
-
+Modulo operator. Returns the remainder of `N` divided by `M`. See also [MOD](../../../sql-statements/built-in-functions/numeric-functions/mod.md).
 
 ## Examples
-
 
 ```
 SELECT 1042 % 50;
@@ -28,9 +23,6 @@ SELECT 1042 % 50;
 
 ## See Also
 
-
 * [Operator Precedence](../operator-precedence.md)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

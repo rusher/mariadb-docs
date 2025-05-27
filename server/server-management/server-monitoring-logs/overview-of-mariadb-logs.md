@@ -39,7 +39,7 @@ Note that storage engines can have their logs too: for example, InnoDB keeps an 
 * Required for point-in-time recovery.
 * Binary log files are mainly used by replication and can also be used with [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to apply on a backup to get the database up to date.
 * One can decide what to log with [--binlog-ignore-db=database\_name](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or [--binlog-do-db=database\_name](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
-* The super user can disable logging for a connection by [setting SQL\_LOG\_BIN](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) to 0. However while this is 0, no changes done in this connection will be replicated to the slaves!
+* The super user can disable logging for a connection by [setting SQL\_LOG\_BIN](../../reference/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) to 0. However while this is 0, no changes done in this connection will be replicated to the slaves!
 * For examples, see [Using and Maintaining the Binary Log](binary-log/using-and-maintaining-the-binary-log.md).
 
 ### Examples

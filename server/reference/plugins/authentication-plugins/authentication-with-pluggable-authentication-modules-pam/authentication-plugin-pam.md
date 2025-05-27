@@ -27,7 +27,7 @@ The `pam` authentication plugin's library is provided in [binary packages](../..
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
 ```
 INSTALL SONAME 'auth_pam';
@@ -45,7 +45,7 @@ plugin_load_add = auth_pam
 
 The `auth_pam` shared library actually refers to version `2.0` of the `pam` authentication plugin. Version `1.0` of the plugin as the `auth_pam_v1` shared library is also available.
 
-If you need to install version `1.0` of the authentication plugin instead of version `2.0`, then you can do so. For example, with [INSTALL SONAME](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
+If you need to install version `1.0` of the authentication plugin instead of version `2.0`, then you can do so. For example, with [INSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md):
 
 ```
 INSTALL SONAME 'auth_pam_v1';
@@ -61,7 +61,7 @@ plugin_load_add = auth_pam_v1
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
 ```
 UNINSTALL SONAME 'auth_pam';
@@ -142,13 +142,13 @@ The `pam` authentication plugin uses a [setuid](https://linux.die.net/man/2/setu
 
 ## Creating Users
 
-Similar to all other [authentication plugins](../), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) while specifying the name of the plugin in the [IDENTIFIED VIA](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause. For example:
+Similar to all other [authentication plugins](../), to create a user in MariaDB which uses the `pam` authentication plugin, you would execute [CREATE USER](../../../sql-statements/account-management-sql-commands/create-user.md) while specifying the name of the plugin in the [IDENTIFIED VIA](../../../sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause. For example:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA pam;
 ```
 
-If [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). For example:
+If [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user this way with [GRANT](../../../sql-statements/account-management-sql-commands/grant.md). For example:
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA pam;
@@ -412,7 +412,7 @@ The `pam` authentication plugin isolates PAM module code from the server address
 
 When a [password validation plugin](../../password-validation-plugins/) is enabled, MariaDB won't allow an account to be created if the password validation plugin says that the account's password is too weak. This creates a problem for accounts that authenticate with the `pam` authentication plugin, since MariaDB has no knowledge of the user's password. When a user tries to create an account that authenticates with the `pam` authentication plugin, the password validation plugin would throw an error, even with [strict\_password\_validation=OFF](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) set.
 
-The workaround is to uninstall the [password validation plugin](../../password-validation-plugins/) with [UNINSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md), and then create the account, and then reinstall the [password validation plugin](../../../mariadb-internals/password-validation.md) with [INSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md).
+The workaround is to uninstall the [password validation plugin](../../password-validation-plugins/) with [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md), and then create the account, and then reinstall the [password validation plugin](../../../mariadb-internals/password-validation.md) with [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md).
 
 For example:
 
@@ -537,10 +537,10 @@ You may find the following PAM-related tutorials helpful:
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--pam=value`
 * Data Type: `enumerated`

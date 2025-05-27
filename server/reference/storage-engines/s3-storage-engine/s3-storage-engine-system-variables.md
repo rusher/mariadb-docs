@@ -24,7 +24,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `s3_block_size`
 
-* Description: The default block size for a table, if not specified in [CREATE TABLE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md). Set to 4M as default. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
+* Description: The default block size for a table, if not specified in [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md). Set to 4M as default. See [mysqld startup options for S3](using-the-s3-storage-engine.md#mysqld-startup-options-for-s3).
 * Commandline: `--s3-block-size=#`
 * Scope: Global
 * Dynamic: Yes

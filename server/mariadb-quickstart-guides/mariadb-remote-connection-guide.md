@@ -150,7 +150,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
+* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
 
 ```
 SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
@@ -188,7 +188,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%'
 
 (% is a wildcard)
 
-For more information about how to use GRANT, please see the [GRANT](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)\
+For more information about how to use GRANT, please see the [GRANT](../reference/sql-statements/account-management-sql-commands/grant.md)\
 page.
 
 At this point we have accomplished our goal and we have a user 'root' that can\

@@ -1,6 +1,6 @@
 # MariaDB Audit Plugin Options and System Variables
 
-There are a several options and system variables related to the [MariaDB Audit Plugin](./), once it has been [installed](mariadb-audit-plugin-installation.md). System variables can be displayed using the [SHOW VARIABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement like so:
+There are a several options and system variables related to the [MariaDB Audit Plugin](./), once it has been [installed](mariadb-audit-plugin-installation.md). System variables can be displayed using the [SHOW VARIABLES](../../sql-statements/administrative-sql-statements/show/show-variables.md) statement like so:
 
 ```
 SHOW GLOBAL VARIABLES LIKE '%server_audit%';

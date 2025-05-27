@@ -8,7 +8,7 @@ addition, the binary log, while not a storage engine as such, also supports\
 the new API and can provide a binlog position consistent with storage engine\
 transaction snapshots.
 
-This means that with transaction isolation level at least [REPEATABLE READ](../../reference/sql-statements-and-structure/sql-statements/transactions/set-transaction.md#repeatable-read), the`START TRANSACTION WITH CONSISTENT SNAPSHOT` statement can be used to ensure\
+This means that with transaction isolation level at least [REPEATABLE READ](../../reference/sql-statements/transactions/set-transaction.md#repeatable-read), the`START TRANSACTION WITH CONSISTENT SNAPSHOT` statement can be used to ensure\
 that queries will see a transaction-consistent view of the database also\
 between storage engines. It is then not possible for a query to see the\
 changes from some transaction T in XtraDB tables without also seeing the\
@@ -92,7 +92,7 @@ For more information on the design and implementation of this feature, see [MWL#
 
 ## See Also
 
-* [START TRANSACTION](../../reference/sql-statements-and-structure/sql-statements/transactions/start-transaction.md)
+* [START TRANSACTION](../../reference/sql-statements/transactions/start-transaction.md)
 * [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 * [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../reference/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 

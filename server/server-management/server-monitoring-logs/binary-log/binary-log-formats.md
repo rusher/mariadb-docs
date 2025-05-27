@@ -34,8 +34,8 @@ In certain cases when it would be impossible to execute the statement on the rep
 row-based logging for the statement. Some cases of this are:
 
 * When replication has been changed from row-based to statement-based and a statement uses data from a temporary table created during row-based mode. In this case, the temporary tables are not stored on the replica, so row logging is the only alternative.
-* [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/), to another storage engine.
-* One is using [SEQUENCEs](../../../reference/sql-statements-and-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) definition.
+* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/), to another storage engine.
+* One is using [SEQUENCEs](../../../reference/sql-statements-and-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) definition.
 
 In certain cases, a statement may not be deterministic, and therefore not safe for [replication](broken-reference). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
 
@@ -79,7 +79,7 @@ When using row base logging, some statement works different on the master.
 
 * DELETE FROM table\_name
   * In row base mode the table will always use deletion row-by-row which can take a long time if the table is big. It can also use a lot of space in the binary log.
-  * In STATEMENT or MIXED mode, [truncate](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate.md) will be used, if possible (no triggers, no foreign keys etc). This is much faster and uses less space in the binary log.
+  * In STATEMENT or MIXED mode, [truncate](../../../reference/sql-statements/built-in-functions/numeric-functions/truncate.md) will be used, if possible (no triggers, no foreign keys etc). This is much faster and uses less space in the binary log.
 
 ## Compression of the Binary Log
 
@@ -87,13 +87,13 @@ When using row base logging, some statement works different on the master.
 
 ## Configuring the Binary Log Format
 
-The format for [binary log](./) events can be configured by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. If you have the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege, then you can change it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The format for [binary log](./) events can be configured by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. If you have the [SUPER](../../../reference/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege, then you can change it dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL binlog_format='ROW';
 ```
 
-You can also change it dynamically for just a specific session with [SET SESSION](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+You can also change it dynamically for just a specific session with [SET SESSION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET SESSION binlog_format='ROW';
@@ -109,7 +109,7 @@ binlog_format=ROW
 
 Be careful when changing the binary log format when using [replication](broken-reference). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
 
-Be careful changing the binary log format dynamically when the server is a replica and [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md) is enabled. If you change the global value dynamically, then that does not also affect the session values of any currently running threads. This can cause problems with [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md), because the [worker threads](../../../ha-and-performance/standard-replication/replication-threads.md#worker-threads) will remain running even after [STOP SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) is executed. This can be worked around by resetting the [slave\_parallel\_threads](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. For example:
+Be careful changing the binary log format dynamically when the server is a replica and [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md) is enabled. If you change the global value dynamically, then that does not also affect the session values of any currently running threads. This can cause problems with [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md), because the [worker threads](../../../ha-and-performance/standard-replication/replication-threads.md#worker-threads) will remain running even after [STOP SLAVE](../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) is executed. This can be worked around by resetting the [slave\_parallel\_threads](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. For example:
 
 ```
 STOP SLAVE;
@@ -131,11 +131,11 @@ The binary log format is upwards-compatible. This means replication should alway
 
 Statements that affect the `mysql` database can be logged in a different way to that expected.
 
-If the mysql database is edited directly, logging is performed as expected according to the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). Statements that directly edit the mysql database include [INSERT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), [DELETE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md), [REPLACE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/replace.md), [DO](../../../reference/sql-statements-and-structure/sql-statements/stored-routine-statements/do.md), [LOAD DATA INFILE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md), and [TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md).
+If the mysql database is edited directly, logging is performed as expected according to the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). Statements that directly edit the mysql database include [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md), [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md), [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md), [DO](../../../reference/sql-statements/stored-routine-statements/do.md), [LOAD DATA INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md), [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md), and [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md).
 
-If the `mysql` database is edited indirectly, statement logging is used regardless of [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) setting. Statements editing the `mysql` database indirectly include [GRANT](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md), [REVOKE](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/revoke.md), [SET PASSWORD](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md), [RENAME USER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/rename-user.md), [ALTER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/), [DROP](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/) and [CREATE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/) (except for the situation described below).
+If the `mysql` database is edited indirectly, statement logging is used regardless of [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) setting. Statements editing the `mysql` database indirectly include [GRANT](../../../reference/sql-statements/account-management-sql-commands/grant.md), [REVOKE](../../../reference/sql-statements/account-management-sql-commands/revoke.md), [SET PASSWORD](../../../reference/sql-statements/account-management-sql-commands/set-password.md), [RENAME USER](../../../reference/sql-statements/account-management-sql-commands/rename-user.md), [ALTER](../../../reference/sql-statements/data-definition/alter/), [DROP](../../../reference/sql-statements/data-definition/drop/) and [CREATE](../../../reference/sql-statements/data-definition/create/) (except for the situation described below).
 
-CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md) portion of the statement is logged using statement-based logging, while the [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) portion is logged according to the value of `binlog_format`.
+CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) portion of the statement is logged using statement-based logging, while the [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) portion is logged according to the value of `binlog_format`.
 
 ## See Also
 

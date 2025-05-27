@@ -17,9 +17,9 @@ The following restrictions apply to [triggers](./).
 
 * [Trigger Overview](trigger-overview.md)
 * [CREATE TRIGGER](create-trigger.md)
-* [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
-* [Information Schema TRIGGERS Table](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
-* [SHOW TRIGGERS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-triggers.md)
-* [SHOW CREATE TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
+* [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md)
+* [Information Schema TRIGGERS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md)
+* [SHOW TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/show/show-triggers.md)
+* [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 
 CC BY-SA / Gnu FDL

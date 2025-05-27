@@ -1,0 +1,28 @@
+# Information Schema ROCKSDB\_TRX Table
+
+The [Information Schema](../../) `ROCKSDB_TRX` table is included as part of the [MyRocks](../../../../../../storage-engines/myrocks/) storage engine.
+
+The `PROCESS` [privilege](../../../../../account-management-sql-commands/grant.md) is required to view the table.
+
+It contains the following columns:
+
+| Column                      | Description |
+| --------------------------- | ----------- |
+| Column                      | Description |
+| TRANSACTION\_ID             |             |
+| STATE                       |             |
+| NAME                        |             |
+| WRITE\_COUNT                |             |
+| LOCK\_COUNT                 |             |
+| TIMEOUT\_SEC                |             |
+| WAITING\_KEY                |             |
+| WAITING\_COLUMN\_FAMILY\_ID |             |
+| IS\_REPLICATION             |             |
+| SKIP\_TRX\_API              |             |
+| READ\_ONLY                  |             |
+| HAS\_DEADLOCK\_DETECTION    |             |
+| NUM\_ONGOING\_BULKLOAD      |             |
+| THREAD\_ID                  |             |
+| QUERY                       |             |
+
+CC BY-SA / Gnu FDL
