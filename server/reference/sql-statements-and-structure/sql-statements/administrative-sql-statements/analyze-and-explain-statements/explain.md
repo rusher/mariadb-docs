@@ -6,11 +6,17 @@
 EXPLAIN tbl_name [col_name | wild]
 ```
 
-Or
+or
 
 ```sql
 EXPLAIN [EXTENDED | PARTITIONS | FORMAT=JSON] 
   {SELECT select_options | UPDATE update_options | DELETE delete_options}
+```
+
+or
+
+```sql
+EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>
 ```
 
 ## Description
@@ -26,6 +32,7 @@ The `EXPLAIN` statement can be used either as a synonym for[DESCRIBE](../describ
 * `EXPLAIN PARTITIONS` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../../server-management/partitioning-tables/partition-pruning-and-selection.md).
 * [ANALYZE statement](analyze-statement.md) performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics.
 * `EXPLAIN` output can be printed in the [slow query log](../../../../../server-management/server-monitoring-logs/slow-query-log/). See [EXPLAIN in the Slow Query Log](../../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
+* `EXPLAIN FOR CONNECTION` is an alias for `SHOW EXPLAIN FOR`.
 
 [SHOW EXPLAIN](../show/show-explain.md) shows the output of a running statement. In some cases, its output can be closer to reality than `EXPLAIN`.
 
