@@ -2661,7 +2661,6 @@
           * [EXPLAIN ANALYZE](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-analyze.md)
           * [EXPLAIN FORMAT=JSON](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-format-json.md)
           * [EXPLAIN](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md)
-          * [EXPLAIN FOR CONNECTION](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain-1.md)
           * [Using Buffer UPDATE Algorithm](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/using-buffer-update-algorithm.md)
         * [BACKUP Commands](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/README.md)
           * [BACKUP LOCK](reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-lock.md)
