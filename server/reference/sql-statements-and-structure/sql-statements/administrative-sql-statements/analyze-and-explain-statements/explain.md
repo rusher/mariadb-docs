@@ -2,13 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 EXPLAIN tbl_name [col_name | wild]
 ```
 
 Or
 
-```
+```sql
 EXPLAIN [EXTENDED | PARTITIONS | FORMAT=JSON] 
   {SELECT select_options | UPDATE update_options | DELETE delete_options}
 ```
