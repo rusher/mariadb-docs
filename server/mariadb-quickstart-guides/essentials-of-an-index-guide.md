@@ -55,6 +55,6 @@ would allow you to quickly find the phone numbers of all the cashiers, or the ph
 
 Where possible, you should create an index for each column that you search for records by, to avoid having the server read every row of a table.
 
-See [CREATE INDEX](../reference/sql-statements/data-definition/create/create-index.md) and [Getting Started with Indexes](../../kb/en/getting-started-with-indexes/) for more information.
+See [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) and [Getting Started with Indexes](../../kb/en/getting-started-with-indexes/) for more information.
 
 CC BY-SA / Gnu FDL

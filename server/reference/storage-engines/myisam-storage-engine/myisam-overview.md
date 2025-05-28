@@ -10,7 +10,7 @@ A MyISAM table is stored in three files on disk. There's a table definition file
 
 ## MyISAM features
 
-* Does not support [transactions](../../sql-statements/transactions/).
+* Does not support [transactions](../../sql-statements-and-structure/sql-statements/transactions/).
 * Does not support foreign keys.
 * Supports [FULLTEXT indexes](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
 * Supports [GIS](../../sql-structure/geometry/) data types.

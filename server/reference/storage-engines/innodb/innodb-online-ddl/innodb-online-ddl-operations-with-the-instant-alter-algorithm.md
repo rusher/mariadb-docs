@@ -464,7 +464,7 @@ This applies to [ALTER TABLE ... DROP PRIMARY KEY](../../../sql-statements/data-
 
 ### `ALTER TABLE ... ADD INDEX` and `CREATE INDEX`
 
-This applies to [ALTER TABLE ... ADD INDEX](../../../sql-statements/data-definition/alter/alter-table.md#add-index) and [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md) for [InnoDB](../) tables.
+This applies to [ALTER TABLE ... ADD INDEX](../../../sql-statements/data-definition/alter/alter-table.md#add-index) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) for [InnoDB](../) tables.
 
 #### Adding a Plain Index
 

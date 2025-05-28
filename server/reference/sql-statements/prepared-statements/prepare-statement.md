@@ -78,7 +78,7 @@ Prior to this, not all statements can be prepared. Only the following SQL comman
 * [CHECKSUM {TABLE | TABLES}](../table-statements/checksum-table.md)
 * [COMMIT](../transactions/commit.md)
 * {[CREATE](../data-definition/create/create-database.md) | [DROP](../data-definition/drop/drop-database.md)} DATABASE
-* {[CREATE](../data-definition/create/create-index.md) | [DROP](../data-definition/drop/drop-index.md)} INDEX
+* {[CREATE](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) | [DROP](../data-definition/drop/drop-index.md)} INDEX
 * {[CREATE](../data-definition/create/create-table.md) | [RENAME](../data-definition/rename-table.md) | [DROP](../data-definition/drop/drop-table.md)} TABLE
 * {[CREATE](../account-management-sql-statements/create-user.md) | [RENAME](../account-management-sql-statements/rename-user.md) | [DROP](../account-management-sql-statements/drop-user.md)} USER
 * {[CREATE](../../../server-usage/views/create-view.md) | [DROP](../../../server-usage/views/drop-view.md)} VIEW

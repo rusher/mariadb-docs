@@ -61,7 +61,7 @@ A rollback can also be triggered implicitly, when certain errors occur.
 
 You can experiment with transactions to check in which cases they implicitly commit or rollback. The [in\_transaction](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) system variable can help: it is set to 1 when a transaction is in progress, or 0 when no transaction is in progress.
 
-This section only covers the basic syntax for transactions. Much more options are available. For more information, see [Transactions](../../../../reference/sql-statements/transactions/).
+This section only covers the basic syntax for transactions. Much more options are available. For more information, see [Transactions](../../../../reference/sql-statements-and-structure/sql-statements/transactions/).
 
 ## Constraint Checking
 

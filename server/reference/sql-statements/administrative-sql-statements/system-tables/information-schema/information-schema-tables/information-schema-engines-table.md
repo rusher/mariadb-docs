@@ -4,15 +4,15 @@ The [Information Schema](../) `ENGINES` table displays status information about 
 
 It contains the following columns:
 
-| Column       | Description                                                                                        |
-| ------------ | -------------------------------------------------------------------------------------------------- |
-| Column       | Description                                                                                        |
-| ENGINE       | Name of the storage engine.                                                                        |
-| SUPPORT      | Whether the engine is the default, or is supported or not.                                         |
-| COMMENT      | Storage engine comments.                                                                           |
-| TRANSACTIONS | Whether or not the engine supports [transactions](../../../../transactions/).                      |
-| XA           | Whether or not the engine supports [XA transactions](../../../../transactions/xa-transactions.md). |
-| SAVEPOINTS   | Whether or not [savepoints](../../../../transactions/savepoint.md) are supported.                  |
+| Column       | Description                                                                                                                  |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| Column       | Description                                                                                                                  |
+| ENGINE       | Name of the storage engine.                                                                                                  |
+| SUPPORT      | Whether the engine is the default, or is supported or not.                                                                   |
+| COMMENT      | Storage engine comments.                                                                                                     |
+| TRANSACTIONS | Whether or not the engine supports [transactions](../../../../../sql-statements-and-structure/sql-statements/transactions/). |
+| XA           | Whether or not the engine supports [XA transactions](../../../../transactions/xa-transactions.md).                           |
+| SAVEPOINTS   | Whether or not [savepoints](../../../../transactions/savepoint.md) are supported.                                            |
 
 It provides identical information to the `[SHOW ENGINES](../../../show/show-engines.md)` statement. Since storage engines are plugins, different information about them is also shown in the `[information_schema.PLUGINS](plugins-table-information-schema.md)` table and by the `[SHOW PLUGINS](../../../show/show-plugins.md)` statement.
 

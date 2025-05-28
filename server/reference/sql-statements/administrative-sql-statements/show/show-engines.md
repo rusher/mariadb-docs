@@ -23,7 +23,7 @@ The output consists of the following columns:
 * `Engine` indicates the engine's name.
 * `Support` indicates whether the engine is installed, and whether it is the default engine for the current session.
 * `Comment` is a brief description.
-* `Transactions`, `XA` and `Savepoints` indicate whether [transactions](../../transactions/), [XA transactions](../../transactions/xa-transactions.md) and [transaction savepoints](../../transactions/savepoint.md) are supported by the engine.
+* `Transactions`, `XA` and `Savepoints` indicate whether [transactions](../../../sql-statements-and-structure/sql-statements/transactions/), [XA transactions](../../transactions/xa-transactions.md) and [transaction savepoints](../../transactions/savepoint.md) are supported by the engine.
 
 ## Examples
 

@@ -25,7 +25,7 @@ Currently, the following commands can send progress report messages to the\
 client:
 
 * [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md)
-* [CREATE INDEX](../../sql-statements/data-definition/create/create-index.md)
+* [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
 * [DROP INDEX](../../sql-statements/data-definition/drop/drop-index.md)
 * [LOAD DATA INFILE](../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) (not `LOAD DATA LOCAL INFILE`, as in that case we\
   don't know the size of the file).

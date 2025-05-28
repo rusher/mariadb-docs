@@ -4,7 +4,7 @@ This article is about the Sequence storage engine. For details about sequence ob
 
 A **Sequence** engine allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment.
 
-It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../sql-statements/transactions/), and [support XA](../sql-statements/transactions/xa-transactions.md).
+It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../sql-statements-and-structure/sql-statements/transactions/), and [support XA](../sql-statements/transactions/xa-transactions.md).
 
 ## Installing
 

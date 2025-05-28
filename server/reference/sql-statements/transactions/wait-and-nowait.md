@@ -25,7 +25,7 @@ The lock wait timeout can be explicitly set in the statement by using either `WA
 
 * [Query Limits and Timeouts](../../../ha-and-performance/optimization-and-tuning/query-optimizations/query-limits-and-timeouts.md)
 * [ALTER TABLE](../data-definition/alter/alter-table.md)
-* [CREATE INDEX](../data-definition/create/create-index.md)
+* [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
 * [DROP INDEX](../data-definition/drop/drop-index.md)
 * [DROP TABLE](../data-definition/drop/drop-table.md)
 * [LOCK TABLES and UNLOCK TABLES](lock-tables.md)

@@ -92,7 +92,7 @@ See [CREATE TABLE: Column Definitions](../create/create-table.md#column-definiti
 
 See [CREATE TABLE: Index Definitions](../create/create-table.md#index-definitions) for information about index definitions.
 
-The [CREATE INDEX](../create/create-index.md) and [DROP INDEX](../drop/drop-index.md) statements can also be used to add or remove an index.
+The [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) and [DROP INDEX](../drop/drop-index.md) statements can also be used to add or remove an index.
 
 ## Character Sets and Collations
 

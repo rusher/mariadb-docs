@@ -2,7 +2,7 @@
 
 ## Overview
 
-When a [transaction](../../sql-statements/transactions/) writes data, it always inserts them in the table indexes or data (in the buffer pool or in physical files). No private copies are created. The old versions of data being modified by active [InnoDB](./) transactions are stored in the undo log. The original data can then be restored, or viewed by a consistent read.
+When a [transaction](../../sql-statements-and-structure/sql-statements/transactions/) writes data, it always inserts them in the table indexes or data (in the buffer pool or in physical files). No private copies are created. The old versions of data being modified by active [InnoDB](./) transactions are stored in the undo log. The original data can then be restored, or viewed by a consistent read.
 
 ## Implementation Details
 

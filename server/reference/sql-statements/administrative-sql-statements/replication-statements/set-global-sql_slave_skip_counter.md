@@ -13,7 +13,7 @@ for recovering from [replication](broken-reference) stops caused by a statement.
 
 If multi-source replication is used, this statement applies to the default connection. It could be necessary to change the value of the [default\_master\_connection](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable.
 
-Note that, if the event is a [transaction](../../transactions/), the whole transaction will be skipped. With non-transactional engines, an event is always a single statement.
+Note that, if the event is a [transaction](../../../sql-statements-and-structure/sql-statements/transactions/), the whole transaction will be skipped. With non-transactional engines, an event is always a single statement.
 
 This statement is valid only when the replica threads are not running.\
 Otherwise, it produces an error.
