@@ -1,0 +1,9 @@
+---
+icon: earth-africa
+---
+
+# ENDPOINT
+
+A synonym for [ST\_ENDPOINT](st_endpoint.md).
+
+CC BY-SA / Gnu FDL

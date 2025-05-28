@@ -1,3 +1,7 @@
+---
+icon: earth-africa
+---
+
 # Geometry Types
 
 ## Description
@@ -9,28 +13,28 @@ tables. See also [SPATIAL INDEX](spatial-index.md).
 
 The basic geometry type is `GEOMETRY`. But the type can be more specific. The following types are supported:
 
-| Geometry Types                                                    |
-| ----------------------------------------------------------------- |
-| Geometry Types                                                    |
-| [POINT](geometry-constructors/point.md)                           |
-| [LINESTRING](geometry-constructors/linestring.md)                 |
-| [POLYGON](geometry-constructors/polygon.md)                       |
-| [MULTIPOINT](geometry-constructors/multipoint.md)                 |
-| [MULTILINESTRING](geometry-constructors/multilinestring.md)       |
-| [MULTIPOLYGON](geometry-constructors/multipolygon.md)             |
-| [GEOMETRYCOLLECTION](geometry-constructors/geometrycollection.md) |
-| GEOMETRY                                                          |
+| Geometry Types                                                                         |
+| -------------------------------------------------------------------------------------- |
+| Geometry Types                                                                         |
+| [POINT](../../sql-statements/geometry-constructors/point.md)                           |
+| [LINESTRING](../../sql-statements/geometry-constructors/linestring.md)                 |
+| [POLYGON](../../sql-statements/geometry-constructors/polygon.md)                       |
+| [MULTIPOINT](../../sql-statements/geometry-constructors/multipoint.md)                 |
+| [MULTILINESTRING](../../sql-statements/geometry-constructors/multilinestring.md)       |
+| [MULTIPOLYGON](../../sql-statements/geometry-constructors/multipolygon.md)             |
+| [GEOMETRYCOLLECTION](../../sql-statements/geometry-constructors/geometrycollection.md) |
+| GEOMETRY                                                                               |
 
 ## Examples
 
 **Note:** For clarity, only one type is listed per table in the examples below, but a table\
 row can contain multiple types. For example:
 
-```
+```sql
 CREATE TABLE object (shapeA POLYGON, shapeB LINESTRING);
 ```
 
-```
+```sql
 INSERT INTO geometry_example VALUES
   (Point(0, 0)),
   (ST_PolygonFromText('POLYGON((0 0, 0 1, 1 1, 1 0, 0 0))')),
@@ -44,7 +48,7 @@ INSERT INTO geometry_example VALUES
     (15 40, 15 20, 25 20, 30 25, 30 35, 25 40, 15 40)))'));
 ```
 
-```
+```sql
 SELECT ST_AsWKT(g) FROM geometry_example;
 
 +-----------------------------------------------------------------------------------------------+
@@ -59,9 +63,9 @@ SELECT ST_AsWKT(g) FROM geometry_example;
 +-----------------------------------------------------------------------------------------------+
 ```
 
-### [POINT](geometry-constructors/point.md)
+### [POINT](../../sql-statements/geometry-constructors/point.md)
 
-```
+```sql
 CREATE TABLE gis_point  (g POINT);
 SHOW FIELDS FROM gis_point;
 INSERT INTO gis_point VALUES
@@ -81,9 +85,9 @@ INSERT INTO gis_line VALUES
     (LineStringFromWKB(AsWKB(LineString(Point(10, 10), Point(40, 10)))));
 ```
 
-### [POLYGON](geometry-constructors/polygon.md)
+### [POLYGON](../../sql-statements/geometry-constructors/polygon.md)
 
-```
+```sql
 CREATE TABLE gis_polygon   (g POLYGON);
 SHOW FIELDS FROM gis_polygon;
 INSERT INTO gis_polygon VALUES
@@ -92,9 +96,9 @@ INSERT INTO gis_polygon VALUES
     (PolyFromWKB(AsWKB(Polygon(LineString(Point(0, 0), Point(30, 0), Point(30, 30), Point(0, 0))))));
 ```
 
-### [MULTIPOINT](geometry-constructors/multipoint.md)
+### [MULTIPOINT](../../sql-statements/geometry-constructors/multipoint.md)
 
-```
+```sql
 CREATE TABLE gis_multi_point (g MULTIPOINT);
 SHOW FIELDS FROM gis_multi_point;
 INSERT INTO gis_multi_point VALUES
@@ -103,9 +107,9 @@ INSERT INTO gis_multi_point VALUES
     (MPointFromWKB(AsWKB(MultiPoint(Point(3, 6), Point(4, 10)))));
 ```
 
-### [MULTILINESTRING](geometry-constructors/multilinestring.md)
+### [MULTILINESTRING](../../sql-statements/geometry-constructors/multilinestring.md)
 
-```
+```sql
 CREATE TABLE gis_multi_line (g MULTILINESTRING);
 SHOW FIELDS FROM gis_multi_line;
 INSERT INTO gis_multi_line VALUES
@@ -114,9 +118,9 @@ INSERT INTO gis_multi_line VALUES
     (MLineFromWKB(AsWKB(MultiLineString(LineString(Point(1, 2), Point(3, 5)), LineString(Point(2, 5), Point(5, 8), Point(21, 7))))));
 ```
 
-### [MULTIPOLYGON](geometry-constructors/multipolygon.md)
+### [MULTIPOLYGON](../../sql-statements/geometry-constructors/multipolygon.md)
 
-```
+```sql
 CREATE TABLE gis_multi_polygon  (g MULTIPOLYGON);
 SHOW FIELDS FROM gis_multi_polygon;
 INSERT INTO gis_multi_polygon VALUES
@@ -125,9 +129,9 @@ INSERT INTO gis_multi_polygon VALUES
     (MPolyFromWKB(AsWKB(MultiPolygon(Polygon(LineString(Point(0, 3), Point(3, 3), Point(3, 0), Point(0, 3)))))));
 ```
 
-### [GEOMETRYCOLLECTION](geometry-constructors/geometrycollection.md)
+### [GEOMETRYCOLLECTION](../../sql-statements/geometry-constructors/geometrycollection.md)
 
-```
+```sql
 CREATE TABLE gis_geometrycollection  (g GEOMETRYCOLLECTION);
 SHOW FIELDS FROM gis_geometrycollection;
 INSERT INTO gis_geometrycollection VALUES
@@ -139,7 +143,7 @@ INSERT INTO gis_geometrycollection VALUES
 
 ### [GEOMETRY](geometry-types.md)
 
-```
+```sql
 CREATE TABLE gis_geometry (g GEOMETRY);
 SHOW FIELDS FROM gis_geometry;
 INSERT into gis_geometry SELECT * FROM gis_point;

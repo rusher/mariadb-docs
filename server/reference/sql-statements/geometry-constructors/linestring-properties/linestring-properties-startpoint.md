@@ -1,0 +1,9 @@
+---
+icon: earth-africa
+---
+
+# STARTPOINT
+
+A synonym for [ST\_STARTPOINT](st_startpoint.md).
+
+CC BY-SA / Gnu FDL

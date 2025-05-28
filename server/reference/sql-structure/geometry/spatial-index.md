@@ -1,3 +1,7 @@
+---
+icon: earth-africa
+---
+
 # SPATIAL INDEX
 
 ## Description
@@ -9,19 +13,19 @@ Spatial indexes can be created when the table is created, or added after the fac
 
 * with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md):
 
-```
+```sql
 CREATE TABLE geom (g GEOMETRY NOT NULL, SPATIAL INDEX(g));
 ```
 
 * with [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md):
 
-```
+```sql
 ALTER TABLE geom ADD SPATIAL INDEX(g);
 ```
 
 * with [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md):
 
-```
+```sql
 CREATE SPATIAL INDEX sp_index ON geom (g);
 ```
 
@@ -36,13 +40,13 @@ To drop spatial indexes, use [ALTER TABLE](../../sql-statements/data-definition/
 
 * with [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md):
 
-```
+```sql
 ALTER TABLE geom DROP INDEX g;
 ```
 
 * with [DROP INDEX](../../sql-statements/data-definition/drop/drop-index.md):
 
-```
+```sql
 DROP INDEX sp_index ON geom;
 ```
 

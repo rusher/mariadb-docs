@@ -1,5 +1,0 @@
-
-# Geometry Constructors
-
-Geometry constructors
-

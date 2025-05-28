@@ -1,5 +1,0 @@
-
-# LineString Properties
-
-LineString properties
-

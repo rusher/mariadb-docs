@@ -6,13 +6,13 @@ The [Information Schema](../) `SPATIAL_REF_SYS` table stores information on each
 
 It contains the following columns:
 
-| Column     | Type          | Null | Description                                                                                                       |
-| ---------- | ------------- | ---- | ----------------------------------------------------------------------------------------------------------------- |
-| Column     | Type          | Null | Description                                                                                                       |
-| SRID       | smallint(5)   | NO   | An integer value that uniquely identifies each Spatial Reference System within a database.                        |
-| AUTH\_NAME | varchar(512)  | NO   | The name of the standard or standards body that is being cited for this reference system.                         |
-| AUTH\_SRID | smallint(5)   | NO   | The numeric ID of the coordinate system in the above authority's catalog.                                         |
-| SRTEXT     | varchar(2048) | NO   | The [Well-known Text Representation](../../../../../sql-structure/geometry/wkt/) of the Spatial Reference System. |
+| Column     | Type          | Null | Description                                                                                                   |
+| ---------- | ------------- | ---- | ------------------------------------------------------------------------------------------------------------- |
+| Column     | Type          | Null | Description                                                                                                   |
+| SRID       | smallint(5)   | NO   | An integer value that uniquely identifies each Spatial Reference System within a database.                    |
+| AUTH\_NAME | varchar(512)  | NO   | The name of the standard or standards body that is being cited for this reference system.                     |
+| AUTH\_SRID | smallint(5)   | NO   | The numeric ID of the coordinate system in the above authority's catalog.                                     |
+| SRTEXT     | varchar(2048) | NO   | The [Well-known Text Representation](../../../../geometry-constructors/wkt/) of the Spatial Reference System. |
 
 Note: See [MDEV-7540](https://jira.mariadb.org/browse/MDEV-7540).
 

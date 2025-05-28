@@ -1,5 +1,0 @@
-
-# Geometry Properties
-
-Geometry properties
-

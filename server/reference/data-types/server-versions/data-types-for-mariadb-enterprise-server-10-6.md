@@ -105,17 +105,17 @@ Each column in a table has a specified data type that defines what kind of data 
 
 ## Geometry Types
 
-| Data Type                                                                                      | Class    | Description                                                       |
-| ---------------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
-| Data Type                                                                                      | Class    | Description                                                       |
-| [GEOMETRY](../../sql-structure/geometry/geometry-types.md)                                     | Geometry | Accepts collection data; and point, line, polygon single or multi |
-| [GEOMETRYCOLLECTION](../../sql-structure/geometry/geometry-constructors/geometrycollection.md) | Geometry | WKB Geometry Collection                                           |
-| [LINESTRING](../../sql-structure/geometry/geometry-constructors/linestring.md)                 | Geometry | WKB LineString from WKB Point coordinate data                     |
-| [MULTILINESTRING](../../sql-structure/geometry/geometry-constructors/multilinestring.md)       | Geometry | WKB MultiLineString from WKB LineString data                      |
-| [MULTIPOINT](../../sql-structure/geometry/geometry-constructors/multipoint.md)                 | Geometry | WKB MultiPoint from WKB Point coordinate data                     |
-| [MULTIPOLYGON](../../sql-structure/geometry/geometry-constructors/multipolygon.md)             | Geometry | WKB MultiPolygon from WKB Polygon data                            |
-| [POINT](../../sql-structure/geometry/geometry-constructors/point.md)                           | Geometry | WKB Point coordinate data                                         |
-| [POLYGON](../../sql-structure/geometry/geometry-constructors/polygon.md)                       | Geometry | WKB Polygon from WKB LineString data                              |
+| Data Type                                                                              | Class    | Description                                                       |
+| -------------------------------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
+| Data Type                                                                              | Class    | Description                                                       |
+| [GEOMETRY](../../sql-structure/geometry/geometry-types.md)                             | Geometry | Accepts collection data; and point, line, polygon single or multi |
+| [GEOMETRYCOLLECTION](../../sql-statements/geometry-constructors/geometrycollection.md) | Geometry | WKB Geometry Collection                                           |
+| [LINESTRING](../../sql-statements/geometry-constructors/linestring.md)                 | Geometry | WKB LineString from WKB Point coordinate data                     |
+| [MULTILINESTRING](../../sql-statements/geometry-constructors/multilinestring.md)       | Geometry | WKB MultiLineString from WKB LineString data                      |
+| [MULTIPOINT](../../sql-statements/geometry-constructors/multipoint.md)                 | Geometry | WKB MultiPoint from WKB Point coordinate data                     |
+| [MULTIPOLYGON](../../sql-statements/geometry-constructors/multipolygon.md)             | Geometry | WKB MultiPolygon from WKB Polygon data                            |
+| [POINT](../../sql-statements/geometry-constructors/point.md)                           | Geometry | WKB Point coordinate data                                         |
+| [POLYGON](../../sql-statements/geometry-constructors/polygon.md)                       | Geometry | WKB Polygon from WKB LineString data                              |
 
 ## Other Types
 

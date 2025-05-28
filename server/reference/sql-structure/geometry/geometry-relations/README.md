@@ -1,5 +1,0 @@
-
-# Geometry Relations
-
-Geometry relations
-

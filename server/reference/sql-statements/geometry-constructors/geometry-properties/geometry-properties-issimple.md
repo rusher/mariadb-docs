@@ -1,0 +1,9 @@
+---
+icon: earth-africa
+---
+
+# IsSimple
+
+A synonym for [ST\_IsSImple](st_issimple.md).
+
+CC BY-SA / Gnu FDL

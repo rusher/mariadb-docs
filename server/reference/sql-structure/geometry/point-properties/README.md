@@ -1,5 +1,0 @@
-
-# Point Properties
-
-Point properties
-
