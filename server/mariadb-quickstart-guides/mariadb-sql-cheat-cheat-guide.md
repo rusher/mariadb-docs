@@ -31,7 +31,7 @@ Also see [Common MariaDB Queries](https://mariadb.com/kb/en/common-mariadb-queri
 
 ### A Simple Example
 
-```
+```sql
 CREATE DATABASE mydb;
 USE mydb;
 CREATE TABLE mytable ( id INT PRIMARY KEY, name VARCHAR(20) );
