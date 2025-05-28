@@ -1,3 +1,23 @@
+---
+icon: rabbit-running
+cover: ../.gitbook/assets/blue-bright-1200x628.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Adding & Changing Data Guide
 
 There are several ways to add and to change data in MariaDB. There are a few SQL statements that you can use, each with a few options. Additionally, there are twists that you can do by mixing SQL statements together with various clauses. In this article, we will explore the ways in which data can be added and changed in MariaDB.

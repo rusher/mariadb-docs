@@ -1,3 +1,23 @@
+---
+icon: rabbit-running
+cover: ../.gitbook/assets/coastal-blue-swoosh-medium-600x500.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Basics Guide
 
 The quickstart guide walks you through connecting to a MariaDB server, creating your initial database and table structures, and performing fundamental data operations. It's designed for new users or anyone needing a quick refresher on essential MariaDB commands and basic syntax.

@@ -1,3 +1,23 @@
+---
+icon: rabbit-running
+cover: ../.gitbook/assets/blue-green-gradient-1200x628png.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: hero
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Essentials of an Index Guide
 
 _An index on `Last_Name` organizes the records by surname, enhancing search efficiency without altering the original table order. Indices can be created for any column, such as ID or first name, to enable quick lookups based on different criteria._
