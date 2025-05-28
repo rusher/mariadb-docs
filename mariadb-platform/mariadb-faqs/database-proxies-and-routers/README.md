@@ -1,5 +1,2 @@
 # Database Proxies & Routers
 
-####
-
-*

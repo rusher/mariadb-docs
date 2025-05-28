@@ -1,4 +1,4 @@
-# Enterprise Platform
+# MariaDB Enterprise Platform
 
 * Q: What is the MariaDB Enterprise Platform?\
   A: The MariaDB Enterprise Platform is a comprehensive, integrated database solution offered by MariaDB plc. It bundles the MariaDB Enterprise Server with a curated suite of enterprise-grade tools, advanced features, and critical technologies. This platform is specifically designed to support demanding, mission-critical applications by providing robust high availability, elastic scalability, enhanced security, and simplified manageability.
