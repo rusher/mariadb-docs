@@ -2505,6 +2505,7 @@
       * [TokuDB Status Variables](reference/storage-engines/tokudb/tokudb-status-variables.md)
       * [TokuDB System Variables](reference/storage-engines/tokudb/tokudb-system-variables.md)
   * [Frequently Asked Questions](reference/faq/README.md)
+    * [MariaDB Community Server](reference/faq/mariadb-community-server.md)
     * [Community Questions](reference/faq/community-questions/README.md)
       * [How Can I Contribute to MariaDB?](reference/faq/community-questions/mariadb-community-how-can-i-contribute-to-mariadb.md)
     * [DBA Questions](reference/faq/dba-questions/README.md)
