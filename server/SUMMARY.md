@@ -433,6 +433,7 @@
     * [NOT NULL Constraints](architecture/server-constraints/not-null-constraints.md)
     * [PRIMARY KEY Constraints](architecture/server-constraints/primary-key-constraints.md)
     * [UNIQUE Constraints](architecture/server-constraints/unique-constraints-with-mariadb-enterprise-server.md)
+  * [Spider Storage Engine](architecture/spider-storage-engine.md)
 * [Clients & Utilities](clients-and-utilities/README.md)
   * [dbdeployer](clients-and-utilities/dbdeployer.md)
   * [dbForge Studio for MySQL/MariaDB](clients-and-utilities/dbforge-studio-for-mysqlmariadb.md)
