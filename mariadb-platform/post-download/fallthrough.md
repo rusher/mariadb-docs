@@ -15,21 +15,7 @@ layout:
 
 # Thank You for Downloading
 
-
-
-            Thank you for downloading. Create your MariaDB account to receive download release notifications,
-            product updates and more.
-            
-
 {% @marketo/form formId="4279" %}
-
-
-
-
-Thank you for creating a MariaDB ID.
-            An email with details will be delivered shortly.
-
-
 
 ## Useful Resources
 
