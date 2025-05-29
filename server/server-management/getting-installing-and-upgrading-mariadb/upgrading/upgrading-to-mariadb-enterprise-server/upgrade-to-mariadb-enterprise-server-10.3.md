@@ -38,7 +38,7 @@ Confirm successful completion of the prepare operation.
 
 ## Audit Plugin Considerations <a href="#audit-plugin-considerations" id="audit-plugin-considerations"></a>
 
-If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit/) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) statement:
+If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit.md) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
 
 ```
 UNINSTALL SONAME 'server_audit';
@@ -54,19 +54,19 @@ When upgrading to a new major release of MariaDB Enterprise Server, it is necess
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1\. Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables#innodb_fast_shutdown) system variable to 1:
+1\. Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
 
 ```
 SET GLOBAL innodb_fast_shutdown = 1;
 ```
 
-2\. Use [XA RECOVER](../../../../reference/sql-statements/transactions/xa-transactions#xa-recover) to confirm that there are no external [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions) in a prepared state:
+2\. Use [XA RECOVER](../../../../reference/sql-statements/transactions/xa-transactions.md#xa-recover) to confirm that there are no external [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions.md) in a prepared state:
 
 ```
 XA RECOVER;
 ```
 
-Commit or roll back any open [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions) before stopping the node for upgrade.
+Commit or roll back any open [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions.md) before stopping the node for upgrade.
 
 3\. Stop the server process: For distributions that use `systemd` (most supported OSes), you can manage the server process using the `systemctl` command:
 
@@ -146,7 +146,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 
 ### Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux) <a href="#install-via-yum-rhel-almalinux-centos-rocky-linux" id="install-via-yum-rhel-almalinux-centos-rocky-linux"></a>
 
-1\. Retrieve your Customer Download Token at [https:_customers.mariadb.com/downloads/token_](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
 2\. Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
@@ -186,7 +186,7 @@ Installation of additional packages may be required for some plugins.
 
 ### Install via APT (Debian, Ubuntu) <a href="#install-via-apt-debian-ubuntu" id="install-via-apt-debian-ubuntu"></a>
 
-1\. Retrieve your Customer Download Token at [https:_customers.mariadb.com/downloads/token/_](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
 2\. Configure the APT package repository. Installable versions of MariaDB Enterprise Server are `11.8 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
@@ -228,7 +228,7 @@ $ sudo apt install mariadb-server mariadb-backup
 
 ### Install via ZYpp (SLES) <a href="#install-via-zypp-sles" id="install-via-zypp-sles"></a>
 
-1\. Retrieve your Customer Download Token at [https:_customers.mariadb.com/downloads/token/_](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
 2\. Configure the ZYpp package repository. Installable versions of MariaDB Enterprise Server are `11.8 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
@@ -334,7 +334,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-2\. You can also verify the server version by checking the value of the [version](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#version) system variable with the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status) statement: SHOW GLOBAL VARIABLES LIKE 'version';
+2\. You can also verify the server version by checking the value of the [version](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version) system variable with the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement: `SHOW GLOBAL VARIABLES LIKE 'version';`
 
 ```
 +---------------+-----------------------------+
@@ -344,7 +344,7 @@ MariaDB [(none)]>
 +---------------+-----------------------------+
 ```
 
-3\. You can also verify the server version by calling the [VERSION()](../../../../reference/sql-functions/secondary-functions/information-functions/version) function:
+3\. You can also verify the server version by calling the [VERSION()](../../../../reference/sql-functions/secondary-functions/information-functions/version.md) function:
 
 ```
 SELECT VERSION();
