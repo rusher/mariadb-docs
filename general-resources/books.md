@@ -39,6 +39,3 @@ An introduction to [Common Table Expressions](https://mariadb.com/kb/en/common-t
 [_MariaDB : Administration et optimisation_](https://www.amazon.co.uk/MariaDB-Administration-optimisation-St%C3%A9phane-Combaudon/dp/2409008550) by Stéphane Combaudon, July 2017 (French)\
 S'adresse aux développeurs et administrateurs MySQL ou MariaDB désireux de consolider leurs connaissances sur la principale variante de MySQL.
 
-[_MariaDB Cookbook_](https://www.packtpub.com/big-data-and-business-intelligence/mariadb-cookbook) by Daniel Bartholomew, March 2014\
-A cookbook filled with useful MariaDB recipes. Chapters cover such things as [Sphinx](https://mariadb.com/kb/en/sphinxse/), [Connect](https://mariadb.com/kb/en/connect/), [Cassandra](https://mariadb.com/kb/en/cassandra/), [virtual](https://mariadb.com/kb/en/virtual-columns/) and [dynamic columns](https://mariadb.com/kb/en/dynamic-columns/), [TokuDB](https://mariadb.com/kb/en/tokudb/), and more.
-
