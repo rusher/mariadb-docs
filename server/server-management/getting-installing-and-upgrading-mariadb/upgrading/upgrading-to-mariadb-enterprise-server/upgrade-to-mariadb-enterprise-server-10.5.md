@@ -294,20 +294,20 @@ MariaDB Enterprise Server includes configuration to `start, stop, restart, enabl
 
 For distributions that use `systemd`, you can manage the Server process using the `systemctl` command:
 
-| Operation              | Command                        |
-| ---------------------- | ------------------------------ |
-| Start                  | sudo systemctl start mariadb   |
-| Stop                   | sudo systemctl stop mariadb    |
-| Restart                | sudo systemctl restart mariadb |
-| Enable during startup  | sudo systemctl enable mariadb  |
-| Disable during startup | sudo systemctl disable mariadb |
-| Status                 | sudo systemctl status mariadb  |
+| Operation              | Command                          |
+| ---------------------- | -------------------------------- |
+| Start                  | `sudo systemctl start mariadb`   |
+| Stop                   | `sudo systemctl stop mariadb`    |
+| Restart                | `sudo systemctl restart mariadb` |
+| Enable during startup  | `sudo systemctl enable mariadb`  |
+| Disable during startup | `sudo systemctl disable mariadb` |
+| Status                 | `sudo systemctl status mariadb`  |
 
 ## Upgrading the Data Directory <a href="#upgrading-the-data-directory" id="upgrading-the-data-directory"></a>
 
 MariaDB Enterprise Server ships with a utility that can be used to identify and correct compatibility issues in the new version. After you upgrade your Server and start the server process, run this utility to upgrade the data directory.
 
-The utility is called `mariadb-upgrade in MariaDB Enterprise Server 10.4 and later:`
+The utility is called `mariadb-upgrade` in MariaDB Enterprise Server 10.4 and later:
 
 ```bash
 sudo mariadb-upgrade
