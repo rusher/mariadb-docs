@@ -4,15 +4,15 @@
 
 These instructions detail the **upgrade** from a previous version of **MariaDB Enterprise Server** to **MariaDB Enterprise Server 10.6** on a range of [supported Operating Systems](https://mariadb.com/engineering-policies).
 
-When [MariaDB Enterprise Server](https://mariadb.com/kb/en/mariadb-enterprise-server/) is upgraded, the old version needs to be uninstalled, and the new version needs to be installed.
+When MariaDB Enterprise Server is upgraded, the old version needs to be uninstalled, and the new version needs to be installed.
 
-See [What's New in MariaDB Enterprise Server 10.6](https://mariadb.com/kb/en/whats-new-in-mariadb-enterprise-server-10-6/).
+See [What's New in MariaDB Enterprise Server 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/whats-new-in-mariadb-enterprise-server-10-6).
 
 ## Data Backup <a href="#data-backup" id="data-backup"></a>
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup before upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](https://mariadb.com/kb/en/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](https://mariadb.com/kb/en/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
 
 1\. Take a full backup. On MariaDB Enterprise Server 10.6 and later:
 
@@ -38,13 +38,13 @@ Confirm successful completion of the prepare operation.
 
 ## Audit Plugin Considerations <a href="#audit-plugin-considerations" id="audit-plugin-considerations"></a>
 
-If you have the [MariaDB Audit Plugin](https://mariadb.com/kb/en/mariadb-audit-plugin/) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](https://mariadb.com/kb/en/mariadb-enterprise-audit/) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](https://mariadb.com/kb/en/uninstall-soname/) statement:
+If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit.md) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
 
 ```sql
 UNINSTALL SONAME 'server_audit';
 ```
 
-And if you load the plugin in a configuration file using the plugin\_load\_addoption, then the option should also be removed. The [MariaDB Enterprise Audit Plugin](https://mariadb.com/kb/en/mariadb-enterprise-audit/) will automatically be installed after installing MariaDB Enterprise Server 10.4 or later.
+And if you load the plugin in a configuration file using the `plugin\_load\_add` option, then the option should also be removed. The [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit/) will automatically be installed after installing MariaDB Enterprise Server 10.4 or later.
 
 ## Uninstall the Old Version <a href="#uninstall-the-old-version" id="uninstall-the-old-version"></a>
 
@@ -54,19 +54,19 @@ When upgrading to a new major release of MariaDB Enterprise Server, it is necess
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1\. Set the [innodb\_fast\_shutdown](https://mariadb.com/kb/en/innodb-system-variables/#innodb_fast_shutdown) system variable to 1:
+1\. Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
 
 ```sql
 SET GLOBAL innodb_fast_shutdown = 1;
 ```
 
-2\. Use [XA RECOVER](https://mariadb.com/kb/en/xa-transactions/#xa-recover) to confirm that there are no external [XA transactions](https://mariadb.com/kb/en/xa-transactions/) in a prepared state:
+2\. Use [XA RECOVER](../../../../reference/sql-statements/transactions/xa-transactions.md#xa-recover) to confirm that there are no external [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions.md) in a prepared state:
 
 ```sql
 XA RECOVER;
 ```
 
-Commit or roll back any open [XA transactions](https://mariadb.com/kb/en/xa-transactions/) before stopping the node for upgrade.
+Commit or roll back any open [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions.md) before stopping the node for upgrade.
 
 3\. Stop the server process: For distributions that use `systemd` (most supported OSes), you can manage the server process using the `systemctl` command:
 
@@ -86,58 +86,58 @@ Be sure to check that this wildcard does not unintentionally refer to any of you
 
 2\. Uninstall the Galera package as well. The name of the package depends on the specific version of MariaDB Enterprise Server. When upgrading from MariaDB Enterprise Server 10.4 or later, the package is called `galera-enterprise-4`:
 
-```
-$ sudo yum remove galera-enterprise-4
+```bash
+sudo yum remove galera-enterprise-4
 ```
 
 3\. Before proceeding, verify that all MariaDB Enterprise Server packages are uninstalled. The following command should not return any results:
 
-```
-$ rpm --query --all | grep -i -E "mariadb|galera"
+```bash
+rpm --query --all | grep -i -E "mariadb|galera"
 ```
 
 ### Uninstall via APT (Debian, Ubuntu) <a href="#uninstall-via-apt-debian-ubuntu" id="uninstall-via-apt-debian-ubuntu"></a>
 
 1\. Uninstall all of the MariaDB Enterprise Server packages. Note that a wildcard character is used to ensure that all MariaDB Enterprise Server packages are uninstalled:
 
-```
-$ sudo apt-get remove "mariadb-*"
+```bash
+sudo apt-get remove "mariadb-*"
 ```
 
 Be sure to check that this wildcard does not unintentionally refer to any of your custom applications.
 
 2\. Uninstall the Galera package as well. The name of the package depends on the specific version of MariaDB Enterprise Server. When upgrading from MariaDB Enterprise Server 10.4 or later, the package is called galera-enterprise-4:
 
-```
-$ sudo apt remove galera-enterprise-4
+```bash
+sudo apt remove galera-enterprise-4
 ```
 
 3\. Before proceeding, verify that all MariaDB Enterprise Server packages are uninstalled. The following command should not return any results:
 
-```
-$ apt list --installed | grep -i -E "mariadb|galera"
+```bash
+apt list --installed | grep -i -E "mariadb|galera"
 ```
 
 ### Uninstall via ZYpp (SLES) <a href="#uninstall-via-zypp-sles" id="uninstall-via-zypp-sles"></a>
 
 1\. Uninstall all of the MariaDB Enterprise Server packages. Note that a wildcard character is used to ensure that all MariaDB Enterprise Server packages are uninstalled:
 
-```
-$ sudo zypper remove "MariaDB-*"
+```bash
+sudo zypper remove "MariaDB-*"
 ```
 
 Be sure to check that this wildcard does not unintentionally refer to any of your custom applications.
 
 2\. Uninstall the Galera package as well. The name of the package depends on the specific version of MariaDB Enterprise Server. When upgrading from MariaDB Enterprise Server 10.4 or later, the package is called galera-enterprise-4:
 
-```
-$ sudo zypper remove galera-enterprise-4
+```bash
+sudo zypper remove galera-enterprise-4
 ```
 
 3\. Before proceeding, verify that all MariaDB Enterprise Server packages are uninstalled. The following command should not return any results:
 
-```
-$ rpm --query --all | grep -i -E "mariadb|galera"
+```bash
+rpm --query --all | grep -i -E "mariadb|galera"
 ```
 
 ## Install the New Version <a href="#install-the-new-version" id="install-the-new-version"></a>
@@ -146,38 +146,38 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 
 ### Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux) <a href="#install-via-yum-rhel-almalinux-centos-rocky-linux" id="install-via-yum-rhel-almalinux-centos-rocky-linux"></a>
 
-1\. Retrieve your Customer Download Token at [https:_customers.mariadb.com/downloads/token_](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
-2\. Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 10.6.
+2\. Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.8, 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
 To configure YUM package repositories:
 
-```
-$ sudo yum install curl 
-```
-
-```
-$ curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
+```bash
+sudo yum install curl 
 ```
 
+```bash
+curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
 ```
-$ echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
+
+```bash
+echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
     | sha256sum -c -
 ```
 
-```
-$ chmod +x mariadb_es_repo_setup
+```bash
+chmod +x mariadb_es_repo_setup
 ```
 
-```
-$ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
+```bash
+sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
    --mariadb-server-version="10.6"
 ```
 
 3\. Install MariaDB Enterprise Server and package dependencies:
 
-```
-$ sudo yum install MariaDB-server MariaDB-backup
+```bash
+sudo yum install MariaDB-server MariaDB-backup
 ```
 
 Installation of additional packages may be required for some plugins.
@@ -186,36 +186,36 @@ Installation of additional packages may be required for some plugins.
 
 ### Install via APT (Debian, Ubuntu) <a href="#install-via-apt-debian-ubuntu" id="install-via-apt-debian-ubuntu"></a>
 
-1\. Retrieve your Customer Download Token at [https:_customers.mariadb.com/downloads/token/_](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
-2\. Configure the APT package repository. Installable versions of MariaDB Enterprise Server are `11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 10.6.
+2\. Configure the APT package repository. Installable versions of MariaDB Enterprise Server are `11.8 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
 To configure APT package repositories:
 
-```
-$ sudo apt install curl
-```
-
-```
-$ curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
+```bash
+sudo apt install curl
 ```
 
+```bash
+curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
 ```
-$ echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
+
+```bash
+echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
     | sha256sum -c -
 ```
 
-```
-$ chmod +x mariadb_es_repo_setup
-```
-
-```
-$ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
-   --mariadb-server-version="10.5"
+```bash
+chmod +x mariadb_es_repo_setup
 ```
 
+```bash
+sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
+   --mariadb-server-version="10.6"
 ```
-$ sudo apt update
+
+```bash
+sudo apt update
 ```
 
 3\. Install MariaDB Enterprise Server and package dependencies:
@@ -228,37 +228,38 @@ $ sudo apt install mariadb-server mariadb-backup
 
 ### Install via ZYpp (SLES) <a href="#install-via-zypp-sles" id="install-via-zypp-sles"></a>
 
-1\. Retrieve your Customer Download Token at [https:_customers.mariadb.com/downloads/token/_](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
-2\. Configure the ZYpp package repository. Installable versions of MariaDB Enterprise Server are `11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 10.6.
+2\. Configure the ZYpp package repository. Installable versions of MariaDB Enterprise Server are `11.8, 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
 To configure ZYpp package repositories:
 
-```
-$ sudo zypper install curl
+```bash
+sudo zypper install curl
 ```
 
+```bash
+curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
 ```
-$ curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
 
-<<code>>
-$ echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
+```bash
+echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
     | sha256sum -c -
 ```
 
-```
-$ chmod +x mariadb_es_repo_setup
+```bash
+chmod +x mariadb_es_repo_setup
 ```
 
-```
-$ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
+```bash
+sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
    --mariadb-server-version="10.6"
 ```
 
 3\. Install MariaDB Enterprise Server and package dependencies:
 
-```
-$ sudo zypper install MariaDB-server MariaDB-backup
+```bash
+sudo zypper install MariaDB-server MariaDB-backup
 ```
 
 Installation of additional packages may be required for some plugins.
@@ -269,22 +270,22 @@ Installation of additional packages may be required for some plugins.
 
 For platforms that use YUM or ZYpp as a package manager: MariaDB Enterprise Server's packages bundle several configuration files:
 
-* /etc/my.cnf
-* /etc/my.cnf.d/client.cnf
-* /etc/my.cnf.d/mariadb-enterprise.cnf
-* /etc/my.cnf.d/mysql-clients.cnf
-* /etc/my.cnf.d/server.cnf
+* `/etc/my.cnf`
+* `/etc/my.cnf.d/client.cnf`
+* `/etc/my.cnf.d/mariadb-enterprise.cnf`
+* `/etc/my.cnf.d/mysql-clients.cnf`
+* `/etc/my.cnf.d/server.cnf`
 
 If your version of any of these configuration files contained any custom edits, then the package manager may save your edited version with the `.rpmsave` extension during the upgrade process. If you want to continue using your version with the custom edits, then you may need to move it back.
 
 For example, to move `server.cnf` back in place:
 
-```
-$ sudo mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf.original
+```bash
+sudo mv /etc/my.cnf.d/server.cnf /etc/my.cnf.d/server.cnf.original
 ```
 
-```
-$ sudo mv /etc/my.cnf.d/server.cnf.rpmsave /etc/my.cnf.d/server.cnf
+```bash
+sudo mv /etc/my.cnf.d/server.cnf.rpmsave /etc/my.cnf.d/server.cnf
 ```
 
 ## Starting the Server <a href="#starting-the-server" id="starting-the-server"></a>
@@ -308,8 +309,8 @@ MariaDB Enterprise Server ships with a utility that can be used to identify and 
 
 The utility is called `mariadb-upgrade in MariaDB Enterprise Server 10.4 and later:`
 
-```
-$ sudo mariadb-upgrade
+```bash
+sudo mariadb-upgrade
 ```
 
 ## Testing <a href="#testing" id="testing"></a>
@@ -318,8 +319,8 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
 1\. Connect to the server using MariaDB Client using the `root@localhost` user account. MariaDB Client is called `mariadb` (ES 10.4 and later):
 
-```
-$ sudo mariadb
+```bash
+sudo mariadb
 ```
 
 ```
@@ -334,7 +335,11 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-2\. You can also verify the server version by checking the value of the [version](https://mariadb.com/kb/en/server-system-variables/#version) system variable with the [SHOW GLOBAL STATUS](https://mariadb.com/kb/en/show-status/) statement: SHOW GLOBAL VARIABLES LIKE 'version';
+2\. You can also verify the server version by checking the value of the [version](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version) system variable with the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
+
+```sql
+SHOW GLOBAL VARIABLES LIKE 'version';
+```
 
 ```
 +---------------+-----------------------------+
@@ -344,13 +349,17 @@ MariaDB [(none)]>
 +---------------+-----------------------------+
 ```
 
-3\. You can also verify the server version by calling the [VERSION()](https://mariadb.com/kb/en/version/) function:
+3\. You can also verify the server version by calling the [VERSION()](../../../../reference/sql-functions/secondary-functions/information-functions/version.md) function:
+
+```sql
+SELECT VERSION();
+```
 
 ```
-SELECT VERSION();
 +-----------------------------+
 | VERSION()                   |
 +-----------------------------+
 | 10.6.21-17-MariaDB-Enterprise |
 +-----------------------------+
 ```
+
