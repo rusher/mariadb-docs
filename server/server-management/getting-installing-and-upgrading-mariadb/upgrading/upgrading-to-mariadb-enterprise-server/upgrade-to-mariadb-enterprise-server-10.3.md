@@ -4,15 +4,15 @@
 
 These instructions detail the **upgrade** from a previous version of **MariaDB Enterprise Server** to **MariaDB Enterprise Server 10.3** on a range of [supported Operating Systems](https://mariadb.com/engineering-policies/).
 
-When [MariaDB Enterprise Server](https://mariadb.com/kb/en/mariadb-enterprise-server/) is upgraded, the old version needs to be uninstalled, and the new version needs to be installed.
+When MariaDB Enterprise Server is upgraded, the old version needs to be uninstalled, and the new version needs to be installed.
 
-See [What's New in MariaDB Enterprise Server 10.3](https://mariadb.com/kb/en/whats-new-in-mariadb-enterprise-server-10-3/).
+See [What's New in MariaDB Enterprise Server 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/whats-new-in-mariadb-enterprise-server-10-3).
 
 ## Data Backup <a href="#data-backup" id="data-backup"></a>
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup before upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](https://mariadb.com/kb/en/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](https://mariadb.com/kb/en/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
 
 1\. Take a full backup. On MariaDB Enterprise Server 10.4 and later:
 
@@ -38,13 +38,13 @@ Confirm successful completion of the prepare operation.
 
 ## Audit Plugin Considerations <a href="#audit-plugin-considerations" id="audit-plugin-considerations"></a>
 
-If you have the [MariaDB Audit Plugin](https://mariadb.com/kb/en/mariadb-audit-plugin/) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](https://mariadb.com/kb/en/mariadb-enterprise-audit/) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](https://mariadb.com/kb/en/uninstall-soname/) statement:
+If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit/) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) statement:
 
 ```
 UNINSTALL SONAME 'server_audit';
 ```
 
-And if you load the plugin in a configuration file using the plugin\_load\_addoption, then the option should also be removed. The [MariaDB Enterprise Audit Plugin](https://mariadb.com/kb/en/mariadb-enterprise-audit/) will automatically be installed after installing MariaDB Enterprise Server 10.4 or later.
+And if you load the plugin in a configuration file using the plugin\_load\_add option, then the option should also be removed. The [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit/) will automatically be installed after installing MariaDB Enterprise Server 10.4 or later.
 
 ## Uninstall the Old Version <a href="#uninstall-the-old-version" id="uninstall-the-old-version"></a>
 
@@ -54,19 +54,19 @@ When upgrading to a new major release of MariaDB Enterprise Server, it is necess
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1\. Set the [innodb\_fast\_shutdown](https://mariadb.com/kb/en/innodb-system-variables/#innodb_fast_shutdown) system variable to 1:
+1\. Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables#innodb_fast_shutdown) system variable to 1:
 
 ```
 SET GLOBAL innodb_fast_shutdown = 1;
 ```
 
-2\. Use [XA RECOVER](https://mariadb.com/kb/en/xa-transactions/#xa-recover) to confirm that there are no external [XA transactions](https://mariadb.com/kb/en/xa-transactions/) in a prepared state:
+2\. Use [XA RECOVER](../../../../reference/sql-statements/transactions/xa-transactions#xa-recover) to confirm that there are no external [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions) in a prepared state:
 
 ```
 XA RECOVER;
 ```
 
-Commit or roll back any open [XA transactions](https://mariadb.com/kb/en/xa-transactions/) before stopping the node for upgrade.
+Commit or roll back any open [XA transactions](../../../../reference/sql-statements/transactions/xa-transactions) before stopping the node for upgrade.
 
 3\. Stop the server process: For distributions that use `systemd` (most supported OSes), you can manage the server process using the `systemctl` command:
 
@@ -334,7 +334,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-2\. You can also verify the server version by checking the value of the [version](https://mariadb.com/kb/en/server-system-variables/#version) system variable with the [SHOW GLOBAL STATUS](https://mariadb.com/kb/en/show-status/) statement: SHOW GLOBAL VARIABLES LIKE 'version';
+2\. You can also verify the server version by checking the value of the [version](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#version) system variable with the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status) statement: SHOW GLOBAL VARIABLES LIKE 'version';
 
 ```
 +---------------+-----------------------------+
@@ -344,7 +344,7 @@ MariaDB [(none)]>
 +---------------+-----------------------------+
 ```
 
-3\. You can also verify the server version by calling the [VERSION()](https://mariadb.com/kb/en/version/) function:
+3\. You can also verify the server version by calling the [VERSION()](../../../../reference/sql-functions/secondary-functions/information-functions/version) function:
 
 ```
 SELECT VERSION();
