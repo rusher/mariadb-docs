@@ -4,7 +4,7 @@
 
 MariaDB Enterprise ColumnStore includes a bulk data loading tool called cpimport, which bypasses the SQL layer to decrease the overhead of bulk data loading.
 
-Refer to, the [cpimport modes](../columnstore-data-ingestion/columnstore-bulk-data-loading.md#cpimport-modes) for additional information and [ColumnStore Bulk Data Loading](../columnstore-data-ingestion/columnstore-bulk-data-loading.md).
+Refer to, the [cpimport modes](../data-ingestion/columnstore-bulk-data-loading.md#cpimport-modes) for additional information and [ColumnStore Bulk Data Loading](../data-ingestion/columnstore-bulk-data-loading.md).
 
 The cpimport tool:
 
@@ -281,6 +281,6 @@ When this problem occurs, some solutions are:
 * Monitor burst credit balances in AWS and run data load operations when burst credits are available
 * Increase the burst credit balance by increasing the file system size (for example, by creating a dummy file)
 
-Additional information is available [here](../columnstore-data-ingestion/columnstore-bulk-data-loading.md#cpimport-modes).
+Additional information is available [here](../data-ingestion/columnstore-bulk-data-loading.md#cpimport-modes).
 
 Copyright © 2025 MariaDB
