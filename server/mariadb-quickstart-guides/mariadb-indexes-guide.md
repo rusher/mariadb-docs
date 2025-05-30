@@ -1,20 +1,34 @@
-# Getting Started with Indexes
+---
+description: Indexing Guide
+---
 
-For a basic overview, see [The Essentials of an Index](essentials-of-an-index-guide.md).
+# Getting Started with Indexes Guide
 
-There are four main kinds of indexes; primary keys (unique and not null), unique indexes (unique and can be null), plain indexes (not necessarily unique) and full-text indexes (for full-text searching).
+This guide explains the different types of indexes in MariaDB, their characteristics, and how they are used. Learn to create and manage Primary Keys, Unique Indexes, and Plain Indexes, along with key considerations for choosing and maintaining effective indexes for optimal query performance.
 
-The terms 'KEY' and 'INDEX' are generally used interchangeably, and statements should work with either keyword.
+In MariaDB, the terms `KEY` and `INDEX` are generally used interchangeably in SQL statements.
 
-## Primary Key
+### Index Types Overview
 
-A primary key is unique and can never be null. It will always identify only one record, and each record must be represented. Each table can only have one primary key.
+There are four main kinds of indexes:
 
-In [InnoDB](../reference/storage-engines/innodb/) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
+* **Primary Keys:** Unique and not NULL.
+* **Unique Indexes:** Must be unique but can contain NULL values.
+* **Plain Indexes (or Regular Indexes):** Not necessarily unique.
+* **Full-Text Indexes:** Used for full-text searching capabilities.
 
-Many tables use a numeric ID field as a primary key. The [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) attribute can be used to generate a unique identity for new rows, and is commonly-used with primary keys.
+### Primary Key
 
-Primary keys are usually added when the table is created with the [CREATE TABLE](../reference/sql-statements/data-definition/create/create-table.md#indexes) statement. For example, the following creates a primary key on the ID field. Note that the ID field had to be defined as NOT NULL, otherwise the index could not have been created.
+A primary key uniquely identifies each record in a table. Its values must be unique, and it cannot contain `NULL` values. Each table can have only one primary key.
+
+**InnoDB Considerations:**
+
+* In InnoDB tables, the primary key is included as a suffix in all other indexes. Therefore, keeping the primary key compact (e.g., using an appropriate integer type) is important for performance and storage efficiency.
+* If a table has no explicitly defined primary key and no `UNIQUE` indexes, InnoDB automatically creates an invisible 6-byte clustered index.
+
+**Using `AUTO_INCREMENT`:** The `AUTO_INCREMENT` attribute is commonly used with numeric primary keys to automatically generate a unique ID for each new row.
+
+SQL
 
 ```
 CREATE TABLE `Employees` (
@@ -22,95 +36,86 @@ CREATE TABLE `Employees` (
   `First_Name` VARCHAR(25) NOT NULL,
   `Last_Name` VARCHAR(25) NOT NULL,
   `Position` VARCHAR(25) NOT NULL,
-  `Home_Address` VARCHAR(50) NOT NULL,
-  `Home_Phone` VARCHAR(12) NOT NULL,
   PRIMARY KEY (`ID`)
 );
 ```
 
-You cannot create a primary key with the [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../reference/sql-statements/data-definition/alter/alter-table.md), for example:
+Note: The column defined as a primary key (or part of it) must be explicitly declared as `NOT NULL`.
+
+**Adding a Primary Key to an Existing Table:** Use `ALTER TABLE`. You cannot create a primary key with `CREATE INDEX`.
+
+SQL
 
 ```
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
 ```
 
-### Finding Tables Without Primary Keys
+**Finding Tables Without Primary Keys:** This query uses the `information_schema` database to find tables lacking primary keys:
 
-Tables in the `[information_schema](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/README.md)` database can be queried to find tables that do not have primary keys. For example, here is a query using the [TABLES](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) and [KEY\_COLUMN\_USAGE](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) tables that can be used:
+SQL
 
 ```
 SELECT t.TABLE_SCHEMA, t.TABLE_NAME
 FROM information_schema.TABLES AS t
-LEFT JOIN information_schema.KEY_COLUMN_USAGE AS c 
+LEFT JOIN information_schema.KEY_COLUMN_USAGE AS c
 ON t.TABLE_SCHEMA = c.CONSTRAINT_SCHEMA
    AND t.TABLE_NAME = c.TABLE_NAME
    AND c.CONSTRAINT_NAME = 'PRIMARY'
-WHERE t.TABLE_SCHEMA != 'information_schema'
-   AND t.TABLE_SCHEMA != 'performance_schema'
-   AND t.TABLE_SCHEMA != 'mysql'
-   AND c.CONSTRAINT_NAME IS NULL;
+WHERE t.TABLE_SCHEMA NOT IN ('information_schema', 'performance_schema', 'mysql', 'sys')
+  AND c.CONSTRAINT_NAME IS NULL;
 ```
 
-## Unique Index
+### Unique Index
 
-A Unique Index must be unique, but it can have columns that may be NULL. So each key value identifies only one record, but not each record needs to be represented.
+A unique index ensures that all values in the indexed column (or combination of columns) are unique. However, unlike a primary key, columns in a unique index can store `NULL` values. Each key value uniquely identifies a row, but not every row needs to be represented if `NULL`s are allowed.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
+**Behavior (MariaDB 10.5+):**
 
-Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
+* If the index type is not specified, `UNIQUE` typically creates a BTREE index, usable by the optimizer.
+* If a key exceeds the maximum length for the storage engine and the engine supports long unique indexes, a HASH key might be created to enforce uniqueness.
 
-For example, to create a unique key on the Employee\_Code field, as well as a primary key, use:
+**Creating Unique Indexes:** During table creation:
+
+SQL
 
 ```
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL,
-  `First_Name` VARCHAR(25) NOT NULL,
-  `Last_Name` VARCHAR(25) NOT NULL,
-  `Position` VARCHAR(25) NOT NULL,
-  `Home_Address` VARCHAR(50) NOT NULL,
-  `Home_Phone` VARCHAR(12) NOT NULL,
   `Employee_Code` VARCHAR(25) NOT NULL,
+  `First_Name` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`ID`),
-  UNIQUE KEY (`Employee_Code`)
+  UNIQUE KEY `UK_EmpCode` (`Employee_Code`) -- Naming the unique key is good practice
 );
 ```
 
-Unique keys can also be added after the table is created with the [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../reference/sql-statements/data-definition/alter/alter-table.md) command, for example:
+After table creation using `ALTER TABLE`:
+
+SQL
 
 ```
-ALTER TABLE Employees ADD UNIQUE `EmpCode`(`Employee_Code`);
+ALTER TABLE Employees ADD UNIQUE `UK_HomePhone` (`Home_Phone`);
 ```
 
-and
+After table creation using `CREATE UNIQUE INDEX`:
+
+SQL
 
 ```
-CREATE UNIQUE INDEX HomePhone ON Employees(Home_Phone);
+CREATE UNIQUE INDEX `IX_Position` ON Employees(Position);
 ```
 
-Indexes can contain more than one column. MariaDB is able to use one or more columns on the leftmost part of the index, if it cannot use the whole index. (except for the HASH index type).
+**Multi-Column Unique Indexes:** An index can span multiple columns. MariaDB can use the leftmost part(s) of such an index if it cannot use the whole index (except for HASH indexes).
 
-Take another example:
+SQL
 
 ```
 CREATE TABLE t1 (a INT NOT NULL, b INT, UNIQUE (a,b));
-
-INSERT INTO t1 values (1,1), (2,2);
-
+INSERT INTO t1 VALUES (1,1), (2,2);
+INSERT INTO t1 VALUES (2,1); -- Valid: (2,1) is unique, though '2' in 'a' and '1' in 'b' are not individually unique here.
 SELECT * FROM t1;
-+---+------+
-| a | b    |
-+---+------+
-| 1 |    1 |
-| 2 |    2 |
-+---+------+
 ```
 
-Since the index is defined as unique over both columns _a_ and _b_, the following row is valid, as while neither _a_ nor _b_ are unique on their own, the combination is unique:
-
 ```
-INSERT INTO t1 values (2,1);
-
-SELECT * FROM t1;
 +---+------+
 | a | b    |
 +---+------+
@@ -120,12 +125,16 @@ SELECT * FROM t1;
 +---+------+
 ```
 
-The fact that a `UNIQUE` constraint can be `NULL` is often overlooked. In SQL any `NULL` is never equal to anything, not even to another `NULL`. Consequently, a `UNIQUE` constraint will not prevent one from storing duplicate rows if they contain null values:
+**`NULL` Values in Unique Indexes:** A `UNIQUE` constraint allows multiple `NULL` values because in SQL, `NULL` is never equal to another `NULL`.
+
+SQL
 
 ```
-INSERT INTO t1 values (3,NULL), (3, NULL);
-
+INSERT INTO t1 VALUES (3,NULL), (3, NULL); -- Both rows are inserted
 SELECT * FROM t1;
+```
+
+```
 +---+------+
 | a | b    |
 +---+------+
@@ -137,91 +146,76 @@ SELECT * FROM t1;
 +---+------+
 ```
 
-Indeed, in SQL two last rows, even if identical, are not equal to each other:
+Verification:
+
+SQL
 
 ```
 SELECT (3, NULL) = (3, NULL);
+```
 
-+---------------------- +
+```
++-----------------------+
 | (3, NULL) = (3, NULL) |
-+---------------------- +
-| 0                     |
-+---------------------- +
++-----------------------+
+|                     0 | -- 0 means false
++-----------------------+
 ```
 
-In MariaDB you can combine this with [virtual columns](../reference/sql-statements/data-definition/create/generated-columns.md) to\
-enforce uniqueness over a subset of rows in a table:
+**Conditional Uniqueness with Virtual Columns:** You can enforce uniqueness over a subset of rows using unique indexes on [virtual columns](https://www.google.com/search?q=../reference/sql-statements-and-structure/tables-and-views/virtual-columns.md). This example ensures `user_name` is unique for 'Active' or 'On-Hold' users, but allows duplicate names for 'Deleted' users:
+
+SQL
 
 ```
-create table Table_1 (
-  user_name varchar(10),
-  status enum('Active', 'On-Hold', 'Deleted'),
-  del char(0) as (if(status in ('Active', 'On-Hold'),'', NULL)) persistent,
-  unique(user_name,del)
-)
+CREATE TABLE Table_1 (
+  user_name VARCHAR(10),
+  status ENUM('Active', 'On-Hold', 'Deleted'),
+  del CHAR(0) AS (IF(status IN ('Active', 'On-Hold'), '', NULL)) PERSISTENT,
+  UNIQUE(user_name, del)
+);
 ```
 
-This table structure ensures that all _active_ or _on-hold_ users have distinct\
-names, but as soon as a user is _deleted_, his name is no longer part of the\
-uniqueness constraint, and another user may get the same name.
+**Trailing Pad Characters:** If a unique index is on a column where trailing pad characters are stripped or ignored (e.g., `CHAR` vs `VARCHAR` behavior), inserts where values differ only by the number of trailing pad characters can result in duplicate-key errors.
 
-If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error.
+**Long Keys and HASH Indexes (MariaDB 10.5+):** For engines like InnoDB, `UNIQUE` can be used with various column types and numbers. If a key's length exceeds the engine's maximum, a HASH key may be created.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)
-
-For some engines, like InnoDB, `UNIQUE` can be used with any type of columns or any number of columns.
+SQL
 
 ```
-create table t1 (a int primary key,
-b blob,
-c1 varchar(1000),
-c2 varchar(1000),
-c3 varchar(1000),
-c4 varchar(1000),
-c5 varchar(1000),
-c6 varchar(1000),
-c7 varchar(1000),
-c8 varchar(1000),
-c9 varchar(1000),
-unique key `b` (b),
-unique key `all_c` (c1,c2,c3,c4,c6,c7,c8,c9)) engine=myisam;
+-- Example table definition (simplified for brevity)
+CREATE TABLE t_long_keys (
+  a INT PRIMARY KEY,
+  b BLOB,
+  c1 VARCHAR(1000),
+  UNIQUE KEY `uk_b` (b),
+  UNIQUE KEY `uk_c1` (c1)
+) ENGINE=InnoDB;
+
+-- SHOW CREATE TABLE might reveal 'USING HASH' for uk_b or uk_c1 if they exceed length limits
+SHOW CREATE TABLE t_long_keys\G
 ```
 
-If the key length is longer than the max key length supported by the engine, a HASH key will be created.\
-This can be seen with `SHOW CREATE TABLE table_name` or `SHOW INDEX FROM table_name`:
+Example output snippet showing `USING HASH`:
 
 ```
-show create table t1\G
-*************************** 1. row ***************************
-       Table: t1
-Create Table: CREATE TABLE `t1` (
-  `a` int(11) NOT NULL,
-  `b` blob DEFAULT NULL,
-  `c1` varchar(1000) DEFAULT NULL,
-  `c2` varchar(1000) DEFAULT NULL,
-  `c3` varchar(1000) DEFAULT NULL,
-  `c4` varchar(1000) DEFAULT NULL,
-  `c5` varchar(1000) DEFAULT NULL,
-  `c6` varchar(1000) DEFAULT NULL,
-  `c7` varchar(1000) DEFAULT NULL,
-  `c8` varchar(1000) DEFAULT NULL,
-  `c9` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`a`),
-  UNIQUE KEY `b` (`b`) USING HASH,
-  UNIQUE KEY `all_c` (`c1`,`c2`,`c3`,`c4`,`c6`,`c7`,`c8`,`c9`) USING HASH
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
+...
+  UNIQUE KEY `uk_b` (`b`) USING HASH,
+...
 ```
 
-## Plain Indexes
+### Plain Indexes (Regular Indexes)
 
-Indexes do not necessarily need to be unique. For example:
+Plain indexes do not enforce uniqueness; they are primarily used to speed up data retrieval.
+
+SQL
 
 ```
-CREATE TABLE t2 (a INT NOT NULL, b INT, INDEX (a,b));
-
-INSERT INTO t2 values (1,1), (2,2), (2,2);
-
+CREATE TABLE t2 (a INT NOT NULL, b INT, INDEX `idx_a_b` (a,b));
+INSERT INTO t2 VALUES (1,1), (2,2), (2,2); -- Duplicate (2,2) is allowed
 SELECT * FROM t2;
+```
+
+```
 +---+------+
 | a | b    |
 +---+------+
@@ -231,51 +225,41 @@ SELECT * FROM t2;
 +---+------+
 ```
 
-## Full-Text Indexes
+### Full-Text Indexes
 
-Full-text indexes support full-text indexing and searching. See the [Full-Text Indexes](../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) section.
+Full-text indexes are used for performing full-text searches on text data. For details, see the [Full-Text Indexes](https://www.google.com/search?q=../optimization-and-tuning/query-optimizations/full-text-indexes.md) documentation.
 
-## Choosing Indexes
+### Choosing Indexes
 
-In general you should only add indexes to match the queries your application\
-uses. Any extra will waste resources. In an application with very small tables,\
-indexes will not make much difference but as soon as your tables are larger\
-than your buffer sizes the indexes will start to speed things up dramatically.
+* **Index for Queries:** Add indexes that match the `WHERE` clauses, `JOIN` conditions, and `ORDER BY` clauses of your application's queries.
+* **Avoid Over-Indexing:** Extra indexes consume storage and can slow down `INSERT`, `UPDATE`, and `DELETE` operations.
+* **Impact of Table Size:** Indexes provide more significant speed-ups on large tables (larger than buffer sizes) than on very small tables.
+* **Use `EXPLAIN`:** Analyze your queries with the `EXPLAIN` statement to determine if indexes are being used effectively and identify columns that might benefit from indexing.
+* **`LIKE '%word%'`:** Queries using a leading wildcard in a `LIKE` clause (e.g., `LIKE '%word%'`) typically cannot use standard BTREE indexes effectively and may result in full table scans unless a full-text index is used.
+* **Delayed Writes:** For tables with many reads and writes, consider storage engine options or server configurations related to delayed writes to potentially improve performance by batching disk I/O. (This is an advanced topic.)
+* **Creating Indexes on Existing Tables:** Use `CREATE INDEX index_name ON table_name (column_list);`
+* **Large Tables:** For very large tables, it's often faster to load data into the table first and then create indexes, rather than creating indexes on an empty table and then loading data.
 
-Using the [EXPLAIN](../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) statement on your queries can help you decide which columns need indexing.
+### Viewing Indexes
 
-If you query contains something like `LIKE '%word%'`, without a fulltext index you are using a full table scan every time, which is very slow.
+*   **`SHOW INDEX FROM table_name;`**: Displays information about all indexes on a table.SQL
 
-If your table has a large number of reads and writes, consider using delayed\
-writes. This uses the db engine in a "batch" write mode, which cuts down on\
-disk io, therefore increasing performance.
+    ```
+    SHOW INDEX FROM Employees;
+    ```
+*   **`SHOW CREATE TABLE table_name;`**: Shows the `CREATE TABLE` statement, which includes definitions for all indexes.SQL
 
-Use the [CREATE INDEX](../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command to create an index.
+    ```
+    SHOW CREATE TABLE Employees\G
+    ```
 
-If you are building a large table then for best performance add the index after\
-the table is populated with data. This is to increase the insert performance\
-and remove the index overhead during inserts.
+### When to Remove an Index
 
-## Viewing Indexes
+Remove an index if:
 
-You can view which indexes are present on a table, as well as details about them, with the [SHOW INDEX](../reference/sql-statements/administrative-sql-statements/show/show-index.md) statement.
-
-If you want to know how to re-create an index, run `[SHOW CREATE TABLE](../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md)`.
-
-## When to Remove an Index
-
-If an index is rarely used (or not used at all) then remove it to increase INSERT,\
-and UPDATE performance.
-
-If [user statistics](../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, the [Information Schema](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) [INDEX\_STATISTICS](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md) table stores the index usage.
-
-If the [slow query log](../server-management/server-monitoring-logs/slow-query-log/) is enabled and the `[log_queries_not_using_indexes](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_queries_not_using_indexes)` server system variable is `ON`, the queries which do not use indexes are logged.
-
-_The initial version of this article was copied, with permission, from_ [_Proper\_Indexing\_Strategy_](https://hashmysql.org/wiki/Proper_Indexing_Strategy) _on 2012-10-30._
-
-## See Also
-
-* [AUTO\_INCREMENT](../reference/data-types/auto_increment.md)
-* [The Essentials of an Index](broken-reference)
+* It is rarely or never used. Unused indexes still incur overhead during data modification operations.
+* **Identifying Unused Indexes:**
+  * If [user statistics](https://www.google.com/search?q=../server-usage/administration/server-monitoring-and-logs/statistics/user-statistics.md) are enabled, query the `information_schema.INDEX_STATISTICS` table.
+  * If the [slow query log](https://www.google.com/search?q=../server-usage/administration/server-monitoring-and-logs/slow-query-log.md) is enabled and the `log_queries_not_using_indexes` [server system variable](https://www.google.com/search?q=../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md%23log_queries_not_using_indexes) is `ON`, queries performing full table scans will be logged, which can indicate missing or ineffective indexes.
 
 CC BY-SA / Gnu FDL
