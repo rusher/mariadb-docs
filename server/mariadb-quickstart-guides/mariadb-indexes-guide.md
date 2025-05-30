@@ -28,8 +28,6 @@ A primary key uniquely identifies each record in a table. Its values must be uni
 
 **Using `AUTO_INCREMENT`:** The `AUTO_INCREMENT` attribute is commonly used with numeric primary keys to automatically generate a unique ID for each new row.
 
-SQL
-
 ```
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -44,15 +42,11 @@ Note: The column defined as a primary key (or part of it) must be explicitly dec
 
 **Adding a Primary Key to an Existing Table:** Use `ALTER TABLE`. You cannot create a primary key with `CREATE INDEX`.
 
-SQL
-
 ```
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
 ```
 
 **Finding Tables Without Primary Keys:** This query uses the `information_schema` database to find tables lacking primary keys:
-
-SQL
 
 ```
 SELECT t.TABLE_SCHEMA, t.TABLE_NAME
@@ -76,8 +70,6 @@ A unique index ensures that all values in the indexed column (or combination of 
 
 **Creating Unique Indexes:** During table creation:
 
-SQL
-
 ```
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL,
@@ -90,23 +82,17 @@ CREATE TABLE `Employees` (
 
 After table creation using `ALTER TABLE`:
 
-SQL
-
 ```
 ALTER TABLE Employees ADD UNIQUE `UK_HomePhone` (`Home_Phone`);
 ```
 
 After table creation using `CREATE UNIQUE INDEX`:
 
-SQL
-
 ```
 CREATE UNIQUE INDEX `IX_Position` ON Employees(Position);
 ```
 
 **Multi-Column Unique Indexes:** An index can span multiple columns. MariaDB can use the leftmost part(s) of such an index if it cannot use the whole index (except for HASH indexes).
-
-SQL
 
 ```
 CREATE TABLE t1 (a INT NOT NULL, b INT, UNIQUE (a,b));
@@ -127,8 +113,6 @@ SELECT * FROM t1;
 
 **`NULL` Values in Unique Indexes:** A `UNIQUE` constraint allows multiple `NULL` values because in SQL, `NULL` is never equal to another `NULL`.
 
-SQL
-
 ```
 INSERT INTO t1 VALUES (3,NULL), (3, NULL); -- Both rows are inserted
 SELECT * FROM t1;
@@ -148,8 +132,6 @@ SELECT * FROM t1;
 
 Verification:
 
-SQL
-
 ```
 SELECT (3, NULL) = (3, NULL);
 ```
@@ -163,8 +145,6 @@ SELECT (3, NULL) = (3, NULL);
 ```
 
 **Conditional Uniqueness with Virtual Columns:** You can enforce uniqueness over a subset of rows using unique indexes on [virtual columns](https://www.google.com/search?q=../reference/sql-statements-and-structure/tables-and-views/virtual-columns.md). This example ensures `user_name` is unique for 'Active' or 'On-Hold' users, but allows duplicate names for 'Deleted' users:
-
-SQL
 
 ```
 CREATE TABLE Table_1 (
@@ -206,8 +186,6 @@ Example output snippet showing `USING HASH`:
 ### Plain Indexes (Regular Indexes)
 
 Plain indexes do not enforce uniqueness; they are primarily used to speed up data retrieval.
-
-SQL
 
 ```
 CREATE TABLE t2 (a INT NOT NULL, b INT, INDEX `idx_a_b` (a,b));

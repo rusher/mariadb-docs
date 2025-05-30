@@ -1,4 +1,4 @@
-# Joining Tables with JOIN Clauses
+# Copy of Joining Tables with JOIN Clauses
 
 In the absence of a more tutorial-level document, here is a simple example of\
 three basic JOIN types, which you can experiment with in order to see what the\
