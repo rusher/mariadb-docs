@@ -90,7 +90,7 @@ $ mariadb --host=192.0.2.1 \
    --password
 ```
 
-3. Lock the database with the [FLUSH TABLES WITH READ LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush) statement:
+3. Lock the database with the [FLUSH TABLES WITH READ LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) statement:
 
 ```
 FLUSH TABLES WITH READ LOCK;
@@ -135,7 +135,7 @@ $ sudo mariadb-backup --prepare \
 ```
 
 8. Ensure that all previous operations are complete.
-9. In the original client connection to the primary server, unlock the database with the [UNLOCK TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/transactions-unlock-tables) statement:
+9. In the original client connection to the primary server, unlock the database with the [UNLOCK TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/transactions-unlock-tables) statement:
 
 ```
 UNLOCK TABLES;

@@ -366,8 +366,8 @@ MariaDB Enterprise ColumnStore enables batch insert mode by default.
 
 When batch insert mode is enabled, MariaDB Enterprise ColumnStore, MariaDB Enterprise ColumnStore has special handling for the following statements:
 
-* [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
-* [INSERT INTO .. SELECT FROM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) .
+* [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
+* [INSERT INTO .. SELECT FROM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) .
 
 Enterprise ColumnStore uses the following rules:
 

@@ -14,7 +14,7 @@ You are loading data into a ColumnStore table by querying one or more local tabl
 
 MariaDB Enterprise ColumnStore enables batch insert mode by default.
 
-When batch insert mode is enabled, MariaDB Enterprise ColumnStore has special handling for [INSERT INTO .. SELECT FROM ..](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) statements.
+When batch insert mode is enabled, MariaDB Enterprise ColumnStore has special handling for [INSERT INTO .. SELECT FROM ..](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) statements.
 
 Enterprise ColumnStore uses the following rules:
 
@@ -47,13 +47,13 @@ $ mariadb --host 192.168.0.100 --port 5001 \
 
 After the command is executed, it will prompt you for a password.
 
-2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database) statement:
+2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement:
 
 ```
 CREATE DATABASE inventory;
 ```
 
-3. For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) statement:
+3. For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement:
 
 ```
 CREATE TABLE inventory.products (

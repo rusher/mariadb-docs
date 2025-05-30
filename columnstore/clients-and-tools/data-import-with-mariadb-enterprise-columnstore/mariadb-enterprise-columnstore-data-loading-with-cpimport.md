@@ -50,13 +50,13 @@ $ mariadb --host 192.168.0.100 --port 5001 \
 
 After the command is executed, it will prompt you for a password.
 
-2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database) statement:
+2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement:
 
 ```
 CREATE DATABASE inventory;
 ```
 
-3. For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) statement:
+3. For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement:
 
 ```
 CREATE TABLE inventory.products (
@@ -179,7 +179,7 @@ The cpimport tool can import data from standard input (stdin) if no file is prov
 
 Importing from standard input is useful in many scenarios.
 
-One scenario is when you want to import data from a remote database. You can use [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to query the table using the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select) statement, and then pipe the results into the standard input of the cpimport tool:
+One scenario is when you want to import data from a remote database. You can use [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) to query the table using the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) statement, and then pipe the results into the standard input of the cpimport tool:
 
 ```
 $ mariadb --quick \

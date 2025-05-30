@@ -30,7 +30,7 @@ The ColumnStore storage engine has the following features:
 
 ### Creating a ColumnStore Table
 
-To create a ColumnStore table, use the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) statement with the `ENGINE=ColumnStore` option:
+To create a ColumnStore table, use the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement with the `ENGINE=ColumnStore` option:
 
 ```
 CREATE DATABASE columnstore_db;

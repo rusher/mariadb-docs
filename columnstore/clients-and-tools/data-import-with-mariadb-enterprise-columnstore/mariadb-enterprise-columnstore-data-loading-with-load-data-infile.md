@@ -6,7 +6,7 @@ MariaDB Enterprise ColumnStore automatically translates `LOAD DATA [ LOCAL ] INF
 
 ## Intended Use Cases
 
-You can load data using the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement in the following cases:
+You can load data using the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement in the following cases:
 
 * You are loading data into a ColumnStore table from a text file stored on the primary node's file system.
 * You are loading data into a ColumnStore table from a text file stored on the client's file system. In this case, `LOAD DATA LOCAL INFILE` must be used.
@@ -17,7 +17,7 @@ You can load data using the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDF
 
 MariaDB Enterprise ColumnStore enables batch insert mode by default.
 
-When batch insert mode is enabled, MariaDB Enterprise ColumnStore has special handling for [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements.
+When batch insert mode is enabled, MariaDB Enterprise ColumnStore has special handling for [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements.
 
 Enterprise ColumnStore uses the following rules:
 
@@ -28,7 +28,7 @@ Batch insert mode can be disabled by setting the `columnstore_use_import_for_bat
 
 ## Insert Cache
 
-Starting with MariaDB Enterprise ColumnStore 6, an insert cache can be enabled to speed up [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements.
+Starting with MariaDB Enterprise ColumnStore 6, an insert cache can be enabled to speed up [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statements.
 
 The insert cache is disabled by default, but it can be enabled by configuring `columnstore_cache_inserts=ON`:
 
@@ -42,7 +42,7 @@ The cache is flushed to ColumnStore in the following scenarios:
 
 When the number of cached rows exceeds the value of `columnstore_cache_flush_threshold`
 
-When a statement other than [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/insert) or [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) is executed
+When a statement other than [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) or [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) is executed
 
 [cpimport](mariadb-enterprise-columnstore-data-loading-with-cpimport.md) is used to flush the insert cache to ColumnStore when `columnstore_cache_use_import=ON` is configured.
 
@@ -70,13 +70,13 @@ $ mariadb --host 192.168.0.100 --port 5001 \
 
 After the command is executed, it will prompt you for a password.
 
-2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database) statement:
+2. For each database that you are importing, create the database with the [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement:
 
 ```
 CREATE DATABASE inventory;
 ```
 
-For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) statement:
+For each table that you are importing, create the table with the [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) statement:
 
 ```
 CREATE TABLE inventory.products (
@@ -115,7 +115,7 @@ To use another delimiter, you can set the field delimiter.
 
 ## Load a Local Input File on the Client
 
-If you are loading a file located on the client, you can use the [LOAD DATA LOCAL INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement. However, for this statement to work, the client must explicitly enable usage of a local infile.
+If you are loading a file located on the client, you can use the [LOAD DATA LOCAL INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement. However, for this statement to work, the client must explicitly enable usage of a local infile.
 
 If you are using [MariaDB Client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client) the `--local-infile` option can be used:
 
@@ -163,7 +163,7 @@ conn = mariadb.connect(
 Set the Field Delimiter
 ```
 
-The default field delimiter for the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement is a tab.
+The default field delimiter for the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement is a tab.
 
 If your data file uses a different field delimiter, you can specify the field delimiter with the `FIELDS TERMINATED BY` clause.
 
@@ -183,7 +183,7 @@ FIELDS TERMINATED BY ',';
 
 ## Set the Quoting Style
 
-By default, the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement does not expect fields to be quoted.
+By default, the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) statement does not expect fields to be quoted.
 
 If your data file uses quotes around fields, you can specify the quote character with the `FIELDS [OPTIONALLY] ENCLOSED BY` clause.
 
