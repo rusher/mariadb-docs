@@ -1,4 +1,4 @@
-# mariadb-enterprise-columnstore-locking
+# MariaDB Enterprise Columnstore Locking
 
 ## MariaDB Enterprise ColumnStore Locking
 
@@ -16,7 +16,7 @@ MariaDB Enterprise ColumnStore requires a table lock for write operations.
 
 ## Locking for Data Loading
 
-MariaDB Enterprise ColumnStore requires a write metadata lock (MDL) on the table when a bulk data load is performed with [cpimport](../clients-and-tools/data-import-with-mariadb-enterprise-columnstore/mariadb-enterprise-columnstore-data-loading-with-cpimport.md).
+MariaDB Enterprise ColumnStore requires a write metadata lock (MDL) on the table when a bulk data load is performed with [cpimport](../clients-and-tools/data-import/mariadb-enterprise-columnstore-data-loading-with-cpimport.md).
 
 When a bulk data load is running:
 
@@ -24,7 +24,7 @@ When a bulk data load is running:
 * Write queries and concurrent bulk data loads on the same table will be blocked until the bulk data load operation is complete, and the write metadata lock on the table has been released.
 * The write metadata lock (MDL) can be monitored with the [METADATA\_LOCK\_INFO plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/metadata-lock-info-plugin).
 
-For additional information, see "[MariaDB Enterprise ColumnStore Data Loading](../clients-and-tools/data-import-with-mariadb-enterprise-columnstore/)".
+For additional information, see "[MariaDB Enterprise ColumnStore Data Loading](../clients-and-tools/data-import/)".
 
 ## Online Schema Changes
 
