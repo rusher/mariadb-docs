@@ -1,216 +1,162 @@
-# Configuring MariaDB for Remote Client Access
+---
+description: Remote Access Configuration Guide
+---
 
-Some MariaDB packages bind MariaDB to 127.0.0.1 (the loopback IP address) by default\
-as a security measure using the [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) configuration directive. Old MySQL packages sometimes disabled TCP/IP networking altogether using the [skip-networking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) directive. Before going in to how to configure these, let's\
-explain what each of them actually does:
+# Configuring MariaDB for Remote Client Access Guide
 
-* [skip-networking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is fairly simple. It just tells MariaDB to run without any of the TCP/IP networking options.
-* [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) requires a little bit of background information. A given\
-  server usually has at least two networking interfaces (although this is not\
-  required) and can easily have more. The two most common are a Loopback\
-  network device and a physical Network Interface Card (NIC) which allows\
-  you to communicate with the network. MariaDB is bound to the loopback\
-  interface by default because it makes it impossible to connect to the TCP\
-  port on the server from a remote host (the bind-address must refer to a local\
-  IP address, or you will receive a fatal error and MariaDB will not start).\
-  This of course is not desirable if you want to use the TCP port from a remote\
-  host, so you must remove this bind-address directive or replace it either 0.0.0.0\
-  to listen on all interfaces, or the address of a specific public interface.
+This guide explains how to configure your MariaDB server to accept connections from remote hosts. Learn to adjust crucial network settings like `bind-address`, grant appropriate user privileges for remote connections, and configure essential firewall rules.
 
-**MariaDB starting with** [**10.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011)
+### Understanding Key Network Directives
 
-Multiple comma-separated addresses can now be given to `bind_address` to allow the server to listen on more than one specific interface while not listening on others.
+Two main configuration directives control MariaDB's network accessibility:
 
-If [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) is bound to 127.0.0.1 (localhost), one can't connect to the MariaDB server from other hosts or from the same host over TCP/IP on a different interface than the loopback (127.0.0.1). This for example will not work (connecting with a hostname that points to a local IP of the host):
+* **`skip-networking`**: If this directive is enabled, MariaDB will not listen for TCP/IP connections at all. All interaction must be through local mechanisms like Unix sockets or named pipes.
+* **`bind-address`**: This directive specifies the IP address the server listens on.
+  * By default, for security, many MariaDB packages bind to `127.0.0.1` (localhost). This means the server will only accept connections originating from the server machine itself via the loopback interface. Remote connections will fail.
+  *   If `bind-address` is set to `127.0.0.1`, attempting to connect from another host, or even from the same host using a non-loopback IP address, will result in errors like:
 
-```
-(/my/maria-10.11) ./client/mariadb --host=myhost --protocol=tcp --port=3306 test
-ERROR 2002 (HY000): Can't connect to MySQL server on 'myhost' (115)
-(/my/maria-10.11) telnet myhost 3306
-Trying 192.168.0.11...
-telnet: connect to address 192.168.0.11: Connection refused
-```
+      ```
+      ERROR 2002 (HY000): Can't connect to MySQL server on 'myhost' (115)
+      ```
 
-Using 'localhost' works when binding with `bind_address`:
+      A `telnet myhost 3306` test would likely show "Connection refused."
+  * To allow connections from other hosts, you must either comment out the `bind-address` directive (making MariaDB listen on all available network interfaces, i.e., `0.0.0.0` for IPv4), or set it to a specific public IP address of the server.
+  * **MariaDB 10.11 and later:** `bind-address` can accept multiple comma-separated IP addresses, allowing the server to listen on specific interfaces while excluding others.
+
+Connecting via `localhost` typically works even if `bind-address` is `127.0.0.1` (using the loopback interface):
+
+Bash
 
 ```
-(my/maria-10.11) ./client/mariadb --host=localhost --protocol=tcp --port=3306 test
-Reading table information for completion of table and column names
-You can turn off this feature to get a quicker startup with -A
-
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-...
+./client/mariadb --host=localhost --protocol=tcp --port=3306 test
 ```
 
-## Finding the Defaults File
+### Locating the MariaDB Configuration File
 
-To enable MariaDB to listen to remote connections, you need to edit your defaults\
-file. See [Configuring MariaDB with my.cnf](../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) for more detail.
+To change these network settings, you need to edit MariaDB's configuration file (often named `my.cnf` or `my.ini`).
 
-Common locations for defaults files:
+* See [Configuring MariaDB with my.cnf](https://www.google.com/search?q=link_to_configuring_with_my_cnf) for comprehensive details.
+* **Common Locations:**
+  * `/etc/my.cnf` (Unix/Linux/BSD)
+  * `/etc/mysql/my.cnf` (Common on Debian/Ubuntu)
+  * `$MYSQL_HOME/my.cnf` (Unix/Linux/BSD, where `$MYSQL_HOME` is MariaDB's base directory)
+  * `SYSCONFDIR/my.cnf` (Compile-time specified system configuration directory)
+  * `DATADIR\my.ini` (Windows, in the data directory)
+  * `~/.my.cnf` (User-specific configuration file)
+*   **Identifying Loaded Files:** To see which configuration files your `mariadbd` server instance reads and in what order, execute:
 
-```
-* /etc/my.cnf                              (*nix/BSD)
-  * $MYSQL_HOME/my.cnf                       (*nix/BSD) *Most Notably /etc/mysql/my.cnf
-  * SYSCONFDIR/my.cnf                        (*nix/BSD)
-  * DATADIR\my.ini                           (Windows)
-```
+    Bash
 
-You can see which defaults files are read and in which order by executing:
+    ```
+    mariadbd --help --verbose
+    ```
 
-```
-shell> mariadbd --help --verbose
-mariadbd  Ver 10.11.5-MariaDB for linux-systemd on x86_64 (MariaDB Server)
-Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+    Look for a line similar to: `Default options are read from the following files in the given order: /etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf`
 
-Starts the MariaDB database server.
+### Modifying the Configuration File for Remote Access
 
-Usage: ./mariadbd [OPTIONS]
+1. **Open the File:** Use a text editor to open the primary configuration file identified (e.g., `/etc/mysql/my.cnf`).
+2. **Locate `[mysqld]` Section:** Find the section starting with `[mysqld]`.
+3. **Adjust Directives:**
+   *   If `skip-networking` is present and enabled (not commented out with `#`), comment it out or set it to `0`:Ini, TOML
 
-Default options are read from the following files in the given order:
-/etc/my.cnf /etc/mysql/my.cnf ~/.my.cnf
-```
+       ```
+       #skip-networking
+       ```
 
-The last line shows which defaults files are read.
+       orIni, TOML
 
-## Editing the Defaults File
+       ```
+       skip-networking=0
+       ```
+   *   If `bind-address = 127.0.0.1` (or another loopback/specific IP that's too restrictive) is present:
 
-Once you have located the defaults file, use a text editor to open the file and\
-try to find lines like this under the \[mysqld] section:
+       * To listen on all available IPv4 interfaces: Comment it out entirely (`#bind-address = 127.0.0.1`) or set `bind-address = 0.0.0.0`.
+       * To listen on a specific public IP address of your server: `bind-address = <your_server_public_ip>`.
+       * Alternatively, to effectively disable binding to a specific address and listen on all, you can add `skip-bind-address`. Example changes: \<!-- end list -->
 
-```
-[mysqld]
-    ...
-    skip-networking
-    ...
-    bind-address = <some ip-address>
-    ...
-```
+       Ini, TOML
 
-(The lines may not be in this order, and the order doesn't matter.)
+       ```
+       [mysqld]
+       ...
+       #skip-networking
+       #bind-address = 127.0.0.1
+       ...
+       ```
 
-If you are able to locate these lines, make sure they are both commented out\
-(prefaced with hash (#) characters), so that they look like this:
+       Or, to be explicit for listening on all interfaces if `bind-address` was previously restrictive:Ini, TOML
 
-```
-[mysqld]
-    ...
-    #skip-networking
-    ...
-    #bind-address = <some ip-address>
-    ...
-```
+       ```
+       [mysqld]
+       bind-address = 0.0.0.0
+       ```
+4. **Save and Restart:** Save the configuration file and restart the MariaDB server service.
+   * See [Starting and Stopping MariaDB](https://www.google.com/search?q=link_to_starting_stopping_mariadb) for instructions.
+5.  **Verify Settings (Optional):** You can check the options `mariadbd` is effectively using by running:Bash
 
-(Again, the order of these lines don't matter)
+    ```
+    ./sql/mariadbd --print-defaults  # Adjust path to mariadbd if necessary
+    ```
 
-Alternatively, just add the following lines **at the end** of your .my.cnf (notice that the file name starts with a dot) file in your home directory or alternative **last** in your /etc/my.cnf file.
+    Look for the effective `bind-address` value or the absence of `skip-networking`. If multiple `[mysqld]` sections or `skip-bind-address` are used, the last specified prevailing value is typically what counts.
 
-```
-[mysqld]
-skip-networking=0
-skip-bind-address
-```
+### Granting User Privileges for Remote Connections
 
-This works as one can have any number of \[mysqld] sections.
+Configuring the server to listen for remote connections is only the first step. You must also grant privileges to user accounts to connect from specific remote hosts. MariaDB user accounts are defined as `'username'@'hostname'`.
 
-Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/)).
+1.  **Connect to MariaDB:**&#x42;ash
 
-You can check the options mariadbd is using by executing:
+    ```
+    mariadb -u root -p
+    ```
+2.  **View Existing Remote Users (Optional):**&#x53;QL
 
-```
-shell> ./sql/mariadbd --print-defaults
-./sql/mariadbd would have been started with the following arguments:
---bind-address=127.0.0.1 --innodb_file_per_table=ON --server-id=1 --skip-bind-address ...
-```
+    ```
+    SELECT User, Host FROM mysql.user WHERE Host <> 'localhost' AND Host <> '127.0.0.1' AND Host <> '::1';
+    ```
+3. **Grant Privileges:** Use the `GRANT` statement to allow a user to connect from a remote host or a range of hosts.
+   * **Syntax Elements:**
+     * Privileges (e.g., `ALL PRIVILEGES`, `SELECT, INSERT, UPDATE`)
+     * Database/tables (e.g., `database_name.*` for all tables in a database, `*.*` for all databases)
+     * Username
+     * Host (IP address, hostname, or subnet with wildcards like `%`)
+     * Password (using `IDENTIFIED BY 'password'`)
+   *   **Example: Grant `root`-like access from a specific LAN subnet:** It's highly discouraged to allow `root` access from all hosts (`'root'@'%'`) directly to the internet. Instead, restrict it to trusted networks if necessary.
 
-It doesn't matter if you have the original --bind-address left as the later --skip-bind-address will overwrite it.
+       SQL
 
-## Granting User Connections From Remote Hosts
+       ```
+       GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%'
+         IDENTIFIED BY 'my-very-strong-password' WITH GRANT OPTION;
+       FLUSH PRIVILEGES;
+       ```
 
-Now that your MariaDB server installation is setup to accept connections from\
-remote hosts, we have to add a user that is allowed to connect from something\
-other than 'localhost' (Users in MariaDB are defined as 'user'@'host', so\
-'chadmaynard'@'localhost' and 'chadmaynard'@'1.1.1.1' (or\
-'chadmaynard'@'server.domain.local') are different users that can have\
-completely different permissions and/or passwords.
+       This allows the `root` user to connect from any IP address in the `192.168.100.x` subnet. Replace `'my-very-strong-password'` with a strong, unique password.
+   * For creating less privileged users or more granular permissions, see the [GRANT](https://www.google.com/search?q=link_to_GRANT_page) documentation.
 
-To create a new user:
+### Configuring Your Firewall
 
-* log into the [mariadb command line client](../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) (or your favorite graphical client if you wish)
+Even if MariaDB is configured for remote access, a firewall on the server (software or hardware) might block incoming connections on MariaDB's port (default is `3306`).
 
-```
-Welcome to the MariaDB monitor.  Commands end with ; or \g.
-Your MariaDB connection id is 36
-Server version: 5.5.28-MariaDB-mariadb1~lucid mariadb.org binary distribution
+*   **RHEL/CentOS 7 Example (using `firewall-cmd`):**&#x42;ash
 
-Copyright (c) 2000, 2012, Oracle, Monty Program Ab and others.
+    ```
+    sudo firewall-cmd --add-port=3306/tcp --permanent
+    sudo firewall-cmd --reload
+    ```
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+    The first command adds the rule, the second makes it persist after reboots and applies the changes. Consult your OS/firewall documentation for specific commands.
 
-MariaDB [(none)]>
-```
+### Important Considerations and Reverting Changes
 
-* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
-
-```
-SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
-+--------+-----------+
-| User   | Host      |
-+--------+-----------+
-| daniel | %         |
-| root   | 127.0.0.1 |
-| root   | ::1       |
-| root   | gandalf   |
-+--------+-----------+
-4 rows in set (0.00 sec)
-```
-
-(If you have a fresh install, it is normal for no rows to be returned)
-
-Now you have some decisions to make. At the heart of every grant statement you have these things:
-
-* list of allowed privileges
-* what database/tables these privileges apply to
-* username
-* host this user can connect from
-* and optionally a password
-
-It is common for people to want to create a "root" user that can connect from anywhere, so as an example, we'll do just that, but to improve on it we'll create\
-a root user that can connect from anywhere on my local area network (LAN), which\
-has addresses in the subnet 192.168.100.0/24. This is an improvement because\
-opening a MariaDB server up to the Internet and granting access to all\
-hosts is bad practice.
-
-```
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%' 
-  IDENTIFIED BY 'my-new-password' WITH GRANT OPTION;
-```
-
-(% is a wildcard)
-
-For more information about how to use GRANT, please see the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md)\
-page.
-
-At this point we have accomplished our goal and we have a user 'root' that can\
-connect from anywhere on the 192.168.100.0/24 LAN.
-
-## Port 3306 is Configured in Firewall
-
-One more point to consider whether the firewall is configured to allow incoming request from remote clients:
-
-On RHEL and CentOS 7, it may be necessary to configure the firewall to allow TCP access to MariaDB from remote hosts. To do so, execute both of these commands:
-
-```
-firewall-cmd --add-port=3306/tcp 
-firewall-cmd --permanent --add-port=3306/tcp
-```
-
-## Caveats
-
-* If your system is running a software firewall (or behind a hardware firewall\
-  or NAT) you must allow connections destined to TCP port that MariaDB runs on (by\
-  default and almost always 3306).
-* To undo this change and not allow remote access anymore, simply remove the `skip-bind-address` line or uncomment the [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) line in your defaults file. The end result should be that you should have in the output from `./sql/mariadbd --print-defaults` the option `--bind-address=127.0.0.1` and no `--skip-bind-address`.
+* **Security:** Opening MariaDB to remote connections, especially to the internet, increases security risks. Always use strong passwords, grant minimal necessary privileges, and restrict host access as much as possible. Consider using TLS/SSL for encrypted connections (see [Secure Connections Overview](https://www.google.com/search?q=link_to_Secure_Connections_Overview)).
+* **Reverting:** To disable remote access and revert to a more secure local-only setup:
+  1. Edit your MariaDB configuration file.
+  2. Ensure `skip-networking` is not enabled (or is `0`).
+  3. Set `bind-address = 127.0.0.1` explicitly, or remove any `skip-bind-address` directive if you previously added it to listen on all interfaces. The goal is to have `bind-address=127.0.0.1` as the effective setting.
+  4. Restart the MariaDB server.
+  5. Review and revoke any unnecessary remote `GRANT` privileges.
 
 _The initial version of this article was copied, with permission, from_ [_Remote\_Clients\_Cannot\_Connect_](https://hashmysql.org/wiki/Remote_Clients_Cannot_Connect) _on 2012-10-30._
 
