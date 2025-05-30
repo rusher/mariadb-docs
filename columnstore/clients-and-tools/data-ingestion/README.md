@@ -3,7 +3,7 @@
 ColumnStore provides several mechanisms to ingest data:
 
 * [cpimport](columnstore-bulk-data-loading.md) provides the fastest performance for inserting data and ability to route data to particular PM nodes. Normally this should be the default choice for loading data .
-* [LOAD DATA INFILE](../../columnstore-sql-structure-and-commands/columnstore-data-manipulation-statements/columnstore-load-data-infile.md) provides another means of bulk inserting data.
+* [LOAD DATA INFILE](../../sql-commands/columnstore-data-manipulation-statements/columnstore-load-data-infile.md) provides another means of bulk inserting data.
   * By default with autocommit on it will internally stream the data to an instance of the cpimport process. This requires some memory overhead on the UM server so may be less reliable than cpimport for very large imports.
   * In transactional mode DML inserts are performed which will be significantly slower plus it will consume both binlog transaction files and ColumnStore VersionBuffer files.
 * DML, i.e. INSERT, UPDATE, and DELETE, provide row level changes. ColumnStore is optimized towards bulk modifications and so these operations are slower than they would be in say InnoDB.
