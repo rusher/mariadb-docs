@@ -198,7 +198,7 @@ MariaDB ColumnStore query statistics history can be retrieved for analysis. By d
 </QueryStats>
 ```
 
-Cross Engine Support must also be enabled before enabling Query Statistics. See the [Cross Engine Configuration](../managing-columnstore/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins.md) section.
+Cross Engine Support must also be enabled before enabling Query Statistics. See the [Cross Engine Configuration](../management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins.md) section.
 
 For Querystats Cross Engine User needs INSERT Privege on querystats table.
 
