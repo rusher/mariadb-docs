@@ -2,7 +2,7 @@
 
 ## Overview
 
-When Enterprise ColumnStore executes a query, the [ExeMgr process](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) on the initiator/aggregator node translates the ColumnStore execution plan (CSEP) into a job list. A job list is a sequence of job steps.
+When Enterprise ColumnStore executes a query, the [ExeMgr process](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) on the initiator/aggregator node translates the ColumnStore execution plan (CSEP) into a job list. A job list is a sequence of job steps.
 
 Enterprise ColumnStore uses many different types of job steps that provide different scalability benefits:
 
@@ -11,7 +11,7 @@ Enterprise ColumnStore uses many different types of job steps that provide diffe
 
 As you increase the number of ColumnStore nodes or the number of cores on each node, Enterprise ColumnStore can use those resources to more efficiently execute job steps.
 
-For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluation](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md).".
+For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluation](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md).".
 
 ## Batch Primitive Step (BPS)
 
@@ -63,7 +63,7 @@ Enterprise ColumnStore performs the hash join in memory by default. If you perfo
 * Enterprise ColumnStore can be configured to use more memory for in-memory hash joins.
 * Enterprise ColumnStore can be configured to use disk-based joins.
 
-For additional information, see "[Configure in-memory joins](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-in-memory-joins)" and "[Configure Disk-Based Joins](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-joins)".
+For additional information, see "[Configure in-memory joins](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-in-memory-joins)" and "[Configure Disk-Based Joins](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-joins)".
 
 ## Having Step (HVS)
 
@@ -97,7 +97,7 @@ Enterprise ColumnStore 5 performs aggregation operations in memory. As a consequ
 
 In Enterprise ColumnStore 6, disk-based aggregations can be enabled.
 
-For additional information, see "[Configure Disk-Based Aggregations](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-aggregations)".
+For additional information, see "[Configure Disk-Based Aggregations](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-aggregations)".
 
 ## Tuple Union Step (TUS)
 
@@ -121,6 +121,6 @@ Enterprise ColumnStore defines a **window function** step to evaluate window fun
 
 In `calGetTrace()` output, a window function step is abbreviated WFS.
 
-Window function steps are evaluated locally by the [ExeMgr process](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) on the initiator/aggregator node.
+Window function steps are evaluated locally by the [ExeMgr process](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) on the initiator/aggregator node.
 
 Copyright © 2025 MariaDB

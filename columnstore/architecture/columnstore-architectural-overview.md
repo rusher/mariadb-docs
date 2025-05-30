@@ -45,8 +45,8 @@ The ColumnStore nodes:
 
 * Receive queries from MaxScale
 * Execute queries
-* Use [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) for data
-* Use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory).
+* Use [S3-compatible object storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) for data
+* Use [Shared Local Storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory).
 
 ### Enterprise ColumnStore with Shared Local Storage
 
@@ -69,18 +69,18 @@ The ColumnStore nodes:
 
 * Receive queries from MaxScale
 * Execute queries
-* Use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
+* Use [Shared Local Storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [DB Root directories](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
 
 ## Software Architecture
 
-| Software Component                                                                                                                              | Role                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Software Component                                                                                                                              | Role                                                                                               |
-| [MariaDB Enterprise ColumnStore](../../kb/en/mariadb-columnstore/)                                                                              | • Columnar storage engine • Query execution • Data storage                                         |
-| [MariaDB Enterprise Server](../../kb/en/mariadb-enterprise-server/)                                                                             | Enterprise-grade database server                                                                   |
-| [ColumnStore Storage Engine Plugin](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#columnstore-storage-engine-plugin) | • Storage engine plugin • Integrates MariaDB Enterprise ColumnStore into MariaDB Enterprise Server |
-| [Cluster Management API (CMAPI)](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server)                            | • REST API • Used for administrative tasks                                                         |
-| [MariaDB MaxScale](../../kb/en/maxscale/)                                                                                                       | • Database proxy • Accepts connections • Routes queries • Performs auto-failover                   |
+| Software Component                                                                                                                               | Role                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------- |
+| Software Component                                                                                                                               | Role                                                                                               |
+| [MariaDB Enterprise ColumnStore](../../kb/en/mariadb-columnstore/)                                                                               | • Columnar storage engine • Query execution • Data storage                                         |
+| [MariaDB Enterprise Server](../../kb/en/mariadb-enterprise-server/)                                                                              | Enterprise-grade database server                                                                   |
+| [ColumnStore Storage Engine Plugin](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#columnstore-storage-engine-plugin)  | • Storage engine plugin • Integrates MariaDB Enterprise ColumnStore into MariaDB Enterprise Server |
+| [Cluster Management API (CMAPI)](../columnstore-architecture/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Used for administrative tasks                                                         |
+| [MariaDB MaxScale](../../kb/en/maxscale/)                                                                                                        | • Database proxy • Accepts connections • Routes queries • Performs auto-failover                   |
 
 ### MariaDB Enterprise ColumnStore
 
@@ -119,7 +119,7 @@ For additional information, see "[ColumnStore Storage Engine](../../kb/en/column
 
 ### Cluster Management API (CMAPI) Server
 
-The [Cluster Management API (CMAPI)](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) server provides a REST API that can be used to configure and manage Enterprise ColumnStore.
+The [Cluster Management API (CMAPI)](../columnstore-architecture/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) server provides a REST API that can be used to configure and manage Enterprise ColumnStore.
 
 CMAPI must run on every ColumnStore node in a multi-node deployment but is not required in a single-node deployment.
 
@@ -162,7 +162,7 @@ MariaDB Enterprise ColumnStore automatically partitions each column into extents
 
 MariaDB Enterprise ColumnStore supports S3-compatible object storage.
 
-S3-compatible object storage is optional, but **highly recommended**. If S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) (such as NFS) for high availability.
+S3-compatible object storage is optional, but **highly recommended**. If S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use [Shared Local Storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) (such as NFS) for high availability.
 
 S3-compatible object storage is:
 
@@ -182,10 +182,10 @@ If you have any questions about using specific S3-compatible object storage with
 
 MariaDB Enterprise ColumnStore can use shared local storage.
 
-Shared local storage is required for high availability. The specific [Shared Local Storage requirements](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) depend on whether Enterprise ColumnStore is configured to use [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage):
+Shared local storage is required for high availability. The specific [Shared Local Storage requirements](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) depend on whether Enterprise ColumnStore is configured to use [S3-compatible object storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage):
 
-* When S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use shared local storage for high availability.
-* When S3-compatible object storage is not used, Enterprise ColumnStore requires the [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) to use shared local storage for high availability.
+* When S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use shared local storage for high availability.
+* When S3-compatible object storage is not used, Enterprise ColumnStore requires the [DB Root directories](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) to use shared local storage for high availability.
 
 The most common shared local storage options for on-premises and cloud deployments are:
 
@@ -272,23 +272,23 @@ As you increase the number of ColumnStore nodes or the number of cores on each n
 
 MariaDB Enterprise ColumnStore leverages common technologies to provide highly available production analytics with automatic failover:
 
-| Technology                                                                                                                  | Role                                                                                                                                                                                                                                               |
-| --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Technology                                                                                                                  | Role                                                                                                                                                                                                                                               |
-| [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage)           | • HA for data • Optional.                                                                                                                                                                                                                          |
-| [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                           | • With S3: HA for [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) • Without S3: HA for [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) |
-| [MariaDB Replication](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#mariadb-replication)         | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication                                                                                                                     |
-| [MaxScale](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#maxscale)                               | • Monitoring • Automatic failover • Load balancing                                                                                                                                                                                                 |
-| [Cluster Management API (CMAPI) Server](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Administration • Add nodes • Remove nodes                                                                                                                                                                                             |
+| Technology                                                                                                                                              | Role                                                                                                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Technology                                                                                                                                              | Role                                                                                                                                                                                                                                                                                                       |
+| [S3-compatible object storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage)           | • HA for data • Optional.                                                                                                                                                                                                                                                                                  |
+| [Shared Local Storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                           | • With S3: HA for [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) • Without S3: HA for [DB Root directories](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) |
+| [MariaDB Replication](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#mariadb-replication)                                     | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication                                                                                                                                                                             |
+| [MaxScale](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#maxscale)                                                           | • Monitoring • Automatic failover • Load balancing                                                                                                                                                                                                                                                         |
+| [Cluster Management API (CMAPI) Server](../columnstore-architecture/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Administration • Add nodes • Remove nodes                                                                                                                                                                                                                                                     |
 
 ### Shared Local Storage
 
 MariaDB Enterprise ColumnStore can use shared local storage.
 
-Shared local storage is required for high availability. The specific [Shared Local Storage requirements](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) depend on whether Enterprise ColumnStore is configured to use [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage):
+Shared local storage is required for high availability. The specific [Shared Local Storage requirements](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) depend on whether Enterprise ColumnStore is configured to use [S3-compatible object storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage):
 
-* When S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use shared local storage for high availability.
-* When S3-compatible object storage is not used, Enterprise ColumnStore requires the [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) to use [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for high availability.
+* When S3-compatible object storage is used, Enterprise ColumnStore requires the [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) to use shared local storage for high availability.
+* When S3-compatible object storage is not used, Enterprise ColumnStore requires the [DB Root directories](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) to use [Shared Local Storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for high availability.
 
 The most common shared local storage options for on-premises and cloud deployments are:
 
@@ -395,8 +395,8 @@ MariaDB Enterprise ColumnStore supports backup and restore using well-known tool
 | Component                                                                                                                                     | Backup Methods                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
 | Component                                                                                                                                     | Backup Methods                     |
-| [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage)                             | • S3 snapshot                      |
-| [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                                             | • File system snapshot • File copy |
+| [S3-compatible object storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) | • S3 snapshot                      |
+| [Shared Local Storage](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                 | • File system snapshot • File copy |
 | [Enterprise Server Data Directory](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#enterprise-server-data-directory) | • MariaDB Enterprise Backup        |
 
 For additional information, see "MariaDB Enterprise ColumnStore Backup and Restore".
@@ -412,12 +412,12 @@ The S3-compatible object storage can be backed up by:
 
 ### Shared Local Storage
 
-MariaDB Enterprise ColumnStore can leverage file system snapshots or file copy tools (such as rsync) to backup shared local storage when it is used for the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) or the [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
+MariaDB Enterprise ColumnStore can leverage file system snapshots or file copy tools (such as rsync) to backup shared local storage when it is used for the [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) or the [DB Root directories](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
 
 The shared local storage can be backed up by:
 
 1. Locking the database on the primary node
-2. Performing a file system snapshot or using a file copy tool (such as rsync) to copy the contents of the [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) and/or the [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
+2. Performing a file system snapshot or using a file copy tool (such as rsync) to copy the contents of the [Storage Manager directory](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) and/or the [DB Root directories](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
 
 ### Enterprise Server Data Directory
 

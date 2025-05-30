@@ -43,7 +43,7 @@ Convenience utility programs _getConfig_ and _setConfig_ are available to safely
 
 ### Module heartbeats
 
-Heartbeat monitoring occurs between modules (both [UM](../../columnstore-architecture/columnstore-user-module/) and [PM](../../columnstore-architecture/columnstore-performance-module.md)) to determine the module is up and functioning. The module heartbeat settings are the same for all modules.
+Heartbeat monitoring occurs between modules (both [UM](../../architecture/columnstore-user-module/) and [PM](../../architecture/columnstore-performance-module.md)) to determine the module is up and functioning. The module heartbeat settings are the same for all modules.
 
 1. ModuleHeartbeatPeriod refers to how often the heartbeat test is performed. For example, if you set the period to 5, then the heartbeat test is performed every 5 seconds. The initial default value is 1. To disable heartbeat monitoring set the value to -1.
 2. ModuleHeartbeatCount refers to how many failures in a row must take place before a fault is processed. The initial default value is 3.

@@ -4,7 +4,7 @@
 
 The ColumnStore storage engine uses a ColumnStore Execution Plan (CSEP) to represent a query plan internally.
 
-When the select handler receives the `SELECT_LEX` object, it transforms it into a CSEP as part of the query planning and optimization process. For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluation](../../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md)."
+When the select handler receives the `SELECT_LEX` object, it transforms it into a CSEP as part of the query planning and optimization process. For additional information, see "[MariaDB Enterprise ColumnStore Query Evaluation](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md)."
 
 ## Viewing the CSEP
 

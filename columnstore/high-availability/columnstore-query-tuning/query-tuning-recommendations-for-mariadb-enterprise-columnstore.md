@@ -44,7 +44,7 @@ In Enterprise ColumnStore 6, disk-based aggregations can be enabled.
 
 For best performance, avoid excessive aggregations or enable disk-based aggregations.
 
-For additional information, see "[Configure Disk-Based Aggregations](../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-aggregations)".
+For additional information, see "[Configure Disk-Based Aggregations](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-aggregations)".
 
 ## Avoid Non-Distributed Functions
 
@@ -66,11 +66,11 @@ If the joined tables are very large, the in-memory hash join can require too muc
 * Enterprise ColumnStore can be configured to use disk-based joins.
 * Enterprise ColumnStore can use optimizer statistics to better optimize the join order.
 
-For additional information, see "[Configure In-Memory Joins](../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-in-memory-joins)", "[Configure Disk-Based Joins](../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-joins)", and "[Optimizer Statistics](collect-statistics-with-analyze-table-for-mariadb-enterprise-columnstore.md)".
+For additional information, see "[Configure In-Memory Joins](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-in-memory-joins)", "[Configure Disk-Based Joins](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#configure-disk-based-joins)", and "[Optimizer Statistics](collect-statistics-with-analyze-table-for-mariadb-enterprise-columnstore.md)".
 
 ## Load Ordered Data in Proper Order
 
-Enterprise ColumnStore uses extent elimination to optimize queries. [Extent elimination](../../columnstore-architecture/mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) uses the minimum and maximum values in the [extent map](../../columnstore-performance-tuning/columnstore-query-tuning/mariadb-enterprise-columnstore-storage-architecture/#extent-map) to determine which extents can be skipped for a query.
+Enterprise ColumnStore uses extent elimination to optimize queries. [Extent elimination](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) uses the minimum and maximum values in the [extent map](../../columnstore-performance-tuning/columnstore-query-tuning/mariadb-enterprise-columnstore-storage-architecture/#extent-map) to determine which extents can be skipped for a query.
 
 When data is loaded into Enterprise ColumnStore, it appends the data to the latest extent. When an extent reaches the maximum number of column values, Enterprise ColumnStore creates a new extent. As a consequence, if ordered data is loaded in its proper order, then similar values will be clustered together in the same extent. This can improve query performance, because extent elimination performs best when similar values are clustered together.
 
