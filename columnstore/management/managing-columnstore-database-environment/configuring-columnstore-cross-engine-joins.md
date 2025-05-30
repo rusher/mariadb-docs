@@ -35,7 +35,7 @@ This change should be made while the ColumnStore server is down. In a multi node
 
 Check here on how to make changes via the command line to Columnstore.xml:
 
-[columnstore-configuration-file-update-and-distribution.md](../managing-columnstore-system/columnstore-configuration-file-update-and-distribution.md)
+[columnstore-configuration-file-update-and-distribution.md](../columnstore-system/columnstore-configuration-file-update-and-distribution.md)
 
 ## Troubleshooting
 
