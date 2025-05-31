@@ -1,32 +1,22 @@
-
 # Performance of MEMORY Tables
 
 Between [MariaDB 5.5.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5521-release-notes) and 5.5.22 some work was done on how the hash index for a [MEMORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/memory-storage-engine) table is created. This results in better performance when inserting rows into a memory table.
 
-
 The following benchmark compares MariaDB-5.5.21 and 5.5.25. Compiled with identical settings on the same machine. The operation was loading 50 million rows into a MEMORY table with LOAD DATA INFILE.
-
 
 Two different tables were tested: one with an indexed INT column and one with an indexed CHAR(20) column. The data files were pre-generated and located on a SSD. In order to make the effect visible, the cpu speed was set to minimum (core I5 @ 800Mhz)
 
-
 Result:
 
-
-
 | Table Type | MariaDB Version | rows per second | Percent |
-| --- | --- | --- | --- |
+| ---------- | --------------- | --------------- | ------- |
 | Table Type | MariaDB Version | rows per second | Percent |
-| INT | 5.5.21 | 411022 | 100% |
-|  | 5.5.25 | 510016 | 124% |
-| CHAR(20) | 5.5.21 | 259399 | 100% |
-|  | 5.5.25 | 411535 | 159% |
-
-
+| INT        | 5.5.21          | 411022          | 100%    |
+|            | 5.5.25          | 510016          | 124%    |
+| CHAR(20)   | 5.5.21          | 259399          | 100%    |
+|            | 5.5.25          | 411535          | 159%    |
 
 This is how the benchmark was run:
-
-
 
 ```
 MariaDB [test]> tee 5.5.21.txt
@@ -34,10 +24,7 @@ MariaDB [test]> set @instance="5.5.21";
 MariaDB [test]> source bench.sql
 ```
 
-
-
 The script used to generate the data files:
-
 
 ```
 #!/usr/bin/perl -w                                                              
@@ -60,7 +47,6 @@ close F or die;
 ```
 
 The benchmark SQL script bench.sql:
-
 
 ```
 use test;                                                                       
@@ -193,6 +179,4 @@ select operation, instance, avg(opsize/(unix_timestamp(ended)-unix_timestamp(sta
 from results group by operation, instance;
 ```
 
-
 CC BY-SA / Gnu FDL
-

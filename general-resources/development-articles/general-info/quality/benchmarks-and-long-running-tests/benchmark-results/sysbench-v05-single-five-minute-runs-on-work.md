@@ -1,34 +1,31 @@
-
-# sysbench v0.5 - Three Times Five Minutes Runs on work with 5.1.42
+# sysbench v0.5 - Single Five Minute Runs on work
 
 MariDB/MySQL sysbench benchmark comparison in %
 
-
-Each test was run for 5 minutes 3 times
-
+Each test was run for 5 minutes.
 
 ```
 Number of threads
                      1       4       8       16      32      64      128
  sysbench test
-  delete             98.99   86.56   97.42  102.60  101.25   98.91   99.99
-  insert             99.20   97.52   98.18   99.01   99.32   99.76   99.36
-  oltp_complex_ro   100.34   99.60   98.97  100.34   99.37   99.98  100.25
-  oltp_complex_rw   115.90  101.87  101.93  100.78  100.45   95.67  105.08
-  oltp_simple       100.09   99.82   99.73   99.57   99.57  101.48  100.59
-  select             99.72   99.83   98.85   99.92  101.29   99.34  100.11
-  update_index      112.62  101.40   99.31  100.21   98.15   99.12   99.98
-  update_non_index   99.36   99.28  100.20   87.68   97.09  102.04   99.91
+  delete            121.52  144.77  117.70  115.15  100.48   75.39   66.56
+  insert            114.89  181.50  118.06  136.00  125.53  141.83  113.88
+  oltp_complex_ro   103.13  100.99   94.65  104.14   97.87   90.18   79.93
+  oltp_complex_rw   131.65  149.90  120.88  128.58  116.71   89.92   80.63
+  oltp_simple       102.32  102.57   97.33   96.34   93.99   78.81   59.71
+  select            102.12  102.05   96.64   97.28   93.55   81.53   59.83
+  update_index      114.08  103.98  115.59  124.90  123.51  104.38   99.11
+  update_non_index  134.04  147.94  150.91  150.04  152.12  108.34   89.24
+
+insert/4 is a glitch
 
 (MariaDB q/s / MySQL q/s * 100)
 ```
 
-Benchmark was run on
-work: Linux openSUSE 11.1 (x86_64), daul socket quad-core Intel 3.0GHz. with 6MB L2 cache, 8 GB RAM, data_dir on single disk.
-
+Benchmark was run on\
+work: Linux openSUSE 11.1 (x86\_64), daul socket quad-core Intel 3.0GHz. with 6MB L2 cache, 8 GB RAM, data\_dir on single disk.
 
 MariaDB and MySQL were compiled with
-
 
 ```
 BUILD/compile-amd64-max
@@ -36,20 +33,27 @@ BUILD/compile-amd64-max
 
 MariaDB revision was:
 
-
 ```
--rtag:5.1.42
+revno: 2821
+committer: Sergei Golubchik <sergii@pisem.net>
+branch nick: maria-5.1
+timestamp: Tue 2010-02-23 13:04:58 +0100
+message:
+fix for a possible DoS in the my_net_skip_rest()
 ```
 
 MySQL revision was:
 
-
 ```
--rtag:5.1.42
+revno: 2929
+committer: Alexander Nozdrin <alik@sun.com>
+branch nick: mysql-trunk
+timestamp: Sat 2010-02-20 12:26:22 +0300
+message:
+Fix default.conf.
 ```
 
 sysbench was run with these parameters:
-
 
 ```
 --oltp-table-size=2000000 \
@@ -62,13 +66,11 @@ sysbench was run with these parameters:
 
 and this variable part of parameters
 
-
 ```
 --num-threads=$THREADS --test=${TEST_DIR}/${SYSBENCH_TEST}
 ```
 
 Configuration used for MariaDB and MySQL:
-
 
 ```
 --no-defaults \
@@ -96,6 +98,4 @@ Configuration used for MariaDB and MySQL:
 --innodb_max_dirty_pages_pct=80"
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -85,7 +85,7 @@ is OFF to prevent subquery cache bugs from showing up during the test.
 ## See Also
 
 * [RQG Documentation](https://github.com/RQG/RQG-Documentation/wiki/Category:RandomQueryGenerator)
-* [RQG Performance Comparisons](benchmarks/benchmarks/rqg-performance-comparisons.md)
+* [RQG Performance Comparisons](benchmarks-and-long-running-tests/benchmarks/rqg-performance-comparisons.md)
 * [RQG Extensions for MariaDB Features](rqg-extensions-for-mariadb.md)
 * [QA Tools](qa-tools.md)
 * [Worklog Quality Checklist Template](worklog-quality-checklist-template.md)

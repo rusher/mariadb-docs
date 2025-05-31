@@ -13,7 +13,7 @@ The list of automatic tests is located in the `buildbot.conf` file in the`[maria
 
 ## See Also
 
-* [RQG Performance Comparisons](benchmarks/benchmarks/rqg-performance-comparisons.md)
+* [RQG Performance Comparisons](benchmarks-and-long-running-tests/benchmarks/rqg-performance-comparisons.md)
 * [RQG Extensions for MariaDB Features](rqg-extensions-for-mariadb.md)
 * [Optimizer Quality](optimizer-quality.md)
 * [QA Tools](qa-tools.md)

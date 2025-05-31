@@ -1,45 +1,34 @@
-
 # Select Random Ranges and Select Random Point
 
 * `select_random_ranges` (select 10 ranges with a delta as parameter)
 * `select_random_points` (select 100 random points)
 
-
 ## Findings:
 
-
 `select_random_ranges`
-
 
 * A delta of 100 for the ranges gives 3 - 6% performance gain
 * A delta of 50 for the ranges gives 3 - 15% performance gain
 * A delta of 5 for the ranges gives up to 70% performance gain
 * A delta of 1 million shows no difference at all.
 
-
 `select_random_points`
-
 
 * We see up to 150% performance gain fetching index only
 * We see up to 50% performance gain fetching index and data
 
-
 The absolute numbers are highly RAM depended
 
-
-* We see an up to 250% performance difference on a 2GB system
- compared to a 4GB system.
-
+* We see an up to 250% performance difference on a 2GB system\
+  compared to a 4GB system.
 
 MariaDB and MySQL were compiled with
-
 
 ```
 BUILD/compile-amd64-max
 ```
 
 MariaDB revision was:
-
 
 ```
 revno: 2742
@@ -53,7 +42,6 @@ message:
 
 sysbench was run with the following parameters:
 
-
 ```
 --oltp-table-size=20000000 \       # 20 million rows.
 --max-requests=0 \
@@ -66,13 +54,11 @@ sysbench was run with the following parameters:
 
 and the following variable parameters
 
-
 ```
 --num-threads=$THREADS --test=${TEST_DIR}/${SYSBENCH_TEST}
 ```
 
 Configuration used for MariDB:
-
 
 ```
 --no-defaults \
@@ -90,6 +76,4 @@ Configuration used for MariDB:
 --tmpdir=/mnt/data/sysbench
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,17 +1,11 @@
-
 # sysbench Benchmark Setup
 
-For our automated MariaDB/MySQL sysbench benchmark tests, we use sysbench from
-`lp:sysbench`. This page describes the basic parameters and configuration we
+For our automated MariaDB/MySQL sysbench benchmark tests, we use sysbench from`lp:sysbench`. This page describes the basic parameters and configuration we\
 use.
 
-
-You can find the automation wrapper scripts we use for running sysbench in
-[lp:mariadb-tools](mariadb-tools.md)
-
+You can find the automation wrapper scripts we use for running sysbench in[lp:mariadb-tools](mariadb-tools.md)
 
 ## Current general parameters
-
 
 ```
 table_open_cache = 512
@@ -21,7 +15,6 @@ query_cache_type = 0
 ```
 
 ## Current InnoDB parameters
-
 
 ```
 innodb_data_home_dir = /data/mysql/
@@ -41,10 +34,8 @@ innodb_max_dirty_pages_pct = 80
 
 ## Compile
 
-
-Install MariaDB or MySQL to /usr/local and make a symlink to /usr/local/mysql.
+Install MariaDB or MySQL to /usr/local and make a symlink to /usr/local/mysql.\
 Please use non-debug version! On Mac OS X we currently need automake1.10.
-
 
 ```
 ./autogen.sh
@@ -58,7 +49,6 @@ optionally: make install
 
 ## Start and prepare database to use
 
-
 ```
 mysqladmin -uroot drop sbtest
 mysqladmin -uroot create sbtest
@@ -66,14 +56,11 @@ mysqladmin -uroot create sbtest
 
 ### Tests
 
-
-We use the latest sysbench with Lua scripting support. Therefore the test names
-differ from sysbench <= 0.4. To get reasonable results we use a run time of 5
+We use the latest sysbench with Lua scripting support. Therefore the test names\
+differ from sysbench <= 0.4. To get reasonable results we use a run time of 5\
 minutes.
 
-
 We run the tests with 1, 4, 8, 16, 32, 64, and 128 threads.
-
 
 ```
 NUM_THREADS="1 4 8 16 32 64 128"
@@ -114,16 +101,11 @@ TEST_DIR=${HOME}/work/monty_program/sysbench/sysbench/tests/db
 
 ## Custom added tests
 
-
 We created a couple of custom tests for SysBench:
 
-
-* select_random_ranges.lua
-* select_random_points.lua
-
+* select\_random\_ranges.lua
+* select\_random\_points.lua
 
 Both of these have been added to the latest SysBench v0.5 repository.
 
-
 CC BY-SA / Gnu FDL
-

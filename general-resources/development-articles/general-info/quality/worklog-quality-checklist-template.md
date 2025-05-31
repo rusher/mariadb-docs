@@ -226,7 +226,7 @@ _This makes it much faster to review code as one knows what it tested and what o
 ## See also
 
 * [RQG Documentation](https://github.com/RQG/RQG-Documentation/wiki/Category:RandomQueryGenerator)
-* [RQG Performance Comparisons](benchmarks/benchmarks/rqg-performance-comparisons.md)
+* [RQG Performance Comparisons](benchmarks-and-long-running-tests/benchmarks/rqg-performance-comparisons.md)
 * [RQG Extensions for MariaDB Features](rqg-extensions-for-mariadb.md)
 * [Optimizer Quality](optimizer-quality.md)
 * [QA Tools](qa-tools.md)

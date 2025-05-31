@@ -1,6 +1,6 @@
 # DBT-3 Dataset
 
-This page describes our setup for DBT-3 tests. A very cogent resource on the [DBT3 Benchmark](../benchmarks/benchmarks/dbt3-automation-scripts.md) is also available. See also [dbt-3-queries](dbt-3-queries.md)
+This page describes our setup for DBT-3 tests. A very cogent resource on the [DBT3 Benchmark](../benchmarks-and-long-running-tests/benchmarks/dbt3-automation-scripts.md) is also available. See also [dbt-3-queries](dbt-3-queries.md)
 
 ## Get and compile DBT3
 

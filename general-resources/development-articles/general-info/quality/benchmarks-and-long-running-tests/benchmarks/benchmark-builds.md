@@ -1,23 +1,17 @@
-
 # Benchmark Builds
 
 When you build for benchmarks, it's important to use consistent compile time settings across different versions and even products (i.e. when comparing MySQL and MariaDB).
 
-
-MariaDB and MySQL are now built using *cmake*. This makes it hard to fine tune settings because when you chose a predefined build configuration (recommended: *RelWithDebInfo*) then other settings like *CFLAGS* are overwritten by those from the *CMakefile*.
-
+MariaDB and MySQL are now built using _cmake_. This makes it hard to fine tune settings because when you chose a predefined build configuration (recommended: _RelWithDebInfo_) then other settings like _CFLAGS_ are overwritten by those from the _CMakefile_.
 
 There are more pain points with cmake:
-
 
 * cmake uses a different install layout than autotools builds
 * the OQGraph engine is included by default, but fails often due to mismatching boost libraries
 * make install tries to create directories in system locations (/etc/my.cnf.d etc.) which fails as ordinary user
 * CMakefiles for different products sometimes use different CFLAGS
 
-
 So here is my build script that fixes all those things.
-
 
 ```
 #!/bin/bash
@@ -46,7 +40,6 @@ make && make install
 
 The script shall be run from a subdir of a source tree. i.e.
 
-
 ```
 tar xfz mariadb-10.0.7.tar.gz
 cd mariadb-10.0.7
@@ -55,6 +48,4 @@ cd build
 #... run the build script above
 ```
 
-
 CC BY-SA / Gnu FDL
-

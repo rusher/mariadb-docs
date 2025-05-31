@@ -116,7 +116,7 @@ lists.mariadb.org' with an offer to run a BuildBot slave.
 
 ## Setting up the Slave BuildBot
 
-See [buildbot-setup](buildbot-setup/).
+See [buildbot-setup](setup/).
 
 ### Pausing mysql-test-run.pl
 
