@@ -170,7 +170,7 @@ alter_object:
 ## See Also
 
 * [RQG Documentation](https://github.com/RQG/RQG-Documentation/wiki/Category:RandomQueryGenerator)
-* [RQG Performance Comparisons](benchmarks-and-long-running-tests/benchmarks/rqg-performance-comparisons.md)
+* [RQG Performance Comparisons](benchmarks/benchmarks/rqg-performance-comparisons.md)
 * [Optimizer Quality](optimizer-quality.md)
 * [QA Tools](qa-tools.md)
 * [Worklog Quality Checklist Template](worklog-quality-checklist-template.md)

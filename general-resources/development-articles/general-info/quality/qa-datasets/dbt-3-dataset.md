@@ -1,20 +1,20 @@
-
 # DBT-3 Dataset
 
-This page describes our setup for DBT-3 tests. A very cogent resource on the [DBT3 Benchmark](../benchmarks-and-long-running-tests/benchmarks/dbt3-automation-scripts.md) is also available. See also [dbt-3-queries](dbt-3-queries.md)
-
+This page describes our setup for DBT-3 tests. A very cogent resource on the [DBT3 Benchmark](../benchmarks/benchmarks/dbt3-automation-scripts.md) is also available. See also [dbt-3-queries](dbt-3-queries.md)
 
 ## Get and compile DBT3
 
-
 * Get [DBT3](https://osdldbt.sourceforge.net/)
-* Make sure that you have pg_ctl and createdb of PostgreSQL installed. On
- Ubuntu look for postgresql and postgresql-client and make sure that pg_ctl is
- in your PATH, for instance: 
+* Make sure that you have pg\_ctl and createdb of PostgreSQL installed. On\
+  Ubuntu look for postgresql and postgresql-client and make sure that pg\_ctl is\
+  in your PATH, for instance:
+
 ```
 PATH=/usr/lib/postgresql/8.4/bin:$PATH
 ```
+
 * Compile DBT3
+
 ```
 gunzip -c dbt3-1.9.tar.gz | tar xvf -
 cd dbt3-1.9
@@ -23,17 +23,16 @@ make
 cd src/dbgen
 make
 ```
+
 * Generate data:
+
 ```
 ./dbgen -s30
 ```
 
-
 ## DDL
 
-
 Substitute `${ENGINE}` with the storage engine you want to use:
-
 
 ```
 CREATE TABLE supplier (
@@ -124,9 +123,7 @@ CREATE TABLE time_statistics (
 
 ## Load data
 
-
 Substitute `${DATA_DIR}` with the path to your generated data.
-
 
 ```
 LOAD DATA LOCAL INFILE '${DATA_DIR}/supplier.tbl' into table supplier fields terminated by '|';
@@ -140,7 +137,6 @@ LOAD DATA LOCAL INFILE '${DATA_DIR}/supplier.tbl' into table supplier fields ter
 ```
 
 ## Indexes we need
-
 
 ```
 ALTER TABLE lineitem 
@@ -170,7 +166,6 @@ CREATE INDEX i_n_regionkey ON nation (n_regionkey);
 
 ## Analyze tables
 
-
 ```
 ANALYZE TABLE supplier;
 ANALYZE TABLE part;
@@ -182,6 +177,4 @@ ANALYZE TABLE nation;
 ANALYZE TABLE region;
 ```
 
-
 CC BY-SA / Gnu FDL
-
