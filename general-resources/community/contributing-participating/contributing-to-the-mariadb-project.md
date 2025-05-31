@@ -26,7 +26,7 @@ strong C/C++ skills. Areas for non-developers include:
 
 * [Reporting Bugs](../community/bug-tracking/reporting-bugs.md)
   * To report a bug you'll need to sign up for an account by clicking on the Create an account link below the login fields
-* [Suggesting Features](../../development-articles/general-development-information/tools/jira.md)
+* [Suggesting Features](../../development-articles/general-info/tools/jira.md)
 * [Answering questions](https://mariadb.com/kb/en/+questions/) in the Knowledge Base
 * Helping other people answering problems or even fixing their bugs on [IRC](../../../kb/en/irc/) in the #maria channel on [Libera.Chat](../../../kb/en/irc/) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
 * Testing and Benchmarking
@@ -34,7 +34,7 @@ strong C/C++ skills. Areas for non-developers include:
 * Creating [documentation and KB articles](https://mariadb.com/kb/en/meta/writing-and-editing-knowledge-base-articles) for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
-* Running a [BuildBot](../../development-articles/general-development-information/tools/buildbot/) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
+* Running a [BuildBot](../../development-articles/general-info/tools/buildbot/) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
 * [Donate](https://mariadb.org/donate/) time or money to the MariaDB project.
 * Ask your company to [sponsor a feature](sponsoring-the-mariadb-project.md).
 * [MariaDB Foundation page on getting involved](https://mariadb.org/get-involved/)

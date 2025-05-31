@@ -50,7 +50,7 @@ ftp> put /tmp/mariadb-bug-'short-description'.tgz
 ftp> quit
 ```
 
-* To be able to follow the progress, create a bug report in [JIRA](../../../development-articles/general-development-information/tools/jira.md) about this. This should be easy to do based on the information you have in your README file.
+* To be able to follow the progress, create a bug report in [JIRA](../../../development-articles/general-info/tools/jira.md) about this. This should be easy to do based on the information you have in your README file.
 
 ## See Also
 

@@ -90,7 +90,7 @@ Some project names include:
 
 #### Type
 
-Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../development-articles/general-development-information/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
+Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../development-articles/general-info/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
 See also [plans for next release](broken-reference) for things that we are considering to have in the next MariaDB release.
 
