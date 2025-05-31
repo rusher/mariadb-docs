@@ -19,10 +19,10 @@ thread_type: IO_THREAD | SQL_THREAD
 
 ## Description
 
-`START SLAVE` or `START REPLICA` from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes) with no thread\_type options starts both of the replica threads (see [replication](broken-reference)) needed to connect with a master setup with [CHANGE MASTER TO](change-master-to.md) .\
+`START SLAVE` or `START REPLICA` from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1051-release-notes) with no thread\_type options starts both of the replica threads (see [replication](broken-reference)) needed to connect with a master setup with [CHANGE MASTER TO](change-master-to.md) .\
 The I/O thread reads events from the primary server and stores\
 them in the [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). The SQL thread reads events from the relay log\
-and executes them. `START REPLICA` requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#replication-slave-admin) privilege.
+and executes them. `START REPLICA` requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#replication-slave-admin) privilege.
 
 If `START REPLICA` succeeds in starting the replica threads, it returns\
 without any error. However, even in that case, it might be that the\
@@ -43,7 +43,7 @@ STATUS](../show/show-replica-status.md) ([SHOW REPLICA STATUS](../show/show-repl
 
 **SQL\_BEFORE\_GTIDS|SQL\_AFTER\_GTIDS**
 
-[MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) extended the START REPLICA UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its\
+[MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) extended the START REPLICA UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its\
 syntax is:
 
 ```
@@ -56,7 +56,7 @@ See [Global Transaction ID#SQL\_BEFORE\_GTIDS/SQL\_AFTER\_GTIDS](../../../../ha-
 
 If there is only one nameless primary, or the default primary (as specified by the [default\_master\_connection](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable) is intended, `connection_name` can be omitted. If provided, the `START REPLICA` statement will apply to the specified primary. `connection_name` is case-insensitive.
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as\
 using the channel\_name directly after `START REPLICA`.

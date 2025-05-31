@@ -1,13 +1,10 @@
-
 # REPLACE...RETURNING
 
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes)
 
-##### MariaDB starting with [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
-REPLACE ... RETURNING was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), and returns a resultset of the replaced rows.
-
+REPLACE ... RETURNING was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes), and returns a resultset of the replaced rows.
 
 ## Syntax
-
 
 ```
 REPLACE [LOW_PRIORITY | DELAYED]
@@ -19,7 +16,6 @@ REPLACE [LOW_PRIORITY | DELAYED]
 
 Or:
 
-
 ```
 REPLACE [LOW_PRIORITY | DELAYED]
     [INTO] tbl_name [PARTITION (partition_list)]
@@ -30,7 +26,6 @@ REPLACE [LOW_PRIORITY | DELAYED]
 
 Or:
 
-
 ```
 REPLACE [LOW_PRIORITY | DELAYED]
     [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
@@ -39,19 +34,14 @@ REPLACE [LOW_PRIORITY | DELAYED]
       [, select_expr ...]]
 ```
 
-
 ## Description
 
-
-`REPLACE ... RETURNING` returns a resultset of the replaced rows.
+`REPLACE ... RETURNING` returns a resultset of the replaced rows.\
 This returns the listed columns for all the rows that are replaced, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
-
 
 ## Examples
 
-
 Simple REPLACE statement
-
 
 ```
 REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 
@@ -65,7 +55,6 @@ as Total ,id2|id2, id2&&id2;
 ```
 
 Using stored functions in RETURNING
-
 
 ```
 DELIMITER |
@@ -88,7 +77,6 @@ EXECUTE stmt;
 
 Subqueries in the statement
 
-
 ```
 REPLACE INTO t1 SELECT * FROM t2 RETURNING (SELECT id2 FROM t2 WHERE 
 id2 IN (SELECT id2 FROM t2 WHERE id2=1)) AS new_id;
@@ -104,17 +92,12 @@ id2 IN (SELECT id2 FROM t2 WHERE id2=1)) AS new_id;
 
 Subqueries in the RETURNING clause that return more than one row or column cannot be used..
 
-
-Aggregate functions cannot be used in the RETURNING clause. Since aggregate functions work on a set of values and if the purpose is to get the row count, ROW_COUNT() with SELECT can be used, or it can be used in REPLACE...SELECT...RETURNING if the table in the RETURNING clause is not the same as the REPLACE table.
-
+Aggregate functions cannot be used in the RETURNING clause. Since aggregate functions work on a set of values and if the purpose is to get the row count, ROW\_COUNT() with SELECT can be used, or it can be used in REPLACE...SELECT...RETURNING if the table in the RETURNING clause is not the same as the REPLACE table.
 
 ## See Also
-
 
 * [INSERT ... RETURNING](../inserting-loading-data/insertreturning.md)
 * [DELETE ... RETURNING](delete.md#returning)
 * [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,14 +1,10 @@
+# Where is the table\_cache in MariaDB?
 
-# Where is the table_cache in MariaDB?
-
-All versions of MariaDB are based on MySQL 5.1 and greater, thus the `table_cache` option is deprecated in favor of `table_open_cache`. This is also documented at: [mysqld Options (full list)](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
-
+All versions of MariaDB are based on MySQL 5.1 and greater, thus the `table_cache` option is deprecated in favor of `table_open_cache`. This is also documented at: [mysqld Options (full list)](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 
 For further reading, please refer to the MySQL manual: [How MySQL Opens and Closes Tables](https://dev.mysql.com/doc/refman/5.1/en/table-cache.html).
 
-
 Examples of use cases:
-
 
 ```
 MariaDB [(none)]> SHOW GLOBAL STATUS LIKE 'opened_tables';
@@ -28,6 +24,4 @@ MariaDB [(none)]> SELECT @@table_open_cache;
 1 row in set (0.00 sec)
 ```
 
-
 CC BY-SA / Gnu FDL
-

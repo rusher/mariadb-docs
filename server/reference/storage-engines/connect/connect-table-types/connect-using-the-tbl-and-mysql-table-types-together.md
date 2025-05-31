@@ -85,7 +85,7 @@ Almost all the work will be done on the remote machines, simultaneously thanks\
 to the thread option, making this query super-fast even on big tables placed on\
 many remote machines.
 
-Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/tools/jira).
+Thread is currently experimental. Use it only for test and report any malfunction on [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/jira).
 
 ## Providing a list of servers
 

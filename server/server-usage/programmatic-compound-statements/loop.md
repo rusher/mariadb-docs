@@ -23,7 +23,7 @@ See [Delimiters](../../clients-and-utilities/mariadb-client/delimiters.md) in th
 
 ## See Also
 
-* [LOOP in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [LOOP in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 * [ITERATE](iterate.md)
 * [LEAVE](leave.md)
 * [FOR Loops](for.md)

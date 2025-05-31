@@ -15,7 +15,7 @@ If `N_or_S` is a string, returns a hexadecimal string representation of`N_or_S` 
 digits. If `N_or_S` is NULL, returns NULL. The inverse of this operation is performed by the [UNHEX](unhex.md)()\
 function.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes)
 
 HEX() with an [INET6](../../data-types/string-data-types/inet6.md) argument returns a hexadecimal representation of the underlying 16-byte binary string.
 
@@ -44,7 +44,7 @@ SELECT HEX('MariaDB');
 +----------------+
 ```
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes):
 
 ```
 SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));

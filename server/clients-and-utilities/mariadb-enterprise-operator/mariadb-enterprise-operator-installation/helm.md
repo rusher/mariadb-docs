@@ -130,7 +130,7 @@ helm upgrade --install mariadb-enterprise-operator \
   mariadb-enterprise-operator/mariadb-enterprise-operator
 ```
 
-Whenever a new version of the operator is released, an upgrade guide is linked in the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator-release-notes) if additional upgrade steps are required. Be sure to review the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator-release-notes) and follow the version-specific upgrade guides accordingly.
+Whenever a new version of the operator is released, an upgrade guide is linked in the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator) if additional upgrade steps are required. Be sure to review the [release notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator) and follow the version-specific upgrade guides accordingly.
 
 ## Operator high availability
 

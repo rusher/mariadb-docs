@@ -4,24 +4,24 @@ The following tables indicate the approximate data storage requirements for each
 
 ## Numeric Data Types
 
-| Data Type                                               | Storage Requirement                   |
-| ------------------------------------------------------- | ------------------------------------- |
-| Data Type                                               | Storage Requirement                   |
-| [TINYINT](data-types-numeric-data-types/tinyint.md)     | 1 byte                                |
-| [SMALLINT](data-types-numeric-data-types/smallint.md)   | 2 bytes                               |
-| [MEDIUMINT](data-types-numeric-data-types/mediumint.md) | 3 bytes                               |
-| [INT](data-types-numeric-data-types/int.md)             | 4 bytes                               |
-| [BIGINT](data-types-numeric-data-types/bigint.md)       | 8 bytes                               |
-| [FLOAT](data-types-numeric-data-types/float.md)(p)      | 4 bytes if p <= 24, otherwise 8 bytes |
-| [DOUBLE](data-types-numeric-data-types/double.md)       | 8 bytes                               |
-| [DECIMAL](data-types-numeric-data-types/decimal.md)     | See table below                       |
-| [BIT](data-types-numeric-data-types/bit.md)(M)          | (M+7)/8 bytes                         |
+| Data Type                                    | Storage Requirement                   |
+| -------------------------------------------- | ------------------------------------- |
+| Data Type                                    | Storage Requirement                   |
+| [TINYINT](numeric-data-types/tinyint.md)     | 1 byte                                |
+| [SMALLINT](numeric-data-types/smallint.md)   | 2 bytes                               |
+| [MEDIUMINT](numeric-data-types/mediumint.md) | 3 bytes                               |
+| [INT](numeric-data-types/int.md)             | 4 bytes                               |
+| [BIGINT](numeric-data-types/bigint.md)       | 8 bytes                               |
+| [FLOAT](numeric-data-types/float.md)(p)      | 4 bytes if p <= 24, otherwise 8 bytes |
+| [DOUBLE](numeric-data-types/double.md)       | 8 bytes                               |
+| [DECIMAL](numeric-data-types/decimal.md)     | See table below                       |
+| [BIT](numeric-data-types/bit.md)(M)          | (M+7)/8 bytes                         |
 
 Note that MEDIUMINT columns will require 4 bytes in memory (for example, in InnoDB buffer pool).
 
 ### Decimal
 
-[Decimals](data-types-numeric-data-types/decimal.md) are stored using a binary format, with the integer and the fraction stored separately. Each nine-digit multiple requires 4 bytes, followed by a number of bytes for whatever remains, as follows:
+[Decimals](numeric-data-types/decimal.md) are stored using a binary format, with the integer and the fraction stored separately. Each nine-digit multiple requires 4 bytes, followed by a number of bytes for whatever remains, as follows:
 
 | Remaining digits | Storage Requirement |
 | ---------------- | ------------------- |
@@ -83,9 +83,9 @@ Assuming a single-byte character-set:
 
 ### Microseconds
 
-[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and MySQL 5.6 introduced [microseconds](../sql-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB defaults to the MySQL format (by means of the [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and MySQL 5.6 introduced [microseconds](../sql-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB defaults to the MySQL format (by means of the [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
 
-#### MySQL 5.6+ and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)+
+#### MySQL 5.6+ and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)+
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |
@@ -95,7 +95,7 @@ Assuming a single-byte character-set:
 | 3,4       | 2 bytes             |
 | 5,6       | 3 bytes             |
 
-#### [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) - [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+#### [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) - [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |

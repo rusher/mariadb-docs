@@ -30,13 +30,13 @@ allows IPv6 connections from local machine ::1, from IP addresses starting with 
 
 ## Client-Side Support for Proxy Protocol
 
-Since the functionality is suited only to very specific proxy-like programs, most client APIs do not provide support for sending proxy headers. One exception is [Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) version 3 or later. One can now use [mysql\_optionsv()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv):
+Since the functionality is suited only to very specific proxy-like programs, most client APIs do not provide support for sending proxy headers. One exception is [Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) version 3 or later. One can now use [mysql\_optionsv()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv):
 
 ```
 mysql_optionsv(mysql, MARIADB_OPT_PROXY_HEADER, header,  header_size)
 ```
 
-prior to [mysql\_real\_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) or mysql\_connect(), to send the header. In the call above `_header_` is the proxy header with the type `void *`, and `_header_size_` is its size in bytes (type is `size_t`).
+prior to [mysql\_real\_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) or mysql\_connect(), to send the header. In the call above `_header_` is the proxy header with the type `void *`, and `_header_size_` is its size in bytes (type is `size_t`).
 
 ### Example
 

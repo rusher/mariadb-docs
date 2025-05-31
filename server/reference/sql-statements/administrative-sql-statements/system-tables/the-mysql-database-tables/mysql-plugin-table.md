@@ -13,8 +13,8 @@ This table only contains information about [plugins](../../../../plugins/) that 
 This table does not contain information about:
 
 * Built-in plugins.
-* Plugins loaded with the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
-* Plugins loaded with the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+* Plugins loaded with the [--plugin-load-add](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+* Plugins loaded with the [--plugin-load](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
 
 This table only contains enough information to reload the plugin when the server is restarted, which means it only contains the plugin name and the plugin library.
 

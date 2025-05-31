@@ -95,7 +95,7 @@ collation_connection: utf8_general_ci
 
 These columns were added in MariaDB/MySQL 5.1.21.
 
-Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) have NULL in the `Created` column.
+Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) have NULL in the `Created` column.
 
 ## See also
 

@@ -18,7 +18,7 @@ myisamchk should not be run while anyone is accessing any of the affected tables
 
 With no options, myisamchk simply checks your table as the default operation.
 
-The following options can be set while passed as commandline options to myisamchk, or set with a \[myisamchk] section in your [my.cnf](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) file.
+The following options can be set while passed as commandline options to myisamchk, or set with a \[myisamchk] section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) file.
 
 ### General Options
 

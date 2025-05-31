@@ -32,7 +32,7 @@ SELECT HOUR('272:59:59');
 +-------------------+
 ```
 
-Difference between `[EXTRACT (HOUR FROM ...)](extract.md)` (>= [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) and [MariaDB 5.5.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes)) and `HOUR`:
+Difference between `[EXTRACT (HOUR FROM ...)](extract.md)` (>= [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) and [MariaDB 5.5.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes)) and `HOUR`:
 
 ```
 SELECT EXTRACT(HOUR FROM '26:30:00'), HOUR('26:30:00');

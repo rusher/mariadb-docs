@@ -15,7 +15,7 @@ This will be couched in terms of Data Warehousing, with a huge `Fact` table and 
 
 `Staging` is one (or more) tables in which the data lives only long enough to be handed off to Normalization, Summary, and the Fact tables.
 
-Since we are probably talking about a billion-row table, shrinking the width of the Fact table by normalizing (as mentioned here). Changing an [INT](../../../reference/data-types/data-types-numeric-data-types/int.md) to a [MEDIUMINT](../../../reference/data-types/data-types-numeric-data-types/mediumint.md) will save a GB. Replacing a string by an id (normalizing) saves many GB. This helps disk space and cacheability, hence speed.
+Since we are probably talking about a billion-row table, shrinking the width of the Fact table by normalizing (as mentioned here). Changing an [INT](../../../reference/data-types/numeric-data-types/int.md) to a [MEDIUMINT](../../../reference/data-types/numeric-data-types/mediumint.md) will save a GB. Replacing a string by an id (normalizing) saves many GB. This helps disk space and cacheability, hence speed.
 
 ## Injection speed
 
@@ -29,7 +29,7 @@ Generally the fastest injection rate can be achieved by "staging" the INSERTs in
 
 ## Normalization
 
-Let's say your Input has a [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) `host_name` column, but you need to turn that into a smaller [MEDIUMINT](../../../reference/data-types/data-types-numeric-data-types/mediumint.md) `host_id` in the Fact table. The "Normalization" table, as I call it, looks something like
+Let's say your Input has a [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) `host_name` column, but you need to turn that into a smaller [MEDIUMINT](../../../reference/data-types/numeric-data-types/mediumint.md) `host_id` in the Fact table. The "Normalization" table, as I call it, looks something like
 
 ```
 CREATE TABLE Hosts (

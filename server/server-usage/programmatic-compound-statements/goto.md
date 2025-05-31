@@ -1,22 +1,16 @@
-
 # GOTO
 
 ## Syntax
-
 
 ```
 GOTO label
 ```
 
-
 ## Description
 
-
-The `GOTO` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
-
+The `GOTO` statement causes the code to jump to the specified label, and continue operating from there. It is only accepted when in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle).
 
 ## Example
-
 
 ```
 SET sql_mode=ORACLE;
@@ -55,6 +49,4 @@ call p1();
 1 row in set (0.000 sec)
 ```
 
-
 CC BY-SA / Gnu FDL
-

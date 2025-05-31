@@ -2,7 +2,7 @@
 
 Binary literals can be written in one of the following formats: `b'value'`, `B'value'` or `0bvalue`, where `value` is a string composed by `0` and `1` digits.
 
-Binary literals are interpreted as binary strings, and are convenient to represent [VARBINARY](../../data-types/string-data-types/varbinary.md), [BINARY](../../data-types/string-data-types/binary.md) or [BIT](../../data-types/data-types-numeric-data-types/bit.md) values.
+Binary literals are interpreted as binary strings, and are convenient to represent [VARBINARY](../../data-types/string-data-types/varbinary.md), [BINARY](../../data-types/string-data-types/binary.md) or [BIT](../../data-types/numeric-data-types/bit.md) values.
 
 To convert a binary literal into an integer, just add 0.
 

@@ -1,32 +1,23 @@
+# schema\_object\_overview Sys Schema View
 
-# schema_object_overview Sys Schema View
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-The [Sys Schema](../README.md) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-
+The [Sys Schema](../) was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
 ## Description
 
-
 A count of the number of objects within each schema, sorted by schema and object.
-
 
 Contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| db | Schema name |
-| object_type | Object name |
-| count | Count of the number of objects |
-
-
+| Column       | Description                    |
+| ------------ | ------------------------------ |
+| Column       | Description                    |
+| db           | Schema name                    |
+| object\_type | Object name                    |
+| count        | Count of the number of objects |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.schema_object_overview;
@@ -47,6 +38,4 @@ SELECT * FROM sys.schema_object_overview;
 +--------------------+---------------+-------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

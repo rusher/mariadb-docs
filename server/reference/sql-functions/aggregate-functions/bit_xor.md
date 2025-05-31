@@ -8,7 +8,7 @@ BIT_XOR(expr) [over_clause]
 
 ## Description
 
-Returns the bitwise XOR of all bits in `expr`. The calculation is performed with 64-bit ([BIGINT](../../data-types/data-types-numeric-data-types/bigint.md)) precision. It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.
+Returns the bitwise XOR of all bits in `expr`. The calculation is performed with 64-bit ([BIGINT](../../data-types/numeric-data-types/bigint.md)) precision. It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.
 
 If no rows match, `BIT_XOR` will return a value with all bits set to `0`. NULL values have no effect on the result unless all results are NULL, which is treated as no match.
 

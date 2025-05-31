@@ -1,13 +1,10 @@
+# VEC\_ToText
 
-# VEC_ToText
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-
-##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
-[Vectors](../README.md) were introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117).
-
+[Vectors](../) were introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117).
 
 ## Syntax
-
 
 ```
 VEC_ToText(v)
@@ -15,12 +12,9 @@ VEC_ToText(v)
 
 ## Description
 
-
 `VEC_ToText` converts a binary vector into a json array of numbers (floats). Returns NULL and throws a warning [4201](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4201.md) if given an invalid vector.
 
-
 ## Example
-
 
 ```
 SELECT VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d');
@@ -32,7 +26,6 @@ SELECT VEC_ToText(x'e360d63ebe554f3fcdbc523f4522193f5236083d');
 ```
 
 Invalid vector:
-
 
 ```
 SELECT VEC_ToText(x'aabbcc');
@@ -49,9 +42,6 @@ Warning (Code 4201): Invalid binary vector format. Must use IEEE standard float
 
 ## See Also
 
-
 * [Error 4201: Invalid binary vector format](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4200-to-4299/e4201.md)
 
-
 CC BY-SA / Gnu FDL
-

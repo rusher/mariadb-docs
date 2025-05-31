@@ -2,7 +2,7 @@
 
 **MariaDB starting with** [**11.7.1**](../../../../kb/en/mariadb-1171-release-notes/)
 
-Vectors were introduced in [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+Vectors were introduced in [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 This page documents system variables related to [Vectors](./).
 
@@ -21,7 +21,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Valid Values:
   * `euclidean` Calculates straight-line distance between vectors. Best for spatial data, images, etc, when absolute magnitude matters.
   * `cosine` Measures directional similarity between vectors. Ideal for text embeddings, semantic search, and when vector magnitude is less important.
-* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 #### `mhnsw_default_m`
 
@@ -34,7 +34,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `int unsigned`
 * Default Value: `6`
 * Range: `3` to `200`
-* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 #### `mhnsw_ef_search`
 
@@ -45,7 +45,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `int unsigned`
 * Default Value: `20`
 * Range: `1` to `10000`
-* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 #### `mhnsw_max_cache_size`
 
@@ -56,6 +56,6 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Data Type: `bigint unsigned`
 * Default Value: `16777216` (16 MB)
 * Range: `1048576` to `18446744073709551615`
-* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+* Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 CC BY-SA / Gnu FDL

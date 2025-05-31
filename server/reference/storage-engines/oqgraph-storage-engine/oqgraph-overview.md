@@ -12,7 +12,7 @@ See [Installing OQGRAPH](installing-oqgraph.md). Note that if the [query cache](
 
 ## Creating a Table
 
-The following documentation is based upon [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) and OQGRAPH v3.
+The following documentation is based upon [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes) and OQGRAPH v3.
 
 ## Example with origin and destination nodes only
 
@@ -51,7 +51,7 @@ ENGINE=OQGRAPH
 data_table='oq_backing' origid='origid' destid='destid';
 ```
 
-An older format (prior to [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)) has the latch field as a SMALLINT rather than a VARCHAR. The format gives an error:
+An older format (prior to [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)) has the latch field as a SMALLINT rather than a VARCHAR. The format gives an error:
 
 ```
 CREATE TABLE oq_old (
@@ -70,7 +70,7 @@ data_table='oq_backing' origid='origid' destid='destid';
 ERROR 1005 (HY000): Can't create table `test`.`oq_old` (errno: 140 "Wrong create options")
 ```
 
-The old, deprecated format can still be used prior to [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) if the value of the [oqgraph\_allow\_create\_integer\_latch](../../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `FALSE`, to `TRUE`.
+The old, deprecated format can still be used prior to [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) if the value of the [oqgraph\_allow\_create\_integer\_latch](../../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `FALSE`, to `TRUE`.
 
 ```
 SET GLOBAL oqgraph_allow_create_integer_latch=1;

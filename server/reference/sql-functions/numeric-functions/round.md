@@ -13,8 +13,8 @@ value `X` to become zero.
 
 The rounding algorithm depends on the data type of `X`:
 
-* for floating point types ([FLOAT](../../data-types/data-types-numeric-data-types/float.md), [DOUBLE](../../data-types/data-types-numeric-data-types/double.md)) the C libraries rounding function is used, so the behavior _may_ differ between operating systems
-* for fixed point types ([DECIMAL](../../data-types/data-types-numeric-data-types/decimal.md), [DEC/NUMBER/FIXED](../../data-types/data-types-numeric-data-types/dec-numeric-fixed.md)) the "round half up" rule is used, meaning that e.g. a value ending in exactly .5 is always rounded up.
+* for floating point types ([FLOAT](../../data-types/numeric-data-types/float.md), [DOUBLE](../../data-types/numeric-data-types/double.md)) the C libraries rounding function is used, so the behavior _may_ differ between operating systems
+* for fixed point types ([DECIMAL](../../data-types/numeric-data-types/decimal.md), [DEC/NUMBER/FIXED](../../data-types/numeric-data-types/dec-numeric-fixed.md)) the "round half up" rule is used, meaning that e.g. a value ending in exactly .5 is always rounded up.
 
 ## Examples
 

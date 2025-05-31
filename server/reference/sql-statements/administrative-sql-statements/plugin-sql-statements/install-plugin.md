@@ -64,7 +64,7 @@ for each plugin that is loaded so that the plugin has a chance to\
 perform any final cleanup.
 
 If you need to load plugins for a single server startup when the`--skip-grant-tables` option is given (which tells the server\
-not to read system tables), use the`--plugin-load` [mariadbd option](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load).
+not to read system tables), use the`--plugin-load` [mariadbd option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load).
 
 #### IF NOT EXISTS
 

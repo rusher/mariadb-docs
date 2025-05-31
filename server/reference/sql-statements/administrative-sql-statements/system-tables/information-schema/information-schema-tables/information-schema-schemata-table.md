@@ -4,15 +4,15 @@ The [Information Schema](../) `SCHEMATA` table stores information about database
 
 It contains the following columns:
 
-| Column                        | Description                                                                                                                                                                                  |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                        | Description                                                                                                                                                                                  |
-| CATALOG\_NAME                 | Always def.                                                                                                                                                                                  |
-| SCHEMA\_NAME                  | Database name.                                                                                                                                                                               |
-| DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database.                                                                                       |
-| DEFAULT\_COLLATION\_NAME      | Default [collation](../../../../../data-types/string-data-types/character-sets/).                                                                                                            |
-| SQL\_PATH                     | Always NULL.                                                                                                                                                                                 |
-| SCHEMA\_COMMENT               | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes). |
+| Column                        | Description                                                                                                                                              |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                        | Description                                                                                                                                              |
+| CATALOG\_NAME                 | Always def.                                                                                                                                              |
+| SCHEMA\_NAME                  | Database name.                                                                                                                                           |
+| DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database.                                                   |
+| DEFAULT\_COLLATION\_NAME      | Default [collation](../../../../../data-types/string-data-types/character-sets/).                                                                        |
+| SQL\_PATH                     | Always NULL.                                                                                                                                             |
+| SCHEMA\_COMMENT               | Database comment. From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes). |
 
 ## Example
 
@@ -45,7 +45,7 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 ...
 ```
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes):
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes):
 
 ```
 SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G

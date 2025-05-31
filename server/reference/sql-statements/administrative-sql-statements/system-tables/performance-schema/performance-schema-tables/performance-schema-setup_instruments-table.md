@@ -1,27 +1,19 @@
+# Performance Schema setup\_instruments Table
 
-# Performance Schema setup_instruments Table
-
-The `setup_instruments` table contains a list of instrumented object classes for which it is possible to collect events. There is one row for each instrument in the source code. When an instrument is enabled and executed, instances are created which are then stored in the [cond_instances](performance-schema-cond_instances-table.md), [file_instances](performance-schema-file_instances-table.md), [mutex_instances](performance-schema-mutex_instances-table.md), [rwlock_instances](performance-schema-rwlock_instances-table.md) or [socket_instance](performance-schema-socket_instances-table.md) tables.
-
+The `setup_instruments` table contains a list of instrumented object classes for which it is possible to collect events. There is one row for each instrument in the source code. When an instrument is enabled and executed, instances are created which are then stored in the [cond\_instances](performance-schema-cond_instances-table.md), [file\_instances](performance-schema-file_instances-table.md), [mutex\_instances](performance-schema-mutex_instances-table.md), [rwlock\_instances](performance-schema-rwlock_instances-table.md) or [socket\_instance](performance-schema-socket_instances-table.md) tables.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| NAME | Instrument name |
-| ENABLED | Whether or not the instrument is enabled. It can be disabled, and the instrument will produce no events. |
-| TIMED | Whether or not the instrument is timed. It can be set, but if disabled, events produced by the instrument will have NULL values for the corresponding TIMER_START, TIMER_END, and TIMER_WAIT values. |
-
-
+| Column  | Description                                                                                                                                                                                             |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column  | Description                                                                                                                                                                                             |
+| NAME    | Instrument name                                                                                                                                                                                         |
+| ENABLED | Whether or not the instrument is enabled. It can be disabled, and the instrument will produce no events.                                                                                                |
+| TIMED   | Whether or not the instrument is timed. It can be set, but if disabled, events produced by the instrument will have NULL values for the corresponding TIMER\_START, TIMER\_END, and TIMER\_WAIT values. |
 
 ## Example
 
-
-From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
-
+From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
 
 ```
 SELECT * FROM setup_instruments ORDER BY name;
@@ -1028,6 +1020,4 @@ SELECT * FROM setup_instruments ORDER BY name;
 996 rows in set (0.005 sec)
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -10,7 +10,7 @@ ROW_COUNT()
 
 ROW\_COUNT() returns the number of rows updated, inserted or deleted\
 by the preceding statement. This is the same as the row count that the\
-mariadb client displays and the value from the [mysql\_affected\_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_affected_rows) C\
+mariadb client displays and the value from the [mysql\_affected\_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_affected_rows) C\
 API function.
 
 Generally:
@@ -19,7 +19,7 @@ Generally:
 * For DML statements other than [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) and for [ALTER TABLE](../../../sql-statements/data-definition/alter/), returns the number of affected rows.
 * For DDL statements (including [TRUNCATE](../../numeric-functions/truncate.md)) and for other statements which don't return any result set (such as [USE](../../../sql-statements/administrative-sql-statements/use-database.md), [DO](../../../sql-statements/stored-routine-statements/do.md), [SIGNAL](../../../../server-usage/programmatic-compound-statements/signal.md) or [DEALLOCATE PREPARE](../../../sql-statements/prepared-statements/deallocate-drop-prepare.md)), returns 0.
 
-For [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md), affected rows is by default the number of rows that were actually changed. If the CLIENT\_FOUND\_ROWS flag to [mysql\_real\_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) is specified when connecting to mariadbd, affected rows is instead the number of rows matched by the WHERE clause.
+For [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md), affected rows is by default the number of rows that were actually changed. If the CLIENT\_FOUND\_ROWS flag to [mysql\_real\_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) is specified when connecting to mariadbd, affected rows is instead the number of rows matched by the WHERE clause.
 
 For [REPLACE](../../../sql-statements/data-manipulation/changing-deleting-data/replace.md), deleted rows are also counted. So, if REPLACE deletes a row and adds a new row, ROW\_COUNT() returns 2.
 

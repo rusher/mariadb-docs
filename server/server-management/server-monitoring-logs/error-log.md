@@ -12,7 +12,7 @@ MariaDB always writes its error log, but the destination is configurable.
 
 To configure the error log to be written to a file, you can set the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable. You can configure a specific file name. However, if a specific file name is not configured, then the log will be written to the `${hostname}.err` file in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory by default.
 
-The [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable can be set in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, to write the error log to the default `${hostname}.err` file, you could configure the following:
+The [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, to write the error log to the default `${hostname}.err` file, you could configure the following:
 
 ```
 [mariadb]
@@ -38,7 +38,7 @@ However, the [log\_error](../../ha-and-performance/optimization-and-tuning/syste
 log_error=/var/log/mysql/mariadb.err
 ```
 
-Another way to configure the error log file name is to set the [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/), error log, [binary logs](binary-log/), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
+Another way to configure the error log file name is to set the [log-basename](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/), error log, [binary logs](binary-log/), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
 
 ```
 [mariadb]
@@ -47,13 +47,13 @@ log-basename=mariadb
 log_error
 ```
 
-The [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
+The [log-basename](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
 
 ### Writing the Error Log to Stderr on Unix
 
 On Unix, if the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not set, then errors are written to `stderr`, which usually means that the log messages are output to the terminal that started `mariadbd`.
 
-If the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable was set in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
+If the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable was set in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
 
 ### Writing the Error Log to Syslog on Unix
 
@@ -61,23 +61,23 @@ On Unix, the error log can also be redirected to the [syslog](https://linux.die.
 
 #### Syslog with mariadbd-safe
 
-If you [start](https://mariadb.com/kb/en/) MariaDB with [mariadbd-safe](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then the error log can be redirected to the syslog. See [mariadbd-safe: Configuring MariaDB to Write the Error Log to Syslog](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
+If you [start](https://mariadb.com/kb/en/) MariaDB with [mariadbd-safe](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then the error log can be redirected to the syslog. See [mariadbd-safe: Configuring MariaDB to Write the Error Log to Syslog](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
 #### Syslog with Systemd
 
-If you [start](https://mariadb.com/kb/en/) MariaDB with [systemd](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
+If you [start](https://mariadb.com/kb/en/) MariaDB with [systemd](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
-[systemd](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) for more information.
+[systemd](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) for more information.
 
 ### Writing the Error Log to Console on Windows
 
-On Windows, if the [console](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option is specified, and if the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not used, then errors are written to the console. If both options are specified, then the last option takes precedence.
+On Windows, if the [console](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option is specified, and if the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not used, then errors are written to the console. If both options are specified, then the last option takes precedence.
 
 ### Writing the Error Log to the Windows Event Viewer
 
 On Windows, error log messages are also written to the Windows Event Viewer. You can find MariaDB's error log messages by browsing **Windows Logs**, and then selecting **Application** or **Application Log**, depending on the Windows version.
 
-You can find MariaDB's error log messages by searching for the **Source** `MariaDB` (prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this was `MySQL`).
+You can find MariaDB's error log messages by searching for the **Source** `MariaDB` (prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), this was `MySQL`).
 
 ## Finding the Error Log
 
@@ -87,7 +87,7 @@ To find where the error log is stored, one can find the options used for the err
 mariadbd --print-defaults
 ```
 
-or (from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011))
+or (from [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011))
 
 ```
 my_print_defaults --mariadbd | grep log-error
@@ -99,7 +99,7 @@ or
 my_print_defaults --mysqld | grep log-error
 ```
 
-If the above don't help, check also if your system is set to [write to syslog](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog), in which case you need to use [journalctl](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) to access it.
+If the above don't help, check also if your system is set to [write to syslog](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog), in which case you need to use [journalctl](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) to access it.
 
 ## Configuring the Error Log Verbosity
 
@@ -111,7 +111,7 @@ The [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-vari
 SET GLOBAL log_warnings=3;
 ```
 
-It can also be set either on the command-line or in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set either on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -139,7 +139,7 @@ However, if [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-s
 
 ### Verbosity Level 1
 
-Default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes). If [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `1`, then many types of warnings are logged. Some useful warnings are:
+Default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes). If [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `1`, then many types of warnings are logged. Some useful warnings are:
 
 * Replication-related messages:
 
@@ -179,7 +179,7 @@ Frequent warnings about [unsafe statements for statement-based replication](../.
 
 ### Verbosity Level 2
 
-Default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes). If [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `2`, then a couple other different kinds of warnings are printed. For example:
+Default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes). If [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `2`, then a couple other different kinds of warnings are printed. For example:
 
 * Messages related to access denied errors:
 
@@ -213,7 +213,7 @@ Default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mar
 ```
 
 * Messages related to the files used to [persist replication state](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
-  * Either the default `master.info` file or the file that is configured by the [master\_info\_file](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+  * Either the default `master.info` file or the file that is configured by the [master\_info\_file](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
   * Either the default `relay-log.info` file or the file that is configured by the [relay\_log\_info\_file](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 
 ```
@@ -341,13 +341,13 @@ Then, each item (note, warning or error) consists of a single line, containing t
 2016-06-15 16:53:33 139651251140544 [Note] InnoDB: The InnoDB memory heap is disabled
 ```
 
-Until [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), the format only consisted of the date (yymmdd) and time, followed by the type of error (Note, Warning or Error) and the error message, for example:
+Until [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes), the format only consisted of the date (yymmdd) and time, followed by the type of error (Note, Warning or Error) and the error message, for example:
 
 ```
 160615 16:53:08 [Note] InnoDB: The InnoDB memory heap is disabled
 ```
 
-The first item will always contain the source revision, a unique server id (from [MariaDB 10.5.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-26-release-notes), [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes), [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)) and the process\_id, for example:
+The first item will always contain the source revision, a unique server id (from [MariaDB 10.5.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-10-5-26-release-notes), [MariaDB 10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-19-release-notes), [MariaDB 10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-9-release-notes), [MariaDB 11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [MariaDB 11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [MariaDB 11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-3-release-notes), [MariaDB 11.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-2-release-notes), [MariaDB 11.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-1-release-notes)) and the process\_id, for example:
 
 ```
 2024-09-19 22:58:50 0 [Note] Starting MariaDB 11.7.0-preview-MariaDB source revision 
@@ -374,7 +374,7 @@ Many error messages are ready from an error messages file that contains localize
 [ERROR] Can't find messagefile '/usr/share/errmsg.sys'
 ```
 
-If this error is occurring because the file is in a custom location, then you can configure this location by setting the [lc\_messages\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variable either on the command-line or in a server [option group](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+If this error is occurring because the file is in a custom location, then you can configure this location by setting the [lc\_messages\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variable either on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

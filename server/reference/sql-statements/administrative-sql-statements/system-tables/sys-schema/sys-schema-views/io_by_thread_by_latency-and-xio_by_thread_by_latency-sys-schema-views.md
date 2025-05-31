@@ -1,40 +1,30 @@
+# io\_by\_thread\_by\_latency and x$io\_by\_thread\_by\_latency Sys Schema Views
 
-# io_by_thread_by_latency and x$io_by_thread_by_latency Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ## Description
 
-
 The `io_by_thread_by_latency` and `x$io_by_thread_by_latency` view summarize I/O consumers to display time waiting for I/O, grouped by thread. Rows are sorted by descending total I/O latency by default.
-
 
 The `io_by_thread_by_latency` view is intended to be easier for human reading, while the `x$io_by_thread_by_latency` view provides the data in raw form, intended for tools that process the data.
 
-
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| user | The account associated with a foreground thread, or the background thread name |
-| total | Total number of I/O events allocated for the thread. |
-| total_latency | Total wait time of timed I/O events for the thread. |
-| min_latency | Minimum single wait time of timed I/O events for the thread. |
-| avg_latency | Average wait time per timed I/O event for the thread. |
-| min_latency | Maximum single wait time of timed I/O events for the thread. |
-| thread_id | Thread id. |
-| processlist_id | Processlist id for foreground threads, or NULL for background threads. |
-
-
+| Column          | Description                                                                    |
+| --------------- | ------------------------------------------------------------------------------ |
+| Column          | Description                                                                    |
+| user            | The account associated with a foreground thread, or the background thread name |
+| total           | Total number of I/O events allocated for the thread.                           |
+| total\_latency  | Total wait time of timed I/O events for the thread.                            |
+| min\_latency    | Minimum single wait time of timed I/O events for the thread.                   |
+| avg\_latency    | Average wait time per timed I/O event for the thread.                          |
+| min\_latency    | Maximum single wait time of timed I/O events for the thread.                   |
+| thread\_id      | Thread id.                                                                     |
+| processlist\_id | Processlist id for foreground threads, or NULL for background threads.         |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.io_by_thread_by_latency\G
@@ -82,6 +72,4 @@ processlist_id: 7
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-

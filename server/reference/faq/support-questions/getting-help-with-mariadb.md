@@ -6,7 +6,7 @@ There's an active help community on [StackOverflow](https://stackoverflow.com/) 
 
 If you have a question about a feature that is not properly documented or something that is not working as expected, go to the corresponding [Knowledge Base page](../../../../kb/en/mariadb/) and ask your question there.
 
-You can report and check on bugs which apply to MariaDB in [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/tools/jira).
+You can report and check on bugs which apply to MariaDB in [JIRA](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/jira).
 
 [MariaDB plc](https://mariadb.com) offers [commercial support](https://mariadb.com/services/mariadb-mysql-subscription-services).
 

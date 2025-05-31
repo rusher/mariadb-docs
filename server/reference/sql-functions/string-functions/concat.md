@@ -23,7 +23,7 @@ A `NULL` parameter hides all information contained in other parameters from the 
 
 ### Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `CONCAT` ignores [null](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/null/).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), `CONCAT` ignores [null](../../sql-statements-and-structure/sql-statements/built-in-functions/string-functions/null/).
 
 ## Examples
 
@@ -61,7 +61,7 @@ SELECT CONCAT('The value of @v is: ', IFNULL(@v, ''));
 +------------------------------------------------+
 ```
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
 
 ```
 SELECT CONCAT('Ma', 'ria', NULL, 'DB');
@@ -75,6 +75,6 @@ SELECT CONCAT('Ma', 'ria', NULL, 'DB');
 ## See Also
 
 * [GROUP\_CONCAT()](../aggregate-functions/group_concat.md)
-* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 
 GPLv2 fill\_help\_tables.sql

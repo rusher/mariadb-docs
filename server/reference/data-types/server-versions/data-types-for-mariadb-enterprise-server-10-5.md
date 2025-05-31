@@ -8,42 +8,42 @@ Each column in a table has a specified data type that defines what kind of data 
 
 ## Integer Numeric Types
 
-| Data Type                                                  | Class                                            | Description                                                                                                           |
-| ---------------------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Data Type                                                  | Class                                            | Description                                                                                                           |
-| [BIGINT](../data-types-numeric-data-types/bigint.md)       | Integer                                          | Integer from -9223372036854775808 to 9223372036854775807 when signed, or from 0 to 18446744073709551615 when unsigned |
-| [BIT](../data-types-numeric-data-types/bit.md)             | Bit                                              | Bit data                                                                                                              |
-| [BOOL](../data-types-numeric-data-types/bool.md)           | Integer                                          | See [TINYINT](../data-types-numeric-data-types/tinyint.md)                                                            |
-| [BOOLEAN](../data-types-numeric-data-types/boolean.md)     | Integer                                          | See [TINYINT](../data-types-numeric-data-types/tinyint.md)                                                            |
-| [INT](../data-types-numeric-data-types/int.md)             | Integer                                          | Integer from -2147483648 to 2147483647 when signed, or from 0 to 4294967295 when unsigned                             |
-| [INT1](../data-types-numeric-data-types/int1.md)           | Integer                                          | See [TINYINT](../data-types-numeric-data-types/tinyint.md)                                                            |
-| [INT2](../data-types-numeric-data-types/int2.md)           | Integer                                          | See [SMALLINT](../data-types-numeric-data-types/smallint.md)                                                          |
-| \[                                                         | INT3]\(../data-types-numeric-data-types/int3.md) | Integer                                                                                                               |
-| [INT4](../data-types-numeric-data-types/int4.md)           | Integer                                          | See [INT](../data-types-numeric-data-types/int.md)                                                                    |
-| [INT8](../data-types-numeric-data-types/int8.md)           | Integer                                          | See [BIGINT](../data-types-numeric-data-types/bigint.md)                                                              |
-| [INTEGER](../data-types-numeric-data-types/integer.md)     | Integer                                          | See [INT](../data-types-numeric-data-types/int.md)                                                                    |
-| [MEDIUMINT](../data-types-numeric-data-types/mediumint.md) | Integer                                          | Integer from -8388608 to 8388607 when signed, or from 0 to 16777215 when unsigne                                      |
-| [MIDDLEINT](../data-types-numeric-data-types/middleint.md) | Integer                                          | See [MEDIUMINT](../data-types-numeric-data-types/mediumint.md)                                                        |
-| [SERIAL](../serial.md)                                     | Alias                                            | This is an alias for BIGINT UNSIGNED NOT NULL AUTO\_INCREMENT UNIQUE                                                  |
-| [SMALLINT](../data-types-numeric-data-types/smallint.md)   | Integer                                          | Integer from -32768 to 32767 when signed, or from 0 to 65535 when unsigned                                            |
-| [TINYINT](../data-types-numeric-data-types/tinyint.md)     | Integer                                          | Integer from -128 to 127 when signed, or from 0 to 255 when unsigned                                                  |
+| Data Type                                       | Class                                            | Description                                                                                                           |
+| ----------------------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| Data Type                                       | Class                                            | Description                                                                                                           |
+| [BIGINT](../numeric-data-types/bigint.md)       | Integer                                          | Integer from -9223372036854775808 to 9223372036854775807 when signed, or from 0 to 18446744073709551615 when unsigned |
+| [BIT](../numeric-data-types/bit.md)             | Bit                                              | Bit data                                                                                                              |
+| [BOOL](../numeric-data-types/bool.md)           | Integer                                          | See [TINYINT](../numeric-data-types/tinyint.md)                                                                       |
+| [BOOLEAN](../numeric-data-types/boolean.md)     | Integer                                          | See [TINYINT](../numeric-data-types/tinyint.md)                                                                       |
+| [INT](../numeric-data-types/int.md)             | Integer                                          | Integer from -2147483648 to 2147483647 when signed, or from 0 to 4294967295 when unsigned                             |
+| [INT1](../numeric-data-types/int1.md)           | Integer                                          | See [TINYINT](../numeric-data-types/tinyint.md)                                                                       |
+| [INT2](../numeric-data-types/int2.md)           | Integer                                          | See [SMALLINT](../numeric-data-types/smallint.md)                                                                     |
+| \[                                              | INT3]\(../data-types-numeric-data-types/int3.md) | Integer                                                                                                               |
+| [INT4](../numeric-data-types/int4.md)           | Integer                                          | See [INT](../numeric-data-types/int.md)                                                                               |
+| [INT8](../numeric-data-types/int8.md)           | Integer                                          | See [BIGINT](../numeric-data-types/bigint.md)                                                                         |
+| [INTEGER](../numeric-data-types/integer.md)     | Integer                                          | See [INT](../numeric-data-types/int.md)                                                                               |
+| [MEDIUMINT](../numeric-data-types/mediumint.md) | Integer                                          | Integer from -8388608 to 8388607 when signed, or from 0 to 16777215 when unsigne                                      |
+| [MIDDLEINT](../numeric-data-types/middleint.md) | Integer                                          | See [MEDIUMINT](../numeric-data-types/mediumint.md)                                                                   |
+| [SERIAL](../serial.md)                          | Alias                                            | This is an alias for BIGINT UNSIGNED NOT NULL AUTO\_INCREMENT UNIQUE                                                  |
+| [SMALLINT](../numeric-data-types/smallint.md)   | Integer                                          | Integer from -32768 to 32767 when signed, or from 0 to 65535 when unsigned                                            |
+| [TINYINT](../numeric-data-types/tinyint.md)     | Integer                                          | Integer from -128 to 127 when signed, or from 0 to 255 when unsigned                                                  |
 
 ## Non-integer Numeric Types
 
-| Data Type                                                                | Class     | Description                                                |
-| ------------------------------------------------------------------------ | --------- | ---------------------------------------------------------- |
-| Data Type                                                                | Class     | Description                                                |
-| [DEC](../data-types-numeric-data-types/dec-numeric-fixed.md)             | Fixed Num | See [DECIMAL](../data-types-numeric-data-types/decimal.md) |
-| [DECIMAL](../data-types-numeric-data-types/decimal.md)                   | Fixed Num | Fixed-point number                                         |
-| [DOUBLE](../data-types-numeric-data-types/double.md)                     | Float     | Double-precision floating-point number                     |
-| [DOUBLE PRECISION](../data-types-numeric-data-types/double-precision.md) | Float     | See [DOUBLE](../data-types-numeric-data-types/double.md)   |
-| [FIXED](../data-types-numeric-data-types/fixed.md)                       | Fixed Num | See [DECIMAL](../data-types-numeric-data-types/decimal.md) |
-| [FLOAT](../data-types-numeric-data-types/float.md)                       | Float     | Single-precision floating-point number                     |
-| [FLOAT4](../data-types-numeric-data-types/float4.md)                     | Float     | See [FLOAT](../data-types-numeric-data-types/float.md)     |
-| [FLOAT8](../data-types-numeric-data-types/float8.md)                     | Float     | See [DOUBLE](../data-types-numeric-data-types/double.md)   |
-| [NUMBER](../data-types-numeric-data-types/number.md)                     | SQL/PL    | See [DECIMAL](../data-types-numeric-data-types/decimal.md) |
-| [NUMERIC](../data-types-numeric-data-types/numeric.md)                   | Fixed Num | See [DECIMAL](../data-types-numeric-data-types/decimal.md) |
-| [REAL](../data-types-numeric-data-types/real.md)                         | Float     | See [DOUBLE](../data-types-numeric-data-types/double.md)   |
+| Data Type                                                     | Class     | Description                                     |
+| ------------------------------------------------------------- | --------- | ----------------------------------------------- |
+| Data Type                                                     | Class     | Description                                     |
+| [DEC](../numeric-data-types/dec-numeric-fixed.md)             | Fixed Num | See [DECIMAL](../numeric-data-types/decimal.md) |
+| [DECIMAL](../numeric-data-types/decimal.md)                   | Fixed Num | Fixed-point number                              |
+| [DOUBLE](../numeric-data-types/double.md)                     | Float     | Double-precision floating-point number          |
+| [DOUBLE PRECISION](../numeric-data-types/double-precision.md) | Float     | See [DOUBLE](../numeric-data-types/double.md)   |
+| [FIXED](../numeric-data-types/fixed.md)                       | Fixed Num | See [DECIMAL](../numeric-data-types/decimal.md) |
+| [FLOAT](../numeric-data-types/float.md)                       | Float     | Single-precision floating-point number          |
+| [FLOAT4](../numeric-data-types/float4.md)                     | Float     | See [FLOAT](../numeric-data-types/float.md)     |
+| [FLOAT8](../numeric-data-types/float8.md)                     | Float     | See [DOUBLE](../numeric-data-types/double.md)   |
+| [NUMBER](../numeric-data-types/number.md)                     | SQL/PL    | See [DECIMAL](../numeric-data-types/decimal.md) |
+| [NUMERIC](../numeric-data-types/numeric.md)                   | Fixed Num | See [DECIMAL](../numeric-data-types/decimal.md) |
+| [REAL](../numeric-data-types/real.md)                         | Float     | See [DOUBLE](../numeric-data-types/double.md)   |
 
 ## String Types
 

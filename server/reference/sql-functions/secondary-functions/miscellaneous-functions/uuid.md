@@ -8,7 +8,7 @@ UUID()
 
 ## Description
 
-Returns a Universally Unique Identifier (UUID) version 1. Functions to generate v4 and v7 UUIDs are available from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117). See [UUIDv4](uuid_v4.md) and [UUIDv7](uuid_v7.md) respectively.
+Returns a Universally Unique Identifier (UUID) version 1. Functions to generate v4 and v7 UUIDs are available from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117). See [UUIDv4](uuid_v4.md) and [UUIDv7](uuid_v7.md) respectively.
 
 A UUID is designed as a number that is globally unique in space and time. Two\
 calls to `UUID()` are expected to generate two different\

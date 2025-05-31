@@ -12,7 +12,7 @@ Reads the file and returns the file contents as a string. To use this function, 
 
 If the file does not exist or cannot be read because one of the preceding conditions is not satisfied, the function returns NULL.
 
-Since [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1), the [character\_set\_filesystem](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem) system variable has controlled interpretation of file names that are given as literal strings.
+Since [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1), the [character\_set\_filesystem](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem) system variable has controlled interpretation of file names that are given as literal strings.
 
 Statements using the LOAD\_FILE() function are not [safe for statement based replication](../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md). This is because the slave will execute the LOAD\_FILE() command itself. If the file doesn't exist on the slave, the function will return NULL.
 

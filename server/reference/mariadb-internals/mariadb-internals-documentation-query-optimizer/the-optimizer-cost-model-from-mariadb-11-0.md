@@ -2,7 +2,7 @@
 
 ## Background
 
-Before [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110), the MariaDB Query optimizer used a 'basic cost' of 1 for:
+Before [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110), the MariaDB Query optimizer used a 'basic cost' of 1 for:
 
 * One disk access
 * Fetching a key
@@ -22,7 +22,7 @@ not properly calibrated.
 
 ## New Cost Model
 
-In [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) we have fixed the above shortcomings by changing the\
+In [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110) we have fixed the above shortcomings by changing the\
 basic cost for 'storage engine operations' to be 1 millisecond. This\
 means that for most queries the query cost (`LAST_QUERY_COST`) should be\
 close (or at least proportional) to the time the server is spending in\

@@ -32,9 +32,9 @@ The [AUTO\_INCREMENT](../../data-types/auto_increment.md) value for an [InnoDB](
 ALTER TABLE tab AUTO_INCREMENT=100;
 ```
 
-However, in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, [InnoDB](./) stores the table's [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter in memory. In these versions, when the server restarts, the counter is re-initialized to the highest value found in the table. This means that the above operation can be undone if the server is restarted before any rows are written to the table.
+However, in [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) and before, [InnoDB](./) stores the table's [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter in memory. In these versions, when the server restarts, the counter is re-initialized to the highest value found in the table. This means that the above operation can be undone if the server is restarted before any rows are written to the table.
 
-In [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and later, the [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter is persistent, so this restriction is no longer present. Persistent, however, does not mean transactional. Gaps may still occur in some cases, such as if a [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md) statement fails, or if a user executes [ROLLBACK](../../sql-statements/transactions/rollback.md) or [ROLLBACK TO SAVEPOINT](../../sql-statements/transactions/savepoint.md).
+In [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes) and later, the [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter is persistent, so this restriction is no longer present. Persistent, however, does not mean transactional. Gaps may still occur in some cases, such as if a [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md) statement fails, or if a user executes [ROLLBACK](../../sql-statements/transactions/rollback.md) or [ROLLBACK TO SAVEPOINT](../../sql-statements/transactions/savepoint.md).
 
 For example:
 
@@ -85,6 +85,6 @@ Create Table: CREATE TABLE `t1` (
 * [AUTO\_INCREMENT](../../data-types/auto_increment.md)
 * [AUTO\_INCREMENT FAQ](../../data-types/auto_increment-faq.md)
 * [LAST\_INSERT\_ID](../../sql-functions/secondary-functions/information-functions/last_insert_id.md)
-* [Sequences](../../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* [Sequences](../../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 CC BY-SA / Gnu FDL

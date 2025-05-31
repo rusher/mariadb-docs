@@ -39,7 +39,7 @@ Some Aria storage engine operations also support progress messages:
 
 ### Limitations
 
-Although the above commands support progress reporting, there are some limitations to what progress is reported. To be specific, when executing one of these commands against an InnoDB table with [ALGORITHM=INPLACE](../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) (which is the default in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)+), progress is only reported during the merge sort phase while reconstructing indexes.
+Although the above commands support progress reporting, there are some limitations to what progress is reported. To be specific, when executing one of these commands against an InnoDB table with [ALGORITHM=INPLACE](../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) (which is the default in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)+), progress is only reported during the merge sort phase while reconstructing indexes.
 
 ## Enabling and Disabling Progress Reporting
 
@@ -72,7 +72,7 @@ This is updated every [progress\_report\_time](../../../ha-and-performance/optim
 
 ## How to Add Support for Progress Reporting to a Client
 
-You need to use the [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) or later client library. You can check that the library\
+You need to use the [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) or later client library. You can check that the library\
 supports progress reporting by doing:
 
 ```
@@ -213,6 +213,6 @@ It contains the following data (in addition to the error header):
 
 ## See Also
 
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 CC BY-SA / Gnu FDL

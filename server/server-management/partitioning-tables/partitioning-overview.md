@@ -53,7 +53,7 @@ If partition is listed as DISABLED:
 +-------------------------------+----------+--------------------+---------+---------+
 ```
 
-MariaDB has either been built without partitioning support, or has been started with the the [--skip-partition](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, or one of its variants:
+MariaDB has either been built without partitioning support, or has been started with the the [--skip-partition](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, or one of its variants:
 
 ```
 --skip-partition
@@ -135,14 +135,14 @@ ALTER TABLE t1 COALESCE PARTITION 2;
 
 ### Converting Partitions to/from Tables
 
-**MariaDB starting with** [**10.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
+**MariaDB starting with** [**10.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 
 ```
 CONVERT PARTITION partition_name TO TABLE tbl_name
 CONVERT TABLE normal_table TO partition_definition
 ```
 
-`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), be used to convert partitions in an existing table to a standalone table:
+`[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... CONVERT PARTITION` can, from [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), be used to convert partitions in an existing table to a standalone table:
 
 ```
 CREATE OR REPLACE TABLE t1 (
@@ -237,10 +237,10 @@ Create Table: CREATE TABLE `t1` (
 
 #### CONVERT TABLE ... WITH / WITHOUT VALIDATION
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
 When converting tables to a partition, validation is performed on each row to ensure it meets the partition requirements. This can be very slow in the case of larger tables.\
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```
 CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
@@ -248,7 +248,7 @@ CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
 
 `WITH VALIDATION` will result in the validation being performed, and is the default behaviour.
 
-An alternative (and the only method prior to [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)) to convert partitions to tables is to use `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
+An alternative (and the only method prior to [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)) to convert partitions to tables is to use `[ALTER TABLE](../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) ... EXCHANGE PARTITION`. This requires having to manually do the following steps:
 
 * create an empty table with the same structure as the partition
 * exchange the table with the partition
@@ -396,13 +396,13 @@ Empty set (0.002 sec)
 
 ### Exchanging Partitions
 
-<= [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
+<= [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
 
 ```
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name
 ```
 
-> \= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+> \= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
 ```
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
@@ -467,7 +467,7 @@ The following requirements must be met:
 * Table t1 must be partitioned, and table t2 cannot be partitioned
 * Table t2 cannot be a temporary table
 * Table t1 and t2 must otherwise be identica
-* Any existing row in t2 must match the conditions for storage in the exchanged partition p1 unless, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), the `WITHOUT VALIDATION` option is specified.
+* Any existing row in t2 must match the conditions for storage in the exchanged partition p1 unless, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), the `WITHOUT VALIDATION` option is specified.
 
 MariaDB will by default perform the validation to see that each row meets the partition requirements, and the statement will fail if a row does not fit.
 
@@ -498,10 +498,10 @@ ERROR 1526 (HY000): Table has no partition for value 0
 
 #### WITH / WITHOUT VALIDATION
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
 This validation is performed for each row, and can be very slow in the case of larger tables.\
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), it is possible to disable this validation by specifying the `WITHOUT VALIDATION` option.
 
 ```
 ALTER TABLE t1 EXCHANGE PARTITION p1 with TABLE t2 WITHOUT VALIDATION;

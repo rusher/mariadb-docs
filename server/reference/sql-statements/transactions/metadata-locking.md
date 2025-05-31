@@ -12,9 +12,9 @@ ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
 
 If the [metadata\_lock\_info](../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../administrative-sql-statements/system-tables/information-schema/) [metadata\_lock\_info](../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table stores information about existing metadata locks.
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes)
 
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the [Performance Schema metadata\_locks](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md) table contains metadata lock information.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the [Performance Schema metadata\_locks](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md) table contains metadata lock information.
 
 ## Example
 

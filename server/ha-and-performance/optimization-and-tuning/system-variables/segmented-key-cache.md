@@ -25,7 +25,7 @@ by Fredrik Nylander from Stardoll.com. The code was extensively\
 reworked, improved, and eventually merged into MariaDB by Igor Babaev\
 from Monty Program (now MariaDB Corporation).
 
-You can find some benchmark results comparing various settings on the [Segmented Key Cache Performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance) page.
+You can find some benchmark results comparing various settings on the [Segmented Key Cache Performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks/benchmarks/segmented-key-cache-performance) page.
 
 ## Segmented Key Cache Syntax
 
@@ -65,6 +65,6 @@ database. Columns in this table are:
 
 ## See Also
 
-* [Segmented Key Cache Performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/quality/benchmarks-and-long-running-tests/benchmarks/segmented-key-cache-performance)
+* [Segmented Key Cache Performance](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks/benchmarks/segmented-key-cache-performance)
 
 CC BY-SA / Gnu FDL

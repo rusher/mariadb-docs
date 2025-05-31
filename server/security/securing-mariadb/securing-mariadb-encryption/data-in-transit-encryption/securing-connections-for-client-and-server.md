@@ -10,12 +10,12 @@ The data in transit are encrypted (by default or if enabled manually) using the 
 
 ### Enabling TLS for MariaDB Server
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
 Starting from 11.4, MariaDB enables TLS automatically. Certificates are generated on startup and only stored in memory. Certificate verification is enabled by default on the client side and certificates are verified if the authentication plugin itself is MitM safe (mysql\_native\_password, ed25519, parsec).\
 If you want to use externally generated certificates as with older MariaDB versions, see below.
 
-**MariaDB until** [**11.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
+**MariaDB until** [**11.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
 
 In order to enable TLS in a MariaDB server, you need to generate TLS certificates and configure the server to use them.
 
@@ -26,7 +26,7 @@ To do that there are a number of system variables that you need to set, such as:
 * Unless you use a certificate which was signed by a trusted certificate authority (CA) you need to set the path to the certificate authority chain that can verify the server's certificate by setting either the [ssl\_ca](ssltls-system-variables.md#ssl_ca) or the [ssl\_capath](ssltls-system-variables.md#ssl_capath) system variables.
 * If you want to restrict the server to certain ciphers, then you also need to set the [ssl\_cipher](ssltls-system-variables.md#ssl_cipher) system variable.
 
-For example, to set these variables for the server, add the system variables to a relevant server [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+For example, to set these variables for the server, add the system variables to a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -64,11 +64,11 @@ Different [clients and utilities](../../../../../kb/en/clients-utilities/) may u
 
 One-way TLS means that only the server provides a private key and an X509 certificate. When TLS is used without a client certificate, it is called "one-way" TLS, because only the server can be authenticated, so certificate based authentication is only possible in one direction. However, encryption is still possible in both directions. [Server certificate verification](secure-connections-overview.md#server-certificate-verification) means that the client verifies that the certificate belongs to the server.
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114)
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
 
-Starting from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114) (Connector/C version 3.4) this mode is enabled by default. Connector/C will enable TLS automatically on all non-local connections and will require a verified server certificate to prevent man-in-the-middle attacks.
+Starting from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114) (Connector/C version 3.4) this mode is enabled by default. Connector/C will enable TLS automatically on all non-local connections and will require a verified server certificate to prevent man-in-the-middle attacks.
 
-To enable one-way TLS manually (for older clients or if you want verification with CA certificate) you can specify these options in a a relevant client [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+To enable one-way TLS manually (for older clients or if you want verification with CA certificate) you can specify these options in a a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [client-mariadb]
@@ -98,7 +98,7 @@ disable-ssl-verify-server-cert
 
 Two-way TLS means that both the client and server provide a private key and an X509 certificate. It is called "two-way" TLS because both the client and server can be authenticated.
 
-For example, to specify these options in a relevant client [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md), you could set the following:
+For example, to specify these options in a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), you could set the following:
 
 ```
 [client-mariadb]
@@ -123,7 +123,7 @@ Two-way SSL is required for an account if the `REQUIRE X509`, `REQUIRE SUBJECT`,
 
 ### Enabling TLS for MariaDB Connector/C Clients
 
-See the documentation on MariaDB Connector/C's [TLS Options](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv#tlsssl-options) for information on how to enable TLS for clients that use MariaDB Connector/C.
+See the documentation on MariaDB Connector/C's [TLS Options](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv#tlsssl-options) for information on how to enable TLS for clients that use MariaDB Connector/C.
 
 ### Enabling TLS for MariaDB Connector/ODBC Clients
 
@@ -149,7 +149,7 @@ SHOW SESSION STATUS LIKE 'Ssl_version';
 
 ## Requiring TLS
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [require\_secure\_transport](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) system variable is available. When set (by default it is off), connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets or named pipes. Note that requirements set for specific user accounts will take precedence over this setting.
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [require\_secure\_transport](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) system variable is available. When set (by default it is off), connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets or named pipes. Note that requirements set for specific user accounts will take precedence over this setting.
 
 ### Requiring TLS for Specific User Accounts
 

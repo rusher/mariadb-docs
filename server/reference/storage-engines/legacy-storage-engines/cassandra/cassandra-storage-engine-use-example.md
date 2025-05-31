@@ -1,15 +1,10 @@
-
 # Cassandra Storage Engine Use Example
 
-CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
-
-
+CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
 This page is a short demo of what using [Cassandra Storage Engine](cassandra-storage-engine-overview.md) looks like.
 
-
 First, a keyspace and column family must be created in Cassandra:
-
 
 ```
 cqlsh> CREATE KEYSPACE mariadbtest2
@@ -23,7 +18,6 @@ cqlsh:mariadbtest2>
 
 Now, let's try to connect an SQL table to it:
 
-
 ```
 MariaDB [test]> create table t1 (
     ->   rowkey varchar(36) primary key, 
@@ -34,7 +28,6 @@ ERROR 1928 (HY000): Internal error: 'Failed to map column data2 to datatype org.
 
 We've used a wrong datatype. Let's try again:
 
-
 ```
 MariaDB [test]> create table t1 (
     ->   rowkey varchar(36) primary key, 
@@ -44,7 +37,6 @@ Query OK, 0 rows affected (0.04 sec)
 ```
 
 Ok. Let's insert some data:
-
 
 ```
 MariaDB [test]> insert into t1 values ('rowkey10', 'data1-value', 123456);
@@ -59,7 +51,6 @@ Query OK, 1 row affected (0.00 sec)
 
 Let's select it back:
 
-
 ```
 MariaDB [test]> select * from t1 where rowkey='rowkey11';
 +----------+--------------+-------+
@@ -72,7 +63,6 @@ MariaDB [test]> select * from t1 where rowkey='rowkey11';
 
 Now, let's check if it can be seen in Cassandra:
 
-
 ```
 cqlsh:mariadbtest2> select * from cf1;
  pk       | data1        | data2
@@ -83,7 +73,6 @@ cqlsh:mariadbtest2> select * from cf1;
 ```
 
 Or, in cassandra-cli:
-
 
 ```
 [default@mariadbtest2] list cf1;
@@ -106,6 +95,4 @@ RowKey: rowkey11
 Elapsed time: 5 msec(s).
 ```
 
-
 CC BY-SA / Gnu FDL
-

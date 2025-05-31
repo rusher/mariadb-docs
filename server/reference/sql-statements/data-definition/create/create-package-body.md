@@ -1,14 +1,10 @@
-
 # CREATE PACKAGE BODY
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114).
-
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114).
 
 In Oracle mode, the PL/SQL dialect is used, while in non-Oracle mode, SQL/PSM is used.
 
-
 ## Syntax (Oracle mode)
-
 
 ```
 CREATE [ OR REPLACE ]
@@ -95,30 +91,22 @@ condition_value:
         | mariadb_error_code
 ```
 
-
 ## Description
 
-
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114).
-
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114).
 
 The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package.md) statement.
 
-
 A package body provides implementations of the package public routines and can optionally have:
-
 
 * package-wide private variables
 * package private routines
 * forward declarations for private routines
 * an executable initialization section
 
-
 ## Examples
 
-
 Oracle mode:
-
 
 ```
 SET sql_mode=ORACLE;
@@ -179,8 +167,7 @@ $$
 DELIMITER ;
 ```
 
-Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114):
-
+Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114):
 
 ```
 DELIMITER $$
@@ -223,12 +210,9 @@ DELIMITER ;
 
 ## See Also
 
-
 * [CREATE PACKAGE](create-package.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
 * [DROP PACKAGE BODY](../drop/drop-package-body.md)
-* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
-
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 
 CC BY-SA / Gnu FDL
-

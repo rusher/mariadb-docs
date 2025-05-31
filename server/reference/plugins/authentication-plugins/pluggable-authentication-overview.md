@@ -64,7 +64,7 @@ Most [clients and utilities](../../../../kb/en/clients-utilities/) support some 
 | --plugin-dir=path          | Directory for client-side plugins.                                                                                                                                                                                                                                           |
 | --secure-auth              | Refuse to connect to the server if the server uses the [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin. This mode is off by default, which is a difference in behavior compared to MySQL 5.6 and later, where it is on by default. |
 
-Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the following options with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function:
+Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the following options with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function:
 
 * `MYSQL_OPT_CAN_HANDLE_EXPIRED_PASSWORDS`
 * `MYSQL_PLUGIN_DIR`
@@ -166,7 +166,7 @@ The following server-side authentication plugins are installed by default:
 The following server-side authentication plugins are installed by default:
 
 * The [mysql\_native\_password](authentication-plugin-mysql_native_password.md) and [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugins are installed by default in all builds.
-* The [unix\_socket](authentication-plugin-unix-socket.md) authentication plugin is installed by default in new installations that use the [.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md) packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/getting-installing-and-upgrading-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+* The [unix\_socket](authentication-plugin-unix-socket.md) authentication plugin is installed by default in new installations that use the [.deb](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md) packages provided by Debian's default repositories in Debian 9 and later and Ubuntu's default repositories in Ubuntu 15.10 and later. See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 * The [named\_pipe](authentication-plugin-named-pipe.md) authentication plugin is installed by default in all builds on Windows.\
   <>
 
@@ -181,7 +181,7 @@ Most [clients and utilities](../../../../kb/en/clients-utilities/) support the `
 | Client Option     | Description                        |
 | --plugin-dir=path | Directory for client-side plugins. |
 
-Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the `MYSQL_PLUGIN_DIR` option with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function.
+Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the `MYSQL_PLUGIN_DIR` option with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function.
 
 For example:
 
@@ -236,7 +236,7 @@ Most [clients and utilities](../../../../kb/en/clients-utilities/) also support 
 | Client Option | Description                                                                                                                                                                                                                                                                  |
 | --secure-auth | Refuse to connect to the server if the server uses the [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin. This mode is off by default, which is a difference in behavior compared to MySQL 5.6 and later, where it is on by default. |
 
-Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the `MYSQL_SECURE_AUTH` option with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function.
+Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the `MYSQL_SECURE_AUTH` option with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function.
 
 For example:
 
@@ -263,7 +263,7 @@ Most [clients and utilities](../../../../kb/en/clients-utilities/) support the `
 | Client Option       | Description                                       |
 | --default-auth=name | Default authentication client-side plugin to use. |
 
-Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the `MYSQL_DEFAULT_AUTH` option with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function.
+Developers who are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) can implement similar functionality in their application by setting the `MYSQL_DEFAULT_AUTH` option with the [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function.
 
 For example:
 

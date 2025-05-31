@@ -8,7 +8,7 @@ DIV
 
 ## Description
 
-Integer division. Similar to [FLOOR()](floor.md), but is safe with [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md) values.\
+Integer division. Similar to [FLOOR()](floor.md), but is safe with [BIGINT](../../data-types/numeric-data-types/bigint.md) values.\
 Incorrect results may occur for non-integer operands that exceed BIGINT range.
 
 If the `ERROR_ON_DIVISION_BY_ZERO` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used, a division by zero produces an error. Otherwise, it returns NULL.

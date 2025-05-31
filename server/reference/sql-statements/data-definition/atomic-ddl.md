@@ -1,6 +1,6 @@
 # Atomic DDL
 
-From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), we have improved readability for DDL (Data Definition Language) operations to make most of them atomic, and the rest crash-safe, even if the server crashes in the middle of an operation.
+From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1061-release-notes), we have improved readability for DDL (Data Definition Language) operations to make most of them atomic, and the rest crash-safe, even if the server crashes in the middle of an operation.
 
 The design of Atomic/Crash-safe DDL ([MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567)) allows it to work with all storage engines.
 
@@ -74,7 +74,7 @@ work are:
 
 ### The DDL Log Recovery File
 
-The new startup option [--log-ddl-recovery=path](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (`ddl_recovery.log` by default) can be used to specify the place for\
+The new startup option [--log-ddl-recovery=path](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (`ddl_recovery.log` by default) can be used to specify the place for\
 the DDL log file. This is mainly useful in the case when one has a\
 filesystem on persistent memory, as there is a lot of sync on this\
 file during DDL operations.
@@ -89,11 +89,11 @@ to 3 times before giving up and proceeding with the next entry.
 
 ### Conclusions
 
-* We believe that a clean separation of layers leads to an easier-to-maintain solution. The Atomic DDL implementation in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106) introduced minimal changes to the storage engine API, mainly for native ALTER TABLE.
-* In our InnoDB implementation, no file format changes were needed on top of the RENAME undo log that was introduced in [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) for a backup-safe TRUNCATE re-implementation. Correct use of sound design principles (write-ahead logging and transactions; also file creation now follows the ARIES protocol) is sufficient. We removed the hacks (at most one CREATE or DROP per transaction) and correctly implemented `rollback` and `purge` triggers for the InnoDB SYS\_INDEXES table.
+* We believe that a clean separation of layers leads to an easier-to-maintain solution. The Atomic DDL implementation in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) introduced minimal changes to the storage engine API, mainly for native ALTER TABLE.
+* In our InnoDB implementation, no file format changes were needed on top of the RENAME undo log that was introduced in [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) for a backup-safe TRUNCATE re-implementation. Correct use of sound design principles (write-ahead logging and transactions; also file creation now follows the ARIES protocol) is sufficient. We removed the hacks (at most one CREATE or DROP per transaction) and correctly implemented `rollback` and `purge` triggers for the InnoDB SYS\_INDEXES table.
 * Numerous DDL recovery bugs in InnoDB were found and fixed quickly thanks to [rr-project.org](https://rr-project.org). We are still working on one: data files must not be deleted before the DDL transaction is committed.
 
-Thanks to Atomic/Crash-safe DDL, the MariaDB server is now much more stable and reliable in unstable environments. There is still ongoing work to fix the few remaining issues mentioned above to make all DDL operations Atomic. The target for these is [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107).
+Thanks to Atomic/Crash-safe DDL, the MariaDB server is now much more stable and reliable in unstable environments. There is still ongoing work to fix the few remaining issues mentioned above to make all DDL operations Atomic. The target for these is [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107).
 
 ### See Also
 

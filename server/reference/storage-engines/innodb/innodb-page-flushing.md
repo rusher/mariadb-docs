@@ -22,7 +22,7 @@ To make flushing more eager, set to a higher value, for example `SET GLOBAL inno
 
 The [innodb\_page\_cleaners](innodb-system-variables.md#innodb_page_cleaners) system variable makes it possible to use multiple InnoDB page cleaner threads. It is deprecated and ignored now as the original reasons for splitting the buffer pool have mostly gone away.
 
-The number of InnoDB page cleaner threads can be configured by setting the [innodb\_page\_cleaners](innodb-system-variables.md#innodb_page_cleaners) system variable. The system variable can be set in a server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+The number of InnoDB page cleaner threads can be configured by setting the [innodb\_page\_cleaners](innodb-system-variables.md#innodb_page_cleaners) system variable. The system variable can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -44,7 +44,7 @@ Since the original reasons for splitting the buffer pool have mostly gone away, 
 
 ## Page Flushing with Multi-threaded Flush Threads
 
-InnoDB's multi-thread flush feature can be enabled by setting the [innodb\_use\_mtflush](innodb-system-variables.md#innodb_use_mtflush) system variable. The number of threads cane be configured by setting the [innodb\_mtflush\_threads](innodb-system-variables.md#innodb_mtflush_threads) system variable. This system variable can be set in a server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+InnoDB's multi-thread flush feature can be enabled by setting the [innodb\_use\_mtflush](innodb-system-variables.md#innodb_use_mtflush) system variable. The number of threads cane be configured by setting the [innodb\_mtflush\_threads](innodb-system-variables.md#innodb_mtflush_threads) system variable. This system variable can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -69,7 +69,7 @@ The amount of I/O capacity available to InnoDB can be configured by setting the 
 SET GLOBAL innodb_io_capacity=20000;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -83,7 +83,7 @@ The maximum amount of I/O capacity available to InnoDB in an emergency defaults 
 SET GLOBAL innodb_io_capacity_max=20000;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

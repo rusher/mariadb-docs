@@ -13,7 +13,7 @@ This documentation aims to provide guidance on various configuration aspects sha
 
 ## my.cnf
 
-An inline [configuration file (my.cnf)](../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) can be provisioned in the `MariaDB` resource via the `myCnf` field:
+An inline [configuration file (my.cnf)](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) can be provisioned in the `MariaDB` resource via the `myCnf` field:
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -32,7 +32,7 @@ spec:
     max_allowed_packet=256M
 ```
 
-In this field, you may provide any [configuration option](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) supported by MariaDB.
+In this field, you may provide any [configuration option](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) supported by MariaDB.
 
 Under the hood, the operator automatically creates a `ConfigMap` with the contents of the `myCnf` field, which will be mounted in the `MariaDB` instance. Alternatively, you can manage your own configuration using a pre-existing `ConfigMap` by linking it via `myCnfConfigMapKeyRef`. It is important to note that the key in this `ConfigMap` i.e. the config file name, must have a `.cnf` extension in order to be detected by MariaDB:
 

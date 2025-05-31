@@ -36,7 +36,7 @@ For valid identifiers to use as function names, see [Identifier Names](../../ref
 #### RETURNS
 
 The `RETURNS` clause indicates the type of the function's\
-return value, and can be one of [string](https://mariadb.com/kb/en/string), [INTEGER](../../reference/data-types/data-types-numeric-data-types/integer.md), [REAL](../../reference/data-types/data-types-numeric-data-types/real.md) or [DECIMAL](../../reference/data-types/data-types-numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../reference/data-types/string-data-types/) functions.
+return value, and can be one of [string](https://mariadb.com/kb/en/string), [INTEGER](../../reference/data-types/numeric-data-types/integer.md), [REAL](../../reference/data-types/numeric-data-types/real.md) or [DECIMAL](../../reference/data-types/numeric-data-types/decimal.md). `DECIMAL` functions currently return string values and should be written like [STRING](../../reference/data-types/string-data-types/) functions.
 
 #### shared\_library\_name
 

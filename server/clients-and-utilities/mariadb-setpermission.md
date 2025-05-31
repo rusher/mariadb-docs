@@ -1,9 +1,6 @@
-
 # mariadb-setpermission
 
-
 ## Syntax
-
 
 ```
 mariadb-setpermission [options]
@@ -11,48 +8,34 @@ mariadb-setpermission [options]
 
 ## Description
 
+`mariadb-setpermission` is a Perl script that was originally written and contributed by Luuk de Boer. It requires the DBI and DBD::mysql Perl modules to be installed.`mariadb-setpermission` can help you add users or databases or change passwords in MariaDB.
 
-`mariadb-setpermission` is a Perl script that was originally written and contributed by Luuk de Boer. It requires the DBI and DBD::mysql Perl modules to be installed.
-`mariadb-setpermission` can help you add users or databases or change passwords in MariaDB.
-
-
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_setpermission`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
-
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_setpermission`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It interactively sets permissions in the MariaDB grant tables, but does not check permissions which have already been set in MariaDB. So if you can't connect to MariaDB using the permission you just added, take a look at the permissions which have already been set in MariaDB.
 
-
 The account used when you connect determines which permissions you have when attempting to modify existing permissions in the grant tables.
 
-
-`mariadb-setpermission` also reads options from the [client] and [perl] groups in the .my.cnf file in your home directory, if the file exists.
-
+`mariadb-setpermission` also reads options from the \[client] and \[perl] groups in the .my.cnf file in your home directory, if the file exists.
 
 The following options are available:
 
-
 ## Options
 
-
 | Option | Description |
-| --- | --- |
+| ------ | ----------- |
 | Option | Description |
 
-
-
-|   |   |
-| --- | --- |
-| --help | Display a help message and exit. |
-| --host=host_name | Connect to the MariaDB server on the given host. |
+|                     |                                                                                                                                                                                                                                                                                                          |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --help              | Display a help message and exit.                                                                                                                                                                                                                                                                         |
+| --host=host\_name   | Connect to the MariaDB server on the given host.                                                                                                                                                                                                                                                         |
 | --password=password | The password to use when connecting to the server. Note that the password value is not optional for this option, unlike for other MariaDB programs Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line. |
-| --port=port_num | The TCP/IP port number to use for the connection. |
-| --socket=path | For connections to localhost, the Unix socket file to use. |
-| --user=user_name | The MariaDB user name to use when connecting to the server. |
-
-
+| --port=port\_num    | The TCP/IP port number to use for the connection.                                                                                                                                                                                                                                                        |
+| --socket=path       | For connections to localhost, the Unix socket file to use.                                                                                                                                                                                                                                               |
+| --user=user\_name   | The MariaDB user name to use when connecting to the server.                                                                                                                                                                                                                                              |
 
 ## Example
-
 
 ```
 ./mariadb-setpermission --user=msandbox --password=msandbox --host=127.0.0.1 --port=11200
@@ -81,6 +64,4 @@ What would you like to do:
   0. exit this program
 ```
 
-
 CC BY-SA / Gnu FDL
-

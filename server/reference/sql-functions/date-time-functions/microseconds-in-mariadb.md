@@ -49,7 +49,7 @@ SELECT CURTIME(4);
 --> 10:11:12.3456
 ```
 
-* [TIME\_TO\_SEC()](time_to_sec.md) and [UNIX\_TIMESTAMP()](unix_timestamp.md) preserve microseconds of the argument. These functions will return a [decimal](../../data-types/data-types-numeric-data-types/decimal.md) number if the result non-zero datetime precision and an [integer](../../data-types/data-types-numeric-data-types/int.md) otherwise (for backward compatibility).
+* [TIME\_TO\_SEC()](time_to_sec.md) and [UNIX\_TIMESTAMP()](unix_timestamp.md) preserve microseconds of the argument. These functions will return a [decimal](../../data-types/numeric-data-types/decimal.md) number if the result non-zero datetime precision and an [integer](../../data-types/numeric-data-types/int.md) otherwise (for backward compatibility).
 
 ```
 SELECT TIME_TO_SEC('10:10:10.12345');
@@ -89,7 +89,7 @@ SELECT CAST('2009-12-31 23:59:59.998877' as DATETIME(3));
 
 ## MySQL 5.6 Microseconds
 
-MySQL 5.6 introduced microseconds using a slightly different implementation to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). Since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB has defaulted to the MySQL format, by means of the [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable. The MySQL version requires slightly [more storage](../../data-types/data-type-storage-requirements.md) but has some advantages in permitting the eventual support of negative dates, and in replication.
+MySQL 5.6 introduced microseconds using a slightly different implementation to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). Since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB has defaulted to the MySQL format, by means of the [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable. The MySQL version requires slightly [more storage](../../data-types/data-type-storage-requirements.md) but has some advantages in permitting the eventual support of negative dates, and in replication.
 
 ## See Also
 

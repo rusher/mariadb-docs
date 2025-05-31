@@ -1,8 +1,8 @@
 # Performance Schema metadata\_locks Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The metadata\_locks table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
+The metadata\_locks table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `metadata_locks` table contains [metadata lock](../../../../transactions/metadata-locking.md) information.
 
@@ -13,7 +13,7 @@ UPDATE performance_schema.setup_instruments SET enabled='YES', timed='YES'
   WHERE name LIKE 'wait/lock/metadata%';
 ```
 
-or in the [configuration file](../../../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md):
+or in the [configuration file](../../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'

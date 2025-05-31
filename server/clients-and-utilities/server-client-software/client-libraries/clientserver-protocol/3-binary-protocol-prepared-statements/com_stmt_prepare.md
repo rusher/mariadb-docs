@@ -7,8 +7,8 @@ See [PREPARE](../../../../../reference/sql-statements/prepared-statements/prepar
 
 ### Implemented by
 
-* [mariadb\_stmt\_execute\_direct()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mariadb_stmt_execute_direct)
-* [mysql\_stmt\_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare)
+* [mariadb\_stmt\_execute\_direct()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mariadb_stmt_execute_direct)
+* [mysql\_stmt\_prepare()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-prepared-statement-functions/mysql_stmt_prepare)
 
 ## Fields
 

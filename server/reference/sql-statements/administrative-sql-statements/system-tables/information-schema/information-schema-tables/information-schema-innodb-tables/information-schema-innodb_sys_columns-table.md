@@ -18,22 +18,22 @@ It has the following columns:
 
 The column `MTYPE` uses a numeric column type identifier, which has the following values:
 
-| Column Type Identifier | Description                                                                      |
-| ---------------------- | -------------------------------------------------------------------------------- |
-| Column Type Identifier | Description                                                                      |
-| 1                      | [VARCHAR](../../../../../../data-types/string-data-types/varchar.md)             |
-| 2                      | [CHAR](../../../../../../data-types/string-data-types/char.md)                   |
-| 3                      | FIXBINARY                                                                        |
-| 4                      | [BINARY](../../../../../../data-types/string-data-types/binary.md)               |
-| 5                      | [BLOB](../../../../../../data-types/string-data-types/blob.md)                   |
-| 6                      | [INT](../../../../../../data-types/data-types-numeric-data-types/int.md)         |
-| 7                      | SYS\_CHILD                                                                       |
-| 8                      | SYS                                                                              |
-| 9                      | [FLOAT](../../../../../../data-types/data-types-numeric-data-types/float.md)     |
-| 10                     | [DOUBLE](../../../../../../data-types/data-types-numeric-data-types/double.md)   |
-| 11                     | [DECIMAL](../../../../../../data-types/data-types-numeric-data-types/decimal.md) |
-| 12                     | VARMYSQL                                                                         |
-| 13                     | MYSQL                                                                            |
+| Column Type Identifier | Description                                                           |
+| ---------------------- | --------------------------------------------------------------------- |
+| Column Type Identifier | Description                                                           |
+| 1                      | [VARCHAR](../../../../../../data-types/string-data-types/varchar.md)  |
+| 2                      | [CHAR](../../../../../../data-types/string-data-types/char.md)        |
+| 3                      | FIXBINARY                                                             |
+| 4                      | [BINARY](../../../../../../data-types/string-data-types/binary.md)    |
+| 5                      | [BLOB](../../../../../../data-types/string-data-types/blob.md)        |
+| 6                      | [INT](../../../../../../data-types/numeric-data-types/int.md)         |
+| 7                      | SYS\_CHILD                                                            |
+| 8                      | SYS                                                                   |
+| 9                      | [FLOAT](../../../../../../data-types/numeric-data-types/float.md)     |
+| 10                     | [DOUBLE](../../../../../../data-types/numeric-data-types/double.md)   |
+| 11                     | [DECIMAL](../../../../../../data-types/numeric-data-types/decimal.md) |
+| 12                     | VARMYSQL                                                              |
+| 13                     | MYSQL                                                                 |
 
 ## Example
 

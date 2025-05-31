@@ -1,11 +1,8 @@
-
 # FOR
 
 ## Syntax
 
-
 Integer range FOR loop:
-
 
 ```
 [begin_label:]
@@ -16,7 +13,6 @@ END FOR [ end_label ]
 
 Explicit cursor FOR loop
 
-
 ```
 [begin_label:]
 FOR record_name IN cursor_name [ ( cursor_actual_parameter_list)]
@@ -24,8 +20,7 @@ DO statement_list
 END FOR [ end_label ]
 ```
 
-Explicit cursor FOR loop ([Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle))
-
+Explicit cursor FOR loop ([Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle))
 
 ```
 [begin_label:]
@@ -37,7 +32,6 @@ END LOOP [ end_label ]
 
 Implicit cursor FOR loop
 
-
 ```
 [begin_label:]
 FOR record_name IN ( select_statement )
@@ -45,24 +39,17 @@ DO statement_list
 END FOR [ end_label ]
 ```
 
-
 ## Description
-
 
 FOR loops allow code to be executed a fixed number of times.
 
-
 In an integer range FOR loop, MariaDB will compare the lower bound and upper bound values, and assign the lower bound value to a counter. If REVERSE is not specified, and the upper bound value is greater than or equal to the counter, the counter will be incremented and the statement will continue, after which the loop is entered again. If the upper bound value is greater than the counter, the loop will be exited.
-
 
 If REVERSE is specified, the counter is decremented, and the upper bound value needs to be less than or equal for the loop to continue.
 
-
 ## Examples
 
-
 Intger range FOR loop:
-
 
 ```
 CREATE TABLE t1 (a INT);
@@ -88,7 +75,6 @@ SELECT * FROM t1;
 ```
 
 REVERSE integer range FOR loop:
-
 
 ```
 CREATE OR REPLACE TABLE t1 (a INT);
@@ -120,8 +106,7 @@ SELECT * FROM t1;
 +------+
 ```
 
-Explicit cursor in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle):
-
+Explicit cursor in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle):
 
 ```
 SET sql_mode=ORACLE;
@@ -174,9 +159,6 @@ Query OK, 0 rows affected (0.000 sec)
 
 ## See Also
 
-
 * [LOOP](loop.md)
 
-
 CC BY-SA / Gnu FDL
-

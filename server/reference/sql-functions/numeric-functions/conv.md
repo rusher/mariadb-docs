@@ -15,7 +15,7 @@ to base _`to_base`_.
 Returns `NULL` if any argument is `NULL`, or if the second or third argument are not in the allowed range.
 
 The argument _`N`_ is interpreted as an integer, but may be specified as an\
-integer or a string. The minimum base is 2 and the maximum base is 36 (prior to [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes)) or 62 (from [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-0-release-notes)). If _`to_base`_ is a negative number, _`N`_ is regarded as a signed number.\
+integer or a string. The minimum base is 2 and the maximum base is 36 (prior to [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-0-release-notes)) or 62 (from [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-0-release-notes)). If _`to_base`_ is a negative number, _`N`_ is regarded as a signed number.\
 Otherwise, _`N`_ is treated as unsigned. `CONV()` works with 64-bit\
 precision.
 

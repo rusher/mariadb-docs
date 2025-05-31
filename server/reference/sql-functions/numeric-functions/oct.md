@@ -8,7 +8,7 @@ OCT(N)
 
 ## Description
 
-Returns a string representation of the octal value of N, where N is a longlong ([BIGINT](../../data-types/data-types-numeric-data-types/bigint.md)) number. This is equivalent to [CONV(N,10,8)](conv.md). Returns NULL if N is NULL.
+Returns a string representation of the octal value of N, where N is a longlong ([BIGINT](../../data-types/numeric-data-types/bigint.md)) number. This is equivalent to [CONV(N,10,8)](conv.md). Returns NULL if N is NULL.
 
 ## Examples
 

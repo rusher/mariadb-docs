@@ -38,7 +38,7 @@ Note that storage engines can have their logs too: for example, InnoDB keeps an 
 * Used on machines that are, or may become, replication masters.
 * Required for point-in-time recovery.
 * Binary log files are mainly used by replication and can also be used with [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to apply on a backup to get the database up to date.
-* One can decide what to log with [--binlog-ignore-db=database\_name](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or [--binlog-do-db=database\_name](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+* One can decide what to log with [--binlog-ignore-db=database\_name](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or [--binlog-do-db=database\_name](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
 * The super user can disable logging for a connection by [setting SQL\_LOG\_BIN](../../reference/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) to 0. However while this is 0, no changes done in this connection will be replicated to the slaves!
 * For examples, see [Using and Maintaining the Binary Log](binary-log/using-and-maintaining-the-binary-log.md).
 
@@ -56,7 +56,7 @@ If you are a super user running a log batch job that you don't want to have logg
 SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 ```
 
-[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) will add this automatically to your dump file if you run it with the `--skip-log-queries` option.
+[mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously mysqldump) since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) will add this automatically to your dump file if you run it with the `--skip-log-queries` option.
 
 ## See Also
 

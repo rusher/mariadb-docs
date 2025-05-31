@@ -1,41 +1,31 @@
+# io\_global\_by\_file\_by\_bytes and x$io\_global\_by\_file\_by\_bytes Sys Schema Views
 
-# io_global_by_file_by_bytes and x$io_global_by_file_by_bytes Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ## Description
 
-
 The `io_global_by_file_by_bytes` and `x$io_global_by_file_by_bytes` views summarize global I/O consumers showing I/O in bytes, grouped by file. Rows are sorted by descending total I/O (bytes read and written) by default.
-
 
 The `io_global_by_file_by_bytes` view is intended to be easier for human reading, while the `x$io_global_by_file_by_bytes` view provides the data in raw form, intended for tools that process the data.
 
-
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| file | File path name. |
-| count_read | Total number of read events for the file. |
-| total_read | Total number of bytes read from the file. |
-| avg_read | Average number of bytes per read from the file. |
-| count_write | Total number of write events for the file. |
-| total_written | Total number of bytes written to the file. |
-| avg_write | Average number of bytes per write to the file. |
-| total | Total number of bytes read and written for the file. |
-| write_pct | Percentage of total I/O bytes that were writes. |
-
-
+| Column         | Description                                          |
+| -------------- | ---------------------------------------------------- |
+| Column         | Description                                          |
+| file           | File path name.                                      |
+| count\_read    | Total number of read events for the file.            |
+| total\_read    | Total number of bytes read from the file.            |
+| avg\_read      | Average number of bytes per read from the file.      |
+| count\_write   | Total number of write events for the file.           |
+| total\_written | Total number of bytes written to the file.           |
+| avg\_write     | Average number of bytes per write to the file.       |
+| total          | Total number of bytes read and written for the file. |
+| write\_pct     | Percentage of total I/O bytes that were writes.      |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.io_global_by_file_by_bytes\G
@@ -87,6 +77,4 @@ total_written: 82944
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-

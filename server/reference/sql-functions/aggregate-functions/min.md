@@ -21,7 +21,7 @@ It is an [aggregate function](./), and so can be used with the [GROUP BY](../../
 
 `MIN()` returns `NULL` if there were no matching rows.
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../sql-statements/data-definition/create/create-table.md#index-types) can be used to optimize MIN.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../sql-statements/data-definition/create/create-table.md#index-types) can be used to optimize MIN.
 
 ## Examples
 

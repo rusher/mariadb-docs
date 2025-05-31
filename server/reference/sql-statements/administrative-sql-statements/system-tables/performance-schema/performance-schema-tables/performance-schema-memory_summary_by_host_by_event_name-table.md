@@ -1,46 +1,35 @@
+# Performance Schema memory\_summary\_by\_host\_by\_event\_name Table
 
-# Performance Schema memory_summary_by_host_by_event_name Table
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes)
 
-
-##### MariaDB starting with [10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes)
-The memory_summary_by_host_by_event_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes).
-
+The memory\_summary\_by\_host\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes).
 
 There are five memory summary tables in the Performance Schema that share a number of fields in common. These include:
 
-
-* [memory_summary_by_account_by_event_name](performance-schema-memory_summary_by_account_by_event_name-table.md)
-* memory_summary_by_host_by_event_name
-* [memory_summary_by_thread_by_event_name](performance-schema-memory_summary_by_thread_by_event_name-table.md)
-* [memory_summary_by_user_by_event_name](performance-schema-memory_summary_by_user_by_event_name-table.md)
-* [memory_global_by_event_name](performance-schema-memory_summary_global_by_event_name-table.md)
-
+* [memory\_summary\_by\_account\_by\_event\_name](performance-schema-memory_summary_by_account_by_event_name-table.md)
+* memory\_summary\_by\_host\_by\_event\_name
+* [memory\_summary\_by\_thread\_by\_event\_name](performance-schema-memory_summary_by_thread_by_event_name-table.md)
+* [memory\_summary\_by\_user\_by\_event\_name](performance-schema-memory_summary_by_user_by_event_name-table.md)
+* [memory\_global\_by\_event\_name](performance-schema-memory_summary_global_by_event_name-table.md)
 
 The `memory_summary_by_host_by_event_name` table contains memory usage statistics aggregated by host and event.
 
-
 The table contains the following columns:
 
-
-
-| Field | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| Field | Type | Null | Default | Description |
-| HOST | char(60) | YES | NULL | Host portion of the account. |
-| EVENT_NAME | varchar(128) | NO | NULL | Event name. |
-| COUNT_ALLOC | bigint(20) unsigned | NO | NULL | Total number of allocations to memory. |
-| COUNT_FREE | bigint(20) unsigned | NO | NULL | Total number of attempts to free the allocated memory. |
-| SUM_NUMBER_OF_BYTES_ALLOC | bigint(20) unsigned | NO | NULL | Total number of bytes allocated. |
-| SUM_NUMBER_OF_BYTES_FREE | bigint(20) unsigned | NO | NULL | Total number of bytes freed |
-| LOW_COUNT_USED | bigint(20) | NO | NULL | Lowest number of allocated blocks (lowest value of CURRENT_COUNT_USED). |
-| CURRENT_COUNT_USED | bigint(20) | NO | NULL | Currently allocated blocks that have not been freed (COUNT_ALLOC minus COUNT_FREE). |
-| HIGH_COUNT_USED | bigint(20) | NO | NULL | Highest number of allocated blocks (highest value of CURRENT_COUNT_USED). |
-| LOW_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Lowest number of bytes used. |
-| CURRENT_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Current number of bytes used (total allocated minus total freed). |
-| HIGH_NUMBER_OF_BYTES_USED | bigint(20) | NO | NULL | Highest number of bytes used. |
-
-
-
+| Field                            | Type                | Null | Default | Description                                                                           |
+| -------------------------------- | ------------------- | ---- | ------- | ------------------------------------------------------------------------------------- |
+| Field                            | Type                | Null | Default | Description                                                                           |
+| HOST                             | char(60)            | YES  | NULL    | Host portion of the account.                                                          |
+| EVENT\_NAME                      | varchar(128)        | NO   | NULL    | Event name.                                                                           |
+| COUNT\_ALLOC                     | bigint(20) unsigned | NO   | NULL    | Total number of allocations to memory.                                                |
+| COUNT\_FREE                      | bigint(20) unsigned | NO   | NULL    | Total number of attempts to free the allocated memory.                                |
+| SUM\_NUMBER\_OF\_BYTES\_ALLOC    | bigint(20) unsigned | NO   | NULL    | Total number of bytes allocated.                                                      |
+| SUM\_NUMBER\_OF\_BYTES\_FREE     | bigint(20) unsigned | NO   | NULL    | Total number of bytes freed                                                           |
+| LOW\_COUNT\_USED                 | bigint(20)          | NO   | NULL    | Lowest number of allocated blocks (lowest value of CURRENT\_COUNT\_USED).             |
+| CURRENT\_COUNT\_USED             | bigint(20)          | NO   | NULL    | Currently allocated blocks that have not been freed (COUNT\_ALLOC minus COUNT\_FREE). |
+| HIGH\_COUNT\_USED                | bigint(20)          | NO   | NULL    | Highest number of allocated blocks (highest value of CURRENT\_COUNT\_USED).           |
+| LOW\_NUMBER\_OF\_BYTES\_USED     | bigint(20)          | NO   | NULL    | Lowest number of bytes used.                                                          |
+| CURRENT\_NUMBER\_OF\_BYTES\_USED | bigint(20)          | NO   | NULL    | Current number of bytes used (total allocated minus total freed).                     |
+| HIGH\_NUMBER\_OF\_BYTES\_USED    | bigint(20)          | NO   | NULL    | Highest number of bytes used.                                                         |
 
 CC BY-SA / Gnu FDL
-

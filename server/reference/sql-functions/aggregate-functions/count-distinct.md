@@ -12,7 +12,7 @@ Returns a count of the number of different non-NULL values.
 
 COUNT(DISTINCT) returns 0 if there were no matching rows.
 
-Although, from [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/), COUNT DISTINCT cannot be.
+Although, from [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/), COUNT DISTINCT cannot be.
 
 ## Examples
 

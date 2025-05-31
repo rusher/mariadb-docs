@@ -1,41 +1,31 @@
+# io\_global\_by\_file\_by\_latency and x$io\_global\_by\_file\_by\_latency Sys Schema Views
 
-# io_global_by_file_by_latency and x$io_global_by_file_by_latency Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ## Description
 
-
 The `io_global_by_file_by_latency` and `x$io_global_by_file_by_latency` views summarize global I/O consumers to display time waiting for I/O, grouped by file. Rows are sorted by descending total latency by default.
-
 
 The `io_global_by_file_by_latency` view is intended to be easier for human reading, while the `x$io_global_by_file_by_latency` view provides the data in raw form, intended for tools that process the data.
 
-
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| file | File path name. |
-| total | Total number of I/O events for the file. |
-| total_latency | Total wait time of timed I/O events for the file. |
-| count_read | Total number of read I/O events for the file. |
-| read_latency | Total wait time of timed read I/O events for the file. |
-| count_write | Total number of write I/O events for the file. |
-| write_latency | Total wait time of timed write I/O events for the file. |
-| count_misc | Total number of other I/O events for the file. |
-| misc_latency | Total wait time of timed other I/O events for the file. |
-
-
+| Column         | Description                                             |
+| -------------- | ------------------------------------------------------- |
+| Column         | Description                                             |
+| file           | File path name.                                         |
+| total          | Total number of I/O events for the file.                |
+| total\_latency | Total wait time of timed I/O events for the file.       |
+| count\_read    | Total number of read I/O events for the file.           |
+| read\_latency  | Total wait time of timed read I/O events for the file.  |
+| count\_write   | Total number of write I/O events for the file.          |
+| write\_latency | Total wait time of timed write I/O events for the file. |
+| count\_misc    | Total number of other I/O events for the file.          |
+| misc\_latency  | Total wait time of timed other I/O events for the file. |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.io_global_by_file_by_latency\G
@@ -85,6 +75,4 @@ write_latency: 1310187820
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-

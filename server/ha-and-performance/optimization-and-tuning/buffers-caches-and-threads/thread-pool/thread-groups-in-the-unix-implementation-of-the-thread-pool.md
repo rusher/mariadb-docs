@@ -10,7 +10,7 @@ When setting the `[thread_pool_size](thread-pool-system-status-variables.md#thre
 SET GLOBAL thread_pool_size=32;
 ```
 
-It can also be set in a server [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -125,7 +125,7 @@ The thread pool's **timer thread** creates a new **worker thread** for a thread 
 
 In some of the scenarios listed above, a thread is only created within a thread group if no new threads have been created for the thread group within the _throttling interval_. The throttling interval depends on the number of threads that are already in the thread group.
 
-In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105) and later, thread creation is not throttled until a thread group has more than 1 + `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` threads:
+In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105) and later, thread creation is not throttled until a thread group has more than 1 + `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` threads:
 
 | Number of Threads in Thread Group                                                                       | Throttling Interval (milliseconds) |
 | ------------------------------------------------------------------------------------------------------- | ---------------------------------- |
@@ -148,7 +148,7 @@ This stall detection feature is implemented by creating a **timer thread** that 
 SET GLOBAL thread_pool_stall_limit=300;
 ```
 
-It can also be set in a server [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -182,7 +182,7 @@ You might expect that the thread pool would shutdown one of the **worker threads
 SET GLOBAL thread_pool_oversubscribe=10;
 ```
 
-It can also be set in a server [option group](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

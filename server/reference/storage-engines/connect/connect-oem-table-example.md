@@ -1,11 +1,8 @@
-
 # CONNECT - OEM Table Example
 
 This is an example showing how an OEM table can be implemented.
 
-
 The header File `my_global.h`:
-
 
 ```
 /***********************************************************************/
@@ -45,9 +42,7 @@ typedef const charset_info_st CHARSET_INFO;
 
 Note: This is a fake `my_global.h` that just contains what is useful for the `jmgoem.cpp`source file.
 
-
 The source File `jmgoem.cpp`:
-
 
 ```
 /************* jmgoem C++ Program Source Code File (.CPP) **************/
@@ -155,7 +150,6 @@ PQRYRES __stdcall ColMONGO(PGLOBAL g, PTOS tp, char *tab,
 
 The file `mongo.def`: (required only on Windows)
 
-
 ```
 LIBRARY     MONGO
 EXPORTS
@@ -165,24 +159,16 @@ EXPORTS
 
 ### Compiling this OEM
 
-
 To compile this OEM module, first make the two or three required files by copy/pasting from the above listings.
-
 
 Even if this module is to be used with a binary distribution, you need some source files in order to successfully compile it. At least the CONNECT header files that are included in `jmgoem.cpp` and the ones they can include. This can be obtained by downloading the MariaDB source file tar.gz and extracting from it the CONNECT sources files in a directory that will be added to the additional source directories if it is not the directory containing the above files.
 
-
 The module must be linked to the `ha_connect.lib` of the binary version it will used with. Recent distributions add this lib in the plugin directory.
-
 
 The resulting module, for instance `mongo.so` or `mongo.dll`, must be placed in the plugin directory of the MariaDB server. Then, you will be able to use MONGO like tables simply replacing in the CREATE TABLE statement the option `TABLE_TYPE=MONGO` with `TABLE_TYPE=OEM SUBTYPE=MONGO MODULE=’mongo.(so|dll)’`. Actually, the module name, here supposedly ‘mongo’, can be anything you like.
 
-
-This will work with the last (not yet) distributed versions of [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and 10.1 because, even it is not enabled, the MONGO type is included in them. This is also the case for [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) but then, on Windows, you will have to define NOEXP and NOMGOCOL because these functions are not exported by this version.
-
+This will work with the last (not yet) distributed versions of [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and 10.1 because, even it is not enabled, the MONGO type is included in them. This is also the case for [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) but then, on Windows, you will have to define NOEXP and NOMGOCOL because these functions are not exported by this version.
 
 To implement for older versions that do not contain the MONGO type, you can add the corresponding source files, namely `javaconn.cpp`, `jmgfam.cpp`, `jmgoconn.cpp`, `mongo.cpp` and `tabjmg.cpp` that you should find in the CONNECT extracted source files if you downloaded a recent version. As they include `my_global.h`, this is the reason why the included file was named this way. In addition, your compiling should define `HAVE_JMGO` and `HAVE_JAVACONN`. Of course, this is possible only if `ha_connect.lib` is available.
 
-
 CC BY-SA / Gnu FDL
-

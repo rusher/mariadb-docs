@@ -15,7 +15,7 @@ are successfully inserted.
 
 If one gives an argument to LAST\_INSERT\_ID(), then it will return the value of the expression and\
 the next call to LAST\_INSERT\_ID() will return the same value. The value will also be sent to the client\
-and can be accessed by the [mysql\_insert\_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id) function.
+and can be accessed by the [mysql\_insert\_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_insert_id) function.
 
 For example, after inserting a row that generates an AUTO\_INCREMENT\
 value, you can get the value like this:
@@ -177,7 +177,7 @@ SELECT * FROM t;
 
 ## See Also
 
-* [mysql\_insert\_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_insert_id)
+* [mysql\_insert\_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_insert_id)
 * [AUTO\_INCREMENT](../../../data-types/auto_increment.md)
 * [AUTO\_INCREMENT handling in InnoDB](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [Sequences](../../../sql-structure/sequences/) - an alternative to auto\_increment

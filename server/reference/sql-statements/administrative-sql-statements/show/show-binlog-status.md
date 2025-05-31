@@ -11,11 +11,11 @@ SHOW BINLOG STATUS -- From MariaDB 10.5.2
 
 Provides status information about the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) files of the primary.
 
-This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG MONITOR](../../account-management-sql-statements/grant.md#binlog-monitor) privilege.
+This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG MONITOR](../../account-management-sql-statements/grant.md#binlog-monitor) privilege.
 
 To see information about the current [GTIDs](../../../../ha-and-performance/standard-replication/gtid.md) in the binary log, use the[gtid\_binlog\_pos](../../../../ha-and-performance/standard-replication/gtid.md) variable.
 
-`SHOW MASTER STATUS` was renamed to `SHOW BINLOG STATUS` in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), but the old name remains an alias for compatibility purposes.
+`SHOW MASTER STATUS` was renamed to `SHOW BINLOG STATUS` in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), but the old name remains an alias for compatibility purposes.
 
 ## Example
 

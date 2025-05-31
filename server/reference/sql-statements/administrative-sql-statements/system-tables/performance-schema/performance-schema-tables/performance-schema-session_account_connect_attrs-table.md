@@ -1,34 +1,24 @@
-
-# Performance Schema session_account_connect_attrs Table
+# Performance Schema session\_account\_connect\_attrs Table
 
 ## Description
 
-
 The `session_account_connect_attrs` table shows connection attributes for the current session.
 
+Applications can pass key/value connection attributes to the server when a connection is made. The [session\_connect\_attrs](performance-schema-session_connect_attrs-table.md) and `session_account_connect_attrs` tables provide access to this information, for all sessions and the current session respectively.
 
-Applications can pass key/value connection attributes to the server when a connection is made. The [session_connect_attrs](performance-schema-session_connect_attrs-table.md) and `session_account_connect_attrs` tables provide access to this information, for all sessions and the current session respectively.
-
-
-The C API functions [mysql_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_options) and [mysql_optionsv()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) are used for passing connection attributes to the server.
-
+The C API functions [mysql\_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_options) and [mysql\_optionsv()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) are used for passing connection attributes to the server.
 
 `session_account_connect_attrs` contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| PROCESSLIST_ID | Session connection identifier. |
-| ATTR_NAME | Attribute name. |
-| ATTR_VALUE | Attribute value. |
-| ORDINAL_POSITION | Order in which attribute was added to the connection attributes. |
-
-
+| Column            | Description                                                      |
+| ----------------- | ---------------------------------------------------------------- |
+| Column            | Description                                                      |
+| PROCESSLIST\_ID   | Session connection identifier.                                   |
+| ATTR\_NAME        | Attribute name.                                                  |
+| ATTR\_VALUE       | Attribute value.                                                 |
+| ORDINAL\_POSITION | Order in which attribute was added to the connection attributes. |
 
 ## Example
-
 
 ```
 SELECT * FROM performance_schema.session_account_connect_attrs;
@@ -44,6 +34,4 @@ SELECT * FROM performance_schema.session_account_connect_attrs;
 +----------------+-----------------+------------------+------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

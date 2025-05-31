@@ -1,13 +1,10 @@
+# VEC\_DISTANCE\_EUCLIDEAN
 
-# VEC_DISTANCE_EUCLIDEAN
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-
-##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
-Vectors were introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117).
-
+Vectors were introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117).
 
 ## Syntax
-
 
 ```
 VEC_DISTANCE_EUCLIDEAN(v, s)
@@ -15,15 +12,11 @@ VEC_DISTANCE_EUCLIDEAN(v, s)
 
 ## Description
 
-
 `VEC_Distance_Euclidean` is an SQL function that calculates a Euclidean (L2) distance between two points.
 
-
-If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../create-table-with-vectors.md)), the index will not be used, and a full table scan performed instead. The [VEC_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as VEC_DISTANCE_EUCLIDEAN or [VEC_DISTANCE_COSINE](vec_distance_cosine.md), depending on the underlying index type.
-
+If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../create-table-with-vectors.md)), the index will not be used, and a full table scan performed instead. The [VEC\_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as VEC\_DISTANCE\_EUCLIDEAN or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), depending on the underlying index type.
 
 ## Example
-
 
 ```
 INSERT INTO v VALUES 
@@ -58,12 +51,9 @@ SELECT id FROM v
 
 ## See Also
 
-
-* [VEC_DISTANCE](vector-functions-vec_distance.md)
-* [VEC_DISTANCE_COSINE](vec_distance_cosine.md)
+* [VEC\_DISTANCE](vector-functions-vec_distance.md)
+* [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md)
 * [Vector Overview](../vector-overview.md)
 * [CREATE TABLE with Vectors](../create-table-with-vectors.md)
 
-
 CC BY-SA / Gnu FDL
-

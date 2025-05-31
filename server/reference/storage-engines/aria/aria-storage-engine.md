@@ -1,8 +1,8 @@
 # Aria Storage Engine
 
-The [Aria](./) storage engine is compiled in by default from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and it is required to be 'in use' when MariaDB is started.
+The [Aria](./) storage engine is compiled in by default from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and it is required to be 'in use' when MariaDB is started.
 
-From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), all [system tables](../../sql-statements/administrative-sql-statements/system-tables/) are Aria.
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), all [system tables](../../sql-statements/administrative-sql-statements/system-tables/) are Aria.
 
 Additionally, internal on-disk tables are in the Aria table format instead of\
 the [MyISAM](../myisam-storage-engine/) table format. This should speed up some [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md)\
@@ -98,7 +98,7 @@ recovery_failures: 0
 
 ### Missing valid id
 
-The error `Missing valid id at start of file. File is not a valid aria control file` means that something overwrote at least the first 4 bytes in the file. This can happen due to a problem with the file system (hardware or software), or a bug in which a thread inside MariaDB wrote on the wrong file descriptor (in which case you should [report the bug](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/company-and-community/bug-tracking/reporting-bugs), attaching a copy of the control file to assist).
+The error `Missing valid id at start of file. File is not a valid aria control file` means that something overwrote at least the first 4 bytes in the file. This can happen due to a problem with the file system (hardware or software), or a bug in which a thread inside MariaDB wrote on the wrong file descriptor (in which case you should [report the bug](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/bug-tracking/reporting-bugs), attaching a copy of the control file to assist).
 
 In the case of a corrupted log file, with the server shut down, one should be able to fix that by deleting all aria\_log files.\
 If the control\_file is corrupted, then one has to delete the aria\_control\_file and all aria\_log.\* files.\

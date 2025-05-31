@@ -1,29 +1,21 @@
-
 # SHOW PACKAGE STATUS
 
 ## Syntax
-
 
 ```
 SHOW PACKAGE STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
 
-
 ## Description
-
 
 The `SHOW PACKAGE STATUS` statement returns characteristics of stored package specifications, such as the database, name, type, creator, creation and modification dates, and character set information. A similar statement, `[SHOW PACKAGE BODY STATUS](show-package-body-status.md)`, displays information about stored package bodies (i.e. implementations).
 
-
 The `LIKE` clause, if present, indicates which package names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-
-The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION_SCHEMA database contains more detailed information.
-
+The [ROUTINES table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database contains more detailed information.
 
 ## Examples
-
 
 ```
 SHOW PACKAGE STATUS LIKE 'pkg1'\G
@@ -43,13 +35,10 @@ collation_connection: utf8_general_ci
 
 ## See Also
 
-
 * [SHOW PACKAGE BODY](show-package-body-status.md)
 * [SHOW CREATE PACKAGE](show-create-package.md)
 * [CREATE PACKAGE](../../data-definition/create/create-package.md)
 * [DROP PACKAGE](../../data-definition/drop/drop-package.md)
-* [Oracle SQL_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
-
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 
 CC BY-SA / Gnu FDL
-

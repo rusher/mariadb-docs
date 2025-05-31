@@ -16,15 +16,15 @@ The type can be one of the following values:
 * [CHAR](../../data-types/string-data-types/char.md)
 * [DATE](../../data-types/date-and-time-data-types/date.md)
 * [DATETIME](../../data-types/date-and-time-data-types/datetime.md)
-* \[DECIMAL[(M\[,D\])](../../data-types/data-types-numeric-data-types/decimal.md)]
-* [DOUBLE](../../data-types/data-types-numeric-data-types/double.md)
-* [FLOAT](../../data-types/data-types-numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
-* [INTEGER](../../data-types/data-types-numeric-data-types/int.md)
+* \[DECIMAL[(M\[,D\])](../../data-types/numeric-data-types/decimal.md)]
+* [DOUBLE](../../data-types/numeric-data-types/double.md)
+* [FLOAT](../../data-types/numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
+* [INTEGER](../../data-types/numeric-data-types/int.md)
   * Short for `SIGNED INTEGER`
 * SIGNED \[INTEGER]
 * UNSIGNED \[INTEGER]
 * [TIME](../../data-types/date-and-time-data-types/time.md)
-* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
+* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
 
 Note that in MariaDB, `INT` and `INTEGER` are the same thing.
 

@@ -1,8 +1,6 @@
-
 # SUBSTRING
 
 ## Syntax
-
 
 ```
 SUBSTRING(str,pos), 
@@ -16,33 +14,23 @@ SUBSTR(str,pos,len),
 SUBSTR(str FROM pos FOR len)
 ```
 
-
 ## Description
 
+The forms without a _`len`_ argument return a substring from string _`str`_ starting at position _`pos`_.
 
-The forms without a *`len`* argument return a substring from string *`str`* starting at position *`pos`*.
+The forms with a _`len`_ argument return a substring _`len`_ characters long from string _`str`_, starting at position _`pos`_.
 
+The forms that use _`FROM`_ are standard SQL syntax.
 
-The forms with a *`len`* argument return a substring *`len`* characters long from string *`str`*, starting at position *`pos`*.
+It is also possible to use a negative value for _`pos`_. In this case, the beginning of the substring is _`pos`_ characters from the end of the string, rather than the beginning. A negative value may be used for _`pos`_ in any of the forms of this function.
 
-
-The forms that use *`FROM`* are standard SQL syntax.
-
-
-It is also possible to use a negative value for *`pos`*. In this case, the beginning of the substring is *`pos`* characters from the end of the string, rather than the beginning. A negative value may be used for *`pos`* in any of the forms of this function.
-
-
-By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle-compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), when sql_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).
-
+By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle-compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), when sql\_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).
 
 If any argument is `NULL`, returns `NULL`.
 
-
-Prior to [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/what-is-mariadb-118), the optimizer could not take advantage of queries of the format [SUBSTR(col, 1, n) = const_str](substring.md).
-
+Prior to [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118), the optimizer could not take advantage of queries of the format [SUBSTR(col, 1, n) = const\_str](substring.md).
 
 ## Examples
-
 
 ```
 SELECT SUBSTRING('Knowledgebase',5);
@@ -88,8 +76,7 @@ SELECT SUBSTRING('Knowledgebase' FROM -8 FOR 4);
 +------------------------------------------+
 ```
 
-[Oracle mode from MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle):
-
+[Oracle mode from MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle):
 
 ```
 SELECT SUBSTR('abc',0,3);
@@ -125,11 +112,8 @@ SELECT SUBSTR('abc',1,2);
 
 ## See Also
 
-
 * [INSTR()](instr.md) - Returns the position of a string within a string
 * [LOCATE()](locate.md) - Returns the position of a string within a string
-* [SUBSTRING_INDEX()](substring_index.md) - Returns a string based on substring
+* [SUBSTRING\_INDEX()](substring_index.md) - Returns a string based on substring
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

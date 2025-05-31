@@ -1,41 +1,32 @@
+# host\_summary and x$host\_summary Sys Schema Views
 
-# host_summary and x$host_summary Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
 ## Description
 
-
 The `host_summary` and `x$host_summary` views contain host activity information, grouped by host. The `host_summary` view is intended to be easier for human reading, while the `x$host_summary` view provides the data in raw form, intended for tools that process the data.
-
 
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| host | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
-| statements | Total number of statements for the host. |
-| statement_latency | Total wait time of timed statements for the host. |
-| statement_avg_latency | Average wait time per timed statement for the host. |
-| table_scans | Total table scans for the host. |
-| file_ios | Total file I/O events for the host. |
-| file_io_latency | Total wait time of timed file I/O events for the host. |
-| current_connections | Current connections for the host. |
-| total_connections | Total connections for the host. |
-| unique_users | Number of distinct users for the host. |
-| current_memory | Current allocated memory for the host. |
-| total_memory_allocated | Total allocated memory for the host. |
-
-
+| Column                   | Description                                                                                                                                           |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                   | Description                                                                                                                                           |
+| host                     | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
+| statements               | Total number of statements for the host.                                                                                                              |
+| statement\_latency       | Total wait time of timed statements for the host.                                                                                                     |
+| statement\_avg\_latency  | Average wait time per timed statement for the host.                                                                                                   |
+| table\_scans             | Total table scans for the host.                                                                                                                       |
+| file\_ios                | Total file I/O events for the host.                                                                                                                   |
+| file\_io\_latency        | Total wait time of timed file I/O events for the host.                                                                                                |
+| current\_connections     | Current connections for the host.                                                                                                                     |
+| total\_connections       | Total connections for the host.                                                                                                                       |
+| unique\_users            | Number of distinct users for the host.                                                                                                                |
+| current\_memory          | Current allocated memory for the host.                                                                                                                |
+| total\_memory\_allocated | Total allocated memory for the host.                                                                                                                  |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.host_summary\G
@@ -69,6 +60,4 @@ SELECT * FROM sys.x$host_summary\G
 total_memory_allocated: 0
 ```
 
-
 CC BY-SA / Gnu FDL
-

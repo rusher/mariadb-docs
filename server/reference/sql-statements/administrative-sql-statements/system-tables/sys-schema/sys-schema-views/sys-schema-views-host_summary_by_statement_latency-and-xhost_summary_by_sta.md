@@ -1,38 +1,29 @@
+# host\_summary\_by\_statement\_latency and x$host\_summary\_by\_statement\_latency Sys Schema Views
 
-# host_summary_by_statement_latency and x$host_summary_by_statement_latency Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ## Description
 
-
 The `host_summary_by_statement_latency` and `x$host_summary_by_statement_latency` views summarize statement statistics, grouped by host. Rows are sorted by descending total latency by default. The `host_summary_by_statement_latency` view is intended to be easier for human reading, while the `x$host_summary_by_statement_latency` view provides the data in raw form, intended for tools that process the data.
-
 
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| host | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
-| total | Total number of statements for the host. |
-| max_latency | Maximum single wait time of timed statements for the host. |
-| lock_latency | Total time spent by timed statements for the host waiting for locks. |
-| total_latency | Total wait time of timed statements for the host. |
-| rows_sent | Total number of rows returned by statements for the host. |
-| rows_examined | Total number of rows read from storage engines by statements for the host. |
-| rows_affected | Total number of rows affected by statements for the host. |
-| full_scans | Total number of full table scans by statements for the host. |
-
-
+| Column         | Description                                                                                                                                           |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                           |
+| host           | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
+| total          | Total number of statements for the host.                                                                                                              |
+| max\_latency   | Maximum single wait time of timed statements for the host.                                                                                            |
+| lock\_latency  | Total time spent by timed statements for the host waiting for locks.                                                                                  |
+| total\_latency | Total wait time of timed statements for the host.                                                                                                     |
+| rows\_sent     | Total number of rows returned by statements for the host.                                                                                             |
+| rows\_examined | Total number of rows read from storage engines by statements for the host.                                                                            |
+| rows\_affected | Total number of rows affected by statements for the host.                                                                                             |
+| full\_scans    | Total number of full table scans by statements for the host.                                                                                          |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.host_summary_by_statement_latency\G
@@ -80,6 +71,4 @@ rows_affected: 0
    full_scans: 0
 ```
 
-
 CC BY-SA / Gnu FDL
-

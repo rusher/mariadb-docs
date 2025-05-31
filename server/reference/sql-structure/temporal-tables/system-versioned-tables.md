@@ -99,9 +99,9 @@ Create Table: CREATE TABLE `t` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 WITH SYSTEM VERSIONING
 ```
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to convert a versioned table from implicit to explicit row\_start/row\_end columns. Note that in order to do any ALTER on a system versioned table, [system\_versioning\_alter\_history](system-versioned-tables.md#system_versioning_alter_history) must be set to `KEEP`.
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to convert a versioned table from implicit to explicit row\_start/row\_end columns. Note that in order to do any ALTER on a system versioned table, [system\_versioning\_alter\_history](system-versioned-tables.md#system_versioning_alter_history) must be set to `KEEP`.
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;
@@ -112,7 +112,7 @@ ALTER TABLE t1 ADD COLUMN rs TIMESTAMP(6) AS ROW START,
   ADD COLUMN re TIMESTAMP(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re)
 ```
 
-Prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117), this would result in a duplicate row error:
+Prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117), this would result in a duplicate row error:
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;
@@ -189,7 +189,7 @@ Additionally MariaDB implements a non-standard extension:
 SELECT * FROM t FOR SYSTEM_TIME ALL;
 ```
 
-If the `FOR SYSTEM_TIME` clause is not used, the table will show the _current_ data. This is usually the same as if one had specified `FOR SYSTEM_TIME AS OF CURRENT_TIMESTAMP`, unless one has adjusted the _row\_start_ value (until [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), only possible by setting the [secure\_timestamp](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) variable). For example:
+If the `FOR SYSTEM_TIME` clause is not used, the table will show the _current_ data. This is usually the same as if one had specified `FOR SYSTEM_TIME AS OF CURRENT_TIMESTAMP`, unless one has adjusted the _row\_start_ value (until [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), only possible by setting the [secure\_timestamp](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) variable). For example:
 
 ```
 CREATE OR REPLACE TABLE t (a int) WITH SYSTEM VERSIONING;
@@ -350,9 +350,9 @@ CREATE TABLE t (x INT) WITH SYSTEM VERSIONING
 
 #### Default Partitions
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes)
 
-Since partitioning by current and historical data is such a typical usecase, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105), it is possible to use a simplified statement to do so. For example, instead of
+Since partitioning by current and historical data is such a typical usecase, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), it is possible to use a simplified statement to do so. For example, instead of
 
 ```
 CREATE TABLE t (x INT) WITH SYSTEM VERSIONING 
@@ -398,9 +398,9 @@ ERROR 4128 (HY000): Wrong partitions for `t`: must have at least one HISTORY and
 
 #### Automatically Creating Partitions
 
-**MariaDB starting with** [**10.9.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes)
+**MariaDB starting with** [**10.9.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes)
 
-From [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes), the `AUTO` keyword can be used to automatically create history partitions.\
+From [MariaDB 10.9.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/mariadb-1091-release-notes), the `AUTO` keyword can be used to automatically create history partitions.\
 For example
 
 ```
@@ -546,8 +546,8 @@ There are a number of system variables related to system-versioned tables:
 * Dynamic: Yes
 * Type: Boolean
 * Default Value: `ON`
-* Introduced: [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes)
-* Removed: [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes)
+* Introduced: [MariaDB 10.3.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1034-release-notes)
+* Removed: [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes)
 
 #### system\_versioning\_insert\_history
 
@@ -557,12 +557,12 @@ There are a number of system variables related to system-versioned tables:
 * Dynamic: Yes
 * Type: Boolean
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-0-release-notes)
+* Introduced: [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-0-release-notes)
 
 ## Limitations
 
 * Versioning clauses can not be applied to [generated (virtual and persistent) columns](../../sql-statements/data-definition/create/generated-columns.md).
-* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011), use the `-H` or `--dump-history` options to include the history.
+* [mariadb-dump](../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) did not read historical rows from versioned tables, and so historical data would not be backed up. Also, a restore of the timestamps would not be possible as they cannot be defined by an insert/a user. From [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), use the `-H` or `--dump-history` options to include the history.
 
 ## See Also
 

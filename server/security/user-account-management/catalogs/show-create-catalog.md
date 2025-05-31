@@ -1,28 +1,20 @@
-
 # SHOW CREATE CATALOG
 
+**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/what-is-mariadb-120)
 
-##### MariaDB starting with [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
 Catalog support is planned for 12.0.
 
-
-
 ## Syntax
-
 
 ```
 SHOW CREATE CATALOG catalog_name
 ```
 
-
 ## Description
 
-
-Shows the [CREATE CATALOG](create-catalog.md) statement that creates the given [catalog](README.md).
-
+Shows the [CREATE CATALOG](create-catalog.md) statement that creates the given [catalog](./).
 
 ## Examples
-
 
 ```
 SHOW CREATE CATALOG def;
@@ -35,10 +27,7 @@ SHOW CREATE CATALOG def;
 
 ## See Also
 
-
 * [CREATE CATALOG](create-catalog.md)
 * [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 
-
 CC BY-SA / Gnu FDL
-

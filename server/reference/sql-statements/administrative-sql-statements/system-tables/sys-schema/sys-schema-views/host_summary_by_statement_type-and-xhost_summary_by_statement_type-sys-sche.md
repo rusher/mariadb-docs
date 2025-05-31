@@ -1,42 +1,32 @@
+# host\_summary\_by\_statement\_type and x$host\_summary\_by\_statement\_type Sys Schema Views
 
-# host_summary_by_statement_type and x$host_summary_by_statement_type Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ## Description
 
-
 The `host_summary_by_statement_type` and `x$host_summary_by_statement_type` views summarize information about executed statements, grouped by host and statement type. Rows are sorted by host and descending total latency by default.
-
 
 The `host_summary_by_statement_type` view is intended to be easier for human reading, while the `x$host_summary_by_statement_type` view provides the data in raw form, intended for tools that process the data.
 
-
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| host | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
-| statement | Final component of the statement event name, for example create_table or select. |
-| total | Total number of statement occurrences for the host. |
-| total_latency | Total wait time of timed statements of the statement event for the host. |
-| max_latency | Maximum single wait time of timed occurrences of the statement event for the host. |
-| lock_latency | Total time spent by timed occurrences of the statement event for the host waiting for locks. |
-| rows_sent | Total number of rows returned by occurrences of the statement event for the host. |
-| rows_examined | Total number of rows read from storage engines by occurrences of the statement event for the host. |
-| rows_affected | Total number of rows affected by occurrences of the statement event for the host. |
-| full_scans | Total number of full table scans by occurrences of the statement event for the host. |
-
-
+| Column         | Description                                                                                                                                           |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                           |
+| host           | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
+| statement      | Final component of the statement event name, for example create\_table or select.                                                                     |
+| total          | Total number of statement occurrences for the host.                                                                                                   |
+| total\_latency | Total wait time of timed statements of the statement event for the host.                                                                              |
+| max\_latency   | Maximum single wait time of timed occurrences of the statement event for the host.                                                                    |
+| lock\_latency  | Total time spent by timed occurrences of the statement event for the host waiting for locks.                                                          |
+| rows\_sent     | Total number of rows returned by occurrences of the statement event for the host.                                                                     |
+| rows\_examined | Total number of rows read from storage engines by occurrences of the statement event for the host.                                                    |
+| rows\_affected | Total number of rows affected by occurrences of the statement event for the host.                                                                     |
+| full\_scans    | Total number of full table scans by occurrences of the statement event for the host.                                                                  |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.host_summary_by_statement_type\G
@@ -90,6 +80,4 @@ rows_affected: 0
    full_scans: 22
 ```
 
-
 CC BY-SA / Gnu FDL
-

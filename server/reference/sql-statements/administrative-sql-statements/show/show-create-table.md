@@ -21,7 +21,7 @@ Note that `SHOW CREATE TABLE` is not meant to provide metadata about a table. It
 
 MariaDB permits [TEXT](../../../data-types/string-data-types/text.md) and [BLOB](../../../data-types/string-data-types/blob.md) data types to be assigned a [DEFAULT](../../data-definition/create/create-table.md#default) value. As a result, `SHOW CREATE TABLE` will append a `DEFAULT NULL` to nullable TEXT or BLOB fields if no specific default is provided.
 
-Numbers are no longer quoted in the `DEFAULT` clause in `SHOW CREATE` statement. Prior to [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), MariaDB quoted numbers.
+Numbers are no longer quoted in the `DEFAULT` clause in `SHOW CREATE` statement. Prior to [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), MariaDB quoted numbers.
 
 ### Index Order
 
@@ -63,7 +63,7 @@ Create Table: CREATE TABLE t (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-Unquoted numeric DEFAULTs, from [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes):
+Unquoted numeric DEFAULTs, from [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes):
 
 ```
 CREATE TABLE td (link TINYINT DEFAULT 1);
@@ -76,7 +76,7 @@ Create Table: CREATE TABLE `td` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-Quoted numeric DEFAULTs, until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes):
+Quoted numeric DEFAULTs, until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes):
 
 ```
 CREATE TABLE td (link TINYINT DEFAULT 1);

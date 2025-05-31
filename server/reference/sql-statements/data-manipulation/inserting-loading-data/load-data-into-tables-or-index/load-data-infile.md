@@ -35,7 +35,7 @@ One must have the [FILE](../../../account-management-sql-statements/grant.md#fil
 
 If the [secure\_file\_priv](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) system variable is set (by default it is not), the loaded file must be present in the specified directory.
 
-Note that MariaDB's [systemd](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md) unit file restricts access to `/home`, `/root`, and `/run/user` by default. See [Configuring access to home directories](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-access-to-home-directories).
+Note that MariaDB's [systemd](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md) unit file restricts access to `/home`, `/root`, and `/run/user` by default. See [Configuring access to home directories](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-access-to-home-directories).
 
 ### `LOAD DATA LOCAL INFILE`
 
@@ -44,7 +44,7 @@ When you execute the `LOAD DATA INFILE` statement, MariaDB Server attempts to re
 If you don't want to permit this operation (perhaps for security reasons), you can disable the `LOAD DATA LOCAL INFILE` statement on either the server or the client.
 
 * The `LOAD DATA LOCAL INFILE` statement can be disabled on the server by setting the [local\_infile](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) system variable to `0`.
-* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](../../../../../../kb/en/about-mariadb-connector-c/), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql\_real\_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/mariadb-connectorc-api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
+* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](../../../../../../kb/en/about-mariadb-connector-c/), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql\_real\_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
 * The `LOAD DATA LOCAL INFILE` strict modes like `STRICT_TRANS_TABLES` are disabled with keyword "local". ([MDEV-11235](https://jira.mariadb.org/browse/MDEV-11235))
 
 If the `LOAD DATA LOCAL INFILE` statement is disabled by either the server or the client and if the user attempts to execute it, then the server will cause the statement to fail with the following error message:
@@ -55,7 +55,7 @@ The used command is not allowed with this MariaDB version
 
 Note that it is not entirely accurate to say that the MariaDB version does not support the command. It would be more accurate to say that the MariaDB configuration does not support the command. See [MDEV-20500](https://jira.mariadb.org/browse/MDEV-20500) for more information.
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the error message is more accurate:
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the error message is more accurate:
 
 ```
 The used command is not allowed because the MariaDB server or client 
@@ -105,7 +105,7 @@ The `LOAD DATA INFILE` statement supports [progress reporting](../../../../maria
 
 ### Using mariadb-import
 
-MariaDB ships with a separate utility for loading data from files: [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (or `mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/what-is-mariadb-105)). It operates by sending `LOAD DATA INFILE` statements to the server.
+MariaDB ships with a separate utility for loading data from files: [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (or `mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)). It operates by sending `LOAD DATA INFILE` statements to the server.
 
 Using [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) you can compress the file using the `--compress` option, to get better performance over slow networks, providing both the client and server support the compressed protocol. Use the `--local` option to load from the local file system.
 

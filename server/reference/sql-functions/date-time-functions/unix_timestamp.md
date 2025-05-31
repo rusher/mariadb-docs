@@ -23,9 +23,9 @@ The inverse function of `UNIX_TIMESTAMP()` is `[FROM_UNIXTIME()](from_unixtime.m
 
 Timestamps in MariaDB have a maximum value of 4294967295, equivalent to 2106-02-07 06:28:15. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](../../data-types/date-and-time-data-types/datetime.md) as a storage type if you require dates beyond this.
 
-**MariaDB until** [**11.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+**MariaDB until** [**11.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
 
-Before [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the maximum value was 2147483647, equivalent to 2038-01-19 05:14:07.
+Before [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the maximum value was 2147483647, equivalent to 2038-01-19 05:14:07.
 
 ### Error Handling
 
@@ -33,7 +33,7 @@ Returns NULL for wrong arguments to `UNIX_TIMESTAMP()`. In MySQL and MariaDB bef
 
 ### Compatibility
 
-As you can see in the examples above, UNIX\_TIMESTAMP(constant-date-string) returns a timestamp with 6 decimals while [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and before returns it without decimals. This can cause a problem if you are using UNIX\_TIMESTAMP() as a partitioning function. You can fix this by using [FLOOR](../numeric-functions/floor.md)(UNIX\_TIMESTAMP(..)) or changing the date string to a date number, like 20080101000000.
+As you can see in the examples above, UNIX\_TIMESTAMP(constant-date-string) returns a timestamp with 6 decimals while [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and before returns it without decimals. This can cause a problem if you are using UNIX\_TIMESTAMP() as a partitioning function. You can fix this by using [FLOOR](../numeric-functions/floor.md)(UNIX\_TIMESTAMP(..)) or changing the date string to a date number, like 20080101000000.
 
 ## Examples
 

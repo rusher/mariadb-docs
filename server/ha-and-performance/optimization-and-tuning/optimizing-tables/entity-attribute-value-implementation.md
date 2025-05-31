@@ -34,7 +34,7 @@ It goes by various names
 
 Decide which columns need to be searched/sorted by SQL queries. No, you don't need all the columns to be searchable or sortable. Certain columns are frequently used for selection; identify these. You probably won't use all of them in all queries, but you will use some of them in every query.
 
-The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one [BLOB](../../../reference/data-types/string-data-types/blob.md). Searchable fields are declared appropriately ([INT](../../../reference/data-types/data-types-numeric-data-types/int.md), [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md), etc). The BLOB contains JSON-encoding of all the extra fields.
+The solution uses one table for all the EAV stuff. The columns include the searchable fields plus one [BLOB](../../../reference/data-types/string-data-types/blob.md). Searchable fields are declared appropriately ([INT](../../../reference/data-types/numeric-data-types/int.md), [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md), etc). The BLOB contains JSON-encoding of all the extra fields.
 
 The table should be [InnoDB](../../../reference/storage-engines/innodb/), hence it should have a PRIMARY KEY. The entitity\_id is the 'natural' PK. Add a small number of other indexes (often 'composite') on the searchable fields. [PARTITIONing](../../../server-management/partitioning-tables/) is unlikely to be of any use, unless the Entities should purged after some time. (Example: News Articles)
 
@@ -68,7 +68,7 @@ You have included the most important fields to search on -- date, category, etc.
 * Queries are fast (since you have picked 'good' indexes)
 * Expandable (JSON is happy to have new fields)
 * Compatible (No 3rd party products, just supported products)
-* Range tests work (unlike storing [INTs](../../../reference/data-types/data-types-numeric-data-types/int.md) in [VARCHARs](../../../reference/data-types/string-data-types/varchar.md))
+* Range tests work (unlike storing [INTs](../../../reference/data-types/numeric-data-types/int.md) in [VARCHARs](../../../reference/data-types/string-data-types/varchar.md))
 * (Drawback) Cannot use the non-indexed attributes in WHERE or ORDER BY clauses, must deal with that in the app. (MySQL 5.7 partially alleviates this.)
 
 ## Postlog

@@ -145,7 +145,7 @@ SHOW SLAVE STATUS\G;
 
 #### Supported Conversions
 
-* Between [TINYINT](../../reference/data-types/data-types-numeric-data-types/tinyint.md), [SMALLINT](../../reference/data-types/data-types-numeric-data-types/smallint.md), [MEDIUMINT](../../reference/data-types/data-types-numeric-data-types/mediumint.md), [INT](../../reference/data-types/data-types-numeric-data-types/int.md) and [BIGINT](../../reference/data-types/data-types-numeric-data-types/bigint.md). If lossy conversion is supported, the value from the primary will be converted to the maximum or minimum permitted on the replica, which non-lossy conversions require the replica column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
+* Between [TINYINT](../../reference/data-types/numeric-data-types/tinyint.md), [SMALLINT](../../reference/data-types/numeric-data-types/smallint.md), [MEDIUMINT](../../reference/data-types/numeric-data-types/mediumint.md), [INT](../../reference/data-types/numeric-data-types/int.md) and [BIGINT](../../reference/data-types/numeric-data-types/bigint.md). If lossy conversion is supported, the value from the primary will be converted to the maximum or minimum permitted on the replica, which non-lossy conversions require the replica column to be large enough. For example, SMALLINT UNSIGNED can be converted to MEDIUMINT, but not SMALLINT SIGNED.
 
 ## Different Number or Order of Columns
 

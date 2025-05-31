@@ -1,27 +1,19 @@
-
 # Regular Expressions Overview
 
 Regular Expressions allow MariaDB to perform complex pattern matching on a string. In many cases, the simple pattern matching provided by [LIKE](../like.md) is sufficient. `LIKE` performs two kinds of matches:
 
-
 * `_` - the underscore, matching a single character
 * `%` - the percentage sign, matching any number of characters.
 
-
 In other cases you may need more control over the returned matches, and will need to use regular expressions.
 
-
-Until [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
-
+Until [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
 
 Regular expression matches are performed with the [REGEXP](regexp.md) function. `RLIKE` is a synonym for `REGEXP`.
 
-
 Comparisons are performed on the byte value, so characters that are treated as equivalent by a collation, but do not have the same byte-value, such as accented characters, could evaluate as unequal.
 
-
 Without any special characters, a regular expression match is true if the characters match. The match is case-insensitive, except in the case of BINARY strings.
-
 
 ```
 SELECT 'Maria' REGEXP 'Maria';
@@ -48,7 +40,6 @@ SELECT BINARY 'Maria' REGEXP 'maria';
 
 Note that the word being matched must match the whole pattern:
 
-
 ```
 SELECT 'Maria' REGEXP 'Mari';
 +-----------------------+
@@ -67,9 +58,7 @@ SELECT 'Mari' REGEXP 'Maria';
 
 The first returns true because the pattern "Mari" exists in the expression "Maria". When the order is reversed, the result is false, as the pattern "Maria" does not exist in the expression "Mari"
 
-
 A match can be performed against more than one word with the `|` character. For example:
-
 
 ```
 SELECT 'Maria' REGEXP 'Monty|Maria';
@@ -82,15 +71,11 @@ SELECT 'Maria' REGEXP 'Monty|Maria';
 
 ## Special Characters
 
-
 The above examples introduce the syntax, but are not very useful on their own. It's the special characters that give regular expressions their power.
-
 
 #### ^
 
-
 `^` matches the beginning of a string (inside square brackets it can also mean NOT - see below):
-
 
 ```
 SELECT 'Maria' REGEXP '^Ma';
@@ -103,9 +88,7 @@ SELECT 'Maria' REGEXP '^Ma';
 
 #### $
 
-
 `$` matches the end of a string:
-
 
 ```
 SELECT 'Maria' REGEXP 'ia$';
@@ -118,9 +101,7 @@ SELECT 'Maria' REGEXP 'ia$';
 
 #### .
 
-
 `.` matches any single character:
-
 
 ```
 SELECT 'Maria' REGEXP 'Ma.ia';
@@ -138,11 +119,9 @@ SELECT 'Maria' REGEXP 'Ma..ia';
 +-------------------------+
 ```
 
-#### *
-
+#### \*
 
 `x*` matches zero or more of a character `x`. In the examples below, it's the `r` character.
-
 
 ```
 SELECT 'Maria' REGEXP 'Mar*ia';
@@ -169,9 +148,7 @@ SELECT 'Marrria' REGEXP 'Mar*ia';
 
 #### +
 
-
 `x+` matches one or more of a character `x`. In the examples below, it's the `r` character.
-
 
 ```
 SELECT 'Maria' REGEXP 'Mar+ia';
@@ -198,9 +175,7 @@ SELECT 'Marrria' REGEXP 'Mar+ia';
 
 #### ?
 
-
 `x?` matches zero or one of a character `x`. In the examples below, it's the `r` character.
-
 
 ```
 SELECT 'Maria' REGEXP 'Mar?ia';
@@ -227,9 +202,7 @@ SELECT 'Marrria' REGEXP 'Mar?ia';
 
 #### ()
 
-
 `(xyz)` - combine a sequence, for example `(xyz)+` or `(xyz)*`
-
 
 ```
 SELECT 'Maria' REGEXP '(ari)+';
@@ -242,10 +215,8 @@ SELECT 'Maria' REGEXP '(ari)+';
 
 #### {}
 
-
-`x{n}` and `x{m,n}`
+`x{n}` and `x{m,n}`\
 This notation is used to match many instances of the `x`. In the case of `x{n}` the match must be exactly that many times. In the case of `x{m,n}`, the match can occur from `m` to `n` times. For example, to match zero or one instance of the string `ari` (which is identical to `(ari)?`), the following can be used:
-
 
 ```
 SELECT 'Maria' REGEXP '(ari){0,1}';
@@ -256,11 +227,9 @@ SELECT 'Maria' REGEXP '(ari){0,1}';
 +-----------------------------+
 ```
 
-#### []
-
+#### \[]
 
 `[xy]` groups characters for matching purposes. For example, to match either the `p` or the `r` character:
-
 
 ```
 SELECT 'Maria' REGEXP 'Ma[pr]ia';
@@ -273,7 +242,6 @@ SELECT 'Maria' REGEXP 'Ma[pr]ia';
 
 The square brackets also permit a range match, for example, to match any character from a-z, `[a-z]` is used. Numeric ranges are also permitted.
 
-
 ```
 SELECT 'Maria' REGEXP 'Ma[a-z]ia';
 +----------------------------+
@@ -285,7 +253,6 @@ SELECT 'Maria' REGEXP 'Ma[a-z]ia';
 
 The following does not match, as `r` falls outside of the range `a-p`.
 
-
 ```
 SELECT 'Maria' REGEXP 'Ma[a-p]ia';
 +----------------------------+
@@ -295,11 +262,9 @@ SELECT 'Maria' REGEXP 'Ma[a-p]ia';
 +----------------------------+
 ```
 
-##### ^
-
+**^**
 
 The `^` character means does `NOT` match, for example:
-
 
 ```
 SELECT 'Maria' REGEXP 'Ma[^p]ia';
@@ -318,7 +283,6 @@ SELECT 'Maria' REGEXP 'Ma[^r]ia';
 ```
 
 The `[` and `]` characters on their own can be literally matched inside a `[]` block, without escaping, as long as they immediately match the opening bracket:
-
 
 ```
 SELECT '[Maria' REGEXP '[[]';
@@ -352,7 +316,6 @@ SELECT ']Maria' REGEXP '[]a]';
 
 Incorrect order, so no match:
 
-
 ```
 SELECT ']Maria' REGEXP '[a]]';
 +------------------------+
@@ -363,7 +326,6 @@ SELECT ']Maria' REGEXP '[a]]';
 ```
 
 The `-` character can also be matched in the same way:
-
 
 ```
 SELECT '-Maria' REGEXP '[1-10]';
@@ -383,9 +345,7 @@ SELECT '-Maria' REGEXP '[-1-10]';
 
 #### Word boundaries
 
-
 The `[:<:](https://mariadb.com/kb/en/%3C%3A)` and `[:>:](https://mariadb.com/kb/en/%3E%3A)` patterns match the beginning and the end of a word respectively. For example:
-
 
 ```
 SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]MariaDB[[:>:]]';
@@ -405,31 +365,25 @@ SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]Maria[[:>:]]';
 
 #### Character Classes
 
-
 There are a number of shortcuts to match particular preset character classes. These are matched with the `[:character_class:]` pattern (inside a `[]` set). The following character classes exist:
 
-
-
-| Character Class | Description |
-| --- | --- |
-| Character Class | Description |
-| alnum | Alphanumeric |
-| alpha | Alphabetic |
-| blank | Whitespace |
-| cntrl | Control characters |
-| digit | Digits |
-| graph | Graphic characters |
-| lower | Lowercase alphabetic |
-| print | Graphic or space characters |
-| punct | Punctuation |
-| space | Space, tab, newline, and carriage return |
-| upper | Uppercase alphabetic |
-| xdigit | Hexadecimal digit |
-
-
+| Character Class | Description                              |
+| --------------- | ---------------------------------------- |
+| Character Class | Description                              |
+| alnum           | Alphanumeric                             |
+| alpha           | Alphabetic                               |
+| blank           | Whitespace                               |
+| cntrl           | Control characters                       |
+| digit           | Digits                                   |
+| graph           | Graphic characters                       |
+| lower           | Lowercase alphabetic                     |
+| print           | Graphic or space characters              |
+| punct           | Punctuation                              |
+| space           | Space, tab, newline, and carriage return |
+| upper           | Uppercase alphabetic                     |
+| xdigit          | Hexadecimal digit                        |
 
 For example:
-
 
 ```
 SELECT 'Maria' REGEXP 'Mar[[:alnum:]]*';
@@ -441,7 +395,6 @@ SELECT 'Maria' REGEXP 'Mar[[:alnum:]]*';
 ```
 
 Remember that matches are by default case-insensitive, unless a binary string is used, so the following example, specifically looking for an uppercase, counter-intuitively matches a lowercase character:
-
 
 ```
 SELECT 'Mari' REGEXP 'Mar[[:upper:]]+';
@@ -461,114 +414,108 @@ SELECT BINARY 'Mari' REGEXP 'Mar[[:upper:]]+';
 
 #### Character Names
 
-
 There are also number of shortcuts to match particular preset character names. These are matched with the `[.character.]` pattern (inside a `[]` set). The following character classes exist:
 
-
-
-| Name | Character |
-| --- | --- |
-| Name | Character |
-| NUL | 0 |
-| SOH | 001 |
-| STX | 002 |
-| ETX | 003 |
-| EOT | 004 |
-| ENQ | 005 |
-| ACK | 006 |
-| BEL | 007 |
-| alert | 007 |
-| BS | 010 |
-| backspace | '\b' |
-| HT | 011 |
-| tab | '\t' |
-| LF | 012 |
-| newline | '\n' |
-| VT | 013 |
-| vertical-tab | '\v' |
-| FF | 014 |
-| form-feed | '\f' |
-| CR | 015 |
-| carriage-return | '\r' |
-| SO | 016 |
-| SI | 017 |
-| DLE | 020 |
-| DC1 | 021 |
-| DC2 | 022 |
-| DC3 | 023 |
-| DC4 | 024 |
-| NAK | 025 |
-| SYN | 026 |
-| ETB | 027 |
-| CAN | 030 |
-| EM | 031 |
-| SUB | 032 |
-| ESC | 033 |
-| IS4 | 034 |
-| FS | 034 |
-| IS3 | 035 |
-| GS | 035 |
-| IS2 | 036 |
-| RS | 036 |
-| IS1 | 037 |
-| US | 037 |
-| space | ' ' |
-| exclamation-mark | '!' |
-| quotation-mark | '"' |
-| number-sign | '#' |
-| dollar-sign | '$' |
-| percent-sign | '%' |
-| ampersand | '&' |
-| apostrophe | '\'' |
-| left-parenthesis | '(' |
-| right-parenthesis | ')' |
-| asterisk | '*' |
-| plus-sign | '+' |
-| comma | ',' |
-| hyphen | '-' |
-| hyphen-minus | '-' |
-| period | '.' |
-| full-stop | '.' |
-| slash | '/' |
-| solidus | '/' |
-| zero | '0' |
-| one | '1' |
-| two | '2' |
-| three | '3' |
-| four | '4' |
-| five | '5' |
-| six | '6' |
-| seven | '7' |
-| eight | '8' |
-| nine | '9' |
-| colon | ':' |
-| semicolon | ';' |
-| less-than-sign | '<' |
-| equals-sign | '=' |
-| greater-than-sign | '>' |
-| question-mark | '?' |
-| commercial-at | '@' |
-| left-square-bracket | '[' |
-| backslash | '' |
-| reverse-solidus | '' |
-| right-square-bracket | ']' |
-| circumflex | '^' |
-| circumflex-accent | '^' |
-| underscore | '_' |
-| low-line | '_' |
-| grave-accent | '`' |
-| left-brace | '{' |
-| left-curly-bracket | '{' |
-| vertical-line | '|' |
-| right-brace | '}' |
-| right-curly-bracket | '}' |
-| tilde | '' |
-| DEL | 177 |
-
-
+| Name                 | Character |
+| -------------------- | --------- |
+| Name                 | Character |
+| NUL                  | 0         |
+| SOH                  | 001       |
+| STX                  | 002       |
+| ETX                  | 003       |
+| EOT                  | 004       |
+| ENQ                  | 005       |
+| ACK                  | 006       |
+| BEL                  | 007       |
+| alert                | 007       |
+| BS                   | 010       |
+| backspace            | '\b'      |
+| HT                   | 011       |
+| tab                  | '\t'      |
+| LF                   | 012       |
+| newline              | '\n'      |
+| VT                   | 013       |
+| vertical-tab         | '\v'      |
+| FF                   | 014       |
+| form-feed            | '\f'      |
+| CR                   | 015       |
+| carriage-return      | '\r'      |
+| SO                   | 016       |
+| SI                   | 017       |
+| DLE                  | 020       |
+| DC1                  | 021       |
+| DC2                  | 022       |
+| DC3                  | 023       |
+| DC4                  | 024       |
+| NAK                  | 025       |
+| SYN                  | 026       |
+| ETB                  | 027       |
+| CAN                  | 030       |
+| EM                   | 031       |
+| SUB                  | 032       |
+| ESC                  | 033       |
+| IS4                  | 034       |
+| FS                   | 034       |
+| IS3                  | 035       |
+| GS                   | 035       |
+| IS2                  | 036       |
+| RS                   | 036       |
+| IS1                  | 037       |
+| US                   | 037       |
+| space                | ' '       |
+| exclamation-mark     | '!'       |
+| quotation-mark       | '"'       |
+| number-sign          | '#'       |
+| dollar-sign          | '$'       |
+| percent-sign         | '%'       |
+| ampersand            | '&'       |
+| apostrophe           | '''       |
+| left-parenthesis     | '('       |
+| right-parenthesis    | ')'       |
+| asterisk             | '\*'      |
+| plus-sign            | '+'       |
+| comma                | ','       |
+| hyphen               | '-'       |
+| hyphen-minus         | '-'       |
+| period               | '.'       |
+| full-stop            | '.'       |
+| slash                | '/'       |
+| solidus              | '/'       |
+| zero                 | '0'       |
+| one                  | '1'       |
+| two                  | '2'       |
+| three                | '3'       |
+| four                 | '4'       |
+| five                 | '5'       |
+| six                  | '6'       |
+| seven                | '7'       |
+| eight                | '8'       |
+| nine                 | '9'       |
+| colon                | ':'       |
+| semicolon            | ';'       |
+| less-than-sign       | '<'       |
+| equals-sign          | '='       |
+| greater-than-sign    | '>'       |
+| question-mark        | '?'       |
+| commercial-at        | '@'       |
+| left-square-bracket  | '\['      |
+| backslash            | ''        |
+| reverse-solidus      | ''        |
+| right-square-bracket | ']'       |
+| circumflex           | '^'       |
+| circumflex-accent    | '^'       |
+| underscore           | '\_'      |
+| low-line             | '\_'      |
+| grave-accent         | '\`'      |
+| left-brace           | '{'       |
+| left-curly-bracket   | '{'       |
+| vertical-line        | '         |
+| right-brace          | '}'       |
+| right-curly-bracket  | '}'       |
+| tilde                | ''        |
+| DEL                  | 177       |
 
 For example:
-
 
 ```
 SELECT '|' REGEXP '[[.vertical-line.]]';
@@ -581,12 +528,9 @@ SELECT '|' REGEXP '[[.vertical-line.]]';
 
 ### Combining
 
-
 The true power of regular expressions is unleashed when the above is combined, to form more complex examples. Regular expression's reputation for complexity stems from the seeming complexity of multiple combined regular expressions, when in reality, it's simply a matter of understanding the characters and how they apply:
 
-
 The first example fails to match, as while the `Ma` matches, either `i` or `r` only matches once before the `ia` characters at the end.
-
 
 ```
 SELECT 'Maria' REGEXP 'Ma[ir]{2}ia';
@@ -599,7 +543,6 @@ SELECT 'Maria' REGEXP 'Ma[ir]{2}ia';
 
 This example matches, as either `i` or `r` match exactly twice after the `Ma`, in this case one `r` and one `i`.
 
-
 ```
 SELECT 'Maria' REGEXP 'Ma[ir]{2}';
 +----------------------------+
@@ -611,12 +554,9 @@ SELECT 'Maria' REGEXP 'Ma[ir]{2}';
 
 ### Escaping
 
-
-With the large number of special characters, care needs to be taken to properly escape characters. Two backslash characters, `` (one for the MariaDB parser, one for the regex library), are required to properly escape a character. For example:
-
+With the large number of special characters, care needs to be taken to properly escape characters. Two backslash characters, \`\` (one for the MariaDB parser, one for the regex library), are required to properly escape a character. For example:
 
 To match the literal `(Ma`:
-
 
 ```
 SELECT '(Maria)' REGEXP '(Ma';
@@ -634,7 +574,6 @@ SELECT '(Maria)' REGEXP '\\(Ma';
 ```
 
 To match `r+`: The first two examples are incorrect, as they match `r` one or more times, not `r+`:
-
 
 ```
 SELECT 'Mar+ia' REGEXP 'r+';
@@ -666,6 +605,4 @@ SELECT 'Maria' REGEXP 'r+';
 +---------------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

@@ -1,37 +1,28 @@
+# Information Schema CHECK\_CONSTRAINTS Table
 
-# Information Schema CHECK_CONSTRAINTS Table
-
-The [Information Schema](../README.md) `CHECK_CONSTRAINTS` table stores metadata about the [constraints](../../../../data-definition/constraint.md) defined for tables in all databases.
-
+The [Information Schema](../) `CHECK_CONSTRAINTS` table stores metadata about the [constraints](../../../../data-definition/constraint.md) defined for tables in all databases.
 
 It contains the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| CONSTRAINT_CATALOG | Always contains the string 'def'. |
-| CONSTRAINT_SCHEMA | Database name. |
-| CONSTRAINT_NAME | Constraint name. |
-| TABLE_NAME | Table name. |
-| LEVEL | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10510-release-notes) |
-| CHECK_CLAUSE | Constraint clause. |
-
-
+| Column              | Description                                                                                                                                                                           |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column              | Description                                                                                                                                                                           |
+| CONSTRAINT\_CATALOG | Always contains the string 'def'.                                                                                                                                                     |
+| CONSTRAINT\_SCHEMA  | Database name.                                                                                                                                                                        |
+| CONSTRAINT\_NAME    | Constraint name.                                                                                                                                                                      |
+| TABLE\_NAME         | Table name.                                                                                                                                                                           |
+| LEVEL               | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-10510-release-notes) |
+| CHECK\_CLAUSE       | Constraint clause.                                                                                                                                                                    |
 
 ## Example
 
-
 A table with a numeric table check constraint and with a default check constraint name:
-
 
 ```
 CREATE TABLE t ( a int, CHECK (a>10));
 ```
 
-To see check constraint call `check_constraints` table from [information schema](../README.md).
-
+To see check constraint call `check_constraints` table from [information schema](../).
 
 ```
 SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
@@ -47,7 +38,6 @@ CONSTRAINT_CATALOG: def
 ```
 
 A new table check constraint called `a_upper`:
-
 
 ```
 ALTER TABLE t ADD CONSTRAINT a_upper CHECK (a<100);
@@ -74,7 +64,6 @@ CONSTRAINT_CATALOG: def
 
 A new table `tt` with a field check constraint called `b` , as well as a table check constraint called `b_upper`:
 
-
 ```
 CREATE TABLE tt(b int CHECK(b>0),CONSTRAINT b_upper CHECK(b<50));
 
@@ -89,11 +78,9 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 +--------------------+-------------------+-----------------+------------+--------------+
 ```
 
-*Note:* The name of the field constraint is the same as the field name.
-
+_Note:_ The name of the field constraint is the same as the field name.
 
 After dropping the default table constraint called `CONSTRAINT_1`:
-
 
 ```
 ALTER TABLE t DROP CONSTRAINT CONSTRAINT_1;
@@ -110,7 +97,6 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 
 Trying to insert invalid arguments into table `t` and `tt` generates an error.
 
-
 ```
 INSERT INTO t VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `a_upper` failed for `test`.`t`
@@ -122,8 +108,7 @@ INSERT INTO tt VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `b_upper` failed for `test`.`tt`
 ```
 
-From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10510-release-notes):
-
+From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-10510-release-notes):
 
 ```
 create table majra(check(x>0), x int, y int check(y < 0), z int,
@@ -158,6 +143,4 @@ select * from information_schema.check_constraints where table_name='majra';
 4 rows in set (0.001 sec)
 ```
 
-
 CC BY-SA / Gnu FDL
-

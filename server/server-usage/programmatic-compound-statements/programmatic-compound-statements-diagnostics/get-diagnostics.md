@@ -57,11 +57,11 @@ For a list of SQLSTATE values and MariaDB error codes, see [MariaDB Error Codes]
 
 The type for all the condition properties is VARCHAR(64), except for MYSQL\_ERRNO, whose valid range is 1 to 65534.
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 ## ROW\_NUMBER
 
-Until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), there was no way, short of parsing the error text, to know in what row an error had happened. From 10.7, one can use the ROW\_NUMBER property to retrieve the row number too, even if the error text does not mention it. Note that this property was named ERROR\_INDEX in the [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes) preview release. As a result, ROW\_NUMBER is a [reserved word](../../../reference/sql-structure/sql-language-structure/reserved-words.md) from [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107).
+Until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), there was no way, short of parsing the error text, to know in what row an error had happened. From 10.7, one can use the ROW\_NUMBER property to retrieve the row number too, even if the error text does not mention it. Note that this property was named ERROR\_INDEX in the [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes) preview release. As a result, ROW\_NUMBER is a [reserved word](../../../reference/sql-structure/sql-language-structure/reserved-words.md) from [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107).
 
 ## Examples
 
@@ -105,7 +105,7 @@ SELECT @sqlstate, @errno, @text;
 +-----------+--------+-------------------------------------------+
 ```
 
-From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107):
+From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107):
 
 ```
 INSERT INTO t1 VALUES (4,'d',1.00104),(1,'a',1.00101),(2,'b',1.00102);

@@ -1,9 +1,6 @@
-
 # LONGTEXT
 
-
 ## Syntax
-
 
 ```
 LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
@@ -11,27 +8,19 @@ LONGTEXT [CHARACTER SET charset_name] [COLLATE collation_name]
 
 ## Description
 
-
 A [TEXT](text.md) column with a maximum length of 4,294,967,295 or 4GB (`232 - 1`) characters. The effective maximum length is less if the value contains multi-byte characters. The effective maximum length of LONGTEXT columns also depends on the configured maximum packet size in the client/server protocol and available memory. Each LONGTEXT value is stored using a four-byte length prefix that indicates the number of bytes in the value.
-
 
 JSON is an alias for LONGTEXT. See [JSON Data Type](json.md) for details.
 
-
 ## Oracle Mode
 
-
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), [CLOB](clob.md) is a synonym for `LONGTEXT`.
-
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), [CLOB](clob.md) is a synonym for `LONGTEXT`.
 
 ## EXAMPLES
 
-
 ### LONGTEXT
 
-
 Example of LONGTEXT:
-
 
 ```
 CREATE TABLE longtext_example (
@@ -40,11 +29,9 @@ CREATE TABLE longtext_example (
 ) DEFAULT CHARSET=latin1; -- One byte per char makes the examples clearer
 ```
 
-
 #### Note:
 
 The maximum size of a `LONGTEXT` is so large that it cannot be sent to the server without breaking the value up into chunks (something that the command-line client cannot do). For values larger than `16M`, you can increase the `max_allowed_packet` size up to a maximum of `1024M` to increase the allowed size of non-chunked values.
-
 
 ```
 INSERT INTO longtext_example VALUES
@@ -61,12 +48,9 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 
 ### Data Too Long
 
-
-When SQL_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
-
+When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
 Example of data too long behavior for LONGTEXT:
-
 
 ```
 TRUNCATE longtext_example;
@@ -81,13 +65,10 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 
 ## See Also
 
-
 * [TEXT](text.md)
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [JSON Data Type](json.md)
-* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 
-
-GPLv2 fill_help_tables.sql
-
+GPLv2 fill\_help\_tables.sql

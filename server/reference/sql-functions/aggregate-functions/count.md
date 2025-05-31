@@ -8,7 +8,7 @@ COUNT(expr)
 
 ## Description
 
-Returns a count of the number of non-NULL values of expr in the rows retrieved by a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) statement. The result is a [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md) value. It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.
+Returns a count of the number of non-NULL values of expr in the rows retrieved by a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) statement. The result is a [BIGINT](../../data-types/numeric-data-types/bigint.md) value. It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.
 
 COUNT(\*) counts the total number of rows in a table.
 

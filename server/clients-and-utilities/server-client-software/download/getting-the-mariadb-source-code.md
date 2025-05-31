@@ -33,8 +33,8 @@ Source repositories for the MariaDB Connectors are:
 
 See also:
 
-* [Using git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
-* [Compiling MariaDB from source](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/)
+* [Using git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
+* [Compiling MariaDB from source](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/)
 
 The rest of this page contains information on checking out the\
 MariaDB source from Launchpad. As the current source is now on GitHub, the\
@@ -102,7 +102,7 @@ bzr log | less
 ```
 
 1. If you are going to be hacking on the MariaDB source code. See the [Contributing Code](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/contributing-participating/contributing-code) page for help.
-2. If you just want to compile MariaDB at this point, see the [Compiling MariaDB](../../../server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page.
+2. If you just want to compile MariaDB at this point, see the [Compiling MariaDB](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page.
 
 ## Source Tree Tarball
 
@@ -161,7 +161,7 @@ bzr pull
 ## Alternate Bazaar Instructions
 
 The following alternative instructions are what we have used for setting up\
-repositories on our build machines in [buildbot](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-development-information/tools/buildbot).
+repositories on our build machines in [buildbot](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/buildbot).
 
 ### Shell Variables
 
@@ -208,7 +208,7 @@ $BZR branch $MARIA_REPO $MARIA_MASTER
 $BZR branch $MARIA_MASTER $MARIA_WORK
 ```
 
-Check out packaging sources (only for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and below):
+Check out packaging sources (only for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and below):
 
 ```
 $BZR branch $PACKAGING_REPO $PACKAGING_MASTER

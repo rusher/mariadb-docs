@@ -1,14 +1,10 @@
-
 # SHOW CREATE SERVER
 
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-##### MariaDB starting with [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117)
-The  SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/what-is-mariadb-117).
-
-
+The SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117).
 
 ## Syntax
-
 
 ```
 SHOW CREATE SERVER server_name
@@ -16,12 +12,9 @@ SHOW CREATE SERVER server_name
 
 ## Description
 
-
 Shows the [CREATE SERVER](../../data-definition/create/create-server.md) statement that created the given server definition.
 
-
 ## Example
-
 
 ```
 SHOW CREATE SERVER srv1\G
@@ -33,10 +26,7 @@ Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql
 
 ## See Also
 
-
 * [CREATE SERVER](../../data-definition/create/create-server.md)
-* [SHOW](README.md)
-
+* [SHOW](./)
 
 CC BY-SA / Gnu FDL
-

@@ -1,34 +1,25 @@
+# host\_summary\_by\_file\_io\_type and x$host\_summary\_by\_file\_io\_type Sys Schema Views
 
-# host_summary_by_file_io_type and x$host_summary_by_file_io_type Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
 ## Description
 
-
 The `host_summary_by_file_io_type` and `x$host_summary_by_file_io_type` views summarize file I/O, grouped by host and event type. Rows are sorted by host and descending total I/O latency by default. The `host_summary_by_file_io_type` view is intended to be easier for human reading, while the `x$host_summary_by_file_io_type` view provides the data in raw form, intended for tools that process the data.
-
 
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| host | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
-| event_name | File I/O event name. |
-| total | Total number of occurrences of the file I/O event for the host. |
-| total_latency | Total wait time of timed occurrences of the file I/O event for the host. |
-| max_latency | Maximum single wait time of timed occurrences of the file I/O event for the host. |
-
-
+| Column         | Description                                                                                                                                           |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                           |
+| host           | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
+| event\_name    | File I/O event name.                                                                                                                                  |
+| total          | Total number of occurrences of the file I/O event for the host.                                                                                       |
+| total\_latency | Total wait time of timed occurrences of the file I/O event for the host.                                                                              |
+| max\_latency   | Maximum single wait time of timed occurrences of the file I/O event for the host.                                                                     |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.host_summary_by_file_io_type;
@@ -57,6 +48,4 @@ SELECT * FROM sys.x$host_summary_by_file_io_type;
 +------------+----------------------------------------------+-------+---------------+-------------+
 ```
 
-
 CC BY-SA / Gnu FDL
-

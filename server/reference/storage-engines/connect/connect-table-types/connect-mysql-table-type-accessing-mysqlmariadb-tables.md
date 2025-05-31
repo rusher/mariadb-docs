@@ -323,7 +323,7 @@ There is a maximum key.index length of 255 bytes. You may be able to declare the
 
 The following types can't be used:
 
-* [BIT](../../../data-types/data-types-numeric-data-types/bit.md)
+* [BIT](../../../data-types/numeric-data-types/bit.md)
 * [BINARY](../../../data-types/string-data-types/binary.md)
 * [TINYBLOB](../../../data-types/string-data-types/tinyblob.md), [BLOB](../../../data-types/string-data-types/blob.md), [MEDIUMBLOB](../../../data-types/string-data-types/mediumblob.md), [LONGBLOB](../../../data-types/string-data-types/longblob.md)
 * [TINYTEXT](../../../data-types/string-data-types/tinytext.md), [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md), [LONGTEXT](../../../data-types/string-data-types/longtext.md)

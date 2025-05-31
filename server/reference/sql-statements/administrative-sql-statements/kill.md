@@ -21,7 +21,7 @@ thread with the `KILL thread_id` statement.`KILL` allows the optional `CONNECTIO
 If a connection is terminated that has an active transaction, the transaction will be rolled back. If only a query is killed, the current transaction will stay active. See also [idle\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout).
 
 If you have the [PROCESS](../account-management-sql-statements/grant.md#process) privilege, you can see all threads. If\
-you have the [SUPER](../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-statements/grant.md#connection-admin) privilege, you can kill all threads and\
+you have the [SUPER](../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-statements/grant.md#connection-admin) privilege, you can kill all threads and\
 statements. Otherwise, you can see and kill only your own threads and\
 statements.
 

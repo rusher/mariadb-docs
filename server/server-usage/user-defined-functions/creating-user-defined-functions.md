@@ -16,12 +16,12 @@ All functions need to be thread-safe, so not global or static variables that cha
 
 Required for all UDFs; this is where the results are calculated.
 
-| C/C++ type | SQL type                                                                       |
-| ---------- | ------------------------------------------------------------------------------ |
-| C/C++ type | SQL type                                                                       |
-| char \*    | [STRING](../../reference/data-types/string-data-types/)                        |
-| long long  | [INTEGER](../../reference/data-types/data-types-numeric-data-types/integer.md) |
-| double     | [REAL](../../reference/data-types/data-types-numeric-data-types/)              |
+| C/C++ type | SQL type                                                            |
+| ---------- | ------------------------------------------------------------------- |
+| C/C++ type | SQL type                                                            |
+| char \*    | [STRING](../../reference/data-types/string-data-types/)             |
+| long long  | [INTEGER](../../reference/data-types/numeric-data-types/integer.md) |
+| double     | [REAL](../../reference/data-types/numeric-data-types/)              |
 
 DECIMAL functions return string values, and so should be written accordingly. It is not possible to create ROW functions.
 
@@ -63,7 +63,7 @@ Used to add the argument to the current aggregate.
 
 ### x\_remove()
 
-Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 ### Description
 
@@ -89,6 +89,6 @@ For an example, see `sql/udf_example.cc` in the source tree. For a collection of
 * [Stored Functions](../stored-routines/stored-functions/)
 * [Stored Aggregate Functions](../stored-routines/stored-functions/stored-aggregate-functions.md)
 * [User-defined Functions Calling Sequences](user-defined-functions-calling-sequences.md)
-* [allow-suspicious-udfs](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-allow-suspicious-udfs)
+* [allow-suspicious-udfs](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-allow-suspicious-udfs)
 
 CC BY-SA / Gnu FDL

@@ -1,52 +1,37 @@
-
 # 1-Binlog Events
 
-Binary log events, or binlog events, are information about data modification made to a MariaDB server instance stored in the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/README.md) files.
-
+Binary log events, or binlog events, are information about data modification made to a MariaDB server instance stored in the [binary log](../../../../../server-management/server-monitoring-logs/binary-log/) files.
 
 ### Log File Structure
 
-
 Each log file contains:
 
-
-* a 4-byte magic number, followed by a series of events describing data modifications:
-The magic number bytes are 0xfe 0x62 0x69 0x6e = 0xfe 'b''i''n' (this is the BINLOG_MAGIC constant).
+* a 4-byte magic number, followed by a series of events describing data modifications:\
+  The magic number bytes are 0xfe 0x62 0x69 0x6e = 0xfe 'b''i''n' (this is the BINLOG\_MAGIC constant).
 * series of binlog events.
-
 
 ### Event Content
 
-
 Each event contains the 'header' followed by 'data bytes':
 
-
 The header bytes provide information about
-
 
 * event type
 * creation time
 * which server created the event
 * flags and so forth
 
-
 The data bytes provide information specific to the type of event.
 
-
-Note that the first event, [FORMAT_DESCRIPTION_EVENT](format_description_event.md) at 'position' 4, is a descriptor event that describes the format used to write events in the file.
-
+Note that the first event, [FORMAT\_DESCRIPTION\_EVENT](format_description_event.md) at 'position' 4, is a descriptor event that describes the format used to write events in the file.
 
 The remaining events are interpreted according to the version.
 
-
-The final event is usually a log-rotation event [ROTATE_EVENT](rotate_event.md) that specifies the next binary log filename or a [STOP_EVENT](stop_event.md) written during server shutdown.
-
+The final event is usually a log-rotation event [ROTATE\_EVENT](rotate_event.md) that specifies the next binary log filename or a [STOP\_EVENT](stop_event.md) written during server shutdown.
 
 **Note**: in case of a server crash there is no terminating event (no ROTATE nor STOP)
 
-
-### Example [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) Binlog File (Hexdump -C $file_name)
-
+### Example [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) Binlog File (Hexdump -C $file\_name)
 
 ```
 fe 62 69 6e a4 85 9e 59  0f 8c 27 00 00 f5 00 00  |.bin...Y..'.....|
@@ -64,9 +49,7 @@ fe 62 69 6e a4 85 9e 59  0f 8c 27 00 00 f5 00 00  |.bin...Y..'.....|
 ...
 ```
 
-
-### Example From [mysqlbinlog](../../../../mariadb-binlog/README.md)
-
+### Example From [mysqlbinlog](../../../../mariadb-binlog/)
 
 ```
 DELIMITER /*!*/;
@@ -90,6 +73,4 @@ AAAAAAAAAAAEEwQAAatbouA=
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-

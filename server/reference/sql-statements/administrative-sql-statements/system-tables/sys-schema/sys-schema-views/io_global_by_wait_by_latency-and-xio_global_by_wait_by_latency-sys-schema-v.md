@@ -1,45 +1,35 @@
+# io\_global\_by\_wait\_by\_latency and x$io\_global\_by\_wait\_by\_latency Sys Schema Views
 
-# io_global_by_wait_by_latency and x$io_global_by_wait_by_latency Sys Schema Views
+**MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
-
-##### MariaDB starting with [10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106)
-These [Sys Schema](../README.md) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106).
-
+These [Sys Schema](../) views were introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
 
 ## Description
 
-
 The `io_global_by_wait_by_latency` and `x$io_global_by_wait_by_latency` views summarize global I/O consumers, displaying I/O and time waiting for I/O, grouped by event. Rows are sorted by descending total latency by default.
-
 
 The `io_global_by_wait_by_latency` view is intended to be easier for human reading, while the `x$io_global_by_wait_by_latency` view provides the data in raw form, intended for tools that process the data.
 
-
 They contain the following columns:
 
-
-
-| Column | Description |
-| --- | --- |
-| Column | Description |
-| event_name | I/O event name. The wait/io/file prefix is stripped. |
-| total | Total number of occurrences of the I/O event. |
-| total_latency | Total wait time of timed occurrences of the I/O event. |
-| min_latency | Minimum single wait time of timed occurrences of the I/O event. |
-| avg_latency | Average wait time per timed occurrence of the I/O event. |
-| max_latency | Maximum single wait time of timed occurrences of the I/O event. |
-| count_read | Total number of read request for the I/O event. |
-| total_read | Total number of bytes read for the I/O event. |
-| avg_read | Average number of bytes per read for the I/O event. |
-| count_write | Total number of write requests for the I/O event. |
-| total_written | Number of bytes written for the I/O event. |
-| avg_written | Average number of bytes per write for the I/O event. |
-| total_requested | Total number of bytes (read and write) for the I/O event. |
-
-
+| Column           | Description                                                     |
+| ---------------- | --------------------------------------------------------------- |
+| Column           | Description                                                     |
+| event\_name      | I/O event name. The wait/io/file prefix is stripped.            |
+| total            | Total number of occurrences of the I/O event.                   |
+| total\_latency   | Total wait time of timed occurrences of the I/O event.          |
+| min\_latency     | Minimum single wait time of timed occurrences of the I/O event. |
+| avg\_latency     | Average wait time per timed occurrence of the I/O event.        |
+| max\_latency     | Maximum single wait time of timed occurrences of the I/O event. |
+| count\_read      | Total number of read request for the I/O event.                 |
+| total\_read      | Total number of bytes read for the I/O event.                   |
+| avg\_read        | Average number of bytes per read for the I/O event.             |
+| count\_write     | Total number of write requests for the I/O event.               |
+| total\_written   | Number of bytes written for the I/O event.                      |
+| avg\_written     | Average number of bytes per write for the I/O event.            |
+| total\_requested | Total number of bytes (read and write) for the I/O event.       |
 
 ## Example
-
 
 ```
 SELECT * FROM sys.io_global_by_wait_by_latency\G
@@ -109,6 +99,4 @@ total_written: 82944
 ...
 ```
 
-
 CC BY-SA / Gnu FDL
-

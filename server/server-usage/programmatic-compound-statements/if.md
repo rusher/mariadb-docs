@@ -19,7 +19,7 @@ is executed. Each statement\_list consists of one or more statements.
 ## See Also
 
 * The [IF() function](../../reference/sql-functions/control-flow-functions/if-function.md), which differs from the `IF` statement described above.
-* [Changes in Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Changes in Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 * The [CASE statement](case-statement.md).
 
 GPLv2 fill\_help\_tables.sql

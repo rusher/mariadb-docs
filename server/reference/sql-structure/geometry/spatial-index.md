@@ -52,9 +52,9 @@ DROP INDEX sp_index ON geom;
 
 ### Data-at-Rest Encyption
 
-Before [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), InnoDB's spatial indexes could not be [encrypted](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/). If an InnoDB table was encrypted and if it contained spatial indexes, then those indexes would be unencrypted.
+Before [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), InnoDB's spatial indexes could not be [encrypted](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/). If an InnoDB table was encrypted and if it contained spatial indexes, then those indexes would be unencrypted.
 
-In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, if `[innodb_checksum_algorithm](../../storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)` is set to `full_crc32` or `strict_full_crc32`, and if the table does not use `[ROW_FORMAT=COMPRESSED](../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md)`, then InnoDB spatial indexes will be encrypted if the table is encrypted.
+In [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later, if `[innodb_checksum_algorithm](../../storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm)` is set to `full_crc32` or `strict_full_crc32`, and if the table does not use `[ROW_FORMAT=COMPRESSED](../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md)`, then InnoDB spatial indexes will be encrypted if the table is encrypted.
 
 See [MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026) for more information.
 

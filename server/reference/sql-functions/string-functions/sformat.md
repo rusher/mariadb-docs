@@ -1,32 +1,23 @@
-
 # SFORMAT
 
+**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-##### MariaDB starting with [10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
-SFORMAT was added in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
-
+SFORMAT was added in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
 
 ## Description
 
-
 The `SFORMAT` function takes an input string and a formatting specification and returns the string formatted using the rules the user passed in the specification.
-
 
 It uses the [fmtlib library](https://fmt.dev/) for Python-like (as well as Rust, C++20, etc) string formatting.
 
-
 Only fmtlib 7.0.0+ is supported.
-
 
 There is no native support for temporal and decimal values:
 
-
-* TIME_RESULT is handled as STRING_RESULT
-* DECIMAL_RESULT as REAL_RESULT
-
+* TIME\_RESULT is handled as STRING\_RESULT
+* DECIMAL\_RESULT as REAL\_RESULT
 
 ## Examples
-
 
 ```
 SELECT SFORMAT("The answer is {}.", 42);
@@ -62,9 +53,6 @@ SELECT SFORMAT('MariaDB Server {} has a preview for MDEV-{} which is about {}',
 
 ## See Also
 
-
 * [10.7 preview feature: Python-like string formatting](https://mariadb.org/10-7-preview-feature-sformat/)
 
-
 CC BY-SA / Gnu FDL
-

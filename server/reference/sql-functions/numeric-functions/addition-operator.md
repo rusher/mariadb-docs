@@ -10,7 +10,7 @@
 
 Addition.
 
-If both operands are integers, the result is calculated with [BIGINT](../../data-types/data-types-numeric-data-types/bigint.md) precision. If either integer is unsigned, the result is also an unsigned integer.
+If both operands are integers, the result is calculated with [BIGINT](../../data-types/numeric-data-types/bigint.md) precision. If either integer is unsigned, the result is also an unsigned integer.
 
 For real or string operands, the operand with the highest precision determines the result precision.
 
