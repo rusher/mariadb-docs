@@ -176,7 +176,7 @@ CREATE TABLE `db1`.`tab` (
 
 #### JSON\_DETAILED output unnecessarily verbose
 
-JSON\_DETAILED function ([json\_detailed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_detailed) ) is described as
+JSON\_DETAILED function ([json\_detailed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_detailed) ) is described as
 
 ```
 Represents JSON in the most understandable way emphasizing nested structures.

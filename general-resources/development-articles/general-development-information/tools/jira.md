@@ -1,6 +1,6 @@
 # Jira - Project Planning and Tracking
 
-Jira is the tool that is used for [bug reporting](../../../community/company-and-community/bug-tracking/reporting-bugs.md), project planning and tracking in MariaDB development. It replaced the previous tool called [WorkLog](worklog.md). Jira is also where you can find the [MariaDB roadmap](https://jira.mariadb.org).
+Jira is the tool that is used for [bug reporting](../../../community/community/bug-tracking/reporting-bugs.md), project planning and tracking in MariaDB development. It replaced the previous tool called [WorkLog](worklog.md). Jira is also where you can find the [MariaDB roadmap](https://jira.mariadb.org).
 
 The MariaDB Jira is located at [jira.mariadb.org](https://jira.mariadb.org)
 

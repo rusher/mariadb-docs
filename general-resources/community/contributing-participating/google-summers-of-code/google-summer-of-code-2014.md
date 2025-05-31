@@ -48,7 +48,7 @@ Mentor: Colin Charles
 
 ### GIS enhancements to MariaDB
 
-[GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/geographic-geometric-features) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), as well as making sure we are fully OpenGIS compliant. [MDEV-5813](https://jira.mariadb.org/browse/MDEV-5813)
+[GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), as well as making sure we are fully OpenGIS compliant. [MDEV-5813](https://jira.mariadb.org/browse/MDEV-5813)
 
 Skills: C
 

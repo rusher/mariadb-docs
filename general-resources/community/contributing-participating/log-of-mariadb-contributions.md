@@ -17,7 +17,7 @@ Reviewer: ....
 ```
 
 For those cases this is not done, please add to this page a short line for each\
-push into MariaDB that includes code from contributors not employed by the MariaDB Foundation or the MariaDB Corporation. The purpose of this is to properly track that all such patches are submitted either under [MCA](../company-and-community/legal-documents/mca.md) or BSD-new and to ensure that the developer gets credit for his work.
+push into MariaDB that includes code from contributors not employed by the MariaDB Foundation or the MariaDB Corporation. The purpose of this is to properly track that all such patches are submitted either under [MCA](../community/legal-documents/mca.md) or BSD-new and to ensure that the developer gets credit for his work.
 
 Example:
 
@@ -245,7 +245,7 @@ Feature/Patch name
 
 * Tencent Game DBA Team, developed by vinchen.
 
-[UPDATE statements with the same source and target](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update#update-statements-with-the-same-source-and-target) ([MDEV-12874](https://jira.mariadb.org/browse/MDEV-12874))
+[UPDATE statements with the same source and target](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update#update-statements-with-the-same-source-and-target) ([MDEV-12874](https://jira.mariadb.org/browse/MDEV-12874))
 
 * Jerome Brauge.
 
@@ -376,11 +376,11 @@ Power8 optimization
 
 * [MariaDB Foundation](https://mariadb.org)
 
-[Upgraded regexp library](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/regular-expressions-functions/pcre)
+[Upgraded regexp library](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre)
 
 * [MariaDB Foundation](https://mariadb.org)
 
-Reviews for [replication](broken-reference), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), compression, [Galera](../../../en/mariadb-galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/mroonga) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create) etc.
+Reviews for [replication](broken-reference), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), compression, [Galera](../../../en/mariadb-galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/mroonga) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create) etc.
 
 * [MariaDB Foundation](https://mariadb.org)
 
@@ -404,7 +404,7 @@ Table level [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security
 
 * Antony Curtis
 
-[CREATE OR REPLACE/IF NOT EXISTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create)
+[CREATE OR REPLACE/IF NOT EXISTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create)
 
 * Sriram Patil
 
@@ -412,7 +412,7 @@ New [status variables for replication](https://app.gitbook.com/s/SsmexDFPv2xG2OT
 
 * Daniel Black
 
-[RESET MASTER TO #](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-master)
+[RESET MASTER TO #](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/reset-master)
 
 * Daniël van Eeden
 
@@ -448,11 +448,11 @@ Facebook
 
 Percona
 
-* [SET STATEMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-statement), [enforce\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#enforce_storage_engine)
+* [SET STATEMENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set-statement), [enforce\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#enforce_storage_engine)
 
 Oracle
 
-* [UNION ALL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/union) optimization, [default\_tmp\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#default_tmp_storage_engine)
+* [UNION ALL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/union) optimization, [default\_tmp\_storage\_engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#default_tmp_storage_engine)
 
 ### [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) Log of Contributions
 
@@ -466,7 +466,7 @@ Per thread memory counting and usage
 * Base code by Lixun Peng, Taobao
 * License: BSD
 
-[GET\_LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/get_lock)
+[GET\_LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock)
 
 * Code by Konstantin "Kostja" Osipov, mail.ru
 * License: BSD
@@ -476,7 +476,7 @@ Per thread memory counting and usage
 * Code by Olivier Bertrand
 * License: GPL
 
-[Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider)[metadata\_lock\_info Information schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table)
+[Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider)[metadata\_lock\_info Information schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table)
 
 * Code by Kentoku Shiba, Spiral Arms
 * License: GPL
@@ -486,7 +486,7 @@ Per thread memory counting and usage
 * Code by Vicentiu Ciorbaru, Google Summer of Code 2013
 * License: BSD
 
-[PCRE Regular Expressions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/regular-expressions-functions/pcre)
+[PCRE Regular Expressions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre)
 
 * Code by Sudheera Palihakkara, Google Summer of Code 2013
 * License: BSD
@@ -640,7 +640,7 @@ Facebook has sponsored many features, including:
 
 ### See Also
 
-* [SHOW CONTRIBUTORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-contributors) lists [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
-* [SHOW AUTHORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-authors) lists the authors of MariaDB (including documentation, QA etc).
+* [SHOW CONTRIBUTORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-contributors) lists [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
+* [SHOW AUTHORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-authors) lists the authors of MariaDB (including documentation, QA etc).
 
 CC BY-SA / Gnu FDL

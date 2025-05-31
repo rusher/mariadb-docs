@@ -12,7 +12,7 @@ If this doesn't say 'stripped' then you are fine. If not, you should either [dow
 
 ### Debugging Memory Consumption With tcmalloc
 
-Read the [Profiling Memory Usage](../../community/company-and-community/bug-tracking/profiling-memory-usage.md) page for more information on how to debug high memory consumption.
+Read the [Profiling Memory Usage](../../community/community/bug-tracking/profiling-memory-usage.md) page for more information on how to debug high memory consumption.
 
 If you have a problem with a mysqld process that keeps on growing, you can use tcmalloc to find out\
 what is allocating memory:

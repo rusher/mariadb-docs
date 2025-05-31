@@ -24,7 +24,7 @@ The success of [MariaDB](../../../kb/en/mariadb/) depends on the participation o
 There are several ways to contribute besides [Contributing Code](contributing-code.md), and not all of them require\
 strong C/C++ skills. Areas for non-developers include:
 
-* [Reporting Bugs](../company-and-community/bug-tracking/reporting-bugs.md)
+* [Reporting Bugs](../community/bug-tracking/reporting-bugs.md)
   * To report a bug you'll need to sign up for an account by clicking on the Create an account link below the login fields
 * [Suggesting Features](../../development-articles/general-development-information/tools/jira.md)
 * [Answering questions](https://mariadb.com/kb/en/+questions/) in the Knowledge Base

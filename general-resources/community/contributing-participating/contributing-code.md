@@ -77,7 +77,7 @@ All code in MariaDB comes from one of the following sources:
 * MySQL
 * Code developed by people employed by the [MariaDB Foundation](https://mariadb.org).
 * Code developed by people employed by [MariaDB Corporation](https://mariadb.com).
-* Code shared with the MariaDB Foundation under the [MCA](../company-and-community/legal-documents/mca.md).
+* Code shared with the MariaDB Foundation under the [MCA](../community/legal-documents/mca.md).
 * Code with a known origin that is under a permissive license (BSD or public domain).
 
 If you want the code to be part of the main [MariaDB](../../../en/mariadb/) tree, you also have to\
@@ -87,10 +87,10 @@ that the foundation can offer the code to other projects (like MySQL).
 You do this by either:
 
 1. Signing the MariaDB Contributor Agreement\
-   ([MCA](../company-and-community/legal-documents/mca.md)) and then scanning and sending it to the foundation.
+   ([MCA](../community/legal-documents/mca.md)) and then scanning and sending it to the foundation.
 2. Sending an email to[maria-developers](https://launchpad.net/~maria-developers) where you say\
    that your patch and all fixes to it are provided to the MariaDB Foundation under\
-   the [MCA](../company-and-community/legal-documents/mca.md).
+   the [MCA](../community/legal-documents/mca.md).
 3. Licensing your code using the[BSD license](https://opensource.org/licenses/bsd-license.html).
 
 We need shared copyright for the following reasons:
@@ -104,7 +104,7 @@ We need shared copyright for the following reasons:
    MariaDB (the MCA/BSD allows us to give those companies the rights to all\
    changes between MySQL and MariaDB so they can use MariaDB instead of MySQL)
 
-More information about the MCA can be found on the[MCA FAQ](../company-and-community/legal-documents/mariadb-contributor-agreement-faq.md) page.
+More information about the MCA can be found on the[MCA FAQ](../community/legal-documents/mariadb-contributor-agreement-faq.md) page.
 
 ### Before Pushing Code to a Stable Branch
 

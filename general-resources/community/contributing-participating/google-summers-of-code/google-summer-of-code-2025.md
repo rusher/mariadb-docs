@@ -112,7 +112,7 @@ The goal of the project is to reclaim the wasted disk space either re-creating t
 
 MariaDB Columnstore lacks recursive CTE handling, so as of now Columnstore hands over the processing back to MariaDB Server if a query contains recursive CTE.
 
-Here is the info about the feature:[recursive-common-table-expressions-overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview)
+Here is the info about the feature:[recursive-common-table-expressions-overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview)
 
 **Skills needed:** modern C++**Mentors:** Leonid Fedorov
 
@@ -122,7 +122,7 @@ Here is the info about the feature:[recursive-common-table-expressions-overview]
 
 MariaDB Columnstore lacks UNION EXCEPT INTERSECT handling, so as of now Columnstore hands over the processing back to MariaDB Server if a query contains UNION EXCEPT or UNION INTERCEPT
 
-Here is the info about the feature:[except](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/except)[intersect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/joins-subqueries/intersect)
+Here is the info about the feature:[except](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/except)[intersect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/intersect)
 
 **Skills needed:** modern C++**Mentors:** Alexey Antipovsky
 

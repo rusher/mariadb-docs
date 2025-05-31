@@ -6,7 +6,7 @@ icon: check
 
 Explore these resources to optimize your use of MariaDB, including documentation, enterprise solutions and community engagement.
 
-* Documentation: [Feedback & issue reporting](../community/company-and-community/bug-tracking/reporting-documentation-bugs.md)
+* Documentation: [Feedback & issue reporting](../community/community/bug-tracking/reporting-documentation-bugs.md)
 * Enterprise products & support: [Contact us](https://mariadb.com/contact/?utm_medium=docs)
 * Chat & mailing lists: [Joining the Community](../community/joining-the-community.md)
 

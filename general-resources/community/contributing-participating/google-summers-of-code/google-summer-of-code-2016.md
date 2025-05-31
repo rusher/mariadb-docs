@@ -25,7 +25,7 @@ The [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-uti
 
 ### Aggregate stored functions
 
-With [CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function) one can create functions in SQL, but this syntax doesn't allow one to create an aggregate function (like [SUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/sum), [AVG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/aggregate-functions/avg), etc). This task is to add support for aggregate [stored functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions).
+With [CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-function) one can create functions in SQL, but this syntax doesn't allow one to create an aggregate function (like [SUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/aggregate-functions/sum), [AVG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/aggregate-functions/avg), etc). This task is to add support for aggregate [stored functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions).
 
 | Details:             | Skills:                                                | Mentor: | Students Interested: |
 | -------------------- | ------------------------------------------------------ | ------- | -------------------- |
@@ -36,7 +36,7 @@ With [CREATE FUNCTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/
 
 ### GIS enhancements
 
-[GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/geographic-geometric-features) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), converters (eg. ST\_GeomFromGeoJSON - ST\_AsGeoJSON, ST\_GeomFromKML - ST\_AsKML, etc.), Getting data from SHP format (shp2sql convertor), as well as making sure we are fully OpenGIS compliant.
+[GIS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry) enhancements for 10.1 that we want to work on include adding support for altitude (the third coordinate), converters (eg. ST\_GeomFromGeoJSON - ST\_AsGeoJSON, ST\_GeomFromKML - ST\_AsKML, etc.), Getting data from SHP format (shp2sql convertor), as well as making sure we are fully OpenGIS compliant.
 
 | Details:             | Skills:                                                | Mentor: | Students Interested: |
 | -------------------- | ------------------------------------------------------ | ------- | -------------------- |
