@@ -153,7 +153,7 @@ The `systemctl` command is used to start and stop the MariaDB Enterprise Server 
 | Bootstrap a cluster node          | sudo galera\_new\_cluster      |
 | Recover a cluster node's position | sudo galera\_recovery          |
 
-For additional information, see "Start and Stop Services".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
 
 ## MariaDB Enterprise Server Logs
 
@@ -161,14 +161,13 @@ MariaDB Enterprise Server produces log data that can be helpful in problem diagn
 
 Log filenames and locations may be overridden in the server configuration. The default location of logs is the data directory. The data directory is specified by the datadir system variable.
 
-| Log                          | System Variable/Option    | Default Filename  |
-| ---------------------------- | ------------------------- | ----------------- |
-| Log                          | System Variable/Option    | Default Filename  |
-| MariaDB Error Log            | log\_error                | .err              |
-| MariaDB Enterprise Audit Log | server\_audit\_file\_path | server\_audit.log |
-| Slow Query Log               | slow\_query\_log\_file    | -slow.log         |
-| General Query Log            | general\_log\_file        | .log              |
-| Binary Log                   | log\_bin                  | -bin              |
+| Log                                                                                         | System Variable/Option                                                                                                                                    | Default Filename      |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| [MariaDB Error Log](../../../server-management/server-monitoring-logs/error-log.md)         | [log\_error](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables)             | `<hostname>.err`      |
+| [MariaDB Enterprise Audit Log](../../../reference/plugins/mariadb-enterprise-audit.md)      | [server\_audit\_file\_path](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path)  | `server_audit.log`    |
+| [Slow Query Log](../../../server-management/server-monitoring-logs/slow-query-log/)         | [slow\_query\_log\_file](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables) | `<hostname>-slow.log` |
+| [General Query Log](../../../server-management/server-monitoring-logs/general-query-log.md) | [general\_log\_file](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables)     | `<hostname>.log`      |
+| [Binary Log](../../../server-management/server-monitoring-logs/binary-log/)                 | [log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin)                                       | `<hostname>-bin`      |
 
 ## MaxScale Configuration Management
 
@@ -195,7 +194,7 @@ The systemctl command is used to start and stop the MaxScale service.>
 | Disable during startup | sudo systemctl disable maxscale |
 | Status                 | sudo systemctl status maxscale  |
 
-For additional information, "Start and Stop Services".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
 
 ## Next Step
 

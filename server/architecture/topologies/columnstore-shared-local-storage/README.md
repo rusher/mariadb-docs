@@ -278,27 +278,22 @@ MariaDB Enterprise Server packages are configured to read configuration files fr
 
 To ensure that your custom changes will be read last, create a custom configuration file with the z- prefix in one of the include directories.
 
-| Distribution                               | Example Configuration File Path                |
-| ------------------------------------------ | ---------------------------------------------- |
-| Distribution                               | Example Configuration File Path                |
-| • CentOS • Red Hat Enterprise Linux (RHEL) | /etc/my.cnf.d/z-custom-mariadb.cnf             |
-| • Debian • Ubuntu                          | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
+<table><thead><tr><th valign="top">Distribution</th><th valign="top">Example Configuration File Path</th></tr></thead><tbody><tr><td valign="top"><ul><li>CentOS</li><li>Red Hat Enterprise Linux (RHEL)</li></ul></td><td valign="top">/etc/my.cnf.d/z-custom-mariadb.cnf</td></tr><tr><td valign="top"><ul><li>Debian</li><li>Ubuntu</li></ul></td><td valign="top">/etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf</td></tr></tbody></table>
 
 ### MariaDB Enterprise Server Service Management
 
 The systemctl command is used to start and stop the MariaDB Enterprise Server service.
 
-| Operation              | Command                        |
-| ---------------------- | ------------------------------ |
-| Operation              | Command                        |
-| Start                  | sudo systemctl start mariadb   |
-| Stop                   | sudo systemctl stop mariadb    |
-| Restart                | sudo systemctl restart mariadb |
-| Enable during startup  | sudo systemctl enable mariadb  |
-| Disable during startup | sudo systemctl disable mariadb |
-| Status                 | sudo systemctl status mariadb  |
+| Operation              | Command                          |
+| ---------------------- | -------------------------------- |
+| Start                  | `sudo systemctl start mariadb`   |
+| Stop                   | `sudo systemctl stop mariadb`    |
+| Restart                | `sudo systemctl restart mariadb` |
+| Enable during startup  | `sudo systemctl enable mariadb`  |
+| Disable during startup | `sudo systemctl disable mariadb` |
+| Status                 | `sudo systemctl status mariadb`  |
 
-For additional information, see "Start and Stop Services".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
 
 ### MariaDB Enterprise Server Logs
 
@@ -306,28 +301,19 @@ MariaDB Enterprise Server produces log data that can be helpful in problem diagn
 
 Log filenames and locations may be overridden in the server configuration. The default location of logs is the data directory. The data directory is specified by the datadir system variable.
 
-| Log                          | System Variable/Option    | Default Filename  |
-| ---------------------------- | ------------------------- | ----------------- |
-| Log                          | System Variable/Option    | Default Filename  |
-| MariaDB Error Log            | log\_error                | .err              |
-| MariaDB Enterprise Audit Log | server\_audit\_file\_path | server\_audit.log |
-| Slow Query Log               | slow\_query\_log\_file    | -slow.log         |
-| General Query Log            | general\_log\_file        | .log              |
-| Binary Log                   | log\_bin                  | -bin              |
+| Log                                                                                         | System Variable/Option                                                                                                                                    | Default Filename      |
+| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| [MariaDB Error Log](../../../server-management/server-monitoring-logs/error-log.md)         | [log\_error](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables)             | `<hostname>.err`      |
+| [MariaDB Enterprise Audit Log](../../../reference/plugins/mariadb-enterprise-audit.md)      | [server\_audit\_file\_path](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path)  | `server_audit.log`    |
+| [Slow Query Log](../../../server-management/server-monitoring-logs/slow-query-log/)         | [slow\_query\_log\_file](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables) | `<hostname>-slow.log` |
+| [General Query Log](../../../server-management/server-monitoring-logs/general-query-log.md) | [general\_log\_file](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables)     | `<hostname>.log`      |
+| [Binary Log](../../../server-management/server-monitoring-logs/binary-log/)                 | [log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin)                                       | `<hostname>-bin`      |
 
 ### Enterprise ColumnStore Service Management
 
 The systemctl command is used to start and stop the ColumnStore service.
 
-| Operation              | Command                                    |
-| ---------------------- | ------------------------------------------ |
-| Operation              | Command                                    |
-| Start                  | sudo systemctl start mariadb-columnstore   |
-| Stop                   | sudo systemctl stop mariadb-columnstore    |
-| Restart                | sudo systemctl restart mariadb-columnstore |
-| Enable during startup  | sudo systemctl enable mariadb-columnstore  |
-| Disable during startup | sudo systemctl disable mariadb-columnstore |
-| Status                 | sudo systemctl status mariadb-columnstore  |
+<table><thead><tr><th width="232.962890625">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb-columnstore</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb-columnstore</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb-columnstore</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb-columnstore</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb-columnstore</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb-columnstore</code></td></tr></tbody></table>
 
 In the ColumnStore Object Storage topology, the mariadb-columnstore service should not be enabled. The CMAPI service restarts Enterprise ColumnStore as needed, so it does not need to start automatically upon reboot.
 
@@ -335,15 +321,7 @@ In the ColumnStore Object Storage topology, the mariadb-columnstore service shou
 
 The systemctl command is used to start and stop the CMAPI service.
 
-| Operation              | Command                                          |
-| ---------------------- | ------------------------------------------------ |
-| Operation              | Command                                          |
-| Start                  | sudo systemctl start mariadb-columnstore-cmapi   |
-| Stop                   | sudo systemctl stop mariadb-columnstore-cmapi    |
-| Restart                | sudo systemctl restart mariadb-columnstore-cmapi |
-| Enable during startup  | sudo systemctl enable mariadb-columnstore-cmapi  |
-| Disable during startup | sudo systemctl disable mariadb-columnstore-cmapi |
-| Status                 | sudo systemctl status mariadb-columnstore-cmapi  |
+<table><thead><tr><th width="248.370361328125">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb-columnstore-cmapi</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb-columnstore-cmapi</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb-columnstore-cmapi</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb-columnstore-cmapi</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb-columnstore-cmapi</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb-columnstore-cmapi</code></td></tr></tbody></table>
 
 For additional information on endpoints, see "CMAPI".
 
@@ -351,12 +329,7 @@ For additional information on endpoints, see "CMAPI".
 
 MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/).
 
-| Method                                                                                                                                                   | Benefits                                                                                                                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Method                                                                                                                                                   | Benefits                                                                                                                                                                                                |
-| [MaxCtrl](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/)   | Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.                                                                                                        |
-| [MaxGUI](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/)                                               | MaxGUI is a graphical utility that can perform administrative tasks through the REST API.                                                                                                               |
-| [REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/) | The REST API can be used directly. For example, the curl utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs. |
+<table><thead><tr><th width="200.962890625">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the curl utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
 
 The procedure on these pages configures MaxScale using MaxCtrl.
 
@@ -364,15 +337,7 @@ The procedure on these pages configures MaxScale using MaxCtrl.
 
 The systemctl command is used to start and stop the MaxScale service.>
 
-| Operation              | Command                         |
-| ---------------------- | ------------------------------- |
-| Operation              | Command                         |
-| Start                  | sudo systemctl start maxscale   |
-| Stop                   | sudo systemctl stop maxscale    |
-| Restart                | sudo systemctl restart maxscale |
-| Enable during startup  | sudo systemctl enable maxscale  |
-| Disable during startup | sudo systemctl disable maxscale |
-| Status                 | sudo systemctl status maxscale  |
+<table><thead><tr><th width="274.4443359375">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start maxscale</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop maxscale</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart maxscale</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable maxscale</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable maxscale</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status maxscale</code></td></tr></tbody></table>
 
 For additional information, see "Start and Stop Services".
 

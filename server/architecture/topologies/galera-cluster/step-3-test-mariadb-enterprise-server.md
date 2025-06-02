@@ -28,7 +28,7 @@ $ sudo systemctl start mariadb
 
 ## Test Local Client Connections
 
-Use MariaDB Client to test the local connection to the Enterprise Server node.
+Use [MariaDB Client](../../../clients-and-utilities/mariadb-client/) to test the local connection to the Enterprise Server node.
 
 This action is performed on each Enterprise Cluster node:
 
@@ -154,7 +154,7 @@ INSERT INTO test.contacts (first_name, last_name, email)
 $ sudo mariadb
 ```
 
-4. Execute a SELECT query to retrieve the data:
+4. Execute a [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) query to retrieve the data:
 
 ```sql
 SELECT * FROM test.contacts;

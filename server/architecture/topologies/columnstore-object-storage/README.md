@@ -39,27 +39,15 @@ Customers can obtain support by submitting a support case.
 
 The following components are deployed during this procedure:
 
-| Component                                                                                  | Function                                                                                                   |
-| ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| Component                                                                                  | Function                                                                                                   |
-| [MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/)               | Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging. |
-| [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) | Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers      |
+<table><thead><tr><th width="268.5184326171875" valign="top">Component</th><th valign="top">Function</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/">MariaDB Enterprise Server</a></td><td valign="top">Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging.</td></tr><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/">MariaDB MaxScale</a></td><td valign="top">Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers</td></tr></tbody></table>
 
 ### MariaDB Enterprise Server Components
 
-| Component                                                                                                            | Description                                                                                                                                                                                                                                                                                                                                                                        |
-| -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/columnstore-storage-engine-overview) | <ul><li>Columnar storage engine</li><li>Highly available</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>Scalable query execution</li><li><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/mariadb-columnstore-cmapi-release-notes/">Cluster Management API (CMAPI)</a> provides a REST API for multi-node administration</li></ul> |
+<table><thead><tr><th width="305.2591552734375" valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/columnstore-storage-engine-overview">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Highly available</li><li>Optimized for Online Analytical Processing (OLAP) workloads</li><li>Scalable query execution</li><li><a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/mariadb-columnstore-cmapi-release-notes/">Cluster Management API (CMAPI)</a> provides a REST API for multi-node administration</li></ul></td></tr></tbody></table>
 
 ### MariaDB MaxScale Components
 
-| Component               | Description                                                                                                                                                                                        |
-| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Listener                | Listens for client connections to MaxScale then passes them to the router service                                                                                                                  |
-| MariaDB Monitor         | Tracks changes in the state of MariaDB Enterprise Servers.                                                                                                                                         |
-| Read Connection Router  | Routes connections from the listener to any available Enterprise ColumnStore node                                                                                                                  |
-| Read/Write Split Router | Routes read operations from the listener to any available Enterprise ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server |
-| Server Module           | Connection configuration in MaxScale to an Enterprise ColumnStore node                                                                                                                             |
+<table><thead><tr><th width="242.4443359375">Component</th><th>Description</th></tr></thead><tbody><tr><td>Listener</td><td>Listens for client connections to MaxScale then passes them to the router service</td></tr><tr><td>MariaDB Monitor</td><td>Tracks changes in the state of MariaDB Enterprise Servers.</td></tr><tr><td>Read Connection Router</td><td>Routes connections from the listener to any available Enterprise ColumnStore node</td></tr><tr><td>Read/Write Split Router</td><td>Routes read operations from the listener to any available Enterprise ColumnStore node, and routes write operations from the listener to a specific server that MaxScale uses as the primary server</td></tr><tr><td>Server Module</td><td>Connection configuration in MaxScale to an Enterprise ColumnStore node</td></tr></tbody></table>
 
 ## Topology
 
@@ -157,10 +145,7 @@ The recommended hardware requirements are:
 
 The ColumnStore Object Storage topology requires the following storage types:
 
-| Storage Type                                                                 | Description                                                                                                            |
-| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| [S3-Compatible Object Storage](./#s3-compatible-object-storage-requirements) | The ColumnStore Object Storage topology uses S3-compatible object storage to store data.                               |
-| [Shared Local Storage](./#shared-local-storage-directories)                  | The ColumnStore Object Storage topology uses shared local storage for the Storage Manager directory to store metadata. |
+<table><thead><tr><th width="285.111083984375">Storage Type</th><th>Description</th></tr></thead><tbody><tr><td><a href="./#s3-compatible-object-storage-requirements">S3-Compatible Object Storage</a></td><td>The ColumnStore Object Storage topology uses S3-compatible object storage to store data.</td></tr><tr><td><a href="./#shared-local-storage-directories">Shared Local Storage</a></td><td>The ColumnStore Object Storage topology uses shared local storage for the Storage Manager directory to store metadata.</td></tr></tbody></table>
 
 ### S3-Compatible Object Storage Requirements
 
@@ -205,7 +190,7 @@ The Storage Manager directory is located at the following path by default:
 
 The most common shared local storage options for the ColumnStore Object Storage topology are:
 
-<table><thead><tr><th>Shared Local Storage</th><th width="163.666748046875">Common Usage</th><th>Description</th></tr></thead><tbody><tr><td>EBS (Elastic Block Store) Multi-Attach</td><td>AWS</td><td><ul><li>EBS is a high-performance block-storage service for AWS (Amazon Web Services).</li><li>EBS Multi-Attach allows an EBS volume to be attached to multiple instances in AWS. Only clustered file systems, such as GFS2, are supported.</li><li>For deployments in AWS, EBS Multi-Attach is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data.</li></ul></td></tr><tr><td>EFS (Elastic File System)</td><td>AWS</td><td><ul><li>EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services).</li><li>For deployments in AWS, EFS is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data. EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services).</li></ul></td></tr><tr><td>Filestore</td><td>GCP</td><td><ul><li>Filestore is high-performance, fully managed storage for GCP (Google Cloud Platform).</li><li>For deployments in GCP, Filestore is the recommended option for the Storage Manager directory, and Google Object Storage (S3-compatible) is the recommended option for data.</li></ul></td></tr><tr><td>GlusterFS</td><td>On-premises</td><td><ul><li>GlusterFS is a distributed file system.</li><li>GlusterFS supports replication and failover.</li></ul></td></tr><tr><td>NFS (Network File System)</td><td>On-premises</td><td><ul><li>NFS is a distributed file system.</li><li>If NFS is used, the storage should be mounted with the sync option to ensure that each node flushes its changes immediately.</li><li>For on-premises deployments, NFS is the recommended option for the Storage Manager directory, and any S3-compatible storage is the recommended option for data.</li></ul></td></tr></tbody></table>
+<table><thead><tr><th valign="top">Shared Local Storage</th><th width="163.666748046875" valign="top">Common Usage</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top">EBS (Elastic Block Store) Multi-Attach</td><td valign="top">AWS</td><td valign="top"><ul><li>EBS is a high-performance block-storage service for AWS (Amazon Web Services).</li><li>EBS Multi-Attach allows an EBS volume to be attached to multiple instances in AWS. Only clustered file systems, such as GFS2, are supported.</li><li>For deployments in AWS, EBS Multi-Attach is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data.</li></ul></td></tr><tr><td valign="top">EFS (Elastic File System)</td><td valign="top">AWS</td><td valign="top"><ul><li>EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services).</li><li>For deployments in AWS, EFS is a recommended option for the Storage Manager directory, and Amazon S3 storage is the recommended option for data. EFS is a scalable, elastic, cloud-native NFS file system for AWS (Amazon Web Services).</li></ul></td></tr><tr><td valign="top">Filestore</td><td valign="top">GCP</td><td valign="top"><ul><li>Filestore is high-performance, fully managed storage for GCP (Google Cloud Platform).</li><li>For deployments in GCP, Filestore is the recommended option for the Storage Manager directory, and Google Object Storage (S3-compatible) is the recommended option for data.</li></ul></td></tr><tr><td valign="top">GlusterFS</td><td valign="top">On-premises</td><td valign="top"><ul><li>GlusterFS is a distributed file system.</li><li>GlusterFS supports replication and failover.</li></ul></td></tr><tr><td valign="top">NFS (Network File System)</td><td valign="top">On-premises</td><td valign="top"><ul><li>NFS is a distributed file system.</li><li>If NFS is used, the storage should be mounted with the sync option to ensure that each node flushes its changes immediately.</li><li>For on-premises deployments, NFS is the recommended option for the Storage Manager directory, and any S3-compatible storage is the recommended option for data.</li></ul></td></tr></tbody></table>
 
 ### Recommended Storage Options
 
@@ -340,14 +325,7 @@ To ensure that your custom changes will be read last, create a custom configurat
 
 The systemctl command is used to start and stop the MariaDB Enterprise Server service.
 
-| Operation              | Command                          |
-| ---------------------- | -------------------------------- |
-| Start                  | `sudo systemctl start mariadb`   |
-| Stop                   | `sudo systemctl stop mariadb`    |
-| Restart                | `sudo systemctl restart mariadb` |
-| Enable during startup  | `sudo systemctl enable mariadb`  |
-| Disable during startup | `sudo systemctl disable mariadb` |
-| Status                 | `sudo systemctl status mariadb`  |
+<table><thead><tr><th width="262.592529296875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb</code></td></tr></tbody></table>
 
 For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
 
@@ -395,7 +373,7 @@ The systemctl command is used to start and stop the MaxScale service.>
 
 <table><thead><tr><th width="281.5555419921875">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start maxscale</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop maxscale</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart maxscale</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable maxscale</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable maxscale</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status maxscale</code></td></tr></tbody></table>
 
-For additional information, see "Start and Stop Services".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
 
 ## Next Step
 

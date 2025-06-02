@@ -1,10 +1,10 @@
-# Step 3: Install MariaDB Enterprise Server
+# Step 2: Install MariaDB Enterprise Server
 
 ## Overview
 
-This page details step 3 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](./)".
+This page details step 2 of the 4-step procedure "[Deploy HTAP Topology](./)".
 
-This step installs MariaDB Enterprise Server, MariaDB Enterprise ColumnStore 23.10, CMAPI, and dependencies.
+This step installs MariaDB Enterprise Server MariaDB Enterprise ColumnStore 23.10, and dependencies.
 
 Interactive commands are detailed. Alternatively, the described operations can be performed using automation.
 
@@ -61,56 +61,55 @@ $ sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply \
 
 ## Install Enterprise Server and Enterprise ColumnStore
 
-1. On each Enterprise ColumnStore node, install additional dependencies:
-
-Install on CentOS and RHEL (YUM):
-
-```bash
-$ sudo yum install jemalloc jq curl
-```
-
-Install on Debian 9 and Ubuntu 18.04 (APT)
+1. **On each Enterprise ColumnStore node**, install additional dependencies:\
+   Install on CentOS / RHEL (YUM)
 
 ```bash
-$ sudo apt install libjemalloc1 jq curl
+$ sudo yum install epel-release
+
+$ sudo yum install jemalloc
 ```
 
-Install on Debian 10 and Ubuntu 20.04 (APT):
+Install of Debian 10 and Ubuntu 20.04 (APT):
 
 ```bash
-$ sudo apt install libjemalloc2 jq curl
+$ sudo apt install libjemalloc2
 ```
 
-2. On each Enterprise ColumnStore node, install MariaDB Enterprise Server and MariaDB Enterprise ColumnStore:
+Install on Debian 9 and Ubuntu 18.04 (APT):
+
+```bash
+$ sudo apt install libjemalloc1
+```
+
+2. **On the Enterprise ColumnStore node**, install MariaDB Enterprise Server and MariaDB Enterprise ColumnStore:
 
 Install on CentOS / RHEL (YUM):
 
-```bash
+```
 $ sudo yum install MariaDB-server \
-   MariaDB-backup \
-   MariaDB-shared \
-   MariaDB-client \
-   MariaDB-columnstore-engine \
-   MariaDB-columnstore-cmapi
+      MariaDB-backup \
+      MariaDB-shared \
+      MariaDB-client \
+      MariaDB-columnstore-engine
 ```
 
 Install on Debian / Ubuntu (APT):
 
-```bash
+```
 $ sudo apt install mariadb-server \
-   mariadb-backup \
-   libmariadb3 \
-   mariadb-client \
-   mariadb-plugin-columnstore \
-   mariadb-columnstore-cmapi
+      mariadb-backup \
+      libmariadb3 \
+      mariadb-client \
+      mariadb-plugin-columnstore
 ```
 
 ## Next Step
 
-Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
+Navigation in the procedure "Deploy HTAP Topology".
 
-This page was step 3 of 9.
+This page was step 2 of 4.
 
-Next: Step 4: Start and Configure MariaDB Enterprise Server.
+Next: Step 3: Start and Configure MariaDB Enterprise Server.
 
 Copyright © 2025 MariaDB
