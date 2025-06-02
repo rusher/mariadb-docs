@@ -708,11 +708,11 @@ particular server variable. With this parameter it can be specified whether`all`
 
 The current auto tunable parameters are:
 
-| MaxScale Parameter                                                                                                        | Server Variable Dependency                                                                                                                          |
-| ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MaxScale Parameter                                                                                                        | Server Variable Dependency                                                                                                                          |
-| [connection\_keepalive](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest [wait\_timeout](https://mariadb.com/docs/reference/mdb/system-variables/wait_timeout/) value of the servers used by the service |
-| [wait\_timeout](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](https://mariadb.com/docs/reference/mdb/system-variables/wait_timeout/) value of the servers used by the service        |
+| MaxScale Parameter                                                                                                        | Server Variable Dependency                                                                                                                                                                                             |
+| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| MaxScale Parameter                                                                                                        | Server Variable Dependency                                                                                                                                                                                             |
+| [connection\_keepalive](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest[  ](#user-content-fn-1)[^1]value of the servers used by the service                                                                                                                                |
+| [wait\_timeout](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
 
 The values of the server variables are collected by monitors, which means that\
 if the servers of a service are not monitored by a monitor, then the parameters\
@@ -5246,3 +5246,5 @@ with a "keep-alive ping".
 Systemd reference: [systemd.service.html](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
 
 CC BY-SA / Gnu FDL
+
+[^1]: 
