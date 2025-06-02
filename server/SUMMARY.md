@@ -1,6 +1,7 @@
 # Table of contents
 
 * [MariaDB Server Documentation](README.md)
+* [Enterprise Server Lifecycle](enterprise-server-lifecycle.md)
 * [Quickstart Guides](mariadb-quickstart-guides/README.md)
   * [Installing MariaDB Server Guide](mariadb-quickstart-guides/installing-mariadb-server-guide.md)
   * [Adding & Changing Data Guide](<mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide (1).md>)
@@ -457,6 +458,13 @@
         * [Step 7: Start and Configure MariaDB MaxScale](architecture/topologies/columnstore-shared-local-storage/deploy-columnstore-shared-local-storage-topology/step-7-start-and-configure-mariadb-maxscale.md)
         * [Step 8: Test MariaDB MaxScale](architecture/topologies/columnstore-shared-local-storage/deploy-columnstore-shared-local-storage-topology/step-8-test-mariadb-maxscale.md)
         * [Step 9: Import Data](architecture/topologies/columnstore-shared-local-storage/deploy-columnstore-shared-local-storage-topology/step-9-import-data.md)
+    * [Galera Cluster](architecture/topologies/galera-cluster/README.md)
+      * [Step 1: Install MariaDB Enterprise Server](architecture/topologies/galera-cluster/step-1-install-mariadb-enterprise-server.md)
+      * [Step 2: Start and Configure MariaDB Enterprise Server](architecture/topologies/galera-cluster/step-2-start-and-configure-mariadb-enterprise-server.md)
+      * [Step 3: Test MariaDB Enterprise Server](architecture/topologies/galera-cluster/step-3-test-mariadb-enterprise-server.md)
+      * [Step 4: Install MariaDB MaxScale](architecture/topologies/galera-cluster/step-4-install-mariadb-maxscale.md)
+      * [Step 5: Start and Configure MariaDB MaxScale](architecture/topologies/galera-cluster/step-5-start-and-configure-mariadb-maxscale.md)
+      * [Step 6: Test MariaDB MaxScale](architecture/topologies/galera-cluster/step-6-test-mariadb-maxscale.md)
 * [Clients & Utilities](clients-and-utilities/README.md)
   * [dbdeployer](clients-and-utilities/dbdeployer.md)
   * [dbForge Studio for MySQL/MariaDB](clients-and-utilities/dbforge-studio-for-mysqlmariadb.md)
@@ -3854,3 +3862,4 @@
         * [About Non-blocking Operation in the Client Library](reference/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/about-non-blocking-operation-in-the-client-library.md)
         * [Non-blocking API Reference](reference/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/non-blocking-api-reference.md)
         * [Using the Non-blocking Library](reference/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library/using-the-non-blocking-library.md)
+* [Support](support.md)
