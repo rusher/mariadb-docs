@@ -1,3 +1,3 @@
 # Table of contents
 
-* [MariaDB Documentation](README.md)
+* [Official MariaDB Documentation](README.md)
