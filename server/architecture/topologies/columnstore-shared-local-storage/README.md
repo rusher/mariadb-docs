@@ -21,17 +21,17 @@ Please read and understand this procedure before executing.
 
 ## Procedure Steps
 
-| Step   | Description                                   |
-| ------ | --------------------------------------------- |
-| Step 1 | Prepare ColumnStore Nodes                     |
-| Step 2 | Configure Shared Local Storage                |
-| Step 3 | Install MariaDB Enterprise Server             |
-| Step 4 | Start and Configure MariaDB Enterprise Server |
-| Step 5 | Test MariaDB Enterprise Server                |
-| Step 6 | Install MariaDB MaxScale                      |
-| Step 7 | Start and Configure MariaDB MaxScale          |
-| Step 8 | Test MariaDB MaxScale                         |
-| Step 9 | Import Data                                   |
+| Step                                                              | Description                                   |
+| ----------------------------------------------------------------- | --------------------------------------------- |
+| [Step 1](step-1-prepare-columnstore-nodes.md)                     | Prepare ColumnStore Nodes                     |
+| [Step 2](step-2-configure-shared-local-storage.md)                | Configure Shared Local Storage                |
+| [Step 3](step-3-install-mariadb-enterprise-server.md)             | Install MariaDB Enterprise Server             |
+| [Step 4](step-4-start-and-configure-mariadb-enterprise-server.md) | Start and Configure MariaDB Enterprise Server |
+| [Step 5](step-5-test-mariadb-enterprise-server.md)                | Test MariaDB Enterprise Server                |
+| [Step 6](step-6-install-mariadb-maxscale.md)                      | Install MariaDB MaxScale                      |
+| [Step 7](step-7-start-and-configure-mariadb-maxscale.md)          | Start and Configure MariaDB MaxScale          |
+| [Step 8](step-8-test-mariadb-maxscale.md)                         | Test MariaDB MaxScale                         |
+| [Step 9](step-9-import-data.md)                                   | Import Data                                   |
 
 ## Support
 
@@ -109,7 +109,7 @@ These requirements are for the ColumnStore Object Storage topology when deployed
 
 ### Operating System
 
-In alignment to the enterprise lifecycle, the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
+In alignment to the [enterprise lifecycle](../../../enterprise-server-lifecycle.md), the ColumnStore Object Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5 is provided for:
 
 * CentOS Linux 7 (x86\_64)
 * Debian 10 (x86\_64)

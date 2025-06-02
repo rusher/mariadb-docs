@@ -2,7 +2,7 @@
 
 ## Overview
 
-This page details step 4 of the 9-step procedure "[Deploy ColumnStore Shared Local Storage Topology](./)".
+This page details step 4 of the 9-step procedure "[Deploy ColumnStore Object Storage Topology](./)".
 
 This step starts and configures MariaDB Enterprise Server, and MariaDB Enterprise ColumnStore 23.10.
 
@@ -36,8 +36,8 @@ $ sudo systemctl stop mariadb-columnstore-cmapi
 
 | Connector                                                                                                                                                 | MariaDB Connector/R2DBC                                                                                                  |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| [character\_set\_server](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables) | Set this system variable to utf8                                                                                         |
-| [collation\_server](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables)      | Set this system variable to utf8\_general\_ci                                                                            |
+| [character\_set\_server](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables) | Set this system variable to `utf8`                                                                                       |
+| [collation\_server](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables)      | Set this system variable to `utf8_general_ci`                                                                            |
 | columnstore\_use\_import\_for\_batchinsert                                                                                                                | Set this system variable to ALWAYS to always use cpimport for LOAD DATA INFILE and INSERT...SELECT statements.           |
 | [gtid\_strict\_mode](../../../ha-and-performance/standard-replication/gtid.md#gtid_strict_mode)                                                           | Set this system variable to ON.                                                                                          |
 | [log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin)                                       | Set this option to the file you want to use for the Binary Log. Setting this option enables binary logging.              |
@@ -67,6 +67,45 @@ gtid_strict_mode                       = ON
 # This must be unique on each Enterprise ColumnStore node
 server_id                              = 1
 ```
+
+## Configure the S3 Storage Manager
+
+On each Enterprise ColumnStore node, configure S3 Storage Manager to use S3-compatible storage by editing the /etc/columnstore/storagemanager.cnf configuration file:
+
+```
+[ObjectStorage]
+…
+service = S3
+…
+[S3]
+bucket                = your_columnstore_bucket_name
+endpoint              = your_s3_endpoint
+aws_access_key_id     = your_s3_access_key_id
+aws_secret_access_key = your_s3_secret_key
+# iam_role_name       = your_iam_role
+# sts_region          = your_sts_region
+# sts_endpoint        = your_sts_endpoint
+# ec2_iam_mode        = enabled
+
+[Cache]
+cache_size = your_local_cache_size
+path       = your_local_cache_path
+```
+
+The S3-compatible object storage options are configured under \[S3]:
+
+* The bucket option must be set to the name of the bucket that you created in "Create an S3 Bucket".
+* The endpoint option must be set to the endpoint for the S3-compatible object storage.
+* The `aws_access_key_id and aws_secret_access_key` options must be set to the access key ID and secret access key for the S3-compatible object storage.
+* To use a specific IAM role, you must uncomment and set `iam_role_name, sts_region, and sts_endpoint`.
+* To use the IAM role assigned to an EC2 instance, you must uncomment `ec2_iam_mode=enabled`.
+
+The local cache options are configured under \[Cache]:
+
+* The cache\_size option is set to 2 GB by default.
+* The path option is set to `/var/lib/columnstore/storagemanager/cache` by default.
+
+Ensure that the specified path has sufficient storage space for the specified cache size.
 
 ## Start the Enterprise ColumnStore Services
 
@@ -124,21 +163,21 @@ TO 'util_user'@'127.0.0.1';
 
 3. On each Enterprise ColumnStore node, configure the ColumnStore utility user:
 
-```bash
+```
 $ sudo mcsSetConfig CrossEngineSupport Host 127.0.0.1
 ```
 
-```bash
+```
 $ sudo mcsSetConfig CrossEngineSupport Port 3306
 ```
 
-```bash
+```
 $ sudo mcsSetConfig CrossEngineSupport User util_user
 ```
 
 4. On each Enterprise ColumnStore node, set the password:
 
-```bash
+```
 $ sudo mcsSetConfig CrossEngineSupport Password util_user_passwd
 ```
 
@@ -182,7 +221,7 @@ This action is performed on the primary server.
 
 1. Use the [CREATE USER](../../../reference/sql-statements/account-management-sql-statements/create-user.md) statement to create the MaxScale user:
 
-```sql
+```
 CREATE USER 'mxs'@'192.0.2.%'
 IDENTIFIED BY 'mxs_passwd';
 ```
@@ -193,7 +232,7 @@ Ensure that the user account can connect from the IP address of the MaxScale ins
 
 2. Use the [GRANT](../../../reference/sql-statements/account-management-sql-statements/grant.md) statement to grant the privileges required by the router:
 
-```sql
+```
 GRANT SHOW DATABASES ON *.* TO 'mxs'@'192.0.2.%';
 
 GRANT SELECT ON mysql.columns_priv TO 'mxs'@'192.0.2.%';
@@ -537,7 +576,7 @@ $ sudo setenforce enforcing
 
 For example, the file will usually look like this after the change:
 
-```systemd
+```editorconfig
 # This file controls the state of SELinux on the system.
 # SELINUX= can take one of these three values:
 #     enforcing - SELinux security policy is enforced.
@@ -636,7 +675,7 @@ $ sudo firewall-cmd --permanent --add-rich-rule='
 
 4. Reload the runtime configuration:
 
-```
+```bash
 $ sudo firewall-cmd --reload
 ```
 
@@ -680,9 +719,9 @@ $ sudo ufw reload
 
 ## Next Step
 
-Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
+Navigation in the procedure "Deploy ColumnStore Object Storage Topology":
 
-This page was step 4 of 9.
+This page was **step 4 of 9**.
 
 Next: Step 5: Test MariaDB Enterprise Server.
 
