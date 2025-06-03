@@ -3,7 +3,8 @@
 ## About
 
 * [About MariaDB Documentation](README.md)
-  * [Contributing Documentation](about/about-mariadb-documentation/contributing-documentation.md)
+  * [Contributing Documentation](about/about-mariadb-documentation/contributing-documentation/README.md)
+    * [Reporting Documentation Bugs](about/about-mariadb-documentation/contributing-documentation/reporting-documentation-bugs.md)
   * [Documentation Style Guide](about/about-mariadb-documentation/documentation-style-guide.md)
 * [About MariaDB](about/about-mariadb.md)
 * [Contact Us](about/contact-us.md)
@@ -13,7 +14,6 @@
 * [Joining the Community](community/joining-the-community.md)
 * [MariaDB Community](community/community/README.md)
   * [Bug Tracking](community/community/bug-tracking/README.md)
-    * [Reporting Documentation Bugs](community/community/bug-tracking/reporting-documentation-bugs.md)
     * [Reporting Software Bugs](community/community/bug-tracking/reporting-bugs.md)
     * [Bug Processing](community/community/bug-tracking/mariadb-community-bug-processing.md)
     * [Security Bug Fixing](community/community/bug-tracking/mariadb-security-bug-fixing-policy.md)

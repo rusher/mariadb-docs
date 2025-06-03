@@ -4,7 +4,7 @@ icon: check
 
 # Reporting Software Bugs
 
-For reporting documentation bugs specifically, see [Reporting Documentation Bugs](reporting-documentation-bugs.md).
+For reporting documentation bugs specifically, see [Reporting Documentation Bugs](../../../about/about-mariadb-documentation/contributing-documentation/reporting-documentation-bugs.md).
 
 MariaDB's bug and feature tracker is found at [jira.mariadb.org](https://jira.mariadb.org).
 
