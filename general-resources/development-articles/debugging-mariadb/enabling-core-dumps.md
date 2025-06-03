@@ -4,7 +4,7 @@
 
 Core dumps are enabled by default on **Windows**, so **this step can be skipped on Windows** in those versions. See [MDEV-18439](https://jira.mariadb.org/browse/MDEV-18439) for more information.
 
-In order to enable core dumps, you need to set the `[core_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#core_file)` system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files). For example:
+In order to enable core dumps, you need to set the `[core_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#core_file)` system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
 
 ```
 [mariadb]
@@ -87,7 +87,7 @@ Using `sudo systemctl edit mariadb.service` add the contents:
 LimitCORE=infinity
 ```
 
-See [systemd: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd#configuring-the-core-file-size) for more details.
+See [systemd: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd#configuring-the-core-file-size) for more details.
 
 #### Running MariaDB Containers
 
@@ -108,7 +108,7 @@ EOF
 
 The system would have to be restarted for this change to take effect.
 
-See [Configuring Linux for MariaDB: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb#configuring-the-core-file-size) for more details.
+See [Configuring Linux for MariaDB: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb#configuring-the-core-file-size) for more details.
 
 ### Setting the Path on Linux
 
@@ -266,7 +266,7 @@ See the IBM [Core Dump Handler](https://github.com/IBM/core-dump-handler) projec
 
 ## Core Files and Address Sanitizer (ASAN)
 
-If your `mariadbd` binary is built with [Address Sanitizer (ASAN)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan) then it will not be able to generate a core file.
+If your `mariadbd` binary is built with [Address Sanitizer (ASAN)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan) then it will not be able to generate a core file.
 
 ## What's Included in Core Files
 

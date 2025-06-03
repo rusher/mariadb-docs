@@ -20,7 +20,7 @@ MariaDB Community Server 10.6.17, MariaDB Enterprise Server 10.6.16-11 and all o
 
 ### System malloc is not good if there are a lot of allocations of different size.
 
-If [Memory\_used](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#memory_used) and [information\_schema.processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) do not show an increase in memory, but the process still increases in size, then a likely problem is the system memory allocation library (malloc). Replacing malloc with [tcmalloc or jemalloc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/using-mariadb-with-tcmalloc-or-jemalloc) should fix the issue in this case.
+If [Memory\_used](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-status-variables#memory_used) and [information\_schema.processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table) do not show an increase in memory, but the process still increases in size, then a likely problem is the system memory allocation library (malloc). Replacing malloc with [tcmalloc or jemalloc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/using-mariadb-with-tcmalloc-or-jemalloc) should fix the issue in this case.
 
 ## Profiling with the MariaDB server
 
@@ -195,6 +195,6 @@ pprof --pdf /usr/sbin/mariadbd $(ls /var/lib/mysql/pprof/*.heap|sort -V|tail -n 
 
 ## See also
 
-* [Using MariaDB with tcmalloc or jemalloc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/using-mariadb-with-tcmalloc-or-jemalloc)
+* [Using MariaDB with tcmalloc or jemalloc](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/compiling-mariadb-with-extra-modulesoptions/using-mariadb-with-tcmalloc-or-jemalloc)
 
 CC BY-SA / Gnu FDL

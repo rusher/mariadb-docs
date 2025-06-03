@@ -1,27 +1,23 @@
-
 # Installing VM images for testing .deb upgrade between versions
 
-This step creates virtual machine images used to do an important additional
-upgrade test for .debs. Each virtual machine is pre-installed with an older
-version of MariaDB, and the test tries upgrading this version to the newly
+This step creates virtual machine images used to do an important additional\
+upgrade test for .debs. Each virtual machine is pre-installed with an older\
+version of MariaDB, and the test tries upgrading this version to the newly\
 build one (to check that dependencies etc. work out correctly).
 
-
-This step may not be easily possible to replicate exactly for new or updated
-images. For example, when we add a new platform/distro, we will not have the
-same old version of MariaDB available for installation on the new planform. Or
-if needing to re-create an image in the future, the original old .debs used
-before may no longer be available. However, this is not a big problem, as we
-can just use whatever version of MariaDB is available. In fact, while we
-cannot reasonably test every possible upgrade combination between MariaDB
-versions, it is still useful to test upgrades from different versions on
+This step may not be easily possible to replicate exactly for new or updated\
+images. For example, when we add a new platform/distro, we will not have the\
+same old version of MariaDB available for installation on the new planform. Or\
+if needing to re-create an image in the future, the original old .debs used\
+before may no longer be available. However, this is not a big problem, as we\
+can just use whatever version of MariaDB is available. In fact, while we\
+cannot reasonably test every possible upgrade combination between MariaDB\
+versions, it is still useful to test upgrades from different versions on\
 different platforms, to increase coverage a bit.
 
-
-The bulk of the images were installed with the following two loops, using
-packages from the OurDelta repository for [MariaDB 5.1.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5142-release-notes), which was the one
+The bulk of the images were installed with the following two loops, using\
+packages from the OurDelta repository for [MariaDB 5.1.42](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/mariadb-5142-release-notes), which was the one\
 available from there at the time of installation.
-
 
 ```
 for i in "vm-hardy-amd64-install qemu64 hardy" "vm-hardy-i386-install qemu32,-nx hardy" \
@@ -57,12 +53,10 @@ for i in "vm-debian4-amd64-install qemu64 etch /kvm/debian-40r8-amd64-netinst.is
 done
 ```
 
-The Ubuntu 10.04 "lucid" images were installed manually (as no packages for
+The Ubuntu 10.04 "lucid" images were installed manually (as no packages for\
 lucid were available from OurDelta at the time of installation):
 
-
 Create and boot 64-bit lucid upgrade image:
-
 
 ```
 qemu-img create -b vm-lucid-amd64-install.qcow2 -f qcow2 vm-lucid-amd64-upgrade2.qcow2 
@@ -71,21 +65,18 @@ kvm -m 512 -hda vm-lucid-amd64-upgrade2.qcow2 -redir 'tcp:2200::22' -boot c -smp
 
 Create directory inside the image:
 
-
 ```
 mkdir buildbot
 ```
 
 Copy in packages to be installed from outside:
 
-
 ```
 scp -P 2200 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -r /archive/pack/mariadb-5.1-knielsen/build-277/kvm-deb-lucid-amd64/debs buildbot@localhost:buildbot/
 ```
 
-Install the MariaDB packages, remove package dir, and upgrade to latest
+Install the MariaDB packages, remove package dir, and upgrade to latest\
 security fixes:
-
 
 ```
 sudo apt-get update
@@ -98,7 +89,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
 Now the same, but for 32-bit lucid:
 
-
 ```
 qemu-img create -b vm-lucid-i386-install.qcow2 -f qcow2 vm-lucid-i386-upgrade2.qcow2 
 kvm -m 512 -hda vm-lucid-i386-upgrade2.qcow2 -redir 'tcp:2200::22' -boot c -smp 1 -cpu qemu32,-nx -net nic,model=virtio -net user -nographic
@@ -106,21 +96,18 @@ kvm -m 512 -hda vm-lucid-i386-upgrade2.qcow2 -redir 'tcp:2200::22' -boot c -smp 
 
 Create directory inside the image:
 
-
 ```
 mkdir buildbot
 ```
 
 Copy in packages to be installed from outside:
 
-
 ```
 scp -P 2200 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -r /archive/pack/mariadb-5.1-knielsen/build-277/kvm-deb-lucid-x86/debs buildbot@localhost:buildbot/
 ```
 
-Install the MariaDB packages, remove package dir, and upgrade to latest
+Install the MariaDB packages, remove package dir, and upgrade to latest\
 security fixes:
-
 
 ```
 sudo apt-get update
@@ -133,9 +120,7 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
 The Ubuntu 10.10 "maverick" images were likewise installed manually:
 
-
 Create and boot 64-bit maverick upgrade image:
-
 
 ```
 qemu-img create -b vm-maverick-amd64-install.qcow2 -f qcow2 vm-maverick-amd64-upgrade2.qcow2
@@ -155,7 +140,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
 Same for 32-bit maverick:
 
-
 ```
 qemu-img create -b vm-maverick-i386-install.qcow2 -f qcow2 vm-maverick-i386-upgrade2.qcow2
 kvm -m 512 -hda vm-maverick-i386-upgrade2.qcow2 -redir 'tcp:2200::22' -boot c -smp 1 -cpu qemu32,-nx -net nic,model=virtio -net user -nographic
@@ -172,12 +156,10 @@ sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 ```
 
-For Ubuntu 11.04 "natty", mariadb packages were installed from the repository
+For Ubuntu 11.04 "natty", mariadb packages were installed from the repository\
 for the previous version.
 
-
 64-bit Ubuntu natty:
-
 
 ```
 qemu-img create -b vm-natty-amd64-install.qcow2 -f qcow2 vm-natty-amd64-upgrade2.qcow2
@@ -198,7 +180,6 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
 32-bit Ubuntu natty:
 
-
 ```
 qemu-img create -b vm-natty-i386-install.qcow2 -f qcow2 vm-natty-i386-upgrade2.qcow2
 kvm -m 512 -hda vm-natty-i386-upgrade2.qcow2 -redir 'tcp:2200::22' -boot c -smp 1 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -218,6 +199,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 
 For Ubuntu 11.10 "oneiric". The steps performed are listed at: [Buildbot Setup for Virtual Machines - Ubuntu 11.10 "oneiric"](../buildbot-setup-for-virtual-machines-ubuntu/buildbot-setup-for-virtual-machines-ubuntu-1110-oneiric.md) (in the VMs for Upgrade Testing section)
 
-
 CC BY-SA / Gnu FDL
-

@@ -302,7 +302,7 @@ A lot can be done to improve it.
 
 ### Cassandra Storage Engine v2, based on DataStax C++ driver/
 
-[MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) had Cassandra Storage Engine which was developed for Cassandra 1.1.x. Back then, Cassandra provided a Thrift API, and that was what Cassandra-SE used.
+[MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) had Cassandra Storage Engine which was developed for Cassandra 1.1.x. Back then, Cassandra provided a Thrift API, and that was what Cassandra-SE used.
 
 Then, Cassandra 2.0 switched to using a different network protocol (and also changed the data model).
 

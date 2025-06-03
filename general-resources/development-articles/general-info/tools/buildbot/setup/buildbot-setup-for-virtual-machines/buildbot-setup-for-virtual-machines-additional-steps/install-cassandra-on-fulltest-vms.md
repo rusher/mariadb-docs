@@ -1,22 +1,16 @@
-
 # Install Cassandra on Fulltest VMs
 
-CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
-
-
+CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
 Here are the steps I took to install Cassandra on the Fulltest VMs.
 
-
 1. backed up the fulltest VMs with:
-
 
 ```
 rsync -avP /kvm/vms/*fulltest* host:/destination/path/
 ```
 
 1. boot the amd64 fulltest VM:
-
 
 ```
 vm=vm-precise-amd64-fulltest.qcow2
@@ -25,13 +19,11 @@ kvm -m 2048 -hda /kvm/vms/${vm} -boot c -smp 2 -cpu qemu64 -net nic,model=virtio
 
 1. login to the VM:
 
-
 ```
 ssh -t -p 22666 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i /kvm/vms/ssh-keys/id_dsa dbart@localhost
 ```
 
 1. in the VM, install Cassandra:
-
 
 ```
 sudo vi /etc/apt/sources.list.d/cassandra.list
@@ -52,7 +44,6 @@ sudo apt-get install cassandra
 
 1. in the VM, launch the `cassandra-cli` program and test the Cassandra installation:
 
-
 ```
 create keyspace DEMO; 
 use DEMO; 
@@ -69,7 +60,6 @@ quit;
 ```
 
 * Output of the above:
-
 
 ```
 dbart@ubuntu-precise-amd64:~$
@@ -129,13 +119,11 @@ Elapsed time: 53 msec(s).
 
 1. in the VM, shut it down:
 
-
 ```
 sudo shutdown -h now
 ```
 
 1. Do steps 2-6 for `vm-precise-i386-fulltest.qcow2`. The output of the testing step was:
-
 
 ```
 dbart@ubuntu-precise-i386:~$
@@ -195,11 +183,8 @@ Elapsed time: 57 msec(s).
 
 1. on the other build hosts, rsync the files over:
 
-
 ```
 rsync -avP host::kvm/vms/*fulltest* /kvm/vms/
 ```
 
-
 CC BY-SA / Gnu FDL
-

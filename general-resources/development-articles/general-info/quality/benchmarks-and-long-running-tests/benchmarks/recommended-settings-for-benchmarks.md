@@ -38,7 +38,7 @@ This results in all kinds of weird behavior when you run one big process (mysqld
 
 ## Linux Kernel Settings
 
-See [configuring Linux for MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb).
+See [configuring Linux for MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb).
 
 ## InnoDB Settings
 

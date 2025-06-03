@@ -8,7 +8,7 @@ Instructions on how to build a mysqld that contains all the information we need 
 
 _**Note: this text has been extracted into a separate article from**_ [_**Reporting bugs**_](reporting-bugs.md)_**, see its full history there.**_
 
-* Add the [--core-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) option to your /.my.cnf or /etc/my.cnf file under the \[mysqld] tag.
+* Add the [--core-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options) option to your /.my.cnf or /etc/my.cnf file under the \[mysqld] tag.
 * Get the latest [MariaDB code from GitHub](../../contributing-participating/contributing-code.md).
 * Compile MariaDB with the -g compiler flag (Unix).
 * Optionally: with more checking [Compile MariaDB for debugging](../../../development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md) - will cause slowdown.
@@ -54,7 +54,7 @@ ftp> quit
 
 ## See Also
 
-* [Compiling MariaDB from Source](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/compiling-mariadb-from-source).
+* [Compiling MariaDB from Source](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source).
 * [Compiling MariaDB for debugging](../../../development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md)
 * [How to produce a stack trace from a core file](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md)
 

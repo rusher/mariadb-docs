@@ -1,9 +1,6 @@
-
 # Buildbot Setup for Virtual Machines - Ubuntu 11.10 "oneiric"
 
-
 ## Base install
-
 
 ```
 qemu-img create -f qcow2 /kvm/vms/vm-oneiric-amd64-serial.qcow2 8G
@@ -56,14 +53,12 @@ ssh -p 2256 buildbot@localhost 'sudo cp -vi ttyS0.conf /etc/init/; rm -v ttyS0.c
 
 Enabling passwordless sudo:
 
-
 ```
 sudo VISUAL=vi visudo
 # Add line at end: `%sudo ALL=NOPASSWD: ALL'
 ```
 
 Editing /boot/grub/menu.lst:
-
 
 ```
 sudo vi /etc/default/grub
@@ -78,7 +73,6 @@ sudo update-grub
 
 ## VMs for building .debs
 
-
 ```
 for i in '/kvm/vms/vm-oneiric-amd64-serial.qcow2 2255 qemu64' '/kvm/vms/vm-oneiric-i386-serial.qcow2 2256 qemu64' ; do \
   set $i; \
@@ -89,8 +83,7 @@ for i in '/kvm/vms/vm-oneiric-amd64-serial.qcow2 2255 qemu64' '/kvm/vms/vm-oneir
 done
 ```
 
-Install cmake (required for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)) with:
-
+Install cmake (required for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)) with:
 
 ```
 kvm -m 1024 -hda ${vm} -redir tcp:22565::22 -boot c -smp 2 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -108,15 +101,11 @@ sudo /sbin/shutdown -h now
 
 Also:
 
-
 * [Installing the Boost library needed for the OQGraph storage engine](../buildbot-setup-for-virtual-machines-additional-steps/installing-the-boost-library-needed-for-the-oqgraph-storage-engine.md)
-
 
 ## VMs for install testing.
 
-
 See above for how to obtain my.seed and sources.append.
-
 
 ```
 for i in '/kvm/vms/vm-oneiric-amd64-serial.qcow2 2255 qemu64' '/kvm/vms/vm-oneiric-i386-serial.qcow2 2256 qemu64' ; do \
@@ -132,7 +121,6 @@ done
 
 ## VMs for MySQL upgrade testing
 
-
 ```
 for i in '/kvm/vms/vm-oneiric-amd64-install.qcow2 2255 qemu64' '/kvm/vms/vm-oneiric-i386-install.qcow2 2256 qemu64' ; do \
   set $i; \
@@ -144,12 +132,9 @@ done
 
 ## VMs for MariaDB upgrade testing
 
-
-*The steps below are based on the Natty steps on [Installing VM images for testing .deb upgrade between versions](../buildbot-setup-for-virtual-machines-additional-steps/installing-vm-images-for-testing-deb-upgrade-between-versions.md).*
-
+_The steps below are based on the Natty steps on_ [_Installing VM images for testing .deb upgrade between versions_](../buildbot-setup-for-virtual-machines-additional-steps/installing-vm-images-for-testing-deb-upgrade-between-versions.md)_._
 
 64-bit Ubuntu oneiric:
-
 
 ```
 qemu-img create -b vm-oneiric-amd64-install.qcow2 -f qcow2 vm-oneiric-amd64-upgrade2.qcow2
@@ -175,7 +160,6 @@ sudo shutdown -h now
 
 32-bit Ubuntu oneiric:
 
-
 ```
 qemu-img create -b vm-oneiric-i386-install.qcow2 -f qcow2 vm-oneiric-i386-upgrade2.qcow2
 kvm -m 512 -hda vm-oneiric-i386-upgrade2.qcow2 -redir 'tcp:2200::22' -boot c -smp 1 -cpu qemu64 -net nic,model=virtio -net user -nographic
@@ -198,6 +182,4 @@ sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 sudo shutdown -h now
 ```
 
-
 CC BY-SA / Gnu FDL
-

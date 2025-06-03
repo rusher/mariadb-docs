@@ -18,7 +18,7 @@ We are also putting a lot of effort into speeding up MariaDB Server, and to keep
 
 The MariaDB Server source tree is maintained by MariaDB the company and its developers. They are the primary contributors to the MariaDB Server project and the ones who are ultimately responsible for the quality of the code.
 
-MariaDB Server 5.1, MariaDB Server 5.2, and MariaDB Server 5.3 were built off of [MySQL 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility).
+MariaDB Server 5.1, MariaDB Server 5.2, and MariaDB Server 5.3 were built off of [MySQL 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/mariadb-vs-mysql-compatibility).
 
 MariaDB Server 5.5 was a combination of MariaDB Server 5.3 and MySQL 5.5.
 
@@ -29,7 +29,7 @@ can be found on the [MariaDB Server Releases](https://mariadb.com/kb/en/mariadb-
 
 ## Plans
 
-[MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/what-is-mariadb-118) is an upcoming major development release.
+[MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118) is an upcoming major development release.
 
 ### JIRA
 
@@ -44,7 +44,7 @@ to [JIRA](tools/jira.md).
 
 * [Current tasks for 11.8](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(11.8\)%20ORDER%20BY%20priority%20DESC)
 * [11.8 Features/fixes by vote](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20issuetype%20%3D%20Task%20AND%20fixVersion%20in%20\(11.8\)%20ORDER%20BY%20votes%20DESC%2C%20priority%20DESC)
-* [What is MariaDB 11.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/what-is-mariadb-118)
+* [What is MariaDB 11.8?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118)
 * [Plans for MariaDB 11.7](broken-reference)
 * [Plans for MariaDB 11.6](broken-reference)
 
