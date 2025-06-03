@@ -122,7 +122,7 @@ $ sudo systemctl start mariadb-columnstore
 $ sudo systemctl enable mariadb-columnstore
 ```
 
-For additional information, see "Start and Stop Services".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
 
 ## Create User Accounts
 
