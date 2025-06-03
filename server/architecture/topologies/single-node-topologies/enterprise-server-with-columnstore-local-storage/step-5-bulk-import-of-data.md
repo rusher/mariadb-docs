@@ -1,0 +1,80 @@
+# Step 5: Bulk Import of Data
+
+## Overview
+
+This page details step 5 of a 5-step procedure for deploying [Single-Node Enterprise ColumnStore with Local storage](./).
+
+This step bulk imports data to Enterprise ColumnStore.
+
+Interactive commands are detailed. Alternatively, the described operations can be performed using automation.
+
+## Import the Schema
+
+Before data can be imported into the tables, create a matching schema.
+
+**On the primary server**, create the schema:
+
+1. For each database that you are importing, create the database with the [CREATE DATABASE](../../../../reference/sql-statements/data-definition/create/create-database.md) statement:
+
+```sql
+CREATE DATABASE inventory;
+```
+
+2. For each table that you are importing, create the table with the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement:
+
+```sql
+CREATE TABLE inventory.products (
+   product_name varchar(11) NOT NULL DEFAULT '',
+   supplier varchar(128) NOT NULL DEFAULT '',
+   quantity varchar(128) NOT NULL DEFAULT '',
+   unit_cost varchar(128) NOT NULL DEFAULT ''
+) ENGINE=Columnstore DEFAULT CHARSET=utf8;
+```
+
+## Import the Data
+
+Enterprise ColumnStore supports multiple methods to import data into ColumnStore tables.
+
+### cpimport
+
+MariaDB Enterprise ColumnStore includes [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/data-import-with-mariadb-enterprise-columnstore/mariadb-enterprise-columnstore-data-loading-with-cpimport), which is a command-line utility designed to efficiently load data in bulk. Alternative methods are available.
+
+To import your data from a TSV (tab-separated values) file, on the primary server run [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/data-import-with-mariadb-enterprise-columnstore/mariadb-enterprise-columnstore-data-loading-with-cpimport):
+
+```bash
+$ sudo cpimport -s '\t' inventory products /tmp/inventory-products.tsv
+```
+
+### LOAD DATA INFILE
+
+When data is loaded with the [LOAD DATA INFILE](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, MariaDB Enterprise ColumnStore loads the data using [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/data-import-with-mariadb-enterprise-columnstore/mariadb-enterprise-columnstore-data-loading-with-cpimport), which is a command-line utility designed to efficiently load data in bulk. Alternative methods are available.
+
+To import your data from a TSV (tab-separated values) file, on the primary server use [LOAD DATA INFILE](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement:
+
+```sql
+LOAD DATA INFILE '/tmp/inventory-products.tsv'
+INTO TABLE inventory.products;
+```
+
+### Import from Remote Database
+
+MariaDB Enterprise ColumnStore can also import data directly from a remote database. A simple method is to query the table using the [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement, and then pipe the results into [cpimport](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/data-import-with-mariadb-enterprise-columnstore/mariadb-enterprise-columnstore-data-loading-with-cpimport), which is a command-line utility that is designed to efficiently load data in bulk. Alternative methods are available.
+
+To import your data from a remote MariaDB database:
+
+```bash
+$ mariadb --quick \
+   --skip-column-names \
+   --execute="SELECT * FROM inventory.products" \
+   | cpimport -s '\t' inventory products
+```
+
+## Next Step
+
+Navigation in the Single-Node Enterprise ColumnStore topology with Local storage deployment procedure:
+
+This page was step 5 of 5.
+
+This procedure is complete.
+
+Copyright © 2025 MariaDB
