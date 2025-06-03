@@ -365,12 +365,12 @@ We recommend **not** making custom changes to one of the bundled configuration f
    \
    For example:
 
-```
-[mariadb]
-log_error                              = mariadbd.err
-character_set_server                   = utf8
-collation_server                       = utf8_general_ci
-```
+   ```
+   [mariadb]
+   log_error                              = mariadbd.err
+   character_set_server                   = utf8
+   collation_server                       = utf8_general_ci
+   ```
 
 ### Configure Cross Engine Joins
 
@@ -583,6 +583,9 @@ We set SELinux to permissive mode in the [SELinux](community-server-with-columns
 
     ```bash
     $ sudo grep mysqld /var/log/audit/audit.log | audit2allow -M mariadb_local
+    ```
+
+    ```
     Nothing to do
     ```
 4.  If audit events were found, the new SELinux policy can be loaded using `semodule`:
@@ -644,6 +647,9 @@ When you have MariaDB ColumnStore up and running, you should test it to ensure t
 
     ```bash
     $ sudo mariadb
+    ```
+
+    ```
     Welcome to the MariaDB monitor.  Commands end with ; or \g.
     Your MariaDB connection id is 38
     Server version: 10.6.21-MariaDB MariaDB Server
