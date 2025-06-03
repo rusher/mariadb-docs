@@ -1,32 +1,79 @@
-# Restoring Data from Dump Files
+---
+description: Data Restoration Guide
+icon: rabbit-running
+---
 
-If you lose your data in MariaDB, but have been using [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) (previously called mysqldump) to make regular backups of your data in MariaDB, you can use the dump files to restore your data. This is the point of the back-ups, after all. To restore a dump file, it's just a matter of having the mariadb client execute all of the SQL statements that the file contains. There are some things to consider before restoring from a dump file, so read this section all of the way through before restoring. One simple and perhaps clumsy method to restore from a dump file is to enter something like the following:
+# Restoring Data from Dump Files Guide
 
-```
-mariadb --user admin_restore --password < /data/backup/db1.sql
-```
+This guide explains how to restore your MariaDB data from backup files created with `mariadb-dump`. Learn the basic restoration process using the `mariadb` client and a specific technique for selectively restoring a single table while minimizing data loss on other tables.
 
-Again, this is not using [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). The [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) utility is only for making back-up copies, not restoring databases. Instead, you would use the mariadb client, which will read the dump file's content in order to batch execute the SQL statements that it contains. Notice that the redirect for `STDOUT` is not used here, but the redirect for the standard input (`STDIN`); the less-than sign is used since the dump file is an input source. Also, notice that in this example a database isn't specified. That's given within the dump file.
+It's important to understand that `mariadb-dump` is used for creating backup (dump) files, while the `mariadb` client utility is used for restoring data from these files. The dump file contains SQL statements that, when executed, recreate the database structure and/or data.
 
-#### Restoring One Table
+### Basic Restoration Process
 
-The problem with restoring from a dump file is that you may overwrite tables or databases that you wish you hadn't. For instance, your dump file might be a few days old and only one table may have been lost. If you restore all of the databases or all of the tables in a database, you would be restoring the data back to it's state at the time of the backup, a few days before. This could be quite a disaster. This is why dumping by database and table can be handy. However, that could be cumbersome.
+To restore a dump file, you direct the `mariadb` client to execute the SQL statements contained within the file.
 
-A simple and easy method of limiting a restoration would be to create temporarily a user who only has privileges for the table you want to restore. You would enter a [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md) statement like this:
-
-```
-GRANT SELECT
-ON db1.* TO 'admin_restore_temp'@'localhost' 
-IDENTIFIED BY 'its_pwd';
-
-GRANT ALL ON db1.table1
-TO 'admin_restore_temp'@'localhost';
+```bash
+mariadb --user your_username --password < /path/to/your/backupfile.sql
 ```
 
-These two SQL statements allow the temporary user to have the needed [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) privileges on all of the tables of `db1` and `ALL` privileges for the `table1` table. Now when you restore the dump file containing the whole `db1` database, only `table1` will be replaced with the back-up copy. Of course, MariaDB will generate errors. To overlook the errors and to proceed with the restoration of data where no errors are generated (i.e., `table1`), use the `--force` option. Here's what you would enter at the command-line for this situation:
+* Replace `your_username` with your MariaDB username and `/path/to/your/backupfile.sql` with the actual path to your dump file.
+* You will be prompted for the password for `your_username`.
+* The `<` symbol is a standard input (STDIN) redirect, feeding the contents of `backupfile.sql` to the `mariadb` client.
+*   Often, the dump file itself contains `CREATE DATABASE IF NOT EXISTS` and `USE database_name;` statements, so a specific database doesn't always need to be named on the command line during restore. If your dump file restores to a specific database, ensure that user has permissions to it. If the dump file does _not_ specify a database, you might need to create the database first and then run:
 
-```
-mariadb --user admin_restore_temp --password --force < /data/backup/db1.sql
-```
+    ```bash
+    mariadb --user your_username --password your_database_name < /path/to/your/backupfile.sql
+    ```
 
-CC BY-SA / Gnu FDL
+### Important Considerations Before Restoring
+
+* **Data Overwriting:** Restoring a dump file will execute the SQL statements within it. If the dump file contains `DROP TABLE` and `CREATE TABLE` statements (common for full backups), existing tables with the same names will be dropped and recreated, leading to loss of any data added or changed since the backup was made.
+* **Backup Age:** If your dump file is several days old, restoring it entirely could revert all data in the affected tables/databases to that older state. This can be disastrous if only a small portion of data was lost and the rest has been actively updated.
+
+Always ensure you understand the contents of the dump file and the potential impact before initiating a restore, especially on a production system. Consider testing the restore on a non-production environment first if possible.
+
+### Restoring a Single Table Selectively
+
+If only one table has been lost or corrupted and your backup file contains an entire database (or multiple tables), a full restore might overwrite recent, valid data in other tables. Here’s a method to restore only a specific table using a temporary user with restricted privileges:
+
+1. **Create a Temporary User:** Create a MariaDB user specifically for this restore operation.
+2.  **Grant Limited Privileges:**
+
+    * Grant this temporary user the minimal privileges needed for the dump file to execute up to the point of restoring your target table. This might be `SELECT` on all tables in the database if the dump file checks other tables, or simply the ability to `USE` the database.
+    * Then, grant `ALL PRIVILEGES` (or specific necessary privileges like `CREATE`, `DROP`, `INSERT`, `SELECT`) _only_ on the specific table you want to restore.
+
+    Example SQL to create a temporary user and grant permissions (replace placeholders):
+
+    ```sql
+    -- Connect to MariaDB as an administrative user (e.g., root)
+    CREATE USER 'admin_restore_temp'@'localhost' IDENTIFIED BY 'its_very_secure_pwd';
+
+    -- Grant general SELECT on the database (might be needed if dump file structure requires it)
+    -- Or, if not needed, ensure the user can at least USE the database.
+    GRANT SELECT ON your_database_name.* TO 'admin_restore_temp'@'localhost';
+
+    -- Grant full privileges ONLY on the table to be restored
+    GRANT ALL PRIVILEGES ON your_database_name.table_to_restore TO 'admin_restore_temp'@'localhost';
+
+    FLUSH PRIVILEGES;
+    ```
+3.  Restore Using the Temporary User and `--force`:
+
+    Use the mariadb client with the temporary user and the --force option. The --force option tells MariaDB to continue executing statements in the dump file even if some SQL errors occur. Errors will occur for operations on tables where admin\_restore\_temp lacks permissions, but operations on table\_to\_restore (where permissions were granted) should succeed.
+
+    Bash
+
+    ```sql
+    mariadb --user admin_restore_temp --password --force your_database_name < /path/to/your/fulldumpfile.sql
+    ```
+
+    You will be prompted for the password of `admin_restore_temp`.
+4. **Verify Restoration:** Check that `table_to_restore` has been correctly restored.
+5.  **Clean Up:** Drop the temporary user once the restoration is confirmed:
+
+    ```sql
+    DROP USER 'admin_restore_temp'@'localhost';
+    ```
+
+This method helps to isolate the restore operation to the intended table, protecting other data from being inadvertently reverted to an older state.

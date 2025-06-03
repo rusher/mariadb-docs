@@ -1,146 +1,142 @@
+---
+description: Modifying Dates and Times Guide
+icon: rabbit-running
+---
+
 # Changing Times in MariaDB
 
-The article entitled, [Doing Time with MariaDB](https://mariadb.com/kb/en/doing-time-with-mariadb/) dealt with time and date columns in MariaDB and how to selectively retrieve and format time and date elements. This article will go a little further by exploring special functions that are available in MariaDB to modify time and date.
+This guide explores MariaDB functions for performing calculations and modifications on date and time values. Learn to use functions like `DATE_ADD`, `DATE_SUB`, `TIME_TO_SEC`, and `SEC_TO_TIME` to accurately add or subtract intervals and manage date/time changes that cross midnight or month/year boundaries.
 
-**The Nature of Time**
+_(For foundational knowledge on date and time data types and basic retrieval, please refer to the "Date and Time Handling Guide".)_
 
-For most of us, there is a morning and an afternoon in each day. Days are measured in either two twelve-hour blocks or one twenty-four-hour block. There are twelve months in a year, with each month consisting of thirty or thirty-one days. The only exception is the month of February which contains twenty-eight days usually, but once every four years it contains twenty-nine. While this all may be rather natural, putting it into a computer program can make it seem very unnatural and frustrating.
+### Calculating Time Across Midnight
 
-For the scenario in this article we have a MariaDB database in which customers enter work requests through the web. When they enter a trouble ticket, a record is entered into a MariaDB table called, tickets. This record contains several fields, one of which is the date that the ticket was entered called ticket\_date. Another contains the time the ticket was entered. It's called simply, entered. Yet another column is called promised; it's the time that the customer was promised that their problem would be resolved. Both the entered and the promised columns are time data type columns. The value of entered is determined from the current time of the server. The value of promised is determined by adding a number of hours to the value of entered, depending on the urgency of the ticket set by the customer. For instance, tickets marked "ASAP" are to be completed within two hours according to our company's policy. This all works nicely in testing, but occasionally customers create tickets at odd times and on odd days.
+When adding hours to a `TIME` value, calculations might exceed 24 hours. For example, if a task is entered at 23:00 and is promised 2 hours later, a simple addition can be problematic.
 
-**Around the Clock**
+Consider an `INSERT` statement for a `tickets` table with `entered` and `promised` `TIME` columns:
 
-Setting aside the potential problems for a moment, let's look at a simple example of how we might add tickets. Suppose we wanted to write a CGI script (in Perl or PHP) that will allow users to create tickets on-line any time. We might use the following SQL statement in our script:
+SQL
 
-```
-INSERT INTO tickets
-(client_id, urgency, trouble,
-ticket_date, entered, promised)
-VALUES('$client_id', '$urgency', '$trouble',
-CURDATE(), CURTIME(),
-SEC_TO_TIME(TIME_TO_SEC(CURTIME()) + 7200));
-```
-
-If you're unfamiliar with [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements and the use of script variables (e.g., $client\_id), you may want to go back and read an earlier article ([MariaDB Basics](../../kb/en/mariadb-basics/)) in this series which explains both. For the purposes of this article, however, let's focus on the minor formula in the SQL statement above for calculating the promised time, the last line. The [TIME\_TO\_SEC( )](../reference/sql-functions/date-time-functions/time_to_sec.md) function converts a time to seconds so that a calculation may be performed. In this case, the current time is converted to seconds. The formula above then adds 7200 seconds (which is two hours) to that. In order to insert the seconds sum into a time column (i.e., promised), it needs to be converted to a time format. Hence, the calculation is wrapped up in the [SEC\_TO\_TIME( )](../reference/sql-functions/date-time-functions/sec_to_time.md) function.
-
-As nice as the SQL statement above is, a problem arises when a customer runs it at 11:00 p.m (or 23:00 in MariaDB time) and the promised time is to be two hours later. The SQL statement above will calculate a promised time of 25:00. What time is that in human or computer terms? As humans, we know that it's meant to be 1:00 a.m., but MariaDB will need this clarified. One solution would be to place the time formula above inside of an IF clause in MariaDB. To do this, the last line of the SQL statement would be replaced with these lines:
-
-```
-...
-IF((TIME_TO_SEC(CURTIME()) + 7200) < 86400,
-SEC_TO_TIME(TIME_TO_SEC(CURTIME()) + 7200),
-SEC_TO_TIME((TIME_TO_SEC(CURTIME()) + 7200) - 86400)));
+```sql
+-- Example: Calculating a promised time 2 hours (7200 seconds) from current time
+INSERT INTO tickets (client_id, urgency, trouble, ticket_date, entered, promised)
+VALUES ('some_client', 'ASAP', 'Issue details',
+        CURDATE(), CURTIME(),
+        SEC_TO_TIME(TIME_TO_SEC(CURTIME()) + 7200));
 ```
 
-The first element in the IF clause is the test. The second piece is the value used if the test passes. The third is the value if the test fails. So, if the total seconds is less than 86,400 (i.e., the number of seconds in one day), then the total seconds of the current time, converted to the time format is to be used. Otherwise, the total seconds of the current time minus 86,400 seconds, converted to the time format is to be used. Incidentally, there's an extra closing parenthesis at the end of this SQL statement excerpt because there was an opening one as part of the `VALUES` clause that's not shown here. Although the statement above works, it's a bit excessive and can be accomplished a little more succinctly if one reconsiders the purpose of the IF clause.
+* `TIME_TO_SEC(time)` converts a time value to seconds.
+* `SEC_TO_TIME(seconds)` converts seconds back to a time format (`HHH:MM:SS`).
 
-What we're trying to determine in the IF clause is the number of seconds into the day in which the work was promised to be done, meaning the excess amount of time of the day (i.e., one hour). For such a calculation, the modulo division operator (i.e., the `%`) can be used. The modulo division operator will give the remainder of a division. For instance, the result of `SELECT 14 % 5;` is `4`. That is to say, 5 goes into 14 two complete times with 4 left over. As another example, the result of `SELECT 3 % 5;` is 3; that is to say, 5 goes into 3 zero times with 3 left over. Using this arithmetic operator in the time formula above, we can eliminate the IF clause and use the following to accomplish our task:
+If `CURTIME()` is `23:00:00` (82,800 seconds), `82800 + 7200 = 90000` seconds. `SEC_TO_TIME(90000)` would result in `25:00:00`. While MariaDB can store this, it doesn't represent a standard clock time for the next day.
 
-```
-...
-SEC_TO_TIME((TIME_TO_SEC(CURTIME()) + 7200) % 86400));
-```
+Modulo Arithmetic for Time Rollover:
 
-If the current time is 23:00, then the time in seconds will be 82,800. The formula above will add 7200 to 82,800 to make 90,000 seconds. The modulo division operator will divide 86,400 into 90,000 one time, giving a remainder of 3600 seconds. The SEC\_TO\_TIME function will then convert 3600 seconds to one hour or 1:00 a.m.
+To handle time wrapping around the 24-hour clock (86,400 seconds in a day) for TIME columns, use the modulo operator (%):
 
-**Today or Tomorrow?**
-
-There is a problem with the results from the formula at the end of the previous section. If the customer is promised 1:00 a.m., is that time today or tomorrow? Again, as humans we know that since the promised time must be after the entered time, it must be 1:00 a.m. on the following day. Since computers don't make these assumptions, though, we'll have to make some adjustments to the tickets table and the SQL statement. To be able to record the date and time in each column, we'll first change the column types of entered and promised from time to datetime. We'll do the following SQL statements to migrate the data and to clean up the table:
-
-```
-ALTER TABLE tickets,
-CHANGE COLUMN entered entered_old TIME,
-CHANGE COLUMN promised promised_old TIME,
-ADD COLUMN entered DATETIME,
-ADD COLUMN promised DATETIME;
-
-UPDATE tickets
-SET entered = CONCAT(ticket_date, ' ', entered_old),
-promised = CONCAT(ticket_date, ' ', promised_old);
-
-ALTER TABLE tickets,
-DROP COLUMN entered_old,
-DROP COLUMN promised_old,
-DROP COLUMN ticket_date;
+```sql
+-- Corrected calculation for 'promised' TIME, wraps around 24 hours
+SEC_TO_TIME((TIME_TO_SEC(CURTIME()) + 7200) % 86400)
 ```
 
-The first SQL statement above alters the table to change the names of the time columns temporarily and to add the new columns with datetime types. If we were instead just to change the existing time columns to datetime types without this two step process, the data would be clobbered and reset to all zeros. The next SQL statement copies the values of the ticket\_date column and pastes it together with the value of one of the old time columns to come up with the new date and time value for the entered and promised dates and times. The flaw in this statement, of course, is that it doesn't deal with the problems with some promised times that the previous layout caused. In fact, it reinforces it by giving a 1:00 a.m. promised time the date of the entered time. This will either have to be fixed manually if it's important to the developer, or with a script that will compare the two time columns. Either way, it's a little out of the scope of this article, so we'll move on. The last SQL statement above deletes the old time columns and the old date column now that the data has been migrated. By the way, it's a good practice to backup the data before altering a table. Also, you probably would run a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement before the last SQL statement above to check the migrated data before dropping the old columns.
+If current time is 23:00, `(82800 + 7200) % 86400` becomes `90000 % 86400`, which is `3600` seconds. `SEC_TO_TIME(3600)` correctly results in `01:00:00`.
 
-Having changed the column types, we can now use the function [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md), which can deal with times that exceed twenty-four hours so that the problem with times straddling the midnight hour won't reoccur. Therefore, our on-going SQL statement becomes this:
+### Tracking Date Changes with Time: Using `DATETIME`
 
-```
-INSERT INTO tickets
-(client_id, urgency, trouble,
-entered, promised)
-VALUES('$client_id', '$urgency', '$trouble',
-NOW(),
-DATE_ADD(NOW(), INTERVAL 2 HOUR));
-```
+The modulo arithmetic above gives the correct time of day but doesn't indicate if the promised time falls on the next calendar day. For calculations where the date might change, it's essential to use `DATETIME` (or `TIMESTAMP`) data types.
 
-First notice that the field ticket\_date was eliminated and [CURTIME()](../reference/sql-functions/date-time-functions/curtime.md) was replaced with [NOW( )](../reference/sql-functions/date-time-functions/now.md), which provides the date and time in one. In the last line we see [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md): an interval of two hours is added to the date and time now (or rather when the record is created). If the time rolls into the next day, then the date is advanced by one and the correct hour is set accordingly.
+If your table initially used separate `DATE` and `TIME` columns (e.g., `ticket_date`, `entered_time`, `promised_time`), you would typically alter the table to use `DATETIME` columns (e.g., `entered_datetime`, `promised_datetime`) to store both date and time information accurately. This often involves:
 
-The [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md) function will also allow for the addition of minutes. The directive `HOUR` would be replaced with `MINUTE`. To add both hours and minutes (e.g., two hours and thirty minutes), the last line of the SQL statement above could read like this:
+1. Adding new `DATETIME` columns.
+2. Populating them by combining the old date and time columns (e.g., using `CONCAT(ticket_date, ' ', entered_time)`).
+3. Dropping the old separate date and time columns. _(Always back up your data before such structural changes.)_
 
-```
-...
-DATE_ADD(NOW(), INTERVAL '2:30' HOUR_MINUTE));
-```
+With `DATETIME` columns, `NOW()` can be used to get the current date and time.
 
-If the time in which the statement is run is 11:00 p.m., the result would be 1:30 a.m. on the next day.
+### Adding Durations with `DATE_ADD`
 
-**Around the Calendar**
+The `DATE_ADD(date, INTERVAL expr unit)` function is the most robust way to add a duration to a date, time, or datetime value. It correctly handles rollovers across days, months, and years.
 
-The dilemma that can occur with calculations involving hours that wrap around the clock, can similarly occur with calculations involving days that roll into a new month. This problem was fairly easy to resolve with an arithmetic operator when dealing with a constant like the number of seconds in a day. However, a formula to deal with the various number of days in each month would be very lengthy. For instance, if we were simply to add five days to the date February 27, we would get February 32. Imagine trying to create an SQL statement to figure out whether that's supposed to be March 1, 2, 3, or 4--depending on whether the previous month is a regular month with 30 or 31 days, or the one irregular month with 28 or 29 days, depending on the year.
+* `date`: A `DATE`, `DATETIME`, or `TIME` value.
+* `expr`: The value of the interval to add.
+* `unit`: The unit of the interval (e.g., `HOUR`, `MINUTE`, `DAY`, `MONTH`, `YEAR`, etc.).
 
-Fortunately (as you probably have already guessed), [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md) will solve the month dilemma, as well. If instead of promising that tickets will be resolved within a couple hours of the time they are entered, we promise resolution within five days, the SQL statement would look like this:
+Adding Hours (handles date change):
 
-```
-INSERT INTO tickets
-(client_id, urgency, trouble,
-entered, promised)
-VALUES('$client_id', '$urgency', '$trouble',
-NOW(),
-DATE_ADD(NOW(), INTERVAL 5 DAY));
+If entered and promised are DATETIME columns:
+
+```sql
+INSERT INTO tickets (client_id, urgency, trouble, entered, promised)
+VALUES ('some_client', 'ASAP', 'Issue details',
+        NOW(),
+        DATE_ADD(NOW(), INTERVAL 2 HOUR));
 ```
 
-If this statement is run on February 27, then the value of promised would be March 3 or 4, depending on whether it is a leap year. Which one will be determined by the [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md) function, requiring no fancy formula.
+If `NOW()` is `2025-06-03 23:00:00`, `promised` will correctly be `2025-06-04 01:00:00`.
 
-Just as hours and minutes can be mixed with [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md), days and hours can be mixed, as well. To make the value of promised two days and six hours from now, the last line of the SQL statement above would read like this:
+Adding Combined Hours and Minutes:
 
-```
-...
-DATE_ADD(NOW(), INTERVAL '2 6' DAY_HOUR));
-```
+Use HOUR\_MINUTE as the unit. The expr is a string 'hours:minutes'.
 
-The function [DATE\_ADD( )](../reference/sql-functions/date-time-functions/date_add.md) will also allow the addition of months and of years. For instance, to increase the date by one year and two months, the SQL statement would be adjusted to look like this:
-
-```
-...
-DATE_ADD(NOW(), INTERVAL '1 2' YEAR_MONTH));
+```sql
+-- Add 2 hours and 30 minutes
+DATE_ADD(NOW(), INTERVAL '2:30' HOUR_MINUTE)
 ```
 
-This increases the year by one and the month by two. These intervals have no effect on time or day values, though. So, if the value of [NOW( )](../reference/sql-functions/date-time-functions/now.md) is `2017-09-15 23:00`, then the value of promised would become 2018-11-15 23:00, regardless of whether next year is a leap year and regardless of the number of days in each intervening month.
+If `NOW()` is `2025-06-03 23:00:00`, this results in `2025-06-04 01:30:00`.
 
-**Stepping Back**
+### Date Calculations Across Months and Years with `DATE_ADD`
 
-It stands to reason that if one wants to add days to the current date, then one will want to subtract days in an equally agreeable manner. For subtracting days we can still use the DATE\_ADD function. Just put a negative sign in front of the interval value like this:
+`DATE_ADD` also correctly handles date changes across month and year boundaries, including leap years.
 
-```
-...
-DATE_ADD(NOW(), INTERVAL -5 DAY));
-```
+**Adding Days:**
 
-This will give a value five days before the current date. An alternative would be to use the [DATE\_SUB( )](../reference/sql-functions/date-time-functions/date_sub.md) function which subtracts from the date given. The above amendment (subtracting five days from the current date) could be entered like so:
-
-```
-...
-DATE_SUB(NOW(), INTERVAL 5 DAY));
+```sql
+-- Add 5 days
+DATE_ADD(NOW(), INTERVAL 5 DAY)
 ```
 
-Notice that the 5 is not preceded by a negative sign. If it were, it would have the effect of adding five days.
+If `NOW()` is `2025-02-27`, this would result in `2025-03-04` (assuming 2025 is not a leap year).
 
-**Conclusion**
+Adding Combined Days and Hours:
 
-This article along with the previous one on time and date in MariaDB in no way exhaust the topic. There are many more functions and tricks to manipulating temporal values in MariaDB, not to mention what can be done with the extension of a script using a programming language like PHP. Plus, new functions are occasionally being added to MariaDB.
+Use DAY\_HOUR as the unit. The expr is a string 'days hours'.
 
-CC BY-SA / Gnu FDL
+```sql
+-- Add 2 days and 6 hours
+DATE_ADD(NOW(), INTERVAL '2 6' DAY_HOUR)
+```
+
+Adding Combined Years and Months:
+
+Use YEAR\_MONTH as the unit. The expr is a string 'years-months'.
+
+```sql
+-- Add 1 year and 2 months
+DATE_ADD(NOW(), INTERVAL '1-2' YEAR_MONTH) -- Note: Original text used '1 2', '1-2' is common for YEAR_MONTH
+```
+
+If `NOW()` is `2025-09-15 23:00:00`, this results in `2026-11-15 23:00:00`. This type of interval typically does not affect the day or time components directly, only the year and month.
+
+### Subtracting Durations
+
+Using DATE\_ADD with a Negative Interval:
+
+You can subtract durations by providing a negative value for expr.
+
+```sql
+-- Subtract 5 days
+DATE_ADD(NOW(), INTERVAL -5 DAY)
+```
+
+Using DATE\_SUB(date, INTERVAL expr unit):
+
+This function is specifically for subtracting durations.
+
+```sql
+-- Subtract 5 days
+DATE_SUB(NOW(), INTERVAL 5 DAY)
+```
+
+Note: With `DATE_SUB`, `expr` is positive for subtraction. A negative `expr` would result in addition.
+

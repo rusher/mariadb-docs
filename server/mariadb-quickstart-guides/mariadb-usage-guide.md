@@ -1,61 +1,88 @@
-# A MariaDB Primer
+---
+description: MariaDB Primer
+icon: rabbit-running
+---
 
-This primer is designed to teach you the basics of getting information into and out of an existing MariaDB database using the [mariadb](../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client program. It's not a complete reference and will not touch on any advanced topics. It is just a quick jump-start into using MariaDB.
+# A MariaDB Primer Guide
 
-#### Logging into MariaDB
+This primer offers a quick jump-start for beginners using an existing MariaDB database via the `mariadb` command-line client. Learn how to log in, understand basic database concepts, and perform essential SQL operations like creating tables, inserting data, and retrieving or modifying records.
 
-Log into your MariaDB server from the command-line like so:
+### Logging into MariaDB
 
-```
+To begin, log into your MariaDB server from your system's command-line:
+
+```bash
 mariadb -u user_name -p -h ip_address db_name
 ```
 
-Replace _user\_name_ with your database username. Replace _ip\_address_ with the host name or address of your server. If you're accessing MariaDB from the same server you're logged into, then don't include `-h` and the _ip\_address_. Replace _db\_name_ with the name of the database you want to access (such as _test_, which sometimes comes already created for testing purposes - note that Windows does not create this database, and some setups may also have removed the `test` database by running [mariadb-secure-installation](../clients-and-utilities/mariadb-secure-installation.md), in which case you can leave the _db\_name_ out).
+* Replace `user_name` with your MariaDB username.
+* Replace `ip_address` with the hostname or IP address of your MariaDB server. If you are accessing MariaDB from the same server you're logged into (i.e., locally), you can usually omit the `-h ip_address` part.
+* Replace `db_name` with the name of the database you wish to access (e.g., `test`). Some setups may have a `test` database by default; others might not, or it might have been removed (e.g., by `mariadb-secure-installation`). If unsure, or if you want to connect without selecting a specific database initially, you can omit `db_name`.
 
-When prompted to enter your password, enter it. If your login is successful you should see something that looks similar to this:
+You will be prompted to enter your password. If your login is successful, you will see a prompt similar to this:
 
-```
+```bash
 MariaDB [test]>
 ```
 
-This is where you will enter in all of your SQL statements. More about those later. For now, let's look at the components of the prompt: The "MariaDB" part means you that you are connected to a MariaDB database server. The word between the brackets is the name of your default database, the _test_ database in this example.
+The "MariaDB" indicates you are connected to a MariaDB server. The name within the brackets (e.g., `test`) is your current default database. If no database was specified or successfully connected to, it might show `[(none)]`.
 
-#### The Basics of a Database
+### Understanding Database Basics and Setup
 
-To make changes to a database or to retrieve data, you will need to enter an SQL statement. SQL stands for Structured Query Language. An SQL statement that requests data is called a query. Databases store information in tables. They're are similar to spreadsheets, but much more efficient at managing data.
+SQL (Structured Query Language): This is the language used to interact with MariaDB. An SQL statement that requests data is called a query.
 
-Note that the _test_ database may not contain any data yet. If you want to follow along with the primer, copy and paste the following into the [mariadb](../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client. This will create the tables we will use and add some data to them. Don't worry about understanding them yet; we'll get to that later.
+Tables: Databases store information in tables, which are structured like spreadsheets with rows and columns, but are much more efficient for data management.
 
-```
+Example Setup:
+
+If the test database is empty or doesn't exist, you can run the following SQL statements to create and populate tables for the examples in this primer. Copy and paste these into the mariadb client prompt.
+
+```sql
 CREATE DATABASE IF NOT EXISTS test;
-
 USE test;
 
 CREATE TABLE IF NOT EXISTS books (
-  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT, 
-  Title VARCHAR(100) NOT NULL, 
-  SeriesID INT, AuthorID INT);
+  BookID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  Title VARCHAR(100) NOT NULL,
+  SeriesID INT,
+  AuthorID INT
+);
 
-CREATE TABLE IF NOT EXISTS authors 
-(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT);
+CREATE TABLE IF NOT EXISTS authors (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+  -- You would typically add more columns like name, etc.
+);
 
-CREATE TABLE IF NOT EXISTS series 
-(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT);
+CREATE TABLE IF NOT EXISTS series (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT
+  -- You would typically add more columns like series_name, etc.
+);
 
-INSERT INTO books (Title,SeriesID,AuthorID) 
-VALUES('The Fellowship of the Ring',1,1), 
-      ('The Two Towers',1,1), ('The Return of the King',1,1),  
-      ('The Sum of All Men',2,2), ('Brotherhood of the Wolf',2,2), 
-      ('Wizardborn',2,2), ('The Hobbbit',0,1);
+INSERT INTO books (Title, SeriesID, AuthorID) VALUES
+  ('The Fellowship of the Ring', 1, 1),
+  ('The Two Towers', 1, 1),
+  ('The Return of the King', 1, 1),
+  ('The Sum of All Men', 2, 2),
+  ('Brotherhood of the Wolf', 2, 2),
+  ('Wizardborn', 2, 2),
+  ('The Hobbbit', 0, 1); -- Note: "Hobbbit" is intentionally misspelled for a later example
 ```
 
-Notice the semi-colons used above. The [mariadb](../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client lets you enter very complex SQL statements over multiple lines. It won't send an SQL statement until you type a semi-colon and hit \[Enter].
+* **Semicolons (`;`):** The `mariadb` client allows complex SQL statements over multiple lines. It sends the statement to the server for execution only after you type a semicolon (`;`) and press \[Enter].
 
-Let's look at what you've done so far. Enter the following:
+### Exploring Your Database Structure
 
-```
+Listing Tables:
+
+To see the tables in your current database:
+
+```sql
 SHOW TABLES;
+```
 
+**Output (example):**
+
+```sql
 +----------------+
 | Tables_in_test |
 +----------------+
@@ -66,11 +93,17 @@ SHOW TABLES;
 3 rows in set (0.00 sec)
 ```
 
-Notice that this displays a list of the tables in the database. If you didn't already have tables in your `test` database, your results should look the same as above. Let's now enter the following to get information about one of these tables:
+Describing a Table:
 
-```
+To get information about the columns in a table (like their names and types):
+
+```sql
 DESCRIBE books;
+```
 
+**Output (example):**
+
+```sql
 +----------+--------------+------+-----+---------+----------------+
 | Field    | Type         | Null | Key | Default | Extra          |
 +----------+--------------+------+-----+---------+----------------+
@@ -81,13 +114,19 @@ DESCRIBE books;
 +----------+--------------+------+-----+---------+----------------+
 ```
 
-The main bit of information of interest to us is the _Field_ column. The other columns provide useful information about the structure and type of data in the database, but the _Field_ column gives us the names, which is needed to retrieve data from the table.
+The `Field` column lists the column names, which you'll need to retrieve specific data.
 
-Let's retrieve data from the `books` table. We'll do so by executing a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement like so:
+### Retrieving Data (SELECT)
 
-```
+To retrieve data from a table, use the `SELECT` statement.
+
+```sql
 SELECT * FROM books;
+```
 
+* The asterisk (`*`) is a wildcard meaning "all columns." **Output (example):**
+
+```sql
 +--------+----------------------------+----------+----------+
 | BookID | Title                      | SeriesID | AuthorID |
 +--------+----------------------------+----------+----------+
@@ -102,48 +141,47 @@ SELECT * FROM books;
 7 rows in set (0.00 sec)
 ```
 
-This SQL statement or query asks the database to show us all of the data in the `books` table. The wildcard ('`*`') character indicates to select all columns.
+### Adding Data (INSERT)
 
-#### Inserting Data
+To add new rows to a table, use the `INSERT` statement.
 
-Suppose now that we want to add another book to this table. We'll add the book, _Lair of Bones_. To insert data into a table, you would use the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. To insert information on a book, we would enter something like this:
-
-```
+```sql
 INSERT INTO books (Title, SeriesID, AuthorID)
 VALUES ("Lair of Bones", 2, 2);
+```
 
+* After `INSERT INTO table_name`, list the columns you are providing data for in parentheses.
+* The `VALUES` keyword is followed by a list of values in parentheses, in the same order as the listed columns. **Output:**
+
+```sql
 Query OK, 1 row affected (0.00 sec)
 ```
 
-Notice that we put a list of columns in parentheses after the name of the table, then we enter the keyword `VALUES` followed by a list of values in parentheses--in the same order as the columns were listed. We could put the columns in a different order, as long as the values are in the same order as we list the columns. Notice the message that was returned indicates that the execution of the SQL statement went fine and one row was entered.
+You can run `SELECT * FROM books;` again to see the newly added row.
 
-Execute the following SQL statement again and see what results are returned:
+### Modifying Data (UPDATE)
 
-```
-SELECT * FROM books;
-```
+To change existing data in a table, use the `UPDATE` statement. Let's correct the spelling of "The Hobbbit".
 
-You should see the data you just entered on the last row of the results. In looking at the data for the other books, suppose we notice that the title of the seventh book is spelled wrong. It should be spelled _The Hobbit_, not _The Hobbbit_. We will need to update the data for that row.
-
-#### Modifying Data
-
-To change data in a table, you will use the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. Let's change the spelling of the book mentioned above. To do this, enter the following:
-
-```
-UPDATE books 
-SET Title = "The Hobbit" 
+```sql
+UPDATE books
+SET Title = "The Hobbit"
 WHERE BookID = 7;
+```
 
+* `SET Title = "The Hobbit"` specifies the column to change and its new value.
+* `WHERE BookID = 7` is crucial; it specifies _which row(s)_ to update. Without a `WHERE` clause, `UPDATE` would change _all_ rows in the table. **Output:**
+
+```sql
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 ```
 
-Notice the syntax of this SQL statement. The `SET` clause is where you list the columns and the values to set them. The `WHERE` clause says that you want to update only rows in which the `BookID` column has a value of `7`, of which there are only one. You can see from the message it returned that one row matched the `WHERE` clause and one row was changed. There are no warnings because everything went fine. Execute the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) from earlier to see that the data changed.
+Run `SELECT * FROM books WHERE BookID = 7;` to see the correction.
 
-As you can see, using MariaDB isn't very difficult. You just have to understand the syntax of SQL since it doesn't allow for typing mistakes or things in the wrong order or other deviations.
+Using MariaDB involves understanding SQL syntax. It doesn't allow for typing mistakes or clauses in the wrong order, but with practice, it becomes straightforward.
 
-#### See Also
+### See Also
 
-* [MariaDB Basics](../../kb/en/mariadb-basics/)
+* [MariaDB Basics](https://www.google.com/search?q=link_to_MariaDB_Basics_docs)
 
-CC BY-SA / Gnu FDL
