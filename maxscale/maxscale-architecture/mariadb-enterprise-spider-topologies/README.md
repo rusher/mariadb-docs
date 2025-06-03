@@ -1,6 +1,4 @@
-# mariadb-enterprise-spider-topologies
-
-## MariaDB Enterprise Spider Topologies
+# MariaDB Enterprise Spider Topologies
 
 ## Overview
 
