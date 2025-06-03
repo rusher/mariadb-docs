@@ -1,4 +1,4 @@
-# Reporting Documentation Bugs
+# Reporting Documentation Issues
 
 ## Bug Reports
 
@@ -19,12 +19,12 @@ If you find issues in the documentation, please report them:
 
 This is a super quick way to provide feedback or report issues in the documentation. However, it's one-way communication — we can't provide feedback to you, since we don't know who you are. :innocent:
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (1).png" alt="Screenshot of the GitBook rating system. One of the smiley icons is selected, which opens a text field to provide feedback. Rating and feedback are sent with a Submit button." width="223"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1).png" alt="Screenshot of the GitBook rating system. One of the smiley icons is selected, which opens a text field to provide feedback. Rating and feedback are sent with a Submit button." width="223"><figcaption></figcaption></figure></div>
 
 ### MariaDB Community Slack
 
 Join the `#documentation` channel in [MariaDB Community Slack](https://r.mariadb.com/join-community-slack). This allows for more detailed feedback or reports, and naturally provides two-way communication.
 
-<div align="left"><figure><img src="../../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
+<div align="left"><figure><img src="../../.gitbook/assets/image (1) (1).png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 CC BY-SA / Gnu FDL

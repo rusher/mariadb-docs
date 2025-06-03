@@ -3,9 +3,9 @@
 ## About
 
 * [About MariaDB Documentation](README.md)
-  * [Contributing Documentation](about/about-mariadb-documentation/contributing-documentation/README.md)
-    * [Reporting Documentation Bugs](about/about-mariadb-documentation/contributing-documentation/reporting-documentation-bugs.md)
+  * [Contributing Documentation](about/about-mariadb-documentation/contributing-documentation.md)
   * [Documentation Style Guide](about/about-mariadb-documentation/documentation-style-guide.md)
+  * [Reporting Documentation Issues](about/about-mariadb-documentation/reporting-documentation-bugs.md)
 * [About MariaDB](about/about-mariadb.md)
 * [Contact Us](about/contact-us.md)
 
