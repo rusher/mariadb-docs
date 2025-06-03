@@ -8,7 +8,7 @@ Installation and configuration instructions are available for the deployment of 
 
 These instructions detail a single-node deployment of a columnar data store, for MariaDB Community Server, with data optionally stored on S3-compatible object storage:
 
-* Single-Node ColumnStore Topology with MariaDB Community Server
+* [Single-Node ColumnStore Topology with MariaDB Community Server](community-server-with-columnstore.md)
 
 For high availability and scalability, see "[Enterprise ColumnStore with Object Storage](../columnstore-object-storage/)" or "[Enterprise ColumnStore with Shared Local Storage](../columnstore-shared-local-storage/)".
 
@@ -22,7 +22,7 @@ These instructions detail a single-node deployment of MariaDB Community Server:
 
 These instructions detail a single-node deployment of a columnar data store:
 
-* [Single-Node Enterprise ColumnStore Local Storage Topology with MariaDB Enterprise Server](enterprise-server-with-columnstore-local-storage)
+* [Single-Node Enterprise ColumnStore Local Storage Topology with MariaDB Enterprise Server](enterprise-server-with-columnstore-local-storage/)
 
 For high availability and scalability, see "[Enterprise ColumnStore with Shared Local Storage](../columnstore-shared-local-storage/)".
 
@@ -30,7 +30,7 @@ For high availability and scalability, see "[Enterprise ColumnStore with Shared 
 
 These instructions detail a single-node deployment of a columnar data store for MariaDB Enterprise Server, with data stored on S3-compatible object storage:
 
-* Single-Node Enterprise ColumnStore Object Storage Topology with MariaDB Enterprise Server
+* [Single-Node Enterprise ColumnStore Object Storage Topology with MariaDB Enterprise Server](enterprise-server-with-columnstore-object-storage/)
 
 For high availability and scalability, see "[Enterprise ColumnStore with Object Storage](../columnstore-object-storage/)".
 
@@ -38,6 +38,6 @@ For high availability and scalability, see "[Enterprise ColumnStore with Object 
 
 These instructions detail a single-node deployment of MariaDB Enterprise Server:
 
-* Single-Node Enterprise Server Topology with MariaDB Enterprise Server
+* [Single-Node Enterprise Server Topology with MariaDB Enterprise Server](enterprise-server.md)
 
-\
+\\

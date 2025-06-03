@@ -488,6 +488,8 @@
       * [Step 7: Test MariaDB MaxScale](architecture/topologies/primary-replica/step-7-test-mariadb-maxscale.md)
     * [Single Node Topologies](architecture/topologies/single-node-topologies/README.md)
       * [Community Server](architecture/topologies/single-node-topologies/community-server.md)
+      * [Community Server with ColumnStore](architecture/topologies/single-node-topologies/community-server-with-columnstore.md)
+      * [Enterprise Server](architecture/topologies/single-node-topologies/enterprise-server.md)
       * [Enterprise Server with ColumnStore (Local Storage)](architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage/README.md)
         * [Step 1: Prepare Systems for Enterprise ColumnStore Nodes](architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage/step-1-prepare-systems-for-enterprise-columnstore-nodes.md)
         * [Step 2: Install Enterprise ColumnStore](architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage/step-2-install-enterprise-columnstore.md)
