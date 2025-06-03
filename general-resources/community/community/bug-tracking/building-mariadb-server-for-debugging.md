@@ -1,12 +1,6 @@
----
-icon: check
----
-
 # Building MariaDB Server for Debugging
 
 Instructions on how to build a mysqld that contains all the information we need to fix problems you encounter. (A more detailed explanation can be found [here](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).)
-
-_**Note: this text has been extracted into a separate article from**_ [_**Reporting bugs**_](reporting-bugs.md)_**, see its full history there.**_
 
 * Add the [--core-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options) option to your /.my.cnf or /etc/my.cnf file under the \[mysqld] tag.
 * Get the latest [MariaDB code from GitHub](../../contributing-participating/contributing-code.md).

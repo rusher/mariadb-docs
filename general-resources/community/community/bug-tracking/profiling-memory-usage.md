@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Profiling Memory Usage
 
 Profiling the memory usage can be useful for finding out why a program appears to use more memory than it should. It is especially helpful for analyzing OOM situations or other cases where the memory grows linearly and causes problems.
@@ -50,7 +46,7 @@ The profiling interval and the profiling duration can be passed as arguments to 
 
 The overhead of the profiling can be large enough that it affects production workloads negatively. To reduce the overhead, the sampling frequency of memory allocations can be lowered using the `--sample-rate` option:
 
-```
+```bash
 -s SAMPLE_RATE, --sample-rate SAMPLE_RATE
                         sample every N-th allocation to decrease the overhead
 ```
@@ -61,7 +57,7 @@ For example, `-s 10` will sample only 10% of memory allocations which may miss o
 
 On RHEL based systems, the package is named `bcc-tools`. After installing it, use the following command to profile the memory usage 5 times per second over a window of 60 seconds:
 
-```
+```bash
 sudo /usr/share/bcc/tools/memleak -p $(pidof mariadbd) 5 60 | tee memleak.log
 ```
 
@@ -69,7 +65,7 @@ sudo /usr/share/bcc/tools/memleak -p $(pidof mariadbd) 5 60 | tee memleak.log
 
 On Ubuntu/Debian the package is named `bpfcc-tools`. After installing it, use the following command to profile the memory usage 5 times per second over a window of 60 seconds:
 
-```
+```bash
 sudo memleak-bpfcc -p $(pidof mariadbd) 5 60 | tee memleak.log
 ```
 
@@ -81,7 +77,7 @@ Jemalloc is an alternative to the default glibc memory allocator. It is capable 
 
 To enable jemalloc, the packages for it must be first installed from the system repositories. Ubuntu 20.04 requires the following packages to be installed for jemalloc profiling:
 
-```
+```bash
 apt-get -y install libjemalloc2 libjemalloc-dev binutils
 ```
 
@@ -93,7 +89,7 @@ The version of jemalloc that is available in most Red Hat repositories is not co
 
 Once installed, edit the systemd service file with `systemctl edit mariadb.service` and add the following lines into it. The path to the `libjemalloc.so` file is OS-specific so make sure it points to the correct file. The example here is for Ubuntu and Debian environments.
 
-```
+```bash
 [Service]
 Environment=MALLOC_CONF=prof:true,prof_leak:true,prof_gdump:true,lg_prof_sample:18,prof_prefix:/var/lib/mysql/jeprof/jeprof
 Environment=LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
@@ -101,7 +97,7 @@ Environment=LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libjemalloc.so.2
 
 Then create the directory for the profile files:
 
-```
+```bash
 mkdir /var/lib/mysql/jeprof/
 chown mysql:mysql /var/lib/mysql/jeprof/
 ```
@@ -112,13 +108,13 @@ The directory in `/var/lib/mysql/jeprof/` will start to be filled by versioned f
 
 The simplest method is to generate a text report with the following command.
 
-```
+```bash
 jeprof --txt /usr/sbin/mariadbd $(ls -1 /var/lib/mysql/jeprof/*.heap|sort -V|tail -n 1) > heap-report.txt
 ```
 
 A better way to look at the generated heap profile is with the PDF output. However, this requires the installation of extra packages (`apt -y install graphviz ghostscript gv`). To generate the PDF report of the latest heap dump, run the following command:
 
-```
+```bash
 jeprof --pdf /usr/sbin/mariadbd $(ls -1 /var/lib/mysql/jeprof/*.heap|sort -V|tail -n 1) > heap-report.pdf
 ```
 
@@ -136,19 +132,19 @@ Similarly to the jemalloc memory allocator, the [tcmalloc](https://github.com/go
 
 On RHEL based systems, the `gperftools` package is in the EPEL repositories. These must be first enabled by installing the `epel-release` package.
 
-```
+```bash
 sudo dnf -y install epel-release
 ```
 
 After this, the `gperftools` package can be installed.
 
-```
+```bash
 sudo dnf -y install gperftools
 ```
 
 #### Ubuntu 20.04
 
-```
+```bash
 sudo apt -y install google-perftools
 ```
 
@@ -158,7 +154,7 @@ Once tcmalloc is installed, edit the systemd service file with `systemctl edit m
 
 **Note:** Make sure to use the correct **path** and **library name** to the tcmalloc library in `LD_PRELOAD`. The following example uses the Debian location of the library. The file is usually located in `/usr/lib64/libtcmalloc_and_profiler.so.4` on RHEL systems. The version number of the library can also change which might require other adjustments to the library path.
 
-```
+```bash
 [Service]
 Environment=LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libtcmalloc_and_profiler.so.4
 Environment=HEAPPROFILE=/var/lib/mysql/pprof/mariadbd.prof
@@ -168,7 +164,7 @@ Environment=HEAP_CHECK_AFTER_DESTRUCTORS=true
 
 Then create the directory for the profile files:
 
-```
+```bash
 mkdir /var/lib/mysql/pprof/
 chown mysql:mysql /var/lib/mysql/pprof/
 ```
@@ -189,7 +185,7 @@ Depending on which OS you are using, the report generation program is named eith
 
 It is important to pick the latest `.heap` file to analyze. The following command generates the `heap-report.pdf` from the latest heap dump. The file will show the breakdown of the memory usage.
 
-```
+```bash
 pprof --pdf /usr/sbin/mariadbd $(ls /var/lib/mysql/pprof/*.heap|sort -V|tail -n 1) > heap-report.pdf
 ```
 

@@ -9,7 +9,7 @@ icon: question
 
 Add the following in the global comment for each contribution:
 
-```
+```bash
 Patch: Name, url or where we got patch
 Author:   ....
 License:  MCA or BSD
@@ -21,7 +21,7 @@ push into MariaDB that includes code from contributors not employed by the Maria
 
 Example:
 
-```
+```bash
 Feature/Patch name
 * Author(s)
 * Author has signed MCA on "date" | Patch was licensed under BSD

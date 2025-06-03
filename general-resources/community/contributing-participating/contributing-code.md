@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Contributing Code
 
 _For contributors interested in MariaDB development, explore open projects via_ [_JIRA_](https://jira.mariadb.org) _and check for_ [_beginner-friendly tasks_](https://jira.mariadb.org/issues/?jql=resolution%20%3D%20Unresolved%20AND%20labels%20%3D%20beginner-friendly%20ORDER%20BY%20updated%20DESC)_. Engage with the community on the_ [_maria-developers_](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) _mailing list,_ [_Slack_](https://r.mariadb.com/join-community-slack) _,_ [_Zulip_](https://mariadb.zulipchat.com)_, or_ [_IRC_](../../../en/irc/) _channel for guidance._

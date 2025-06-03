@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Bug Processing
 
 This page describes how community bug reports are processed among our products and explains what you need to notice while tracking bugs.

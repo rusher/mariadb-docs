@@ -1,8 +1,3 @@
----
-description: Ask Petr if we can redirect the MCA & FAQ to https://mariadb.com/legal/
-icon: question
----
-
 # MariaDB Contributor Agreement FAQ
 
 #### What is the Intention of the [MCA](mca.md)?

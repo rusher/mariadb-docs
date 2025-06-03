@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Joining the Community
 
 _For discussions, release announcements, and development updates, engage with the MariaDB community through various chat platforms and mailing lists. Participate in Zulip, Slack, IRC channels, or subscribe to mailing lists like announce, discuss, docs, developers, commits, and packagers for extensive community interactions._

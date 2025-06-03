@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Reporting Software Bugs
 
 For reporting documentation bugs specifically, see [Reporting Documentation Bugs](../../../about/about-mariadb-documentation/reporting-documentation-bugs.md).

@@ -1,8 +1,3 @@
----
-description: Review with Max, move to MariaDB Community section
-icon: question
----
-
 # Product Development
 
-Articles of interest to MariaDB Developers
+Articles of interest to MariaDB developers, including contributors from the MariaDB Community.

@@ -1,12 +1,6 @@
----
-icon: check
----
-
 # Extracting Entries from the Binary Log
 
 Instructions to narrow down problems on a replication replica.
-
-_**Note: this text has been extracted into a separate article from**_ [_**Reporting bugs**_](reporting-bugs.md)_**, see its full history there.**_
 
 Sometimes a [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) event causes an error of some sort. A whole binary log file is sometimes impractical due to size or sensitivity reasons.
 
@@ -14,7 +8,7 @@ Sometimes a [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-m
 
 This is just in case you don't quite extract the right information first. If the binlog expired off and you haven't got the right information, your bug report may not easily be reproducible.
 
-```
+```bash
 sudo cp /var/lib/mysql/mysql-bin.000687 ~/
 sudo chown $USER: ~/mysql-bin.000687
 ```
@@ -25,7 +19,7 @@ Binary logs have a header portion. Without the header [mariadb-binlog](https://a
 
 We look at the binary log to see how big the header and session information is:
 
-```
+```sql
 mariadb-binlog --base64-output=decode-rows --verbose mysql-bin.000687 | more
 /*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;
 /*!40019 SET @@session.max_insert_delayed_threads=0*/;
@@ -58,7 +52,7 @@ dd if=mysql-bin.000687 of=mysql-bin.000687-extract-offset-129619 bs=1 count=328
 
 We need to find out at what offset the entry at 129619 ends and it might be useful to extract some previous entries as well.
 
-```
+```bash
 mariadb-binlog --base64-output=decode-rows --verbose mysql-bin.000687 | grep  '^# at ' |  grep -C 10 '^# at 129619$'
 # at 127602
 # at 127690
@@ -85,19 +79,19 @@ mariadb-binlog --base64-output=decode-rows --verbose mysql-bin.000687 | grep  '^
 
 Take a look at those entries with:
 
-```
+```bash
 mariadb-binlog --base64-output=decode-rows --verbose --start-position 129006  --stop-position 130168  mysql-bin.000687 | more
 ```
 
 Now let's assume we want to start at our original 129619 and finish before 130168
 
-```
+```bash
 dd if=mysql-bin.000687 bs=1 skip=129619 count=$(( 130168 - 129619 ))  >> mysql-bin.000687-extract-offset-129619
 ```
 
 Check the extract:
 
-```
+```bash
 mariadb-binlog mysql-bin.000687-extract-offset-129619
 ```
 

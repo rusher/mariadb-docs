@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Contributing to the MariaDB Project
 
 #### How to Contribute to MariaDB

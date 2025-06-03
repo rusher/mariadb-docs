@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Security Bug Fixing
 
 See [MariaDB Security Policy](https://mariadb.org/about/security-policy/).
