@@ -1,22 +1,13 @@
+# COM\_DEBUG
 
-# COM_DEBUG
-
-The COM_DEBUG command forces the server to dump debug information to stdout. It requires super privileges.
-
+The COM\_DEBUG command forces the server to dump debug information to stdout. It requires super privileges.
 
 #### Fields
 
-
-
-* [int<1>](../protocol-data-types.md#fixed-length-integers) 0xOD : COM_DEBUG Header
-
-
+* [int<1>](../protocol-data-types.md#fixed-length-integers) 0xOD : COM\_DEBUG Header
 
 #### Response
 
-
-[OK Packet](../4-server-response-packets/ok_packet.md) or [ERR Packet](../4-server-response-packets/err_packet.md)
-
+[EOF Packet](../4-server-response-packets/eof_packet.md)
 
 CC BY-SA / Gnu FDL
-
