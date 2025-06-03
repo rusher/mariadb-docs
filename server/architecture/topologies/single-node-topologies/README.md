@@ -8,8 +8,7 @@ Installation and configuration instructions are available for the deployment of 
 
 These instructions detail a single-node deployment of a columnar data store, for MariaDB Community Server, with data optionally stored on S3-compatible object storage:
 
-* Single-Node ColumnStore Topology with MariaDB Community Server 10.5
-* Single-Node ColumnStore Topology with MariaDB Community Server 10.6
+* Single-Node ColumnStore Topology with MariaDB Community Server
 
 For high availability and scalability, see "[Enterprise ColumnStore with Object Storage](../columnstore-object-storage/)" or "[Enterprise ColumnStore with Shared Local Storage](../columnstore-shared-local-storage/)".
 
@@ -23,7 +22,7 @@ These instructions detail a single-node deployment of MariaDB Community Server:
 
 These instructions detail a single-node deployment of a columnar data store:
 
-* Single-Node Enterprise ColumnStore Local Storage Topology with MariaDB Enterprise Server 11.4
+* [Single-Node Enterprise ColumnStore Local Storage Topology with MariaDB Enterprise Server](enterprise-server-with-columnstore-local-storage)
 
 For high availability and scalability, see "[Enterprise ColumnStore with Shared Local Storage](../columnstore-shared-local-storage/)".
 

@@ -81,7 +81,9 @@ INSERT INTO test.contacts (first_name, last_name, email)
 
 ```sql
 SELECT * FROM test.contacts;
+```
 
+```
 +------------+-----------+----------------------+
 | first_name | last_name | email                |
 +------------+-----------+----------------------+
