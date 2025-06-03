@@ -1,5 +1,6 @@
 ---
 description: Basic Joins Guide
+icon: rabbit-running
 ---
 
 # Joining Tables with JOIN Clauses Guide

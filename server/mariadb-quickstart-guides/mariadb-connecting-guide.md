@@ -1,3 +1,7 @@
+---
+icon: rabbit-running
+---
+
 # Connecting to MariaDB Guide
 
 This guide details the parameters for connecting to a MariaDB server using client programs like `mariadb`. Learn about default connection behaviors and how to use various command-line options to customize your connection, including secure TLS configurations.

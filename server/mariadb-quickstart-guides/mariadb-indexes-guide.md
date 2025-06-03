@@ -1,5 +1,6 @@
 ---
 description: Indexing Guide
+icon: rabbit-running
 ---
 
 # Getting Started with Indexes Guide

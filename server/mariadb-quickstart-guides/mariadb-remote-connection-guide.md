@@ -1,5 +1,6 @@
 ---
 description: Remote Access Configuration Guide
+icon: rabbit-running
 ---
 
 # Configuring MariaDB for Remote Client Access Guide
