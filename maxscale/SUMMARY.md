@@ -10,7 +10,7 @@
 * [MaxScale Architecture](maxscale-architecture/README.md)
   * [mariadb-enterprise-spider-topologies](maxscale-architecture/mariadb-enterprise-spider-topologies/README.md)
     * [federated-mariadb-enterprise-spider-topology](maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology.md)
-    * [odbc-mariadb-enterprise-spider-topology](maxscale-architecture/mariadb-enterprise-spider-topologies/odbc-mariadb-enterprise-spider-topology.md)
+    * [ODBC MariaDB Enterprise Spider Topology](maxscale-architecture/mariadb-enterprise-spider-topologies/odbc-mariadb-enterprise-spider-topology.md)
     * [Sharded MariaDB Enterprise Spider Topology](maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology.md)
 * [MaxScale Management](maxscale-management/README.md)
   * [operating-maxscale](maxscale-management/operating-maxscale.md)

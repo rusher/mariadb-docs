@@ -1,6 +1,4 @@
-# odbc-mariadb-enterprise-spider-topology
-
-## ODBC MariaDB Enterprise Spider Topology
+# ODBC MariaDB Enterprise Spider Topology
 
 ## Overview
 
