@@ -218,7 +218,7 @@
 
 * [Books](books.md)
 * [Whitepapers](whitepapers.md)
-* [Tutorials](external-tutorials.md)
+* [Tutorials](tutorials.md)
 * [Quickstart Guides](quickstart-guides.md)
 * [Customer Stories](customer-stories.md)
 * [Events](events.md)
