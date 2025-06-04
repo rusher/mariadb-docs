@@ -591,7 +591,7 @@
     * [mariadb-maxscale-2402-maxscale-2402-module-commands](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02reference/mariadb-maxscale-2402-maxscale-2402-module-commands.md)
     * [mariadb-maxscale-2402-maxscale-2402-securing-your-maxscale-deployment](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02reference/mariadb-maxscale-2402-maxscale-2402-securing-your-maxscale-deployment.md)
   * [MaxScale 24.02 Release-Notes](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/README.md)
-    * [mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24020-release-notes-2024-02-29](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24020-release-notes-2024-02-29.md)
+    * [MaxScale 24.02 MariaDB MaxScale 24.02.0 Release Notes -- 2024-02-29](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24020-release-notes-2024-02-29.md)
     * [mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24021-release-notes](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24021-release-notes.md)
     * [mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24022-release-notes-2024-06-03](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24022-release-notes-2024-06-03.md)
     * [mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24023-release-notes-2024-09-09](other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24023-release-notes-2024-09-09.md)
