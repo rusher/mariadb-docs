@@ -1,4 +1,5 @@
 ---
+description: Adding and Modifying Data Guide
 icon: rabbit-running
 cover: ../.gitbook/assets/blue-bright-1200x628.png
 coverY: 0
@@ -20,149 +21,186 @@ layout:
 
 # Adding & Changing Data Guide
 
-There are several ways to add and to change data in MariaDB. There are a few SQL statements that you can use, each with a few options. Additionally, there are twists that you can do by mixing SQL statements together with various clauses. In this article, we will explore the ways in which data can be added and changed in MariaDB.
+This guide explains how to add new data and modify existing data in MariaDB using `INSERT`, `REPLACE`, and `UPDATE` statements. Learn about various options for handling duplicates, managing statement priorities, inserting data from other tables, and performing conditional updates.
 
-#### Adding Data
+### Adding Data with `INSERT`
 
-To add data to a table in MariaDB, you will need to use the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. Its basic, minimal syntax is the command [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) followed by the table name and then the keyword VALUES with a comma separated list of values contained in parentheses:
+The `INSERT` statement is used to add new rows to a table.
 
-```
-INSERT table1
-VALUES('text1','text2','text3');
-```
+Basic Syntax:
 
-In this example, text is added to a table called table1, which contains only three columns—the same number of values that we're inserting. The number of columns must match. If you don't want to insert data into all of the columns of a table, though, you could name the columns desired:
+If providing values for all columns in their defined order:
 
-```
-INSERT INTO table1
-(col3, col1)
-VALUES('text3','text1');
+```sql
+INSERT table1 VALUES('value1','value2','value3');
 ```
 
-Notice that the keyword `INTO` was added here. This is optional and has no effect on MariaDB. It's only a matter of grammatical preference. In this example we not only name the columns, but we list them in a different order. This is acceptable to MariaDB. Just be sure to list the values in the same order. If you're going to insert data into a table and want to specify all of the values except one (say the key column since it's an auto-incremented one), then you could just give a value of DEFAULT to keep from having to list the columns. Incidentally, you can give the column names even if you're naming all of them. It's just unnecessary unless you're going to reorder them as we did in this last example.
+The number of values must match the number of columns in `table1`.
 
-When you have many rows of data to insert into the same table, it can be more efficient to insert all of the rows in one SQL statement. Multiple row insertions can be done like so:
+Specifying Columns:
 
-```
-INSERT IGNORE
-INTO table2
-VALUES('id1','text','text'),
-('id2','text','text'),
-('id2','text','text');
+It's good practice to specify the columns you are inserting data into, which also allows you to insert columns in any order or omit columns that have default values or allow NULL.
+
+```sql
+INSERT INTO table1 (col3, col1) VALUES('value_for_col3', 'value_for_col1');
 ```
 
-Notice that the keyword VALUES is used only once and each row is contained in its own set of parentheses and each set is separated by commas. We've added an intentional mistake to this example: We are attempting to insert three rows of data into table2 for which the first column happens to be a `UNIQUE` key field. The third row entered here has the same identification number for the key column as the second row. This would normally result in an error and none of the three rows would be inserted. However, since the statement has an `IGNORE` flag, duplicates will be ignored and not inserted, but the other rows will still be inserted. So, the first and second rows above will be inserted and the third one won't.
+* The `INTO` keyword is optional but commonly used for readability.
+* If a column is not listed and is an `AUTO_INCREMENT` key, its value will be generated. For other omitted columns, their `DEFAULT` value will be used, or `NULL` if allowed. You can explicitly insert a default value using the `DEFAULT` keyword in the `VALUES` list for a specific column.
 
-#### Priority
+Multiple Row Inserts:
 
-An [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement takes priority over read statements (i.e., SELECT statements). An [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) will lock the table and force other clients to wait until it's finished. On a busy MariaDB server that has many simultaneous requests for data, this could cause users to experience delays when you run a script that performs a series of [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statements. If you don't want user requests to be put on hold and you can wait to insert the data, you could use the `LOW_PRIORITY` flag:
+Insert multiple rows in a single statement for efficiency:
 
-```
-INSERT LOW_PRIORITY
-INTO table1
-VALUES('text1','text2','text3');
-```
-
-The `LOW_PRIORITY` flag will put the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement in queue, waiting for all current and pending requests to be completed before it's performed. If new requests are made while a low priority statement is waiting, then they are put ahead of it in the queue. MariaDB does not begin to execute a low priority statement until there are no other requests waiting. Once the transaction begins, though, the table is locked and any other requests for data from the table that come in after it starts must wait until it's completed. Because it locks the table, low priority statements will prevent simultaneous insertions from other clients even if you're dealing with a MyISAM table. Incidentally, notice that the `LOW_PRIORITY` flag comes before the `INTO`.
-
-One potential inconvenience with an `INSERT LOW_PRIORITY` statement is that the client will be tied up waiting for the statement to be completed successfully. So if you're inserting data into a busy server with a low priority setting using the mariadb client, your client could be locked up for minutes, maybe hours depending on how busy your server is at the time. As an alternative either to making other clients with read requests wait or to having your client wait, you can use the DELAYED flag instead of the `LOW_PRIORITY` flag:
-
-```
-INSERT DELAYED
-INTO table1
-VALUES('text1','text2','text3');
+```sql
+INSERT INTO table2 (id_col, data_col1, data_col2) VALUES
+  ('id1', 'text_a', 'text_b'),
+  ('id2', 'text_c', 'text_d'),
+  ('id3', 'text_e', 'text_f');
 ```
 
-MariaDB will take the request as a low priority one and put it on its list of tasks to perform when it has a break. However, it will immediately release the client so that the client can go on to enter other SQL statements or even exit. Another advantage of this method is that multiple `INSERT DELAYED` requests are batched together for block insertion when there is a gap, making the process potentially faster than `INSERT LOW_PRIORITY`. The flaw in this choice, however, is that the client is never told if a delayed insertion is successfully made or not. The client is informed of error messages when the statement is entered—the statement has to be valid before it will be queued—but it's not told of problems that occur after it's accepted. This brings up another flaw: delayed insertions are stored in the server's memory. So if the MariaDB daemon (mariadbd) dies or is manually killed, then the transactions are lost and the client is not notified of the failure. So DELAYED is not always a good alternative.
+The `VALUES` keyword is used only once, with each row's values enclosed in parentheses and separated by commas.
 
-#### Contingent Additions
+Handling Duplicates with INSERT IGNORE:
 
-As an added twist to [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), you can combine it with a SELECT statement. Suppose that you have a table called employees which contains employee information for your company. Suppose further that you have a column to indicate whether an employee is on the company's softball team. However, you one day decide to create a separate database and table for the softball team's data that someone else will administer. To get the database ready for the new administrator, you have to copy some data for team members to the new table. Here's one way you can accomplish this task:
+If you attempt to insert a row that would cause a duplicate value in a PRIMARY KEY or UNIQUE index, an error normally occurs, and the row (and potentially subsequent rows in a multi-row insert) might not be inserted.
 
-```
-INSERT INTO softball_team 
-(last, first, telephone) 
-SELECT name_last, name_first, tel_home
-FROM company.employees 
-WHERE softball='Y';
-```
+Using IGNORE tells MariaDB to discard the duplicate row(s) and continue inserting any other valid rows without generating an error.
 
-In this SQL statement the columns in which data is to be inserted into are listed, then the complete SELECT statement follows with the appropriate WHERE clause to determine if an employee is on the softball team. Since we're executing this statement from the new database and since the table employees is in a separate database called company, we have to specify it as you see here. By the way, [INSERT...SELECT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert-select.md) statements cannot be performed on the same table.
-
-#### Replacement Data
-
-When you're adding massive amounts of data to a table that has a key field, as mentioned earlier, you can use the `IGNORE` flag to prevent duplicates from being inserted, but still allow unique rows to be entered. However, there may be times when you actually want to replace the rows with the same key fields with the new ones. In such a situation, instead of using [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) you can use a [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statement:
-
-```
-REPLACE LOW_PRIORITY
-INTO table2 (id, col1, col2)
-VALUES('id1','text','text'),
-('id2','text','text'),
-('id3','text','text');
+```sql
+INSERT IGNORE INTO table2 (unique_id_col, data_col) VALUES
+  ('id1', 'some_data'),        -- Will be inserted if new
+  ('id2', 'other_data'),       -- Will be inserted if new
+  ('id1', 'duplicate_data');  -- Will be ignored if 'id1' already exists or was just inserted
 ```
 
-Notice that the syntax is the same as an [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement. The flags all have the same effect, as well. Also, multiple rows may be inserted, but there's no need for the `IGNORE` flag since duplicates won't happen—the originals are just overwritten. Actually, when a row is replaced, it's first deleted completely and the new row is then inserted. Any columns without values in the new row will be given the default values for the columns. None of the values of the old row are kept. Incidentally, [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) will also allow you to combine it with a SELECT statement as we saw with the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement earlier.
+### Managing `INSERT` Priority and Behavior
 
-#### Updating Data
+LOW\_PRIORITY:
 
-If you want to change the data contained in existing records, but only for certain columns, then you would need to use an [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. The syntax for [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) is a little bit different from the syntax shown before for [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statements:
+An INSERT statement normally takes priority over SELECT statements, potentially locking the table and making other clients wait. LOW\_PRIORITY makes the INSERT wait until no other clients are reading from the table.
 
-```
-UPDATE LOW_PRIORITY table3
-SET col1 = 'text-a', col2='text-b'
-WHERE id < 100;
+```sql
+INSERT LOW_PRIORITY INTO table1 VALUES('value1','value2','value3');
 ```
 
-In the SQL statement here, we are changing the value of the two columns named individually using the `SET` clause. Incidentally, the `SET` clause optionally can be used in [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [REPLACE](../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md) statements, but it eliminates the multiple row option. In the statement above, we're also using a `WHERE` clause to determine which records are changed: only rows with an id that has a value less than 100 are updated. Notice that the `LOW_PRIORITY` flag can be used with this statement, too. The `IGNORE` flag can be used, as well.
+* Once the `LOW_PRIORITY` insert begins, it will lock the table as usual. New read requests that arrive while it's waiting will be processed before it.
 
-A useful feature of the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement is that it allows the use of the current value of a column to update the same column. For instance, suppose you want to add one day to the value of a date column where the date is a Sunday. You could do the following:
+DELAYED:
 
+(Note: INSERT DELAYED is a feature that was primarily associated with the MyISAM storage engine. It is deprecated in older MariaDB/MySQL versions and removed in modern MariaDB versions (e.g., from MariaDB 10.5). Check your MariaDB version for support and consider alternatives if using a recent version.)
+
+`INSERT DELAYED` allowed the server to queue the insert request and return control to the client immediately. Data was written when the table was not in use. Multiple `DELAYED` inserts were batched.
+
+```sql
+-- Syntax for historical reference; may not be supported
+INSERT DELAYED INTO table1 VALUES('value1','value2','value3');
 ```
+
+Flaws included no confirmation of successful insertion and potential data loss if the server crashed before data was written from memory.
+
+### Inserting Data from Another Table (`INSERT...SELECT`)
+
+You can insert rows into a table based on data retrieved from another table (or tables) using `INSERT ... SELECT`.
+
+```sql
+INSERT INTO softball_team (last_name, first_name, telephone)
+  SELECT name_last, name_first, tel_home
+  FROM company_database.employees
+  WHERE is_on_softball_team = 'Y';
+```
+
+* The columns in the `INSERT INTO softball_team (...)` list must correspond in number and general data type compatibility to the columns in the `SELECT` list.
+* `INSERT...SELECT` statements generally cannot operate on the exact same table as both the target and the source directly without mechanisms like temporary tables or certain subquery structures.
+
+### Replacing Data with `REPLACE`
+
+The `REPLACE` statement works like `INSERT`, but if a new row has the same value as an existing row for a `PRIMARY KEY` or a `UNIQUE` index, the existing row is deleted before the new row is inserted. If no such conflict exists, it acts like a normal `INSERT`.
+
+```sql
+REPLACE LOW_PRIORITY INTO table2 (id_col, data_col1, data_col2) VALUES
+  ('id1', 'new_text_a', 'new_text_b'), -- If 'id1' exists, old row is deleted, this is inserted
+  ('id2', 'new_text_c', 'new_text_d'), -- If 'id2' doesn't exist, this is inserted
+  ('id3', 'new_text_e', 'new_text_f');
+```
+
+* Flags like `LOW_PRIORITY` work similarly to `INSERT`.
+* `REPLACE` also supports the `REPLACE ... SELECT` syntax.
+* Because `REPLACE` performs a delete then an insert, any columns in the table not specified in the `REPLACE` statement will receive their default values for the newly inserted row, not values from the old row.
+
+### Modifying Data with `UPDATE`
+
+Use the `UPDATE` statement to change data in existing rows.
+
+**Basic Syntax:**
+
+```sql
+UPDATE table3
+SET col1 = 'new_value_a', col2 = 'new_value_b'
+WHERE id_column < 100;
+```
+
+* The `SET` clause specifies which columns to modify and their new values.
+* The `WHERE` clause is crucial; it determines which rows are updated. **Without a `WHERE` clause, all rows in the table will be updated.**
+* `LOW_PRIORITY` and `IGNORE` (to ignore errors like unique key violations during update, allowing other valid row updates to proceed) can also be used with `UPDATE`.
+
+Using Current Column Values in an Update:
+
+You can use a column's current value in the calculation for its new value.
+
+```sql
 UPDATE table5
-SET col_date = DATE_ADD(col_date, INTERVAL 1 DAY)
-WHERE DAYOFWEEK(col_date) = 1;
+SET event_date = DATE_ADD(event_date, INTERVAL 1 DAY)
+WHERE DAYOFWEEK(event_date) = 1; -- Example: Add 1 day if event_date is a Sunday
 ```
 
-For rows where the day of the week is Sunday, the DATE\_ADD() function will take the value of col\_date before it's updated and add one day to it. MariaDB will then take this sum and set col\_date to it.
+ORDER BY and LIMIT with UPDATE:
 
-There are a couple more twists that you can now do with the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement: if you want to update the rows in a specific order, you can add an [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause. You can also limit the number of rows that are updated with a [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Below is an example of both of these clauses:
+You can control the order in which rows are updated and limit the number of rows affected (for single-table updates).
 
-```
+```sql
 UPDATE LOW_PRIORITY table3
-SET col1='text-a', col2='text-b'
-WHERE id < 100
-ORDER BY col3 DESC
+SET col1 = 'updated_text_a', col2 = 'updated_text_b'
+WHERE status_column = 'pending'
+ORDER BY creation_date DESC
 LIMIT 10;
 ```
 
-The ordering can be descending as indicated here by the `DESC` flag, or ascending with either the ASC flag or by just leaving it out, as ascending is the default. The [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause, of course, limits the number of rows affected to ten here.
+This updates the 10 most recently created 'pending' rows.
 
-If you want to refer to multiple tables in one [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement, you can do so like this:
+Multi-Table UPDATE:
 
-```
-UPDATE table3, table4
-SET table3.col1 = table4.col1
-WHERE table3.id = table4.id;
-```
+You can update rows in one table based on values from another table by joining them.
 
-Here we see a join between the two tables named. In table3, the value of col1 is set to the value of the same column in table4 where the values of id from each match. We're not updating both tables here; we're just accessing both. We must specify the table name for each column to prevent an ambiguity error. Incidentally, [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) and [LIMIT](../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clauses aren't allowed with multiple table updates.
-
-There's another combination that you can do with the [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement that we didn't mention earlier. It involves the [UPDATE](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement. When inserting multiple rows of data, if you want to note which rows had potentially duplicate entries and which ones are new, you could add a column called status and change it's value accordingly with a statement like this one:
-
-```
-INSERT IGNORE INTO table1 
-(id, col1, col2, status) 
-VALUES('1012','text','text','new'),
-('1025,'text','text','new'),
-('1030,'text','text','new')
-ON DUPLICATE KEY 
-UPDATE status = 'old';
+```sql
+UPDATE products p
+JOIN stock_levels s ON p.product_id = s.product_id
+SET p.stock_count = s.current_stock
+WHERE s.warehouse_id = 'WHA';
 ```
 
-Because of the `IGNORE` flag, errors will not be generated, duplicates won't be inserted or replaced, but the rest will be added. Because of the [ON DUPLICATE KEY](../reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), the column status of the original row will be set to old when there are duplicate entry attempts. The rest will be inserted and their status set to new.
+* Here, `products.stock_count` is updated using values from `stock_levels`.
+* `ORDER BY` and `LIMIT` are generally not allowed with multi-table `UPDATE` statements in this direct join form.
 
-#### Conclusion
+### Conditional Inserts or Updates (`INSERT ... ON DUPLICATE KEY UPDATE`)
 
-As you can see from some of these SQL statements, MariaDB offers you quite a few ways to add and to change data. In addition to these methods, there are also some bulk methods of adding and changing data in a table. You could use the [LOAD DATA INFILE](../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement and the [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) command-line utility. These methods are covered in another article on [Importing Data into MariaDB](https://mariadb.com/kb/en/importing-data-into-mariadb/).
+This powerful feature allows you to `INSERT` a new row, but if a duplicate key (Primary or Unique) conflict occurs, it performs an `UPDATE` on the existing row instead.
+
+```sql
+INSERT INTO table1 (id, col1, col2, status_column)
+VALUES ('1012', 'some_text', 'other_text', 'new')
+ON DUPLICATE KEY UPDATE status_column = 'old', col2 = VALUES(col2);
+```
+
+* If `id` '1012' does not exist, the row is inserted with `status_column = 'new'`.
+* If `id` '1012' already exists, the existing row is updated: `status_column` is set to 'old', and `col2` is updated with the value that _would have been inserted_ for `col2` (using `VALUES(col2)`).
+* The `IGNORE` keyword can be used with `INSERT ... ON DUPLICATE KEY UPDATE` to ignore errors that might occur during the `UPDATE` part if the update itself causes a problem (though this is less common). If `IGNORE` is used with `INSERT` and `ON DUPLICATE KEY UPDATE` is also present, `IGNORE` only applies to the `INSERT` part, not the `UPDATE` part.
+
+### Further Data Modification Methods
+
+Beyond these SQL statements, MariaDB offers bulk methods for adding data, such as:
+
+* `LOAD DATA INFILE`: For importing data from text files.
+* `mariadb-import` utility: A command-line tool that uses `LOAD DATA INFILE`. These are typically covered in guides focused on bulk data operations (e.g., "Bulk Data Importing Guide").
 
 CC BY-SA / Gnu FDL

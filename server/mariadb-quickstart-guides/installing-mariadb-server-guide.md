@@ -1,4 +1,5 @@
 ---
+description: 'Quickstart Guide: Installing MariaDB Server'
 icon: rabbit-running
 cover: ../.gitbook/assets/Group 15569 (2).png
 coverY: 0
@@ -20,11 +21,7 @@ layout:
 
 # Installing MariaDB Server Guide
 
-### Quickstart Guide: Installing MariaDB Server
-
-### Quickstart Guide: Installing MariaDB Server
-
-_This guide provides a quick overview of how to install MariaDB Server on common operating systems. The specific steps may vary slightly depending on your Linux distribution or if you are installing on Windows._
+This guide provides a quick overview of how to install MariaDB Server on common operating systems. The specific steps may vary slightly depending on your Linux distribution or if you are installing on Windows.
 
 #### For Linux (Ubuntu/Debian/Red Hat-based distributions)
 
