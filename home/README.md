@@ -10,32 +10,31 @@ description: >-
 
 New to MariaDB? Start here to set up your environment, connect to your first database and run basic commands.
 
-* Installation Guides
-* Basic Concepts
-* Connecting to MariaDB
-* First SQL Queries
+* [Installation Guides](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/installing-mariadb-server-guide)
+* [Basic Concepts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-usage-guide)
+* [Connecting to MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-connecting-guide-1)
+* [First SQL Queries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-sql-guide)
 
 ### Product Documentation
 
 Dedicated resources for specific MariaDB products and tools.
 
-* [MariaDB Enterprise Platform](https://mariadb.net/docs/platform)
-* [MariaDB Server](https://mariadb.net/docs/server)
-* [MariaDB MaxScale](https://mariadb.net/docs/maxscale)
-* [MariaDB ColumnStore](https://mariadb.net/docs/columnstore)
-* [Galera Cluster](https://mariadb.net/docs/galera-cluster)
-* [MariaDB Connectors](https://mariadb.net/docs/connectors)
-* [MariaDB Tools](https://mariadb.net/docs/tools)
+* [MariaDB Enterprise Platform](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/)
+* [MariaDB Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/)
+* [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/)
+* [MariaDB ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/)
+* [Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
+* [MariaDB Connectors](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/)
+* [MariaDB Tools](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/kuTXWg0NDbRx6XUeYpGD/)
 
 ### Release Notes
 
 Stay updated with the latest releases and version-specific changes.
 
-* [MariaDB Enterprise Server](https://mariadb.net/docs/release-notes/enterprise-server)
+* [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server)
 * [MariaDB Community Server](https://mariadb.net/docs/release-notes/community-server)
-* MariaDB MaxScale
-* [MariaDB ColumnStore](https://mariadb.net/docs/release-notes/columnstore)
-* [MariaDB Enterprise Operator](https://mariadb.net/docs/release-notes/mariadb-enterprise-operator)
+* [MariaDB ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore)
+* [MariaDB Enterprise Operator](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator)
 * [MariaDB Connectors](https://mariadb.net/docs/release-notes/connectors)
 
 
