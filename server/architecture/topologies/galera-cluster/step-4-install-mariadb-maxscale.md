@@ -51,7 +51,7 @@ $ sudo zypper install curl
 ```bash
 $ curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
 
-$ echo "99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe  mariadb_es_repo_setup" \
+$ echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
        | sha256sum -c -
 
 $ chmod +x mariadb_es_repo_setup
