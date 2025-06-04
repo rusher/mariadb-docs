@@ -6,7 +6,7 @@
   * [MariaDB ColumnStore System Usage](columnstore-quickstart-guides/mariadb-columnstore-usage-guide.md)
   * [ColumnStore Minimum Hardware Specification](columnstore-quickstart-guides/columnstore-minimum-hardware-specification.md)
 * [ColumnStore Architecture](architecture/README.md)
-  * [ColumnStore Architectural Overview](architecture/columnstore-architectural-overview.md)
+  * [ColumnStore Architectural Overview](columnstore-architecture/columnstore-architectural-overview.md)
   * [ColumnStore Performance Module](architecture/columnstore-performance-module.md)
   * [ColumnStore Query Processing](architecture/columnstore-query-processing.md)
   * [ColumnStore Storage Architecture](architecture/columnstore-storage-architecture.md)
