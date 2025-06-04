@@ -1835,7 +1835,7 @@
       * [XA Transactions](reference/sql-statements/transactions/xa-transactions.md)
   * [SQL Functions](reference/sql-functions/README.md)
     * [Functions & Operators](reference/sql-functions/function-and-operator-reference/README.md)
-      * [Functions & Operators A-C](reference/sql-functions/function-and-operator-reference/function-and-operator-reference.md)
+      * [Functions & Operators A-C](reference/sql-functions/function-and-operator-reference/function-and-operator-reference-a-c.md)
     * [Aggregate Functions](reference/sql-functions/aggregate-functions/README.md)
       * [AVG](reference/sql-functions/aggregate-functions/avg.md)
       * [BIT\_AND](reference/sql-functions/aggregate-functions/bit_and.md)
