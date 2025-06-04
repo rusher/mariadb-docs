@@ -1,7 +1,6 @@
 # Table of contents
 
 * [MariaDB Server Documentation](README.md)
-* [Enterprise Server Lifecycle](enterprise-server-lifecycle.md)
 * [Quickstart Guides](mariadb-quickstart-guides/README.md)
   * [Installing MariaDB Server Guide](mariadb-quickstart-guides/installing-mariadb-server-guide.md)
   * [Adding & Changing Data Guide](<mariadb-quickstart-guides/mariadb-adding-and-changing-data-guide (1).md>)
@@ -114,6 +113,7 @@
     * [Inserting and Updating with Views](server-usage/views/inserting-and-updating-with-views.md)
     * [View Algorithms](server-usage/views/view-algorithms.md)
 * [Server Management](server-management/README.md)
+  * [Enterprise Server Lifecycle](server-management/enterprise-server-lifecycle.md)
   * [Copying Tables Between Different MariaDB Databases and MariaDB Servers](server-management/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md)
   * [Backing Up and Restoring Databases](server-management/backing-up-and-restoring-databases/README.md)
     * [Backup and Restore Overview](server-management/backing-up-and-restoring-databases/backup-and-restore-overview.md)

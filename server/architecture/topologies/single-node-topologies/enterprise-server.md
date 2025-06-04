@@ -14,7 +14,7 @@ These instructions detail the deployment of the following MariaDB database produ
 
 ## MariaDB Enterprise Server Components
 
-These instructions detail the deployment of the following [MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/) components:
+These instructions detail the deployment of the following [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) components:
 
 <table><thead><tr><th valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top">InnoDB</td><td valign="top"><ul><li>It is a general purpose storage engine</li><li>It is ACID-compliant</li><li>It is performant</li><li>It is the transactional component of MariaDB's single stack <a href="../htap/">Hybrid Transactional/Analytical Processing (HTAP)</a> solution</li></ul></td></tr></tbody></table>
 
@@ -183,7 +183,7 @@ It is not recommended to make custom changes to one of the bundled configuration
 
 3. Set your system variables and options in the configuration file.
 
-They need to be set in a group that will be read by [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd), such as \[mariadb] or \[server].
+They need to be set in a group that will be read by [mariadbd](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd.md), such as \[mariadb] or \[server].
 
 For example:
 

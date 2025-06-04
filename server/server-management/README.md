@@ -1,5 +1,3 @@
+# Server Management
 
-# MariaDB Administration
-
-There are many tasks that database administrators (DBAs) have to perform. This section of the MariaDB Documentation provides information on how to do these tasks.
-
+Effectively managing your MariaDB Server is key to ensuring its reliability, performance, and security. This section serves as your central hub for all aspects of MariaDB Server management, offering in-depth guides and practical advice.

@@ -78,7 +78,7 @@ These requirements are for the Primary/Replica topology when deployed with Maria
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](../../../enterprise-server-lifecycle.md), the Primary/Replica topology with MariaDB Enterprise Server 11.4 and MariaDB MaxScale 25.01 is provided for:
+In alignment to the [enterprise lifecycle](../../../server-management/enterprise-server-lifecycle.md), the Primary/Replica topology with MariaDB Enterprise Server 11.4 and MariaDB MaxScale 25.01 is provided for:
 
 * AlmaLinux 8 (x86\_64, ARM64)
 * AlmaLinux 9 (x86\_64, ARM64)
