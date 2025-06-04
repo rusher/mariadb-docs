@@ -32,10 +32,10 @@ Dedicated resources for specific MariaDB products and tools.
 Stay updated with the latest releases and version-specific changes.
 
 * [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server)
-* [MariaDB Community Server](https://mariadb.net/docs/release-notes/community-server)
+* [MariaDB Community Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server)
 * [MariaDB ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore)
 * [MariaDB Enterprise Operator](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator)
-* [MariaDB Connectors](https://mariadb.net/docs/release-notes/connectors)
+* [MariaDB Connectors](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
 
 
 
