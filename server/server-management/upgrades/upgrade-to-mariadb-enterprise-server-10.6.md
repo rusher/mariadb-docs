@@ -1,6 +1,6 @@
 # Upgrade to MariaDB Enterprise Server 10.6
 
-These instructions detail the **upgrade** from a previous version of **MariaDB Enterprise Server** to **MariaDB Enterprise Server 10.6** on a range of [supported Operating Systems](https://mariadb.com/engineering-policies/).
+These instructions detail the **upgrade** from a previous version of **MariaDB Enterprise Server**to **MariaDB Enterprise Server 10.6** on a range of [supported Operating Systems](https://mariadb.com/engineering-policies/).
 
 When [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) is upgraded, the old version needs to be uninstalled, and the new version needs to be installed.
 
@@ -326,7 +326,14 @@ MariaDB Enterprise Server includes configuration to start, stop, restart, enable
 
 For distributions that use systemd, you can manage the Server process using the `systemctl` command:
 
-<table><thead><tr><th width="234.1480712890625">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb</code></td></tr></tbody></table>
+| **Operation**          | **Command**                      |
+| ---------------------- | -------------------------------- |
+| Start                  | `sudo systemctl start mariadb`   |
+| Stop                   | `sudo systemctl stop mariadb`    |
+| Restart                | `sudo systemctl restart mariadb` |
+| Enable during startup  | `sudo systemctl enable mariadb`  |
+| Disable during startup | `sudo systemctl disable mariadb` |
+| Status                 | `sudo systemctl status mariadb`  |
 
 ### Upgrading the Data Directory
 
@@ -344,7 +351,7 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
 1.  Connect to the server using MariaDB Client using the `root@localhost` user account.
 
-    MariaDB Client is called [mariadb](../../clients-and-utilities/mariadb-client/) (ES10.4 and later):
+    MariaDB Client is called [mariadb](../../clients-and-utilities/mariadb-client/) (ES10.4 and later) or `mysql` (ES10.3 and lower):
 
     ```bash
     $ sudo mariadb
