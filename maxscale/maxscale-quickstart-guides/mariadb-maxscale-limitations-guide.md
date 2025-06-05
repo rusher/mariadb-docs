@@ -1,6 +1,4 @@
-# mariadb-maxscale-limitations-guide
-
-## MaxScale 25.01 Limitations and Known Issues within MariaDB MaxScale
+# MaxScale 25.01 Limitations and Known Issues within MariaDB MaxScale
 
 ## Limitations and Known Issues within MariaDB MaxScale
 

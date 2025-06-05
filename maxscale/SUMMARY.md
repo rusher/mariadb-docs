@@ -6,7 +6,7 @@
   * [MariaDB MaxScale Overview](maxscale-quickstart-guides/mariadb-maxscale-overview.md)
   * [Authentication Modules](maxscale-quickstart-guides/mariadb-maxscale-authentication-modules-guide.md)
   * [MaxScale 25.01 About MariaDB MaxScale](maxscale-quickstart-guides/mariadb-maxscale-guide.md)
-  * [mariadb-maxscale-limitations-guide](maxscale-quickstart-guides/mariadb-maxscale-limitations-guide.md)
+  * [MaxScale 25.01 Limitations and Known Issues within MariaDB MaxScale](maxscale-quickstart-guides/mariadb-maxscale-limitations-guide.md)
 * [MaxScale Architecture](maxscale-architecture/README.md)
   * [MariaDB Enterprise Spider Topologies](maxscale-architecture/mariadb-enterprise-spider-topologies/README.md)
     * [Federated MariaDB Enterprise Spider Topology](maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology.md)
