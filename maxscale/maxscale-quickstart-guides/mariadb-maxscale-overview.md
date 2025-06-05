@@ -1,6 +1,4 @@
-# mariadb-maxscale-overview
-
-## MariaDB MaxScale Overview
+# MariaDB MaxScale Overview
 
 ## Overview
 
@@ -60,7 +58,7 @@ MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be f
 
 ### Architecture
 
-* [MariaDB MaxScale Architecture](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/understanding-mariadb-architecture)
+* [MariaDB MaxScale Architecture](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/understanding-mariadb-architecture)
 
 ### What's New
 

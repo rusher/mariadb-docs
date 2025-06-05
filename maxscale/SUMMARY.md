@@ -3,7 +3,7 @@
 * [MariaDB MaxScale](README.md)
   * [MaxScale Trial](readme/maxscale-trial.md)
 * [Quickstart Guides](maxscale-quickstart-guides/README.md)
-  * [mariadb-maxscale-overview](maxscale-quickstart-guides/mariadb-maxscale-overview.md)
+  * [MariaDB MaxScale Overview](maxscale-quickstart-guides/mariadb-maxscale-overview.md)
   * [Authentication Modules](maxscale-quickstart-guides/mariadb-maxscale-authentication-modules-guide.md)
   * [mariadb-maxscale-guide](maxscale-quickstart-guides/mariadb-maxscale-guide.md)
   * [mariadb-maxscale-limitations-guide](maxscale-quickstart-guides/mariadb-maxscale-limitations-guide.md)
