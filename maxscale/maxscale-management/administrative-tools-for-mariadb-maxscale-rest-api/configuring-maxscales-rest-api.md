@@ -1,6 +1,4 @@
-# configuring-maxscales-rest-api
-
-## Configuring MaxScale's REST API
+# Configuring MaxScale's REST API
 
 ## Overview
 
