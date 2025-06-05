@@ -1,6 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-automatic-failover-with-mariadb-monitor
-
-## MaxScale 24.08 Beta Automatic Failover With MariaDB Monitor
+# MaxScale 24.08 Beta Automatic Failover With MariaDB Monitor
 
 ## Automatic Failover With MariaDB Monitor
 

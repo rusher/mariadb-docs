@@ -1,6 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-using-maxgui-tutorial
-
-## MaxScale 24.08 Beta Using MaxGUI Tutorial
+# MaxScale 24.08 Beta Using MaxGUI Tutorial
 
 ## Using MaxGUI Tutorial
 

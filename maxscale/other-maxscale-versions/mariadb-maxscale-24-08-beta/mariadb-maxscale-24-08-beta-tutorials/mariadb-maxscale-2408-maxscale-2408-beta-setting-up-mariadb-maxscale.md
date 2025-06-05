@@ -1,6 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-setting-up-mariadb-maxscale
-
-## MaxScale 24.08 Beta Setting up MariaDB MaxScale
+# MaxScale 24.08 Beta Setting up MariaDB MaxScale
 
 ## Setting up MariaDB MaxScale
 

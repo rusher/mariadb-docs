@@ -1,6 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-avrorouter-tutorial
-
-## MaxScale 24.08 Beta Avrorouter Tutorial
+# MaxScale 24.08 Beta Avrorouter Tutorial
 
 ## Avrorouter Tutorial
 

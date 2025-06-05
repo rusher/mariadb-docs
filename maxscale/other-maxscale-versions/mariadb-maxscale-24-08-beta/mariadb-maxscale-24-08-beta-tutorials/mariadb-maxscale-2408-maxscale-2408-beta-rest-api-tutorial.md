@@ -1,6 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-rest-api-tutorial
-
-## MaxScale 24.08 Beta REST API Tutorial
+# MaxScale 24.08 Beta REST API Tutorial
 
 ## REST API Tutorial
 
