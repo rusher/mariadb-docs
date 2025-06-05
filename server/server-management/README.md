@@ -1,5 +1,8 @@
 ---
-description: Page description test
+description: >-
+  Effectively managing your MariaDB Server is key to ensuring its reliability,
+  performance, and security. This section serves as your central hub for all
+  aspects of MariaDB Server management, offering i
 icon: gear
 layout:
   title:
