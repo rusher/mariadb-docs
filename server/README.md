@@ -1,5 +1,4 @@
 ---
-description: Page description test
 icon: server
 layout:
   title:
