@@ -1,6 +1,4 @@
-# columnstore-partition-management
-
-## ColumnStore Partition Management
+# ColumnStore Partition Management
 
 1. [Introduction "Introduction"](columnstore-partition-management.md#introduction)
 2. [Managing partitions by partition number "Managing partitions by partition number"](columnstore-partition-management.md#managing-partitions-by-partition-number)

@@ -18,7 +18,7 @@
   * [ColumnStore Storage Engine](architecture/columnstore-storage-engine-overview.md)
 * [Managing ColumnStore](management/README.md)
   * [Managing ColumnStore Database Environment](management/managing-columnstore-database-environment/README.md)
-    * [columnstore-partition-management](management/managing-columnstore-database-environment/columnstore-partition-management.md)
+    * [ColumnStore Partition Management](management/managing-columnstore-database-environment/columnstore-partition-management.md)
     * [Configuring ColumnStore Cross-Engine Joins](management/managing-columnstore-database-environment/configuring-columnstore-cross-engine-joins.md)
   * [Managing ColumnStore System](management/columnstore-system/README.md)
     * [columnstore-audit-plugin](management/columnstore-system/columnstore-audit-plugin.md)
