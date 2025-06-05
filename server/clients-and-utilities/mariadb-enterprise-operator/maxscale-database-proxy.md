@@ -430,7 +430,7 @@ Note that, the `Connection` uses the `Service` described in the [Kubernetes Serv
 
 To synchronize the configuration state across multiple replicas, MaxScale stores the configuration externally in a MariaDB table and conducts periodic polling across all replicas. By default, the table `mysql.maxscale_config` is used, but this can be configured by the user as well as the synchronization interval.
 
-Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://mariadb.com/docs/server/architecture/components/maxscale/monitors/mariadbmon/use-cooperative-locking-ha-maxscale-mariadb-monitor/) for more information.
+Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) for more information.
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -521,7 +521,7 @@ The GUI is exposed via a dedicated Kubernetes `Service` in the same port as the 
 
 ## MaxScale API
 
-MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://mariadb.com/kb/en/mariadb-maxscale-25-01-rest-api/) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
+MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/administrative-tools-for-mariadb-maxscale-rest-api/configuring-maxscales-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
 
 ## Troubleshooting
 
