@@ -13,7 +13,7 @@
     * [ODBC MariaDB Enterprise Spider Topology](maxscale-architecture/mariadb-enterprise-spider-topologies/odbc-mariadb-enterprise-spider-topology.md)
     * [Sharded MariaDB Enterprise Spider Topology](maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology.md)
 * [MaxScale Management](maxscale-management/README.md)
-  * [operating-maxscale](maxscale-management/operating-maxscale.md)
+  * [Operating MaxScale](maxscale-management/operating-maxscale.md)
   * [understanding-maxscales-administrative-interfaces](maxscale-management/understanding-maxscales-administrative-interfaces.md)
   * [MaxCtrl](maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl/README.md)
     * [connecting-to-maxscale-using-tls-with-maxctrl](maxscale-management/administrative-tools-for-mariadb-maxscale-maxctrl/connecting-to-maxscale-using-tls-with-maxctrl.md)

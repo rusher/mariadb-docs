@@ -1,6 +1,4 @@
-# operating-maxscale
-
-## Operating MaxScale
+# Operating MaxScale
 
 ## Overview
 
