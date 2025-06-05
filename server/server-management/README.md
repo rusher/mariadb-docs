@@ -1,1 +1,6 @@
+---
+icon: gear
+---
+
 # Server Management
+
