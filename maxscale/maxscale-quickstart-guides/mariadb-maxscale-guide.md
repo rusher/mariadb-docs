@@ -1,6 +1,4 @@
-# mariadb-maxscale-guide
-
-## MaxScale 25.01 About MariaDB MaxScale
+# MaxScale 25.01 About MariaDB MaxScale
 
 ## About MariaDB MaxScale
 
