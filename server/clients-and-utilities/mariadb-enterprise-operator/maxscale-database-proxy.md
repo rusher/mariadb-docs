@@ -8,7 +8,7 @@ MaxScale is a sophisticated database proxy, router, and load balancer designed s
 * Replay pending transactions when a server goes down.
 * Support for Galera and Replication.
 
-To better understand what MaxScale is capable of you may check the [product page](https://mariadb.com/docs/server/products/mariadb-maxscale/) and the [documentation](https://mariadb.com/kb/en/maxscale/).
+To better understand what MaxScale is capable of you may check the [product page](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-quickstart-guides/mariadb-maxscale-overview) and the [documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/).
 
 ## Table of contents
 
