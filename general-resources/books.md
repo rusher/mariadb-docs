@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Books
 
 #### Summary

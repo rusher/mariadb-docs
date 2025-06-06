@@ -1,7 +1,3 @@
----
-icon: check
----
-
 # Videos
 
 ## For the latest videos from MariaDB, visit:&#x20;

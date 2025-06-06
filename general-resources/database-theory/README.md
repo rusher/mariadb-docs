@@ -1,6 +1,5 @@
 ---
 description: Move up a level
-icon: check
 ---
 
 # Database Theory

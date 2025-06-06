@@ -1,6 +1,5 @@
 ---
 description: Keep in nav, redirect page to URL below
-icon: check
 ---
 
 # Events

@@ -143,7 +143,7 @@ Some have also been added to Columnstore.
 
 It would be useful if MariaDB had a utility that was able to parse frm files and print the DDL associated with the table.\
 For example, it would be useful for users who performed a partial backup with Mariabackup:[partial-backup-and-restore-with-mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup)\
-But they forgot to also backup the table DDL, so they can't restore the tables using the following process:[innodb-file-per-table-tablespaces](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces)\
+But they forgot to also backup the table DDL, so they can't restore the tables using the following process:[innodb-file-per-table-tablespaces](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces)\
 mysqlfrm is a tool that already exists that does similar things:[mysqlfrm.py](https://github.com/mysql/mysql-utilities/blob/master/scripts/mysqlfrm.py)\
 But it doesn't seem very user-friendly. It needs to be able to contact the local MariaDB server, and it also needs to be able to spawn a server instance, and it seems to need to be able to create a bunch of files during this process. e.g.:
 

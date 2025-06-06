@@ -1,6 +1,6 @@
 # Benchmarking Aria
 
-We have not yet had time to benchmark [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria) properly. Here follows some things that have been discussed on the [maria-discuss](https://launchpad.net/~maria-discuss) email list.
+We have not yet had time to benchmark [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) properly. Here follows some things that have been discussed on the [maria-discuss](https://launchpad.net/~maria-discuss) email list.
 
 ## Aria used for internal temporary tables
 
@@ -47,7 +47,7 @@ sum functions involved. In this case rows are just written to the tmp\
 tables and there is no updates. As soon as there are summary functions\
 and updates the new row format in Aria gives a close to 50 % speedup.
 
-The above table also shows how the page size (determined by the [aria\_block\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria/aria-system-variables#aria_block_size) system variable) affects the performance.\
+The above table also shows how the page size (determined by the [aria\_block\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_block_size) system variable) affects the performance.\
 The reason for the difference is that there is more data to move\
 back/from the page cache for inserting of keys. (When reading data we\
 are normally not copying pages). The bigger page size however allows\

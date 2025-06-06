@@ -6,7 +6,7 @@ MariaDB was designed as a drop-in replacement of MySQL with more features, new s
 
 The roadmap for MariaDB Server is formed by its engineers and product managers, with input from the community.
 
-MariaDB Server developers work with several [storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines) vendors and developers to get the best storage engines into MariaDB Server.
+MariaDB Server developers work with several [storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines) vendors and developers to get the best storage engines into MariaDB Server.
 
 The collected information is then turned into specific tasks which are then prioritized and added to the roadmap in the [JIRA](tools/jira.md) issue tracker at [**jira.mariadb.org**](https://jira.mariadb.org)
 

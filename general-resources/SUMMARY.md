@@ -211,17 +211,12 @@
 
 ## Additional Resources
 
-* [Videos](additional-resources/videos.md)
+* [Customer Stories](additional-resources/customer-stories.md)
 * [Blogs](additional-resources/blogs.md)
 
 ***
 
 * [Books](books.md)
-* [Whitepapers](whitepapers.md)
-* [Tutorials](tutorials.md)
-* [Quickstart Guides](quickstart-guides.md)
-* [Customer Stories](customer-stories.md)
-* [Events](events.md)
 * [Database Theory](database-theory/README.md)
   * [ACID: Concurrency Control with Transactions](database-theory/acid-concurrency-control-with-transactions.md)
   * [Exploring Early Database Models](database-theory/exploring-early-database-models.md)
@@ -256,4 +251,10 @@
     * [Database Normalization: Boyce-Codd Normal Form](database-theory/database-normalization/database-normalization-boyce-codd-normal-form.md)
     * [Database Normalization Overview](database-theory/database-normalization/database-normalization-overview.md)
     * [Understanding Denormalization](database-theory/database-normalization/understanding-denormalization.md)
+* [Events](events.md)
+* [Quickstart Guides](quickstart-guides.md)
+* [Support](support.md)
+* [Tutorials](tutorials.md)
+* [Videos](videos.md)
+* [Whitepapers](whitepapers.md)
 * [Distributions Including MariaDB](<README (1).md>)

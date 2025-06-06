@@ -241,7 +241,7 @@ Feature/Patch name
 
 ### [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) Log of Contributions
 
-[Instant ADD COLUMN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb) ([MDEV-11369](https://jira.mariadb.org/browse/MDEV-11369))
+[Instant ADD COLUMN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb) ([MDEV-11369](https://jira.mariadb.org/browse/MDEV-11369))
 
 * Tencent Game DBA Team, developed by vinchen.
 
@@ -380,7 +380,7 @@ Power8 optimization
 
 * [MariaDB Foundation](https://mariadb.org)
 
-Reviews for [replication](broken-reference), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), compression, [Galera](../../../en/mariadb-galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/mroonga) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create) etc.
+Reviews for [replication](broken-reference), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), compression, [Galera](../../../en/mariadb-galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create) etc.
 
 * [MariaDB Foundation](https://mariadb.org)
 
@@ -400,7 +400,7 @@ Table level [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security
 
 * [Codership](https://galeracluster.com/)
 
-[Compound statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements)
+[Compound statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements)
 
 * Antony Curtis
 
@@ -471,12 +471,12 @@ Per thread memory counting and usage
 * Code by Konstantin "Kostja" Osipov, mail.ru
 * License: BSD
 
-[CONNECT storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/connect)
+[CONNECT storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect)
 
 * Code by Olivier Bertrand
 * License: GPL
 
-[Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider)[metadata\_lock\_info Information schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table)
+[Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider)[metadata\_lock\_info Information schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table)
 
 * Code by Kentoku Shiba, Spiral Arms
 * License: GPL
@@ -566,13 +566,13 @@ Declaring many CHARSET objects as const.
 * Fredrik Nylander from Stardoll.com
 * License: MCA
 
-The [OQGRAPH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/oqgraph-storage-engine/installing-oqgraph) storage engine
+The [OQGRAPH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/oqgraph-storage-engine/installing-oqgraph) storage engine
 
 * [doc](https://openquery.com/graph/doc)
 * Created by Arjen Lenz, Open Query
 * License GPL
 
-The [Sphinx](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/sphinx-storage-engine) storage engine
+The [Sphinx](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sphinx-storage-engine) storage engine
 
 * [current.html](https://sphinxsearch.com/docs/current.html)
 * Created by Andrew Aksyonoff.
@@ -635,7 +635,7 @@ Google has sponsored:
 Facebook has sponsored many features, including:
 
 * [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined)
-* The [non-blocking client library](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library)
+* The [non-blocking client library](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/mariadb-internals/using-mariadb-with-your-programs-api/non-blocking-client-library)
 * Facebook employees do frequent the mailing list
 
 ### See Also

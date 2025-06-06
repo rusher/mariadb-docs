@@ -270,14 +270,14 @@ If your `mariadbd` binary is built with [Address Sanitizer (ASAN)](https://app.g
 
 ## What's Included in Core Files
 
-Core files usually contain a dump of all memory in the process's full address space. This means that if a server has some large buffers configured (such as a large [InnoDB buffer pool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-buffer-pool)), then the server's core files can get very large.
+Core files usually contain a dump of all memory in the process's full address space. This means that if a server has some large buffers configured (such as a large [InnoDB buffer pool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-buffer-pool)), then the server's core files can get very large.
 
 Some large buffers have been excluded from core files on some systems as a way to reduce the size.
 
 The following buffers are excluded:
 
-* [InnoDB buffer pool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-buffer-pool)
-* [InnoDB log buffer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_log_buffer_size)
+* [InnoDB buffer pool](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-buffer-pool)
+* [InnoDB log buffer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_buffer_size)
 * InnoDB Redo log buffer (fixed 2M)
 * [Query cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache)
 

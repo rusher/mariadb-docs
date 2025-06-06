@@ -54,7 +54,7 @@ I do understand, sysbench it does not resemble anything that real-life load, and
 
 What do I refer to as durability cheating:
 
-1. using [innodb\_flush\_log\_at\_trx\_commit=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) , which, for me , is ok for many scenarios
+1. using [innodb\_flush\_log\_at\_trx\_commit=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) , which, for me , is ok for many scenarios
 2. "Switch off Windows disk flushing" setting, which has the effect of not flushing data in the disk controller (file system caching is not used here anyway). This setting is only recommended for battery backed disks, my own desktop does not have it, of course.
 
 However, if I have not done the above, then I would be measuring the latency of a FlushFileBuffers() in my benchmark, which was not what I wanted. I wanted to stress the asynchronous IO.
