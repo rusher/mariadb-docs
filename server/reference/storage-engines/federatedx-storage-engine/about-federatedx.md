@@ -27,7 +27,7 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
-```
+```sql
 INSTALL SONAME 'ha_federatedx';
 ```
 
@@ -43,7 +43,7 @@ plugin_load_add = ha_federatedx
 
 You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
-```
+```sql
 UNINSTALL SONAME 'ha_federatedx';
 ```
 
@@ -105,7 +105,7 @@ connection=mysql://username:password@hostname:port/database/tablename
 
 Or, using a Federated server, first a server is created:
 
-```
+```sql
 create server 'server_one' foreign data wrapper 'mysql' options
   (HOST '127.0.0.1',
   DATABASE 'db1',
@@ -123,7 +123,7 @@ You can also use 'mariadb' as a wrapper.
 Then the FederatedX table is created specifying the newly created Federated server.\
 The following statements creates a federated table, `federated.t1` against the table `db1.t1` on the remote server.
 
-```
+```sql
 CREATE TABLE federated.t1 (
   `id` int(20) NOT NULL,
   `name` varchar(64) NOT NULL default ''
@@ -139,13 +139,13 @@ should be given as "FEDERATED" without an extra "X", not "FEDERATEDX").
 
 The equivalent of above, if done specifying all the connection parameters
 
-```
+```sql
 CONNECTION="mysql://root@127.0.0.1:3306/db1/t1"
 ```
 
 You can also change the server to point to a new schema:
 
-```
+```sql
 ALTER SERVER 'server_one' options(DATABASE 'db2');
 ```
 
@@ -231,7 +231,7 @@ To use this handler, it's very simple. You must have two databases running, eith
 
 First, on the foreign database you create a table, for example:
 
-```
+```sql
 CREATE TABLE federated.test_table (
   id     int(20) NOT NULL auto_increment,
   name   varchar(32) NOT NULL default '',
@@ -244,7 +244,7 @@ DEFAULT CHARSET=latin1;
 
 Then, on the server that will be connecting to the foreign host (client), you create a federated table without specifying the table structure:
 
-```
+```sql
 CREATE TABLE federated_test_table ENGINE=FEDERATED 
   CONNECTION='mysql://root@127.0.0.1:9306/federated/test_table';
 ```
@@ -260,7 +260,7 @@ for FederatedX, and port 5555 for the foreign database.
 
 Alternatively (or if you're using MariaDB before version 10.0.2) you specify the federated table structure explicitly:
 
-```
+```sql
 CREATE TABLE federated_test_table (
   id     int(20) NOT NULL auto_increment,
   name   varchar(32) NOT NULL default '',
@@ -292,7 +292,7 @@ Once compiled, I did a 'make install' (not for the purpose of installing the bin
 
 Then, I started the foreign server:
 
-```
+```bash
 /usr/local/mysql/bin/mysqld_safe \
   --user=mysql --log=/tmp/mysqld.5555.log -P 5555
 ```
@@ -321,14 +321,14 @@ I would create a table on the client to the foreign server on port 5555, and the
 Another thing to look for is 'show variables' to show you that you have\
 support for FederatedX handler support:
 
-```
-show variables like '%federat%'
+```sql
+SHOW variables like '%federat%'
 ```
 
 and:
 
-```
-show storage engines;
+```sql
+SHOW storage engines;
 ```
 
 Both should display the federatedx storage handler.
@@ -339,15 +339,15 @@ A federated server is a way to have a foreign data source defined-- with all con
 
 For instance, if you wanted to connect to a table, `first_db.test_table`, using this definition:
 
-```
+```sql
 CREATE TABLE federated_test_table ENGINE=FEDERATED 
   CONNECTION='mysql://patg@192.168.1.123/first_db/test_table';
 ```
 
 You could instead create this with a server:
 
-```
-create server 'server_one' foreign data wrapper 'mysql' options
+```sql
+CREATE SERVER 'server_one' foreign data wrapper 'mysql' options
   (HOST '192.168.1.123',		
   DATABASE 'first_db',		
   USER 'patg',
@@ -359,7 +359,7 @@ create server 'server_one' foreign data wrapper 'mysql' options
 
 You could now specify the server instead of the full URL in the connection string:
 
-```
+```sql
 CREATE TABLE federated_test_table ENGINE=FEDERATED 
   CONNECTION='server_one/test_table';
 ```
