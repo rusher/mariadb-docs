@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MultiPolygonFromText
 
 A synonym for [MPolyFromText](mpolyfromtext.md).

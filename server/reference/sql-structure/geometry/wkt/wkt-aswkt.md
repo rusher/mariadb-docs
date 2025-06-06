@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # AsWKT
 
 A synonym for [ST\_AsText()](st_astext.md).

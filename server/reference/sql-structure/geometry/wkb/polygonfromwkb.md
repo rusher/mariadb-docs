@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # PolygonFromWKB
 
 A synonym for [ST\_PolyFromWKB](st_polyfromwkb.md).

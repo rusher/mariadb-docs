@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # PolyFromText
 
 A synonym for [ST\_PolyFromText](st_polyfromtext.md).

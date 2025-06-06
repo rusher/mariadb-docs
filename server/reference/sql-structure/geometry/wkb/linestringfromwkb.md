@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # LineStringFromWKB
 
 A synonym for [ST\_LineFromWKB](st_linefromwkb.md).

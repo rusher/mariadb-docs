@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # BUFFER
 
 A synonym for [ST\_BUFFER](st_buffer.md).

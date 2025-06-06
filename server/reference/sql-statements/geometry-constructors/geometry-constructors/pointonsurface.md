@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # PointOnSurface
 
 A synonym for [ST\_PointOnSurface](st_pointonsurface.md).

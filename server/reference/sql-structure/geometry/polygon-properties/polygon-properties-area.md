@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # AREA
 
 A synonym for [ST\_AREA](st_area.md).

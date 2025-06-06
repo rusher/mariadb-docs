@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # BOUNDARY
 
 A synonym for [ST\_BOUNDARY](st_boundary.md).

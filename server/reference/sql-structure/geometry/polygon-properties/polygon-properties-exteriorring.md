@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # ExteriorRing
 
 A synonym for [ST\_ExteriorRing](st_exteriorring.md).

@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # Y
 
 A synonym for [ST\_Y](st_y.md).

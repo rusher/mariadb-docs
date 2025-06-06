@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MULTILINESTRING
 
 ## Syntax

@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # ST\_GeometryCollectionFromText
 
 A synonym for [ST\_GeomCollFromText](st_geomcollfromtext.md).

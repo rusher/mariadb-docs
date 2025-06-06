@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # IsClosed
 
 A synonym for [ST\_IsClosed](st_isclosed.md).

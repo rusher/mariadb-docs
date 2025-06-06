@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MultiPolygonFromWKB
 
 Synonym for [MPolyFromWKB](mpolyfromwkb.md).

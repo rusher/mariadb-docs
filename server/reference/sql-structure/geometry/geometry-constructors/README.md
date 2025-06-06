@@ -1,11 +1,5 @@
 ---
-icon: earth-africa
-cover: ../../../../.gitbook/assets/MDB-asset-image-19 (2).jpg
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:

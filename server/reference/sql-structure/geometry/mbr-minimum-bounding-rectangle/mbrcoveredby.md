@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MBRCoveredBy
 
 **MariaDB starting with** [**11.8**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118)

@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # STARTPOINT
 
 A synonym for [ST\_STARTPOINT](st_startpoint.md).

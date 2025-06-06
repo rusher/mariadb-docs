@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MultiLineStringFromText
 
 A synonym for [MLineFromText](mlinefromtext.md).

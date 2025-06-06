@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # ENDPOINT
 
 A synonym for [ST\_ENDPOINT](st_endpoint.md).

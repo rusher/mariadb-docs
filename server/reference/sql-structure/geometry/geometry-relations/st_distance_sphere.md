@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # ST\_DISTANCE\_SPHERE
 
 **MariaDB starting with** [**10.5.10**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-10510-release-notes)

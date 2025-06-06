@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MultiPointFromWKB
 
 A synonym for [MPointFromWKB](mpointfromwkb.md).

@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # GeomFromWKB
 
 A synonym for [ST\_GeomFromWKB](st_geomfromwkb.md).

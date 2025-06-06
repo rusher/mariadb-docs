@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # ST\_MPolyFromText
 
 A synonym for [ST\_GeomFromText](st_geomfromtext.md).

@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MBRIntersects
 
 ## Syntax

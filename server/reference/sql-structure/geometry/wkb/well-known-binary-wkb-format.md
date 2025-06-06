@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # Well-Known Binary (WKB) Format
 
 WKB stands for Well-Known Binary, a format for representing geographical and geometrical data.
