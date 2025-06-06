@@ -6,7 +6,7 @@ CHECK TABLE will mark the table as corrupt if it finds a problem, while REPAIR T
 
 ## Examples
 
-```
+```sql
 CREATE TABLE csv_test (
   x INT NOT NULL, y DATE NOT NULL, z CHAR(10) NOT NULL
   ) ENGINE=CSV;
@@ -17,7 +17,7 @@ INSERT INTO csv_test VALUES
     (3,CURDATE(),'three');
 ```
 
-```
+```sql
 SELECT * FROM csv_test;
 +---+------------+-------+
 | x | y          | z     |
@@ -30,7 +30,7 @@ SELECT * FROM csv_test;
 
 Using an editor, the actual file will look as follows
 
-```
+```bash
 $ cat csv_test.CSV
 1,"2013-07-08","one"
 2,"2013-07-08","two"
@@ -45,7 +45,7 @@ Let's introduce some corruption with an unwanted quote in the 2nd row:
 3,"2013-07-08","three"
 ```
 
-```
+```sql
 CHECK TABLE csv_test;
 +---------------+-------+----------+----------+
 | Table         | Op    | Msg_type | Msg_text |
@@ -56,7 +56,7 @@ CHECK TABLE csv_test;
 
 We can repair this, but all rows from the corrupt row onwards will be lost:
 
-```
+```sql
 REPAIR TABLE csv_test;
 +---------------+--------+----------+----------------------------------------+
 | Table         | Op     | Msg_type | Msg_text                               |

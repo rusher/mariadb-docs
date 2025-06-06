@@ -8,7 +8,7 @@ However, since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/com
 
 The CSV storage engine is the default storage engine when using [logging of SQL queries](../../../server-management/server-monitoring-logs/writing-logs-into-tables.md) to tables.
 
-```
+```bash
 mysqld --log-output=table
 ```
 
@@ -38,27 +38,27 @@ The `.CSM` file stores metadata about the table such as the state and the number
 
 Forgetting to add NOT NULL:
 
-```
+```sql
 CREATE TABLE csv_test (x INT, y DATE, z CHAR(10)) ENGINE=CSV;
 ERROR 1178 (42000): The storage engine for the table doesn't support nullable columns
 ```
 
 Creating, inserting and selecting:
 
-```
+```sql
 CREATE TABLE csv_test (
   x INT NOT NULL, y DATE NOT NULL, z CHAR(10) NOT NULL
   ) ENGINE=CSV;
 ```
 
-```
+```sql
 INSERT INTO csv_test VALUES
     (1,CURDATE(),'one'),
     (2,CURDATE(),'two'),
     (3,CURDATE(),'three');
 ```
 
-```
+```sql
 SELECT * FROM csv_test;
 +---+------------+-------+
 | x | y          | z     |
@@ -71,7 +71,7 @@ SELECT * FROM csv_test;
 
 Viewing in a text editor:
 
-```
+```bash
 $ cat csv_test.CSV
 1,"2011-11-16","one"
 2,"2011-11-16","two"
