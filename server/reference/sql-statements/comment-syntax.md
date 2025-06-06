@@ -4,7 +4,7 @@ There are three supported comment styles in MariaDB:
 
 1. From a '`#`' to the end of a line:
 
-```
+```sql
 SELECT * FROM users; 
 
 # This is a comment
@@ -13,13 +13,13 @@ SELECT * FROM users;
 
 1. From a '`--`' to the end of a line. The space after the two dashes is required (as in MySQL).
 
-```
+```sql
 SELECT * FROM users; -- This is a comment
 ```
 
 1. C style comments from an opening '`/*`' to a closing '`*/`'. Comments of this form can span multiple lines:
 
-```
+```sql
 SELECT * FROM users; /* This is a
 multi-line
 comment */
@@ -46,13 +46,13 @@ hide the code from MySQL.
 
 MySQL and MariaDB executable comment syntax:
 
-```
+```sql
 /*! MySQL or MariaDB-specific code */
 ```
 
 Code that should be executed only starting from a specific MySQL or MariaDB version:
 
-```
+```sql
 /*!##### MySQL or MariaDB-specific code */
 ```
 
@@ -61,27 +61,27 @@ above specify the specific the minimum versions of MySQL and MariaDB that should
 
 For example, if you want to embed some code that should only execute on MySQL or MariaDB starting from 5.1.0, you would do the following:
 
-```
+```sql
 /*!50100 MySQL and MariaDB 5.1.0 (and above) code goes here. */
 ```
 
 MariaDB-only executable comment syntax (starting from [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)):
 
-```
+```sql
 /*M! MariaDB-specific code */
 /*M!###### MariaDB-specific code */
 ```
 
 MariaDB ignores MySQL-style executable comments that have a version number in the range `50700..99999`. This is needed to skip features introduced in MySQL-5.7 that are not ported to MariaDB 10.x yet.
 
-```
+```sql
 /*!50701 MariaDB-10.x ignores MySQL-5.7 specific code */
 ```
 
 **Note:** comments which have a version number in the range `50700..99999` that use\
 MariaDB-style executable comment syntax are still executed.
 
-```
+```sql
 /*M!50701 MariaDB-10.x does not ignore this */
 ```
 
@@ -92,7 +92,7 @@ Statement delimiters cannot be used within executable comments.
 In MySQL all the following will return 2:\
 In MariaDB, the last 2 queries would return 3.
 
-```
+```sql
 SELECT 2 /* +1 */;
 SELECT 1 /*! +1 */;
 SELECT 1 /*!50101 +1 */;
@@ -102,14 +102,14 @@ SELECT 2 /*M!50301 +1 */;
 
 The following executable statement will not work due to the delimiter inside the executable portion:
 
-```
+```sql
 /*M!100100 select 1 ; */
 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
 ```
 
 Instead, the delimiter should be placed outside the executable portion:
 
-```
+```sql
 /*M!100100 select 1 */;
 +---+
 | 1 |

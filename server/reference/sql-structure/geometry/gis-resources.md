@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # GIS Resources
 
 Here are a few resources for those interested in GIS in MariaDB.

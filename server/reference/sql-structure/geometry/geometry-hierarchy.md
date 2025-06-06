@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # Geometry Hierarchy
 
 ## Description

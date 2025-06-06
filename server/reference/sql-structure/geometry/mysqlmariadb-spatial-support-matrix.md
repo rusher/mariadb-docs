@@ -1,7 +1,3 @@
----
-icon: earth-africa
----
-
 # MySQL/MariaDB Spatial Support Matrix
 
 This table shows when different spatial features were introduced into MySQL and MariaDB.

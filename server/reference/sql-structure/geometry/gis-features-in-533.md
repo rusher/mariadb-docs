@@ -1,17 +1,11 @@
----
-icon: earth-africa
----
+# GIS Features
 
-# GIS features in 5.3.3
-
-Basic information about the existing spatial features can be found in the[Geographic Features](./) section of the Knowlegebase. The[Spatial Extensions page of the MySQL manual](https://dev.mysql.com/doc/refman/5.6/en/spatial-extensions.html)\
+Basic information about the existing spatial features can be found in the[Geographic Features](./) section of the Knowlegebase. The [Spatial Extensions page of the MySQL manual](https://dev.mysql.com/doc/refman/5.6/en/spatial-extensions.html)\
 also applies to MariaDB.
 
-The [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) release , contains code improving\
-the spatial functionality in MariaDB.
+The [MariaDB 5.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/mariadb-533-release-notes) release , contains code improving the spatial functionality in MariaDB.
 
-MySQL operates on spatial data based on the OpenGIS standards, particularly the[OpenGIS SFS](https://www.opengeospatial.org/standards/sfs) (Simple feature\
-access, SQL option).
+MySQL operates on spatial data based on the OpenGIS standards, particularly the[OpenGIS SFS](https://www.opengeospatial.org/standards/sfs) (Simple feature access, SQL option).
 
 Initial support was based on version 05-134 of the standard. MariaDB implements\
 a subset of the 'SQL with Geometry Types' environment proposed by the OGC. And\
