@@ -1,6 +1,4 @@
-# mariadb-enterprise-server-innodb-operations
-
-## MariaDB Enterprise Server InnoDB Operations
+# MariaDB Enterprise Server InnoDB Operations
 
 ## Overview
 

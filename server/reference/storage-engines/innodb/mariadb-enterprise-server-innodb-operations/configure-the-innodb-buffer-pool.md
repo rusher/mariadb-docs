@@ -1,6 +1,4 @@
-# configure-the-innodb-buffer-pool
-
-## Configure the InnoDB Buffer Pool
+# Configure the InnoDB Buffer Pool
 
 ## Overview
 
@@ -57,13 +55,13 @@ $ mariadb --user=root
 
 For example, to set the size to 2 GB:
 
-```
+```sql
 SET GLOBAL innodb_buffer_pool_size=(2 * 1024 * 1024 * 1024);
 ```
 
 3. Confirm that the resize operation has been completed by querying the [Innodb\_buffer\_pool\_resize\_status](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable using the [SHOW GLOBAL STATUS](../../../sql-statements/administrative-sql-statements/show/show-status.md) statement:
 
-```
+```sql
 SHOW GLOBAL STATUS
    LIKE 'Innodb_buffer_pool_resize_status';
 ```
@@ -135,7 +133,7 @@ innodb_buffer_pool_size=2G
 
 3. Restart the server:
 
-```
+```bash
 $ sudo systemctl restart mariadb
 ```
 

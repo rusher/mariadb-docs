@@ -1,6 +1,4 @@
-# schema-changes-innodb-schema-changes
-
-## InnoDB Schema Changes
+# InnoDB Schema Changes
 
 ## MariaDB Enterprise Server InnoDB Schema Changes with the INPLACE Algorithm
 

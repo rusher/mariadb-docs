@@ -1,6 +1,4 @@
-# configure-the-innodb-redo-log
-
-## Configure the InnoDB Redo Log
+# Configure the InnoDB Redo Log
 
 ## Overview
 
@@ -46,13 +44,13 @@ $ mariadb --user=root
 
 For example, to set the size to 512 MB:
 
-```
+```sql
 SET GLOBAL innodb_log_file_size=(512 * 1024 * 1024);
 ```
 
 And to set the size to 2 GB:
 
-```
+```sql
 SET GLOBAL innodb_log_file_size=(2 * 1024 * 1024 * 1024);
 ```
 
@@ -60,7 +58,7 @@ SET GLOBAL innodb_log_file_size=(2 * 1024 * 1024 * 1024);
 
 Execute the following statement until it shows the new size:
 
-```
+```sql
 SHOW GLOBAL VARIABLES
    LIKE 'innodb_log_file_size';
 ```
@@ -142,7 +140,7 @@ innodb_log_file_size=2G
 
 3. Starting in MariaDB Community Server 10.5, the server must be restarted for the configuration change to take effect:
 
-```
+```bash
 $ sudo systemctl restart mariadb
 ```
 

@@ -1,6 +1,4 @@
-# configure-the-innodb-io-threads
-
-## Configure the InnoDB I/O Threads
+# Configure the InnoDB I/O Threads
 
 ## Overview
 
@@ -67,7 +65,7 @@ $ mariadb --user=root
 
 For example:
 
-```
+```sql
 SET GLOBAL innodb_read_io_threads=8;
 SET GLOBAL innodb_write_io_threads=8;
 ```

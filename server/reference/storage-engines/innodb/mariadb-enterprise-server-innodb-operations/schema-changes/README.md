@@ -1,6 +1,4 @@
-# schema-changes
-
-## Schema Changes
+# Schema Changes
 
 ## Overview
 

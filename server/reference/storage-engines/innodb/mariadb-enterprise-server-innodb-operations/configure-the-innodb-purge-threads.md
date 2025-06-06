@@ -1,6 +1,4 @@
-# configure-the-innodb-purge-threads
-
-## Configure the InnoDB Purge Threads
+# Configure the InnoDB Purge Threads
 
 ## Overview
 
@@ -48,7 +46,7 @@ $ mariadb --user=root
 
 For example:
 
-```
+```sql
 SET GLOBAL innodb_purge_threads=8;
 ```
 
@@ -108,7 +106,7 @@ innodb_purge_threads=8
 
 3. Restart the server:
 
-```
+```bash
 $ sudo systemctl restart mariadb
 ```
 

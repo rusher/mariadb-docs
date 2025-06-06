@@ -1,6 +1,4 @@
-# configure-the-innodb-undo-log
-
-## Configure the InnoDB Undo Log
+# Configure the InnoDB Undo Log
 
 ## Overview
 
@@ -24,7 +22,7 @@ When you configure separate undo log tablespaces, you can also configure the sep
 
 Separate InnoDB undo log tablespaces must be configured prior to the initialization of the server's InnoDB data directory. If you try to configure separate InnoDB undo log tablespaces when the InnoDB data directory has already been initializes, you will see errors in the error log during startup similar to the following:
 
-```
+```sql
 [ERROR] InnoDB: Expected to open innodb_undo_tablespaces=8 but was able to find only 0
 [ERROR] InnoDB: Plugin initialization aborted with error Generic error
 ```
@@ -34,7 +32,7 @@ To safely configure separate InnoDB undo log tablespaces:
 1. If you have preexisting data, backup your data with [MariaDB Dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md).
 2. Ensure that the server is stopped:
 
-```
+```bash
 $ sudo systemctl stop mariadb
 ```
 
@@ -76,7 +74,7 @@ innodb_undo_directory=/innodb/undo
 
 6. If you want your InnoDB undo log tablespaces to be in a specific directory, then also create the directory, and give it the proper permissions:
 
-```
+```bash
 $ sudo mkdir -p /innodb/undo
 $ sudo chown mysql:mysql /innodb/undo
 ```
@@ -85,27 +83,27 @@ $ sudo chown mysql:mysql /innodb/undo
 
 For example, if the default value of /var/lib/mysql is used for both:
 
-```
+```bash
 $ sudo rm -fr /var/lib/mysql/*
 ```
 
 8. Reinitialize the data directory using the MariaDB Install DB command.
 9. Start the server:
 
-```
+```bash
 $ sudo systemctl start mariadb
 ```
 
 10. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 11. If your server had preexisting data, then reload the backup taken at the beginning of the procedure.
 12. Confirm that the configuration changes were properly applied by checking the values of the system variables using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW GLOBAL VARIABLES
    WHERE Variable_name IN (
       'innodb_undo_tablespaces',
