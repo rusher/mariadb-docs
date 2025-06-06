@@ -1,41 +1,162 @@
 # MariaDB Package Repository Setup and Usage
 
-If you are looking to set up MariaDB Server, it is often easiest to use a\
-repository. The MariaDB Foundation has a repository configuration tool atand MariaDB Corporation provides a convenient\
-shell script to configure access to their MariaDB Package Repositories. It is\
-available at:
+## Overview
 
-* [mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup)
+If you are looking to set up MariaDB Server, it is often easiest to use a repository. The MariaDB Foundation has a repository configuration tool and MariaDB Corporation provides two convenient\
+shell scripts to configure access to their MariaDB Package Repositories:
 
-The script by default sets up 3 different repositories in a single repository configuration file. The repositories are
+* `mariadb_es_repo_setup` for MariaDB Enterprise Server, which can be downloaded from:
+  * [https://dlm.mariadb.com/enterprise-release-helpers/mariadb\_es\_repo\_setup](https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup)
+* `mariadb_repo_setup` for MariaDB Community Server, which can be downloaded from:
+  * [https://r.mariadb.com/downloads/mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup)
 
-* MariaDB Server Repository
-* MariaDB MaxScale Repository
-* MariaDB Tools Repository
+### Download and Verify the script
 
-The script can be executed in the following way:
+The repository setup script can be downloaded and verified in the following way:
+
+{% tabs %}
+{% tab title="mariadb_es_repo_setup" %}
+Download the script:
+
+```bash
+curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
+```
+
+Verify the checksum of the script:
+
+```bash
+echo "${checksum} mariadb_es_repo_setup" | sha256sum -c -
+```
+{% endtab %}
+
+{% tab title="mariadb_repo_setup" %}
+Download the script:
+
+```bash
+curl -LsSO https://r.mariadb.com/downloads/mariadb_repo_setup
+```
+
+Verify the checksum of the script:
+
+```bash
+echo "${checksum} mariadb_repo_setup" | sha256sum -c -
+```
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Checksums of the various releases of the script can be found in the Versions section at the bottom of this page. Substitute `${checksum}`  in the example above with the latest checksum.
+{% endhint %}
+
+### Prerequisites
+
+For the script to work, the `curl`  package needs to be installed on your system. Additionally on Debian and Ubuntu the `apt-transport-https` package needs to be installed. The script will check if these are installed and let you know before it attempts to create the repository configuration on your system.
+
+They can be installed on your system as follows:
+
+{% tabs %}
+{% tab title="RHEL / Rocky / Alma" %}
+```bash
+sudo dnf install curl
+```
+{% endtab %}
+
+{% tab title="Debian / Ubuntu" %}
+```bash
+sudo apt update
+sudo apt install curl apt-transport-https
+```
+{% endtab %}
+
+{% tab title="SLES" %}
+```bash
+sudo zypper install curl
+```
+{% endtab %}
+{% endtabs %}
+
+### Run the script
+
+After the script is downloaded you need to run it with `root` user permissions. This is normally accomplished by using the `sudo` command:
+
+{% tabs %}
+{% tab title="mariadb_es_repo_setup" %}
+Retrieve your customer downloads token:
+
+1. Navigate to [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/)
+2. Log in
+3. Copy the Customer Download Token
+4. Substitute your token for `${token}` when running the `mariadb_es_repo_setup` script, below
+
+Set the script to be executable:
 
 ```
-curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
+chmod +x mariadb_es_repo_setup
 ```
 
-For the script to work, the `curl` and `ca-certificates` packages need to be installed on your system. Additionally on Debian and Ubuntu the `apt-transport-https` package needs to be installed. The script will check if these are installed and let you know before it attempts to create the repository configuration on your system.
+Run the script:
+
+```
+sudo ./mariadb_es_repo_setup --token="${token}" --apply
+```
+{% endtab %}
+
+{% tab title="mariadb_repo_setup" %}
+Set the script to be executable:
+
+```
+chmod +x mariadb_repo_setup
+```
+
+Run the script:
+
+```
+sudo ./mariadb_repo_setup
+```
+{% endtab %}
+{% endtabs %}
+
+
+
+
+
+
 
 ## Repositories
 
-The script will will set up 3 different repositories in a single repository configuration file.
+The script will will set up different repositories in a single repository configuration file. The primary two are the [MariaDB Server Repository](mariadb-package-repository-setup-and-usage.md#mariadb-server-repository), and the [MariaDB MaxScale Repository](mariadb-package-repository-setup-and-usage.md#mariadb-maxscale-repository).
 
-### MariaDB Repository
+The default repositories setup by `mariadb_es_repo_setup` are:
+
+* MariaDB Enterprise Server Repository
+* A MariaDB Enterprise Server Debug Repository (Ubuntu only)
+* MariaDB Enterprise MaxScale Repository
+* MariaDB Tools Repository
+
+The default repositories set up by `mariadb_repo_setup` are:
+
+* MariaDB Community Server Repository
+* MariaDB Community Server Debug Repository (Ubuntu only)
+* MariaDB MaxScale Repository
+* MariaDB Tools Repository
+
+{% hint style="info" %}
+Ubuntu needs a separate debug repository for MariaDB Server debug packages. Other Linux distributions include the debug packages in the main repository. Debug packages should normally only be installed for specific purposes under the direction of a qualified support engineer.
+{% endhint %}
+
+### MariaDB Server Repository
 
 The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../reference/plugins/), and [Mariabackup](../../backing-up-and-restoring-databases/mariabackup/).
 
 The binaries in MariaDB Corporation's **MariaDB Repository** are currently identical to the binaries in MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 
-By default, the script will configure your system to install from the 11.rolling repository which contains the latest stable version of MariaDB. If you would like to stick to a major long-term release series, then you will need to either manually edit the repository configuration file to point to that specific version or series, or run the MariaDB Package Repository setup script again.
+By default, the `mariadb_repo_setup` script will configure your system to install from the 11.rolling repository, which contains the latest stable version of MariaDB Community server.
 
-The script can also configure your system to install from the repository of a different version of MariaDB if you use the `[--mariadb-server-version](#-mariadb-server-version)` option.
+The `mariadb_es_repo_setup` script will set up whatever is the current stable version of MariaDB Enterprise Server.
 
-If you would not like to configure the **MariaDB Repository** on your system, then you can use the `--skip-server` option to prevent the MariaDB Package Repository setup script from configuring it.
+If you would like to stick to a specific release series, then you will need to either manually edit the repository configuration file to point to that specific version or series, or run the MariaDB Package Repository setup script again using the `--mariadb-server-version` option. For example, if you wanted to specifically use the 11.4 series you would do: `--mariadb-server-version=11.4`.
+
+If you do not want to configure the **MariaDB Repository** on your system, for example if you are setting up a server just running MariaDB MaxScale, then you can use the `--skip-server` option to prevent the setup script from configuring the server repository.
 
 ### MariaDB MaxScale Repository
 
@@ -43,13 +164,13 @@ The **MariaDB MaxScale Repository** contains software packages related to [Maria
 
 By default, the script will configure your system to install from the repository of the _latest_ GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g. '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
 
-Older versions of the MariaDB Package Repository setup script would configure a specific MariaDB MaxScale series in the repository (i.e. '`2.4`'), so if you used the script in the past to set up your repository and want MariaDB MaxScale to automatically use the latest GA version then change '`2.4`' or '`2.3`' in the repository configuration to '`latest`'. Or download the current version of the script and re-run it to set up the repository again.
+Older versions of the MariaDB Package Repository setup script would configure a specific MariaDB MaxScale series in the repository (i.e. `24.02`), so if you used the script in the past to set up your repository and want MariaDB MaxScale to automatically use the latest GA version then change `24.02` or whatever version it is set to in the repository configuration to `latest`. Or download the current version of the setup script and re-run it to set up the repository again.
 
-The script can configure your system to install from the repository of an older version of MariaDB MaxScale if you use the `[--mariadb-maxscale-version](#-mariadb-maxscale-version)` option. For example, `--mariadb-maxscale-version=2.4` if you want the latest release in the MariaDB MaxScale 2.4.x series.
+The script can configure your system to install from the repository of an older version of MariaDB MaxScale if you use the `--mariadb-maxscale-version` option. For example, `--mariadb-maxscale-version=25.01` .
 
-If you do not want to configure the **MariaDB MaxScale Repository** on your system, then you can use the `--skip-maxscale` option to prevent the MariaDB Package Repository setup script from configuring it.
+If you do not want to configure the **MariaDB MaxScale Repository** on your system, then you can use the `--skip-maxscale` option to prevent the setup script from configuring it.
 
-MariaDB MaxScale is licensed under the [Business Source License 1.1](https://mariadb.com/bsl11/), so it is not entirely free to use for organizations who do not have a subscription with MariaDB Corporation. If you would like more information, see the information at [MariaDB Business Source License (BSL): Frequently Asked Questions](https://mariadb.com/bsl-faq-mariadb/). If you would like to know how much a subscription to use MariaDB MaxScale would cost, see [MariaDB Corporation's subscription pricing](https://mariadb.com/pricing/).
+
 
 ## Supported Distributions
 
@@ -64,116 +185,9 @@ The distributions currently supported by the script include:
 
 To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb).
 
-## Manual Configuration
+## Options
 
-### Configure MariaDB Enterprise Repository
-
-MariaDB Corporation provides the MariaDB Enterprise Repository for customers of MariaDB Corporation to install MariaDB database products using the operating system's package manager.
-
-The MariaDB Enterprise Repository is configured using the mariadb\_es\_repo\_setup script, which requires the [Customer Download Token](../deployment-general-installing-and-upgrading-instructions/token.md) to be provided via the --token option.
-
-Configure the MariaDB Enterprise Repository using the following procedure:
-
-1. [Retrieve your Customer Download Token.](../deployment-general-installing-and-upgrading-instructions/token.md#retrieve-customer-download-token)
-2. Install the prerequisites for downloading the software from the Web.Install on CentOS / RHEL / Rocky Linux (YUM):
-
-```
-$ sudo yum install curl
-```
-
-Install on Debian / Ubuntu (APT):
-
-```
-$ sudo apt install curl apt-transport-https
-```
-
-Install on SLES (ZYpp):
-
-```
-$ sudo zypper install curl
-```
-
-1. Configure the MariaDB Enterprise Repository using the mariadb\_es\_repo\_setup script and provide the Customer Download Token using the --token option:
-
-```
-curl -LsSO https://dlm.mariadb.com/enterprise-release-helpers/mariadb_es_repo_setup
-
-echo "4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0  mariadb_es_repo_setup" \
-       | sha256sum -c -
-
-chmod +x mariadb_es_repo_setup
-
-sudo ./mariadb_es_repo_setup --token="CUSTOMER_DOWNLOAD_TOKEN" --apply
-```
-
-To learn how to configure your system to install a specific product or version from the MariaDB Enterprise Repository, see the available mariadb\_es\_repo\_setup command-line options.
-
-### Configure MariaDB Community Repository
-
-MariaDB Corporation provides the MariaDB Community Repository for any MariaDB user to install MariaDB products using the operating system's package manager.
-
-The MariaDB Community Repository is configured using the [mariadb\_repo\_setup](mariadb-package-repository-setup-and-usage.md) script.
-
-Configure the MariaDB Community Repository using the following procedure:
-
-1. Install the prerequisites for downloading the software from the Web.Install on CentOS / RHEL / Rocky Linux (YUM):
-
-```
-$ sudo yum install curl
-```
-
-Install on Debian / Ubuntu (APT):
-
-```
-$ sudo apt install curl apt-transport-https
-```
-
-Install on SLES (ZYpp):
-
-```
-$ sudo zypper install curl
-```
-
-1. Configure the MariaDB Community Repository using the [mariadb\_repo\_setup](mariadb-package-repository-setup-and-usage.md) script:
-
-```
-curl -LsSO https://r.mariadb.com/downloads/mariadb_repo_setup
-
-echo "c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a  mariadb_repo_setup" \
-       | sha256sum -c -
-
-chmod +x mariadb_repo_setup
-
-sudo ./mariadb_repo_setup
-```
-
-To learn how to configure your system to install a specific product or version from the MariaDB Community Repository, see the available [mariadb\_repo\_setup](mariadb-package-repository-setup-and-usage.md) command-line options.
-
-## Configuration Using the MariaDB Package Repository Setup Script
-
-The script can be executed in the following way:
-
-```
-curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
-```
-
-The script will have to set up package repository configuration files, so it will need to be executed as root.
-
-The script will also install the GPG public keys used to verify the signature of MariaDB software packages. If you want to avoid that, then you can use the `--skip-key-import` option.
-
-If the script tries to create the repository configuration file and one with that name already exists, then the script will rename the existing file with an extension in the format ".old\_\[0-9]+", which would make the OS's package manager ignore the file. You can safely remove those files after you have confirmed that the updated repository configuration file works..
-
-If you want to see the repository configuration file that would be created without actually doing so, then you can use the `[--write-to-stdout](#-write-to-stdout)` option. This also prevents the need to run the script as root,
-
-If you want to download the script, rather than executing it, then you can do so in the following way:
-
-```
-curl -LO https://r.mariadb.com/downloads/mariadb_repo_setup
-```
-
-### Options
-
-To provide options to the script, you must tell bash to expect them by executing bash with the options `-s --`, for example:
+To provide options to the script, you must tell your  to expect them by executing bash with the options `-s --`, for example:
 
 ```
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --help
@@ -181,7 +195,6 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- -
 
 | Option                      | Description                                                                                                                                                                                       |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                      | Description                                                                                                                                                                                       |
 | --help                      | Display a usage message and exit                                                                                                                                                                  |
 | --mariadb-server-version=   | Override the default MariaDB Server version. By default, the script will use '11.rolling'                                                                                                         |
 | --mariadb-maxscale-version= | Override the default MariaDB MaxScale version. By default, the script will use 'latest'                                                                                                           |
@@ -404,24 +417,18 @@ sudo zypper install maxscale
 
 ## Versions
 
-| Version    | sha256sum                                                        |
-| ---------- | ---------------------------------------------------------------- |
-| Version    | sha256sum                                                        |
-| 2025-02-13 | c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a |
-| 2024-11-14 | ceaa5bd124c4d10a892c384e201bb6e0910d370ebce235306d2e4b860ed36560 |
-| 2024-08-14 | 6083ef1974d11f49d42ae668fb9d513f7dc2c6276ffa47caed488c4b47268593 |
-| 2024-05-30 | 26e5bf36846003c4fe455713777a4e4a613da0df3b7f74b6dad1cb901f324a84 |
-| 2024-02-16 | 30d2a05509d1c129dd7dd8430507e6a7729a4854ea10c9dcf6be88964f3fdc25 |
-| 2023-11-21 | 2d7291993f1b71b5dc84cc1d23a65a5e01e783aa765c2bf5ff4ab62814bb5da1 |
-| 2023-08-21 | 935944a2ab2b2a48a47f68711b43ad2d698c97f1c3a7d074b34058060c2ad21b |
-| 2023-08-14 | f5ba8677ad888cf1562df647d3ee843c8c1529ed63a896bede79d01b2ecc3c1d |
-| 2023-06-09 | 3a562a8861fc6362229314772c33c289d9096bafb0865ba4ea108847b78768d2 |
-| 2023-02-16 | ad125f01bada12a1ba2f9986a21c59d2cccbe8d584e7f55079ecbeb7f43a4da4 |
-| 2022-11-17 | 367a80b01083c34899958cdd62525104a3de6069161d309039e84048d89ee98b |
-| 2022-08-22 | 733cf126b03f73050e242102592658913d10829a5bf056ab77e7f864b3f8de1f |
-| 2022-08-15 | f99e1d560bd72a3a23f64eaede8982d5494407cafa8f995de45fb9a7274ebc5c |
-| 2022-06-14 | d4e4635eeb79b0e96483bd70703209c63da55a236eadd7397f769ee434d92ca8 |
-| 2022-02-08 | b9e90cde27affc2a44f9fc60e302ccfcacf71f4ae02071f30d570e6048c28597 |
-| 2022-01-18 | c330d2755e18e48c3bba300a2898b0fc8ad2d3326d50b64e02fe65c67b454599 |
+{% tabs %}
+{% tab title="mariadb_es_repo_setup" %}
+### mariadb\_es\_repo\_setup Versions
+
+<table><thead><tr><th width="126.2962646484375">Version</th><th>sha256sum</th></tr></thead><tbody><tr><td>2025-06-04</td><td><code>4d483b4df193831a0101d3dfa7fb3e17411dda7fc06c31be4f9e089c325403c0</code></td></tr><tr><td>2025-01-16</td><td><code>99ea6c55dbf32bfc42cdcd05c892aebc5e51b06f4c72ec209031639d6e7db9fe</code></td></tr><tr><td>2025-01-07</td><td><code>b98c6436e01ff33d7e88513edd7b77a965c4500d6d52ee3f106a198a558927af</code></td></tr><tr><td>2024-11-19</td><td><code>97e5ef25b4c4a4bd70b30da46b1eae0b57db2f755ef820a28d254e902ab5a879</code></td></tr><tr><td>2024-11-13</td><td><code>0c181ada4e7a4cd1d7688435c478893502675b880be2b918af7d998e239eb325</code></td></tr><tr><td>2024-09-20</td><td><code>c12da6a9baa57eab7fa685aa24bf76e6929a8c67f4cd244835520c0181007753</code></td></tr><tr><td>2024-09-09</td><td><code>733f247c626d965304b678b62a4b86eb4bb8bf956f98a241b6578dedc6ca4020</code></td></tr><tr><td>2024-06-12</td><td><code>b96fcd684a84bbe1080b6276f424537fc9d9c11ebe243ad8b9a45dd459f6ee4f</code></td></tr><tr><td>2023-07-27</td><td><code>f8eb9c1b59ccfd979d27e39798d2f2a98447dd29e2149ce92bf606aab4493ad9</code></td></tr><tr><td>2023-03-13</td><td><code>8dfef0ec98eb03a4455df07b33107a6d4601425c9df0ab5749b8f10bf3abdcbb</code></td></tr><tr><td>2022-10-26</td><td><code>3f4a9d1c507a846a598e95d6223871aade69a9955276455324e7cc5f54a87021</code></td></tr><tr><td>2022-09-12</td><td><code>713a8f78ea7bab3eccfb46dc14e61cd54c5cf5a08acb5c320ef5370d375e48bd</code></td></tr><tr><td>2022-06-14</td><td><code>cfcd35671125d657a212d92b93be7b1f4ad2fda58dfa8b5ab4b601bf3afa4eae</code></td></tr><tr><td>2022-03-11</td><td><code>53efddb84ea12efa7d521499a7474065bd4a60c721492d0e72b4336192f4033f</code></td></tr><tr><td>2021-12-13</td><td><code>5feb2aac767c512cc9e2af674d1aef42df0b775ba2968fffa8700eb42702bd44</code></td></tr><tr><td>2021-10-13</td><td><code>4f266ff758fe15eeb9b8b448a003eb53e93f3064baf1acb789dd39de4f534b1d</code></td></tr><tr><td>2021-09-14</td><td><code>b741361ea3a0a9fcaa30888a63ff3a8a4021882f126cf4ef26cf616493a29315</code></td></tr><tr><td>2021-08-26</td><td><code>a49347a4e36f99c5b248403ed9fb9b33a2f07f5e24605a694b1b1e24d7199f28</code></td></tr><tr><td>2021-06-29</td><td><code>99e768b24ae430b37dec7cb69cdd625396630dba18f5e1588ee24d3d8bb97064</code></td></tr><tr><td>2021-06-14</td><td><code>ec08f8ede524f568b3766795ad8ca1a0d0ac4db355a18c3d85681d7f9c0f8c09</code></td></tr><tr><td>2021-05-04</td><td><code>bf67a231c477fba0060996a83b197c29617b6193e1167f6f062216ae13c716c7</code></td></tr><tr><td>2021-03-15</td><td><code>99c7f4a3473a397d824d5f591274c2a4f5ebf6dc292eea154800bbaca04ddc7e</code></td></tr><tr><td>2021-02-12</td><td><code>c78db828709d94876406a0ea346f13fbc38e73996795903f40e3c21385857dd4</code></td></tr><tr><td>2020-12-16</td><td><code>c01fa97aed71ca0cd37cba7036ff80ab40efed4cc261c890aa2aa11cd8ab4e2f</code></td></tr><tr><td>2020-12-15</td><td><code>e42f1f16f2c78a3de0e73dcc2a9081e2f771b3161f4f4ceecb13ea788d84673b</code></td></tr><tr><td>2020-12-14</td><td><code>4aaf495606633a47c55ea602829e67e702aec0a5c6ff6b1af90709c19ee9f322</code></td></tr><tr><td>2020-10-07</td><td><code>93fa0df3d6491a791f5d699158dcfe3e6ce20c45ddc2f534ed2f5eac6468ff0a</code></td></tr><tr><td>2020-09-08</td><td><code>eeebe9e08dffb8a4e820cc0f673afe437621060129169ea3db0790eb649dbe9b</code></td></tr><tr><td>2020-07-16</td><td><code>957bc29576e8fd320fa18e35fa49b5733f3c8eeb4ca06792fb1f05e089c810ff</code></td></tr></tbody></table>
+{% endtab %}
+
+{% tab title="mariadb_repo_setup" %}
+### mariadb\_repo\_setup Versions
+
+<table data-header-hidden><thead><tr><th width="123.92596435546875">Version</th><th>sha256sum</th></tr></thead><tbody><tr><td><strong>Version</strong></td><td><strong>sha256sum</strong></td></tr><tr><td>2025-02-13</td><td><code>c4a0f3dade02c51a6a28ca3609a13d7a0f8910cccbb90935a2f218454d3a914a</code></td></tr><tr><td>2024-11-14</td><td><code>ceaa5bd124c4d10a892c384e201bb6e0910d370ebce235306d2e4b860ed36560</code></td></tr><tr><td>2024-08-14</td><td><code>6083ef1974d11f49d42ae668fb9d513f7dc2c6276ffa47caed488c4b47268593</code></td></tr><tr><td>2024-05-30</td><td><code>26e5bf36846003c4fe455713777a4e4a613da0df3b7f74b6dad1cb901f324a84</code></td></tr><tr><td>2024-02-16</td><td><code>30d2a05509d1c129dd7dd8430507e6a7729a4854ea10c9dcf6be88964f3fdc25</code></td></tr><tr><td>2023-11-21</td><td><code>2d7291993f1b71b5dc84cc1d23a65a5e01e783aa765c2bf5ff4ab62814bb5da1</code></td></tr><tr><td>2023-08-21</td><td><code>935944a2ab2b2a48a47f68711b43ad2d698c97f1c3a7d074b34058060c2ad21b</code></td></tr><tr><td>2023-08-14</td><td><code>f5ba8677ad888cf1562df647d3ee843c8c1529ed63a896bede79d01b2ecc3c1d</code></td></tr><tr><td>2023-06-09</td><td><code>3a562a8861fc6362229314772c33c289d9096bafb0865ba4ea108847b78768d2</code></td></tr><tr><td>2023-02-16</td><td><code>ad125f01bada12a1ba2f9986a21c59d2cccbe8d584e7f55079ecbeb7f43a4da4</code></td></tr><tr><td>2022-11-17</td><td><code>367a80b01083c34899958cdd62525104a3de6069161d309039e84048d89ee98b</code></td></tr><tr><td>2022-08-22</td><td><code>733cf126b03f73050e242102592658913d10829a5bf056ab77e7f864b3f8de1f</code></td></tr><tr><td>2022-08-15</td><td><code>f99e1d560bd72a3a23f64eaede8982d5494407cafa8f995de45fb9a7274ebc5c</code></td></tr><tr><td>2022-06-14</td><td><code>d4e4635eeb79b0e96483bd70703209c63da55a236eadd7397f769ee434d92ca8</code></td></tr><tr><td>2022-02-08</td><td><code>b9e90cde27affc2a44f9fc60e302ccfcacf71f4ae02071f30d570e6048c28597</code></td></tr><tr><td>2022-01-18</td><td><code>c330d2755e18e48c3bba300a2898b0fc8ad2d3326d50b64e02fe65c67b454599</code></td></tr></tbody></table>
+{% endtab %}
+{% endtabs %}
 
 CC BY-SA / Gnu FDL
