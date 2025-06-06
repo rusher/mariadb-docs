@@ -10,13 +10,13 @@ The OQGRAPH storage engine exists as a separate package in the repositories for 
 
 On Debian and Ubuntu, install the package as follows:
 
-```
+```bash
 sudo apt-get install mariadb-plugin-oqgraph
 ```
 
 or (for [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0))
 
-```
+```bash
 sudo apt-get install mariadb-oqgraph-engine-10.0
 ```
 
@@ -24,14 +24,14 @@ sudo apt-get install mariadb-oqgraph-engine-10.0
 
 Note that OQGRAPH v3 requires libjudy, which is not in the official Red Hat/Fedora repositories. This needs to be installed first, for example:
 
-```
+```bash
 wget http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 rpm -Uvh epel-release-6-8.noarch.rpm
 ```
 
 Then install the package, as follows:
 
-```
+```bash
 sudo yum install MariaDB-oqgraph-engine
 ```
 
@@ -39,7 +39,7 @@ sudo yum install MariaDB-oqgraph-engine
 
 On either system you can then launch the `mysql` command-line client and install the plugin in MariaDB as follows:
 
-```
+```sql
 INSTALL SONAME 'ha_oqgraph';
 ```
 

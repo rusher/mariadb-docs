@@ -12,7 +12,7 @@ For `aria_s3_copy` to work reliably, the table should not be changed by the Mari
 
 Example of properly created Aria table:
 
-```
+```sql
 create table test1 (a int) transactional=0 row_format=PAGE engine=aria;
 ```
 
@@ -64,7 +64,7 @@ op=to
 The following code will copy an existing Aria table named `test1` to S3.\
 If the `--database` option is not given, then the directory name where the table files exist will be used as the database.
 
-```
+```bash
 shell> aria_s3_copy --force --op=to --database=foo --compress --verbose --s3_block_size=4M test1
 Delete of aria table: foo.test1
 Delete of index information foo/test1/index

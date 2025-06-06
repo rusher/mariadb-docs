@@ -1,4 +1,4 @@
-# Testing the Connections to S3
+# Testing Connections
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)
 
@@ -28,7 +28,7 @@ There are several ways to ensure you get them right:
 
 Execute the following sql commands to create a trivial sql table:
 
-```
+```sql
 use test;
 create table s3_test (a int) engine=aria row_format=page transactional=0;
 insert into s3_test values (1),(2);
@@ -38,7 +38,7 @@ flush tables s3_test;
 Now you can use the [aria\_s3\_copy](aria_s3_copy.md) tool to copy this to S3 from your\
 shell/the command line:
 
-```
+```bash
 shell> cd mariadb-data-directory/test
 shell> aria_s3_copy --op=to --verbose --force --**other*options* s3_test.frm
 
@@ -85,7 +85,7 @@ also specify `s3-hostname` and possibly change`s3-protocol-version` to "Original
 
 Now you can test the configuration:
 
-```
+```bash
 shell> cd **mysql-test** directory
 shell> ./mysql-test-run --suite=s3
 ...
@@ -106,7 +106,7 @@ One can use the `s3_debug` variable to get a trace of the S3 engines interaction
 
 Here follows one example on can use to get a trace if `ALTER TABLE .. ENGINE=S3` fails:
 
-```
+```sql
 use test;
 create table s3_test (a int) engine=aria row_format=page transactional=0;
 insert into s3_test values (1),(2);

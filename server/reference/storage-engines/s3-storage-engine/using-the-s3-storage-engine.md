@@ -24,13 +24,13 @@ and restart the server.
 
 Now [install the plugin library](../../plugins/plugin-overview.md#installing-a-plugin), for example:
 
-```
+```sql
 INSTALL SONAME 'ha_s3';
 ```
 
 If the library is not available, for example:
 
-```
+```sql
 INSTALL SONAME 'ha_s3';
 ERROR 1126 (HY000): Can't open shared library '/var/lib/mysql/lib64/mysql/plugin/ha_s3.so' 
   (errno: 13, cannot open shared object file: No such file or directory)
@@ -38,13 +38,13 @@ ERROR 1126 (HY000): Can't open shared library '/var/lib/mysql/lib64/mysql/plugin
 
 you may need to install a separate package for the S3 storage engine, for example:
 
-```
+```bash
 shell> yum install MariaDB-s3-engine
 ```
 
 or for Debian/Ubuntu
 
-```
+```bash
 shell> apt install mariadb-plugin-s3
 ```
 
@@ -58,13 +58,13 @@ existing table to be stored on S3.
 
 To move data from an existing table to S3, one can run:
 
-```
+```sql
 ALTER TABLE old_table ENGINE=S3 COMPRESSION_ALGORITHM=zlib
 ```
 
 To get data back to a 'normal' table one can do:
 
-```
+```sql
 ALTER TABLE s3_table ENGINE=INNODB
 ```
 
@@ -168,21 +168,12 @@ s3-use-http=ON
 
 ## Typical Usage Case for S3 Tables
 
-The typical use case would be that there exists tables that after some\
-time would become fairly inactive, but are still important so that they\
-can not be removed. In that case, an option is to move such a table\
-to an archiving service, which is accessible through an S3 API.
+The typical use case would be that there exists tables that after some time would become fairly inactive, but are still important so that they can not be removed. In that case, an option is to move such a table to an archiving service, which is accessible through an S3 API.
 
-Notice that S3 means the Cloud Object Storage API defined by Amazon\
-AWS. Often the whole of Amazon’s Cloud Object Storage is referred to\
-as S3. In the context of the S3 archive storage engine, it refers to\
-the API itself that defines how to store objects in a cloud service,\
-being it Amazon’s or someone else’s. OpenStack for example provides an\
-S3 API for storing objects.
+Notice that S3 means the Cloud Object Storage API defined by Amazon AWS. Often the whole of Amazon’s Cloud Object Storage is referred to as S3. In the context of the S3 archive storage engine, it refers to the API itself that defines how to store objects in a cloud service,\
+being it Amazon’s or someone else’s. OpenStack for example provides an S3 API for storing objects.
 
-The main benefit of storing things in an S3 compatible storage is that the\
-cost of storage is much cheaper than many other alternatives. Many S3\
-implementations also provide reliable long-term storage.
+The main benefit of storing things in an S3 compatible storage is that the cost of storage is much cheaper than many other alternatives. Many S3 implementations also provide reliable long-term storage.
 
 ## Operations Allowed on S3 Tables
 
@@ -291,7 +282,7 @@ Try also to execute the query twice to check if the problem is that the data was
 
 If you get errors such as:
 
-```
+```sql
 ERROR 3 (HY000): Got error from put_object(bubu/produkt/frm): 5 Couldn't connect to server
 ```
 
@@ -300,20 +291,20 @@ To procedure to enable other ports is the following:
 
 Search for the ports allowed for MariaDB:
 
-```
+```bash
 $ sudo semanage port -l | grep mysqld_port_t
 mysqld_port_t                tcp   1186, 3306, 63132-63164
 ```
 
 Say you want to allow MariaDB to connect to port 32768:
 
-```
+```bash
 $ sudo semanage port -a -t mysqld_port_t -p tcp 32768
 ```
 
 You can verify that the new port, 32768, is now allowed for MariaDB:
 
-```
+```bash
 $ sudo semanage port -l | grep mysqld_port_t
 mysqld_port_t                tcp   32768,1186, 3306, 63132-63164
 ```

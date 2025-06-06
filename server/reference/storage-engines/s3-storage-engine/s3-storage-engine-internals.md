@@ -1,4 +1,4 @@
-# S3 Storage Engine Internals
+# Engine Internals
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)
 
@@ -67,7 +67,7 @@ block\_number is a 6-digit decimal number, prefixed with 0\
 
 ### Installing awsctl on Linux
 
-```
+```bash
 # install python-pip (on an OpenSuse distribution)
 # use the appropriate command for your distribution
 zypper install python-pip
@@ -85,7 +85,7 @@ aws configure
 
 One can use the `aws` python tool to see how things are stored on S3:
 
-```
+```bash
 shell> aws s3 ls --recursive s3://mariadb-bucket/
 2019-05-10 17:46:48       8192 foo/test1/aria
 2019-05-10 17:46:49    3227648 foo/test1/data/000001
@@ -95,7 +95,7 @@ shell> aws s3 ls --recursive s3://mariadb-bucket/
 
 To delete an obsolete table `foo.test1` one can do:
 
-```
+```bash
 shell> ~/.local/bin/aws s3 rm --recursive s3://mariadb-bucket/foo/test1
 delete: s3://mariadb-bucket/foo/test1/aria
 delete: s3://mariadb-bucket/foo/test1/data/000001

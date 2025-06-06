@@ -12,13 +12,13 @@ When all build prerequisites are met, OQGraph is enabled and compiled automatica
 
 If OQGRAPH gets compiled properly, there should be a file like:
 
-```
+```bash
 storage/oqgraph/ha_oqgraph.so
 ```
 
 If this is not the case, then you can find out if there is any modules missing that are required by OQGRAPH by doing:
 
-```
+```bash
 cmake . -LAH | grep -i oqgraph
 ```
 

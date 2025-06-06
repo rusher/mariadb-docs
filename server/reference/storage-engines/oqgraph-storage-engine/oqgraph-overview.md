@@ -18,7 +18,7 @@ The following documentation is based upon [MariaDB 10.0.7](https://app.gitbook.c
 
 To create an OQGRAPH v3 table, a backing table must first be created. This backing table will store the actual data, and will be used for all INSERTs, UPDATEs and so on. It must be a regular table, not a view. Here's a simple example to start with:
 
-```
+```sql
 CREATE TABLE oq_backing (
   origid INT UNSIGNED NOT NULL, 
   destid INT UNSIGNED NOT NULL,  
@@ -29,14 +29,14 @@ CREATE TABLE oq_backing (
 
 Some data can be inserted into the backing table to test with later:
 
-```
+```sql
 INSERT INTO oq_backing(origid, destid) 
  VALUES (1,2), (2,3), (3,4), (4,5), (2,6), (5,6);
 ```
 
 Now the read-only OQGRAPH table is created. The CREATE statement must match the format below - any difference will result in an error.
 
-```
+```sql
 CREATE TABLE oq_graph (
   latch VARCHAR(32) NULL,
   origid BIGINT UNSIGNED NULL,
@@ -53,7 +53,7 @@ data_table='oq_backing' origid='origid' destid='destid';
 
 An older format (prior to [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)) has the latch field as a SMALLINT rather than a VARCHAR. The format gives an error:
 
-```
+```sql
 CREATE TABLE oq_old (
   latch SMALLINT UNSIGNED NULL,
   origid BIGINT UNSIGNED NULL,
@@ -72,7 +72,7 @@ ERROR 1005 (HY000): Can't create table `test`.`oq_old` (errno: 140 "Wrong create
 
 The old, deprecated format can still be used prior to [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) if the value of the [oqgraph\_allow\_create\_integer\_latch](../../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch) system variable is changed from its default, `FALSE`, to `TRUE`.
 
-```
+```sql
 SET GLOBAL oqgraph_allow_create_integer_latch=1;
 
 CREATE TABLE oq_old (
@@ -101,7 +101,7 @@ Data is only inserted into the backing table, not the OQGRAPH table.
 
 Now, having created the `oq_graph` table linked to a backing table, it is now possible to query the `oq_graph` table directly. The `weight` field, since it was not specified in this example, defaults to `1`.
 
-```
+```sql
 SELECT * FROM oq_graph;
 +-------+--------+--------+--------+------+--------+
 | latch | origid | destid | weight | seq  | linkid |
@@ -121,7 +121,7 @@ The data here represents one-directional starting and ending nodes. So node 2 ha
 
 There are three fields which can be manipulated: `origid`, `destid` (the example above uses these two), as well as `weight`. To create a backing table with a `weight` field as well, the following syntax can be used:
 
-```
+```sql
 CREATE TABLE oq2_backing (
   origid INT UNSIGNED NOT NULL, 
   destid INT UNSIGNED NOT NULL, 
@@ -131,12 +131,12 @@ CREATE TABLE oq2_backing (
 );
 ```
 
-```
+```sql
 INSERT INTO oq2_backing(origid, destid, weight)  
  VALUES (1,2,1), (2,3,1), (3,4,3), (4,5,1), (2,6,10), (5,6,2);
 ```
 
-```
+```sql
 CREATE TABLE oq2_graph (
   latch VARCHAR(32) NULL,
   origid BIGINT UNSIGNED NULL,
@@ -151,7 +151,7 @@ ENGINE=OQGRAPH
 data_table='oq2_backing' origid='origid' destid='destid' weight='weight';
 ```
 
-```
+```sql
 SELECT * FROM oq2_graph;
 +-------+--------+--------+--------+------+--------+
 | latch | origid | destid | weight | seq  | linkid |
