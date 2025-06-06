@@ -81,7 +81,7 @@ A MariaDB build's support for other InnoDB page compression algorithms can be ch
 
 For example:
 
-```
+```sql
 SHOW GLOBAL STATUS WHERE Variable_name IN (
    'Innodb_have_lz4', 
    'Innodb_have_lzo', 
@@ -112,7 +112,7 @@ The general steps for compiling MariaDB are:
 
 * Download and unpack the source code distribution:
 
-```
+```bash
 wget https://downloads.mariadb.com/MariaDB/mariadb-10.4.8/source/mariadb-10.4.8.tar.gz
 tar -xvzf mariadb-10.4.8.tar.gz
 cd mariadb-10.4.8/
@@ -120,26 +120,26 @@ cd mariadb-10.4.8/
 
 * Configure the build using [cmake](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake):
 
-```
+```bash
 cmake .
 ```
 
 * Check [CMakeCache.txt](https://cmake.org/runningcmake/) to confirm that it has found the desired compression library on your system.
 * Compile the build:
 
-```
+```bash
 make
 ```
 
 * Either install the build:
 
-```
+```bash
 make install
 ```
 
 Or make a package to install:
 
-```
+```bash
 make package
 ```
 
@@ -175,7 +175,7 @@ SET GLOBAL innodb_compression_default=ON;
 
 This system variable's session value can be changed dynamically with [SET SESSION](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL innodb_file_per_table=ON;
 
 SET GLOBAL innodb_file_format='Barracuda';
@@ -206,7 +206,7 @@ innodb_compression_default=ON
 
 InnoDB page compression can be enabled for individual tables by setting the [PAGE\_COMPRESSED](../../sql-statements/data-definition/create/create-table.md#page_compressed) table option to `1`. For example:
 
-```
+```sql
 SET GLOBAL innodb_file_per_table=ON;
 
 SET GLOBAL innodb_file_format='Barracuda';
@@ -245,7 +245,7 @@ This system variable's default value is `6`.
 
 This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL innodb_compression_level=9;
 ```
 
@@ -261,7 +261,7 @@ innodb_compression_level=9
 
 The compression level for individual tables can also be configured by setting the [PAGE\_COMPRESSION\_LEVEL](../../sql-statements/data-definition/create/create-table.md#page_compression_level) table option for the table. For example:
 
-```
+```sql
 SET GLOBAL innodb_file_per_table=ON;
 
 SET GLOBAL innodb_file_format='Barracuda';
@@ -320,7 +320,7 @@ This system variable's default value is `50`.
 
 This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL innodb_compression_pad_pct_max=75;
 ```
 
@@ -433,7 +433,7 @@ InnoDB page compression can be monitored by querying the following status variab
 
 With InnoDB page compression, a page is only compressed when it is flushed to disk. This means that if you are monitoring InnoDB page compression via these status variables, then the status variables values will only get incremented when the dirty pages are flushed to disk, which does not necessarily happen immediately. For example:
 
-```
+```sql
 CREATE TABLE `tab` (
      `id` int(11) NOT NULL,
      `str` varchar(50) DEFAULT NULL,

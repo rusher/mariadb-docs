@@ -1,6 +1,4 @@
-# mariadb-enterprise-server-innodb-io-threads
-
-## MariaDB Enterprise Server InnoDB I/O Threads
+# MariaDB Enterprise Server InnoDB I/O Threads
 
 ## Overview
 

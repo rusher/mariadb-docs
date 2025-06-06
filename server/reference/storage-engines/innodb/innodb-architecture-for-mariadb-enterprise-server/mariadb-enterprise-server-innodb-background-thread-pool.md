@@ -1,6 +1,4 @@
-# mariadb-enterprise-server-innodb-background-thread-pool
-
-## MariaDB Enterprise Server InnoDB Background Thread Pool
+# MariaDB Enterprise Server InnoDB Background Thread Pool
 
 ## Overview
 

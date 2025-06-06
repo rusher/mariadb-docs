@@ -32,7 +32,7 @@ innodb_page_cleaners=8
 
 The system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL innodb_page_cleaners=8;
 ```
 
@@ -65,7 +65,7 @@ Increasing the amount of I/O capacity available to InnoDB can also help increase
 
 The amount of I/O capacity available to InnoDB can be configured by setting the [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL innodb_io_capacity=20000;
 ```
 
@@ -79,7 +79,7 @@ innodb_io_capacity=20000
 
 The maximum amount of I/O capacity available to InnoDB in an emergency defaults to either `2000` or twice [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity), whichever is higher, or can be directly configured by setting the [innodb\_io\_capacity\_max](innodb-system-variables.md#innodb_io_capacity_max) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL innodb_io_capacity_max=20000;
 ```
 

@@ -10,13 +10,13 @@ The standard InnoDB Monitor returns extensive InnoDB information, particularly l
 
 To enable the standard InnoDB Monitor, from [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), set the [innodb\_status\_output](innodb-system-variables.md) system variable to 1. Before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), running the following statement was the method used:
 
-```
+```sql
 CREATE TABLE innodb_monitor (a INT) ENGINE=INNODB;
 ```
 
 To disable the standard InnoDB monitor, either set the system variable to zero, or, before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), drop the table
 
-```
+```sql
 DROP TABLE innodb_monitor;
 ```
 
@@ -31,13 +31,13 @@ The InnoDB Lock Monitor displays additional lock information.
 To enable the InnoDB Lock Monitor, the standard InnoDB monitor must be enabled. Then, from [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), set the [innodb\_status\_output\_locks](innodb-system-variables.md) system variable to 1.\
 Before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), running the following statement was the method used:
 
-```
+```sql
 CREATE TABLE innodb_lock_monitor (a INT) ENGINE=INNODB;
 ```
 
 To disable the standard InnoDB monitor, either set the system variable to zero, or, before [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes), drop the table
 
-```
+```sql
 DROP TABLE innodb_lock_monitor;
 ```
 
@@ -51,13 +51,13 @@ Enabling the Tablespace Monitor outputs a list of file segments in the shared ta
 
 To enable the Tablespace Monitor, run the following statement:
 
-```
+```sql
 CREATE TABLE innodb_tablespace_monitor (a INT) ENGINE=INNODB;
 ```
 
 To disable it, drop the table:
 
-```
+```sql
 DROP TABLE innodb_tablespace_monitor;
 ```
 
@@ -69,13 +69,13 @@ Enabling the Table Monitor outputs the contents of the InnoDB internal data dict
 
 To enable the Table Monitor, run the following statement:
 
-```
+```sql
 CREATE TABLE innodb_table_monitor (a INT) ENGINE=INNODB;
 ```
 
 To disable it, drop the table:
 
-```
+```sql
 DROP TABLE innodb_table_monitor;
 ```
 

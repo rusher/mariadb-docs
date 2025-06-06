@@ -1,6 +1,4 @@
-# innodb-storage-engine-introduction
-
-## InnoDB Storage Engine Introduction
+# InnoDB Storage Engine Introduction
 
 ## Overview
 
@@ -52,11 +50,11 @@ The InnoDB storage engine:
 
 ### Creating an InnoDB Table
 
-```
+```sql
 CREATE DATABASE hq_sales;
 ```
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -68,7 +66,7 @@ CREATE TABLE hq_sales.invoices (
 ) ENGINE = InnoDB;
 ```
 
-```
+```sql
 SELECT TABLE_SCHEMA, TABLE_NAME, ENGINE
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA='hq_sales'

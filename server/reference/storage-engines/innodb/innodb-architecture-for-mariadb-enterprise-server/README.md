@@ -1,6 +1,4 @@
-# innodb-architecture-for-mariadb-enterprise-server
-
-## InnoDB Architecture for MariaDB Enterprise Server
+# InnoDB Architecture for MariaDB Enterprise Server
 
 ## Overview
 

@@ -35,7 +35,7 @@ The redo log files are typically named `ib_logfileN`, where `N` is an integer. H
 innodb_log_file_size=2G
 ```
 
-```
+```sql
 SET GLOBAL innodb_log_file_size=(2 * 1024 * 1024 * 1024);
 
 SHOW GLOBAL VARIABLES

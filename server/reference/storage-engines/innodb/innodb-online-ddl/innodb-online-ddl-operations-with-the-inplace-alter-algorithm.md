@@ -21,7 +21,7 @@ With the exception of adding an [auto-increment](../../../data-types/auto_increm
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50)
@@ -44,7 +44,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -72,7 +72,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -95,7 +95,7 @@ See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Changing the Data Type
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -109,7 +109,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change co
 
 But this succeeds in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) and later, because the original length of the column is less than 256 bytes, and the new length is still less than 256 bytes:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -123,7 +123,7 @@ Query OK, 0 rows affected (0.005 sec)
 
 But this fails in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes) and later, because the original length of the column is less than 256 bytes, and the new length is greater than 256 bytes:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -145,7 +145,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -167,7 +167,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -192,7 +192,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -206,7 +206,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -231,7 +231,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -245,7 +245,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -265,7 +265,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -291,7 +291,7 @@ This operation only changes the table's metadata, so the table does not have to 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.\
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -313,7 +313,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -335,7 +335,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -349,7 +349,7 @@ Query OK, 0 rows affected (0.006 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -377,7 +377,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int,
    b varchar(50),
@@ -392,7 +392,7 @@ Query OK, 0 rows affected (0.021 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int,
    b varchar(50),
@@ -409,7 +409,7 @@ ERROR 1265 (01000): Data truncated for column 'a' at row 1
 
 And this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int,
    b varchar(50),
@@ -437,7 +437,7 @@ However, there is an exception. If you are dropping a primary key, and adding a 
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -451,7 +451,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Dropping a prima
 
 But this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -478,7 +478,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -492,7 +492,7 @@ Query OK, 0 rows affected (0.010 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -519,7 +519,7 @@ This operation supports a read-only locking strategy. This strategy can be expli
 
 For example, this succeeds, but requires the table to be rebuilt, so that the hidden `FTS_DOC_ID` column can be added:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -533,7 +533,7 @@ Query OK, 0 rows affected (0.055 sec)
 
 And this succeeds in the same way as above:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -547,7 +547,7 @@ Query OK, 0 rows affected (0.041 sec)
 
 And this succeeds, and the second command does not require the table to be rebuilt:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -564,7 +564,7 @@ Query OK, 0 rows affected (0.017 sec)
 
 But this second command fails, because only one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index can be added at a time:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -582,7 +582,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: InnoDB presently
 
 And this third command fails, because a table cannot be rebuilt when it has more than one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -612,7 +612,7 @@ This operation supports a read-only locking strategy. This strategy can be expli
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -626,7 +626,7 @@ Query OK, 0 rows affected (0.006 sec)
 
 And this succeeds in the same way as above:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -648,7 +648,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -662,7 +662,7 @@ ALTER TABLE tab DROP INDEX b_index;
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -686,7 +686,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab1 (
    a int PRIMARY KEY,
    b varchar(50),
@@ -706,7 +706,7 @@ ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Adding foreign k
 
 But this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab1 (
    a int PRIMARY KEY,
    b varchar(50),
@@ -737,7 +737,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab2 (
    a int PRIMARY KEY,
    b varchar(50)
@@ -768,7 +768,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -792,7 +792,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -816,7 +816,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -843,7 +843,7 @@ See [MDEV-16328](https://jira.mariadb.org/browse/MDEV-16328) for more informatio
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -857,7 +857,7 @@ Query OK, 0 rows affected (0.006 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -871,7 +871,7 @@ Query OK, 0 rows affected (0.020 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -894,7 +894,7 @@ This operation supports the read-only locking strategy. This strategy can be exp
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -915,7 +915,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -940,7 +940,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -964,7 +964,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -990,7 +990,7 @@ If either of the previously mentioned system variables is set to `ON`, then `OPT
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -1018,7 +1018,7 @@ OPTIMIZE TABLE tab;
 
 And this succeeds, but the table is not rebuilt:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -1056,7 +1056,7 @@ This operation supports the exclusive locking strategy. This strategy can be exp
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -1070,7 +1070,7 @@ Query OK, 0 rows affected (0.011 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),

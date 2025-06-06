@@ -38,7 +38,7 @@ In [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-ser
 
 For example:
 
-```
+```sql
 CREATE TABLE t1 (pk INT AUTO_INCREMENT PRIMARY KEY, i INT, UNIQUE (i)) ENGINE=InnoDB;
 
 INSERT INTO t1 (i) VALUES (1),(2),(3);
@@ -67,7 +67,7 @@ Create Table: CREATE TABLE `t1` (
 
 If the server is restarted at this point, then the [AUTO\_INCREMENT](../../data-types/auto_increment.md) counter will revert to `101`, which is the persistent value set as part of the failed [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/insert-ignore.md).
 
-```
+```sql
 # Restart server
 SHOW CREATE TABLE t1\G
 *************************** 1. row ***************************
