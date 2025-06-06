@@ -69,8 +69,8 @@ One use of that information is to take the output of `myrocks_hotbackup` and mak
 * Percona Server has gap lock checking ON but doesn't seem to have any way to control it?\
   Queries that use Gap Lock on MyRocks fail with an error like this:
 
-```
-insert into tbl2 select * from tbl1;
+```sql
+INSERT INTO tbl2 select * from tbl1;
 ERROR 1105 (HY000): Using Gap Lock without full unique key in multi-table or multi-statement transactions
 is not allowed. You need to either rewrite queries to use all unique key columns in WHERE equal conditions,
 or rewrite to single-table, single-statement transaction.  Query: insert into tbl2 select * from tbl1

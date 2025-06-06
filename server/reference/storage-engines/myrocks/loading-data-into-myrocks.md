@@ -10,7 +10,7 @@ See
 Note\
 When one loads data with [rocksdb\_bulk\_load=1](myrocks-system-variables.md#rocksdb_bulk_load) and the data conflicts with the data already in the database, one may get non-trivial errors, for example:
 
-```
+```sql
 ERROR 1105 (HY000): [./.rocksdb/test.t1_PRIMARY_2_0.bulk_load.tmp] bulk load error: 
   Invalid argument: External file requires flush
 ```

@@ -16,7 +16,7 @@ See the [Groonga Normalizer Reference](https://groonga.org/docs/reference/normal
 
 ## Examples
 
-```
+```sql
 SELECT mroonga_normalize("ABぃ㍑");
 +-------------------------------+
 | mroonga_normalize("ABぃ㍑")   |

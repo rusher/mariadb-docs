@@ -20,7 +20,7 @@ Returns highlighted HTML.
 
 ## Examples
 
-```
+```sql
 SELECT mroonga_highlight_html('<p>MariaDB includes the Mroonga storage engine</p>.') 
   AS highlighted_html;
 +-----------------------------------------------------------------+
@@ -32,7 +32,7 @@ SELECT mroonga_highlight_html('<p>MariaDB includes the Mroonga storage engine</p
 
 Highlighting the words `MariaDB` and `Mroonga` in a given text:
 
-```
+```sql
 SELECT mroonga_highlight_html('MariaDB includes the Mroonga storage engine.', 'MariaDB', 'Mroonga') 
   AS highlighted_html;
 +--------------------------------------------------------------------------------------------------------+
@@ -44,7 +44,7 @@ SELECT mroonga_highlight_html('MariaDB includes the Mroonga storage engine.', 'M
 
 The same outcome, formulated as a Groonga query:
 
-```
+```sql
 SELECT mroonga_highlight_html('MariaDB includes the Mroonga storage engine.', 'MariaDB OR Mroonga' 
   AS query) AS highlighted_text;
 +--------------------------------------------------------------------------------------------------------+

@@ -5,7 +5,7 @@ By default, the data is stored in the `default` column family.
 
 One can specify which column family the data goes to by using index comments:
 
-```
+```sql
 INDEX index_name(col1, col2, ...) COMMENT 'column_family_name'
 ```
 

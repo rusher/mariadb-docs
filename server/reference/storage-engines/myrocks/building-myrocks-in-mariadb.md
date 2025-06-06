@@ -21,14 +21,14 @@ Platform requirements:
 
 The steps were checked on a fresh install of Ubuntu 16.04.2 LTS Xenial.
 
-```
+```bash
 sudo apt-get update
 sudo apt-get -y install g++ cmake libbz2-dev libaio-dev bison zlib1g-dev libsnappy-dev 
 sudo apt-get -y install libgflags-dev libreadline6-dev libncurses5-dev libssl-dev liblz4-dev gdb git
 ;
 ```
 
-```
+```bash
 git clone https://github.com/MariaDB/server.git mariadb-10.2
 cd mariadb-10.2
 git checkout 10.2
@@ -45,7 +45,7 @@ This should produce `storage/rocksdb/ha_rocksdb.so` which is MyRocks storage eng
 MyRocks does not require any special way to initialize the data directory.\
 Minimal my.cnf flle:
 
-```
+```bash
 cat > ~/my1.cnf <<EOF
 [mysqld]
 
@@ -62,7 +62,7 @@ EOF
 
 Run the server like this
 
-```
+```bash
 (cd mysql-test; ./mtr alias)
 cp -r mysql-test/var/install.db ~/data1
 cd ../sql

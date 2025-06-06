@@ -1,4 +1,4 @@
-# MyRocks and Replication
+# Replication
 
 Details about how MyRocks works with [replication](../../../ha-and-performance/standard-replication/).
 
@@ -14,7 +14,7 @@ Because of that, generally one cannot use MyRocks and statement-based replicatio
 
 Updating a MyRocks table while having SBR on, will result in an error as follow:
 
-```
+```sql
 ERROR 4056 (HY000): Can't execute updates on master with binlog_format != ROW.
 ```
 

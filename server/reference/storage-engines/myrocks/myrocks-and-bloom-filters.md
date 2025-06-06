@@ -1,4 +1,4 @@
-# MyRocks and Bloom Filters
+# Bloom Filters
 
 Bloom filters are used to reduce read amplification. Bloom filters can be set on a per-column family basis (see [myrocks-column-families](myrocks-column-families.md)).
 
@@ -25,7 +25,7 @@ and restart the server.
 
 Check if the column family actually uses the bloom filter:
 
-```
+```sql
 select * 
 from information_schema.rocksdb_cf_options 
 where 
@@ -46,7 +46,7 @@ where
 
 Watch these status variables:
 
-```
+```sql
 show status like '%bloom%';
 +-------------------------------------+-------+
 | Variable_name                       | Value |

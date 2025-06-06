@@ -12,7 +12,7 @@ the contents slightly overlap, but each source has its own unique information, s
 
 Check the output of
 
-```
+```sql
 SHOW STATUS like 'Rocksdb%'
 ```
 

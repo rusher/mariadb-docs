@@ -8,8 +8,6 @@ description: Deploy Spider Sharded Topology
 
 <table><thead><tr><th valign="top">Software Version</th><th>Diagram</th><th valign="top">Features</th></tr></thead><tbody><tr><td valign="top"><ul><li>Enterprise Server 10.4</li><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul></td><td><img src="../../../.gitbook/assets/es-spider-sharded-mariadb-topology-no-title.png" alt=""></td><td valign="top"><p><strong>Shard tables for horizontal scalability</strong></p><ul><li>Spider Node uses Spider storage engine for Sharded Spider Tables</li><li>Sharded Spider Table is a partitioned "virtual" table</li><li>Spider uses MariaDB foreign data wrapper to query Data Tables on Data Nodes for each partition</li><li>Data Node uses non-Spider storage engine for Data Tables</li><li>Supports transactions</li><li>Enterprise Server 10.3+, Enterprise Spider</li></ul></td></tr></tbody></table>
 
-
-
 This procedure describes the deployment of the **Spider Sharded topology** with MariaDB Enterprise Server.
 
 This procedure incrementally deploys MariaDB Enterprise Spider on an existing MariaDB Enterprise Server deployment.
@@ -32,13 +30,13 @@ If you have not yet deployed MariaDB Enterprise Server on the Spider Node and Da
 
 ## Support
 
-Customers can obtain support by [submitting a support case](broken-reference).
+Customers can obtain support by [submitting a support case](broken-reference/).
 
 ## Components
 
 The following components are deployed during this procedure:
 
-<table><thead><tr><th width="267.333251953125">Component</th><th>Function</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/">MariaDB Enterprise Server</a></td><td>Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging.</td></tr><tr><td><a href="../../../reference/storage-engines/spider/">MariaDB Enterprise Spider</a></td><td>Storage engine used by Spider Tables to read from and write to Data Tables using the MariaDB foreign data wrapper.</td></tr></tbody></table>
+<table><thead><tr><th width="267.333251953125">Component</th><th>Function</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/">MariaDB Enterprise Server</a></td><td>Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging.</td></tr><tr><td><a href="../../../reference/storage-engines/spider/">MariaDB Enterprise Spider</a></td><td>Storage engine used by Spider Tables to read from and write to Data Tables using the MariaDB foreign data wrapper.</td></tr></tbody></table>
 
 ## Term Definitions
 
@@ -105,4 +103,4 @@ Navigation in the procedure "Deploy Spider Sharded Topology":
 
 Next: Step 1: Install Enterprise Spider
 
-Copyright © 2025 MariaDB\
+Copyright © 2025 MariaDB\\

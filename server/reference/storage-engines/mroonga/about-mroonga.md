@@ -21,13 +21,13 @@ Mroonga currently only supports Linux x86\_64 (Intel64/AMD64).
 
 Enable Mroonga with the following statement:
 
-```
+```sql
 INSTALL SONAME 'ha_mroonga';
 ```
 
 On Debian and Ubuntu mroonga engine will be installed with
 
-```
+```bash
 sudo apt-get install mariadb-plugin-mroonga
 ```
 
@@ -35,7 +35,7 @@ See [Plugin overview](../../plugins/plugin-overview.md) for details on installin
 
 [SHOW ENGINES](../../sql-statements/administrative-sql-statements/show/show-engines.md) can be used to check whether Mroonga is installed correctly:
 
-```
+```sql
 SHOW ENGINES;
 ...
 *************************** 8. row ***************************
@@ -50,7 +50,7 @@ Transactions: NO
 
 Once the plugin is installed, add a UDF (User-Defined Function) named "last\_insert\_grn\_id", that returns the record ID assigned by groonga in INSERT, by the following SQL.
 
-```
+```sql
 CREATE FUNCTION last_insert_grn_id RETURNS INTEGER SONAME 'ha_mroonga.so';
 ```
 

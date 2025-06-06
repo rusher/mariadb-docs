@@ -1,8 +1,8 @@
-# MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT
+# START TRANSACTION WITH CONSISTENT SNAPSHOT
 
 FB/MySQL has added new syntax:
 
-```
+```sql
 START TRANSACTION WITH CONSISTENT ROCKSDB|INNODB SNAPSHOT;
 ```
 
@@ -10,7 +10,7 @@ The statement returns the binlog coordinates pointing at the snapshot.
 
 MariaDB (and Percona Server) support extension to the regular
 
-```
+```sql
 START TRANSACTION WITH CONSISTENT SNAPSHOT;
 ```
 

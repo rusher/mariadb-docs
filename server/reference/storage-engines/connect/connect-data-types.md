@@ -34,13 +34,13 @@ the number of characters.
 ## TYPE\_INT
 
 The [INTEGER](../../data-types/numeric-data-types/integer.md) type contains signed integer numeric 4-byte values (the _int/ of_\
-_the C language) ranging from `–2,147,483,648` to `2,147,483,647` for signed_\
-_type and `0` to `4,294,967,295` for unsigned type._
+&#xNAN;_&#x74;he C language) ranging from `–2,147,483,648` to `2,147,483,647` for signed_\
+&#xNAN;_&#x74;ype and `0` to `4,294,967,295` for unsigned type._
 
 ## TYPE\_SHORT
 
 The SHORT data type contains signed [integer numeric 2-byte](../../data-types/numeric-data-types/smallint.md) values (the _short_\
-_integer_ of the C language) ranging from `–32,768` to `32,767` for signed\
+&#xNAN;_&#x69;nteger_ of the C language) ranging from `–32,768` to `32,767` for signed\
 type and `0` to `65,535` for unsigned type.
 
 ## TYPE\_TINY

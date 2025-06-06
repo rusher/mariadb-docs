@@ -25,7 +25,7 @@ You can also configure your package manager to install it from MariaDB Foundatio
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's\
 repository using `[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
-```
+```bash
 sudo yum install MariaDB-rocksdb-engine
 ```
 
@@ -34,7 +34,7 @@ sudo yum install MariaDB-rocksdb-engine
 On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
 repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
-```
+```bash
 sudo apt-get install mariadb-plugin-rocksdb
 ```
 
@@ -42,7 +42,7 @@ sudo apt-get install mariadb-plugin-rocksdb
 
 On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
 
-```
+```bash
 sudo zypper install MariaDB-rocksdb-engine
 ```
 
@@ -56,7 +56,7 @@ Once the shared library is in place, the plugin is not actually installed by Mar
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
-```
+```sql
 INSTALL SONAME 'ha_rocksdb';
 ```
 
@@ -74,7 +74,7 @@ Note: When installed with a package manager, an option file that contains the `[
 
 You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
-```
+```sql
 UNINSTALL SONAME 'ha_rocksdb';
 ```
 
@@ -84,7 +84,7 @@ If you installed the plugin by providing the `[--plugin-load](../../../server-ma
 
 After installing MyRocks you will see RocksDB in the list of plugins:
 
-```
+```sql
 SHOW PLUGINS;
 +-------------------------------+----------+--------------------+---------------+---------+
 | Name                          | Status   | Type               | Library       | License |
@@ -110,7 +110,7 @@ SHOW PLUGINS;
 
 Supported compression types are listed in the [rocksdb\_supported\_compression\_types](myrocks-system-variables.md#rocksdb_supported_compression_types) variable. For example:
 
-```
+```sql
 SHOW VARIABLES LIKE 'rocksdb_supported_compression_types';
 +-------------------------------------+-------------+
 | Variable_name                       | Value       |
@@ -125,7 +125,7 @@ See [MyRocks and Data Compression](myrocks-and-data-compression.md) for more.
 
 All MyRocks [system variables](myrocks-system-variables.md) and [status variables](myrocks-status-variables.md) are prefaced with "rocksdb", so you can query them with, for example:
 
-```
+```sql
 SHOW VARIABLES LIKE 'rocksdb%';
 SHOW STATUS LIKE 'rocksdb%';
 ```

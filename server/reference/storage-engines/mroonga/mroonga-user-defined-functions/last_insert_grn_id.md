@@ -12,7 +12,7 @@ last_insert_grn_id()
 
 ## Examples
 
-```
+```sql
 SELECT last_insert_grn_id();
 +----------------------+
 | last_insert_grn_id() |

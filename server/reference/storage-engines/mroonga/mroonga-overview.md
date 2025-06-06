@@ -4,7 +4,7 @@ Once Mroonga has been installed (see [About Mroonga](about-mroonga.md)), its bas
 
 For example:
 
-```
+```sql
 CREATE TABLE ft_mroonga(copy TEXT,FULLTEXT(copy)) ENGINE=Mroonga;
 
 INSERT INTO ft_mroonga(copy) VALUES ('Once upon a time'),
@@ -22,13 +22,13 @@ SELECT * FROM ft_mroonga WHERE MATCH(copy) AGAINST('wicked');
 
 Mroonga can also order by weighting. For example, first add another record:
 
-```
+```sql
 INSERT INTO ft_mroonga(copy) VALUES ('She met a wicked, wicked witch');
 ```
 
 Records can be returned by weighting, for example, the newly added record has two occurences of the word 'wicked' and a higher weighting:
 
-```
+```sql
 SELECT *, MATCH(copy) AGAINST('wicked') AS score FROM ft_mroonga 
    WHERE MATCH(copy) AGAINST('wicked') ORDER BY score DESC;
 +--------------------------------+--------+
@@ -45,14 +45,14 @@ Mroonga permits you to set a different parser for searching by specifying the pa
 
 For example:
 
-```
+```sql
 CREATE TABLE ft_mroonga(copy TEXT,FULLTEXT(copy) COMMENT 'parser "TokenDelimitNull"') 
   ENGINE=Mroonga;,
 ```
 
 or
 
-```
+```sql
 SET GLOBAL mroonga_default_parser = 'TokenBigramSplitSymbol';
 ```
 
@@ -81,7 +81,7 @@ The following parser settings are available:
 
 `TokenBigram` failing to match partial symbols which `TokenBigramSplitSymbol` matches, since `TokenBigramSplitSymbol` does not treat continuous symbols as a token.
 
-```
+```sql
 DROP TABLE ft_mroonga;
 CREATE TABLE ft_mroonga(copy TEXT,FULLTEXT(copy) COMMENT 'parser "TokenBigram"') 
   ENGINE=Mroonga;
@@ -111,7 +111,7 @@ SELECT * FROM ft_mroonga WHERE MATCH(copy) AGAINST('!?');
 
 #### TokenBigram vs TokenBigramSplitSymbolAlpha
 
-```
+```sql
 DROP TABLE ft_mroonga;
 CREATE TABLE ft_mroonga(copy TEXT,FULLTEXT(copy) COMMENT 'parser "TokenBigram"') 
   ENGINE=Mroonga;

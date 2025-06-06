@@ -19,7 +19,7 @@ Returns the escaped string.
 
 ## Example
 
-```
+```sql
 SELECT mroonga_escape("+-<>~*()\"\:");
 '\\+\\-\\<\\>\\~\\*\\(\\)\\"\\:
 ```

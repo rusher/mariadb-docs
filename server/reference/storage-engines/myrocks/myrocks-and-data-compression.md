@@ -1,4 +1,4 @@
-# MyRocks and Data Compression
+# Data Compression
 
 MyRocks supports several compression algorithms.
 
@@ -6,7 +6,7 @@ MyRocks supports several compression algorithms.
 
 Supported compression algorithms can be checked like so:
 
-```
+```sql
 show variables like 'rocksdb%compress%';
 +-------------------------------------+------------------------------------+
 | Variable_name                       | Value                              |
@@ -37,7 +37,7 @@ Compression is set on a per-Column Family basis. See [MyRocks Column Families](m
 
 To check current compression settings for a column family one can use a query like so:
 
-```
+```sql
 select * from information_schema.rocksdb_cf_options 
 where option_type like '%ompression%' and cf_name='default';
 ```
@@ -81,7 +81,7 @@ The data will not be re-compressed immediately. However, all new SST files will 
 
 Please note that `rocksdb-override-cf-options` syntax is quite strict. Any typos will result in the parse error, and MyRocks plugin will not be loaded. Depending on your configuration, the server may still start. If it does start, you can use this command to check if the plugin is loaded:
 
-```
+```sql
 select * from information_schema.plugins where plugin_name='ROCKSDB'
 ```
 
@@ -100,7 +100,7 @@ Another way is to detect the error is check the error log. When option parsing f
 
 A query to check what compression is used in the SST files that store the data for a given table (test.t1):
 
-```
+```sql
 select
   SP.sst_name, SP.compression_algo
 from
