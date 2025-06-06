@@ -5,9 +5,9 @@ To facilitate development and QA, we have created some test repositories for
 the Galera wsrep provider.
 
 
-These are **test** repositories. There will be periods when they do not work at
-all, or work incorrectly, or possibly cause earthquakes, typhoons, and
-tornadoes. You have been warned.
+{% hint style="warning" %}
+These are **test** repositories. There will be periods when they do not work at all, or work incorrectly, or possibly cause earthquakes, typhoons, and tornadoes. You have been warned.
+{% endhint %}
 
 
 ## Galera Test Repositories for YUM
