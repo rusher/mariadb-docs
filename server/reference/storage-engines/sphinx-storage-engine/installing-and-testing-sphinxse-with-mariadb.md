@@ -32,7 +32,7 @@ installation is.
 After installing Sphinx, you can check that things are working in MariaDB by\
 doing the following:
 
-```
+```bash
 cd installation-dir/mysql-test
 ./mysql-test-run --suite=sphinx
 ```

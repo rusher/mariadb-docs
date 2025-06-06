@@ -4,7 +4,7 @@
 
 Direct SQL is a way to map reduced execution on remote backends and store the results in a local table. This can either be sequential, using the UDF function [spider\_direct\_sql](spider-functions/spider_direct_sql.md), or concurrently, using [spider\_bg\_direct\_sql](spider-functions/spider_bg_direct_sql.md).
 
-```
+```sql
 spider1 backend << EOF 
 CREATE TEMPORARY TABLE res
 (
@@ -30,7 +30,7 @@ EOF
 
 Or if you are using a [SERVER](../../sql-statements/data-definition/create/create-server.md):
 
-```
+```sql
 SELECT spider_direct_sql( 
   'SELECT * FROM sbtest s  WHERE s.id IN(10,12,13)',
   'res',
@@ -42,7 +42,7 @@ SELECT spider_direct_sql(
 
 The default for [spider\_bg\_direct\_sql](spider-functions/spider_bg_direct_sql.md) is to access concurrently all backends. If you have multiple partitions store inside a single backend, you still can increase parallelism affecting different channels to each partitions.
 
-```
+```sql
 CREATE TEMPORARY TABLE res
 (
   id int(10) unsigned NOT NULL , 
@@ -85,7 +85,7 @@ Check that [Handler Socket](../../sql-structure/nosql/handlersocket/) is running
 +-------------------------------+---------------+
 ```
 
-```
+```sql
 spider1 backend << EOF 
 CREATE TEMPORARY TABLE res
 (
@@ -115,7 +115,7 @@ If the Spider table is partitioned, you must set "Spider table name" with a part
 
 You can check the table name and the link ID with the part name using the following SQL:
 
-```
+```sql
 SELECT table_name FROM mysql.spider_tables;
 ```
 
@@ -123,7 +123,7 @@ SELECT table_name FROM mysql.spider_tables;
 
 To capture all queries sent to remote backends on a `Spider Node` :
 
-```
+```sql
 SET GLOBAL general_log=ON; 
 SET GLOBAL spider_general_log=ON;
 SET GLOBAL spider_log_result_errors=1;
@@ -175,13 +175,13 @@ The [Performance schema](../../sql-statements/administrative-sql-statements/syst
 
 To activate the performance schema, use the [performance\_schema](../../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
 
-```
+```sql
 performance_schema=on
 ```
 
 Activate the Spider probes to be monitored.
 
-```
+```sql
 UPDATE performance_schema.setup_instruments SET 
   ENABLED='YES', TIMED='yes' WHERE NAME LIKE '%spider%';
 ```
@@ -190,7 +190,7 @@ Run your queries ...
 
 And check the performance metrics. Remove specific Spider metrics to have a more global view.
 
-```
+```sql
 SELECT * FROM performance_schema.events_waits_summary_global_by_event_name 
   WHERE COUNT_STAR<>0 AND EVENT_NAME LIKE '%spider%' 
   ORDER BY SUM_TIMER_WAIT DESC LIMIT 10;

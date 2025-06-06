@@ -26,7 +26,7 @@ Before Engine Condition Push Down patch .
 
 Spider can benefit by 10% additional performance with Independent Storage Engine Statistics.
 
-```
+```sql
 set global use_stat_tables='preferably';
 USE backend; 
 ANALYZE TABLE sbtest;

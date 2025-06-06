@@ -14,7 +14,7 @@ Spider deployments use data nodes to store the actual table data. In order for a
 
 For instance, first create the table:
 
-```
+```sql
 CREATE TABLE test.spider_example (
    id INT PRIMARY KEY AUTO_INCREMENT,
    name VARCHAR(50)
@@ -23,7 +23,7 @@ CREATE TABLE test.spider_example (
 
 Next, create a user for the Spider node and set a password for that user. For the sake of the example, assume the Spider node is at the IP address 192.168.1.1:
 
-```
+```sql
 CREATE USER spider@192.168.1.1;
 
 SET PASSWORD FOR spider@192.168.1.1 = PASSWORD('passwd');
@@ -31,13 +31,13 @@ SET PASSWORD FOR spider@192.168.1.1 = PASSWORD('passwd');
 
 Then grant the `spider` user privileges on the example table.
 
-```
+```sql
 GRANT ALL ON test.spider_example TO spider@192.168.1.1;
 ```
 
 The data node is now ready for use. You can test it by attempting to connect the MariaDB client to the data from the Spider node. For instance, assuming the data node is at the IP address 192.168.1.5, SSH into the Spider node then try to establish a client connection.
 
-```
+```sql
 $ mysql -u spider -p -h 192.168.1.5 test -e "SHOW TABLES;"
 
 +----------------+
@@ -57,7 +57,7 @@ To install the Spider storage engine, complete the installation process shown be
 
 On Debian and Ubuntu, the Spider storage engine is installed via a separate `mariadb-plugin-spider` package. To install the package via APT, execute the following command:
 
-```
+```bash
 $ sudo apt install mariadb-plugin-spider
 ```
 
@@ -69,7 +69,7 @@ With [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-ser
 
 The plugin can be loaded dynamically without a server restart by executing `INSTALL SONAME` or `INSTALL PLUGIN`:
 
-```
+```sql
 INSTALL SONAME "ha_spider";
 ```
 
@@ -127,7 +127,7 @@ Running this configuration script also creates a series of new tables in the `my
 
 You can verify that the Spider plugin has been loaded by querying the `information_schema.ENGINES` table:
 
-```
+```sql
 SELECT ENGINE, SUPPORT
 FROM information_schema.ENGINES
 WHERE ENGINE = 'SPIDER';
@@ -149,7 +149,7 @@ With the data node or data nodes configured, you can set up the Spider node to u
 
 In order to connect the Spider node to the data nodes, you may issue a `[CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)` statement for each data node. You can then use the server definition in creating the Spider table.
 
-```
+```sql
 CREATE SERVER dataNode1 FOREIGN DATA WRAPPER mysql
 OPTIONS (
    HOST '192.168.1.5',
@@ -171,7 +171,7 @@ Alternatively, you could also choose not to create a server, but specify the con
 
 With the data nodes set up and the Spider node configured for use, you can create the Spider table. The Spider table must have the same column definitions as the tables on the data nodes. Spider can be configured through table parameters passed to the `COMMENT` or `CONNECTION` option.
 
-```
+```sql
 CREATE TABLE test.spider_example (
    id INT PRIMARY KEY AUTO_INCREMENT,
    name VARCHAR(50)
@@ -183,7 +183,7 @@ This configures Spider to use the server `dataNode1`, (defined above), as a remo
 
 Alternatively, starting from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), one could specify spider table parameters using table options:
 
-```
+```sql
 CREATE TABLE test.spider_example (
    id INT PRIMARY KEY AUTO_INCREMENT,
    name VARCHAR(50)

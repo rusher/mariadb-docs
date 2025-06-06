@@ -36,7 +36,7 @@ To create a table in the Spider storage engine format, the COMMENT and/or CONNEC
 
 For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](../../../clients-and-utilities/legacy-clients-and-utilities/mysql-sandbox.md) tool, an easy way to test with multiple installations)::
 
-```
+```sql
 node1 >CREATE TABLE s(
   id INT NOT NULL AUTO_INCREMENT,
   code VARCHAR(10),
@@ -45,7 +45,7 @@ node1 >CREATE TABLE s(
 
 On the local server, a Spider table can be created as follows:
 
-```
+```sql
 CREATE TABLE s(
   id INT NOT NULL AUTO_INCREMENT,
   code VARCHAR(10),
@@ -57,7 +57,7 @@ COMMENT='host "127.0.0.1", user "msandbox", password "msandbox", port "8607"';
 
 Records can now be inserted on the local server, and they will be stored on the remote server:
 
-```
+```sql
 INSERT INTO s(code) VALUES ('a');
 
 node1 > SELECT * FROM s;
@@ -72,7 +72,7 @@ node1 > SELECT * FROM s;
 
 Alternative to specifying the data node information in the COMMENT, certain information (server, database, table) can also be specified using Table Options, like so:
 
-```
+```sql
 CREATE SERVER srv FOREIGN DATA WRAPPER mysql OPTIONS(
   HOST '127.0.0.1',
   USER 'msandbox',
@@ -153,7 +153,7 @@ alias spider1='/usr/local/skysql/mysql-client/bin/mysql  --user=skysql --passwor
 
 Create the empty tables to hold the data and repeat for all available backend nodes.
 
-```
+```sql
 backend1 << EOF 
 CREATE DATABASE backend;
 CREATE TABLE backend.sbtest (
@@ -183,7 +183,7 @@ EOF
 
 ![Spider7](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider7.png)
 
-```
+```sql
 spider1 << EOF
 CREATE SERVER backend 
   FOREIGN DATA WRAPPER mysql 
@@ -218,7 +218,7 @@ Without connection pool or MariaDB thread pool, HaProxy and Spider have been pro
 
 Create the spider table on the Spider Node
 
-```
+```sql
 #spider1 << EOF
 CREATE SERVER backend1 
   FOREIGN DATA WRAPPER mysql 
@@ -258,7 +258,7 @@ EOF
 
 Copy the data from the original sysbench table to the spider table
 
-```
+```sql
 #/usr/local/skysql/mariadb/bin/mysqldump  --user=skysql --password=skyvodka --host=192.168.0.202 --port=5054 --no-create-info test sbtest | spider1 backend 
 
 #backend2 -e"select count(*) from backend.sbtest;"
@@ -325,7 +325,7 @@ We have 4 cores per backend and 2 backends .
 
 On `backend1`
 
-```
+```sql
 #backend1 << EOF 
 CREATE DATABASE bsbackend1;
 CREATE DATABASE bsbackend2;
@@ -368,7 +368,7 @@ EOF
 
 On `backend2`
 
-```
+```sql
 #backend2 << EOF 
 CREATE DATABASE bsbackend5;
 CREATE DATABASE bsbackend6;
@@ -411,7 +411,7 @@ EOF
 
 On `Spider Node`
 
-```
+```sql
 #spider2 << EOF
 CREATE SERVER bsbackend1 FOREIGN DATA WRAPPER mysql OPTIONS( HOST '192.168.0.202', DATABASE 'bsbackend1',USER 'skysql', PASSWORD 'skyvodka',PORT 5054);
 CREATE SERVER bsbackend2 FOREIGN DATA WRAPPER mysql OPTIONS( HOST '192.168.0.202', DATABASE 'bsbackend2',USER 'skysql', PASSWORD 'skyvodka',PORT 5054);
@@ -449,7 +449,7 @@ INSERT INTO  bsbackend.sbtest SELECT * FROM backend.sbtest;
 
 Now test the following query :
 
-```
+```sql
 select count(*) from sbtest;
 +----------+
 | count(*) |
@@ -497,7 +497,7 @@ Spider's high availability feature has been deprecated ([MDEV-28479](https://jir
 
 ![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png)
 
-```
+```sql
 #backend1 -e "CREATE DATABASE backend_rpl"
 #backend2 -e "CREATE DATABASE backend_rpl"
 
@@ -557,14 +557,14 @@ EOF
 
 What is happening if we stop one backend?
 
-```
+```sql
 #spider1 -e "SELECT * FROM backend.sbtest where id=10000001";
 ERROR 1429 (HY000) at line 1: Unable to connect to foreign data source: backend1
 ```
 
 Let's fix this with spider monitoring. Note that msi is the list of spider nodes @@server\_id variable participating in the quorum.
 
-```
+```sql
 #spider1 << EOF
 DROP  TABLE backend.sbtest;
 CREATE  TABLE backend.sbtest
@@ -601,7 +601,7 @@ Monitoring should be setup between Spider nodes participating in the cluster. We
 
 This simple setup does not bring HA in case the `Spider Node` is not available. In a production setup the number of `Spider Nodes` in the spider\_link\_mon\_servers table should be at least 3 to get a majority consensus.
 
-```
+```sql
 #spider1 -e "SELECT * FROM backend.sbtest WHERE id=10000001"
 +----------+---+---+---------------+
 | id       | k | c | pad           |
@@ -612,7 +612,7 @@ This simple setup does not bring HA in case the `Spider Node` is not available. 
 
 Checking the state of the nodes:
 
-```
+```sql
 #spider1 -e "SELECT db_name, table_name,server  FROM mysql.spider_tables WHERE link_status=3"
 +---------+--------------+----------+
 | db_name | table_name   | server   |
@@ -625,7 +625,7 @@ Checking the state of the nodes:
 
 No change has been made to cluster, so let's create a divergence:
 
-```
+```sql
 # spider1 -e "INSERT INTO backend.sbtest select 10000003, 0, '' ,'replicas test';"
 # backend1 -e "SELECT * FROM backend.sbtest WHERE id=10000003"
 # backend2 -e "SELECT * FROM backend_rpl.sbtest WHERE id=10000003"
@@ -638,7 +638,7 @@ No change has been made to cluster, so let's create a divergence:
 
 Reintroducing the failed backend1 in the cluster:
 
-```
+```sql
 #spider1 << EOF
 ALTER TABLE backend.sbtest 
 ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'

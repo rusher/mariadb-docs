@@ -10,7 +10,7 @@ If it doesn't already exist, you can use the sample configuration file, `sphinx.
 
 The sample configuration file documents the available options. You will need to make at least a few changes. A MariaDB user with permission to access the database must be created. For example:
 
-```
+```sql
 CREATE USER 'sphinx'@localhost 
   IDENTIFIED BY 'sphinx_password';
 GRANT SELECT on test.* to 'sphinx'@localhost;
@@ -18,7 +18,7 @@ GRANT SELECT on test.* to 'sphinx'@localhost;
 
 Add these details to the `mysql` section of the config file:
 
-```
+```sql
 sql_host = localhost 
 sql_user = sphinx 
 sql_pass = sphinx_password 
@@ -36,7 +36,7 @@ pid_file = C:\Sphinx\sphinx.pid
 
 The query in the configuration files is the query that will be used for building the index. In the sample data, this is:
 
-```
+```sql
 sql_query = \
   SELECT id, group_id, UNIX_TIMESTAMP(date_added) AS date_added, title, content \
   FROM documents

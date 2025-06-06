@@ -10,7 +10,7 @@ The Federated MariaDB Enterprise Spider topology can be used to migrate tables f
 * A Spider Table is created on the Spider Node that references the Data Table on the Data Node.
 * On the Spider node, the Data Table's data is migrated to the destination table by querying the Spider Table like the following:
 
-```
+```sql
 INSERT INTO innodb_tab
    SELECT * FROM spider_tab;
 ```
@@ -29,7 +29,7 @@ A local copy of the table must be created. This new table will contain the migra
 
 * On the Spider Node\*, create a local copy of each table that is being migrated:
 
-```
+```sql
 CREATE DATABASE hq_sales;
 
 CREATE SEQUENCE hq_sales.invoice_seq;
@@ -51,7 +51,7 @@ The table data can be migrated to the local table using the Spider Tables.
 
 * On the Spider Node\*, migrate the table data to the local copy of the table using the [INSERT SELECT](../../../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    SELECT * FROM spider_hq_sales.invoices;
 ```
@@ -60,7 +60,7 @@ INSERT INTO hq_sales.invoices
 
 On the Spider Node, read from the local copy of the table using a [SELECT](../../../../../sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that the data has been migrated:
 
-```
+```sql
 SELECT * FROM hq_sales.invoices;
 ```
 

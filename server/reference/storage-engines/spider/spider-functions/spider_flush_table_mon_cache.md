@@ -12,7 +12,7 @@ A [UDF](../../../../server-usage/user-defined-functions/) installed with the [Sp
 
 ## Examples
 
-```
+```sql
 SELECT SPIDER_FLUSH_TABLE_MON_CACHE();
 +--------------------------------+
 | SPIDER_FLUSH_TABLE_MON_CACHE() |

@@ -30,7 +30,7 @@ The following procedure shows how to take a consistent backup of a Spider Node a
 
 For MariaDB Enterprise Server 10.5 and later:
 
-```
+```sql
 CREATE USER 'mariadb-backup'@'localhost'
    IDENTIFIED BY 'mb_passwd';
 
@@ -43,25 +43,25 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR
 
 For example, on the hq\_server Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 On the eastern\_server Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON eastern_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 On the western\_server Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON western_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 3. On the Spider Node, acquire a read lock on Spider Tables using the LOCK TABLES statement:
 
-```
+```sql
 LOCK TABLES spider_sharded_sales.invoices READ;
 ```
 
@@ -73,7 +73,7 @@ The read lock will propagate to the Data Tables on each Data Node as well. The r
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
 
-```
+```bash
 $ sudo mariadb-backup --backup \
    --target-dir=/data/backups/full \
    --user=mariadb-backup \
@@ -84,7 +84,7 @@ $ sudo mariadb-backup --backup \
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
 
-```
+```bash
 $ sudo mariadb-backup --backup \
    --target-dir=/data/backups/full \
    --user=mariadb-backup \
@@ -93,7 +93,7 @@ $ sudo mariadb-backup --backup \
 
 6. On the Spider Node, after the backup is complete, in your original session, use the [UNLOCK TABLES](../../../../../sql-statements/transactions/transactions-unlock-tables.md) statement to release the table locks:
 
-```
+```sql
 UNLOCK TABLES;
 ```
 
@@ -101,7 +101,7 @@ UNLOCK TABLES;
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
 
-```
+```bash
 $ sudo mariadb-backup --prepare \
    --target-dir=/data/backups/full
 ```
@@ -114,13 +114,13 @@ The Spider Node and Data Nodes now each have a complete backup of the data direc
 
 1. On the Spider Node and on each Data Node, stop the MariaDB Server process:
 
-```
+```bash
 $ sudo systemctl stop mariadb
 ```
 
 2. On the Spider Node and on each Data Node, empty the data directory:
 
-```
+```bash
 $ sudo rm -fr /var/lib/mysql/*
 ```
 
@@ -128,26 +128,26 @@ $ sudo rm -fr /var/lib/mysql/*
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
 
-```
+```bash
 $ sudo mariadb-backup --copy-back \
    --target-dir=/data/backups/full
 ```
 
 4. On the Spider Node and on each Data Node, confirm that the restored files are owned by the user that owns the MariaDB Server process:
 
-```
+```bash
 $ sudo chown -R mysql:mysql /var/lib/mysql
 ```
 
 5. On the Spider Node and on each Data Node, start the MariaDB Server process:
 
-```
+```bash
 $ sudo systemctl start mariadb
 ```
 
 6. On the Spider Node, query a Spider Table to test it:
 
-```
+```sql
 SELECT * FROM spider_sharded_sales.invoices;
 ```
 
@@ -193,7 +193,7 @@ The following procedure shows how to take a consistent backup of a Spider Node a
 
 1. On the Spider Node and on each Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
 
-```
+```sql
 CREATE USER 'mariadb-dump'@'localhost'
    IDENTIFIED BY 'md_passwd';
 
@@ -206,25 +206,25 @@ GRANT SELECT, INSERT, SHOW VIEW, TRIGGER, CREATE, ALTER, EVENT, RELOAD, LOCK TAB
 
 For example, on the hq\_server Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 On the `eastern_server` Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON eastern_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 On the `western_server` Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON western_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 3. On the Spider Node, acquire a read lock on Spider Tables using the [LOCK TABLES](../../../../../sql-statements/transactions/lock-tables.md) statement:
 
-```
+```sql
 LOCK TABLES spider_sharded_sales.invoices READ;
 ```
 
@@ -235,7 +235,7 @@ The read lock will propagate to the Data Tables on each Data Node as well. The r
 4. On each Data Node, perform the backup using MariaDB Dump.\
    With MariaDB Dump 10.5 and later, use the mariadb-dump command:
 
-```
+```bash
 $ mariadb-dump \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -251,7 +251,7 @@ $ mariadb-dump \
 
 With MariaDB Dump 10.5 and later, use the mariadb-dump command:
 
-```
+```bash
 $ mariadb-dump \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -265,7 +265,7 @@ $ mariadb-dump \
 
 6. On the Spider Node, after the backups are complete, in your original session use the [UNLOCK TABLES](../../../../../sql-statements/transactions/transactions-unlock-tables.md) statement to release the table locks:
 
-```
+```sql
 UNLOCK TABLES;
 ```
 
@@ -280,7 +280,7 @@ MariaDB Client can restore a Sharded MariaDB Enterprise Spider topology from a b
 
 With MariaDB Client 10.5 and later, use the mariadb command:
 
-```
+```bash
 $ mariadb \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -294,7 +294,7 @@ $ mariadb \
 
 With MariaDB Client 10.5 and later, use the mariadb command:
 
-```
+```bash
 $ mariadb \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -306,7 +306,7 @@ $ mariadb \
 
 4. On the Spider Node, query a Spider Table to test it:
 
-```
+```sql
 SELECT * FROM spider_sharded_sales.invoices;
 ```
 

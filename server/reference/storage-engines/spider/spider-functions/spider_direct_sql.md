@@ -14,7 +14,7 @@ The function returns `1` if the SQL executes successfully, or `0` if it fails.
 
 ## Examples
 
-```
+```sql
 SELECT SPIDER_DIRECT_SQL('SELECT * FROM s', '', 'srv "node1", port "8607"');
 +----------------------------------------------------------------------+
 | SPIDER_DIRECT_SQL('SELECT * FROM s', '', 'srv "node1", port "8607"') |

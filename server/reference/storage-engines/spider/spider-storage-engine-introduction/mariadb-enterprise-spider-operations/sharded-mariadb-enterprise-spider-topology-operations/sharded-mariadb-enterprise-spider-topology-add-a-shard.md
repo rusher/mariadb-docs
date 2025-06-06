@@ -10,7 +10,7 @@ Each data node requires a user account that the Spider Node uses to connect.
 
 On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) statement:
 
-```
+```sql
 CREATE USER spider_user@192.0.2.1 IDENTIFIED BY "password";
 ```
 
@@ -30,7 +30,7 @@ The Spider Node requires connection details for each Data Node.
 
 On the Spider Node, create a server object to configure the connection details for the Data Node hosting the new shard using the [CREATE SERVER](../../../../../sql-statements/data-definition/create/create-server.md) statement:
 
-```
+```sql
 CREATE SERVER southern_server
    FOREIGN DATA WRAPPER mariadb
 OPTIONS (
@@ -54,7 +54,7 @@ If your Data Tables already exist, grant privileges on the tables to the Spider 
 
 On the Data Node hosting the new shard, create the Data Tables:
 
-```
+```sql
 CREATE DATABASE southern_sales;
 
 CREATE SEQUENCE southern_sales.invoice_seq;
@@ -85,7 +85,7 @@ The Spider Node connects to the Data Nodes with the user account configured prev
 
 On the Data Node hosting the new shard, grant the Spider user sufficient privileges to operate on the Data Table:
 
-```
+```sql
 GRANT ALL PRIVILEGES ON southern_sales.invoices TO 'spider_user'@'192.0.2.1';
 ```
 
@@ -102,7 +102,7 @@ The default spider\_bka\_mode value is -1, and the implicit Spider Table value i
 
 On the Data Node hosting the new shard, grant the Spider user the [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege on the database:
 
-```
+```sql
 GRANT CREATE TEMPORARY TABLES ON southern_sales.* TO 'spider_user'@'192.0.2.1';
 ```
 
@@ -112,7 +112,7 @@ A partition for the new shard must be added to the Spider Table on the Spider No
 
 On the Spider Node, alter the Spider Table to add the partition and reference the name of the Data Node hosting the new shard in the COMMENT partition option:
 
-```
+```sql
 ALTER TABLE spider_sharded_sales.invoices
    ADD PARTITION (
       PARTITION southern_partition VALUES IN (4) COMMENT = 'server "southern_server", table "invoices"'
@@ -123,7 +123,7 @@ ALTER TABLE spider_sharded_sales.invoices
 
 On the Spider Node, read from the Spider Table using a [SELECT](../../../../../sql-statements/data-manipulation/selecting-data/select.md) statement:
 
-```
+```sql
 SELECT * FROM spider_sharded_sales.invoices;
 ```
 

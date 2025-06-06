@@ -14,7 +14,7 @@ Have 3 or more servers available and Install MariaDB on each of these servers:
 
 Follow the instructions [here](spider-storage-engine-overview.md#installing) to enable the Spider storage engine on the spider server:
 
-```
+```sql
 INSTALL SONAME 'ha_spider';
 ```
 
@@ -46,7 +46,7 @@ spider> mysql -u spider -p -h 172.21.21.4 test
 
 The table definition should be created in the test database on both backend1 and backend2 servers:
 
-```
+```sql
 create table opportunities (
 id int,
 accountName varchar(20),
@@ -64,7 +64,7 @@ key (accountName)
 
 While the connection information can also be specified inline in the comment or (from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)) as table options, it is cleaner to define a server object representing each remote backend server connection:
 
-```
+```sql
 create server backend1 foreign data wrapper mysql options 
 (host '172.21.21.3', database 'test', user 'spider', password 'spider', port 3306);
 create server backend2 foreign data wrapper mysql options 
@@ -75,7 +75,7 @@ create server backend2 foreign data wrapper mysql options
 
 Bear in mind, if you ever need to remove, recreate or otherwise modify the server definition for any reason, you need to also execute a [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement. Otherwise, Spider continues to use the old server definition, which can result in queries raising the error
 
-```
+```sql
 Error 1429: Unable to connect to foreign data source
 ```
 
@@ -89,7 +89,7 @@ FLUSH TABLES;
 
 In this case, a spider table is created to allow remote access to the opportunities table hosted on backend1. This then allows for queries and remote dml into the backend1 server from the spider server:
 
-```
+```sql
 create table opportunities (
 id int,
 accountName varchar(20),
@@ -109,7 +109,7 @@ See also `[hash-partitioning-type](../../../server-management/partitioning-table
 
 In this case a spider table is created to distribute data across backend1 and backend2 by hashing the id column. Since the id column is an incrementing numeric value the hashing will ensure even distribution across the 2 nodes.
 
-```
+```sql
 create table opportunities (
 id int,
 accountName varchar(20),
@@ -134,7 +134,7 @@ See also `[range-partitioning-type](../../../server-management/partitioning-tabl
 
 In this case a spider table is created to distribute data across backend1 and backend2 based on the first letter of the accountName field. All accountNames that start with the letter L and prior will be stored in backend1 and all other values stored in backend2. Note that the accountName column must be added to the primary key which is a requirement of MariaDB partitioning:
 
-```
+```sql
 create table opportunities (
 id int,
 accountName varchar(20),
@@ -159,7 +159,7 @@ See also `[list-partitioning-type](../../../server-management/partitioning-table
 
 In this case a spider table is created to distribute data across backend1 and backend2 based on specific values in the owner field. Bill, Bob, and Chris will be stored in backend1 and Maria and Olivier stored in backend2. Note that the owner column must be added to the primary key which is a requirement of MariaDB partitioning:
 
-```
+```sql
 create table opportunities (
 id int,
 accountName varchar(20),
@@ -180,7 +180,7 @@ key(accountName)
 
 With [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) the following partition clause can be used to specify a default partition for all other values, however this must be a distinct partition / shard:
 
-```
+```sql
 PARTITION partition_name DEFAULT
 ```
 

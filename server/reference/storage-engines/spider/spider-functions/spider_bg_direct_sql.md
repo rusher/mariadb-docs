@@ -14,7 +14,7 @@ This function is a [UDF](../../../../server-usage/user-defined-functions/) insta
 
 ## Examples
 
-```
+```sql
 SELECT SPIDER_BG_DIRECT_SQL('SELECT * FROM example_table',  '', 
    'srv "node1", port "8607"') AS "Direct Query";
 +--------------+

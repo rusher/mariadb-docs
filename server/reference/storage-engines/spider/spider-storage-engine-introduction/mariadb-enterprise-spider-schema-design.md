@@ -10,7 +10,7 @@ For each Spider Table, MariaDB Enterprise Spider requires connection details for
 
 In a Federated MariaDB Enterprise Spider topology, the [Connection Options](mariadb-enterprise-spider-schema-design.md#connection-options) are specified in the COMMENT table option for the Spider Table:
 
-```
+```sql
 CREATE SERVER hq_server
 FOREIGN DATA WRAPPER mariadb
 OPTIONS (
@@ -37,7 +37,7 @@ COMMENT='server "hq_server", table "invoices"';
 
 An alternative syntax is available. When you don't want to create a server object, the full connection details for the Data Node can be specified in the COMMENT table option:
 
-```
+```sql
 CREATE TABLE spider_hq_sales.invoices_alternate (
    branch_id INT NOT NULL,
    invoice_id INT NOT NULL,
@@ -54,7 +54,7 @@ COMMENT='table "invoices", host "192.0.2.2", port "5801", user "spider_user", pa
 
 In a Sharded MariaDB Enterprise Spider topology, the [Connection Options](mariadb-enterprise-spider-schema-design.md#connection-options) are specified in the COMMENT partition option for each partition of the Spider Table:
 
-```
+```sql
 CREATE SERVER hq_server
 FOREIGN DATA WRAPPER mariadb
 OPTIONS (
@@ -105,7 +105,7 @@ PARTITION BY LIST(branch_id) (
 
 An alternative syntax is available. When you don't want to create a server object, the full connection details for the Data Nodes can be specified in the COMMENT partition option:
 
-```
+```sql
 CREATE TABLE spider_sharded_sales.invoices (
    branch_id INT NOT NULL,
    invoice_id INT NOT NULL,

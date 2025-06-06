@@ -18,13 +18,13 @@ Sphinx does not depend on MariaDB, and can run independently, but SphinxSE provi
 
 The Sphinx storage engine is included in the source, binaries, and packages of MariaDB. SphinxSE is built as a dynamically loadable .so plugin. To use it, you need to perform a one-time install:
 
-```
+```sql
 INSTALL SONAME 'ha_sphinx';
 ```
 
 Once installed, SphinxSE will show up in the list of installed storage engines:
 
-```
+```sql
 SHOW ENGINES;
 +------------+---------+--------------------------------------------+--------------+------+------------+
 | Engine     | Support | Comment                                    | Transactions | XA   | Savepoints |

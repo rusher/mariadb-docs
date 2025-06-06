@@ -18,7 +18,7 @@ The character set or collation for the Spider Table can be updated or modified u
 
 On the Spider Node, alter the Spider Table's character set and collation:
 
-```
+```sql
 ALTER TABLE spider_hq_sales.invoices
    DEFAULT CHARACTER SET 'utf8mb4'
    DEFAULT COLLATE 'utf8mb4_general_ci';
@@ -32,7 +32,7 @@ In a Federated MariaDB Enterprise Spider topology, the connection options for a 
 
 * On the Spider Node\*, alter the table's connection details:
 
-```
+```sql
 ALTER TABLE spider_hq_sales.invoices
    COMMENT = 'server "new_hq_server", table "invoices"'
 ```

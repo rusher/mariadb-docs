@@ -11,7 +11,7 @@ This article will help you to use Spider ODBC to connect to Oracle. Which can ea
 1. In your working directory create a new folder to hold the Oracle ODBC `RPMs mkdir oracle_odbc_rpms` and then change into this directory
 2. Download the following files (be sure to use the appropriate driver for your scenario):
 
-```
+```bash
 wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle-instantclient19.16-odbc-19.16.0.0.0-1.x86_64.rpm
 wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle-instantclient19.16-sqlplus-19.16.0.0.0-1.x86_64.rpm
 wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle-instantclient19.16-basic-19.16.0.0.0-1.x86_64.rpm
@@ -19,7 +19,7 @@ wget https://download.oracle.com/otn_software/linux/instantclient/1916000/oracle
 
 3. Install the RPMs:
 
-```
+```bash
 yum localinstall *.rpm
 ```
 
@@ -67,7 +67,7 @@ REMOTE=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST={host_name/ip address})(PORT=15
 8. Start the MariaDB database with, e.g.: `systemctl start mariadb or systemctl start mysqld`
 9. Log into MariaDB and run the following:
 
-```
+```sql
 INSTALL SONAME 'ha_spider';
 CREATE DATABASE spider_test;
 USE spider_test;

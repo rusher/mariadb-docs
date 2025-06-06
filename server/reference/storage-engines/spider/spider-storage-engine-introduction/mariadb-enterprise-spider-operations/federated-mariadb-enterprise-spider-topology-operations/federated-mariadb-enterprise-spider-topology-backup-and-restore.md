@@ -28,7 +28,7 @@ The following procedure shows how to take a consistent backup of a Spider Node a
 
 1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
 
-```
+```sql
 CREATE USER 'mariadb-backup'@'localhost'
    IDENTIFIED BY 'mb_passwd';
 
@@ -41,13 +41,13 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR
 
 For example, on the hq\_server Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 3. On the Spider Node, acquire a read lock on Spider Tables using the [LOCK TABLES](../../../../../sql-statements/transactions/lock-tables.md) statement:
 
-```
+```sql
 LOCK TABLES spider_federated_sales.invoices READ;
 ```
 
@@ -57,7 +57,7 @@ The read lock will propagate to the Data Tables on the Data Node. The read locks
 
 4. On the Data Node, perform the backup using MariaDB Backup:
 
-```
+```bash
 $ sudo mariadb-backup --backup \
    --target-dir=/data/backups/full \
    --user=mariadb-backup \
@@ -66,7 +66,7 @@ $ sudo mariadb-backup --backup \
 
 5. When the Data Node backup is complete, perform the backup on the Spider Node using MariaDB Backup:
 
-```
+```bash
 $ sudo mariadb-backup --backup \
    --target-dir=/data/backups/full \
    --user=mariadb-backup \
@@ -75,13 +75,13 @@ $ sudo mariadb-backup --backup \
 
 6. When the Spider Node backup is complete, release the table locks in your original session using the [UNLOCK TABLES](../../../../../sql-statements/transactions/transactions-unlock-tables.md) statement:
 
-```
+```sql
 UNLOCK TABLES;
 ```
 
 7. On the Spider Node and the Data Node, prepare each of the backups using MariaDB Backup:
 
-```
+```bash
 $ sudo mariadb-backup --prepare \
    --target-dir=/data/backups/full
 ```
@@ -94,38 +94,38 @@ MariaDB Backup can restore a Federated MariaDB Enterprise Spider topology from a
 
 1. On the Spider Node and on the Data Node, stop the MariaDB Server process:
 
-```
+```bash
 $ sudo systemctl stop mariadb
 ```
 
 2. On the Spider Node and on the Data Node, empty the data directory:
 
-```
+```bash
 $ sudo rm -fr /var/lib/mysql/*
 ```
 
 3. On the Spider Node and on the Data Node, restore the backup for that server using MariaDB Backup:
 
-```
+```bash
 $ sudo mariadb-backup --copy-back \
    --target-dir=/data/backups/full
 ```
 
 4. On the Spider Node and on the Data Node, confirm that the restored files are owned by the user that owns the MariaDB Server process:
 
-```
+```bash
 $ sudo chown -R mysql:mysql /var/lib/mysql
 ```
 
 5. On the Spider Node and on the Data Node, start the MariaDB Server process:
 
-```
+```bash
 $ sudo systemctl start mariadb
 ```
 
 6. On the Spider Node, query a Spider Table to test it:
 
-```
+```sql
 SELECT * FROM spider_hq_sales.invoices;
 ```
 
@@ -165,7 +165,7 @@ The following procedure shows how to take a consistent backup of a Spider Node a
 
 1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
 
-```
+```sql
 CREATE USER 'mariadb-dump'@'localhost'
    IDENTIFIED BY 'md_passwd';
 
@@ -178,13 +178,13 @@ GRANT SELECT, INSERT, SHOW VIEW, TRIGGER, CREATE, ALTER, EVENT, RELOAD, LOCK TAB
 
 For example, on the hq\_server Data Node:
 
-```
+```sql
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
 3. On the Spider Node, acquire a read lock on Spider Tables using the LOCK TABLES statement:
 
-```
+```sql
 LOCK TABLES spider_federated_sales.invoices READ;
 ```
 
@@ -194,7 +194,7 @@ The read lock will propagate to the Data Tables on the Data Node. The read locks
 
 4. On the Data Node, perform the backup using MariaDB Dump:
 
-```
+```bash
 $ mariadb-dump \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -208,7 +208,7 @@ $ mariadb-dump \
 
 5. When the Data Node has been backed up, perform the backup on the Spider Node using MariaDB Dump:
 
-```
+```bash
 $ mariadb-dump \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -235,7 +235,7 @@ MariaDB Client can restore a Federated MariaDB Enterprise Spider topology from a
 1. Stop all traffic to the Spider Node and the Data Node.
 2. On the Spider Node, restore the backup for that server using MariaDB Client:
 
-```
+```bash
 $ mariadb \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -247,7 +247,7 @@ $ mariadb \
 
 3. On the Data Node, restore the backup for that server using MariaDB Client:
 
-```
+```bash
 $ mariadb \
    --user=mariadb-dump \
    --password='md_passwd' \
@@ -259,7 +259,7 @@ $ mariadb \
 
 On the Spider Node, query a Spider Table to test it:
 
-```
+```sql
 SELECT * FROM spider_hq_sales.invoices;
 ```
 

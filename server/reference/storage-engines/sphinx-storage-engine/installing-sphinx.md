@@ -8,7 +8,7 @@ Many Linux distributions have Sphinx in their repositories. These can be used to
 
 Ubuntu users can make use of the repository, as follows:
 
-```
+```bash
 sudo add-apt-repository ppa:builds/sphinxsearch-rel21
 sudo apt-get update
 sudo apt-get install sphinxsearch

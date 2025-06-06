@@ -13,7 +13,7 @@ A [UDF](../../../../server-usage/user-defined-functions/) installed with the [Sp
 
 If the Spider table is partitioned, the name must be of the format `table_name#P#partition_name`. The partition name can be viewed in the `mysql.spider_tables` table, for example:
 
-```
+```sql
 SELECT table_name FROM mysql.spider_tables;
 +-------------+
 | table_name  |

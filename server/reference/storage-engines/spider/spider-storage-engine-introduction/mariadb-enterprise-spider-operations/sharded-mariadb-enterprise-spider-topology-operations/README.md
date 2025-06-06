@@ -6,7 +6,6 @@ Choose an operation for the Sharded MariaDB Enterprise Spider topology:
 
 | Operation                                                                              | Description                                                      |
 | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| Operation                                                                              | Description                                                      |
 | [Add a Shard](sharded-mariadb-enterprise-spider-topology-add-a-shard.md)               | How to add a new shard to a Spider Table.                        |
 | [Backup and Restore](sharded-mariadb-enterprise-spider-topology-backup-and-restore.md) | How to create a new backup or restore an existing backup.        |
 | [Update Character Set or Collation](./#update-character-sets-and-collations)           | How to update the character set or collation for a Spider Table. |
@@ -18,7 +17,7 @@ The character set or collation for the Spider Table can be updated or modified u
 
 On the Spider Node, alter the Spider Table's character set and collation:
 
-```
+```sql
 ALTER TABLE spider_sharded_sales.invoices
    DEFAULT CHARACTER SET 'utf8mb4'
    DEFAULT COLLATE 'utf8mb4_general_ci';
@@ -32,7 +31,7 @@ In a Sharded MariaDB Enterprise Spider topology, the connection options for a Da
 
 On the Spider Node, alter the partition's connection details:
 
-```
+```sql
 ALTER TABLE spider_sharded_sales.invoices
    REORGANIZE PARTITION hq_partition INTO (
       PARTITION hq_partition VALUES IN (1) COMMENT = 'server "new_hq_server", table "invoices"'

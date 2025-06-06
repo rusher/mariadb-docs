@@ -1,3 +1,6 @@
+---
+description: The following UDFs are available with the Spider Storage Engine.
+---
+
 # Spider Functions
 
-The following [UDFs](../../../../server-usage/user-defined-functions/) are available with the [Spider Storage Engine](../).
