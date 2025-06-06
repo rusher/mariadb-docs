@@ -43,7 +43,7 @@ The [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#alg
 
 For example, if a user wanted to add a column to a table, but only if the operation used an algorithm that is at least as efficient as the `INPLACE`, then they could execute the following:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50)
@@ -60,7 +60,7 @@ The [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/sy
 
 For example, if a user wanted to add a column to a table, but only if the operation used an algorithm that is at least as efficient as the `INPLACE`, then they could execute the following:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50)
@@ -89,7 +89,7 @@ The `COPY` algorithm refers to the original [ALTER TABLE](../../../sql-statement
 
 When the `COPY` algorithm is used, MariaDB essentially does the following operations:
 
-```
+```sql
 -- Create a temporary table with the new definition
 CREATE TEMPORARY TABLE tmp_tab (
 ...
@@ -133,7 +133,7 @@ If an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md
 
 If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operation does not support the `INPLACE` algorithm, then an error will be raised. For example:
 
-```
+```sql
 SET SESSION alter_algorithm='INPLACE';
 
 ALTER TABLE tab MODIFY COLUMN c int;
@@ -171,7 +171,7 @@ If an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md
 
 If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operation does not support the `NOCOPY` algorithm, then an error will be raised. For example:
 
-```
+```sql
 SET SESSION alter_algorithm='NOCOPY';
 
 ALTER TABLE tab MODIFY COLUMN c int;
@@ -194,7 +194,7 @@ If an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md
 
 If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) operation does not support the `INSTANT` algorithm, then an error will be raised. For example:
 
-```
+```sql
 SET SESSION alter_algorithm='INSTANT';
 
 ALTER TABLE tab MODIFY COLUMN c int;
@@ -230,7 +230,7 @@ The [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) cl
 
 For example, if a user wanted to add a column to a table, but only if the operation is non-locking, then they could execute the following:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50)

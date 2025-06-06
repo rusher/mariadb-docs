@@ -42,7 +42,7 @@ The operation is also crash safe. If the server is killed while executing an ins
 
 ## Example
 
-```
+```sql
 CREATE TABLE t(id INT PRIMARY KEY, u INT UNSIGNED NOT NULL UNIQUE)
 ENGINE=InnoDB;
 

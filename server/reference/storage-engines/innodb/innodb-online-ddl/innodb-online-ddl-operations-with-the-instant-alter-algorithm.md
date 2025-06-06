@@ -14,7 +14,7 @@ With the exception of adding an [auto-increment](../../../data-types/auto_increm
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50)
@@ -27,7 +27,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 And this succeeds in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50)
@@ -52,7 +52,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -80,7 +80,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -109,7 +109,7 @@ The supported operations in this category support the non-locking strategy. This
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -123,7 +123,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 But this succeeds because the original length of the column is less than 256 bytes, and the new length is still less than 256 bytes:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -137,7 +137,7 @@ Query OK, 0 rows affected (0.005 sec)
 
 But this fails because the original length of the column is between 128 bytes and 255 bytes, and the new length is greater than 256 bytes:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -151,7 +151,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change co
 
 But this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=REDUNDANT`:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -165,7 +165,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 And this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=DYNAMIC` and the column's original length is 127 bytes or less:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -180,7 +180,7 @@ Query OK, 0 rows affected (0.003 sec)
 
 And this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=COMPRESSED` and the column's original length is 127 bytes or less:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -195,7 +195,7 @@ Query OK, 0 rows affected (0.003 sec)
 
 But this fails even in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes) and later because the table has `ROW_FORMAT=DYNAMIC` and the column's original length is between 128 bytes and 255 bytes:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -216,7 +216,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -234,7 +234,7 @@ InnoDB does **not** support modifying a column to **not** allow [NULL](../../../
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -257,7 +257,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -271,7 +271,7 @@ Query OK, 0 rows affected (0.002 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -294,7 +294,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -308,7 +308,7 @@ Query OK, 0 rows affected (0.002 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -328,7 +328,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -353,7 +353,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -371,7 +371,7 @@ InnoDB supports removing a column's [DEFAULT](../../../sql-statements/data-defin
 
 This operation supports the non-locking strategy. This strategy can be explicitly chosen by setting the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause to `NONE`. When this strategy is used, all concurrent DML is permitted.
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -391,7 +391,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -405,7 +405,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -427,7 +427,7 @@ InnoDB does **not** support adding a primary key to a table with [ALGORITHM](../
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int,
    b varchar(50),
@@ -448,7 +448,7 @@ InnoDB does **not** support dropping a primary key with [ALGORITHM](../../../sql
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -472,7 +472,7 @@ InnoDB does **not** support adding a plain index to a table with [ALGORITHM](../
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -486,7 +486,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 And this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -504,7 +504,7 @@ InnoDB does **not** support adding a [FULLTEXT](../../../../ha-and-performance/o
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -522,7 +522,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 And this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -544,7 +544,7 @@ InnoDB does **not** support adding a [SPATIAL](../../../sql-structure/geometry/s
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -558,7 +558,7 @@ ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: ADD INDEX. Try A
 
 And this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -576,7 +576,7 @@ InnoDB does **not** support adding foreign key constraints to a table with [ALGO
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab1 (
    a int PRIMARY KEY,
    b varchar(50),
@@ -605,7 +605,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab2 (
    a int PRIMARY KEY,
    b varchar(50)
@@ -636,7 +636,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -656,7 +656,7 @@ InnoDB does **not** support changing a table's [row format](../innodb-row-format
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -676,7 +676,7 @@ InnoDB does **not** support changing a table's [KEY\_BLOCK\_SIZE](../innodb-row-
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -703,7 +703,7 @@ See [MDEV-16328](https://jira.mariadb.org/browse/MDEV-16328) for more informatio
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -717,7 +717,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -732,7 +732,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 But this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -752,7 +752,7 @@ InnoDB does **not** support dropping [system versioning](../../../sql-structure/
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -774,7 +774,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -795,7 +795,7 @@ InnoDB does **not** support forcing a table rebuild with [ALGORITHM](../../../sq
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -815,7 +815,7 @@ InnoDB does **not** support forcing a table rebuild with [ALGORITHM](../../../sq
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -835,7 +835,7 @@ InnoDB does **not** support optimizing a table with with [ALGORITHM](../../../sq
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -873,7 +873,7 @@ This operation supports the exclusive locking strategy. This strategy can be exp
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -887,7 +887,7 @@ Query OK, 0 rows affected (0.008 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -925,7 +925,7 @@ These operations require the following non-canonical changes to the storage form
 
 This non-canonical storage format has the potential to incur some performance or storage overhead for all subsequent DML operations. If you notice some issues like this and you want to normalize a table's storage format to avoid this problem, then you can do so by forcing a table rebuild by executing [ALTER TABLE ... FORCE](../../../sql-statements/data-definition/alter/alter-table.md#force) with [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`. For example:
 
-```
+```sql
 SET SESSION alter_algorithm='INPLACE';
 ALTER TABLE tab FORCE;
 Query OK, 0 rows affected (0.008 sec)
@@ -941,7 +941,7 @@ The effect of many of these bugs is that the table seems to _forget_ that its ta
 
 If you are concerned that a table may be affected by one of these bugs, then your best option would be to normalize the table structure. This can be done by rebuilding the table. For example:
 
-```
+```sql
 SET SESSION alter_algorithm='INPLACE';
 ALTER TABLE tab FORCE;
 Query OK, 0 rows affected (0.008 sec)
@@ -949,7 +949,7 @@ Query OK, 0 rows affected (0.008 sec)
 
 If you are concerned about these bugs, and you want to perform an operation that supports the [INSTANT](innodb-online-ddl-overview.md#algorithminstant) algorithm, but you want to avoid using that algorithm, then you can set the algorithm to [INPLACE](innodb-online-ddl-overview.md#inplace-algorithm) and add the `FORCE` keyword to the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement:
 
-```
+```sql
 SET SESSION alter_algorithm='INPLACE';
 ALTER TABLE tab ADD COLUMN c varchar(50), FORCE;
 ```

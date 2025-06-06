@@ -54,7 +54,7 @@ InnoDB does **not** support modifying a column to **not** allow [NULL](../../../
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -116,7 +116,7 @@ InnoDB does **not** support adding a primary key to a table with [ALGORITHM](../
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int,
    b varchar(50),
@@ -137,7 +137,7 @@ InnoDB does **not** support dropping a primary key with [ALGORITHM](../../../sql
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -163,7 +163,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -177,7 +177,7 @@ Query OK, 0 rows affected (0.009 sec)
 
 And this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -202,7 +202,7 @@ This operation supports a read-only locking strategy. This strategy can be expli
 
 For example, this succeeds, but the first operation requires the table to be rebuilt [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) set to `INPLACE`, so that the hidden `FTS_DOC_ID` column can be added:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -220,7 +220,7 @@ Query OK, 0 rows affected (0.017 sec)
 
 And this succeeds in the same way as above:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -238,7 +238,7 @@ Query OK, 0 rows affected (0.016 sec)
 
 But this second command fails, because only one [FULLTEXT](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) index can be added at a time:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -263,7 +263,7 @@ This operation supports a read-only locking strategy. This strategy can be expli
 
 For example, this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -277,7 +277,7 @@ Query OK, 0 rows affected (0.005 sec)
 
 And this succeeds in the same way as above:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -305,7 +305,7 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 For example, this fails:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab1 (
    a int PRIMARY KEY,
    b varchar(50),
@@ -325,7 +325,7 @@ ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: Adding foreign ke
 
 But this succeeds:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab1 (
    a int PRIMARY KEY,
    b varchar(50),
@@ -370,7 +370,7 @@ InnoDB does **not** support changing a table's [row format](../innodb-row-format
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -390,7 +390,7 @@ InnoDB does **not** support changing a table's [KEY\_BLOCK\_SIZE](../innodb-row-
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -423,7 +423,7 @@ InnoDB does **not** support dropping [system versioning](../../../sql-structure/
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -451,7 +451,7 @@ InnoDB does **not** support forcing a table rebuild with [ALGORITHM](../../../sq
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -471,7 +471,7 @@ InnoDB does **not** support forcing a table rebuild with [ALGORITHM](../../../sq
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
@@ -491,7 +491,7 @@ InnoDB does **not** support optimizing a table with with [ALGORITHM](../../../sq
 
 For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE tab (
    a int PRIMARY KEY,
    b varchar(50),
