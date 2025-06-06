@@ -38,7 +38,7 @@ Solutions
 
 ## PARTITION
 
-The idea here is to have a sliding window of [partitions](../../../server-usage/partitioning-tables/). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](../../../reference/data-types/date-and-time-data-types/datetime.md) (or [timestamp](../../../reference/data-types/date-and-time-data-types/timestamp.md)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
+The idea here is to have a sliding window of [partitions](../../../server-management/partitioning-tables/). Let's say you need to purge news articles after 30 days. The "partition key" would be the [datetime](../../../reference/data-types/date-and-time-data-types/datetime.md) (or [timestamp](../../../reference/data-types/date-and-time-data-types/timestamp.md)) that is to be used for purging, and the PARTITIONs would be "range". Every night, a cron job would come along and build a new partition for the next day, and drop the oldest partition.
 
 Dropping a partition is essentially instantaneous, much faster than deleting that many rows. However, you must design the table so that the entire partition can be dropped. That is, you cannot have some items living longer than others.
 
@@ -50,7 +50,7 @@ Since two news articles could have the same timestamp, you cannot assume the par
 
 Reference implementation for Partition maintenance
 
-[MariaDB docs on PARTITION](../../../server-usage/partitioning-tables/)
+[MariaDB docs on PARTITION](../../../server-management/partitioning-tables/)
 
 ## Deleting in chunks
 

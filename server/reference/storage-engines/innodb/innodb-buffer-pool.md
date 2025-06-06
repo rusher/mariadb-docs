@@ -36,7 +36,7 @@ The [innodb\_old\_blocks\_time](innodb-system-variables.md#innodb_old_blocks_tim
 
 Before changing either of these values from their defaults, make sure you understand the impact and how your system currently uses the buffer. Their main reason for existence is to reduce the impact of full table scans, which are usually infrequent, but large, and previously could clear everything from the buffer. Setting a non-zero delay could help in situations where full table scans are performed in quick succession.
 
-Temporarily changing these values can also be useful to avoid the negative impact of a full table scan, as explained in [InnoDB logical backups](../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-overview.md#innodb-logical-backups).
+Temporarily changing these values can also be useful to avoid the negative impact of a full table scan, as explained in [InnoDB logical backups](../../../server-usage/backup-and-restore/backup-and-restore-overview.md#innodb-logical-backups).
 
 ## Dumping and Restoring the Buffer Pool
 

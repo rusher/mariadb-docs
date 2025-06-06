@@ -1332,7 +1332,7 @@ Because the [Event Scheduler](../../../server-usage/triggers-events/event-schedu
 #### `--skip-partition`
 
 * Commandline: `--skip-partition`, `--disable-partition`
-* Description: Disables user-defined [partitioning](../../../server-usage/partitioning-tables/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION\_SCHEMA.TABLES table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
+* Description: Disables user-defined [partitioning](../../partitioning-tables/). Previously partitioned tables cannot be accessed or modifed. Tables can still be seen with [SHOW TABLES](../../../reference/sql-statements/administrative-sql-statements/show/show-tables.md) or by viewing the [INFORMATION\_SCHEMA.TABLES table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md). Tables can be dropped with [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md), but this only removes .frm files, not the associated .par files, which will need to be removed manually.
 
 #### `--skip-slave-start`
 

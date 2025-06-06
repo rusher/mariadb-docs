@@ -62,7 +62,7 @@ The `UPDATE` statement supports the following modifiers:
 
 ### PARTITION
 
-See [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.
+See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
 
 ### FOR PORTION OF
 

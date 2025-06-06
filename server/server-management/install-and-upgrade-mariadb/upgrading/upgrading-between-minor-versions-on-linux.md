@@ -4,7 +4,7 @@ For Windows, see [Upgrading MariaDB on Windows](upgrading-mariadb-on-windows.md)
 
 For MariaDB Galera Cluster, see [Upgrading Between Minor Versions with Galera Cluster](https://mariadb.com/kb/en/upgrading-between-minor-versions-with-galera-cluster/) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../server-usage/backup-and-restore/mariabackup/).
 
 To upgrade between minor versions of MariaDB on Linux/Unix (for example from [MariaDB 10.11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-4-release-notes) to [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-5-release-notes)), the following procedure is suggested:
 

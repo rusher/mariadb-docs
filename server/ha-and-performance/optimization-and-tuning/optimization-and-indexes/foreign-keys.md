@@ -6,7 +6,7 @@ A foreign key is a constraint which can be used to enforce data integrity. It is
 
 Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../reference/storage-engines/innodb/) and the obsolete [PBXT](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/) support foreign keys.
 
-[Partitioned tables](../../../server-usage/partitioning-tables/) cannot contain foreign keys, and cannot be referenced by a foreign key.
+[Partitioned tables](../../../server-management/partitioning-tables/) cannot contain foreign keys, and cannot be referenced by a foreign key.
 
 ## Syntax
 

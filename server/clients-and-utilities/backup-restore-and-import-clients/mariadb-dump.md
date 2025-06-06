@@ -492,9 +492,9 @@ stored using the InnoDB storage engine.
 
 ## See Also
 
-* [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
+* [Mariabackup](../../server-usage/backup-and-restore/mariabackup/)
 * [MariaDB point-in-time recovery](https://www.youtube.com/watch?v=ezHmnNmmcDo) (video)
-* [MariaDB Enterprise Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
+* [MariaDB Enterprise Backup](../../server-usage/backup-and-restore/mariabackup/)
 * [Upgrading to a newer major version of MariaDB](https://www.youtube.com/watch?v=1kLIXN2DoEo) (video)
 
 CC BY-SA / Gnu FDL

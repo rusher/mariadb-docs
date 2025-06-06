@@ -18,7 +18,7 @@ We currently have ZYpp repositories for the following Linux distributions:
 
 If you want to install MariaDB with `zypper`, then you can configure `zypper` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](../mariadb-package-repository-setup-and-usage.md).
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 To use the script, execute the following command:
 
@@ -34,7 +34,7 @@ See [MariaDB Package Repository Setup and Usage](../mariadb-package-repository-s
 
 If you want to install MariaDB with `zypper`, then you can configure `zypper` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `zypper` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
 
 For example, if you wanted to use the repository to install [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) on SLES 15, then you could use the following commands to add the MariaDB `zypper` repository:
 
@@ -158,7 +158,7 @@ sudo zypper install MariaDB-client MariaDB-shared
 
 ### Installing Mariabackup with ZYpp
 
-To install [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/), execute the following command:
+To install [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/), execute the following command:
 
 ```
 sudo zypper install MariaDB-backup
@@ -206,7 +206,7 @@ sudo zypper install MariaDB-client-debuginfo MariaDB-shared-debuginfo
 
 #### Installing Debug Info for Mariabackup with ZYpp
 
-To install `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` for [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/), execute the following command:
+To install `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` for [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/), execute the following command:
 
 ```
 sudo zypper install MariaDB-backup-debuginfo

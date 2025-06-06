@@ -18,7 +18,7 @@ The goal is to look only at records "close", in both directions, to the target l
 
 ## A solution -- first, the principles
 
-[PARTITIONs](../../../server-usage/partitioning-tables/) in MariaDB and MySQL sort of give you a way to have two clustered indexes. So, if we could slice up (partition) the globe in one dimension and use ordinary indexing in the other dimension, maybe we can get something approximating a 2D index. This 2D approach keeps the number of disk hits significantly lower than 1D approaches, thereby speeding up "find nearest" queries.
+[PARTITIONs](../../../server-management/partitioning-tables/) in MariaDB and MySQL sort of give you a way to have two clustered indexes. So, if we could slice up (partition) the globe in one dimension and use ordinary indexing in the other dimension, maybe we can get something approximating a 2D index. This 2D approach keeps the number of disk hits significantly lower than 1D approaches, thereby speeding up "find nearest" queries.
 
 It works. Not perfectly, but better than the alternatives.
 

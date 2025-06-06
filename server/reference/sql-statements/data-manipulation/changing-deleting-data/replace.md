@@ -68,7 +68,7 @@ Note that unless the table has a `PRIMARY KEY` or`UNIQUE` index, using a `REPLAC
 makes no sense. It becomes equivalent to `INSERT`, because\
 there is no index to be used to determine whether a new row duplicates another.
 
-Values for all columns are taken from the values sSee [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.pecified in the`REPLACE` statement. Any missing columns are set to their\
+Values for all columns are taken from the values sSee [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.pecified in the`REPLACE` statement. Any missing columns are set to their\
 default values, just as happens for `INSERT`. You cannot refer\
 to values from the current row and use them in the new row. If you use an\
 assignment such as `'SET col = col + 1'`, the\
@@ -89,7 +89,7 @@ This statement activates INSERT and DELETE triggers. See [Trigger Overview](../.
 
 ### PARTITION
 
-See [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.
+See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
 
 ### REPLACE RETURNING
 

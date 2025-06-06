@@ -141,7 +141,7 @@ SELECT * FROM spider_hq_sales.invoices;
 
 ## MariaDB Dump
 
-[MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) generates backup files containing the SQL statements necessary to recreate the database. [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is included with MariaDB Enterprise Server and can be used to backup databases in Spider deployments. The MariaDB Client can then be used to restore databases from a [MariaDB Dump backup](../../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+[MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) generates backup files containing the SQL statements necessary to recreate the database. [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is included with MariaDB Enterprise Server and can be used to backup databases in Spider deployments. The MariaDB Client can then be used to restore databases from a [MariaDB Dump backup](../../../../../../server-usage/backup-and-restore/mariabackup/).
 
 ### Backing Up Spider with MariaDB Dump
 

@@ -6,7 +6,7 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.7 to MariaDB 10.8 with Galera Cluster](https://mariadb.com/kb/en/upgrading-from-mariadb-107-to-mariadb-108-with-galera-cluster) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/).
 
 The suggested upgrade procedure is:
 

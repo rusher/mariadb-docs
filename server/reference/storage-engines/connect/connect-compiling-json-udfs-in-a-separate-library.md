@@ -1,4 +1,4 @@
-# Compiling JSON UDFs in a Separate Library
+# CONNECT - Compiling JSON UDFs in a Separate Library
 
 Although the JSON UDFs can be nicely included in the CONNECT library module, there are cases when you may need to have them in a separate library.
 
@@ -16,7 +16,7 @@ To make it, you need to have access to the most recent MariaDB source code. Then
 
 `jsonutil.cpp` is not distributed with the source code, you will have to make it from the following:
 
-```cpp
+```
 #include "my_global.h"
 #include "mysqld.h"
 #include "plugin.h"

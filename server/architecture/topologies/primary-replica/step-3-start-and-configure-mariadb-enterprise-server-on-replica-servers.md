@@ -51,7 +51,7 @@ When deploying a new replica server to an existing system, back up the primary s
 
 ### Back up the Primary Server
 
-Use [MariaDB Backup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) to back up the primary server.
+Use [MariaDB Backup](../../../server-usage/backup-and-restore/mariabackup/) to back up the primary server.
 
 1. On the primary server, take a full backup:
 
@@ -87,7 +87,7 @@ $ sudo rsync -av /data/backup/replica_backup 192.0.2.11:/data/backup/
 $ sudo mv /var/lib/mysql /var/lib/mysql_backup
 ```
 
-3. **On the replica server**, use [MariaDB Backup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) to restore the backup to the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables):
+3. **On the replica server**, use [MariaDB Backup](../../../server-usage/backup-and-restore/mariabackup/) to restore the backup to the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#list-of-server-system-variables):
 
 ```bash
 $ sudo mariadb-backup --copy-back \

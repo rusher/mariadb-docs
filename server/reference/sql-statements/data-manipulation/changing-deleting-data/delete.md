@@ -92,7 +92,7 @@ DELETE FROM t1 AS a1 WHERE a1.c1 = 2;
 
 ### PARTITION
 
-See [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.
+See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
 
 ### FOR PORTION OF
 

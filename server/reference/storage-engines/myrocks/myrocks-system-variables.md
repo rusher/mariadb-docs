@@ -1087,7 +1087,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_remove_mariabackup_checkpoint`
 
-* Description: Remove [mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) checkpoint.
+* Description: Remove [mariabackup](../../../server-usage/backup-and-restore/mariabackup/) checkpoint.
 * Commandline: `--rocksdb-remove-mariabackup-checkpoint={0|1}`
 * Scope: Global
 * Dynamic: Yes

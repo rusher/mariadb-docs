@@ -74,7 +74,7 @@ The page also shows how to edit the binary log before replaying it. This allows 
 
 ### Incremental Backups with mariabackup
 
-The simplest way to take an incremental backup is to use Mariabackup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup.md).
+The simplest way to take an incremental backup is to use Mariabackup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/incremental-backup-and-restore-with-mariabackup.md).
 
 Mariabackup can run on both Linux and Windows systems.
 
@@ -96,6 +96,6 @@ By default. all table files are located in the _data directory_, which is define
 
 Regardless of the storage engine used, each table's structure is generally stored in a file with the `.frm` extension.
 
-The files used for [partitioned tables](../../../../server-usage/partitioning-tables/) are different from the files used for non-partitioned tables. See [Partitions Files](../../../../server-usage/partitioning-tables/partitions-files.md) for details.
+The files used for [partitioned tables](../../../partitioning-tables/) are different from the files used for non-partitioned tables. See [Partitions Files](../../../partitioning-tables/partitions-files.md) for details.
 
 CC BY-SA / Gnu FDL

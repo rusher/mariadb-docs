@@ -63,7 +63,7 @@ However, if there is at least one existing replica, it is better to use it to pr
 * A backup from the existing replica must be restored in the new replica;
 * The backup should include the system tables. In this way it will not be necessary to set the correct coordinates manually.
 
-For more information see [Setting Up Replication](../../../../ha-and-performance/standard-replication/setting-up-replication.md) and [Setting up a Replica with Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md).
+For more information see [Setting Up Replication](../../../../ha-and-performance/standard-replication/setting-up-replication.md) and [Setting up a Replica with Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/setting-up-a-replica-with-mariabackup.md).
 
 ### Replication and Permissions
 

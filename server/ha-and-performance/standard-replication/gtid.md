@@ -317,7 +317,7 @@ correct GTID position stored in the [mysql.gtid\_slave\_pos](../../reference/sql
 
 #### Setting up a New Replica with Mariabackup
 
-A new replica can easily be set up with [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
+A new replica can easily be set up with [Mariabackup](../../server-usage/backup-and-restore/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with Mariabackup](../../server-usage/backup-and-restore/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
 
 #### Setting up a New Replica with mariadb-dump
 

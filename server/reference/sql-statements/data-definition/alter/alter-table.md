@@ -439,19 +439,19 @@ ERROR 1067 (42000): Invalid default value for 'd'
 
 #### ADD PARTITION
 
-See [Partitioning Overview: Adding Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#adding-partitions) for details.
+See [Partitioning Overview: Adding Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#adding-partitions) for details.
 
 #### ANALYZE PARTITION
 
-See [Partitioning Overview: Analyzing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#analyzing-partitions) for details.
+See [Partitioning Overview: Analyzing Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#analyzing-partitions) for details.
 
 #### CHECK PARTITION
 
-See [Partitioning Overview: Checking Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#checking-partitions) for details.
+See [Partitioning Overview: Checking Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#checking-partitions) for details.
 
 #### COALESCE PARTITION
 
-Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overview: Coalescing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#coalescing-partitions).
+Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overview: Coalescing Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#coalescing-partitions).
 
 #### CONVERT PARTITION / TABLE
 
@@ -472,13 +472,13 @@ ALTER TABLE partitioned_table CONVERT TABLE normal_table
 
 From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
-See [Partitioning Overview: Converting Partitions to/from Tables](../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details.
+See [Partitioning Overview: Converting Partitions to/from Tables](../../../../server-management/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details.
 
 See also [10.7 preview feature: CONVERT PARTITION](https://mariadb.org/10-7-preview-feature-convert-partition/) (mariadb.org blog post)
 
 #### DROP PARTITION
 
-Used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](../../../../server-usage/partitioning-tables/partitioning-types/range-partitioning-type.md) and [LIST](../../../../server-usage/partitioning-tables/partitioning-types/list-partitioning-type.md) partitions. See [Partitioning Overview: Dropping Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#dropping-partitions).
+Used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](../../../../server-management/partitioning-tables/partitioning-types/range-partitioning-type.md) and [LIST](../../../../server-management/partitioning-tables/partitioning-types/list-partitioning-type.md) partitions. See [Partitioning Overview: Dropping Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#dropping-partitions).
 
 #### EXCHANGE PARTITION
 
@@ -486,25 +486,25 @@ This is used to exchange the contents of a partition with another table. This is
 
 From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
-See [Partitioning Overview: Exchanging Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
+See [Partitioning Overview: Exchanging Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
 
 See also [copying InnoDB's transportable tablespaces](../../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
 
 #### OPTIMIZE PARTITION
 
-See [Partitioning Overview: Optimizing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#optimizing-partitions) for details.
+See [Partitioning Overview: Optimizing Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#optimizing-partitions) for details.
 
 #### REMOVE PARTITIONING
 
-See [Partitioning Overview: Removing Partitioning](../../../../server-usage/partitioning-tables/partitioning-overview.md#removing-partitioning).
+See [Partitioning Overview: Removing Partitioning](../../../../server-management/partitioning-tables/partitioning-overview.md#removing-partitioning).
 
 #### REORGANIZE PARTITION
 
-See [Partitioning Overview: Reorganizing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#reorganizing-partitions).
+See [Partitioning Overview: Reorganizing Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#reorganizing-partitions).
 
 #### TRUNCATE PARTITION
 
-See [Partitioning Overview: Truncating Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#truncating-partitions).
+See [Partitioning Overview: Truncating Partitions](../../../../server-management/partitioning-tables/partitioning-overview.md#truncating-partitions).
 
 ### DISCARD TABLESPACE
 

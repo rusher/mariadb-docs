@@ -13,7 +13,7 @@ As a general rule, there is no reason why a table that is corrupted on a master 
 
 ## Partitioned Tables
 
-[Partitioned tables](../../../../server-usage/partitioning-tables/) are normally split into multiple physical files (one per partition). Even if one of the partitions is corrupted, in most cases other partitions are healthy.
+[Partitioned tables](../../../partitioning-tables/) are normally split into multiple physical files (one per partition). Even if one of the partitions is corrupted, in most cases other partitions are healthy.
 
 For this reason, `CHECK TABLE` and `REPAIR TABLE` don't work on partitioned tables. Instead, use [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) to check or repair a single partition.
 
