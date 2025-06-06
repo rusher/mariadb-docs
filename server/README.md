@@ -1,4 +1,8 @@
 ---
+description: >-
+  Explore MariaDB Server, the powerful open-source relational database. This
+  comprehensive documentation covers installation, deployment, usage, security,
+  and advanced topics to help you master MariaDB.
 icon: server
 layout:
   title:

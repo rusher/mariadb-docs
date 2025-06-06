@@ -1,10 +1,10 @@
-# Joining Tables with JOIN Clauses
+# Joining Tables with JOIN
 
 In the absence of a more tutorial-level document, here is a simple example of\
 three basic JOIN types, which you can experiment with in order to see what the\
 different joins accomplish:
 
-```
+```sql
 CREATE TABLE t1 ( a INT );
 CREATE TABLE t2 ( b INT );
 INSERT INTO t1 VALUES (1), (2), (3);
@@ -17,7 +17,7 @@ SELECT * FROM t2 LEFT JOIN t1 ON t1.a = t2.b;
 
 The first two SELECTs are (unfortunately) commonly written with an older form:
 
-```
+```sql
 SELECT * FROM t1, t2 WHERE t1.a = t2.b;
 SELECT * FROM t1, t2;
 ```
@@ -41,7 +41,7 @@ JOINs can be concatenated to read results from three or more tables.
 
 Here is the output of the various SELECT statements listed above:
 
-```
+```sql
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ------ ------ 
 | a    | b    |
@@ -95,8 +95,8 @@ That should give you a bit more understanding of how JOINS work!
 
 ## See Also
 
-* [More Advanced JOINs](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
-* [Comma vs JOIN](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
+* [More Advanced JOINs](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md)
+* [Comma vs JOIN](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/comma-vs-join.md)
 * [mysql\_p5.shtml](https://www.keithjbrown.co.uk/vworks/mysql/mysql_p5.shtml) - Nice tutorial.\
   Part 5 covers joins.
 

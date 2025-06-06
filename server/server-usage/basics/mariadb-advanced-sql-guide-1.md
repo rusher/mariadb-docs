@@ -1,10 +1,10 @@
-# Useful MariaDB Queries
+# Commonly Used Queries
 
 This page is intended to be a quick reference of commonly-used and/or useful queries in MariaDB.
 
 ## Creating a Table
 
-```
+```sql
 CREATE TABLE t1 ( a INT );
 CREATE TABLE t2 ( b INT );
 CREATE TABLE student_tests (
@@ -13,11 +13,11 @@ CREATE TABLE student_tests (
 );
 ```
 
-See [CREATE TABLE](../reference/sql-statements/data-definition/create/create-table.md) for more.
+See [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) for more.
 
 ## Inserting Records
 
-```
+```sql
 INSERT INTO t1 VALUES (1), (2), (3);
 INSERT INTO t2 VALUES (2), (4);
 
@@ -33,13 +33,13 @@ INSERT INTO student_tests
  ('Tatiana', 'Tuning', 83, '2013-09-30');
 ```
 
-See [INSERT](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) for more.
+See [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) for more.
 
 ## Using AUTO\_INCREMENT
 
 The AUTO\_INCREMENT attribute is used to automatically generate a unique identity for new rows.
 
-```
+```sql
 CREATE TABLE student_details (
  id INT NOT NULL AUTO_INCREMENT, name CHAR(10), 
  date_of_birth DATE, PRIMARY KEY (id)
@@ -48,7 +48,7 @@ CREATE TABLE student_details (
 
 When inserting, the id field can be omitted, and is automatically created.
 
-```
+```sql
 INSERT INTO student_details (name,date_of_birth) VALUES 
  ('Chun', '1993-12-31'), 
  ('Esben','1946-01-01'),
@@ -66,19 +66,19 @@ SELECT * FROM student_details;
 +----+---------+---------------+
 ```
 
-See [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) for more.
+See [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) for more.
 
 ## Querying from two tables on a common value
 
-```
+```sql
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
-This kind of query is called a join - see [JOINS](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/) for more.
+This kind of query is called a join - see [JOINS](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/) for more.
 
 ## Finding the Maximum Value
 
-```
+```sql
 SELECT MAX(a) FROM t1;
 +--------+
 | MAX(a) |
@@ -87,11 +87,11 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](../reference/sql-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](<mariadb-advanced-sql-guide (1).md#finding-the-maximum-value-and-grouping-the-results>) below for a more practical example.
+See the [MAX() function](../../reference/sql-functions/aggregate-functions/max.md) for more, as well as [Finding the maximum value and grouping the results](mariadb-advanced-sql-guide-1.md#finding-the-maximum-value-and-grouping-the-results) below for a more practical example.
 
 ## Finding the Minimum Value
 
-```
+```sql
 SELECT MIN(a) FROM t1;
 +--------+
 | MIN(a) |
@@ -100,11 +100,11 @@ SELECT MIN(a) FROM t1;
 +--------+
 ```
 
-See the [MIN() function](../reference/sql-functions/aggregate-functions/min.md) for more.
+See the [MIN() function](../../reference/sql-functions/aggregate-functions/min.md) for more.
 
 ## Finding the Average Value
 
-```
+```sql
 SELECT AVG(a) FROM t1;
 +--------+
 | AVG(a) |
@@ -113,11 +113,11 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](../reference/sql-functions/aggregate-functions/avg.md) for more.
+See the [AVG() function](../../reference/sql-functions/aggregate-functions/avg.md) for more.
 
 ## Finding the Maximum Value and Grouping the Results
 
-```
+```sql
 SELECT name, MAX(score) FROM student_tests GROUP BY name;
 +---------+------------+
 | name    | MAX(score) |
@@ -129,11 +129,11 @@ SELECT name, MAX(score) FROM student_tests GROUP BY name;
 +---------+------------+
 ```
 
-See the [MAX() function](../reference/sql-functions/aggregate-functions/max.md) for more.
+See the [MAX() function](../../reference/sql-functions/aggregate-functions/max.md) for more.
 
 ## Ordering Results
 
-```
+```sql
 SELECT name, test, score FROM student_tests ORDER BY score DESC;
 +---------+--------+-------+
 | name    | test   | score |
@@ -149,13 +149,13 @@ SELECT name, test, score FROM student_tests ORDER BY score DESC;
 +---------+--------+-------+
 ```
 
-See [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
+See [ORDER BY](../../reference/sql-statements/data-manipulation/selecting-data/order-by.md) for more.
 
 ## Finding the Row with the Minimum of a Particular Column
 
 In this example, we want to find the lowest test score for any student.
 
-```
+```sql
 SELECT name,test, score FROM student_tests WHERE score=(SELECT MIN(score) FROM student);
 +-------+--------+-------+
 | name  | test   | score |
@@ -168,7 +168,7 @@ SELECT name,test, score FROM student_tests WHERE score=(SELECT MIN(score) FROM s
 
 This example returns the best test results of each student:
 
-```
+```sql
 SELECT name, test, score FROM student_tests st1 WHERE score = (
   SELECT MAX(score) FROM student st2 WHERE st1.name = st2.name
 ); 
@@ -184,9 +184,9 @@ SELECT name, test, score FROM student_tests st1 WHERE score = (
 
 ## Calculating Age
 
-The [TIMESTAMPDIFF](../reference/sql-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
+The [TIMESTAMPDIFF](../../reference/sql-functions/date-time-functions/timestampdiff.md) function can be used to calculate someone's age:
 
-```
+```sql
 SELECT CURDATE() AS today;
 +------------+
 | today      |
@@ -206,13 +206,13 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR,date_of_birth,'2014-08-02') AS ag
 +---------+---------------+------+
 ```
 
-See [TIMESTAMPDIFF()](../reference/sql-functions/date-time-functions/timestampdiff.md) for more.
+See [TIMESTAMPDIFF()](../../reference/sql-functions/date-time-functions/timestampdiff.md) for more.
 
 ## Using User-defined Variables
 
-This example sets a [user-defined variable](../reference/sql-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
+This example sets a [user-defined variable](../../reference/sql-structure/sql-language-structure/user-defined-variables.md) with the average test score, and then uses it in a later query to return all results above the average.
 
-```
+```sql
 SELECT @avg_score:= AVG(score) FROM student_tests;
 +-------------------------+
 | @avg_score:= AVG(score) |
@@ -234,7 +234,7 @@ SELECT * FROM student_tests WHERE score > @avg_score;
 
 User-defined variables can also be used to add an incremental counter to a resultset:
 
-```
+```sql
 SET @count = 0;
 
 SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details;
@@ -248,13 +248,13 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 +---------+---------+---------------+
 ```
 
-See [User-defined Variables](../reference/sql-structure/sql-language-structure/user-defined-variables.md) for more.
+See [User-defined Variables](../../reference/sql-structure/sql-language-structure/user-defined-variables.md) for more.
 
 ## View Tables in Order of Size
 
 Returns a list of all tables in the database, ordered by size:
 
-```
+```sql
 SELECT table_schema as `DB`, table_name AS `Table`, 
   ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)` 
   FROM information_schema.TABLES 
@@ -276,7 +276,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
 
 This example assumes there's a unique ID, but that all other fields are identical. In the example below, there are 4 records, 3 of which are duplicates, so two of the three duplicates need to be removed. The intermediate SELECT is not necessary, but demonstrates what is being returned.
 
-```
+```sql
 CREATE TABLE t (id INT, f1 VARCHAR(2));
 
 INSERT INTO t VALUES (1,'a'), (2,'a'), (3,'b'), (4,'a');

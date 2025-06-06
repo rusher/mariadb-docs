@@ -18,7 +18,7 @@ the query.
 
 There is a syntax error in the following. How fast can you find it?
 
-```
+```sql
 SELECT u.id, u.name, alliance.ally FROM users u JOIN alliance ON
 (u.id=alliance.userId) JOIN team ON (alliance.teamId=team.teamId
 WHERE team.teamName='Legionnaires' AND u.online=1 AND ((u.subscription='paid'
@@ -27,7 +27,7 @@ AND u.paymentStatus='current') OR u.subscription='free') ORDER BY u.name;
 
 Here's the same query, with correct use of whitespace. Can you find the error faster?
 
-```
+```sql
 SELECT
     u.id
     , u.name
@@ -66,7 +66,7 @@ not an arbitrary string.
 
 Bad:
 
-```
+```sql
 SELECT *
 FROM
     financial_reportQ_1 AS a
@@ -83,7 +83,7 @@ alias refers.
 
 Better:
 
-```
+```sql
 SELECT *
 FROM
     financial_report_Q_1 AS frq1
@@ -109,7 +109,7 @@ logic.
 
 Bad:
 
-```
+```sql
 SELECT *
 FROM
     family,
@@ -124,7 +124,7 @@ the two tables.
 
 Better:
 
-```
+```sql
 SELECT *
 FROM
     family
@@ -159,7 +159,7 @@ mind, often reveals an obvious mistake, such as mispelled field names, a\
 missing 'AND', or an extra closing parenthesis. Sometimes the error is a little\
 less helpful. A frequent, less-than-helpful message:
 
-```
+```sql
 ERROR 1064: You have an error in your SQL syntax; check the manual that corresponds to your
 MariaDB server version for the right syntax to use near ' ' at line 1
 ```
@@ -171,26 +171,26 @@ appear.
 
 Check for missing closers, such as ' and ):
 
-```
+```sql
 SELECT * FROM someTable WHERE field = 'value
 ```
 
 Look for incomplete clauses, often indicated by an exposed comma:
 
-```
+```sql
 SELECT * FROM someTable WHERE field = 1 GROUP BY id,
 ```
 
 ### Checking for keywords
 
-MariaDB allows table and field names and aliases that are also [reserved words](../reference/sql-structure/sql-language-structure/reserved-words.md). To prevent ambiguity, such names must be enclosed in backticks (\`):
+MariaDB allows table and field names and aliases that are also [reserved words](../../reference/sql-structure/sql-language-structure/reserved-words.md). To prevent ambiguity, such names must be enclosed in backticks (\`):
 
-```
+```sql
 SELECT * FROM actionTable WHERE `DELETE` = 1;
 ```
 
 If the syntax error is shown near one of your identifiers, check if it appears\
-on the [reserved word list](../reference/sql-structure/sql-language-structure/reserved-words.md).
+on the [reserved word list](../../reference/sql-structure/sql-language-structure/reserved-words.md).
 
 A text editor with color highlighting for SQL syntax helps to find these\
 errors. When you enter a field name, and it shows up in the same color as the\
@@ -213,7 +213,7 @@ time, old syntax will work in newer versions of MariaDB. One notable exception i
 the change in precedence of the comma operator relative to the JOIN keyword in\
 version 5.0. A query that used to work, such as
 
-```
+```sql
 SELECT * FROM a, b JOIN c ON a.x = c.x;
 ```
 
@@ -228,14 +228,14 @@ running a recent installation, fails completely in your production environment.
 This query fails in any version of MySQL prior to 4.1, when subqueries were\
 added to the server:
 
-```
+```sql
 SELECT * FROM someTable WHERE someId IN (SELECT id FROM someLookupTable);
 ```
 
 This query fails in some early versions of MySQL, because the JOIN syntax did\
 not originally allow an ON clause:
 
-```
+```sql
 SELECT * FROM tableA JOIN tableB ON tableA.x = tableB.y;
 ```
 

@@ -1,14 +1,14 @@
-# Connecting to MariaDB
+# Connecting to MariaDB Server
 
-This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](../../kb/en/a-mariadb-primer/) first.
+This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](../../../kb/en/a-mariadb-primer/) first.
 
-In order to connect to the MariaDB server, the client software must provide the correct connection parameters. The client software will most often be the [mariadb client](../clients-and-utilities/mariadb-client/), used for entering statements from the command line, but the same concepts apply to any client, such as a [graphical client](../clients-and-utilities/graphical-and-enhanced-clients/), a client to run backups such as [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), etc. The rest of this article assumes that the mariadb command line client is used.
+In order to connect to the MariaDB server, the client software must provide the correct connection parameters. The client software will most often be the [mariadb client](../../clients-and-utilities/mariadb-client/), used for entering statements from the command line, but the same concepts apply to any client, such as a [graphical client](../../clients-and-utilities/graphical-and-enhanced-clients/), a client to run backups such as [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), etc. The rest of this article assumes that the mariadb command line client is used.
 
 If a connection parameter is not provided, it will revert to a default value.
 
 For example, to connect to MariaDB using only default values with the mariadb client, enter the following from the command line:
 
-```
+```bash
 mariadb
 ```
 
@@ -21,7 +21,7 @@ In this case, the following defaults apply:
 
 These defaults can be overridden by specifying a particular parameter to use. For example:
 
-```
+```bash
 mariadb -h 166.78.144.191 -u username -ppassword database_name
 ```
 
@@ -37,7 +37,7 @@ In this case:
 
 ### host
 
-```
+```bash
 --host=name
 -h name
 ```
@@ -46,7 +46,7 @@ Connect to the MariaDB server on the given host. The default host is `localhost`
 
 ### password
 
-```
+```bash
 --password[=passwd]
 -p[passwd]
 ```
@@ -55,7 +55,7 @@ The password of the MariaDB account. It is generally not secure to enter the pas
 
 ### pipe
 
-```
+```bash
 --pipe
 -W
 ```
@@ -64,7 +64,7 @@ On Windows systems that have been started with the `--enable-named-pipe` option,
 
 ### port
 
-```
+```bash
 --port=num
 -P num
 ```
@@ -73,7 +73,7 @@ The TCP/IP port number to use for the connection. The default is `3306`.
 
 ### protocol
 
-```
+```bash
 --protocol=name
 ```
 
@@ -86,7 +86,7 @@ Specifies the protocol to be used for the connection for the connection. It can 
 
 ### shared-memory-base-name
 
-```
+```bash
 --shared-memory-base-name=name
 ```
 
@@ -94,7 +94,7 @@ Only available on Windows systems in which the server has been started with the 
 
 ### socket
 
-```
+```bash
 --socket=name
 -S name
 ```
@@ -103,11 +103,11 @@ For connections to localhost, this specifies either the Unix socket file to use 
 
 ### TLS Options
 
-A brief listing is provided below. See [Secure Connections Overview](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) and [TLS System Variables](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) for more detail.
+A brief listing is provided below. See [Secure Connections Overview](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) and [TLS System Variables](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) for more detail.
 
 #### ssl
 
-```
+```bash
 --ssl
 ```
 
@@ -115,7 +115,7 @@ Enable TLS for connection (automatically enabled with other TLS flags). Disable 
 
 #### ssl-ca
 
-```
+```bash
 --ssl-ca=name
 ```
 
@@ -123,7 +123,7 @@ CA file in PEM format (check OpenSSL docs, implies `--ssl`).
 
 #### ssl-capath
 
-```
+```bash
 --ssl-capath=name
 ```
 
@@ -133,7 +133,7 @@ CA file in PEM format (check OpenSSL docs, implies `--ssl`).
 
 #### ssl-cert
 
-```
+```bash
 --ssl-cert=name
 ```
 
@@ -141,7 +141,7 @@ X509 cert in PEM format (implies `--ssl`).
 
 #### ssl-cipher
 
-```
+```bash
 --ssl-cipher=name
 ```
 
@@ -149,7 +149,7 @@ TLS cipher to use (implies `--ssl`).
 
 #### ssl-key
 
-```
+```bash
 --ssl-key=name
 ```
 
@@ -157,7 +157,7 @@ X509 key in PEM format (implies `--ssl`).
 
 #### ssl-crl
 
-```
+```bash
 --ssl-crl=name
 ```
 
@@ -165,7 +165,7 @@ Certificate revocation list (implies `--ssl`).
 
 #### ssl-crlpath
 
-```
+```bash
 --ssl-crlpath=name
 ```
 
@@ -173,7 +173,7 @@ Certificate revocation list path (implies `--ssl`).
 
 #### ssl-verify-server-cert
 
-```
+```bash
 --ssl-verify-server-cert
 ```
 
@@ -181,12 +181,12 @@ Verify server's "Common Name" in its cert against hostname used when connecting.
 
 ### user
 
-```
+```bash
 --user=name
 -u name
 ```
 
-The MariaDB user name to use when connecting to the server. The default is either your Unix login name, or `ODBC` on Windows. See the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md) command for details on creating MariaDB user accounts.
+The MariaDB user name to use when connecting to the server. The default is either your Unix login name, or `ODBC` on Windows. See the [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md) command for details on creating MariaDB user accounts.
 
 ## Option Files
 
@@ -194,10 +194,10 @@ It's also possible to use option files (or configuration files) to set these opt
 
 ## See Also
 
-* [A MariaDB Primer](../../kb/en/a-mariadb-primer/)
-* [mariadb client](../clients-and-utilities/mariadb-client/)
-* [Clients and Utilities](../clients-and-utilities/)
-* [Configuring MariaDB for Remote Client Access](../../kb/en/configuring-mariadb-for-remote-client-access/)
-* [--skip-grant-tables](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
+* [A MariaDB Primer](../../../kb/en/a-mariadb-primer/)
+* [mariadb client](../../clients-and-utilities/mariadb-client/)
+* [Clients and Utilities](../../clients-and-utilities/)
+* [Configuring MariaDB for Remote Client Access](../../../kb/en/configuring-mariadb-for-remote-client-access/)
+* [--skip-grant-tables](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
 
 CC BY-SA / Gnu FDL

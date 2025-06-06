@@ -1,4 +1,4 @@
-# Creating & Using Views
+# Views
 
 ## A Tutorial Introduction
 
@@ -18,14 +18,14 @@ and CREATE VIEW privileges on this table.
 ## The Employee Database
 
 First, we need some data we can perform our optimizations on, so we'll recreate\
-the tables from the [More Advanced Joins](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial, to\
+the tables from the [More Advanced Joins](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/more-advanced-joins.md) tutorial, to\
 provide us with a starting point. If you have already completed that tutorial\
 and have this database already, you can skip ahead.
 
 First, we create the table that will hold all of the employees and their\
 contact information:
 
-```
+```sql
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `First_Name` VARCHAR(25) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `Employees` (
 
 Next, we add a few employees to the table:
 
-```
+```sql
 INSERT INTO `Employees` (`First_Name`, `Last_Name`, `Position`, `Home_Address`, `Home_Phone`)
 VALUES
   ('Mustapha', 'Mond', 'Chief Executive Officer', '692 Promiscuous Plaza', '326-555-3492'),
@@ -52,7 +52,7 @@ VALUES
 
 Now, we create a second table, containing the hours which each employee clocked in and out during the week:
 
-```
+```sql
 CREATE TABLE `Hours` (
   `ID` TINYINT(3) UNSIGNED NOT NULL,
   `Clock_In` DATETIME NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE `Hours` (
 Finally, although it is a lot of information, we add a full week of hours for\
 each of the employees into the second table that we created:
 
-```
+```sql
 INSERT INTO `Hours`
 VALUES ('1', '2005-08-08 07:00:42', '2005-08-08 17:01:36'),
   ('1', '2005-08-09 07:01:34', '2005-08-09 17:10:11'),
@@ -113,7 +113,7 @@ all employees, and then standardize that query by making it into a view.
 
 Our previous query looked like this:
 
-```
+```sql
 SELECT
   `Employees`.`First_Name`,
   `Employees`.`Last_Name`,
@@ -129,7 +129,7 @@ AND DATE_FORMAT(`Hours`.`Clock_In`, '%H:%i:%S') > '07:00:59';
 
 The result:
 
-```
+```sql
 +------------+-----------+---------------------+---------------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           |
 +------------+-----------+---------------------+---------------------+
@@ -148,7 +148,7 @@ late instances must be made up at the end of one's shift, so we want to exclude\
 from our report anyone whose clock-out time was greater than 10 hours and one\
 minute after their clock-in time.
 
-```
+```sql
 SELECT
   `Employees`.`First_Name`,
   `Employees`.`Last_Name`,
@@ -165,7 +165,7 @@ AND TIMESTAMPDIFF(MINUTE,`Hours`.`Clock_Out`,`Hours`.`Clock_In`) > -601;
 
 This gives us the following list of people who have violated our attendance policy:
 
-```
+```sql
 +------------+-----------+---------------------+---------------------+------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           | Difference |
 +------------+-----------+---------------------+---------------------+------------+
@@ -196,7 +196,7 @@ their usefulness.
 Creating a view is almost exactly the same as creating a SELECT statement, so\
 we can use our previous SELECT statement in the creation of our new view:
 
-```
+```sql
 CREATE SQL SECURITY INVOKER VIEW Employee_Tardiness AS 
 SELECT
   `Employees`.`First_Name`,
@@ -223,11 +223,11 @@ explanatory. We simply run 'CREATE VIEW AS' and then append any\
 valid SELECT statement, and our view is created. Now if we do a SELECT from the\
 view, we can see we get the same results as before, with much less SQL:
 
-```
+```sql
 SELECT * FROM Employee_Tardiness;
 ```
 
-```
+```sql
 +------------+-----------+---------------------+---------------------+------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           | Difference |
 +------------+-----------+---------------------+---------------------+------------+
@@ -247,11 +247,11 @@ SELECT * FROM Employee_Tardiness;
 Now we can even perform operations on the table, such as limiting our results\
 to just those with a Difference of at least five minutes:
 
-```
+```sql
 SELECT * FROM Employee_Tardiness WHERE Difference >=5;
 ```
 
-```
+```sql
 +------------+-----------+---------------------+---------------------+------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           | Difference |
 +------------+-----------+---------------------+---------------------+------------+

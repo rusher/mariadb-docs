@@ -1,11 +1,11 @@
-# Configuring MariaDB for Remote Client Access
+# Remote Client Access
 
 Some MariaDB packages bind MariaDB to 127.0.0.1 (the loopback IP address) by default\
-as a security measure using the [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) configuration directive. Old MySQL packages sometimes disabled TCP/IP networking altogether using the [skip-networking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) directive. Before going in to how to configure these, let's\
+as a security measure using the [bind-address](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) configuration directive. Old MySQL packages sometimes disabled TCP/IP networking altogether using the [skip-networking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) directive. Before going in to how to configure these, let's\
 explain what each of them actually does:
 
-* [skip-networking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is fairly simple. It just tells MariaDB to run without any of the TCP/IP networking options.
-* [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) requires a little bit of background information. A given\
+* [skip-networking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is fairly simple. It just tells MariaDB to run without any of the TCP/IP networking options.
+* [bind-address](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) requires a little bit of background information. A given\
   server usually has at least two networking interfaces (although this is not\
   required) and can easily have more. The two most common are a Loopback\
   network device and a physical Network Interface Card (NIC) which allows\
@@ -21,9 +21,9 @@ explain what each of them actually does:
 
 Multiple comma-separated addresses can now be given to `bind_address` to allow the server to listen on more than one specific interface while not listening on others.
 
-If [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) is bound to 127.0.0.1 (localhost), one can't connect to the MariaDB server from other hosts or from the same host over TCP/IP on a different interface than the loopback (127.0.0.1). This for example will not work (connecting with a hostname that points to a local IP of the host):
+If [bind-address](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) is bound to 127.0.0.1 (localhost), one can't connect to the MariaDB server from other hosts or from the same host over TCP/IP on a different interface than the loopback (127.0.0.1). This for example will not work (connecting with a hostname that points to a local IP of the host):
 
-```
+```bash
 (/my/maria-10.11) ./client/mariadb --host=myhost --protocol=tcp --port=3306 test
 ERROR 2002 (HY000): Can't connect to MySQL server on 'myhost' (115)
 (/my/maria-10.11) telnet myhost 3306
@@ -33,7 +33,7 @@ telnet: connect to address 192.168.0.11: Connection refused
 
 Using 'localhost' works when binding with `bind_address`:
 
-```
+```bash
 (my/maria-10.11) ./client/mariadb --host=localhost --protocol=tcp --port=3306 test
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A
@@ -45,11 +45,11 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 ## Finding the Defaults File
 
 To enable MariaDB to listen to remote connections, you need to edit your defaults\
-file. See [Configuring MariaDB with my.cnf](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for more detail.
+file. See [Configuring MariaDB with my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for more detail.
 
 Common locations for defaults files:
 
-```
+```bash
 * /etc/my.cnf                              (*nix/BSD)
   * $MYSQL_HOME/my.cnf                       (*nix/BSD) *Most Notably /etc/mysql/my.cnf
   * SYSCONFDIR/my.cnf                        (*nix/BSD)
@@ -58,7 +58,7 @@ Common locations for defaults files:
 
 You can see which defaults files are read and in which order by executing:
 
-```
+```bash
 shell> mariadbd --help --verbose
 mariadbd  Ver 10.11.5-MariaDB for linux-systemd on x86_64 (MariaDB Server)
 Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
@@ -78,7 +78,7 @@ The last line shows which defaults files are read.
 Once you have located the defaults file, use a text editor to open the file and\
 try to find lines like this under the \[mysqld] section:
 
-```
+```bash
 [mysqld]
     ...
     skip-networking
@@ -92,7 +92,7 @@ try to find lines like this under the \[mysqld] section:
 If you are able to locate these lines, make sure they are both commented out\
 (prefaced with hash (#) characters), so that they look like this:
 
-```
+```bash
 [mysqld]
     ...
     #skip-networking
@@ -105,7 +105,7 @@ If you are able to locate these lines, make sure they are both commented out\
 
 Alternatively, just add the following lines **at the end** of your .my.cnf (notice that the file name starts with a dot) file in your home directory or alternative **last** in your /etc/my.cnf file.
 
-```
+```bash
 [mysqld]
 skip-networking=0
 skip-bind-address
@@ -113,11 +113,11 @@ skip-bind-address
 
 This works as one can have any number of \[mysqld] sections.
 
-Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)).
+Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)).
 
 You can check the options mariadbd is using by executing:
 
-```
+```bash
 shell> ./sql/mariadbd --print-defaults
 ./sql/mariadbd would have been started with the following arguments:
 --bind-address=127.0.0.1 --innodb_file_per_table=ON --server-id=1 --skip-bind-address ...
@@ -136,9 +136,9 @@ completely different permissions and/or passwords.
 
 To create a new user:
 
-* log into the [mariadb command line client](../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) (or your favorite graphical client if you wish)
+* log into the [mariadb command line client](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) (or your favorite graphical client if you wish)
 
-```
+```bash
 Welcome to the MariaDB monitor.  Commands end with ; or \g.
 Your MariaDB connection id is 36
 Server version: 5.5.28-MariaDB-mariadb1~lucid mariadb.org binary distribution
@@ -150,9 +150,9 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
+* if you are interested in viewing any existing remote users, issue the following SQL statement on the [mysql.user](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
 
-```
+```sql
 SELECT User, Host FROM mysql.user WHERE Host <> 'localhost';
 +--------+-----------+
 | User   | Host      |
@@ -181,14 +181,14 @@ has addresses in the subnet 192.168.100.0/24. This is an improvement because\
 opening a MariaDB server up to the Internet and granting access to all\
 hosts is bad practice.
 
-```
+```sql
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%' 
   IDENTIFIED BY 'my-new-password' WITH GRANT OPTION;
 ```
 
 (% is a wildcard)
 
-For more information about how to use GRANT, please see the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md)\
+For more information about how to use GRANT, please see the [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md)\
 page.
 
 At this point we have accomplished our goal and we have a user 'root' that can\
@@ -200,7 +200,7 @@ One more point to consider whether the firewall is configured to allow incoming 
 
 On RHEL and CentOS 7, it may be necessary to configure the firewall to allow TCP access to MariaDB from remote hosts. To do so, execute both of these commands:
 
-```
+```bash
 firewall-cmd --add-port=3306/tcp 
 firewall-cmd --permanent --add-port=3306/tcp
 ```
@@ -210,7 +210,7 @@ firewall-cmd --permanent --add-port=3306/tcp
 * If your system is running a software firewall (or behind a hardware firewall\
   or NAT) you must allow connections destined to TCP port that MariaDB runs on (by\
   default and almost always 3306).
-* To undo this change and not allow remote access anymore, simply remove the `skip-bind-address` line or uncomment the [bind-address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) line in your defaults file. The end result should be that you should have in the output from `./sql/mariadbd --print-defaults` the option `--bind-address=127.0.0.1` and no `--skip-bind-address`.
+* To undo this change and not allow remote access anymore, simply remove the `skip-bind-address` line or uncomment the [bind-address](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) line in your defaults file. The end result should be that you should have in the output from `./sql/mariadbd --print-defaults` the option `--bind-address=127.0.0.1` and no `--skip-bind-address`.
 
 _The initial version of this article was copied, with permission, from_ [_Remote\_Clients\_Cannot\_Connect_](https://hashmysql.org/wiki/Remote_Clients_Cannot_Connect) _on 2012-10-30._
 
