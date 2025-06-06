@@ -14,7 +14,7 @@ In the event that you have a specific tablespace that you need stored in a dedic
 
 For instance,
 
-```
+```sql
 CREATE TABLE test.t1 (
    id INT PRIMARY KEY AUTO_INCREMENT,
    name VARCHAR(50)
@@ -45,7 +45,7 @@ You can copy the transportable tablespace of a non-partitioned table from one se
 
 The workflow is simplified starting from [MariaDB 11.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes). On the source server, simply do:
 
-```
+```sql
 FLUSH TABLES t1 FOR EXPORT;
 # scp /data/contacts/test/t1.ibd target-server.com:/var/lib/mysql/test/
 # scp /data/contacts/test/t1.cfg target-server.com:/var/lib/mysql/test/
@@ -55,7 +55,7 @@ UNLOCK TABLES;
 
 On the destination server, simply do:
 
-```
+```sql
 ALTER TABLE t1 IMPORT TABLESPACE;
 ```
 
@@ -65,7 +65,7 @@ You can export a non-partitioned table by locking the table and copying the tabl
 
 * First, use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
 
-```
+```sql
 FLUSH TABLES test.t1 FOR EXPORT;
 ```
 
@@ -80,7 +80,7 @@ This forces the server to close the table and provides your connection with a re
 
 * Then, once you've copied the files, you can release the lock with [UNLOCK TABLES](../../../sql-statements/transactions/lock-tables.md):
 
-```
+```sql
 UNLOCK TABLES;
 ```
 
@@ -92,7 +92,7 @@ For example, the process would go like this:
 
 * First, on the destination server, you need to create a copy of the table. Use the same [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement that was used to create the table on the original server.
 
-```
+```sql
 CREATE TABLE test.t1 (
    id INT PRIMARY KEY AUTO_INCREMENT,
    name VARCHAR(50)
@@ -101,13 +101,13 @@ CREATE TABLE test.t1 (
 
 * Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the new table's tablespace:
 
-```
+```sql
 ALTER TABLE test.t1 DISCARD TABLESPACE;
 ```
 
 * Then, copy the `.ibd` and `.cfg` files from the original server to the relevant directory on the target MariaDB Server.
 
-```
+```bash
 # scp /data/tablespaces/t1.ibd target-server.com:/var/lib/mysql/test/
 # scp /data/tablespaces/t1.cfg target-server.com:/var/lib/mysql/test/
 ```
@@ -116,7 +116,7 @@ File-per-table tablespaces can be imported with just the `.ibd` file in many cas
 
 * Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
 
-```
+```sql
 ALTER TABLE test.t1 IMPORT TABLESPACE;
 ```
 
@@ -130,7 +130,7 @@ You can export a partitioned table by locking the table and copying the `.ibd` a
 
 * First, let's create a test table with some data on the original server:
 
-```
+```sql
 CREATE TABLE test.t2 (
    employee_id INT,
    name VARCHAR(50)
@@ -151,7 +151,7 @@ INSERT INTO test.t2 (name, employee_id) VALUES
 
 * Then, we need to export the partitioned tablespace from the original server, which follows the same process as exporting non-partitioned tablespaces. That means that we need to use the [FLUSH TABLES ... FOR EXPORT](../../../sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) statement on the target table:
 
-```
+```sql
 FLUSH TABLES test.t2 FOR EXPORT;
 ```
 
@@ -159,7 +159,7 @@ This forces the server to close the table and provides your connection with a re
 
 * Then, if we grep the database directory in the data directory for the newly created `t2` table, we can see a number of `.ibd` and `.cfg` files for the table:
 
-```
+```sql
 # ls -l /var/lib/mysql/test/ | grep t2
 total 428
 -rw-rw---- 1 mysql mysql 827 Dec 5 16:08 t2.frm
@@ -176,7 +176,7 @@ total 428
 
 * Then, while our connection still holds the lock on the table, we need to copy the tablespace files and the metadata files to a safe directory:
 
-```
+```bash
 $ mkdir /tmp/backup
 $ sudo cp /var/lib/mysql/test/t2*.ibd /tmp/backup
 $ sudo cp /var/lib/mysql/test/t2*.cfg /tmp/backup
@@ -184,7 +184,7 @@ $ sudo cp /var/lib/mysql/test/t2*.cfg /tmp/backup
 
 * Then, once we've copied the files, we can release the lock with [UNLOCK TABLES](../../../sql-statements/transactions/lock-tables.md):
 
-```
+```sql
 UNLOCK TABLES;
 ```
 
@@ -200,7 +200,7 @@ $ scp /tmp/backup/t2* user@target-host:/tmp/backup
 
 * Then, we need to import the partitioned tablespaces onto the target server. The import process for partitioned tables is more complicated than the import process for non-partitioned tables. To start with, if it doesn't already exist, then we need to create a partitioned table on the target server that matches the partitioned table on the original server:
 
-```
+```sql
 CREATE TABLE test.t2 (
    employee_id INT,
    name VARCHAR(50)
@@ -215,7 +215,7 @@ PARTITION BY RANGE (employee_id) (
 
 * Then, using this table as a model, we need to create a placeholder of this table with the same structure that does not use partitioning. This can be done with a [CREATE TABLE... AS SELECT](../../../sql-statements/data-definition/create/create-table.md#create-select) statement:
 
-```
+```sql
 CREATE TABLE test.t2_placeholder LIKE test.t2;
 ALTER TABLE test.t2_placeholder REMOVE PARTITIONING;
 ```
@@ -228,13 +228,13 @@ From this point forward, the rest of our steps need to happen for each individua
 
 * First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the placeholder table's tablespace:
 
-```
+```sql
 ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
 ```
 
 * Then, copy the `.ibd` and `.cfg` files for the next partition to the relevant directory for the `t2_placeholder` table on the target MariaDB Server:
 
-```
+```bash
 # cp /tmp/backup/t2#P#p0.cfg /var/lib/mysql/test/t2_placeholder.cfg
 # cp /tmp/backup/t2#P#p0.ibd /var/lib/mysql/test/t2_placeholder.ibd
 # chown mysql:mysql /var/lib/mysql/test/t2_placeholder*
@@ -244,13 +244,13 @@ File-per-table tablespaces can be imported with just the `.ibd` file in many cas
 
 * Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
 
-```
+```sql
 ALTER TABLE test.t2_placeholder IMPORT TABLESPACE;
 ```
 
 The placeholder table now contains data from the `p0` partition on the source server.
 
-```
+```sql
 SELECT * FROM test.t2_placeholder;
 
 +-------------+--------------+
@@ -262,13 +262,13 @@ SELECT * FROM test.t2_placeholder;
 
 * Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../sql-statements/data-definition/alter/alter-table.md#exchange-partition) statement:
 
-```
+```sql
 ALTER TABLE test.t2 EXCHANGE PARTITION p0 WITH TABLE test.t2_placeholder;
 ```
 
 The target table now contains the first partition from the source table.
 
-```
+```sql
 SELECT * FROM test.t2;
 
 +-------------+--------------+
@@ -282,7 +282,7 @@ SELECT * FROM test.t2;
 
 When this process is complete for all partitions, the target table will contain the imported data:
 
-```
+```sql
 SELECT * FROM test.t2;
 
 +-------------+----------------+
@@ -297,7 +297,7 @@ SELECT * FROM test.t2;
 
 * Then, we can remove the placeholder table from the database:
 
-```
+```sql
 DROP TABLE test.t2_placeholder;
 ```
 
@@ -309,7 +309,7 @@ DROP TABLE test.t2_placeholder;
 
 If a file-per-tablespace file contains columns that use one or more of these temporal data types and if the tablespace file's original table was created with a certain storage format for these columns, then the tablespace file can only be imported into tables that were also created with the same storage format for these columns as the original table. Otherwise, you will see errors like the following:
 
-```
+```sql
 ALTER TABLE dt_test IMPORT TABLESPACE;
 ERROR 1808 (HY000): Schema mismatch (Column dt precise type mismatch.)
 ```
@@ -324,14 +324,14 @@ InnoDB file-per-table tablespaces can use different [row formats](../innodb-row-
 
 If a file-per-tablespace file was created with a certain row format, then the tablespace file can only be imported into tables that were created with the same row format as the original table. Otherwise, you will see errors like the following:
 
-```
+```sql
 ALTER TABLE t0 IMPORT TABLESPACE;
 ERROR 1808 (HY000): Schema mismatch (Expected FSP_SPACE_FLAGS=0x21, .ibd file contains 0x0.)
 ```
 
 The error message is a bit more descriptive in [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes) and later:
 
-```
+```sql
 ALTER TABLE t0 IMPORT TABLESPACE;
 ERROR 1808 (HY000): Schema mismatch (Table flags don't match, server table has 0x1 and the meta-data file has 0x0; .cfg file uses ROW_FORMAT=REDUNDANT)
 ```
@@ -344,7 +344,7 @@ See [MDEV-15049](https://jira.mariadb.org/browse/MDEV-15049) and [MDEV-16851](ht
 
 DISCARD on a table with foreign key constraints is only possible after disabling [foreign\_key\_checks](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks):
 
-```
+```sql
 SET SESSION foreign_key_checks=0;
 ALTER TABLE t0 DISCARD TABLESPACE;
 ```

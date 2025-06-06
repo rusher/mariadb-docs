@@ -18,7 +18,7 @@ The `REDUNDANT` row format is supported by both the `Antelope` and the `Barracud
 
 For example:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 CREATE TABLE tab (

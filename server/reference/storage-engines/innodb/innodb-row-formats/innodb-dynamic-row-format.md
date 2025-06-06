@@ -23,7 +23,7 @@ It is recommended to set the [innodb\_strict\_mode](../innodb-system-variables.m
 
 For example:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -48,7 +48,7 @@ $ mariadb --user=root
 
 2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'default_storage_engine';
 ```
@@ -63,7 +63,7 @@ SHOW SESSION VARIABLES
 
 3. Confirm that InnoDB's default row format is Dynamic by checking the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW GLOBAL VARIABLES
    LIKE 'innodb_default_row_format';
 ```
@@ -78,13 +78,13 @@ SHOW GLOBAL VARIABLES
 
 4. If the database does not exist, then create the database for the table using the [CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) statement:
 
-```
+```sql
 CREATE DATABASE hq_sales;
 ```
 
 5. Create the table using the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE hq_sales.invoices (
 
 6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
-```
+```sql
 SELECT NAME, ROW_FORMAT
 FROM information_schema.INNODB_SYS_TABLES
 WHERE NAME='hq_sales/invoices';
@@ -126,7 +126,7 @@ $ mariadb --user=root
 
 2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'default_storage_engine';
 ```
@@ -141,7 +141,7 @@ SHOW SESSION VARIABLES
 
 3. Confirm that InnoDB's default row format is not Dynamic by checking the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW GLOBAL VARIABLES
    LIKE 'innodb_default_row_format';
 ```
@@ -156,13 +156,13 @@ SHOW GLOBAL VARIABLES
 
 4. If the database does not exist, then create the database for the table using the [CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) statement:
 
-```
+```sql
 CREATE DATABASE hq_sales;
 ```
 
 5. Create the table using the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -176,7 +176,7 @@ CREATE TABLE hq_sales.invoices (
 
 6. Confirm that the table uses the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
-```
+```sql
 SELECT NAME, ROW_FORMAT
 FROM information_schema.INNODB_SYS_TABLES
 WHERE NAME='hq_sales/invoices';
@@ -204,7 +204,7 @@ $ mariadb --user=root
 
 2. Search for InnoDB tables that do not use the Dynamic row format by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
-```
+```sql
 SELECT NAME, ROW_FORMAT
 FROM information_schema.INNODB_SYS_TABLES
 WHERE NAME NOT LIKE 'SYS_%'
@@ -221,7 +221,7 @@ AND ROW_FORMAT != 'Dynamic';
 
 3. Alter the table using the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
 
-```
+```sql
 ALTER TABLE hq_sales.invoices
    ROW_FORMAT = Dynamic;
 ```

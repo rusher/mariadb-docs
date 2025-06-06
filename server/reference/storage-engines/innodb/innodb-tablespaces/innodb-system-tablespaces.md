@@ -57,7 +57,7 @@ In cases where the InnoDB system tablespace has grown too large, before [MariaDB
 The backup utility [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) produces backup files containing the SQL statements needed to recreate the database. As a result, it restores a database with the bare minimum data rather than any additional information that might have built up in the tablespace file.\
 Use mariadb-dump to backup all of your InnoDB database tables, including the system tables in the `mysql` database that use InnoDB. You can find out what they are using the Information Schema.
 
-```
+```sql
 SELECT TABLE_NAME FROM information_schema.TABLES
 WHERE TABLE_SCHEMA = 'mysql' AND ENGINE = 'InnoDB';
 ```

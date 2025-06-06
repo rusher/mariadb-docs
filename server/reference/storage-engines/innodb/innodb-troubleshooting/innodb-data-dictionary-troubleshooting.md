@@ -25,7 +25,7 @@ In this case the table definition, the `.frm` file, is missing and the InnoDB di
 
 Use the query to identify potentially other tablespaces that are known but missing with:
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_TABLES WHERE NAME LIKE 'dbname/%';
 ```
 
@@ -37,7 +37,7 @@ It may come about if MariaDB exits in the middle of an [ALTER TABLE ... ALGORITH
 
 To identify orphan tables, run:
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.INNODB_SYS_TABLES WHERE NAME LIKE '%#sql%';
 ```
 
@@ -53,7 +53,7 @@ mv #sql-36ab_2.frm #sql-ib87-856498050.frm
 
 * Drop the table, for example:
 
-```
+```sql
 DROP TABLE `#mysql50##sql-ib87-856498050`;
 ```
 

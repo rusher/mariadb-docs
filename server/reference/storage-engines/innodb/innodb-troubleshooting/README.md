@@ -1,3 +1,6 @@
+---
+description: Guidelines for troubleshooting problems with InnoDB.
+---
+
 # InnoDB Troubleshooting
 
-Guidelines when troubleshooting problems with InnoDB.

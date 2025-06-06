@@ -21,7 +21,7 @@ This system variable cannot be set to `compressed`, which means that the default
 
 For example, the following statements would create a table with the `DYNAMIC` row format:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -36,7 +36,7 @@ CREATE TABLE tab (
 
 One way to specify an InnoDB table's row format is by setting the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement. For example:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 SET GLOBAL innodb_file_per_table=ON;
@@ -53,7 +53,7 @@ CREATE TABLE tab (
 
 The [SHOW TABLE STATUS](../../../sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the row format used by a table. For example:
 
-```
+```sql
 SHOW TABLE STATUS FROM db1 WHERE Name='tab'\G
 *************************** 1. row ***************************
            Name: tab
@@ -78,7 +78,7 @@ Max_data_length: 0
 
 The [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can also be queried to see the row format used by a table. For example:
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name='db1/tab'\G
 *************************** 1. row ***************************
      TABLE_ID: 42
@@ -161,7 +161,7 @@ If a table's definition can allow rows that the table's InnoDB row format can't 
 
 If the table were using the `REDUNDANT` or `COMPACT` row formats, then the error or warning would be the following:
 
-```
+```sql
 ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to 
 TEXT or BLOB or using ROW_FORMAT=DYNAMIC or ROW_FORMAT=COMPRESSED 
 may help. In current row format, BLOB prefix of 768 bytes is stored inline.
@@ -169,7 +169,7 @@ may help. In current row format, BLOB prefix of 768 bytes is stored inline.
 
 And if the table were using the `DYNAMIC` or `COMPRESSED` row formats, then the error or warning would be the following:
 
-```
+```sql
 ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to 
 TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored inline.
 ```

@@ -57,7 +57,7 @@ It is also recommended to set the [innodb\_strict\_mode](../innodb-system-variab
 
 InnoDB automatically uses the `COMPRESSED` row format for a table if the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to some value in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement. For example:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 SET GLOBAL innodb_file_per_table=ON;
@@ -72,7 +72,7 @@ CREATE TABLE tab (
 
 If the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option is **not** set to some value, but the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option is set to `COMPRESSED` in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement, then InnoDB uses a default value of `8` for the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option. For example:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 SET GLOBAL innodb_file_per_table=ON;
@@ -89,7 +89,7 @@ CREATE TABLE tab (
 
 The default block size for tables that use the Compressed row format is half of [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB. A compressed table with the default block size can be created by setting the ROW\_FORMAT table option to COMPRESSED:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -111,7 +111,7 @@ $ mariadb --user=root
 
 2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'default_storage_engine';
 ```
@@ -126,7 +126,7 @@ SHOW SESSION VARIABLES
 
 3. Create the table using the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement, and specify the Compressed row format using the `ROW_FORMAT` table option:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE hq_sales.invoices (
 
 4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
-```
+```sql
 SELECT NAME, ROW_FORMAT, ZIP_PAGE_SIZE
 FROM information_schema.INNODB_SYS_TABLES
 WHERE NAME='hq_sales/invoices';
@@ -158,7 +158,7 @@ WHERE NAME='hq_sales/invoices';
 
 The default block size for tables that use the Compressed row format is half of [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB. A compressed table with a non-default block size can be created by setting the `KEY_BLOCK_SIZE` table option to the desired block size.
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -195,7 +195,7 @@ SHOW SESSION VARIABLES
 
 3. Create the table using the CREATE TABLE statement, and specify the block size using the `KEY_BLOCK_SIZE` table option, which implies the Compressed row format:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -209,7 +209,7 @@ CREATE TABLE hq_sales.invoices (
 
 4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
-```
+```sql
 SELECT NAME, ROW_FORMAT, ZIP_PAGE_SIZE
 FROM information_schema.INNODB_SYS_TABLES
 WHERE NAME='hq_sales/invoices';

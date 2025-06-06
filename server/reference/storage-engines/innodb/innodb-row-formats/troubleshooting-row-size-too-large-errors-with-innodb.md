@@ -28,7 +28,7 @@ These messages are raised in the following cases:
 
 Here is an example of the problem:
 
-```
+```sql
 SET GLOBAL innodb_default_row_format='dynamic';
 
 SET SESSION innodb_strict_mode=ON;
@@ -255,7 +255,7 @@ InnoDB does not currently have an easy way to check all existing tables to deter
 
 One method to check a single existing table for this problem is to enable [InnoDB strict mode](../innodb-strict-mode.md), and then try to create a duplicate of the table with [CREATE TABLE ... LIKE](../../../sql-statements/data-definition/create/create-table.md#create-table-like). If the table has this problem, then the operation will fail. For example:
 
-```
+```sql
 SET SESSION innodb_strict_mode=ON;
 
 CREATE TABLE tab_dup LIKE tab;
@@ -279,7 +279,7 @@ As the script runs it will output one line reporting the database and tablename 
 
 In either case, the script prints one final line to announce when it's done: `./rowsize.sh done.`
 
-```
+```bash
 #!/bin/bash
 
 [ -z "$3" ] && echo "Usage: $0 host user password" >&2 && exit 1
@@ -342,7 +342,7 @@ ALTER TABLE tab ROW_FORMAT=DYNAMIC;
 
 You can use the [INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information\_schema](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database to find all tables that use the [REDUNDANT](innodb-redundant-row-format.md) or the [COMPACT](innodb-compact-row-format.md) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](innodb-dynamic-row-format.md) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](../innodb-tablespaces/innodb-system-tablespaces.md#system-tables-within-the-innodb-system-tablespace):
 
-```
+```sql
 SELECT NAME, ROW_FORMAT
 FROM information_schema.INNODB_SYS_TABLES
 WHERE ROW_FORMAT IN('Redundant', 'Compact')
@@ -383,7 +383,7 @@ Therefore, a potential solution to the _Row size too large_ error is to ensure t
 
 For example, when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [latin1](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(256)`:
 
-```
+```sql
 SET GLOBAL innodb_default_row_format='dynamic';
 SET SESSION innodb_strict_mode=ON;
 CREATE OR REPLACE TABLE tab (
@@ -591,7 +591,7 @@ CREATE OR REPLACE TABLE tab (
 
 And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(86)`:
 
-```
+```sql
 SET GLOBAL innodb_default_row_format='dynamic';
 SET SESSION innodb_strict_mode=ON;
 CREATE OR REPLACE TABLE tab (
@@ -799,7 +799,7 @@ CREATE OR REPLACE TABLE tab (
 
 And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8mb4](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(64)`:
 
-```
+```sql
 SET GLOBAL innodb_default_row_format='dynamic';
 SET SESSION innodb_strict_mode=ON;
 CREATE OR REPLACE TABLE tab (
@@ -1038,7 +1038,7 @@ An _unsafe_ workaround is to disable [InnoDB strict mode](../innodb-strict-mode.
 
 For example, even though the following table schema is too large for most InnoDB row formats to store, it can still be created when [InnoDB strict mode](../innodb-strict-mode.md) is disabled:
 
-```
+```sql
 SET GLOBAL innodb_default_row_format='dynamic';
 SET SESSION innodb_strict_mode=OFF;
 CREATE OR REPLACE TABLE tab (
@@ -1246,7 +1246,7 @@ CREATE OR REPLACE TABLE tab (
 
 But as mentioned above, if [InnoDB strict mode](../innodb-strict-mode.md) is **disabled** and if a [DDL](../../../sql-statements/data-definition/) statement is executed, then InnoDB will still raise a **warning** with this message. The [SHOW WARNINGS](../../../sql-statements/administrative-sql-statements/show/show-warnings.md) statement can be used to view the warning. For example:
 
-```
+```sql
 SHOW WARNINGS;
 +---------+------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | Level | Code | Message |
