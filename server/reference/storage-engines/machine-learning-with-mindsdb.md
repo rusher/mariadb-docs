@@ -15,21 +15,21 @@ MindsDB connects to MariaDB Server via a regular user to setup a dedicated datab
 
 For example, if MindsDB is installed locally, one can create a user called `mindsdb@localhost`. MindsDB only authenticates via the [mysql\_native\_password](../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) plugin, hence one must set a password for the user:
 
-```
+```sql
 CREATE USER mindsdb@localhost;
 SET PASSWORD for mindsdb@localhost=PASSWORD("password");
 ```
 
 The user must be granted the global [FILE](../sql-statements/account-management-sql-statements/grant.md#file) privilege and all privileges on the `mindsdb` database.
 
-```
+```sql
 GRANT FILE on *.* to mindsdb@localhost;
 GRANT ALL on mindsdb.* to mindsdb@localhost;
 ```
 
 Assuming MindsDB is in the python path one can start up MindsDB with the following parameters:
 
-```
+```bash
 python -m mindsdb --config=$CONFIG_PATH --api=http,mysql
 ```
 
@@ -45,7 +45,7 @@ If the connection between MindsDB and MariaDB is successful, you should see the 
 
 MindsDB, as an AutoML framework does all the work when it comes to training the AI model. What is necessary is to pass it the initial data, which MindsDB retrieves via a SELECT statement. This can be done by inserting into the `predictors` table.
 
-```
+```sql
 INSERT INTO `predictors`
        (`name`, `predict`, `select_data_query`)
 VALUES ('bikes_model', 'count', 'SELECT * FROM test.bike_data');

@@ -1,14 +1,10 @@
-
 # Container Backup and Restoration
 
 MariaDB databases in containers need backup and restore like their non-container equivalents.
 
-
 ## Logicial Backups
 
-
 In this section, we will assume that the MariaDB container has been created as follows:
-
 
 ```
 $ docker volume create mariadb_data
@@ -27,9 +23,7 @@ $ docker run -d --name mariadb \
 
 ### Backup
 
-
 [mariadb-dump](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is in the Docker Official Image and can be used as follows:
-
 
 ```
 $ docker exec mariadb \
@@ -38,9 +32,7 @@ $ docker exec mariadb \
 
 ### Restoring Data from Dump Files
 
-
 For restoring data, you can use the following `docker exec` command:
-
 
 ```
 $ docker exec mariadb \
@@ -49,21 +41,15 @@ $ docker exec mariadb \
 
 ## Physical Backups
 
-
-[mariadb-backup](../../../../backing-up-and-restoring-databases/mariabackup/README.md) is in the Docker Official Image.
-
+[mariadb-backup](../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/) is in the Docker Official Image.
 
 ### Backup
 
-
 Mariabackup can create a backup as follows:
 
+To perform a backup using [Mariabackup](../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/), a second container is started that shares the original container's data directory. An additional volume for the backup needs to be included in the second backup instance. Authentication against the MariaDB database instance is required to successfully complete the backup. In the example below, a `mysql@localhost` user is used with the MariaDB server's Unix socket shared with the backup container.
 
-To perform a backup using [Mariabackup](../../../../backing-up-and-restoring-databases/mariabackup/README.md), a second container is started that shares the original container's data directory. An additional volume for the backup needs to be included in the second backup instance. Authentication against the MariaDB database instance is required to successfully complete the backup. In the example below, a `mysql@localhost` user is used with the MariaDB server's Unix socket shared with the backup container.
-
-
-Note: Privileges listed here are for 10.5+. For an exact list, see [Mariabackup: Authentication and Privileges](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges).
-
+Note: Privileges listed here are for 10.5+. For an exact list, see [Mariabackup: Authentication and Privileges](../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md#authentication-and-privileges).
 
 ```
 $ docker volume create mariadb_data
@@ -84,19 +70,15 @@ $ docker run -d --name mariadb \
 
 Mariabackup will run as the `mysql` user in the container, so the permissions on `/backup` will need to ensure that it can be written to by this user:
 
-
 ```
 $ docker exec --user mysql mariadb mariadb-backup --backup --target-dir=backup
 ```
 
 ### Restore
 
-
 These steps restore the backup made with Mariabackup.
 
-
 At some point before doing the restore, the backup needs to be prepared. The prepare must be done with the same MariaDB version that performed the backup. Perform the prepare like this:
-
 
 ```
 $ docker run --rm \
@@ -107,7 +89,6 @@ $ docker run --rm \
 ```
 
 Now that the image is prepared, start the container with both the data and the backup volumes and restore the backup. The data directory must be empty to perform this action:
-
 
 ```
 $ docker volume create mariadb_restore
@@ -127,7 +108,6 @@ $ docker run --rm \
 
 With `mariadb_restore` volume containing the restored backup, start normally as this is an initialized data directory. At this point a later version of `<mariadb-image>` container can be used:
 
-
 ```
 $ docker run -d --name mariadb \
   -v mariadb_restore:/var/lib/mysql \
@@ -138,13 +118,9 @@ $ docker run -d --name mariadb \
 
 On the environment variables here:
 
-
-* [MARIADB_AUTO_UPGRADE](mariadb-server-docker-official-image-environment-variables.md#mariadb_auto_upgrade-mariadb_disable_upgrade_backup) here in addition to upgrading the system tables ensures there is a [healthcheck user](using-healthcheck-sh.md).
+* [MARIADB\_AUTO\_UPGRADE](mariadb-server-docker-official-image-environment-variables.md#mariadb_auto_upgrade-mariadb_disable_upgrade_backup) here in addition to upgrading the system tables ensures there is a [healthcheck user](using-healthcheck-sh.md).
 * `MARIADB_ROOT_PASSWORD` is a convenience if any scripts, like logical backup above, use the environment variable. This environment variable is not strictly required.
 
-
-For further information on Mariabackup, see [Mariabackup Overview](../../../../backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md).
-
+For further information on Mariabackup, see [Mariabackup Overview](../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md).
 
 CC BY-SA / Gnu FDL
-

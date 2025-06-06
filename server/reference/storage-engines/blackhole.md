@@ -12,7 +12,7 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
-```
+```sql
 INSTALL SONAME 'ha_blackhole';
 ```
 
@@ -28,7 +28,7 @@ plugin_load_add = ha_blackhole
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
-```
+```sql
 UNINSTALL SONAME 'ha_blackhole';
 ```
 

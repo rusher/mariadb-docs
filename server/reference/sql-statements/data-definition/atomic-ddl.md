@@ -70,7 +70,7 @@ This should be true for most storage engines. The ones that still need some\
 work are:
 
 * The [S3 storage engine](../../storage-engines/s3-storage-engine/).
-* The [partitioning engine](../../../server-management/partitioning-tables/). Partitioning should be atomic for most cases, but there are still some known issues that need to be tested and fixed.
+* The [partitioning engine](../../../server-usage/partitioning-tables/). Partitioning should be atomic for most cases, but there are still some known issues that need to be tested and fixed.
 
 ### The DDL Log Recovery File
 

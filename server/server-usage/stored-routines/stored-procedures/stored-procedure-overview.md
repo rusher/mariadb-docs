@@ -6,7 +6,7 @@ A Stored Procedure is a routine invoked with a [CALL](../../../reference/sql-sta
 
 Here's a skeleton example to see a stored procedure in action:
 
-```
+```sql
 DELIMITER //
 
 CREATE PROCEDURE Reset_animal_count() 
@@ -19,7 +19,7 @@ DELIMITER ;
 
 First, the delimiter is changed, since the function definition will contain the regular semicolon delimiter. The procedure is named `Reset_animal_count`. `MODIFIES SQL DATA` indicates that the procedure will perform a write action of sorts, and modify data. It's for advisory purposes only. Finally, there's the actual SQL statement - an UPDATE.
 
-```
+```sql
 SELECT * FROM animal_count;
 +---------+
 | animals |
@@ -39,7 +39,7 @@ SELECT * FROM animal_count;
 
 A more complex example, with input parameters, from an actual procedure used by banks:
 
-```
+```sql
 CREATE PROCEDURE
   Withdraw                             /* Routine name */
   (parameter_amount DECIMAL(6,2),     /* Parameter list */
@@ -70,7 +70,7 @@ Security is a key reason. Banks commonly use stored procedures so that applicati
 
 To find which stored functions are running on the server, use [SHOW PROCEDURE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-procedure-status.md).
 
-```
+```sql
 SHOW PROCEDURE STATUS\G
 *************************** 1. row ***************************
                   Db: test
@@ -88,7 +88,7 @@ collation_connection: utf8_general_ci
 
 or query the [routines table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database directly:
 
-```
+```sql
 SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES 
   WHERE ROUTINE_TYPE='PROCEDURE';
 +--------------------+
@@ -100,7 +100,7 @@ SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES
 
 To find out what the stored procedure does, use [SHOW CREATE PROCEDURE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-procedure.md).
 
-```
+```sql
 SHOW CREATE PROCEDURE Reset_animal_count\G
 *************************** 1. row ***************************
            Procedure: Reset_animal_count

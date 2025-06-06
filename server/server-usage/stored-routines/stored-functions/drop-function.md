@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP FUNCTION [IF EXISTS] f_name
 ```
 
@@ -19,7 +19,7 @@ For dropping a [user-defined functions](../../user-defined-functions/) (UDF), se
 
 ## Examples
 
-```
+```sql
 DROP FUNCTION hello;
 Query OK, 0 rows affected (0.042 sec)
 

@@ -1,6 +1,4 @@
-# storage-engines-storage-engines-overview
-
-## Storage Engines Overview
+# Storage Engines Overview
 
 ## Overview
 
@@ -30,11 +28,11 @@ A storage engine is a type of [plugin](../plugins/) for [MariaDB Enterprise Serv
 
 Identify the server's global default storage engine by using [SHOW GLOBAL VARIABLES](../sql-statements/administrative-sql-statements/show/show-variables.md) to query the [default\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'default_storage_engine';
 ```
 
-```
+```sql
 +------------------------+--------+
 | Variable_name          | Value  |
 +------------------------+--------+
@@ -48,7 +46,7 @@ Identify the session's default storage engine by using [SHOW SESSION VARIABLES](
 SHOW SESSION VARIABLES LIKE 'default_storage_engine';
 ```
 
-```
+```sql
 +------------------------+--------+
 | Variable_name          | Value  |
 +------------------------+--------+
@@ -60,19 +58,19 @@ SHOW SESSION VARIABLES LIKE 'default_storage_engine';
 
 Global default storage engine:
 
-```
+```sql
 SET GLOBAL default_storage_engine='MyRocks';
 ```
 
 Session default storage engine supersedes global default during this session:
 
-```
+```sql
 SET SESSION default_storage_engine='MyRocks';
 ```
 
 ### Configure the Default Storage Engine
 
-```
+```bash
 [mariadb]
 ...
 default_storage_engine=MyRocks
@@ -80,7 +78,7 @@ default_storage_engine=MyRocks
 
 ### Identify Available Storage Engines
 
-```
+```sql
 SHOW ENGINES;
 ```
 
@@ -88,7 +86,7 @@ SHOW ENGINES;
 
 Storage engine is specified at time of table creation using a ENGINE = parameter.
 
-```
+```sql
 CREATE TABLE accounts.messages (
   id INT PRIMARY KEY AUTO_INCREMENT,
   sender_id INT,

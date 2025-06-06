@@ -295,7 +295,7 @@ Data for this feature is stored in the [mysql.transaction\_registry table](../..
 
 When the history is stored together with the current data, it increases the size of the table, so current data queries — table scans and index searches — will take more time, because they will need to skip over historical data. If most queries on that table use only current data, it might make sense to store the history separately, to reduce the overhead from versioning.
 
-This is done by partitioning the table by `SYSTEM_TIME`. Because of the [partition pruning](../../../server-management/partitioning-tables/partition-pruning-and-selection.md) optimization, all current data queries will only access one partition, the one that stores current data.
+This is done by partitioning the table by `SYSTEM_TIME`. Because of the [partition pruning](../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) optimization, all current data queries will only access one partition, the one that stores current data.
 
 This example shows how to create such a partitioned table:
 
@@ -506,7 +506,7 @@ CREATE TABLE t (
 );
 ```
 
-Changes in other sections:[create-table.md](../../sql-statements/data-definition/create/create-table.md)[alter-table.md](../../sql-statements/data-definition/alter/alter-table.md)[join-syntax.md](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)[partitioning-types-overview.md](../../../server-management/partitioning-tables/partitioning-types/partitioning-types-overview.md)[date-and-time-units.md](../../sql-functions/date-time-functions/date-and-time-units.md)[delete.md](../../sql-statements/data-manipulation/changing-deleting-data/delete.md)[grant.md](../../sql-statements/account-management-sql-statements/grant.md)\
+Changes in other sections:[create-table.md](../../sql-statements/data-definition/create/create-table.md)[alter-table.md](../../sql-statements/data-definition/alter/alter-table.md)[join-syntax.md](../../sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)[partitioning-types-overview.md](../../../server-usage/partitioning-tables/partitioning-types/partitioning-types-overview.md)[date-and-time-units.md](../../sql-functions/date-time-functions/date-and-time-units.md)[delete.md](../../sql-statements/data-manipulation/changing-deleting-data/delete.md)[grant.md](../../sql-statements/account-management-sql-statements/grant.md)\
 they all reference back to this page\
 Also, TODO:
 

@@ -10,7 +10,7 @@ This describes possible issues that may arise and what to do about them.
 
 _Recommendation._ One way to assist in searching for issues in is to do (at least in \*nix)
 
-```
+```bash
 mysqldump --no-data --all-databases >schemas
 egrep 'CREATE|PRIMARY' schemas   # Focusing on PRIMARY KEYs
 egrep 'CREATE|FULLTEXT' schemas  # Looking for FULLTEXT indexes
@@ -38,7 +38,7 @@ _Fact._ The fields of the PRIMARY KEY are included in each Secondary key.
 
 * Check for redundant indexes with this in mind.
 
-```
+```sql
 PRIMARY KEY(id),
 INDEX(b), -- effectively the same as INDEX(b, id)
 INDEX(b, id) -- effectively the same as INDEX(b)
@@ -47,7 +47,7 @@ INDEX(b, id) -- effectively the same as INDEX(b)
 * (Keep one of the INDEXes, not both)
 * Note subtle things like
 
-```
+```sql
 PRIMARY KEY(id),
 UNIQUE(b), -- keep for uniqueness constraint
 INDEX(b, id) -- DROP this one
@@ -55,7 +55,7 @@ INDEX(b, id) -- DROP this one
 
 * Also, since the PK and the data coexist:
 
-```
+```sql
 PRIMARY KEY(id),
 INDEX(id, b) -- DROP this one; it adds almost nothing
 ```
@@ -63,7 +63,7 @@ INDEX(id, b) -- DROP this one; it adds almost nothing
 _Contrast._ This feature of MyISAM is not available in InnoDB; the value of\
 'id' will start over at 1 for each different value of 'abc':
 
-```
+```sql
 id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (abc, id)
 ```
@@ -71,7 +71,7 @@ PRIMARY KEY (abc, id)
 A way to simulate the MyISAM 'feature' might be something like: What you want\
 is this, but it won't work because it is referencing the table twice:
 
-```
+```sql
 INSERT INTO foo
     (other, id, ...)
     VALUES
@@ -80,7 +80,7 @@ INSERT INTO foo
 
 Instead, you need some variant on this. (You may already have a BEGIN...COMMIT.)
 
-```
+```sql
 BEGIN;
 SELECT @id := MAX(id)+1 FROM foo WHERE other = 123 FOR UPDATE;
 INSERT INTO foo
@@ -98,7 +98,7 @@ to change the design. There is no straightforward workaround. However, the\
 following may be ok. (Be sure that the datatype for id is big enough since it\
 won't start over.):
 
-```
+```sql
 id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (abc, id),
 UNIQUE(id)
@@ -136,7 +136,7 @@ _Fact._ The maximum length of an INDEX is different between the Engines.\
 (This change is not likely to hit you, but watch out.) MyISAM allows 1000\
 bytes; InnoDB allows 767 bytes, just big enough for a
 
-```
+```sql
 VARCHAR(255) CHARACTER SET utf8.
 
 ERROR 1071 (42000): Specified key was too long; max key length is 767 bytes
@@ -164,7 +164,7 @@ effectively has to do a "table scan".
 
 _Same as MyISAM._ Almost always
 
-```
+```sql
 INDEX(a)   -- DROP this one because the other one handles it.
 INDEX(a,b)
 ```
@@ -204,7 +204,7 @@ from your maintenance scripts. (No real harm if you keep them.)
 Backup scripts may need checking. A MyISAM table can be backed up by copying\
 three files. With InnoDB this is only possible if [innodb\_file\_per\_table](innodb/innodb-system-variables.md) is set to 1. Before [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0),\
 capturing a table or database for copying from production to a development\
-environment was not possible. Change to [mysqldump](../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md). Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) a hot copy can be created - see [Backup and restore overview](../../server-management/backing-up-and-restoring-databases/backup-and-restore-overview.md).
+environment was not possible. Change to [mysqldump](../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md). Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) a hot copy can be created - see [Backup and restore overview](../../server-usage/backing-up-and-restoring-databases/backup-and-restore-overview.md).
 
 Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), the DATA DIRECTORY [table option](../sql-statements/data-definition/create/create-table.md#table-options) was not supported for InnoDB. Since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) it is supported, but only in CREATE TABLE. INDEX DIRECTORY has no effect, since InnoDB does not use separate files for indexes. To better balance the workload through several disks, the paths of some InnoDB log files can also be changed.
 

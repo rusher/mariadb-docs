@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ALTER PROCEDURE proc_name [characteristic ...]
 
 characteristic:
@@ -23,7 +23,7 @@ You must have the `ALTER ROUTINE` privilege for the procedure. By default, that 
 
 ## Example
 
-```
+```sql
 ALTER PROCEDURE simpleproc SQL SECURITY INVOKER;
 ```
 

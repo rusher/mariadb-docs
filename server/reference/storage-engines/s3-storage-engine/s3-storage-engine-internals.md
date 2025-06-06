@@ -21,7 +21,7 @@ One can also use ALTER TABLE to change the structure of an S3 table.
 
 ## Partitioning Tables
 
-Starting from [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1053-release-notes), S3 tables can also be used with [Partitioning tables](../../../server-management/partitioning-tables/).\
+Starting from [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1053-release-notes), S3 tables can also be used with [Partitioning tables](../../../server-usage/partitioning-tables/).\
 All [ALTER PARTITION](../../sql-statements/data-definition/alter/alter-table.md) operations are supported except:
 
 * REBUILD PARTITION

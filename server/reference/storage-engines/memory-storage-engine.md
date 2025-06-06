@@ -1,4 +1,4 @@
-# MEMORY Storage Engine
+# MEMORY
 
 Contents of the MEMORY storage engine (previously known as HEAP) are stored in memory rather than on disk.
 
@@ -30,7 +30,7 @@ MEMORY tables are lost when a server restarts. In order to achieve this result i
 
 The following example shows how to create a `MEMORY` table with a given maximum size, as described above.
 
-```
+```sql
 SET max_heap_table_size = 1024*516;
 
 CREATE TABLE t (a VARCHAR(10), b INT) ENGINE = MEMORY;

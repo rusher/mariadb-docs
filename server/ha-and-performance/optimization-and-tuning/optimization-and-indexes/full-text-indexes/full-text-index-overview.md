@@ -4,7 +4,7 @@ MariaDB has support for full-text indexing and searching:
 
 * A full-text index in MariaDB is an index of type FULLTEXT, and it allows more options when searching for portions of text from a field.
 * Full-text indexes can be used only with [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/), [Aria](../../../../reference/storage-engines/aria/), [InnoDB](../../../../reference/storage-engines/innodb/) and [Mroonga](../../../../reference/storage-engines/mroonga/) tables, and can be created only for [CHAR](../../../../reference/data-types/string-data-types/char.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), or [TEXT](../../../../reference/data-types/string-data-types/text.md) columns.
-* [Partitioned tables](../../../../server-management/partitioning-tables/) cannot contain fulltext indexes, even if the storage engine supports them.
+* [Partitioned tables](../../../../server-usage/partitioning-tables/) cannot contain fulltext indexes, even if the storage engine supports them.
 * A FULLTEXT index definition can be given in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement when a\
   table is created, or added later using [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) or [CREATE INDEX](../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md).
 * For large data sets, it is much faster to load your data into a table that\

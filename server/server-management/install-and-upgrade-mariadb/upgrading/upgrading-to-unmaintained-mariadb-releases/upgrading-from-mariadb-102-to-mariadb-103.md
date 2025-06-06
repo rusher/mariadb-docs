@@ -6,7 +6,7 @@ For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.
 
 For MariaDB Galera Cluster, see [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](https://mariadb.com/kb/en/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster) instead.
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
 
 The suggested upgrade procedure is:
 
@@ -106,7 +106,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 #### MariaDB Backup and Percona XtraBackup
 
-* [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is not compatible with [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). Installations currently using XtraBackup should upgrade to [MariaDB Backup](../../../backing-up-and-restoring-databases/mariabackup/) before upgrading to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).
+* [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) is not compatible with [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103). Installations currently using XtraBackup should upgrade to [MariaDB Backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/) before upgrading to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).
 
 #### Privileges
 

@@ -6,7 +6,7 @@ A Stored Function is a defined function that is called from within an SQL statem
 
 Here's a skeleton example to see a stored function in action:
 
-```
+```sql
 DELIMITER //
 
 CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC
@@ -25,7 +25,7 @@ First, the delimiter is changed, since the function definition will contain the 
 
 Next, the function body is placed between [BEGIN and END](../../programmatic-compound-statements/begin-end.md) statements. It declares a tinyint, `X`, which is simply set to 42, and this is the result returned.
 
-```
+```sql
 SELECT FortyTwo();
 +------------+
 | FortyTwo() |
@@ -36,7 +36,7 @@ SELECT FortyTwo();
 
 Of course, a function that doesn't take any arguments is of little use. Here's a more complex example:
 
-```
+```sql
 DELIMITER //
 CREATE FUNCTION VatCents(price DECIMAL(10,2)) RETURNS INT DETERMINISTIC
 BEGIN
@@ -58,7 +58,7 @@ From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-s
 
 To find which stored functions are running on the server, use [SHOW FUNCTION STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-function-status.md).
 
-```
+```sql
 SHOW FUNCTION STATUS\G
 *************************** 1. row ***************************
                   Db: test
@@ -77,7 +77,7 @@ collation_connection: utf8_general_ci
 
 or query the [routines table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md) in the INFORMATION\_SCHEMA database directly:
 
-```
+```sql
 SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES WHERE
   ROUTINE_TYPE='FUNCTION';
 +--------------+
@@ -89,7 +89,7 @@ SELECT ROUTINE_NAME FROM INFORMATION_SCHEMA.ROUTINES WHERE
 
 To find out what the stored function does, use [SHOW CREATE FUNCTION](../../../reference/sql-statements/administrative-sql-statements/show/show-create-function.md).
 
-```
+```sql
 SHOW CREATE FUNCTION VatCents\G
 *************************** 1. row ***************************
             Function: VatCents

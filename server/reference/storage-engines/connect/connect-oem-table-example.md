@@ -1,10 +1,10 @@
-# CONNECT - OEM Table Example
+# OEM Table Example
 
 This is an example showing how an OEM table can be implemented.
 
 The header File `my_global.h`:
 
-```
+```cpp
 /***********************************************************************/
 /*  Definitions needed by the included files.                          */
 /***********************************************************************/
@@ -44,7 +44,7 @@ Note: This is a fake `my_global.h` that just contains what is useful for the `jm
 
 The source File `jmgoem.cpp`:
 
-```
+```cpp
 /************* jmgoem C++ Program Source Code File (.CPP) **************/
 /* PROGRAM NAME: jmgoem    Version 1.0                                 */
 /*  (C) Copyright to the author Olivier BERTRAND          2017         */

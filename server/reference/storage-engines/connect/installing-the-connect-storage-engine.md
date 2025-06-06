@@ -1,4 +1,4 @@
-# Installing the CONNECT Storage Engine
+# Installing
 
 The `CONNECT` storage engine enables MariaDB to access external local or remote data (MED). This is done by defining tables based on different data types, in particular files in various formats, data extracted from other DBMS or products (such as Excel or MongoDB) via ODBC or JDBC, or data retrieved from the environment (for example DIR, WMI, and MAC tables)
 
@@ -27,7 +27,7 @@ You can also configure your package manager to install it from MariaDB Foundatio
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's\
 repository using `[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
-```
+```bash
 sudo yum install MariaDB-connect-engine
 ```
 
@@ -36,7 +36,7 @@ sudo yum install MariaDB-connect-engine
 On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
 repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
-```
+```bash
 sudo apt-get install mariadb-plugin-connect
 ```
 
@@ -44,7 +44,7 @@ sudo apt-get install mariadb-plugin-connect
 
 On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
 
-```
+```bash
 sudo zypper install MariaDB-connect-engine
 ```
 
@@ -54,7 +54,7 @@ Once the shared library is in place, the plugin is not actually installed by Mar
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
-```
+```sql
 INSTALL SONAME 'ha_connect';
 ```
 
@@ -70,7 +70,7 @@ plugin_load_add = ha_connect
 
 You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
-```
+```sql
 UNINSTALL SONAME 'ha_connect';
 ```
 
@@ -84,19 +84,19 @@ The `CONNECT` storage engine has some external dependencies.
 
 The `CONNECT` storage engine requires an ODBC library. On Unix-like systems, that usually means installing [unixODBC](https://www.unixodbc.org/). On some systems, this is installed as the `unixODBC` package. For example:
 
-```
+```bash
 sudo yum install unixODBC
 ```
 
 On other systems, this is installed as the `libodbc1` package. For example:
 
-```
+```bash
 sudo apt-get install libodbc1
 ```
 
 If you do not have the ODBC library installed, then you may get an error about a missing library when you attempt to install the plugin. For example:
 
-```
+```sql
 INSTALL SONAME 'ha_connect';
 ERROR 1126 (HY000): Can't open shared library '/home/ian/MariaDB_Downloads/10.1.17/lib/plugin/ha_connect.so' 
   (errno: 2, libodbc.so.1: cannot open shared object file: No such file or directory)

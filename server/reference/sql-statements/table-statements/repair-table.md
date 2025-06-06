@@ -65,7 +65,7 @@ The FORCE argument was added in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZX
 
 ### Partitioned Tables
 
-`REPAIR TABLE` is also supported for [partitioned tables](../../../server-management/partitioning-tables/) with the [ALTER TABLE ... REPAIR PARTITION](../data-definition/alter/alter-table.md) statement. However, the `USE_FRM` option cannot be used with this statement on a partitioned table. See [Repairing Partitions](../../../server-management/partitioning-tables/partitioning-overview.md#repairing-partitions) for details.
+`REPAIR TABLE` is also supported for [partitioned tables](../../../server-usage/partitioning-tables/) with the [ALTER TABLE ... REPAIR PARTITION](../data-definition/alter/alter-table.md) statement. However, the `USE_FRM` option cannot be used with this statement on a partitioned table. See [Repairing Partitions](../../../server-usage/partitioning-tables/partitioning-overview.md#repairing-partitions) for details.
 
 ### Progress Reporting
 

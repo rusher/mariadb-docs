@@ -16,7 +16,7 @@ Starting from `mariadb-upgrade` 2.0, the user running the upgrade tool must have
 
 `mariadb-upgrade` is run after starting the new MariaDB server. Running it before you shut down the old version will not hurt anything and will allow you to make sure it works and figure out authentication for it ahead of time.
 
-It is recommended to make a [backup](../server-management/backing-up-and-restoring-databases/) of all the databases before running `mariadb-upgrade`.
+It is recommended to make a [backup](broken-reference) of all the databases before running `mariadb-upgrade`.
 
 In most cases, `mariadb-upgrade` should just take a few seconds. The main work of `mariadb-upgrade` is to:
 

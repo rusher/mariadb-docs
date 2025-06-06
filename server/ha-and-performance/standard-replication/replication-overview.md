@@ -16,7 +16,7 @@ Replication is used in a number of common scenarios. Uses include:
 
 * Scalability. By having one or more replicas, reads can be spread over multiple servers, reducing the load on the primary. The most common scenario for a high-read, low-write environment is to have one primary, where all the writes occur, replicating to multiple replicas, which handle most of the reads.
 * Data analysis. Analyzing data may have too much of an impact on a primary server, and this can similarly be handled on a replica, while the primary continues unaffected by the extra load.
-* Backup assistance. [Backups](../../server-management/backing-up-and-restoring-databases/) can more easily be run if a server is not actively changing the data. A common scenario is to replicate the data to a replica, which is then disconnected from the primary with the data in a stable state. Backup is then performed from this server. See [Replication as a Backup Solution](../../server-management/backing-up-and-restoring-databases/replication-as-a-backup-solution.md).
+* Backup assistance. [Backups](broken-reference) can more easily be run if a server is not actively changing the data. A common scenario is to replicate the data to a replica, which is then disconnected from the primary with the data in a stable state. Backup is then performed from this server. See [Replication as a Backup Solution](../../server-usage/backing-up-and-restoring-databases/replication-as-a-backup-solution.md).
 * Distribution of data. Instead of being connected to a remote primary, it's possible to replicate the data locally and work from this data instead.
 
 ## Common Replication Setups

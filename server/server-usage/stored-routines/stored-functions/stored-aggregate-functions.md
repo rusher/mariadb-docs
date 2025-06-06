@@ -10,7 +10,7 @@ Creating a custom aggregate function is done using the [CREATE FUNCTION](../../.
 
 ## Standard Syntax
 
-```
+```sql
 CREATE AGGREGATE FUNCTION function_name (parameters) RETURNS return_type
 BEGIN
       All types of declarations
@@ -26,7 +26,7 @@ Stored aggregate functions were a [2016 Google Summer of Code](https://app.gitbo
 
 ### Using SQL/PL
 
-```
+```sql
 SET sql_mode=Oracle;
 DELIMITER //
 
@@ -50,7 +50,7 @@ DELIMITER ;
 
 First a simplified example:
 
-```
+```sql
 CREATE TABLE marks(stud_id INT, grade_count INT);
 
 INSERT INTO marks VALUES (1,6), (2,4), (3,7), (4,5), (5,8);
@@ -84,7 +84,7 @@ DELIMITER ;
 
 A non-trivial example that cannot easily be rewritten using existing functions:
 
-```
+```sql
 DELIMITER //
 CREATE AGGREGATE FUNCTION medi_int(x INT) RETURNS DOUBLE
 BEGIN
@@ -114,7 +114,7 @@ DELIMITER ;
 
 This uses the same marks table as created above.
 
-```
+```sql
 SET sql_mode=Oracle;
 DELIMITER //
 

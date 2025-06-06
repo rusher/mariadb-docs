@@ -1,4 +1,4 @@
-# CONNECT - Adding the REST Feature as a Library Called by an OEM Table
+# Adding the REST Feature as a Library Called by an OEM Table
 
 If you are using a version of MariaDB that does not support REST, this is how the REST feature can be added as a library called by an OEM table.
 
@@ -85,7 +85,7 @@ OPTION_LIST=’Ftype=XML’
 
 To be added to the create table statement. For instance:
 
-```
+```sql
 CREATE  TABLE webw
 ENGINE=CONNECT TABLE_TYPE=OEM MODULE='Rest.dll' SUBTYPE=REST
 FILE_NAME='weatherdata.xml'

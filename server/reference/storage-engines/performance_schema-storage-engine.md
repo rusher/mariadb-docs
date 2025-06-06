@@ -1,8 +1,8 @@
-# PERFORMANCE\_SCHEMA Storage Engine
+# PERFORMANCE\_SCHEMA
 
 If you run [SHOW ENGINES](../sql-statements/administrative-sql-statements/show/show-engines.md), you'll see the following storage engine listed.
 
-```
+```sql
 SHOW ENGINES\G
 ...
       Engine: PERFORMANCE_SCHEMA

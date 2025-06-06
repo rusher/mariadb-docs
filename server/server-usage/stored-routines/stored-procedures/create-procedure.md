@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE
     [OR REPLACE]
     [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
@@ -135,7 +135,7 @@ For information about invoking [stored procedures](./) from within programs writ
 
 If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
-```
+```sql
 DROP PROCEDURE IF EXISTS name;
 CREATE PROCEDURE name ...;
 ```
@@ -159,7 +159,7 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 The following example shows a simple stored procedure that uses an `OUT`\
 parameter. It uses the DELIMITER command to set a new delimiter for the duration of the process — see [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md).
 
-```
+```sql
 DELIMITER //
 
 CREATE PROCEDURE simpleproc (OUT param1 INT)
@@ -182,7 +182,7 @@ SELECT @a;
 
 Character set and collation:
 
-```
+```sql
 DELIMITER //
 
 CREATE PROCEDURE simpleproc2 (
@@ -198,7 +198,7 @@ DELIMITER ;
 
 CREATE OR REPLACE:
 
-```
+```sql
 DELIMITER //
 
 CREATE PROCEDURE simpleproc2 (

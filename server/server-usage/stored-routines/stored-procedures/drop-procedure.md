@@ -18,13 +18,13 @@ While this statement takes effect immediately, threads which are executing a pro
 
 ## Examples
 
-```
+```sql
 DROP PROCEDURE simpleproc;
 ```
 
 IF EXISTS:
 
-```
+```sql
 DROP PROCEDURE simpleproc;
 ERROR 1305 (42000): PROCEDURE test.simpleproc does not exist
 

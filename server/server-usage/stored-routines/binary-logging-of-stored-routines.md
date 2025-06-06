@@ -30,7 +30,7 @@ If the above criteria are met, then the following limitations apply:
 
 A deterministic function:
 
-```
+```sql
 DELIMITER //
  
 CREATE FUNCTION trust_me(x INT)
@@ -46,7 +46,7 @@ DELIMITER ;
 
 A non-deterministic function, since it uses the [UUID\_SHORT](../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md) function:
 
-```
+```sql
 DELIMITER //
 
 CREATE FUNCTION dont_trust_me()

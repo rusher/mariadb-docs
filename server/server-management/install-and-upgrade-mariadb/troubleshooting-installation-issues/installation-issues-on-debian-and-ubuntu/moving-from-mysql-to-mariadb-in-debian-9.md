@@ -120,7 +120,7 @@ The suggested upgrade procedure is:
 
 1. Set [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md) to `0`. This is to ensure that if you make a backup as part of the upgrade, all data is written to the InnoDB data files, which simplifies any restore in the future.
 2. Shutdown MySQL 5.5
-3. Take a [backup](../../../backing-up-and-restoring-databases/backup-and-restore-overview.md)
+3. Take a [backup](../../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-overview.md)
 
 * when the server is shut down is the perfect time to take a backup of your databases
 * store a copy of the backup on external media or a different machine for safety

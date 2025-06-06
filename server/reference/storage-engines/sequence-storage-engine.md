@@ -1,4 +1,4 @@
-# Sequence Storage Engine
+# Sequence
 
 This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](../sql-structure/sequences/).
 
@@ -10,7 +10,7 @@ It creates completely virtual, ephemeral tables automatically when you need them
 
 The Sequence engine is installed by default, and [SHOW ENGINES](../sql-statements/administrative-sql-statements/show/show-engines.md) will list the Sequence storage engine as supported:
 
-```
+```sql
 SHOW ENGINES\G
 ...
 *************************** 5. row ***************************
@@ -42,7 +42,7 @@ Transactions: NO
 
 To use a Sequence table, you simply select from it, as in
 
-```
+```sql
 SELECT * FROM seq_1_to_5;
 +-----+
 | seq |
@@ -59,7 +59,7 @@ To use a sequence in a statement, you select from the table named by a pattern *
 
 In the case of an odd step, the sequence will commence with the `FROM`, and end at the final result before `TO`.
 
-```
+```sql
 SELECT * FROM seq_1_to_15_step_3;
 +-----+
 | seq |
@@ -74,7 +74,7 @@ SELECT * FROM seq_1_to_15_step_3;
 
 A sequence can go backwards too. In this case the final value will always be the `TO` value, so that a descending sequence has the same values as an ascending sequence:
 
-```
+```sql
 SELECT * FROM seq_5_to_1_step_2;
 +-----+
 | seq |
@@ -85,7 +85,7 @@ SELECT * FROM seq_5_to_1_step_2;
 +-----+
 ```
 
-```
+```sql
 SELECT * FROM seq_15_to_1_step_3;
 +-----+
 | seq |
@@ -98,7 +98,7 @@ SELECT * FROM seq_15_to_1_step_3;
 +-----+
 ```
 
-```
+```sql
 SELECT * FROM seq_15_to_2_step_3;
 +-----+
 | seq |
@@ -113,7 +113,7 @@ SELECT * FROM seq_15_to_2_step_3;
 
 This engine is particularly useful with joins and subqueries. For example, this query finds all prime numbers below 50:
 
-```
+```sql
 SELECT seq FROM seq_2_to_50 s1 WHERE 0 NOT IN
      (SELECT s1.seq % s2.seq FROM seq_2_to_50 s2 WHERE s2.seq <= sqrt(s1.seq));
 +-----+
@@ -139,7 +139,7 @@ SELECT seq FROM seq_2_to_50 s1 WHERE 0 NOT IN
 
 And almost (without 2, the only even prime number) the same result with joins:
 
-```
+```sql
 SELECT s1.seq FROM seq_2_to_50 s1 JOIN seq_2_to_50 s2 
   WHERE s1.seq > s2.seq AND s1.seq % s2.seq <> 0 
   GROUP BY s1.seq HAVING s1.seq - COUNT(*) = 2;
@@ -165,7 +165,7 @@ SELECT s1.seq FROM seq_2_to_50 s1 JOIN seq_2_to_50 s2
 
 Sequence tables can also be useful in date calculations. For example, to find the day of the week that a particular date has fallen on over a 40 year period (perhaps for birthday planning ahead!):
 
-```
+```sql
 SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
     '1980-12-05' + INTERVAL (seq) YEAR date FROM seq_0_to_40;
 +-----------+------------+
@@ -187,7 +187,7 @@ SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
 
 Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../sql-functions/string-functions/cast.md) statement. For example:
 
-```
+```sql
 SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 +----+
 | x  |
@@ -208,14 +208,14 @@ Sequence tables, while virtual, are still tables, so they must be in a database.
 
 If the SEQUENCE storage engine is installed, it is not possible to create a table with a name which follows the SEQUENCE pattern:
 
-```
+```sql
 CREATE TABLE seq_1_to_100 (col INT) ENGINE = InnoDB;
 ERROR 1050 (42S01): Table 'seq_1_to_100' already exists
 ```
 
 However, a SEQUENCE table can be converted to another engine and the new table can be referred in any statement:
 
-```
+```sql
 ALTER TABLE seq_1_to_100 ENGINE = BLACKHOLE;
 
 SELECT * FROM seq_1_to_100;
@@ -224,7 +224,7 @@ Empty set (0.00 sec)
 
 While a SEQUENCE table cannot be dropped, it is possible to drop the converted table. The SEQUENCE table with the same name will still exist:
 
-```
+```sql
 DROP TABLE seq_1_to_100;
 
 SELECT COUNT(*) FROM seq_1_to_100;
@@ -238,7 +238,7 @@ SELECT COUNT(*) FROM seq_1_to_100;
 
 A temporary table with a SEQUENCE-like name can always be created and used:
 
-```
+```sql
 CREATE TEMPORARY TABLE seq_1_to_100 (col INT) ENGINE = InnoDB;
 
 SELECT * FROM seq_1_to_100;

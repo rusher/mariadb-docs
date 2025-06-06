@@ -21,7 +21,7 @@ The following options are meaningful for MERGE tables:
 
 If you define a MERGE table with a definition which is different from the underlying MyISAM tables, or one of the underlying tables is not MyISAM, the CREATE TABLE statement will not return any error. But any statement which involves the table will produce an error like the following:
 
-```
+```sql
 ERROR 1168 (HY000): Unable to open underlying table which is differently defined 
   or of non-MyISAM type or doesn't exist
 ```
@@ -32,7 +32,7 @@ The error is also produced if the table is properly define, but an underlying ta
 
 If you try to insert a new row into a MERGE table with INSERT\_METHOD=NO, you will get an error like the following:
 
-```
+```sql
 ERROR 1036 (HY000): Table 'tbl_name' is read only
 ```
 
@@ -40,7 +40,7 @@ It is possible to build a MERGE table on MyISAM tables which have one or more [v
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (
     a INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     message CHAR(20)) ENGINE=MyISAM;
@@ -74,7 +74,7 @@ SELECT * FROM total;
 
 In the following example, we'll create three MyISAM tables, and then a MERGE table on them. However, one of them uses a different data type for the column b, so a SELECT will produce an error:
 
-```
+```sql
 CREATE TABLE t1 (
   a INT,
   b INT
@@ -102,7 +102,7 @@ ERROR 1168 (HY000): Unable to open underlying table which is differently defined
 
 To find out what's wrong, we'll use a CHECK TABLE:
 
-```
+```sql
 CHECK TABLE t_mrg\G
 *************************** 1. row ***************************
    Table: test.t_mrg

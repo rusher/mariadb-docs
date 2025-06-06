@@ -1761,7 +1761,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_log_optimize_ddl`
 
-* Description: Whether [InnoDB redo log](innodb-redo-log.md) activity should be reduced when natively creating indexes or rebuilding tables. Reduced logging requires additional page flushing and interferes with [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/). Enabling this may slow down backup and cause delay due to page flushing. Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1051-release-notes). Deprecated (but not ignored) from [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes) and [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes).
+* Description: Whether [InnoDB redo log](innodb-redo-log.md) activity should be reduced when natively creating indexes or rebuilding tables. Reduced logging requires additional page flushing and interferes with [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/). Enabling this may slow down backup and cause delay due to page flushing. Deprecated and ignored from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1051-release-notes). Deprecated (but not ignored) from [MariaDB 10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes), [MariaDB 10.3.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10326-release-notes) and [MariaDB 10.2.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10235-release-notes).
 * Commandline: `--innodb-log-optimize-ddl={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -2236,7 +2236,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_safe_truncate`
 
-* Description: Use a backup-safe [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md) implementation and crash-safe rename operations inside InnoDB. This is not compatible with hot backup tools other than [Mariabackup](../../../server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md). Users who need to use such tools may set this to `OFF`.
+* Description: Use a backup-safe [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md) implementation and crash-safe rename operations inside InnoDB. This is not compatible with hot backup tools other than [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md). Users who need to use such tools may set this to `OFF`.
 * Commandline: `--innodb-safe-truncate={0|1}`
 * Scope: Global
 * Dynamic: No
