@@ -715,7 +715,7 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-See [Setting up a Replication Slave with Mariabackup](../../../server-usage/backup-and-restore/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information on how to do this with [Mariabackup](../../../server-usage/backup-and-restore/mariabackup/).
+See [Setting up a Replication Slave with Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information on how to do this with [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
 
 ## Example
 

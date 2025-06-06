@@ -41,7 +41,7 @@ and `INSERT ... SET` forms of the statement insert rows based on explicitly spec
 
 The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use [INSERT ... SELECT](insert-select.md) to copy rows between different databases.
 
-The PARTITION clause can be used in both the INSERT and the SELECT part. See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
+The PARTITION clause can be used in both the INSERT and the SELECT part. See [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)
 

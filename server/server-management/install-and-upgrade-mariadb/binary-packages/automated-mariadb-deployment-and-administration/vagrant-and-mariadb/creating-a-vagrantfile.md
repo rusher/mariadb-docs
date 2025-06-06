@@ -88,7 +88,7 @@ apt-get install -y
 
 To find out the steps to install MariaDB on your system of choice, see the [Getting, Installing, and Upgrading MariaDB](../../../) section.
 
-You may also want to restore a database backup in the new Vagrant machine. In this way, you can have the database needed by the application you are developing. To find out how to do it, see [Backup and Restore Overview](../../../../../server-usage/backup-and-restore/backup-and-restore-overview.md). The most flexible type of backup (meaning that it works between different MariaDB versions, and in some cases even between MariaDB and different DBMSs) is a [dump](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md).
+You may also want to restore a database backup in the new Vagrant machine. In this way, you can have the database needed by the application you are developing. To find out how to do it, see [Backup and Restore Overview](../../../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-overview.md). The most flexible type of backup (meaning that it works between different MariaDB versions, and in some cases even between MariaDB and different DBMSs) is a [dump](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md).
 
 On Linux machines, the `shell` provisioner uses the default shell. On Windows machines, it uses PowerShell.
 

@@ -190,7 +190,7 @@ implementations also provide reliable long-term storage.
 * [DROP TABLE](../../sql-statements/data-definition/drop/drop-table.md)
 * [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) Any SELECT operations you can perform on a normal table should work with an S3 table.
 * [SHOW TABLES](../../sql-statements/administrative-sql-statements/show/show-tables.md) will show all tables that exist in the current defined S3 location.
-* S3 tables can be part of [partitions](../../../server-management/partitioning-tables/partitions-files.md). See Discovery below.
+* S3 tables can be part of [partitions](../../../server-usage/partitioning-tables/partitions-files.md). See Discovery below.
 
 ## Discovery
 

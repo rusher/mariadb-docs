@@ -71,7 +71,7 @@ ERROR 1905 (HY000): Cannot define foreign key with ON UPDATE SET NULL clause on 
   * However, `VIRTUAL` or `PERSISTENT` generated columns cannot be explicitly set to any other values than `NULL` or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md). If a generated column is explicitly set to any other value, then the outcome depends on whether [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). If it is not enabled, then a warning will be raised and the default generated value will be used instead. If it is enabled, then an error will be raised instead.
 * The [CREATE TABLE](create-table.md) statement has limited support for generated columns.
   * It supports defining generated columns in a new table.
-  * It supports using generated columns to [partition tables](../../../../server-management/partitioning-tables/).
+  * It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
   * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
 * The [ALTER TABLE](../alter/alter-table.md) statement has limited support for generated columns.
   * It supports the `MODIFY` and `CHANGE` clauses for `PERSISTENT` generated columns.
@@ -80,7 +80,7 @@ ERROR 1905 (HY000): Cannot define foreign key with ON UPDATE SET NULL clause on 
   * It does not support altering a table if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY` if the table has a `VIRTUAL` generated column that is indexed. See [MDEV-14046](https://jira.mariadb.org/browse/MDEV-14046) for more information.
   * It does not support adding a `VIRTUAL` generated column with the `ADD` clause if the same statement is also adding other columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17468](https://jira.mariadb.org/browse/MDEV-17468) for more information.
   * It also does not support altering an existing column into a `VIRTUAL` generated column.
-  * It supports using generated columns to [partition tables](../../../../server-management/partitioning-tables/).
+  * It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
   * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
 * The [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md) statement supports generated columns.
 * The [DESCRIBE](../../administrative-sql-statements/describe.md) statement can be used to check whether a table has generated columns.

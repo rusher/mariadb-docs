@@ -58,7 +58,7 @@ There are some limitations on the use of `DELAYED`:
 * Pending `INSERT DELAYED` statements are lost if a table is\
   write locked and ALTER TABLE is used to modify the table structure.
 * `INSERT DELAYED` is not supported for views. If you try, you will get an error like this: `ERROR 1347 (HY000): 'view_name' is not BASE TABLE`
-* `INSERT DELAYED` is not supported for [partitioned tables](../../../../server-management/partitioning-tables/).
+* `INSERT DELAYED` is not supported for [partitioned tables](../../../../server-usage/partitioning-tables/).
 * `INSERT DELAYED` is not supported within [stored programs](../../../../server-usage/stored-routines/).
 * `INSERT DELAYED` does not work with [triggers](../../../../server-usage/triggers-events/triggers/).
 * `INSERT DELAYED` does not work if there is a check constraint in place.

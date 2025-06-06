@@ -51,9 +51,9 @@ For compatibility with some other database systems, MariaDB supports the [JSON](
 ## Features
 
 * [Flashback](../../../server-monitoring-logs/binary-log/flashback.md) functionality allows one to "undo" the changes that happened after a certain point in time.
-* [Partitioned tables](../../../partitioning-tables/) support the following features:
-  * Tables can be partitioned based on [multiple columns](../../../partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types.md).
-  * Several [partitioning types](../../../partitioning-tables/partitioning-overview.md#partitioning-types) are available.
+* [Partitioned tables](../../../../server-usage/partitioning-tables/) support the following features:
+  * Tables can be partitioned based on [multiple columns](../../../../server-usage/partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types.md).
+  * Several [partitioning types](../../../../server-usage/partitioning-tables/partitioning-overview.md#partitioning-types) are available.
   * Subpartitions.
 * [Progress reporting](../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for some typically expensive statements.
 

@@ -30,13 +30,13 @@ If you have not yet deployed MariaDB Enterprise Server on the Spider Node and Da
 
 ## Support
 
-Customers can obtain support by [submitting a support case](broken-reference/).
+Customers can obtain support by [submitting a support case](broken-reference).
 
 ## Components
 
 The following components are deployed during this procedure:
 
-<table><thead><tr><th width="302.8887939453125">Component</th><th>Function</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/">MariaDB Enterprise Server</a></td><td>Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging.</td></tr><tr><td><a href="../../../reference/storage-engines/spider/">MariaDB Enterprise Spider</a></td><td>Storage engine used by Spider Tables to read from and write to Data Tables using the MariaDB foreign data wrapper.</td></tr></tbody></table>
+<table><thead><tr><th width="302.8887939453125">Component</th><th>Function</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/">MariaDB Enterprise Server</a></td><td>Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging.</td></tr><tr><td><a href="../../../reference/storage-engines/spider/">MariaDB Enterprise Spider</a></td><td>Storage engine used by Spider Tables to read from and write to Data Tables using the MariaDB foreign data wrapper.</td></tr></tbody></table>
 
 ## Term Definitions
 

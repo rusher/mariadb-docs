@@ -47,7 +47,7 @@ The [VALUES()](../../../sql-functions/secondary-functions/miscellaneous-function
 
 The [IGNORE](ignore.md) and [DELAYED](insert-delayed.md) options are ignored when you use `ON DUPLICATE KEY UPDATE`.
 
-See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details on the PARTITION clause.
+See [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details on the PARTITION clause.
 
 This statement activates INSERT and UPDATE triggers. See [Trigger Overview](../../../../server-usage/triggers-events/triggers/trigger-overview.md) for details.
 

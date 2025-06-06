@@ -1,10 +1,10 @@
-# CONNECT - Making the GetRest Library
+# Making the GetRest Library
 
 To enable the REST feature with binary distributions of MariaDB, the function calling the cpprestsdk package is not included in CONNECT, thus allowing CONNECT normal operation when the cpprestsdk package is not installed. Therefore, it must be compiled separately as a library (so or dll) that will be loaded by CONNECT when needed.
 
 This library will contain only one file shown here:
 
-```
+```cpp
 /************* Restget C++ Program Source Code File (.CPP) *************/
 /* Adapted from the sample program of the Casablanca tutorial.         */
 /* Copyright Olivier Bertrand 2019.                                    */

@@ -26,7 +26,7 @@ If a table identifier is prefixed with a dot (.), the default database is assume
 * .`tbl_name`
 * . `tbl_name`
 
-For DML statements, it is possible to specify a list of the partitions using the PARTITION clause. See [Partition Pruning and Selection](../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
+For DML statements, it is possible to specify a list of the partitions using the PARTITION clause. See [Partition Pruning and Selection](../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.
 
 ## See Also
 

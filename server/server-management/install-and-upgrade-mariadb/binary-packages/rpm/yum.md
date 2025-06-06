@@ -21,7 +21,7 @@ We currently have YUM/DNF repositories for the following Linux distributions, an
 
 If you want to install MariaDB with `yum`, then you can configure `yum` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](../mariadb-package-repository-setup-and-usage.md).
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 To use the script, execute the following command:
 
@@ -37,7 +37,7 @@ See [MariaDB Package Repository Setup and Usage](../mariadb-package-repository-s
 
 If you want to install MariaDB with `yum`, then you can configure `yum` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate configuration file to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `yum` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate configuration file to add the repository for your distribution.
 
 Once you have the appropriate repository configuration section for your distribution, add it to a file named `MariaDB.repo` under `/etc/yum.repos.d/`.
 
@@ -186,7 +186,7 @@ sudo yum install MariaDB-devel
 
 ### Installing Mariabackup with YUM
 
-To install [Mariabackup](../../../../server-usage/backup-and-restore/mariabackup/), execute the following command:
+To install [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/), execute the following command:
 
 ```
 sudo yum install MariaDB-backup

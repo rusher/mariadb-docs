@@ -451,7 +451,7 @@ The second (and subsequent) table will be reached into based on the ON clause. (
 
 PARTITIONing is rarely a substitute for a good INDEX.
 
-PARTITION BY RANGE is a technique that is sometimes useful when indexing fails to be good enough. In a two-dimensional situation such as nearness in a geographical sense, one dimension can partially be handled by partition pruning; then the other dimension can be handled by a regular index (preferrably the PRIMARY KEY). This goes into more detail: [Find nearest 10 pizza parlors](../../../server-management/partitioning-tables/partition-maintenance.md).
+PARTITION BY RANGE is a technique that is sometimes useful when indexing fails to be good enough. In a two-dimensional situation such as nearness in a geographical sense, one dimension can partially be handled by partition pruning; then the other dimension can be handled by a regular index (preferrably the PRIMARY KEY). This goes into more detail: [Find nearest 10 pizza parlors](../../../server-usage/partitioning-tables/partition-maintenance.md).
 
 ## FULLTEXT
 

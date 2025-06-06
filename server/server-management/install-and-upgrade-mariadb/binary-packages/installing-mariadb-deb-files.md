@@ -26,7 +26,7 @@ We currently have APT repositories for the following Linux distributions:
 
 If you want to install MariaDB with `apt`, then you can configure `apt` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](mariadb-package-repository-setup-and-usage.md).
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `apt` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../reference/plugins/), and [Mariabackup](../../../server-usage/backup-and-restore/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `apt` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../reference/plugins/), and [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 To use the script, execute the following command:
 
@@ -42,7 +42,7 @@ See [MariaDB Package Repository Setup and Usage](mariadb-package-repository-setu
 
 If you want to install MariaDB with `apt`, then you can configure `apt` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `apt-get` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../reference/plugins/), and [Mariabackup](../../../server-usage/backup-and-restore/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `apt-get` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../kb/en/clients-utilities/), [client libraries](../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../reference/plugins/), and [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
 
 There are several ways to add the repository.
 
@@ -315,7 +315,7 @@ sudo apt-get install mariadb-client libmariadb3
 
 #### Installing Mariabackup with APT
 
-To install [Mariabackup](../../../server-usage/backup-and-restore/mariabackup/), first you would have to update the package cache by executing the following command:
+To install [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/), first you would have to update the package cache by executing the following command:
 
 ```
 sudo apt update
@@ -412,7 +412,7 @@ For MariaDB, the following DEBs are available:
 | libmariadb-dev                         | Development headers and static libraries.                                                                                                                                                                                                    |
 | libmariadbclient18                     | Virtual package to satisfy external depends                                                                                                                                                                                                  |
 | libmysqlclient18                       | Virtual package to satisfy external depends                                                                                                                                                                                                  |
-| mariadb-backup                         | [Mariabackup](../../../server-usage/backup-and-restore/mariabackup/)                                                                                                                                                                         |
+| mariadb-backup                         | [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/)                                                                                                                                                         |
 | mariadb-client                         | Client tools like [mariadb CLI](../../../clients-and-utilities/mariadb-client/), [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), and others.                                               |
 | mariadb-client-core                    | Core client tools                                                                                                                                                                                                                            |
 | mariadb-common                         | Character set files and /etc/my.cnf                                                                                                                                                                                                          |

@@ -24,7 +24,7 @@ The table object is only closed when `HANDLER ... CLOSE` is called by the sessio
 
 [Prepared statements](../../../sql-statements/prepared-statements/) work with `HANDLER READ`, which gives a much higher performance (50% speedup) as there is no parsing and all data is transformed in binary (without conversions to text, as with the normal protocol).
 
-The HANDLER command does not work with [partitioned tables](../../../../server-management/partitioning-tables/).
+The HANDLER command does not work with [partitioned tables](../../../../server-usage/partitioning-tables/).
 
 ## Key Lookup
 

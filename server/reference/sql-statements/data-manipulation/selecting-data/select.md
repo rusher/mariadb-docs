@@ -121,7 +121,7 @@ Order a resultset. See [ORDER BY](order-by.md) for details.
 
 ### PARTITION
 
-Specifies to the optimizer which partitions are relevant for the query. Other partitions will not be read. See [Partition Pruning and Selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md) for details.
+Specifies to the optimizer which partitions are relevant for the query. Other partitions will not be read. See [Partition Pruning and Selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md) for details.
 
 ### PROCEDURE
 

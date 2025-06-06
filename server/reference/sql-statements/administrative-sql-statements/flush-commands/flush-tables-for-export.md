@@ -54,12 +54,12 @@ FLUSH TABLES test.t1 FOR EXPORT;
 UNLOCK TABLES;
 ```
 
-For a full description, please see [copying MariaDB tables](../../../../server-management/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md).
+For a full description, please see [copying MariaDB tables](../../../../server-usage/tables/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md).
 
 ## See Also
 
 * [FLUSH TABLES](flush.md)
-* [Copying Tables Between Different MariaDB Databases and MariaDB Servers](../../../../server-management/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md)
+* [Copying Tables Between Different MariaDB Databases and MariaDB Servers](../../../../server-usage/tables/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md)
 * [Copying Transportable InnoDB Tablespaces](../../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces)
 * [myisampack](../../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.
 * [aria\_pack](../../../../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution

@@ -29,7 +29,7 @@ The `EXPLAIN` statement can be used either as a synonym for[DESCRIBE](../describ
   process the `SELECT`, `UPDATE` or `DELETE`, including information about how tables\
   are joined and in which order. `EXPLAIN EXTENDED` can be\
   used to provide additional information.
-* `EXPLAIN PARTITIONS` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../server-management/partitioning-tables/partition-pruning-and-selection.md).
+* `EXPLAIN PARTITIONS` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md).
 * [ANALYZE statement](analyze-statement.md) performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics.
 * `EXPLAIN` output can be printed in the [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/). See [EXPLAIN in the Slow Query Log](../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
 * `EXPLAIN FOR CONNECTION` is an alias for `SHOW EXPLAIN FOR`.

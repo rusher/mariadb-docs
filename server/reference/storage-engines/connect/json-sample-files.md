@@ -2,7 +2,7 @@
 
 ### Expense.json
 
-```
+```json
 [
   {
     "WHO": "Joe",
@@ -171,7 +171,7 @@ This is an example showing how an OEM table can be implemented. It is out of the
 
 The header File tabfic.h:
 
-```
+```cpp
 // TABFIC.H     Olivier Bertrand    2008-2010
 // External table type to read FIC files
 
@@ -266,7 +266,7 @@ class FICCOL : public DOSCOL {
 
 The source File tabfic.cpp:
 
-```
+```cpp
 /*******************************************************************/
 /*  FIC: OEM table to read FIC files.                              */
 /*******************************************************************/
@@ -524,7 +524,7 @@ To make it, you need to have access to the last MariaDB source code. Then, make 
 
 jsonutil.cpp is not distributed with the source code, you will have to make it from the following:
 
-```
+```cpp
 #include "my_global.h"
 #include "mysqld.h"
 #include "plugin.h"
