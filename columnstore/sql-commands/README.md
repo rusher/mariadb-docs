@@ -1,5 +1,7 @@
+---
+icon: paperclip
+---
 
-# ColumnStore SQL Structure and Commands
+# Reference
 
 SQL syntax supported by MariaDB ColumnStore
-

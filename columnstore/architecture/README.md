@@ -1,3 +1,7 @@
+---
+icon: house-blank
+---
+
 # ColumnStore Architecture
 
 Release notes and other documentation for ColumnStore is also available in the Enterprise docs section of the MariaDB website. For example:
