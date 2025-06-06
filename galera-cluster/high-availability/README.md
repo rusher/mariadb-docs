@@ -1,4 +1,6 @@
-
+---
+icon: bolt
+---
 
 # High Availability
 

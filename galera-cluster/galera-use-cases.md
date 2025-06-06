@@ -1,3 +1,7 @@
+---
+icon: briefcase-arrow-right
+---
+
 # Galera Use Cases
 
 Common use cases for Galera replication include:
