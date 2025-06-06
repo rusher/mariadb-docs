@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP VIEW [IF EXISTS]
     view_name [, view_name] ...
     [RESTRICT | CASCADE]
@@ -27,7 +27,7 @@ The [DROP privilege](../../reference/sql-statements/account-management-sql-state
 
 If a view references another view, it will be possible to drop the referenced view. However, the other view will reference a view which does not exist any more. Thus, querying it will produce an error similar to the following:
 
-```
+```sql
 ERROR 1356 (HY000): View 'db_name.view_name' references invalid table(s) or 
 column(s) or function(s) or definer/invoker of view lack rights to use them
 ```
@@ -44,18 +44,18 @@ Note that it is not necessary to use `DROP VIEW` to replace an existing view, be
 
 ## Examples
 
-```
+```sql
 DROP VIEW v,v2;
 ```
 
 Given views `v` and `v2`, but no view `v3`
 
-```
+```sql
 DROP VIEW v,v2,v3;
 ERROR 1051 (42S02): Unknown table 'v3'
 ```
 
-```
+```sql
 DROP VIEW IF EXISTS v,v2,v3;
 Query OK, 0 rows affected, 1 warning (0.01 sec)
 

@@ -21,7 +21,7 @@ It has the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.VIEWS\G
 *************************** 1. row ***************************
        TABLE_CATALOG: def

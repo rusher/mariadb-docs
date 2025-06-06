@@ -32,14 +32,14 @@ by a user having the [SUPER](../../../reference/sql-statements/account-managemen
 
 `ALTER EVENT` works only with an existing event:
 
-```
+```sql
 ALTER EVENT no_such_event ON SCHEDULE EVERY '2:3' DAY_HOUR;
 ERROR 1539 (HY000): Unknown event 'no_such_event'
 ```
 
 ## Examples
 
-```
+```sql
 ALTER EVENT myevent 
   ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 2 HOUR 
   DO 

@@ -37,7 +37,7 @@ If a warning is issued with the SIGNAL or RESIGNAL statement (that is, an error 
 
 Here's a simple example to demonstrate a trigger in action. Using these two tables as an example:
 
-```
+```sql
 CREATE TABLE animals (id mediumint(9) 
 NOT NULL AUTO_INCREMENT, 
 name char(30) NOT NULL, 
@@ -50,7 +50,7 @@ INSERT INTO animal_count (animals) VALUES(0);
 
 We want to increment a counter each time a new animal is added. Here's what the trigger will look like:
 
-```
+```sql
 CREATE TRIGGER increment_animal 
 AFTER INSERT ON animals 
 FOR EACH ROW 
@@ -71,7 +71,7 @@ The set of statements to run are the statements on the table of the trigger, the
 
 Now, if we insert a record into the `animals` table, the trigger will run, incrementing the animal\_count table;
 
-```
+```sql
 SELECT * FROM animal_count;
 +---------+
 | animals |
@@ -96,7 +96,7 @@ For more details on the syntax, see [CREATE TRIGGER](create-trigger.md).
 
 To drop a trigger, use the [DROP TRIGGER](../../../reference/sql-statements/data-definition/drop/drop-trigger.md) statement. Triggers are also dropped if the table with which they are associated is also dropped.
 
-```
+```sql
 DROP TRIGGER increment_animal;
 ```
 
@@ -112,7 +112,7 @@ The [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-s
 
 Triggers can consist of multiple statements enclosed by a [BEGIN and END](../../programmatic-compound-statements/begin-end.md). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
 
-```
+```sql
 DROP TABLE animals;
 
 UPDATE animal_count SET animals=0;
@@ -161,7 +161,7 @@ If a trigger contains an error and the engine is transactional, or it is a BEFOR
 
 Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../reference/storage-engines/innodb/), a transactional engine, and then again using [MyISAM](../../../reference/storage-engines/myisam-storage-engine/), a non-transactional engine.
 
-```
+```sql
 DROP TABLE animals;
 
 CREATE TABLE animals (id mediumint(9) NOT NULL AUTO_INCREMENT, 
@@ -183,7 +183,7 @@ Empty set (0.00 sec)
 
 And now the identical procedure, but with a MyISAM table.
 
-```
+```sql
 DROP TABLE animals;
 
 CREATE TABLE animals (id mediumint(9) NOT NULL AUTO_INCREMENT, 
@@ -209,7 +209,7 @@ SELECT * FROM animals;
 
 The following example shows how to use a trigger to validate data. The [SIGNAL](../../programmatic-compound-statements/signal.md) statement is used to intentionally produce an error if the email field is not a valid email. As the example shows, in that case the new row is not inserted (because it is a BEFORE trigger).
 
-```
+```sql
 CREATE TABLE user (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	first_name CHAR(20),

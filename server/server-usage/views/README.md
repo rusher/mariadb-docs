@@ -1,5 +1,6 @@
+---
+description: Views are stored queries that act as a virtual table.
+---
 
 # Views
-
-Views are stored queries that act as a virtual table.
 

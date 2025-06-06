@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE] [AGGREGATE] FUNCTION [IF NOT EXISTS] function_name
     RETURNS {STRING|INTEGER|REAL|DECIMAL}
     SONAME shared_library_name
@@ -55,7 +55,7 @@ Aggregate UDF functions can be used as [window functions](../../reference/sql-fu
 
 If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
-```
+```sql
 DROP FUNCTION IF EXISTS function_name;
 CREATE FUNCTION name ...;
 ```
@@ -72,14 +72,14 @@ this process, you may crash the server.
 
 ### Examples
 
-```
+```sql
 CREATE FUNCTION jsoncontains_path RETURNS integer SONAME 'ha_connect.so';
 Query OK, 0 rows affected (0.00 sec)
 ```
 
 OR REPLACE and IF NOT EXISTS:
 
-```
+```sql
 CREATE FUNCTION jsoncontains_path RETURNS integer SONAME 'ha_connect.so';
 ERROR 1125 (HY000): Function 'jsoncontains_path' already exists
 

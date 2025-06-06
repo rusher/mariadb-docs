@@ -12,7 +12,7 @@ Events are created with the [CREATE EVENT](../../../reference/sql-statements/dat
 
 ### Example
 
-```
+```sql
 CREATE EVENT test_event 
   ON SCHEDULE EVERY 1 MINUTE DO 
    UPDATE test.t1 SET a = a + 1;
@@ -24,7 +24,7 @@ Events are only executed if the event scheduler is running. This is determined b
 
 You can check if the Event scheduler is running with:
 
-```
+```sql
 SHOW PROCESSLIST;
 +----+-----------------+-----------+------+---------+------+-----------------------------+------------------+----------+
 | Id | User            | Host      | db   | Command | Time | State                       | Info             | Progress |
@@ -37,7 +37,7 @@ SHOW PROCESSLIST;
 
 If the event scheduler is not running and `event_scheduler` has been set to `OFF`, use:
 
-```
+```sql
 SET GLOBAL event_scheduler = ON;
 ```
 
@@ -53,7 +53,7 @@ If an event is currently being executed, it can be seen by querying the [Informa
 
 ### Example
 
-```
+```sql
 SHOW EVENTS\G;
 *************************** 1. row ***************************
                   Db: test
@@ -91,7 +91,7 @@ An event can be changed with the [ALTER EVENT](alter-event.md) statement.
 
 ### Example
 
-```
+```sql
 ALTER EVENT test_event ON SCHEDULE EVERY '2:3' DAY_HOUR;
 ```
 
@@ -101,7 +101,7 @@ Events are dropped with the [DROP EVENT](../../../reference/sql-statements/data-
 
 ### Example
 
-```
+```sql
 DROP EVENT test_event;
 Query OK, 0 rows affected (0.00 sec)
 ```

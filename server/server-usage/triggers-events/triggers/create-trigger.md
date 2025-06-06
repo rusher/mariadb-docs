@@ -73,7 +73,7 @@ This is the same syntax used by MySQL 5.7, although MySQL 5.7 does not have mult
 `FOLLOWS` and `PRECEDES` are not stored in the trigger definition. However the trigger order is guaranteed to not change over time. [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) and other backup methods will not change trigger order.\
 You can verify the trigger order from the `ACTION_ORDER` column in [INFORMATION\_SCHEMA.TRIGGERS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
 
-```
+```sql
 SELECT trigger_name, action_order FROM information_schema.triggers 
   WHERE event_object_table='t1';
 ```
@@ -86,7 +86,7 @@ SELECT trigger_name, action_order FROM information_schema.triggers
 
 ## Examples
 
-```
+```sql
 CREATE DEFINER=`root`@`localhost` TRIGGER increment_animal
   AFTER INSERT ON animals FOR EACH ROW 
    UPDATE animal_count SET animal_count.animals = animal_count.animals+1;
@@ -94,7 +94,7 @@ CREATE DEFINER=`root`@`localhost` TRIGGER increment_animal
 
 OR REPLACE and IF NOT EXISTS
 
-```
+```sql
 CREATE DEFINER=`root`@`localhost` TRIGGER increment_animal
   AFTER INSERT ON animals FOR EACH ROW
     UPDATE animal_count SET animal_count.animals = animal_count.animals+1;

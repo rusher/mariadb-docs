@@ -34,20 +34,20 @@ A view cannot be of type ALGORITHM=MERGE if it uses any of the following:
 
 Here's an example of how MariaDB handles a view with a MERGE algorithm. Take a view defined as follows:
 
-```
+```sql
 CREATE ALGORITHM = MERGE VIEW view_name (view_field1, view_field2) AS
 SELECT field1, field2 FROM table_name WHERE field3 > '2013-06-01';
 ```
 
 Now, if we run a query on this view, as follows:
 
-```
+```sql
 SELECT * FROM view_name;
 ```
 
 to execute the view `view_name` becomes the underlying table, `table_name`, the `*` becomes the fields `view_field1` and `view_field2`, corresponding to `field1` and `field2` and the WHERE clause, `WHERE field3 > 100` is added, so the actual query executed is:
 
-```
+```sql
 SELECT field1, field2 FROM table_name WHERE field3 > '2013-06-01'
 ```
 
@@ -55,7 +55,7 @@ SELECT field1, field2 FROM table_name WHERE field3 > '2013-06-01'
 
 Given the same view as above, if we run the query:
 
-```
+```sql
 SELECT * FROM view_name WHERE view_field < 8000;
 ```
 
@@ -63,7 +63,7 @@ everything occurs as it does in the previous example, but `view_field < 8000` ta
 
 So the resulting query is:
 
-```
+```sql
 SELECT field1, field2 FROM table_name WHERE (field3 > '2013-06-01') AND (field1 < 8000);
 ```
 

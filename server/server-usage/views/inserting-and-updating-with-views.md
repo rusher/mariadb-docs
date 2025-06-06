@@ -47,7 +47,7 @@ There are two keywords that can be applied. WITH LOCAL CHECK OPTION restricts th
 
 If a row is rejected because of the CHECK OPTION, an error similar to the following is produced:
 
-```
+```sql
 ERROR 1369 (HY000): CHECK OPTION failed 'db_name.view_name'
 ```
 
@@ -55,7 +55,7 @@ A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION
 
 ## Examples
 
-```
+```sql
 CREATE TABLE table1 (x INT);
 
 CREATE VIEW view1 AS SELECT x, 99 AS y FROM table1;
@@ -63,7 +63,7 @@ CREATE VIEW view1 AS SELECT x, 99 AS y FROM table1;
 
 Checking whether the view is updateable:
 
-```
+```sql
 SELECT TABLE_NAME,IS_UPDATABLE FROM INFORMATION_SCHEMA.VIEWS;
 +------------+--------------+
 | TABLE_NAME | IS_UPDATABLE |
@@ -74,20 +74,20 @@ SELECT TABLE_NAME,IS_UPDATABLE FROM INFORMATION_SCHEMA.VIEWS;
 
 This query works, as the view is updateable:
 
-```
+```sql
 UPDATE view1 SET x = 5;
 ```
 
 This query fails, since column `y` is a literal.
 
-```
+```sql
 UPDATE view1 SET y = 5;
 ERROR 1348 (HY000): Column 'y' is not updatable
 ```
 
 Here are three views to demonstrate the WITH CHECK OPTION clause.
 
-```
+```sql
 CREATE VIEW view_check1 AS SELECT * FROM table1 WHERE x < 100 WITH CHECK OPTION;
 
 CREATE VIEW view_check2 AS SELECT * FROM view_check1 WHERE x > 10 WITH LOCAL CHECK OPTION;
@@ -97,13 +97,13 @@ CREATE VIEW view_check3 AS SELECT * FROM view_check1 WHERE x > 10 WITH CASCADED 
 
 This insert succeeds, as `view_check2` only checks the insert against `view_check2`, and the WHERE clause evaluates to true (`150` is `>10`).
 
-```
+```sql
 INSERT INTO view_check2 VALUES (150);
 ```
 
 This insert fails, as `view_check3` checks the insert against both `view_check3` and the underlying views. The WHERE clause for `view_check1` evaluates as false (`150` is `>10`, but `150` is not `<100`), so the insert fails.
 
-```
+```sql
 INSERT INTO view_check3 VALUES (150);
 ERROR 1369 (HY000): CHECK OPTION failed 'test.view_check3'
 ```

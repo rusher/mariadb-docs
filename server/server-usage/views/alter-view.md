@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ALTER
     [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
     [DEFINER = { user | CURRENT_USER }]
@@ -22,7 +22,7 @@ privilege for each column referred to in the `SELECT` statement. `ALTER VIEW` is
 
 ## Example
 
-```
+```sql
 ALTER VIEW v AS SELECT a, a*3 AS a2 FROM t;
 ```
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP FUNCTION [IF EXISTS] function_name
 ```
 
@@ -20,13 +20,13 @@ To upgrade the UDF's shared library, first run a [DROP FUNCTION](../stored-routi
 
 ## Examples
 
-```
+```sql
 DROP FUNCTION jsoncontains_path;
 ```
 
 IF EXISTS:
 
-```
+```sql
 DROP FUNCTION jsoncontains_path;
 ERROR 1305 (42000): FUNCTION test.jsoncontains_path does not exist
 

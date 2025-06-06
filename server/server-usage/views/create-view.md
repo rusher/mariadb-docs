@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE
     [OR REPLACE]
     [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
@@ -53,7 +53,7 @@ A view belongs to a database. By default, a new view is created in the\
 default database. To create the view explicitly in a given database,\
 specify the name as db\_name.view\_name when you create it.
 
-```
+```sql
 CREATE VIEW test.v AS SELECT * FROM t;
 ```
 
@@ -84,7 +84,7 @@ subqueries. The SELECT need not even refer to any tables. The\
 following example defines a view that selects two columns from another\
 table, as well as an expression calculated from those columns:
 
-```
+```sql
 CREATE TABLE t (qty INT, price INT);
 
 INSERT INTO t VALUES(3, 50);
@@ -129,7 +129,7 @@ If you create a view and then change the query processing environment\
 by changing system variables, that may affect the results that you get\
 from the view:
 
-```
+```sql
 CREATE VIEW v (mycol) AS SELECT 'abc';
 
 SET sql_mode = '';
@@ -195,7 +195,7 @@ Example: A view might depend on a stored function, and that function\
 might invoke other stored routines. For example, the following view\
 invokes a stored function f():
 
-```
+```sql
 CREATE VIEW v AS SELECT * FROM t WHERE t.id = f(t.name);
 
 Suppose that f() contains a statement such as this:
@@ -265,7 +265,7 @@ When the IF NOT EXISTS clause is used, MariaDB will return a warning instead of 
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t (a INT, b INT) ENGINE = InnoDB;
 
 INSERT INTO t VALUES (1,1), (2,2), (3,3);
@@ -284,7 +284,7 @@ SELECT * FROM v;
 
 OR REPLACE and IF NOT EXISTS:
 
-```
+```sql
 CREATE VIEW v AS SELECT a, a*2 AS a2 FROM t;
 ERROR 1050 (42S01): Table 'v' already exists
 

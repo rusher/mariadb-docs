@@ -6,7 +6,7 @@ For further reading, please refer to the MySQL manual: [How MySQL Opens and Clos
 
 Examples of use cases:
 
-```
+```sql
 MariaDB [(none)]> SHOW GLOBAL STATUS LIKE 'opened_tables';
 +---------------+--------+
 | Variable_name | Value  |
