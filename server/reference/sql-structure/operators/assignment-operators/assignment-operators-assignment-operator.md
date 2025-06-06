@@ -12,7 +12,7 @@ The equal sign is used as both an assignment operator in certain contexts, and a
 
 Since its use can be ambiguous, unlike the [:= assignment operator](assignment-operator.md), the _`=`_ assignment operator cannot be used in all contexts, and is only valid as part of a [SET](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement, or the SET clause of an [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) statement
 
-This operator works with both [user-defined variables](../../sql-language-structure/user-defined-variables.md) and [local variables](../../../../server-usage/programmatic-compound-statements/declare-variable.md).
+This operator works with both [user-defined variables](../../sql-language-structure/user-defined-variables.md) and [local variables](../../../sql-statements/programmatic-compound-statements/declare-variable.md).
 
 ## Examples
 

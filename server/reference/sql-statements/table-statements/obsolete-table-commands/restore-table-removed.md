@@ -19,7 +19,7 @@ that was made with `[BACKUP TABLE](backup-table-removed.md)`. The\
 directory should be specified as a full path name.
 
 Existing tables are not overwritten; if you try to restore over an existing\
-table, an error occurs. Just as for `BACKUP TABLE`,`RESTORE TABLE` works only for [MyISAM](../../../storage-engines/myisam-storage-engine/) tables.\
+table, an error occurs. Just as for `BACKUP TABLE`,`RESTORE TABLE` works only for [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) tables.\
 Restored tables are not replicated from master to slave.
 
 The backup for each table consists of its .frm format file and .MYD\

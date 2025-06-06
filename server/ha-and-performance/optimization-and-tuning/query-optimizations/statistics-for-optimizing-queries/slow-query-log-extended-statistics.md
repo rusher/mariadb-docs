@@ -101,7 +101,7 @@ Note that in any case, only queries that takes longer than **log\_slow\_time** o
 
 **MariaDB starting with** [**10.6.16**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-16-release-notes)
 
-If one enables the warning option for `log_slow_verbosity`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md).`log_slow_max_warnings` limits the number of warnings printed to the slow query log per query. The default value is 10.
+If one enables the warning option for `log_slow_verbosity`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](../../../../server-usage/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md).`log_slow_max_warnings` limits the number of warnings printed to the slow query log per query. The default value is 10.
 
 ## Credits
 
@@ -110,6 +110,6 @@ patch from [Percona](https://www.percona.com/).
 
 ## See also
 
-* [Notes when an index cannot be used because of type conversions](../../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)
+* [Notes when an index cannot be used because of type conversions](../../../../server-usage/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)
 
 CC BY-SA / Gnu FDL

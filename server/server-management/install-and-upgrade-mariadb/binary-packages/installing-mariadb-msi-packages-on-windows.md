@@ -60,7 +60,7 @@ not recommended to change this setting.
   networking" checkbox is deselected, the database will use named pipes for\
   communication.
 * InnoDB engine settings
-* Defines the [InnoDB buffer pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md) size, and the InnoDB [page size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size). The default buffer pool size is 12.5% of RAM, and depending on your requirements you can give InnoDB more (up to 70-80% RAM). 32 bit versions of MariaDB have restrictions on maximum buffer pool size, which is approximately 1GB, due to virtual address space limitations for 32bit processes. A 16k page size is suitable for most situations. See the [innodb\_page\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) system variable for details on other settings.
+* Defines the [InnoDB buffer pool](../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) size, and the InnoDB [page size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size). The default buffer pool size is 12.5% of RAM, and depending on your requirements you can give InnoDB more (up to 70-80% RAM). 32 bit versions of MariaDB have restrictions on maximum buffer pool size, which is approximately 1GB, due to virtual address space limitations for 32bit processes. A 16k page size is suitable for most situations. See the [innodb\_page\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) system variable for details on other settings.
 
 ### Ready to Install
 

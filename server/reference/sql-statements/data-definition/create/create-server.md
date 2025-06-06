@@ -30,7 +30,7 @@ option: >= MariaDB 11.7
 
 ## Description
 
-This statement creates the definition of a server for use with the [Spider](../../../storage-engines/spider/), [Connect](../../../storage-engines/connect/),[FEDERATED](../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../storage-engines/federatedx-storage-engine/) storage\
+This statement creates the definition of a server for use with the [Spider](../../../../server-usage/storage-engines/spider/), [Connect](../../../../server-usage/storage-engines/connect/),[FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/) storage\
 engine. The CREATE SERVER statement creates a new row within the[servers](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) table within the mysql database. This statement\
 requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
 
@@ -55,7 +55,7 @@ is 0.
 the ownership or operation of the server connection that is created.
 
 The CREATE SERVER statement creates an entry in the[mysql.servers](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) table that can later be used with the\
-CREATE TABLE statement when creating a [Spider](../../../storage-engines/spider/), [Connect](../../../storage-engines/connect/), [FederatedX](../../../storage-engines/federatedx-storage-engine/) or[FEDERATED](../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) table. The options that you specify will\
+CREATE TABLE statement when creating a [Spider](../../../../server-usage/storage-engines/spider/), [Connect](../../../../server-usage/storage-engines/connect/), [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/) or[FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md) table. The options that you specify will\
 be used to populate the columns in the mysql.servers table. The table columns\
 are Server\_name, Host, Db, Username, Password, Port and Socket.
 
@@ -122,8 +122,8 @@ SHOW WARNINGS;
 * [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md)
 * [ALTER SERVER](../alter/alter-server.md)
 * [DROP SERVER](../drop/drop-server.md)
-* [Spider Storage Engine](../../../storage-engines/spider/)
-* [Connect Storage Engine](../../../storage-engines/connect/)
+* [Spider Storage Engine](../../../../server-usage/storage-engines/spider/)
+* [Connect Storage Engine](../../../../server-usage/storage-engines/connect/)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 * [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md)
 

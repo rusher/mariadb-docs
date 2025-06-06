@@ -39,9 +39,9 @@ The `LIMIT` clause has the same syntax as for the`[SELECT statement](../../data-
 
 If the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) server variable is set to 1, Notes are included in the output of `SHOW WARNINGS`; if it is set to 0, this statement will not show (or count) Notes.
 
-The results of `SHOW WARNINGS` and `SHOW COUNT(*) WARNINGS` are directly sent to the client. If you need to access those information in a stored program, you can use the [GET DIAGNOSTICS](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) statement instead.
+The results of `SHOW WARNINGS` and `SHOW COUNT(*) WARNINGS` are directly sent to the client. If you need to access those information in a stored program, you can use the [GET DIAGNOSTICS](../../programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) statement instead.
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
+For a list of MariaDB error codes, see [MariaDB Error Codes](../../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
 The [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client also has a number of options related to warnings. The `\W` command will show warnings after every statement, while `\w` will disable this. Starting the client with the `--show-warnings` option will show warnings after every statement.
 

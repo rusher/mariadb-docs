@@ -1,6 +1,6 @@
 # Information Schema ROCKSDB\_TRX Table
 
-The [Information Schema](../../) `ROCKSDB_TRX` table is included as part of the [MyRocks](../../../../../../storage-engines/myrocks/) storage engine.
+The [Information Schema](../../) `ROCKSDB_TRX` table is included as part of the [MyRocks](../../../../../../../server-usage/storage-engines/myrocks/) storage engine.
 
 The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 

@@ -1,5 +1,4 @@
 ---
-icon: earth-africa
 layout:
   title:
     visible: true

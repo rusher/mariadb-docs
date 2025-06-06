@@ -1,6 +1,6 @@
 # Information Schema INNODB\_BUFFER\_PAGE Table
 
-The [Information Schema](../../) `INNODB_BUFFER_PAGE` table contains information about pages in the [buffer pool](../../../../../../storage-engines/innodb/innodb-buffer-pool.md).
+The [Information Schema](../../) `INNODB_BUFFER_PAGE` table contains information about pages in the [buffer pool](../../../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md).
 
 Querying this table can have a noticeable performance impact on a production server.
 
@@ -93,7 +93,7 @@ OLDEST_MODIFICATION: 0
 
 ## See Also
 
-* [InnoDB Buffer Pool](../../../../../../storage-engines/innodb/innodb-buffer-pool.md)
+* [InnoDB Buffer Pool](../../../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md)
 * [innodb\_buffer\_stats\_by\_schema and x$innodb\_buffer\_stats\_by\_schema Sys Schema Views](https://mariadb.com/kb/en/sys-schema-views-innodb_buffer_stats_by_schema-and-xinnodb_buffer_stats_by_/)
 
 CC BY-SA / Gnu FDL

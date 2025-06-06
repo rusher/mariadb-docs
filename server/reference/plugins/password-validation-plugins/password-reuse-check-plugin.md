@@ -2,7 +2,7 @@
 
 **MariaDB starting with** [**10.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 
-`password_reuse_check` is a [password validation](../../mariadb-internals/password-validation.md) plugin introduced in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+`password_reuse_check` is a [password validation](../../../server-usage/mariadb-internals/password-validation.md) plugin introduced in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
 
 ## Description
 
@@ -70,7 +70,7 @@ The bump to version 2.0 required the change of the stored format to mitigate an 
 
 ## See Also
 
-* [Password Validation](../../mariadb-internals/password-validation.md)
+* [Password Validation](../../../server-usage/mariadb-internals/password-validation.md)
 * [10.7 preview feature: Password Reuse Check plugin](https://mariadb.org/10-7-preview-feature-password-reuse-check-plugin/) (mariadb.org blog post)
 
 CC BY-SA / Gnu FDL

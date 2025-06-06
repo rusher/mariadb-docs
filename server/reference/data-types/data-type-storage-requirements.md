@@ -107,9 +107,9 @@ Assuming a single-byte character-set:
 
 ## NULLs
 
-For the InnoDB [COMPACT](../storage-engines/innodb/innodb-row-formats/innodb-compact-row-format.md), [DYNAMIC](../storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format.md) and [COMPRESSED](../storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md) row formats, a number of bytes will be allocated in the record header for the nullable fields. If there are between 1 and 8 nullable fields, 1 such byte will be allocated. In the record payload area, no space will be reserved for values that are NULL.
+For the InnoDB [COMPACT](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-compact-row-format.md), [DYNAMIC](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-dynamic-row-format.md) and [COMPRESSED](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md) row formats, a number of bytes will be allocated in the record header for the nullable fields. If there are between 1 and 8 nullable fields, 1 such byte will be allocated. In the record payload area, no space will be reserved for values that are NULL.
 
-For the [InnoDB REDUNDANT row format](../storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format.md), the overhead is 1 bit in the record header (as a part of the 1-byte or 2-byte "end of field" pointer). In that format, a NULL fixed-length field will consume the same amount of space as any NOT NULL value in the record payload area. The motivation is that it is possible to update in place between NOT NULL and NULL values.
+For the [InnoDB REDUNDANT row format](../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-redundant-row-format.md), the overhead is 1 bit in the record header (as a part of the 1-byte or 2-byte "end of field" pointer). In that format, a NULL fixed-length field will consume the same amount of space as any NOT NULL value in the record payload area. The motivation is that it is possible to update in place between NOT NULL and NULL values.
 
 In other formats, NULL values usually require 1 bit in the data file, 1 byte in the index file.
 

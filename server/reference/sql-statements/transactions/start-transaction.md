@@ -19,7 +19,7 @@ transaction_property:
 The `START TRANSACTION` or `BEGIN` statement\
 begins a new transaction. [COMMIT](commit.md) commits the current\
 transaction, making its changes permanent. [ROLLBACK](rollback.md) rolls\
-back the current transaction, canceling its changes. The [SET](../../../server-usage/programmatic-compound-statements/set-variable.md)[autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) statement disables or enables the default autocommit mode for the current session.
+back the current transaction, canceling its changes. The [SET](../programmatic-compound-statements/set-variable.md)[autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) statement disables or enables the default autocommit mode for the current session.
 
 START TRANSACTION and SET autocommit = 1 implicitly commit the current transaction, if any.
 
@@ -59,7 +59,7 @@ DDL statements (`CREATE`, `ALTER`, `DROP`) and administrative statements (`FLUSH
 
 Transactions cannot be used in Stored Functions or Triggers. In Stored Procedures and Events BEGIN is not allowed, so you should use START TRANSACTION instead.
 
-A transaction acquires a [metadata lock](metadata-locking.md) on every table it accesses to prevent other connections from altering their structure. The lock is released at the end of the transaction. This happens even with non-transactional storage engines (like [MEMORY](../../storage-engines/memory-storage-engine.md) or [CONNECT](../../storage-engines/connect/)), so it makes sense to use transactions with non-transactional tables.
+A transaction acquires a [metadata lock](metadata-locking.md) on every table it accesses to prevent other connections from altering their structure. The lock is released at the end of the transaction. This happens even with non-transactional storage engines (like [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) or [CONNECT](../../../server-usage/storage-engines/connect/)), so it makes sense to use transactions with non-transactional tables.
 
 ### in\_transaction
 
@@ -67,7 +67,7 @@ The [in\_transaction](../../../ha-and-performance/optimization-and-tuning/system
 
 ### WITH CONSISTENT SNAPSHOT
 
-The `WITH CONSISTENT SNAPSHOT` option starts a consistent read for storage engines such as [InnoDB](../../storage-engines/innodb/) that can do so, the same as if a START TRANSACTION followed by a SELECT from any InnoDB table was issued.
+The `WITH CONSISTENT SNAPSHOT` option starts a consistent read for storage engines such as [InnoDB](../../../server-usage/storage-engines/innodb/) that can do so, the same as if a START TRANSACTION followed by a SELECT from any InnoDB table was issued.
 
 See [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md).
 
@@ -83,6 +83,6 @@ COMMIT;
 ## See Also
 
 * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
-* [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
+* [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 
 GPLv2 fill\_help\_tables.sql

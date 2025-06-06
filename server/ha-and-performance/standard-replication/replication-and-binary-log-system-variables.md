@@ -85,7 +85,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
   The default value of 0 means that no delay is introduced.\
   Setting this value can reduce I/O on the binary log and give an increased opportunity for parallel apply on the replica when [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication) is enabled, but too high a value will decrease the transaction throughput. By monitoring the status variable [binlog\_group\_commit\_trigger\_count](replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_count) (>=[MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes)) it is possible to see how often this is occurring.
 * Starting with [MariaDB 10.0.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes) and [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes):\
-  If the server detects that one of the committing transactions T1 holds an[InnoDB](../../reference/storage-engines/innodb/) row lock that another transaction T2 is waiting for, then the\
+  If the server detects that one of the committing transactions T1 holds an[InnoDB](../../server-usage/storage-engines/innodb/) row lock that another transaction T2 is waiting for, then the\
   commit will complete immediately without further delay. This helps avoid\
   losing throughput when many transactions need conflicting locks. This often\
   makes it safe to use this option without losing\
@@ -906,7 +906,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `slave_skip_errors`
 
-* Description: When an error occurs on the replica, [replication](broken-reference) usually halts. This option permits a list of [error codes](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave\_skipped\_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
+* Description: When an error occurs on the replica, [replication](broken-reference) usually halts. This option permits a list of [error codes](../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave\_skipped\_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
 * Commandline: `--slave-skip-errors=[error_code1,error_code2,...|all|ddl_exist_errors]`
 * Scope: Global
 * Dynamic: No
@@ -925,7 +925,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `slave_transaction_retries`
 
-* Description: Number of times a [replication](broken-reference) replica retries to execute an SQL thread after it fails due to InnDB deadlock or by exceeding the transaction execution time limit. If after this number of tries the SQL thread has still failed to execute, the replica will stop with an error. See also the [innodb\_lock\_wait\_timeout](../../reference/storage-engines/innodb/innodb-system-variables.md) system variable.
+* Description: Number of times a [replication](broken-reference) replica retries to execute an SQL thread after it fails due to InnDB deadlock or by exceeding the transaction execution time limit. If after this number of tries the SQL thread has still failed to execute, the replica will stop with an error. See also the [innodb\_lock\_wait\_timeout](../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable.
 * Commandline: `--slave-transaction-retries=#`
 * Scope: Global
 * Dynamic: Yes
@@ -936,7 +936,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `slave_transaction_retry_errors`
 
-* Description: When an error occurs during a transaction on the replica, [replication](broken-reference) usually halts. By default, transactions that caused a deadlock or elapsed lock wait timeout will be retried. One can add other errors to the the list of errors that should be retried by adding a comma-separated list of [error numbers](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) to this variable. This is particularly useful in some [Spider](../../reference/storage-engines/spider/) setups. Some recommended errors to retry for Spider are 1020, 1158, 1159, 1160, 1161, 1429, 2013, 12701 (these are in the default value in recent versions).
+* Description: When an error occurs during a transaction on the replica, [replication](broken-reference) usually halts. By default, transactions that caused a deadlock or elapsed lock wait timeout will be retried. One can add other errors to the the list of errors that should be retried by adding a comma-separated list of [error numbers](../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) to this variable. This is particularly useful in some [Spider](../../server-usage/storage-engines/spider/) setups. Some recommended errors to retry for Spider are 1020, 1158, 1159, 1160, 1161, 1429, 2013, 12701 (these are in the default value in recent versions).
 * Commandline: `--slave-transaction_retry-errors=[error_code1,error_code2,...]`
 * Scope: Global
 * Dynamic: No

@@ -2,7 +2,7 @@
 
 The `SQL_ERROR_LOG` plugin collects errors sent to clients in a log file defined by [sql\_error\_log\_filename](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename), so that they can later be analyzed. The log file can be rotated if [sql\_error\_log\_rotate](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate) is set.
 
-Errors are logged as they happen and an error will be logged even if it was handled by a [condition handler](../../server-usage/programmatic-compound-statements/declare-handler.md) and was never technically _sent_ to the client.
+Errors are logged as they happen and an error will be logged even if it was handled by a [condition handler](../../reference/sql-statements/programmatic-compound-statements/declare-handler.md) and was never technically _sent_ to the client.
 
 From [MariaDB 10.11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-5-release-notes) warnings can also be logged if [sql\_error\_log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings) is enabled.
 

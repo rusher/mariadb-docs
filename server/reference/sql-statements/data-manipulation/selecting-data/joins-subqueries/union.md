@@ -52,7 +52,7 @@ ERROR 1234 (42000): Incorrect usage/placement of 'HIGH_PRIORITY'
 
 Individual SELECTs cannot be written [INTO DUMPFILE](../select-into-dumpfile.md) or [INTO OUTFILE](../select-into-outfile.md). If the last SELECT statement specifies INTO DUMPFILE or INTO OUTFILE, the entire result of the UNION will be written. Placing the clause after any other SELECT will result in a syntax error.
 
-If the result is a single row, [SELECT ... INTO @var\_name](../../../../../server-usage/programmatic-compound-statements/selectinto.md) can also be used.
+If the result is a single row, [SELECT ... INTO @var\_name](../../../programmatic-compound-statements/selectinto.md) can also be used.
 
 ### Parentheses
 

@@ -205,7 +205,7 @@ START SLAVE IO_THREAD;
 
 The most important aspects to tune are the wait point and the primary timeout.
 
-When the binary log is enabled, transactions must be committed both in the [storage engine](understanding-mariadb-architecture.md#storage-engines) (usually [InnoDB](../../../../reference/storage-engines/innodb/)) and in the [binary log](understanding-mariadb-architecture.md#the-binary-log). Semi-synchronous replication requires that the transaction is also acknowledged by at least one replica before the primary can report success to the client.
+When the binary log is enabled, transactions must be committed both in the [storage engine](understanding-mariadb-architecture.md#storage-engines) (usually [InnoDB](../../../../server-usage/storage-engines/innodb/)) and in the [binary log](understanding-mariadb-architecture.md#the-binary-log). Semi-synchronous replication requires that the transaction is also acknowledged by at least one replica before the primary can report success to the client.
 
 The wait point determines at which point the primary must stop and wait for a confirmation from a replica. This is an important decision from disaster recovery standpoint, in case the primary crashes when a transaction is not fully committed. The [rpl\_semi\_sync\_master\_wait\_point](../../../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point) is used to set the wait point, Its allowed values are:
 
@@ -276,7 +276,7 @@ For other required settings, see [Mandatory Options](https://app.gitbook.com/s/3
 
 Galera is not suitable for all databases and workloads.
 
-* Galera only replicates [InnoDB](../../../../reference/storage-engines/innodb/) tables. Other storage engines should not be used.
+* Galera only replicates [InnoDB](../../../../server-usage/storage-engines/innodb/) tables. Other storage engines should not be used.
 * For performance reasons, it is highly desirable that all tables have a primary key.
 * Long transactions will damage performance.
 * Some applications use an integer [AUTO\_INCREMENT](../../../../reference/data-types/auto_increment.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `AUTO_INCREMENT` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) columns for chronological order instead.

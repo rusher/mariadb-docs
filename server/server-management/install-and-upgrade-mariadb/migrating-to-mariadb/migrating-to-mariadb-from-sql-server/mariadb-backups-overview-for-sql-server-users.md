@@ -33,7 +33,7 @@ Since is it a 3rd party tool, it could be incompatible with some present or futu
 
 ## Hot Backups (mariabackup)
 
-Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../reference/storage-engines/myrocks/) tables and non-transactional storage engines.
+Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../server-usage/storage-engines/myrocks/) tables and non-transactional storage engines.
 
 ## Cold Backups and Snapshots
 
@@ -86,11 +86,11 @@ Mariabackup can run on both Linux and Windows systems.
 
 It is entirely possible to restore a single table from a physical backup, or to copy the table to another server.
 
-With the [MyISAM](../../../../reference/storage-engines/myisam-storage-engine/) storage engine it was very easy to move tables between different servers, as long as the MySQL or MariaDB version was the same.
+With the [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) storage engine it was very easy to move tables between different servers, as long as the MySQL or MariaDB version was the same.
 
-[InnoDB](../../../../reference/storage-engines/innodb/) is nowadays the default storage engine, and it is more complex, as it supports transactions for example. It still supports restoring a table from a physical file, this feature is called _transportable tablespaces_. There is a particular procedure to follow, and some limitations. This is basically the MariaDB equivalent of detaching and re-attaching tables in SQL Server.
+[InnoDB](../../../../server-usage/storage-engines/innodb/) is nowadays the default storage engine, and it is more complex, as it supports transactions for example. It still supports restoring a table from a physical file, this feature is called _transportable tablespaces_. There is a particular procedure to follow, and some limitations. This is basically the MariaDB equivalent of detaching and re-attaching tables in SQL Server.
 
-For more information, see [InnoDB File-Per-Table Tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
+For more information, see [InnoDB File-Per-Table Tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
 
 By default. all table files are located in the _data directory_, which is defined by the system variable [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir). There may be exceptions, because a table's files can be located elsewhere using the [DATA DIRECTORY and INDEX DIRECTORY](../../../../reference/sql-statements/data-definition/create/create-table.md#data-directoryindex-directory) options in `CREATE TABLE`.
 

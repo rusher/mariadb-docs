@@ -12,7 +12,7 @@ See [What's New in MariaDB Enterprise Server 11.8](https://app.gitbook.com/s/aEn
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup before upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-management/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
 
 1\. Take a full backup. On MariaDB Enterprise Server 11.8 and later:
 
@@ -38,7 +38,7 @@ Confirm successful completion of the prepare operation.
 
 ## Audit Plugin Considerations <a href="#audit-plugin-considerations" id="audit-plugin-considerations"></a>
 
-If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit.md) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
+If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin/) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the [MariaDB Enterprise Audit Plugin](../../../../reference/plugins/mariadb-enterprise-audit.md) that is present in MariaDB Enterprise Server 10.4 or later. It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
 
 ```sql
 UNINSTALL SONAME 'server_audit';
@@ -54,7 +54,7 @@ When upgrading to a new major release of MariaDB Enterprise Server, it is necess
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1\. Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
+1\. Set the [innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
 
 ```sql
 SET GLOBAL innodb_fast_shutdown = 1;
@@ -146,7 +146,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 
 ### Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux) <a href="#install-via-yum-rhel-almalinux-centos-rocky-linux" id="install-via-yum-rhel-almalinux-centos-rocky-linux"></a>
 
-1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token atand substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
 2\. Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.8, 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
@@ -186,7 +186,7 @@ Installation of additional packages may be required for some plugins.
 
 ### Install via APT (Debian, Ubuntu) <a href="#install-via-apt-debian-ubuntu" id="install-via-apt-debian-ubuntu"></a>
 
-1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token atand substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
 2\. Configure the APT package repository. Installable versions of MariaDB Enterprise Server are `11.8 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
@@ -228,7 +228,7 @@ $ sudo apt install mariadb-server mariadb-backup
 
 ### Install via ZYpp (SLES) <a href="#install-via-zypp-sles" id="install-via-zypp-sles"></a>
 
-1\. Retrieve your Customer Download Token at [](https://customers.mariadb.com/downloads/token) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
+1\. Retrieve your Customer Download Token atand substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 
 2\. Configure the ZYpp package repository. Installable versions of MariaDB Enterprise Server are `11.8, 11.4, 10.6, 10.5, 10.4, and 10.3.` Pass the version to install using the `--mariadb-server-version` flag to `mariadb_es_repo_setup`. The following directions reference 11.8.
 
@@ -362,4 +362,3 @@ SELECT VERSION();
 | 11.8.2-0-MariaDB-Enterprise |
 +-----------------------------+
 ```
-

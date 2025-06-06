@@ -56,7 +56,7 @@ The instructions below show how to perform a backup using [MariaDB Backup](../ba
 
 Before the new version can be installed, we first need to stop the current MariaDB Server process.
 
-1.  Set the [innodb\_fast\_shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to `1`:
+1.  Set the [innodb\_fast\_shutdown](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to `1`:
 
     ```sql
     SET GLOBAL innodb_fast_shutdown = 1;
@@ -82,7 +82,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 
 {% tabs %}
 {% tab title="Install via YUM" %}
-#### Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux)
+**Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux)**
 
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://mariadb.com/docs/server/ref/mariadb_es_repo_setup/). The following directions reference `10.6`.
@@ -115,11 +115,10 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```bash
     $ sudo yum update "MariaDB-*" "galera*"
     ```
-
 {% endtab %}
 
 {% tab title="Install via APT" %}
-#### Install via APT (Debian, Ubuntu)
+**Install via APT (Debian, Ubuntu)**
 
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the APT package repository.
@@ -158,11 +157,10 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
     ```
     $ sudo apt install --only-upgrade "mariadb-*" "galera*"
     ```
-
 {% endtab %}
 
 {% tab title="Install via ZYpp" %}
-#### Install via ZYpp (SLES)
+**Install via ZYpp (SLES)**
 
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the ZYpp package repository.
@@ -259,7 +257,7 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
 1.  Connect to the server using MariaDB Client using the `root@localhost` user account.
 
-    MariaDB Client is called [mariadb](../../clients-and-utilities/mariadb-client) (ES10.4 and later) or `mysql` (ES10.3, ES10.2):
+    MariaDB Client is called [mariadb](../../clients-and-utilities/mariadb-client/) (ES10.4 and later) or `mysql` (ES10.3, ES10.2):
 
     ```bash
     $ sudo mariadb

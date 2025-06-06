@@ -222,7 +222,7 @@ RENAME TABLE client_addresses
 TO db2.client_addresses;
 ```
 
-Finally, with tables that contain data (excluding [InnoDB](../reference/storage-engines/innodb/) tables), occasionally it's desirable to resort the data within the table. Although the [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause in a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement can do this on the fly as needed, sometimes developers want to do this somewhat permanently to the data within the table based on a particular column or columns. It can be done by entering the following:
+Finally, with tables that contain data (excluding [InnoDB](../server-usage/storage-engines/innodb/) tables), occasionally it's desirable to resort the data within the table. Although the [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause in a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement can do this on the fly as needed, sometimes developers want to do this somewhat permanently to the data within the table based on a particular column or columns. It can be done by entering the following:
 
 ```
 ALTER TABLE client_addresses
@@ -231,7 +231,7 @@ ORDER BY city, name;
 
 Notice that we're sorting by the city first and then by the client's name. Now when the developer enters a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement without an [ORDER BY](../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause, the results are already ordered by the default of city and then name, at least until more data is added to the table.
 
-This is not applicable to [InnoDB](../reference/storage-engines/innodb/) tables, the default, which are ordered according to the clustered index, unless the primary key is defined on the specific columns.
+This is not applicable to [InnoDB](../server-usage/storage-engines/innodb/) tables, the default, which are ordered according to the clustered index, unless the primary key is defined on the specific columns.
 
 #### Summation
 

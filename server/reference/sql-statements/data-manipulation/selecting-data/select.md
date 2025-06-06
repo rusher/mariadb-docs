@@ -97,7 +97,7 @@ The `INTO` clause is used to specify that the query results should be written to
 
 * [SELECT INTO OUTFILE](select-into-outfile.md) - formatting and writing the result to an external file.
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
-* [SELECT INTO Variable](../../../../server-usage/programmatic-compound-statements/selectinto.md) - selecting and setting variables.
+* [SELECT INTO Variable](../../programmatic-compound-statements/selectinto.md) - selecting and setting variables.
 
 The reverse of `SELECT INTO OUTFILE` is [LOAD DATA](../inserting-loading-data/load-data-into-tables-or-index/).
 
@@ -132,7 +132,7 @@ Passes the whole result set to a C Procedure. See [PROCEDURE](procedure.md) and 
 **MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106)
 
 The SKIP LOCKED clause was introduced in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes).\
-This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../storage-engines/innodb/) tables and ignored otherwise.
+This causes those rows that couldn't be locked ([LOCK IN SHARE MODE](lock-in-share-mode.md) or [FOR UPDATE](for-update.md)) to be excluded from the result set. An explicit `NOWAIT` is implied here. This is only implemented on [InnoDB](../../../../server-usage/storage-engines/innodb/) tables and ignored otherwise.
 
 ### Optimizer Hints
 

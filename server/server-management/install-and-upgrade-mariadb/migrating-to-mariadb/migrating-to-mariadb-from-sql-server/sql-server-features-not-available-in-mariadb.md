@@ -21,7 +21,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
   * Triggers on DDL and login.
   * `INSTEAD OF` triggers.
   * The `DISABLE TRIGGER` syntax.
-* [Cursors](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-cursors/) advanced features.
+* [Cursors](../../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors/) advanced features.
   * Global cursors.
   * `DELETE ... CURRENT OF`, `UPDATE ... CURRENT OF` statements: MariaDB cursors are read-only.
   * Specifying a direction (MariaDB cursors can only advance by one row).
@@ -40,7 +40,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 ## Introduced in SQL Server 2016
 
 * Native data masking
-* PolyBase (however, [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105) supports accessing Amazon S3 via the [S3 storage engine](../../../../reference/storage-engines/s3-storage-engine/) and several DBMSs via [CONNECT](../../../../reference/storage-engines/connect/))
+* PolyBase (however, [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105) supports accessing Amazon S3 via the [S3 storage engine](../../../../server-usage/storage-engines/s3-storage-engine/) and several DBMSs via [CONNECT](../../../../server-usage/storage-engines/connect/))
 * R and Python services
 * ColumnStore indexes. MariaDB has a storage engine called [ColumnStore](../../../../../kb/en/mariadb-columnstore/), but this is a completely different feature.
 

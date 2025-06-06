@@ -14,17 +14,17 @@ The `innodb_buffer_stats_by_table` view is intended to be easier for human readi
 
 They contain the following columns:
 
-| Column         | Description                                                                                                                       |
-| -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                       |
-| object\_schema | Object schema name, or InnoDB System if the table belongs to the [InnoDB storage engine](../../../../../storage-engines/innodb/). |
-| object\_name   | Table name.                                                                                                                       |
-| allocated      | Total number of bytes allocated for the table.                                                                                    |
-| data           | Number of data bytes allocated for the table.                                                                                     |
-| pages          | Total number of pages allocated for the table.                                                                                    |
-| pages\_hashed  | Total number of hashed pages allocated for the table.                                                                             |
-| pages\_old     | Total number of old pages allocated for the table.                                                                                |
-| rows\_cached   | Total number of cached rows for the table.                                                                                        |
+| Column         | Description                                                                                                                                       |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                       |
+| object\_schema | Object schema name, or InnoDB System if the table belongs to the [InnoDB storage engine](../../../../../../server-usage/storage-engines/innodb/). |
+| object\_name   | Table name.                                                                                                                                       |
+| allocated      | Total number of bytes allocated for the table.                                                                                                    |
+| data           | Number of data bytes allocated for the table.                                                                                                     |
+| pages          | Total number of pages allocated for the table.                                                                                                    |
+| pages\_hashed  | Total number of hashed pages allocated for the table.                                                                                             |
+| pages\_old     | Total number of old pages allocated for the table.                                                                                                |
+| rows\_cached   | Total number of cached rows for the table.                                                                                                        |
 
 ## Example
 

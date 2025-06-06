@@ -50,8 +50,8 @@ However, there are some things that have changed which could affect an upgrade:
 
 #### Storage Engines
 
-* The [ARCHIVE](../../../../reference/storage-engines/archive/) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
-* The [BLACKHOLE](../../../../reference/storage-engines/blackhole.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
+* The [ARCHIVE](../../../../server-usage/storage-engines/archive.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
+* The [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md) storage engine is no longer enabled by default, and the plugin needs to be specifically enabled.
 
 #### Replication
 
@@ -64,7 +64,7 @@ Most of the following options have increased in value to give better performance
 | Option                                                                                                                                                   | Old default value | New default value                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------ |
 | Option                                                                                                                                                   | Old default value | New default value                                            |
-| [innodb\_log\_compressed\_pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md)                                                | ON                | OFF                                                          |
+| [innodb\_log\_compressed\_pages](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md)                                             | ON                | OFF                                                          |
 | [join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)                | 128K              | 256K                                                         |
 | [max\_allowed\_packet](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet)            | 1M                | 4M                                                           |
 | [query\_alloc\_block\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_alloc_block_size)   | 8192              | 16384                                                        |
@@ -99,7 +99,7 @@ You might consider using the following major new features in [MariaDB 10.1](http
 
 * [Galera Cluster](../../../../../en/galera/) is now included by default.
 * [Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
-* [InnoDB/XtraDB Page Compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md)
+* [InnoDB/XtraDB Page Compression](../../../../server-usage/storage-engines/innodb/innodb-page-compression.md)
 
 ## Notes
 

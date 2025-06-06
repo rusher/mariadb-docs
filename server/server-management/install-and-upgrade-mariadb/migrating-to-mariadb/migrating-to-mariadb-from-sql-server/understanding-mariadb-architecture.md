@@ -12,23 +12,23 @@ MySQL was born at the beginning of the 90s. Back in the days, if compared to its
 
 The web evolved rapidly, and the same happened to MySQL. Being open source helped a lot in this respect, because the community needed functionalities that weren’t supported at that time.
 
-MySQL was probably the first database system to support a [pluggable storage engine architecture](../../../../reference/storage-engines/). Basically, this means that MySQL knows very little about creating or populating a table, reading from it, building proper indexes and caches. It just delegated all these operations to a special plugin type called a storage engine.
+MySQL was probably the first database system to support a [pluggable storage engine architecture](../../../../server-usage/storage-engines/). Basically, this means that MySQL knows very little about creating or populating a table, reading from it, building proper indexes and caches. It just delegated all these operations to a special plugin type called a storage engine.
 
 One of the first plugins developed by third parties was [InnoDB](understanding-mariadb-architecture.md#innodb). It is very fast, and it adds two important features that are not otherwise supported: transactions and [foreign keys](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md).
 
-Note that when MariaDB asks a storage engine to write or read a row, the storage engine could theoretically do anything. This led to the creation of very interesting alternative engines, like [BLACKHOLE](../../../../reference/storage-engines/blackhole.md) (which doesn’t write or read any data, acting like the /dev/null file in Linux), or [CONNECT](../../../../reference/storage-engines/connect/) (which can read and write to files written in many different formats, or remote DBMSs, or some other special data sources).
+Note that when MariaDB asks a storage engine to write or read a row, the storage engine could theoretically do anything. This led to the creation of very interesting alternative engines, like [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md) (which doesn’t write or read any data, acting like the /dev/null file in Linux), or [CONNECT](../../../../server-usage/storage-engines/connect/) (which can read and write to files written in many different formats, or remote DBMSs, or some other special data sources).
 
-Nowadays InnoDB is the default MariaDB storage engine, and it is the best choice for most use cases. But for particular needs, sometimes using a different storage engine is desirable. In case of doubts about the best storage engine to use for a specific case, check the [Choosing the Right Storage Engine](../../../../reference/storage-engines/choosing-the-right-storage-engine.md) page.
+Nowadays InnoDB is the default MariaDB storage engine, and it is the best choice for most use cases. But for particular needs, sometimes using a different storage engine is desirable. In case of doubts about the best storage engine to use for a specific case, check the [Choosing the Right Storage Engine](../../../../server-usage/storage-engines/choosing-the-right-storage-engine.md) page.
 
 When we create a table, we specify its storage engine or use the default one. It is possible to convert an existing table to another storage engine, though this is a blocking operation which requires a complete table copy. Third-party storage engines can also be installed while MariaDB is running.
 
 Note that it is perfectly possible to use tables with different storage engines in the same transaction (even if some engines are not transactional). It is even possible to use different engines in the same query, for example with JOINs and subqueries.
 
-The default storage engine can be changed by changing the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) variable. A different default can be specified for temporary tables by setting [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine). MariaDB uses [Aria](../../../../reference/storage-engines/aria/aria-storage-engine.md) for system tables and temporary tables created internally to store the intermediate results of a query.
+The default storage engine can be changed by changing the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) variable. A different default can be specified for temporary tables by setting [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine). MariaDB uses [Aria](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) for system tables and temporary tables created internally to store the intermediate results of a query.
 
 ### InnoDB
 
-It is worth spending some more words here about [InnoDB](../../../../reference/storage-engines/innodb/), the default storage engine.
+It is worth spending some more words here about [InnoDB](../../../../server-usage/storage-engines/innodb/), the default storage engine.
 
 #### Primary Key and Indexes
 
@@ -49,11 +49,11 @@ Some consequences of these design choices are the following:
 
 For InnoDB, a _tablespace_ is a file containing data (not a file group as in SQL Server). The types of tablespaces are:
 
-* [System tablespace](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md).
-* [File-per-table tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
-* [Temporary tablespaces](../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md).
+* [System tablespace](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md).
+* [File-per-table tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).
+* [Temporary tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md).
 
-The system tablespace is stored in the file `ibdata`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb\_file\_per\_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb\_file\_per\_table is 1.
+The system tablespace is stored in the file `ibdata`. It contains information used by InnoDB internally, like rollback segments, as well as some system tables. Historically, the system tablespace also contained all tables created by the user. In modern MariaDB versions, a table is created in the system tablespace only if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to 0 at the moment of the table creation. By default, innodb\_file\_per\_table is 1.
 
 Tables created while `innodb_file_per_table=1` are written into their own tablespace. These are `.ibd` files.
 
@@ -65,7 +65,7 @@ Starting from [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comm
 
 In SQL Server, the transaction log contains both the undo log and the redo log. Usually we have only one transaction log.
 
-In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](../../../../reference/storage-engines/innodb/innodb-redo-log.md) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](../../../../reference/storage-engines/innodb/innodb-undo-log.md) by default is written to the _system tablespace_, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
+In MariaDB the undo log and the redo log are stored separately. By default, the [redo log](../../../../server-usage/storage-engines/innodb/innodb-redo-log.md) is written to two files, called `ib_logfile0` and `ib_logfile1`. The [undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md) by default is written to the _system tablespace_, which is in the `ibdata1` file. However, it is possible to write it in separate files in a specified directory.
 
 MariaDB provides no way to inspect the contents of the transaction logs. However, it is possible to inspect the [binary log](understanding-mariadb-architecture.md#the-binary-log).
 
@@ -73,11 +73,11 @@ InnoDB transaction logs are written in a circular fashion: their size is normall
 
 #### InnoDB Buffer Pool
 
-MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../ha-and-performance/optimization-and-tuning/mariadb-memory-allocation.md).
+MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../ha-and-performance/optimization-and-tuning/mariadb-memory-allocation.md).
 
 MariaDB has no extension like the SQL Server buffer pool extension.
 
-A part of the buffer pool is called the [change buffer](../../../../reference/storage-engines/innodb/innodb-change-buffering.md). It contains dirty pages that have been modified in memory and not yet flushed.
+A part of the buffer pool is called the [change buffer](../../../../server-usage/storage-engines/innodb/innodb-change-buffering.md). It contains dirty pages that have been modified in memory and not yet flushed.
 
 #### InnoDB Background Threads
 
@@ -87,18 +87,18 @@ InnoDB has background threads that take care of flushing dirty pages from the ch
 
 InnoDB flushing is similar to _lazy writes_ and _checkpoints_ in SQL Server. It has no equivalent for _eager writing_.
 
-For more information, see [InnoDB Page Flushing](../../../../reference/storage-engines/innodb/innodb-page-flushing.md) and [InnoDB Purge](../../../../reference/storage-engines/innodb/innodb-purge.md).
+For more information, see [InnoDB Page Flushing](../../../../server-usage/storage-engines/innodb/innodb-page-flushing.md) and [InnoDB Purge](../../../../server-usage/storage-engines/innodb/innodb-purge.md).
 
 #### Checksums and Doublewrite Buffer
 
-InnoDB pages have checksums. After writing pages to disk, InnoDB verifies that the checksums match. The checksum algorithm is determined by [innodb\_checksum\_algorithm](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Check the variable documentation for its consequences on performance, backward compatibility and encryption.
+InnoDB pages have checksums. After writing pages to disk, InnoDB verifies that the checksums match. The checksum algorithm is determined by [innodb\_checksum\_algorithm](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm). Check the variable documentation for its consequences on performance, backward compatibility and encryption.
 
 In case of a system crash, hardware failure or power outage, a page could be half-written on disk. For some pages, this causes a disaster. Therefore, InnoDB writes essential pages to disk twice. A backup copy of the new page version is written first. Then, the old page is overwritten. The backup copies are written into a file called the _doublewrite buffer_.
 
 * If an event prevents the first page from being written, the old version of the page will still be available.
 * If an event prevents the old page from being completely overwritten by its new version, the page can still be recovered using the doublewrite buffer.
 
-The doublewrite buffer can disabled using the [innodb\_doublewrite](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) variable, but this usually doesn't bring big performance benefits. The doublewrite buffer location can be changed with [innodb\_doublewrite\_file](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file).
+The doublewrite buffer can disabled using the [innodb\_doublewrite](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite) variable, but this usually doesn't bring big performance benefits. The doublewrite buffer location can be changed with [innodb\_doublewrite\_file](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite_file).
 
 ### Aria
 
@@ -111,11 +111,11 @@ Aria is a non-transactional storage engine. By default it is crash-safe, meaning
 
 Aria caches indexes into the pagecache. Data are not directly cached by Aria, so it's important that the underlying filesystem caches reads and writes.
 
-The pagecache size is determined by the [aria\_pagecache\_buffer\_size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) system variable. To know if it is big enough we can check the proportion of free pages (the ratio between [Aria\_pagecache\_blocks\_used](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria\_pagecache\_blocks\_unused](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_unused)) and the proportion of cache misses (the ratio between [Aria\_pagecache\_read\_requests](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_read_requests) and [Aria\_pagecache\_reads](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_reads).
+The pagecache size is determined by the [aria\_pagecache\_buffer\_size](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) system variable. To know if it is big enough we can check the proportion of free pages (the ratio between [Aria\_pagecache\_blocks\_used](../../../../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria\_pagecache\_blocks\_unused](../../../../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_unused)) and the proportion of cache misses (the ratio between [Aria\_pagecache\_read\_requests](../../../../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_read_requests) and [Aria\_pagecache\_reads](../../../../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_reads).
 
-The proportion of dirty pages is the ratio between [Aria\_pagecache\_blocks\_used](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria\_pagecache\_blocks\_not\_flushed](../../../../reference/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_not_flushed) tells us if the log file is big enough.
+The proportion of dirty pages is the ratio between [Aria\_pagecache\_blocks\_used](../../../../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_used) and [Aria\_pagecache\_blocks\_not\_flushed](../../../../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_blocks_not_flushed) tells us if the log file is big enough.
 
-The size of Aria log is determined by [aria\_log\_file\_size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size).
+The size of Aria log is determined by [aria\_log\_file\_size](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size).
 
 ## Databases
 
@@ -257,7 +257,7 @@ The [Server System Variables](../../../../ha-and-performance/optimization-and-tu
 
 ### Scope
 
-A global system variable is one that affects the general behavior of MariaDB. For example [innodb\_buffer\_pool\_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) determines the size of the InnoDB buffer pool, which is used by read and write operations, no matter which user issued them. A session system variable is one that affects MariaDB behavior for the current connection; changing it will not affect other connected users, or future connections from the current user.
+A global system variable is one that affects the general behavior of MariaDB. For example [innodb\_buffer\_pool\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) determines the size of the InnoDB buffer pool, which is used by read and write operations, no matter which user issued them. A session system variable is one that affects MariaDB behavior for the current connection; changing it will not affect other connected users, or future connections from the current user.
 
 A variable could exist in both the global and session scopes. In this case, the session value is what affects the current connection. When a user connects, the current global value is copied to the session scope. Changing the global value afterward will not change existing connections.
 

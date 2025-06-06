@@ -23,7 +23,7 @@ To flush data to the tables, use [FLUSH TABLES](../../reference/sql-statements/a
 
 To empty the contents of the log tables, [TRUNCATE TABLE](../../reference/sql-statements/table-statements/truncate-table.md) can be used.
 
-The log tables use the [CSV](../../reference/storage-engines/csv/) storage engine by default. This allows an external program to read the files if needed: normal CSV files are stored in the `mysql` subdirectory, in the data dir. However that engine is slow because it does not support indexes, so you can convert the tables to [MyISAM](../../reference/storage-engines/myisam-storage-engine/) (but not other storage engines). To do so, first temporarily disable logging:
+The log tables use the [CSV](../../server-usage/storage-engines/csv/) storage engine by default. This allows an external program to read the files if needed: normal CSV files are stored in the `mysql` subdirectory, in the data dir. However that engine is slow because it does not support indexes, so you can convert the tables to [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) (but not other storage engines). To do so, first temporarily disable logging:
 
 ```
 SET GLOBAL general_log = 'OFF';

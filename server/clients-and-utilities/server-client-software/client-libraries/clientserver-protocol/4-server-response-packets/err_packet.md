@@ -1,45 +1,30 @@
+# ERR\_Packet
 
-# ERR_Packet
+## ERR\_Packet
 
-## ERR_Packet
-
-
-ERR_Packet indicates that an error occured.
-
+ERR\_Packet indicates that an error occured.
 
 ### Fields
 
-
-
-* [int<1>](../protocol-data-types.md#fixed-length-integers) ERR_Packet header = 0xFF
-* [int<2>](../protocol-data-types.md#fixed-length-integers) error code. see [error list](../../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
-* if (errorcode == 0xFFFF) /* progress reporting */
-
+* [int<1>](../protocol-data-types.md#fixed-length-integers) ERR\_Packet header = 0xFF
+* [int<2>](../protocol-data-types.md#fixed-length-integers) error code. see [error list](../../../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
+* if (errorcode == 0xFFFF) /\* progress reporting \*/
   * [int<1>](../protocol-data-types.md#fixed-length-integers) stage
-  * [int<1>](../protocol-data-types.md#fixed-length-integers) max_stage
+  * [int<1>](../protocol-data-types.md#fixed-length-integers) max\_stage
   * [int<3>](../protocol-data-types.md#fixed-length-integers) progress
-  * [string<lenenc>](../protocol-data-types.md#length-encoded-strings) progress_info
+  * [string](../protocol-data-types.md#length-encoded-strings) progress\_info
 * else
-
   * if (next byte = '#')
-
     * [string<1>](../protocol-data-types.md#fixed-length-strings) sql state marker '#'
     * [string<5>](../protocol-data-types.md#fixed-length-strings)sql state
-    * [string<EOF>](../protocol-data-types.md#fixed-length-strings) human-readable error message
+    * [string](../protocol-data-types.md#fixed-length-strings) human-readable error message
   * else
-
-    * [string<EOF>](../protocol-data-types.md#fixed-length-strings) human-readable error message
-
-
+    * [string](../protocol-data-types.md#fixed-length-strings) human-readable error message
 
 Note that the ERR packet is supposed to send a server error to the client. In particular, all error codes in the range 2000 to 2999 and 5000 to 5999 (inclusive) are reserved for client errors and an ERR packet with such an error code will be considered malformed.
 
-
 #### See also
 
-
-["Progress reporting"](../../../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)
-
+["Progress reporting"](../../../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)
 
 CC BY-SA / Gnu FDL
-

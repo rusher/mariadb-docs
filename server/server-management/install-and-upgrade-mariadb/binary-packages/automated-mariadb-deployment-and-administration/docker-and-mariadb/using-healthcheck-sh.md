@@ -60,7 +60,7 @@ The connecting user must have [USAGE](../../../../../reference/sql-statements/ac
 
 This indicates that the buffer pool dump previously saved has been completed loaded into the InnoDB Buffer Pool and as such the server has a hot cache ready for use. This checks the [innodb\_buffer\_pool\_load\_status](../../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_status) for a "complete" indicator.
 
-This test doesn't check if [innodb-system-variables/#innodb\_buffer\_pool\_load\_at\_startupinnodb\_buffer\_pool\_load\_at\_startup](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup) is set at startup.
+This test doesn't check if [innodb-system-variables/#innodb\_buffer\_pool\_load\_at\_startupinnodb\_buffer\_pool\_load\_at\_startup](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startupinnodb_buffer_pool_load_at_startup) is set at startup.
 
 The connecting user must have [USAGE](../../../../../reference/sql-statements/account-management-sql-statements/grant.md#the-usage-privilege) privileges to perform this test.
 

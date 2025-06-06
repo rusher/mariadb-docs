@@ -4,7 +4,7 @@
 
 Compressions plugins were added in a [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes) preview release.
 
-The various MariaDB storage engines, such as [InnoDB](../../../reference/storage-engines/innodb/), [RocksDB](../../../reference/storage-engines/myrocks/), [Mroonga](../../../reference/storage-engines/mroonga/), can use different compression libraries.
+The various MariaDB storage engines, such as [InnoDB](../../../server-usage/storage-engines/innodb/), [RocksDB](../../../server-usage/storage-engines/myrocks/), [Mroonga](../../../server-usage/storage-engines/mroonga/), can use different compression libraries.
 
 Before [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes), each separate library would have to be compiled in in order to be available for use, resulting in numerous runtime/rpm/deb dependencies, most of which would never be used by users.
 
@@ -30,7 +30,7 @@ Once available, [install as a plugin](../../../reference/sql-statements/administ
 INSTALL SONAME 'provider_lz4';
 ```
 
-The compression algorithm can then be used, for example, in [InnoDB compression](../../../reference/storage-engines/innodb/innodb-page-compression.md):
+The compression algorithm can then be used, for example, in [InnoDB compression](../../../server-usage/storage-engines/innodb/innodb-page-compression.md):
 
 ```
 SET GLOBAL innodb_compression_algorithm = lz4;

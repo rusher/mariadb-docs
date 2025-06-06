@@ -14,7 +14,7 @@ CASE WHEN [condition] THEN result [WHEN [condition] THEN result ...]
 
 The first version returns the result for the first `value=compare_value` comparison that is true. The second version returns the result for the first condition that is true. If there was no matching result value, the result after ELSE is returned, or NULL if there is no ELSE part.
 
-There is also a [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.
+There is also a [CASE statement](../../sql-statements/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.
 
 ## Examples
 
@@ -61,7 +61,7 @@ SELECT
 
 ## See Also
 
-* The [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described above.
+* The [CASE statement](../../sql-statements/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described above.
 * The [IF() function](if-function.md).
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 

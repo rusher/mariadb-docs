@@ -4,7 +4,7 @@ The `mysql.db` table contains information about database-level privileges. The t
 
 Note that the MariaDB privileges occur at many levels. A user may not be granted a privilege at the database level, but may still have permission on a table level, for example. See [privileges](../../../account-management-sql-statements/grant.md) for a more complete view of the MariaDB privilege system.
 
-This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
 
 The `mysql.db` table contains the following fields:
 

@@ -34,7 +34,7 @@ In certain cases when it would be impossible to execute the statement on the rep
 row-based logging for the statement. Some cases of this are:
 
 * When replication has been changed from row-based to statement-based and a statement uses data from a temporary table created during row-based mode. In this case, the temporary tables are not stored on the replica, so row logging is the only alternative.
-* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/), to another storage engine.
+* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../server-usage/storage-engines/s3-storage-engine/), to another storage engine.
 * One is using [SEQUENCEs](../../../reference/sql-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) definition.
 
 In certain cases, a statement may not be deterministic, and therefore not safe for [replication](broken-reference). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:

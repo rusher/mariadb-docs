@@ -4,7 +4,7 @@ The [Information Schema](../../) `INNODB_SYS_TABLESTATS` table contains InnoDB s
 
 The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
-Note that the MySQL InnoDB and Percona XtraDB versions of the tables differ (see [XtraDB and InnoDB](../../../../../../storage-engines/innodb/)).
+Note that the MySQL InnoDB and Percona XtraDB versions of the tables differ (see [XtraDB and InnoDB](../../../../../../../server-usage/storage-engines/innodb/)).
 
 It contains the following columns:
 

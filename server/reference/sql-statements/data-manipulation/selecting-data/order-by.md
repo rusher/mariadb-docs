@@ -125,7 +125,7 @@ SELECT * FROM store;
 
 ## See Also
 
-* [Why is ORDER BY in a FROM subquery ignored?](../../../faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
+* [Why is ORDER BY in a FROM subquery ignored?](../../../../server-usage/faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
 * [SELECT](select.md)
 * [UPDATE](../changing-deleting-data/update.md)
 * [DELETE](../changing-deleting-data/delete.md)

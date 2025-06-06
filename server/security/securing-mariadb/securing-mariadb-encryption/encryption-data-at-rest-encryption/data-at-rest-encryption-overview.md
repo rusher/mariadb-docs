@@ -11,17 +11,17 @@ Using encryption has an overhead of roughly _3-5%_.
 
 ## Which Storage Engines Does MariaDB Encryption Support?
 
-MariaDB encryption is fully supported for the [InnoDB](../../../../reference/storage-engines/innodb/) storage engines. Encryption is also supported for the Aria storage engine, but only for tables created with `ROW_FORMAT=PAGE` (the default), and for the binary log (replication log).
+MariaDB encryption is fully supported for the [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engines. Encryption is also supported for the Aria storage engine, but only for tables created with `ROW_FORMAT=PAGE` (the default), and for the binary log (replication log).
 
 MariaDB allows the user to configure flexibly what to encrypt. In or InnoDB, one can choose to encrypt:
 
-* everything — all tablespaces (with all tables) (with [innodb\_encrypt\_tables=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables))
+* everything — all tablespaces (with all tables) (with [innodb\_encrypt\_tables=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables))
 * individual tables
 * everything, excluding individual tables
 
-Additionally, one can choose to encrypt InnoDB log files (recommended, with [innodb\_encrypt\_log=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)) and InnoDB Temporary Tables (with [innodb\_encrypt\_temporary\_tables=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)).
+Additionally, one can choose to encrypt InnoDB log files (recommended, with [innodb\_encrypt\_log=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log)) and InnoDB Temporary Tables (with [innodb\_encrypt\_temporary\_tables=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)).
 
-When [innodb\_encrypt\_log=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) or [innodb\_encrypt\_temporary\_tables=1](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) an encryption key of 1 must be defined. See [Enabling InnoDB Encryption](innodb-encryption/innodb-enabling-encryption.md).
+When [innodb\_encrypt\_log=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) or [innodb\_encrypt\_temporary\_tables=1](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables) an encryption key of 1 must be defined. See [Enabling InnoDB Encryption](innodb-encryption/innodb-enabling-encryption.md).
 
 ## Limitations
 
@@ -58,7 +58,7 @@ Encryption occurs whenever MariaDB writes pages to disk. Encrypting table data r
 
 ### Encrypting Table Data
 
-MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Additionally, it supports encrypting the [InnoDB redo log](../../../../reference/storage-engines/innodb/innodb-redo-log.md) and internal on-disk temporary tables that use the Aria storage engine..
+MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Additionally, it supports encrypting the [InnoDB redo log](../../../../server-usage/storage-engines/innodb/innodb-redo-log.md) and internal on-disk temporary tables that use the Aria storage engine..
 
 * [Encrypting Data for InnoDB](innodb-encryption/innodb-encryption-overview.md)
 * [Encrypting Data for Aria](aria-encryption/aria-encryption-overview.md)
@@ -67,7 +67,7 @@ MariaDB supports data-at-rest encryption for InnoDB and Aria storage engines. Ad
 
 MariaDB also creates temporary files on disk. For example, a binary log cache will be written to a temporary file if the binary log cache exceeds `[binlog_cache_size](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_cache_size)` or `[binlog_stmt_cache_size](../../../../server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size)`, and temporary files are also often used for filesorts during query execution. Since [MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes), these temporary files can also be encrypted if [encrypt\_tmp\_files=ON](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files) is set.
 
-Since [MariaDB 10.1.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10127-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), temporary files created internally by InnoDB, such as those used for merge sorts and row logs can also be encrypted if [innodb\_encrypt\_log=ON](../../../../reference/storage-engines/innodb/innodb-system-variables.md) is set. These files are encrypted regardless of whether the tables involved are encrypted or not, and regardless of whether [encrypt\_tmp\_files](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files) is set or not.
+Since [MariaDB 10.1.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10127-release-notes), [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), temporary files created internally by InnoDB, such as those used for merge sorts and row logs can also be encrypted if [innodb\_encrypt\_log=ON](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) is set. These files are encrypted regardless of whether the tables involved are encrypted or not, and regardless of whether [encrypt\_tmp\_files](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files) is set or not.
 
 ### Encrypting Binary Logs
 
@@ -77,7 +77,7 @@ MariaDB can also encrypt [binary logs](../../../../server-management/server-moni
 
 ## Encryption and Page Compression
 
-Data-at-rest encryption and [InnoDB page compression](../../../../reference/storage-engines/innodb/innodb-page-compression.md) can be used\
+Data-at-rest encryption and [InnoDB page compression](../../../../server-usage/storage-engines/innodb/innodb-page-compression.md) can be used\
 together. When they are used together, data is first compressed, and then it is encrypted. In\
 this case you save space and still have your data protected.
 

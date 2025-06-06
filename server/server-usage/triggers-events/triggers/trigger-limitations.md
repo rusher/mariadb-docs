@@ -8,7 +8,7 @@ The following restrictions apply to [triggers](./).
 * Triggers are always executed for each row. The standard `FOR EACH STATEMENT` option is not supported in MariaDB,
 * Triggers cannot operate on any tables in the mysql, information\_schema or performance\_schema database.
 * Cannot return a resultset.
-* The [RETURN](../../programmatic-compound-statements/return.md) statement is not permitted, since triggers don't return any values. Use [LEAVE](../../programmatic-compound-statements/leave.md) to immediately exit a trigger.
+* The [RETURN](../../../reference/sql-statements/programmatic-compound-statements/return.md) statement is not permitted, since triggers don't return any values. Use [LEAVE](../../../reference/sql-statements/programmatic-compound-statements/leave.md) to immediately exit a trigger.
 * Triggers are not activated by [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) actions.
 * If a trigger is loaded into cache, it is not automatically reloaded when the table metadata changes. In this case a trigger can operate using the outdated metadata.
 * By default, with row-based replication, triggers run on the master, and the effects of their executions are replicated to the slaves. However, starting from [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), it is possible to run triggers on the slaves. See [Running triggers on the slave for Row-based events](../../../ha-and-performance/standard-replication/running-triggers-on-the-replica-for-row-based-events.md).

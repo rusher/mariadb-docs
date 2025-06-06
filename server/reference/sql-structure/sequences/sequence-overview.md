@@ -1,6 +1,6 @@
 # Sequence Overview
 
-This page is about sequence objects. For details about the storage engine, see [Sequence Storage Engine](../../storage-engines/sequence-storage-engine.md).
+This page is about sequence objects. For details about the storage engine, see [Sequence Storage Engine](../../../server-usage/storage-engines/sequence-storage-engine.md).
 
 ## Introduction
 
@@ -195,7 +195,7 @@ The special properties for sequence tables are:
 ## Implementation
 
 Internally, sequence tables are created as a normal table without\
-rollback (the [InnoDB](../../storage-engines/innodb/), [Aria](../../storage-engines/aria/) and [MySAM](../../storage-engines/myisam-storage-engine/) engines support this), wrapped by a\
+rollback (the [InnoDB](../../../server-usage/storage-engines/innodb/), [Aria](../../../server-usage/storage-engines/aria/) and [MySAM](../../../server-usage/storage-engines/myisam-storage-engine/) engines support this), wrapped by a\
 sequence engine object. This allowed us to create sequences with\
 almost no performance impact for normal tables. (The cost is one 'if'\
 per insert if the [binary log](../../../server-management/server-monitoring-logs/binary-log/) is enabled).
@@ -254,8 +254,8 @@ The `cycle_count` column is incremented every time the sequence wraps around.
 * [PREVIOUS VALUE FOR](sequence-functions/previous-value-for-sequence_name.md)
 * [SETVAL()](sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../data-types/auto_increment.md)
-* [Sequence Storage Engine](../../storage-engines/sequence-storage-engine.md)
+* [Sequence Storage Engine](../../../server-usage/storage-engines/sequence-storage-engine.md)
 * [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
-* [Error 4084: Sequence has run out](../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
+* [Error 4084: Sequence has run out](../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-4000-to-4099/e4084.md)
 
 CC BY-SA / Gnu FDL

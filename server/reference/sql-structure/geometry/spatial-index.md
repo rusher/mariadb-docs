@@ -2,7 +2,7 @@
 
 ## Description
 
-On [MyISAM](../../storage-engines/myisam-storage-engine/), [Aria](../../storage-engines/aria/) and [InnoDB](../../storage-engines/innodb/) tables, MariaDB can create spatial indexes (an R-tree index) using syntax similar to that for creating regular indexes, but extended with the `SPATIAL` keyword.\
+On [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [Aria](../../../server-usage/storage-engines/aria/) and [InnoDB](../../../server-usage/storage-engines/innodb/) tables, MariaDB can create spatial indexes (an R-tree index) using syntax similar to that for creating regular indexes, but extended with the `SPATIAL` keyword.\
 Currently, columns in spatial indexes must be declared `NOT NULL`.
 
 Spatial indexes can be created when the table is created, or added after the fact like so:

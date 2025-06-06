@@ -37,7 +37,7 @@ The following components are deployed during this procedure:
 
 ## MariaDB Enterprise Server Components
 
-<table><thead><tr><th valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="../../../reference/storage-engines/innodb/">InnoDB</a></td><td valign="top"><ul><li>General purpose storage engine</li><li>Support for Online Transactional Processing (OLTP) workloads</li><li>ACID-compliant</li><li>Performance</li></ul></td></tr><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Optimized for Online Analytical</li><li>Processing (OLAP) workloads</li><li>Scalable query execution</li></ul></td></tr></tbody></table>
+<table><thead><tr><th valign="top">Component</th><th valign="top">Description</th></tr></thead><tbody><tr><td valign="top"><a href="../../../server-usage/storage-engines/innodb/">InnoDB</a></td><td valign="top"><ul><li>General purpose storage engine</li><li>Support for Online Transactional Processing (OLTP) workloads</li><li>ACID-compliant</li><li>Performance</li></ul></td></tr><tr><td valign="top"><a href="https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/">MariaDB Enterprise ColumnStore</a></td><td valign="top"><ul><li>Columnar storage engine</li><li>Optimized for Online Analytical</li><li>Processing (OLAP) workloads</li><li>Scalable query execution</li></ul></td></tr></tbody></table>
 
 ## Topology
 
@@ -60,7 +60,7 @@ The ColumnStore node:
 
 * Receives queries from MaxScale
 * Executes queries
-* Uses a row-based storage engine, such as [InnoDB](../../../reference/storage-engines/innodb/) to handle transactional queries
+* Uses a row-based storage engine, such as [InnoDB](../../../server-usage/storage-engines/innodb/) to handle transactional queries
 * Uses Enterprise ColumnStore as the columnar storage engine to handle analytical queries
 * Uses cross-engine JOINs to join transactional and analytical tables
 * Replicates data between engines using [MariaDB Replication](../../../ha-and-performance/standard-replication/)

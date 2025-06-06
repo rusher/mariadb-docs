@@ -25,13 +25,13 @@ _what's matched by the wildcard is shown. If a database name contains any unders
 
 `mariadb-show` supports the following options:
 
-| Option                             | Description                                                                                                               |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| Option                             | Description                                                                                                               |
-| -c name, --character-sets-dir=name | Directory for [character set](../reference/data-types/string-data-types/character-sets/) files.                           |
-| -C, --compress                     | Use compression in server/client protocol if both support it.                                                             |
-| --count                            | Show number of rows per table (may be slow for non-[MyISAM](../reference/storage-engines/myisam-storage-engine/) tables). |
-| -                                  |                                                                                                                           |
+| Option                             | Description                                                                                                                  |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Option                             | Description                                                                                                                  |
+| -c name, --character-sets-dir=name | Directory for [character set](../reference/data-types/string-data-types/character-sets/) files.                              |
+| -C, --compress                     | Use compression in server/client protocol if both support it.                                                                |
+| --count                            | Show number of rows per table (may be slow for non-[MyISAM](../server-usage/storage-engines/myisam-storage-engine/) tables). |
+| -                                  |                                                                                                                              |
 
 ## \[name], --debug\[=name] | Output debug log. Typical is d:t:o,filename, the default is d:t:o. |
 

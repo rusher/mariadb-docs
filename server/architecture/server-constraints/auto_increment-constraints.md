@@ -283,7 +283,7 @@ AND invoice_date = '2020-05-10 12:37:22';
 
 When multiple rows are inserted into a table concurrently, InnoDB needs to be able to generate multiple values concurrently in a safe manner. It has several different modes that can be used to do this, and each mode has its own advantages and disadvantages.
 
-InnoDB's `AUTO_INCREMENT` lock mode is configured with the [innodb\_autoinc\_lock\_mode](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) system variable. Users can choose between 3 different values:
+InnoDB's `AUTO_INCREMENT` lock mode is configured with the [innodb\_autoinc\_lock\_mode](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) system variable. Users can choose between 3 different values:
 
 | Value | Description                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -296,7 +296,7 @@ InnoDB's `AUTO_INCREMENT` lock mode is configured with the [innodb\_autoinc\_loc
 
 ## Configuring the AUTO\_INCREMENT Lock Mode for InnoDB
 
-The [innodb\_autoinc\_lock\_mode](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) system variable configures the `AUTO_INCREMENT` Lock Mode for InnoDB.
+The [innodb\_autoinc\_lock\_mode](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) system variable configures the `AUTO_INCREMENT` Lock Mode for InnoDB.
 
 1. Choose a configuration file for custom changes to system variables and options.
 
@@ -312,7 +312,7 @@ Some example configuration file paths for different distributions are shown in t
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
-2. Set the [innodb\_autoinc\_lock\_mode](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) system variable in the configuration file.\
+2. Set the [innodb\_autoinc\_lock\_mode](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode) system variable in the configuration file.\
    It needs to be set in a group that will be read by MariaDB Server, such as \[mariadb] or \[server].
 
 For example:

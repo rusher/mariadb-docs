@@ -14,9 +14,9 @@ ANALYZE [NO_WRITE_TO_BINLOG | LOCAL] TABLE tbl_name [,tbl_name ...]
 ## Description
 
 `ANALYZE TABLE` analyzes and stores the key distribution for a\
-table ([index statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../storage-engines/myisam-storage-engine/), [Aria](../../storage-engines/aria/) and [InnoDB](../../storage-engines/innodb/) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md).
+table ([index statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)). This statement works with [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [Aria](../../../server-usage/storage-engines/aria/) and [InnoDB](../../../server-usage/storage-engines/innodb/) tables. During the analysis, InnoDB will allow reads/writes, and MyISAM/Aria reads/inserts. For MyISAM tables, this statement is equivalent to using [myisamchk --analyze](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md).
 
-ANALYZE uses histograms, which can provide a better selectivity than InnoDB statistics offer. InnoDB statistics work with a limited sample set and is therefore not as accurate as persistent statistics can be. For more information on how the analysis works within InnoDB, see[InnoDB Limitations](../../storage-engines/innodb/innodb-limitations.md#table-analysis).
+ANALYZE uses histograms, which can provide a better selectivity than InnoDB statistics offer. InnoDB statistics work with a limited sample set and is therefore not as accurate as persistent statistics can be. For more information on how the analysis works within InnoDB, see[InnoDB Limitations](../../../server-usage/storage-engines/innodb/innodb-limitations.md#table-analysis).
 
 MariaDB uses the stored key distribution to decide the order in which\
 tables should be joined when you perform a join on something other than\
@@ -35,7 +35,7 @@ From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-
 can use `[ALTER TABLE](../data-definition/alter/alter-table.md) ... ANALYZE PARTITION` to analyze one or\
 more partitions.
 
-The [Aria](../../storage-engines/aria/) storage engine supports [progress reporting](../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for the `ANALYZE TABLE` statement.
+The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for the `ANALYZE TABLE` statement.
 
 ## Performance Impact
 
@@ -54,7 +54,7 @@ ANALYZE isn’t useful for table columns of type UNIQUE, PRIMARY KEY, TIME, or C
 
 `ANALYZE TABLE` supports [engine-independent statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md). See [Engine-Independent Table Statistics: Collecting Statistics with the ANALYZE TABLE Statement](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#collecting-statistics-with-the-analyze-table-statement) for more information.
 
-Engine-independent statistics can be controlled (enabled and disabled) using the [use\_stat\_tables variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables) and the [optimizer\_use\_condition\_selectivity variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity). InnoDB-persistent statistics are controlled with the [innodb\_stats\_persistent variable](../../storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent). Combining both kinds of statistics is possible.
+Engine-independent statistics can be controlled (enabled and disabled) using the [use\_stat\_tables variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables) and the [optimizer\_use\_condition\_selectivity variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity). InnoDB-persistent statistics are controlled with the [innodb\_stats\_persistent variable](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent). Combining both kinds of statistics is possible.
 
 The server relies on InnoDB statistics by default. That way, it can use some statistics even if `ANALYZE TABLE` is never run (or not often enough). This gives good enough results for the majority of queries. Some queries, however, need more statistical data so the optimizer can create a good plan. Slow queries indicate there aren't enough statistical data. Those queries can be accelerated by running `ANALYZE TABLE tbl PERSISTENT FOR ...`, where `tbl` indicates a table used by a slow query. You can also run `ANALYZE TABLE ... PERSISTENT FOR ALL`, but that has a significant performance impact.
 
@@ -99,7 +99,7 @@ ANALYZE TABLE tbl;
 * [This one trick can make MariaDB 30x faster!](https://mariadb.org/mariadb-30x-faster/) (mariadb.org blog)
 * [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)
 * [InnoDB Persistent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
-* [Progress Reporting](../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)
+* [Progress Reporting](../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md)
 * [Engine-independent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md)
 * [Histogram-based Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md)
 * [ANALYZE Statement](../administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md)

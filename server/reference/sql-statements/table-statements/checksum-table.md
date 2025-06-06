@@ -16,7 +16,7 @@ With `QUICK`, the live table checksum is reported if it is\
 available, or `NULL` otherwise. This is very fast. A live\
 checksum is enabled by specifying the `CHECKSUM=1` table\
 option when you [create the table](../data-definition/create/create-table.md); currently, this is supported\
-only for [Aria](../../storage-engines/aria/) and [MyISAM](../../storage-engines/myisam-storage-engine/) tables.
+only for [Aria](../../../server-usage/storage-engines/aria/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables.
 
 With `EXTENDED`, the entire table is read row by row and the\
 checksum is calculated. This can be very slow for large tables.

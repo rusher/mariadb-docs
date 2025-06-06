@@ -5,7 +5,7 @@
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlhotcopy`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It is a fast way to make a backup of the database or single tables, but it can be run only on the same machine where the database\
-directories are located. `mariadb-hotcopy`> works only for backing up [MyISAM](../../reference/storage-engines/myisam-storage-engine/) and [ARCHIVE](../../reference/storage-engines/archive/) tables. It runs on Unix and NetWare.
+directories are located. `mariadb-hotcopy`> works only for backing up [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) and [ARCHIVE](../../server-usage/storage-engines/archive.md) tables. It runs on Unix and NetWare.
 
 To use `mariadb-hotcopy`, you must have read access to the files\
 for the tables that you are backing up, the SELECT [privilege](../../reference/sql-statements/account-management-sql-statements/grant.md) for\

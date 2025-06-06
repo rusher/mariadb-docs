@@ -1,6 +1,6 @@
 # Cracklib Password Check Plugin
 
-`cracklib_password_check` is a [password validation](../../mariadb-internals/password-validation.md) plugin. It uses the [CrackLib](https://github.com/cracklib/cracklib) library to check the strength of new passwords. CrackLib is installed by default in many Linux distributions, since the system's [Pluggable Authentication Module (PAM)](https://en.wikipedia.org/wiki/Pluggable_authentication_module) authentication framework is usually configured to check the strength of new passwords with the `[pam_cracklib](https://linux.die.net/man/8/pam_cracklib)` PAM module.
+`cracklib_password_check` is a [password validation](../../../server-usage/mariadb-internals/password-validation.md) plugin. It uses the [CrackLib](https://github.com/cracklib/cracklib) library to check the strength of new passwords. CrackLib is installed by default in many Linux distributions, since the system's [Pluggable Authentication Module (PAM)](https://en.wikipedia.org/wiki/Pluggable_authentication_module) authentication framework is usually configured to check the strength of new passwords with the `[pam_cracklib](https://linux.die.net/man/8/pam_cracklib)` PAM module.
 
 Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict\_password\_validation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
@@ -183,7 +183,7 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 
 ## See Also
 
-* [Password Validation](../../mariadb-internals/password-validation.md)
+* [Password Validation](../../../server-usage/mariadb-internals/password-validation.md)
 * [simple\_password\_check plugin](simple-password-check-plugin.md) - permits the setting of basic criteria for passwords
 
 CC BY-SA / Gnu FDL

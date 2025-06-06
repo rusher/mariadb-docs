@@ -25,7 +25,7 @@ statement must return a single value. If more than one column is returned when t
 error 1241 results. If more than one row is returned when the function is called, error 1242\
 results. Use a `LIMIT` clause to ensure only one row is returned.
 
-You can also replace the `RETURN` clause with a [BEGIN...END](../../../../server-usage/programmatic-compound-statements/begin-end.md) compound\
+You can also replace the `RETURN` clause with a [BEGIN...END](../../programmatic-compound-statements/begin-end.md) compound\
 statement. The compound statement must contain a `RETURN` statement. When the function is\
 called, the `RETURN` statement immediately returns its result, and any statements after `RETURN`\
 are effectively ignored.

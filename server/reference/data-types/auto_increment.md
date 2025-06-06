@@ -6,7 +6,7 @@ The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new
 
 `AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than 0.
 
-Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../storage-engines/innodb/)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../storage-engines/aria/), [MyISAM](../storage-engines/myisam-storage-engine/), [MERGE](../storage-engines/merge.md), [Spider](../storage-engines/spider/), [TokuDB](../storage-engines/tokudb/), [BLACKHOLE](../storage-engines/blackhole.md), [FederatedX](../storage-engines/federatedx-storage-engine/) and [Federated](../storage-engines/legacy-storage-engines/federated-storage-engine.md).
+Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../../server-usage/storage-engines/innodb/)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../../server-usage/storage-engines/aria/), [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/), [MERGE](../../server-usage/storage-engines/merge.md), [Spider](../../server-usage/storage-engines/spider/), [TokuDB](../../server-usage/storage-engines/tokudb/), [BLACKHOLE](../../server-usage/storage-engines/blackhole.md), [FederatedX](../../server-usage/storage-engines/federatedx-storage-engine/) and [Federated](../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md).
 
 ```
 CREATE TABLE animals (
@@ -96,7 +96,7 @@ SELECT * FROM animals;
 
 AUTO\_INCREMENT is persistent in InnoDB. Prior to [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), InnoDB used an auto-increment counter that was stored in memory. When the server restarted, the counter was re-initialized to the highest value used in the table, which canceled the effects of any AUTO\_INCREMENT = N option in the table statements).
 
-See also [AUTO\_INCREMENT Handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md).
+See also [AUTO\_INCREMENT Handling in InnoDB](../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md).
 
 ## Setting Explicit Values
 
@@ -139,7 +139,7 @@ SELECT id FROM t;
 +----+
 ```
 
-The [ARCHIVE](../storage-engines/archive/) storage engine does not allow to insert a value that is lower than the current maximum.
+The [ARCHIVE](../../server-usage/storage-engines/archive.md) storage engine does not allow to insert a value that is lower than the current maximum.
 
 ## Missing Values
 
@@ -301,8 +301,8 @@ SELECT * FROM t1;
 * [Sequences](../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [AUTO\_INCREMENT FAQ](auto_increment-faq.md)
 * [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md)
-* [AUTO\_INCREMENT handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)
-* [BLACKHOLE and AUTO\_INCREMENT](../storage-engines/blackhole.md#blackhole-and-auto_increment)
+* [AUTO\_INCREMENT handling in InnoDB](../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [BLACKHOLE and AUTO\_INCREMENT](../../server-usage/storage-engines/blackhole.md#blackhole-and-auto_increment)
 * [UUID\_SHORT()](../sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md) - Generate unique ids
 * [Generating Identifiers – from AUTO\_INCREMENT to Sequence (percona.com)](https://www.percona.com/community-blog/2018/10/12/generating-identifiers-auto_increment-sequence/)
 

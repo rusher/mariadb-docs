@@ -32,7 +32,7 @@ One must have a `SHUTDOWN` privilege (see [GRANT](../account-management-sql-stat
 
 ## Shutdown for Upgrades
 
-If you are doing a shutdown to [migrate to another major version of MariaDB](https://mariadb.com/kb/en/upgrading-between-major-mariadb-version), please ensure that the [innodb\_fast\_shutdown](../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
+If you are doing a shutdown to [migrate to another major version of MariaDB](https://mariadb.com/kb/en/upgrading-between-major-mariadb-version), please ensure that the [innodb\_fast\_shutdown](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
 
 ## Example
 
@@ -72,6 +72,6 @@ NET STOP MariaDB
 ## See Also
 
 * [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md).
-* [InnoDB fast shutdown option](../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+* [InnoDB fast shutdown option](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
 CC BY-SA / Gnu FDL

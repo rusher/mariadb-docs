@@ -2,11 +2,11 @@
 
 **System tables should not normally be edited directly. Use the related SQL statements instead.**
 
-The `mysql.servers` table contains information about servers as used by the [Spider](../../../../storage-engines/spider/), [FEDERATED](../../../../storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../../storage-engines/federatedx-storage-engine/), [Connect](../../../../storage-engines/connect/) storage engines.
+The `mysql.servers` table contains information about servers as used by the [Spider](../../../../../server-usage/storage-engines/spider/), [FEDERATED](../../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md) or [FederatedX](../../../../../server-usage/storage-engines/federatedx-storage-engine/), [Connect](../../../../../server-usage/storage-engines/connect/) storage engines.
 
 The contents are modified by the [CREATE SERVER](../../../data-definition/create/create-server.md), [ALTER SERVER](../../../data-definition/alter/alter-server.md) and [DROP SERVER](../../../data-definition/drop/drop-server.md) statements.
 
-This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
 
 The `mysql.servers` table contains the following fields:
 

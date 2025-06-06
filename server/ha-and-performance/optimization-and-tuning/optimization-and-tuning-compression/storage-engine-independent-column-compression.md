@@ -68,12 +68,12 @@ When using the `COMPRESSED` attribute, note that FIELD LENGTH is reduced by 1; f
 ### Limitations
 
 * The only supported method currently is zlib.
-* The [CSV](../../../reference/storage-engines/csv/) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
+* The [CSV](../../../server-usage/storage-engines/csv/) storage engine stores data uncompressed on-disk even if the COMPRESSED attribute is present.
 * It is not possible to create indexes over compressed columns.
 
 ### Comparison with InnoDB Page Compression
 
-Storage-independent column compression is different to [InnoDB Page Compression](../../../reference/storage-engines/innodb/innodb-page-compression.md) in a number of ways.
+Storage-independent column compression is different to [InnoDB Page Compression](../../../server-usage/storage-engines/innodb/innodb-page-compression.md) in a number of ways.
 
 * It is storage engine independent, while InnoDB page compression applies to InnoDB only.
 * By being specific to a column, one can access non-compressed fields without the decompression overhead.
@@ -92,7 +92,7 @@ CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);
 
 ### See Also
 
-* [InnoDB Page Compression](../../../reference/storage-engines/innodb/innodb-page-compression.md)
-* [InnoDB Compressed Row Format](../../../reference/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
+* [InnoDB Page Compression](../../../server-usage/storage-engines/innodb/innodb-page-compression.md)
+* [InnoDB Compressed Row Format](../../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
 
 CC BY-SA / Gnu FDL

@@ -17,7 +17,7 @@ Generally:
 
 * For statements which return a result set (such as [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md), [SHOW](../../../sql-statements/administrative-sql-statements/show/), [DESC](../../../sql-statements/administrative-sql-statements/describe.md) or [HELP](../../../sql-statements/administrative-sql-statements/help-command.md)), returns -1, even when the result set is empty. This is also true for administrative statements, such as [OPTIMIZE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md).
 * For DML statements other than [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) and for [ALTER TABLE](../../../sql-statements/data-definition/alter/), returns the number of affected rows.
-* For DDL statements (including [TRUNCATE](../../numeric-functions/truncate.md)) and for other statements which don't return any result set (such as [USE](../../../sql-statements/administrative-sql-statements/use-database.md), [DO](../../../sql-statements/stored-routine-statements/do.md), [SIGNAL](../../../../server-usage/programmatic-compound-statements/signal.md) or [DEALLOCATE PREPARE](../../../sql-statements/prepared-statements/deallocate-drop-prepare.md)), returns 0.
+* For DDL statements (including [TRUNCATE](../../numeric-functions/truncate.md)) and for other statements which don't return any result set (such as [USE](../../../sql-statements/administrative-sql-statements/use-database.md), [DO](../../../sql-statements/stored-routine-statements/do.md), [SIGNAL](../../../sql-statements/programmatic-compound-statements/signal.md) or [DEALLOCATE PREPARE](../../../sql-statements/prepared-statements/deallocate-drop-prepare.md)), returns 0.
 
 For [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md), affected rows is by default the number of rows that were actually changed. If the CLIENT\_FOUND\_ROWS flag to [mysql\_real\_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) is specified when connecting to mariadbd, affected rows is instead the number of rows matched by the WHERE clause.
 
@@ -37,7 +37,7 @@ ROW\_COUNT() does not take into account rows that are not directly deleted/updat
 
 **Warning:** After [INSERT DELAYED](../../../sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md), ROW\_COUNT() returns the number of the rows you tried to insert, not the number of the successful writes.
 
-This information can also be found in the [diagnostics area](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md).
+This information can also be found in the [diagnostics area](../../../sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md).
 
 Statements using the ROW\_COUNT() function are not [safe for statement-based replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 

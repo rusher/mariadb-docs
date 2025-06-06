@@ -4,7 +4,7 @@
 
 This page describes recommended settings for IO-bound queries that shovel through lots of records.
 
-First, turn on [Batched Key Access](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md):
+First, turn on [Batched Key Access](../../../server-usage/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md):
 
 ```
 # Turn on disk-ordered reads

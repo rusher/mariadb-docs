@@ -160,7 +160,7 @@ Note that even if there is no parallelism available from the primary [group comm
 replication, since the actual commit steps of different transactions can run\
 in parallel. This can be particularly effective on a replica with binlog enabled\
 ([log\_slave\_updates=1](replication-and-binary-log-system-variables.md)), and more so if replica is configured\
-to be crash-safe ([sync\_binlog=1](replication-and-binary-log-system-variables.md) and[innodb\_flush\_log\_at\_trx\_commit=1](../../reference/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
+to be crash-safe ([sync\_binlog=1](replication-and-binary-log-system-variables.md) and[innodb\_flush\_log\_at\_trx\_commit=1](../../server-usage/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
 
 #### Minimal Mode of In-Order Parallel Replication
 

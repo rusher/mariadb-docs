@@ -18,7 +18,7 @@ CREATE TABLE customer (
 
 [User-defined variables](../sql-structure/sql-language-structure/user-defined-variables.md) are NULL until a value is explicitly assigned.
 
-[Stored routines](../../server-usage/stored-routines/) parameters and [local variables](../../server-usage/programmatic-compound-statements/declare-variable.md) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
+[Stored routines](../../server-usage/stored-routines/) parameters and [local variables](../sql-statements/programmatic-compound-statements/declare-variable.md) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
 
 ## Syntax
 
@@ -283,7 +283,7 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [COALESCE function](../sql-structure/operators/comparison-operators/coalesce.md)
 * [IFNULL function](../sql-functions/control-flow-functions/ifnull.md)
 * [NULLIF function](../sql-functions/control-flow-functions/nullif.md)
-* [CONNECT data types](../storage-engines/connect/connect-data-types.md#null-handling)
+* [CONNECT data types](../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
 * [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
 
 CC BY-SA / Gnu FDL

@@ -53,6 +53,6 @@ NUMERIC_PRECISION_RADIX: 2
 * [PREVIOUS VALUE FOR](../../../../../sql-structure/sequences/sequence-functions/previous-value-for-sequence_name.md)
 * [SETVAL()](../../../../../sql-structure/sequences/sequence-functions/setval.md). Set next value for the sequence.
 * [AUTO INCREMENT](../../../../../data-types/auto_increment.md)
-* [Sequence Storage Engine](../../../../../storage-engines/sequence-storage-engine.md)
+* [Sequence Storage Engine](../../../../../../server-usage/storage-engines/sequence-storage-engine.md)
 
 CC BY-SA / Gnu FDL

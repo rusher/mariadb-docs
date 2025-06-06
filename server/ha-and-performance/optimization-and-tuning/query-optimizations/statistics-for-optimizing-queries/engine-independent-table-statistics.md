@@ -36,7 +36,7 @@ Engine-independent statistics are collected by doing full table and full index s
 
 The [ANALYZE TABLE](../../../../reference/sql-statements/table-statements/analyze-table.md) statement can be used to collect table statistics. However, simply running `ANALYZE TABLE table_name` does not collect engine-independent (or histogram) statistics by default.
 
-When the [ANALYZE TABLE](../../../../reference/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../reference/storage-engines/innodb/) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
+When the [ANALYZE TABLE](../../../../reference/sql-statements/table-statements/analyze-table.md) statement is executed, MariaDB makes a call to the table's storage engine, and the storage engine collects its own statistics for the table. The specific behavior depends on the storage engine. For the default [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engine, see [InnoDB Persistent Statistics](innodb-persistent-statistics.md) for more information.
 
 [ANALYZE TABLE](../../../../reference/sql-statements/table-statements/analyze-table.md) may also collect engine-independent statistics for the table. The specific behavior depends on the value of the [use\_stat\_tables](../../system-variables/server-system-variables.md#use_stat_tables) system variable. Engine-independent statistics will only be collected if one of the following is true:
 

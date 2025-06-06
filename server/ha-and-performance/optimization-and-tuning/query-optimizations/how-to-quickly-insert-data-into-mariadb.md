@@ -46,7 +46,7 @@ SET @@session.unique_checks = 0;
 SET @@session.foreign_key_checks = 0;
 ```
 
-For InnoDB tables, the [AUTO\_INCREMENT lock mode](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) can be temporarily set to 2, which is the fastest setting:
+For InnoDB tables, the [AUTO\_INCREMENT lock mode](../../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md) can be temporarily set to 2, which is the fastest setting:
 
 ```
 SET @@global.innodb_autoinc_lock_mode = 2;
@@ -91,7 +91,7 @@ insert **many** rows at a time, where it may be faster to create a file\
 locally, add the rows there, and then use `LOAD DATA INFILE` to load them;\
 compared to using `INSERT` to insert the rows.
 
-You will also get [progress reporting](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for`LOAD DATA INFILE`.
+You will also get [progress reporting](../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for`LOAD DATA INFILE`.
 
 ### mariadb-import
 
@@ -165,13 +165,13 @@ delimiter ;
 
 ## Server Variables That Can be Used to Tune Insert Speed
 
-| Option                                                                                                                     | Description                                                    |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Option                                                                                                                     | Description                                                    |
-| [innodb\_buffer\_pool\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) | Increase this if you have many indexes in InnoDB/XtraDB tables |
-| [key\_buffer\_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)   | Increase this if you have many indexes in MyISAM tables        |
-| [max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet)                                  | Increase this to allow bigger multi-insert statements          |
-| [read\_buffer\_size](../system-variables/server-system-variables.md#read_buffer_size)                                      | Read block size when reading a file with LOAD DATA             |
+| Option                                                                                                                        | Description                                                    |
+| ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Option                                                                                                                        | Description                                                    |
+| [innodb\_buffer\_pool\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) | Increase this if you have many indexes in InnoDB/XtraDB tables |
+| [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)   | Increase this if you have many indexes in MyISAM tables        |
+| [max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet)                                     | Increase this to allow bigger multi-insert statements          |
+| [read\_buffer\_size](../system-variables/server-system-variables.md#read_buffer_size)                                         | Read block size when reading a file with LOAD DATA             |
 
 See [Server System Variables](../system-variables/server-system-variables.md) for the full list of server\
 variables.

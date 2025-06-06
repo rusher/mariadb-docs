@@ -116,23 +116,23 @@ Like the above, this is an indication that a second MariaDB instance is already 
 
 ## InnoDB
 
-[InnoDB](../../../reference/storage-engines/innodb/) is probably the MariaDB component that most frequently causes a crash. In the error log, lines containing InnoDB messages generally start with "InnoDB:".
+[InnoDB](../../../server-usage/storage-engines/innodb/) is probably the MariaDB component that most frequently causes a crash. In the error log, lines containing InnoDB messages generally start with "InnoDB:".
 
 ### Cannot Allocate Memory for the InnoDB Buffer Pool
 
-In a typical installation on a dedicated server, at least 70% of your memory should be assigned to [InnoDB buffer pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md); sometimes it can even reach 85%. But be very careful: don't assign to the buffer pool more memory than it can allocate. If it cannot allocate memory, InnoDB will use the disk's swap area, which is very bad for performance. If swapping is disabled or the swap area is not big enough, InnoDB will crash. In this case, MariaDB will probably try to restart several times, and each time it will log a message like this:
+In a typical installation on a dedicated server, at least 70% of your memory should be assigned to [InnoDB buffer pool](../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md); sometimes it can even reach 85%. But be very careful: don't assign to the buffer pool more memory than it can allocate. If it cannot allocate memory, InnoDB will use the disk's swap area, which is very bad for performance. If swapping is disabled or the swap area is not big enough, InnoDB will crash. In this case, MariaDB will probably try to restart several times, and each time it will log a message like this:
 
 ```
 140124 17:29:01 InnoDB: Fatal error: cannot allocate memory for the buffer pool
 ```
 
-In that case, you will need to add more memory to your server/VM or decrease the value of the [innodb\_buffer\_pool\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md) variables.
+In that case, you will need to add more memory to your server/VM or decrease the value of the [innodb\_buffer\_pool\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md) variables.
 
 Remember that the buffer pool will slightly exceed that limit. Also, remember that MariaDB also needs allocate memory for other storage engines and several per-connection buffers. The operating system also needs memory.
 
 ### InnoDB Table Corruption
 
-By default, InnoDB deliberately crashes the server when it detects table corruption. The reason for this behavior is preventing corruption propagation. However, in some situations, server availability is more important than data integrity. For this reason, we can avoid these crashes by changing the value of [innodb\_corrupt\_table\_action](../../../reference/storage-engines/innodb/innodb-system-variables.md) to 'warn'.
+By default, InnoDB deliberately crashes the server when it detects table corruption. The reason for this behavior is preventing corruption propagation. However, in some situations, server availability is more important than data integrity. For this reason, we can avoid these crashes by changing the value of [innodb\_corrupt\_table\_action](../../../server-usage/storage-engines/innodb/innodb-system-variables.md) to 'warn'.
 
 If InnoDB crashes the server after detecting data corruption, it writes a detailed message in the error log. The first lines are similar to the following:
 
@@ -142,13 +142,13 @@ InnoDB: file read of page 7.
 InnoDB: You may have to recover from a backup.
 ```
 
-Generally, it is still possible to recover most of the corrupted data. To do so, restart the server in [InnoDB recovery mode](../../../reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md) and try to extract the data that you want to backup. You can save them in a CSV file or in a non-InnoDB table. Then, restart the server in normal mode and restore the data.
+Generally, it is still possible to recover most of the corrupted data. To do so, restart the server in [InnoDB recovery mode](../../../server-usage/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md) and try to extract the data that you want to backup. You can save them in a CSV file or in a non-InnoDB table. Then, restart the server in normal mode and restore the data.
 
 ## MyISAM
 
 Most tables in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
 
-A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam\_recover\_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
+A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam\_recover\_options](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
 
 ## systemd
 

@@ -1,6 +1,6 @@
 # Information Schema INNODB\_BUFFER\_POOL\_PAGES Table
 
-The [Information Schema](../../) `INNODB_BUFFER_POOL_PAGES` table is a Percona enhancement, and is only available for XtraDB, not InnoDB (see [XtraDB and InnoDB](../../../../../../storage-engines/innodb/)). It contains a record for each page in the [buffer pool](../../../../../../storage-engines/innodb/innodb-buffer-pool.md).
+The [Information Schema](../../) `INNODB_BUFFER_POOL_PAGES` table is a Percona enhancement, and is only available for XtraDB, not InnoDB (see [XtraDB and InnoDB](../../../../../../../server-usage/storage-engines/innodb/)). It contains a record for each page in the [buffer pool](../../../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md).
 
 It has the following columns:
 

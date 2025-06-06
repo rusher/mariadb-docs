@@ -110,7 +110,7 @@ The [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-s
 
 ## More Complex Triggers
 
-Triggers can consist of multiple statements enclosed by a [BEGIN and END](../../programmatic-compound-statements/begin-end.md). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
+Triggers can consist of multiple statements enclosed by a [BEGIN and END](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md). If you're entering multiple statements on the command line, you'll want to temporarily set a new delimiter so that you can use a semicolon to delimit the statements inside your trigger. See [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
 
 ```
 DROP TABLE animals;
@@ -159,7 +159,7 @@ SELECT * FROM animal_count;
 
 If a trigger contains an error and the engine is transactional, or it is a BEFORE trigger, the trigger will not run, and will prevent the original statement from running as well. If the engine is non-transactional, and it is an AFTER trigger, the trigger will not run, but the original statement will.
 
-Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../reference/storage-engines/innodb/), a transactional engine, and then again using [MyISAM](../../../reference/storage-engines/myisam-storage-engine/), a non-transactional engine.
+Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../storage-engines/innodb/), a transactional engine, and then again using [MyISAM](../../storage-engines/myisam-storage-engine/), a non-transactional engine.
 
 ```
 DROP TABLE animals;
@@ -207,7 +207,7 @@ SELECT * FROM animals;
 +----+----------+
 ```
 
-The following example shows how to use a trigger to validate data. The [SIGNAL](../../programmatic-compound-statements/signal.md) statement is used to intentionally produce an error if the email field is not a valid email. As the example shows, in that case the new row is not inserted (because it is a BEFORE trigger).
+The following example shows how to use a trigger to validate data. The [SIGNAL](../../../reference/sql-statements/programmatic-compound-statements/signal.md) statement is used to intentionally produce an error if the email field is not a valid email. As the example shows, in that case the new row is not inserted (because it is a BEFORE trigger).
 
 ```
 CREATE TABLE user (

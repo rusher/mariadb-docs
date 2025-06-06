@@ -52,7 +52,7 @@ The [Information Schema TABLE\_CONSTRAINTS Table](../administrative-sql-statemen
 
 ### FOREIGN KEY Constraints
 
-[InnoDB](../../storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
+[InnoDB](../../../server-usage/storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
 constraint definition in InnoDB looks like this:
 
 ```

@@ -157,7 +157,7 @@ INSERT INTO t3 VALUES (1),(6);
 +------+
 ```
 
-Here is an example that makes use of the [SEQUENCE](../../../../storage-engines/sequence-storage-engine.md) storage engine and the [VALUES](../../../../sql-structure/sql-language-structure/table-value-constructors.md) statement, to generate a numeric sequence and remove some arbitrary numbers from it:
+Here is an example that makes use of the [SEQUENCE](../../../../../server-usage/storage-engines/sequence-storage-engine.md) storage engine and the [VALUES](../../../../sql-structure/sql-language-structure/table-value-constructors.md) statement, to generate a numeric sequence and remove some arbitrary numbers from it:
 
 ```
 (SELECT seq FROM seq_1_to_10) EXCEPT VALUES (2), (3), (4);

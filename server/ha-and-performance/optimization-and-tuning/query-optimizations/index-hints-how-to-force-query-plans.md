@@ -213,7 +213,7 @@ and [ORDER BY](../../../reference/sql-statements/data-manipulation/selecting-dat
 * Use a temporary table for [ORDER BY](../../../reference/sql-statements/data-manipulation/selecting-data/order-by.md):
   * Create a temporary (in memory) table for the 'to-be-sorted' data. (If this\
     gets bigger than `max_heap_table_size` or contains blobs\
-    then an [Aria](../../../reference/storage-engines/aria/) or [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) disk based table will be used)
+    then an [Aria](../../../server-usage/storage-engines/aria/) or [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) disk based table will be used)
   * Sort the keys + reference to row (with filesort)
   * Scan the table in sorted order
 

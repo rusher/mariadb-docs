@@ -1,6 +1,6 @@
 # aria\_read\_log
 
-**aria\_read\_log** is a tool for displaying and applying log records from an [Aria](../../reference/storage-engines/aria/) [transaction log](../../reference/storage-engines/aria/aria-storage-engine.md#aria-log-files).
+**aria\_read\_log** is a tool for displaying and applying log records from an [Aria](../../server-usage/storage-engines/aria/) [transaction log](../../server-usage/storage-engines/aria/aria-storage-engine.md#aria-log-files).
 
 Note: Aria is compiled without -DIDENTICAL\_PAGES\_AFTER\_RECOVERY\
 which means that the table files are not byte-to-byte identical to\

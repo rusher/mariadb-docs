@@ -12,7 +12,7 @@ a subset of the 'SQL with Geometry Types' environment proposed by the OGC. And\
 the SQL environment was extended with a set of geometry types.
 
 MariaDB supports spatial extensions to operate on spatial features.\
-These features are available for [Aria](../../storage-engines/aria/), [MyISAM](../../storage-engines/myisam-storage-engine/), [InnoDB](../../storage-engines/innodb/), NDB, and [ARCHIVE](../../storage-engines/archive/) tables.
+These features are available for [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/), NDB, and [ARCHIVE](../../../server-usage/storage-engines/archive.md) tables.
 
 For spatial columns, Aria and MyISAM supports both [SPATIAL](spatial-index.md) and non-SPATIAL\
 indexes. Other storage engines support non-SPATIAL indexes.

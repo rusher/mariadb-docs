@@ -13,7 +13,7 @@ myisamchk has the following requirements for disk space:
 There are a number of [system variables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) that are useful to adjust when running myisamchk. They will increase memory usage, and since some are per-session variables, you don't want to increase the general value, but you can either pass an increased value to myisamchk as a commandline option, or with a \[myisamchk] section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) file.
 
 * [sort\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sort_buffer_size). By default this is 4M, but it's very useful to increase to make myisamchk sorting much faster. Since the server won't be running when you run myisamchk, you can increase substantially. 16M is usually a minimum, but values such as 256M are not uncommon if memory is available.
-* [key\_buffer\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) (which particularly helps with the --extend-check and --safe-recover options.
+* [key\_buffer\_size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) (which particularly helps with the --extend-check and --safe-recover options.
 * [read\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size)
 * [write\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#write_buffer_size)
 
