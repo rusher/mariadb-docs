@@ -3,7 +3,7 @@
 With the introduction of [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](../../server-management/server-monitoring-logs/binary-log/).
 
 With these improvements, the `START TRANSACTION WITH CONSISTENT SNAPSHOT` statement was enhanced to ensure consistency between storage engines that support the new\
-API. At the time of writing, the supporting engines are [XtraDB](../../server-usage/storage-engines/innodb/) and [PBXT](../../server-usage/replication-cluster-multi-master/standard-replication/pbxt-storage-engine/). In\
+API. At the time of writing, the supporting engines are [XtraDB](../../reference/storage-engines/innodb/) and [PBXT](../../server-usage/replication-cluster-multi-master/standard-replication/pbxt-storage-engine/). In\
 addition, the binary log, while not a storage engine as such, also supports\
 the new API and can provide a binlog position consistent with storage engine\
 transaction snapshots.
@@ -94,6 +94,6 @@ For more information on the design and implementation of this feature, see [MWL#
 
 * [START TRANSACTION](../../reference/sql-statements/transactions/start-transaction.md)
 * [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
-* [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
+* [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../reference/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 
 CC BY-SA / Gnu FDL

@@ -6,19 +6,19 @@ The MariaDB XA implementation is based on the X/Open CAE document Distributed Tr
 
 XA transactions are designed to allow distributed transactions, where a transaction manager (the application) controls a transaction which involves multiple resources. Such resources are usually DBMSs, but could be resources of any type. The whole set of required transactional operations is called a global transaction. Each subset of operations which involve a single resource is called a local transaction. XA used a 2-phases commit (2PC). With the first commit, the transaction manager tells each resource to prepare an effective commit, and waits for a confirm message. The changes are not still made effective at this point. If any of the resources encountered an error, the transaction manager will rollback the global transaction. If all resources communicate that the first commit is successful, the transaction manager can require a second commit, which makes the changes effective.
 
-In MariaDB, XA transactions can only be used with storage engines that support them. At least [InnoDB](../../../server-usage/storage-engines/innodb/), [TokuDB](../../../server-usage/storage-engines/tokudb/), [SPIDER](../../../server-usage/storage-engines/spider/) and [MyRocks](../../../server-usage/storage-engines/myrocks/) support them. XA transactions are always supported.
+In MariaDB, XA transactions can only be used with storage engines that support them. At least [InnoDB](../../storage-engines/innodb/), [TokuDB](../../storage-engines/tokudb/), [SPIDER](../../storage-engines/spider/) and [MyRocks](../../storage-engines/myrocks/) support them. XA transactions are always supported.
 
 Like regular transactions, XA transactions create [metadata locks](metadata-locking.md) on accessed tables.
 
 XA transactions require [REPEATABLE READ](set-transaction.md#repeatable-read) as a minimum isolation level. However, distributed transactions should always use [SERIALIZABLE](set-transaction.md#serializable).
 
-Trying to start more than one XA transaction at the same time produces a 1400 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09'). The same error is produced when attempting to start an XA transaction while a regular transaction is in effect. Trying to start a regular transaction while an XA transaction is in effect produces a 1399 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE07').
+Trying to start more than one XA transaction at the same time produces a 1400 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09'). The same error is produced when attempting to start an XA transaction while a regular transaction is in effect. Trying to start a regular transaction while an XA transaction is in effect produces a 1399 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE07').
 
-The [statements that cause an implicit COMMIT](sql-statements-that-cause-an-implicit-commit.md) for regular transactions produce a 1400 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
+The [statements that cause an implicit COMMIT](sql-statements-that-cause-an-implicit-commit.md) for regular transactions produce a 1400 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
 
 ## Internal XA vs External XA
 
-XA transactions are an overloaded term in MariaDB. If a [storage engine](../../../server-usage/storage-engines/) is XA-capable, it can mean one or both of these:
+XA transactions are an overloaded term in MariaDB. If a [storage engine](../../storage-engines/) is XA-capable, it can mean one or both of these:
 
 * It supports MariaDB's internal two-phase commit API. This is transparent to the user. Sometimes this is called "internal XA", since MariaDB's internal [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) can handle coordinating these transactions.
 * It supports XA transactions, with the `XA START`, `XA PREPARE`, `XA COMMIT`, etc. statements. Sometimes this is called "external XA", since it requires the use of an external transaction coordinator to use this feature properly.
@@ -225,7 +225,7 @@ xa rollback X'31320d3334093637763738',X'6162630a646566',3;
 
 [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) does not support XA transactions.
 
-However, [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../server-usage/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) by default, which could have performance implications.
+However, [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) by default, which could have performance implications.
 
 See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md#mariadb-galera-cluster) for more information.
 

@@ -2,7 +2,7 @@
 
 ## About Segmented Key Cache
 
-A segmented key cache is a collection of structures for regular [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/)\
+A segmented key cache is a collection of structures for regular [MyISAM](../../../reference/storage-engines/myisam-storage-engine/)\
 key caches called key cache segments. Segmented key caches mitigate one\
 of the major problems of the simple key cache: thread contention for key\
 cache lock (mutex). With regular key caches, every call of a key cache\
@@ -29,7 +29,7 @@ You can find some benchmark results comparing various settings on the [Segmented
 
 ## Segmented Key Cache Syntax
 
-New global variable: [key\_cache\_segments](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments). This variable sets the number of segments in a key cache. Valid values for this variable are whole\
+New global variable: [key\_cache\_segments](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments). This variable sets the number of segments in a key cache. Valid values for this variable are whole\
 numbers between `0` and `64`. If the number of segments is set to a number\
 greater than `64` the number of segments will be truncated to 64 and a warning will be issued.
 
@@ -40,7 +40,7 @@ for testing purposes, and setting`key_cache_segments = 1` should be slower than 
 should not be used in production.
 
 Other global variables used when working with regular key caches also\
-apply to segmented key caches: [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size),[key\_cache\_age\_threshold](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold), [key\_cache\_block\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size), and[key\_cache\_division\_limit](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit).
+apply to segmented key caches: [key\_buffer\_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size),[key\_cache\_age\_threshold](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold), [key\_cache\_block\_size](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size), and[key\_cache\_division\_limit](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit).
 
 ## Segmented Key Cache Statistics
 

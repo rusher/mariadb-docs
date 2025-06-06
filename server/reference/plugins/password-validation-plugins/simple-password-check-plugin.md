@@ -1,6 +1,6 @@
 # Simple Password Check Plugin
 
-`simple_password_check` is a [password validation](../../../server-usage/mariadb-internals/password-validation.md) plugin. It can check whether a password contains at least a certain number of characters of a specific type. When first installed, a password is required to be at least eight characters, and requires at least one digit, one uppercase character, one lowercase character, and one character that is neither a digit nor a letter.
+`simple_password_check` is a [password validation](../../mariadb-internals/password-validation.md) plugin. It can check whether a password contains at least a certain number of characters of a specific type. When first installed, a password is required to be at least eight characters, and requires at least one digit, one uppercase character, one lowercase character, and one character that is neither a digit nor a letter.
 
 Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict\_password\_validation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
@@ -117,7 +117,7 @@ Prior to [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/communi
 
 ## See Also
 
-* [Password Validation](../../../server-usage/mariadb-internals/password-validation.md)
+* [Password Validation](../../mariadb-internals/password-validation.md)
 * [cracklib\_password\_check plugin](cracklib-password-check-plugin.md) - use the Cracklib password-strength checking library
 
 CC BY-SA / Gnu FDL

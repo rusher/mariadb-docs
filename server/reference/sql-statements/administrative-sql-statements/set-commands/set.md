@@ -48,7 +48,7 @@ Setting a global variable to DEFAULT will restore it to the server default, and 
 
 ## Examples
 
-* [innodb\_sync\_spin\_loops](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops) is a global variable.
+* [innodb\_sync\_spin\_loops](../../../storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops) is a global variable.
 * [skip\_parallel\_replication](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) is a session variable.
 * [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) is both global and session.
 
@@ -158,8 +158,8 @@ SELECT @a;
 
 * [Using last\_value() to return data of used rows](../../../sql-functions/secondary-functions/information-functions/last_value.md)
 * [SET STATEMENT](set-statement.md)
-* [SET Variable](../../programmatic-compound-statements/set-variable.md)
+* [SET Variable](../../../../server-usage/programmatic-compound-statements/set-variable.md)
 * [SET Data Type](../../../data-types/string-data-types/set-data-type.md)
-* [DECLARE Variable](../../programmatic-compound-statements/declare-variable.md)
+* [DECLARE Variable](../../../../server-usage/programmatic-compound-statements/declare-variable.md)
 
 GPLv2 fill\_help\_tables.sql

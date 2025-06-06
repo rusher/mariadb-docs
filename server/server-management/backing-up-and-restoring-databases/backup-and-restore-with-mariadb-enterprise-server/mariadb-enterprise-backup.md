@@ -17,7 +17,7 @@ MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server 10.2, 10.
 
 ## Storage Engines and Backup Types
 
-MariaDB Backup creates a file-level backup of data from the MariaDB Community Server data directory. This backup includes [temporal data](../../../reference/sql-structure/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](../../../server-usage/storage-engines/innodb/), [MyRocks](../../../server-usage/storage-engines/myrocks/), [Aria](../../../server-usage/storage-engines/aria/)).
+MariaDB Backup creates a file-level backup of data from the MariaDB Community Server data directory. This backup includes [temporal data](../../../reference/sql-structure/temporal-tables/), and the encrypted and unencrypted tablespaces of supported storage engines (e.g., [InnoDB](../../../reference/storage-engines/innodb/), [MyRocks](../../../reference/storage-engines/myrocks/), [Aria](../../../reference/storage-engines/aria/)).
 
 MariaDB Enterprise Server implements:
 

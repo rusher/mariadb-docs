@@ -29,7 +29,7 @@ Executing the `DROP INDEX` statement requires the `[INDEX](../../account-managem
 
 Online DDL is used by default with InnoDB, when the drop index operation supports it.
 
-See [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../server-usage/storage-engines/innodb/).
+See [InnoDB Online DDL Overview](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../storage-engines/innodb/).
 
 ## DROP INDEX IF EXISTS ...
 

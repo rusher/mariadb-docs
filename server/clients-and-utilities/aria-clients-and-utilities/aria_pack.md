@@ -1,6 +1,6 @@
 # aria\_pack
 
-aria\_pack is a tool for compressing [Aria](../../server-usage/storage-engines/aria/) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
+aria\_pack is a tool for compressing [Aria](../../reference/storage-engines/aria/) tables. The resulting table are read-only, and usually about 40% to 70% smaller.
 
 aria\_pack is run as follows
 

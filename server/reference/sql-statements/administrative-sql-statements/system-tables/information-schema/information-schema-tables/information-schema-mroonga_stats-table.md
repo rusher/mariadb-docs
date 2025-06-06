@@ -1,6 +1,6 @@
 # Information Schema MROONGA\_STATS Table
 
-The [Information Schema](../) `MROONGA_STATS` table only exists if the [Mroonga](../../../../../../server-usage/storage-engines/mroonga/) storage engine is installed, and contains information about its activities.
+The [Information Schema](../) `MROONGA_STATS` table only exists if the [Mroonga](../../../../../storage-engines/mroonga/) storage engine is installed, and contains information about its activities.
 
 | Column        | Description                                  |
 | ------------- | -------------------------------------------- |

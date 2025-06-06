@@ -22,7 +22,7 @@ Please read and understand this procedure before executing.
 
 ## Support
 
-Customers can obtain support by [submitting a support case](../../../../support.md).
+Customers can obtain support by [submitting a support case](broken-reference).
 
 ## Components
 
@@ -120,7 +120,7 @@ For the preferred S3-compatible object storage providers that provide cloud and 
 
 The use of non-cloud and non-hardware providers is at your own risk.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, [contact us](../../../../support.md).
+If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, [contact us](broken-reference).
 
 ### Preferred Object Storage Providers: Cloud
 

@@ -2,7 +2,7 @@
 
 ## myisampack
 
-`myisampack` is a tool for compressing [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) tables. The resulting tables\
+`myisampack` is a tool for compressing [MyISAM](../../reference/storage-engines/myisam-storage-engine/) tables. The resulting tables\
 are read-only, and usually about 40% to 70% smaller. It is run as follows:
 
 ```

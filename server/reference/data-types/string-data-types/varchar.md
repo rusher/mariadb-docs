@@ -28,7 +28,7 @@ bytes.
 
 MariaDB follows the standard SQL specification, and does not remove trailing spaces from VARCHAR values.
 
-VARCHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../../server-usage/storage-engines/connect/) storage engine does not support VARCHAR(0).
+VARCHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../storage-engines/connect/) storage engine does not support VARCHAR(0).
 
 VARCHAR is shorthand for CHARACTER VARYING. NATIONAL VARCHAR is the\
 standard SQL way to define that a VARCHAR column should use some\
@@ -146,7 +146,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 ## Difference Between VARCHAR and [TEXT](text.md)
 
 * VARCHAR columns can be fully indexed. [TEXT](text.md) columns can only be indexed over a specified length.
-* Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../../server-usage/storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
+* Using [TEXT](text.md) or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
 
 ## Oracle Mode
 

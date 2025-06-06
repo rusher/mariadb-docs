@@ -158,7 +158,7 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 **Notes:**
 
 1. If SQL Server uses a non-unicode collation, a subset of UTF-8 is used. So it is possible to use a smaller character set on MariaDB too.
-2. [InnoDB](../../../../server-usage/storage-engines/innodb/) has a maximum row length of 65,535 bytes. [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) columns do not contribute to the row size, because they are stored separately (except for the first 12 bytes).
+2. [InnoDB](../../../../reference/storage-engines/innodb/) has a maximum row length of 65,535 bytes. [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) columns do not contribute to the row size, because they are stored separately (except for the first 12 bytes).
 3. In SQL Server, UTF-16 is used if data contains Supplementary Characters, otherwise UCS-2 is used. If not sure, use `utf16` in MariaDB.
 4. In SQL Server, the value of `ANSI_PADDING` determines if `char` values should be padded with spaces to their maximum length. In MariaDB, this depends on the [PAD\_CHAR\_TO\_FULL\_LENGTH](../../../variables-and-modes/sql-mode.md#pad_char_to_full_length) sql\_mode flag.
 5. See JSON, below.

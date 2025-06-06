@@ -4,7 +4,7 @@ The [Information Schema](../../) `INNODB_FT_DELETED` table contains rows that ha
 
 The fulltext index is then only reorganized when an [OPTIMIZE TABLE](../../../../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) statement is underway. The related [INNODB\_FT\_BEING\_DELETED](information-schema-innodb_ft_being_deleted-table.md) table contains rows being deleted while an `OPTIMIZE TABLE` is in the process of running.
 
-The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
 
 It has the following column:
 

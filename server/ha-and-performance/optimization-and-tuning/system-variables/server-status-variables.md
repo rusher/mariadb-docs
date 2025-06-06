@@ -2,18 +2,18 @@
 
 The full list of status variables are listed in the contents on this page; most are described on this page, but some are described elsewhere:
 
-* [Aria Status Variables](../../../server-usage/storage-engines/aria/aria-status-variables.md)
+* [Aria Status Variables](../../../reference/storage-engines/aria/aria-status-variables.md)
 * [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
 * [InnoDB Status Variables](innodb-status-variables.md)
-* [Mroonga Status Variables](../../../server-usage/storage-engines/mroonga/mroonga-status-variables.md)
-* [MyRocks Status Variables](../../../server-usage/storage-engines/myrocks/myrocks-status-variables.md)
+* [Mroonga Status Variables](../../../reference/storage-engines/mroonga/mroonga-status-variables.md)
+* [MyRocks Status Variables](../../../reference/storage-engines/myrocks/myrocks-status-variables.md)
 * [Performance Scheme Status Variables](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md)
 * [Replication and Binary Log Status Variables](../../standard-replication/replication-and-binary-log-status-variables.md)
-* [S3 Storage Engine Status Variables](../../../server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
+* [S3 Storage Engine Status Variables](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
 * [Server\_Audit Status Variables](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md)
 * [Sphinx Status Variables](sphinx-status-variables.md)
 * [Spider Status Variables](spider-status-variables.md)
-* [TokuDB Status Variables](../../../server-usage/storage-engines/tokudb/tokudb-status-variables.md)
+* [TokuDB Status Variables](../../../reference/storage-engines/tokudb/tokudb-status-variables.md)
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -234,7 +234,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_begin`
 
-* Description: Number of [BEGIN](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md) or [START TRANSACTION](../../../reference/sql-statements/transactions/start-transaction.md) statements executed.
+* Description: Number of [BEGIN](../../../server-usage/programmatic-compound-statements/begin-end.md) or [START TRANSACTION](../../../reference/sql-statements/transactions/start-transaction.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -276,7 +276,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_compound_sql`
 
-* Description: Number of [compund](../../../reference/sql-statements/programmatic-compound-statements/) sql statements.
+* Description: Number of [compund](../../../server-usage/programmatic-compound-statements/) sql statements.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -516,7 +516,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_get_diagnostics`
 
-* Description: Number of [GET DIAGNOSTICS](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) commands executed.
+* Description: Number of [GET DIAGNOSTICS](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -686,7 +686,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_resignal`
 
-* Description: Number of [RESIGNAL](../../../reference/sql-statements/programmatic-compound-statements/resignal.md) commands executed.
+* Description: Number of [RESIGNAL](../../../server-usage/programmatic-compound-statements/resignal.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -747,7 +747,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_signal`
 
-* Description: Number of [SIGNAL](../../../reference/sql-statements/programmatic-compound-statements/signal.md) statements executed.
+* Description: Number of [SIGNAL](../../../server-usage/programmatic-compound-statements/signal.md) statements executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -777,7 +777,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_client_statistics`
 
-* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../server-usage/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -929,7 +929,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_index_statistics`
 
-* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../server-usage/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1008,7 +1008,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_table_statistics`
 
-* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../server-usage/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1033,7 +1033,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_user_statistics`
 
-* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../server-usage/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](../../../reference/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1335,7 +1335,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_json`
 
-* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../server-usage/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
+* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1606,7 +1606,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Maria_*`
 
-* Description: When the Maria storage engine was renamed Aria, the Maria variables existing at the time were renamed at the same time. See [Aria Server Status Variables](../../../server-usage/storage-engines/aria/aria-status-variables.md).
+* Description: When the Maria storage engine was renamed Aria, the Maria variables existing at the time were renamed at the same time. See [Aria Server Status Variables](../../../reference/storage-engines/aria/aria-status-variables.md).
 
 #### `Max_memory_used`
 
@@ -1897,7 +1897,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 #### `Syncs`
 
 * Description: Number of times my\_sync() has been called, or the number of times the server has had to force data to disk. Covers the [binary log](../../../server-management/server-monitoring-logs/binary-log/), .frm creation (if these\
-  operations are configured to sync) and some storage engines ([Archive](../../../server-usage/storage-engines/archive.md),[CSV](../../../server-usage/storage-engines/csv/), [Aria](../../../server-usage/storage-engines/aria/)), but not [XtraDB/InnoDB](../../../server-usage/storage-engines/innodb/)).
+  operations are configured to sync) and some storage engines ([Archive](../../../reference/storage-engines/archive/),[CSV](../../../reference/storage-engines/csv/), [Aria](../../../reference/storage-engines/aria/)), but not [XtraDB/InnoDB](../../../reference/storage-engines/innodb/)).
 * Scope: Global, Session
 * Data Type: `numeric`
 

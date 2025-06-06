@@ -18,16 +18,16 @@ For [all practical purposes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comp
 
 Check the values of the following server variables:
 
-* [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table)
-* [innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+* [innodb\_file\_per\_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table)
+* [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
 ```
 select @@Innodb_file_per_table,@@Innodb_fast_shutdown\G
 ```
 
-[innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) should be 1. This is the default setting for MySQL and MariaDB. If not, one should use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) for migration as some of the following recommendations will not work.
+[innodb\_file\_per\_table](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) should be 1. This is the default setting for MySQL and MariaDB. If not, one should use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) for migration as some of the following recommendations will not work.
 
-[innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) should be 0 (at least on the migrated server during shutdown, to ensure that a full shutdown is done when taking server down). This is required when upgrading between major versions of both MySQL and MariaDB as the format of the undo or redo files can change between major versions. This variable can be set just before doing the shutdown.
+[innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) should be 0 (at least on the migrated server during shutdown, to ensure that a full shutdown is done when taking server down). This is required when upgrading between major versions of both MySQL and MariaDB as the format of the undo or redo files can change between major versions. This variable can be set just before doing the shutdown.
 
 If your distribution allows it, install the MariaDB packages or the MariaDB tar distribution on the database server. Do not start MariaDB yet! This will decrease the downtime while doing the migration.
 
@@ -239,14 +239,14 @@ All the options in your original MySQL [my.cnf file](../../mariadbd-configuratio
 
 However as MariaDB has more features than MySQL, there are a few things that you should consider changing in your `my.cnf` file.
 
-* MariaDB uses the [Aria storage engine](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) by default for internal temporary files, instead of MyISAM. If you have a lot of temporary files, you should add and set `[aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)` to the same value as you have for `[key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)`.
-* If you don't use MyISAM tables, you can set [key-buffer-size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
+* MariaDB uses the [Aria storage engine](../../../../reference/storage-engines/aria/aria-storage-engine.md) by default for internal temporary files, instead of MyISAM. If you have a lot of temporary files, you should add and set `[aria-pagecache-buffer-size](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)` to the same value as you have for `[key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)`.
+* If you don't use MyISAM tables, you can set [key-buffer-size](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
 * If you have a LOT of connections (> 100) that mostly run short running queries, you should consider using the [thread pool](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md). For example using : [thread\_handling=pool-of-threads](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_handling) and [thread\_pool\_size=128](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_pool_size) could give a notable performance boost in this case. Where the `thread_pool_size` should be about `2 * number of cores on your machine`.
 
 ## Other Things to Think About
 
 * MariaDB has LGPL versions of the [C connector](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) and [Java Client](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j). If you are shipping an application that supports MariaDB or MySQL, you should consider using these!
-* You should consider trying out the [MyRocks storage engine](../../../../server-usage/storage-engines/myrocks/) or some of the other [new storage engines](../../../../server-usage/storage-engines/) that MariaDB provides.
+* You should consider trying out the [MyRocks storage engine](../../../../reference/storage-engines/myrocks/) or some of the other [new storage engines](../../../../reference/storage-engines/) that MariaDB provides.
 
 ## See Also
 

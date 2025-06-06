@@ -232,8 +232,8 @@ Setting either [query\_cache\_type](../system-variables/server-system-variables.
 
 ## Limitations
 
-* The query cache needs to be disabled in order to use [OQGRAPH](../../../server-usage/storage-engines/oqgraph-storage-engine/).
-* The query cache is not used by the [Spider](../../../server-usage/storage-engines/spider/) storage engine (amongst others).
+* The query cache needs to be disabled in order to use [OQGRAPH](../../../reference/storage-engines/oqgraph-storage-engine/).
+* The query cache is not used by the [Spider](../../../reference/storage-engines/spider/) storage engine (amongst others).
 * The query cache also needs to be disabled for MariaDB [Galera](../../../../kb/en/galera/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 ## LOCK TABLES and the Query Cache

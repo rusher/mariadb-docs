@@ -18,7 +18,7 @@ This table does not contain information about:
 
 This table only contains enough information to reload the plugin when the server is restarted, which means it only contains the plugin name and the plugin library.
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.plugin` table contains the following fields:
 

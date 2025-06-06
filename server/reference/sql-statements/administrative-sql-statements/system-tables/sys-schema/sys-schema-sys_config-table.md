@@ -6,7 +6,7 @@ The Sys Schema _sys\_config_ table was added in [MariaDB 10.6.0](https://app.git
 
 The _sys.sys\_config_ table holds configuration options for the [Sys Schema](./).
 
-This is a persistent table (using the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine), with the configuration persisting across upgrades (new options are added with [INSERT IGNORE](../../../data-manipulation/inserting-loading-data/insert-ignore.md).
+This is a persistent table (using the [Aria](../../../../storage-engines/aria/) storage engine), with the configuration persisting across upgrades (new options are added with [INSERT IGNORE](../../../data-manipulation/inserting-loading-data/insert-ignore.md).
 
 The table also has two related triggers, which maintain the user that INSERTs or UPDATEs the configuration - sys\_config\_insert\_set\_user and sys\_config\_update\_set\_user respectively.
 
@@ -39,6 +39,6 @@ Note, when functions check for configuration options, they first check whether a
 
 ### Notes
 
-Some early versions of _sys\_config_ were stored in [InnoDB](../../../../../server-usage/storage-engines/innodb/) format.
+Some early versions of _sys\_config_ were stored in [InnoDB](../../../../storage-engines/innodb/) format.
 
 CC BY-SA / Gnu FDL

@@ -116,9 +116,9 @@ parameter.
 
 The routine\_body consists of a valid SQL procedure statement. This can\
 be a simple statement such as [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) or [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md), or it can be a\
-compound statement written using [BEGIN and END](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md). Compound statements\
+compound statement written using [BEGIN and END](../../programmatic-compound-statements/begin-end.md). Compound statements\
 can contain declarations, loops, and other control structure\
-statements. See [Programmatic and Compound Statements](../../../reference/sql-statements/programmatic-compound-statements/) for syntax details.
+statements. See [Programmatic and Compound Statements](../../programmatic-compound-statements/) for syntax details.
 
 MariaDB allows routines to contain DDL statements, such as `CREATE` and\
 DROP. MariaDB also allows [stored procedures](./) (but not [stored functions](../stored-functions/))\

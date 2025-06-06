@@ -6,7 +6,7 @@ The `mysql.procs_priv` table contains information about [stored procedure](../..
 
 The [INFORMATION\_SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table derives its contents from `mysql.procs_priv`.
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.procs_priv` table contains the following fields:
 

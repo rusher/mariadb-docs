@@ -1,8 +1,8 @@
 # mysql.spider\_table\_crd Table
 
-The `mysql.spider_table_crd` table is installed by the [Spider storage engine](../../../../../../server-usage/storage-engines/spider/).
+The `mysql.spider_table_crd` table is installed by the [Spider storage engine](../../../../../storage-engines/spider/).
 
-This table uses the [Aria](../../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../storage-engines/aria/) storage engine.
 
 It contains the following fields:
 

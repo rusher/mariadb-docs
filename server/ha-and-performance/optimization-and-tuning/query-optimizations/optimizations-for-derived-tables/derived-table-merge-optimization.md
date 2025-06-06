@@ -93,6 +93,6 @@ set @@optimizer_switch='derived_merge=OFF'
 
 ## See Also
 
-* FAQ entry: [Why is ORDER BY in a FROM subquery ignored?](../../../../server-usage/faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
+* FAQ entry: [Why is ORDER BY in a FROM subquery ignored?](../../../../reference/faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
 
 CC BY-SA / Gnu FDL

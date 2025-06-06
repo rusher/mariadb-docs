@@ -10,7 +10,7 @@ The terms 'KEY' and 'INDEX' are generally used interchangeably, and statements s
 
 A primary key is unique and can never be null. It will always identify only one record, and each record must be represented. Each table can only have one primary key.
 
-In [InnoDB](../server-usage/storage-engines/innodb/) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
+In [InnoDB](../reference/storage-engines/innodb/) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
 
 Many tables use a numeric ID field as a primary key. The [AUTO\_INCREMENT](../reference/data-types/auto_increment.md) attribute can be used to generate a unique identity for new rows, and is commonly-used with primary keys.
 

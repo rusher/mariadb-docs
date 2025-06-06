@@ -14,7 +14,7 @@ A fixed-length string that is always right-padded with spaces to the specified\
 length when stored. `M` represents the column length in characters. The range\
 of `M` is `0` to `255`. If `M` is omitted, the length is `1`.
 
-CHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../../server-usage/storage-engines/connect/) storage engine does not support CHAR(0).
+CHAR(0) columns can contain 2 values: an empty string or NULL. Such columns cannot be part of an index. The [CONNECT](../../storage-engines/connect/) storage engine does not support CHAR(0).
 
 **Note:** Trailing spaces are removed when `CHAR` values are retrieved\
 unless the `PAD_CHAR_TO_FULL_LENGTH` [SQL mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled.

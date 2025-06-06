@@ -1,6 +1,6 @@
 # HANDLER for MEMORY Tables
 
-This article explains how to use [HANDLER commands](handler-commands.md) efficiently with [MEMORY/HEAP](../../../../server-usage/storage-engines/memory-storage-engine.md) tables.
+This article explains how to use [HANDLER commands](handler-commands.md) efficiently with [MEMORY/HEAP](../../../storage-engines/memory-storage-engine.md) tables.
 
 If you want to scan a table for over different key values, not just search for exact key values, you should create your keys with 'USING BTREE':
 

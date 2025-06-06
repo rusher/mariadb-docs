@@ -64,7 +64,7 @@ SELECT  * INTO OUTFILE "/tmp/skr3" FROM (SELECT * FROM t1 UNION SELECT * FROM t1
 * [SELECT](select.md)
 * [LOAD\_DATA()](../../../sql-functions/string-functions/load_file.md) function
 * [LOAD DATA INFILE](../inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md)
-* [SELECT INTO Variable](../../programmatic-compound-statements/selectinto.md)
+* [SELECT INTO Variable](../../../../server-usage/programmatic-compound-statements/selectinto.md)
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
 
 CC BY-SA / Gnu FDL

@@ -13,9 +13,9 @@ These SQL Server features are not available in MariaDB:
 
 ## Transactions, Storage Engines and the Binary Log
 
-In MariaDB, transactions are optionally implemented by [storage engines](../../../../server-usage/storage-engines/). The default storage engine, [InnoDB](../../../../server-usage/storage-engines/innodb/), fully supports transactions. Other transactional storage engines include [MyRocks](../../../../server-usage/storage-engines/myrocks/) and [TokuDB](../../../../server-usage/storage-engines/tokudb/). Most storage engines are not transactional, therefore they should not considered general purpose engines.
+In MariaDB, transactions are optionally implemented by [storage engines](../../../../reference/storage-engines/). The default storage engine, [InnoDB](../../../../reference/storage-engines/innodb/), fully supports transactions. Other transactional storage engines include [MyRocks](../../../../reference/storage-engines/myrocks/) and [TokuDB](../../../../reference/storage-engines/tokudb/). Most storage engines are not transactional, therefore they should not considered general purpose engines.
 
-Most of the information in this page refers to generic MariaDB server behaviors or InnoDB. For [MyRocks](../../../../server-usage/storage-engines/myrocks/) and [TokuDB](../../../../server-usage/storage-engines/tokudb/) please check the proper KnowledgeBase sections.
+Most of the information in this page refers to generic MariaDB server behaviors or InnoDB. For [MyRocks](../../../../reference/storage-engines/myrocks/) and [TokuDB](../../../../reference/storage-engines/tokudb/) please check the proper KnowledgeBase sections.
 
 Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table.md) are queued.
 
@@ -227,7 +227,7 @@ As you can see, session 1 uses `WITH CONSISTENT SNAPSHOT`, thus it sees all tabl
 
 When we try to read or modify a row that is exclusive-locked by another transaction, our transaction is queued until that lock is released. There could be more queued transactions waiting to acquire the same lock, in which case we will wait even more.
 
-There is a timeout for such waits, defined by the [innodb\_lock\_wait\_timeout](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) variable. If it is set to 0, statements that encounter a row lock will fail immediately. When the timeout is exceeded, MariaDB produces the following error:
+There is a timeout for such waits, defined by the [innodb\_lock\_wait\_timeout](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) variable. If it is set to 0, statements that encounter a row lock will fail immediately. When the timeout is exceeded, MariaDB produces the following error:
 
 ```
 ERROR 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
@@ -272,7 +272,7 @@ Lock modes are the following:
 * Shared Locks (S) can be acquired acquired on reads. Multiple shared locks can be acquired at the same time (because the rows are not supposed to change when shared-locked) but are incompatible with exclusive locks.
 * Intention locks (IS, XS) are acquired when it is not possible to acquire an exclusive lock or a shared lock. When a lock on a row or gap is released, the oldest intention lock on that resource (if any) is converted to an X or S lock.
 
-For more information see [InnoDB Lock Modes](../../../../server-usage/storage-engines/innodb/innodb-lock-modes.md).
+For more information see [InnoDB Lock Modes](../../../../reference/storage-engines/innodb/innodb-lock-modes.md).
 
 ### Information Schema
 
@@ -338,7 +338,7 @@ trx_autocommit_non_locking: 0
 
 ### Deadlocks
 
-InnoDB detects deadlocks automatically. Since this consumes CPU time, some users prefer to disable this feature by setting the [innodb\_deadlock\_detect](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) variable to 0. If this is done, locked transactions will wait until the they exceed the [innodb\_lock\_wait\_timeout](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout). Therefore it is important to set innodb\_lock\_wait\_timeout to a very low value, like 1.
+InnoDB detects deadlocks automatically. Since this consumes CPU time, some users prefer to disable this feature by setting the [innodb\_deadlock\_detect](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) variable to 0. If this is done, locked transactions will wait until the they exceed the [innodb\_lock\_wait\_timeout](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout). Therefore it is important to set innodb\_lock\_wait\_timeout to a very low value, like 1.
 
 When InnoDB detects a deadlock, it kills the transaction that modified the least amount of data. The client will receive the following error:
 
@@ -391,6 +391,6 @@ Record lock, heap no 3 PHYSICAL RECORD: n_fields 3; compact format; info bits 32
 
 The latest detected deadlock never disappears from the output of `SHOW ENGINE InnoDB STATUS`. If you cannot see any, MariaDB hasn't detected any InnoDB deadlocks since the last restart.
 
-Another way to monitor deadlocks is to set [innodb\_print\_all\_deadlocks](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) to 1 (0 is the default). InnoDB will log all detected deadlocks into the [error log](../../../server-monitoring-logs/error-log.md).
+Another way to monitor deadlocks is to set [innodb\_print\_all\_deadlocks](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks) to 1 (0 is the default). InnoDB will log all detected deadlocks into the [error log](../../../server-monitoring-logs/error-log.md).
 
 CC BY-SA / Gnu FDL

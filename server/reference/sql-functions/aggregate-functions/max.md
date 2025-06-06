@@ -119,7 +119,7 @@ SELECT name, test, score, MAX(score)
 * [AVG](avg.md) (average)
 * [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
-* [MIN/MAX optimization](../../../server-usage/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
+* [MIN/MAX optimization](../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
 * [GREATEST()](../../sql-structure/operators/comparison-operators/greatest.md) returns the largest value from a list
 
 GPLv2 fill\_help\_tables.sql

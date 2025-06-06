@@ -120,7 +120,7 @@ SELECT name, test, score, MIN(score)
 * [AVG](avg.md) (average)
 * [MAX](max.md) (maximum)
 * [SUM](sum.md) (sum total)
-* [MIN/MAX optimization](../../../server-usage/mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
+* [MIN/MAX optimization](../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
 * [LEAST()](../../sql-structure/operators/comparison-operators/least.md) returns the smallest value from a list.
 
 GPLv2 fill\_help\_tables.sql

@@ -4,7 +4,7 @@
 
 The `mysql.roles_mapping` table contains information about mariaDB [roles](../../../../../security/user-account-management/roles/).
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.roles_mapping` table contains the following fields:
 

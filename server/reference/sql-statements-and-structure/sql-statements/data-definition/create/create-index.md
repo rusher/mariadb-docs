@@ -45,7 +45,7 @@ Another shortcut, [DROP INDEX](../../../../sql-statements/data-definition/drop/d
 
 For valid identifiers to use as index names, see [Identifier Names](../../../../sql-structure/sql-language-structure/identifier-names.md).
 
-For limits on InnoDB indexes, see [InnoDB Limitations](../../../../../server-usage/storage-engines/innodb/innodb-limitations.md).
+For limits on InnoDB indexes, see [InnoDB Limitations](../../../../storage-engines/innodb/innodb-limitations.md).
 
 Note that KEY\_BLOCK\_SIZE is currently ignored in CREATE INDEX, although it is included in the output of [SHOW CREATE TABLE](../../../../sql-statements/administrative-sql-statements/show/show-create-table.md).
 
@@ -57,7 +57,7 @@ Executing the `CREATE INDEX` statement requires the `[INDEX](../../account-manag
 
 Online DDL is supported with the [ALGORITHM](create-index.md#algorithm) and [LOCK](create-index.md#lock) clauses.
 
-See [InnoDB Online DDL Overview](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../../server-usage/storage-engines/innodb/).
+See [InnoDB Online DDL Overview](../../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../storage-engines/innodb/).
 
 ## CREATE OR REPLACE INDEX
 
@@ -95,7 +95,7 @@ Stage: 1 of 2 'copy to tmp table'    46% of stage
 
 The progress report is also shown in the output of the [SHOW PROCESSLIST](../../../../sql-statements/administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
-See [Progress Reporting](../../../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for more information.
+See [Progress Reporting](../../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for more information.
 
 ## WITHOUT OVERLAPS
 
@@ -151,6 +151,6 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 * [Full-text Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/)
 * [WITHOUT OVERLAPS](../../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps)
 * [Ignored Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
-* [InnoDB Limitations](../../../../../server-usage/storage-engines/innodb/innodb-limitations.md)
+* [InnoDB Limitations](../../../../storage-engines/innodb/innodb-limitations.md)
 
 GPLv2 fill\_help\_tables.sql

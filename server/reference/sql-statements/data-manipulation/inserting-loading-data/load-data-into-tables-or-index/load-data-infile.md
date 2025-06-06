@@ -68,7 +68,7 @@ If you load data from a file into a table that already contains data and has a [
 
 The `REPLACE` keyword works like the [REPLACE](../../changing-deleting-data/replace.md) statement. Here, the statement attempts to load the data from the file. If the row does not exist, it adds it to the table. If the row contains an existing primary key, it replaces the table data. That is, in the event of a conflict, it assumes the file contains the desired row.
 
-This operation can cause a degradation in load speed by a factor of 20 or more if the part that has already been loaded is larger than the capacity of the [InnoDB Buffer Pool](../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md). This happens because it causes a lot of turnaround in the buffer pool.
+This operation can cause a degradation in load speed by a factor of 20 or more if the part that has already been loaded is larger than the capacity of the [InnoDB Buffer Pool](../../../../storage-engines/innodb/innodb-buffer-pool.md). This happens because it causes a lot of turnaround in the buffer pool.
 
 Use the `IGNORE` keyword when you want to skip any rows that contain a conflicting primary key. Here, the statement attempts to load the data from the file. If the row does not exist, it adds it to the table. If the row contains an existing primary key, it ignores the addition request and moves on to the next. That is, in the event of a conflict, it assumes the table contains the desired row.
 
@@ -95,13 +95,13 @@ _col\_name\_or\_user\_var_ can be a column name, or a user variable. In the case
 
 ### Priority and Concurrency
 
-In storage engines that perform table-level locking ([MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../../../server-usage/storage-engines/memory-storage-engine.md) and [MERGE](../../../../../server-usage/storage-engines/merge.md)), using the [LOW\_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md) keyword, MariaDB delays insertions until no other clients are reading from the table. Alternatively, when using the [MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) storage engine, you can use the [CONCURRENT](../concurrent-inserts.md) keyword to perform concurrent insertion.
+In storage engines that perform table-level locking ([MyISAM](../../../../storage-engines/myisam-storage-engine/), [MEMORY](../../../../storage-engines/memory-storage-engine.md) and [MERGE](../../../../storage-engines/merge.md)), using the [LOW\_PRIORITY](../../changing-deleting-data/high_priority-and-low_priority.md) keyword, MariaDB delays insertions until no other clients are reading from the table. Alternatively, when using the [MyISAM](../../../../storage-engines/myisam-storage-engine/) storage engine, you can use the [CONCURRENT](../concurrent-inserts.md) keyword to perform concurrent insertion.
 
 The `LOW_PRIORITY` and `CONCURRENT` keywords are mutually exclusive. They cannot be used in the same statement.
 
 ### Progress Reporting
 
-The `LOAD DATA INFILE` statement supports [progress reporting](../../../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md). You may find this useful when dealing with long-running operations. Using another client you can issue a [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) query to check the progress of the data load.
+The `LOAD DATA INFILE` statement supports [progress reporting](../../../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md). You may find this useful when dealing with long-running operations. Using another client you can issue a [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) query to check the progress of the data load.
 
 ### Using mariadb-import
 
@@ -111,7 +111,7 @@ Using [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-i
 
 ### Indexing
 
-In cases where the storage engine supports [ALTER TABLE... DISABLE KEYS](../../../data-definition/alter/alter-table.md#enable-disable-keys) statements ([MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../../../server-usage/storage-engines/aria/)), the `LOAD DATA INFILE` statement automatically disables indexes during the execution.
+In cases where the storage engine supports [ALTER TABLE... DISABLE KEYS](../../../data-definition/alter/alter-table.md#enable-disable-keys) statements ([MyISAM](../../../../storage-engines/myisam-storage-engine/) and [Aria](../../../../storage-engines/aria/)), the `LOAD DATA INFILE` statement automatically disables indexes during the execution.
 
 ## Examples
 

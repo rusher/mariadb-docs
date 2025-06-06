@@ -2,7 +2,7 @@
 
 ## aria\_chk
 
-`aria_chk` is used to check, repair, optimize, sort and get information about [Aria](../../server-usage/storage-engines/aria/) tables.
+`aria_chk` is used to check, repair, optimize, sort and get information about [Aria](../../reference/storage-engines/aria/) tables.
 
 With the MariaDB server you can use [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md),[REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md) and [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to do\
 similar things.

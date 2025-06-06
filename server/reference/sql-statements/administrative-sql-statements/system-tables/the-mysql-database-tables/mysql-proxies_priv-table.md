@@ -4,7 +4,7 @@
 
 The `mysql.proxies_priv` table contains information about proxy privileges. The table can be queried and although it is possible to directly update it, it is best to use [GRANT](../../../account-management-sql-statements/grant.md) for setting privileges.
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.proxies_priv` table contains the following fields:
 

@@ -9,7 +9,7 @@ PREPARE stmt_name FROM preparable_stmt
 ## Description
 
 The `PREPARE` statement prepares a statement and assigns it a name,`stmt_name`, by which to refer to the statement later. Statement names\
-are not case sensitive. `preparable_stmt` is either a string literal or a [user variable](../../sql-structure/sql-language-structure/user-defined-variables.md) (not a [local variable](../programmatic-compound-statements/declare-variable.md), an SQL expression or a subquery) that contains the text of the statement. The text must\
+are not case sensitive. `preparable_stmt` is either a string literal or a [user variable](../../sql-structure/sql-language-structure/user-defined-variables.md) (not a [local variable](../../../server-usage/programmatic-compound-statements/declare-variable.md), an SQL expression or a subquery) that contains the text of the statement. The text must\
 represent a single SQL statement, not multiple statements. Within the\
 statement, "?" characters can be used as parameter markers to indicate\
 where data values are to be bound to the query later when you execute\
@@ -28,7 +28,7 @@ error is returned and no statement with the given name exists.
 
 Prepared statements can be PREPAREd and [EXECUTEd](execute-statement.md) in a stored procedure, but not in a stored function or trigger. Also, even if the statement is PREPAREd in a procedure, it will not be deallocated when the procedure execution ends.
 
-A prepared statement can access [user-defined variables](../../sql-structure/sql-language-structure/user-defined-variables.md), but not [local variables](../programmatic-compound-statements/declare-variable.md) or procedure's parameters.
+A prepared statement can access [user-defined variables](../../sql-structure/sql-language-structure/user-defined-variables.md), but not [local variables](../../../server-usage/programmatic-compound-statements/declare-variable.md) or procedure's parameters.
 
 If the prepared statement contains a syntax error, PREPARE will fail. As a side effect, stored procedures can use it to check if a statement is valid. For example:
 
@@ -45,7 +45,7 @@ BEGIN
 END;
 ```
 
-The [FOUND\_ROWS()](../../sql-functions/secondary-functions/information-functions/found_rows.md) and [ROW\_COUNT()](../../sql-functions/secondary-functions/information-functions/row_count.md) functions, if called immediatly after EXECUTE, return the number of rows read or affected by the prepared statements; however, if they are called after DEALLOCATE PREPARE, they provide information about this statement. If the prepared statement produces errors or warnings, [GET DIAGNOSTICS](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) return information about them. DEALLOCATE PREPARE shouldn't clear the [diagnostics area](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md), unless it produces an error.
+The [FOUND\_ROWS()](../../sql-functions/secondary-functions/information-functions/found_rows.md) and [ROW\_COUNT()](../../sql-functions/secondary-functions/information-functions/row_count.md) functions, if called immediatly after EXECUTE, return the number of rows read or affected by the prepared statements; however, if they are called after DEALLOCATE PREPARE, they provide information about this statement. If the prepared statement produces errors or warnings, [GET DIAGNOSTICS](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) return information about them. DEALLOCATE PREPARE shouldn't clear the [diagnostics area](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md), unless it produces an error.
 
 A prepared statement is executed with `[EXECUTE](execute-statement.md)` and released\
 with `[DEALLOCATE PREPARE](deallocate-drop-prepare.md)`.
@@ -123,9 +123,9 @@ Prior to this, not all statements can be prepared. Only the following SQL comman
 
 Synonyms are not listed here, but can be used. For example, DESC can be used instead of DESCRIBE.
 
-[Compound statements](../programmatic-compound-statements/using-compound-statements-outside-of-stored-programs.md) can be prepared too.
+[Compound statements](../../../server-usage/programmatic-compound-statements/using-compound-statements-outside-of-stored-programs.md) can be prepared too.
 
-Note that if a statement can be run in a stored routine, it will work even if it is called by a prepared statement. For example, [SIGNAL](../programmatic-compound-statements/signal.md) can't be directly prepared. However, it is allowed in [stored routines](../../../server-usage/stored-routines/). If the x() procedure contains SIGNAL, you can still prepare and execute the 'CALL x();' prepared statement.
+Note that if a statement can be run in a stored routine, it will work even if it is called by a prepared statement. For example, [SIGNAL](../../../server-usage/programmatic-compound-statements/signal.md) can't be directly prepared. However, it is allowed in [stored routines](../../../server-usage/stored-routines/). If the x() procedure contains SIGNAL, you can still prepare and execute the 'CALL x();' prepared statement.
 
 PREPARE supports most kinds of expressions as well, for example:
 

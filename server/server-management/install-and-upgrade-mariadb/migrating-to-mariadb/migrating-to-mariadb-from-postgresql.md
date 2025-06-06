@@ -4,15 +4,15 @@ There are many different ways to migrate from [PostgreSQL](https://www.postgresq
 
 ## MariaDB's CONNECT Storage Engine
 
-MariaDB's [CONNECT](../../../server-usage/storage-engines/connect/) storage engine can be used to migrate from PostgreSQL to MariaDB. There are two primary ways that this can be done.
+MariaDB's [CONNECT](../../../reference/storage-engines/connect/) storage engine can be used to migrate from PostgreSQL to MariaDB. There are two primary ways that this can be done.
 
-See [Loading the CONNECT Storage Engine](../../../server-usage/storage-engines/connect/installing-the-connect-storage-engine.md) for information on how to install the CONNECT storage engine.
+See [Loading the CONNECT Storage Engine](../../../reference/storage-engines/connect/installing-the-connect-storage-engine.md) for information on how to install the CONNECT storage engine.
 
 ### Tables with ODBC table\_type
 
 The CONNECT storage engine allows you to create tables that refer to tables on an external server, and it can fetch the data using a compatible [ODBC](https://en.wikipedia.org/wiki/Open_Database_Connectivity) driver. PostgreSQL does have a freely available ODBC driver called `[psqlODBC](https://odbc.postgresql.org/)`. Therefore, if you install `psqlODBC` on the MariaDB Server, and then configure the system's ODBC framework (such as [unixODBC](https://www.unixodbc.org/)), then the MariaDB server will be able to connect to the remote PostgreSQL server. At that point, you can create tables with the `[ENGINE=CONNECT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine)` and `[table_type=ODBC](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)` table options set, so that you can access the PostgreSQL tables from MariaDB.
 
-See [CONNECT ODBC Table Type: Accessing Tables From Another DBMS](../../../server-usage/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md) for more information on how to do that.
+See [CONNECT ODBC Table Type: Accessing Tables From Another DBMS](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md) for more information on how to do that.
 
 Once the remote table is setup, you can migrate the data to local tables very simply. For example:
 
@@ -37,7 +37,7 @@ INSERT INTO tab SELECT * FROM psql_tab;
 
 The CONNECT storage engine allows you to create tables that refer to tables on an external server, and it can fetch the data using a compatible [JDBC](https://en.wikipedia.org/wiki/Java_Database_Connectivity) driver. PostgreSQL does have a freely available [JDBC driver](https://jdbc.postgresql.org/). If you install this JDBC driver on the MariaDB server, then the MariaDB server will be able to connect to the remote PostgreSQL server via JDBC. At that point, you can create tables with the `[ENGINE=CONNECT](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#storage-engine)` and `[table_type=JDBC](../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md)` table options set, so that you can access the PostgreSQL tables from MariaDB.
 
-See [CONNECT JDBC Table Type: Accessing Tables from Another DBMS](../../../server-usage/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms.md) for more information on how to do that.
+See [CONNECT JDBC Table Type: Accessing Tables from Another DBMS](../../../reference/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms.md) for more information on how to do that.
 
 Once the remote table is setup, you can migrate the data to local tables very simply. For example:
 

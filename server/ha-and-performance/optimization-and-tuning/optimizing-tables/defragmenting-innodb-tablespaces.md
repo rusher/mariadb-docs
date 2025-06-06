@@ -2,7 +2,7 @@
 
 ## Overview
 
-When rows are deleted from an [InnoDB](../../../server-usage/storage-engines/innodb/) table, the rows are simply marked as deleted and not physically deleted. The free space is not returned to the operating system for re-use.
+When rows are deleted from an [InnoDB](../../../reference/storage-engines/innodb/) table, the rows are simply marked as deleted and not physically deleted. The free space is not returned to the operating system for re-use.
 
 The purge thread will physically delete index keys and rows, but the free space introduced is still not returned to operating system. This can lead to gaps in the pages. If you have variable length rows, new rows may be larger than old rows and cannot make use of the available space.
 
@@ -19,7 +19,7 @@ The feature described below has been deprecated in [MariaDB 11.0](https://app.gi
 
 [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) merged Facebook's defragmentation code prepared for MariaDB by Matt, Seong Uck Lee from Kakao. The only major difference to Facebook's code and Matt’s patch is that MariaDB does not introduce new literals to SQL and makes no changes to the server code. Instead, [OPTIMIZE TABLE](optimize-table.md) is used and all code changes are inside the InnoDB/XtraDB storage engines.
 
-The behaviour of `OPTIMIZE TABLE` is unchanged by default, and to enable this new feature, you need to set the [innodb\_defragment](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) system variable to `1`.
+The behaviour of `OPTIMIZE TABLE` is unchanged by default, and to enable this new feature, you need to set the [innodb\_defragment](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment) system variable to `1`.
 
 ```
 [mysqld]
@@ -27,7 +27,7 @@ The behaviour of `OPTIMIZE TABLE` is unchanged by default, and to enable this ne
 innodb-defragment=1
 ```
 
-No new tables are created and there is no need to copy data from old tables to new tables. Instead, this feature loads `n` pages (determined by [innodb-defragment-n-pages](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)) and tries to move records so that pages would be full of records and then frees pages that are fully empty after the operation.
+No new tables are created and there is no need to copy data from old tables to new tables. Instead, this feature loads `n` pages (determined by [innodb-defragment-n-pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)) and tries to move records so that pages would be full of records and then frees pages that are fully empty after the operation.
 
 Note that tablespace files (including ibdata1) will not shrink as the result of defragmentation, but one will get better memory utilization in the InnoDB buffer pool as there are fewer data pages in use.
 
@@ -35,12 +35,12 @@ A number of new system and status variables for controlling and monitoring the f
 
 ### System Variables
 
-* [innodb\_defragment](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment): Enable InnoDB defragmentation.
-* [innodb\_defragment\_n\_pages](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages): Number of pages considered at once when merging multiple pages to defragment.
-* [innodb\_defragment\_stats\_accuracy](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy): Number of defragment stats changes there are before the stats are written to persistent storage.
-* [innodb\_defragment\_fill\_factor\_n\_recs](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs): Number of records of space that defragmentation should leave on the page.
-* [innodb\_defragment\_fill\_factor](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor): Indicates how full defragmentation should fill a page.
-* [innodb\_defragment\_frequency](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency): Maximum times per second for defragmenting a single index.
+* [innodb\_defragment](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment): Enable InnoDB defragmentation.
+* [innodb\_defragment\_n\_pages](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages): Number of pages considered at once when merging multiple pages to defragment.
+* [innodb\_defragment\_stats\_accuracy](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy): Number of defragment stats changes there are before the stats are written to persistent storage.
+* [innodb\_defragment\_fill\_factor\_n\_recs](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs): Number of records of space that defragmentation should leave on the page.
+* [innodb\_defragment\_fill\_factor](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor): Indicates how full defragmentation should fill a page.
+* [innodb\_defragment\_frequency](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency): Maximum times per second for defragmenting a single index.
 
 ### Status Variables
 

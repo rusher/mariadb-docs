@@ -122,7 +122,7 @@ Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. 
 
 #### NO\_ENGINE\_SUBSTITUTION
 
-If not set, if the available storage engine specified by a CREATE TABLE or ALTER TABLE is not available, a warning is given and the default storage engine is used instead. If set, generate a 1286 error when creating a table if the specified [storage engine](../../server-usage/storage-engines/) is not available. See also [enforce\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#enforce_storage_engine). Default since [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes).
+If not set, if the available storage engine specified by a CREATE TABLE or ALTER TABLE is not available, a warning is given and the default storage engine is used instead. If set, generate a 1286 error when creating a table if the specified [storage engine](../../reference/storage-engines/) is not available. See also [enforce\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#enforce_storage_engine). Default since [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes).
 
 #### NO\_FIELD\_OPTIONS
 

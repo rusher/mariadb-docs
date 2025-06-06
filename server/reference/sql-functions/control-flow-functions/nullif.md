@@ -36,6 +36,6 @@ SELECT NULLIF(1,2);
 * [IS NOT NULL operator](../../sql-structure/operators/comparison-operators/is-not-null.md)
 * [COALESCE function](../../sql-structure/operators/comparison-operators/coalesce.md)
 * [IFNULL function](ifnull.md)
-* [CONNECT data types](../../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
+* [CONNECT data types](../../storage-engines/connect/connect-data-types.md#null-handling)
 
 GPLv2 fill\_help\_tables.sql

@@ -24,7 +24,7 @@ $ docker run --name some-%%REPO%% -e MARIADB_ROOT_PASSWORD=my-secret-pw --networ
 
 ### Enabling a Plugin in the Configuration Files
 
-plugin-load-add\` can be used as a configuration option to load plugins. The example below loads the [FederatedX Storage Engine](../../../../../server-usage/storage-engines/federatedx-storage-engine/).
+plugin-load-add\` can be used as a configuration option to load plugins. The example below loads the [FederatedX Storage Engine](../../../../../reference/storage-engines/federatedx-storage-engine/).
 
 ```
 $ printf "[mariadb]\nplugin-load-add=ha_federatedx\n" > /my/custom/federatedx.conf
@@ -55,7 +55,7 @@ $ docker run --rm mariadb:latest sh -c 'apt-get update -qq && apt-cache search m
 
 A new image needs to be created when using additional packages. The `mariadb` image can however be used as a base:
 
-In the following, the [CONNECT Storage Engine](../../../../../server-usage/storage-engines/connect/) is installed:
+In the following, the [CONNECT Storage Engine](../../../../../reference/storage-engines/connect/) is installed:
 
 ```
 FROM mariadb:latest

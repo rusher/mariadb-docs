@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_FT_INDEX_TABLE` table contains information about InnoDB [fulltext indexes](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) is run. See the [INNODB\_FT\_INDEX\_CACHE](information-schema-innodb_ft_index_cache-table.md) table.
 
-The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
 
 It has the following columns:
 

@@ -20,7 +20,7 @@ Please read and understand this procedure before executing.
 
 ## Support
 
-Customers can obtain support by [submitting a support case](../../../../support.md).
+Customers can obtain support by [submitting a support case](broken-reference).
 
 ## Components
 

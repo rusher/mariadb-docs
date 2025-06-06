@@ -54,7 +54,7 @@ Additional information on the release numbering for MariaDB Enterprise Server ca
 
 MariaDB Corporation offers vendor support for MariaDB Enterprise Server including:
 
-* [Customer Support](../support.md) as detailed in [Subscription Services Policy](https://mariadb.com/subscription-services-policies/).
+* [Customer Support](broken-reference) as detailed in [Subscription Services Policy](https://mariadb.com/subscription-services-policies/).
 * [Professional Services](https://mariadb.com/services/) including Migration Services, Remote DBA Services, and consulting.
 * Customer communications, managed via the [MariaDB Customer Portal](https://customers.mariadb.com/).
 * [Training](https://mariadb.com/services/training/)

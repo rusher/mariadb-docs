@@ -1,6 +1,6 @@
 # SHOW LOCALES
 
-`SHOW LOCALES` was introduced as part of the [Information Schema plugin extension](../../../../server-usage/mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
+`SHOW LOCALES` was introduced as part of the [Information Schema plugin extension](../../../mariadb-internals/information-schema-plugins-show-and-flush-statements.md).
 
 `SHOW LOCALES` is used to return [locales](../../../data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) information as part of the [Locales](../../../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md) plugin. It requires this plugin to be installed to work.
 

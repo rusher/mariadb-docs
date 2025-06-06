@@ -16,7 +16,7 @@ User-defined variables cannot be declared. They can be read even if no value has
 
 * [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) statement;
 * [:=](../operators/assignment-operators/assignment-operator.md) operator within a SQL statement;
-* [SELECT ... INTO](../../sql-statements/programmatic-compound-statements/selectinto.md).
+* [SELECT ... INTO](../../../server-usage/programmatic-compound-statements/selectinto.md).
 
 Since user-defined variables type cannot be declared, the only way to force their type is using [CAST()](../../sql-functions/string-functions/cast.md) or [CONVERT()](../../sql-functions/string-functions/convert.md):
 
@@ -96,7 +96,7 @@ Empty set (0.000 sec)
 
 ## See Also
 
-* [DECLARE VARIABLE](../../sql-statements/programmatic-compound-statements/declare-variable.md)
+* [DECLARE VARIABLE](../../../server-usage/programmatic-compound-statements/declare-variable.md)
 * [Performance Schema user\_variables\_by\_thread Table](../../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
 * [Information Schema USER\_VARIABLES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_variables-table.md)
 

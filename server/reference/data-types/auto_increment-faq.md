@@ -38,7 +38,7 @@ application.
 
 ## Can I do group-wise auto\_increment?
 
-Yes, if you use the [MyISAM engine](../../server-usage/storage-engines/myisam-storage-engine/).
+Yes, if you use the [MyISAM engine](../storage-engines/myisam-storage-engine/).
 
 ## How do I get the auto\_increment value in a BEFORE INSERT trigger?
 
@@ -85,7 +85,7 @@ No, it only has to be indexed. It doesn't even have to be unique.
 
 ## InnoDB and AUTO\_INCREMENT
 
-See [AUTO\_INCREMENT handling in InnoDB](../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md)
+See [AUTO\_INCREMENT handling in InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 
 ## General Information To Read
 
@@ -122,9 +122,9 @@ SELECT * FROM autoinc_test;
 ## See Also
 
 * [AUTO\_INCREMENT](auto_increment.md)
-* [AUTO\_INCREMENT handling in XtraDB/InnoDB](../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [AUTO\_INCREMENT handling in XtraDB/InnoDB](../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md)
-* [BLACKHOLE and AUTO\_INCREMENT](../../server-usage/storage-engines/blackhole.md#blackhole-and-auto_increment)
+* [BLACKHOLE and AUTO\_INCREMENT](../storage-engines/blackhole.md#blackhole-and-auto_increment)
 * [Sequences](../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 _The initial version of this article was copied, with permission, from_ [_Autoincrement\_FAQ_](https://hashmysql.org/wiki/Autoincrement_FAQ) _on 2012-10-05._

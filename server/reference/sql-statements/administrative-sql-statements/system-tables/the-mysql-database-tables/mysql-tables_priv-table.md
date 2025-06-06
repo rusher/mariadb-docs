@@ -8,7 +8,7 @@ Note that the MariaDB privileges occur at many levels. A user may be granted a p
 
 The [INFORMATION\_SCHEMA.TABLE\_PRIVILEGES](../information-schema/information-schema-tables/information-schema-table_privileges-table.md) table derives its contents from `mysql.tables_priv`.
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.tables_priv` table contains the following fields:
 

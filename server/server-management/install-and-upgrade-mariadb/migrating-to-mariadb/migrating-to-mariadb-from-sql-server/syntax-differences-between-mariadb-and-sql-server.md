@@ -69,7 +69,7 @@ It is rarely necessary to use `;` in SQL Server. It is required for certain comm
 
 But the same doesn't apply to MariaDB. **Normally, with MariaDB you only use `;`.**
 
-However, MariaDB also has some situations where you want to use a `;` but you don't want the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client to send the query yet. This can be done in any situation, but it is particularly useful when creating [stored routines](../../../../server-usage/stored-routines/) or using [BEGIN NOT ATOMIC](../../../../reference/sql-statements/programmatic-compound-statements/begin-end.md).
+However, MariaDB also has some situations where you want to use a `;` but you don't want the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client to send the query yet. This can be done in any situation, but it is particularly useful when creating [stored routines](../../../../server-usage/stored-routines/) or using [BEGIN NOT ATOMIC](../../../../server-usage/programmatic-compound-statements/begin-end.md).
 
 The reason is better explained with an example:
 
@@ -150,11 +150,11 @@ MariaDB offers the following solutions to help:
 * The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error.
 * The [ALTER TABLE ... LOCK](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
 
-To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
+To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
 
 An `ALTER TABLE` can be queued because a long-running statement (even a `SELECT`) required a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md). Since this may cause troubles, sometimes we want the operation to simply fail if the wait is too long. This can be achieved with the [WAIT and NOWAIT](../../../../reference/sql-statements/transactions/wait-and-nowait.md) clauses, whose syntax is a bit different from SQL Server.
 
-SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, note that [most ALTER TABLE statements](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `ALGORITHM = INSTANT`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
+SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, note that [most ALTER TABLE statements](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `ALGORITHM = INSTANT`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
 
 ### IF EXISTS, IF NOT EXISTS, OR REPLACE
 
@@ -248,9 +248,9 @@ MariaDB [SHOW ERRORS](../../../../reference/sql-statements/administrative-sql-st
 
 Instead, inside stored procedures you can:
 
-* Use the [GET DIAGNOSTICS](../../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) command to assign error properties to variables. This is the equivalent of using SQL Server functions like `ERROR_NUMBER()` or `ERROR_STATE()`.
-* Add a [DECLARE HANDLER](../../../../reference/sql-statements/programmatic-compound-statements/declare-handler.md) block to handle all errors, a class of errors, or a specific error. This is the equivalent of SQL Server `TRY ... CATCH`.
-* An error or warning can be generated on purpose using [SIGNAL](../../../../reference/sql-statements/programmatic-compound-statements/signal.md). Inside a `DECLARE HANDLER` block, [RESIGNAL](../../../../reference/sql-statements/programmatic-compound-statements/resignal.md) can be used to issue the error again, and interrupt the execution of the block. These are the equivalents of SQL Server `RAISERROR()`.
+* Use the [GET DIAGNOSTICS](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) command to assign error properties to variables. This is the equivalent of using SQL Server functions like `ERROR_NUMBER()` or `ERROR_STATE()`.
+* Add a [DECLARE HANDLER](../../../../server-usage/programmatic-compound-statements/declare-handler.md) block to handle all errors, a class of errors, or a specific error. This is the equivalent of SQL Server `TRY ... CATCH`.
+* An error or warning can be generated on purpose using [SIGNAL](../../../../server-usage/programmatic-compound-statements/signal.md). Inside a `DECLARE HANDLER` block, [RESIGNAL](../../../../server-usage/programmatic-compound-statements/resignal.md) can be used to issue the error again, and interrupt the execution of the block. These are the equivalents of SQL Server `RAISERROR()`.
 
 ## Administration
 

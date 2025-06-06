@@ -1,6 +1,6 @@
 # SQL statements That Cause an Implicit Commit
 
-Some SQL statements cause an implicit commit. As a rule of thumb, such statements are DDL statements. The same statements (except for [SHUTDOWN](../administrative-sql-statements/shutdown.md)) produce a 1400 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
+Some SQL statements cause an implicit commit. As a rule of thumb, such statements are DDL statements. The same statements (except for [SHUTDOWN](../administrative-sql-statements/shutdown.md)) produce a 1400 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
 
 Here is the list:
 

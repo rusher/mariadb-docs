@@ -179,7 +179,7 @@ SELECT * FROM t;
 
 * [mysql\_insert\_id](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_insert_id)
 * [AUTO\_INCREMENT](../../../data-types/auto_increment.md)
-* [AUTO\_INCREMENT handling in InnoDB](../../../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md)
+* [AUTO\_INCREMENT handling in InnoDB](../../../storage-engines/innodb/auto_increment-handling-in-innodb.md)
 * [Sequences](../../../sql-structure/sequences/) - an alternative to auto\_increment
 * [INSERT...RETURNING](../../../sql-statements/data-manipulation/inserting-loading-data/insertreturning.md)
 

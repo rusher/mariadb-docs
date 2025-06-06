@@ -51,7 +51,7 @@ If a row is rejected because of the CHECK OPTION, an error similar to the follow
 ERROR 1369 (HY000): CHECK OPTION failed 'db_name.view_name'
 ```
 
-A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](../storage-engines/blackhole.md) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
+A view with a WHERE which is always false (like `WHERE 0`) and WITH CHECK OPTION is similar to a [BLACKHOLE](../../reference/storage-engines/blackhole.md) table: no row is ever inserted and no row is ever returned. An insertable view with a WHERE which is always false but no CHECK OPTION is a view that accepts data but does not show them.
 
 ## Examples
 

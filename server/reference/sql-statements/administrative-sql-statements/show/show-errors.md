@@ -25,7 +25,7 @@ SELECT @@error_count;
 
 The value of [error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#error_count) might be greater than the number of messages displayed by [SHOW WARNINGS](show-warnings.md) if the [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) system variable is set so low that not all messages are stored.
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](../../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
+For a list of MariaDB error codes, see [MariaDB Error Codes](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
 
 ## Examples
 

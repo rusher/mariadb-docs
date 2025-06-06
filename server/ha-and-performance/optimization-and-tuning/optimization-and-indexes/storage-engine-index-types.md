@@ -4,15 +4,15 @@ This refers to the index\_type definition when creating an index, i.e. BTREE, HA
 
 For more information on general types of indexes, such as primary keys, unique indexes etc, go to [Getting Started with Indexes](https://mariadb.com/kb/en/getting-started-with-indexes/).
 
-| Storage Engine                                                                | Permitted Indexes |
-| ----------------------------------------------------------------------------- | ----------------- |
-| Storage Engine                                                                | Permitted Indexes |
-| [Aria](../../../server-usage/storage-engines/aria/)                           | BTREE, RTREE      |
-| [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/)        | BTREE, RTREE      |
-| [InnoDB](../../../server-usage/storage-engines/innodb/)                       | BTREE             |
-| [MEMORY/HEAP](../../../server-usage/storage-engines/memory-storage-engine.md) | HASH, BTREE       |
+| Storage Engine                                                             | Permitted Indexes |
+| -------------------------------------------------------------------------- | ----------------- |
+| Storage Engine                                                             | Permitted Indexes |
+| [Aria](../../../reference/storage-engines/aria/)                           | BTREE, RTREE      |
+| [MyISAM](../../../reference/storage-engines/myisam-storage-engine/)        | BTREE, RTREE      |
+| [InnoDB](../../../reference/storage-engines/innodb/)                       | BTREE             |
+| [MEMORY/HEAP](../../../reference/storage-engines/memory-storage-engine.md) | HASH, BTREE       |
 
-BTREE is generally the default index type. For [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) tables, HASH is the default. [TokuDB](../../../server-usage/storage-engines/tokudb/) uses a particular data structure called _fractal trees_, which is optimized for data that do not entirely fit memory.
+BTREE is generally the default index type. For [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) tables, HASH is the default. [TokuDB](../../../reference/storage-engines/tokudb/) uses a particular data structure called _fractal trees_, which is optimized for data that do not entirely fit memory.
 
 Understanding the B-tree and hash data structures can help predict how different queries perform on different storage engines that use these data structures in their indexes, particularly for the MEMORY storage engine that lets you choose B-tree or hash indexes.\
 B-Tree Index Characteristics

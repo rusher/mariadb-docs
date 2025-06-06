@@ -17,8 +17,8 @@ This page has a list of SQL Server features that MariaDB implements in a differe
 
 * Clustered indexes. In MariaDB, the physical order of rows is delegated to the storage engine. InnoDB uses the primary key as a clustered index.
 * Hash indexes. Only some storage engines support `HASH` indexes.
-  * The [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engine has a feature called adaptive hash index, enabled by default. It means that in InnoDB all indexes are created as `BTREE`, and depending on how they are used, InnoDB could convert them from BTree to hash indexes, or the other way around. This happens in the background.
-  * The [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) storage engine uses hash indexes by default, if we don't specify the `BTREE` keyword.
+  * The [InnoDB](../../../../reference/storage-engines/innodb/) storage engine has a feature called adaptive hash index, enabled by default. It means that in InnoDB all indexes are created as `BTREE`, and depending on how they are used, InnoDB could convert them from BTree to hash indexes, or the other way around. This happens in the background.
+  * The [MEMORY](../../../../reference/storage-engines/memory-storage-engine.md) storage engine uses hash indexes by default, if we don't specify the `BTREE` keyword.
   * See [Storage Engine Index Types](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/storage-engine-index-types.md) for more information.
 * Query store. MariaDB allows query performance analysis using the [slow log](../../../server-monitoring-logs/slow-query-log/) and [performance\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/). Some open source or commercial 3rd party tools read that information to produce statistics and make it easy to identify slow queries.
 
@@ -33,7 +33,7 @@ This page has a list of SQL Server features that MariaDB implements in a differe
 
 * `NOT FOR REPLICATION`
   * MariaDB supports [replication filters](../../../../ha-and-performance/standard-replication/replication-filters.md) to exclude some tables or databases from replication
-  * It is possible to keep a table empty in a slave (or in the master) by using the [BLACKHOLE storage engine](../../../../server-usage/storage-engines/blackhole.md).
+  * It is possible to keep a table empty in a slave (or in the master) by using the [BLACKHOLE storage engine](../../../../reference/storage-engines/blackhole.md).
   * The master can have columns that are not present in a slave (the other way around is also supported). Before using this feature, carefully read the [Replication When the Master and Slave Have Different Table Definitions](../../../../ha-and-performance/standard-replication/replication-when-the-primary-and-replica-have-different-table-definitions.md) page.
   * With MariaDB it's possible to [prevent a trigger from running on slaves](../../../../ha-and-performance/standard-replication/running-triggers-on-the-replica-for-row-based-events.md).
   * It's possible to run [events](../../../../server-usage/triggers-events/event-scheduler/) without replicating them. The same applies to some administrative statements.
@@ -50,7 +50,7 @@ This page has a list of SQL Server features that MariaDB implements in a differe
 
 ## Other Features
 
-* Linked servers. MariaDB supports storage engines to read from, and write to, remote tables. When using the [CONNECT](../../../../server-usage/storage-engines/connect/) engine, those tables could be in different DBMSs, including SQL Server.
+* Linked servers. MariaDB supports storage engines to read from, and write to, remote tables. When using the [CONNECT](../../../../reference/storage-engines/connect/) engine, those tables could be in different DBMSs, including SQL Server.
 * Job scheduler: MariaDB uses an [event scheduler](../../../../server-usage/triggers-events/event-scheduler/) to schedule events instead.
 
 ## See Also

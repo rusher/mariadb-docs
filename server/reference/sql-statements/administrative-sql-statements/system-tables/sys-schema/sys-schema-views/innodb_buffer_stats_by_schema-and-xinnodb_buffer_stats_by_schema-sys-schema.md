@@ -14,16 +14,16 @@ The `innodb_buffer_stats_by_schema` view is intended to be easier for human read
 
 They contain the following columns:
 
-| Column         | Description                                                                                                                                       |
-| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                                       |
-| object\_schema | Object schema name, or InnoDB System if the table belongs to the [InnoDB storage engine](../../../../../../server-usage/storage-engines/innodb/). |
-| allocated      | Total number of bytes allocated for the schema.                                                                                                   |
-| data           | Total number of data bytes allocated for the schema.                                                                                              |
-| pages          | Total number of pages allocated for the schema.                                                                                                   |
-| pages\_hashed  | Total number of hashed pages allocated for the schema.                                                                                            |
-| pages\_old     | Total number of old pages allocated for the schema.                                                                                               |
-| rows\_cached   | Total number of cached rows for the schema.                                                                                                       |
+| Column         | Description                                                                                                                       |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                       |
+| object\_schema | Object schema name, or InnoDB System if the table belongs to the [InnoDB storage engine](../../../../../storage-engines/innodb/). |
+| allocated      | Total number of bytes allocated for the schema.                                                                                   |
+| data           | Total number of data bytes allocated for the schema.                                                                              |
+| pages          | Total number of pages allocated for the schema.                                                                                   |
+| pages\_hashed  | Total number of hashed pages allocated for the schema.                                                                            |
+| pages\_old     | Total number of old pages allocated for the schema.                                                                               |
+| rows\_cached   | Total number of cached rows for the schema.                                                                                       |
 
 ## Example
 

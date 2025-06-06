@@ -25,7 +25,7 @@ ALTER SERVER s OPTIONS (USER 'sally');
 
 * [CREATE SERVER](../create/create-server.md)
 * [DROP SERVER](../drop/drop-server.md)
-* [Spider Storage Engine](../../../../server-usage/storage-engines/spider/)
+* [Spider Storage Engine](../../../storage-engines/spider/)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 
 GPLv2 fill\_help\_tables.sql

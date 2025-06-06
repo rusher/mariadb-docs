@@ -5,7 +5,7 @@ This is a list of [status variables](../../server-status-variables.md) that were
 The list excludes status related to the following storage engines included in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0):
 
 * [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
-* [Mroonga Status Variables](../../../../../server-usage/storage-engines/mroonga/mroonga-status-variables.md)
+* [Mroonga Status Variables](../../../../../reference/storage-engines/mroonga/mroonga-status-variables.md)
 * [Spider Status Variables](../../spider-status-variables.md)
 
 | Variable                                                                                                                                                            | Added                                                                                                                                                         |

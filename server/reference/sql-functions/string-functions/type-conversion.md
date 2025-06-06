@@ -197,6 +197,6 @@ SELECT "2.2" / 3;
 
 ## See also
 
-* [Notes when an index cannot be used because of type conversions](../../../server-usage/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)
+* [Notes when an index cannot be used because of type conversions](../../mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used.md)
 
 CC BY-SA / Gnu FDL

@@ -69,7 +69,7 @@ If the `IF NOT EXISTS` clause is used, then the table will only be created if a 
 
 Use the `TEMPORARY` keyword to create a temporary table that is only available to the current session. Temporary tables are dropped when the session ends. Temporary table names are specific to the session. They will not conflict with other temporary tables from other sessions even if they share the same name. They will shadow names of non-temporary tables or views, if they are identical. A temporary table can have the same name as a non-temporary table which is located in the same database. In that case, their name will reference the temporary table when used in SQL statements. You must have the [CREATE TEMPORARY TABLES](../../account-management-sql-statements/grant.md#database-privileges) privilege on the database to create temporary tables. If no storage engine is specified, the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) setting will determine the engine.
 
-[ROCKSDB](../../../../server-usage/storage-engines/myrocks/) temporary tables cannot be created by setting the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) system variable, or using `CREATE TEMPORARY TABLE LIKE`. Before [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), they could be specified, but would silently fail, and a MyISAM table would be created instead. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107) an error is returned. Explicitly creating a temporary table with `ENGINE=ROCKSDB` has never been permitted.
+[ROCKSDB](../../../storage-engines/myrocks/) temporary tables cannot be created by setting the [default\_tmp\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) system variable, or using `CREATE TEMPORARY TABLE LIKE`. Before [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), they could be specified, but would silently fail, and a MyISAM table would be created instead. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107) an error is returned. Explicitly creating a temporary table with `ENGINE=ROCKSDB` has never been permitted.
 
 ## CREATE TABLE ... LIKE
 
@@ -301,7 +301,7 @@ reference_option:
 
 Index names are optional, if not specified an automatic name will be assigned. Index name are needed to drop indexes and appear in error messages when a constraint is violated.
 
-For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md).
+For limits on InnoDB indexes, see [InnoDB Limitations](../../../storage-engines/innodb/innodb-limitations.md).
 
 ### Index Categories
 
@@ -365,7 +365,7 @@ See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more i
 
 The `KEY_BLOCK_SIZE` index option is similar to the [KEY\_BLOCK\_SIZE](create-table.md#key_block_size) table option.
 
-With the [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engine, if you specify a non-zero value for the `KEY_BLOCK_SIZE` table option for the whole table, then the table will implicitly be created with the [ROW\_FORMAT](create-table.md#row_format) table option set to `COMPRESSED`. However, this does not happen if you just set the `KEY_BLOCK_SIZE` index option for one or more indexes in the table. The [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engine ignores the `KEY_BLOCK_SIZE` index option. However, the [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md) statement may still report it for the index.
+With the [InnoDB](../../../storage-engines/innodb/) storage engine, if you specify a non-zero value for the `KEY_BLOCK_SIZE` table option for the whole table, then the table will implicitly be created with the [ROW\_FORMAT](create-table.md#row_format) table option set to `COMPRESSED`. However, this does not happen if you just set the `KEY_BLOCK_SIZE` index option for one or more indexes in the table. The [InnoDB](../../../storage-engines/innodb/) storage engine ignores the `KEY_BLOCK_SIZE` index option. However, the [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md) statement may still report it for the index.
 
 For information about the `KEY_BLOCK_SIZE` index option, see the [KEY\_BLOCK\_SIZE](create-table.md#key_block_size) table option below.
 
@@ -401,7 +401,7 @@ The `COMMENT` index option allows you to specify a comment with user-readable te
 
 #### CLUSTERING Index Option
 
-The `CLUSTERING` index option is only valid for tables using the [TokuDB](../../../../server-usage/storage-engines/tokudb/) storage engine.
+The `CLUSTERING` index option is only valid for tables using the [TokuDB](../../../storage-engines/tokudb/) storage engine.
 
 #### IGNORED / NOT IGNORED
 
@@ -446,7 +446,7 @@ For each individual table you create (or alter), you can set some table options.
 
 The equal sign is optional.
 
-Some options are supported by the server and can be used for all tables, no matter what storage engine they use; other options can be specified for all storage engines, but have a meaning only for some engines. Also, engines can [extend CREATE TABLE with new options](../../../../server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md).
+Some options are supported by the server and can be used for all tables, no matter what storage engine they use; other options can be specified for all storage engines, but have a meaning only for some engines. Also, engines can [extend CREATE TABLE with new options](../../../storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md).
 
 If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled, wrong table options generate a warning; otherwise, they generate an error.
 
@@ -456,7 +456,7 @@ If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/vari
 
 ### \[STORAGE] ENGINE
 
-`[STORAGE] ENGINE` specifies a [storage engine](../../../../server-usage/storage-engines/) for the table. If this option is not used, the default storage engine is used instead. That is, the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) session option value if it is set, or the value specified for the `--default-storage-engine` [mariadbd startup option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md), or the default storage engine, [InnoDB](../../../../server-usage/storage-engines/innodb/). If the specified storage engine is not installed and active, the default value will be used, unless the `NO_ENGINE_SUBSTITUTION` [SQL MODE](../../../../server-management/variables-and-modes/sql-mode.md) is set (default). This is only true for `CREATE TABLE`, not for `ALTER TABLE`. For a list of storage engines that are present in your server, issue a [SHOW ENGINES](../../administrative-sql-statements/show/show-engines.md).
+`[STORAGE] ENGINE` specifies a [storage engine](../../../storage-engines/) for the table. If this option is not used, the default storage engine is used instead. That is, the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) session option value if it is set, or the value specified for the `--default-storage-engine` [mariadbd startup option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md), or the default storage engine, [InnoDB](../../../storage-engines/innodb/). If the specified storage engine is not installed and active, the default value will be used, unless the `NO_ENGINE_SUBSTITUTION` [SQL MODE](../../../../server-management/variables-and-modes/sql-mode.md) is set (default). This is only true for `CREATE TABLE`, not for `ALTER TABLE`. For a list of storage engines that are present in your server, issue a [SHOW ENGINES](../../administrative-sql-statements/show/show-engines.md).
 
 ### AUTO\_INCREMENT
 
@@ -464,7 +464,7 @@ If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/vari
 
 ### AVG\_ROW\_LENGTH
 
-`AVG_ROW_LENGTH` is the average rows size. It only applies to tables using [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) storage engines that have the [ROW\_FORMAT](create-table.md#row_format) table option set to `FIXED` format.
+`AVG_ROW_LENGTH` is the average rows size. It only applies to tables using [MyISAM](../../../storage-engines/myisam-storage-engine/) and [Aria](../../../storage-engines/aria/aria-storage-engine.md) storage engines that have the [ROW\_FORMAT](create-table.md#row_format) table option set to `FIXED` format.
 
 MyISAM uses `MAX_ROWS` and `AVG_ROW_LENGTH` to decide the maximum size of a table (default: 256TB, or the maximum file size allowed by the system).
 
@@ -474,7 +474,7 @@ MyISAM uses `MAX_ROWS` and `AVG_ROW_LENGTH` to decide the maximum size of a tabl
 
 ### CHECKSUM/TABLE\_CHECKSUM
 
-`CHECKSUM` (or `TABLE_CHECKSUM`) can be set to 1 to maintain a live checksum for all table's rows. This makes write operations slower, but [CHECKSUM TABLE](../../table-statements/checksum-table.md) will be very fast. This option is only supported for [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria tables](../../../../server-usage/storage-engines/aria/aria-storage-engine.md).
+`CHECKSUM` (or `TABLE_CHECKSUM`) can be set to 1 to maintain a live checksum for all table's rows. This makes write operations slower, but [CHECKSUM TABLE](../../table-statements/checksum-table.md) will be very fast. This option is only supported for [MyISAM](../../../storage-engines/myisam-storage-engine/) and [Aria tables](../../../storage-engines/aria/aria-storage-engine.md).
 
 ### \[DEFAULT] COLLATE
 
@@ -482,15 +482,15 @@ MyISAM uses `MAX_ROWS` and `AVG_ROW_LENGTH` to decide the maximum size of a tabl
 
 ### COMMENT
 
-`COMMENT` is a comment for the table. The maximum length is 2048 characters. Also used to define table parameters when creating a [Spider](../../../../server-usage/storage-engines/spider/) table.
+`COMMENT` is a comment for the table. The maximum length is 2048 characters. Also used to define table parameters when creating a [Spider](../../../storage-engines/spider/) table.
 
 ### CONNECTION
 
-`CONNECTION` is used to specify a server name or a connection string for a [Spider](../../../../server-usage/storage-engines/spider/), [CONNECT](../../../../server-usage/storage-engines/connect/), [Federated or FederatedX table](../../../../server-usage/storage-engines/federatedx-storage-engine/about-federatedx.md).
+`CONNECTION` is used to specify a server name or a connection string for a [Spider](../../../storage-engines/spider/), [CONNECT](../../../storage-engines/connect/), [Federated or FederatedX table](../../../storage-engines/federatedx-storage-engine/about-federatedx.md).
 
 ### DATA DIRECTORY/INDEX DIRECTORY
 
-`DATA DIRECTORY` and `INDEX DIRECTORY` are supported for MyISAM and Aria, and DATA DIRECTORY is also supported by InnoDB if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) server system variable is enabled, but only in CREATE TABLE, not in [ALTER TABLE](../alter/alter-table.md). So, carefully choose a path for InnoDB tables at creation time, because it cannot be changed without dropping and re-creating the table. These options specify the paths for data files and index files, respectively. If these options are omitted, the database's directory will be used to store data files and index files. Note that these table options do not work for [partitioned](../../../../server-management/partitioning-tables/) tables (use the partition options instead), or if the server has been invoked with the [--skip-symbolic-links startup option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md). To avoid the overwriting of old files with the same name that could be present in the directories, you can use [the --keep\_files\_on\_create option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (an error will be issued if files already exist). These options are ignored if the `NO_DIR_IN_CREATE` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled (useful for replicas). Also note that symbolic links cannot be used for InnoDB tables.
+`DATA DIRECTORY` and `INDEX DIRECTORY` are supported for MyISAM and Aria, and DATA DIRECTORY is also supported by InnoDB if the [innodb\_file\_per\_table](../../../storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) server system variable is enabled, but only in CREATE TABLE, not in [ALTER TABLE](../alter/alter-table.md). So, carefully choose a path for InnoDB tables at creation time, because it cannot be changed without dropping and re-creating the table. These options specify the paths for data files and index files, respectively. If these options are omitted, the database's directory will be used to store data files and index files. Note that these table options do not work for [partitioned](../../../../server-management/partitioning-tables/) tables (use the partition options instead), or if the server has been invoked with the [--skip-symbolic-links startup option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md). To avoid the overwriting of old files with the same name that could be present in the directories, you can use [the --keep\_files\_on\_create option](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (an error will be issued if files already exist). These options are ignored if the `NO_DIR_IN_CREATE` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled (useful for replicas). Also note that symbolic links cannot be used for InnoDB tables.
 
 `DATA DIRECTORY` works by creating symlinks from where the table would normally have been (inside the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)) to where the option specifies. For security reasons, to avoid bypassing the privilege system, the server does not permit symlinks inside the datadir. Therefore, `DATA DIRECTORY` cannot be used to specify a location inside the datadir. An attempt to do so will result in an error `1210 (HY000) Incorrect arguments to DATA DIRECTORY`.
 
@@ -500,7 +500,7 @@ MyISAM uses `MAX_ROWS` and `AVG_ROW_LENGTH` to decide the maximum size of a tabl
 
 ### ENCRYPTED
 
-The `ENCRYPTED` table option can be used to manually set the encryption status of an [InnoDB](../../../../server-usage/storage-engines/innodb/) table. See [InnoDB Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/) for more information.
+The `ENCRYPTED` table option can be used to manually set the encryption status of an [InnoDB](../../../storage-engines/innodb/) table. See [InnoDB Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/) for more information.
 
 Aria does not support the `ENCRYPTED` table option. See [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049).
 
@@ -508,7 +508,7 @@ See [Data-at-Rest Encryption](../../../../security/securing-mariadb/securing-mar
 
 ### ENCRYPTION\_KEY\_ID
 
-The `ENCRYPTION_KEY_ID` table option can be used to manually set the encryption key of an [InnoDB](../../../../server-usage/storage-engines/innodb/) table. See [InnoDB Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/) for more information.
+The `ENCRYPTION_KEY_ID` table option can be used to manually set the encryption key of an [InnoDB](../../../storage-engines/innodb/) table. See [InnoDB Encryption](../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/) for more information.
 
 Aria does not support the `ENCRYPTION_KEY_ID` table option. See [MDEV-18049](https://jira.mariadb.org/browse/MDEV-18049).
 
@@ -516,17 +516,17 @@ See [Data-at-Rest Encryption](../../../../security/securing-mariadb/securing-mar
 
 ### IETF\_QUOTES
 
-For the [CSV](../../../../server-usage/storage-engines/csv/) storage engine, the `IETF_QUOTES` option, when set to `YES`, enables IETF-compatible parsing of embedded quote and comma characters. Enabling this option for a table improves compatibility with other tools that use CSV, but is not compatible with MySQL CSV tables, or MariaDB CSV tables created without this option. Disabled by default.
+For the [CSV](../../../storage-engines/csv/) storage engine, the `IETF_QUOTES` option, when set to `YES`, enables IETF-compatible parsing of embedded quote and comma characters. Enabling this option for a table improves compatibility with other tools that use CSV, but is not compatible with MySQL CSV tables, or MariaDB CSV tables created without this option. Disabled by default.
 
 ### INSERT\_METHOD
 
-`INSERT_METHOD` is only used with [MERGE](../../../../server-usage/storage-engines/merge.md) tables. This option determines in which underlying table the new rows should be inserted. If you set it to 'NO' (which is the default) no new rows can be added to the table (but you will still be able to perform `INSERT`s directly against the underlying tables). `FIRST` means that the rows are inserted into the first table, and `LAST` means that thet are inserted into the last table.
+`INSERT_METHOD` is only used with [MERGE](../../../storage-engines/merge.md) tables. This option determines in which underlying table the new rows should be inserted. If you set it to 'NO' (which is the default) no new rows can be added to the table (but you will still be able to perform `INSERT`s directly against the underlying tables). `FIRST` means that the rows are inserted into the first table, and `LAST` means that thet are inserted into the last table.
 
 ### KEY\_BLOCK\_SIZE
 
 `KEY_BLOCK_SIZE` is used to determine the size of key blocks, in bytes or kilobytes. However, this value is just a hint, and the storage engine could modify or ignore it. If `KEY_BLOCK_SIZE` is set to 0, the storage engine's default value will be used.
 
-With the [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engine, if you specify a non-zero value for the `KEY_BLOCK_SIZE` table option for the whole table, then the table will implicitly be created with the [ROW\_FORMAT](create-table.md#row_format) table option set to `COMPRESSED`.
+With the [InnoDB](../../../storage-engines/innodb/) storage engine, if you specify a non-zero value for the `KEY_BLOCK_SIZE` table option for the whole table, then the table will implicitly be created with the [ROW\_FORMAT](create-table.md#row_format) table option set to `COMPRESSED`.
 
 ### MIN\_ROWS/MAX\_ROWS
 
@@ -538,15 +538,15 @@ With the [InnoDB](../../../../server-usage/storage-engines/innodb/) storage engi
 
 ### PAGE\_CHECKSUM
 
-`PAGE_CHECKSUM` is only applicable to [Aria](../../../../server-usage/storage-engines/aria/) tables, and determines whether indexes and data should use page checksums for extra safety.
+`PAGE_CHECKSUM` is only applicable to [Aria](../../../storage-engines/aria/) tables, and determines whether indexes and data should use page checksums for extra safety.
 
 ### PAGE\_COMPRESSED
 
-`PAGE_COMPRESSED` is used to enable [InnoDB page compression](../../../../server-usage/storage-engines/innodb/innodb-page-compression.md) for [InnoDB](../../../../server-usage/storage-engines/innodb/) tables.
+`PAGE_COMPRESSED` is used to enable [InnoDB page compression](../../../storage-engines/innodb/innodb-page-compression.md) for [InnoDB](../../../storage-engines/innodb/) tables.
 
 ### PAGE\_COMPRESSION\_LEVEL
 
-`PAGE_COMPRESSION_LEVEL` is used to set the compression level for [InnoDB page compression](../../../../server-usage/storage-engines/innodb/innodb-page-compression.md) for [InnoDB](../../../../server-usage/storage-engines/innodb/) tables. The table must also have the [PAGE\_COMPRESSED](create-table.md#page_compressed) table option set to `1`.
+`PAGE_COMPRESSION_LEVEL` is used to set the compression level for [InnoDB page compression](../../../storage-engines/innodb/innodb-page-compression.md) for [InnoDB](../../../storage-engines/innodb/) tables. The table must also have the [PAGE\_COMPRESSED](create-table.md#page_compressed) table option set to `1`.
 
 Valid values for `PAGE_COMPRESSION_LEVEL` are 1 (the best speed) through 9 (the best compression), .
 
@@ -564,7 +564,7 @@ The `ROW_FORMAT` table option specifies the row format for the data file. Possib
 
 #### Supported MyISAM Row Formats
 
-For [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), the supported row formats are:
+For [MyISAM](../../../storage-engines/myisam-storage-engine/), the supported row formats are:
 
 * `FIXED`
 * `DYNAMIC`
@@ -572,30 +572,30 @@ For [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), t
 
 The `COMPRESSED` row format can only be set by the [myisampack](../../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) command line tool.
 
-See [MyISAM Storage Formats](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-storage-formats.md) for more information.
+See [MyISAM Storage Formats](../../../storage-engines/myisam-storage-engine/myisam-storage-formats.md) for more information.
 
 #### Supported Aria Row Formats
 
-For [Aria](../../../../server-usage/storage-engines/aria/aria-storage-engine.md), the supported row formats are:
+For [Aria](../../../storage-engines/aria/aria-storage-engine.md), the supported row formats are:
 
 * `PAGE`
 * `FIXED`
 * `DYNAMIC`.
 
-See [Aria Storage Formats](../../../../server-usage/storage-engines/aria/aria-storage-formats.md) for more information.
+See [Aria Storage Formats](../../../storage-engines/aria/aria-storage-formats.md) for more information.
 
 #### Supported InnoDB Row Formats
 
-For [InnoDB](../../../../server-usage/storage-engines/innodb/), the supported row formats are:
+For [InnoDB](../../../storage-engines/innodb/), the supported row formats are:
 
 * `COMPACT`
 * `REDUNDANT`
 * `COMPRESSED`
 * `DYNAMIC`.
 
-If the `ROW_FORMAT` table option is set to `FIXED` for an InnoDB table, then the server will either return an error or a warning depending on the value of the [innodb\_strict\_mode](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) system variable. If the [innodb\_strict\_mode](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) system variable is set to `OFF`, then a warning is issued, and MariaDB will create the table using the default row format for the specific MariaDB server version. If the [innodb\_strict\_mode](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) system variable is set to `ON`, then an error will be raised.
+If the `ROW_FORMAT` table option is set to `FIXED` for an InnoDB table, then the server will either return an error or a warning depending on the value of the [innodb\_strict\_mode](../../../storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) system variable. If the [innodb\_strict\_mode](../../../storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) system variable is set to `OFF`, then a warning is issued, and MariaDB will create the table using the default row format for the specific MariaDB server version. If the [innodb\_strict\_mode](../../../storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) system variable is set to `ON`, then an error will be raised.
 
-See [InnoDB Storage Formats](../../../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) for more information.
+See [InnoDB Storage Formats](../../../storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) for more information.
 
 #### Other Storage Engines and ROW\_FORMAT
 
@@ -608,19 +608,19 @@ If the table is a [sequence](../../../sql-structure/sequences/), then it will ha
 ### STATS\_AUTO\_RECALC
 
 `STATS_AUTO_RECALC` indicates whether to automatically recalculate persistent statistics (see `STATS_PERSISTENT`, below) for an InnoDB table.\
-If set to `1`, statistics will be recalculated when more than 10% of the data has changed. When set to `0`, stats will be recalculated only when an [ANALYZE TABLE](../../table-statements/analyze-table.md) is run. If set to `DEFAULT`, or left out, the value set by the [innodb\_stats\_auto\_recalc](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc) system variable applies. See [InnoDB Persistent Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
+If set to `1`, statistics will be recalculated when more than 10% of the data has changed. When set to `0`, stats will be recalculated only when an [ANALYZE TABLE](../../table-statements/analyze-table.md) is run. If set to `DEFAULT`, or left out, the value set by the [innodb\_stats\_auto\_recalc](../../../storage-engines/innodb/innodb-system-variables.md#innodb_stats_auto_recalc) system variable applies. See [InnoDB Persistent Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
 
 ### STATS\_PERSISTENT
 
-`STATS_PERSISTENT` indicates whether the InnoDB statistics created by [ANALYZE TABLE](../../table-statements/analyze-table.md) will remain on disk or not. It can be set to `1` (on disk), `0` (not on disk, the pre-MariaDB 10 behavior), or `DEFAULT` (the same as leaving out the option), in which case the value set by the [innodb\_stats\_persistent](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent) system variable will apply. Persistent statistics stored on disk allow the statistics to survive server restarts, and provide better query plan stability. See [InnoDB Persistent Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
+`STATS_PERSISTENT` indicates whether the InnoDB statistics created by [ANALYZE TABLE](../../table-statements/analyze-table.md) will remain on disk or not. It can be set to `1` (on disk), `0` (not on disk, the pre-MariaDB 10 behavior), or `DEFAULT` (the same as leaving out the option), in which case the value set by the [innodb\_stats\_persistent](../../../storage-engines/innodb/innodb-system-variables.md#innodb_stats_persistent) system variable will apply. Persistent statistics stored on disk allow the statistics to survive server restarts, and provide better query plan stability. See [InnoDB Persistent Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
 
 ### STATS\_SAMPLE\_PAGES
 
-`STATS_SAMPLE_PAGES` indicates how many pages are used to sample index statistics. If 0 or DEFAULT, the default value, the [innodb\_stats\_sample\_pages](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) value is used. See [InnoDB Persistent Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
+`STATS_SAMPLE_PAGES` indicates how many pages are used to sample index statistics. If 0 or DEFAULT, the default value, the [innodb\_stats\_sample\_pages](../../../storage-engines/innodb/innodb-system-variables.md#innodb_stats_sample_pages) value is used. See [InnoDB Persistent Statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md).
 
 ### TRANSACTIONAL
 
-`TRANSACTIONAL` is only applicable for Aria tables. In future Aria tables created with this option will be fully transactional, but currently this provides a form of crash protection. See [Aria Storage Engine](../../../../server-usage/storage-engines/aria/aria-storage-engine.md) for more details.
+`TRANSACTIONAL` is only applicable for Aria tables. In future Aria tables created with this option will be fully transactional, but currently this provides a form of crash protection. See [Aria Storage Engine](../../../storage-engines/aria/aria-storage-engine.md) for more details.
 
 ### UNION
 
@@ -734,7 +734,7 @@ CREATE TABLE t1(
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [CREATE TABLE with Vectors](../../../sql-structure/vectors/create-table-with-vectors.md)
-* Storage engines can add their own [attributes for columns, indexes and tables](../../../../server-usage/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
+* Storage engines can add their own [attributes for columns, indexes and tables](../../../storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md)
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * [InnoDB Limitations](https://mariadb.com/kb/en/InnoDB_Limitations)
 

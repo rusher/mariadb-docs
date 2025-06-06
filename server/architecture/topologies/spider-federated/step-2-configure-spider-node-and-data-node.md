@@ -99,10 +99,10 @@ By default, the Spider user also requires the [CREATE TEMPORARY TABLES](../../..
 
 Spider BKA Mode is configured using the following methods:
 
-* The session value is configured by setting the [spider\_bka\_mode](../../../server-usage/storage-engines/spider/spider-system-variables.md#spider_bka_mode) system variable on the Spider Node. The default value is `-1`. When the session value is `-1`, the value for each [Spider Table](step-2-configure-spider-node-and-data-node.md#create-the-spider-table) is used.
+* The session value is configured by setting the [spider\_bka\_mode](../../../reference/storage-engines/spider/spider-system-variables.md#spider_bka_mode) system variable on the Spider Node. The default value is `-1`. When the session value is `-1`, the value for each [Spider Table](step-2-configure-spider-node-and-data-node.md#create-the-spider-table) is used.
 * The value for each [Spider Table](step-2-configure-spider-node-and-data-node.md#create-the-spider-table) is configured by setting the `bka_mode` option in the `COMMENT` table option. When the `bka_mode` option is not set, the implicit value is `1`.
 
-The default [spider\_bka\_mode](../../../server-usage/storage-engines/spider/spider-system-variables.md#spider_bka_mode) value is `-1`, and the implicit Spider Table value is `1`, so the default Spider BKA Mode is `1`.
+The default [spider\_bka\_mode](../../../reference/storage-engines/spider/spider-system-variables.md#spider_bka_mode) value is `-1`, and the implicit Spider Table value is `1`, so the default Spider BKA Mode is `1`.
 
 On the Data Node, grant the Spider user the `CREATE TEMPORARY TABLES` privilege on the database:
 

@@ -16,7 +16,7 @@ DDL statements are affected by some server system variables.
 
 [sql\_mode](../../../variables-and-modes/sql-mode.md) determines the behavior of some SQL statements and expressions, including how strict error checking is, and some details regarding the syntax. Objects like [stored procedures](../../../../server-usage/stored-routines/stored-procedures/), [stored functions](../../../../server-usage/stored-routines/stored-functions/) [triggers](../../../../server-usage/triggers-events/triggers/) and [views](../../../../server-usage/views/), are always executed with the sql\_mode that was in effect during their creation. [sql\_mode='MSSQL'](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modemssql) can be used to have MariaDB behaving as close to SQL Server as possible.
 
-[innodb\_strict\_mode](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
+[innodb\_strict\_mode](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_strict_mode) enables the so-called InnoDB strict mode. Normally some errors in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) options are ignored. When InnoDB strict mode is enabled, the creation of InnoDB tables will fail with an error when certain mistakes are made.
 
 [updatable\_views\_with\_limit](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit) determines whether view updates can be made with an [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement with a `LIMIT` clause if the view does not contain all primary or not null unique key columns from the underlying table.
 
@@ -71,7 +71,7 @@ SQL Server Management Studio and several other Microsoft tools allow one to expo
 
 MariaDB allows importing CSV files with the [LOAD DATA INFILE](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement, which is essentially the MariaDB equivalent of `BULK INSERT`.
 
-It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](../../../../server-usage/storage-engines/connect/) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-select.md).
+It can happen that we don't want to import the whole data, but some filtered or transformed version of it. In that case, we may prefer to use the [CONNECT](../../../../reference/storage-engines/connect/) storage engine to access CSV files and query them. The results of a query can be inserted into a table using [INSERT SELECT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-select.md).
 
 ## Moving Data from MariaDB to SQL Server
 
@@ -79,7 +79,7 @@ There are several ways to move data from MariaDB to SQL Server:
 
 * If the tables don't exist at all in SQL Server, we need to generate a dump first. The dump can include data or not.
 * If the tables are already in SQL Server, we can use CSV files instead of dumps to move the rows. CSV files are the most concise format to move data between different technologies.
-* With the tables already in SQL Server, another way to move data is to insert the rows into [CONNECT](../../../../server-usage/storage-engines/connect/) tables that "point" to remote SQL Server tables.
+* With the tables already in SQL Server, another way to move data is to insert the rows into [CONNECT](../../../../reference/storage-engines/connect/) tables that "point" to remote SQL Server tables.
 
 ### Using a Dump (Structure)
 
@@ -106,16 +106,16 @@ mariadb-dump by default produces an output with both data and structure.
 CSV files can also be used to export data to SQL Server. There are several ways to produce CSV files from MariaDB:
 
 * The [SELECT INTO OUTFILE](../../../../reference/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) statement.
-* The [CONNECT](../../../../server-usage/storage-engines/connect/) storage engine, with the [CSV table type](../../../../server-usage/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md).
-* The [CSV](../../../../server-usage/storage-engines/csv/) storage engine (note that it doesn't support `NULL` and indexes).
+* The [CONNECT](../../../../reference/storage-engines/connect/) storage engine, with the [CSV table type](../../../../reference/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md).
+* The [CSV](../../../../reference/storage-engines/csv/) storage engine (note that it doesn't support `NULL` and indexes).
 
 ### Using CONNECT Tables
 
-The [CONNECT](../../../../server-usage/storage-engines/connect/) storage engine allows one to access external data, in many forms:
+The [CONNECT](../../../../reference/storage-engines/connect/) storage engine allows one to access external data, in many forms:
 
-* [Data files](../../../../server-usage/storage-engines/connect/connect-table-types/connect-table-types-data-files.md) ([CSV](../../../../server-usage/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md), [JSON](../../../../server-usage/storage-engines/connect/connect-table-types/connect-json-table-type.md), [XML](../../../../server-usage/storage-engines/connect/connect-table-types/connect-xml-table-type.md), HTML and more).
-* Remote databases, using the [ODBC](../../../../server-usage/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md) or [JDBC](../../../../server-usage/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms.md) standards, or [MariaDB/MySQL native protocol](../../../../server-usage/storage-engines/connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md).
-* Some [special data sources](../../../../server-usage/storage-engines/connect/connect-table-types/connect-table-types-special-virtual-tables.md).
+* [Data files](../../../../reference/storage-engines/connect/connect-table-types/connect-table-types-data-files.md) ([CSV](../../../../reference/storage-engines/connect/connect-table-types/connect-csv-and-fmt-table-types.md), [JSON](../../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), [XML](../../../../reference/storage-engines/connect/connect-table-types/connect-xml-table-type.md), HTML and more).
+* Remote databases, using the [ODBC](../../../../reference/storage-engines/connect/connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md) or [JDBC](../../../../reference/storage-engines/connect/connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms.md) standards, or [MariaDB/MySQL native protocol](../../../../reference/storage-engines/connect/connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md).
+* Some [special data sources](../../../../reference/storage-engines/connect/connect-table-types/connect-table-types-special-virtual-tables.md).
 
 `CONNECT` was mentioned previously because it could allow one to read a CSV file and query it in SQL, filtering and transforming the data that we want to move into regular MariaDB tables.
 
@@ -125,7 +125,7 @@ To enable `CONNECT` to work with SQL Server, we need to fulfill these requiremen
 
 * Install the ODBC driver, downloadable form [Microsoft](https://microsoft.com/) website. The driver is also available for Linux and MacOS.
 * Install [unixODBC](https://www.unixodbc.org/).
-* [Install CONNECT](../../../../server-usage/storage-engines/connect/installing-the-connect-storage-engine.md) (unless it is already installed).
+* [Install CONNECT](../../../../reference/storage-engines/connect/installing-the-connect-storage-engine.md) (unless it is already installed).
 
 Here is an example of a `CONNECT` table that points to a SQL Server table:
 

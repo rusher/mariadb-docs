@@ -2,7 +2,7 @@
 
 The default delimiter in the [mariadb](./) client is the semicolon.
 
-When creating [stored programs](../../server-usage/stored-routines/) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](../../reference/sql-statements/programmatic-compound-statements/begin-end.md) block. To understand better, consider the following example:
+When creating [stored programs](../../server-usage/stored-routines/) from the command-line, it is likely you will need to differentiate between the regular delimiter and a delimiter inside a [BEGIN END](../../server-usage/programmatic-compound-statements/begin-end.md) block. To understand better, consider the following example:
 
 ```
 CREATE FUNCTION FortyTwo() RETURNS TINYINT DETERMINISTIC

@@ -171,7 +171,7 @@ S3-compatible object storage is:
 
 Many S3-compatible object storage services exist. MariaDB Corporation cannot make guarantees about all S3-compatible object storage services, because different services provide different functionality.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](../../../support.md).
+If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](broken-reference).
 
 ### Create an S3 Bucket
 
@@ -311,7 +311,7 @@ MariaDB ColumnStore requires configuration after it is installed. The configurat
 MariaDB Community Server can be configured in the following ways:
 
 * [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) can be set in a configuration file (such as `/etc/my.cnf`). MariaDB Community Server must be restarted to apply changes made to the configuration file.
-* [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)  can be set on the command-line.
+* [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) can be set on the command-line.
 * If a system variable supports dynamic changes, then it can be set on-the-fly using the [SET](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 ### Configuration Files
@@ -359,18 +359,18 @@ We recommend **not** making custom changes to one of the bundled configuration f
 * On RHEL and CentOS, a good custom configuration file would be: `/etc/my.cnf.d/z-custom-my.cnf`
 * On Debian and Ubuntu, a good custom configuration file would be: `/etc/mysql/mariadb.conf.d/z-custom-my.cnf`
 
-3. Set your system variables and options in the configuration file.\
-   \
-   They need to be set in a group that will be read by [mariadbd](https://mariadb.com/docs/server/ref/cs10.6/cli/mariadbd/), such as `[mariadb]` or `[server]`.\
-   \
-   For example:
+3.  Set your system variables and options in the configuration file.\
+    \
+    They need to be set in a group that will be read by [mariadbd](https://mariadb.com/docs/server/ref/cs10.6/cli/mariadbd/), such as `[mariadb]` or `[server]`.\
+    \
+    For example:
 
-   ```
-   [mariadb]
-   log_error                              = mariadbd.err
-   character_set_server                   = utf8
-   collation_server                       = utf8_general_ci
-   ```
+    ```
+    [mariadb]
+    log_error                              = mariadbd.err
+    character_set_server                   = utf8
+    collation_server                       = utf8_general_ci
+    ```
 
 ### Configure Cross Engine Joins
 
@@ -661,4 +661,4 @@ When you have MariaDB ColumnStore up and running, you should test it to ensure t
     MariaDB [(none)]>
     ```
 
-\
+\\

@@ -26,7 +26,7 @@ SELECT 1 from <table> LIMIT 0
 
 Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
-* This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into [innodb\_log\_files\_in\_group](../../../server-usage/storage-engines/innodb/innodb-system-variables.md) files.)
+* This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into [innodb\_log\_files\_in\_group](../../../reference/storage-engines/innodb/innodb-system-variables.md) files.)
 * The log is also used to see detect if any truncate or online alter tables are used.
 * The assumption is that the copy thread will be able to keep up with server. It should always be able keep up, if the redo log is big enough.
 

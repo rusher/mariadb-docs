@@ -4,7 +4,7 @@ The `mysql.event` table contains information about MariaDB [events](../../../../
 
 The table is upgraded live, and there is no need to restart the server if the table has changed.
 
-This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
 
 The `mysql.event` table contains the following fields:
 

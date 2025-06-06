@@ -10,8 +10,8 @@ option = {FOR UPGRADE | QUICK | FAST | MEDIUM | EXTENDED | CHANGED}
 
 ## Description
 
-`CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for[Archive](../../../server-usage/storage-engines/archive.md), [Aria](../../../server-usage/storage-engines/aria/), [CSV](../../../server-usage/storage-engines/csv/), [InnoDB](../../../server-usage/storage-engines/innodb/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables. For Aria and MyISAM tables, the\
-key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
+`CHECK TABLE` checks a table or tables for errors. `CHECK TABLE` works for[Archive](../../storage-engines/archive/), [Aria](../../storage-engines/aria/), [CSV](../../storage-engines/csv/), [InnoDB](../../storage-engines/innodb/) and [MyISAM](../../storage-engines/myisam-storage-engine/) tables. For Aria and MyISAM tables, the\
+key statistics are updated as well. For CSV, see also [Checking and Repairing CSV Tables](../../storage-engines/csv/checking-and-repairing-csv-tables.md).
 
 As an alternative, [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) is a commandline tool for checking MyISAM tables when the tables are not being accessed. For Aria tables, there is a similar tool: [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md).
 
@@ -39,7 +39,7 @@ storage engines:
 For most cases running `CHECK TABLE` without options or `MEDIUM` should be\
 good enough.
 
-The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../../../server-usage/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for this statement.
+The [Aria](../../storage-engines/aria/) storage engine supports [progress reporting](../../mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for this statement.
 
 If you want to know if two tables are identical, take a look\
 at [CHECKSUM TABLE](checksum-table.md).

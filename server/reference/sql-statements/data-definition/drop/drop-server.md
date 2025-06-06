@@ -11,7 +11,7 @@ DROP SERVER [ IF EXISTS ] server_name
 Drops the server definition for the server named _server\_name_. The\
 corresponding row within the [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) will be deleted. This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
 
-Dropping a server for a table does not affect any [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/), [FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md), [Connect](../../../../server-usage/storage-engines/connect/) or [Spider](../../../../server-usage/storage-engines/spider/) tables that used this connection information when they were created.
+Dropping a server for a table does not affect any [FederatedX](../../../storage-engines/federatedx-storage-engine/), [FEDERATED](../../../storage-engines/legacy-storage-engines/federated-storage-engine.md), [Connect](../../../storage-engines/connect/) or [Spider](../../../storage-engines/spider/) tables that used this connection information when they were created.
 
 DROP SERVER is not written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/), irrespective of\
 the [binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used. From [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes), [Galera](../../../../../kb/en/galera/) replicates the [CREATE SERVER](../create/create-server.md), [ALTER SERVER](../alter/alter-server.md) and DROP SERVER statements.
@@ -41,9 +41,9 @@ Query OK, 0 rows affected (0.00 sec)
 
 * [CREATE SERVER](../create/create-server.md)
 * [ALTER SERVER](../alter/alter-server.md)
-* [Spider Storage Engine](../../../../server-usage/storage-engines/spider/)
-* [FederatedX Storage Engine](../../../../server-usage/storage-engines/federatedx-storage-engine/)
-* [Connect Storage Engine](../../../../server-usage/storage-engines/connect/)
+* [Spider Storage Engine](../../../storage-engines/spider/)
+* [FederatedX Storage Engine](../../../storage-engines/federatedx-storage-engine/)
+* [Connect Storage Engine](../../../storage-engines/connect/)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 
 GPLv2 fill\_help\_tables.sql

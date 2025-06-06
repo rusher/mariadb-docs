@@ -26,7 +26,7 @@ The following list shows the SQL operator precedence. Operators that appear firs
 
 Functions precedence is always higher than operators precedence.
 
-In this page `CASE` refers to the [CASE operator](../../sql-functions/control-flow-functions/case-operator.md), not to the [CASE statement](../../sql-statements/programmatic-compound-statements/case-statement.md)`.`
+In this page `CASE` refers to the [CASE operator](../../sql-functions/control-flow-functions/case-operator.md), not to the [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md)`.`
 
 If the `HIGH_NOT_PRECEDENCE` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set, `NOT` has the same precedence as `!`.
 

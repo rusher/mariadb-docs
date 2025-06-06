@@ -127,7 +127,7 @@ The [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-vari
 
 If [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) is `0`, then many optional warnings will not be logged. However, this does not prevent all warnings from being logged, because there are certain core warnings that will always be written to the error log. For example:
 
-* If [InnoDB strict mode](../../server-usage/storage-engines/innodb/innodb-strict-mode.md) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](../../server-usage/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb.md), then InnoDB will log a warning:
+* If [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-strict-mode.md) is disabled, and if DDL is performed on a table that triggers a ["Row size too large" error](../../reference/storage-engines/innodb/innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb.md), then InnoDB will log a warning:
 
 ```
 [Warning] InnoDB: Cannot add field col25 in table db1.tab because after 
@@ -135,7 +135,7 @@ If [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-varia
   size (8126) for a record on index leaf page.
 ```
 
-However, if [InnoDB strict mode](../../server-usage/storage-engines/innodb/innodb-strict-mode.md) is enabled, then the same message will be logged as an error.
+However, if [InnoDB strict mode](../../reference/storage-engines/innodb/innodb-strict-mode.md) is enabled, then the same message will be logged as an error.
 
 ### Verbosity Level 1
 

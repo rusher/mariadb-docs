@@ -1,22 +1,22 @@
 # SHOW ENGINE INNODB STATUS
 
-`SHOW ENGINE INNODB STATUS` is a specific form of the [SHOW ENGINE](show-engine.md) statement that displays the [InnoDB Monitor](../../../../server-usage/storage-engines/innodb/innodb-monitors.md) output, which is extensive InnoDB information which can be useful in diagnosing problems.
+`SHOW ENGINE INNODB STATUS` is a specific form of the [SHOW ENGINE](show-engine.md) statement that displays the [InnoDB Monitor](../../../storage-engines/innodb/innodb-monitors.md) output, which is extensive InnoDB information which can be useful in diagnosing problems.
 
 The following sections are displayed
 
 * Status: Shows the timestamp, monitor name and the number of seconds, or the elapsed time between the current time and the time the InnoDB Monitor output was last displayed. The per-second averages are based upon this time.
 * BACKGROUND THREAD: srv\_master\_thread lines show work performed by the main background thread.
-* SEMAPHORES: Threads waiting for a semaphore and stats on how the number of times threads have needed a spin or a wait on a mutex or rw-lock semaphore. If this number of threads is large, there may be I/O or contention issues. Reducing the size of the [innodb\_thread\_concurrency](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable may help if contention is related to thread scheduling. `Spin rounds per wait` shows the number of spinlock rounds per OS wait for a mutex.
+* SEMAPHORES: Threads waiting for a semaphore and stats on how the number of times threads have needed a spin or a wait on a mutex or rw-lock semaphore. If this number of threads is large, there may be I/O or contention issues. Reducing the size of the [innodb\_thread\_concurrency](../../../storage-engines/innodb/innodb-system-variables.md) system variable may help if contention is related to thread scheduling. `Spin rounds per wait` shows the number of spinlock rounds per OS wait for a mutex.
 * LATEST FOREIGN KEY ERROR: Only shown if there has been a foreign key constraint error, it displays the failed statement and information about the constraint and the related tables.
 * LATEST DETECTED DEADLOCK: Only shown if there has been a deadlock, it displays the transactions involved in the deadlock and the statements being executed, held and required locked and the transaction rolled back to.
 * TRANSACTIONS: The output of this section can help identify lock contention, as well as reasons for the deadlocks.
 * FILE I/O: InnoDB thread information as well as pending I/O operations and I/O performance statistics.
-* INSERT BUFFER AND ADAPTIVE HASH INDEX: InnoDB insert buffer (old name for the [change buffer](../../../../server-usage/storage-engines/innodb/innodb-change-buffering.md)) and adaptive hash index status information, including the number of each type of operation performed, and adaptive hash index performance.
+* INSERT BUFFER AND ADAPTIVE HASH INDEX: InnoDB insert buffer (old name for the [change buffer](../../../storage-engines/innodb/innodb-change-buffering.md)) and adaptive hash index status information, including the number of each type of operation performed, and adaptive hash index performance.
 * LOG: InnoDB log information, including current log sequence number, how far the log has been flushed to disk, the position at which InnoDB last took a checkpoint, pending writes and write performance statistics.
-* BUFFER POOL AND MEMORY: Information on buffer pool pages read and written, which allows you to see the number of data file I/O operations performed by your queries. See [InnoDB Buffer Pool](../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) for more. Similar information is also available from the [INFORMATION\_SCHEMA.INNODB\_BUFFER\_POOL\_STATS](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_stats-table.md) table.
+* BUFFER POOL AND MEMORY: Information on buffer pool pages read and written, which allows you to see the number of data file I/O operations performed by your queries. See [InnoDB Buffer Pool](../../../storage-engines/innodb/innodb-buffer-pool.md) for more. Similar information is also available from the [INFORMATION\_SCHEMA.INNODB\_BUFFER\_POOL\_STATS](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_stats-table.md) table.
 * ROW OPERATIONS:Information about the main thread, including the number and performance rate for each type of row operation.
 
-If the [innodb\_status\_output\_locks](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable is set to `1`, extended lock information will be displayed.
+If the [innodb\_status\_output\_locks](../../../storage-engines/innodb/innodb-system-variables.md) system variable is set to `1`, extended lock information will be displayed.
 
 Example output:
 

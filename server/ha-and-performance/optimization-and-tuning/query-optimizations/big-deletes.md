@@ -15,8 +15,8 @@ Any suggestions on how to speed this up?
 
 ## Why it is a problem
 
-* [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) will lock the table during the entire operation, thereby nothing else can be done with the table.
-* [InnoDB](../../../server-usage/storage-engines/innodb/) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
+* [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) will lock the table during the entire operation, thereby nothing else can be done with the table.
+* [InnoDB](../../../reference/storage-engines/innodb/) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
 * InnoDB has to write the undo information to its transaction logs; this significantly increases the I/O required.
 * [Replication](broken-reference), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
 
@@ -141,7 +141,7 @@ This technique is NOT recommended because the LIMIT leads to a warning on replic
 
 ## InnoDB chunking recommendation
 
-* Have a 'reasonable' size for [innodb\_log\_file\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md).
+* Have a 'reasonable' size for [innodb\_log\_file\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md).
 * Use AUTOCOMMIT=1 for the session doing the deletions.
 * Pick about 1000 rows for the chunk size.
 * Adjust the row count down if asynchronous replication (Statement Based) causes too much delay on the Slaves or hogs the table too much.
@@ -176,11 +176,11 @@ This is costly. (Switch to the PARTITION solution if practical.)
 
 MyISAM leaves gaps in the table (.MYD file); [OPTIMIZE TABLE](../optimizing-tables/optimize-table.md) will reclaim the freed space after a big delete. But it may take a long time and lock the table.
 
-InnoDB is block-structured, organized in a BTree on the PRIMARY KEY. An isolated deleted row leaves a block less full. A lot of deleted rows can lead to coalescing of adjacent blocks. (Blocks are normally 16KB - see [innodb\_page\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md).)
+InnoDB is block-structured, organized in a BTree on the PRIMARY KEY. An isolated deleted row leaves a block less full. A lot of deleted rows can lead to coalescing of adjacent blocks. (Blocks are normally 16KB - see [innodb\_page\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md).)
 
 In InnoDB, there is no practical way to reclaim the freed space from ibdata1, other than to reuse the freed blocks eventually.
 
-The only option with [innodb\_file\_per\_table = 0](../../../server-usage/storage-engines/innodb/innodb-system-variables.md) is to dump ALL tables, remove ibdata\*, restart, and reload. That is rarely worth the effort and time.
+The only option with [innodb\_file\_per\_table = 0](../../../reference/storage-engines/innodb/innodb-system-variables.md) is to dump ALL tables, remove ibdata\*, restart, and reload. That is rarely worth the effort and time.
 
 InnoDB, even with innodb\_file\_per\_table = 1, won't give space back to the OS, but at least it is only one table to rebuild with. In this case, something like this should work:
 
@@ -199,7 +199,7 @@ The following technique can be used for any combination of
 
 * Deleting a large portion of the table more efficiently
 * Add PARTITIONing
-* Converting to [innodb\_file\_per\_table = ON](../../../server-usage/storage-engines/innodb/innodb-system-variables.md)
+* Converting to [innodb\_file\_per\_table = ON](../../../reference/storage-engines/innodb/innodb-system-variables.md)
 * Defragmenting
 
 This can be done by chunking, or (if practical) all at once:
@@ -263,7 +263,7 @@ SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1;
 
 Then (presumably) re-executing the DELETE will finish the aborted task.
 
-(That is yet another reason to move all your tables [from MyISAM to InnoDB](../../../server-usage/storage-engines/converting-tables-from-myisam-to-innodb.md).)
+(That is yet another reason to move all your tables [from MyISAM to InnoDB](../../../reference/storage-engines/converting-tables-from-myisam-to-innodb.md).)
 
 ## SBR vs RBR; Galera
 

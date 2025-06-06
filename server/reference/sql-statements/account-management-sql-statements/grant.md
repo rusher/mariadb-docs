@@ -267,7 +267,7 @@ Execute [CREATE SERVER](../data-definition/create/create-server.md), [ALTER SERV
 
 #### **FILE**
 
-Read and write files on the server, using statements like [LOAD DATA INFILE](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) or functions like [LOAD\_FILE()](../../sql-functions/string-functions/load_file.md). Also needed to create [CONNECT](../../../server-usage/storage-engines/connect/) outward tables. MariaDB server must have the permissions to access those files.
+Read and write files on the server, using statements like [LOAD DATA INFILE](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) or functions like [LOAD\_FILE()](../../sql-functions/string-functions/load_file.md). Also needed to create [CONNECT](../../storage-engines/connect/) outward tables. MariaDB server must have the permissions to access those files.
 
 #### **GRANT OPTION**
 

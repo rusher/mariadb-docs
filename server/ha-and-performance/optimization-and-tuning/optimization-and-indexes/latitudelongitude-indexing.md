@@ -99,7 +99,7 @@ Fields and indexes
 * PRIMARY KEY(lon, lat, ...) -- lon must be first; something must be added to make it UNIQUE
 * id -- (optional) you may need to identify the rows for your purposes; AUTO\_INCREMENT if you like
 * INDEX(id) -- if `id` is [AUTO\_INCREMENT](../../../reference/data-types/auto_increment.md), then this plain INDEX (not UNIQUE, not PRIMARY KEY) is necessary
-* ENGINE=[InnoDB](../../../server-usage/storage-engines/innodb/) -- so the PRIMARY KEY will be "clustered"
+* ENGINE=[InnoDB](../../../reference/storage-engines/innodb/) -- so the PRIMARY KEY will be "clustered"
 * Other indexes -- keep to a minimum (this is a general performance rule for large tables)
 
 For most of this discussion, lat is assumed to be MEDIUMINT -- scaled from -90 to +90 by multiplying by 10000. Similarly for lon and -180 to +180.

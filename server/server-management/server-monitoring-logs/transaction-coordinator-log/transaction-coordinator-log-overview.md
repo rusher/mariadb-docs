@@ -1,6 +1,6 @@
 # Transaction Coordinator Log Overview
 
-The transaction coordinator log (tc\_log) is used to coordinate transactions that affect multiple [XA-capable](../../../reference/sql-statements/transactions/xa-transactions.md) [storage engines](../../../server-usage/storage-engines/). If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available.
+The transaction coordinator log (tc\_log) is used to coordinate transactions that affect multiple [XA-capable](../../../reference/sql-statements/transactions/xa-transactions.md) [storage engines](../../../reference/storage-engines/). If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available.
 
 ## Types of Transaction Coordinator Logs
 
@@ -90,7 +90,7 @@ See [this docker issue](https://github.com/docker-library/mariadb/issues/201) fo
 
 ### MariaDB Galera Cluster
 
-[MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds include a built-in plugin called `wsrep`. Prior to [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), this plugin was internally considered an [XA-capable](../../../reference/sql-statements/transactions/xa-transactions.md) [storage engine](../../../server-usage/storage-engines/). Consequently, these [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](../../../reference/sql-statements/transactions/xa-transactions.md) enabled on these builds by default is [InnoDB](../../../server-usage/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a transaction coordinator log by default, which could have performance implications.
+[MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds include a built-in plugin called `wsrep`. Prior to [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), this plugin was internally considered an [XA-capable](../../../reference/sql-statements/transactions/xa-transactions.md) [storage engine](../../../reference/storage-engines/). Consequently, these [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](../../../reference/sql-statements/transactions/xa-transactions.md) enabled on these builds by default is [InnoDB](../../../reference/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a transaction coordinator log by default, which could have performance implications.
 
 For example, [MDEV-16509](https://jira.mariadb.org/browse/MDEV-16509) describes performance problems where [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) actually performs better when the [binary log](../binary-log/) is enabled. It is possible that this is caused by the fact that MariaDB is forced to use the memory-mapped file-based transaction coordinator log in this case, which may not perform as well.
 

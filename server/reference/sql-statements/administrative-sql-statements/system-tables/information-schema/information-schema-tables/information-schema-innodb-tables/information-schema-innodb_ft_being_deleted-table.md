@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_FT_BEING_DELETED` table is only used while document ID's in the related [INNODB\_FT\_DELETED](information-schema-innodb_ft_deleted-table.md) are being removed from an InnoDB [fulltext index](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) while an [OPTIMIZE TABLE](../../../../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) is underway. At all other times the table will be empty.
 
-The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../storage-engines/innodb/innodb-system-variables.md#innodb_ft_aux_table) system variable to be set.
 
 It has the following column:
 

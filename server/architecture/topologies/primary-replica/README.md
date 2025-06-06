@@ -33,9 +33,9 @@ The following components are deployed during this procedure:
 
 ### MariaDB Enterprise Server Components
 
-| Component                                               | Description                                                                                          |
-| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [InnoDB](../../../server-usage/storage-engines/innodb/) | <ul><li>General purpose storage engine</li></ul><ul><li>ACID-compliant</li><li>Performance</li></ul> |
+| Component                                            | Description                                                                                          |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [InnoDB](../../../reference/storage-engines/innodb/) | <ul><li>General purpose storage engine</li></ul><ul><li>ACID-compliant</li><li>Performance</li></ul> |
 
 ### MariaDB MaxScale Components
 

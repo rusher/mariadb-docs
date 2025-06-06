@@ -9,7 +9,7 @@ prepare test from "select id into ? from t1 where val=?";
 execute test using @out, @in;
 ```
 
-This is particularly convenient when used with [compound statements](../programmatic-compound-statements/using-compound-statements-outside-of-stored-programs.md):
+This is particularly convenient when used with [compound statements](../../../server-usage/programmatic-compound-statements/using-compound-statements-outside-of-stored-programs.md):
 
 ```
 PREPARE stmt FROM "BEGIN NOT ATOMIC

@@ -1,6 +1,6 @@
 # Concurrent Inserts
 
-The [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) storage engine supports concurrent inserts. This feature allows [SELECT](../selecting-data/select.md) statements to be executed during [INSERT](insert.md) operations, reducing contention.
+The [MyISAM](../../../storage-engines/myisam-storage-engine/) storage engine supports concurrent inserts. This feature allows [SELECT](../selecting-data/select.md) statements to be executed during [INSERT](insert.md) operations, reducing contention.
 
 Whether concurrent inserts can be used or not depends on the value of the [concurrent\_insert](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) server system variable:
 

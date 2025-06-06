@@ -1,6 +1,6 @@
 # Information Schema ENGINES Table
 
-The [Information Schema](../) `ENGINES` table displays status information about the server's [storage engines](../../../../../../server-usage/storage-engines/).
+The [Information Schema](../) `ENGINES` table displays status information about the server's [storage engines](../../../../../storage-engines/).
 
 It contains the following columns:
 
@@ -18,7 +18,7 @@ It provides identical information to the `[SHOW ENGINES](../../../show/show-engi
 
 The table is not a standard Information Schema table, and is a MySQL and MariaDB extension.
 
-Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../../../server-usage/storage-engines/innodb/). The same applies to [FederatedX](../../../../../../server-usage/storage-engines/federatedx-storage-engine/).
+Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../../storage-engines/innodb/). The same applies to [FederatedX](../../../../../storage-engines/federatedx-storage-engine/).
 
 ## Example
 

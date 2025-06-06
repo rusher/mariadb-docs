@@ -49,60 +49,60 @@ On most servers upgrading from 10.6 should be painless. However, there are some 
 
 #### Compression
 
-If a non-zlib compression algorithm was used in [InnoDB](../../../../server-usage/storage-engines/innodb/) or [Mroonga](../../../../server-usage/storage-engines/mroonga/) before upgrading to 10.7, those tables will be unreadable until the appropriate compression library is installed. See [Compression Plugins#Upgrading](../../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md#upgrading).
+If a non-zlib compression algorithm was used in [InnoDB](../../../../reference/storage-engines/innodb/) or [Mroonga](../../../../reference/storage-engines/mroonga/) before upgrading to 10.7, those tables will be unreadable until the appropriate compression library is installed. See [Compression Plugins#Upgrading](../../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md#upgrading).
 
 #### Options That Have Changed Default Values
 
-| Option                                                                                                              | Old default | New default         |
-| ------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------- |
-| Option                                                                                                              | Old default | New default         |
-| [spider\_auto\_increment\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)         | -1          | 0                   |
-| [spider\_bgs\_first\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)              | -1          | 2                   |
-| [spider\_bgs\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 0                   |
-| [spider\_bgs\_second\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 100                 |
-| [spider\_bka\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 1                   |
-| [spider\_bka\_table\_name\_type](../../../../server-usage/storage-engines/spider/spider-system-variables.md)        | -1          | 1                   |
-| [spider\_buffer\_size](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                  | -1          | 16000               |
-| [spider\_bulk\_size](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                    | -1          | 16000               |
-| [spider\_bulk\_update\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 0                   |
-| [spider\_bulk\_update\_size](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 16000               |
-| [spider\_casual\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                  | -1          | 0                   |
-| [spider\_connect\_timeout](../../../../server-usage/storage-engines/spider/spider-system-variables.md)              | -1          | 6                   |
-| [spider\_crd\_bg\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                 | -1          | 2                   |
-| [spider\_crd\_interval](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                 | -1          | 51                  |
-| [spider\_crd\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 1                   |
-| [spider\_crd\_sync](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 0                   |
-| [spider\_crd\_type](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 2                   |
-| [spider\_crd\_weight](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                   | -1          | 2                   |
-| [spider\_delete\_all\_rows\_type](../../../../server-usage/storage-engines/spider/spider-system-variables.md)       | -1          | 1                   |
-| [spider\_direct\_dup\_insert](../../../../server-usage/storage-engines/spider/spider-system-variables.md)           | -1          | 0                   |
-| [spider\_direct\_order\_limit](../../../../server-usage/storage-engines/spider/spider-system-variables.md)          | -1          | 9223372036854775807 |
-| [spider\_error\_read\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 0                   |
-| [spider\_error\_write\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 0                   |
-| [spider\_first\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                   | -1          | 0                   |
-| [spider\_init\_sql\_alloc\_size](../../../../server-usage/storage-engines/spider/spider-system-variables.md)        | -1          | 1024                |
-| [spider\_internal\_limit](../../../../server-usage/storage-engines/spider/spider-system-variables.md)               | -1          | 9223372036854775807 |
-| [spider\_internal\_offset](../../../../server-usage/storage-engines/spider/spider-system-variables.md)              | -1          | 0                   |
-| [spider\_internal\_optimize](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 0                   |
-| [spider\_internal\_optimize\_local](../../../../server-usage/storage-engines/spider/spider-system-variables.md)     | -1          | 0                   |
-| [spider\_load\_crd\_at\_startup](../../../../server-usage/storage-engines/spider/spider-system-variables.md)        | -1          | 1                   |
-| [spider\_load\_sts\_at\_startup](../../../../server-usage/storage-engines/spider/spider-system-variables.md)        | -1          | 1                   |
-| [spider\_low\_mem\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                | -1          | 1                   |
-| [spider\_max\_order](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                    | -1          | 32767               |
-| [spider\_multi\_split\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 100                 |
-| [spider\_net\_read\_timeout](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 600                 |
-| [spider\_net\_write\_timeout](../../../../server-usage/storage-engines/spider/spider-system-variables.md)           | -1          | 600                 |
-| [spider\_quick\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                   | -1          | 3                   |
-| [spider\_quick\_page\_byte](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 10485760            |
-| [spider\_quick\_page\_size](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 1024                |
-| [spider\_read\_only\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)              | -1          | 0                   |
-| [spider\_reset\_sql\_alloc](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 1                   |
-| [spider\_second\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                  | -1          | 0                   |
-| [spider\_selupd\_lock\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)            | -1          | 1                   |
-| [spider\_semi\_split\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 2                   |
-| [spider\_semi\_split\_read\_limit](../../../../server-usage/storage-engines/spider/spider-system-variables.md)      | -1          | 1                   |
-| [spider\_semi\_table\_lock\_connection](../../../../server-usage/storage-engines/spider/spider-system-variables.md) | -1          | 1                   |
-| [spider\_reset\_sql\_alloc](../../../../server-usage/storage-engines/spider/spider-system-variables.md)             | -1          | 1                   |
+| Option                                                                                                           | Old default | New default         |
+| ---------------------------------------------------------------------------------------------------------------- | ----------- | ------------------- |
+| Option                                                                                                           | Old default | New default         |
+| [spider\_auto\_increment\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)         | -1          | 0                   |
+| [spider\_bgs\_first\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)              | -1          | 2                   |
+| [spider\_bgs\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)                     | -1          | 0                   |
+| [spider\_bgs\_second\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 100                 |
+| [spider\_bka\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)                     | -1          | 1                   |
+| [spider\_bka\_table\_name\_type](../../../../reference/storage-engines/spider/spider-system-variables.md)        | -1          | 1                   |
+| [spider\_buffer\_size](../../../../reference/storage-engines/spider/spider-system-variables.md)                  | -1          | 16000               |
+| [spider\_bulk\_size](../../../../reference/storage-engines/spider/spider-system-variables.md)                    | -1          | 16000               |
+| [spider\_bulk\_update\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 0                   |
+| [spider\_bulk\_update\_size](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 16000               |
+| [spider\_casual\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)                  | -1          | 0                   |
+| [spider\_connect\_timeout](../../../../reference/storage-engines/spider/spider-system-variables.md)              | -1          | 6                   |
+| [spider\_crd\_bg\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)                 | -1          | 2                   |
+| [spider\_crd\_interval](../../../../reference/storage-engines/spider/spider-system-variables.md)                 | -1          | 51                  |
+| [spider\_crd\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)                     | -1          | 1                   |
+| [spider\_crd\_sync](../../../../reference/storage-engines/spider/spider-system-variables.md)                     | -1          | 0                   |
+| [spider\_crd\_type](../../../../reference/storage-engines/spider/spider-system-variables.md)                     | -1          | 2                   |
+| [spider\_crd\_weight](../../../../reference/storage-engines/spider/spider-system-variables.md)                   | -1          | 2                   |
+| [spider\_delete\_all\_rows\_type](../../../../reference/storage-engines/spider/spider-system-variables.md)       | -1          | 1                   |
+| [spider\_direct\_dup\_insert](../../../../reference/storage-engines/spider/spider-system-variables.md)           | -1          | 0                   |
+| [spider\_direct\_order\_limit](../../../../reference/storage-engines/spider/spider-system-variables.md)          | -1          | 9223372036854775807 |
+| [spider\_error\_read\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 0                   |
+| [spider\_error\_write\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 0                   |
+| [spider\_first\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)                   | -1          | 0                   |
+| [spider\_init\_sql\_alloc\_size](../../../../reference/storage-engines/spider/spider-system-variables.md)        | -1          | 1024                |
+| [spider\_internal\_limit](../../../../reference/storage-engines/spider/spider-system-variables.md)               | -1          | 9223372036854775807 |
+| [spider\_internal\_offset](../../../../reference/storage-engines/spider/spider-system-variables.md)              | -1          | 0                   |
+| [spider\_internal\_optimize](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 0                   |
+| [spider\_internal\_optimize\_local](../../../../reference/storage-engines/spider/spider-system-variables.md)     | -1          | 0                   |
+| [spider\_load\_crd\_at\_startup](../../../../reference/storage-engines/spider/spider-system-variables.md)        | -1          | 1                   |
+| [spider\_load\_sts\_at\_startup](../../../../reference/storage-engines/spider/spider-system-variables.md)        | -1          | 1                   |
+| [spider\_low\_mem\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)                | -1          | 1                   |
+| [spider\_max\_order](../../../../reference/storage-engines/spider/spider-system-variables.md)                    | -1          | 32767               |
+| [spider\_multi\_split\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 100                 |
+| [spider\_net\_read\_timeout](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 600                 |
+| [spider\_net\_write\_timeout](../../../../reference/storage-engines/spider/spider-system-variables.md)           | -1          | 600                 |
+| [spider\_quick\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)                   | -1          | 3                   |
+| [spider\_quick\_page\_byte](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 10485760            |
+| [spider\_quick\_page\_size](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 1024                |
+| [spider\_read\_only\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)              | -1          | 0                   |
+| [spider\_reset\_sql\_alloc](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 1                   |
+| [spider\_second\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)                  | -1          | 0                   |
+| [spider\_selupd\_lock\_mode](../../../../reference/storage-engines/spider/spider-system-variables.md)            | -1          | 1                   |
+| [spider\_semi\_split\_read](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 2                   |
+| [spider\_semi\_split\_read\_limit](../../../../reference/storage-engines/spider/spider-system-variables.md)      | -1          | 1                   |
+| [spider\_semi\_table\_lock\_connection](../../../../reference/storage-engines/spider/spider-system-variables.md) | -1          | 1                   |
+| [spider\_reset\_sql\_alloc](../../../../reference/storage-engines/spider/spider-system-variables.md)             | -1          | 1                   |
 
 #### Options That Have Been Removed or Renamed
 

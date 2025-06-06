@@ -54,7 +54,7 @@ When upgrading to a new major release of MariaDB Enterprise Server, it is necess
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1\. Set the [innodb\_fast\_shutdown](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
+1\. Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to 1:
 
 ```sql
 SET GLOBAL innodb_fast_shutdown = 1;

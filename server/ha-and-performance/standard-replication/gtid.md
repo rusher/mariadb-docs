@@ -212,7 +212,7 @@ In order to be crash-safe, this table must use a transactional storage engine\
 such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
-make it transactional on a system configured with [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) as the default\
+make it transactional on a system configured with [MyISAM](../../reference/storage-engines/myisam-storage-engine/) as the default\
 storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
@@ -860,7 +860,7 @@ The value is a list of engine names, separated by commas (','). Replication\
 of transactions using these engines will automatically create new versions\
 of the mysql.gtid\_slave\_pos table in the same engine and use that for future\
 transactions (table creation takes place in a background thread). This avoids introducing a cross-engine transaction to update the GTID position. Only transactional storage engines are supported for\
-gtid\_pos\_auto\_engines (this currently means [InnoDB](../../server-usage/storage-engines/innodb/), [TokuDB](../../server-usage/storage-engines/tokudb/), or [MyRocks](../../server-usage/storage-engines/myrocks/)).
+gtid\_pos\_auto\_engines (this currently means [InnoDB](../../reference/storage-engines/innodb/), [TokuDB](../../reference/storage-engines/tokudb/), or [MyRocks](../../reference/storage-engines/myrocks/)).
 
 The variable can be changed dynamically, but replica SQL threads should be stopped when changing it, and it will take effect when the replicas are running again.
 

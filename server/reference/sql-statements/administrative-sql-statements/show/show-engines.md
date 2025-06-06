@@ -16,7 +16,7 @@ The `[information_schema.ENGINES](../system-tables/information-schema/informatio
 
 Since storage engines are plugins, different information about them is also shown in the `[information_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)` table and by the `[SHOW PLUGINS](show-plugins.md)` statement.
 
-Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../server-usage/storage-engines/innodb/). The same applies to [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/).
+Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../storage-engines/innodb/). The same applies to [FederatedX](../../../storage-engines/federatedx-storage-engine/).
 
 The output consists of the following columns:
 

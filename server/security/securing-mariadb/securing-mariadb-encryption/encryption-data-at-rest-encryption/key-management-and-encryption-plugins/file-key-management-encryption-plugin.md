@@ -16,7 +16,7 @@ The File Key Management plugin is the easiest [key management and encryption plu
 * It does not support key rotation.
 * It supports two different algorithms for encrypting data.
 
-It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](../../../../../server-usage/mariadb-internals/encryption-plugin-api.md).
+It can also serve as an example and as a starting point when developing a key management and encryption plugin with the [encryption plugin API](../../../../../reference/mariadb-internals/encryption-plugin-api.md).
 
 ## Installing the File Key Management Plugin's Package
 

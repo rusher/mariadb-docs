@@ -35,7 +35,7 @@ SELECT LOAD_FILE('/tmp/world') AS world;
 
 * [SELECT](select.md)
 * [LOAD\_FILE()](../../../sql-functions/string-functions/load_file.md)
-* [SELECT INTO Variable](../../programmatic-compound-statements/selectinto.md)
+* [SELECT INTO Variable](../../../../server-usage/programmatic-compound-statements/selectinto.md)
 * [SELECT INTO OUTFILE](select-into-outfile.md)
 
 CC BY-SA / Gnu FDL

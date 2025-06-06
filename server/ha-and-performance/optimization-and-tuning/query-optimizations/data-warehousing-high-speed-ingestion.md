@@ -120,7 +120,7 @@ The choice depends on which is faster (insertion or processing). There are trade
 
 ## Engine choice
 
-`Fact` table -- [InnoDB](../../../server-usage/storage-engines/innodb/), if for no other reason than that a system crash would not need a REPAIR TABLE. (REPAIRing a billion-row [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) table can take hours or days.)
+`Fact` table -- [InnoDB](../../../reference/storage-engines/innodb/), if for no other reason than that a system crash would not need a REPAIR TABLE. (REPAIRing a billion-row [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) table can take hours or days.)
 
 Normalization tables -- InnoDB, primarily because it can be done efficiently with 2 indexes, whereas, MyISAM would need 4 to achieve the same efficiency.
 
