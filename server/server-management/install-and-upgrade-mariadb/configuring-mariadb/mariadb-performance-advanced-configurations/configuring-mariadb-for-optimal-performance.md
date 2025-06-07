@@ -10,7 +10,7 @@ Feel free to update this article if you have more ideas.
 
 ## [my.cnf](../configuring-mariadb-with-option-files.md) Files
 
-MariaDB is normally configured by editing the [my.cnf](../../mariadbd-configuration-files-and-groups.md) file. In the next section you have a list of variables that you may want to configure for dedicated MariaDB servers.
+MariaDB is normally configured by editing the [my.cnf](broken-reference) file. In the next section you have a list of variables that you may want to configure for dedicated MariaDB servers.
 
 ## [InnoDB](../../../../reference/storage-engines/innodb/) Storage Engine
 

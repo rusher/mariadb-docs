@@ -235,7 +235,7 @@ Thus On Windows, just install MariaDB and use the upgrade wizard which is part o
 
 ## Upgrading my.cnf
 
-All the options in your original MySQL [my.cnf file](../../mariadbd-configuration-files-and-groups.md) should work fine for MariaDB.
+All the options in your original MySQL [my.cnf file](broken-reference) should work fine for MariaDB.
 
 However as MariaDB has more features than MySQL, there are a few things that you should consider changing in your `my.cnf` file.
 

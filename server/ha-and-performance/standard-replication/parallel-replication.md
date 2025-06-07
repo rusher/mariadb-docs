@@ -22,7 +22,7 @@ potentially increase replication performance by applying multiple events in para
 
 ## How to Enable Parallel Replica
 
-To enable, specify [slave-parallel-threads=#](replication-and-binary-log-system-variables.md) in your [my.cnf](../../server-management/install-and-upgrade-mariadb/mariadbd-configuration-files-and-groups.md) file as an argument to mysql.\
+To enable, specify [slave-parallel-threads=#](replication-and-binary-log-system-variables.md) in your [my.cnf](broken-reference) file as an argument to mysql.\
 Parallel replication can in addition be disabled on a per-multi-source\
 connection by setting [@@connection\_name.slave-parallel-mode](replication-and-binary-log-system-variables.md) to "none".
 

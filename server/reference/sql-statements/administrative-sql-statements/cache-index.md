@@ -18,7 +18,7 @@ cache. It is used only for [MyISAM](../../storage-engines/myisam-storage-engine/
 
 A default key cache exists and cannot be destroyed. To create more key caches, the [key\_buffer\_size](../../storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) server system variable.
 
-The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a [configuration file](../../../server-management/install-and-upgrade-mariadb/mariadbd-configuration-files-and-groups.md) and include some `CACHE INDEX` (and optionally `[LOAD INDEX](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)`) statements in the init file.
+The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a [configuration file](broken-reference) and include some `CACHE INDEX` (and optionally `[LOAD INDEX](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)`) statements in the init file.
 
 ## Examples
 

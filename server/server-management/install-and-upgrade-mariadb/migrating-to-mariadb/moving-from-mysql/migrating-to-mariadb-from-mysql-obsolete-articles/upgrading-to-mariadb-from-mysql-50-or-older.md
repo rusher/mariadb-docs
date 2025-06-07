@@ -29,7 +29,7 @@ mysql_upgrade --socket=127.0.0.1 --protocol=socket
 
 To see other options, use [--help](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md).
 
-"mysql\_upgrade" reads the [my.cnf](../../../mariadbd-configuration-files-and-groups.md) sections \[mysql\_upgrade] and \[client] for default values.
+"mysql\_upgrade" reads the [my.cnf](broken-reference) sections \[mysql\_upgrade] and \[client] for default values.
 
 There are a variety of reasons tables need to be converted; they could be any of the following:
 

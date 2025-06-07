@@ -24,7 +24,7 @@ variables that affect the operation of the server or your client. Older\
 versions of MySQL employed `SET OPTION`, but this syntax was\
 deprecated in favor of `SET` without `OPTION`, and was removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
-Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](../../../../server-management/install-and-upgrade-mariadb/mariadbd-configuration-files-and-groups.md).
+Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](broken-reference).
 
 For setting variables on a per-query basis, see [SET STATEMENT](set-statement.md).
 
