@@ -22,7 +22,7 @@ Check the page [Installation issues on Windows](../../troubleshooting-installati
 
 Windows users don't necessarily need to install MariaDB to use it. They can download ready-to-use ZIP packages to avoid any change in the system (except for downloading MariaDB and writing databases on the disk). This is very useful for testing without risking some undesired side effect on the machine in use. And it avoids the hassle of installing Docker or virtual machines.
 
-It is necessary to run [mysql\_install\_db.exe](../../mariadb-install-db-exe.md) to install the data directory.
+It is necessary to run [mysql\_install\_db.exe](../../installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md) to install the data directory.
 
 The drawback is that MariaDB will need to be started and stopped from the command line.
 

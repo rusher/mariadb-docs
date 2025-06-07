@@ -1,7 +1,7 @@
 # mariadb-install-db
 
 **This page is for the `mariadb-install-db` script for Linux/Unix only**\
-For the Windows specific tool of similar name and purpose see [mysql\_install\_db.exe](../server-management/install-and-upgrade-mariadb/mariadb-install-db-exe.md).\
+For the Windows specific tool of similar name and purpose see [mysql\_install\_db.exe](../server-management/install-and-upgrade-mariadb/installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md).\
 The Windows version shares the common theme (creating system tables), yet has a lot of functionality specific to Windows systems, for example creating a Windows service. The Windows version does _not_ share command line parameters with the Unix shell script.
 
 `mariadb-install-db` initializes the MariaDB data directory and creates the[system tables](../reference/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database, if they do not exist.
@@ -425,7 +425,7 @@ SELECT user,host FROM mysql.user;
 ## See Also
 
 * [Configure MariaDB with catalog support](../security/user-account-management/catalogs/starting-with-catalogs.md)
-* [Installing system tables (mariadb-install-db)](../server-management/install-and-upgrade-mariadb/installing-system-tables-mariadb-install-db.md)
+* [Installing system tables (mariadb-install-db)](../server-management/install-and-upgrade-mariadb/installing-system-tables-mariadb-install-db/)
 * The Windows version of `mariadb-install-db`: `[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)`
 
 CC BY-SA / Gnu FDL

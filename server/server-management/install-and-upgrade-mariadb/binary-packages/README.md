@@ -1,7 +1,8 @@
 ---
 description: >-
-  This section contains information on and installation instructions for MariaDB
-  binaries and packages
+  Install MariaDB Server using binary packages. This section guides you through
+  deploying pre-compiled versions on various platforms, offering a
+  straightforward approach for setup and upgrades.
 ---
 
 # MariaDB Binary Packages

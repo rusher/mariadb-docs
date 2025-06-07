@@ -187,7 +187,7 @@ MariaDB builds with `readline`; using an alternative such as `Editline` may resu
 
 ## Post-install Tasks
 
-* [Installing system tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db.md)
+* [Installing system tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db/)
 * [Starting and Stopping MariaDB Automatically](../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 
 CC BY-SA / Gnu FDL

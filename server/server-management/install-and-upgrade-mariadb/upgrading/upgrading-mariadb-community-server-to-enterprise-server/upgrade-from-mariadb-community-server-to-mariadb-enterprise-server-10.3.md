@@ -8,7 +8,7 @@ When [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup prior to upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
 
 1.  Take a full backup.
 
@@ -52,9 +52,9 @@ The instructions below show how to perform a backup using [MariaDB Backup](../..
 
 ### Audit Plugin Considerations
 
-If you have the [MariaDB Audit Plugin](../../reference/plugins/mariadb-audit-plugin/) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the MariaDB Enterprise Audit Plugin that is present in MariaDB Enterprise Server 10.4 or later.
+If you have the [MariaDB Audit Plugin](../../../../reference/plugins/mariadb-audit-plugin/) installed and if you are upgrading to MariaDB Enterprise Server 10.4 or later, then the audit plugin should be removed prior to the upgrade to prevent conflict with the MariaDB Enterprise Audit Plugin that is present in MariaDB Enterprise Server 10.4 or later.
 
-It can be removed by using the [UNINSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
+It can be removed by using the [UNINSTALL SONAME](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) statement:
 
 ```sql
 UNINSTALL SONAME 'server_audit';
@@ -72,12 +72,12 @@ When upgrading to MariaDB Enterprise Server, it is necessary to remove the exist
 
 Before the old version can be uninstalled, we first need to stop the current MariaDB Server process.
 
-1.  Set the [innodb\_fast\_shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to `1`:
+1.  Set the [innodb\_fast\_shutdown](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to `1`:
 
     ```sql
     SET GLOBAL innodb_fast_shutdown = 1;
     ```
-2.  Use [XA RECOVER](../../reference/sql-statements/transactions/xa-transactions.md#xa-recover) to confirm that there are no external XA transactions in a prepared state:
+2.  Use [XA RECOVER](../../../../reference/sql-statements/transactions/xa-transactions.md#xa-recover) to confirm that there are no external XA transactions in a prepared state:
 
     ```sql
     XA RECOVER;
@@ -367,7 +367,7 @@ For distributions that use systemd, you can manage the Server process using the 
 
 MariaDB Enterprise Server ships with a utility that can be used to identify and correct compatibility issues in the new version. After you upgrade your Server and start the server process, run this utility to upgrade the data directory.
 
-The utility is called [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md) in MariaDB Enterprise Server 10.4 and later:
+The utility is called [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) in MariaDB Enterprise Server 10.4 and later:
 
 ```bash
 $ sudo mariadb-upgrade
@@ -385,7 +385,7 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
 1.  Connect to the server using MariaDB Client using the `root@localhost` user account.
 
-    MariaDB Client is called [mariadb](../../clients-and-utilities/mariadb-client/) (ES10.4 and later) or `mysql` (ES10.3 and earlier):
+    MariaDB Client is called [mariadb](../../../../clients-and-utilities/mariadb-client/) (ES10.4 and later) or `mysql` (ES10.3 and earlier):
 
     ```bash
     $ sudo mariadb
@@ -415,7 +415,7 @@ When MariaDB Enterprise Server is up and running on your system, you should test
     | version       | 10.3.39-MariaDB |
     +---------------+-----------------+
     ```
-3.  You can also verify the server version by calling the [VERSION()](../../reference/sql-functions/secondary-functions/information-functions/version.md) function:
+3.  You can also verify the server version by calling the [VERSION()](../../../../reference/sql-functions/secondary-functions/information-functions/version.md) function:
 
     ```sql
     SELECT VERSION();

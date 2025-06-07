@@ -1,6 +1,6 @@
-# mariadb-install-db.exe
+# Installing System Tables on Windows
 
-The `mariadb-install-db.exe` utility is the Windows equivalent of [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md).
+The `mariadb-install-db.exe` utility is the Windows equivalent of [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md).
 
 ## Functionality
 
