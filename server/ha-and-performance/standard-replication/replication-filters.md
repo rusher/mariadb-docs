@@ -14,7 +14,7 @@ The following options are available, and they are evaluated in the order that th
 
 #### `binlog_do_db`
 
-The [binlog\_do\_db](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option allows you to configure a [replication primary](broken-reference) to write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+The [binlog\_do\_db](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option allows you to configure a [replication primary](broken-reference) to write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
 
 This option will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 
@@ -37,7 +37,7 @@ This will tell the primary to do the following:
 
 #### `binlog_ignore_db`
 
-The [binlog\_ignore\_db](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option allows you to configure a [replication primary](broken-reference) to **not** write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+The [binlog\_ignore\_db](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option allows you to configure a [replication primary](broken-reference) to **not** write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
 
 This option will **not** work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
 

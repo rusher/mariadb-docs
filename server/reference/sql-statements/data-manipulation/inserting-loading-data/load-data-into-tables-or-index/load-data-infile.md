@@ -35,7 +35,7 @@ One must have the [FILE](../../../account-management-sql-statements/grant.md#fil
 
 If the [secure\_file\_priv](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) system variable is set (by default it is not), the loaded file must be present in the specified directory.
 
-Note that MariaDB's [systemd](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md) unit file restricts access to `/home`, `/root`, and `/run/user` by default. See [Configuring access to home directories](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-access-to-home-directories).
+Note that MariaDB's [systemd](../../../../../server-management/starting-and-stopping-mariadb/systemd.md) unit file restricts access to `/home`, `/root`, and `/run/user` by default. See [Configuring access to home directories](../../../../../server-management/starting-and-stopping-mariadb/systemd.md#configuring-access-to-home-directories).
 
 ### `LOAD DATA LOCAL INFILE`
 

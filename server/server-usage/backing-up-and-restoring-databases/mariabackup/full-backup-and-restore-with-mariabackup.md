@@ -49,7 +49,7 @@ $ mariadb-backup --prepare \
 
 Once the backup is complete and you have prepared the backup for restoration (previous step), you can restore the backup using either the `[--copy-back](mariabackup-options.md#-copy-back)` or the `[--move-back](mariabackup-options.md#-move-back)` options. The `[--copy-back](mariabackup-options.md#-copy-back)` option allows you to keep the original backup files. The `[--move-back](mariabackup-options.md#-move-back)` option actually moves the backup files to the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, so the original backup files are lost.
 
-* First, [stop the MariaDB Server process](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/).
+* First, [stop the MariaDB Server process](../../../server-management/starting-and-stopping-mariadb/).
 * Then, ensure that the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is empty.
 * Then, run mariadb-backup with one of the options mentioned above:
 
@@ -66,7 +66,7 @@ When mariadb-backup restores a database, it preserves the file and directory pri
 $ chown -R mysql:mysql /var/lib/mysql/
 ```
 
-* Finally, [start the MariaDB Server process](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/).
+* Finally, [start the MariaDB Server process](../../../server-management/starting-and-stopping-mariadb/).
 
 ### Restoring with Other Tools
 

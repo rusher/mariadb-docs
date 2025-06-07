@@ -183,7 +183,7 @@ It is not recommended to make custom changes to one of the bundled configuration
 
 3. Set your system variables and options in the configuration file.
 
-They need to be set in a group that will be read by [mariadbd](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd.md), such as \[mariadb] or \[server].
+They need to be set in a group that will be read by [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd.md), such as \[mariadb] or \[server].
 
 For example:
 

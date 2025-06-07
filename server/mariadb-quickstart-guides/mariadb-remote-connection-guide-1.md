@@ -113,7 +113,7 @@ skip-bind-address
 
 This works as one can have any number of \[mysqld] sections.
 
-Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)).
+Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../server-management/starting-and-stopping-mariadb/)).
 
 You can check the options mariadbd is using by executing:
 

@@ -1,6 +1,6 @@
 # Aria System Variables
 
-This page documents system variables related to the [Aria storage engine](./). For options that are not system variables, see [Aria Options](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to the [Aria storage engine](./). For options that are not system variables, see [Aria Options](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
 See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting system variables.
 

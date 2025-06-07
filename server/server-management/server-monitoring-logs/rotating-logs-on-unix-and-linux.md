@@ -32,7 +32,7 @@ long_query_time=5
 
 We will also need to create the relevant directory:
 
-```
+```bash
 sudo mkdir /var/log/mysql/
 sudo chown mysql:mysql /var/log/mysql/
 sudo chmod 0770 /var/log/mysql/
@@ -40,7 +40,7 @@ sudo chmod 0770 /var/log/mysql/
 
 If you are using [SELinux](../../security/securing-mariadb/selinux.md), then you may also need to set the SELinux context for the directory. See [SELinux: Setting the File Context for Log Files](../../security/securing-mariadb/selinux.md#setting-the-file-context-for-log-files) for more information. For example:
 
-```
+```bash
 sudo semanage fcontext -a -t mysqld_log_t "/var/log/mysql(/.*)?"
 sudo restorecon -Rv /var/log/mysql
 ```
@@ -59,7 +59,7 @@ The `root@localhost` user account is configured to use unix\_socket authenticati
 
 The `root@localhost` user account can be altered to use [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication with the [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement. For example:
 
-```
+```sql
 ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
 ```
 
@@ -79,7 +79,7 @@ And the `[logrotate](https://linux.die.net/man/8/logrotate)` configuration files
 
 We can create a `[logrotate](https://linux.die.net/man/8/logrotate)` configuration file for MariaDB by executing the following command in a shell:
 
-```
+```bash
 $ sudo tee /etc/logrotate.d/mariadb <<EOF
 /var/log/mysql/* {
         su mysql mysql
@@ -132,7 +132,7 @@ Each specific configuration directive does the following:
 
 If our system does not have `[logrotate](https://linux.die.net/man/8/logrotate)` 3.8.9 or later, which is needed to support the `createolddir` directive, then we will also need to create the relevant directory specified by the `olddir` directive:
 
-```
+```bash
 sudo mkdir /var/log/mysql/archive/
 sudo chown mysql:mysql /var/log/mysql/archive/
 sudo chmod 0770 /var/log/mysql/archive/
@@ -142,7 +142,7 @@ sudo chmod 0770 /var/log/mysql/archive/
 
 We can test log rotation by executing the `[logrotate](https://linux.die.net/man/8/logrotate)` utility with the `--force` option. For example:
 
-```
+```bash
 sudo logrotate --force /etc/logrotate.d/mariadb
 ```
 
@@ -156,7 +156,7 @@ However, when running tests with the `--force` option, the `[logrotate](https://
 
 After a few tests, we can see that the log rotation is indeed working:
 
-```
+```bash
 $ sudo ls -l /var/log/mysql/archive/
 total 48
 -rw-rw---- 1 mysql mysql  440 Mar 31 15:31 mariadb.err.1
@@ -179,7 +179,7 @@ Let's see an example of how to configure logrotate in Ansible.
 
 First, we'll create a couple of tasks in our playbook:
 
-```
+```bash
 - name: Create mariadb_logrotate_old_dir
   file:
     path: "{{ mariadb_logrotate_old_dir }}"
@@ -200,7 +200,7 @@ The second task uploads logrotate configuration file into the proper directory, 
 
 The file will look like the following:
 
-```
+```django
 {{ mariadb_log_dir }}/* {
         su mysql mysql
         missingok

@@ -51,13 +51,13 @@ mysql-test/mtr --parallel=8 --force
 
 ## Install the Server (If needed)
 
-You can also [run and test mariadb directly from the build directory](../../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md), in which case you can skip the rest of the steps below.
+You can also [run and test mariadb directly from the build directory](../../../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md), in which case you can skip the rest of the steps below.
 
 ```
 cmake --install .
 ```
 
-### [Start the Server](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
+### [Start the Server](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 
 Start the server in it's own terminal window for testing. Note that the directory depends on your system!
 

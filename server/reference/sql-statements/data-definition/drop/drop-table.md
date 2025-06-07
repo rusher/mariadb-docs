@@ -74,7 +74,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 
 ## Dropping an Internal #sql-... Table
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), [DROP TABLE is atomic](drop-table.md#atomic-drop-table) and the following does not apply. Until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), if the [mariadbd process](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table.md) you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), [DROP TABLE is atomic](drop-table.md#atomic-drop-table) and the following does not apply. Until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table.md) you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
 
 If you want to delete one of these tables explicitly you can do so by using the following syntax:
 

@@ -175,7 +175,7 @@ mysql-test/mysql-test-run --force
 
 Each of the above are run from the build directory. There is no need to '`make install`/`cmake --install .`' MariaDB prior to running them.
 
-**NOTE:** If you are doing more extensive testing or debugging of MariaDB (like with real application data and workloads) you may want to start and run MariaDB directly from the source directory instead of installing it with '`sudo make install`'. If so, see[Running MariaDB from the Source Directory](../../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md).
+**NOTE:** If you are doing more extensive testing or debugging of MariaDB (like with real application data and workloads) you may want to start and run MariaDB directly from the source directory instead of installing it with '`sudo make install`'. If so, see[Running MariaDB from the Source Directory](../../../starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md).
 
 ## Increasing Version Number or Tagging a Version
 
@@ -188,6 +188,6 @@ MariaDB builds with `readline`; using an alternative such as `Editline` may resu
 ## Post-install Tasks
 
 * [Installing system tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db/)
-* [Starting and Stopping MariaDB Automatically](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
+* [Starting and Stopping MariaDB Automatically](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 
 CC BY-SA / Gnu FDL

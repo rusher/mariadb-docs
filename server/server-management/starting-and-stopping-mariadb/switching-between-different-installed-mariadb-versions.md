@@ -29,9 +29,9 @@ can skip this section.
 The steps to create a binary tar file are:
 
 * Decide where to put the source. A good place is under `/usr/local/src/mariadb-5.#`.
-* [Get the source](../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md)
-* [Compile the source](../installing-mariadb/compiling-mariadb-from-source/)
-* [Create the binary tar ball](../installing-mariadb/compiling-mariadb-from-source/creating-the-mariadb-binary-tarball.md).
+* [Get the source](../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md)
+* [Compile the source](../install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/)
+* [Create the binary tar ball](../install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/creating-the-mariadb-binary-tarball.md).
 
 You will then be left with a tar file named something like:`mariadb-11.0.1-MariaDB-linux-x86_64.tar.gz`
 
@@ -78,7 +78,7 @@ The steps are:
    (On Linux you do it with the `useradd` command).
 2. Create the directory (we call it `mariadb-data` in the example below) or\
    add a symlink to a directory which is in some other place.
-3. Create the `mysql` permission tables with [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md)
+3. Create the `mysql` permission tables with [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md)
 
 ```
 cd /usr/local/

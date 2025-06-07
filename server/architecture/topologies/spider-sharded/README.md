@@ -80,7 +80,7 @@ These requirements are for the Spider Sharded topology when deployed with MariaD
 
 ### Operating Systems
 
-In alignment to the [enterprise lifecycle](../../../server-management/install-and-upgrade-mariadb/upgrading/upgrades/enterprise-server-lifecycle.md), the Spider Sharded topology with MariaDB Enterprise Server is provided for:
+In alignment to the [enterprise lifecycle](../../../server-management/enterprise-server-lifecycle.md), the Spider Sharded topology with MariaDB Enterprise Server is provided for:
 
 * AlmaLinux 8 (x86\_64, ARM64)
 * AlmaLinux 9 (x86\_64, ARM64)

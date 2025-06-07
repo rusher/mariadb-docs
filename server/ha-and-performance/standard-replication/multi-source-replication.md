@@ -134,7 +134,7 @@ different systems.
 Hint:
 
 Instead of specifying names for `mysqld` with [--relay-log](replication-and-binary-log-system-variables.md#relay_log), [--relay-log-index](replication-and-binary-log-system-variables.md#relay_log_index), [--general-log-file](../optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [--slow-query-log-file](../optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file),[--log-bin](replication-and-binary-log-system-variables.md#log_bin) and [--log-bin-index](replication-and-binary-log-system-variables.md#log_bin_index), you can just\
-specify [--log-basename](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) and all the other variables are set\
+specify [--log-basename](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) and all the other variables are set\
 with this as a prefix.
 
 ## Other Things

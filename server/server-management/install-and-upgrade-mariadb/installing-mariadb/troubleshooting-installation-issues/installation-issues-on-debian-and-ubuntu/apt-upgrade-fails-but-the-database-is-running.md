@@ -40,6 +40,6 @@ This situation could occur if the timeout for the init script was too short. For
 To overcome this, the timeout needs to be increased. This can be achieved as follows:
 
 * On systems where systemd is not enabled/supported: The timeout can be increased by setting MYSQLD\_STARTUP\_TIMEOUT either directly in the script or via the command line. In [MariaDB 10.1.13](broken-reference) and later versions, the init script also sources /etc/default/mariadb, so it can also be used to set MYSQLD\_STARTUP\_TIMEOUT to persistently change the startup timeout. The default timeout has been increased from 30s to 60s in [MariaDB 10.1.13](broken-reference).
-* On systems that support systemd: The startup timeout can be increased by setting [TimeoutStartSec systemd](../../../starting-and-stopping-mariadb/systemd.md) option.
+* On systems that support systemd: The startup timeout can be increased by setting [TimeoutStartSec systemd](../../../../starting-and-stopping-mariadb/systemd.md) option.
 
 CC BY-SA / Gnu FDL

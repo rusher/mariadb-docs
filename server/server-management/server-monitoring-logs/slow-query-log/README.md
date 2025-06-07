@@ -1,5 +1,9 @@
+---
+description: >-
+  Utilize the slow query log in MariaDB Server. This section helps you identify
+  and optimize inefficient queries, improving overall database performance and
+  responsiveness.
+---
 
 # Slow Query Log
-
-The slow query log is a record of SQL queries that took a long time to perform.
 

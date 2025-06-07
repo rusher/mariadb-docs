@@ -27,7 +27,7 @@ Only the last path can have the `autoextend` , `max` and `autoshrink` options.
 
 ## Sizing Temporary Tablespaces
 
-In order to size temporary tablespaces, use the [innodb\_temp\_data\_file\_path](../innodb-system-variables.md#innodb_temp_data_file_path) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+In order to size temporary tablespaces, use the [innodb\_temp\_data\_file\_path](../innodb-system-variables.md#innodb_temp_data_file_path) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]

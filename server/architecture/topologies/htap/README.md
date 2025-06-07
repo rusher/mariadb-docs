@@ -77,7 +77,7 @@ These requirements are for the HTAP topology when deployed with MariaDB Enterpri
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](../../../server-management/install-and-upgrade-mariadb/upgrading/upgrades/enterprise-server-lifecycle.md), the HTAP topology with MariaDB Enterprise Server 11.4 and MariaDB Enterprise ColumnStore is provided for:
+In alignment to the [enterprise lifecycle](../../../server-management/enterprise-server-lifecycle.md), the HTAP topology with MariaDB Enterprise Server 11.4 and MariaDB Enterprise ColumnStore is provided for:
 
 * Debian 11 (x86\_64, ARM64)
 * Debian 12 (x86\_64, ARM64)
@@ -193,7 +193,7 @@ The systemctl command is used to start and stop the MariaDB Enterprise Server se
 
 <table><thead><tr><th width="244.814697265625">Operation</th><th>Command</th></tr></thead><tbody><tr><td>Start</td><td><code>sudo systemctl start mariadb</code></td></tr><tr><td>Stop</td><td><code>sudo systemctl stop mariadb</code></td></tr><tr><td>Restart</td><td><code>sudo systemctl restart mariadb</code></td></tr><tr><td>Enable during startup</td><td><code>sudo systemctl enable mariadb</code></td></tr><tr><td>Disable during startup</td><td><code>sudo systemctl disable mariadb</code></td></tr><tr><td>Status</td><td><code>sudo systemctl status mariadb</code></td></tr></tbody></table>
 
-For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/starting-and-stopping-mariadb/)".
 
 ## MariaDB Enterprise Server Logs
 

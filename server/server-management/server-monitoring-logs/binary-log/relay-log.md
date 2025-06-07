@@ -24,7 +24,7 @@ If you need to overcome this issue while replication is already underway,you can
 
 For example:
 
-```
+```bash
 shell> cat NEW_relay_log_name.index >> OLD_relay_log_name.index
 shell> mv OLD_relay_log_name.index NEW_relay_log_name.index
 ```

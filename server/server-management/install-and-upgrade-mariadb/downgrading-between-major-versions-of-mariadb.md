@@ -1,4 +1,4 @@
-# Downgrading between Major Versions of MariaDB
+# Downgrading MariaDB
 
 Downgrading MariaDB is not officially supported between major versions.
 
@@ -21,8 +21,8 @@ Assuming one **must** downgrade to an earlier major version, here is a list of t
 
 * MariaDB must be shut down cleanly. This means that:
   * One should ensure that [innodb\_fast\_shutdown≠2](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown).
-  * One uses the [SHUTDOWN](../../reference/sql-statements/administrative-sql-statements/shutdown.md) command, [mariadb-admin shutdown](../../clients-and-utilities/mariadb-admin.md) or the operating system official commands, like [systemctl stop mariadb.service](starting-and-stopping-mariadb/systemd.md#stopping-the-mariadb-server-process).
-* Start the old server with [--skip-privilege-tables](starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables).
+  * One uses the [SHUTDOWN](../../reference/sql-statements/administrative-sql-statements/shutdown.md) command, [mariadb-admin shutdown](../../clients-and-utilities/mariadb-admin.md) or the operating system official commands, like [systemctl stop mariadb.service](../starting-and-stopping-mariadb/systemd.md#stopping-the-mariadb-server-process).
+* Start the old server with [--skip-privilege-tables](../starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables).
 * Use ALTER TABLE to restore the [mysql schema tables](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) to their original definition or drop and recreate the mysql tables. One can find the old definition by using [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) to create a separate temporary data directory. Starting the MariaDB server on the temporary directory will allow you to use [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) to find the old definition.
 * Execute [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to reload the old tables.
 

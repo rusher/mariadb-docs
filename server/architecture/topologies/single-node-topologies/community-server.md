@@ -211,7 +211,7 @@ And on Debian and Ubuntu, custom configuration files from the following director
     * On Debian and Ubuntu, a good custom configuration file would be: `/etc/mysql/mariadb.conf.d/z-custom-my.cnf`
 3.  Set your system variables and options in the configuration file.
 
-    They need to be set in a group that will be read by [mariadbd](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd.md), such as `[mariadb]` or `[server]`.
+    They need to be set in a group that will be read by [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd.md), such as `[mariadb]` or `[server]`.
 
     For example:
 

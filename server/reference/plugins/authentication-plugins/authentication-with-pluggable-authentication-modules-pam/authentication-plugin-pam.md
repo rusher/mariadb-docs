@@ -33,7 +33,7 @@ The first method can be used to install the plugin without restarting the server
 INSTALL SONAME 'auth_pam';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -67,7 +67,7 @@ You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../.
 UNINSTALL SONAME 'auth_pam';
 ```
 
-If you installed the plugin by providing the [--plugin-load](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ### Uninstalling the v1 Plugin
 
@@ -124,7 +124,7 @@ The problem is that on some systems, the `pam_unix` PAM module needs access to `
 
 Newer versions of PAM do not have this limitation, so you may want to try upgrading your version of PAM to see if that fixes the issue.
 
-If that does not work, then you can work around this problem by giving the user that runs [mysqld](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) access to `/etc/shadow`. For example, if the `mysql` user runs [mysqld](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md), then you could do the following:
+If that does not work, then you can work around this problem by giving the user that runs [mysqld](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) access to `/etc/shadow`. For example, if the `mysql` user runs [mysqld](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md), then you could do the following:
 
 ```
 sudo groupadd shadow

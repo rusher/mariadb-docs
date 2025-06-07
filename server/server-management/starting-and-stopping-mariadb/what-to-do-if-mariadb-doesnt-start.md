@@ -6,7 +6,7 @@ If you have tried everything here, and still need help, you can ask for help on 
 
 ## The Error Log and the Data Directory
 
-The reason for the failure will almost certainly be written in the [error log](../../server-monitoring-logs/error-log.md) and, if you are starting MariaDB manually, to the console. By default, the error log is named _host-name_.err and is written to the data directory.
+The reason for the failure will almost certainly be written in the [error log](../server-monitoring-logs/error-log.md) and, if you are starting MariaDB manually, to the console. By default, the error log is named _host-name_.err and is written to the data directory.
 
 Common Locations:
 
@@ -15,7 +15,7 @@ Common Locations:
 * C:\Program Files\MariaDB x.y\data (x.y refers to the version number)
 * C:\Program Files (x86)\MariaDB x.y\data (32bit version on 64bit Windows)
 
-It's also possible that the error log has been explicitly written to another location. This is often done by changing the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` or `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variables in an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
+It's also possible that the error log has been explicitly written to another location. This is often done by changing the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` or `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variables in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
 
 A quick way to get the values of these system variables is to execute the following commands:
 
@@ -26,7 +26,7 @@ mariadbd --help --verbose | grep 'datadir' | tail -1
 
 ## Option Files
 
-Another kind of file to consider when troubleshooting is [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md). The default option file is called `my.cnf`. Option files contain configuration options, such as the location of the data directory mentioned above. If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
+Another kind of file to consider when troubleshooting is [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). The default option file is called `my.cnf`. Option files contain configuration options, such as the location of the data directory mentioned above. If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
 You can check which configuration options MariaDB server will use from its option files by executing the following command:
 
@@ -40,23 +40,23 @@ You can also check by executing the following command:
 my_print_defaults --mysqld
 ```
 
-See [Configuring MariaDB with Option Files: Checking Program Options](../configuring-mariadb/configuring-mariadb-with-option-files.md#checking-program-options) for more information on checking configuration options.
+See [Configuring MariaDB with Option Files: Checking Program Options](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#checking-program-options) for more information on checking configuration options.
 
 ### Invalid Option or Option Value
 
-Another potential reason for a startup failure is that an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) contains an invalid option or an invalid option value. In those cases, the [error log](../../server-monitoring-logs/error-log.md) should contain an error similar to this:
+Another potential reason for a startup failure is that an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) contains an invalid option or an invalid option value. In those cases, the [error log](../server-monitoring-logs/error-log.md) should contain an error similar to this:
 
 ```
 140514 12:19:37 [ERROR] /usr/local/mysql/bin/mariadbd: unknown variable 'option=value'
 ```
 
-This is more likely to happen when you upgrade to a new version of MariaDB. In most cases the [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) from the old version of MariaDB will work just fine with the new version. However, occasionally, options are removed in new versions of MariaDB, or the valid values for options are changed in new versions of MariaDB. Therefore, it's possible for an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) to stop working after an upgrade.
+This is more likely to happen when you upgrade to a new version of MariaDB. In most cases the [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) from the old version of MariaDB will work just fine with the new version. However, occasionally, options are removed in new versions of MariaDB, or the valid values for options are changed in new versions of MariaDB. Therefore, it's possible for an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) to stop working after an upgrade.
 
 Also remember that option names are case sensitive.
 
 Examine the specifics of the error. Possible fixes are usually one of the following:
 
-* If the option is completely invalid, then remove it from the [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md).
+* If the option is completely invalid, then remove it from the [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 * If the option's name has changed, then fix the name.
 * If the option's valid values have changed, then change the option's value to a valid one.
 * If the problem is caused by a simple typo, then fix the typo.
@@ -70,11 +70,11 @@ System error 1067 has occurred.
 Fatal error: Can't open privilege tables: Table 'mysql.host' doesn't exist
 ```
 
-If errors like this occur, then critical [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
+If errors like this occur, then critical [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
 
-If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
+If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
-If the [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
+If the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
 
 ## Can't Create Test File
 
@@ -116,23 +116,23 @@ Like the above, this is an indication that a second MariaDB instance is already 
 
 ## InnoDB
 
-[InnoDB](../../../reference/storage-engines/innodb/) is probably the MariaDB component that most frequently causes a crash. In the error log, lines containing InnoDB messages generally start with "InnoDB:".
+[InnoDB](../../reference/storage-engines/innodb/) is probably the MariaDB component that most frequently causes a crash. In the error log, lines containing InnoDB messages generally start with "InnoDB:".
 
 ### Cannot Allocate Memory for the InnoDB Buffer Pool
 
-In a typical installation on a dedicated server, at least 70% of your memory should be assigned to [InnoDB buffer pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md); sometimes it can even reach 85%. But be very careful: don't assign to the buffer pool more memory than it can allocate. If it cannot allocate memory, InnoDB will use the disk's swap area, which is very bad for performance. If swapping is disabled or the swap area is not big enough, InnoDB will crash. In this case, MariaDB will probably try to restart several times, and each time it will log a message like this:
+In a typical installation on a dedicated server, at least 70% of your memory should be assigned to [InnoDB buffer pool](../../reference/storage-engines/innodb/innodb-buffer-pool.md); sometimes it can even reach 85%. But be very careful: don't assign to the buffer pool more memory than it can allocate. If it cannot allocate memory, InnoDB will use the disk's swap area, which is very bad for performance. If swapping is disabled or the swap area is not big enough, InnoDB will crash. In this case, MariaDB will probably try to restart several times, and each time it will log a message like this:
 
 ```
 140124 17:29:01 InnoDB: Fatal error: cannot allocate memory for the buffer pool
 ```
 
-In that case, you will need to add more memory to your server/VM or decrease the value of the [innodb\_buffer\_pool\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md) variables.
+In that case, you will need to add more memory to your server/VM or decrease the value of the [innodb\_buffer\_pool\_size](../../reference/storage-engines/innodb/innodb-system-variables.md) variables.
 
 Remember that the buffer pool will slightly exceed that limit. Also, remember that MariaDB also needs allocate memory for other storage engines and several per-connection buffers. The operating system also needs memory.
 
 ### InnoDB Table Corruption
 
-By default, InnoDB deliberately crashes the server when it detects table corruption. The reason for this behavior is preventing corruption propagation. However, in some situations, server availability is more important than data integrity. For this reason, we can avoid these crashes by changing the value of [innodb\_corrupt\_table\_action](../../../reference/storage-engines/innodb/innodb-system-variables.md) to 'warn'.
+By default, InnoDB deliberately crashes the server when it detects table corruption. The reason for this behavior is preventing corruption propagation. However, in some situations, server availability is more important than data integrity. For this reason, we can avoid these crashes by changing the value of [innodb\_corrupt\_table\_action](../../reference/storage-engines/innodb/innodb-system-variables.md) to 'warn'.
 
 If InnoDB crashes the server after detecting data corruption, it writes a detailed message in the error log. The first lines are similar to the following:
 
@@ -142,13 +142,13 @@ InnoDB: file read of page 7.
 InnoDB: You may have to recover from a backup.
 ```
 
-Generally, it is still possible to recover most of the corrupted data. To do so, restart the server in [InnoDB recovery mode](../../../reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md) and try to extract the data that you want to backup. You can save them in a CSV file or in a non-InnoDB table. Then, restart the server in normal mode and restore the data.
+Generally, it is still possible to recover most of the corrupted data. To do so, restart the server in [InnoDB recovery mode](../../reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md) and try to extract the data that you want to backup. You can save them in a CSV file or in a non-InnoDB table. Then, restart the server in normal mode and restore the data.
 
 ## MyISAM
 
-Most tables in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
+Most tables in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are MyISAM tables. These tables are necessary for MariaDB to properly work, or even start.
 
-A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam\_recover\_options](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
+A MariaDB crash could cause system tables corruption. With the default settings, MariaDB will simply not start if the system tables are corrupted. With [myisam\_recover\_options](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options), we can force MyISAM to repair damaged tables.
 
 ## systemd
 
@@ -173,7 +173,7 @@ You might need to troubleshoot SELinux-related issues in cases, such as:
 
 Setting SELinux state to `permissive` is a common way to investigate what is going wrong while allowing MariaDB to function normally. `permissive` is supposed to produce a log entry every time it should block a resource access, without actually blocking it. However, [there are situations](https://danwalsh.livejournal.com/67855.html) when SELinux blocks resource accesses even in `permissive` mode.
 
-See [SELinux](../../../security/securing-mariadb/selinux.md) for more information.
+See [SELinux](../../security/securing-mariadb/selinux.md) for more information.
 
 ## AppArmor
 

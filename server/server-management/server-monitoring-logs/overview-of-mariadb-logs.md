@@ -38,7 +38,7 @@ Note that storage engines can have their logs too: for example, InnoDB keeps an 
 * Used on machines that are, or may become, replication masters.
 * Required for point-in-time recovery.
 * Binary log files are mainly used by replication and can also be used with [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to apply on a backup to get the database up to date.
-* One can decide what to log with [--binlog-ignore-db=database\_name](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or [--binlog-do-db=database\_name](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+* One can decide what to log with [--binlog-ignore-db=database\_name](../starting-and-stopping-mariadb/mariadbd-options.md) or [--binlog-do-db=database\_name](../starting-and-stopping-mariadb/mariadbd-options.md).
 * The super user can disable logging for a connection by [setting SQL\_LOG\_BIN](../../reference/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) to 0. However while this is 0, no changes done in this connection will be replicated to the slaves!
 * For examples, see [Using and Maintaining the Binary Log](binary-log/using-and-maintaining-the-binary-log.md).
 
@@ -46,13 +46,13 @@ Note that storage engines can have their logs too: for example, InnoDB keeps an 
 
 If you know that your next query will be slow and you don't want to log it in the slow query log, do:
 
-```
+```sql
 SET LOCAL SLOW_QUERY_LOG=0;
 ```
 
 If you are a super user running a log batch job that you don't want to have logged (for example mariadb-dump), do:
 
-```
+```sql
 SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 ```
 

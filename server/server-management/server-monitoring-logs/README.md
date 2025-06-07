@@ -1,5 +1,9 @@
+---
+description: >-
+  Learn about MariaDB Server monitoring and logs. This section guides you
+  through using various logs & monitoring tools to track database activity,
+  troubleshoot issues, and ensure optimal performance.
+---
 
 # Server Monitoring & Logs
-
-MariaDB can keep a number of log files, including the error log, the binary log, the general query log and the slow query log.
 

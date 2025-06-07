@@ -8,14 +8,14 @@ To write logs into tables, the [log\_output](../../ha-and-performance/optimizati
 
 So, to write logs into tables, one of the following settings can be used:
 
-```
+```sql
 SET GLOBAL log_output = 'TABLE';
 SET GLOBAL log_output = 'FILE,TABLE';
 ```
 
 The general log will be written into the [general\_log](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table, and the slow query log will be written into the [slow\_log](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-slow_log-table.md) table. Only a limited set of operations are supported for those special tables. For example, direct DML statements (like `INSERT`) on those tables will fail with an error similar to the following:
 
-```
+```sql
 ERROR 1556 (HY000): You can't use locks with log tables.
 ```
 
@@ -25,7 +25,7 @@ To empty the contents of the log tables, [TRUNCATE TABLE](../../reference/sql-st
 
 The log tables use the [CSV](../../reference/storage-engines/csv/) storage engine by default. This allows an external program to read the files if needed: normal CSV files are stored in the `mysql` subdirectory, in the data dir. However that engine is slow because it does not support indexes, so you can convert the tables to [MyISAM](../../reference/storage-engines/myisam-storage-engine/) (but not other storage engines). To do so, first temporarily disable logging:
 
-```
+```sql
 SET GLOBAL general_log = 'OFF';
 ALTER TABLE mysql.general_log ENGINE = MyISAM;
 ALTER TABLE mysql.slow_log ENGINE = MyISAM;

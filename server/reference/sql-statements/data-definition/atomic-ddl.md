@@ -74,7 +74,7 @@ work are:
 
 ### The DDL Log Recovery File
 
-The new startup option [--log-ddl-recovery=path](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (`ddl_recovery.log` by default) can be used to specify the place for\
+The new startup option [--log-ddl-recovery=path](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) (`ddl_recovery.log` by default) can be used to specify the place for\
 the DDL log file. This is mainly useful in the case when one has a\
 filesystem on persistent memory, as there is a lot of sync on this\
 file during DDL operations.

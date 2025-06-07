@@ -1,6 +1,6 @@
 # InnoDB System Variables
 
-This page documents system variables related to the [InnoDB storage engine](./). For options that are not system variables, see [InnoDB Options](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+This page documents system variables related to the [InnoDB storage engine](./). For options that are not system variables, see [InnoDB Options](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
 See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
@@ -15,7 +15,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `ignore_builtin_innodb`
 
-* Description: Setting this to `1` results in the built-in InnoDB storage engine being ignored. In some versions of MariaDB, XtraDB is the default and is always present, so this variable is ignored and setting it results in a warning. From [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes) to [MariaDB 10.0.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1008-release-notes), when InnoDB was the default instead of XtraDB, this variable needed to be set. Usually used in conjunction with the [plugin-load=innodb=ha\_innodb](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option to use the InnoDB plugin.
+* Description: Setting this to `1` results in the built-in InnoDB storage engine being ignored. In some versions of MariaDB, XtraDB is the default and is always present, so this variable is ignored and setting it results in a warning. From [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes) to [MariaDB 10.0.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1008-release-notes), when InnoDB was the default instead of XtraDB, this variable needed to be set. Usually used in conjunction with the [plugin-load=innodb=ha\_innodb](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option to use the InnoDB plugin.
 * Commandline: `--ignore-builtin-innodb`
 * Scope: Global
 * Dynamic: No

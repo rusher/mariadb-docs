@@ -39,7 +39,7 @@ If MariaDB needs to perform automatic crash recovery and if the [binary log](../
 
 Manual heuristic recovery occurs when `[--tc-heuristic-recover](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` is set to some value other than `OFF`. This might be needed if the server finds prepared transactions during crash recovery that are not in the transaction coordinator log. For example, the [error log](../error-log.md) might contain an error like this:
 
-```
+```sql
 [ERROR] Found 1 prepared transactions! It means that mysqld was not shut down properly last time and critical recovery information (last binlog or tc.log file) was manually deleted after a crash. You have to start mysqld with --tc-heuristic-recover switch to commit or rollback pending transactions.
 ```
 

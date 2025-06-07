@@ -99,7 +99,7 @@ SHOW VARIABLES LIKE "perf%";
 
 See [Performance Schema System Variables](performance-schema-system-variables.md) for a full list of available system variables.
 
-Note that the "consumer" events are not shown on this list, as they are only available as options, not as system variables, and they can only be enabled at [startup](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+Note that the "consumer" events are not shown on this list, as they are only available as options, not as system variables, and they can only be enabled at [startup](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
 ## Column Comments
 
@@ -123,7 +123,7 @@ column_comment: Open handles on the file. A value of greater than zero means
 
 ## See Also
 
-* [Performance schema options](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)
+* [Performance schema options](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md)
 * [SHOW ENGINE STATUS](../../show/show-engine.md)
 * [SHOW PROFILE](../../show/show-profile.md)\`\`
 * [ANALYZE STATEMENT](../../analyze-and-explain-statements/analyze-statement.md)

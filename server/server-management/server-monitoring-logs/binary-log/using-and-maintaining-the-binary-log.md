@@ -19,11 +19,11 @@ If the binary log index file has been removed, or incorrectly manually edited, a
 
 ### Examples
 
-```
+```sql
 PURGE BINARY LOGS TO 'mariadb-bin.000063';
 ```
 
-```
+```sql
 PURGE BINARY LOGS BEFORE '2013-04-22 09:55:22';
 ```
 
@@ -49,7 +49,7 @@ There are three formats for the binary log. The default is statement-based loggi
 
 ## Selectively Logging to the Binary Log
 
-By default, all changes to data or data structure are logged. This behavior can be changed by starting the server with the `--binlog-ignore-db=database_name` or `--binlog-do-db=database_name` [options](../../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md).
+By default, all changes to data or data structure are logged. This behavior can be changed by starting the server with the `--binlog-ignore-db=database_name` or `--binlog-do-db=database_name` [options](../../starting-and-stopping-mariadb/mariadbd-options.md).
 
 `--binlog-ignore-db=database_name` specified a database to ignore for logging purposes, while `--binlog-do-db=database_name` will not log any statements unless they apply to the specified database.
 
@@ -67,7 +67,7 @@ For row-based logging, the server will log any updates to any tables in the name
 
 Assume the server has started with the option `--binlog-ignore-db=employees`. The following example _is_ logged if statement-based logging is used, and _is not_ logged with row-based logging.
 
-```
+```sql
 USE customers;
 UPDATE employees.details SET bonus=bonus*1.2;
 ```
@@ -76,7 +76,7 @@ This is because statement-based logging examines the default database, in this c
 
 Assume instead the server started with the option `--binlog-do-db=employees`. The following example _is not_ logged if statement-based logging is used, and _is_ logged with row-based logging.
 
-```
+```sql
 USE customers;
 UPDATE employees.details SET bonus=bonus*1.2;
 ```

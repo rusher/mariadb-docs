@@ -153,7 +153,7 @@ The `systemctl` command is used to start and stop the MariaDB Enterprise Server 
 | Bootstrap a cluster node          | sudo galera\_new\_cluster      |
 | Recover a cluster node's position | sudo galera\_recovery          |
 
-For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/starting-and-stopping-mariadb/)".
 
 ## MariaDB Enterprise Server Logs
 
@@ -194,7 +194,7 @@ The systemctl command is used to start and stop the MaxScale service.>
 | Disable during startup | sudo systemctl disable maxscale |
 | Status                 | sudo systemctl status maxscale  |
 
-For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/starting-and-stopping-mariadb/)".
 
 ## Next Step
 

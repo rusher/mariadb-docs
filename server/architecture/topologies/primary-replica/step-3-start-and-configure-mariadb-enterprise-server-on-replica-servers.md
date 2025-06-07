@@ -108,7 +108,7 @@ Start MariaDB Enterprise Server. If the Enterprise Server process is already run
 $ systemctl start mariadb
 ```
 
-For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/starting-and-stopping-mariadb/)".
 
 ### Set the Global Transaction ID Position
 

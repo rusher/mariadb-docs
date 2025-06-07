@@ -10,7 +10,7 @@ Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-c
 
 MariaDB uses these tables to manage [privileges](../reference/sql-statements/account-management-sql-statements/grant.md#privilege-levels), [roles](../security/user-account-management/roles/), and [plugins](../reference/plugins/). It also uses them to provide the data for the [help](../reference/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](mariadb-client/mariadb-command-line-client.md) client.
 
-`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/) and their content.
+`mariadb-install-db` works by starting MariaDB Server's `mariadbd` process in [--bootstrap](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-bootstrap) mode and sending commands to create the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/) and their content.
 
 ## Using mariadb-install-db
 
@@ -188,7 +188,7 @@ data directory, which is the directory specified with `--datadir` option. This s
 
 ### Testing With mariadbd
 
-You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
+You can also test that this is not a general fault of MariaDB Server by trying to start the `mariadbd` process. The [-skip-grant-tables](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables) option will tell it to ignore the [system tables](../reference/sql-statements/administrative-sql-statements/system-tables/). Enabling the [general query log](../server-management/server-monitoring-logs/general-query-log.md) can help you determine what queries are being run on the server. For example:
 
 ```
 mariadbd --skip-grant-tables --general-log

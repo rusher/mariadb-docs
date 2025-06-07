@@ -38,7 +38,7 @@ However, the [log\_error](../../ha-and-performance/optimization-and-tuning/syste
 log_error=/var/log/mysql/mariadb.err
 ```
 
-Another way to configure the error log file name is to set the [log-basename](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/), error log, [binary logs](binary-log/), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
+Another way to configure the error log file name is to set the [log-basename](../starting-and-stopping-mariadb/mariadbd-options.md) option, which configures MariaDB to use a common prefix for all log files (e.g. [general query log](general-query-log.md), [slow query log](slow-query-log/), error log, [binary logs](binary-log/), etc.). The error log file name will be built by adding a `.err` extension to this prefix. For example, if you configured the following, then the error log would still be written to `mariadb.err` in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory:
 
 ```
 [mariadb]
@@ -47,7 +47,7 @@ log-basename=mariadb
 log_error
 ```
 
-The [log-basename](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
+The [log-basename](../starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
 
 ### Writing the Error Log to Stderr on Unix
 
@@ -61,17 +61,17 @@ On Unix, the error log can also be redirected to the [syslog](https://linux.die.
 
 #### Syslog with mariadbd-safe
 
-If you [start](https://mariadb.com/kb/en/) MariaDB with [mariadbd-safe](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then the error log can be redirected to the syslog. See [mariadbd-safe: Configuring MariaDB to Write the Error Log to Syslog](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
+If you [start](https://mariadb.com/kb/en/) MariaDB with [mariadbd-safe](../starting-and-stopping-mariadb/mariadbd-safe.md), then the error log can be redirected to the syslog. See [mariadbd-safe: Configuring MariaDB to Write the Error Log to Syslog](../starting-and-stopping-mariadb/mariadbd-safe.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
 #### Syslog with Systemd
 
-If you [start](https://mariadb.com/kb/en/) MariaDB with [systemd](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
+If you [start](https://mariadb.com/kb/en/) MariaDB with [systemd](../starting-and-stopping-mariadb/systemd.md), then the error log can also be redirected to the syslog. See [Systemd: Configuring MariaDB to Write the Error Log to Syslog](../starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog) for more information.
 
-[systemd](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) for more information.
+[systemd](../starting-and-stopping-mariadb/systemd.md) also has its own logging system called the `journal`, and some errors may get logged there instead. See [Systemd:Systemd Journal](../starting-and-stopping-mariadb/systemd.md#systemd-journal) for more information.
 
 ### Writing the Error Log to Console on Windows
 
-On Windows, if the [console](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option is specified, and if the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not used, then errors are written to the console. If both options are specified, then the last option takes precedence.
+On Windows, if the [console](../starting-and-stopping-mariadb/mariadbd-options.md) option is specified, and if the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not used, then errors are written to the console. If both options are specified, then the last option takes precedence.
 
 ### Writing the Error Log to the Windows Event Viewer
 
@@ -99,7 +99,7 @@ or
 my_print_defaults --mysqld | grep log-error
 ```
 
-If the above don't help, check also if your system is set to [write to syslog](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog), in which case you need to use [journalctl](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#systemd-journal) to access it.
+If the above don't help, check also if your system is set to [write to syslog](../starting-and-stopping-mariadb/systemd.md#configuring-mariadb-to-write-the-error-log-to-syslog), in which case you need to use [journalctl](../starting-and-stopping-mariadb/systemd.md#systemd-journal) to access it.
 
 ## Configuring the Error Log Verbosity
 
@@ -213,7 +213,7 @@ Default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mar
 ```
 
 * Messages related to the files used to [persist replication state](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
-  * Either the default `master.info` file or the file that is configured by the [master\_info\_file](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+  * Either the default `master.info` file or the file that is configured by the [master\_info\_file](../starting-and-stopping-mariadb/mariadbd-options.md) option.
   * Either the default `relay-log.info` file or the file that is configured by the [relay\_log\_info\_file](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 
 ```

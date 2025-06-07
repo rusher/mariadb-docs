@@ -10,7 +10,7 @@ TLS must be manually enabled on the server.
 
 1. Acquire an X509 certificate and a private key for the server.\
    If it is a test or development server, then self-signed certificates and keys might be sufficient.
-2. Determine which [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) you need to configure.\
+2. Determine which [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) you need to configure.\
    Mandatory system variables and options for TLS include:
 
 | System Variable/Option                                                                                                                                    | Description                                                                                                                                                |

@@ -64,7 +64,7 @@ SHOW SESSION VARIABLES LIKE 'time_zone';
 
 The system time zone is determined when the server starts, and it sets the value of the [system\_time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable. The system time zone is usually read from the operating system's environment. You can change the system time zone in several different ways, such as:
 
-* If you are starting the server with [mariadbd-safe](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `--timezone` option either on the command-line or in the \[mariadbd-safe] [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+* If you are starting the server with [mariadbd-safe](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `--timezone` option either on the command-line or in the \[mariadbd-safe] [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadbd-safe]
@@ -91,7 +91,7 @@ $ sudo ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 sudo dpkg-reconfigure tzdata
 ```
 
-* On Linux operating systems that use [systemd](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md), you can change the default time zone for the whole system by using the [timedatectl](https://www.freedesktop.org/software/systemd/man/timedatectl.html) utility. For example:
+* On Linux operating systems that use [systemd](../../../../../server-management/starting-and-stopping-mariadb/systemd.md), you can change the default time zone for the whole system by using the [timedatectl](https://www.freedesktop.org/software/systemd/man/timedatectl.html) utility. For example:
 
 ```
 sudo timedatectl set-timezone America/New_York

@@ -4,9 +4,9 @@ To enable binary logging, start the server with the `[--log-bin[=name](../../../
 
 If you specify a filename with an extension (for example `.log`), the extension will be silently ignored.
 
-If you don't provide a name (which can, optionally, include an absolute path), the default will be `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](../../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
+If you don't provide a name (which can, optionally, include an absolute path), the default will be `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
-We strongly recommend you use either [--log-basename](../../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](broken-reference) doesn't stop if the hostname of the computer changes.
+We strongly recommend you use either [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](broken-reference) doesn't stop if the hostname of the computer changes.
 
 The directory storing the binary logs will contain a binary log index, as well as the individual binary log files.
 
@@ -37,7 +37,7 @@ The binary log index file will by default have the same name as the individual b
 
 Clients with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege (or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) variable.
 
-```
+```sql
 SET sql_log_bin = 0;
 
 SET sql_log_bin = 1;

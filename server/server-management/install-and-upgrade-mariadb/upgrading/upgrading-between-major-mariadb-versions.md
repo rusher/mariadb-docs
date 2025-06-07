@@ -32,7 +32,7 @@ Note that rpms don't support upgrading between major versions, only minor like 1
 ### Step by Step Instructions for Upgrades
 
 * Upgrade MariaDB binaries and libraries, preferably without starting MariaDB.
-* If the MariaDB server process, [mariadbd](../starting-and-stopping-mariadb/mariadbd-options.md) was not started as part of the upgrade, start it by executing `mariadbd --skip-grant-tables`. This may produce some warnings about some system tables not being up to date, but you can ignore these for now as [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) will fix that.
+* If the MariaDB server process, [mariadbd](../../starting-and-stopping-mariadb/mariadbd-options.md) was not started as part of the upgrade, start it by executing `mariadbd --skip-grant-tables`. This may produce some warnings about some system tables not being up to date, but you can ignore these for now as [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) will fix that.
 * Run [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md)
 * Restart MariaDB server.
 
@@ -81,7 +81,7 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 * Delete the tables in the `mysql` database (if you didn't use the option `--add-drop-table` to [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md))
 * Delete the new MariaDB installation
 * Install the old MariaDB version
-* Start the server with [mariadbd --skip-grant-tables](../starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables)
+* Start the server with [mariadbd --skip-grant-tables](../../starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables)
 * Install the old `mysql` database
 * Execute in the [mariadb client](../../../clients-and-utilities/mariadb-client/) [FLUSH PRIVILEGES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md)
 

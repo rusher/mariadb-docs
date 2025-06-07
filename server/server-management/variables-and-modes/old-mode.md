@@ -18,11 +18,11 @@ In other words, `OLD_MODE` options are by design deprecated from the day they we
 
 You can check the variable's local and global value with:
 
-```
+```sql
 SELECT @@OLD_MODE, @@GLOBAL.OLD_MODE;
 ```
 
-You can set the `OLD_MODE` either from the[command line](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (option `--old-mode`) or by setting the [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
+You can set the `OLD_MODE` either from the[command line](../starting-and-stopping-mariadb/mariadbd-options.md) (option `--old-mode`) or by setting the [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode) system variable.
 
 Non-default old mode features are deprecated by design, and from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), a warning will be issued when set.
 
@@ -80,7 +80,7 @@ Changes to `OLD_MODE` are not sent to replicas.
 
 This example shows how to get a readable list of enabled OLD\_MODE flags:
 
-```
+```sql
 SELECT REPLACE(@@OLD_MODE, ',', '\n');
 +---------------------------------------------------+
 | REPLACE(@@OLD_MODE, ',', '\n')                    |
@@ -92,7 +92,7 @@ SELECT REPLACE(@@OLD_MODE, ',', '\n');
 
 Adding a new flag:
 
-```
+```sql
 SET @@OLD_MODE = CONCAT(@@OLD_MODE, ',NO_PROGRESS_INFO');
 ```
 
@@ -100,13 +100,13 @@ If the specified flag is already ON, the above example has no effect but does no
 
 How to unset a flag:
 
-```
+```sql
 SET @@OLD_MODE = REPLACE(@@OLD_MODE, 'NO_PROGRESS_INFO', '');
 ```
 
 How to check if a flag is set:
 
-```
+```sql
 SELECT @@OLD_MODE LIKE '%NO_PROGRESS_INFO';
 +------------------------------------+
 | @@OLD_MODE LIKE '%NO_PROGESS_INFO' |
@@ -117,7 +117,7 @@ SELECT @@OLD_MODE LIKE '%NO_PROGRESS_INFO';
 
 From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113):
 
-```
+```sql
 SET @@OLD_MODE = CONCAT(@@OLD_MODE, ',NO_PROGRESS_INFO');
 Query OK, 0 rows affected, 1 warning (0.000 sec)
 

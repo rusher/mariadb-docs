@@ -60,7 +60,7 @@ To calculate the group commit ratio, we actually need the values of these status
 
 For example, if we had the following first snapshot:
 
-```
+```sql
 SHOW GLOBAL STATUS WHERE Variable_name IN('Binlog_commits', 'Binlog_group_commits');
 +----------------------+-------+
 | Variable_name        | Value |
@@ -73,7 +73,7 @@ SHOW GLOBAL STATUS WHERE Variable_name IN('Binlog_commits', 'Binlog_group_commit
 
 And the following second snapshot:
 
-```
+```sql
 SHOW GLOBAL STATUS WHERE Variable_name IN('Binlog_commits', 'Binlog_group_commits');
 +----------------------+-------+
 | Variable_name        | Value |
@@ -112,7 +112,7 @@ When both [innodb\_flush\_log\_at\_trx\_commit=1](../../../reference/storage-eng
 
 To query these variables, use a statement such as:
 
-```
+```sql
 SHOW GLOBAL STATUS LIKE 'Binlog_%commit%';
 ```
 

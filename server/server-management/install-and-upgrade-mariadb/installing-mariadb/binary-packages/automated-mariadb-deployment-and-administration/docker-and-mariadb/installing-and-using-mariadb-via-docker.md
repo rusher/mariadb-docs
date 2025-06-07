@@ -84,7 +84,7 @@ docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d dock
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306  -d docker.io/library/mariadb:10.5
 ```
 
-Optionally, after the image name, we can specify some [options for mariadbd](../../../../starting-and-stopping-mariadb/mariadbd-options.md). For example:
+Optionally, after the image name, we can specify some [options for mariadbd](../../../../../starting-and-stopping-mariadb/mariadbd-options.md). For example:
 
 ```
 docker run --name mariadbtest -e MYSQL_ROOT_PASSWORD=mypass -p 3306:3306 -d mariadb:10.3 --log-bin --binlog-format=MIXED

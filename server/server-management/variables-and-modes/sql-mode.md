@@ -8,7 +8,7 @@ The most important ways for doing this are using `SQL_MODE` (controlled by the [
 
 You can check the local and global value of it with:
 
-```
+```sql
 SELECT @@SQL_MODE, @@GLOBAL.SQL_MODE;
 ```
 
@@ -23,9 +23,9 @@ SELECT @@SQL_MODE, @@GLOBAL.SQL_MODE;
 | [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes)    | NO\_ENGINE\_SUBSTITUTION, NO\_AUTO\_CREATE\_USER                                                         |
 | <= [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes) | No value                                                                                                 |
 
-You can set the `SQL_MODE` either from the[command line](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
+You can set the `SQL_MODE` either from the[command line](../starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
 
-```
+```sql
 SET sql_mode = 'modes';
 SET GLOBAL sql_mode = 'modes';
 ```
@@ -220,7 +220,7 @@ Some Information Schema tables (such as [ROUTINES](../../reference/sql-statement
 
 This example shows how to get a readable list of enabled SQL\_MODE flags:
 
-```
+```sql
 SELECT REPLACE(@@SQL_MODE, ',', '\n');
 +-------------------------------------------------------------------------+
 | REPLACE(@@SQL_MODE, ',', '\n')                                          |
@@ -234,7 +234,7 @@ NO_ENGINE_SUBSTITUTION |
 
 Adding a new flag:
 
-```
+```sql
 SET @@SQL_MODE = CONCAT(@@SQL_MODE, ',NO_ENGINE_SUBSTITUTION');
 ```
 
@@ -242,13 +242,13 @@ If the specified flag is already ON, the above example has no effect but does no
 
 How to unset a flag:
 
-```
+```sql
 SET @@SQL_MODE = REPLACE(@@SQL_MODE, 'NO_ENGINE_SUBSTITUTION', '');
 ```
 
 How to check if a flag is set:
 
-```
+```sql
 SELECT @@SQL_MODE LIKE '%NO_ZERO_DATE%';
 +----------------------------------+
 | @@SQL_MODE LIKE '%NO_ZERO_DATE%' |
@@ -259,7 +259,7 @@ SELECT @@SQL_MODE LIKE '%NO_ZERO_DATE%';
 
 Without and with strict mode:
 
-```
+```sql
 CREATE TABLE strict (s CHAR(5), n TINYINT);
 
 INSERT INTO strict VALUES ('MariaDB', '128');
@@ -289,7 +289,7 @@ ERROR 1406 (22001): Data too long for column 's' at row 1
 
 Overriding strict mode with the IGNORE keyword:
 
-```
+```sql
 INSERT IGNORE INTO strict VALUES ('MariaDB', '128');
 Query OK, 1 row affected, 2 warnings (0.15 sec)
 ```

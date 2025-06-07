@@ -14,7 +14,7 @@ Binary tarballs provide multiple benefits:
 * They are highly OS independent. As long as you get the bintar for the architecture, GLIBC version and if you are using systemd or not, the bintar should work almost anywhere.
 * You do not need to be root to use them.
   * They can be installed by anyone to any path, including ones home directory.
-* You can have [any number of different MariaDB installations](../../starting-and-stopping-mariadb/running-multiple-mariadb-server-processes.md) on the same machine. This is often desired during upgrades when one wants to have the old installation running until switching to the new one.
+* You can have [any number of different MariaDB installations](../../../starting-and-stopping-mariadb/running-multiple-mariadb-server-processes.md) on the same machine. This is often desired during upgrades when one wants to have the old installation running until switching to the new one.
 * You can use them on systems for which MariaDB does not support native packages.
 
 ### Installing binary tarballs
@@ -146,14 +146,14 @@ systemctl stop mariadb.service
 
 respectively.
 
-Please refer to the [systemd](../../starting-and-stopping-mariadb/systemd.md) page for further information.
+Please refer to the [systemd](../../../starting-and-stopping-mariadb/systemd.md) page for further information.
 
 ### Post Installation
 
 After this, remember to set proper passwords for all accounts accessible from\
 untrusted sources, to avoid exposing the host to security risks!
 
-Also consider using the [mysql.server](../../starting-and-stopping-mariadb/mysql-server.md) to[start MariaDB automatically](../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)\
+Also consider using the [mysql.server](../../../starting-and-stopping-mariadb/mysql-server.md) to[start MariaDB automatically](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)\
 when your system boots.
 
 On systems using systemd you can instead enable automatic startup during system boot with

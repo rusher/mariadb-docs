@@ -12,7 +12,7 @@ By default MariaDB uses the following permissions for files and directories:
 
 ## Configuring File Permissions with Environment Variables
 
-You can configure MariaDB to use different permissions for files and directories by setting the following [environment variables](../configuring-mariadb/mariadb-environment-variables.md) before you start the server:
+You can configure MariaDB to use different permissions for files and directories by setting the following [environment variables](../install-and-upgrade-mariadb/configuring-mariadb/mariadb-environment-variables.md) before you start the server:
 
 | Object Type | Environment Variable |
 | ----------- | -------------------- |

@@ -181,7 +181,7 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-The number of connection attempts is limited by the [master\_retry\_count](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option. It can be set either on the command-line or in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+The number of connection attempts is limited by the [master\_retry\_count](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option. It can be set either on the command-line or in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -219,7 +219,7 @@ If the [slave\_net\_timeout](../../../../ha-and-performance/standard-replication
 
 ### TLS Options
 
-The TLS options are used for providing information about [TLS](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). The options can be set even on replicas that are compiled without TLS support. The TLS options are saved to either the default `master.info` file or the file that is configured by the [master\_info\_file](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option, but these TLS options are ignored unless the replica supports TLS.
+The TLS options are used for providing information about [TLS](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/). The options can be set even on replicas that are compiled without TLS support. The TLS options are saved to either the default `master.info` file or the file that is configured by the [master\_info\_file](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option, but these TLS options are ignored unless the replica supports TLS.
 
 See [Replication with Secure Connections](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/replication-with-secure-connections.md) for more information.
 
@@ -666,10 +666,10 @@ There are some cases where options are implicitly reset, such as when the [MASTE
 
 ## Option Persistence
 
-The values of the [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options (i.e. the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) position on the primary) and most other options are written to either the default `master.info` file or the file that is configured by the [master\_info\_file](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option. The [replica's I/O thread](../../../../ha-and-performance/standard-replication/replication-threads.md#slave-io-thread) keeps this [binary log](../../../../server-management/server-monitoring-logs/binary-log/) position updated as it downloads events only when [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option\
+The values of the [MASTER\_LOG\_FILE](change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](change-master-to.md#master_log_pos) options (i.e. the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) position on the primary) and most other options are written to either the default `master.info` file or the file that is configured by the [master\_info\_file](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option. The [replica's I/O thread](../../../../ha-and-performance/standard-replication/replication-threads.md#slave-io-thread) keeps this [binary log](../../../../server-management/server-monitoring-logs/binary-log/) position updated as it downloads events only when [MASTER\_USE\_GTID](change-master-to.md#master_use_gtid) option\
 is set to `NO`. Otherwise the file is not updated on a per event basis.
 
-The [master\_info\_file](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option can be set either on the command-line or in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+The [master\_info\_file](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option can be set either on the command-line or in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

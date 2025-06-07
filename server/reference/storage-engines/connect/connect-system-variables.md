@@ -183,7 +183,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `connect_xtrace`
 
-* Description: Console trace value. Set to `0` (no trace), or to other values if a console tracing is desired. Note that to test this handler, MariaDB should be executed with the [--console](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) parameter because CONNECT prints some error and trace messages on the console. In some Linux versions, this is re-routed into the error log file. Console tracing can be set on the command line or later by names or values. Valid values (from Connect 1.06.006) include:
+* Description: Console trace value. Set to `0` (no trace), or to other values if a console tracing is desired. Note that to test this handler, MariaDB should be executed with the [--console](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) parameter because CONNECT prints some error and trace messages on the console. In some Linux versions, this is re-routed into the error log file. Console tracing can be set on the command line or later by names or values. Valid values (from Connect 1.06.006) include:
   * `0`: No trace
   * `YES` or `1`: Basic trace
   * `MORE` or `2`: More tracing

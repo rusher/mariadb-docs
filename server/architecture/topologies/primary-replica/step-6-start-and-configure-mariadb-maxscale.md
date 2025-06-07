@@ -31,7 +31,7 @@ For additional information, see "[Global Settings](https://app.gitbook.com/s/0pS
 $ sudo systemctl restart maxscale
 ```
 
-For additional information, see "[Starting and Stopping MariaDB](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)".
+For additional information, see "[Starting and Stopping MariaDB](../../../server-management/starting-and-stopping-mariadb/)".
 
 ## Configure Server Objects
 

@@ -85,7 +85,7 @@ For compatibility reasons, the TLS system variables in MariaDB still use the `ss
 
 #### `ssl_key`
 
-* Description: Defines a path to a private key file to use for [TLS](./). This system variable requires that you use the absolute path, not a relative path. This system variable implies the [ssl](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option.
+* Description: Defines a path to a private key file to use for [TLS](./). This system variable requires that you use the absolute path, not a relative path. This system variable implies the [ssl](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option.
 * Commandline: `--ssl-key=name`
 * Scope: Global
 * Dynamic: No
