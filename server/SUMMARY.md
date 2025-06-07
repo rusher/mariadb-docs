@@ -361,6 +361,7 @@
       * [Trigger Limitations](server-usage/triggers-events/triggers/trigger-limitations.md)
       * [Triggers and Implicit Locks](server-usage/triggers-events/triggers/triggers-and-implicit-locks.md)
   * [User-Defined Functions](server-usage/user-defined-functions/README.md)
+    * [User-Defined Functions Overview](server-usage/user-defined-functions/user-defined-functions-overview.md)
     * [Creating User-Defined Functions](server-usage/user-defined-functions/creating-user-defined-functions.md)
     * [CREATE FUNCTION UDF](server-usage/user-defined-functions/create-function-udf.md)
     * [DROP FUNCTION UDF](server-usage/user-defined-functions/drop-function-udf.md)

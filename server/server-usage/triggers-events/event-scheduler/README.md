@@ -1,7 +1,8 @@
 ---
 description: >-
-  Events are named database objects containing SQL statements that are to be
-  executed at a later stage, either once off, or at regular intervals.
+  Utilize the Event Scheduler in MariaDB Server to automate tasks. Learn how to
+  create, manage, and schedule events to execute SQL statements at specified
+  intervals or times.
 ---
 
 # Event Scheduler
