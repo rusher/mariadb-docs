@@ -1,7 +1,8 @@
 ---
 description: >-
-  SphinxSE is a storage engine that talks to searchd (Sphinx daemon) to enable
-  text searching.
+  Integrate MariaDB Server with Sphinx for advanced full-text search. The Sphinx
+  storage engine allows you to query external Sphinx indexes directly from your
+  database.
 ---
 
 # SphinxSE
