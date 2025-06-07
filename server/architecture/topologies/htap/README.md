@@ -27,7 +27,7 @@ Please read and understand this procedure before executing.
 
 ## Support
 
-Customers can obtain support by [submitting a support case](broken-reference).
+Customers can obtain support by [submitting a support case](broken-reference/).
 
 ## Components
 
@@ -77,7 +77,7 @@ These requirements are for the HTAP topology when deployed with MariaDB Enterpri
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](../../../server-management/enterprise-server-lifecycle.md), the HTAP topology with MariaDB Enterprise Server 11.4 and MariaDB Enterprise ColumnStore is provided for:
+In alignment to the [enterprise lifecycle](../../../server-management/install-and-upgrade-mariadb/upgrading/upgrades/enterprise-server-lifecycle.md), the HTAP topology with MariaDB Enterprise Server 11.4 and MariaDB Enterprise ColumnStore is provided for:
 
 * Debian 11 (x86\_64, ARM64)
 * Debian 12 (x86\_64, ARM64)
@@ -102,7 +102,7 @@ For the preferred S3-compatible object storage providers that provide cloud and 
 
 The use of non-cloud and non-hardware providers is at your own risk.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, [contact us](broken-reference).
+If you have any questions about using specific S3-compatible object storage with MariaDB Enterprise ColumnStore, [contact us](broken-reference/).
 
 ### Preferred Object Storage Providers: Cloud
 

@@ -1,5 +1,9 @@
+---
+description: >-
+  Migrate from SQL Server to MariaDB. This section provides detailed guidance,
+  tools, and best practices for a smooth and efficient transition of your
+  databases and applications to MariaDB.
+---
 
 # Migrating to MariaDB from SQL Server
-
-This section is a guide to help you migrate from SQL Server to MariaDB. This includes a general understanding of MariaDB, information to help plan the migration, and differences in the configuration and syntax.
 
