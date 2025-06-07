@@ -28,7 +28,7 @@ Semisynchronous replication can be enabled on the primary by setting the [rpl\_s
 SET GLOBAL rpl_semi_sync_master_enabled=ON;
 ```
 
-It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -44,7 +44,7 @@ Semisynchronous replication can be enabled on the replica by setting the [rpl\_s
 SET GLOBAL rpl_semi_sync_slave_enabled=ON;
 ```
 
-It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -88,7 +88,7 @@ If you see a lot of timeouts like this in your environment, then you may want to
 SET GLOBAL rpl_semi_sync_master_timeout=20000;
 ```
 
-It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -113,7 +113,7 @@ It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/admin
 SET GLOBAL rpl_semi_sync_master_wait_point='AFTER_SYNC';
 ```
 
-It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

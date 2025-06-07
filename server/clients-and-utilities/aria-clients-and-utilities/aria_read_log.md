@@ -17,7 +17,7 @@ You need to use one of `-d` or `-a`.
 
 ## Options
 
-The following variables can be set while passed as commandline options to aria\_read\_log, or set in the `[aria_read_log]` section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) file.
+The following variables can be set while passed as commandline options to aria\_read\_log, or set in the `[aria_read_log]` section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
 
 | Option                       | Description                                                                                                                                                                                                                                |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

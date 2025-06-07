@@ -22,7 +22,7 @@ The suggested upgrade procedure is:
   2. Does a very quick check of all tables and marks them as compatible with [MariaDB 5.5](broken-reference)
 * In most cases this should be a fast operation (depending of course on the number of tables)
 
-1. Add new options to [my.cnf](../../configuring-mariadb-with-option-files.md) to enable features
+1. Add new options to [my.cnf](../../configuring-mariadb/configuring-mariadb-with-option-files.md) to enable features
 
 * If you change `my.cnf` then you need to restart `mysqld`
 

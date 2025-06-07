@@ -375,7 +375,7 @@ The tips in this document apply to MySQL, MariaDB, and Percona.
 
 ### See Also
 
-* [Configuring MariaDB for Optimal Performance](../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/configuring-mariadb-for-optimal-performance.md)
+* [Configuring MariaDB for Optimal Performance](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/configuring-mariadb-for-optimal-performance.md)
 * More in-depth: Tocker's tuning for 5.6
 * Irfan's InnoDB performance optimization basics (redux)
 * 10 MySQL settings to tune after installation

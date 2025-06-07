@@ -27,7 +27,7 @@ CREATE USER root@localhost IDENTIFIED VIA unix_socket OR mysql_native_password U
 CREATE USER mysql@localhost IDENTIFIED VIA unix_socket OR mysql_native_password USING 'invalid'
 ```
 
-Using unix\_socket means that if you are the system root user, you can login as root@locahost without a password. This technique was pioneered by Otto Kekäläinen in Debian MariaDB packages and has been successfully [used in Debian](../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) since as early as [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
+Using unix\_socket means that if you are the system root user, you can login as root@locahost without a password. This technique was pioneered by Otto Kekäläinen in Debian MariaDB packages and has been successfully [used in Debian](../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) since as early as [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
 It is based on a simple fact that asking the system root for a password adds no extra security — root has full access to all the data files and all process memory anyway. But not asking for a password means, there is no root password to forget (no need for the numerous tutorials on “how to reset MariaDB root password”). And if you want to script some tedious database work, there is no need to store the root password in plain text for the script to use (no need for debian-sys-maint user).
 
@@ -90,14 +90,14 @@ For example, the option can be set on the command-line while running [mariadb-in
 mariadb-install-db --user=mysql --datadir=/var/lib/mysql --auth-root-authentication-method=normal
 ```
 
-The option can also be set in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) in an [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) supported by [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md). For example:
+The option can also be set in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) in an [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) supported by [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md). For example:
 
 ```
 [mysql_install_db]
 auth_root_authentication_method=normal
 ```
 
-If the option is set in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) and if [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) is executed, then [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) will read this option from the [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), and it will automatically set this option.
+If the option is set in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) and if [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) is executed, then [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) will read this option from the [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), and it will automatically set this option.
 
 ### Altering the User Account to Revert to the Previous Authentication Method
 

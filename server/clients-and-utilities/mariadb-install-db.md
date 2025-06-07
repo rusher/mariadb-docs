@@ -1,7 +1,7 @@
 # mariadb-install-db
 
 **This page is for the `mariadb-install-db` script for Linux/Unix only**\
-For the Windows specific tool of similar name and purpose see [mysql\_install\_db.exe](../server-management/install-and-upgrade-mariadb/installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md).\
+For the Windows specific tool of similar name and purpose see [mysql\_install\_db.exe](../server-management/install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md).\
 The Windows version shares the common theme (creating system tables), yet has a lot of functionality specific to Windows systems, for example creating a Windows service. The Windows version does _not_ share command line parameters with the Unix shell script.
 
 `mariadb-install-db` initializes the MariaDB data directory and creates the[system tables](../reference/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database, if they do not exist.
@@ -67,7 +67,7 @@ $ scripts/mariadb-install-db --user=mysql \
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadb-install-db` can also read options from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-install-db` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-install-db` can also read options from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-install-db` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -82,14 +82,14 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mariadb-install-db` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-install-db` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group                 | Description                                                                        |
 | --------------------- | ---------------------------------------------------------------------------------- |
 | Group                 | Description                                                                        |
 | \[mysql\_install\_db] | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server. |
 
-`mariadb-install-db` also reads options from the following server [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-install-db` also reads options from the following server [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group            | Description                                                                                                                                                                                                |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -106,7 +106,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 ### Installing System Tables From a Source Tree
 
-If you have just [compiled MariaDB from source](../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/), and if you want to use `mariadb-install-db` from your source tree, then that can be done without having to actually install MariaDB. This is very useful if you want to test your changes to MariaDB without disturbing any existing installations of MariaDB.
+If you have just [compiled MariaDB from source](../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/), and if you want to use `mariadb-install-db` from your source tree, then that can be done without having to actually install MariaDB. This is very useful if you want to test your changes to MariaDB without disturbing any existing installations of MariaDB.
 
 To do so, you would have to provide the `--srcdir` option. For example:
 
@@ -116,17 +116,17 @@ To do so, you would have to provide the `--srcdir` option. For example:
 
 ### Installing System Tables From a Binary Tarball
 
-If you install a [binary tarball](../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) package in a non standard path, like your home directory, and if you already have a MariaDB / MySQL package installed, then you may get conflicts\
+If you install a [binary tarball](../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) package in a non standard path, like your home directory, and if you already have a MariaDB / MySQL package installed, then you may get conflicts\
 with the default `/etc/my.cnf`. This often results in permissions\
 errors.
 
-One possible solution is to use the `--no-defaults` option, so that it does not read any [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+One possible solution is to use the `--no-defaults` option, so that it does not read any [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 ./scripts/mariadb-install-db --no-defaults --basedir=. --datadir=data
 ```
 
-Another possible solution is to use the `defaults-file` option, so that you can specify your own [option file](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+Another possible solution is to use the `defaults-file` option, so that you can specify your own [option file](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 ./scripts/mariadb-install-db --defaults-file=~/.my.cnf
@@ -425,7 +425,7 @@ SELECT user,host FROM mysql.user;
 ## See Also
 
 * [Configure MariaDB with catalog support](../security/user-account-management/catalogs/starting-with-catalogs.md)
-* [Installing system tables (mariadb-install-db)](../server-management/install-and-upgrade-mariadb/installing-system-tables-mariadb-install-db/)
+* [Installing system tables (mariadb-install-db)](../server-management/install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/)
 * The Windows version of `mariadb-install-db`: `[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)`
 
 CC BY-SA / Gnu FDL

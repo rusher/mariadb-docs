@@ -13,7 +13,7 @@ UPDATE performance_schema.setup_instruments SET enabled='YES', timed='YES'
   WHERE name LIKE 'wait/lock/metadata%';
 ```
 
-or in the [configuration file](../../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+or in the [configuration file](../../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 performance-schema-instrument='wait/lock/metadata/sql/mdl=ON'

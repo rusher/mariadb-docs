@@ -13,7 +13,7 @@ This documentation aims to provide guidance on various configuration aspects sha
 
 ## my.cnf
 
-An inline [configuration file (my.cnf)](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) can be provisioned in the `MariaDB` resource via the `myCnf` field:
+An inline [configuration file (my.cnf)](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) can be provisioned in the `MariaDB` resource via the `myCnf` field:
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1

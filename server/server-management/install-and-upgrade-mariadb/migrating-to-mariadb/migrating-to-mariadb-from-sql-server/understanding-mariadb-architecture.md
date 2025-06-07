@@ -241,13 +241,13 @@ Note that server system variables are not to be confused with [user-defined vari
 
 ### Configuration Files
 
-MariaDB can use several [configuration files](../../configuring-mariadb-with-option-files.md). Configuration files are searched in several locations, including in the user directory, and if present they all are read and used. They are read in a consistent order. These locations depend on the operating system; see [Default Option File Locations](../../configuring-mariadb-with-option-files.md#default-option-file-locations). It is possible to tell MariaDB which files it should read; see [Global Options Related to Option Files](../../configuring-mariadb-with-option-files.md#global-options-related-to-option-files).
+MariaDB can use several [configuration files](../../configuring-mariadb/configuring-mariadb-with-option-files.md). Configuration files are searched in several locations, including in the user directory, and if present they all are read and used. They are read in a consistent order. These locations depend on the operating system; see [Default Option File Locations](../../configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations). It is possible to tell MariaDB which files it should read; see [Global Options Related to Option Files](../../configuring-mariadb/configuring-mariadb-with-option-files.md#global-options-related-to-option-files).
 
 On Linux, by default the configuration files are called `my.cnf`. On Windows, by default the configuration files can be called `my.ini` or `my.cnf`. The former is more common.
 
 If a variable is mentioned multiple times in different files, the occurrence that is read last will overwrite the others. Similarly, if a variable is mentioned several times in a single file, the occurrence that is read last overwrites the others.
 
-The contents of each configuration file are organized by _option groups_. MariaDB Server and client programs read different groups. The read groups also depend on the MariaDB version. See [Option Groups](../../configuring-mariadb-with-option-files.md#option-groups) for the details. Most commonly, the `[server]` or `[mysqld]` groups are used to contain all server configuration. The `[client-server]` group can be used for options that are shared by the server and the clients (like the port to use), to avoid repeating those variables multiple times.
+The contents of each configuration file are organized by _option groups_. MariaDB Server and client programs read different groups. The read groups also depend on the MariaDB version. See [Option Groups](../../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) for the details. Most commonly, the `[server]` or `[mysqld]` groups are used to contain all server configuration. The `[client-server]` group can be used for options that are shared by the server and the clients (like the port to use), to avoid repeating those variables multiple times.
 
 ### Dynamic and Static Variables
 

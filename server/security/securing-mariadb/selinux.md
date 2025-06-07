@@ -88,13 +88,13 @@ ls --directory --scontext /var/log/mysql
 
 ### Setting the File Context for Option Files
 
-If you use a custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), then you may need to set the file context for that directory. The SELinux file context for MariaDB [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) is `mysqld_etc_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
+If you use a custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then you may need to set the file context for that directory. The SELinux file context for MariaDB [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) is `mysqld_etc_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
 ```
 sudo semanage fcontext --list | grep mysqld_etc_t
 ```
 
-If you would like to set the file context for your custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
+If you would like to set the file context for your custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
 
 ```
 sudo semanage fcontext -a -t mysqld_etc_t "/etc/mariadb(/.*)?"

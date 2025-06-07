@@ -22,7 +22,7 @@ ERROR 2003 (HY000): Can't connect to MySQL server on  'localhost'
   (111 "Connection refused")
 ```
 
-the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct [host](https://mariadb.com/kb/en/connecting-to-mariadb/#host), [port](https://mariadb.com/kb/en/connecting-to-mariadb/#port), [pipe](https://mariadb.com/kb/en/connecting-to-mariadb/#pipe), [socket](https://mariadb.com/kb/en/connecting-to-mariadb/#socket) and [protocol](https://mariadb.com/kb/en/connecting-to-mariadb/#protocol) options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../server-management/install-and-upgrade-mariadb/), [Starting and Stopping MariaDB](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/) or [Troubleshooting Installation Issues](../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/).
+the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct [host](https://mariadb.com/kb/en/connecting-to-mariadb/#host), [port](https://mariadb.com/kb/en/connecting-to-mariadb/#port), [pipe](https://mariadb.com/kb/en/connecting-to-mariadb/#pipe), [socket](https://mariadb.com/kb/en/connecting-to-mariadb/#socket) and [protocol](https://mariadb.com/kb/en/connecting-to-mariadb/#protocol) options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../server-management/install-and-upgrade-mariadb/), [Starting and Stopping MariaDB](../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/) or [Troubleshooting Installation Issues](../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/).
 
 The socket file can be in a non-standard path. In this case, the `socket` option is probably written in the my.cnf file. Check that its value is identical in the \[mysqld] and \[client] sections; if not, the client will look for a socket in a wrong place.
 
@@ -74,7 +74,7 @@ or can connect to a particular database, but not another, for example`mariadb -u
 
 #### Option Files and Environment Variables
 
-It's possible that option files or environment variables may be providing incorrect connection parameters. Check the values provided in any option files read by the client you are using (see [mariadbd Configuration Files and Groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the particular client you're using - see [Clients and Utilities](../clients-and-utilities/)).
+It's possible that option files or environment variables may be providing incorrect connection parameters. Check the values provided in any option files read by the client you are using (see [mariadbd Configuration Files and Groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the particular client you're using - see [Clients and Utilities](../clients-and-utilities/)).
 
 Option files can usually be suppressed with `no-defaults` option, for example:
 

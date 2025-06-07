@@ -10,7 +10,7 @@
 * SLES 12 and above
 * OpenSUSE 12.2 and above
 
-MariaDB's `systemd` unit file is included in the server packages for [RPMs](../binary-packages/rpm/) and [DEBs](../binary-packages/installing-mariadb-deb-files.md). It is also included in certain [binary tarballs](../binary-packages/installing-mariadb-binary-tarballs.md).
+MariaDB's `systemd` unit file is included in the server packages for [RPMs](../installing-mariadb/binary-packages/rpm/) and [DEBs](../installing-mariadb/binary-packages/installing-mariadb-deb-files.md). It is also included in certain [binary tarballs](../installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md).
 
 The service name is `mariadb.service`.
 
@@ -18,7 +18,7 @@ The service name is `mariadb.service`.
 
 When installing MariaDB server rpm / dep package, it will automatically run the [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) script, that creates the initial databases and users.
 
-When MariaDB is started with the `systemd` unit file, it directly starts the `[mariadbd](mariadbd-options.md)` process as the `mysql` user. Unlike with `[sysVinit](sysvinit.md)`, the `[mariadbd](mariadbd-options.md)` process is not started with `[mariadbd-safe](mariadbd-safe.md)`. As a consequence, options will not be read from the `[mariadbd-safe]` [option group](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md).
+When MariaDB is started with the `systemd` unit file, it directly starts the `[mariadbd](mariadbd-options.md)` process as the `mysql` user. Unlike with `[sysVinit](sysvinit.md)`, the `[mariadbd](mariadbd-options.md)` process is not started with `[mariadbd-safe](mariadbd-safe.md)`. As a consequence, options will not be read from the `[mariadbd-safe]` [option group](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ## Contents of the MariaDB Service's Unit File
 
@@ -82,15 +82,15 @@ This template unit file allows you to interact with multiple MariaDB instances o
 sudo systemctl start mariadb@node1.service
 ```
 
-MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](../binary-packages/rpm/) packages on platforms that have `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` versions older than 3.3.0, because these `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` version starting with [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
+MariaDB's build system cannot include the `mariadb@.service` template unit file in [RPM](../installing-mariadb/binary-packages/rpm/) packages on platforms that have `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` versions older than 3.3.0, because these `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` versions have a [bug](https://public.kitware.com/Bug/view.php?id=14782) that causes it to encounter errors when packaging a file in RPMs if the file name contains the `@` character. MariaDB's RHEL 7 and CentOS 7 RPM build hosts only got a new enough `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)` version starting with [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes). To use this functionality on a MariaDB version that does not have the file, you can copy the file from a package that does have the file.
 
 #### Default configuration of Multiple Instances in 10.4 and Later
 
-`systemd` will also look for an [option file](../configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name.
+`systemd` will also look for an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name.
 
-It will use the `.%I` as the [custom option group suffix](../configuring-mariadb-with-option-files.md#custom-option-group-suffixes) that is appended to any [server option group](../configuring-mariadb-with-option-files.md#server-option-groups), in any configuration file included by default.
+It will use the `.%I` as the [custom option group suffix](../configuring-mariadb/configuring-mariadb-with-option-files.md#custom-option-group-suffixes) that is appended to any [server option group](../configuring-mariadb/configuring-mariadb-with-option-files.md#server-option-groups), in any configuration file included by default.
 
-In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../configuring-mariadb-with-option-files.md) at the path`/etc/mynode1.cnf`.
+In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) at the path`/etc/mynode1.cnf`.
 
 When using multiple instances, each instance will of course also need their own `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, `[socket](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#socket)` and , `[port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#port)` (unless `[skip_networking](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking) is specified). As [mariadb-install-db#option-groups](../../../clients-and-utilities/mariadb-install-db.md#option-groups) reads the same sections as the server, and`ExecStartPre=`run [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) within the service, the instances are autocreated if there is sufficient priviledges.`
 
@@ -125,7 +125,7 @@ Here the instance name is the unix user of the service.
 
 #### Configuring Multiple Instances in 10.3 and Earlier
 
-`systemd` will also look for an [option file](../configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name. By default, it will look for the option file in a directory defined at build time by the `INSTALL_SYSCONF2DIR` option provided to `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)`.
+`systemd` will also look for an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) for a specific MariaDB instance based on the instance name. By default, it will look for the option file in a directory defined at build time by the `INSTALL_SYSCONF2DIR` option provided to `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)`.
 
 For example, on RHEL, CentOS, Fedora, and other similar Linux distributions, `INSTALL_SYSCONF2DIR` is defined as `/etc/my.cnf.d/`, so it will look for an option file that matches the format:
 
@@ -135,7 +135,7 @@ And on Debian, Ubuntu, and other similar Linux distributions, `INSTALL_SYSCONF2D
 
 * `/etc/mysql/conf.d/my%I.cnf`
 
-In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../configuring-mariadb-with-option-files.md) at the path`/etc/my.cnf.d/mynode1.cnf` for RHEL-like distributions and `/etc/mysql/conf.d/mynode1.cnf` for Debian-like distributions.
+In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) at the path`/etc/my.cnf.d/mynode1.cnf` for RHEL-like distributions and `/etc/mysql/conf.d/mynode1.cnf` for Debian-like distributions.
 
 When using multiple instances, each instance will of course also need their own `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`. See [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) for information on how to initialize the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` for additional MariaDB instances.
 
@@ -613,7 +613,7 @@ Jan 25 18:08:32 ip-172-30-0-249.us-west-2.compute.internal systemd[1]: mariadb.s
 
 ## Converting mariadbd-safe Options to Systemd Options
 
-`mariadb-service-convert` is a script included in many MariaDB packages that is used by the package manager to convert `[mariadbd-safe](mariadbd-safe.md#mariadbd-safe-options)` options to `systemd` options. It reads any explicit settings in the `[mariadbd-safe]` [option group](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md), and its output is directed to `/etc/systemd/system/mariadb.service.d/migrated-from-my.cnf-settings.conf`. This helps to keep the configuration the same when upgrading from a version of MariaDB that does not use `systemd` to one that does.
+`mariadb-service-convert` is a script included in many MariaDB packages that is used by the package manager to convert `[mariadbd-safe](mariadbd-safe.md#mariadbd-safe-options)` options to `systemd` options. It reads any explicit settings in the `[mariadbd-safe]` [option group](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md), and its output is directed to `/etc/systemd/system/mariadb.service.d/migrated-from-my.cnf-settings.conf`. This helps to keep the configuration the same when upgrading from a version of MariaDB that does not use `systemd` to one that does.
 
 Implicitly high defaults of `[open-files-limit](mariadbd-safe.md#mariadbd-safe-options)` may be missed by the conversion script and require explicit configuration. See [Configuring the Open Files Limit](systemd.md#configuring-the-open-files-limit).
 

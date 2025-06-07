@@ -14,7 +14,7 @@ You also need an X509 certificate, a private key, and the Certificate Authority 
 
 In order to secure replication traffic, you will need to ensure that TLS is enabled on the primary. If you want to use two-way TLS, then you will also need to ensure that TLS is enabled on the replica. See [Securing Connections for Client and Server](securing-connections-for-client-and-server.md) for information on how to do that.
 
-For example, to set the TLS system variables for each server, add them to a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) on each server:
+For example, to set the TLS system variables for each server, add them to a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) on each server:
 
 ```
 [mariadb]
@@ -29,7 +29,7 @@ And then [restart the server](https://mariadb.com/kb/en/) to make the changes pe
 At this point, you can reconfigure the replicas to use TLS to encrypt replicated data in transit. There are two methods available to do this:
 
 * Executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to set the relevant TLS options.
-* Setting TLS client options in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+* Setting TLS client options in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ### Executing CHANGE MASTER
 
@@ -132,8 +132,8 @@ The replica now uses TLS to encrypt data in transit as it replicates it from the
 
 ### Setting TLS Client Options in an Option File
 
-In cases where you don't mind restarting the server or you are setting the server up from scratch for the first time, you may find it more convenient to configure TLS options for replication through an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). This is done the same way as it is for other clients. The specific options that you would need to set would depend on whether you want one-way TLS or two-way TLS, and whether you want to verify the server certificate. See [Securing Connections for Client and Server: Enabling TLS for MariaDB Clients](securing-connections-for-client-and-server.md#enabling-tls-for-mariadb-clients) for more information.\
-For example, to enable two-way TLS with [server certificate verification](secure-connections-overview.md#server-certificate-verification), then you could specify the following options in a a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+In cases where you don't mind restarting the server or you are setting the server up from scratch for the first time, you may find it more convenient to configure TLS options for replication through an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). This is done the same way as it is for other clients. The specific options that you would need to set would depend on whether you want one-way TLS or two-way TLS, and whether you want to verify the server certificate. See [Securing Connections for Client and Server: Enabling TLS for MariaDB Clients](securing-connections-for-client-and-server.md#enabling-tls-for-mariadb-clients) for more information.\
+For example, to enable two-way TLS with [server certificate verification](secure-connections-overview.md#server-certificate-verification), then you could specify the following options in a a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [client-mariadb]
@@ -144,7 +144,7 @@ ssl_ca = /etc/my.cnf.d/certificates/ca.pem
 ssl-verify-server-cert
 ```
 
-Before you restart the server, you may also want to set the [--skip-slave-start](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-slave-start) option in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). This option prevents the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) from restarting automatically when the server starts. Instead, they will have to be restarted manually.\
+Before you restart the server, you may also want to set the [--skip-slave-start](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-skip-slave-start) option in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). This option prevents the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) from restarting automatically when the server starts. Instead, they will have to be restarted manually.\
 After these changes have been made, you can [restart the server](https://mariadb.com/kb/en/).\
 Once the server is back online, set the [MASTER\_SSL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option by executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. This will enable TLS. For example:
 

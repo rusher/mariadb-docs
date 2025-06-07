@@ -45,13 +45,13 @@ Next, let's [install the pam\_user\_map PAM module](user-and-group-mapping-with-
 
 Before the module can be compiled from source, we may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/), we need to install `gcc` and `pam-devel`:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), we need to install `gcc` and `pam-devel`:
 
 ```
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md), we need to install `gcc` and `libpam0g-dev`:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), we need to install `gcc` and `libpam0g-dev`:
 
 ```
 sudo apt-get install gcc libpam0g-dev

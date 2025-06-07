@@ -12,7 +12,7 @@ MariaDB always writes its error log, but the destination is configurable.
 
 To configure the error log to be written to a file, you can set the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable. You can configure a specific file name. However, if a specific file name is not configured, then the log will be written to the `${hostname}.err` file in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory by default.
 
-The [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, to write the error log to the default `${hostname}.err` file, you could configure the following:
+The [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, to write the error log to the default `${hostname}.err` file, you could configure the following:
 
 ```
 [mariadb]
@@ -53,7 +53,7 @@ The [log-basename](../install-and-upgrade-mariadb/starting-and-stopping-mariadb/
 
 On Unix, if the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable is not set, then errors are written to `stderr`, which usually means that the log messages are output to the terminal that started `mariadbd`.
 
-If the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable was set in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
+If the [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable was set in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) or on the command-line, then it can still be unset by specifying `--skip-log-error`.
 
 ### Writing the Error Log to Syslog on Unix
 
@@ -111,7 +111,7 @@ The [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-vari
 SET GLOBAL log_warnings=3;
 ```
 
-It can also be set either on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set either on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -374,7 +374,7 @@ Many error messages are ready from an error messages file that contains localize
 [ERROR] Can't find messagefile '/usr/share/errmsg.sys'
 ```
 
-If this error is occurring because the file is in a custom location, then you can configure this location by setting the [lc\_messages\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variable either on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+If this error is occurring because the file is in a custom location, then you can configure this location by setting the [lc\_messages\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variable either on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

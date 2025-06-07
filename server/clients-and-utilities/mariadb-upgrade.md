@@ -80,7 +80,7 @@ mariadb-upgrade --verbose --verbose other-options
 \| -f, --force | Force execution of mariadb-check even if mariadb-upgrade has already been executed for the current version of MariaDB. Ignores mysql\_upgrade\_info. |\
 \| -h, --host=name | Connect to MariaDB on the given host. |\
 \| -p, --password\[=name] | Password to use when connecting to server. If password is not given, it's solicited on the command line (which should be considered insecure). You can use an option file to avoid giving the password on the command line. |\
-\| -P, --port=name | Port number to use for connection or 0 for default to, in order of preference, my.cnf, the MYSQL\_TCP\_PORT [environment variable](../server-management/install-and-upgrade-mariadb/mariadb-environment-variables.md), /etc/services, built-in default (3306). |\
+\| -P, --port=name | Port number to use for connection or 0 for default to, in order of preference, my.cnf, the MYSQL\_TCP\_PORT [environment variable](../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-environment-variables.md), /etc/services, built-in default (3306). |\
 \| --protocol=name | The protocol to use for connection (tcp, socket, pipe, memory). |\
 \| --silent | Print less information. |\
 \| -S, --socket=name | For connections to localhost, the Unix socket file to use, or, on Windows, the name of the named pipe to use. |\
@@ -119,7 +119,7 @@ One effect of not being able to create the `mysql_upgrade_info` file was that ev
 
 #### Option Files
 
-In addition to reading options from the command-line, `mariadb-upgrade` can also read options from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-upgrade` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-upgrade` can also read options from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-upgrade` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -136,7 +136,7 @@ In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 
 **Option Groups**
 
-`mariadb-upgrade` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-upgrade` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group              | Description                                                                                                                                                                                                                                 |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

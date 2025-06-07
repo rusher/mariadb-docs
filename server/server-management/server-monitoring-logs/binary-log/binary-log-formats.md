@@ -99,7 +99,7 @@ You can also change it dynamically for just a specific session with [SET SESSION
 SET SESSION binlog_format='ROW';
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

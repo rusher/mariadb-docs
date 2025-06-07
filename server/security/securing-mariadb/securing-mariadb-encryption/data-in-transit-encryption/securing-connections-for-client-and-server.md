@@ -26,7 +26,7 @@ To do that there are a number of system variables that you need to set, such as:
 * Unless you use a certificate which was signed by a trusted certificate authority (CA) you need to set the path to the certificate authority chain that can verify the server's certificate by setting either the [ssl\_ca](ssltls-system-variables.md#ssl_ca) or the [ssl\_capath](ssltls-system-variables.md#ssl_capath) system variables.
 * If you want to restrict the server to certain ciphers, then you also need to set the [ssl\_cipher](ssltls-system-variables.md#ssl_cipher) system variable.
 
-For example, to set these variables for the server, add the system variables to a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+For example, to set these variables for the server, add the system variables to a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -68,7 +68,7 @@ One-way TLS means that only the server provides a private key and an X509 certif
 
 Starting from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114) (Connector/C version 3.4) this mode is enabled by default. Connector/C will enable TLS automatically on all non-local connections and will require a verified server certificate to prevent man-in-the-middle attacks.
 
-To enable one-way TLS manually (for older clients or if you want verification with CA certificate) you can specify these options in a a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+To enable one-way TLS manually (for older clients or if you want verification with CA certificate) you can specify these options in a a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [client-mariadb]
@@ -98,7 +98,7 @@ disable-ssl-verify-server-cert
 
 Two-way TLS means that both the client and server provide a private key and an X509 certificate. It is called "two-way" TLS because both the client and server can be authenticated.
 
-For example, to specify these options in a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), you could set the following:
+For example, to specify these options in a relevant client [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), you could set the following:
 
 ```
 [client-mariadb]

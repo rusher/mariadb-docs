@@ -60,7 +60,7 @@ There are several ways to set server system variables:
 shell> ./mariadbd-safe --aria_group_commit="hard"
 ```
 
-* Specify them in your my.cnf file (see [Configuring MariaDB with my.cnf](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for more information):
+* Specify them in your my.cnf file (see [Configuring MariaDB with my.cnf](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for more information):
 
 ```
 aria_group_commit = "hard"
@@ -277,7 +277,7 @@ The suffix can be upper or lower-case.
 
 #### `character_set_server`
 
-* Description: Default [character set](../../../reference/data-types/string-data-types/character-sets/) used by the server. See [character\_set\_database](server-system-variables.md#character_set_database) for character sets used by the default database. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
+* Description: Default [character set](../../../reference/data-types/string-data-types/character-sets/) used by the server. See [character\_set\_database](server-system-variables.md#character_set_database) for character sets used by the default database. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
 * Commandline: `--character-set-server`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -324,7 +324,7 @@ The suffix can be upper or lower-case.
 
 #### `collation_server`
 
-* Description: Default [collation](../../../reference/data-types/string-data-types/character-sets/) used by the server. This is set to the default collation for a given character set automatically when [character\_set\_server](server-system-variables.md#character_set_server) is changed, but it can also be set manually. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
+* Description: Default [collation](../../../reference/data-types/string-data-types/character-sets/) used by the server. This is set to the default collation for a given character set automatically when [character\_set\_server](server-system-variables.md#character_set_server) is changed, but it can also be set manually. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
 * Commandline: `--collation-server=name`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1845,7 +1845,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 * If you are using `[mariadbd_safe](../../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md)` to start `mariadbd`, then see the instructions at [mariadbd\_safe: Configuring the Open Files Limit](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md#configuring-the-open-files-limit).
 * If you are using `[systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)` to start `mariadbd`, then see the instructions at [systemd: Configuring the Open Files Limit](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd.md#configuring-the-open-files-limit).
-* Otherwise, you can change the hard limit for the `mysql` user account by modifying `[/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf)`. See [Configuring Linux for MariaDB: Configuring the Open Files Limit](../../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md#configuring-the-open-files-limit) for more details.
+* Otherwise, you can change the hard limit for the `mysql` user account by modifying `[/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf)`. See [Configuring Linux for MariaDB: Configuring the Open Files Limit](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md#configuring-the-open-files-limit) for more details.
 * Commandline: `--open-files-limit=count`
 * Scope: Global
 * Dynamic: No
@@ -2045,7 +2045,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `port`
 
-* Description: Port to listen for TCP/IP connections. If set to `0`, will default to, in order of preference, my.cnf, the MYSQL\_TCP\_PORT [environment variable](../../../server-management/install-and-upgrade-mariadb/mariadb-environment-variables.md), /etc/services, built-in default (3306).
+* Description: Port to listen for TCP/IP connections. If set to `0`, will default to, in order of preference, my.cnf, the MYSQL\_TCP\_PORT [environment variable](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-environment-variables.md), /etc/services, built-in default (3306).
 * Commandline: `--port=#`, `-P`
 * Scope: Global
 * Dynamic: No
@@ -2855,7 +2855,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `tmp_table_size`
 
-* Description: The largest size for temporary tables in memory (not [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) tables) although if [max\_heap\_table\_size](server-system-variables.md#max_heap_table_size) is smaller the lower limit will apply. You can see if it's necessary to increase by comparing the [status variables](server-status-variables.md) `Created_tmp_disk_tables` and `Created_tmp_tables` to see how many temporary tables out of the total created needed to be converted to disk. Often complex GROUP BY queries are responsible for exceeding the limit. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md). From [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes), [tmp\_memory\_table\_size](server-system-variables.md#tmp_memory_table_size) is an alias.
+* Description: The largest size for temporary tables in memory (not [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) tables) although if [max\_heap\_table\_size](server-system-variables.md#max_heap_table_size) is smaller the lower limit will apply. You can see if it's necessary to increase by comparing the [status variables](server-status-variables.md) `Created_tmp_disk_tables` and `Created_tmp_tables` to see how many temporary tables out of the total created needed to be converted to disk. Often complex GROUP BY queries are responsible for exceeding the limit. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md). From [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes), [tmp\_memory\_table\_size](server-system-variables.md#tmp_memory_table_size) is an alias.
 * Commandline: `--tmp-table-size=#`
 * Scope: Global, Session
 * Dynamic: Yes

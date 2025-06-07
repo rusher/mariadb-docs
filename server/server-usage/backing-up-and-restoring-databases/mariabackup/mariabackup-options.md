@@ -284,13 +284,13 @@ Defines the debug sync point. This option is only used by the Mariabackup test s
 
 ### `--defaults-extra-file`
 
-Defines the path to an extra default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+Defines the path to an extra default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```
 --defaults-extra-file=/path/to/config
 ```
 
-Using this option, you can define an extra default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for Mariabackup. Unlike `[--defaults-file](#-defaults-file)`, this file is read after the default [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) are read, allowing you to only overwrite the existing defaults.
+Using this option, you can define an extra default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for Mariabackup. Unlike `[--defaults-file](#-defaults-file)`, this file is read after the default [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) are read, allowing you to only overwrite the existing defaults.
 
 ```bash
 $ mariabackup --backup \
@@ -300,13 +300,13 @@ $ mariabackup --backup \
 
 ### `--defaults-file`
 
-Defines the path to the default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+Defines the path to the default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```
 --defaults-file=/path/to/config
 ```
 
-Using this option, you can define a default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for Mariabackup. Unlike the `[--defaults-extra-file](#-defaults-extra-file)` option, when this option is provided, it completely replaces all default [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+Using this option, you can define a default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for Mariabackup. Unlike the `[--defaults-extra-file](#-defaults-extra-file)` option, when this option is provided, it completely replaces all default [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```bash
 $ mariabackup --backup \
@@ -315,13 +315,13 @@ $ mariabackup --backup \
 
 ### `--defaults-group`
 
-Defines the [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) to read in the [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+Defines the [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) to read in the [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```bash
 --defaults-group="name"
 ```
 
-In situations where you find yourself using certain Mariabackup options consistently every time you call it, you can set the options in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). The `--defaults-group` option defines what option group Mariabackup reads for its options.
+In situations where you find yourself using certain Mariabackup options consistently every time you call it, you can set the options in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). The `--defaults-group` option defines what option group Mariabackup reads for its options.
 
 Options you define from the command-line can be set in the configuration file using minor formatting changes. For instance, if you find yourself perform compression operations frequently, you might set `[--compress-threads](#-compress-threads)` and `[--compress-chunk-size](#-compress-chunk-size)` options in this way:
 

@@ -66,7 +66,7 @@ mariadbd-multi stop 8,10-13
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadbd-multi` can also read options from [option files](../configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadbd-multi` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadbd-multi` can also read options from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadbd-multi` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -81,14 +81,14 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mariadbd-multi` reads options from the following [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
+`mariadbd-multi` reads options from the following [option groups](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group            | Description                                                                         |
 | ---------------- | ----------------------------------------------------------------------------------- |
 | Group            | Description                                                                         |
 | \[mysqld\_multi] | Options read by mysqld\_multi, which includes both MariaDB Server and MySQL Server. |
 
-`mariadbd-multi` also searches [option files](../configuring-mariadb-with-option-files.md) for [option groups](../configuring-mariadb-with-option-files.md#option-groups) with names like `[mariadbdN]`, where `N` can be any positive integer. This number is referred to in the following discussion as the option group number, or `GNR`:
+`mariadbd-multi` also searches [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md) for [option groups](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) with names like `[mariadbdN]`, where `N` can be any positive integer. This number is referred to in the following discussion as the option group number, or `GNR`:
 
 | Group      | Description                                                                                                                                          |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -101,7 +101,7 @@ Options listed in these option groups are the same that you would use in the reg
 
 The `[mariadbd-multi]` option group can be used for options that are needed for `mariadbd-multi` itself. `[mariadbdN]` option groups can be used for options passed to specific `mariadbd` instances.
 
-The regular server [option groups](../configuring-mariadb-with-option-files.md#option-groups) can also be used for common options that are read by all instances:
+The regular server [option groups](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) can also be used for common options that are read by all instances:
 
 | Group            | Description                                                                                                                                                                                                      |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

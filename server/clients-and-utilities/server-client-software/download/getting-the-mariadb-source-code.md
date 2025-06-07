@@ -34,7 +34,7 @@ Source repositories for the MariaDB Connectors are:
 See also:
 
 * [Using git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
-* [Compiling MariaDB from source](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/)
+* [Compiling MariaDB from source](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/)
 
 The rest of this page contains information on checking out the\
 MariaDB source from Launchpad. As the current source is now on GitHub, the\
@@ -102,7 +102,7 @@ bzr log | less
 ```
 
 1. If you are going to be hacking on the MariaDB source code. See the [Contributing Code](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/contributing-participating/contributing-code) page for help.
-2. If you just want to compile MariaDB at this point, see the [Compiling MariaDB](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page.
+2. If you just want to compile MariaDB at this point, see the [Compiling MariaDB](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page.
 
 ## Source Tree Tarball
 

@@ -16,7 +16,7 @@ To enable the slow query log, set the [slow\_query\_log](../../../ha-and-perform
 SET GLOBAL slow_query_log=1;
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -34,7 +34,7 @@ One way to configure the slow query log filename is to set the [slow\_query\_log
 SET GLOBAL slow_query_log_file='mariadb-slow.log';
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -54,7 +54,7 @@ slow_query_log
 slow_query_log_file=/var/log/mysql/mariadb-slow.log
 ```
 
-Another way to configure the slow query log filename is to set the [log-basename](../../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. slow query log, [general query log](../general-query-log.md), [error log](../error-log.md), [binary logs](../binary-log/), etc.). The slow query log filename will be built by adding `-slow.log` to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+Another way to configure the slow query log filename is to set the [log-basename](../../install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. slow query log, [general query log](../general-query-log.md), [error log](../error-log.md), [binary logs](../binary-log/), etc.). The slow query log filename will be built by adding `-slow.log` to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -77,7 +77,7 @@ The slow query log is output to a file by default. However, it can be explicitly
 SET GLOBAL log_output='FILE';
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -95,7 +95,7 @@ The slow query log can either be written to the [slow\_log](../../../reference/s
 SET GLOBAL log_output='TABLE';
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -137,7 +137,7 @@ SET SESSION slow_query_log=0;
 
 ## Disabling the Slow Query Log for Specific Statements
 
-It is possible to disable logging to the slow query log for specific types of statements by setting the [log\_slow\_disabled\_statements](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_disabled_statements) system variable. This option cannot be set dynamically. It can be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It is possible to disable logging to the slow query log for specific types of statements by setting the [log\_slow\_disabled\_statements](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_disabled_statements) system variable. This option cannot be set dynamically. It can be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -156,7 +156,7 @@ The time that defines a slow query can be configured by setting the [long\_query
 SET GLOBAL long_query_time=5.0;
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -177,7 +177,7 @@ SET @@log_slow_filter=concat(@@log_slow_filter,",not_using_index");
 SET GLOBAL log_queries_not_using_indexes=ON;
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -199,7 +199,7 @@ It can be beneficial to exclude queries that examine fewer than a minimum number
 SET GLOBAL min_examined_row_limit=100000;
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -223,7 +223,7 @@ SET SESSION log_slow_filter=replace(@@log_slow_filter,"admin","");
 SET GLOBAL log_slow_admin_statements=ON;
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -243,7 +243,7 @@ It is possible to enable logging to the slow query log for queries that meet spe
 SET GLOBAL log_slow_filter='filesort,filesort_on_disk,tmp_table,tmp_table_on_disk';
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -265,7 +265,7 @@ The slow query log can create a lot of I/O, so it can be beneficial to throttle 
 SET GLOBAL log_slow_rate_limit=5;
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -285,7 +285,7 @@ There are a few optional pieces of information that can be included in the slow 
 SET GLOBAL log_slow_verbosity='full';
 ```
 
-It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

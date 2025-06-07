@@ -93,19 +93,19 @@ The [yaSSL](https://www.wolfssl.com/products/yassl/) library has not been certif
 
 #### MariaDB Server on Windows
 
-MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [MSI](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows.
+MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows.
 
 #### MariaDB Server on Linux
 
 **MariaDB Server in Binary Tarballs**
 
-MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux.
+MariaDB Server is statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux.
 
 **MariaDB Server in DEB Packages**
 
 MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md)` packages.
 
-See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 
 **MariaDB Server in RPM Packages**
 
@@ -117,21 +117,21 @@ MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.ope
 
 #### MariaDB Clients and Utilities on Windows
 
-MariaDB's [clients and utilities](../../../../en/clients-utilities/) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
+MariaDB's [clients and utilities](../../../../en/clients-utilities/) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
 <>
 
 #### MariaDB Clients and Utilities on Linux
 
 **MariaDB Clients and Utilities in Binary Tarballs**
 
-MariaDB's [clients and utilities](../../../../en/clients-utilities/) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
+MariaDB's [clients and utilities](../../../../en/clients-utilities/) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
 <>
 
 **MariaDB Clients and Utilities in DEB Packages**
 
 MariaDB's [clients and utilities](../../../../en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md)` packages.
 
-See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
+See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 
 **MariaDB Clients and Utilities in RPM Packages**
 

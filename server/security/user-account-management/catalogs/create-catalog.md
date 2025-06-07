@@ -43,7 +43,7 @@ space in their internal data dictionary.
 
 ## Pre-Creating Catalog Directories
 
-`CREATE CATALOG` works even if the catalog directory already exists (as long as there is no `mysql` sub directory). This is to allow a database administrator to pre-create the catalog directory and mount it to disk volume and optionally add a [configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) inside the catalog directory.\
+`CREATE CATALOG` works even if the catalog directory already exists (as long as there is no `mysql` sub directory). This is to allow a database administrator to pre-create the catalog directory and mount it to disk volume and optionally add a [configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) inside the catalog directory.\
 The directory will not be recognized as a catalog or show up in [SHOW CATALOGS](show-catalogs.md) until the `mysql` sub directory is created by [CREATE CATALOG](create-catalog.md) or [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md).
 
 ## See Also

@@ -21,7 +21,7 @@ In general, when replicating across different versions of MariaDB, it is best th
 
 #### Example Enabling Replication for MariaDB
 
-Add the following into your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) file and restart the database.
+Add the following into your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file and restart the database.
 
 ```
 [mariadb]

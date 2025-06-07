@@ -4,7 +4,7 @@ Mariabackup creates the following files:
 
 ## `backup-my.cnf`
 
-During the backup, any server options relevant to Mariabackup are written to the `backup-my.cnf` [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), so that they can be re-read later during the `--prepare` stage.
+During the backup, any server options relevant to Mariabackup are written to the `backup-my.cnf` [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), so that they can be re-read later during the `--prepare` stage.
 
 ## `ib_logfile0`
 

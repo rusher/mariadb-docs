@@ -52,12 +52,12 @@ options supported by `[mariadbd](mariadbd-options.md)`. If an unknown option is 
 | --socket=path                            | The Unix socket file that the server should use when listening for local connections.                                                                                                                                                                                                                                                                                    |
 | --syslog, --skip-syslog                  | --syslog causes error messages to be sent to syslog on systems that support the logger program. --skip-syslog suppresses the use of syslog; messages are written to an error log file.                                                                                                                                                                                   |
 | --syslog-tag=tag                         | For logging to syslog, messages from mariadbd-safe and mariadbd are written with a tag of mariadbd-safe and mariadbd, respectively. To specify a suffix for the tag, use --syslog-tag=tag, which modifies the tags to be mariadbd-safe-tag and mariadbd-tag.                                                                                                             |
-| --timezone=timezone                      | Set the TZ time zone [environment variable](../mariadb-environment-variables.md) to the given option value. Consult your operating system documentation for legal time zone specification formats. Also see [Time Zones](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).                            |
+| --timezone=timezone                      | Set the TZ time zone [environment variable](../configuring-mariadb/mariadb-environment-variables.md) to the given option value. Consult your operating system documentation for legal time zone specification formats. Also see [Time Zones](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).        |
 | --user={user\_name or user\_id}          | Run the mariadbd server as the user having the name user\_name or the numeric user ID user\_id. (“User” in this context refers to a system login account, not a MariaDB user listed in the grant tables.)                                                                                                                                                                |
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadbd-safe` can also read options from [option files](../configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadbd-safe` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadbd-safe` can also read options from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadbd-safe` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the **first argument** on the command-line:
 
@@ -72,7 +72,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mariadbd-safe` reads options from the following [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
+`mariadbd-safe` reads options from the following [option groups](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group            | Description                                                                                                                                                                                                                                                          |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -84,7 +84,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 The `[safe_mariadbd]` option group is primarily supported for backward compatibility. You should rename such option groups to `[mariadbd-safe]` in MariaDB installations to prevent breakage in the future if this compatibility is removed.
 
-`mariadbd-safe` also reads options from the following server [option groups](../configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb-with-option-files.md):
+`mariadbd-safe` also reads options from the following server [option groups](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group            | Description                                                                                                                                                                                                      |
 | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

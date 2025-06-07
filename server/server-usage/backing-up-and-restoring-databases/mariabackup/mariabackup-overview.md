@@ -72,19 +72,19 @@ Mariabackup from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/m
 
 ### Installing on Linux
 
-The `mariabackup` executable is included in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux.
+The `mariabackup` executable is included in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux.
 
 #### Installing with a Package Manager
 
 Mariabackup can also be installed via a package manager on Linux. In order to do so, your system needs to be configured to install from one of the MariaDB repositories.
 
-You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](../../../server-management/install-and-upgrade-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md).
+You can configure your package manager to install it from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md).
 
 You can also configure your package manager to install it from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/).
 
 **Installing with yum/dnf**
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's\
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's\
 repository using `[yum](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 ```bash
@@ -93,7 +93,7 @@ sudo yum install MariaDB-backup
 
 **Installing with apt-get**
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
 repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
 
 ```bash
@@ -102,7 +102,7 @@ sudo apt-get install mariadb-backup
 
 **Installing with zypper**
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
 
 ```bash
 sudo zypper install MariaDB-backup
@@ -110,9 +110,9 @@ sudo zypper install MariaDB-backup
 
 ### Installing on Windows
 
-The `mariabackup` executable is included in [MSI](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows.
+The `mariabackup` executable is included in [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows.
 
-When using the [Windows MSI installer](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md), `mariabackup` can be installed by selecting _Backup utilities_:
+When using the [Windows MSI installer](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md), `mariabackup` can be installed by selecting _Backup utilities_:
 
 ![mariadb\_backup\_windows](../../../.gitbook/assets/mariabackup-overview/+image/mariadb_backup_windows.png)
 
@@ -137,11 +137,11 @@ For in-depth explanations on how to use Mariabackup, see:
 
 Options supported by Mariabackup can be found [here](mariabackup-options.md).
 
-`mariabackup` will currently silently ignore unknown command-line options, so be extra careful about accidentally including typos in options or accidentally using options from later `mariabackup` versions. The reason for this is that `mariabackup` currently treats command-line options and options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) equivalently. When it reads from these [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), it has to read a lot of options from the [server option groups](mariabackup-overview.md#server-option-groups) read by `[mysqld](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`. However, `mariabackup` does not know about many of the options that it normally reads in these option groups. If `mariabackup` raised an error or warning when it encountered an unknown option, then this process would generate a large amount of log messages under normal use. Therefore, `mariabackup` is designed to silently ignore the unknown options instead. See [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215) about that.
+`mariabackup` will currently silently ignore unknown command-line options, so be extra careful about accidentally including typos in options or accidentally using options from later `mariabackup` versions. The reason for this is that `mariabackup` currently treats command-line options and options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) equivalently. When it reads from these [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), it has to read a lot of options from the [server option groups](mariabackup-overview.md#server-option-groups) read by `[mysqld](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`. However, `mariabackup` does not know about many of the options that it normally reads in these option groups. If `mariabackup` raised an error or warning when it encountered an unknown option, then this process would generate a large amount of log messages under normal use. Therefore, `mariabackup` is designed to silently ignore the unknown options instead. See [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215) about that.
 
 ### Option Files
 
-In addition to reading options from the command-line, Mariabackup can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+In addition to reading options from the command-line, Mariabackup can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -156,7 +156,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Server Option Groups
 
-Mariabackup reads server options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+Mariabackup reads server options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -176,7 +176,7 @@ Mariabackup reads server options from the following [option groups](../../../ser
 
 #### Client Option Groups
 
-Mariabackup reads client options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+Mariabackup reads client options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -238,7 +238,7 @@ $ mariabackup --backup \
    --user=mariabackup --password=mypassword
 ```
 
-The user account information can also be specified in a supported [client option group](mariabackup-overview.md#client-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The user account information can also be specified in a supported [client option group](mariabackup-overview.md#client-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```bash
 [mariabackup]
@@ -288,7 +288,7 @@ Mariabackup can store the the binary log position in the backup. See [--binlog-i
 
 ### Unsupported Server Option Groups
 
-Prior to [MariaDB 10.1.38](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes), [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes), and [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes), Mariabackup doesn't read server options from all [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) supported by the server. In those versions, it only looks for server options in the following server option groups:
+Prior to [MariaDB 10.1.38](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes), [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes), and [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes), Mariabackup doesn't read server options from all [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) supported by the server. In those versions, it only looks for server options in the following server option groups:
 
 | Group          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -313,13 +313,13 @@ See [MDEV-18347](https://jira.mariadb.org/browse/MDEV-18347) for more informatio
 
 ### No Default Datadir
 
-Prior to [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), if you were performing a `[--copy-back](mariabackup-options.md#-copy-back)` operation, and if you did not explicitly specify a value for the `[datadir](mariabackup-options.md#datadir)` option either on the command line or one of the supported [server option groups](mariabackup-overview.md#server-option-group) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), then Mariabackup would not default to the server's default `datadir`. Instead, Mariabackup would fail with an error. For example:
+Prior to [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), if you were performing a `[--copy-back](mariabackup-options.md#-copy-back)` operation, and if you did not explicitly specify a value for the `[datadir](mariabackup-options.md#datadir)` option either on the command line or one of the supported [server option groups](mariabackup-overview.md#server-option-group) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then Mariabackup would not default to the server's default `datadir`. Instead, Mariabackup would fail with an error. For example:
 
 ```bash
 Error: datadir must be specified.
 ```
 
-The solution is to explicitly specify a value for the `[datadir](mariabackup-options.md#datadir)` option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The solution is to explicitly specify a value for the `[datadir](mariabackup-options.md#datadir)` option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```bash
 [mysqld]
@@ -417,7 +417,7 @@ InnoDB: and force InnoDB to continue crash recovery here.
 
 Prior to [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10224-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes), Mariabackup would actually ignore the error and continue the backup. In some of those cases, Mariabackup would even report a successful completion of the backup to the user. In later versions, Mariabackup will properly throw an error and abort when this error is encountered. See [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) for more information.
 
-When this error is encountered, one solution is to explicitly specify a value for the `[open-files-limit](mariabackup-options.md#-open-files-limit)` option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+When this error is encountered, one solution is to explicitly specify a value for the `[open-files-limit](mariabackup-options.md#-open-files-limit)` option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```bash
 [mariabackup]

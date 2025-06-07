@@ -10,7 +10,7 @@ When setting the `[thread_pool_size](thread-pool-system-status-variables.md#thre
 SET GLOBAL thread_pool_size=32;
 ```
 
-It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -148,7 +148,7 @@ This stall detection feature is implemented by creating a **timer thread** that 
 SET GLOBAL thread_pool_stall_limit=300;
 ```
 
-It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -182,7 +182,7 @@ You might expect that the thread pool would shutdown one of the **worker threads
 SET GLOBAL thread_pool_oversubscribe=10;
 ```
 
-It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

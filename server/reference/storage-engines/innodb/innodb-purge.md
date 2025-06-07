@@ -25,7 +25,7 @@ The Purge Threads perform garbage collection of various items:
 
 ### Configuring the Purge Threads
 
-The number of purge threads can be set by configuring the [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The number of purge threads can be set by configuring the [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -52,7 +52,7 @@ SHOW GLOBAL VARIABLES
 
 ### Configuring the Purge Batch Size
 
-The purge batch size is defined as the number of [InnoDB redo log](innodb-redo-log.md) records that must be written before triggering purge. The purge batch size can be set by configuring the [innodb\_purge\_batch\_size](innodb-system-variables.md#innodb_purge_batch_size) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The purge batch size is defined as the number of [InnoDB redo log](innodb-redo-log.md) records that must be written before triggering purge. The purge batch size can be set by configuring the [innodb\_purge\_batch\_size](innodb-system-variables.md#innodb_purge_batch_size) system variable. This system variable can be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -70,7 +70,7 @@ The max purge lag can be set by configuring the [innodb\_max\_purge\_lag](innodb
 SET GLOBAL innodb_max_purge_lag=1000;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -84,7 +84,7 @@ The maximum delay can be set by configuring the [innodb\_max\_purge\_lag\_delay]
 SET GLOBAL innodb_max_purge_lag_delay=100;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -100,7 +100,7 @@ The purge rollback segment truncation frequency is defined as the number of purg
 SET GLOBAL innodb_purge_rseg_truncate_frequency=64;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -118,7 +118,7 @@ Purge undo log truncation can be enabled by configuring the [innodb\_undo\_log\_
 SET GLOBAL innodb_undo_log_truncate=ON;
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -132,7 +132,7 @@ An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds
 SET GLOBAL innodb_max_undo_log_size='64M';
 ```
 
-This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can also be specified as a command-line argument to [mysqld](../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]

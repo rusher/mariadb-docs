@@ -30,6 +30,6 @@ If in doubt, ways conduct a benchmark that resembles the database workload of in
 
 ## See Also
 
-* [Configuring Linux for MariaDB](../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md)
+* [Configuring Linux for MariaDB](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md)
 
 CC BY-SA / Gnu FDL

@@ -16,23 +16,23 @@ There are two different ways to use MariaDB on Windows natively: using Zip packa
 
 In both cases, 32-bit platforms are still supported.
 
-Check the page [Installation issues on Windows](../../troubleshooting-installation-issues/installation-issues-on-windows.md) to verify if current versions of MariaDB have troubles on Windows. More generally, it is a good idea to check the [Troubleshooting Installation Issues](../../troubleshooting-installation-issues/) category.
+Check the page [Installation issues on Windows](../../installing-mariadb/troubleshooting-installation-issues/installation-issues-on-windows.md) to verify if current versions of MariaDB have troubles on Windows. More generally, it is a good idea to check the [Troubleshooting Installation Issues](../../installing-mariadb/troubleshooting-installation-issues/) category.
 
 ### ZIP Packages
 
 Windows users don't necessarily need to install MariaDB to use it. They can download ready-to-use ZIP packages to avoid any change in the system (except for downloading MariaDB and writing databases on the disk). This is very useful for testing without risking some undesired side effect on the machine in use. And it avoids the hassle of installing Docker or virtual machines.
 
-It is necessary to run [mysql\_install\_db.exe](../../installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md) to install the data directory.
+It is necessary to run [mysql\_install\_db.exe](../../installing-mariadb/installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md) to install the data directory.
 
 The drawback is that MariaDB will need to be started and stopped from the command line.
 
-See [Installing MariaDB Windows ZIP Packages](../../binary-packages/installing-mariadb-windows-zip-packages.md).
+See [Installing MariaDB Windows ZIP Packages](../../installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md).
 
 ### MSI Packages
 
 MSI packages provide a friendly graphical interface to install MariaDB. The installation process is easy but flexible. For example, the user can decide which components to install, whether to install it as a service or not, and if networking should be enabled. An interface to uninstall MariaDB is also provided.
 
-See [Installing MariaDB MSI Packages on Windows](../../binary-packages/installing-mariadb-msi-packages-on-windows.md).
+See [Installing MariaDB MSI Packages on Windows](../../installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md).
 
 ## Installing MariaDB on Docker
 
@@ -42,7 +42,7 @@ Docker runs on all major operating systems. On Windows and MacOS it runs on a Li
 
 Docker's characteristics makes it optimal to test MariaDB functionalities without wasting time on installation and without making changes to the host system. However, it is not ideal to test MariaDB performance.
 
-See [Installing and Using MariaDB via Docker](../../binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md).
+See [Installing and Using MariaDB via Docker](../../installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md).
 
 ## Reinitializing MariaDB Data Directory
 

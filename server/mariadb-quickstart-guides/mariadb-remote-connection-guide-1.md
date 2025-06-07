@@ -45,7 +45,7 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 ## Finding the Defaults File
 
 To enable MariaDB to listen to remote connections, you need to edit your defaults\
-file. See [Configuring MariaDB with my.cnf](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for more detail.
+file. See [Configuring MariaDB with my.cnf](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for more detail.
 
 Common locations for defaults files:
 

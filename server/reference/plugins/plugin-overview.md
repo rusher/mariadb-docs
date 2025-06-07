@@ -172,7 +172,7 @@ If a plugin is installed with one of these options, then a record will **not** b
 
 #### Installing a Plugin with `--plugin-load-add`
 
-You can install a plugin with the [--plugin-load-add](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) option by specifying the option as a command-line argument to [mariadbd](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or by specifying the option in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+You can install a plugin with the [--plugin-load-add](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) option by specifying the option as a command-line argument to [mariadbd](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or by specifying the option in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 The [--plugin-load-add](https://mariadb.com/kb/en/-options/#-plugin-load-add) option uses the following format:
 
@@ -186,7 +186,7 @@ For example, to install all plugins in the `server_audit` plugin library (which 
 $ mariadbd --user=mysql --plugin-load-add='server_audit' --plugin-load-add='ed25519=auth_ed25519'
 ```
 
-You could also set the option to the same values in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+You could also set the option to the same values in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -199,7 +199,7 @@ Special care must be taken when specifying both the [--plugin-load](../../server
 
 #### Installing a Plugin with `--plugin-load`
 
-You can install a plugin with the [--plugin-load](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option by specifying the option as a command-line argument to [mariadbd](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or by specifying the option in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+You can install a plugin with the [--plugin-load](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option by specifying the option as a command-line argument to [mariadbd](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or by specifying the option in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 The [--plugin-load](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option uses the following format:
 
@@ -213,7 +213,7 @@ For example, to install all plugins in the `server_audit` plugin library (which 
 $ mariadbd --user=mysql --plugin-load='server_audit;ed25519=auth_ed25519'
 ```
 
-You could also set the option to the same values in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+You could also set the option to the same values in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -276,7 +276,7 @@ If a plugin is installed with this utility, then a record will be added to the [
 
 ### Configuring the Plugin Directory
 
-When a plugin is being installed, the server looks for the plugin's library in the server's plugin directory. This directory is configured by the `[plugin_dir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)` system variable. This can be specified as a command-line argument to `[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+When a plugin is being installed, the server looks for the plugin's library in the server's plugin directory. This directory is configured by the `[plugin_dir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)` system variable. This can be specified as a command-line argument to `[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -286,7 +286,7 @@ plugin_dir = /usr/lib64/mysql/plugin
 
 ### Configuring the Minimum Plugin Maturity
 
-When a plugin is being installed, the server compares the plugin's maturity level against the server's minimum allowed plugin maturity. This can help prevent users from using unstable plugins on production servers. This minimum plugin maturity is configured by the `[plugin_maturity](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)` system variable. This can be specified as a command-line argument to `[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+When a plugin is being installed, the server compares the plugin's maturity level against the server's minimum allowed plugin maturity. This can help prevent users from using unstable plugins on production servers. This minimum plugin maturity is configured by the `[plugin_maturity](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)` system variable. This can be specified as a command-line argument to `[mariadbd](../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]

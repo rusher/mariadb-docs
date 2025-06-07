@@ -36,13 +36,13 @@ When using such an installation, and not being able to switch to our own MariaDB
 
 Before the module can be compiled from source, you may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`. For example:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`. For example:
 
 ```
 sudo yum install gcc pam-devel MariaDB-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`. For example:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`. For example:
 
 ```
 sudo apt-get install gcc libpam0g-dev libmariadb-dev

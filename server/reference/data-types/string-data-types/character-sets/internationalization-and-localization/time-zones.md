@@ -14,7 +14,7 @@ There are two time zone settings that can be set within MariaDB--the global serv
 
 ### Global Server Time Zone
 
-The global server time zone can be changed at server startup by setting the `--default-time-zone` option either on the command-line or in a server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The global server time zone can be changed at server startup by setting the `--default-time-zone` option either on the command-line or in a server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -64,14 +64,14 @@ SHOW SESSION VARIABLES LIKE 'time_zone';
 
 The system time zone is determined when the server starts, and it sets the value of the [system\_time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone) system variable. The system time zone is usually read from the operating system's environment. You can change the system time zone in several different ways, such as:
 
-* If you are starting the server with [mariadbd-safe](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `--timezone` option either on the command-line or in the \[mariadbd-safe] [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+* If you are starting the server with [mariadbd-safe](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `--timezone` option either on the command-line or in the \[mariadbd-safe] [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadbd-safe]
 timezone='America/New_York'
 ```
 
-* If you are using a Unix-like operating system, then you can set the system time zone by setting the `TZ` [environment variable](../../../../../server-management/install-and-upgrade-mariadb/mariadb-environment-variables.md) in your shell before starting the server. For example:
+* If you are using a Unix-like operating system, then you can set the system time zone by setting the `TZ` [environment variable](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-environment-variables.md) in your shell before starting the server. For example:
 
 ```
 $ export TZ='America/New_York'

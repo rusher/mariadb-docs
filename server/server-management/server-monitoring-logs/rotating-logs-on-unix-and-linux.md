@@ -17,7 +17,7 @@ If you want to enable the [general query log](general-query-log.md) and [slow qu
 * The [general query log](general-query-log.md) is enabled with the `[general_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log)` system variable.
 * The [slow query log](slow-query-log/) is enabled with the `[slow_query_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log)` system variable.
 
-These options can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, if we wanted to put our log files in `/var/log/mysql/`, then we could configure the following:
+These options can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, if we wanted to put our log files in `/var/log/mysql/`, then we could configure the following:
 
 ```
 [mariadb]
@@ -248,6 +248,6 @@ mariadb_logrotate_old_dir: /var/mysql/old-logs
 
 After setting up logrotate in Ansible, you may want to deploy it to a non-production server and test it manually as explained above. Once you're sure that it works fine on one server, you can be confident in the new Ansible tasks and deploy them on all servers.
 
-For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](../install-and-upgrade-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
+For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
 
 CC BY-SA / Gnu FDL

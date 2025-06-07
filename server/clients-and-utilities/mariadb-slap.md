@@ -98,7 +98,7 @@ mariadb-slap [options]
 
 #### Option Files
 
-In addition to reading options from the command-line, `mariadb-slap` can also read options from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-slap` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-slap` can also read options from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-slap` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -115,7 +115,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 **Option Groups**
 
-`mariadb-slap` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-slap` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group             | Description                                                                                                                                                                                                                              |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

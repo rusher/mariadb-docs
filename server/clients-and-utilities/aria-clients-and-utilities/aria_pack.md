@@ -22,7 +22,7 @@ Once a table has been packed, use [aria\_chk -rq](aria_chk.md) (the quick and re
 
 ## Options
 
-The following variables can be set while passed as commandline options to aria\_pack, or set in the \[ariapack] section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) file.
+The following variables can be set while passed as commandline options to aria\_pack, or set in the \[ariapack] section in your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
 
 | Option                    | Description                                                                                                                                                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

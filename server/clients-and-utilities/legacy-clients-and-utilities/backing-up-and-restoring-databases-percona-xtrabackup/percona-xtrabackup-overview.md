@@ -19,7 +19,7 @@ You can also configure your package manager to install it from Percona's reposit
 
 #### Installing with yum/dnf
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's\
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's\
 repository using `[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example, to install Percona XtraBackup 2.3:
 
 ```
@@ -34,7 +34,7 @@ sudo yum install percona-xtrabackup-24
 
 #### Installing with apt-get
 
-On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
+On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
 repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example, to install Percona XtraBackup 2.3:
 
 ```
@@ -49,7 +49,7 @@ sudo apt-get install percona-xtrabackup-24
 
 #### Installing with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example, to install Percona XtraBackup 2.3:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example, to install Percona XtraBackup 2.3:
 
 ```
 sudo zypper install percona-xtrabackup
@@ -91,7 +91,7 @@ Options supported by Percona XtraBackup can be found on Percona's documentation.
 
 ### Option Files
 
-In addition to reading options from the command-line, Percona XtraBackup can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
+In addition to reading options from the command-line, Percona XtraBackup can also read options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 The following options relate to how MariaDB/MySQL command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -105,7 +105,7 @@ The following options relate to how MariaDB/MySQL command-line tools handles opt
 
 #### Server Option Groups
 
-Percona XtraBackup reads server options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+Percona XtraBackup reads server options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group         | Description                                                                                                                  |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -115,7 +115,7 @@ Percona XtraBackup reads server options from the following [option groups](../..
 
 #### Client Option Groups
 
-Percona XtraBackup reads client options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+Percona XtraBackup reads client options from the following [option groups](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group         | Description                                                                                                                                                           |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -140,7 +140,7 @@ $ xtrabackup --backup \
    --user=xtrabackup --password=mypassword
 ```
 
-The user account information can also be specified in a supported [client option group](percona-xtrabackup-overview.md#client-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The user account information can also be specified in a supported [client option group](percona-xtrabackup-overview.md#client-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [xtrabackup]

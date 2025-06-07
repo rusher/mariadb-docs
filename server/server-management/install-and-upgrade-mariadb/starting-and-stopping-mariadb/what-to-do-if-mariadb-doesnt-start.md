@@ -15,7 +15,7 @@ Common Locations:
 * C:\Program Files\MariaDB x.y\data (x.y refers to the version number)
 * C:\Program Files (x86)\MariaDB x.y\data (32bit version on 64bit Windows)
 
-It's also possible that the error log has been explicitly written to another location. This is often done by changing the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` or `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variables in an [option file](../configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
+It's also possible that the error log has been explicitly written to another location. This is often done by changing the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` or `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variables in an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md). See [Option Files](what-to-do-if-mariadb-doesnt-start.md#option-files) below for more information about that.
 
 A quick way to get the values of these system variables is to execute the following commands:
 
@@ -26,7 +26,7 @@ mariadbd --help --verbose | grep 'datadir' | tail -1
 
 ## Option Files
 
-Another kind of file to consider when troubleshooting is [option files](../configuring-mariadb-with-option-files.md). The default option file is called `my.cnf`. Option files contain configuration options, such as the location of the data directory mentioned above. If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
+Another kind of file to consider when troubleshooting is [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md). The default option file is called `my.cnf`. Option files contain configuration options, such as the location of the data directory mentioned above. If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
 You can check which configuration options MariaDB server will use from its option files by executing the following command:
 
@@ -40,23 +40,23 @@ You can also check by executing the following command:
 my_print_defaults --mysqld
 ```
 
-See [Configuring MariaDB with Option Files: Checking Program Options](../configuring-mariadb-with-option-files.md#checking-program-options) for more information on checking configuration options.
+See [Configuring MariaDB with Option Files: Checking Program Options](../configuring-mariadb/configuring-mariadb-with-option-files.md#checking-program-options) for more information on checking configuration options.
 
 ### Invalid Option or Option Value
 
-Another potential reason for a startup failure is that an [option file](../configuring-mariadb-with-option-files.md) contains an invalid option or an invalid option value. In those cases, the [error log](../../server-monitoring-logs/error-log.md) should contain an error similar to this:
+Another potential reason for a startup failure is that an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) contains an invalid option or an invalid option value. In those cases, the [error log](../../server-monitoring-logs/error-log.md) should contain an error similar to this:
 
 ```
 140514 12:19:37 [ERROR] /usr/local/mysql/bin/mariadbd: unknown variable 'option=value'
 ```
 
-This is more likely to happen when you upgrade to a new version of MariaDB. In most cases the [option file](../configuring-mariadb-with-option-files.md) from the old version of MariaDB will work just fine with the new version. However, occasionally, options are removed in new versions of MariaDB, or the valid values for options are changed in new versions of MariaDB. Therefore, it's possible for an [option file](../configuring-mariadb-with-option-files.md) to stop working after an upgrade.
+This is more likely to happen when you upgrade to a new version of MariaDB. In most cases the [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) from the old version of MariaDB will work just fine with the new version. However, occasionally, options are removed in new versions of MariaDB, or the valid values for options are changed in new versions of MariaDB. Therefore, it's possible for an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md) to stop working after an upgrade.
 
 Also remember that option names are case sensitive.
 
 Examine the specifics of the error. Possible fixes are usually one of the following:
 
-* If the option is completely invalid, then remove it from the [option file](../configuring-mariadb-with-option-files.md).
+* If the option is completely invalid, then remove it from the [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 * If the option's name has changed, then fix the name.
 * If the option's valid values have changed, then change the option's value to a valid one.
 * If the problem is caused by a simple typo, then fix the typo.
@@ -70,11 +70,11 @@ System error 1067 has occurred.
 Fatal error: Can't open privilege tables: Table 'mysql.host' doesn't exist
 ```
 
-If errors like this occur, then critical [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
+If errors like this occur, then critical [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) are either missing or are in the wrong location. The above error is quite common after an upgrade if the [option files](../configuring-mariadb/configuring-mariadb-with-option-files.md) set the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` or `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` to a non-standard location, but the new server is using the default location. Therefore, make sure that the `[basedir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#basedir)` and `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` variables are correctly set.
 
-If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
+If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
-If the [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db/) for more information.
+If the [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
 
 ## Can't Create Test File
 

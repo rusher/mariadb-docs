@@ -17,7 +17,7 @@ Before we can use LDAP authentication, we first need to set up our OpenLDAP Serv
 
 On the server acting as the OpenLDAP Server, first, we need to install the OpenLDAP components.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/), that would go like this:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), that would go like this:
 
 ```
 sudo yum install openldap openldap-servers openldap-clients nss-pam-ldapd
@@ -328,7 +328,7 @@ At this point, we can move onto setting up the MariaDB Server.
 
 First, we need to make sure that the LDAP and PAM libraries are installed.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/), we need to install the following packages:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), we need to install the following packages:
 
 ```
 sudo yum install openldap-clients nss-pam-ldapd pam pam-devel
@@ -357,13 +357,13 @@ Next, let's [install the pam\_user\_map PAM module](user-and-group-mapping-with-
 
 Before the module can be compiled from source, we may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/), we need to install `gcc` and `pam-devel`:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), we need to install `gcc` and `pam-devel`:
 
 ```
 sudo yum install gcc pam-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md), we need to install `gcc` and `libpam0g-dev`:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), we need to install `gcc` and `libpam0g-dev`:
 
 ```
 sudo apt-get install gcc libpam0g-dev

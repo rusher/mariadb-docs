@@ -11,7 +11,7 @@ strict adherence to your packaging system's best practices and invite you to\
 create a [bug report](https://mariadb.org/jira) if our project impedes this in\
 any way.
 
-Instructions how to install the packages can be found[here](../../../server-management/install-and-upgrade-mariadb/binary-packages/).
+Instructions how to install the packages can be found[here](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/).
 
 ## Distributions Which Include MariaDB
 
@@ -42,9 +42,9 @@ of version control with git.
 
 For instructions on creating a local branch of MariaDB, see the[Getting the MariaDB Source Code](getting-the-mariadb-source-code.md) page.
 
-See the [Generic Build Instructions](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page for\
+See the [Generic Build Instructions](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md) page for\
 general instructions on compiling MariaDB from the source.\
-The [source](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/) page has links to platform and distribution-specific\
+The [source](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/) page has links to platform and distribution-specific\
 information, including information on how we build the release packages.
 
 CC BY-SA / Gnu FDL

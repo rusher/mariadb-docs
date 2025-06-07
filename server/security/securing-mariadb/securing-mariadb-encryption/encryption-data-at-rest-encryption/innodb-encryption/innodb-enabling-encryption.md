@@ -188,7 +188,7 @@ The [innodb\_encrypt\_temporary\_tables](../../../../../reference/storage-engine
 | OFF    | Disables temporary table encryption. |
 | ON     | Enables temporary table encryption.  |
 
-This system variable can be specified as a command-line argument to [mysqld](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can be specified as a command-line argument to [mysqld](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -200,7 +200,7 @@ innodb_encrypt_temporary_tables=ON
 
 InnoDB uses the [Redo Log](../../../../../reference/storage-engines/innodb/innodb-redo-log.md) in crash recovery. By default, these events are written to file in an unencrypted state. In configuring MariaDB for data-at-rest encryption, ensure that you also enable encryption for the Redo Log.
 
-To encrypt the Redo Log, first [stop](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md) the server process. Then, set the [innodb\_encrypt\_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) to `ON` in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+To encrypt the Redo Log, first [stop](../../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md) the server process. Then, set the [innodb\_encrypt\_log](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) to `ON` in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]

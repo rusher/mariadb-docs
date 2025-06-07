@@ -23,7 +23,7 @@ different complexity. For example,
 
 ## Installing the Plugin
 
-The `pam` authentication plugin's library is provided in [binary packages](../../../../server-management/install-and-upgrade-mariadb/binary-packages/) in all releases on Linux.
+The `pam` authentication plugin's library is provided in [binary packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/) in all releases on Linux.
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
@@ -33,7 +33,7 @@ The first method can be used to install the plugin without restarting the server
 INSTALL SONAME 'auth_pam';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -51,7 +51,7 @@ If you need to install version `1.0` of the authentication plugin instead of ver
 INSTALL SONAME 'auth_pam_v1';
 ```
 
-Or by specifying in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+Or by specifying in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -67,7 +67,7 @@ You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../.
 UNINSTALL SONAME 'auth_pam';
 ```
 
-If you installed the plugin by providing the [--plugin-load](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ### Uninstalling the v1 Plugin
 
@@ -197,7 +197,7 @@ The `dialog` client authentication plugin transmits the password to the server i
 
 ### `mysql_clear_password`
 
-Users can instruct the `pam` authentication plugin to use the `mysql_clear_password` client authentication plugin instead of the [dialog](authentication-plugin-pam.md#dialog) client authentication plugin by configuring the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable on the server. It can be set in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+Users can instruct the `pam` authentication plugin to use the `mysql_clear_password` client authentication plugin instead of the [dialog](authentication-plugin-pam.md#dialog) client authentication plugin by configuring the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable on the server. It can be set in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]

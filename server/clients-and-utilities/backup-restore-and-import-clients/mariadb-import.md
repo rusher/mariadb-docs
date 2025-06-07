@@ -66,7 +66,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 \| -p\[passwd], --password\[=passwd] | Password to use when connecting to server. If password is not given it's asked from the terminal. Specifying a password on the command line should be considered insecure. You can use an option file to avoid giving the password on the command line. |\
 \| --pipe, -W | On Windows, connect to the server via a named pipe. This option applies only if the server supports named-pipe connections. |\
 \| --plugin-dir | Directory for client-side plugins. |\
-\| -P num, --port=num | Port number to use for connection or 0 for default to, in order of preference, my.cnf, the MYSQL\_TCP\_PORT [environment variable](../../server-management/install-and-upgrade-mariadb/mariadb-environment-variables.md), /etc/services, built-in default (3306). |\
+\| -P num, --port=num | Port number to use for connection or 0 for default to, in order of preference, my.cnf, the MYSQL\_TCP\_PORT [environment variable](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-environment-variables.md), /etc/services, built-in default (3306). |\
 \| --print-defaults | Print the program argument list and exit. Must be given as the first option. |\
 \| --protocol=name | The protocol to use for connection (tcp, socket, pipe, memory). |\
 \| -r, --replace | If duplicate unique key was found, replace old row. |\
@@ -91,7 +91,7 @@ mariadb-import [OPTIONS] database textfile1 [textfile2 ...]
 
 #### Option Files
 
-In addition to reading options from the command-line, `mariadb-import` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-import` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-import` can also read options from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-import` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -107,7 +107,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 **Option Groups**
 
-`mariadb-import` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-import` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group             | Description                                                                                                                                                                                                   |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

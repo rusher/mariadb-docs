@@ -9,7 +9,7 @@ InnoDB page compression provides a way to compress InnoDB tables.
 * InnoDB page compression can be used on any storage device and any file system.
 * InnoDB page compression is most efficient on file systems that support sparse files. See [Saving Storage Space with Sparse Files](innodb-page-compression.md#saving-storage-space-with-sparse-files) for more information.
 * InnoDB page compression is most beneficial on solid state drives (SSDs) and other flash storage. See [Optimized for Flash Storage](innodb-page-compression.md#optimized-for-flash-storage) for more information.
-* InnoDB page compression performs best when your storage device and file system support atomic writes, since that allows the [InnoDB doublewrite buffer](innodb-doublewrite-buffer.md) to be disabled. See [Atomic Write Support](../../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for more information.
+* InnoDB page compression performs best when your storage device and file system support atomic writes, since that allows the [InnoDB doublewrite buffer](innodb-doublewrite-buffer.md) to be disabled. See [Atomic Write Support](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for more information.
 
 ## Comparison with the `COMPRESSED` Row Format
 
@@ -54,7 +54,7 @@ This system variable can be changed dynamically with [SET GLOBAL](../../sql-stat
 SET GLOBAL innodb_compression_algorithm='lzma';
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -118,7 +118,7 @@ tar -xvzf mariadb-10.4.8.tar.gz
 cd mariadb-10.4.8/
 ```
 
-* Configure the build using [cmake](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake):
+* Configure the build using [cmake](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/generic-build-instructions.md#using-cmake):
 
 ```bash
 cmake .
@@ -143,7 +143,7 @@ Or make a package to install:
 make package
 ```
 
-See [Compiling MariaDB From Source](../../../server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/) for more information.
+See [Compiling MariaDB From Source](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/) for more information.
 
 ## Enabling InnoDB Page Compression
 
@@ -194,7 +194,7 @@ CREATE TABLE users (
    ENGINE=InnoDB;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -249,7 +249,7 @@ This system variable can be changed dynamically with [SET GLOBAL](../../sql-stat
 SET GLOBAL innodb_compression_level=9;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -302,7 +302,7 @@ This system variable can be changed dynamically with [SET GLOBAL](../../sql-stat
 SET GLOBAL innodb_compression_failure_threshold_pct=10;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -324,7 +324,7 @@ This system variable can be changed dynamically with [SET GLOBAL](../../sql-stat
 SET GLOBAL innodb_compression_pad_pct_max=75;
 ```
 
-This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+This system variable can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -387,7 +387,7 @@ DeviceIoControl(file_handle, FSCTL_SET_ZERO_DATA, inbuf, inbuf_size,
 
 In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and later, InnoDB uses the _punch hole_ technique to create sparse files used automatically when the underlying file system supports sparse files.
 
-In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and before, InnoDB can be configured to use the _punch hole_ technique to create sparse files by configuring the [innodb\_use\_trim](innodb-system-variables.md#innodb_use_trim) and [innodb\_use\_fallocate](innodb-system-variables.md#innodb_use_fallocate) system variables. These system variables can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and before, InnoDB can be configured to use the _punch hole_ technique to create sparse files by configuring the [innodb\_use\_trim](innodb-system-variables.md#innodb_use_trim) and [innodb\_use\_fallocate](innodb-system-variables.md#innodb_use_fallocate) system variables. These system variables can be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -400,7 +400,7 @@ innodb_use_fallocate=ON
 
 InnoDB page compression was designed to be optimized on solid state drives (SSDs) and other flash storage.
 
-InnoDB page compression was originally developed by collaborating with [Fusion-io](https://fusionio.com). As a consequence, it was originally designed to work best on [FusionIO devices](../../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction.md) using [NVMFS](https://ieeexplore.ieee.org/document/6558434). [Fusion-io](https://fusionio.com) has since been acquired by [Western Digital](https://www.westerndigital.com/), and they have decided not to continue supporting [NVMFS](https://ieeexplore.ieee.org/document/6558434).
+InnoDB page compression was originally developed by collaborating with [Fusion-io](https://fusionio.com). As a consequence, it was originally designed to work best on [FusionIO devices](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/fusion-io/fusion-io-introduction.md) using [NVMFS](https://ieeexplore.ieee.org/document/6558434). [Fusion-io](https://fusionio.com) has since been acquired by [Western Digital](https://www.westerndigital.com/), and they have decided not to continue supporting [NVMFS](https://ieeexplore.ieee.org/document/6558434).
 
 However, InnoDB page compression is still likely to be most optimized on solid state drives (SSDs) and other flash storage.
 
@@ -494,7 +494,7 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 ## See Also
 
 * [Storage-Engine Independent Column Compression](../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md)
-* [Atomic Write Support](../../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md)
+* [Atomic Write Support](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md)
 * [MariaDB Introduces Atomic Writes](https://blog.mariadb.org/mariadb-introduces-atomic-writes/)
 * [Small Datum: Third day with InnoDB transparent page compression](https://smalldatum.blogspot.com/2015/09/third-day-with-innodb-transparent-page.html)
 * [InnoDB holepunch compression vs the filesystem in MariaDB 10.1](https://blog.mariadb.org/innodb-holepunch-compression-vs-the-filesystem-in-mariadb-10-1/)

@@ -28,7 +28,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
 
 1.  Configure the YUM package repository.
 
-    Prefix the version with `mariadb-` and pass the version string to the `--mariadb-server-version` flag to [mariadb\_repo\_setup](../../../server-management/install-and-upgrade-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md). The following directions reference `11.4`.
+    Prefix the version with `mariadb-` and pass the version string to the `--mariadb-server-version` flag to [mariadb\_repo\_setup](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md). The following directions reference `11.4`.
 
     To configure YUM package repositories:
 
@@ -68,7 +68,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
 
 1.  Configure the APT package repository.
 
-    Prefix the version with `mariadb-` and pass the version string to the `--mariadb-server-version` flag to [mariadb\_repo\_setup](../../../server-management/install-and-upgrade-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md). The following directions reference `11.4`.
+    Prefix the version with `mariadb-` and pass the version string to the `--mariadb-server-version` flag to [mariadb\_repo\_setup](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md). The following directions reference `11.4`.
 
     To configure APT package repositories:
 
@@ -112,7 +112,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, CentOS), APT (D
 
 1.  Configure the ZYpp package repository.
 
-    Prefix the version with `mariadb-` and pass the version string to the `--mariadb-server-version` flag to [mariadb\_repo\_setup](../../../server-management/install-and-upgrade-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md). The following directions reference `11.4`.
+    Prefix the version with `mariadb-` and pass the version string to the `--mariadb-server-version` flag to [mariadb\_repo\_setup](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage.md). The following directions reference `11.4`.
 
     To configure ZYpp package repositories:
 

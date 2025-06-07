@@ -6,7 +6,7 @@ In many cases, the entry here is a summary, and links to the full description.
 
 By convention, [server variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) have usually been specified with an underscore in the configuration files, and a dash on the command line. You can however specify underscores as dashes - they are interchangeable.
 
-See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md) for which files and groups mariadbd reads for it's default options.
+See [Configuring MariaDB with Option Files](../configuring-mariadb/configuring-mariadb-with-option-files.md) for which files and groups mariadbd reads for it's default options.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
@@ -42,31 +42,31 @@ Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-c
 
 * Commandline: `--defaults-extra-file=name`
 * Description: Read this extra option file after all other option files are read.
-  * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
+  * See [Configuring MariaDB with Option Files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--defaults-file`
 
 * Commandline: `--defaults-file=name`
 * Description: Only read options from the given option file.
-  * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
+  * See [Configuring MariaDB with Option Files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--defaults-group-suffix`
 
 * Commandline: `--defaults-group-suffix=name`
 * Description: In addition to the default option groups, also read option groups with the given suffix.
-  * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
+  * See [Configuring MariaDB with Option Files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--no-defaults`
 
 * Commandline: `--no-defaults`
 * Description: Don't read options from any option file.
-  * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
+  * See [Configuring MariaDB with Option Files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 #### `--print-defaults`
 
 * Commandline: `--print-defaults`
 * Description: Read options from option files, print all option values, and then exit the program.
-  * See [Configuring MariaDB with Option Files](../configuring-mariadb-with-option-files.md).
+  * See [Configuring MariaDB with Option Files](../configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ## Compatibility Options
 
@@ -198,7 +198,7 @@ The following options are related to [replication](broken-reference/) and the [b
 * Description: This option allows you to configure a [replication master](broken-reference/) to write statements and transactions affecting databases that match a specified name into its [binary log](../../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
-  * When setting it on the command-line or in a server [option group](../configuring-mariadb-with-option-files.md#option-groups) in an [option file](../configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
+  * When setting it on the command-line or in a server [option group](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
   * See [Replication Filters](../../../ha-and-performance/standard-replication/replication-filters.md) for more information.
 
 #### `--binlog-ignore-db`
@@ -207,7 +207,7 @@ The following options are related to [replication](broken-reference/) and the [b
 * Description: This option allows you to configure a [replication master](broken-reference/) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
-  * When setting it on the command-line or in a server [option group](../configuring-mariadb-with-option-files.md#option-groups) in an [option file](../configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
+  * When setting it on the command-line or in a server [option group](../configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
   * See [Replication Filters](../../../ha-and-performance/standard-replication/replication-filters.md) for more information.
 
 #### `--binlog-row-event-max-size`

@@ -28,7 +28,7 @@ The main things that are different for Multi-Master Ring Replication are:
 * Use [global transaction id](gtid.md) (as described above)
 * Give each master a unique [gtid\_domain\_id](gtid.md#gtid_domain_id). This will allow replication to apply transactions from a different master in parallel independent from other masters.
 
-Add the following into your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) file for **all masters** and restart the servers.
+Add the following into your [my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file for **all masters** and restart the servers.
 
 ```
 [mariadb]

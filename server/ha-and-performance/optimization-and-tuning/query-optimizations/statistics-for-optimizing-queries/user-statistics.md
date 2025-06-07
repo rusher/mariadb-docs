@@ -16,7 +16,7 @@ The `userstat` plugin works by keeping several hash tables in memory. All variab
 
 By default statistics are not collected. This is to ensure that statistics collection does not cause any extra load on the server unless desired.
 
-Set the [userstat=ON](user-statistics.md#userstat) system variable in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) to enable the plugin. For example:
+Set the [userstat=ON](user-statistics.md#userstat) system variable in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) to enable the plugin. For example:
 
 ```
 [mariadb]

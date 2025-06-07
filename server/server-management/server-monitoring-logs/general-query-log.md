@@ -14,7 +14,7 @@ To enable the general query log, set the `[general_log](../../server-usage/repli
 SET GLOBAL general_log=1;
 ```
 
-It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -32,7 +32,7 @@ One way to configure the general query log filename is to set the `[general_log_
 SET GLOBAL general_log_file='mariadb.log';
 ```
 
-It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -52,7 +52,7 @@ general_log
 general_log_file=/var/log/mysql/mariadb.log
 ```
 
-Another way to configure the general query log filename is to set the `[log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option, which configures MariaDB to use a common prefix for all log files (e.g. general query log, [slow query log](slow-query-log/), [error log](error-log.md), [binary logs](binary-log/), etc.). The general query log filename will be built by adding a `.log` extension to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+Another way to configure the general query log filename is to set the `[log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option, which configures MariaDB to use a common prefix for all log files (e.g. general query log, [slow query log](slow-query-log/), [error log](error-log.md), [binary logs](binary-log/), etc.). The general query log filename will be built by adding a `.log` extension to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -75,7 +75,7 @@ The general query log is output to a file by default. However, it can be explici
 SET GLOBAL log_output='FILE';
 ```
 
-It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -93,7 +93,7 @@ The general query log can either be written to the `[general_log](../../referenc
 SET GLOBAL log_output='TABLE';
 ```
 
-It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
@@ -135,7 +135,7 @@ SET SESSION SQL_LOG_OFF=1;
 
 ## Disabling the General Query Log for Specific Statements
 
-In [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes) and later, it is possible to disable logging to the general query log for specific types of statements by setting the `[log_disabled_statements](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_disabled_statements)` system variable. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+In [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes) and later, it is possible to disable logging to the general query log for specific types of statements by setting the `[log_disabled_statements](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_disabled_statements)` system variable. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]

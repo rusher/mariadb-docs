@@ -2679,7 +2679,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_use_atomic_writes`
 
-* Description: Implement atomic writes on supported SSD devices. See [atomic write support](../../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for other variables affected when this is set.
+* Description: Implement atomic writes on supported SSD devices. See [atomic write support](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md) for other variables affected when this is set.
 * Commandline: `innodb-use-atomic-writes={0|1}`
 * Scope: Global
 * Dynamic: No
@@ -2689,7 +2689,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 #### `innodb_use_fallocate`
 
 * Description: Preallocate files fast, using operating system functionality. On POSIX systems, posix\_fallocate system call is used.
-  * Automatically set to `1` when [innodb\_use\_atomic\_writes](innodb-system-variables.md#innodb_use_atomic_writes) is set - see [FusionIO DirectFS atomic write support](../../../server-management/install-and-upgrade-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md).
+  * Automatically set to `1` when [innodb\_use\_atomic\_writes](innodb-system-variables.md#innodb_use_atomic_writes) is set - see [FusionIO DirectFS atomic write support](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/atomic-write-support.md).
   * See [InnoDB Page Compression: Saving Storage Space with Sparse Files](innodb-page-compression.md#saving-storage-space-with-sparse-files) for more information.
 * Commandline: `innodb-use-fallocate={0|1}`
 * Scope: Global
