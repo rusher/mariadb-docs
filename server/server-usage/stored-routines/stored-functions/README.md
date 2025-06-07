@@ -1,7 +1,8 @@
 ---
 description: >-
-  A stored function is a defined function that is called from within an SQL
-  statement like a regular function, and returns a single value.
+  Utilize stored functions in MariaDB Server. This section details creating,
+  using, and managing user-defined functions to extend SQL capabilities and
+  streamline data manipulation.
 ---
 
 # Stored Functions

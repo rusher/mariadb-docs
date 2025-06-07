@@ -5,7 +5,7 @@ Multi Range Read is an optimization aimed at improving performance for IO-bound 
 Multi Range Read can be used with
 
 * `range` access
-* `ref` and `eq_ref` access, when they are using [Batched Key Access](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md#batch-key-access-join)
+* `ref` and `eq_ref` access, when they are using [Batched Key Access](broken-reference)
 
 as shown in this diagram:
 
@@ -231,7 +231,7 @@ Multi Range Read will make separate calls for steps #1 and #2, causing TWO incre
 
 ## See Also
 
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](broken-reference)
 * [Multi-Range Read Optimization](https://dev.mysql.com/doc/refman/5.6/en/mrr-optimization.html) page in MySQL manual
 
 CC BY-SA / Gnu FDL

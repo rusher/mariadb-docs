@@ -17,7 +17,7 @@ The `WITH` keyword signifies a [Common Table Expression](./) (CTE). It allows yo
 There are two kinds of CTEs:
 
 * [Non-Recursive](non-recursive-common-table-expressions-overview.md)
-* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword, supported since [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes))
+* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword, supported since [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes))
 
 You can use `table_reference` as any normal table in the external `SELECT` part. You can also use `WITH` in subqueries, as well as with [EXPLAIN](../../../administrative-sql-statements/analyze-and-explain-statements/explain.md) and [SELECT](../select.md).
 
@@ -25,7 +25,7 @@ Poorly-formed recursive CTEs can in theory cause infinite loops. The [max\_recur
 
 #### CYCLE ... RESTRICT
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
 
 The CYCLE clause enables CTE cycle detection, avoiding excessive or infinite loops,\
 MariaDB supports a relaxed, non-standard grammar.\
@@ -130,7 +130,7 @@ SELECT * FROM cte;
 +-------+-------+------+
 ```
 
-However, the CYCLE ... RESTRICT clause (from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes)) can overcome this:
+However, the CYCLE ... RESTRICT clause (from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)) can overcome this:
 
 ```
 WITH RECURSIVE cte (depth, from_, to_) AS ( 

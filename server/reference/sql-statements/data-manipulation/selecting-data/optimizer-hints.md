@@ -34,11 +34,11 @@ If the [query\_cache\_type](../../../../ha-and-performance/optimization-and-tuni
 
 For further information about some of these options, see [How to force query plans](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/index-hints-how-to-force-query-plans.md).
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/what-is-mariadb-120)
+**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
 
 ## Expanded Optimizer Hints
 
-[MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/what-is-mariadb-120) features an extensive expansion of optimizer hints.
+[MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120) features an extensive expansion of optimizer hints.
 
 ### Syntax
 

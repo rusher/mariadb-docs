@@ -1,6 +1,6 @@
 # About MariaDB Software
 
-[MariaDB](../../../kb/en/mariadb/) is an open-source, multi-threaded, relational database management system, released under the [GNU Public License](../../reference/faq/licensing-questions/mariadb-licenses.md) (GPL). MariaDB's lead developer is Michael "Monty" Widenius, who is one of the founders of MySQL AB.
+[MariaDB](../../../kb/en/mariadb/) is an open-source, multi-threaded, relational database management system, released under the [GNU Public License](broken-reference) (GPL). MariaDB's lead developer is Michael "Monty" Widenius, who is one of the founders of MySQL AB.
 
 There are millions of installations of MariaDB worldwide, and thousands of downloads a day of MariaDB installation software. The success of MariaDB as a leading database is due not only to open source, but also its reliability, performance, and features.
 
@@ -36,10 +36,10 @@ MariaDB also offers full integration with Galera cluster — an add-on for Maria
 
 MariaDB is known for rapid and stable improvements. Each new release comes with speed and stability improvements, as well as new features. Current and development versions of MariaDB (and many previous versions) can be downloaded from the [MariaDB Downloads Directory](https://downloads.mariadb.org/). There is also a yum repository for installing easily MariaDB and related software. Use the yum [repository tool](https://downloads.mariadb.org/mariadb/repositories/) to configure your server.
 
-* Current Stable MariaDB Release: [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
-* Current Development Release: [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
-* Previous Stable Releases: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102); [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1); [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0); and [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
-* No Longer Supported Previous Releases: [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3); [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2); and [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)
+* Current Stable MariaDB Release: [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+* Current Development Release: [MariaDB 10.4](broken-reference)
+* Previous Stable Releases: [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102); [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1); [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0); and [MariaDB 5.5](broken-reference)
+* No Longer Supported Previous Releases: [MariaDB 5.3](broken-reference); [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2); and [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)
 
 MariaDB makes updates to active releases about once a month. The [MariaDB Foundation](mariadb-foundation.md) provides a [road map](https://jira.mariadb.org), which will give you information on when to expect the next release of MariaDB.
 
@@ -51,8 +51,8 @@ It's highly likely that, for any job to which you apply or take as a database de
 
 ### Related Pages
 
-* [MariaDB versus MySQL - Features](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/mariadb-vs-mysql-features)
-* [MariaDB versus MySQL - Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/mariadb-vs-mysql-compatibility)
+* [MariaDB versus MySQL - Features](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-features)
+* [MariaDB versus MySQL - Compatibility](broken-reference)
 * [What is in the different MariaDB releases](../../../kb/en/what-is-in-the-different-mariadb-releases/)
 * [MariaDB Release Notes](../../../kb/en/release-notes/)
 

@@ -13,7 +13,7 @@ Toad Edge™ allows you to:
 * Compare and synchronize databases using powerful Schema Compare.
 * Obtain detailed information about your databases.
 
-In TOAD Edge 1.2, support for [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) has been added.
+In TOAD Edge 1.2, support for [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) has been added.
 
 #### Product Information
 

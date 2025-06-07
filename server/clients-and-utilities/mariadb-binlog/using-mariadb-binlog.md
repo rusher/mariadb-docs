@@ -2,7 +2,7 @@
 
 The MariaDB server's [binary log](../../server-management/server-monitoring-logs/binary-log/) is a set of files containing "events" which represent modifications to the contents of a MariaDB database.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.These events are written in a binary (i.e. non-human-readable) format. The _mariadb-binlog_ utility is used to view these events in plain text.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.These events are written in a binary (i.e. non-human-readable) format. The _mariadb-binlog_ utility is used to view these events in plain text.
 
 Run [mariadb-binlog](./) from a command-line like this:
 
@@ -12,7 +12,7 @@ shell> mariadb-binlog [options] log_file ...
 
 See [mariadb-binlog Options](mariadb-binlog-options.md) for details on the available options.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlbinlog`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 As an example, here is how you could display the contents of a [binary log](../../server-management/server-monitoring-logs/binary-log/) file\
 named "mariadb-bin.000152":

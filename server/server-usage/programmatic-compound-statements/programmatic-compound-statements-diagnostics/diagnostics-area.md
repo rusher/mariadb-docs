@@ -17,22 +17,22 @@ Each condition has several properties, which are explained here.
 
 The following table shows the type and size of all the properties:
 
-| Property name       | Property type     | Notes                                                                                                                                                                                |
-| ------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Property name       | Property type     | Notes                                                                                                                                                                                |
-| RETURNED\_SQLSTATE  | VARCHAR(5)        |                                                                                                                                                                                      |
-| MYSQL\_ERRNO        | SMALLINT UNSIGNED |                                                                                                                                                                                      |
-| MESSAGE\_TEXT       | VARCHAR(512)      | Before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), was VARCHAR(128) |
-| CLASS\_ORIGIN       | VARCHAR(64)       |                                                                                                                                                                                      |
-| SUBCLASS\_ORIGIN    | VARCHAR(64)       |                                                                                                                                                                                      |
-| CONSTRAINT\_CATALOG | VARCHAR(64)       |                                                                                                                                                                                      |
-| CONSTRAINT\_SCHEMA  | VARCHAR(64)       |                                                                                                                                                                                      |
-| CONSTRAINT\_NAME    | VARCHAR(64)       |                                                                                                                                                                                      |
-| CATALOG\_NAME       | VARCHAR(64)       |                                                                                                                                                                                      |
-| SCHEMA\_NAME        | VARCHAR(64)       |                                                                                                                                                                                      |
-| TABLE\_NAME         | VARCHAR(64)       |                                                                                                                                                                                      |
-| COLUMN\_NAME        | VARCHAR(64)       |                                                                                                                                                                                      |
-| CURSOR\_NAME        | VARCHAR(64)       |                                                                                                                                                                                      |
+| Property name       | Property type     | Notes                                                                                                                                                                                                      |
+| ------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Property name       | Property type     | Notes                                                                                                                                                                                                      |
+| RETURNED\_SQLSTATE  | VARCHAR(5)        |                                                                                                                                                                                                            |
+| MYSQL\_ERRNO        | SMALLINT UNSIGNED |                                                                                                                                                                                                            |
+| MESSAGE\_TEXT       | VARCHAR(512)      | Before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), was VARCHAR(128) |
+| CLASS\_ORIGIN       | VARCHAR(64)       |                                                                                                                                                                                                            |
+| SUBCLASS\_ORIGIN    | VARCHAR(64)       |                                                                                                                                                                                                            |
+| CONSTRAINT\_CATALOG | VARCHAR(64)       |                                                                                                                                                                                                            |
+| CONSTRAINT\_SCHEMA  | VARCHAR(64)       |                                                                                                                                                                                                            |
+| CONSTRAINT\_NAME    | VARCHAR(64)       |                                                                                                                                                                                                            |
+| CATALOG\_NAME       | VARCHAR(64)       |                                                                                                                                                                                                            |
+| SCHEMA\_NAME        | VARCHAR(64)       |                                                                                                                                                                                                            |
+| TABLE\_NAME         | VARCHAR(64)       |                                                                                                                                                                                                            |
+| COLUMN\_NAME        | VARCHAR(64)       |                                                                                                                                                                                                            |
+| CURSOR\_NAME        | VARCHAR(64)       |                                                                                                                                                                                                            |
 
 These properties can never be set to NULL. If they are empty, the empty string is used.
 
@@ -42,7 +42,7 @@ The most common ones have a value for all built-in errors, and can be read both 
 
 RETURNED\_SQLSTATE is the SQLSTATE of the condition. It is a five characters code, composed by a class (first two characters) and a subclass (last three characters). For more information about this property, refer to the [SQLSTATE](sqlstate.md) page.
 
-MYSQL\_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md). The API function to read it is mysql\_errno().
+MYSQL\_ERRNO is the error code. Each built-in condition has a unique numeric code. 0 indicates success, but it cannot be explicitly set or read via SQL. For a list of built-in error codes, refer to [MariaDB Error Codes](broken-reference). The API function to read it is mysql\_errno().
 
 MESSAGE\_TEXT is a descriptive, human-readable message. For built-in errors, parsing this string is the only way to get more information about the error. For example, parsing a message like "Table 'tab1' already exists", a program can find out that the missing table is tab1. The API function to read it is mysql\_error().
 
@@ -115,6 +115,6 @@ All these statements can also be executed inside a stored routine. However, only
 * [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md)
 * [SHOW ERRORS](../../../reference/sql-statements/administrative-sql-statements/show/show-errors.md)
 * [DECLARE HANDLER](../declare-handler.md)
-* [MariaDB Error Codes](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
+* [MariaDB Error Codes](broken-reference)
 
 CC BY-SA / Gnu FDL

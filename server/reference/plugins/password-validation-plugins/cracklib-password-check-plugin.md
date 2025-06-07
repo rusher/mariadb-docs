@@ -1,6 +1,6 @@
 # Cracklib Password Check Plugin
 
-`cracklib_password_check` is a [password validation](../../mariadb-internals/password-validation.md) plugin. It uses the [CrackLib](https://github.com/cracklib/cracklib) library to check the strength of new passwords. CrackLib is installed by default in many Linux distributions, since the system's [Pluggable Authentication Module (PAM)](https://en.wikipedia.org/wiki/Pluggable_authentication_module) authentication framework is usually configured to check the strength of new passwords with the `[pam_cracklib](https://linux.die.net/man/8/pam_cracklib)` PAM module.
+`cracklib_password_check` is a [password validation](broken-reference) plugin. It uses the [CrackLib](https://github.com/cracklib/cracklib) library to check the strength of new passwords. CrackLib is installed by default in many Linux distributions, since the system's [Pluggable Authentication Module (PAM)](https://en.wikipedia.org/wiki/Pluggable_authentication_module) authentication framework is usually configured to check the strength of new passwords with the `[pam_cracklib](https://linux.die.net/man/8/pam_cracklib)` PAM module.
 
 Note that passwords can be directly set as a hash, bypassing the password validation, if the [strict\_password\_validation](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) variable is `OFF` (it is `ON` by default).
 
@@ -93,7 +93,7 @@ ERROR 1819 (HY000): Your password does not satisfy the current policy requiremen
 
 ### Issues with PAM Authentication Plugin
 
-Prior to [MariaDB 10.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1040-release-notes), all [password validation plugins](./) are incompatible with the `[pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin. See [Authentication Plugin - PAM: Conflicts with Password Validation](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#conflicts-with-password-validation) for more information.
+Prior to [MariaDB 10.4.0](broken-reference), all [password validation plugins](./) are incompatible with the `[pam](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md)` authentication plugin. See [Authentication Plugin - PAM: Conflicts with Password Validation](../authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#conflicts-with-password-validation) for more information.
 
 ### SELinux
 
@@ -147,12 +147,12 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 
 ## Versions
 
-| Version | Status | Introduced                                                                                                                                                    |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                    |
-| 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
-| 1.0     | Gamma  | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
-| 1.0     | Alpha  | [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes) |
+| Version | Status | Introduced                                                                                                                                                                          |
+| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version | Status | Introduced                                                                                                                                                                          |
+| 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
+| 1.0     | Gamma  | [MariaDB 10.1.13](broken-reference)                                                                                                                                                 |
+| 1.0     | Alpha  | [MariaDB 10.1.2](broken-reference)                                                                                                                                                  |
 
 ## System Variables
 
@@ -183,7 +183,7 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 
 ## See Also
 
-* [Password Validation](../../mariadb-internals/password-validation.md)
+* [Password Validation](broken-reference)
 * [simple\_password\_check plugin](simple-password-check-plugin.md) - permits the setting of basic criteria for passwords
 
 CC BY-SA / Gnu FDL

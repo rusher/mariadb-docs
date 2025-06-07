@@ -29,7 +29,7 @@ In previous releases, setting a unique index on a column that uses the `BLOB` da
 
 ### Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), `BLOB` is a synonym for `LONGBLOB`.
+In [Oracle mode](broken-reference), `BLOB` is a synonym for `LONGBLOB`.
 
 ## EXAMPLES
 
@@ -87,6 +87,6 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Oracle mode from MariaDB 10.3](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

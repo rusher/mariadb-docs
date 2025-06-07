@@ -43,7 +43,7 @@ master_def:
 
 `CHANGE MASTER` is used on a replica to setup or change [replication](../../../../ha-and-performance/standard-replication/) settings for connecting to the primary.
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to\
 using the channel\_name directly after `CHANGE MASTER`.
@@ -80,9 +80,9 @@ START SLAVE 'gandalf';
 
 #### MASTER\_USER
 
-The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](broken-reference) will use to connect to the [primary](broken-reference).
+The `MASTER_USER` option for `CHANGE MASTER` defines the user account that the [replica](broken-reference/) will use to connect to the [primary](broken-reference/).
 
-This user account will need the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-statements/grant.md#replication-replica) on the primary.
+This user account will need the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege (or, from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes), the [REPLICATION REPLICA](../../account-management-sql-statements/grant.md#replication-replica) on the primary.
 
 For example:
 
@@ -94,11 +94,11 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), and 128 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
+The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and 128 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
 
 #### MASTER\_PASSWORD
 
-The `MASTER_PASSWORD` option for `CHANGE MASTER` defines the password that the [replica](broken-reference) will use to connect to the [primary](broken-reference) as the user account defined by the [MASTER\_USER](change-master-to.md#master_user) option.
+The `MASTER_PASSWORD` option for `CHANGE MASTER` defines the password that the [replica](broken-reference/) will use to connect to the [primary](broken-reference/) as the user account defined by the [MASTER\_USER](change-master-to.md#master_user) option.
 
 For example:
 
@@ -117,9 +117,9 @@ Due to [MDEV-29994](https://jira.mariadb.org/browse/MDEV-29994), the password ca
 
 #### MASTER\_HOST
 
-The `MASTER_HOST` option for `CHANGE MASTER` defines the hostname or IP address of the [primary](broken-reference).
+The `MASTER_HOST` option for `CHANGE MASTER` defines the hostname or IP address of the [primary](broken-reference/).
 
-If you set the value of the `MASTER_HOST` option to the empty string, then that is not the same as not setting the option's value at all. If you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command will fail with an error. In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and before, if you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command would succeed, but the subsequent [START SLAVE](start-replica.md) command would fail.
+If you set the value of the `MASTER_HOST` option to the empty string, then that is not the same as not setting the option's value at all. If you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command will fail with an error. In [MariaDB 5.3](broken-reference) and before, if you set the value of the `MASTER_HOST` option to the empty string, then the `CHANGE MASTER` command would succeed, but the subsequent [START SLAVE](start-replica.md) command would fail.
 
 For example:
 
@@ -142,11 +142,11 @@ log](../../../../server-management/server-monitoring-logs/binary-log/) file name
 Replicas cannot connect to primaries using Unix socket files or Windows named pipes. The replica must connect to the primary using TCP/IP.
 {% endhint %}
 
-The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), and 255 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106).
+The maximum length of the `MASTER_HOST` string is 60 characters until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and 255 characters from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
 
 #### MASTER\_PORT
 
-The `MASTER_PORT` option for `CHANGE MASTER` defines the TCP/IP port of the [primary](broken-reference).
+The `MASTER_PORT` option for `CHANGE MASTER` defines the TCP/IP port of the [primary](broken-reference/).
 
 For example:
 
@@ -379,7 +379,7 @@ The maximum length of `MASTER_SSL_CIPHER` string is 511 characters.
 
 #### MASTER\_SSL\_VERIFY\_SERVER\_CERT
 
-The `MASTER_SSL_VERIFY_SERVER_CERT` option for `CHANGE MASTER` enables [server certificate verification](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), and enabled by default from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114).
+The `MASTER_SSL_VERIFY_SERVER_CERT` option for `CHANGE MASTER` enables [server certificate verification](../../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#server-certificate-verification). This option is disabled by default prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), and enabled by default from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
 
 For example:
 
@@ -498,7 +498,7 @@ The [RELAY\_LOG\_FILE](change-master-to.md#relay_log_file) and [RELAY\_LOG\_POS]
 The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the replica to use the [global transaction ID (GTID)](../../../../ha-and-performance/standard-replication/gtid.md) when connecting to a primary. The possible values are:
 
 * `current_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_current\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid\_current\_pos with gtid\_binlog\_pos and gtid\_slave\_pos. Use the new, safe, [MASTER\_DEMOTE\_TO\_SLAVE=](change-master-to.md#master_demote_to_slave) option instead.
-* `slave_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
+* `slave_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
 * `no` - Don't replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode.
 
 For example:
@@ -522,7 +522,7 @@ START SLAVE;
 
 #### MASTER\_DEMOTE\_TO\_SLAVE
 
-**MariaDB starting with** [**10.10**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
+**MariaDB starting with** [**10.10**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 Used to transition a primary to become a replica. Replaces the old [MASTER\_USE\_GTID=current\_pos](change-master-to.md#master_use_gtid) with a safe alternative by forcing users to set `Using_Gtid=Slave_Pos` and merging `gtid_binlog_pos` into `gtid_slave_pos` once at `CHANGE MASTER TO` time. If `gtid_slave_pos` is more\
 recent than `gtid_binlog_pos` (as in the case of chain replication), the replication state should be preserved.
@@ -542,7 +542,7 @@ Also see [Replication filters](../../../../ha-and-performance/standard-replicati
 
 #### IGNORE\_SERVER\_IDS
 
-The `IGNORE_SERVER_IDS` option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to ignore [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events that originated from certain servers. Filtered [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events will not get logged to the replica’s [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The `IGNORE_SERVER_IDS` option for `CHANGE MASTER` can be used to configure a [replica](broken-reference/) to ignore [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events that originated from certain servers. Filtered [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events will not get logged to the replica’s [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 The option's value can be specified by providing a comma-separated list of [server\_id](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) values. For example:
 
@@ -564,7 +564,7 @@ START SLAVE;
 
 #### DO\_DOMAIN\_IDS
 
-The `DO_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to only apply [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events if the transaction's [GTID](../../../../ha-and-performance/standard-replication/gtid.md) is in a specific [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events will not get logged to the replica’s [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The `DO_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](broken-reference/) to only apply [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events if the transaction's [GTID](../../../../ha-and-performance/standard-replication/gtid.md) is in a specific [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events will not get logged to the replica’s [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 The option's value can be specified by providing a comma-separated list of [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id) values. Duplicate values are automatically ignored. For example:
 
@@ -602,7 +602,7 @@ The `DO_DOMAIN_IDS` option can only be specified if the replica is replicating i
 
 #### IGNORE\_DOMAIN\_IDS
 
-The `IGNORE_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](broken-reference) to ignore [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events if the transaction's [GTID](../../../../ha-and-performance/standard-replication/gtid.md) is in a specific [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events will not get logged to the replica’s [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
+The `IGNORE_DOMAIN_IDS` option for `CHANGE MASTER` can be used to configure a [replica](broken-reference/) to ignore [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events if the transaction's [GTID](../../../../ha-and-performance/standard-replication/gtid.md) is in a specific [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id) value. Filtered [binary log](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/binary_log/) events will not get logged to the replica’s [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md), and they will not be applied by the replica.
 
 The option's value can be specified by providing a comma-separated list of [gtid\_domain\_id](../../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id) values. Duplicate values are automatically ignored. For example:
 

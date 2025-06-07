@@ -14,7 +14,7 @@ The binary log files will have a series of numbers as filename extensions. Each 
 
 A new binary log, with a new extension, is created every time the server starts, the logs are flushed, or the maximum size is reached (determined by [max\_binlog\_size](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_size)).
 
-The binary log index file contains a master list of all the binary logs, in order. From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), if [GTID binlog indexing](../../../ha-and-performance/standard-replication/gtid.md#binlog-indexing) is enabled (the default), an additional index file (`.idx`) is present.
+The binary log index file contains a master list of all the binary logs, in order. From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), if [GTID binlog indexing](../../../ha-and-performance/standard-replication/gtid.md#binlog-indexing) is enabled (the default), an additional index file (`.idx`) is present.
 
 A sample listing from a directory containing the binary logs:
 
@@ -35,7 +35,7 @@ total 100
 
 The binary log index file will by default have the same name as the individual binary logs, with the extension .index. You can specify an alternative name with the `--log-bin-index[=filename]` [option](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin_index).
 
-Clients with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege (or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) variable.
+Clients with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege (or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#binlog-admin) privilege, can disable and re-enable the binary log for the current session by setting the [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) variable.
 
 ```
 SET sql_log_bin = 0;

@@ -21,7 +21,7 @@ MAX() can be used as a [window function](../special-functions/window-functions/)
 
 `MAX()` returns `NULL` if there were no matching rows.
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../sql-statements/data-definition/create/create-table.md#index-types) can be used to optimize MAX.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), not only ascending but also [descending indexes](../../sql-statements/data-definition/create/create-table.md#index-types) can be used to optimize MAX.
 
 ## Examples
 
@@ -119,7 +119,7 @@ SELECT name, test, score, MAX(score)
 * [AVG](avg.md) (average)
 * [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
-* [MIN/MAX optimization](../../mariadb-internals/mariadb-internals-documentation-query-optimizer/minmax-optimization.md) used by the optimizer
+* [MIN/MAX optimization](broken-reference) used by the optimizer
 * [GREATEST()](../../sql-structure/operators/comparison-operators/greatest.md) returns the largest value from a list
 
 GPLv2 fill\_help\_tables.sql

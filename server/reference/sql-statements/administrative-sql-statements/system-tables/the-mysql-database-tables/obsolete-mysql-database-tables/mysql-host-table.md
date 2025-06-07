@@ -2,7 +2,7 @@
 
 ### Usage
 
-Until [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), the `mysql.host` table contained information about hosts and their related privileges. When determining permissions, if a matching record in the [mysql.db table](../mysql-db-table.md) had a blank host value, the mysql.host table would be examined.
+Until [MariaDB 5.5](broken-reference), the `mysql.host` table contained information about hosts and their related privileges. When determining permissions, if a matching record in the [mysql.db table](../mysql-db-table.md) had a blank host value, the mysql.host table would be examined.
 
 This table is not affected by any [GRANT](../../../../account-management-sql-statements/grant.md) statements, and had to be updated manually.
 

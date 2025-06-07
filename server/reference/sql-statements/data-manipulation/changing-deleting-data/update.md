@@ -32,7 +32,7 @@ updated. If the [ORDER BY](../selecting-data/order-by.md) clause is specified, t
 updated in the order that is specified. The [LIMIT](../selecting-data/limit.md) clause\
 places a limit on the number of rows that can be updated.
 
-Both clauses can be used with multiple-table updates. Prior to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), for the multiple-table syntax, `UPDATE` updates rows in each table named in table\_references that satisfy the conditions. In this case,[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md) could not be used.
+Both clauses can be used with multiple-table updates. Prior to [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), for the multiple-table syntax, `UPDATE` updates rows in each table named in table\_references that satisfy the conditions. In this case,[ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md) could not be used.
 
 An `UPDATE` can also reference tables which are located in different databases; see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) for the syntax.
 

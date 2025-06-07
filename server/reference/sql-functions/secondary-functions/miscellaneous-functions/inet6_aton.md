@@ -16,9 +16,9 @@ The returned binary string will be [VARBINARY(16)](../../../data-types/string-da
 
 Returns NULL if the argument is not understood.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes), `INET6_ATON` can take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
+From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), `INET6_ATON` can take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
 
 ## Examples
 

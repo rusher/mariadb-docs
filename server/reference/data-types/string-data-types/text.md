@@ -95,7 +95,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## Indexing
 
-A [unique index](../../../../en/getting-started-with-indexes/#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
+A [unique index](../../../../en/getting-started-with-indexes/#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](broken-reference)
 
 Internally, this uses hash indexing to quickly check the values and if a hash collision is found, the actual stored values are compared in order to retain the uniqueness.
 

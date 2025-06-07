@@ -33,7 +33,7 @@ error_property_name:
 
 Sometimes an error [HANDLER](../../reference/sql-structure/nosql/handler/) just needs to [SIGNAL](signal.md) the same error it received, optionally with some changes. Usually the [RESIGNAL](resignal.md) statement is the most convenient way to do this.
 
-`error_condition` can be an [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) value or a named error condition defined via [DECLARE CONDITION](declare-condition.md). [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) must be a constant string consisting of five characters. These codes are standard to ODBC and ANSI SQL. For customized errors, the recommended [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) is '45000'. For a list of SQLSTATE values used by MariaDB, see the [MariaDB Error Codes](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md) page. The [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) can be read via the API method `mysql_sqlstate( )`.
+`error_condition` can be an [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) value or a named error condition defined via [DECLARE CONDITION](declare-condition.md). [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) must be a constant string consisting of five characters. These codes are standard to ODBC and ANSI SQL. For customized errors, the recommended [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) is '45000'. For a list of SQLSTATE values used by MariaDB, see the [MariaDB Error Codes](broken-reference) page. The [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md) can be read via the API method `mysql_sqlstate( )`.
 
 To specify error properties user-defined variables and [local variables](declare-variable.md) can be used, as well as [character set conversions](../../reference/data-types/string-data-types/character-sets/setting-character-sets-and-collations.md#literals) (but you can't set a collation).
 
@@ -148,6 +148,6 @@ END;
 * [RESIGNAL](resignal.md)
 * [DECLARE HANDLER](declare-handler.md)
 * [Stored Routines](../stored-routines/)
-* [MariaDB Error Codes](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
+* [MariaDB Error Codes](broken-reference)
 
 CC BY-SA / Gnu FDL

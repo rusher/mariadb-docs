@@ -91,11 +91,11 @@ insert **many** rows at a time, where it may be faster to create a file\
 locally, add the rows there, and then use `LOAD DATA INFILE` to load them;\
 compared to using `INSERT` to insert the rows.
 
-You will also get [progress reporting](../../../reference/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting.md) for`LOAD DATA INFILE`.
+You will also get [progress reporting](broken-reference) for`LOAD DATA INFILE`.
 
 ### mariadb-import
 
-You can import many files in parallel with [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)). For example:
+You can import many files in parallel with [mariadb-import](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (`mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)). For example:
 
 ```
 mariadb-import --use-threads=10 database text-file-name [text-file-name...]

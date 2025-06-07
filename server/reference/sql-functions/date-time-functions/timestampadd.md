@@ -16,7 +16,7 @@ The unit value may be specified using one of keywords as shown, or\
 with a prefix of SQL\_TSI\_. For example, DAY and SQL\_TSI\_DAY both are\
 legal.
 
-Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), FRAC\_SECOND was permitted as a synonym for MICROSECOND.
+Before [MariaDB 5.5](broken-reference), FRAC\_SECOND was permitted as a synonym for MICROSECOND.
 
 ## Examples
 

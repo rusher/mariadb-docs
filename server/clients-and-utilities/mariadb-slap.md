@@ -4,7 +4,7 @@
 
 `mariadb-slap` is a tool for load-testing MariaDB. It allows you to emulate multiple concurrent connections, and run a set of queries multiple times.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlslap`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlslap`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It returns a benchmark including the following information:
 
@@ -58,7 +58,7 @@ mariadb-slap [options]
 \| -e name, --engine=name | Comma separated list of storage engines to use for creating the table. The test is run for each engine. You can also specify an option for an engine after a #:#, for example memory:max\_row=2300. |\
 \| -?, --help | Display help and exit. |\
 \| -h name, --host=name | Connect to the MariaDB server on the given host. |\
-\| --init-command=name | SQL Command to execute when connecting to the MariaDB server. Will automatically be re-executed when reconnecting. Added in [MariaDB 5.5.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes). |\
+\| --init-command=name | SQL Command to execute when connecting to the MariaDB server. Will automatically be re-executed when reconnecting. Added in [MariaDB 5.5.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5534-release-notes). |\
 \| -i num, --iterations=num | Number of times to run the tests. |\
 \| --no-defaults | Don't read default options from any option file. Must be given as the first option. |\
 \| --no-drop | Do not drop any schema created during the test after the test is complete. |\
@@ -117,14 +117,14 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 `mariadb-slap` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group             | Description                                                                                                                                                                                                        |
-| ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Group             | Description                                                                                                                                                                                                        |
-| \[mysqlslap]      | Options read by mariadb-slap, which includes both MariaDB Server and MySQL Server.                                                                                                                                 |
-| \[mariadb-slap]   | Options read by mariadb-slap. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](../../kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump.                                                    |
-| \[client-server]  | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients.         |
-| \[client-mariadb] | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/).                                                                                                                                     |
+| Group             | Description                                                                                                                                                                                                                              |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Group             | Description                                                                                                                                                                                                                              |
+| \[mysqlslap]      | Options read by mariadb-slap, which includes both MariaDB Server and MySQL Server.                                                                                                                                                       |
+| \[mariadb-slap]   | Options read by mariadb-slap. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
+| \[client]         | Options read by all MariaDB and MySQL [client programs](../../kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump.                                                                          |
+| \[client-server]  | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients.                               |
+| \[client-mariadb] | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/).                                                                                                                                                           |
 
 ### Examples
 

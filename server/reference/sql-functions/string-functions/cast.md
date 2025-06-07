@@ -18,19 +18,19 @@ The type can be one of the following values:
 * [DATETIME](../../data-types/date-and-time-data-types/datetime.md)
 * \[DECIMAL[(M\[,D\])](../../data-types/numeric-data-types/decimal.md)]
 * [DOUBLE](../../data-types/numeric-data-types/double.md)
-* [FLOAT](../../data-types/numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
+* [FLOAT](../../data-types/numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
 * [INTEGER](../../data-types/numeric-data-types/int.md)
   * Short for `SIGNED INTEGER`
 * SIGNED \[INTEGER]
 * UNSIGNED \[INTEGER]
 * [TIME](../../data-types/date-and-time-data-types/time.md)
-* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
+* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](broken-reference), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
 
 The main difference between `CAST` and [CONVERT()](convert.md) is that `[CONVERT(expr,type)](convert.md)` is ODBC syntax while `CAST(expr as type)` and `[CONVERT(... USING ...)](convert.md)` are SQL92 syntax.
 
-In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, you can use the `CAST()` function with the `INTERVAL` keyword.
+In [MariaDB 10.4](broken-reference) and later, you can use the `CAST()` function with the `INTERVAL` keyword.
 
-Until [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes), `X'HHHH'`, the standard SQL syntax for binary string literals, erroneously worked in the same way as `0xHHHH`. In 5.5.31 it was intentionally changed to behave as a string in all contexts (and never as a number).
+Until [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes), `X'HHHH'`, the standard SQL syntax for binary string literals, erroneously worked in the same way as `0xHHHH`. In 5.5.31 it was intentionally changed to behave as a string in all contexts (and never as a number).
 
 This introduced an incompatibility with previous versions of MariaDB, and all versions of MySQL (see the example below).
 
@@ -105,7 +105,7 @@ ORDER BY CAST(enum_field AS CHAR);
 +------------+
 ```
 
-From [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes), the following will trigger warnings, since `x'aa'` and `'X'aa'` no longer behave as a number. Previously, and in all versions of MySQL, no warnings are triggered since they did erroneously behave as a number:
+From [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes), the following will trigger warnings, since `x'aa'` and `'X'aa'` no longer behave as a number. Previously, and in all versions of MySQL, no warnings are triggered since they did erroneously behave as a number:
 
 ```
 SELECT CAST(0xAA AS UNSIGNED), CAST(x'aa' AS UNSIGNED), CAST(X'aa' AS UNSIGNED);

@@ -2,7 +2,7 @@
 
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 
-Getting [replication](broken-reference) working involves steps on both the master server/s and steps on the replica server/s.
+Getting [replication](broken-reference/) working involves steps on both the master server/s and steps on the replica server/s.
 
 ### Setting up a Replication Replica with MariaDB-Backup
 
@@ -50,7 +50,7 @@ log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/mariadb-vs-mysql-compatibility#mysql-80).
+For replication from MySQL 8.0 to MariaDB [requires slight more configurations](broken-reference).
 
 ### Settings to Check
 
@@ -142,7 +142,7 @@ Slave_SQL_Running: Yes
 * Replication from MySQL 5.6 with GTID, binlog\_rows\_query\_log\_events and ignorable events works. In this case MariaDB will remove the MySQL GTIDs and other unneeded events and instead adds its own GTIDs.
 * \[Replication from MySQL 8.
 
-## to MariaDB]\(https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#mysql-80) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
+## to MariaDB]\(https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#mysql-80) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
 
 ### See Also
 
@@ -156,6 +156,6 @@ Slave_SQL_Running: Yes
 * [Replication and Binary Log Status Variables](replication-and-binary-log-status-variables.md)
 * [Semisynchronous Replication](semisynchronous-replication.md)
 * [Delayed Replication](delayed-replication.md)
-* [Replication Compatibility Between MariaDB and MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/replication-compatibility-between-mariadb-and-mysql)
+* [Replication Compatibility Between MariaDB and MySQL](broken-reference)
 
 CC BY-SA / Gnu FDL

@@ -7,6 +7,6 @@
 * Data Type: `numeric (double)`
 * Default Value: `31536000.000000`
 * Range: `0` to `31536000`
-* Introduced: [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+* Introduced: [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
 CC BY-SA / Gnu FDL

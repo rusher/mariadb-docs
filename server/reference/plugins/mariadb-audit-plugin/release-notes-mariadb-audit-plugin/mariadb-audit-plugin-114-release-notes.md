@@ -21,7 +21,7 @@ If you want to download the MariaDB Audit Plugin separately from the MariaDB ser
 
 ## Added platform and database server support
 
-* The Audit Plugin is now supported in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and as said above it will be included by default into [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), starting from version 10.0.9
+* The Audit Plugin is now supported in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and as said above it will be included by default into [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), starting from version 10.0.9
 * Previous versions of the Audit Plugin couldn't be used with Percona Server, but now support for that has been added.
 
 ## Bug Fixes

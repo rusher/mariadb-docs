@@ -101,10 +101,10 @@ If `[SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md)` does
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA unix_socket;
 ```
 
-**MariaDB starting with** [**11.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
+**MariaDB starting with** [**11.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116)
 
-Prior to [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the plugin only checked whether the OS socket user id matched the MariaDB user name, and ignored the authentication string.\
-From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the authentication string, if present, will be compared with the socket's user name, and authentication can proceed if there's a match. The [external\_user](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable will contain the OS user in this case.\
+Prior to [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the plugin only checked whether the OS socket user id matched the MariaDB user name, and ignored the authentication string.\
+From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), the authentication string, if present, will be compared with the socket's user name, and authentication can proceed if there's a match. The [external\_user](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) system variable will contain the OS user in this case.\
 For example, assuming an OS user of 'bob':
 
 ```
@@ -182,11 +182,11 @@ In this example, a user `serg` is already logged into the operating system and h
 
 ## Versions
 
-| Version | Status | Introduced                                                                                                                                                    |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                    |
-| 1.0     | Stable | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) |
-| 1.0     | Beta   | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes)      |
+| Version | Status | Introduced                                                                                                                                                                     |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Version | Status | Introduced                                                                                                                                                                     |
+| 1.0     | Stable | [MariaDB 10.0.11](broken-reference)                                                                                                                                            |
+| 1.0     | Beta   | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes) |
 
 ## Options
 

@@ -41,9 +41,9 @@ InnoDB's file-per-table tablespaces are transportable, which means that you can 
 
 You can copy the transportable tablespace of a non-partitioned table from one server to another by exporting the tablespace file from the original server, and then importing the tablespace file into the new server.
 
-**MariaDB starting with** [**11.2.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes)
+**MariaDB starting with** [**11.2.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes)
 
-The workflow is simplified starting from [MariaDB 11.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes). On the source server, simply do:
+The workflow is simplified starting from [MariaDB 11.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-1-release-notes). On the source server, simply do:
 
 ```sql
 FLUSH TABLES t1 FOR EXPORT;
@@ -305,7 +305,7 @@ DROP TABLE test.t2_placeholder;
 
 #### Differing Storage Formats for Temporal Columns
 
-[MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes) added the [mysql56\_temporal\_format](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable, which enables a new MySQL 5.6-compatible storage format for the [TIME](../../../data-types/date-and-time-data-types/time.md), [DATETIME](../../../data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../data-types/date-and-time-data-types/timestamp.md) data types.
+[MariaDB 10.1.2](broken-reference) added the [mysql56\_temporal\_format](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable, which enables a new MySQL 5.6-compatible storage format for the [TIME](../../../data-types/date-and-time-data-types/time.md), [DATETIME](../../../data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../data-types/date-and-time-data-types/timestamp.md) data types.
 
 If a file-per-tablespace file contains columns that use one or more of these temporal data types and if the tablespace file's original table was created with a certain storage format for these columns, then the tablespace file can only be imported into tables that were also created with the same storage format for these columns as the original table. Otherwise, you will see errors like the following:
 
@@ -316,7 +316,7 @@ ERROR 1808 (HY000): Schema mismatch (Column dt precise type mismatch.)
 
 See [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225) for more information.
 
-See the pages for the [TIME](../../../data-types/date-and-time-data-types/time.md), [DATETIME](../../../data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../data-types/date-and-time-data-types/timestamp.md) data types to determine how to update the storage format for temporal columns in tables that were created before [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-2-release-notes) or that were created with [mysql56\_temporal\_format=OFF](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format).
+See the pages for the [TIME](../../../data-types/date-and-time-data-types/time.md), [DATETIME](../../../data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../data-types/date-and-time-data-types/timestamp.md) data types to determine how to update the storage format for temporal columns in tables that were created before [MariaDB 10.1.2](broken-reference) or that were created with [mysql56\_temporal\_format=OFF](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format).
 
 #### Differing ROW\_FORMAT Values
 
@@ -329,7 +329,7 @@ ALTER TABLE t0 IMPORT TABLESPACE;
 ERROR 1808 (HY000): Schema mismatch (Expected FSP_SPACE_FLAGS=0x21, .ibd file contains 0x0.)
 ```
 
-The error message is a bit more descriptive in [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes) and later:
+The error message is a bit more descriptive in [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes) and later:
 
 ```sql
 ALTER TABLE t0 IMPORT TABLESPACE;

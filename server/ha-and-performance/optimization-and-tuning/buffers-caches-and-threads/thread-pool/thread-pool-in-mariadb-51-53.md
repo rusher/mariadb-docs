@@ -1,8 +1,8 @@
 # Thread Pool in MariaDB 5.1 - 5.3
 
-This article describes the old thread pool in [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) - 5.3.
+This article describes the old thread pool in [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) - 5.3.
 
-[MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and later use an improved thread pool - see [Thread pool in MariaDB](thread-pool-in-mariadb.md).
+[MariaDB 5.5](broken-reference) and later use an improved thread pool - see [Thread pool in MariaDB](thread-pool-in-mariadb.md).
 
 ## About pool of threads
 

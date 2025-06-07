@@ -21,7 +21,7 @@ Quotes are optional for the character set or collation clauses.
 
 ## Examples
 
-Prior to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), the utf8 [character set](./) (and related collation) was the default for the given variables:
+Prior to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), the utf8 [character set](./) (and related collation) was the default for the given variables:
 
 ```
 SELECT VARIABLE_NAME, SESSION_VALUE 
@@ -87,7 +87,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE
 +--------------------------+-------------------+
 ```
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117), the utf8 [character set](./) (and related collations) became an alias for utf8mb3 rather than the other way around. [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114) added the [character\_set\_collations](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations) variable, so the SELECT query is more specific in this example:
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), the utf8 [character set](./) (and related collations) became an alias for utf8mb3 rather than the other way around. [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114) added the [character\_set\_collations](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations) variable, so the SELECT query is more specific in this example:
 
 ```
 SELECT VARIABLE_NAME, SESSION_VALUE 
@@ -123,7 +123,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE
 +--------------------------+--------------------+
 ```
 
-From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-8-series/what-is-mariadb-118), `utf8mb4` became the default for the affected variables:
+From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118), `utf8mb4` became the default for the affected variables:
 
 ```
 SET NAMES DEFAULT;                

@@ -30,13 +30,13 @@ has been run on the slave, otherwise statistics about index cardinality will\
 not be available. In the absence of index cardinality, the first unique index\
 will be chosen, if any, else the first non-unique index.
 
-Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the slave would always choose the first index without\
+Prior to [MariaDB 5.3](broken-reference), the slave would always choose the first index without\
 considering cardinality. The slave could even choose an unusable index (like\
 FULLTEXT) if no other index was available ([MySQL Bug #58997](https://bugs.mysql.com/bug.php?id=58997)), causing row-based\
-replication to break in this case; this was also fixed in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
+replication to break in this case; this was also fixed in [MariaDB 5.3](broken-reference).
 
 ## See Also
 
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](broken-reference)
 
 CC BY-SA / Gnu FDL

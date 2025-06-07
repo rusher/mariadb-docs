@@ -2,13 +2,13 @@
 
 ## Syntax
 
-<= [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
+<= [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)
 
 ```
 OPEN cursor_name
 ```
 
-From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 ```
 OPEN cursor_name [expression[,...]];
@@ -30,6 +30,6 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [DECLARE CURSOR](declare-cursor.md)
 * [FETCH cursor\_name](fetch.md)
 * [CLOSE cursor\_name](close.md)
-* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Cursors in Oracle mode](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

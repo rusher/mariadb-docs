@@ -1,8 +1,8 @@
 # JSON\_TABLE
 
-**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes)
+**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
 
-JSON\_TABLE was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1060-release-notes).
+JSON\_TABLE was added in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes).
 
 JSON\_TABLE is a table function that converts JSON data into a relational form.
 
@@ -249,9 +249,9 @@ In the current code, evaluation of JSON\_TABLE is deterministic, that is, for a 
 
 ### Extracting a Subdocument into a Column
 
-**MariaDB starting with** [**10.6.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1069-release-notes)
+**MariaDB starting with** [**10.6.9**](broken-reference)
 
-Prior to [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1069-release-notes), JSON\_TABLE did not allow one to extract a JSON "subdocument" into a JSON column.
+Prior to [MariaDB 10.6.9](broken-reference), JSON\_TABLE did not allow one to extract a JSON "subdocument" into a JSON column.
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;
@@ -262,7 +262,7 @@ SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.fo
 +-------+
 ```
 
-This is supported from [MariaDB 10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-1069-release-notes):
+This is supported from [MariaDB 10.6.9](broken-reference):
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;

@@ -18,7 +18,7 @@ Unlike [BINARY](binary.md) values, VARBINARYs are not right-padded when insertin
 
 ### Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), `RAW` is a synonym for `VARBINARY`.
+In [Oracle mode](broken-reference), `RAW` is a synonym for `VARBINARY`.
 
 ## Examples
 
@@ -135,6 +135,6 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 * [VARCHAR](varchar.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Oracle mode from MariaDB 10.3](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

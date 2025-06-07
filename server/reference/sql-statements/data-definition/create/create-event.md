@@ -71,7 +71,7 @@ For valid identifiers to use as event names, see [Identifier Names](../../../sql
 
 #### OR REPLACE
 
-The `OR REPLACE` clause was included in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). If used and the event already exists, instead of an error being returned, the existing event will be dropped and replaced by the newly defined event.
+The `OR REPLACE` clause was included in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). If used and the event already exists, instead of an error being returned, the existing event will be dropped and replaced by the newly defined event.
 
 #### IF NOT EXISTS
 

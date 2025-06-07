@@ -1,8 +1,8 @@
 ---
 description: >-
-  A stored procedure is a routine invoked with a CALL statement. It may have
-  input parameters, output parameters and parameters that are both input
-  parameters and output parameters.
+  Master stored procedures in MariaDB Server. This section covers creating,
+  executing, and managing these powerful routines to encapsulate complex logic
+  and improve application performance.
 ---
 
 # Stored Procedures

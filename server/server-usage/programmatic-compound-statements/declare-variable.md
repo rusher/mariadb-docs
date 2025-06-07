@@ -43,7 +43,7 @@ DECLARE name VARCHAR(5) DEFAULT 'monty';
   DECLARE Y SMALLINT;
 ```
 
-`TYPE OF` and `ROW TYPE OF` from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
+`TYPE OF` and `ROW TYPE OF` from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103):
 
 ```
 DECLARE tmp TYPE OF t1.a; -- Get the data type from the column {{a}} in the table {{t1}}

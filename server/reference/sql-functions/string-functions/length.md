@@ -10,10 +10,10 @@ LENGTH(str)
 
 Returns the length of the string `str`.
 
-In the default mode, when [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#functions) is not set, the length is measured in bytes. In this case, a multi-byte character counts as multiple bytes. This means that for a string\
+In the default mode, when [Oracle mode from MariaDB 10.3](broken-reference) is not set, the length is measured in bytes. In this case, a multi-byte character counts as multiple bytes. This means that for a string\
 containing five two-byte characters, `LENGTH()` returns 10, whereas [CHAR\_LENGTH()](char_length.md) returns 5.
 
-When running [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#functions), the length is measured in characters, and `LENGTH` is a synonym for [CHAR\_LENGTH()](char_length.md).
+When running [Oracle mode from MariaDB 10.3](broken-reference), the length is measured in characters, and `LENGTH` is a synonym for [CHAR\_LENGTH()](char_length.md).
 
 If `str` is not a string value, it is converted into a string. If `str` is `NULL`, the function returns `NULL`.
 
@@ -28,7 +28,7 @@ SELECT LENGTH('MariaDB');
 +-------------------+
 ```
 
-When [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) is not set:
+When [Oracle mode](broken-reference) from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) is not set:
 
 ```
 SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
@@ -39,7 +39,7 @@ SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 +-------------------+--------------+---------------+--------------------+
 ```
 
-In [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#functions):
+In [Oracle mode from MariaDB 10.3](broken-reference):
 
 ```
 SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
@@ -55,6 +55,6 @@ SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 * [CHAR\_LENGTH()](char_length.md)
 * [LENGTHB()](lengthb.md)
 * [OCTET\_LENGTH()](octet_length.md)
-* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#simple-syntax-compatibility)
+* [Oracle mode from MariaDB 10.3](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

@@ -1,6 +1,6 @@
 # index\_merge sort\_intersection
 
-Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the `index_merge` access method supported `union`,`sort-union`, and `intersection` operations. Starting from [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the`sort-intersection` operation is also supported. This allows the use of`index_merge` in a broader number of cases.
+Prior to [MariaDB 5.3](broken-reference), the `index_merge` access method supported `union`,`sort-union`, and `intersection` operations. Starting from [MariaDB 5.3](broken-reference), the`sort-intersection` operation is also supported. This allows the use of`index_merge` in a broader number of cases.
 
 This feature is disabled by default. To enable it, turn on the optimizer switch`index_merge_sort_intersection` like so:
 
@@ -10,7 +10,7 @@ SET optimizer_switch='index_merge_sort_intersection=on'
 
 ## Limitations of index\_merge/intersection
 
-Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the `index_merge` access method had one intersection\
+Prior to [MariaDB 5.3](broken-reference), the `index_merge` access method had one intersection\
 strategy called `intersection`. That strategy can only be used when merged\
 index scans produced rowid-ordered streams. In practice this means that an`intersection` could only be constructed from equality (=) conditions.
 
@@ -43,7 +43,7 @@ our experiments.
 
 ## How index\_merge/sort\_intersection improves the situation
 
-In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), when `index_merge_sort_intersection` is enabled,`index_merge` intersection plans can be constructed from non-equality\
+In [MariaDB 5.3](broken-reference), when `index_merge_sort_intersection` is enabled,`index_merge` intersection plans can be constructed from non-equality\
 conditions:
 
 ```
@@ -74,6 +74,6 @@ The benefit is expected to be bigger for io-bound loads.
 
 ## See Also
 
-* [What is MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+* [What is MariaDB 5.3](broken-reference)
 
 CC BY-SA / Gnu FDL

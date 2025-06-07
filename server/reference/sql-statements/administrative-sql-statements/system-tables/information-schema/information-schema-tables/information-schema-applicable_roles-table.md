@@ -4,13 +4,13 @@ The [Information Schema](../) `APPLICABLE_ROLES` table shows the [role authoriza
 
 It contains the following columns:
 
-| Column        | Description                                        | Added                                                                                                                                                         |
-| ------------- | -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column        | Description                                        | Added                                                                                                                                                         |
-| GRANTEE       | Account that the role was granted to.              |                                                                                                                                                               |
-| ROLE\_NAME    | Name of the role.                                  |                                                                                                                                                               |
-| IS\_GRANTABLE | Whether the role can be granted or not.            |                                                                                                                                                               |
-| IS\_DEFAULT   | Whether the role is the user's default role or not | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
+| Column        | Description                                        | Added                                                                                                                                                                               |
+| ------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column        | Description                                        | Added                                                                                                                                                                               |
+| GRANTEE       | Account that the role was granted to.              |                                                                                                                                                                                     |
+| ROLE\_NAME    | Name of the role.                                  |                                                                                                                                                                                     |
+| IS\_GRANTABLE | Whether the role can be granted or not.            |                                                                                                                                                                                     |
+| IS\_DEFAULT   | Whether the role is the user's default role or not | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 The current role is in the [ENABLED\_ROLES](information-schema-enabled_roles-table.md) Information Schema table.
 

@@ -13,7 +13,7 @@ It contains the following columns:
 
 ## Example
 
-From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
+From [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1057-release-notes), default settings with the Performance Schema enabled:
 
 ```
 SELECT * FROM setup_instruments ORDER BY name;

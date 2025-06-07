@@ -39,6 +39,6 @@ collation_connection: utf8_general_ci
 * [SHOW CREATE PACKAGE BODY](show-create-package-body.md)
 * [CREATE PACKAGE BODY](../../data-definition/create/create-package-body.md)
 * [DROP PACKAGE BODY](../../data-definition/drop/drop-package-body.md)
-* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Oracle SQL\_MODE](broken-reference)
 
 CC BY-SA / Gnu FDL

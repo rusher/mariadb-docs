@@ -9,7 +9,7 @@ On Windows, the data directory is produced during the build.
 The simplest way to start database from the command line is:
 
 1. Go to the directory where mariadbd.exe is located (subdirectory sql\Debug or sql\Relwithdebinfo of the build directory)
-2. From here, execute, if you are using [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105) or newer,
+2. From here, execute, if you are using [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) or newer,
 
 ```
 mariadbd.exe --console
@@ -105,7 +105,7 @@ Above '$PWD' is the environment variable that points to your current directory.\
 If you added `datadir` to your `my.cnf`, you don't have to give this option above.\
 Also above, --user=$LOGNAME is necessary when using msqyld 10.0.1-MariaDB (and possibly other versions)
 
-Now you can start `mariadbd` (or `mysqld` if you are using a version older than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)) in the debugger:
+Now you can start `mariadbd` (or `mysqld` if you are using a version older than [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)) in the debugger:
 
 ```
 cd sql

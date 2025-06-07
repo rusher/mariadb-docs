@@ -327,7 +327,7 @@ Both "Top-n" formulations probably take about the same amount of time.
 
 ## Windowing functions
 
-Hot off the press from Percona Live... [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) has "windowing functions", which make "groupwise max" much more straightforward.
+Hot off the press from Percona Live... [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) has "windowing functions", which make "groupwise max" much more straightforward.
 
 The code:
 
@@ -345,7 +345,7 @@ I did not include the technique(s) using GROUP\_CONCAT. They are useful in some 
 * [Jan Kneschke's blog from 2007](https://jan.kneschke.de/projects/mysql/groupwise-max)
 * [StackOverflow discussion of 'Uncorrelated'](https://stackoverflow.com/questions/14770671/mysql-order-by-before-group-by)
 * Other references: [Inner ORDER BY thrown away](https://mariadb.com/kb/en/mariadb/group-by-trick-has-been-optimized-away/)
-* Adding a large LIMIT to a subquery may make things work. [Why ORDER BY in subquery is ignored](../../../reference/faq/developer-questions/why-is-order-by-in-a-from-subquery-ignored.md)
+* Adding a large LIMIT to a subquery may make things work. [Why ORDER BY in subquery is ignored](broken-reference)
 * [StackOverflow thread](https://stackoverflow.com/questions/36485072/select-with-order-and-group-by-in-maria-dbmysql)
 * [row\_number(), rank(), dense\_rank()](https://kennethxu.blogspot.com/2016/04/analytical-function-in-mysql-rownumber.html)
 * \[http://rpbouman.blogspot.de/2008/07/calculating-nth-percentile-in-mysql.html][Perentile blog](https://rpbouman.blogspot.de/2008/07/calculating-nth-percentile-in-mysql.html]\[Perentile_blog)

@@ -1,6 +1,6 @@
 # MariaDB 5.3 Optimizer Debugging
 
-[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) has an optimizer debugging patch. The patch is pushed into
+[MariaDB 5.3](broken-reference) has an optimizer debugging patch. The patch is pushed into
 
 [lp:maria-captains/maria/5.3-optimizer-debugging](https://code.launchpad.net/~maria-captains/maria/5.3-optimizer-debugging)
 

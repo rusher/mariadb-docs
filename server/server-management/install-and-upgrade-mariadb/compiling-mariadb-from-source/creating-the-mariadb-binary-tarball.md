@@ -11,7 +11,7 @@ If the binaries are already built, you can generate a binary tarball with
 make package
 ```
 
-Prior to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), the following steps were required:
+Prior to [MariaDB 5.5](broken-reference), the following steps were required:
 
 * Use `make_binary_distribution` to generate a binary tar file:
 

@@ -33,6 +33,6 @@ as his prize for suggesting the winning name from Monty Program.
 
 ## See Also
 
-* [Why is the Software Called MariaDB?](../../faq/general-questions/why-is-the-software-called-mariadb.md)
+* [Why is the Software Called MariaDB?](broken-reference)
 
 CC BY-SA / Gnu FDL

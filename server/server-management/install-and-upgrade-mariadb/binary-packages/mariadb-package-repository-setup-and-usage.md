@@ -175,7 +175,7 @@ The distributions currently supported by the script include:
 * Ubuntu 20.04 LTS (Focal), 22.04 LTS (Jammy), and 24.04 LTS (Noble)
 * SUSE Linux Enterprise Server (SLES) 12 and 15
 
-To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-which-include-mariadb).
+To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1).
 
 ## Options
 
@@ -208,7 +208,7 @@ By default, the script will configure your system to install from the repository
 
 The script can also configure your system to install from the repository of a different version of MariaDB if you use the `--mariadb-server-version` option.
 
-The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106), that would be:
+The string `mariadb-` has to be prepended to the version number. For example, to configure your system to install from the repository of [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), that would be:
 
 ```
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version="mariadb-10.6"
@@ -226,7 +226,7 @@ The following MariaDB versions are currently supported:
 * `mariadb-11.rc`
 
 If you want to pin the repository of a specific minor release, such as [MariaDB\
-10.6.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-14-release-notes), then you can also specify the minor release. For example,`mariadb-10.6.14`. This may be helpful if you want to avoid upgrades. However,\
+10.6.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-14-release-notes), then you can also specify the minor release. For example,`mariadb-10.6.14`. This may be helpful if you want to avoid upgrades. However,\
 avoiding upgrades is not recommended, since minor maintenance releases may\
 contain important bug fixes and fixes for security vulnerabilities.
 
@@ -411,7 +411,7 @@ sudo zypper install maxscale
 
 {% tabs %}
 {% tab title="mariadb_es_repo_setup" %}
-#### mariadb\_es\_repo\_setup Versions
+**mariadb\_es\_repo\_setup Versions**
 
 | **Version** | **sha256sum**                                                      |
 | ----------- | ------------------------------------------------------------------ |
@@ -447,7 +447,7 @@ sudo zypper install maxscale
 {% endtab %}
 
 {% tab title="mariadb_repo_setup" %}
-#### mariadb\_repo\_setup Versions
+**mariadb\_repo\_setup Versions**
 
 | **Version** | **sha256sum**                                                      |
 | ----------- | ------------------------------------------------------------------ |

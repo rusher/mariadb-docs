@@ -1,6 +1,6 @@
 # CREATE PACKAGE BODY
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114).
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](broken-reference) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
 
 In Oracle mode, the PL/SQL dialect is used, while in non-Oracle mode, SQL/PSM is used.
 
@@ -93,7 +93,7 @@ condition_value:
 
 ## Description
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114).
+The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](broken-reference) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
 
 The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package.md) statement.
 
@@ -167,7 +167,7 @@ $$
 DELIMITER ;
 ```
 
-Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114):
+Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114):
 
 ```
 DELIMITER $$
@@ -213,6 +213,6 @@ DELIMITER ;
 * [CREATE PACKAGE](create-package.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
 * [DROP PACKAGE BODY](../drop/drop-package-body.md)
-* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Oracle SQL\_MODE](broken-reference)
 
 CC BY-SA / Gnu FDL

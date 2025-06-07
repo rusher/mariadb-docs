@@ -41,7 +41,7 @@ If the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/syste
 
 The results of `SHOW WARNINGS` and `SHOW COUNT(*) WARNINGS` are directly sent to the client. If you need to access those information in a stored program, you can use the [GET DIAGNOSTICS](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) statement instead.
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
+For a list of MariaDB error codes, see [MariaDB Error Codes](broken-reference).
 
 The [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client also has a number of options related to warnings. The `\W` command will show warnings after every statement, while `\w` will disable this. Starting the client with the `--show-warnings` option will show warnings after every statement.
 

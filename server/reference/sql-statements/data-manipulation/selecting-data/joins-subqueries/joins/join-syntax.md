@@ -98,7 +98,7 @@ inner join operations. MariaDB also supports nested joins (see[nested-join-optim
 ### Subqueries
 
 A table subquery is specified as a parenthesized query and must contain a following derived table name (specified as _alias_ in the above syntax specification).\
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-7-rolling-releases/what-is-mariadb-117) onwards, we can optionally specify a list of column names in parenthesis.
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117) onwards, we can optionally specify a list of column names in parenthesis.
 
 ```
 select ic1, ic2, ic3 from

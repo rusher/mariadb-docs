@@ -11,7 +11,7 @@ SHOW COLLATION
 
 The output from `SHOW COLLATION` includes all available[collations](../../../data-types/string-data-types/character-sets/). The `LIKE` clause, if present on its own, indicates which collation names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-Similar information, including some extra information (such as, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114),.5, which collation an alias refers to), can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
+Similar information, including some extra information (such as, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114),.5, which collation an alias refers to), can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
 
 See [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on specifying the collation at the server, database, table and column levels.
 

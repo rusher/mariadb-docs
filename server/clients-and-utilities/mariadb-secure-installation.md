@@ -1,8 +1,8 @@
 # mariadb-secure-installation
 
-Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), [Unix socket authentication](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md).
+Note that many of the reasons for the existence of this script no longer apply (and therefore the guidelines in many online tutorials. In particular, from [MariaDB 10.4](broken-reference), [Unix socket authentication](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is applied by default, and there is usually no need to create a root password. See [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md).
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_secure_installation`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 ## Description
 

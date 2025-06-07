@@ -51,7 +51,7 @@ To solve this, see [Configuring MariaDB for Remote Client Access](../../kb/en/co
 
 ### Authentication Problems
 
-Note that from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), the [unix\_socket authentication plugin](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix\_socket authentication plugin](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) changes..
+Note that from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), the [unix\_socket authentication plugin](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix\_socket authentication plugin](../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](broken-reference) changes..
 
 Authentication is granted to a particular username/host combination. `user1'@'localhost'`, for example, is not the same as `user1'@'166.78.144.191'`. See the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md) article for details on granting permissions.
 
@@ -125,6 +125,6 @@ Since you are connecting from localhost, the anonymous credentials, rather than 
 * [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md)
 * [Authentication from MariaDB 10.4](../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
-* [Error 1698: Access denied for user](../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1600-to-1699/e1698.md)
+* [Error 1698: Access denied for user](broken-reference)
 
 CC BY-SA / Gnu FDL

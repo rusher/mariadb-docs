@@ -46,7 +46,7 @@ For valid identifiers to use as function names, see [Identifier Names](../../../
 
 #### IN | OUT | INOUT | IN OUT
 
-**MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
+**MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
 
 The function parameter qualifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` were added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.
 
@@ -161,7 +161,7 @@ The `[NOT] DETERMINISTIC` clause also affects [binary logging](../../../../serve
 
 #### Oracle Mode
 
-A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) for details on changes when running Oracle mode.
+A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](broken-reference) for details on changes when running Oracle mode.
 
 ## Security
 
@@ -171,7 +171,7 @@ account that called `CREATE FUNCTION`, even if the `DEFINER` clause was used.
 
 Each function has an account associated as the definer. By default, the definer is the account\
 that created the function. Use the `DEFINER` clause to specify a different account as the\
-definer. You must have the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-statements/grant.md#set-user) privilege, to use the `DEFINER`\
+definer. You must have the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-statements/grant.md#set-user) privilege, to use the `DEFINER`\
 clause. See [Account Names](../../account-management-sql-statements/create-user.md#account-names) for details on specifying accounts.
 
 The `SQL SECURITY` clause specifies what privileges are used when a function is called.\

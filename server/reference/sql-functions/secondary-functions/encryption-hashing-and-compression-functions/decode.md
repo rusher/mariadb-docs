@@ -6,13 +6,13 @@
 DECODE(crypt_str,pass_str)
 ```
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes):
+In [Oracle mode](broken-reference) from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes):
 
 ```
 DECODE(expr, search_expr, result_expr [, search_expr2, result_expr2 ...] [default_expr])
 ```
 
-In all modes from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes):
+In all modes from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes):
 
 ```
 DECODE_ORACLE(expr, search_expr, result_expr [, search_expr2, result_expr2 ...] [default_expr])
@@ -23,7 +23,7 @@ DECODE_ORACLE(expr, search_expr, result_expr [, search_expr2, result_expr2 ...] 
 In the default mode, `DECODE` decrypts the encrypted string _crypt\_str_ using _pass\_str_ as the\
 password. _crypt\_str_ should be a string returned from [ENCODE()](encode.md). The resulting string will be the original string only if _pass\_str_ is the same.
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle) from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), `DECODE` compares _expr_ to the search expressions, in order. If it finds a match, the corresponding result expression is returned. If no matches are found, the default expression is returned, or NULL if no default is provided.
+In [Oracle mode](broken-reference) from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes), `DECODE` compares _expr_ to the search expressions, in order. If it finds a match, the corresponding result expression is returned. If no matches are found, the default expression is returned, or NULL if no default is provided.
 
 NULLs are treated as equivalent.
 
@@ -31,7 +31,7 @@ NULLs are treated as equivalent.
 
 ## Examples
 
-From [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes):
+From [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes):
 
 ```
 SELECT DECODE_ORACLE(2+1,3*1,'found1',3*2,'found2','default');

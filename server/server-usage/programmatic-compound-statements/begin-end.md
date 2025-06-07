@@ -64,6 +64,6 @@ In this example, a [TINYINT](../../reference/data-types/numeric-data-types/tinyi
 ## See Also
 
 * [Using compound statements outside of stored programs](using-compound-statements-outside-of-stored-programs.md)
-* [Changes in Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Changes in Oracle mode from MariaDB 10.3](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

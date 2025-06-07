@@ -43,9 +43,9 @@ If used out of a [HANDLER](../../reference/sql-structure/nosql/handler/) constru
 ERROR 1645 (0K000): RESIGNAL when handler not active
 ```
 
-In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), if a [HANDLER](../../reference/sql-structure/nosql/handler/) contained a [CALL](../../reference/sql-statements/stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), trying to do this raises the above error.
+In [MariaDB 5.5](broken-reference), if a [HANDLER](../../reference/sql-structure/nosql/handler/) contained a [CALL](../../reference/sql-statements/stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), trying to do this raises the above error.
 
-For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md).
+For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](broken-reference).
 
 The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../reference/sql-structure/nosql/handler/). The first time the error will be ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
 
@@ -102,7 +102,7 @@ CALL test_error( );
 ERROR 1146 (42S02): `temptab` does not exist
 ```
 
-As explained above, this works on [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), but produces a 1645 error since 10.0.
+As explained above, this works on [MariaDB 5.5](broken-reference), but produces a 1645 error since 10.0.
 
 ```
 CREATE PROCEDURE handle_error()
@@ -122,6 +122,6 @@ END;
 * [SIGNAL](signal.md)
 * [HANDLER](../../reference/sql-structure/nosql/handler/)
 * [Stored Routines](../stored-routines/)
-* [MariaDB Error Codes](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-code-reference.md)
+* [MariaDB Error Codes](broken-reference)
 
 CC BY-SA / Gnu FDL

@@ -13,7 +13,7 @@ EXPLAIN PARTITIONS SELECT * FROM orders WHERE id < 15000000;
 +------+-------------+--------+------------+-------+---------------+---------+---------+------+------+-------------+
 ```
 
-Sometimes the WHERE clause does not contain the necessary information to use partition pruning, or the optimizer cannot infer this information. However, we may know which partitions are relevant for the query. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), we can force MariaDB to only access the specified partitions by adding a PARTITION clause. This feature is called _partition selection_. For example:
+Sometimes the WHERE clause does not contain the necessary information to use partition pruning, or the optimizer cannot infer this information. However, we may know which partitions are relevant for the query. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), we can force MariaDB to only access the specified partitions by adding a PARTITION clause. This feature is called _partition selection_. For example:
 
 ```sql
 SELECT * FROM orders PARTITION (p3) WHERE user_id = 50;

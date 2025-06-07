@@ -24,7 +24,7 @@ Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNIO
 
 UNION queries cannot be used with [aggregate functions](../../../../sql-functions/aggregate-functions/).
 
-`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](broken-reference), in which case all three have the same precedence.
 
 ### ALL/DISTINCT
 
@@ -56,7 +56,7 @@ If the result is a single row, [SELECT ... INTO @var\_name](../../../../../serve
 
 ### Parentheses
 
-Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), a syntax error would be returned.
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](broken-reference), a syntax error would be returned.
 
 ## Examples
 
@@ -105,7 +105,7 @@ UNION
 (SELECT 2, c_name AS name, email FROM customers) ORDER BY sort_column;
 ```
 
-Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1050-release-notes).
+Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
 
 ```
 CREATE TABLE seqs (i INT);

@@ -24,6 +24,6 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [DECLARE CURSOR](declare-cursor.md)
 * [OPEN cursor\_name](open.md)
 * [CLOSE cursor\_name](close.md)
-* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Cursors in Oracle mode](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

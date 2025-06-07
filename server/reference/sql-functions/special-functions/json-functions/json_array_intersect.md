@@ -2,7 +2,7 @@
 
 **MariaDB starting with** [**11.2.0**](../../../../../kb/en/mariadb-1120-release-notes/)
 
-JSON\_ARRAY\_INTERSECT was added in [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
+JSON\_ARRAY\_INTERSECT was added in [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
 
 ## Syntax
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-Until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
+Until [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107)
 
 ```
 DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement
@@ -11,7 +11,7 @@ cursor_formal_parameter:
     name type [collate clause]
 ```
 
-From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
+From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
 
 ```
 DECLARE cursor_name CURSOR [(cursor_formal_parameter[,...])] FOR select_statement
@@ -36,9 +36,9 @@ Cursors can have parameters. This is a non-standard SQL extension. Cursor parame
 
 ### IN
 
-**MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
+**MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
 
-From [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes) preview release, the `IN` qualifier is supported in the `cursor_formal_parameter` part of the syntax.
+From [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes) preview release, the `IN` qualifier is supported in the `cursor_formal_parameter` part of the syntax.
 
 See [Cursor Overview](cursor-overview.md) for an example.
 
@@ -48,6 +48,6 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [OPEN cursor\_name](open.md)
 * [FETCH cursor\_name](fetch.md)
 * [CLOSE cursor\_name](close.md)
-* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle)
+* [Cursors in Oracle mode](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

@@ -2,7 +2,7 @@
 
 ## Description
 
-The [Information Schema](../) `OPTIMIZER_TRACE` table contains [Optimizer Trace](../../../../../mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-overview.md) information.
+The [Information Schema](../) `OPTIMIZER_TRACE` table contains [Optimizer Trace](broken-reference) information.
 
 It contains the following columns:
 

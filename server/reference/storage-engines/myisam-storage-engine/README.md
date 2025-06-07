@@ -4,4 +4,4 @@ MyISAM was the default [storage engine](../) from MySQL 3.23 until it was replac
 
 You're encouraged to rather use the [Aria](../aria/) storage engine for new applications, which has even better performance and the goal of being crash-safe.
 
-Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), [system tables](../../sql-statements/administrative-sql-statements/system-tables/) used the MyISAM storage engine.
+Until [MariaDB 10.4](broken-reference), [system tables](../../sql-statements/administrative-sql-statements/system-tables/) used the MyISAM storage engine.

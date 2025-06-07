@@ -33,7 +33,7 @@ Locks are also required for auto-increments - see [AUTO\_INCREMENT handling in I
 
 ## Gap Locks
 
-With the default [isolation level](../../sql-statements/transactions/set-transaction.md), `REPEATABLE READ`, and, until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), the default setting of the [innodb\_locks\_unsafe\_for\_binlog](innodb-system-variables.md#innodb_locks_unsafe_for_binlog) variable, a method called gap locking is used. When InnoDB sets a shared or exclusive lock on a record, it's actually on the index record. Records will have an internal InnoDB index even if they don't have a unique index defined. At the same time, a lock is held on the gap before the index record, so that another transaction cannot insert a new index record in the gap between the record and the preceding record.
+With the default [isolation level](../../sql-statements/transactions/set-transaction.md), `REPEATABLE READ`, and, until [MariaDB 10.4](broken-reference), the default setting of the [innodb\_locks\_unsafe\_for\_binlog](innodb-system-variables.md#innodb_locks_unsafe_for_binlog) variable, a method called gap locking is used. When InnoDB sets a shared or exclusive lock on a record, it's actually on the index record. Records will have an internal InnoDB index even if they don't have a unique index defined. At the same time, a lock is held on the gap before the index record, so that another transaction cannot insert a new index record in the gap between the record and the preceding record.
 
 The gap can be a single index value, multiple index values, or not exist at all depending on the contents of the index.
 
@@ -41,6 +41,6 @@ If a statement uses all the columns of a unique index to search for unique row, 
 
 Similar to the shared and exclusive intention locks described above, there can be a number of types of gap locks. These include the shared gap lock, exclusive gap lock, intention shared gap lock and intention exclusive gap lock.
 
-Gap locks are disabled if the [innodb\_locks\_unsafe\_for\_binlog](innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is set (until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)), or the [isolation level](../../sql-statements/transactions/set-transaction.md) is set to `READ COMMITTED`.
+Gap locks are disabled if the [innodb\_locks\_unsafe\_for\_binlog](innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is set (until [MariaDB 10.4](broken-reference)), or the [isolation level](../../sql-statements/transactions/set-transaction.md) is set to `READ COMMITTED`.
 
 CC BY-SA / Gnu FDL

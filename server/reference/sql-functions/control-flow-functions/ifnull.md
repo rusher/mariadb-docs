@@ -12,7 +12,7 @@ NVL(expr1,expr2)
 If _`expr1`_ is not NULL, IFNULL() returns _`expr1`_; otherwise it return&#x73;_`expr2`_. IFNULL() returns a numeric or string value, depending on the\
 context in which it is used.
 
-From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), NVL() is an alias for IFNULL().
+From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), NVL() is an alias for IFNULL().
 
 ## Examples
 

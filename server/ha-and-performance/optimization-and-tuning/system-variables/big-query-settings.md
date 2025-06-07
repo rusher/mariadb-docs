@@ -1,10 +1,10 @@
 # Big Query Settings
 
-[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and beyond have a number of features that are targeted at big queries and so are disabled by default.
+[MariaDB 5.3](broken-reference) and beyond have a number of features that are targeted at big queries and so are disabled by default.
 
 This page describes recommended settings for IO-bound queries that shovel through lots of records.
 
-First, turn on [Batched Key Access](../../../reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms.md):
+First, turn on [Batched Key Access](broken-reference):
 
 ```
 # Turn on disk-ordered reads

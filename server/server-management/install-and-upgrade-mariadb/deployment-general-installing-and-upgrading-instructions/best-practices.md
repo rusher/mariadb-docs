@@ -83,7 +83,7 @@ Details assessed during Pre-Production validation can include:
 
 MariaDB Product Notifications allow you to keep aware of new releases, including security fixes. Customers can manage MariaDB Product Notifications through the [MariaDB Customer Portal](https://customers.mariadb.com/?_ga=2.24188474.1431602578.1740983101-1710706710.1737441288).
 
-Additionally, MariaDB Enterprise Server follows an enterprise lifecycle, that provides a [predictable release schedule](../../../reference/faq/mariadb-software-questions/what-is-mariadbs-release-policy-and-schedule.md).
+Additionally, MariaDB Enterprise Server follows an enterprise lifecycle, that provides a [predictable release schedule](broken-reference).
 
 ## Obtaining Support
 

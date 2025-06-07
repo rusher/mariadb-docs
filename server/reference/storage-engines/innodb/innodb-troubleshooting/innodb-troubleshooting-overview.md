@@ -12,6 +12,6 @@ For problems with the InnoDB Data Dictionary, see [InnoDB Data Dictionary Troubl
 
 * [InnoDB Data Dictionary Troubleshooting](innodb-data-dictionary-troubleshooting.md)
 * [InnoDB Recovery Modes](innodb-recovery-modes.md)
-* [Error Codes](../../../mariadb-internals/using-mariadb-with-your-programs-api/error-codes/)
+* [Error Codes](broken-reference)
 
 CC BY-SA / Gnu FDL

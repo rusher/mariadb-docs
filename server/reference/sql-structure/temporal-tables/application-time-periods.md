@@ -183,9 +183,9 @@ The `UPDATE FOR PORTION` statement has the following limitations:
 
 ### WITHOUT OVERLAPS
 
-**MariaDB starting with** [**10.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1053-release-notes)
+**MariaDB starting with** [**10.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes)
 
-[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.\
+[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) introduced a new clause, `WITHOUT OVERLAPS`, which allows one to create an index specifying that application time periods should not overlap.\
 An index constrained by `WITHOUT OVERLAPS` is required to be either a primary key or a unique index.
 
 Take the following example, an application time period table for a booking system:
@@ -228,9 +228,9 @@ ERROR 1062 (23000): Duplicate entry '2-2020-10-06-2020-10-04' for key 'room_numb
 
 ### Information Schema
 
-**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114)
+**MariaDB starting with** [**11.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114)
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/what-is-mariadb-114), the Information Schema contains the following support for application time period tables.
+From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), the Information Schema contains the following support for application time period tables.
 
 * [INFORMATION\_SCHEMA.PERIODS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-periods-table.md) view.
 * [INFORMATION\_SCHEMA.KEY\_PERIOD\_USAGE](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_period_usage-table.md) view.

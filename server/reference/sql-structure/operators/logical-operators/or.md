@@ -19,7 +19,7 @@ Note that, if the `PIPES_AS_CONCAT` [SQL\_MODE](../../../../server-management/va
 
 ### Oracle Mode
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#null-handling), `||` ignores [null](../../../sql-statements-and-structure/operators/logical-operators/null/).
+In [Oracle mode](broken-reference), `||` ignores [null](../../../sql-statements-and-structure/operators/logical-operators/null/).
 
 ## Examples
 
@@ -60,7 +60,7 @@ SELECT 1 || NULL;
 +-----------+
 ```
 
-In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#null-handling):
+In [Oracle mode](broken-reference):
 
 ```
 SELECT 0 || NULL;
@@ -76,6 +76,6 @@ SELECT 0 || NULL;
 ## See Also
 
 * [Operator Precedence](../operator-precedence.md)
-* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/sql_modeoracle#null-handling)
+* [Oracle mode](broken-reference)
 
 GPLv2 fill\_help\_tables.sql

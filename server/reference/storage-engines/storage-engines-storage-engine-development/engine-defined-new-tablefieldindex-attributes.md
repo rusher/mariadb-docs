@@ -109,7 +109,7 @@ With the `IGNORE_BAD_TABLE_OPTIONS` [sql mode](../../../server-management/variab
 
 ## See Also
 
-* [Writing Plugins for MariaDB](../../mariadb-internals/development-writing-plugins-for-mariadb.md)
+* [Writing Plugins for MariaDB](broken-reference)
 * [Storage Engines](../)
 * [Storage Engine Development](./)
 
