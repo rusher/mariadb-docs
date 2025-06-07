@@ -1,6 +1,6 @@
 # Performance of MEMORY Tables
 
-Between [MariaDB 5.5.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/mariadb-5521-release-notes) and 5.5.22 some work was done on how the hash index for a [MEMORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine) table is created. This results in better performance when inserting rows into a memory table.
+Between [MariaDB 5.5.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5521-release-notes) and 5.5.22 some work was done on how the hash index for a [MEMORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine) table is created. This results in better performance when inserting rows into a memory table.
 
 The following benchmark compares MariaDB-5.5.21 and 5.5.25. Compiled with identical settings on the same machine. The operation was loading 50 million rows into a MEMORY table with LOAD DATA INFILE.
 

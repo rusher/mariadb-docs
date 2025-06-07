@@ -92,7 +92,7 @@ After the main test flow is finished, the reporter creates a data dump of the se
 
 It is to be used with `runall-new.pl`.
 
-_Usage example: testing of binlog changes in_ [_MariaDB 10.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) _(e.g._ [_MDEV-181_](https://jira.mariadb.org/browse/MDEV-181)_,_ [_MDEV-232_](https://jira.mariadb.org/browse/MDEV-232)_)_
+_Usage example: testing of binlog changes in_ [_MariaDB 10.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) _(e.g._ [_MDEV-181_](https://jira.mariadb.org/browse/MDEV-181)_,_ [_MDEV-232_](https://jira.mariadb.org/browse/MDEV-232)_)_
 
 ## CrashRecovery Reporter
 
@@ -102,7 +102,7 @@ It is to be used with `runall-new.pl`
 
 ## LimitRowsExamined Transformer
 
-The transformer was developed for testing new [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined) functionality added in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). It can be used in the usual way, by providing its name in the `--transformers` list.
+The transformer was developed for testing new [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined) functionality added in [MariaDB 5.5](broken-reference). It can be used in the usual way, by providing its name in the `--transformers` list.
 
 The transformer checks whether the original query already contains a `ROWS EXAMINED` clause. If it does not, it adds the clause either after the `LIMIT` clause, or at the end of the query. In any case (even if `ROWS EXAMINED` was already there), the transformer returns the following sequence of statements:
 
@@ -112,7 +112,7 @@ The transformer checks whether the original query already contains a `ROWS EXAMI
 
 The result of the main query is checked to be a subset of the original query's result set. The sum of status variables is checked to be not greater than the limit provided in the `ROWS EXAMINED` clause, plus a margin. The margin is configured in the transformer.If the result of the transformed query appears not to be a subset of the original result set, `STATUS_LENGTH_MISMATCH` is returned.If the sum of status variables is greater than the maximum allowed value, `STATUS_REQUIREMENT_UNMET` is returned.Note: Status values `STATUS_REQUIREMENT_UNMET` and `STATUS_REQUIREMENT_UNMET_SELECT` were added to `Constants.pm`.ShowExplain Validator
 
-The validator was developed for testing the new functionality [SHOW EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-explain) introduced in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
+The validator was developed for testing the new functionality [SHOW EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-explain) introduced in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
 The validator checks that the output of `SHOW EXPLAIN` correlates with the output of traditional `EXPLAIN` executed for the same query. It also tries to filter out known expected mismatches between the produced plans.
 
@@ -122,7 +122,7 @@ RQG already provided `--views[=<view type>]` option, which means that in additio
 
 The change was made in `gentest.pl` and both `runall.pl` and `runall-new.pl`.
 
-_Usage example: testing of MERGE view extension in_ [_MariaDB 10.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) _(_[_MDEV-3862_](https://jira.mariadb.org/browse/MDEV-3862)_)_
+_Usage example: testing of MERGE view extension in_ [_MariaDB 10.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) _(_[_MDEV-3862_](https://jira.mariadb.org/browse/MDEV-3862)_)_
 
 ## Multiple Redefining Grammars
 

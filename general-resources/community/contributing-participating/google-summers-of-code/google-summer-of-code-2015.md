@@ -30,7 +30,7 @@ The [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-uti
 
 #### Remote backup of binary logs
 
-[mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog) in MySQL 5.6 also supports streaming [binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) servers for [backups](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases). This is important as the MHA tool can also use this feature.
+[mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog) in MySQL 5.6 also supports streaming [binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) servers for [backups](broken-reference). This is important as the MHA tool can also use this feature.
 
 | Details: | Skills:                                                | Mentor: |
 | -------- | ------------------------------------------------------ | ------- |

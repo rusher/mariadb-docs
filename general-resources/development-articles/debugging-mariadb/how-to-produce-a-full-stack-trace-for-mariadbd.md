@@ -154,7 +154,7 @@ Adjust `10.5` to the major version you are debugging and `focal` to the required
 apt-get update && apt-get install -y mariadb-server-core-10.5-dbgsym
 ```
 
-From [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) the version isn't included in the package name and `mariadb-server-core-dbgsym` can be used as the package name.
+From [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) the version isn't included in the package name and `mariadb-server-core-dbgsym` can be used as the package name.
 
 #### Installing Debug Info Packages packaged by Ubuntu or Debian
 
@@ -290,7 +290,7 @@ For example, to open a core file with `[gdb](https://www.gnu.org/software/gdb/do
 sudo gdb /usr/sbin/mariadbd  /var/lib/mysql/core.932
 ```
 
-Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
+Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](broken-reference) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
 
 Once `[gdb](https://www.gnu.org/software/gdb/documentation)` has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
 
