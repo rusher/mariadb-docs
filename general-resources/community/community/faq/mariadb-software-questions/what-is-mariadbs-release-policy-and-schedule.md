@@ -1,6 +1,6 @@
 # What is MariaDB's Release Policy and Schedule?
 
-The [MariaDB Development Plans](broken-reference)\
+The [MariaDB Development Plans](../../../../faq/mariadb-software-questions/broken-reference/)\
 page links to plans for future versions of MariaDB.
 
 The release schedule for upcoming MariaDB releases can be found on the [MariaDB Jira release page](https://jira.mariadb.org/projects/MDEV?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page).
