@@ -156,7 +156,7 @@
         * [CONNECT Table Types - Catalog Tables](reference/storage-engines/connect/connect-table-types/connect-table-types-catalog-tables.md)
         * [CONNECT Table Types - Data Files](reference/storage-engines/connect/connect-table-types/connect-table-types-data-files.md)
         * [CONNECT Table Types - OEM: Implemented in an External LIB](reference/storage-engines/connect/connect-table-types/connect-table-types-oem.md)
-        * [CONNECT Table Types Overview](server-usage/storage-engines/connect/connect-table-types/connect-table-types-overview-1.md)
+        * [CONNECT Table Types Overview](reference/storage-engines/connect/connect-table-types/connect-table-types-overview.md)
         * [CONNECT Table Types - Special "Virtual" Tables](reference/storage-engines/connect/connect-table-types/connect-table-types-special-virtual-tables.md)
         * [CONNECT Table Types - VIR](reference/storage-engines/connect/connect-table-types/connect-table-types-vir.md)
         * [CONNECT TBL Table Type: Table List](reference/storage-engines/connect/connect-table-types/connect-tbl-table-type-table-list.md)
