@@ -132,7 +132,7 @@ MaxScale [Read/Write Split Router (readwritesplit)](https://app.gitbook.com/s/0p
 
 **On the MaxScale node**, use the maxctrl create service command to configure MaxScale to use the [Read/Write Split Router (readwritesplit)](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit):
 
-```
+```bash
 $ maxctrl create service query_router_service readwritesplit  \
      user=mxs \
      password='MAXSCALE_USER_PASSWORD' \
@@ -154,7 +154,7 @@ These instructions reference TCP port 3307. You can use a different TCP port. Th
 
 **On the MaxScale node**, use the [maxctrl create listener](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl#create-listener) command to configure MaxScale to use a listener for the [Read/Write Split Router (readwritesplit)](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit):
 
-```
+```bash
 $ maxctrl create listener query_router_service query_router_listener 3307 \
      protocol=MariaDBClient
 ```

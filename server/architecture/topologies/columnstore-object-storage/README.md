@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Columnstore Object Storage
 
 ## Overview
@@ -126,7 +140,7 @@ Apr 30 21:54:35 a1ebc96a2519 PrimProc[1004]: 35.668435 |0|0|0| C 28 CAL0000: Err
 
 And the following error message will be raised to the client:
 
-```
+```sql
 ERROR 1815 (HY000): Internal error: System is not ready yet. Please try again.
 ```
 
@@ -269,7 +283,7 @@ $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/shutdown \
 
 * With CMAPI 1.4 and later:
 
-```
+```bash
 $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/node \
       --header 'Content-Type:application/json' \
       --header 'x-api-key:93816fa66cc2d8c224e62275bd4f248234dd4947b68d4af2b29671dd7d5532dd' \
@@ -279,7 +293,7 @@ $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/node \
 
 * With CMAPI 1.3 and earlier:
 
-```
+```bash
 $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/add-node \
       --header 'Content-Type:application/json' \
       --header 'x-api-key:93816fa66cc2d8c224e62275bd4f248234dd4947b68d4af2b29671dd7d5532dd' \
@@ -291,7 +305,7 @@ $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/add-node \
 
 * With CMAPI 1.4 and later:
 
-```
+```bash
 $ curl -k -s -X DELETE https://mcs1:8640/cmapi/0.4.0/cluster/node \
       --header 'Content-Type:application/json' \
       --header 'x-api-key:93816fa66cc2d8c224e62275bd4f248234dd4947b68d4af2b29671dd7d5532dd' \
@@ -301,7 +315,7 @@ $ curl -k -s -X DELETE https://mcs1:8640/cmapi/0.4.0/cluster/node \
 
 * With CMAPI 1.3 and earlier:
 
-```
+```bash
 $ curl -k -s -X PUT https://mcs1:8640/cmapi/0.4.0/cluster/remove-node \
       --header 'Content-Type:application/json' \
       --header 'x-api-key:93816fa66cc2d8c224e62275bd4f248234dd4947b68d4af2b29671dd7d5532dd' \

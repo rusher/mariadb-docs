@@ -61,7 +61,7 @@ To set SELinux to permissive mode:
 
 1. Set SELinux to permissive mode:
 
-```
+```bash
 $ sudo setenforce permissive
 ```
 

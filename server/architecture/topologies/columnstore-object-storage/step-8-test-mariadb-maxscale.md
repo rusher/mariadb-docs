@@ -131,7 +131,7 @@ $ maxctrl list servers
 
 For each server object, view the configuration:
 
-```
+```bash
 $ maxctrl show server mcs1
 ```
 

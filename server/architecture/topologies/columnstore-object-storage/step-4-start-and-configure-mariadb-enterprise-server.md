@@ -163,21 +163,21 @@ TO 'util_user'@'127.0.0.1';
 
 3. On each Enterprise ColumnStore node, configure the ColumnStore utility user:
 
-```
+```bash
 $ sudo mcsSetConfig CrossEngineSupport Host 127.0.0.1
 ```
 
-```
+```bash
 $ sudo mcsSetConfig CrossEngineSupport Port 3306
 ```
 
-```
+```bash
 $ sudo mcsSetConfig CrossEngineSupport User util_user
 ```
 
 4. On each Enterprise ColumnStore node, set the password:
 
-```
+```bash
 $ sudo mcsSetConfig CrossEngineSupport Password util_user_passwd
 ```
 
@@ -221,7 +221,7 @@ This action is performed on the primary server.
 
 1. Use the [CREATE USER](../../../reference/sql-statements/account-management-sql-statements/create-user.md) statement to create the MaxScale user:
 
-```
+```sql
 CREATE USER 'mxs'@'192.0.2.%'
 IDENTIFIED BY 'mxs_passwd';
 ```
@@ -232,7 +232,7 @@ Ensure that the user account can connect from the IP address of the MaxScale ins
 
 2. Use the [GRANT](../../../reference/sql-statements/account-management-sql-statements/grant.md) statement to grant the privileges required by the router:
 
-```
+```sql
 GRANT SHOW DATABASES ON *.* TO 'mxs'@'192.0.2.%';
 
 GRANT SELECT ON mysql.columns_priv TO 'mxs'@'192.0.2.%';

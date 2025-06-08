@@ -134,7 +134,7 @@ These instructions reference TCP port 3308. You can use a different TCP port. Th
 
 On the MaxScale node, use the maxctrl create listener command to configure MaxScale to use a listener for the Read Connection Router (readconnroute):
 
-```
+```bash
 $ maxctrl create listener connection_router_service connection_router_listener 3308 \
      protocol=MariaDBClient
 ```
