@@ -8,7 +8,7 @@ This table only contains information about [plugins](../../../../plugins/) that 
 
 * The [INSTALL SONAME](../../plugin-sql-statements/install-soname.md) statement.
 * The [INSTALL PLUGIN](../../plugin-sql-statements/install-plugin.md) statement.
-* The [mariadb-plugin](../../../../../clients-and-utilities/administrative-tools/mariadb-plugin.md) utility.
+* The [mariadb-plugin](../../../../../clients-and-utilities/mariadb-plugin.md) utility.
 
 This table does not contain information about:
 

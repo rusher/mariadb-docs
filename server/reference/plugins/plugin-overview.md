@@ -103,7 +103,7 @@ This table only contains information about plugins that have been installed via 
 
 * The [INSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) statement.
 * The [INSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) statement.
-* The [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md) utility.
+* The [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) utility.
 
 This table does not contain information about:
 
@@ -131,7 +131,7 @@ There are three primary ways to install a plugin:
 
 * A plugin can be installed dynamically with an SQL statement.
 * A plugin can be installed with a [mariadbd](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option, but it requires a server restart.
-* A plugin can be installed with the [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md) utility, while the server is completely offline.
+* A plugin can be installed with the [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) utility, while the server is completely offline.
 
 When you are installing a plugin, you also have to ensure that:
 
@@ -258,7 +258,7 @@ plugin_load_add = ed25519=auth_ed25519
 
 ### Installing a Plugin with mariadb-plugin
 
-A plugin can be installed with the [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md) utility if the server is completely offline.
+A plugin can be installed with the [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) utility if the server is completely offline.
 
 The syntax is:
 
@@ -300,7 +300,7 @@ A plugin will be loaded by default when the server starts if:
 
 * The plugin was installed with the [INSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) statement.
 * The plugin was installed with the [INSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) statement.
-* The plugin was installed with the [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md) utility.
+* The plugin was installed with the [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) utility.
 * The server is configured to load the plugin with the [--plugin-load-add](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) option.
 * The server is configured to load the plugin with the [--plugin-load](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) option.
 
@@ -320,10 +320,10 @@ A plugin's status can be found by looking at the `PLUGIN_STATUS` column of the [
 
 ## Uninstalling Plugins
 
-Plugins that are found in the mysql.plugin table, that is those that were installed with [INSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), [INSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md) can be uninstalled in one of two ways:
+Plugins that are found in the mysql.plugin table, that is those that were installed with [INSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), [INSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) or [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) can be uninstalled in one of two ways:
 
 * The [UNINSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or the [UNINSTALL PLUGIN](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statement while the server is running
-* With [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md) while the server is offline.
+* With [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md) while the server is offline.
 
 Plugins that were enabled as a `--plugin-load` option do not need to be uninstalled. If `--plugin-load` is omitted the next time the server starts, or the plugin is not listed as one of the `--plugin-load` entries, the plugin will not be loaded.
 
@@ -338,6 +338,6 @@ Plugins that were enabled as a `--plugin-load` option do not need to be uninstal
 * [UNINSTALL SONAME](../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)
 * [SHOW PLUGINS](../sql-statements/administrative-sql-statements/show/show-plugins.md)
 * [INFORMATION\_SCHEMA.PLUGINS Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
-* [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md)
+* [mariadb-plugin](../../clients-and-utilities/mariadb-plugin.md)
 
 CC BY-SA / Gnu FDL

@@ -1,3 +1,7 @@
+---
+icon: question
+---
+
 # mariadb-show
 
 ## mariadb-show

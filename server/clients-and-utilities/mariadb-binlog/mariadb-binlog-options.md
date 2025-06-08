@@ -1,3 +1,7 @@
+---
+icon: question
+---
+
 # mariadb-binlog Options
 
 ## mariadb-binlog Options

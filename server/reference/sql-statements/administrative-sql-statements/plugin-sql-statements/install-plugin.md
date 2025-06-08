@@ -102,7 +102,7 @@ SHOW WARNINGS;
 * [List of Plugins](../../../plugins/information-on-plugins/list-of-plugins.md)
 * [Plugin Overview](../../../plugins/plugin-overview.md)
 * [INFORMATION\_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
-* [mariadb-plugin](../../../../clients-and-utilities/administrative-tools/mariadb-plugin.md)
+* [mariadb-plugin](../../../../clients-and-utilities/mariadb-plugin.md)
 * [SHOW PLUGINS](../show/show-plugins.md)
 * [INSTALL SONAME](install-soname.md)
 * [UNINSTALL PLUGIN](uninstall-plugin.md)

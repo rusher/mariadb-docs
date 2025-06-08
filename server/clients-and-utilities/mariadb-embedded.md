@@ -1,6 +1,6 @@
 # mariadb-embedded
 
-`mariadb-embedded` is a [mariadb client](../mariadb-client/mariadb-command-line-client.md) statically linked to libmariadbd, the embedded server.
+`mariadb-embedded` is a [mariadb client](mariadb-client/mariadb-command-line-client.md) statically linked to libmariadbd, the embedded server.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_embedded`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 

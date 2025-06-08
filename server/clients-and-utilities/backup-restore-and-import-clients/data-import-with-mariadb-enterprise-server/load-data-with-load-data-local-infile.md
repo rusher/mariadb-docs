@@ -1,6 +1,4 @@
-# load-data-with-load-data-local-infile
-
-## LOAD DATA With LOAD DATA LOCAL INFILE
+# LOAD DATA With LOAD DATA LOCAL INFILE
 
 ## Overview
 

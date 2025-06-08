@@ -1,3 +1,7 @@
+---
+icon: question
+---
+
 # mariadb-upgrade
 
 ## mariadb-upgrade

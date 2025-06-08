@@ -24,7 +24,7 @@ Note that statistic counters are never reset, even if a rollback occurs. For exa
 
 If MariaDB shuts down or crashes, `xtstat` will attempt to reconnect. `xtstat` can be terminated any time using the `CTRL-C` key cimbination.
 
-Before [PBXT](../PBXT/) has recovered, not all statistics are available. In particular, the statistics relating to PBXT background threads are not available (including the `sweep` and `chkpnt` statistics).
+Before [PBXT](PBXT/) has recovered, not all statistics are available. In particular, the statistics relating to PBXT background threads are not available (including the `sweep` and `chkpnt` statistics).
 
 ### Command line options
 

@@ -40,7 +40,7 @@ in the given files, /file&#x31;_&#x61;n&#x64;_&#x66;ile2\*:\*
 shell> replace a b b a -- file1 file2 ...
 ```
 
-The replace program is used by [msql2mysql](../legacy-clients-and-utilities/msql2mysql.md).
+The replace program is used by [msql2mysql](msql2mysql.md).
 
 ## Options
 

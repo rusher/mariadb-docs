@@ -1,3 +1,7 @@
+---
+icon: question
+---
+
 # myisamchk
 
 ## myisamchk
