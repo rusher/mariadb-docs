@@ -6,7 +6,7 @@ Catalog support is planned for 12.0.
 
 ## Syntax
 
-```
+```bnf
 SHOW CREATE CATALOG catalog_name
 ```
 
@@ -16,7 +16,7 @@ Shows the [CREATE CATALOG](create-catalog.md) statement that creates the given [
 
 ## Examples
 
-```
+```sql
 SHOW CREATE CATALOG def;
 +---------+-------------------------------------------------------------------------------------------------------+
 | Catalog | Create Catalog                                                                                        |

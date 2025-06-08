@@ -1,9 +1,20 @@
+---
+description: >-
+  Learn about catalogs in MariaDB Server 12 within the context of user account
+  management. This section explains their role in organizing database objects
+  and controlling access permissions.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Catalogs
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
-
-Catalog support is planned for 12.0.
-
-Catalogs are an upcoming feature intended primarily for Cloud Service Providers with many customers, each having many MariaDB Server users and databases.
-
-Catalogs will permit several unrelated users or customers to share a single MariaDB Server instance.

@@ -1,8 +1,6 @@
 # Catalogs Overview
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
-
-Catalog support is planned for 12.0.
+**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120) **—** Catalog support is planned for 12.0.
 
 [Catalogs](./) are an upcoming feature that will be included in a future release of MariaDB. The MariaDB catalogs will be a multi-tenancy feature where a single instance MariaDB server handles multiple independent tenants (customers), who have their own users, schemas etc.\
 See [MDEV-31542](https://jira.mariadb.org/browse/MDEV-31542) "Add multi-tenancy catalogs to MariaDB" for details.
@@ -225,19 +223,19 @@ The following tests ensured that inside the server (mysql\_change\_db), the “c
 
 PHP PDO test:
 
-```
+```bash
 $ php -r '$db = new \PDO("mysql:host=localhost;user=dan;dbname=catalog/test;charset=utf8mb4;unix_socket=/tmp/build-mariadb-server-10.4.sock");'
 ```
 
 PHP mysqli test:
 
-```
+```bash
 php -r '$dbcon = mysqli_connect("localhost","dan","nopass","catalog/test",3306,"/tmp/build-mariadb-server-10.4.sock");'
 ```
 
 Nodejs test:
 
-```
+```javascript
 var mysql = require('mysql')
 var con = mysql.createConnection({
   socketPath: "/tmp/build-mariadb-server-10.4.sock",

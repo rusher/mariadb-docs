@@ -12,31 +12,31 @@ The second variable, [disconnect\_on\_expired\_password](../../ha-and-performanc
 
 Besides automatic password expiry, as determined by [default\_password\_lifetime](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), password expiry times can be set on an individual user basis, overriding the global using the [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md) or [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statements, for example:
 
-```
+```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ```
 
-```
+```sql
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ```
 
 Limits can be disabled by use of the `NEVER` keyword, for example:
 
-```
+```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE NEVER;
 ```
 
-```
+```sql
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE NEVER;
 ```
 
 A manually set limit can be restored the system default by use of `DEFAULT`, for example:
 
-```
+```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
 ```
 
-```
+```sql
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
 ```
 
@@ -47,7 +47,7 @@ To prevent it you need to make sure the `@@secure_timestamp` is set or to audit 
 
 The [SHOW CREATE USER](../../reference/sql-statements/administrative-sql-statements/show/show-create-user.md) statement will display information about the password expiry status of the user. Unlike MySQL, it will not display if the user is unlocked, or if the password expiry is set to default.
 
-```
+```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 CREATE USER 'konstantin'@'localhost' PASSWORD EXPIRE NEVER;
 CREATE USER 'amse'@'localhost' PASSWORD EXPIRE DEFAULT;
@@ -82,7 +82,7 @@ From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 The following query can also be used to check when the current passwords expire for all users:
 
-```
+```sql
 WITH password_expiration_info AS (
   SELECT User, Host,
   IF(

@@ -18,7 +18,7 @@ a 'normal server'. In the future we will add tools that will allow one to easily
 
 To initialize a server with 4 catalogs (the `def` catalog, that holds the catalog root user (CRU) is automatically created):
 
-```
+```bash
 mariadb_install_db --catalogs="cat1 cat2 cat3" --datadir=/my/data/
 ```
 
@@ -34,7 +34,7 @@ One can create a new catalog with [CREATE CATALOG catalog\_name](create-catalog.
 
 When adding more catalogs to an existing server, `mariadb_install_db` will start the [mariadb client](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) to execute the needed commands on the running server. This is why one has to supply user and password to `mariadb_install_db`.
 
-```
+```bash
 mariadb_install_db --catalogs="cat4 cat5 cat6" --datadir=/my/data --catalog-user=monty --catalog-password
 ```
 

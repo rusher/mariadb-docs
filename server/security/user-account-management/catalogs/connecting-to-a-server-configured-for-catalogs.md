@@ -37,14 +37,14 @@ When connecting to a server not configured for catalogs, one can still use `mari
 
 To check if a server supports catalogs:
 
-```
-select @@catalogs;
+```sql
+SELECT @@catalogs;
 +------------+
 | @@catalogs |
 +------------+
 |          0 |
 +------------+
-MariaDB [test]> use catalog foo;
+MariaDB [test]> USE catalog foo;
 ERROR 4193 (HY000): MariaDB is not configured to support catalogs
 ```
 

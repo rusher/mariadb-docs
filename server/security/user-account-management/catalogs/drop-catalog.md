@@ -6,7 +6,7 @@ Catalog support is planned for 12.0.
 
 ## Syntax
 
-```
+```bnf
 DROP CATALOG catalog_name
 ```
 

@@ -6,7 +6,7 @@ Catalog support is planned for 12.0.
 
 ## Syntax
 
-```
+```bnf
 CREATE CATALOG [IF NOT EXISTS] catalog_name
     [create_specification] ...
 
@@ -26,12 +26,12 @@ Note that no users are created.
 
 ## Example
 
-```
-create catalog cat1;
-use catalog cat1;
-create user root@localhost;
-grant all privileges on *.* to root@localhost;
-create database test;
+```sql
+CREATE catalog cat1;
+USE catalog cat1;
+CREATE USER root@localhost;
+GRANT all privileges on *.* to root@localhost;
+CREATE DATABASE test;
 ```
 
 ## Limitations

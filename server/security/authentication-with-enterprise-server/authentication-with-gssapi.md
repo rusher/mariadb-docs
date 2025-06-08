@@ -9,19 +9,19 @@ The gssapi [authentication plugin](../../reference/plugins/authentication-plugin
 The gssapi [authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md) requires an additional package to be installed on Linux.\
 On CentOS, RHEL, and Rocky Linux:
 
-```
+```bash
 $ sudo yum install MariaDB-gssapi-server
 ```
 
 On Debian and Ubuntu:
 
-```
+```bash
 $ sudo apt install mariadb-plugin-gssapi-server
 ```
 
 On SLES:
 
-```
+```bash
 $ sudo zypper install MariaDB-gssapi-server
 ```
 
@@ -47,7 +47,7 @@ The gssapi [authentication plugin](../../reference/plugins/authentication-plugin
 
 To install with the INSTALL SONAME statement:
 
-```
+```sql
 INSTALL SONAME 'gssapi';
 ```
 
@@ -63,14 +63,14 @@ plugin_load_add = auth_gssapi
 
 To create a user account that uses the gssapi [authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md), specify the plugin in the CREATE USER statement:
 
-```
+```sql
 CREATE USER 'USER'@'192.0.2.%'
    IDENTIFIED VIA gssapi;
 ```
 
 An optional realm can be specified:
 
-```
+```sql
 CREATE USER 'USER'@'192.0.2.%'
    IDENTIFIED VIA gssapi USING 'USER@DOMAIN';
 ```

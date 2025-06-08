@@ -1,6 +1,14 @@
 # Authentication from MariaDB 10.4
 
-[MariaDB 10.4](broken-reference) introduced a number of changes to the authentication process, intended to make things easier and more intuitive.
+{% tabs %}
+{% tab title="Current" %}
+
+{% endtab %}
+
+{% tab title="< 10.4" %}
+MariaDB 10.4 introduced a number of changes to the authentication process, intended to make things easier and more intuitive. Those changes aren't available in earlier versions of MariaDB.
+{% endtab %}
+{% endtabs %}
 
 For Windows, see [Authentication Plugin - GSSAPI](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md).
 
@@ -22,9 +30,11 @@ As a result of the above changes, the open-for-everyone all-powerful root accoun
 
 Two all-powerful accounts are created by default — root and the OS user that owns the data directory, typically mysql. They are created as:
 
-```
-CREATE USER root@localhost IDENTIFIED VIA unix_socket OR mysql_native_password USING 'invalid'
-CREATE USER mysql@localhost IDENTIFIED VIA unix_socket OR mysql_native_password USING 'invalid'
+```sql
+CREATE USER root@localhost IDENTIFIED VIA unix_socket 
+    OR mysql_native_password USING 'invalid'
+CREATE USER mysql@localhost IDENTIFIED VIA unix_socket 
+    OR mysql_native_password USING 'invalid'
 ```
 
 Using unix\_socket means that if you are the system root user, you can login as root@locahost without a password. This technique was pioneered by Otto Kekäläinen in Debian MariaDB packages and has been successfully [used in Debian](../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) since as early as [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
@@ -43,7 +53,7 @@ However, seasoned MariaDB DBAs who are used to the old ways do need to make some
 
 After installing MariaDB system-wide the first thing you’ve got used to doing is logging in into the unprotected root account and protecting it, that is, setting the root password:
 
-```
+```bash
 $ sudo dnf install MariaDB-server
 $ mariadb -uroot
 ...
@@ -52,7 +62,7 @@ MariaDB> set password = password("XH4VmT3_jt");
 
 This is not only unnecessary now, it will simply not work — there is no unprotected root account. To login as root use
 
-```
+```bash
 $ sudo dnf install MariaDB-server
 $ sudo mariadb
 ```
@@ -70,8 +80,8 @@ If you've forgotten your root password, no problem — you can still connect usi
 
 To view inside privilege tables, the old mysql.user table still exists. You can select from it as before, although you cannot update it anymore. It doesn’t show alternative authentication plugins and this was one of the reasons for switching to the mysql.global\_priv table — complex authentication rules did not fit into rigid structure of a relational table. You can select from the new table, for example:
 
-```
-select concat(user, '@', host, ' => ', json_detailed(priv)) from mysql.global_priv;
+```sql
+SELECT CONCAT(user, '@', host, ' => ', json_detailed(priv)) from mysql.global_priv;
 ```
 
 ## Reverting to the Previous Authentication Method for root@localhost
@@ -86,7 +96,7 @@ This means that the `root@localhost` user account will use [mysql\_native\_passw
 
 For example, the option can be set on the command-line while running [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md):
 
-```
+```bash
 mariadb-install-db --user=mysql --datadir=/var/lib/mysql --auth-root-authentication-method=normal
 ```
 
@@ -103,8 +113,9 @@ If the option is set in an [option file](../../server-management/install-and-upg
 
 If you have already installed MariaDB, and if the `root@localhost` user account is already using [unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) authentication, then you can revert to the old [mysql\_native\_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication method for the user account by executing the following:
 
-```
-ALTER USER root@localhost IDENTIFIED VIA mysql_native_password USING PASSWORD("verysecret")
+```sql
+ALTER USER root@localhost IDENTIFIED VIA mysql_native_password 
+     USING PASSWORD("verysecret")
 ```
 
 ## See Also

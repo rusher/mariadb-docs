@@ -8,14 +8,14 @@
 
 The password for a [database user account](https://mariadb.com/kb/en/database_user_account) can be changed using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md), and [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statements.
 
-```
+```sql
 With ALTER USER:
 
 ALTER USER 'USER'@'192.0.2.%'
    IDENTIFIED BY 'PASSWD';
 ```
 
-```
+```sql
 With SET PASSWORD:
 
 SET PASSWORD FOR 'USER'@'192.0.2.%'
@@ -26,7 +26,7 @@ SET PASSWORD FOR 'USER'@'192.0.2.%'
 
 If your MariaDB Enterprise Server node has a password validation plugin installed, then the password should also meet the configured requirements. When you try to set or change a user's password and the password validation plugin rejects the password, the following error message will be shown:
 
-```
+```sql
 ERROR HY000: Your password does not satisfy the current policy requirements.
 ```
 

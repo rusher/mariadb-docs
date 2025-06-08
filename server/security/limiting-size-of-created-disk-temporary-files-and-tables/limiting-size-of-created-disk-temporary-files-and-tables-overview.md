@@ -14,7 +14,7 @@ The temporary space includes:
 
 ## Special Cases
 
-* When doing a commit, the last flush of the binlog\_stmt\_cache will not cause an error even if the temporary space limit is exceeded. This is to avoid giving errors on commit. This means that a user can temporary go over the limit with up to [binlog\_stmt\_cache\_size](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size).
+* When doing a commit, the last flush of the binlog\_stmt\_cache will not cause an error even if the temporary space limit is exceeded. This is to avoid giving errors on commit. This means that a user can temporary go over the limit with up to [binlog\_stmt\_cache\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size).
 
 ## System Variables
 
@@ -25,19 +25,19 @@ There are two system variables used for controlling this feature:
 
 ## Status Variables
 
-* [tmp\_space\_used](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tmp_space_used)
-* [max\_tmp\_space\_used](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_tmp_space_used)
+* [tmp\_space\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tmp_space_used)
+* [max\_tmp\_space\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_tmp_space_used)
 
 ## Information Schema
 
-* New field in [information\_schema.process\_list](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md): TMP\_SPACE\_USED
+* New field in [information\_schema.process\_list](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md): TMP\_SPACE\_USED
 
 ## Noteworthy issue
 
-* One has to be careful when using small values for max\_tmp\_space limit together with [binary logging](../../../server-management/server-monitoring-logs/binary-log/) and with non transactional tables.
-* If a binary log entry for the query is larger than [binlog\_stmt\_cache\_size](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size) and one hits the limit of max\_tmp\_space when flushing the entry to disk, the query will abort and the binary log will not contain the last changes to the table. This will also stop the replica!
+* One has to be careful when using small values for max\_tmp\_space limit together with [binary logging](../../server-management/server-monitoring-logs/binary-log/) and with non transactional tables.
+* If a binary log entry for the query is larger than [binlog\_stmt\_cache\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_stmt_cache_size) and one hits the limit of max\_tmp\_space when flushing the entry to disk, the query will abort and the binary log will not contain the last changes to the table. This will also stop the replica!
 * This is also true for all Aria tables as Aria cannot do rollback (except in case of crashes)!
-* One way to avoid it is to use [@@binlog\_format=statement](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) for queries that update many lot of rows.
+* One way to avoid it is to use [@@binlog\_format=statement](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) for queries that update many lot of rows.
 
 ## Implementation
 

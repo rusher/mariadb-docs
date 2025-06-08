@@ -6,13 +6,13 @@ Catalog support is planned for 12.0.
 
 When using a MariaDB Server with [catalogs](./) support, all status information is collected for the whole server, per catalog and per session.
 
-```
+```sql
 SHOW SERVER STATUS;
 ```
 
 shows the status for the whole server. Note that only the super user in the 'def' catalog has privileges for the above statement.
 
-```
+```sql
 SHOW GLOBAL STATUS;
 SHOW CATALOG STATUS;
 ```
@@ -21,7 +21,7 @@ Both commands show the status for the current catalog.\
 The reason that `GLOBAL` shows catalog status is that because catalogs are 'multi-tenant', a\
 catalog user should not be able to see the status from other users (for most things).
 
-```
+```sql
 SHOW [SESSION] STATUS;
 ```
 
@@ -32,7 +32,7 @@ This makes it much easier to find 'bad neighbors' (tenants that cause problems f
 
 When the MariaDB server is not configured for catalogs, the following commands are equivalent:
 
-```
+```sql
 SHOW GLOBAL STATUS
 SHOW SERVER STATUS 
 SHOW CATALOG STATUS

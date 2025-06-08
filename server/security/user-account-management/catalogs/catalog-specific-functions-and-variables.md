@@ -27,8 +27,8 @@ MariaDB [def.test]> select catalog();
 
 One can check if a server supports catalogs with:
 
-```
-select @@catalogs;
+```sql
+SELECT @@catalogs;
 +------------+
 | @@catalogs |
 +------------+

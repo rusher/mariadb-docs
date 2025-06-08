@@ -28,7 +28,7 @@ The [Information Schema ENABLED\_ROLES table](../../../reference/sql-statements/
 
 Creating a role and granting a privilege:
 
-```
+```sql
 CREATE ROLE journalist;
 
 GRANT SHOW DATABASES ON *.* TO journalist;
@@ -38,7 +38,7 @@ GRANT journalist to hulda;
 
 Note, that hulda has no `SHOW DATABASES` privilege, even though she was granted the journalist role. She needs to **set** the role first:
 
-```
+```sql
 SHOW DATABASES;
 +--------------------+
 | Database           |
@@ -79,7 +79,7 @@ SET ROLE NONE;
 
 Roles can be granted to roles:
 
-```
+```sql
 CREATE ROLE writer;
 
 GRANT SELECT ON data.* TO writer;
@@ -89,7 +89,7 @@ GRANT writer TO journalist;
 
 But one does not need to set a role granted to a role. For example, hulda will automatically get all writer privileges when she sets the journalist role:
 
-```
+```sql
 SELECT CURRENT_ROLE;
 +--------------+
 | CURRENT_ROLE |
@@ -123,7 +123,7 @@ SHOW TABLES FROM data;
 When a user sets a role, he, in a sense, has two identities with two associated sets of privileges.\
 But a view (or a stored routine) can have only one definer. So, when a view (or a stored routine) is created with the `SQL SECURITY DEFINER`, one can specify whether the definer should be `CURRENT_USER` (and the view will have none of the privileges of the user's role) or `CURRENT_ROLE` (in this case, the view will use role's privileges, but none of the user's privileges). As a result, sometimes one can create a view that is impossible to use.
 
-```
+```sql
 CREATE ROLE r1;
 
 GRANT ALL ON db1.* TO r1;

@@ -6,7 +6,7 @@ Catalog support is planned for 12.0.
 
 ## Syntax
 
-```
+```bnf
 SHOW CATALOGS
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -36,7 +36,7 @@ The [Information Schema Catalogs table](../../../reference/sql-statements/admini
 +---------+--------------------+
 ```
 
-```
+```sql
 SHOW CATALOGS LIKE 'c%';
 +--------------+--------------------+
 | Catalog (c%) | Comment            |
