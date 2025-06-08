@@ -19,7 +19,7 @@ The [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/in
 
 When [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON`, InnoDB tables are automatically encrypted by default. For example, the following statements create an encrypted table and confirm that it is encrypted:
 
-```
+```sql
 SET GLOBAL innodb_encryption_threads=4;
 
 SET GLOBAL innodb_encrypt_tables=ON;
@@ -43,7 +43,7 @@ WHERE NAME='db1/tab1';
 
 When [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `ON`, an unencrypted InnoDB table can be created by setting the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `NO` for the table. For example, the following statements create an unencrypted table and confirm that it is not encrypted:
 
-```
+```sql
 SET GLOBAL innodb_encryption_threads=4;
 
 SET GLOBAL innodb_encrypt_tables=ON;
@@ -67,7 +67,7 @@ WHERE NAME='db1/tab1';
 
 When [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) is set to `FORCE`, InnoDB tables are automatically encrypted by default, and unencrypted InnoDB tables can **not** be created. In this scenario, if you set the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `NO` for a table, then you will encounter an error. For example:
 
-```
+```sql
 SET GLOBAL innodb_encryption_threads=4;
 
 SET GLOBAL innodb_encrypt_tables='FORCE';
@@ -110,7 +110,7 @@ If a manually encrypted InnoDB table contains a [FULLTEXT INDEX](../../../../../
 
 You can also manually specify a [encryption key](innodb-encryption-overview.md) for a table by using the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option. This allows you to use different encryption keys for different tables. For example, you might create a table using a statement like this:
 
-```
+```sql
 CREATE TABLE tab1 (
    id int PRIMARY KEY,
    str varchar(50)
@@ -128,7 +128,7 @@ WHERE NAME='db1/tab1';
 
 If the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option is not specified, then the table will be encrypted with the key identified by the [innodb\_default\_encryption\_key\_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable. For example, you might create a table using a statement like this:
 
-```
+```sql
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
@@ -148,7 +148,7 @@ WHERE NAME='db1/tab1';
 
 In the event that you have an existing table and you want to manually enable encryption for that table, then you can do the same with an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement. For example:
 
-```
+```sql
 CREATE TABLE tab1 (
    id int PRIMARY KEY,
    str varchar(50)

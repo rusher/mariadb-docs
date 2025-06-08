@@ -10,7 +10,7 @@ In order for MariaDB Server to use TLS, it needs to be compiled with TLS support
 
 If you aren't sure whether your MariaDB Server binary was compiled with TLS support, then you can check the value of the `[have_ssl](ssltls-system-variables.md)` system variable. For example:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'have_ssl';
 +---------------+----------+
 | Variable_name | Value    |
@@ -56,7 +56,7 @@ tls_version = TLSv1.2,TLSv1.3
 
 You can check which TLS protocol versions are enabled on a server by executing [SHOW GLOBAL VARIABLES](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md). For example:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'tls_version';
 ```
 

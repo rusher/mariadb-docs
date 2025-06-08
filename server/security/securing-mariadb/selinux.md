@@ -1,3 +1,10 @@
+---
+description: >-
+  Secure MariaDB Server with SELinux. This section guides you through
+  configuring SELinux policies to enhance the security posture of your MariaDB
+  deployments on Linux systems.
+---
+
 # SELinux
 
 [Security-Enhanced Linux (SELinux)](https://selinuxproject.org/page/Main_Page) is a Linux kernel module that provides a framework for configuring [mandatory access control (MAC)](https://en.wikipedia.org/wiki/Mandatory_access_control) system for many resources on the system. It is enabled by default on some Linux distributions, including RHEL, CentOS, Fedora, and other similar Linux distribution. SELinux prevents programs from accessing files, directories or ports unless it is configured to access those resources.
@@ -6,7 +13,7 @@
 
 To verify whether SELinux is enabled, execute the `[getenforce](https://linux.die.net/man/8/getenforce)` command. For example:
 
-```
+```bash
 getenforce
 ```
 
@@ -14,7 +21,7 @@ getenforce
 
 When you are troubleshooting issues that you think SELinux might be causing, it can help to temporarily put `mysqld_t` into permissive mode. This can be done by executing the `[semanage](https://linux.die.net/man/8/semanage)` command. For example:
 
-```
+```bash
 sudo semanage permissive -a mysqld_t
 ```
 
@@ -24,7 +31,7 @@ If that solved the problem, then it means that the current SELinux policy is the
 
 MariaDB Server should work with your default distribution policy (which is usually part of the `selinux-policy` or `selinux-policy-targeted` system package). If you use `mysqld_safe`, you will need an additional policy file, `mariadb.pp`, which is installed together with the MariaDB Server. It will be loaded automatically if you have `/usr/sbin/semodule` installed, but you can load it manually anytime with
 
-```
+```bash
 /usr/sbin/semodule -i /usr/share/mysql/policy/selinux/mariadb.pp
 ```
 
@@ -38,7 +45,7 @@ File contexts are managed with the `[semanage fcontext](https://linux.die.net/ma
 
 On many systems, the `[semanage](https://linux.die.net/man/8/semanage)` utility is installed by the `policycoreutils-python` package, and the `[restorecon](https://linux.die.net/man/8/restorecon)` utility is installed by the `policycoreutils` package. You can install these with the following command:
 
-```
+```bash
 sudo yum install policycoreutils policycoreutils-python
 ```
 
@@ -48,20 +55,20 @@ A file or directory's current context can be checked by executing `ls` with the 
 
 If you use a custom directory for `[datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, then you may need to set the file context for that directory. The SELinux file context for MariaDB data files is `mysqld_db_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
-```
+```bash
 sudo semanage fcontext --list | grep mysqld_db_t
 ```
 
 If you would like to set the file context for your custom directory for your `[datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
 
-```
+```bash
 sudo semanage fcontext -a -t mysqld_db_t "/mariadb/data(/.*)?"
 sudo restorecon -Rv /mariadb/data
 ```
 
 If you would like to check the current file context, you can do so by by executing `ls` with the `--context` or `--scontext` options. For example:
 
-```
+```bash
 ls --directory --scontext /mariadb/data
 ```
 
@@ -69,20 +76,20 @@ ls --directory --scontext /mariadb/data
 
 If you use a custom directory for [log files](../../server-management/server-monitoring-logs/), then you may need to set the file context for that directory. The SELinux file context for MariaDB [log files](../../server-management/server-monitoring-logs/) is `mysqld_log_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
-```
+```bash
 sudo semanage fcontext --list | grep mysqld_log_t
 ```
 
 If you would like to set the file context for your custom directory for [log files](../../server-management/server-monitoring-logs/), then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
 
-```
+```bash
 sudo semanage fcontext -a -t mysqld_log_t "/var/log/mysql(/.*)?"
 sudo restorecon -Rv /var/log/mysql
 ```
 
 If you would like to check the current file context, you can do so by by executing `ls` with the `--context` or `--scontext` options. For example:
 
-```
+```bash
 ls --directory --scontext /var/log/mysql
 ```
 
@@ -90,20 +97,20 @@ ls --directory --scontext /var/log/mysql
 
 If you use a custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then you may need to set the file context for that directory. The SELinux file context for MariaDB [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) is `mysqld_etc_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
-```
+```bash
 sudo semanage fcontext --list | grep mysqld_etc_t
 ```
 
 If you would like to set the file context for your custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
 
-```
+```bash
 sudo semanage fcontext -a -t mysqld_etc_t "/etc/mariadb(/.*)?"
 sudo restorecon -Rv /etc/mariadb
 ```
 
 If you would like to check the current file context, you can do so by by executing `ls` with the `--context` or `--scontext` options. For example:
 
-```
+```bash
 ls --directory --scontext /etc/mariadb
 ```
 
@@ -111,7 +118,7 @@ ls --directory --scontext /etc/mariadb
 
 A custom location for the socket means it needs to have the right file context of `mysqld_var_run_t` for permitted application to connect to the socket.
 
-```
+```bash
 sudo semanage fcontext -a -t mysqld_var_run_t "/mariadb/run/mariadb.sock"
 ```
 
@@ -121,7 +128,7 @@ A newly created socket with get the right context.
 
 If you wanted to mount your `[tmpdir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tmpdir)` on a `tmpfs` file system or wanted to use a `tmpfs` file system on `/run/shm`, then you might need to allow `mysqld_t` to have access to a couple tmpfs-related file contexts. For example:
 
-```
+```bash
 cd /usr/share/mysql/policy/selinux/
 tee ./mysqld_tmpfs.te <<EOF
 module mysqld_tmpfs 1.0;
@@ -182,7 +189,7 @@ If you see any entries that look similar to this, then you most likely need to a
 
 TCP and UDP ports are enabled for permission to bind too. If you are using a different port, or some Galera ports, configure SELinux to be able to use those ports:
 
-```
+```bash
 sudo semanage port -a -t mysqld_port_t -p tcp 3307
 ```
 
@@ -192,7 +199,7 @@ In some cases, a MariaDB system might need non-standard policies. It is possible
 
 On many systems, the `[audit2allow](https://linux.die.net/man/1/audit2allow)` and `[semanage](https://linux.die.net/man/8/semanage)` utilities are installed by the `policycoreutils-python` package, and the `[semodule](https://linux.die.net/man/8/semodule)` utility is installed by the `policycoreutils` package. You can install these with the following command:
 
-```
+```bash
 sudo yum install policycoreutils policycoreutils-python
 ```
 
@@ -200,13 +207,13 @@ The following process can be used to generate a policy from the audit log:
 
 * Remove dontaudits from the policy:
 
-```
+```bash
 sudo semodule -DB
 ```
 
 * Temporarily put `mysqld_t` into permissive mode. For example:
 
-```
+```bash
 sudo semanage permissive -a mysqld_t
 ```
 
@@ -214,20 +221,20 @@ sudo semanage permissive -a mysqld_t
 * Do whatever was causing SELinux errors.
 * Use the generated audit log to create a policy:
 
-```
+```bash
 sudo grep mysqld /var/log/audit/audit.log | audit2allow -M mariadb_local
 sudo semodule -i mariadb_local.pp
 ```
 
 * Pull `mysqld_t` out of permissive mode. For example:
 
-```
+```bash
 sudo semanage permissive -d mysqld_t
 ```
 
 * Restore dontaudits for the policy:
 
-```
+```bash
 sudo setmodule -B
 ```
 

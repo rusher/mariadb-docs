@@ -53,19 +53,19 @@ ssl_ca = /certs/ca-cert.pem
 
 5. Restart the server.
 
-```
+```bash
 $ sudo systemctl restart mariadb
 ```
 
 6. Connect to the server using [MariaDB Client](../../../../clients-and-utilities/mariadb-client/):
 
-```
+```bash
 $ sudo mariadb
 ```
 
 7. Confirm that TLS is enabled by confirming that the have\_ssl system variable is YES with the SHOW GLOBAL VARIABLES statement:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'have_ssl';
 
 +---------------+-------+

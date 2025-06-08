@@ -38,7 +38,7 @@ Before you uninstall the plugin, you should ensure that [data-at-rest encryption
 
 You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
-```
+```sql
 UNINSTALL SONAME 'file_key_management';
 ```
 
@@ -68,7 +68,7 @@ The key file still needs to have a key identifier for each encryption key added 
 
 For example, to append three new encryption keys to a new key file, you could execute the following:
 
-```
+```bash
 $ (echo -n "1;" ; openssl rand -hex 32 ) | sudo tee -a  /etc/mysql/encryption/keyfile
 $ (echo -n "2;" ; openssl rand -hex 32 ) | sudo tee -a  /etc/mysql/encryption/keyfile
 $ (echo -n "100;" ; openssl rand -hex 32 ) | sudo tee -a  /etc/mysql/encryption/keyfile
@@ -111,13 +111,13 @@ There are some important details to keep in mind about encrypting the key file, 
 
 You can generate a random encryption password using the `[openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html)` command. For example, to create a random 256 character encryption password, you could execute the following:
 
-```
+```bash
 $ sudo openssl rand -hex 128 > /etc/mysql/encryption/keyfile.key
 ```
 
 You can encrypt the key file using the `[openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html)` command. For example, to encrypt the key file with the encryption password created in the previous step, you could execute the following:
 
-```
+```bash
 $ sudo openssl enc -aes-256-cbc -md sha1 \
    -pass file:/etc/mysql/encryption/keyfile.key \
    -in /etc/mysql/encryption/keyfile \
@@ -192,7 +192,7 @@ Note that this variable does not affect the algorithm that MariaDB uses to decry
 
 Once the File Key Management Plugin is enabled, you can use it by creating an encrypted table:
 
-```
+```sql
 CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
 ```
 

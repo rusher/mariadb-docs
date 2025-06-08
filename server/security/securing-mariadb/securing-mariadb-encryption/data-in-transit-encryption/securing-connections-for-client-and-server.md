@@ -40,7 +40,7 @@ And then [restart the server](https://mariadb.com/kb/en/) to make the changes pe
 
 Once the server is back up, you can check that TLS is enabled by checking the value of the [have\_ssl](ssltls-system-variables.md#have_ssl) system variable. For example:
 
-```
+```sql
 SHOW VARIABLES LIKE 'have_ssl';
 
 +---------------+-------+
@@ -137,7 +137,7 @@ See the documentation on [Using TLS/SSL with MariaDB Connector/J](https://app.gi
 
 You can verify that a connection is using TLS by checking the connection's [Ssl\_version](../../../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) status variable. It will either show the TLS version used, or be empty when no encryption is in effect. For example:
 
-```
+```sql
 SHOW SESSION STATUS LIKE 'Ssl_version';
 +---------------+---------------------------+
 | Variable_name | Value                     |
@@ -157,35 +157,35 @@ You can set certain TLS-related restrictions for specific user accounts. For ins
 
 * A user account must connect via TLS if the user account is defined with the `REQUIRE SSL` clause.
 
-```
+```sql
 ALTER USER 'alice'@'%' 
    REQUIRE SSL;
 ```
 
 * A user account must connect via TLS with a specific cipher if the user account is defined with the `REQUIRE CIPHER` clause.
 
-```
+```sql
 ALTER USER 'alice'@'%' 
    REQUIRE CIPHER 'ECDH-RSA-AES256-SHA384';
 ```
 
 * A user account must connect via TLS with a valid client certificate if the user account is defined with the `REQUIRE X509` clause.
 
-```
+```sql
 ALTER USER 'alice'@'%' 
    REQUIRE X509;
 ```
 
 * A user account must connect via TLS with a specific client certificate if the user account is defined with the `REQUIRE SUBJECT` clause.
 
-```
+```sql
 ALTER USER 'alice'@'%' 
    REQUIRE SUBJECT '/CN=alice/O=My Dom, Inc./C=US/ST=Oregon/L=Portland';
 ```
 
 * A user account must connect via TLS with a client certificate that must be signed by a specific certificate authority if the user account is defined with the `REQUIRE ISSUER` clause.
 
-```
+```sql
 ALTER USER 'alice'@'%' 
    REQUIRE SUBJECT '/CN=alice/O=My Dom, Inc./C=US/ST=Oregon/L=Portland'
    AND ISSUER '/C=FI/ST=Somewhere/L=City/ O=Some Company/CN=Peter Parker/emailAddress=p.parker@marvel.com';
@@ -195,7 +195,7 @@ ALTER USER 'alice'@'%'
 
 A user account can have different definitions depending on what host the user account is logging in from. Therefore, it is possible to have different TLS requirements for the same username for different hosts. For example:
 
-```
+```sql
 CREATE USER 'alice'@'localhost' 
    REQUIRE NONE;
 

@@ -16,7 +16,7 @@ The current version of this plugin implements the following features:
 
 Since we require support for key versioning, the key-value storage must be configured in Hashicorp Vault as a key-value storage that uses the interface of the second version. For example, you can create it as follows:
 
-```
+```bash
 ~$ vault secrets enable -path /test -version=2 kv
 ```
 
@@ -25,7 +25,7 @@ Key names must correspond to their numerical identifiers. Key identifiers itself
 From the point of view of the key-value storage (in terms of Hashicorp Vault), the key is a secret containing one key-value pair with the name "data" and a value representing a binary string\
 containing the key value, for example:
 
-```
+```bash
 ~$ vault kv get /test/1
 
 ====== Metadata ======
@@ -44,7 +44,7 @@ data    0123456789ABCDEF0123456789ABCDEF
 
 Keys values are strings containing binary data. MariaDB currently uses the AES algorithm with 256-bit keys as the default encryption method. In this case, the keys that will be stored in the Hashicorp Vault should be 32-byte strings. Most likely you will use some utilities for creating and administering keys designed to work with Hashicorp Vault. But in the simplest case, keys can be created from the command line through the vault utility, for example, as follows:
 
-```
+```bash
 ~$ vault kv put /test/1 data="0123456789ABCDEF0123456789ABCDEF"
 ```
 

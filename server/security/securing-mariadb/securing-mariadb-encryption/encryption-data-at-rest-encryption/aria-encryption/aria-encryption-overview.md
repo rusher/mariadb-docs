@@ -33,7 +33,7 @@ To determine whether an Aria table is encrypted, you currently have to search th
 
 For example, let's say that we have the following table:
 
-```
+```sql
 SELECT * FROM db1.aria_tab LIMIT 1;
 +----+------+
 | id | str  |
@@ -45,7 +45,7 @@ SELECT * FROM db1.aria_tab LIMIT 1;
 
 Then, we could search the data file that belongs to `db1.aria_tab` for `str1` using a command-line tool, such as [strings](https://linux.die.net/man/1/strings):
 
-```
+```bash
 $ sudo strings /var/lib/mysql/db1/aria_tab.MAD | grep "str1"
 str1
 ```

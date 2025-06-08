@@ -1,5 +1,20 @@
+---
+description: >-
+  Secure MariaDB Server data at rest with encryption. This section details how
+  to protect your sensitive information stored on disk, ensuring data
+  confidentiality and compliance.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
 # Data-at-Rest Encryption
-
-MariaDB supports the use of data-at-rest encryption for tables and tablespaces. For a minor performance overhead of 3-5%, this makes it almost impossible for someone with access to the host system or who steals a hard drive to read the original data.
 

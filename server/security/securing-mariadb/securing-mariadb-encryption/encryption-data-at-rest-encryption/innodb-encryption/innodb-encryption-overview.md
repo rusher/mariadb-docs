@@ -35,7 +35,7 @@ For more information on system variables for encryption and other features, see 
 
 To create encrypted tables, specify the table options `ENCRYPTED=YES` and `ENCRYPTION_KEY_ID=` with a corresponding key id;
 
-```
+```sql
 CREATE TABLE t (i int primary key) ENGINE=InnoDB ENCRYPTED=YES ENCRYPTION_KEY_ID=2;
 ```
 
@@ -43,7 +43,7 @@ CREATE TABLE t (i int primary key) ENGINE=InnoDB ENCRYPTED=YES ENCRYPTION_KEY_ID
 
 When using data-at-rest encryption with the InnoDB storage engine, it is not necessary that you encrypt every table in your database. You can check which tables are encrypted and which are not by querying the `[INNODB_TABLESPACES_ENCRYPTION](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)` table in the [Information Schema](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/). This table provides information on which tablespaces are encrypted, which encryption key each tablespace is encrypted with, and whether the background encryption threads are currently working on the tablespace. Since the [system tablespace](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) can also contain tables, it can be helpful to join the `[INNODB_TABLESPACES_ENCRYPTION](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)` table with the `[INNODB_SYS_TABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md)` table to find out the encryption status of each specific table, rather than each tablespace. For example:
 
-```
+```sql
 SELECT st.SPACE, st.NAME, te.ENCRYPTION_SCHEME, te.ROTATING_OR_FLUSHING
 FROM information_schema.INNODB_TABLESPACES_ENCRYPTION te
 JOIN information_schema.INNODB_SYS_TABLES st

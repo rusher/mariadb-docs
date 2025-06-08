@@ -16,13 +16,13 @@ In cases where you have existing Aria tables that you would like to encrypt, the
 
 First, set the `[aria_encrypt_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)` system variable to encrypt new tables.
 
-```
+```sql
 SET GLOBAL aria_encrypt_tables=ON;
 ```
 
 Identify Aria tables that have the `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)` table option set to `PAGE`.
 
-```
+```sql
 SELECT TABLE_SCHEMA, TABLE_NAME 
 FROM information_schema.TABLES 
 WHERE ENGINE='Aria' 
@@ -32,7 +32,7 @@ WHERE ENGINE='Aria'
 
 For each table in the result-set, issue an `[ALTER TABLE](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement to rebuild the table.
 
-```
+```sql
 ALTER TABLE test.aria_table ENGINE=Aria ROW_FORMAT=PAGE;
 ```
 

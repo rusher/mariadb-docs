@@ -48,7 +48,7 @@ Before you uninstall the plugin, you should ensure that [data-at-rest encryption
 
 You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
-```
+```sql
 UNINSTALL SONAME 'eperi_key_management_plugin';
 ```
 
@@ -62,7 +62,7 @@ For information on how to configure the plugin, see Eperi's documentation at the
 
 Once the Eperi Key Management Plugin is enabled, you can use it by creating an encrypted table:
 
-```
+```sql
 CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
 ```
 

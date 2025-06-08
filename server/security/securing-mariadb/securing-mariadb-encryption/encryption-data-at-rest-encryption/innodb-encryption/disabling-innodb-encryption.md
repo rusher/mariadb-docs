@@ -10,19 +10,19 @@ When an InnoDB tablespace has the [ENCRYPTED](../../../../../reference/sql-state
 
 To safely decrypt the tablespaces, first, set the [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable to `OFF`:
 
-```
+```sql
 SET GLOBAL innodb_encrypt_tables = OFF;
 ```
 
 Next, set the [innodb\_encryption\_threads](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) system variable to a non-zero value:
 
-```
+```sql
 SET GLOBAL innodb_encryption_threads = 4;
 ```
 
 Then, set the [innodb\_encryption\_rotate\_key\_age](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) system variable to `1`:
 
-```
+```sql
 SET GLOBAL innodb_encryption_rotate_key_age = 1;
 ```
 
@@ -32,7 +32,7 @@ Once set, any InnoDB tablespaces that have the [ENCRYPTED](../../../../../refere
 
 You can [check the status](innodb-background-encryption-threads.md#checking-the-status-of-background-operations) of the decryption process using the [INNODB\_TABLESPACES\_ENCRYPTION](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md) table in the [information\_schema](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
 
-```
+```sql
 SELECT COUNT(*) AS "Number of Encrypted Tablespaces"
 FROM information_schema.INNODB_TABLESPACES_ENCRYPTION
 WHERE ENCRYPTION_SCHEME != 0
@@ -47,7 +47,7 @@ In the case of manually encrypted InnoDB tablespaces, (that is, those where the 
 
 First, query the Information Schema [TABLES](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table to find the encrypted tables. This can be done with a `WHERE` clause filtering the `CREATE_OPTIONS` column.
 
-```
+```sql
 SELECT TABLE_SCHEMA AS "Database", TABLE_NAME AS "Table"
 FROM information_schema.TABLES
 WHERE ENGINE='InnoDB' 
@@ -56,7 +56,7 @@ WHERE ENGINE='InnoDB'
 
 For each table in the result-set, issue an [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, setting the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `NO`.
 
-```
+```sql
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
 FROM information_schema.INNODB_TABLESPACES_ENCRYPTION
 WHERE NAME='db1/tab1';

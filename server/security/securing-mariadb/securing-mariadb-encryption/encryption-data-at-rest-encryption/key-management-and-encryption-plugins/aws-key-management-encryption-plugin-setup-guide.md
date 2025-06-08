@@ -121,7 +121,7 @@ If you're not running MariaDB Server on an EC2 instance, you can also place the 
 
 1. Create a `credentials` file that MariaDB can read. Use the region you selected when creating the key. Master keys cannot be used across regions. For example:
 
-```
+```bash
 $ cat /var/lib/mysql/.aws/credentials
 [default]
 aws_access_key_id = AKIAIG6IZ6TKF52FVV5A
@@ -131,7 +131,7 @@ region = us-east-1
 
 1. Change the permissions of the file so that it it is owned by, and can only be read by, the `mysql` user:
 
-```
+```bash
 chown mysql /var/lib/mysql/.aws/credentials
 chmod 600 /var/lib/mysql/.aws/credentials
 ```
@@ -163,7 +163,7 @@ Because MariaDB needs to connect to the AWS KMS service, you must ensure that th
 
 The most simple way to cause SELinux to allow outbound HTTPS connections from MariaDB is to enable to mysql\_connect\_any boolean, like this:
 
-```
+```bash
 setsebool -P mysql_connect_any 1
 ```
 
@@ -173,7 +173,7 @@ There are more complex alternatives that have a more granular effect, but those 
 
 Start MariaDB using the `systemctl` tool:
 
-```
+```bash
 systemctl start mariadb
 ```
 
@@ -181,7 +181,7 @@ If you do not use systemd, you may have to start MariaDB using some other mechan
 
 You should see journal output similar to this:
 
-```
+```bash
 # journalctl --no-pager -o cat -u mariadb.service
 
 [Note] /usr/sbin/mysqld (mysqld 10.1.9-MariaDB-enterprise-log) starting as process 19831 ...
@@ -214,7 +214,7 @@ Note the several lines of output that refer explicitly to the "AWS KMS plugin". 
 
 You can see the encrypted keys stored on-disk in the datadir:
 
-```
+```bash
 # ls -l /var/lib/mysql/aws*
 -rw-rw----. 1 mysql mysql 188 Feb 25 18:55 /var/lib/mysql/aws-kms-key.1.1
 -rw-rw----. 1 mysql mysql 188 Feb 25 18:55 /var/lib/mysql/aws-kms-key.2.1
@@ -224,7 +224,7 @@ Note that those keys are not useful alone. They are encrypted. When MariaDB star
 
 For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../clients-and-utilities/mariadb-install-db.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `sudo` to run `mariadb-install-db` so that it finds your credentials file:
 
-```
+```bash
 # sudo -u mysql mariadb-install-db
 Installing MariaDB/MySQL system tables in '/var/lib/mysql' ...
 2016-02-25 23:16:06 139731553998976 [Note] /usr/sbin/mysqld (mysqld 10.1.11-MariaDB-enterprise-log) starting as process 39551 ...
@@ -239,7 +239,7 @@ With `innodb-encrypt-tables=ON`, new InnoDB tables will be encrypted by default,
 
 You can cause the AWS KMS plugin to create new encryption keys at-will by specifying a new ENCRYPTION\_KEY\_ID when creating a table:
 
-```
+```sql
 MariaDB [test]> create table t1 (id serial, v varchar(32)) ENCRYPTION_KEY_ID=3;
 Query OK, 0 rows affected (0.91 sec)
 ```
@@ -249,7 +249,7 @@ Query OK, 0 rows affected (0.91 sec)
 [Note] AWS KMS plugin: loaded key 3, version 1, key length 128 bit
 ```
 
-```
+```bash
 # ls -l /var/lib/mysql/aws*
 -rw-rw----. 1 mysql mysql 188 Feb 25 18:55 /var/lib/mysql/aws-kms-key.1.1
 -rw-rw----. 1 mysql mysql 188 Feb 25 18:55 /var/lib/mysql/aws-kms-key.2.1

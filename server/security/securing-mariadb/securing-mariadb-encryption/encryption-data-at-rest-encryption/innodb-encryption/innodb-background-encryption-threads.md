@@ -32,7 +32,7 @@ InnoDB records the status of background encryption operations in the [INNODB\_TA
 
 For example, to see which InnoDB tablespaces are currently being decrypted or encrypted on by background encryption, you can check which InnoDB tablespaces have the `ROTATING_OR_FLUSHING` column set to `1`:
 
-```
+```sql
 SELECT SPACE, NAME
 FROM information_schema.INNODB_TABLESPACES_ENCRYPTION
 WHERE ROTATING_OR_FLUSHING = 1;
@@ -40,7 +40,7 @@ WHERE ROTATING_OR_FLUSHING = 1;
 
 And to see how many InnoDB tablespaces are currently being decrypted or encrypted by background encryption threads, you can call the [COUNT()](../../../../../reference/sql-functions/aggregate-functions/count.md) aggregate function.
 
-```
+```sql
 SELECT COUNT(*) AS 'encrypting' 
 FROM information_schema.INNODB_TABLESPACES_ENCRYPTION
 WHERE ROTATING_OR_FLUSHING = 1;
@@ -48,7 +48,7 @@ WHERE ROTATING_OR_FLUSHING = 1;
 
 And to see how many InnoDB tablespaces are currently being decrypted or encrypted by background encryption threads, while comparing that to the total number of InnoDB tablespaces and the total number of encrypted InnoDB tablespaces, you can join the table with the [INNODB\_SYS\_TABLESPACES](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table.md) table in the [information\_schema](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database:
 
-```
+```sql
 /* information_schema.INNODB_TABLESPACES_ENCRYPTION does not always have rows for all tablespaces,
   so let's join it with information_schema.INNODB_SYS_TABLESPACES */
 WITH tablespace_ids AS (

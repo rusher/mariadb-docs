@@ -4,7 +4,7 @@
 
 With InnoDB tables using encryption, there are several cases where a [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement can throw Error 1005, due to the InnoDB error 140, `Wrong create options`. For instance,
 
-```
+```sql
 CREATE TABLE `test`.`table1` ( `id` int(4) primary key , `name` varchar(50));
 ERROR 1005 (HY000): Can't create table `test`.`table1` (errno: 140 "Wrong create options")
 ```
@@ -15,7 +15,7 @@ This error is known to occur in the following cases:
 
 * Encrypting a table by setting the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES` when the [innodb\_file\_per\_table](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) is set to `OFF`.In this case, [SHOW WARNINGS](../../../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
 
-```
+```sql
 SHOW WARNINGS;
 +---------+------+---------------------------------------------------------------------+
 | Level   | Code | Message                                                             |
@@ -29,7 +29,7 @@ SHOW WARNINGS;
 
 * Encrypting a table by setting the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES`, and the [innodb\_default\_encryption\_key\_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option refers to a non-existent key identifier. In this case, [SHOW WARNINGS](../../../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
 
-```
+```sql
 SHOW WARNINGS;
 +---------+------+---------------------------------------------------------------------+
 | Level   | Code | Message                                                             |
@@ -43,7 +43,7 @@ SHOW WARNINGS;
 
 * In some versions, this could happen while creating a table with the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT` while the [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is set to `OFF`, and the [innodb\_default\_encryption\_key\_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) system variable or the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option are not set to `1`. In this case, [SHOW WARNINGS](../../../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) would return the following:
 
-```
+```sql
 SHOW WARNINGS;
 +---------+------+---------------------------------------------------------------------+
 | Level   | Code | Message                                                             |
@@ -65,7 +65,7 @@ If you set the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/dat
 
 As a side effect, with the current encryption design, if the [innodb\_encrypt\_tables](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable is later set to `ON`, and InnoDB goes to encrypt the table, then the [InnoDB background encryption threads](innodb-background-encryption-threads.md) will not read this encryption key ID from the `.frm` file. Instead, the threads may encrypt the table with the encryption key with ID `1`, which is internally considered the default encryption key when no key is specified. For example:
 
-```
+```sql
 SET GLOBAL innodb_encrypt_tables=OFF;
 
 CREATE TABLE tab1 (
@@ -89,7 +89,7 @@ A similar problem is that, if you set the [ENCRYPTION\_KEY\_ID](../../../../../r
 
 Recent versions of MariaDB will throw warnings in the case where the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option is set to `NO`, but they will allow the operation to succeed. For example:
 
-```
+```sql
 CREATE TABLE tab1 (
    id INT PRIMARY KEY,
    str VARCHAR(50)
@@ -107,7 +107,7 @@ SHOW WARNINGS;
 
 However, in this case, if you change the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES` or `DEFAULT` with [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md), then it will actually use the proper key. For example:
 
-```
+```sql
 SET GLOBAL innodb_encrypt_tables=ON;
 
 ALTER TABLE tab1 ENCRYPTED=DEFAULT;

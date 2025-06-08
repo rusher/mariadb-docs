@@ -10,7 +10,7 @@ Dynamically linking MariaDB to the system's TLS and cryptography library can oft
 
 You can verify that `mysqld` is in fact dynamically linked to the [OpenSSL](https://www.openssl.org/) shared library on your system by using the `[ldd](https://linux.die.net/man/1/ldd)` command:
 
-```
+```bash
 $ ldd $(which mysqld) | grep -E '(libssl|libcrypto)'
         libssl.so.10 => /lib64/libssl.so.10 (0x00007f8736386000)
         libcrypto.so.10 => /lib64/libcrypto.so.10 (0x00007f8735f25000)
@@ -22,7 +22,7 @@ If the command does not return any results, then either your `mysqld` is statica
 
 If you aren't sure whether your server is linked with [OpenSSL](https://www.openssl.org/) or the bundled TLS library, then you can check the value of the `[have_openssl](data-in-transit-encryption/ssltls-system-variables.md)` system variable. For example:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'have_openssl';
 +---------------+-------+
 | Variable_name | Value |
@@ -35,7 +35,7 @@ SHOW GLOBAL VARIABLES LIKE 'have_openssl';
 
 If you want to see what version of [OpenSSL](https://www.openssl.org/) your server is using, then you can check the value of the `[version_ssl_library](data-in-transit-encryption/ssltls-system-variables.md)` system variable. For example:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'version_ssl_library';
 +---------------------+---------------------------------+
 | Variable_name       | Value                           |
@@ -46,7 +46,7 @@ SHOW GLOBAL VARIABLES LIKE 'version_ssl_library';
 
 Note that the version returned by this system variable does not always necessarily correspond to the exact version of the [OpenSSL](https://www.openssl.org/) package installed on the system. [OpenSSL](https://www.openssl.org/) shared libraries tend to contain interfaces for multiple versions at once to allow for backward compatibility. Therefore, if the [OpenSSL](https://www.openssl.org/) package installed on the system is newer than the [OpenSSL](https://www.openssl.org/) version that the MariaDB Server binary was built with, then the MariaDB Server binary might use one of the interfaces for an older version. See [MDEV-15848](https://jira.mariadb.org/browse/MDEV-15848) for more information. For example:
 
-```
+```bash
 $ cat /etc/redhat-release
 Red Hat Enterprise Linux Server release 7.5 (Maipo)
 $ rpm -q openssl
@@ -147,7 +147,7 @@ On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly rec
 
 Update the package by executing the following command:
 
-```
+```bash
 sudo yum update openssl
 ```
 
@@ -159,7 +159,7 @@ On Debian, Ubuntu, and other similar Linux distributions, it is highly recommend
 
 First update the package cache by executing the following command:
 
-```
+```bash
 sudo apt update
 ```
 

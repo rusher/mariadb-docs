@@ -47,13 +47,13 @@ Two-way TLS means that both the client and server provide a private key and an X
 
 If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
 
-```
+```sql
 STOP SLAVE;
 ```
 
 Then, execute the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
 
-```
+```sql
 CHANGE MASTER TO
    MASTER_SSL_CERT = '/path/to/client-cert.pem',
    MASTER_SSL_KEY = '/path/to/client-key.pem',
@@ -63,7 +63,7 @@ CHANGE MASTER TO
 
 At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
 
-```
+```sql
 START SLAVE;
 ```
 
@@ -81,13 +81,13 @@ One-way TLS means that only the server provides a private key and an X509 certif
 
 If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
 
-```
+```sql
 STOP SLAVE;
 ```
 
 Then, execute the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
 
-```
+```sql
 CHANGE MASTER TO
    MASTER_SSL_CA = '/path/to/ca/ca.pem',
    MASTER_SSL_VERIFY_SERVER_CERT=1;
@@ -95,7 +95,7 @@ CHANGE MASTER TO
 
 At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
 
-```
+```sql
 START SLAVE;
 ```
 
@@ -111,20 +111,20 @@ One-way TLS means that only the server provides a private key and an X509 certif
 
 If the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) are currently running, you first need to stop them by executing the [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement. For example:
 
-```
+```sql
 STOP SLAVE;
 ```
 
 Then, execute the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement to configure the replica to use TLS. For example:
 
-```
+```sql
 CHANGE MASTER TO
    MASTER_SSL=1, MASTER_SSL_VERIFY_SERVER_CERT=0;
 ```
 
 At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement. For example:
 
-```
+```sql
 START SLAVE;
 ```
 
@@ -148,7 +148,7 @@ Before you restart the server, you may also want to set the [--skip-slave-start]
 After these changes have been made, you can [restart the server](https://mariadb.com/kb/en/).\
 Once the server is back online, set the [MASTER\_SSL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option by executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. This will enable TLS. For example:
 
-```
+```sql
 CHANGE MASTER TO
    MASTER_SSL=1;
 ```
@@ -156,7 +156,7 @@ CHANGE MASTER TO
 The certificate and keys will be read from the option file.\
 At this point, you can start replication by executing the [START SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) statement.
 
-```
+```sql
 START SLAVE;
 ```
 

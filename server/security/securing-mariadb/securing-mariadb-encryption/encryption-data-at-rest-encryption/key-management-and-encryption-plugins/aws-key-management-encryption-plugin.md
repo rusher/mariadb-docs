@@ -52,7 +52,7 @@ You do not need to download / install the AWS C++ SDK yourself, the correct vers
 
 With all prerequisites installed the actual build process pretty much comes down to:
 
-```
+```bash
 # clone the MariaDB Server source code repository
 git clone https://github.com/MariaDB/server.git
 cd server
@@ -81,7 +81,7 @@ Even after the package that contains the plugin's shared library is installed on
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
 
-```
+```sql
 INSTALL SONAME 'aws_key_management';
 ```
 
@@ -99,7 +99,7 @@ Before you uninstall the plugin, you should ensure that [data-at-rest encryption
 
 You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
 
-```
+```sql
 UNINSTALL SONAME 'aws_key_management';
 ```
 
@@ -121,7 +121,7 @@ Once you've updated the configuration file, [restart](https://mariadb.com/kb/en/
 
 Once the AWS Key Management Plugin is enabled, you can use it by creating an encrypted table:
 
-```
+```sql
 CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
@@ -141,13 +141,13 @@ When [encrypting Aria tables](../aria-encryption/), the key that is used to encr
 
 The AWS Key Management plugin does support [key rotation](encryption-key-management.md#key-rotation). To rotate a key, set the `[aws_key_management_rotate_key](#aws_key_management_rotate_key)` system variable. For example, to rotate key with ID 2:
 
-```
+```sql
 SET GLOBAL aws_key_management_rotate_key=2;
 ```
 
 Or to rotate all keys, set the value to -1:
 
-```
+```sql
 SET GLOBAL aws_key_management_rotate_key=-1;
 ```
 
