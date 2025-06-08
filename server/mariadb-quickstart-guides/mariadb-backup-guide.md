@@ -1,6 +1,5 @@
 ---
 description: Data Backup with mariadb-dump Guide
-icon: rabbit-running
 ---
 
 # Making Backups with mariadb-dump Guide

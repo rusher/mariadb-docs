@@ -1,7 +1,3 @@
----
-icon: rabbit-running
----
-
 # Connecting to MariaDB Guide
 
 This guide details the parameters for connecting to a MariaDB server using client programs like `mariadb`. Learn about default connection behaviors and how to use various command-line options to customize your connection, including secure TLS configurations.
@@ -28,7 +24,7 @@ In this scenario, the following defaults typically apply:
 
 You can override these defaults by specifying parameters. For example:
 
-```
+```bash
 mariadb -h 166.78.144.191 -u username -ppassword database_name
 ```
 

@@ -1,6 +1,5 @@
 ---
 description: SELECT Statement Guide
-icon: rabbit-running
 ---
 
 # Getting Data Guide
@@ -11,7 +10,7 @@ This guide explains how to retrieve data from MariaDB using the `SELECT` stateme
 
 To follow the examples, first create and populate the `books` and `authors` tables:
 
-```
+```sql
 CREATE OR REPLACE TABLE books (
     isbn CHAR(20) PRIMARY KEY,
     title VARCHAR(50),
@@ -55,7 +54,7 @@ SELECT * FROM books;
 
 **Output (example):**
 
-```
+```sql
 +------------+------------------------+-----------+--------------+----------+-------------+
 | isbn       | title                  | author_id | publisher_id | year_pub | description |
 +------------+------------------------+-----------+--------------+----------+-------------+
@@ -71,13 +70,13 @@ Selecting Specific Columns:
 
 List the column names separated by commas.
 
-```
+```sql
 SELECT isbn, title, author_id FROM books;
 ```
 
 **Output (example):**
 
-```
+```sql
 +------------+------------------------+-----------+
 | isbn       | title                  | author_id |
 +------------+------------------------+-----------+
@@ -92,13 +91,13 @@ SELECT isbn, title, author_id FROM books;
 
 *   To get the first `N` rows:SQL
 
-    ```
+    ```sql
     SELECT isbn, title, author_id FROM books LIMIT 5;
     ```
 
     **Output (example):**
 
-    ```
+    ```sql
     +------------+--------------------+-----------+
     | isbn       | title              | author_id |
     +------------+--------------------+-----------+
@@ -112,13 +111,13 @@ SELECT isbn, title, author_id FROM books;
     ```
 *   To get `N` rows starting from an offset (offset is 0-indexed):SQL
 
-    ```
+    ```sql
     SELECT isbn, title, author_id FROM books LIMIT 5, 10; -- Skip 5 rows, show next 10 (or fewer if less remain)
     ```
 
     **Output (example, assuming only 3 more rows exist after offset 5):**
 
-    ```
+    ```sql
     +------------+------------------------+-----------+
     | isbn       | title                  | author_id |
     +------------+------------------------+-----------+
@@ -135,7 +134,7 @@ Filtering with WHERE:
 
 Use the WHERE clause to specify conditions for row selection.
 
-```
+```sql
 SELECT isbn, title
 FROM books
 WHERE author_id = 2
@@ -144,7 +143,7 @@ LIMIT 5;
 
 **Output (example):**
 
-```
+```sql
 +------------+------------------------+
 | isbn       | title                  |
 +------------+------------------------+
@@ -161,7 +160,7 @@ Ordering with ORDER BY:
 
 Use ORDER BY column\_name \[ASC|DESC] to sort the result set.
 
-```
+```sql
 SELECT isbn, title
 FROM books
 WHERE author_id = 2
@@ -171,7 +170,7 @@ LIMIT 5;
 
 **Output (example):**
 
-```
+```sql
 +------------+--------------------+
 | isbn       | title              |
 +------------+--------------------+
@@ -194,7 +193,7 @@ Joining Tables:
 
 Use JOIN to combine rows from two or more tables based on a related column.
 
-```
+```sql
 SELECT isbn, title, CONCAT(name_first, ' ', name_last) AS author
 FROM books
 JOIN authors USING (author_id) -- Assumes 'author_id' column exists in both tables
@@ -205,7 +204,7 @@ LIMIT 5;
 
 **Output (example):**
 
-```
+```sql
 +------------+--------------------+-------------------+
 | isbn       | title              | author            |
 +------------+--------------------+-------------------+
@@ -226,7 +225,7 @@ Pattern Matching with LIKE:
 
 Use LIKE in the WHERE clause for pattern matching. % is a wildcard for zero or more characters.
 
-```
+```sql
 SELECT isbn, title, CONCAT(name_first, ' ', name_last) AS author
 FROM books
 JOIN authors USING (author_id)
@@ -237,7 +236,7 @@ LIMIT 5;
 
 **Output (example, same as above if only Dostoevsky matches):**
 
-```
+```sql
 +------------+--------------------+-------------------+
 | isbn       | title              | author            |
 +------------+--------------------+-------------------+
@@ -261,7 +260,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     \<!-- end list -->
 
-    ```
+    ```sql
     SELECT DISTINCT title
     FROM books
     JOIN authors USING (author_id)
@@ -271,7 +270,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     **Output (example, showing one "Crime & Punishment"):**
 
-    ```
+    ```sql
     +------------------------+
     | title                  |
     +------------------------+
@@ -288,7 +287,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     SQL
 
-    ```
+    ```sql
     SELECT DISTINCT HIGH_PRIORITY title
     FROM books
     JOIN authors USING (author_id)
@@ -301,7 +300,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     SQL
 
-    ```
+    ```sql
     SELECT SQL_CALC_FOUND_ROWS isbn, title
     FROM books
     JOIN authors USING (author_id)
@@ -312,7 +311,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     **Output (example for the first query):**
 
-    ```
+    ```sql
     +------------+------------------------+
     | isbn       | title                  |
     +------------+------------------------+
@@ -327,13 +326,13 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     Then, to get the total count:
 
-    ```
+    ```sql
     SELECT FOUND_ROWS();
     ```
 
     **Output (example, if 6 Dostoevsky books in total):**
 
-    ```
+    ```sql
     +--------------+
     | FOUND_ROWS() |
     +--------------+

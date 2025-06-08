@@ -1,6 +1,5 @@
 ---
 description: Core SQL Statements Guide
-icon: rabbit-running
 ---
 
 # Basic SQL Statements Guide
@@ -40,7 +39,7 @@ This example demonstrates several of the statements in action:
 
 SQL
 
-```
+```sql
 -- Create a new database
 CREATE DATABASE mydb;
 
@@ -83,7 +82,7 @@ To count the number of records in a table:
 
 SQL
 
-```
+```sql
 SELECT COUNT(*) FROM mytable; -- Or SELECT COUNT(1) FROM mytable;
 ```
 

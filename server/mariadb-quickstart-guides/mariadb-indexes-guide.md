@@ -1,6 +1,5 @@
 ---
 description: Indexing Guide
-icon: rabbit-running
 ---
 
 # Getting Started with Indexes Guide
@@ -29,7 +28,7 @@ A primary key uniquely identifies each record in a table. Its values must be uni
 
 **Using `AUTO_INCREMENT`:** The `AUTO_INCREMENT` attribute is commonly used with numeric primary keys to automatically generate a unique ID for each new row.
 
-```
+```sql
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
   `First_Name` VARCHAR(25) NOT NULL,
@@ -43,13 +42,13 @@ Note: The column defined as a primary key (or part of it) must be explicitly dec
 
 **Adding a Primary Key to an Existing Table:** Use `ALTER TABLE`. You cannot create a primary key with `CREATE INDEX`.
 
-```
+```sql
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
 ```
 
 **Finding Tables Without Primary Keys:** This query uses the `information_schema` database to find tables lacking primary keys:
 
-```
+```sql
 SELECT t.TABLE_SCHEMA, t.TABLE_NAME
 FROM information_schema.TABLES AS t
 LEFT JOIN information_schema.KEY_COLUMN_USAGE AS c
@@ -71,7 +70,7 @@ A unique index ensures that all values in the indexed column (or combination of 
 
 **Creating Unique Indexes:** During table creation:
 
-```
+```sql
 CREATE TABLE `Employees` (
   `ID` TINYINT(3) UNSIGNED NOT NULL,
   `Employee_Code` VARCHAR(25) NOT NULL,
@@ -83,19 +82,19 @@ CREATE TABLE `Employees` (
 
 After table creation using `ALTER TABLE`:
 
-```
+```sql
 ALTER TABLE Employees ADD UNIQUE `UK_HomePhone` (`Home_Phone`);
 ```
 
 After table creation using `CREATE UNIQUE INDEX`:
 
-```
+```sql
 CREATE UNIQUE INDEX `IX_Position` ON Employees(Position);
 ```
 
 **Multi-Column Unique Indexes:** An index can span multiple columns. MariaDB can use the leftmost part(s) of such an index if it cannot use the whole index (except for HASH indexes).
 
-```
+```sql
 CREATE TABLE t1 (a INT NOT NULL, b INT, UNIQUE (a,b));
 INSERT INTO t1 VALUES (1,1), (2,2);
 INSERT INTO t1 VALUES (2,1); -- Valid: (2,1) is unique, though '2' in 'a' and '1' in 'b' are not individually unique here.
@@ -114,7 +113,7 @@ SELECT * FROM t1;
 
 **`NULL` Values in Unique Indexes:** A `UNIQUE` constraint allows multiple `NULL` values because in SQL, `NULL` is never equal to another `NULL`.
 
-```
+```sql
 INSERT INTO t1 VALUES (3,NULL), (3, NULL); -- Both rows are inserted
 SELECT * FROM t1;
 ```
@@ -147,7 +146,7 @@ SELECT (3, NULL) = (3, NULL);
 
 **Conditional Uniqueness with Virtual Columns:** You can enforce uniqueness over a subset of rows using unique indexes on [virtual columns](https://www.google.com/search?q=../reference/sql-statements-and-structure/tables-and-views/virtual-columns.md). This example ensures `user_name` is unique for 'Active' or 'On-Hold' users, but allows duplicate names for 'Deleted' users:
 
-```
+```sql
 CREATE TABLE Table_1 (
   user_name VARCHAR(10),
   status ENUM('Active', 'On-Hold', 'Deleted'),
@@ -162,7 +161,7 @@ CREATE TABLE Table_1 (
 
 SQL
 
-```
+```sql
 -- Example table definition (simplified for brevity)
 CREATE TABLE t_long_keys (
   a INT PRIMARY KEY,
@@ -178,7 +177,7 @@ SHOW CREATE TABLE t_long_keys\G
 
 Example output snippet showing `USING HASH`:
 
-```
+```sql
 ...
   UNIQUE KEY `uk_b` (`b`) USING HASH,
 ...
@@ -188,7 +187,7 @@ Example output snippet showing `USING HASH`:
 
 Plain indexes do not enforce uniqueness; they are primarily used to speed up data retrieval.
 
-```
+```sql
 CREATE TABLE t2 (a INT NOT NULL, b INT, INDEX `idx_a_b` (a,b));
 INSERT INTO t2 VALUES (1,1), (2,2), (2,2); -- Duplicate (2,2) is allowed
 SELECT * FROM t2;
@@ -223,12 +222,12 @@ Full-text indexes are used for performing full-text searches on text data. For d
 
 *   **`SHOW INDEX FROM table_name;`**: Displays information about all indexes on a table.SQL
 
-    ```
+    ```sql
     SHOW INDEX FROM Employees;
     ```
 *   **`SHOW CREATE TABLE table_name;`**: Shows the `CREATE TABLE` statement, which includes definitions for all indexes.SQL
 
-    ```
+    ```sql
     SHOW CREATE TABLE Employees\G
     ```
 

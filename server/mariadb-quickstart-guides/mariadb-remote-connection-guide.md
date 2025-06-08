@@ -1,6 +1,5 @@
 ---
 description: Remote Access Configuration Guide
-icon: rabbit-running
 ---
 
 # Configuring MariaDB for Remote Client Access Guide
@@ -28,7 +27,7 @@ Connecting via `localhost` typically works even if `bind-address` is `127.0.0.1`
 
 Bash
 
-```
+```bash
 ./client/mariadb --host=localhost --protocol=tcp --port=3306 test
 ```
 
@@ -48,7 +47,7 @@ To change these network settings, you need to edit MariaDB's configuration file 
 
     Bash
 
-    ```
+    ```bash
     mariadbd --help --verbose
     ```
 
@@ -108,13 +107,14 @@ Configuring the server to listen for remote connections is only the first step. 
 
 1.  **Connect to MariaDB:**&#x42;ash
 
-    ```
+    ```bash
     mariadb -u root -p
     ```
 2.  **View Existing Remote Users (Optional):**&#x53;QL
 
-    ```
-    SELECT User, Host FROM mysql.user WHERE Host <> 'localhost' AND Host <> '127.0.0.1' AND Host <> '::1';
+    ```sql
+    SELECT User, Host FROM mysql.user 
+    WHERE Host <> 'localhost' AND Host <> '127.0.0.1' AND Host <> '::1';
     ```
 3. **Grant Privileges:** Use the `GRANT` statement to allow a user to connect from a remote host or a range of hosts.
    * **Syntax Elements:**
@@ -127,7 +127,7 @@ Configuring the server to listen for remote connections is only the first step. 
 
        SQL
 
-       ```
+       ```sql
        GRANT ALL PRIVILEGES ON *.* TO 'root'@'192.168.100.%'
          IDENTIFIED BY 'my-very-strong-password' WITH GRANT OPTION;
        FLUSH PRIVILEGES;
@@ -142,7 +142,7 @@ Even if MariaDB is configured for remote access, a firewall on the server (softw
 
 *   **RHEL/CentOS 7 Example (using `firewall-cmd`):**&#x42;ash
 
-    ```
+    ```bash
     sudo firewall-cmd --add-port=3306/tcp --permanent
     sudo firewall-cmd --reload
     ```

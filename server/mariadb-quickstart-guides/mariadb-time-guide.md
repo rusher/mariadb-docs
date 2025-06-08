@@ -1,6 +1,5 @@
 ---
 description: Modifying Dates and Times Guide
-icon: rabbit-running
 ---
 
 # Changing Times in MariaDB
@@ -14,8 +13,6 @@ _(For foundational knowledge on date and time data types and basic retrieval, pl
 When adding hours to a `TIME` value, calculations might exceed 24 hours. For example, if a task is entered at 23:00 and is promised 2 hours later, a simple addition can be problematic.
 
 Consider an `INSERT` statement for a `tickets` table with `entered` and `promised` `TIME` columns:
-
-SQL
 
 ```sql
 -- Example: Calculating a promised time 2 hours (7200 seconds) from current time

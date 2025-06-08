@@ -1,6 +1,5 @@
 ---
 description: MariaDB Primer
-icon: rabbit-running
 ---
 
 # A MariaDB Primer Guide
@@ -82,7 +81,7 @@ SHOW TABLES;
 
 **Output (example):**
 
-```sql
+```
 +----------------+
 | Tables_in_test |
 +----------------+
@@ -103,7 +102,7 @@ DESCRIBE books;
 
 **Output (example):**
 
-```sql
+```
 +----------+--------------+------+-----+---------+----------------+
 | Field    | Type         | Null | Key | Default | Extra          |
 +----------+--------------+------+-----+---------+----------------+
@@ -126,7 +125,7 @@ SELECT * FROM books;
 
 * The asterisk (`*`) is a wildcard meaning "all columns." **Output (example):**
 
-```sql
+```
 +--------+----------------------------+----------+----------+
 | BookID | Title                      | SeriesID | AuthorID |
 +--------+----------------------------+----------+----------+
@@ -172,7 +171,7 @@ WHERE BookID = 7;
 * `SET Title = "The Hobbit"` specifies the column to change and its new value.
 * `WHERE BookID = 7` is crucial; it specifies _which row(s)_ to update. Without a `WHERE` clause, `UPDATE` would change _all_ rows in the table. **Output:**
 
-```sql
+```
 Query OK, 1 row affected (0.00 sec)
 Rows matched: 1  Changed: 1  Warnings: 0
 ```

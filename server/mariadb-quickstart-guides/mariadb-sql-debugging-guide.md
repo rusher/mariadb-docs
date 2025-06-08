@@ -1,6 +1,5 @@
 ---
 description: SQL Query Design Guide
-icon: rabbit-running
 ---
 
 # Basic SQL Debugging Guide

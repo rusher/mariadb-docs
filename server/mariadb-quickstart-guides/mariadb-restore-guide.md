@@ -1,6 +1,5 @@
 ---
 description: Data Restoration Guide
-icon: rabbit-running
 ---
 
 # Restoring Data from Dump Files Guide

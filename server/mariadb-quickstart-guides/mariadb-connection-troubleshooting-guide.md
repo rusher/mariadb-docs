@@ -1,11 +1,5 @@
 ---
-icon: rabbit-running
-cover: ../.gitbook/assets/gray-1200x628.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -30,14 +24,14 @@ Symptoms:
 
 You receive errors similar to:
 
-```
+```sql
 ERROR 2002 (HY000): Can't connect to local MySQL server through
   socket '/var/run/mysqld/mysqld.sock' (2 "No such file or directory")
 ```
 
 or
 
-```
+```sql
 mariadb -u someuser -p --port=3307 --protocol=tcp
 ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost'
   (111 "Connection refused")
@@ -52,7 +46,7 @@ ERROR 2003 (HY000): Can't connect to MySQL server on 'localhost'
   * Check your `my.cnf` (or `my.ini`) configuration file. Ensure the `socket` option has the identical value in both the `[mysqld]` (server) section and the `[client]` (or `[mysql]`) section.
   *   To find the running Unix socket file, you can try commands like:
 
-      ```
+      ```bash
       netstat -ln | grep mysqld
       ```
 
@@ -69,14 +63,14 @@ Symptoms:
 
 You can connect locally, but not from a remote machine, possibly seeing errors like:
 
-```
+```bash
 ./client/mysql --host=myhost --protocol=tcp --port=3306 test
 ERROR 2002 (HY000): Can't connect to MySQL server on 'myhost' (115)
 ```
 
 You can use `telnet` (if available) to test basic network connectivity to the port:
 
-```
+```bash
 telnet myhost 3306
 ```
 
@@ -84,13 +78,13 @@ A "Connection refused" message from telnet indicates a network or firewall issue
 
 The perror utility can interpret OS error codes:
 
-```
+```bash
 perror 115
 ```
 
 Example output:
 
-```
+```bash
 OS error code 115: Operation now in progress
 ```
 
@@ -133,7 +127,7 @@ Symptoms:
 
 You can connect to the MariaDB server, but attempting to USE or query a specific database results in an error:
 
-```
+```sql
 USE test;
 ERROR 1044 (42000): Access denied for user 'youruser'@'yourhost' to database 'test'
 ```
@@ -158,7 +152,7 @@ Unexpected connection behavior or parameter usage that you didn't explicitly pro
   * Check the values in any option files read by your client. See [MariaDB Configuration Files and Groups](https://www.google.com/search?q=link_to_Config_Files_Groups) and the documentation for the specific client you are using (listed under [Clients and Utilities](https://www.google.com/search?q=link_to_Clients_Utilities)).
   *   You can often suppress the reading of default option files by using a `--no-defaults` option (if supported by the client):Bash
 
-      ```
+      ```bash
       mariadb-import --no-defaults ...
       ```
 
@@ -177,7 +171,7 @@ You cannot connect to a running server, often because the root (or other adminis
   4. Execute `FLUSH PRIVILEGES;` to reload the grant tables (they are now active again).
   5.  Change the password for the necessary account, e.g.:SQL
 
-      ```
+      ```sql
       SET PASSWORD FOR 'root'@'localhost' = PASSWORD('your_new_strong_password');
       ```
   6. Stop the server and restart it normally (without `--skip-grant-tables`).
@@ -188,7 +182,7 @@ Symptoms:
 
 You've created a user like 'melisa'@'%' but cannot log in as melisa when connecting from localhost.
 
-```
+```sql
 -- User created with '%' host
 CREATE USER 'melisa'@'%' IDENTIFIED BY 'password';
 
@@ -213,14 +207,14 @@ Example output showing the problem:
 * **Solutions:**
   1.  **Create a specific user for localhost:**&#x53;QL
 
-      ```
+      ```sql
       CREATE USER 'melisa'@'localhost' IDENTIFIED BY 'password_for_melisa_localhost';
       GRANT ALL PRIVILEGES ON yourdatabase.* TO 'melisa'@'localhost'; -- Grant necessary privileges
       FLUSH PRIVILEGES;
       ```
   2.  **Remove the anonymous user for localhost (use with caution):**&#x53;QL
 
-      ```
+      ```sql
       DROP USER ''@'localhost';
       FLUSH PRIVILEGES;
       ```

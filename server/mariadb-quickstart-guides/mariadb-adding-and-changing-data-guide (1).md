@@ -1,12 +1,6 @@
 ---
 description: Adding and Modifying Data Guide
-icon: rabbit-running
-cover: ../.gitbook/assets/blue-bright-1200x628.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:

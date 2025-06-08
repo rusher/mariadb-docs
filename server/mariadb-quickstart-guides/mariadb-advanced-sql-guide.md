@@ -1,11 +1,5 @@
 ---
-icon: rabbit-running
-cover: ../.gitbook/assets/blue-azure-swoosh-medium-600x500.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -26,15 +20,15 @@ The Essential Queries Guide offers a concise collection of commonly-used SQL que
 
 To create new tables:
 
-```
+```sql
 CREATE TABLE t1 ( a INT );
 ```
 
-```
+```sql
 CREATE TABLE t2 ( b INT );
 ```
 
-```
+```sql
 CREATE TABLE student_tests (
  name CHAR(10), test CHAR(10),
  score TINYINT, test_date DATE
@@ -47,15 +41,15 @@ For more details, see the official [CREATE TABLE](https://www.google.com/search?
 
 To add data into your tables:
 
-```
+```sql
 INSERT INTO t1 VALUES (1), (2), (3);
 ```
 
-```
+```sql
 INSERT INTO t2 VALUES (2), (4);
 ```
 
-```
+```sql
 INSERT INTO student_tests
  (name, test, score, test_date) VALUES
  ('Chun', 'SQL', 75, '2012-11-05'),
@@ -76,7 +70,7 @@ The `AUTO_INCREMENT` attribute automatically generates a unique identity for new
 
 Create a table with an `AUTO_INCREMENT` column:
 
-```
+```sql
 CREATE TABLE student_details (
  id INT NOT NULL AUTO_INCREMENT, name CHAR(10),
  date_of_birth DATE, PRIMARY KEY (id)
@@ -85,7 +79,7 @@ CREATE TABLE student_details (
 
 When inserting, omit the `id` field; it will be automatically generated:
 
-```
+```sql
 INSERT INTO student_details (name,date_of_birth) VALUES
  ('Chun', '1993-12-31'),
  ('Esben','1946-01-01'),
@@ -95,7 +89,7 @@ INSERT INTO student_details (name,date_of_birth) VALUES
 
 Verify the inserted records:
 
-```
+```sql
 SELECT * FROM student_details;
 ```
 
@@ -116,7 +110,7 @@ For more details, see the [AUTO\_INCREMENT](https://www.google.com/search?q=link
 
 To combine rows from two tables based on a related column:
 
-```
+```sql
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 
@@ -126,7 +120,7 @@ This type of query is a join. For more details, consult the documentation on [JO
 
 To find the maximum value in a column:
 
-```
+```sql
 SELECT MAX(a) FROM t1;
 ```
 
@@ -144,7 +138,7 @@ See the [MAX() function](https://www.google.com/search?q=link_to_MAX_function_do
 
 To find the minimum value in a column:
 
-```
+```sql
 SELECT MIN(a) FROM t1;
 ```
 
@@ -162,7 +156,7 @@ See the [MIN() function](https://www.google.com/search?q=link_to_MIN_function_do
 
 To calculate the average value of a column:
 
-```
+```sql
 SELECT AVG(a) FROM t1;
 ```
 
@@ -180,7 +174,7 @@ See the [AVG() function](https://www.google.com/search?q=link_to_AVG_function_do
 
 To find the maximum value within groups:
 
-```
+```sql
 SELECT name, MAX(score) FROM student_tests GROUP BY name;
 ```
 
@@ -201,8 +195,9 @@ Further details are available in the MAX() function documentation.
 
 To sort your query results (e.g., in descending order):
 
-```
-SELECT name, test, score FROM student_tests ORDER BY score DESC; -- Use ASC for ascending order
+```sql
+SELECT name, test, score FROM student_tests 
+ ORDER BY score DESC; -- Use ASC for ascending order
 ```
 
 ```
@@ -226,8 +221,9 @@ For more options, see the [ORDER BY](https://www.google.com/search?q=link_to_ORD
 
 To find the entire row containing the minimum value of a specific column across all records:
 
-```
-SELECT name, test, score FROM student_tests WHERE score = (SELECT MIN(score) FROM student_tests);
+```sql
+SELECT name, test, score FROM student_tests 
+ WHERE score = (SELECT MIN(score) FROM student_tests);
 ```
 
 ```
@@ -242,9 +238,9 @@ SELECT name, test, score FROM student_tests WHERE score = (SELECT MIN(score) FRO
 
 To retrieve the full record for the maximum value within each group (e.g., highest score per student):
 
-```
+```sql
 SELECT name, test, score FROM student_tests st1
-WHERE score = (SELECT MAX(st2.score) FROM student_tests st2 WHERE st1.name = st2.name);
+ WHERE score = (SELECT MAX(st2.score) FROM student_tests st2 WHERE st1.name = st2.name);
 ```
 
 ```
@@ -264,7 +260,7 @@ Use the `TIMESTAMPDIFF` function to calculate age from a birth date.
 
 To see the current date (optional, for reference):
 
-```
+```sql
 SELECT CURDATE() AS today;
 ```
 
@@ -278,7 +274,7 @@ SELECT CURDATE() AS today;
 
 To calculate age as of a specific date (e.g., '2014-08-02'):
 
-```
+```sql
 SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, '2014-08-02') AS age
   FROM student_details;
 ```
@@ -304,7 +300,7 @@ See the TIMESTAMPDIFF() documentation for more.
 
 Example: Set a variable for the average score and use it to filter results.
 
-```
+```sql
 SELECT @avg_score := AVG(score) FROM student_tests;
 ```
 
@@ -316,7 +312,7 @@ SELECT @avg_score := AVG(score) FROM student_tests;
 +-------------------------+
 ```
 
-```
+```sql
 SELECT * FROM student_tests WHERE score > @avg_score;
 ```
 
@@ -334,11 +330,11 @@ SELECT * FROM student_tests WHERE score > @avg_score;
 
 Example: Add an incremental counter to a result set.
 
-```
+```sql
 SET @count = 0;
 ```
 
-```
+```sql
 SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details;
 ```
 
@@ -385,17 +381,17 @@ This example assumes `id` is a unique primary key and duplicates are identified 
 
 Setup sample table and data:
 
-```
+```sql
 CREATE TABLE t (id INT, f1 VARCHAR(2));
 ```
 
-```
+```sql
 INSERT INTO t VALUES (1,'a'), (2,'a'), (3,'b'), (4,'a');
 ```
 
 To delete duplicate rows, keeping the one with the highest `id` for each group of `f1` values:
 
-```
+```sql
 DELETE t_del FROM t AS t_del
 INNER JOIN (
     SELECT f1, MAX(id) AS max_id
@@ -409,7 +405,7 @@ This query targets rows for deletion (`t_del`) where their `f1` value matches an
 
 Verify results after deletion:
 
-```
+```sql
 SELECT * FROM t;
 ```
 

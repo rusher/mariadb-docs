@@ -1,6 +1,5 @@
 ---
 description: String Functions Guide
-icon: rabbit-running
 ---
 
 # MariaDB String Functions Guide
@@ -17,7 +16,7 @@ Several functions are available for formatting text and numbers for display or p
 
     SQL
 
-    ```
+    ```sql
     SELECT CONCAT(name_first, ' ', name_last) AS Name FROM contacts;
     ```
 
@@ -47,7 +46,7 @@ Several functions are available for formatting text and numbers for display or p
 * `UCASE(str)` or `UPPER(str)`: Converts a string to all upper-case letters.
 *   `LCASE(str)` or `LOWER(str)`: Converts a string to all lower-case letters.SQL
 
-    ```
+    ```sql
     SELECT UCASE(col1) AS Upper_Col1, LCASE(col2) AS Lower_Col2 FROM table4;
     ```
 
@@ -109,8 +108,6 @@ Functions for changing or generating strings.
 
 *   `REPLACE(str, from_str, to_str)`: Replaces all occurrences of `from_str` within `str` with `to_str`.
 
-    SQL
-
     ```sql
     SELECT CONCAT(REPLACE(title, 'Mrs.', 'Ms.'), ' ', name_first, ' ', name_last) AS Name
     FROM contacts;
@@ -130,16 +127,12 @@ Functions for changing or generating strings.
     This finds 'Mrs.' in the `name` string, and replaces it with 'Ms.'. `LENGTH('Mrs.')` (which is 4) is used for `len`. If `LOCATE()` returns 0, `INSERT()` with a position of 0 typically returns the original string unchanged.
 *   `REVERSE(str)`: Reverses the characters in `str`.
 
-    SQL
-
-    ```
+    ```sql
     SELECT REVERSE('MariaDB'); -- Output: BDeiraM
     ```
 *   `REPEAT(str, count)`: Repeats `str` `count` times.
 
-    SQL
-
-    ```
+    ```sql
     SELECT REPEAT('Ha', 3); -- Output: HaHaHa
     ```
 
@@ -148,8 +141,6 @@ Functions for changing or generating strings.
 Functions that provide information about strings or assist in specific comparisons/conversions.
 
 *   `CHAR_LENGTH(str)` or `CHARACTER_LENGTH(str)`: Returns the length of `str` in characters.
-
-    SQL
 
     ```sql
     SELECT COUNT(school_id) AS 'Number of Students'
@@ -162,8 +153,6 @@ Functions that provide information about strings or assist in specific compariso
 *   INET\_NTOA(numeric\_ip\_representation): Converts the numeric representation back to an IPv4 address string.
 
     To correctly sort IP addresses numerically instead of lexically:
-
-    SQL
 
     ```sql
     SELECT ip_address

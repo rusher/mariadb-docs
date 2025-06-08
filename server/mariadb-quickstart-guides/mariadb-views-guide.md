@@ -1,6 +1,5 @@
 ---
 description: Introduction to Views Guide
-icon: rabbit-running
 ---
 
 # Creating & Using Views Guide
@@ -106,7 +105,7 @@ AND DATE_FORMAT(`Hours`.`Clock_In`, '%H:%i:%S') > '07:00:59';
 
 **Output:**
 
-```sql
+```
 +------------+-----------+---------------------+---------------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           |
 +------------+-----------+---------------------+---------------------+
@@ -135,7 +134,7 @@ WHERE DATE_FORMAT(`Hours`.`Clock_In`, '%Y-%m-%d') BETWEEN '2005-08-08' AND '2005
 
 **Output of Refined Query (example structure):**
 
-```sql
+```
 +------------+-----------+---------------------+---------------------+------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           | Difference |
 +------------+-----------+---------------------+---------------------+------------+
@@ -187,7 +186,7 @@ SELECT * FROM Employee_Tardiness WHERE Difference >= 5;
 
 **Output (example structure, showing those at least 5 minutes short):**
 
-```sql
+```
 +------------+-----------+---------------------+---------------------+------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           | Difference |
 +------------+-----------+---------------------+---------------------+------------+

@@ -1,6 +1,5 @@
 ---
 description: Basic Joins Guide
-icon: rabbit-running
 ---
 
 # Joining Tables with JOIN Clauses Guide
@@ -11,7 +10,7 @@ This guide offers a simple, hands-on introduction to three basic `JOIN` types in
 
 First, create and populate two simple tables, `t1` and `t2`, to use in the `JOIN` examples:
 
-```
+```sql
 CREATE TABLE t1 ( a INT );
 CREATE TABLE t2 ( b INT );
 
@@ -48,7 +47,7 @@ _Explanation:_ Only the row where `t1.a` (value 2) matches `t2.b` (value 2) is r
 
 A `CROSS JOIN` produces a result set in which every row from the first table is joined to every row in the second table. This is also known as a Cartesian product.
 
-```
+```sql
 SELECT * FROM t1 CROSS JOIN t2;
 ```
 
@@ -74,7 +73,7 @@ _Explanation:_ Each of the 3 rows in `t1` is combined with each of the 2 rows in
 
 A `LEFT JOIN` (or `LEFT OUTER JOIN`) produces a result set with all rows from the "left" table (`t1` in this case). If a match is found in the "right" table (`t2`), the corresponding columns from the right table are included. If no match is found, these columns are filled with `NULL`.
 
-```
+```sql
 SELECT * FROM t1 LEFT JOIN t2 ON t1.a = t2.b;
 ```
 
@@ -97,7 +96,7 @@ _Explanation:_ All rows from `t1` are present. For `t1.a = 1` and `t1.a = 3`, th
 
 This example uses a `LEFT JOIN` but with `t2` as the left table. This effectively demonstrates how a `RIGHT JOIN` would behave if `t1` were the left table and `t2` the right. A `RIGHT JOIN` includes all rows from the "right" table and `NULL`s for non-matching "left" table columns.
 
-```
+```sql
 SELECT * FROM t2 LEFT JOIN t1 ON t1.a = t2.b;
 ```
 
@@ -121,14 +120,14 @@ The first two `SELECT` statements (`INNER JOIN` and `CROSS JOIN`) are sometimes 
 
 *   **Implicit INNER JOIN:**
 
-    ```
+    ```sql
     SELECT * FROM t1, t2 WHERE t1.a = t2.b;
     ```
 
     This is equivalent to `SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;`.
 *   **Implicit CROSS JOIN (Cartesian Product):**
 
-    ```
+    ```sql
     SELECT * FROM t1, t2;
     ```
 

@@ -1,12 +1,6 @@
 ---
 description: 'Quickstart Guide: Installing MariaDB Server'
-icon: rabbit-running
-cover: ../.gitbook/assets/Group 15569 (2).png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:

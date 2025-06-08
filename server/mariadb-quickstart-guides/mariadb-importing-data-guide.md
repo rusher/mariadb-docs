@@ -1,6 +1,5 @@
 ---
 description: Bulk Data Importing Guide
-icon: rabbit-running
 ---
 
 # Importing Data Guide
@@ -30,13 +29,13 @@ Basic Syntax:
 
 First, connect to MariaDB using the mariadb client and select your target database:
 
-```
+```sql
 USE sales_dept; -- Or your database name
 ```
 
 Then, load the data:
 
-```
+```sql
 LOAD DATA INFILE '/tmp/prospects.txt'
 INTO TABLE prospect_contact
 FIELDS TERMINATED BY '|';
@@ -51,7 +50,7 @@ Specifying Line Terminators and Enclosing Characters:
 
 If your file has custom line endings or fields enclosed by characters (e.g., quotes):
 
-```
+```sql
 LOAD DATA INFILE '/tmp/prospects.txt'
 INTO TABLE prospect_contact
 FIELDS TERMINATED BY '|' ENCLOSED BY '"'
@@ -70,14 +69,14 @@ When importing data, you might encounter records with primary key values that al
 * **Default Behavior:** MariaDB attempts to import all rows. If duplicates are found and the table has a primary or unique key that would be violated, an error occurs, and subsequent rows may not be imported.
 *   **`REPLACE`:** If you want new data from the file to overwrite existing rows with the same primary key:SQL
 
-    ```
+    ```sql
     LOAD DATA INFILE '/tmp/prospects.txt'
     REPLACE INTO TABLE prospect_contact
     FIELDS TERMINATED BY '|';
     ```
 *   **`IGNORE`:** If you want to keep existing rows and skip importing duplicate records from the file:SQL
 
-    ```
+    ```sql
     LOAD DATA INFILE '/tmp/prospects.txt'
     IGNORE INTO TABLE prospect_contact
     FIELDS TERMINATED BY '|';
@@ -89,7 +88,7 @@ If the target table is actively being used, importing data can lock it, preventi
 
 *   **`LOW_PRIORITY`:** To allow other users to read from the table while the load operation is pending, use `LOW_PRIORITY`. The load will wait until no other clients are reading the table.SQL
 
-    ```
+    ```sql
     LOAD DATA LOW_PRIORITY INFILE '/tmp/prospects.txt'
     INTO TABLE prospect_contact
     FIELDS TERMINATED BY '|';
@@ -103,7 +102,7 @@ Binary Line Endings:
 
 If your file has Windows CRLF line endings and was uploaded in binary mode, you can specify the hexadecimal value:
 
-```
+```sql
 LOAD DATA INFILE '/tmp/prospects.txt'
 INTO TABLE prospect_contact
 FIELDS TERMINATED BY '|'
@@ -118,7 +117,7 @@ To ignore a certain number of lines at the beginning of the file (e.g., a header
 
 SQL
 
-```
+```sql
 LOAD DATA INFILE '/tmp/prospects.txt'
 INTO TABLE prospect_contact
 FIELDS TERMINATED BY '|'
@@ -129,7 +128,7 @@ Handling Escaped Characters:
 
 If fields are enclosed by quotes and contain embedded quotes that are escaped by a special character (e.g., # instead of the default backslash \\):
 
-```
+```sql
 LOAD DATA INFILE '/tmp/prospects.txt'
 INTO TABLE prospect_contact
 FIELDS TERMINATED BY '|'
@@ -146,7 +145,7 @@ Assume prospect\_contact table has: (row\_id INT AUTO\_INCREMENT, name\_first VA
 
 And prospects.txt has columns in order: Last Name, First Name, Telephone.
 
-```
+```sql
 LOAD DATA INFILE '/tmp/prospects.txt'
 INTO TABLE prospect_contact
 FIELDS TERMINATED BY '|' -- Or your actual delimiter, e.g., 0x09 for tab

@@ -1,11 +1,5 @@
 ---
-icon: rabbit-running
-cover: ../.gitbook/assets/blue-green-gradient-1200x628png.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:

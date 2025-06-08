@@ -1,11 +1,5 @@
 ---
-icon: rabbit-running
-cover: ../.gitbook/assets/coastal-blue-swoosh-medium-600x500.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -28,7 +22,7 @@ To interact with the MariaDB server, use a client program. The default command-l
 
 Connect to MariaDB in monitor mode from the Linux command-line:
 
-```
+```bash
 mariadb -u root -p -h localhost
 ```
 
@@ -50,7 +44,7 @@ To exit the `mariadb` monitor, type `quit` or `exit` and press \[Enter].
 
 First, create and select a database.
 
-```
+```sql
 CREATE DATABASE bookstore;
 USE bookstore;
 ```
@@ -59,7 +53,7 @@ This creates a database named `bookstore` and sets it as the default for subsequ
 
 Next, create tables to hold data.
 
-```
+```sql
 CREATE TABLE books (
     isbn CHAR(20) PRIMARY KEY,
     title VARCHAR(50),
@@ -80,7 +74,7 @@ This statement creates a `books` table with six columns:
 
 To view the structure of a created table:
 
-```
+```sql
 DESCRIBE books;
 ```
 
@@ -101,7 +95,7 @@ To modify an existing table, use the `ALTER TABLE` statement (see [ALTER TABLE d
 
 Example of another table, `authors`, using `AUTO_INCREMENT` for the primary key:
 
-```
+```sql
 CREATE TABLE authors (
     author_id INT AUTO_INCREMENT PRIMARY KEY,
     name_last VARCHAR(50),
@@ -125,7 +119,7 @@ The `author_id` will automatically generate a unique number for each new author.
 
 Use the `INSERT` statement (see [INSERT documentation](https://www.google.com/search?q=link_to_INSERT_documentation)) to add new rows to a table.
 
-```
+```sql
 INSERT INTO authors (name_last, name_first, country)
 VALUES('Kafka', 'Franz', 'Czech Republic');
 ```
@@ -134,14 +128,14 @@ Since `author_id` in the `authors` table is `AUTO_INCREMENT` (see [AUTO\_INCREME
 
 To insert data for a book, referencing `author_id` `1` (assuming Kafka's `author_id` became `1`):
 
-```
+```sql
 INSERT INTO books (title, author_id, isbn, year_pub)
 VALUES('The Castle', '1', '0805211063', '1998');
 ```
 
 Multiple rows can be inserted with a single `INSERT` statement:
 
-```
+```sql
 INSERT INTO books (title, author_id, isbn, year_pub)
 VALUES('The Trial', '1', '0805210407', '1995'),
       ('The Metamorphosis', '1', '0553213695', '1995'),
@@ -154,19 +148,19 @@ Use the SELECT statement (see SELECT documentation) to query data from tables.
 
 To retrieve all book titles:
 
-```
+```sql
 SELECT title FROM books;
 ```
 
 To limit the number of rows returned (e.g., to 5) using `LIMIT` (see [LIMIT documentation](https://www.google.com/search?q=link_to_LIMIT_documentation)):
 
-```
+```sql
 SELECT title FROM books LIMIT 5;
 ```
 
 To retrieve data from multiple tables, use a `JOIN` (see [JOIN documentation](https://www.google.com/search?q=link_to_JOIN_documentation)). This example lists book titles and author last names by joining `books` and `authors` on their common `author_id` column:
 
-```
+```sql
 SELECT title, name_last
 FROM books
 JOIN authors USING (author_id);
@@ -174,7 +168,7 @@ JOIN authors USING (author_id);
 
 To filter results, use the `WHERE` clause (see [WHERE documentation](https://www.google.com/search?q=link_to_WHERE_documentation)). This example finds books by 'Kafka' and renames the `title` column<sup>1</sup> in the output to 'Kafka Books' using `AS` (an alias):
 
-```
+```sql
 SELECT title AS 'Kafka Books'
 FROM books
 JOIN authors USING (author_id)
@@ -196,7 +190,7 @@ WHERE name_last = 'Kafka';
 
 To modify existing data, use the `UPDATE` statement (see [UPDATE documentation](https://www.google.com/search?q=link_to_UPDATE_documentation)). Always use a `WHERE` clause to specify which rows to update.
 
-```
+```sql
 UPDATE books
 SET title = 'Amerika'
 WHERE isbn = '0805210644';
@@ -206,7 +200,7 @@ This changes the `title` for the book with the specified `isbn`. Multiple column
 
 To remove rows from a table, use the `DELETE` statement (see [DELETE documentation](https://www.google.com/search?q=link_to_DELETE_documentation)). Use `WHERE` to specify which rows to delete.
 
-```
+```sql
 DELETE FROM books
 WHERE author_id = '2034'; -- Assuming '2034' is the author_id to be deleted
 ```
