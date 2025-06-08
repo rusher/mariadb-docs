@@ -103,7 +103,7 @@ $ mariadb --user=root
 
 2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) using the [SHOW SESSION VARIABLES](../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'default_storage_engine';
 
@@ -116,13 +116,13 @@ SHOW SESSION VARIABLES
 
 3. If the database does not exist, then create the database for the sequence and table using the [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md) statement:
 
-```
+```sql
 CREATE DATABASE hq_sales;
 ```
 
 4. Create the parent table using the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement:
 
-```
+```sql
 CREATE TABLE hq_sales.customers (
    customer_id BIGINT AUTO_INCREMENT NOT NULL,
    customer_name VARCHAR(500) NOT NULL,
@@ -133,7 +133,7 @@ CREATE TABLE hq_sales.customers (
 
 5. Create the child table using the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE hq_sales.invoices (
 
 6. Insert some rows into the parent table using the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.customers (customer_id, name)
    VALUES
    (1, 'John Doe'),
@@ -160,7 +160,7 @@ INSERT INTO hq_sales.customers (customer_id, name)
 
 7. Insert a row into the child table for each row in the parent table using the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -170,14 +170,14 @@ VALUES
 
 8. Attempt to delete a row from the parent table that has a corresponding row in the child table using the `DELETE` statement:
 
-```
+```sql
 DELETE FROM hq_sales.customers
    WHERE customer_id = 1;
 ```
 
 This will fail with the [ER\_ROW\_IS\_REFERENCED\_2](broken-reference) error code as explained in the Operating on a Parent Table section:
 
-```
+```sql
 ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails
    (`hq_sales`.`invoices`, CONSTRAINT `fk_invoices_customers`
    FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`))
@@ -185,7 +185,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 Attempt to insert a row into the child table for a non-existent row in the parent table using the INSERT statement:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -194,7 +194,7 @@ VALUES
 
 This will fail with the [ER\_NO\_REFERENCED\_ROW\_2](broken-reference) error code as explained in the Operating on a Child Table section:
 
-```
+```sql
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails
    (`hq_sales`.`invoices`, CONSTRAINT `fk_invoices_customers`
    FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`))
@@ -206,13 +206,13 @@ Let's create InnoDB tables after confirming that the [default storage engine](..
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) using the [SHOW SESSION VARIABLES](../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'default_storage_engine';
 
@@ -225,13 +225,13 @@ SHOW SESSION VARIABLES
 
 3. If the database does not exist, then create the database for the sequence and table using the [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md) statement:
 
-```
+```sql
 CREATE DATABASE hq_sales;
 ```
 
 4. Create the parent table using the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement:
 
-```
+```sql
 CREATE TABLE hq_sales.customers (
    customer_id BIGINT AUTO_INCREMENT NOT NULL,
    customer_name VARCHAR(500) NOT NULL,
@@ -242,7 +242,7 @@ CREATE TABLE hq_sales.customers (
 
 5. Create the child table using the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -256,7 +256,7 @@ CREATE TABLE hq_sales.invoices (
 
 6. Alter the child table to add the foreign key constraint using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
 
-```
+```sql
 ALTER TABLE hq_sales.invoices ADD CONSTRAINT fk_invoices_customers
       FOREIGN KEY (customer_id) REFERENCES hq_sales.customers (customer_id)
       ON DELETE RESTRICT
@@ -265,7 +265,7 @@ ALTER TABLE hq_sales.invoices ADD CONSTRAINT fk_invoices_customers
 
 7. Insert some rows into the parent table using the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.customers (customer_id, name)
    VALUES
    (1, 'John Doe'),
@@ -274,7 +274,7 @@ INSERT INTO hq_sales.customers (customer_id, name)
 
 8. Insert a row into the child table for each row in the parent table using the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -284,14 +284,14 @@ VALUES
 
 9. Attempt to delete a row from the parent table that has a corresponding row in the child table using the [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement:
 
-```
+```sql
 DELETE FROM hq_sales.customers
    WHERE customer_id = 1;
 ```
 
 This will fail with the [ER\_ROW\_IS\_REFERENCED\_2](broken-reference) error code as explained in the Operating on a Parent Table section:
 
-```
+```sql
 ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails
    (`hq_sales`.`invoices`, CONSTRAINT `fk_invoices_customers`
    FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`))
@@ -299,7 +299,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 10. Attempt to insert a row into the child table for a non-existent row in the parent table using the[INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -308,7 +308,7 @@ VALUES
 
 This will fail with the [ER\_NO\_REFERENCED\_ROW\_2](broken-reference) error code as explained in the Operating on a Child Table section:
 
-```
+```sql
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails
    (`hq_sales`.`invoices`, CONSTRAINT `fk_invoices_customers`
    FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`))
@@ -320,13 +320,13 @@ Let's drop the foreign key constraint from the child table created in the [Creat
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Obtain the name of the foreign key constraint by querying the [information\_schema.TABLE\_CONSTRAINTS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md) table:
 
-```
+```sql
 SELECT CONSTRAINT_NAME
 FROM information_schema.TABLE_CONSTRAINTS
 WHERE TABLE_SCHEMA = 'hq_sales'
@@ -344,7 +344,7 @@ AND CONSTRAINT_TYPE = 'FOREIGN KEY';
 
 3. Drop the foreign key constraint from the child table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
 
-```
+```sql
 ALTER TABLE hq_sales.invoices DROP FOREIGN KEY fk_invoices_customers;
 ```
 
@@ -356,19 +356,19 @@ Let's temporarily disable foreign key constraint checks, and then perform some t
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Temporarily disable foreign key constraint checks by setting the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable with the [SET SESSION](https://mariadb.com/kb/en/set-session) statement:
 
-```
+```sql
 SET SESSION foreign_key_checks=OFF;
 ```
 
 3. If you want to test how to introduce inconsistencies, then attempt to delete a row from the parent table that has a corresponding row in the child table using the [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) statement:
 
-```
+```sql
 DELETE FROM hq_sales.customers
    WHERE customer_id = 1;
 ```
@@ -377,7 +377,7 @@ This operation would usually fail with the [ER\_NO\_REFERENCED\_ROW](broken-refe
 
 4. If you want to test how to introduce inconsistencies, then also attempt to insert a row into the child table for a non-existent row in the parent table using the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -388,7 +388,7 @@ This operation would usually fail with the [ER\_NO\_REFERENCED\_ROW\_2](broken-r
 
 5. Re-enable foreign key constraint checks by setting the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable with the [SET SESSION](../../reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/set-session/) statement:
 
-```
+```sql
 SET SESSION foreign_key_checks=ON;
 ```
 

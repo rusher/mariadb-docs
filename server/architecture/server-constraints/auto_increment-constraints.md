@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn about AUTO_INCREMENT constraints in MariaDB Server. This section details
+  how to automatically generate unique, sequential values for table columns,
+  simplifying data management.
+---
+
 # AUTO\_INCREMENT Constraints
 
 _To define an `AUTO_INCREMENT` column, select an integer data type to accommodate the range of anticipated values. Common choices include `INT`, `BIGINT`, `TINYINT`, `SMALLINT`, and `MEDIUMINT`, depending on size requirements. Ensure the chosen type provides sufficient capacity to avoid overflow while optimizing storage efficiency._
@@ -52,13 +59,13 @@ Let's [create an InnoDB table with an AUTO\_INCREMENT column](auto_increment-con
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) using the [SHOW SESSION VARIABLES](../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'default_storage_engine';
 ```
@@ -73,13 +80,13 @@ SHOW SESSION VARIABLES
 
 3. If the database does not exist, then create the database for the table using the [CREATE DATABASE](https://mariadb.com/kb/en/\[\[create-database) statement:
 
-```
+```sql
 CREATE DATABASE hq_sales;
 ```
 
 4. Create the table using the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement:
 
-```
+```sql
 CREATE TABLE hq_sales.invoices (
    invoice_id BIGINT UNSIGNED AUTO_INCREMENT NOT NULL,
    branch_id INT NOT NULL,
@@ -103,13 +110,13 @@ Let's insert a row into the table created in the [Creating an InnoDB Table with 
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Insert a row with the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement, but do not specify the `AUTO_INCREMENT` column:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -118,7 +125,7 @@ VALUES
 
 3. Select the same row with the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that a value was automatically generated:
 
-```
+```sql
 SELECT invoice_id
 FROM hq_sales.invoices
 WHERE branch_id = 1
@@ -142,14 +149,14 @@ Let's insert a row into the table created in the [Creating an InnoDB Table with 
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Confirm that the session's value of the sql\_mode system variable does not contain\
    NO\_AUTO\_VALUE\_ON\_ZERO with the [SHOW SESSION VARIABLES](../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
-```
+```sql
 SHOW SESSION VARIABLES
    LIKE 'sql_mode';
 ```
@@ -164,7 +171,7 @@ SHOW SESSION VARIABLES
 
 3. Insert a row with the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement, and specify the `AUTO_INCREMENT` column's value as 0:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (invoice_id, branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -173,7 +180,7 @@ VALUES
 
 4. Select the same row with the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that a value was automatically generated:
 
-```
+```sql
 SELECT invoice_id
 FROM hq_sales.invoices
 WHERE branch_id = 1
@@ -197,13 +204,13 @@ Let's insert a row into the table created in the [Creating an InnoDB Table with 
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Insert a row with the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement, and specify the `AUTO_INCREMENT` column's value as NULL:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (invoice_id, branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -212,7 +219,7 @@ VALUES
 
 3. Select the same row with the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that a value was automatically generated:
 
-```
+```sql
 SELECT invoice_id
 FROM hq_sales.invoices
 WHERE branch_id = 1
@@ -236,13 +243,13 @@ Let's insert a row into the table created in the [Creating an InnoDB Table with 
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
 2. Insert a row with the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement, but do not specify the `AUTO_INCREMENT` column:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -251,7 +258,7 @@ VALUES
 
 3. Execute the [LAST\_INSERT\_ID()](../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md) function to get the `AUTO_INCREMENT` value for the new row:
 
-```
+```sql
 SELECT LAST_INSERT_ID();
 
 +------------------+
@@ -263,7 +270,7 @@ SELECT LAST_INSERT_ID();
 
 4. Select the same row with the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that the `AUTO_INCREMENT` column has the same value:
 
-```
+```sql
 SELECT invoice_id
 FROM hq_sales.invoices
 WHERE branch_id = 1
@@ -325,7 +332,7 @@ innodb_autoinc_lock_mode = 2
 
 3. Restart the server:
 
-```
+```bash
 $ sudo systemctl restart mariadb
 ```
 
@@ -337,7 +344,7 @@ Let's alter the `AUTO_INCREMENT` value for the table created in the [Creating an
 
 1. Connect to the server using MariaDB Client:
 
-```
+```bash
 $ mariadb --user=root
 ```
 
@@ -350,7 +357,7 @@ ALTER TABLE hq_sales.invoices
 
 3. Insert a row with the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement, but do not specify the `AUTO_INCREMENT` column:
 
-```
+```sql
 INSERT INTO hq_sales.invoices
    (branch_id, customer_id, invoice_date, invoice_total, payment_method)
 VALUES
@@ -359,7 +366,7 @@ VALUES
 
 4. Execute the [LAST\_INSERT\_ID()](../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md) function to get the `AUTO_INCREMENT` value for the new row:
 
-```
+```sql
 SELECT LAST_INSERT_ID();
 
 +------------------+
@@ -371,7 +378,7 @@ SELECT LAST_INSERT_ID();
 
 5. Select the same row with the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that the `AUTO_INCREMENT` column has the same value:
 
-```
+```sql
 SELECT invoice_id
 FROM hq_sales.invoices
 WHERE branch_id = 1
