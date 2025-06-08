@@ -201,7 +201,7 @@ The binary log allows:
 
 If you don't plan to use any of these features on a server, it is possible to [disable](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin) the binary log to slightly improve the performance.
 
-The binary log can be inspected using the [mariadb-binlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/) utility, which comes with MariaDB. Enabling or disabling the binary log requires restarting MariaDB.
+The binary log can be inspected using the [mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/) utility, which comes with MariaDB. Enabling or disabling the binary log requires restarting MariaDB.
 
 See also [MariaDB Replication Overview for SQL Server Users](mariadb-replication-overview-for-sql-server-users.md) and [MariaDB Backups Overview for SQL Server Users](mariadb-backups-overview-for-sql-server-users.md) for a better understanding of how the binary log is used.
 

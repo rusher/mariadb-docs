@@ -74,7 +74,7 @@ If errors like this occur, then critical [system tables](../../reference/sql-sta
 
 If you're unsure where the option file is located, see [Configuring MariaDB with Option Files: Default Option File Locations](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#default-option-file-locations) for information on the default locations.
 
-If the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
+If the [system tables](../../reference/sql-statements/administrative-sql-statements/system-tables/) really do not exist, then you may need to create them with [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md). See [Installing System Tables (mariadb-install-db)](../install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/) for more information.
 
 ## Can't Create Test File
 

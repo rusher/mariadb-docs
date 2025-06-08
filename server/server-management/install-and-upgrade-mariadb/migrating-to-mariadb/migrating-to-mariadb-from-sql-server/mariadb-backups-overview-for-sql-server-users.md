@@ -63,7 +63,7 @@ As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), Maria
 
 ### Replaying the Binary Log
 
-The page [Using mariadb-binlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/using-mariadb-binlog.md) shows how to use the mariadb-binlog utility to replay a binary log file.
+The page [Using mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/using-mariadb-binlog.md) shows how to use the mariadb-binlog utility to replay a binary log file.
 
 The page also shows how to edit the binary log before replaying it. This allows one to undo an SQL statement that was executed by mistake, for example a `DROP TABLE` against a wrong table. The high level procedure is the following:
 

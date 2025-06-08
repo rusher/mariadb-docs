@@ -90,7 +90,7 @@ earlier events (it is however possible to apply a MyISAM update in parallel\
 with a later InnoDB update). DDL statements are not applied in parallel with\
 any other transactions, earlier or later.
 
-The different kind of transactions can be identified in the output of[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/). For example:
+The different kind of transactions can be identified in the output of[mariadb-binlog](../../clients-and-utilities/mariadb-binlog/). For example:
 
 ```
 #150324 13:06:26 server id 1  end_log_pos 6881 	GTID 0-1-42 ddl
@@ -128,7 +128,7 @@ transaction begins the commit step; at this point it is safe to start the\
 second transaction, as it can no longer disrupt the execution of the first\
 one.
 
-Here is example output from [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) that shows how GTID events are marked\
+Here is example output from [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) that shows how GTID events are marked\
 with commit id. The GTID 0-1-47 has no commit id, and can not run in\
 parallel. The GTIDs 0-1-48 and 0-1-49 have the same commit id 630, and can\
 thus replicate in parallel with one another on a replica:

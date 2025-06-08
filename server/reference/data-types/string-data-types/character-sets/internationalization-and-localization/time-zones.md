@@ -134,7 +134,7 @@ The [mysql](../../../../sql-statements/administrative-sql-statements/system-tabl
 
 By default, these time zone tables in the [mysql](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are created, but not populated.
 
-If you are using a Unix-like operating system, then you can populate these tables using the [mariadb-tzinfo-to-sql](../../../../../clients-and-utilities/mariadb-tzinfo-to-sql.md) utility, which uses the [zoneinfo](https://linux.die.net/man/5/tzfile) data available on Linux, Mac OS X, FreeBSD and Solaris.
+If you are using a Unix-like operating system, then you can populate these tables using the [mariadb-tzinfo-to-sql](../../../../../clients-and-utilities/administrative-tools/mariadb-tzinfo-to-sql.md) utility, which uses the [zoneinfo](https://linux.die.net/man/5/tzfile) data available on Linux, Mac OS X, FreeBSD and Solaris.
 
 If you are using Windows, then you will need to import pre-populated time zone tables. These are available at [MariaDB mirrors](https://mirror.mariadb.org/zoneinfo/).
 

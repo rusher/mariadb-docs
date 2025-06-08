@@ -49,7 +49,7 @@ checksum computation outside of holding LOCK\_log, improving scalability. See [M
 * Data Type: `bool`
 * Default Value: `ON (1)`
 
-The [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) client program by default does not verify checksums when reading a binlog file, however it can be instructed to do so with the option `verify-binlog-checksum`:
+The [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) client program by default does not verify checksums when reading a binlog file, however it can be instructed to do so with the option `verify-binlog-checksum`:
 
 * Variable Name: `verify-binlog-checksum`
 * Data Type: `bool`

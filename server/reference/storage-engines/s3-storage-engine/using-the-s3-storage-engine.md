@@ -231,7 +231,7 @@ it is very unlikely that they can become corrupted. The only known way an S3 tab
 
 ## Current Limitations
 
-* [mysql-test-run](../../../clients-and-utilities/testing-tools/mariadb-test/) doesn't by default test the S3 engine as we can't embed AWS keys into mysql-test-run.
+* [mysql-test-run](../../../clients-and-utilities/mariadb-test/) doesn't by default test the S3 engine as we can't embed AWS keys into mysql-test-run.
 * Replicas should not access S3 tables while they are ALTERed! This is because there is no locking implemented to S3 between servers. However, after a table (either the original S3 table or the partitioned S3 table) is changed on the primary, the replica will notice this on the next access and update its local definition.
 
 ### Limitations in [ALTER .. PARTITION](../../sql-statements/data-definition/alter/alter-table.md)

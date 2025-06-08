@@ -21,7 +21,7 @@ You can also get this information using:
 mariadb-show db_name
 ```
 
-See [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md) for more details.
+See [mariadb-show](../../../../clients-and-utilities/mariadb-show.md) for more details.
 
 If you have no privileges for a base table or view, it does not show up in the output from `SHOW TABLES` or `mariadb-show db_name`.
 

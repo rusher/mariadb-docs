@@ -12,6 +12,6 @@ A MariaDB server with the binary log enabled will run slightly more slowly.
 
 It is important to protect the binary log, as it may contain sensitive information, including passwords.
 
-Binary logs are stored in a binary, not plain text, format, and so are not viewable with a regular editor. However, MariaDB includes [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), a commandline tool for plain text processing of binary logs.
+Binary logs are stored in a binary, not plain text, format, and so are not viewable with a regular editor. However, MariaDB includes [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/), a commandline tool for plain text processing of binary logs.
 
 CC BY-SA / Gnu FDL

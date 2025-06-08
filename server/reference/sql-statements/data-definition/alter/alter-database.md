@@ -45,7 +45,7 @@ clause is for use under these conditions:
 
 * It is intended when upgrading MySQL to 5.1 or later from older versions.
 * It is intended to update a database directory name to the current encoding format if the name contains special characters that need encoding.
-* The statement is used by [mariadb-check](../../../../clients-and-utilities/table-tools/mariadb-check.md) (as invoked by [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md)).
+* The statement is used by [mariadb-check](../../../../clients-and-utilities/mariadb-check.md) (as invoked by [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md)).
 
 For example,if a database in MySQL 5.0 has a name of a-b-c, the name\
 contains instance of the \`-' character. In 5.0, the database directory\

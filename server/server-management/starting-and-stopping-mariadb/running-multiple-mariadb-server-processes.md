@@ -80,6 +80,6 @@ mariadbd-safe --defaults-file=/etc/my_instance1.cnf
 In some cases, there may be easier ways to run multiple MariaDB Server instances on the same server, such as:
 
 * Starting multiple [Docker](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md) containers.
-* Using [dbdeployer](../../clients-and-utilities/administrative-tools/dbdeployer.md) (no longer maintained).
+* Using [dbdeployer](../../clients-and-utilities/dbdeployer.md) (no longer maintained).
 
 CC BY-SA / Gnu FDL

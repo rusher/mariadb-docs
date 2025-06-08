@@ -16,7 +16,7 @@ The service name is `mariadb.service`.
 
 ## Installing & Starting MariaDB
 
-When installing MariaDB server rpm / dep package, it will automatically run the [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md) script, that creates the initial databases and users.
+When installing MariaDB server rpm / dep package, it will automatically run the [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) script, that creates the initial databases and users.
 
 When MariaDB is started with the `systemd` unit file, it directly starts the `[mariadbd](mariadbd-options.md)` process as the `mysql` user. Unlike with `[sysVinit](sysvinit.md)`, the `[mariadbd](mariadbd-options.md)` process is not started with `[mariadbd-safe](mariadbd-safe.md)`. As a consequence, options will not be read from the `[mariadbd-safe]` [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
@@ -106,7 +106,7 @@ Environment='MYSQLD_MULTI_INSTANCE=--defaults-file=/etc/my%I.cnf'
 
 #### Custom configuration of Multiple Instances in 10.4 and Later
 
-Because users may want to do many various things with their multiple instances, we've provided a way to let the user define how they wish their multiple instances to run. The systemd environment variable `MYSQLD_MULTI_INSTANCE` can be set to anything that [mariadbd](mariadbd.md) and [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md) will recognise.
+Because users may want to do many various things with their multiple instances, we've provided a way to let the user define how they wish their multiple instances to run. The systemd environment variable `MYSQLD_MULTI_INSTANCE` can be set to anything that [mariadbd](mariadbd.md) and [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) will recognise.
 
 A hosting environment where each user has their own instance may look like\
 (with `sudo systemctl edit mariadb@.service`):
@@ -137,7 +137,7 @@ And on Debian, Ubuntu, and other similar Linux distributions, `INSTALL_SYSCONF2D
 
 In all distributions, the `%I` is the MariaDB instance name. In the above `node1` case, it would use the [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) at the path`/etc/my.cnf.d/mynode1.cnf` for RHEL-like distributions and `/etc/mysql/conf.d/mynode1.cnf` for Debian-like distributions.
 
-When using multiple instances, each instance will of course also need their own `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`. See [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md) for information on how to initialize the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` for additional MariaDB instances.
+When using multiple instances, each instance will of course also need their own `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`. See [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) for information on how to initialize the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` for additional MariaDB instances.
 
 ## Systemd and Galera Cluster
 
@@ -361,7 +361,7 @@ Environment="UMASK_DIR=0750"
 
 These environment variables do not set the umask. They set the default file system permissions. See [MDEV-23058](https://jira.mariadb.org/browse/MDEV-23058) for more information.
 
-Keep in mind that configuring the umask this way will only affect the permissions of files created by the `mariadbd` process that is managed by `systemd`. The permissions of files created by components that are not managed by `systemd`, such as [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md), will not be affected.
+Keep in mind that configuring the umask this way will only affect the permissions of files created by the `mariadbd` process that is managed by `systemd`. The permissions of files created by components that are not managed by `systemd`, such as [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md), will not be affected.
 
 See [Specifying Permissions for Schema (Data) Directories and Tables](specifying-permissions-for-schema-data-directories-and-tables.md) for more information.
 
@@ -536,7 +536,7 @@ The feature of this extension are:
 
 * that it will autocreate configuration file for user applications
 * It will install the database on first service start
-* `auth-root-*` in [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md) means that the user is their own privileged user with unix socket authentication active. This means non-that user cannot access another users service, even with\
+* `auth-root-*` in [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) means that the user is their own privileged user with unix socket authentication active. This means non-that user cannot access another users service, even with\
   access to the unix socket(s). For more information see [unix socket authentication security](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md#security).
 * If the MariaDB version was upgrade, the upgrade changes are made automatically
 * `LimitData` places a hard upper limit so the user doesn't exceed a portion of the server resources

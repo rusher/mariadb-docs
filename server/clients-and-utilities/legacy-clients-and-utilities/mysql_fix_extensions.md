@@ -4,6 +4,6 @@
 
 From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client is called `mariadb-fix-extensions`. It can still be accessed under its original `mysql_fix_extensions` name via a symlink in Linux, or an alternate binary in Windows.
 
-See [mariadb-fix-extensions](../table-tools/mariadb-fix-extensions.md) for details.
+See [mariadb-fix-extensions](../mariadb-fix-extensions.md) for details.
 
 CC BY-SA / Gnu FDL

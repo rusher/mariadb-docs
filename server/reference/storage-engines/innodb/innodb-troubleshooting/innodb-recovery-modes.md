@@ -66,7 +66,7 @@ Note also that XtraDB (<= [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJ
 
 ## Fixing Things
 
-Try to set innodb\_force\_recovery to 1 and start mariadb. If that fails, try a value of "2". If a value of 2 works, then there is a chance the only corruption you have experienced is within the innodb "undo logs". If that gets mariadb started, you should be able to dump your database with [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). You can verify any other issues with any tables by running [mariadb-check --all-databases](../../../../clients-and-utilities/table-tools/mariadb-check.md).
+Try to set innodb\_force\_recovery to 1 and start mariadb. If that fails, try a value of "2". If a value of 2 works, then there is a chance the only corruption you have experienced is within the innodb "undo logs". If that gets mariadb started, you should be able to dump your database with [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). You can verify any other issues with any tables by running [mariadb-check --all-databases](../../../../clients-and-utilities/mariadb-check.md).
 
 If you were able to successfully dump your databases, or had previously known good backups, drop your database(s) from the mariadb command line like "[DROP DATABASE](../../../sql-statements/data-definition/drop/drop-database.md) yourdatabase". Stop mariadb. Go to /var/lib/mysql (or whereever your mysql data directory is located) and "rm -i ib\*". Start mariadb, create the database(s) you dropped ("[CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) yourdatabase"), and then import your most recent dumps: "mysql < mydatabasedump.sql"
 

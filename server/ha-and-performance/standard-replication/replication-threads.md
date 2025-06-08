@@ -20,9 +20,9 @@ The primary creates a separate binary log dump thread for each replica connected
 
 When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](semisynchronous-replication.md) is being used. Data is not lost, it is stored in the primary server's binary log. The replicas on reconnection, after the primary server restarts, will resume at the exact position they where killed off during the primary shutdown. No data is lost.
 
-In [MariaDB 10.4](broken-reference) and later, this problem can be solved by shutting down the server using either the [mariadb-admin](../../clients-and-utilities/administrative-tools/mariadb-admin.md) utility or the [SHUTDOWN](../../reference/sql-statements/administrative-sql-statements/shutdown.md) command, and providing a special option.
+In [MariaDB 10.4](broken-reference) and later, this problem can be solved by shutting down the server using either the [mariadb-admin](../../clients-and-utilities/mariadb-admin.md) utility or the [SHUTDOWN](../../reference/sql-statements/administrative-sql-statements/shutdown.md) command, and providing a special option.
 
-For example, this problem can be solved by shutting down the server with the [mariadb-admin](../../clients-and-utilities/administrative-tools/mariadb-admin.md) utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility:
+For example, this problem can be solved by shutting down the server with the [mariadb-admin](../../clients-and-utilities/mariadb-admin.md) utility and by providing the `--wait-for-all-slaves` option to the utility and by executing the `shutdown` command with the utility:
 
 ```
 mariadb-admin --wait-for-all-slaves shutdown

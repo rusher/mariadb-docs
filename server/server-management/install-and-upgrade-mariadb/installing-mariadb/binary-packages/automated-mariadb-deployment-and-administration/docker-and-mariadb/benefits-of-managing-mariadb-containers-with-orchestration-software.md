@@ -26,7 +26,7 @@ However, OCI Containers has features called **volumes**. A volume is a directory
 
 Suppose a MariaDB container called `mariadb-main-01` uses a volume that is mapped to `/var/docker/volumes/mariadb-main`. At some point we want to use a more recent MariaDB version. As explained earlier, the container way to do this is to destroy the container and create a new one that uses a more recent version of the MariaDB image.
 
-So, we will destroy `mariadb-main-01`. The volume is still there. Then we create a new container with the same name, but based on a newer image. We make sure to link the volume to the new container too, so it will be able to use `/var/docker/volumes/mariadb-main` again. At this point we may want to run [mariadb-upgrade](../../../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md), but apart from that, everything should _just work_.
+So, we will destroy `mariadb-main-01`. The volume is still there. Then we create a new container with the same name, but based on a newer image. We make sure to link the volume to the new container too, so it will be able to use `/var/docker/volumes/mariadb-main` again. At this point we may want to run [mariadb-upgrade](../../../../../../clients-and-utilities/mariadb-upgrade.md), but apart from that, everything should _just work_.
 
 The container runtime implementations also provide the opportunity to create a volume with an explicit name and this is also persistent. The actual location on the filesystem is managed by the runtime.
 

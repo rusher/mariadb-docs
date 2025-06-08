@@ -417,7 +417,7 @@ The suffix can be upper or lower-case.
 
 #### `debug_sync`
 
-* Description: Used in debugging to show the interface to the [Debug Sync facility](../../../clients-and-utilities/testing-tools/mariadb-test/the-debug-sync-facility.md). MariaDB needs to be configured with -DENABLE\_DEBUG\_SYNC=1 for this variable to be available.
+* Description: Used in debugging to show the interface to the [Debug Sync facility](../../../clients-and-utilities/mariadb-test/the-debug-sync-facility.md). MariaDB needs to be configured with -DENABLE\_DEBUG\_SYNC=1 for this variable to be available.
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `string`
@@ -1462,7 +1462,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_connect_errors`
 
-* Description: Limit to the number of successive failed connects from a host before the host is blocked from making further connections. The count for a host is reset to zero if they successfully connect. To unblock, flush the host cache with a [FLUSH HOSTS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement or [mariadb-admin flush-hosts](../../../clients-and-utilities/administrative-tools/mariadb-admin.md). The [performance\_schema.host\_cache](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table.md) table contains the status of the current hosts.
+* Description: Limit to the number of successive failed connects from a host before the host is blocked from making further connections. The count for a host is reset to zero if they successfully connect. To unblock, flush the host cache with a [FLUSH HOSTS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement or [mariadb-admin flush-hosts](../../../clients-and-utilities/mariadb-admin.md). The [performance\_schema.host\_cache](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-host_cache-table.md) table contains the status of the current hosts.
 * Commandline: `--max-connect-errors=#`
 * Scope: Global
 * Dynamic: Yes

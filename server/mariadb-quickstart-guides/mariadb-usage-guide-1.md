@@ -10,7 +10,7 @@ Log into your MariaDB server from the command-line like so:
 mariadb -u user_name -p -h ip_address db_name
 ```
 
-Replace _user\_name_ with your database username. Replace _ip\_address_ with the host name or address of your server. If you're accessing MariaDB from the same server you're logged into, then don't include `-h` and the _ip\_address_. Replace _db\_name_ with the name of the database you want to access (such as _test_, which sometimes comes already created for testing purposes - note that Windows does not create this database, and some setups may also have removed the `test` database by running [mariadb-secure-installation](../clients-and-utilities/deployment-tools/mariadb-secure-installation.md), in which case you can leave the _db\_name_ out).
+Replace _user\_name_ with your database username. Replace _ip\_address_ with the host name or address of your server. If you're accessing MariaDB from the same server you're logged into, then don't include `-h` and the _ip\_address_. Replace _db\_name_ with the name of the database you want to access (such as _test_, which sometimes comes already created for testing purposes - note that Windows does not create this database, and some setups may also have removed the `test` database by running [mariadb-secure-installation](../clients-and-utilities/mariadb-secure-installation.md), in which case you can leave the _db\_name_ out).
 
 When prompted to enter your password, enter it. If your login is successful you should see something that looks similar to this:
 

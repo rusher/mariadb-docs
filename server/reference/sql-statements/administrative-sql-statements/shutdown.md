@@ -28,7 +28,7 @@ See [Replication Threads: Binary Log Dump Threads and the Shutdown Process](../.
 
 ## Required Permissions
 
-One must have a `SHUTDOWN` privilege (see [GRANT](../account-management-sql-statements/grant.md)) to use this command. It is the same privilege one needs to use the [mariadb-admin shutdown](../../../clients-and-utilities/administrative-tools/mariadb-admin.md#mariadb-admin-commands) command.
+One must have a `SHUTDOWN` privilege (see [GRANT](../account-management-sql-statements/grant.md)) to use this command. It is the same privilege one needs to use the [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md#mariadb-admin-commands) command.
 
 ## Shutdown for Upgrades
 
@@ -51,7 +51,7 @@ END;
 
 ## Other Ways to Stop mariadbd
 
-You can use the [mariadb-admin shutdown](../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command to take down mariadbd cleanly.
+You can use the [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md) command to take down mariadbd cleanly.
 
 You can also use the system kill command on Unix with signal SIGTERM (15)
 
@@ -71,7 +71,7 @@ NET STOP MariaDB
 
 ## See Also
 
-* [mariadb-admin shutdown](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).
+* [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md).
 * [InnoDB fast shutdown option](../../storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
 CC BY-SA / Gnu FDL

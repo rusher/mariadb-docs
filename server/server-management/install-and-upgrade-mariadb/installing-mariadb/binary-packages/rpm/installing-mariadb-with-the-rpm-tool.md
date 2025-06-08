@@ -86,7 +86,7 @@ Giving mysqld 2 seconds to start
 ```
 
 Be sure to follow the instructions given in the preceding output and create a\
-password for the root user either by using [mariadb-admin](../../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) or by running the\
+password for the root user either by using [mariadb-admin](../../../../../clients-and-utilities/mariadb-admin.md) or by running the\
 /usr/bin/mysql\_secure\_installation script.
 
 Installing the MariaDB RPM files installs the MySQL tools in the `/usr/bin`\

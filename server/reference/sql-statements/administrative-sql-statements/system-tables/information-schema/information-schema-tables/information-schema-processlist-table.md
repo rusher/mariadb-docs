@@ -2,7 +2,7 @@
 
 The [Information Schema](../) `PROCESSLIST` table contains information about running threads.
 
-Similar information can also be returned with the [SHOW \[FULL\] PROCESSLIST](../../../show/show-processlist.md) statement, or the [mariadb-admin processlist](../../../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command.
+Similar information can also be returned with the [SHOW \[FULL\] PROCESSLIST](../../../show/show-processlist.md) statement, or the [mariadb-admin processlist](../../../../../../clients-and-utilities/mariadb-admin.md) command.
 
 It contains the following columns:
 

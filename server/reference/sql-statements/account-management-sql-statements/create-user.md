@@ -249,7 +249,7 @@ CREATE USER 'someone'@'localhost' WITH
 
 The resources are tracked per account, which means `'user'@'server'`; not per user name or per connection.
 
-The count can be reset for all users using [FLUSH USER\_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin reload](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).
+The count can be reset for all users using [FLUSH USER\_RESOURCES](../administrative-sql-statements/flush-commands/flush.md), [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin reload](../../../clients-and-utilities/mariadb-admin.md).
 
 Per account resource limits are stored in the [user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table, in the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database. Columns used for resources limits are named `max_questions`, `max_updates`, `max_connections` (for `MAX_CONNECTIONS_PER_HOUR`), and `max_user_connections` (for `MAX_USER_CONNECTIONS`).
 
@@ -356,7 +356,7 @@ CREATE USER ''@'192.168.0.3';
 
 #### Fixing a Legacy Default Anonymous Account
 
-On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
+On some systems, the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table has some entries for the `''@'%'` anonymous account by default. Unfortunately, there is no matching entry in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)/[mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, which means that this anonymous account doesn't exactly exist, but it does have privileges--usually on the default `test` database created by [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md). These account-less privileges are a legacy that is leftover from a time when MySQL's privilege system was less advanced.
 
 This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
 

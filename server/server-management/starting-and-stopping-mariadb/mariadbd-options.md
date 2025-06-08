@@ -1199,7 +1199,7 @@ Options that are also system variables are listed after:
 #### `--bootstrap`
 
 * Commandline: `--bootstrap`
-* Description: Used by mariadb installation scripts, such as [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md) to execute SQL scripts before any privilege or system tables exist. Do no use while an existing MariaDB instance is running.
+* Description: Used by mariadb installation scripts, such as [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md) to execute SQL scripts before any privilege or system tables exist. Do no use while an existing MariaDB instance is running.
 
 #### `--chroot`
 
@@ -1320,7 +1320,7 @@ Options that are also system variables are listed after:
 #### `--skip-grant-tables`
 
 * Commandline: `--skip-grant-tables`
-* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../clients-and-utilities/administrative-tools/mariadb-admin.md), [mariadb-admin reload](../../clients-and-utilities/administrative-tools/mariadb-admin.md) or [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
+* Description: Start without grant tables. This gives all users FULL ACCESS to all tables, which is useful in case of a lost root password. Use [mariadb-admin flush-privileges](../../clients-and-utilities/mariadb-admin.md), [mariadb-admin reload](../../clients-and-utilities/mariadb-admin.md) or [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables. From [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010), available as a [system variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) as well.
 
 Because the [Event Scheduler](../../server-usage/triggers-events/event-scheduler/) also depends on the grant tables for its functionality, it is automatically disabled when running with `--skip-grant-tables`.
 

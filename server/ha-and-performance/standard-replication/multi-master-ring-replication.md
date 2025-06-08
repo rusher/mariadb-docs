@@ -78,7 +78,7 @@ When used correctly, Multi-Master Ring Replication is as resilient to errors as 
 #### What to do when one of the masters dies and has to be replaced by a slave.
 
 * Ensure that the slave is up to date (has digested all relay events).
-* Check if there are any events on the old master that have not been sent to the slave. You can use [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to read the old master binary log files and apply them to the slave.
+* Check if there are any events on the old master that have not been sent to the slave. You can use [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to read the old master binary log files and apply them to the slave.
 * You can now treat the slave as a new master and put it back in the replication ring. The new master will use its replication GTID position to continue replication from the other master in the ring.
 
 If the slave is **not up to date** and one cannot access any information of the old master, then one can continue the following way:

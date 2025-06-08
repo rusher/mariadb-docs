@@ -99,7 +99,7 @@ Finally the lines should look like:
 $bindir/mysqld_safe --defaults-file=/opt/mariadb-data/my.cnf --datadir="$datadir" --pid-file="$mysqld_pid_file_path" $other_args >/dev/null 2>&1 &
 ```
 
-The same change needs to be made to the [mariadb-admin](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command below in the wait\_for\_ready() function so that the mariadb start command can properly listen for the server start. In the **wait\_for\_ready()** function, after **$bindir/mariadb-admin** add **--defaults-file=/opt/mariadb-data/my.cnf**.\
+The same change needs to be made to the [mariadb-admin](../../../../clients-and-utilities/mariadb-admin.md) command below in the wait\_for\_ready() function so that the mariadb start command can properly listen for the server start. In the **wait\_for\_ready()** function, after **$bindir/mariadb-admin** add **--defaults-file=/opt/mariadb-data/my.cnf**.\
 The lines should look like:
 
 ```
@@ -108,7 +108,7 @@ wait_for_ready () {
     if $bindir/mariadb-admin --defaults-file=/opt/mariadb-data/my.cnf ping >/dev/null 2>&1; then
 ```
 
-* Run [mariadb-install-db](../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) by explicitly giving it the my.cnf file as argument:
+* Run [mariadb-install-db](../../../../clients-and-utilities/mariadb-install-db.md) by explicitly giving it the my.cnf file as argument:
 
 ```
 [root@mariadb-near-mysql opt]# cd mariadb

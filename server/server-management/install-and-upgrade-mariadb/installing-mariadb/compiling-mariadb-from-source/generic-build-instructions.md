@@ -142,7 +142,7 @@ After installing MariaDB (using `sudo make install`), but prior to starting Mari
 datadir=/usr/local/mariadb/data/
 ```
 
-1. run the [mariadb-install-db](../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) script to generate the needed system tables
+1. run the [mariadb-install-db](../../../../clients-and-utilities/mariadb-install-db.md) script to generate the needed system tables
 
 Here is an example:
 

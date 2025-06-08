@@ -23,7 +23,7 @@ SHOW INDEX FROM mydb.mytable;
 
 `SHOW KEYS` and `SHOW INDEXES` are synonyms for `SHOW INDEX`.
 
-You can also list a table's indexes with the [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md) command:
+You can also list a table's indexes with the [mariadb-show](../../../../clients-and-utilities/mariadb-show.md) command:
 
 ```
 mariadb-show -k db_name tbl_name

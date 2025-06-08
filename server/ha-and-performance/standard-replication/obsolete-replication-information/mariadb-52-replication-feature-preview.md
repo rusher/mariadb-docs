@@ -126,7 +126,7 @@ a fully non-blocking backup which can be used to provision a new slave.
 between transactions involving more than one storage engine (currently XTraDB\
 and PBXT support this).
 
-### [Annotation of row-based replication events with the original SQL statement](../../../clients-and-utilities/logging-tools/mariadb-binlog/annotate_rows_log_event.md)
+### [Annotation of row-based replication events with the original SQL statement](../../../clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md)
 
 When using row-based replication, the binary log does not contain SQL\
 statements, only discrete single-row insert/update/delete _events_. This can\

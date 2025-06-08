@@ -139,7 +139,7 @@ Starting with [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mari
 You might consider using the following major new features in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102):
 
 * [Window Functions](../../../../reference/sql-functions/special-functions/window-functions/)
-* [mysqlbinlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/) now supports continuous binary log backups
+* [mysqlbinlog](../../../../clients-and-utilities/mariadb-binlog/) now supports continuous binary log backups
 * [Recursive Common Table Expressions](../../../../reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/recursive-common-table-expressions-overview.md)
 * [JSON functions](../../../../reference/sql-functions/special-functions/json-functions/)
 * See also [System Variables Added in MariaDB 10.2](../../../../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-102.md).

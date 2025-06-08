@@ -14,7 +14,7 @@ present on its own, indicates which database names to match. The `WHERE` and `LI
 
 You see only those databases for which you have some kind of\
 privilege, unless you have the global[SHOW DATABASES privilege](../../account-management-sql-statements/grant.md). You\
-can also get this list using the [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md) command.
+can also get this list using the [mariadb-show](../../../../clients-and-utilities/mariadb-show.md) command.
 
 If the server was started with the `--skip-show-database`\
 option, you cannot use this statement at all unless you have the[SHOW DATABASES privilege](../../account-management-sql-statements/grant.md).
