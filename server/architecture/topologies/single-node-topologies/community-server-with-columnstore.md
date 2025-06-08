@@ -171,7 +171,7 @@ S3-compatible object storage is:
 
 Many S3-compatible object storage services exist. MariaDB Corporation cannot make guarantees about all S3-compatible object storage services, because different services provide different functionality.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](broken-reference).
+If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](broken-reference/).
 
 ### Create an S3 Bucket
 
@@ -380,7 +380,7 @@ To configure cross engine joins, perform the following steps, use the mcsSetConf
 
 For example, to configure ColumnStore to use the `cross_engine` user account to connect to the server at `127.0.0.1`:
 
-```
+```bash
 $ sudo mcsSetConfig CrossEngineSupport Host 127.0.0.1
 $ sudo mcsSetConfig CrossEngineSupport Port 3306
 $ sudo mcsSetConfig CrossEngineSupport User cross_engine

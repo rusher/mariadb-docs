@@ -14,7 +14,7 @@ The installation process might have started the Enterprise Server service. The s
 
 Stop the MariaDB Enterprise Server service:
 
-```
+```bash
 $ sudo systemctl stop mariadb
 ```
 

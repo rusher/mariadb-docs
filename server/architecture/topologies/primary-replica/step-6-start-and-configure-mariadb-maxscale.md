@@ -37,7 +37,7 @@ For additional information, see "[Starting and Stopping MariaDB](../../../server
 
 **On the MaxScale node**, use [maxctrl create](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl#create-monitor) server to create a server object for each MariaDB Enterprise Server:
 
-```
+```bash
 $ maxctrl create server node1 192.0.2.101
 
 $ maxctrl create server node2 192.0.2.102
@@ -51,7 +51,7 @@ MaxScale uses monitors to retrieve additional information from the servers. This
 
 **On the MaxScale node**, use [maxctrl create monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl#create-monitor) to create a MariaDB Monitor:
 
-```
+```bash
 $ maxctrl create monitor mdb_monitor mariadbmon \
      user=mxs \
      password='MAXSCALE_USER_PASSWORD' \
@@ -126,7 +126,7 @@ MaxScale Read/Write Split Router (readwritesplit) performs query-based load bala
 
 On the MaxScale node, use the maxctrl create service command to configure MaxScale to use the Read/Write Split Router (readwritesplit):
 
-```
+```bash
 $ maxctrl create service query_router_service readwritesplit  \
      user=mxs \
      password='MAXSCALE_USER_PASSWORD' \

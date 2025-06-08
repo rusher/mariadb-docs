@@ -86,7 +86,7 @@ $ sudo apt install libjemalloc1
 
 Install on CentOS / RHEL (YUM):
 
-```
+```bash
 $ sudo yum install MariaDB-server \
       MariaDB-backup \
       MariaDB-shared \
@@ -96,7 +96,7 @@ $ sudo yum install MariaDB-server \
 
 Install on Debian / Ubuntu (APT):
 
-```
+```bash
 $ sudo apt install mariadb-server \
       mariadb-backup \
       libmariadb3 \
