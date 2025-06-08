@@ -84,7 +84,7 @@ Print results using tab as the column separator, with each row on a new line. Wi
 
 **`--binary-mode`**
 
-By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../mariadb-binlog/) that may contain blobs.
+By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../logging-tools/mariadb-binlog/) that may contain blobs.
 
 **`--character-sets-dir=name`**
 

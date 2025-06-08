@@ -46,7 +46,7 @@ See [Installing and Using MariaDB via Docker](../../installing-mariadb/binary-pa
 
 ## Reinitializing MariaDB Data Directory
 
-While experimenting with MariaDB, you could end up with an unusable installation. This occurs for example if you deliberately delete files that you shouldn't delete. If it happens, there is no need to uninstall and reinstall MariaDB. Instead, you can simply delete the contents of the data directory and run [mariadb-install-db](../../../../clients-and-utilities/mariadb-install-db.md). The program will recreate your system tables and the essential files.
+While experimenting with MariaDB, you could end up with an unusable installation. This occurs for example if you deliberately delete files that you shouldn't delete. If it happens, there is no need to uninstall and reinstall MariaDB. Instead, you can simply delete the contents of the data directory and run [mariadb-install-db](../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md). The program will recreate your system tables and the essential files.
 
 To know where your data directory is, check the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 

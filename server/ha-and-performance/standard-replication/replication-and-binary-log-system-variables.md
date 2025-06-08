@@ -43,7 +43,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `binlog_annotate_row_events`
 
-* Description: This option tells the primary to write [annotate\_rows\_events](../../clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md) to the binary log.
+* Description: This option tells the primary to write [annotate\_rows\_events](../../clients-and-utilities/logging-tools/mariadb-binlog/annotate_rows_log_event.md) to the binary log.
 * Commandline: `--binlog-annotate-row-events[={0|1}]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -562,7 +562,7 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 
 #### `replicate_annotate_row_events`
 
-* Description: Tells the replica to reproduce [annotate\_rows\_events](../../clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md) received from the primary in its own binary log. This option is sensible only when used in tandem with the [log\_slave\_updates](replication-and-binary-log-system-variables.md#log_slave_updates) option.
+* Description: Tells the replica to reproduce [annotate\_rows\_events](../../clients-and-utilities/logging-tools/mariadb-binlog/annotate_rows_log_event.md) received from the primary in its own binary log. This option is sensible only when used in tandem with the [log\_slave\_updates](replication-and-binary-log-system-variables.md#log_slave_updates) option.
 * Commandline: `--replicate-annotate-row-events`
 * Scope: Global
 * Dynamic: No

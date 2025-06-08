@@ -301,7 +301,7 @@ It is possible to have [EXPLAIN output printed in the slow query log](explain-in
 
 ## Viewing the Slow Query Log
 
-Slow query logs written to file can be viewed with any text editor, or you can use the [mariadb-dumpslow](../../../clients-and-utilities/mariadb-dumpslow.md) tool to ease the process by summarizing the information.
+Slow query logs written to file can be viewed with any text editor, or you can use the [mariadb-dumpslow](../../../clients-and-utilities/logging-tools/mariadb-dumpslow.md) tool to ease the process by summarizing the information.
 
 Queries that you find in the log are key queries to try to optimize by constructing a [more efficient query](../../../ha-and-performance/optimization-and-tuning/query-optimizations/) or by making [better use of indexes](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/).
 

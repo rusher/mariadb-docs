@@ -130,7 +130,7 @@ default of 0 on all servers.
 ## Using Global Transaction IDs
 
 Global transaction ID is enabled automatically. Each event\
-group logged to the binlog receives a GTID event, as can be seen with[mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
+group logged to the binlog receives a GTID event, as can be seen with[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
 
 The replica automatically keeps track of the GTID of the last applied event\
 group, as can be seen from the [gtid\_slave\_pos](gtid.md#gtid_slave_pos) variable:
@@ -690,7 +690,7 @@ This variable is the GTID of the last event group written to the binary log,\
 for each replication domain.
 
 Note that when the binlog is empty (such as on a fresh install\
-with [--skip-test-db](../../clients-and-utilities/mariadb-install-db.md#not-creating-the-test-database-and-anonymous-user),\
+with [--skip-test-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md#not-creating-the-test-database-and-anonymous-user),\
 or after [RESET MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-master.md)), there are no event groups written in any replication domain, so in\
 this case the value of `gtid_binlog_pos` will be the empty string.
 
@@ -811,7 +811,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 
 #### `gtid_domain_id`
 
-* Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](gtid.md#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to preserve the domain ID of GTID events.
+* Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](gtid.md#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to preserve the domain ID of GTID events.
 * Commandline: `--gtid-domain-id=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -835,7 +835,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 
 #### `gtid_seq_no`
 
-* Description: gtid\_seq\_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid\_domain\_id](gtid.md#gtid_domain_id) and [@@server\_id](gtid.md#server_id), is typically used by [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to set up the gtid value of the transaction being decoded into the output.
+* Description: gtid\_seq\_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid\_domain\_id](gtid.md#gtid_domain_id) and [@@server\_id](gtid.md#server_id), is typically used by [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to set up the gtid value of the transaction being decoded into the output.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes

@@ -49,7 +49,7 @@ fe 62 69 6e a4 85 9e 59  0f 8c 27 00 00 f5 00 00  |.bin...Y..'.....|
 ...
 ```
 
-### Example From [mysqlbinlog](../../../../mariadb-binlog/)
+### Example From [mysqlbinlog](../../../../logging-tools/mariadb-binlog/)
 
 ```
 DELIMITER /*!*/;

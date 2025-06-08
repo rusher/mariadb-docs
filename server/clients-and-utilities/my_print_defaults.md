@@ -39,7 +39,7 @@ my_print_defaults [OPTIONS] [groups]
 my_print_defaults --defaults-file=example.cnf client client-server mysql
 ```
 
-[mariadb-check](mariadb-check.md) reads from the \[mariadb-check] and \[client] sections, so the following would display the mariadb-check options.
+[mariadb-check](table-tools/mariadb-check.md) reads from the \[mariadb-check] and \[client] sections, so the following would display the mariadb-check options.
 
 ```
 my_print_defaults mariadb-check client

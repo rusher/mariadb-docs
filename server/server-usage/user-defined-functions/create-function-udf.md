@@ -19,7 +19,7 @@ the function.
 To create a function, you must have the [INSERT privilege](../../reference/sql-statements/account-management-sql-statements/grant.md) for the\
 mysql database. This is necessary because`CREATE FUNCTION` adds a row to the[mysql.func system table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-func-table.md) that records the function's name,\
 type, and shared library name. If you do not have this table, you should run\
-the [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md) command to create it.
+the [mariadb-upgrade](../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) command to create it.
 
 UDFs need to be written in C, C++ or another language that uses C calling\
 conventions, MariaDB needs to have been dynamically compiled, and your\

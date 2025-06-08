@@ -8,7 +8,7 @@ There are three supported formats for [binary log](./) events:
 * Row-Based Logging
 * Mixed Logging
 
-Regardless of the format, [binary log](./) events are always stored in a binary format, rather than in plain text. MariaDB includes the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) utility that can be used to output [binary log](./) events in a human-readable format.
+Regardless of the format, [binary log](./) events are always stored in a binary format, rather than in plain text. MariaDB includes the [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) utility that can be used to output [binary log](./) events in a human-readable format.
 
 You may want to set the binary log format in the following cases:
 
@@ -69,7 +69,7 @@ When row-based logging is enabled, DML statements are **not** logged to the [bin
 
 Row-based logging uses more storage than the other log formats but is the safest to use. In practice [mixed logging](binary-log-formats.md#mixed-logging) should be as safe.
 
-If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/), with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). This option is on by default.
+If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). This option is on by default.
 
 This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable to `ROW`.
 

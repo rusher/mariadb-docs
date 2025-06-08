@@ -73,7 +73,7 @@ The [Aria](../../storage-engines/aria/) storage engine supports [progress report
 
 ## See Also
 
-* [mariadb-check](../../../clients-and-utilities/mariadb-check.md)
+* [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md)
 * [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md)
 * [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md)
 

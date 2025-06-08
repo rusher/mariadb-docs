@@ -7,7 +7,7 @@ For [all practical purposes](broken-reference), you can view MariaDB as an upgra
 * If you are using MySQL 8.0 or above, you have to use [mysqldump](../../../../clients-and-utilities/legacy-clients-and-utilities/mysqldump.md) to move your database to MariaDB.
 * For upgrading from very old MySQL versions, see [Upgrading to MariaDB from MySQL 5.0 (or older version)](migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md).
 * Within the same base version (for example MySQL 5.5 -> [MariaDB 5.5](broken-reference), MySQL 5.6 -> [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) and MySQL 5.7 -> [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)) you can in most cases just uninstall MySQL and install MariaDB and you are good to go. There is no need to dump and restore databases. As with any upgrade, we recommend making a backup of your data beforehand.
-* You should run [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md) (as you would with `mysql_upgrade` in MySQL) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses. Note that if you use a MariaDB package, `mariadb-upgrade` is usually run automatically.
+* You should run [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) (as you would with `mysql_upgrade` in MySQL) to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses. Note that if you use a MariaDB package, `mariadb-upgrade` is usually run automatically.
 * All your old clients and connectors (PHP, Perl, Python, Java, etc.) will work\
   unchanged (no need to recompile). This works because MariaDB and MySQL use\
   the same client protocol and the client libraries are binary compatible. You can also use your old MySQL connector packages with MariaDB if you want.
@@ -172,7 +172,7 @@ systemctl start mariadb.service
 ```
 
 * If it does not start, check the error file. Remove all unsupported options from the config files and try again.
-* run [mariadb-upgrade](../../../../clients-and-utilities/mariadb-upgrade.md):
+* run [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md):
 
 ```
 mariadb-upgrade

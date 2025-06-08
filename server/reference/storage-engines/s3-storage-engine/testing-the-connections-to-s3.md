@@ -56,7 +56,7 @@ some typing.
 
 ### Using mariadb-test-run to Test the Connection and the S3 Storage Engine
 
-One can use the [MariaDB test system](../../../clients-and-utilities/mariadb-test/) to run all default S3 test against your S3 storage.
+One can use the [MariaDB test system](../../../clients-and-utilities/testing-tools/mariadb-test/) to run all default S3 test against your S3 storage.
 
 To do that you have to locate the `mysql-test` directory in your system and`cd` to it.
 
@@ -125,6 +125,6 @@ Now you can start testing S3 from your [mariadb command client](../../../clients
 ## See Also
 
 * [Using the S3 Storage Engine](using-the-s3-storage-engine.md)
-* [Using MinIO with mysql-test-run to test the S3 storage engine](../../../clients-and-utilities/mariadb-test/installing-minio-for-usage-with-mariadb-test-run.md)
+* [Using MinIO with mysql-test-run to test the S3 storage engine](../../../clients-and-utilities/testing-tools/mariadb-test/installing-minio-for-usage-with-mariadb-test-run.md)
 
 CC BY-SA / Gnu FDL

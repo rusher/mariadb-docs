@@ -60,7 +60,7 @@ combination of primary and replica servers and checksum enabled/disabled:
 
 ## Checksums and mariadb-binlog
 
-When using the [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) client program, there are similar issues.
+When using the [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) client program, there are similar issues.
 
 A version of `mariadb-binlog` which understands checksums can read binlog files\
 from either old or new servers, with or without checksums enabled.

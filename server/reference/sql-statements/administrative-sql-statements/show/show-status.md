@@ -10,7 +10,7 @@ SHOW [GLOBAL | SESSION] STATUS
 ## Description
 
 `SHOW STATUS` provides server status information. This\
-information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.\
+information also can be obtained using the [mariadb-admin extended-status](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command, or by querying the [Information Schema GLOBAL\_STATUS and SESSION\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-global_status-and-session_status-tables.md) tables.\
 The `LIKE` clause, if present, indicates which variable names\
 to match. The `WHERE` clause can be given to select rows using\
 more general conditions.

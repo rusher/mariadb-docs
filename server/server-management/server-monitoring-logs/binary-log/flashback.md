@@ -6,13 +6,13 @@ Flashback is currently supported only over DML statements ([INSERT](../../../ref
 
 Flashback is achieved in MariaDB Server using existing support for full image format binary logs ([binlog\_row\_image=FULL](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_image)), so it supports all engines.
 
-The real work of Flashback is done by [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) with `--flashback`. This causes events to be translated: INSERT to DELETE, DELETE to INSERT, and for UPDATEs, the before and after images are swapped.
+The real work of Flashback is done by [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) with `--flashback`. This causes events to be translated: INSERT to DELETE, DELETE to INSERT, and for UPDATEs, the before and after images are swapped.
 
 When executing `mariadb-binlog` with `--flashback`, the Flashback events will be stored in memory. You should make sure your server has enough memory for this feature.
 
 ## Arguments
 
-* [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) has the option `--flashback` or `-B` that will let it work in flashback mode.
+* [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) has the option `--flashback` or `-B` that will let it work in flashback mode.
 * [mariadbd](../../starting-and-stopping-mariadb/mariadbd-options.md) has the option [--flashback](../../starting-and-stopping-mariadb/mariadbd-options.md#-flashback) that enables the binary log and sets `binlog_format=ROW`. It is not mandatory to use this option if you have already enabled those options directly.
 
 Do not use `-v` `-vv` options, as this adds verbose information to the binary log which can cause problems when importing. See [MDEV-12066](https://jira.mariadb.org/browse/MDEV-12066) and [MDEV-12067](https://jira.mariadb.org/browse/MDEV-12067).
@@ -42,7 +42,7 @@ A common use case for Flashback is the following scenario:
 * You have one primary and two replicas, one started with `--flashback` (i.e. with binary logging enabled, using [binlog\_format=ROW](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_format), and [binlog\_row\_image=FULL](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_row_image)).
 * Something goes wrong on the primary (like a wrong update or delete) and you would like to revert to a state of the database (or just a table) at a certain point in time.
 * Remove the flashback-enabled replica from replication.
-* Invoke [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) to find the exact log position of the first offending operation after the state you want to revert to.
+* Invoke [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) to find the exact log position of the first offending operation after the state you want to revert to.
 * Run `mariadb-binlog --flashback --start-position=xyz | mariadb` to pipe the output of `mariadb-binlog` directly to the `mariadb` client, or save the output to a file and then direct the file to the command-line client.
 
 CC BY-SA / Gnu FDL

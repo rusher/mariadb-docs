@@ -17,7 +17,7 @@ The following is a list of tools that are required for building MariaDB on Linux
 * [gnutls](https://www.gnutls.org) or [openssl](https://www.openssl.org)
 * [jemalloc](https://www.canonware.com/jemalloc) (optional)
 * [snappy](https://google.github.io/snappy) (compression library, optional)
-* [valgrind](https://www.valgrind.org/) (only needed if running [mysql-test-run --valgrind](../../../../clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md))
+* [valgrind](https://www.valgrind.org/) (only needed if running [mysql-test-run --valgrind](../../../../clients-and-utilities/testing-tools/mariadb-test/mariadb-test-run-pl-options.md))
 * [libcurl](https://curl.se/libcurl/libcurl) (only needed if you want to use the [S3 storage engine](../../../../reference/storage-engines/s3-storage-engine/))
 * libxml2-devel or libxml-dev
 * boost

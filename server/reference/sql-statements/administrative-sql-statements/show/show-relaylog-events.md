@@ -18,7 +18,7 @@ Syntax for the `LIMIT` clause is the same as for [SELECT ... LIMIT](../../data-m
 
 Using the `LIMIT` clause is highly recommended because the `SHOW RELAYLOG EVENTS` command returns the complete contents of the relay log, which can be quite large.
 
-This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/).
+This command does not return events related to setting user and system variables. If you need those, use [mariadb-binlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/).
 
 On the primary, this command does nothing.
 

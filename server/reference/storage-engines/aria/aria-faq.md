@@ -168,7 +168,7 @@ In the current development phase Aria tables created with `TRANSACTIONAL=1` are 
 If Aria doesn't start or you have an unrecoverable table (shouldn't happen):
 
 * Remove the `aria_log.%` files from the data directory.
-* Restart `mysqld` and run [CHECK TABLE](../../sql-statements/table-statements/check-table.md), [REPAIR TABLE](../../sql-statements/table-statements/repair-table.md) or [mariadb-check](../../../clients-and-utilities/mariadb-check.md) on your Aria tables.
+* Restart `mysqld` and run [CHECK TABLE](../../sql-statements/table-statements/check-table.md), [REPAIR TABLE](../../sql-statements/table-statements/repair-table.md) or [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md) on your Aria tables.
 
 Alternatively,
 
@@ -248,7 +248,7 @@ XXX.MAD : The data.
 
 It's safe to copy all the Aria files to another directory or MariaDB instance if any of the following holds:
 
-* If you shutdown the MariaDB Server properly with [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md), so that there is nothing for Aria to recover when it starts.
+* If you shutdown the MariaDB Server properly with [mariadb-admin shutdown](../../../clients-and-utilities/administrative-tools/mariadb-admin.md), so that there is nothing for Aria to recover when it starts.
 
 or
 
@@ -272,7 +272,7 @@ Note that this automatic detection doesn't work if you copy tables within the sa
 
 ### When is it safe to remove old log files?
 
-If you want to remove the [Aria log files](aria-storage-engine.md#aria-log-files) (`aria_log.%`) with `rm` or delete, then you must first shut down MariaDB cleanly (for example, with [mariadb-admin shutdown](../../../clients-and-utilities/mariadb-admin.md)) before deleting the old files.
+If you want to remove the [Aria log files](aria-storage-engine.md#aria-log-files) (`aria_log.%`) with `rm` or delete, then you must first shut down MariaDB cleanly (for example, with [mariadb-admin shutdown](../../../clients-and-utilities/administrative-tools/mariadb-admin.md)) before deleting the old files.
 
 The same rules apply when upgrading MariaDB; When upgrading, first take down MariaDB in a clean way and then upgrade. This will allow you to remove the old log files if there are incompatible problems between\
 releases.
