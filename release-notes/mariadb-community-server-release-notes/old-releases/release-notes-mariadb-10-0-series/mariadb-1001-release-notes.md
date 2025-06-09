@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.1) |**Release Notes** |[Changelog](broken-reference) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.1) |**Release Notes** |[Changelog](../../../changelogs/) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 06 Feb 2013
 
-[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is built on the[MariaDB 5.5 series](broken-reference) with backported features from MySQL\
+[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is built on thethe [MariaDB 5.5 series](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with backported features from MySQL\
 5.6 and entirely new features not found anywhere else.
 
 [MariaDB 10.0.1](mariadb-1001-release-notes.md) is an [_**Alpha**_](../../../mariadb-release-criteria.md) release.\
@@ -18,11 +18,11 @@ be pushed in future releases.**Do not use alpha releases on production systems.*
 **For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 For a list of changes made in [MariaDB 10.0.1](mariadb-1001-release-notes.md), with links to detailed\
-information on each push, see the [changelog](broken-reference).
+information on each push, see the [Changelog](../../../changelogs/) .
 
-## Based on [MariaDB 5.5](broken-reference)
+## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md),
 
-The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](broken-reference) series. It also includes features imported from MySQL 5.6, and completely new features.
+The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md), series. It also includes features imported from MySQL 5.6, and completely new features.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -51,7 +51,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 ### Other Features
 
 Other features are planned for inclusion in the Stable (GA) version of [MariaDB\
-10.0](changes-improvements-in-mariadb-10-0.md). They are listed on the [What is MariaDB 10.0?](changes-improvements-in-mariadb-10-0.md) and[Plans for 10x](broken-reference) pages.
+10.0](changes-improvements-in-mariadb-10-0.md). They are listed on the [What is MariaDB 10.0?](changes-improvements-in-mariadb-10-0.md) and Plans for 10x pages.
 
 ## Important Security Fixes
 
