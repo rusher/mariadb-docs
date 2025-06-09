@@ -7,7 +7,7 @@ merged.
 When using [EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md), if `index_merge` is the plan chosen by the\
 optimizer, it will show up in the "type" column. For example:
 
-```
+```sql
 MariaDB [ontime]> SELECT COUNT(*) FROM ontime;
 +--------+
 |count(*)|
@@ -35,7 +35,7 @@ plan to be rejected in favor of a less efficient plan. The slowdown could be\
 anywhere from 10x to over 100x. Here are two examples (based on the previous\
 query) using MySQL:
 
-```
+```sql
 MySQL [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' OR Dest='SEA') AND securitydelay=0;
 +--+-----------+------+----+-------------------------+-------------+-------+-----+------+-----------+
 |id|select_type|table |type|possible_keys            |key          |key_len|ref  |rows  |Extra      |
@@ -60,7 +60,7 @@ for more information.
 By not discarding potential `index_merge` plans until absolutely necessary,\
 the two queries stay just as efficient as the original:
 
-```
+```sql
 MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' or Dest='SEA');
 +--+-----------+------+-----------+-------------+-----------+-------+----+-----+-------------------------------------+
 |id|select_type|table |type       |possible_keys|key        |key_len|ref |rows |Extra                                |

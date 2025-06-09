@@ -4,7 +4,7 @@
 
 How to [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) lots of rows from a large table? Here is an example of purging items older than 30 days:
 
-```
+```sql
 DELETE FROM tbl WHERE 
   ts < CURRENT_DATE() - INTERVAL 30 DAY
 ```
@@ -18,7 +18,7 @@ Any suggestions on how to speed this up?
 * [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) will lock the table during the entire operation, thereby nothing else can be done with the table.
 * [InnoDB](../../../reference/storage-engines/innodb/) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
 * InnoDB has to write the undo information to its transaction logs; this significantly increases the I/O required.
-* [Replication](broken-reference), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
+* [Replication](broken-reference/), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
 
 ## InnoDB and undo
 
@@ -62,7 +62,7 @@ When deleting in chunks, be sure to avoid doing a table scan. The code below is 
 
 Assuming you have news articles that need to be purged, and you have a schema something like
 
-```
+```sql
 CREATE TABLE tbl
       id INT UNSIGNED NOT NULL AUTO_INCREMENT,
       ts TIMESTAMP,
@@ -72,7 +72,7 @@ CREATE TABLE tbl
 
 Then, this pseudo-code is a good way to delete the rows older than 30 days:
 
-```
+```sql
 @a = 0
    LOOP
       DELETE FROM tbl
@@ -95,7 +95,7 @@ Notes (Most of these caveats will be covered later):
 
 If there are big gaps in `id` values (and there will after the first purge), then
 
-```
+```sql
 @a = SELECT MIN(id) FROM tbl
    LOOP
       SELECT @z := id FROM tbl WHERE id >= @a ORDER BY id LIMIT 1000,1
@@ -116,7 +116,7 @@ If there are big gaps in `id` values (and there will after the first purge), the
 
 That code works whether id is numeric or character, and it mostly works even if id is not UNIQUE. With a non-unique key, the risk is that you could be caught in a loop whenever @z==@a. That can be detected and fixed thus:
 
-```
+```sql
 ...
       SELECT @z := id FROM tbl WHERE id >= @a ORDER BY id LIMIT 1000,1
       If @z == @a
@@ -128,7 +128,7 @@ The drawback is that there could be more than 1000 items with a single id. In mo
 
 If you do not have a primary (or unique) key defined on the table, and you have an INDEX on ts, then consider
 
-```
+```sql
 LOOP
       DELETE FROM tbl
          WHERE ts < DATE_SUB(CURRENT_DATE(), INTERVAL 30 DAY)
@@ -154,7 +154,7 @@ To efficiently to do compound 'greater than':
 
 Assume that you left off at ($g, $s) (and have handled that row):
 
-```
+```sql
 INDEX(Genus, species)
    SELECT/DELETE ...
       WHERE Genus >= '$g' AND ( species  > '$s' OR Genus > '$g' )
@@ -164,7 +164,7 @@ INDEX(Genus, species)
 
 Addenda: The above AND/OR works well in older versions of MySQL; this works better in MariaDB and newer versions of MySQL:
 
-```
+```sql
 WHERE ( Genus = '$g' AND species  > '$s' ) OR Genus > '$g' )
 ```
 
@@ -184,7 +184,7 @@ The only option with [innodb\_file\_per\_table = 0](../../../reference/storage-e
 
 InnoDB, even with innodb\_file\_per\_table = 1, won't give space back to the OS, but at least it is only one table to rebuild with. In this case, something like this should work:
 
-```
+```sql
 CREATE TABLE new LIKE main;
    INSERT INTO new SELECT * FROM main;  -- This could take a long time
    RENAME TABLE main TO old, new TO main;   -- Atomic swap
@@ -204,7 +204,7 @@ The following technique can be used for any combination of
 
 This can be done by chunking, or (if practical) all at once:
 
-```
+```sql
 -- Optional:  SET GLOBAL innodb_file_per_table = ON;
    CREATE TABLE New LIKE Main;
    -- Optional:  ALTER TABLE New ADD PARTITION BY RANGE ...;
@@ -227,13 +227,13 @@ Any UPDATE, DELETE, etc with LIMIT that is replicated to slaves (via [Statement 
 
 An example of an ORDER BY that does not quite work: Assume there are multiple rows for each 'date':
 
-```
+```sql
 DELETE * FROM tbl ORDER BY date LIMIT 111
 ```
 
 Given that id is the PRIMARY KEY (or UNIQUE), this will be safe:
 
-```
+```sql
 DELETE * FROM tbl ORDER BY date, id LIMIT 111
 ```
 
@@ -241,7 +241,7 @@ Unfortunately, even with the ORDER BY, MySQL has a deficiency that leads to a bo
 
 Some of the above code avoids this spurious warning by doing
 
-```
+```sql
 SELECT @z := ... LIMIT 1000,1;  -- not replicated
    DELETE ... BETWEEN @a AND @z;   -- deterministic
 ```
@@ -256,7 +256,7 @@ If it is InnoDB, the query should be rolled back. (Exceptions??)
 
 In MyISAM, rows are DELETEd as the statement is executed, and there is no provision for ROLLBACK. Some of the rows will be deleted, some won't. You probably have no clue of how much was deleted. In a single server, simply run the delete again. The delete is put into the binlog, but with error 1317. Since replication is supposed to keep the master and slave in sync, and since it has no clue of how to do that, replication stops and waits for manual intervention. In a HA (High Available) system using replication, this is a minor disaster. Meanwhile, you need to go to each slave(s) and verify that it is stuck for this reason, then do
 
-```
+```sql
 SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1;
    START SLAVE;
 ```

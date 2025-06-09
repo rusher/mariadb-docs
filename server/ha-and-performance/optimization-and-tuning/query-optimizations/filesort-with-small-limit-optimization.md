@@ -18,7 +18,7 @@ The first way is to check the [Sort\_priority\_queue\_sorts](../system-variables
 
 The second way is to check the slow query log. When one uses [Extended statistics in the slow query log](statistics-for-optimizing-queries/slow-query-log-extended-statistics.md) and specifies [log\_slow\_verbosity=query\_plan](../system-variables/server-system-variables.md#log_slow_verbosity), [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/) entries look like this
 
-```
+```sql
 # Time: 140714 18:30:39
 # User@Host: root[root] @ localhost []
 # Thread_id: 3  Schema: test  QC_hit: No

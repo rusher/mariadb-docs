@@ -10,20 +10,20 @@ Ignored indexes are indexes that are visible and maintained, but which are not u
 
 By default, an index is not ignored. One can mark existing index as ignored (or not ignored) with an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
 
-```
+```sql
 ALTER TABLE table_name ALTER {KEY|INDEX} [IF EXISTS] key_name [NOT] IGNORED;
 ```
 
 It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md), or [CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statement:
 
-```
+```sql
 CREATE TABLE table_name (
   ...
   INDEX index_name ( ...) [NOT] IGNORED
   ...
 ```
 
-```
+```sql
 CREATE INDEX index_name (...) [NOT] IGNORED ON tbl_name (...);
 ```
 
@@ -47,21 +47,21 @@ The primary use case is as follows: a DBA sees an index that seems to have littl
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (id INT PRIMARY KEY, b INT, KEY k1(b) IGNORED);
 ```
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (id INT PRIMARY KEY, b INT, KEY k1(b));
 ALTER TABLE t1 ALTER INDEX k1 IGNORED;
 ```
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (id INT PRIMARY KEY, b INT);
 CREATE INDEX k1 ON t1(b) IGNORED;
 ```
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_NAME = 't1'\G
 *************************** 1. row ***************************
 TABLE_CATALOG: def
@@ -101,7 +101,7 @@ INDEX_COMMENT:
       IGNORED: YES
 ```
 
-```
+```sql
 SHOW INDEXES FROM t1\G
 *************************** 1. row ***************************
         Table: t1
@@ -137,7 +137,7 @@ Index_comment:
 
 The optimizer does not make use of an index when it is ignored, while if the index is not ignored (the default), the optimizer will consider it in the optimizer plan, as shown in the [EXPLAIN](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) output.
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (id INT PRIMARY KEY, b INT, KEY k1(b) IGNORED);
 
 EXPLAIN SELECT * FROM t1 ORDER BY b;

@@ -84,7 +84,7 @@ Storage-independent column compression is different to [InnoDB Page Compression]
 
 ### Examples
 
-```
+```sql
 CREATE TABLE cmp (i TEXT COMPRESSED);
 
 CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);

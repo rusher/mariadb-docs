@@ -23,7 +23,7 @@ All the algorithms given below are "fast", but most introduce flaws:
 
 Here's a way to measure performance without having a big table.
 
-```
+```sql
 FLUSH STATUS;
     SELECT ...;
     SHOW SESSION STATUS LIKE 'Handler%';
@@ -37,7 +37,7 @@ Virtually all published algorithms involve a table scan. The previously publishe
 
 Sometimes the scan can be avoided via a subquery. For example, the first of these will do a table scan; the second will not.
 
-```
+```sql
 SELECT *  FROM RandTest AS a
   WHERE id = FLOOR(@min + (@max - @min + 1) * RAND());  -- BAD: table scan
 SELECT *
@@ -52,7 +52,7 @@ SELECT *
 * Requirement: [AUTO\_INCREMENT](../../../reference/data-types/auto_increment.md) id
 * Requirement: No gaps in id
 
-```
+```sql
 SELECT r.*
       FROM (
           SELECT FLOOR(mm.min_id + (mm.max_id - mm.min_id + 1) * RAND()) AS id
@@ -73,7 +73,7 @@ SELECT r.*
 * Requirement: No gaps in id
 * Flaw: Sometimes delivers fewer than 10 rows
 
-```
+```sql
 -- First select is one-time:
   SELECT @min := MIN(id),
          @max := MAX(id)
@@ -92,7 +92,7 @@ The FLOOR expression could lead to duplicates, hence the inflated inner LIMIT. T
 
 A variant:
 
-```
+```sql
 SELECT r.*
       FROM (
           SELECT FLOOR(mm.min_id + (mm.max_id - mm.min_id + 1) * RAND()) AS id
@@ -117,7 +117,7 @@ Again, ugly but fast, regardless of table size.
 
 This gets 50 "consecutive" ids (possibly with gaps), then delivers a random 10 of them.
 
-```
+```sql
 -- First select is one-time:
 SELECT @min := MIN(id),
        @max := MAX(id)
@@ -149,7 +149,7 @@ Assuming `rnd` is a FLOAT (or DOUBLE) populated with RAND() and INDEXed:
 * Flaw: Fetches 10 adjacent rows (according to `rnd`), hence not good randomness
 * Flaw: Near 'end' of table, can't find 10 rows.
 
-```
+```sql
 SELECT r.*
       FROM ( SELECT RAND() AS start FROM DUAL ) init
       JOIN RandTest r
@@ -160,7 +160,7 @@ SELECT r.*
 
 * These two variants attempt to resolve the end-of-table flaw:
 
-```
+```sql
 SELECT r.*
       FROM ( SELECT RAND() * ( SELECT rnd
                         FROM RandTest
@@ -195,13 +195,13 @@ SELECT r.*
 * Similar code/benefits/flaws to AUTO\_INCREMENT with gaps.
 * Needs 7 random HEX digits:
 
-```
+```sql
 RIGHT( HEX( (1<<24) * (1+RAND()) ), 6)
 ```
 
 can be used as a `start` for adapting a gapped AUTO\_INCREMENT case. If the field is BINARY instead of hex, then
 
-```
+```sql
 UNHEX(RIGHT( HEX( (1<<24) * (1+RAND()) ), 6))
 ```
 

@@ -14,7 +14,7 @@ The question is "When was Andrew Johnson president of the US?".
 
 The available table `Presidents` looks like:
 
-```
+```sql
 +-----+------------+----------------+-----------+
 | seq | last_name  | first_name     | term      |
 +-----+------------+----------------+-----------+
@@ -33,7 +33,7 @@ The available table `Presidents` looks like:
 
 What index(es) would be best for that question? More specifically, what would be best for
 
-```
+```sql
 SELECT  term
         FROM  Presidents
         WHERE  last_name = 'Johnson'
@@ -53,7 +53,7 @@ Some INDEXes to try...
 
 Well, I am fudging a little here. I have a PRIMARY KEY on `seq`, but that has no advantage on the query we are studying.
 
-```
+```sql
 SHOW CREATE TABLE Presidents \G
 CREATE TABLE `presidents` (
   `seq` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
@@ -114,7 +114,7 @@ MariaDB rarely uses more than one index at a time in a query. So, it will analyz
 4. Use the rest of the WHERE clause filter out all but the desired row.
 5. Deliver the answer (1865-1869).
 
-```
+```sql
 EXPLAIN  SELECT  term
   FROM  Presidents
   WHERE  last_name = 'Johnson'
@@ -140,7 +140,7 @@ OK, so you get really smart and decide that MariaDB should be smart enough to us
 4. Reach into the data using seq = (17) to get the row for Andrew Johnson.
 5. Deliver the answer (1865-1869).
 
-```
+```sql
 id: 1
   select_type: SIMPLE
         table: Presidents
@@ -164,7 +164,7 @@ This is called a "compound" or "composite" index since it has more than one colu
 3. Deliver the answer (1865-1869).\
    This is much better. In fact this is usually the "best".
 
-```
+```sql
 ALTER TABLE Presidents
         (drop old indexes and...)
         ADD INDEX compound(last_name, first_name);
@@ -189,7 +189,7 @@ Surprise! We can actually do a little better. A "Covering" index is one in which
 2. Deliver the answer (1865-1869).\
    The "data" BTree is not touched; this is an improvement over "compound".
 
-```
+```sql
 ... ADD INDEX covering(last_name, first_name, term);
 
            id: 1
@@ -221,7 +221,7 @@ Everything is similar to using "compound", except for the addition of "Using ind
 
 ## More examples:
 
-```
+```sql
 INDEX(last, first)
     ... WHERE last = '...' -- good (even though `first` is unused)
     ... WHERE first = '...' -- index is useless

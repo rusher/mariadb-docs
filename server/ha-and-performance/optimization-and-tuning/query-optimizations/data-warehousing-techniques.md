@@ -93,7 +93,7 @@ Normalization is important in Data Warehouse applications because it significant
 
 Here is a typical pattern for a Dimension table:
 
-```
+```sql
 CREATE TABLE Emails (
         email_id MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT,  -- don't make bigger than needed
         email VARCHAR(...) NOT NULL,
@@ -117,7 +117,7 @@ I bring this up as a separate topic because of some of the subtle issues that ca
 
 You may be tempted to do
 
-```
+```sql
 INSERT IGNORE INTO Foos
         SELECT DISTINCT foo FROM Staging;  -- not wise
 ```
@@ -126,7 +126,7 @@ It has the problem of "burning" AUTO\_INCREMENT ids. This is because MariaDB pre
 
 Better is this...
 
-```
+```sql
 INSERT IGNORE INTO Foos
         SELECT DISTINCT foo
             FROM Staging
@@ -142,7 +142,7 @@ Notes:
 
 Once that INSERT is done, this will find all the foo\_ids it needs:
 
-```
+```sql
 INSERT INTO Fact (..., foo_id, ...)
         SELECT ..., Foos.foo_id, ...
             FROM Staging
@@ -155,7 +155,7 @@ Case 1: PRIMARY KEY (dy, foo) and summarization is in lock step with, say, chang
 
 * This approach can have troubles if new data arrives after you have summarized the day's data.
 
-```
+```sql
 INSERT INTO Summary (dy, foo, ct, blah_total)
         SELECT  DATE(dt) as dy, foo,
                 COUNT(*) as ct, SUM(blah) as blah_total)
@@ -171,7 +171,7 @@ Case 2: (dy, foo) is a non-UNIQUE INDEX.
 
 Case 3: PRIMARY KEY (dy, foo) and summarization can happen anytime.
 
-```
+```sql
 INSERT INTO Summary (dy, foo, ct, blah_total)
         ON DUPLICATE KEY UPDATE
             ct = ct + VALUE(ct),
@@ -264,7 +264,7 @@ Still, the [normalization](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/databa
 
 Let's design and analyse a "simple ingestion scheme" for 10 rows/second, without 'batching'.
 
-```
+```sql
 # Normalize:
     $foo_id = SELECT foo_id FROM Foos WHERE foo = $foo;
     if no $foo_id, then

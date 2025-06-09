@@ -4,7 +4,7 @@ MariaDB deals with primary keys over nullable columns according to the SQL stand
 
 Take the following table structure:
 
-```
+```sql
 CREATE TABLE t1(
   c1 INT NOT NULL AUTO_INCREMENT, 
   c2 INT NULL DEFAULT NULL, 
@@ -18,7 +18,7 @@ Before [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-c
 
 Since [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes), the column is converted to NOT NULL, but without a default value. If we then attempt to insert a record without explicitly setting _c2_, a warning (or, in strict mode, an error), will be thrown, for example:
 
-```
+```sql
 INSERT INTO t1() VALUES();
 Query OK, 1 row affected, 1 warning (0.00 sec)
 Warning (Code 1364): Field 'c2' doesn't have a default value

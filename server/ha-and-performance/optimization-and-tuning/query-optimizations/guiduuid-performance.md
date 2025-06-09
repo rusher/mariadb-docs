@@ -58,7 +58,7 @@ Let's make [Stored Functions](../../../server-usage/stored-routines/stored-funct
 * Rearrange fields
 * Convert to/from BINARY(16)
 
-```
+```sql
 DELIMITER //
 
     CREATE FUNCTION UuidToBin(_uuid BINARY(36))
@@ -90,7 +90,7 @@ DELIMITER //
 
 Then you would do things like
 
-```
+```sql
 -- Letting MySQL create the UUID:
     INSERT INTO t (uuid, ...) VALUES (UuidToBin(UUID()), ...);
 
@@ -106,7 +106,7 @@ Then you would do things like
 
 Do not flip the WHERE; this will be inefficent because it won't use INDEX(uuid):
 
-```
+```sql
 WHERE UuidFromBin(uuid) = '1026-baba-6ccd780c-9564-0040f4311e29' -- NO
 ```
 

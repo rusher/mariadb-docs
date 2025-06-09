@@ -17,8 +17,8 @@ as shown in this diagram:
 
 Consider a range query:
 
-```
-explain select * from tbl where tbl.key1 between 1000 and 2000;
+```sql
+EXPLAIN SELECT * from tbl where tbl.key1 between 1000 and 2000;
 +----+-------------+-------+-------+---------------+------+---------+------+------+-----------------------+
 | id | select_type | table | type  | possible_keys | key  | key_len | ref  | rows | Extra                 |
 +----+-------------+-------+-------+---------------+------+---------+------+------+-----------------------+
@@ -38,11 +38,11 @@ SSD drives do not need to do disk seeks, so they will not be hurt as badly, howe
 
 Multi-Range-Read optimization aims to make disk access faster by sorting record read requests and then doing one ordered disk sweep. If one enables Multi Range Read, `EXPLAIN` will show that a "`Rowid-ordered scan`" is used:
 
-```
-set optimizer_switch='mrr=on';
+```sql
+SET optimizer_switch='mrr=on';
 Query OK, 0 rows affected (0.06 sec)
 
-explain select * from tbl where tbl.key1 between 1000 and 2000;
+EXPLAIN select * from tbl where tbl.key1 between 1000 and 2000;
 +----+-------------+-------+-------+---------------+------+---------+------+------+-------------------------------------------+
 | id | select_type | table | type  | possible_keys | key  | key_len | ref  | rows | Extra                                     |
 +----+-------------+-------+-------+---------------+------+---------+------+------+-------------------------------------------+
@@ -70,8 +70,8 @@ The above can make a huge difference on performance. There is also a catch, thou
 
 Batched Key Access can benefit from rowid sorting in the same way as range access does. If one has a join that uses index lookups:
 
-```
-explain select * from t1,t2 where t2.key1=t1.col1;
+```sql
+EXPLAIN select * from t1,t2 where t2.key1=t1.col1;
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref          | rows | Extra       |
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
@@ -83,8 +83,8 @@ explain select * from t1,t2 where t2.key1=t1.col1;
 
 Execution of this query will cause table `t2` to be hit in random locations by lookups made through `t2.key1=t1.col`. If you enable Multi Range and and Batched Key Access, you will get table `t2` to be accessed using a `Rowid-ordered scan`:
 
-```
-set optimizer_switch='mrr=on';
+```sql
+SET optimizer_switch='mrr=on';
 Query OK, 0 rows affected (0.06 sec)
 
 set join_cache_level=6;
@@ -108,8 +108,8 @@ An additional source of speedup is this property: if there are multiple records 
 
 Let us consider again the nested loop join example, with `ref` access on the second table:
 
-```
-explain select * from t1,t2 where t2.key1=t1.col1;
+```sql
+EXPLAIN select * from t1,t2 where t2.key1=t1.col1;
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref          | rows | Extra       |
 +----+-------------+-------+------+---------------+------+---------+--------------+------+-------------+
@@ -128,11 +128,11 @@ In particular, on step #5 we'll read the same index page that we've read on step
 
 This is roughly what `Key-ordered scan` optimization does. In EXPLAIN, it looks as follows:
 
-```
-set optimizer_switch='mrr=on,mrr_sort_keys=on';
+```sql
+SET optimizer_switch='mrr=on,mrr_sort_keys=on';
 Query OK, 0 rows affected (0.00 sec)
 
-set join_cache_level=6;
+SET join_cache_level=6;
 Query OK, 0 rows affected (0.02 sec)
 explain select * from t1,t2 where t2.key1=t1.col1\G
 *************************** 1. row ***************************

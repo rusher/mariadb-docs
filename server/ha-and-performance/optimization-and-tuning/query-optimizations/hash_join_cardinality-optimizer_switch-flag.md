@@ -10,11 +10,11 @@ In MySQL and MariaDB, the output cardinality of a part of query has historically
 
 Consider a query joining customers with their orders:
 
-```
-select * 
-from 
+```sql
+SELECT * 
+FROM
   customer, orders, ...
-where 
+WHERE 
   customer.id = orders.customer_id and ...
 ```
 

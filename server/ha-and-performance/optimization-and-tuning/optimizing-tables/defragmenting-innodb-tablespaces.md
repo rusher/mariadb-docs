@@ -50,7 +50,7 @@ A number of new system and status variables for controlling and monitoring the f
 
 ## Example
 
-```
+```sql
 set @@global.innodb_file_per_table = 1;
 set @@global.innodb_defragment_n_pages = 32;
 set @@global.innodb_defragment_fill_factor = 0.95;
@@ -87,7 +87,7 @@ set autocommit=1;
 
 After these CREATE and INSERT operations, the following information can be seen from the INFORMATION SCHEMA:
 
-```
+```sql
 select count(*) as Value from information_schema.innodb_buffer_page 
   where table_name like '%tb_defragment%' and index_name = 'PRIMARY';
 Value
@@ -131,7 +131,7 @@ table_name index_name sum(number_records) sum(data_size)
 
 Deleting three-quarters of the records, leaving gaps, and then optimizing:
 
-```
+```sql
 delete from tb_defragment where pk2 between 2 and 4;
  
 optimize table tb_defragment;
@@ -146,7 +146,7 @@ Innodb_defragment_count	4
 
 Now some pages have been freed, and some merged:
 
-```
+```sql
 select count(*) as Value from information_schema.innodb_buffer_page 
   where table_name like '%tb_defragment%' and index_name = 'PRIMARY';
 Value

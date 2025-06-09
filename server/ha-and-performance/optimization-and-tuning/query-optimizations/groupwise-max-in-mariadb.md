@@ -75,7 +75,7 @@ Characteristics:
 
 An 'uncorrelated subquery':
 
-```
+```sql
 SELECT  c1.province, c1.city, c1.population
     FROM  Canada AS c1
     JOIN
@@ -101,7 +101,7 @@ Characteristics:
 * Consistent O(N) run time (N = number of input rows)
 * Only one scan of the data
 
-```
+```sql
 SELECT
         province, city, population   -- The desired columns
     FROM
@@ -125,7 +125,7 @@ For your application, change the lines with comments.
 
 \*\*\* 'correlated subquery' (from MySQL doc):\*\*
 
-```
+```sql
 SELECT  province, city, population
     FROM  Canada AS c1
     WHERE  population =
@@ -140,7 +140,7 @@ O(N\*N) (that is, terrible) performance
 
 \*\*\* LEFT JOIN (from MySQL doc):\*\*
 
-```
+```sql
 SELECT  c1.province, c1.city, c1.population
     FROM  Canada AS c1
     LEFT JOIN  Canada AS c2 ON c2.province = c1.province
@@ -165,7 +165,7 @@ This is a variant on "groupwise-max" wherein you desire the largest (or smallest
 * Change the SELECT and ORDER BY if you desire
 * DESC to get the 'largest'; ASC for the 'smallest'
 
-```
+```sql
 SELECT
         province, n, city, population
     FROM
@@ -185,7 +185,7 @@ SELECT
 
 Output:
 
-```
+```sql
 +---------------------------+------+------------------+------------+
 | province                  | n    | city             | population |
 +---------------------------+------+------------------+------------+
@@ -202,7 +202,7 @@ The performance of this is O(N), actually about 3N, where N is the number of sou
 
 EXPLAIN EXTENDED gives
 
-```
+```sql
 +----+-------------+------------+--------+---------------+------+---------+------+------+----------+----------------+
 | id | select_type | table      | type   | possible_keys | key  | key_len | ref  | rows | filtered | Extra          |
 +----+-------------+------------+--------+---------------+------+---------+------+------+----------+----------------+
@@ -233,7 +233,7 @@ Main Handler values:
 
 This variant is faster than the previous, but depends on `city` being unique across the dataset. (from openark.org)
 
-```
+```sql
 SELECT  province, city, population
         FROM  Canada
         JOIN
@@ -275,7 +275,7 @@ Main Handler values:
 
 (This does not need your table to be MyISAM, but it does need MyISAM tmp table for its 2-column PRIMARY KEY feature.) See previous section for what changes to make for your use case.
 
-```
+```sql
 -- build tmp table to get numbering
     -- (Assumes auto_increment_increment = 1)
     CREATE TEMPORARY TABLE t (

@@ -6,14 +6,14 @@ The idea is to check part of the WHERE condition that refers to index fields (we
 
 Index Condition Pushdown is **on** by default. To disable it, set its optimizer\_switch flag like so:
 
-```
+```sql
 SET optimizer_switch='index_condition_pushdown=off'
 ```
 
 When Index Condition Pushdown is used, EXPLAIN will show "Using index condition":
 
-```
-MariaDB [test]> explain select * from tbl where key_col1 between 10 and 11 and key_col2 like '%foo%';
+```sql
+MariaDB [test]> EXPLAIN SELECT * from tbl where key_col1 between 10 and 11 and key_col2 like '%foo%';
 +----+-------------+-------+-------+---------------+----------+---------+------+------+-----------------------+
 | id | select_type | table | type  | possible_keys | key      | key_len | ref  | rows | Extra                 |
 +----+-------------+-------+-------+---------------+----------+---------+------+------+-----------------------+
@@ -42,13 +42,13 @@ The former depends on the query and the dataset. The latter is generally bigger 
 
 I used DBT-3 benchmark data, with scale factor=1. Since the benchmark defines very few indexes, we've added a multi-column index (index condition pushdown is usually useful with multi-column indexes: the first component(s) is what index access is done for, the subsequent have columns that we read and check conditions on).
 
-```
+```sql
 alter table lineitem add index s_r (l_shipdate, l_receiptdate);
 ```
 
 The query was to find big (l\_quantity > 40) orders that were made in January 1993 that took more than 25 days to ship:
 
-```
+```sql
 select count(*) from lineitem
 where
   l_shipdate between '1993-01-01' and '1993-02-01' and

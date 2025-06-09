@@ -17,7 +17,7 @@ searched. AGAINST takes a string to search for, and an optional\
 modifier that indicates what type of search to perform. The search\
 string must be a literal string, not a variable or a column name.
 
-```
+```sql
 MATCH (col1,col2,...) AGAINST (expr [search_modifier])
 ```
 
@@ -68,7 +68,7 @@ A query expansion search is a modification of a natural language search. The sea
 
 Creating a table, and performing a basic search:
 
-```
+```sql
 CREATE TABLE ft_myisam(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;
 
 INSERT INTO ft_myisam(copy) VALUES ('Once upon a time'),
@@ -84,7 +84,7 @@ SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');
 
 Multiple words:
 
-```
+```sql
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked,witch');
 +---------------------------------+
 | copy                            |
@@ -95,14 +95,14 @@ SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked,witch');
 
 Since 'Once' is a [stopword](full-text-index-stopwords.md), no result is returned:
 
-```
+```sql
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('Once');
 Empty set (0.00 sec)
 ```
 
 Inserting the word 'wicked' into more than half the rows excludes it from the results:
 
-```
+```sql
 INSERT INTO ft_myisam(copy) VALUES ('Once upon a wicked time'),
   ('There was a wicked wicked witch'), ('Who ate everybody wicked up');
 
@@ -112,7 +112,7 @@ Empty set (0.00 sec)
 
 Using IN BOOLEAN MODE to overcome the 50% limitation:
 
-```
+```sql
 SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked' IN BOOLEAN MODE);
 +---------------------------------+
 | copy                            |
@@ -126,7 +126,7 @@ SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked' IN BOOLEAN MODE);
 
 Returning the relevance:
 
-```
+```sql
 SELECT copy,MATCH(copy) AGAINST('witch') AS relevance 
   FROM ft_myisam WHERE MATCH(copy) AGAINST('witch');
 +---------------------------------+--------------------+
@@ -139,7 +139,7 @@ SELECT copy,MATCH(copy) AGAINST('witch') AS relevance
 
 WITH QUERY EXPANSION. In the following example, 'MariaDB' is always associated with the word 'database', so it is returned when query expansion is used, even though not explicitly requested.
 
-```
+```sql
 CREATE TABLE ft2(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;
 
 INSERT INTO ft2(copy) VALUES
@@ -177,7 +177,7 @@ SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('database' WITH QUERY EXPANSION);
 
 Partial word matching with IN BOOLEAN MODE:
 
-```
+```sql
 SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('Maria*' IN BOOLEAN MODE);
 +--------------------------------+
 | copy                           |
@@ -191,7 +191,7 @@ SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('Maria*' IN BOOLEAN MODE);
 
 Using boolean operators
 
-```
+```sql
 SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('+MariaDB -database' 
   IN BOOLEAN MODE);
 +------------------+

@@ -4,7 +4,7 @@ Prior to [MariaDB 5.3](broken-reference), the `index_merge` access method suppor
 
 This feature is disabled by default. To enable it, turn on the optimizer switch`index_merge_sort_intersection` like so:
 
-```
+```sql
 SET optimizer_switch='index_merge_sort_intersection=on'
 ```
 
@@ -16,7 +16,7 @@ index scans produced rowid-ordered streams. In practice this means that an`inter
 
 For example, the following query will use `intersection`:
 
-```
+```sql
 MySQL [ontime]> EXPLAIN SELECT AVG(arrdelay) FROM ontime WHERE depdel15=1 AND OriginState ='CA';
 +--+-----------+------+-----------+--------------------+--------------------+-------+----+-----+-------------------------------------------------+
 |id|select_type|table |type       |possible_keys       |key                 |key_len|ref |rows |Extra                                            |
@@ -29,7 +29,7 @@ but if you replace `OriginState ='CA'` with `OriginState IN ('CA', 'GB')`\
 (which matches the same number of records), then `intersection` is not usable\
 anymore:
 
-```
+```sql
 MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and OriginState IN ('CA', 'GB');
 +--+-----------+------+----+--------------------+--------+-------+-----+-----+-----------+
 |id|select_type|table |type|possible_keys       |key     |key_len|ref  |rows |Extra      |
@@ -46,7 +46,7 @@ our experiments.
 In [MariaDB 5.3](broken-reference), when `index_merge_sort_intersection` is enabled,`index_merge` intersection plans can be constructed from non-equality\
 conditions:
 
-```
+```sql
 MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and OriginState IN ('CA', 'GB');
 +--+-----------+------+-----------+--------------------+--------------------+-------+----+-----+--------------------------------------------------------+
 |id|select_type|table |type       |possible_keys       |key                 |key_len|ref |rows |Extra                                                   |

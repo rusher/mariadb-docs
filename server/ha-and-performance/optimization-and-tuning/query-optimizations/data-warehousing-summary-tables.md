@@ -23,7 +23,7 @@ A summary table includes two sets of columns:
 
 The "date" might be a DATE (a 3-byte native datatype), or an hour, or some other time interval. A 3-byte MEDIUMINT UNSIGNED 'hour' can be derived from a DATETIME or TIMESTAMP via
 
-```
+```sql
 FLOOR(UNIX_TIMESTAMP(dt) / 3600)
    FROM_UNIXTIME(hour * 3600)
 ```
@@ -43,7 +43,7 @@ The Fact table has all the sales with columns such as\
 datetime, salesman\_id, city, price, customer\_id, make, model, model\_year.\
 One Summary table might focus on sales:
 
-```
+```sql
 PRIMARY KEY(city, datetime),
    Aggregations: ct, sum_price
    
@@ -86,7 +86,7 @@ Plan F: "Staging table". This is primarily for very high speed ingestion. It is 
 
 ## Summarizing while Inserting (one row at a time)
 
-```
+```sql
 INSERT INTO Fact ...;
     INSERT INTO Summary (..., ct, foo, ...) VALUES (..., 1, foo, ...)
         ON DUPLICATE KEY UPDATE ct = ct+1, sum_foo = sum_foo + VALUES(foo), ...;
@@ -116,7 +116,7 @@ The Fact table needs an AUTO\_INCREMENT id, and you need to be able to find the 
 
 Then perform bulk summarization using
 
-```
+```sql
 FROM Fact
    WHERE id BETWEEN min_id and max_id
 ```
@@ -143,7 +143,7 @@ Case 3: PRIMARY KEY (foo, dy) and summarization can happen anytime.
 Since you should be using InnoDB, there needs to be an explicit PRIMARY KEY.\
 One approach when you do not have a 'natural' PK is this:
 
-```
+```sql
 id INT UNSIGNED AUTO_INCREMENT NOT NULL,
    ...
    PRIMARY KEY(foo, dy, id),  -- `id` added to make unique
@@ -162,7 +162,7 @@ Exception... Let's say you are looking at weather temperatures. And you monitori
 
 Formula for Standard Deviation:
 
-```
+```sql
 SQRT( SUM(sum_foo2)/SUM(ct) - POWER(SUM(sum_foo)/SUM(ct), 2) )
 ```
 
@@ -237,7 +237,7 @@ The flipping step uses a fast, atomic, RENAME.
 
 Here is a sketch of the code:
 
-```
+```sql
 # Prep for flip:
     CREATE TABLE new LIKE Staging;
 

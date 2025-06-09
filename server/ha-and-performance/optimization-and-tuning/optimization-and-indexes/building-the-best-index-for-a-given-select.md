@@ -49,7 +49,7 @@ Think of a list of names, sorted by last\_name, then first\_name. You have undou
 
 Those equate to
 
-```
+```sql
 INDEX(last_name, first_name) -- the order of the list.
     WHERE last_name = 'James' AND first_name = 'Rick'  -- best case
     WHERE last_name = 'James' AND first_name LIKE 'R%' -- pretty good
@@ -137,7 +137,7 @@ You have collected a few columns; put them in INDEX and ADD that to the table. T
 
 An example of the Algorithm being 'wrong':
 
-```
+```sql
 SELECT ... FROM t WHERE flag = true;
 ```
 
@@ -145,7 +145,7 @@ This would (according to the Algorithm) call for INDEX(flag). However, indexing 
 
 On the other hand, the Algorithm is 'right' with
 
-```
+```sql
 SELECT ... FROM t WHERE flag = true AND date >= '2015-01-01';
 ```
 
@@ -153,7 +153,7 @@ That would call for a compound index starting with a flag: INDEX(flag, date). Su
 
 If your resulting INDEX include column(s) that are likely to be UPDATEd, note that the UPDATE will have extra work to remove a 'row' from one place in the INDEX's BTree and insert a 'row' back into the BTree. For example:
 
-```
+```sql
 INDEX(x)
 UPDATE t SET x = ... WHERE ...;
 ```
@@ -162,7 +162,7 @@ There are too many variables to say whether it is better to keep the index or to
 
 In this case, shortening the index may may be beneficial:
 
-```
+```sql
 INDEX(z, x)
 UPDATE t SET x = ... WHERE ...;
 ```
@@ -245,7 +245,7 @@ Cases...
 
 A workaround is to use UNION. Each part of the UNION is optimized separately. For the second case:
 
-```
+```sql
 ( SELECT ... WHERE a=1 )   -- and have INDEX(a)
    UNION DISTINCT -- "DISTINCT" is assuming you need to get rid of dups
    ( SELECT ... WHERE b=2 )   -- and have INDEX(b)
@@ -258,7 +258,7 @@ The third case (OR across 2 tables) is similar to the second.
 
 If you originally had a LIMIT, UNION gets complicated. If you started with ORDER BY z LIMIT 190, 10, then the UNION needs to be
 
-```
+```sql
 ( SELECT ... LIMIT 200 )   -- Note: OFFSET 0, LIMIT 190+10
    UNION DISTINCT -- (or ALL)
    ( SELECT ... LIMIT 200 )
@@ -271,7 +271,7 @@ You cannot directly index a TEXT or BLOB or large VARCHAR or large BINARY column
 
 Example of a prefix index:
 
-```
+```sql
 INDEX(last_name(2), first_name)
 ```
 
@@ -293,7 +293,7 @@ All must do a full scan. (On the other hand, it can handy to use GROUP BY LEFT(d
 
 This is efficient, and can use an index:
 
-```
+```sql
 date_col >= '2016-01-01'
     AND date_col  < '2016-01-01' + INTERVAL 3 MONTH
 ```
@@ -312,7 +312,7 @@ IN ( SELECT ... )
 
 From version 4.1 through 5.5, IN ( SELECT ... ) was very poorly optimized. The SELECT was effectively re-evaluated every time. Often it can be transformed into a JOIN, which works much faster. Heres is a pattern to follow:
 
-```
+```sql
 SELECT  ...
     FROM  a
     WHERE  test_a
@@ -337,7 +337,7 @@ Alas, there are cases where the pattern is hard to follow.
 
 If there is a JOIN or GROUP BY or ORDER BY LIMIT in the subquery, that complicates the JOIN in new format. So, it might be better to use this pattern:
 
-```
+```sql
 SELECT  ...
     FROM  a
     WHERE  test_a
@@ -365,7 +365,7 @@ Sometimes the following will work.
 
 Using DISTINCT or GROUP BY to counteract the explosion
 
-```
+```sql
 SELECT  DISTINCT
         a.*,
         b.y
@@ -379,7 +379,7 @@ SELECT  a.*,
 
 When using second table just to check for existence:
 
-```
+```sql
 SELECT  a.*
     FROM a
     JOIN b  ON b.x = a.x
@@ -396,7 +396,7 @@ SELECT  a.*,
 
 Do it this way.
 
-```
+```sql
 CREATE TABLE XtoY (
         # No surrogate id for this table
         x_id MEDIUMINT UNSIGNED NOT NULL,   -- For JOINing to one table
@@ -457,7 +457,7 @@ PARTITION BY RANGE is a technique that is sometimes useful when indexing fails t
 
 FULLTEXT is now implemented in InnoDB as well as MyISAM. It provides a way to search for "words" in TEXT columns. This is much faster (when it is applicable) than col LIKE '%word%'.
 
-```
+```sql
 WHERE x = 1
       AND MATCH (...) AGAINST (...)
 ```
@@ -476,7 +476,7 @@ always(?) uses the FULLTEXT index first. That is, the whole Algorithm is invalid
 
 The published table (see Wikipedia) is
 
-```
+```sql
 CREATE TABLE wp_postmeta (
       meta_id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
       post_id bigint(20) unsigned NOT NULL DEFAULT '0',
@@ -498,7 +498,7 @@ The problems:
 
 The solutions:
 
-```
+```sql
 CREATE TABLE wp_postmeta (
         post_id BIGINT UNSIGNED NOT NULL,
         meta_key VARCHAR(255) NOT NULL,

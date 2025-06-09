@@ -112,7 +112,7 @@ The PRIMARY KEY must
 
 The FindNearest PROCEDURE will do multiple SELECTs something like this:
 
-```
+```sql
 WHERE lat    BETWEEN @my_lat - @dlat
                        AND @my_lat + @dlat   -- PARTITION Pruning and bounding box
         AND lon    BETWEEN @my_lon - @dlon
@@ -215,7 +215,7 @@ The procedure returns one resultset, SELECT \*, distance.
 
 This version is based on scaling "Deg\*10000 (MEDIUMINT)".
 
-```
+```sql
 DELIMITER //
 
 drop function if exists GCDist //

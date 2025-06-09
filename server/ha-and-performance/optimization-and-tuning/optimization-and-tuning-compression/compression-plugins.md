@@ -20,19 +20,19 @@ From [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 Depending on how MariaDB was installed, the libraries may already be available for installation, or may first need to be installed as .deb or .rpm packages, for example:
 
-```
+```bash
 apt-get install mariadb-plugin-provider-lz4
 ```
 
 Once available, [install as a plugin](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md), for example:
 
-```
+```sql
 INSTALL SONAME 'provider_lz4';
 ```
 
 The compression algorithm can then be used, for example, in [InnoDB compression](../../../reference/storage-engines/innodb/innodb-page-compression.md):
 
-```
+```sql
 SET GLOBAL innodb_compression_algorithm = lz4;
 ```
 

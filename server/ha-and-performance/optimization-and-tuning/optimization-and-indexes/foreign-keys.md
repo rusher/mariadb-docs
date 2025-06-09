@@ -21,7 +21,7 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md). The definition must follow this syntax:
 
-```
+```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
     [index_name] (index_col_name, ...)
     REFERENCES tbl_name (index_col_name,...)
@@ -91,7 +91,7 @@ Foreign keys have the following limitations in MariaDB:
 
 Let's see an example. We will create an `author` table and a `book` table. Both tables have a primary key called `id`. `book` also has a foreign key composed by a field called `author_id`, which refers to the `author` primary key. The foreign key constraint name is optional, but we'll specify it because we want it to appear in error messages: `fk_book_author`.
 
-```
+```sql
 CREATE TABLE author (
   id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL
@@ -110,7 +110,7 @@ CREATE TABLE book (
 
 Now, if we try to insert a book with a non-existing author, we will get an error:
 
-```
+```sql
 INSERT INTO book (title, author_id) VALUES ('Necronomicon', 1);
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails
  (`test`.`book`, CONSTRAINT `fk_book_author` FOREIGN KEY (`author_id`) 
@@ -121,7 +121,7 @@ The error is very descriptive.
 
 Now, let's try to properly insert two authors and their books:
 
-```
+```sql
 INSERT INTO author (name) VALUES ('Abdul Alhazred');
 INSERT INTO book (title, author_id) VALUES ('Necronomicon', LAST_INSERT_ID());
 
@@ -135,7 +135,7 @@ It worked!
 
 Now, let's delete the second author. When we created the foreign key, we specified `ON DELETE CASCADE`. This should propagate the deletion, and make the deleted author's books disappear:
 
-```
+```sql
 DELETE FROM author WHERE name = 'H.P. Lovecraft';
 
 SELECT * FROM book;
@@ -148,7 +148,7 @@ SELECT * FROM book;
 
 We also specified `ON UPDATE RESTRICT`. This should prevent us from modifying an author's `id` (the column referenced by the foreign key) if a child row exists:
 
-```
+```sql
 UPDATE author SET id = 10 WHERE id = 1;
 ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails 
  (`test`.`book`, CONSTRAINT `fk_book_author` FOREIGN KEY (`author_id`) 
@@ -159,7 +159,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 Until [MariaDB 10.4](broken-reference)
 
-```
+```sql
 CREATE TABLE a(a_key INT primary key, not_key INT);
 
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
@@ -193,7 +193,7 @@ SELECT * FROM b;
 
 From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
 
-```
+```sql
 CREATE TABLE a(a_key INT primary key, not_key INT);
 
 CREATE TABLE b(for_key INT REFERENCES a(not_key));

@@ -31,7 +31,7 @@ Generally the fastest injection rate can be achieved by "staging" the INSERTs in
 
 Let's say your Input has a [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) `host_name` column, but you need to turn that into a smaller [MEDIUMINT](../../../reference/data-types/numeric-data-types/mediumint.md) `host_id` in the Fact table. The "Normalization" table, as I call it, looks something like
 
-```
+```sql
 CREATE TABLE Hosts (
     host_id  MEDIUMINT UNSIGNED  NOT NULL AUTO_INCREMENT,
     host_name VARCHAR(99) NOT NULL,
@@ -44,20 +44,20 @@ Here's how you can use `Staging` as an efficient way achieve the swap from name 
 
 Staging has two fields (for this normalization example):
 
-```
+```sql
 host_name VARCHAR(99) NOT NULL,     -- Comes from the insertion proces
     host_id  MEDIUMINT UNSIGNED  NULL,  -- NULL to start with; see code below
 ```
 
 Meawhile, the Fact table has:
 
-```
+```sql
 host_id  MEDIUMINT UNSIGNED NOT NULL,
 ```
 
 SQL #1 (of 2):
 
-```
+```sql
 # This should not be in the main transaction, and it should be done with autocommit = ON
     # In fact, it could lead to strange errors if this were part
     #    of the main transaction and it ROLLBACKed.
@@ -74,7 +74,7 @@ There is a subtle reason for the LEFT JOIN. If, instead, it were INSERT IGNORE..
 
 SQL #2:
 
-```
+```sql
 # Also not in the main transaction, and it should be with autocommit = ON
     # This multi-table UPDATE sets the ids in Staging:
     UPDATE   Hosts AS n
@@ -101,7 +101,7 @@ To keep the processes from stepping on each other, we have a pair of staging tab
 * `StageProcess` is one being processed for normalization, summarization, and moving to the Fact table.\
   A separate process does the processing, then swaps the tables:
 
-```
+```sql
 DROP   TABLE StageProcess;
     CREATE TABLE StageProcess LIKE Staging;
     RENAME TABLE Staging TO tmp, StageProcess TO Staging, tmp TO StageProcess;

@@ -19,7 +19,7 @@ The feature was based upon a patch by Davi Arnaut.
 
 By using [max\_statement\_time](../system-variables/server-system-variables.md#max_statement_time) in conjunction with [SET STATEMENT](../../../reference/sql-statements/administrative-sql-statements/set-commands/set-statement.md), it is possible to limit the execution time of individual queries. For example:
 
-```
+```sql
 SET STATEMENT max_statement_time=100 FOR 
   SELECT field1 FROM table_name ORDER BY field1;
 ```
@@ -27,7 +27,7 @@ SET STATEMENT max_statement_time=100 FOR
 max\_statement\_time per query\
 Individual queries can also be limited by adding a `MAX_STATEMENT_TIME` clause to the query. For example:
 
-```
+```sql
 SELECT MAX_STATEMENT_TIME=2 * FROM t1;
 ```
 

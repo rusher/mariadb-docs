@@ -23,7 +23,7 @@ You can temporarily disable updating of non unique indexes. This is mostly\
 useful when there are zero (or very few) rows in the table into which you are\
 inserting data.
 
-```
+```sql
 ALTER TABLE table_name DISABLE KEYS;
 BEGIN;
 ... inserting data with INSERT or LOAD DATA ....
@@ -41,14 +41,14 @@ afterwards.
 
 When inserting big amounts of data, integrity checks are sensibly time-consuming. It is possible to disable the `UNIQUE` indexes and the [foreign keys](../optimization-and-indexes/foreign-keys.md) checks using the [unique\_checks](../system-variables/server-system-variables.md#unique_checks) and the [foreign\_key\_checks](../system-variables/server-system-variables.md#foreign_key_checks) system variables:
 
-```
+```sql
 SET @@session.unique_checks = 0;
 SET @@session.foreign_key_checks = 0;
 ```
 
 For InnoDB tables, the [AUTO\_INCREMENT lock mode](../../../reference/storage-engines/innodb/auto_increment-handling-in-innodb.md) can be temporarily set to 2, which is the fastest setting:
 
-```
+```sql
 SET @@global.innodb_autoinc_lock_mode = 2;
 ```
 
@@ -60,14 +60,14 @@ The **fastest way** to insert data into MariaDB is through the[LOAD DATA INFILE]
 
 The simplest form of the command is:
 
-```
+```sql
 LOAD DATA INFILE 'file_name' INTO TABLE table_name;
 ```
 
 You can also read a file locally on the machine where the client is running by\
 using:
 
-```
+```sql
 LOAD DATA LOCAL INFILE 'file_name' INTO TABLE table_name;
 ```
 
@@ -113,7 +113,7 @@ avoid doing a full transaction (which includes a disk sync) for every row. For\
 example, doing a begin/end every 1000 inserts will speed up your inserts by\
 almost 1000 times.
 
-```
+```sql
 BEGIN;
 INSERT ...
 INSERT ...
@@ -132,7 +132,7 @@ just one is that the former will use up less transaction log space.
 
 You can insert many rows at once with multi-value row inserts:
 
-```
+```sql
 INSERT INTO table_name values(1,"row 1"),(2, "row 2"),...;
 ```
 
@@ -143,7 +143,7 @@ The limit for how much data you can have in one statement is controlled by the[m
 If you need to insert data into several tables at once, the best way to do so\
 is to enable multi-row statements and send many inserts to the server at once:
 
-```
+```sql
 INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
 INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
 ```
@@ -155,7 +155,7 @@ multiple statements.
 
 To test this in the `mariadb` client you have to do:
 
-```
+```sql
 delimiter ;;
 select 1; select 2;;
 delimiter ;

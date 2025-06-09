@@ -16,14 +16,14 @@ Download it from [world.sql.gz](https://mariadb.com/kb/en/ftp://ftp.askmonty.org
 
 Install it with:
 
-```
+```bash
 mariadb-admin create world
 zcat world.sql.gz | ../client/mysql world
 ```
 
 or
 
-```
+```bash
 mariadb-admin create world
 gunzip world.sql.gz
 ../client/mysql world < world.sql
@@ -37,7 +37,7 @@ the [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/
 The simplest way to force the join order is to put the tables in the correct\
 order in the `FROM` clause and use `SELECT STRAIGHT_JOIN` like so:
 
-```
+```sql
 SELECT STRAIGHT_JOIN SUM(City.Population) FROM Country,City WHERE
 City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 ```
@@ -45,7 +45,7 @@ City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 If you only want to force the join order for a few tables, use`STRAIGHT_JOIN` in the `FROM` clause. When this is done, only tables\
 connected with `STRAIGHT_JOIN` will have their order forced. For example:
 
-```
+```sql
 SELECT SUM(City.Population) FROM Country STRAIGHT_JOIN City WHERE
 City.CountryCode=Country.Code AND Country.HeadOfState="Volodymyr Zelenskyy";
 ```
@@ -79,7 +79,7 @@ particular index.
 You can limit which indexes are considered with the [USE INDEX](use-index.md)\
 option.
 
-```
+```sql
 USE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
@@ -89,7 +89,7 @@ The default is '`FOR JOIN`', which means that the hint only affects how the`WHER
 
 Example:
 
-```
+```sql
 CREATE INDEX Name ON City (Name);
 CREATE INDEX CountryCode ON City (Countrycode);
 EXPLAIN SELECT Name FROM City USE INDEX (CountryCode)
@@ -109,13 +109,13 @@ If we had not used [USE INDEX](use-index.md), the `Name` index would have been i
 
 You can tell the optimizer to not consider some particular index with the[IGNORE INDEX](ignore-index.md) option.
 
-```
+```sql
 IGNORE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
 This is used after the table name in the `FROM` clause:
 
-```
+```sql
 CREATE INDEX Name ON City (Name);
 CREATE INDEX CountryCode ON City (Countrycode);
 EXPLAIN SELECT Name FROM City IGNORE INDEX (Name)
@@ -142,7 +142,7 @@ be better. (The optimizer could decide to do a table scan even if there is\
 an available index when it believes that most or all rows will match and\
 it can avoid the overhead of using the index).
 
-```
+```sql
 CREATE INDEX Name ON City (Name);
 EXPLAIN SELECT Name,CountryCode FROM City FORCE INDEX (Name)
 WHERE name>="A" and CountryCode >="A";
@@ -170,7 +170,7 @@ The optimizer will try to use indexes to resolve [ORDER BY](../../../reference/s
 You can use [USE INDEX](use-index.md), [IGNORE INDEX](ignore-index.md) and[FORCE INDEX](force-index.md) as in the `WHERE` clause above\
 to ensure that some specific index used:
 
-```
+```sql
 USE INDEX [{FOR {JOIN|ORDER BY|GROUP BY}] ([index_list])
 ```
 
@@ -178,7 +178,7 @@ This is used after the table name in the `FROM` clause.
 
 Example:
 
-```
+```sql
 CREATE INDEX Name ON City (Name);
 EXPLAIN SELECT Name,Count(*) FROM City
 FORCE INDEX FOR GROUP BY (Name)
@@ -237,8 +237,9 @@ or `SELECT SQL_BIG_RESULT`.
 
 For example:
 
-```
-EXPLAIN SELECT SQL_SMALL_RESULT Name,Count(*) AS Cities FROM City GROUP BY Name HAVING Cities > 2;
+```sql
+EXPLAIN SELECT SQL_SMALL_RESULT Name,Count(*) AS Cities 
+FROM City GROUP BY Name HAVING Cities > 2;
 ```
 
 produces:
@@ -250,9 +251,9 @@ produces:
 
 while:
 
-```
-EXPLAIN SELECT SQL_BIG_RESULT Name,Count(*) AS Cities FROM City
-GROUP BY Name HAVING Cities > 2;
+```sql
+EXPLAIN SELECT SQL_BIG_RESULT Name,Count(*) AS Cities 
+FROM City GROUP BY Name HAVING Cities > 2;
 ```
 
 produces:
@@ -272,7 +273,7 @@ to free up the table/row locks for the used tables as quickly as possible.
 
 You can do this with the `SQL_BUFFER_RESULT` option:
 
-```
+```sql
 CREATE INDEX Name ON City (Name);
 EXPLAIN SELECT SQL_BUFFER_RESULT Name,Count(*) AS Cities FROM City
 GROUP BY Name HAVING Cities > 2;
