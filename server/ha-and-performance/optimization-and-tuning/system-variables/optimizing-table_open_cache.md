@@ -12,7 +12,7 @@ _table\_open\_cache_ has defaulted to 2000 since [MariaDB 10.1.7](https://app.gi
 
 You can view the current setting in the my.cnf file, or by running:
 
-```
+```sql
 select @@table_open_cache;
 +--------------------+
 | @@table_open_cache |
@@ -23,7 +23,7 @@ select @@table_open_cache;
 
 To evaluate whether you could do with a higher table\_open\_cache, look at the number of opened tables, in conjunction with the server uptime ([Opened\_tables](server-status-variables.md#opened_tables) and [Uptime](server-status-variables.md#uptime) status variables):
 
-```
+```sql
 show global status like 'opened_tables';
 +---------------+--------+
 | Variable_name | Value  |
@@ -40,7 +40,7 @@ It's possible that the open\_table\_cache can even be reduced.
 
 If your number of open\_tables has not yet reached the table\_open\_cache\_size, and the server has been up a while, you can look at decreasing the value.
 
-```
+```sql
 show global status like 'open_tables';
 +---------------+-------+
 | Variable_name | Value |
