@@ -47,21 +47,21 @@ apply to segmented key caches: [key\_buffer\_size](../../../reference/storage-en
 Statistics about the key cache can be found by looking at the[KEY\_CACHES](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_caches-table.md) table in the [INFORMATION\_SCHEMA](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/)\
 database. Columns in this table are:
 
-| Column Name      | Description                                                                                                                     |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Column Name      | Description                                                                                                                     |
-| KEY\_CACHE\_NAME | The name of the key cache                                                                                                       |
-| SEGMENTS         | total number of segments (set to NULL for regular key caches)                                                                   |
-| SEGMENT\_NUMBER  | segment number (set to NULL for any regular key caches and for rows containing aggregation statistics for segmented key caches) |
-| FULL\_SIZE       | memory for cache buffers/auxiliary structures                                                                                   |
-| BLOCK\_SIZE      | size of the blocks                                                                                                              |
-| USED\_BLOCKS     | number of currently used blocks                                                                                                 |
-| UNUSED\_BLOCKS   | number of currently unused blocks                                                                                               |
-| DIRTY\_BLOCKS    | number of currently dirty blocks                                                                                                |
-| READ\_REQUESTS   | number of read requests                                                                                                         |
-| READS            | number of actual reads from files into buffers                                                                                  |
-| WRITE\_REQUESTS  | number of write requests                                                                                                        |
-| WRITES           | number of actual writes from buffers into files                                                                                 |
+| Column Name| Description |
+| - | - |
+| Column Name| Description |
+| KEY\_CACHE\_NAME | The name of the key cache |
+| SEGMENTS | total number of segments (set to NULL for regular key caches) |
+| SEGMENT\_NUMBER| segment number (set to NULL for any regular key caches and for rows containing aggregation statistics for segmented key caches) |
+| FULL\_SIZE | memory for cache buffers/auxiliary structures |
+| BLOCK\_SIZE| size of the blocks|
+| USED\_BLOCKS | number of currently used blocks |
+| UNUSED\_BLOCKS | number of currently unused blocks |
+| DIRTY\_BLOCKS| number of currently dirty blocks|
+| READ\_REQUESTS | number of read requests |
+| READS| number of actual reads from files into buffers|
+| WRITE\_REQUESTS| number of write requests|
+| WRITES | number of actual writes from buffers into files |
 
 ## See Also
 
