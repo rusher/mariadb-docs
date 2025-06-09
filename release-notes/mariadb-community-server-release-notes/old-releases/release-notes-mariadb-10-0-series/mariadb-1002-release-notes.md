@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 
 **Release date:** 24 Apr 2013
 
-[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is built on the[MariaDB 5.5 series](broken-reference) with backported features from MySQL\
+[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is built on thethe [MariaDB 5.5 serie](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with backported features from MySQL\
 5.6 and entirely new features not found anywhere else.
 
 [MariaDB 10.0.2](mariadb-1002-release-notes.md) is an [_**Alpha**_](../../../mariadb-release-criteria.md) release.\
@@ -20,9 +20,9 @@ be pushed in future releases.**Do not use alpha releases on production systems.*
 For a list of changes made in [MariaDB 10.0.2](mariadb-1002-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md).
 
-## Based on [MariaDB 5.5](broken-reference)
+## Based on [MariaDB 5.5](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/311/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
-The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](broken-reference) series. It also includes\
+The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/311/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series. It also includes\
 features imported from MySQL 5.6, and completely new features.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
@@ -67,7 +67,7 @@ details, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/m
 ### Other Features
 
 Other features are planned for inclusion in the Stable (GA) version of [MariaDB\
-10.0](changes-improvements-in-mariadb-10-0.md). They are listed on the [What is MariaDB 10.0?](changes-improvements-in-mariadb-10-0.md) and[Plans for 10x](broken-reference) pages.
+10.0](changes-improvements-in-mariadb-10-0.md). They are listed on the [What is MariaDB 10.0?](changes-improvements-in-mariadb-10-0.md) and Plans for 10x pages.
 
 ## Discontinued builds
 
@@ -86,7 +86,7 @@ distributions:
 Binary tar.gz files built on Ubuntu "Hardy" will also be going away. These are the ones that _do not_ require GLIBC\_2.14+. So for the next release, all binary tar.gz files for Linux will require GLIBC\_2.14+.
 
 If your chosen Linux Distribution or Operating System is deprecated, packages\
-or support are not completely unavailable. Companies such as[SkySQL](https://skysql.com), [Monty Program](https://montyprogram.com), and others provide support for all versions of\
+or support are not completely unavailable. Companies such as [SkySQL](https://skysql.com), [Monty Program](https://montyprogram.com), and others provide support for all versions of\
 MariaDB back to even very old MySQL versions. This includes packaged binaries.\
 Contact them for more details.
 
