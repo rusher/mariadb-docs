@@ -79,3 +79,5 @@ These statements do not cause an implicit commit in the following cases:
 * [START SLAVE](../administrative-sql-statements/replication-statements/start-replica.md), [STOP SLAVE](../administrative-sql-statements/replication-statements/stop-replica.md), [RESET SLAVE](../administrative-sql-statements/replication-statements/reset-replica.md) and [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md) did not cause implicit commits prior to [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

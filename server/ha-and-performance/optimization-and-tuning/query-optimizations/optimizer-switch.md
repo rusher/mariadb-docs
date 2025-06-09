@@ -94,3 +94,5 @@ Below is a list of all _optimizer\_switch_ flags available in MariaDB:
 * [Optimizer hints in SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

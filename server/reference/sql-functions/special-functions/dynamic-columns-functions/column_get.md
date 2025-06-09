@@ -30,3 +30,5 @@ without specifying a maximum length (i.e. using `as CHAR`, not `as CHAR(n)`), Ma
 See [Dynamic Columns:Datatypes](../../../sql-structure/nosql/dynamic-columns.md#datatypes) for more information about datatypes.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

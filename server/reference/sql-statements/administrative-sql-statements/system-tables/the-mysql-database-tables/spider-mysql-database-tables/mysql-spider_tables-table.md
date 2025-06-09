@@ -39,3 +39,5 @@ It contains the following fields:
 | static\_link\_id                     | char(64)   | YES  |     | NULL    |             |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

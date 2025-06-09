@@ -92,3 +92,5 @@ subselect is common whenever you store historized/versioned data.
 * This page is based on the following blog post about table elimination:[?p=58](https://s.petrunia.net/blog/?p=58)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

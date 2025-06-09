@@ -23,3 +23,5 @@ The content is the same as the "real" [GTID\_LIST](gtid_list_event.md).
 * ...
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -143,3 +143,5 @@ CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TA
 * [Compressing the binary log](compressing-events-to-reduce-size-of-the-binary-log.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -15,3 +15,5 @@ INTERSECTS() is based on the original MySQL implementation and uses object bound
 INTERSECTS() tests the opposite relationship to [DISJOINT()](disjoint.md).
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

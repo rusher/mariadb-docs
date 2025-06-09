@@ -73,3 +73,5 @@ SELECT * FROM information_schema.COLLATIONS;
 * [Supported Character Sets and Collations](../../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) - full list of supported characters sets and collations.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

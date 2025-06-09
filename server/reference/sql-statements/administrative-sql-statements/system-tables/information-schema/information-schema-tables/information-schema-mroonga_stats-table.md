@@ -12,3 +12,5 @@ The [Information Schema](../) `MROONGA_STATS` table only exists if the [Mroonga]
 This table always contains 1 row.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

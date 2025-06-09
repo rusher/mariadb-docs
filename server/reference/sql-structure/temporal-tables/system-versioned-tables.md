@@ -572,3 +572,5 @@ There are a number of system variables related to system-versioned tables:
 * [MariaDB Temporal Tables](https://youtu.be/uBoUlTsU1Tk) (video)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

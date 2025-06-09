@@ -62,3 +62,5 @@ Power BI depends on relationships for data analysis. These relationships are aut
 Because column-based storage engines such as MariaDB Enterprise ColumnStore do not use indexes, relationships must be set up manually. For more about creating relationships in Power BI see [Create and Manage Relationships in Power BI](https://docs.microsoft.com/en-us/power-bi/transform-model/desktop-create-and-manage-relationships).
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

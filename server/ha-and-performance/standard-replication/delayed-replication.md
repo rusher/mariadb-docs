@@ -52,3 +52,5 @@ In addition to being in UTC, one should ensure that the clocks are synchronized.
 properly synchronized, there is a gap between the values of the clocks between different machines. MariaDB replication takes this into account by comparing the master and slave clocks when the slave connects to the master. The difference is `clock_difference_between_master_and_slave`.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -124,3 +124,5 @@ SELECT * FROM t WHERE m <=> DEFAULT(m);
 * [CREATE TABLE DEFAULT Clause](../../../sql-statements/data-definition/create/create-table.md#default-column-option)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

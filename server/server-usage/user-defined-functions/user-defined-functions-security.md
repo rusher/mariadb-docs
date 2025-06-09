@@ -8,3 +8,5 @@ The MariaDB server imposes a number of limitations on [user-defined functions](.
 * At least one symbol, beyond the required x() - corresponding to an SQL function X()) - is required. These can be x\_init(), x\_deinit(), xxx\_reset(), x\_clear() and x\_add() functions (see [Creating User-defined Functions](creating-user-defined-functions.md)). The [allow-suspicious-udfs](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-allow-suspicious-udfs) mariadbd option (by default unset) provides a workaround, permitting only one symbol to be used. This is not recommended, as it opens the possibility of loading shared objects that are not legitimate user-defined functions.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

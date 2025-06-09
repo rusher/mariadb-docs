@@ -178,3 +178,5 @@ The first component in the function above is the column or string to be picked a
 There are more string functions available in MariaDB. A few of the functions mentioned here have aliases or close alternatives. There are also functions for converting between ASCII, binary, hexi-decimal, and octal strings. And there are also string functions related to text encryption and decryption that were not mentioned. However, this article has given you a good collection of common string functions that will assist you in building more powerful and accurate SQL statements.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -683,3 +683,5 @@ An accent insensitive collation is one where the accented and unaccented version
 * [Information Schema COLLATIONS Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

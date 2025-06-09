@@ -111,3 +111,5 @@ where _f()_ inserts rows. The function _f()_ could be executed a different numbe
 This sort of construct is therefore not safe to use in replication that is not [row-based](../../../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md), as there could be different results on the master and the slave.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

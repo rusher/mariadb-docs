@@ -26,3 +26,5 @@ SELECT Json_Array(56, 3.1416, 'My name is "Foo"', NULL);
 * [JSON\_MAKE\_ARRAY](../../../storage-engines/connect/connect-table-types/connect-json-table-type.md#json_make_array), the CONNECT storage engine function
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

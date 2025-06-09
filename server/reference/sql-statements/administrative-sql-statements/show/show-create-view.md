@@ -51,3 +51,5 @@ GRANT SHOW VIEW,SELECT ON test_database.test_view TO 'test'@'localhost';
 * [Grant privileges to tables, views etc](../../account-management-sql-statements/grant.md)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

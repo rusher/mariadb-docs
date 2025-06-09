@@ -32,3 +32,5 @@ SELECT UPPER(surname), givenname FROM users ORDER BY surname;
 Prior to [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), the query optimizer did not handle queries of the format `UCASE(varchar_col)=...`. An [optimizer\_switch](../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) option, `sargable_casefold=ON`, was added in [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes) to handle this case. ([MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496))
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

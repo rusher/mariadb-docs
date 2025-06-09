@@ -7,3 +7,5 @@ The [Information Schema](../) `SLAVE_STATUS` table contains replica status infor
 See [SHOW REPLICA STATUS](../../../show/show-replica-status.md) for column descriptions.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -15,3 +15,5 @@ From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 Backward-compatible behavior can be restored by setting old mode to [SESSION\_USER\_IS\_USER](../../../../server-management/variables-and-modes/old-mode.md#session_user_is_user).
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

@@ -14,3 +14,5 @@ Returns true if a given [LINESTRING](../../../sql-statements/geometry-constructo
 `St_IsRing()` and `IsRing()` are synonyms.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

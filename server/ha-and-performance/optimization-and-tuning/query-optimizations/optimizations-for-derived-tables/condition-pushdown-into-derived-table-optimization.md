@@ -43,3 +43,5 @@ However, the optimizer can take the condition `customer_id=1` and push it down i
 * [Condition Pushdown into IN Subqueries](../subquery-optimizations/condition-pushdown-into-in-subqueries.md) (since [MariaDB 10.4](broken-reference))
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

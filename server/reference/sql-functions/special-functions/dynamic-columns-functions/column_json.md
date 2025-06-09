@@ -25,3 +25,5 @@ select item_name, COLUMN_JSON(dynamic_cols) from assets;
 Limitation: `COLUMN_JSON` will decode nested dynamic columns at a nesting level of not more than 10 levels deep. Dynamic columns that are nested deeper than 10 levels will be shown as BINARY string, without encoding.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

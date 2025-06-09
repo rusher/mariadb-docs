@@ -124,3 +124,5 @@ InnoDB creates some system tables within the InnoDB System Tablespace:
 These tables cannot be queried. However, you might see references to them in some places, such as in the [INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information\_schema](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

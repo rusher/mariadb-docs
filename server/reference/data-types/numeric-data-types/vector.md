@@ -25,3 +25,5 @@ CREATE TABLE t1 (id INT AUTO_INCREMENT PRIMARY KEY, v VECTOR(5) NOT NULL, VECTOR
 * [CREATE TABLE with Vectors](../../sql-structure/vectors/create-table-with-vectors.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

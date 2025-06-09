@@ -44,3 +44,5 @@ SELECT ST_ASTEXT(ST_VALIDATE(ST_GeomFromText('POINT(1)')));
 * [ST\_AsText](../wkt/st_astext.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

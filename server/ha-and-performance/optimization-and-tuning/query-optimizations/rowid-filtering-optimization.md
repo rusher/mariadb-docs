@@ -95,3 +95,5 @@ Note the `rowid_filter` element. It has a `range` element inside it. `selectivit
 Rowid filtering can be switched on/off using `rowid_filter` flag in the [optimizer\_switch](../system-variables/server-system-variables.md#optimizer_switch) variable. By default, the optimization is enabled.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

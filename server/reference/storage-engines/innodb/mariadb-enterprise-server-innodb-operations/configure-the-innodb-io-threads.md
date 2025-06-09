@@ -139,3 +139,5 @@ $ sudo systemctl restart mariadb
 Starting with [MariaDB Enterprise Server 10.5](../../../../../kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/), the server can use the configuration change without a restart if you use [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md).
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

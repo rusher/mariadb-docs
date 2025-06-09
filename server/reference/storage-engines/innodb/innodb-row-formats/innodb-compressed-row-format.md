@@ -279,3 +279,5 @@ From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 * [Storage-Engine Independent Column Compression](../../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

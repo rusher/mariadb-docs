@@ -55,3 +55,5 @@ There are three formats for the binary log. The default is [mixed logging](binar
 * [GTID binlog indexing](../../../ha-and-performance/standard-replication/gtid.md#binlog-indexing)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

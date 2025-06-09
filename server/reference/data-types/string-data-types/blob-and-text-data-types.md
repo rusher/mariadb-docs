@@ -34,3 +34,5 @@ It is possible to set a unique index on columns that use the BLOB or TEXT data t
 * [Store a column as compressed](../../sql-statements/data-definition/create/create-table.md#compressed)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

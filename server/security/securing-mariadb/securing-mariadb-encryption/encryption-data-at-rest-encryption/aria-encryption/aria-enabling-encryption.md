@@ -51,3 +51,5 @@ Currently, Aria does not support manually encrypting tables through the `[ENCRYP
 In cases where you want to encrypt tables manually or set the specific encryption key, use [InnoDB](../innodb-encryption/).
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

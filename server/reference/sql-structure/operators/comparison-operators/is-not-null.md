@@ -31,3 +31,5 @@ SELECT 1 IS NOT NULL, 0 IS NOT NULL, NULL IS NOT NULL;
 * [CONNECT data types](../../../storage-engines/connect/connect-data-types.md#null-handling)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

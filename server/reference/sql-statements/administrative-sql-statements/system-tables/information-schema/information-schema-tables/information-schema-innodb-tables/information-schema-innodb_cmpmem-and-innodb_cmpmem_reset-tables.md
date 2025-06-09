@@ -41,3 +41,5 @@ Other tables that can be used to monitor InnoDB compressed tables:
 * [INNODB\_CMP\_PER\_INDEX and INNODB\_CMP\_PER\_INDEX\_RESET](information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

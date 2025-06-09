@@ -139,3 +139,5 @@ HTAP can be implemented with MariaDB Enterprise Server by using [InnoDB](innodb/
 * [Information Schema TABLES table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md), which shows storage engine by table.
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

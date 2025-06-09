@@ -165,3 +165,5 @@ Aggregate functions cannot be used in the RETURNING clause. Since aggregate func
 * [How to quickly insert data into MariaDB](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

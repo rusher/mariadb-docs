@@ -965,3 +965,5 @@ ALTER TABLE tab ADD COLUMN c varchar(50), FORCE;
 * [MDEV-18519](https://jira.mariadb.org/browse/MDEV-18519): This bug could cause a table to become corrupt if a column was added instantly. This isn't and won't be fixed in versions less than [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

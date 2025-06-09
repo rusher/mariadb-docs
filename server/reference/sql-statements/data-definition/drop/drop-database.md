@@ -56,3 +56,5 @@ Note (Code 1008): Can't drop database 'bufg'; database doesn't exist
 * [SHOW CREATE DATABASE](../../administrative-sql-statements/show/show-create-database.md)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

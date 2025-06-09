@@ -103,3 +103,5 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY test)
 * [SUM](sum.md) (sum total)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

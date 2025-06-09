@@ -132,3 +132,5 @@ Beware that `DROP TABLE` can drop both tables and [sequences](../../../sql-struc
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md).
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

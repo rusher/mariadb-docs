@@ -36,3 +36,5 @@ SELECT * FROM user_variables_by_thread;
 * [Information Schema USER\_VARIABLES Table](../../information-schema/information-schema-tables/information-schema-user_variables-table.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

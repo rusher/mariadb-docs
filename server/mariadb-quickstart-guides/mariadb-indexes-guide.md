@@ -239,3 +239,5 @@ Remove an index if:
   * If the [slow query log](../server-management/server-monitoring-logs/slow-query-log/) is enabled and the `log_queries_not_using_indexes` [server system variable](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) is `ON`, queries performing full table scans will be logged, which can indicate missing or ineffective indexes.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

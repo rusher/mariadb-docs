@@ -21,3 +21,5 @@ EQUALS() is based on the original MySQL implementation and uses object bounding 
 From [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), `MBREQUALS` is a synonym for `Equals`.
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

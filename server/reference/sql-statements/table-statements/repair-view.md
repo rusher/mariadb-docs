@@ -19,3 +19,5 @@ By default, `REPAIR VIEW` statements are written to the [binary log](../../../se
 * [CHECK VIEW](check-view.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -46,3 +46,5 @@ A common use case for Flashback is the following scenario:
 * Run `mariadb-binlog --flashback --start-position=xyz | mariadb` to pipe the output of `mariadb-binlog` directly to the `mariadb` client, or save the output to a file and then direct the file to the command-line client.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

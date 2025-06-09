@@ -61,3 +61,5 @@ MariaDB database products are accessible from business intelligence (BI) platfor
 | Microsoft Power BI | [MariaDB Direct Query Adapter for Microsoft Power BI](../../graphical-and-enhanced-clients/mariadb-direct-query-adapter-for-microsoft-power-bi.md) enables Microsoft Power BI Desktop users to remotely connect to and query their MariaDB database, including on MariaDB SkySQL, without downloading the entire data set to their local machine. |
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

@@ -502,3 +502,5 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 * [INFLOW '14: NVM Compression—Hybrid Flash-Aware Application Level Compression](https://www.usenix.org/conference/inflow14/workshop-program/presentation/das)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

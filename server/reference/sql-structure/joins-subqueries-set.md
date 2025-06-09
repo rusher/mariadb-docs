@@ -57,3 +57,5 @@ Remember, practice is the key to mastering these advanced SQL concepts, like any
 Refer to the official MariaDB knowledge base [and.md](operators/logical-operators/and.md) other online resources like W3Schools or SQL Server Tutorial for further information and hands-on examples.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

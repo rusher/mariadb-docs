@@ -69,3 +69,5 @@ TODO.
 * [NULL Filtering Optimization](https://dev.mysql.com/doc/internals/en/optimizer-nulls-filtering.html) is a related optimization in MySQL and MariaDB. It uses inferred NOT NULL conditions to perform filtering (but not index access)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

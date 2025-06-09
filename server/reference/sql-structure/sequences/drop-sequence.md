@@ -34,3 +34,5 @@ DROP SEQUENCE only removes sequences, not tables. However, [DROP TABLE](../../sq
 * [Information Schema SEQUENCES Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

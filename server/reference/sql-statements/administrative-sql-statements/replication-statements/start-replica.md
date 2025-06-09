@@ -73,3 +73,5 @@ using the channel\_name directly after `START REPLICA`.
 * [RESET REPLICA](reset-replica.md) is used to reset parameters for a connection and also to permanently delete a primary connection.
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

@@ -24,3 +24,5 @@ After issuing the statement, one can examine the [binlog\_snapshot\_file](../../
 * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

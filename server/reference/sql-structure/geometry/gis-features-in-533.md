@@ -51,3 +51,5 @@ Predicates, return boolean result of the relationship
 | [ST\_TOUCHES(A,B)](geometry-relations/st-touches.md)        | if A touches B                  |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

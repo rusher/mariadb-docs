@@ -50,3 +50,5 @@ SELECT count(1) from mytable; gives the number of records in the table
 _The first version of this article was copied, with permission, from_ [_Basic\_SQL\_Statements_](https://hashmysql.org/wiki/Basic_SQL_Statements) _on 2012-10-05._
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

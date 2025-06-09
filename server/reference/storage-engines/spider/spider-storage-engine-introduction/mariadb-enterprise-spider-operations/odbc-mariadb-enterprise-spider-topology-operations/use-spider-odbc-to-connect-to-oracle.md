@@ -94,3 +94,5 @@ CREATE OR REPLACE TABLE spider_test.contacts
 **Note:** If you get the following error message: Error from ODBC 0 01004 \[Oracle]\[ODBC]String data, right truncated., you need to set a larger value for the variable spider\_buffer\_size. ([MENT-1557](https://mariadb.com/kb/en/MENT-1557)).
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

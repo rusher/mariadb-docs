@@ -51,3 +51,5 @@ MySQL 5.7.4 introduced similar functionality, but the MariaDB implementation dif
 * [lock\_wait\_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

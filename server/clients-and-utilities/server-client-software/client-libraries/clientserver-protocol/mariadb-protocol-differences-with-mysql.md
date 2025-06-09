@@ -349,3 +349,5 @@ If supporting session tracking, connectors can check if charset of initial track
 ( 'server default collation' from [initial handshare packet](1-connecting/connection.md#initial-handshake-packet) cannot be trusted, since truncated to one byte. Recent mysql and mariadb collation can go on 2 bytes)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

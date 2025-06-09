@@ -28,3 +28,5 @@ Note: `COLUMN_ADD()` is a regular function (just like`[CONCAT()](../../string-fu
 you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col, ....)` pattern.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

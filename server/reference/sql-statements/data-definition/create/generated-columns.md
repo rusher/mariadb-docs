@@ -331,3 +331,5 @@ You can also use virtual columns to implement a "poor man's partial index". See 
 * [Putting Virtual Columns to good use](https://mariadb.com/blog/putting-virtual-columns-good-use) on the mariadb.com blog.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -122,3 +122,5 @@ The plugin supports the following parameters, which must be set in advance and c
 * [HashiCorp Vault and MariaDB](../../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

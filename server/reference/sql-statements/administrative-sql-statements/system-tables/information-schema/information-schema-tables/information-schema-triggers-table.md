@@ -42,3 +42,5 @@ Queries to the `TRIGGERS` table will return information only for databases and t
 * [Trigger Limitations](../../../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

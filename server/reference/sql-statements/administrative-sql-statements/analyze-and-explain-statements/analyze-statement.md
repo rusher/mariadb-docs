@@ -122,3 +122,5 @@ Indeed, we can also see customer.r\_filtered=0.00. This shows that a part of WHE
 * JIRA task for ANALYZE statement, [MDEV-406](https://jira.mariadb.org/browse/MDEV-406)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

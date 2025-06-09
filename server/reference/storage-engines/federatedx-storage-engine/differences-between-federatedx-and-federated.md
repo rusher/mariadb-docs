@@ -14,3 +14,5 @@ The main differences are:
 * When you create a table with FederatedX, the connection will be tested. The `CREATE` will fail if MariaDB can't connect to the remote host or if the remote table doesn't exist.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

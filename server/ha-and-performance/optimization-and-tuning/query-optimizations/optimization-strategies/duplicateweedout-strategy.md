@@ -112,3 +112,5 @@ This plan will read `(239 + 239*18) = 4541` rows, which is much slower.
 * [Subquery Optimizations Map](../subquery-optimizations/subquery-optimizations-map.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

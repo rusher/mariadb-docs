@@ -538,3 +538,5 @@ This applies to [ALTER TABLE ... RENAME TO](../../../sql-statements/data-definit
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](../../../sql-statements/data-definition/create/generated-columns.md#statement-support) for more information on the limitations.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

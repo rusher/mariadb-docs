@@ -88,3 +88,5 @@ stat_description: Number of leaf pages in the index
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

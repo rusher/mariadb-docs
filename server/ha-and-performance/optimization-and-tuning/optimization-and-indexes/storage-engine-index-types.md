@@ -38,3 +38,5 @@ Hash indexes do not permit leftmost prefixing - only the whole index can be used
 See [SPATIAL](../../../reference/sql-structure/geometry/spatial-index.md) for more information.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

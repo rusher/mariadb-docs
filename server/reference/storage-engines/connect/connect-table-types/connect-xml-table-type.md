@@ -1033,3 +1033,5 @@ the header node.
 3. [↑](connect-xml-table-type.md#_ref-2) This may cause some rows to be lost because an eventual where clause on the “multiple” column is applied only on the limited number of retrieved rows.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

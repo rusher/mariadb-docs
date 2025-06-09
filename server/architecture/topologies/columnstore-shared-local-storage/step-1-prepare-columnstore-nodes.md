@@ -216,3 +216,5 @@ Navigation in the procedure "Deploy ColumnStore Shared Local Storage Topology".
 This page was step 1 of 9.
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

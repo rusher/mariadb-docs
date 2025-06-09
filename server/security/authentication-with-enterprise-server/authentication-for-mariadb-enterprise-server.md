@@ -52,3 +52,5 @@ MariaDB Enterprise Server uses authentication plugins to support different authe
 * [Authentication with PARSEC](../../reference/plugins/authentication-plugins/authentication-plugin-parsec.md)
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

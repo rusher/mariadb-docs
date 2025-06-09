@@ -320,3 +320,5 @@ The implementation is described in [MDEV-4506](https://jira.mariadb.org/browse/M
 * [Evaluating MariaDB & MySQL Parallel Replication Part 2: Slave Group Commit](https://mariadb.com/blog/evaluating-mariadb-mysql-parallel-replication-part-2-slave-group-commit) (MariaDB.com blog)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

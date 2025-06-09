@@ -35,3 +35,5 @@ The lock wait timeout can be explicitly set in the statement by using either `WA
 * [TRUNCATE TABLE](../table-statements/truncate-table.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

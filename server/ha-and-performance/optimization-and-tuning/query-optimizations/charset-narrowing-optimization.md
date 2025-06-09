@@ -89,3 +89,5 @@ to enable the optimization.
 * Blog post: [Making “tbl.utf8mb3\_key\_column=utf8mb4\_expr” sargable](https://petrunia.net/2023/10/11/making-tbl-utf8mb3_key_columnutf8mb4_expr-sargable/)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -23,3 +23,5 @@ The different `RESET` options are:
 | QUERY CACHE                                                                   | Removes all queries from [the query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md). See also [FLUSH QUERY CACHE](flush-commands/flush-query-cache.md).                                                                                                                                                                                         |
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

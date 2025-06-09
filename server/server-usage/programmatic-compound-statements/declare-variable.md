@@ -58,3 +58,5 @@ DECLARE rec2 ROW TYPE OF cur1; -- Get the row data type from the cursor {{cur1}}
 * [User-Defined variables](../../reference/sql-structure/sql-language-structure/user-defined-variables.md)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

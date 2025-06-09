@@ -242,3 +242,5 @@ where the strategy is one of DUPSWEEDOUT, FIRSTMATCH, LOOSESCAN, MATERIALIZATION
 * [Use optimizer\_switch to enable/disable specific optimizations](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -50,3 +50,5 @@ using the channel\_name directly after `STOP REPLICA`.
 * [RESET REPLICA](../administrative-sql-statements/replication-statements/reset-replica.md) is used to reset parameters for a connection and also to permanently delete a master connection.
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

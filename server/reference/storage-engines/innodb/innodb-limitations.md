@@ -73,3 +73,5 @@ The InnoDB storage engine does not maintain internal row counts. Transactions is
 * When you commit or roll back a transaction, any locks set in the transaction are released. You don't need to issue [LOCK TABLES](../../sql-statements/transactions/lock-tables.md) statements when the [autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) variable is enabled, as InnoDB would immediately release the table locks.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

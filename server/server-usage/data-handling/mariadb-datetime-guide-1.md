@@ -285,3 +285,5 @@ The option `%l` provides the hours 01 through 12. The `%p` at the end indicates 
 Many developers use PHP, Perl, or some other scripting language with MariaDB. Sometimes developers will solve retrieval problems with longer scripts rather than learn precisely how to extract temporal data with MariaDB. As you can see in several of the examples here (particularly the one using the [QUARTER( )](../../reference/sql-functions/date-time-functions/quarter.md) function), you can accomplish a great deal within MariaDB. When faced with a potentially complicated SQL statement, try creating it in the mariadb client first. Once you get what you need (under various conditions) and in the format desired, then copy the statement into your script. This practice can greatly help you improve your MariaDB statements and scripting code.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

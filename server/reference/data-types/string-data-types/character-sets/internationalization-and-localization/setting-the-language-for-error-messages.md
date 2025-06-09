@@ -121,3 +121,5 @@ language=/usr/share/mysql/french/
 The character set that the error messages are returned in is determined by the [character\_set\_results](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results) variable, which defaults to UTF8.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

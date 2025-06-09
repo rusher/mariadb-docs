@@ -35,3 +35,5 @@ For DML statements, it is possible to specify a list of the partitions using the
 * [DATABASE()](../../sql-functions/secondary-functions/information-functions/database.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

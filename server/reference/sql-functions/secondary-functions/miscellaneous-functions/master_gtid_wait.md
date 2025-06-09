@@ -72,3 +72,5 @@ that two different GTIDs with the same seq\_no (in the same domain) arrive at\
 the same server. This situation is in any case best avoided; setting[gtid\_strict\_mode](../../../../ha-and-performance/standard-replication/gtid.md) is recommended, as this will prevent any such out-of-order sequence numbers from ever being replicated on a slave.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

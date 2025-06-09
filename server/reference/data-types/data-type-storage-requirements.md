@@ -114,3 +114,5 @@ For the [InnoDB REDUNDANT row format](../storage-engines/innodb/innodb-row-forma
 In other formats, NULL values usually require 1 bit in the data file, 1 byte in the index file.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

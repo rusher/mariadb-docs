@@ -316,3 +316,5 @@ The effects of the `AFTER_COMMIT` wait point are:
 For a list of status variables added when the plugin is installed, see [Semisynchronous Replication Plugin Status Variables](../optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md).
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

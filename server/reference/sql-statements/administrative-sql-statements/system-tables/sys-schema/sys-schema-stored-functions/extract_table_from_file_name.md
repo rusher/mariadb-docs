@@ -30,3 +30,5 @@ SELECT sys.extract_table_from_file_name('/usr/local/mysql/data/db/t1.ibd');
 * [extract\_schema\_from\_file\_name()](extract_schema_from_file_name.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -11,3 +11,5 @@ This article documents thread states that are related to [replication](broken-re
 | Waiting to finalize termination                                       | State that only occurs very briefly while the thread is terminating.                                                                                    |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

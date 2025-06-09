@@ -35,3 +35,5 @@ SELECT 0b1000001+0;
 * [BIN()](../../sql-functions/string-functions/bin.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -46,3 +46,5 @@ The following is an incomplete list of when one will not be able to use a table 
   * A prior shutdown with [innodb\_fast\_shutdown=0](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) will be needed in order to empty the undo logs whose format changed in [MDEV-12288](https://jira.mariadb.org/browse/MDEV-12288), and even then, you might need to set [innodb\_force\_recovery=3](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery).
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

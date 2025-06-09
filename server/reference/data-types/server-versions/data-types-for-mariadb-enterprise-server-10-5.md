@@ -129,3 +129,5 @@ Each column in a table has a specified data type that defines what kind of data 
 | [TYPE OF](../type-of.md)                     | SQL/PSM | This is special declaration only available inside a stored procedure           |
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

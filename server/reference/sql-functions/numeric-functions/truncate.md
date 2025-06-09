@@ -66,3 +66,5 @@ SELECT TRUNCATE(10.28*100,0);
 * [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md)
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

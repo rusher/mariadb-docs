@@ -57,3 +57,5 @@ The file which contains the buffer pool dump is specified via the [innodb\_buffe
 * [Setting Innodb Buffer Pool Size Dynamically](../../../ha-and-performance/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

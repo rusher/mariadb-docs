@@ -17,3 +17,5 @@ Returns the node that applied and committed the Global Transaction ID, `ER_LOCAL
 The result from [WSREP\_LAST\_SEEN\_GTID](wsrep_last_seen_gtid.md) can be useful to determine the transaction to provide to WSREP\_SYNC\_WAIT\_UPTO\_GTID for waiting and unblocking purposes.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

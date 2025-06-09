@@ -31,3 +31,5 @@ SHOW CREATE CATALOG def;
 * [Character Sets and Collations](../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

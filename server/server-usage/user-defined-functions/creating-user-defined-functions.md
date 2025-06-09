@@ -92,3 +92,5 @@ For an example, see `sql/udf_example.cc` in the source tree. For a collection of
 * [allow-suspicious-udfs](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-allow-suspicious-udfs)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -67,3 +67,5 @@ SHOW VARIABLES LIKE 'tokudb_version';
 In the MariaDB binary tarballs, only the ones labeled "glibc\_214" have TokuDB.
 
 1. [↑](tokudb-overview.md#_ref-0) with this version, TokuDB now follows the version numbering of Percona XtraDB
+
+{% @marketo/form formId="4316" %}

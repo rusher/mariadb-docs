@@ -42,3 +42,5 @@ Other tables that can be used to monitor XtraDB/InnoDB compressed tables:
 * [INNODB\_CMPMEM and INNODB\_CMPMEM\_RESET](information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

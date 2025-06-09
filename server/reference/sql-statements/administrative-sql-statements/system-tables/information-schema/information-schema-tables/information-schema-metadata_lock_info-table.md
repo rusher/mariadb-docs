@@ -94,3 +94,5 @@ SELECT * FROM information_schema.METADATA_LOCK_INFO;
 * [GET\_LOCK](../../../../../sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

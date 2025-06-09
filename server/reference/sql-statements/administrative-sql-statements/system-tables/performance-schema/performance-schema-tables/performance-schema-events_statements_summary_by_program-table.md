@@ -45,3 +45,5 @@ It contains the following fields.
 | SUM\_NO\_GOOD\_INDEX\_USED      | bigint(20) unsigned                                        | NO   | The total number of statements where no good index was found.                                                                                                                                                                |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

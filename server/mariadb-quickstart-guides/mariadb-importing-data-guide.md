@@ -216,3 +216,5 @@ mariadb-dump does not have a REPLACE flag like LOAD DATA INFILE. If the target t
 * **Other Tools/Methods:** For very complex transformations or ETL (Extract, Transform, Load) processes, dedicated ETL tools or scripting languages (e.g., Python, Perl with database modules) might be more suitable, though they are beyond the scope of this guide.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

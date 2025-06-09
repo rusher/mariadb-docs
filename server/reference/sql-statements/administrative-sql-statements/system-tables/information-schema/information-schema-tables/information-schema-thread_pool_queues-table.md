@@ -20,3 +20,5 @@ Setting [thread\_poll\_exact\_stats](../../../../../../ha-and-performance/optimi
 Setting [thread\_pool\_dedicated\_listener](../../../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#thread_pool_dedicated_listener) will give each group its own dedicated listener, and the listener thread will not pick up work items. As a result, the queueing time in the table will be more exact, since IO requests are immediately dequeued from poll, without delay.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

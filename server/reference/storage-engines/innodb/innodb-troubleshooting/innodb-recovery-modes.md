@@ -71,3 +71,5 @@ Try to set innodb\_force\_recovery to 1 and start mariadb. If that fails, try a 
 If you were able to successfully dump your databases, or had previously known good backups, drop your database(s) from the mariadb command line like "[DROP DATABASE](../../../sql-statements/data-definition/drop/drop-database.md) yourdatabase". Stop mariadb. Go to /var/lib/mysql (or whereever your mysql data directory is located) and "rm -i ib\*". Start mariadb, create the database(s) you dropped ("[CREATE DATABASE](../../../sql-statements/data-definition/create/create-database.md) yourdatabase"), and then import your most recent dumps: "mysql < mydatabasedump.sql"
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

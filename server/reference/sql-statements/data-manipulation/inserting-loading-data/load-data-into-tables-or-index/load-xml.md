@@ -91,3 +91,5 @@ This statement activates INSERT [triggers](../../../../../server-usage/triggers-
 * The [CONNECT](../../../../storage-engines/connect/) storage engine has an [XML table type](../../../../storage-engines/connect/connect-table-types/connect-table-types-data-files.md#xml-table-type).
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

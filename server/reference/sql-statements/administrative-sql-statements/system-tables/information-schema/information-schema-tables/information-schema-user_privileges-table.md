@@ -19,3 +19,5 @@ Similar information can be accessed with the [SHOW GRANTS](../../../show/show-gr
 This information is also stored in the [mysql.global\_priv](../../the-mysql-database-tables/mysql-global_priv-table.md) table, in the `mysql` system database.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

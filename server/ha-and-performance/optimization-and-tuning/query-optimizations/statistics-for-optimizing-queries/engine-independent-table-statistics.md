@@ -100,3 +100,5 @@ A few scenarios where one might need to update statistics tables manually:
 * [Improving MariaDB’s optimizer with better selectivity estimates - Sergey Petrunia - Server Fest 2021](https://www.youtube.com/watch?v=bsl7Fis0onE) (video)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -13,3 +13,5 @@ Compression will have the most impact when events are of a non-negligible size, 
 The [log\_bin\_compress](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) option is used to enable compression of events. Only events with data (query text or row data) above a certain size are compressed; the limit is set with the [log\_bin\_compress\_min\_len](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) option.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

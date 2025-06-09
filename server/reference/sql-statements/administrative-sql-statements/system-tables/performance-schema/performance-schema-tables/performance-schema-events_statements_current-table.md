@@ -53,3 +53,5 @@ It is possible to empty this table with a `TRUNCATE TABLE` statement.
 The related tables, [events\_statements\_history](performance-schema-events_statements_history-table.md) and [events\_statements\_history\_long](performance-schema-events_statements_history_long-table.md) derive their values from the current events table.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

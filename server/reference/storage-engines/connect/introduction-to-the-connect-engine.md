@@ -48,3 +48,5 @@ With version 1.07 of CONNECT, retrieving data from REST queries is available in 
 1. [↑](introduction-to-the-connect-engine.md#_ref-0) Robin Schumacher is Vice President Products at DataStax and former Director of Product Management at MySQL. He has over 13 years of database experience in DB2, MySQL, Oracle, SQL Server and other database engines.
 
 GPLv2
+
+{% @marketo/form formId="4316" %}

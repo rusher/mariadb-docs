@@ -15,3 +15,5 @@ Note that setting `sql_log_bin=1` has no effect if [log\_bin](../../../../ha-and
 Before [MariaDB 5.5](broken-reference) and before MySQL 5.6 one could also set `sql_log_bin` as a global variable. This was disabled as this was too dangerous as it could damage replication.
 
 GPLv2 fill\_help\_tables.sql
+
+{% @marketo/form formId="4316" %}

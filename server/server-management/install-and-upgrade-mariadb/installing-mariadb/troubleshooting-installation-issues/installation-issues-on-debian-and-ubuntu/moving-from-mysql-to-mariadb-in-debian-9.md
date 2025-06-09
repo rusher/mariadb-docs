@@ -191,3 +191,5 @@ If you have comments or suggestions on things we can add or change to improve th
 1. [↑](moving-from-mysql-to-mariadb-in-debian-9.md#_ref-0) The `innodb-open-files` variable defaults to the value of `table-open-cache` (`400` is the default) if it is set to any value less than `10` so long as `innodb-file-per-table` is set to `1` or `TRUE` (the default). If `innodb_file_per_table` is set to `0` or `FALSE` and `innodb-open-files` is set to a value less than `10`, the default is `300`
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

@@ -119,3 +119,5 @@ It is recommended to briefly prevent writes while snapshotting. Specific command
 4. Retrieve, copy, or store the snapshot as is typical for your storage platform and as per business requirements to make the backup durable. This may require mounting the snapshot in some manner.
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

@@ -13,3 +13,5 @@ The following restrictions apply to [stored functions](./).
 * Prepared statements ([PREPARE](../../../reference/sql-statements/prepared-statements/prepare-statement.md), [EXECUTE](../../../reference/sql-statements/prepared-statements/execute-statement.md), [DEALLOCATE PREPARE](../../../reference/sql-statements/prepared-statements/deallocate-drop-prepare.md)) cannot be used, and therefore nor can statements be constructed as strings and then executed.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

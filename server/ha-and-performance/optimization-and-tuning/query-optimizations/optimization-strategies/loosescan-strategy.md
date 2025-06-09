@@ -54,3 +54,5 @@ expr IN (SELECT tbl.keypart2 FROM tbl WHERE tbl.keypart1=const AND ...)
 * LooseScan can be switched off by setting the `loosescan=off` flag in the [optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) variable.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

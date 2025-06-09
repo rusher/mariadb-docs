@@ -92,3 +92,5 @@ A summary of data types across MariaDB Server versions:
 | [YEAR](https://mariadb.com/kb/en/data-types-year)                             | [11.4 ES](server-versions/data-types-for-mariadb-enterprise-server-11-4.md) | [10.6 ES](server-versions/data-types-for-mariadb-enterprise-server-10-6.md) | [10.6 CS](server-versions/data-types-for-mariadb-community-server-10-6.md) | [10.5 ES](server-versions/data-types-for-mariadb-enterprise-server-10-5.md) | [10.5 CS](server-versions/data-types-for-mariadb-community-server-10-5.md) | [10.4 ES](data-types-for-mariadb-enterprise-server-10-4/)                          | [10.4 CS](data-types-for-mariadb-community-server-10-4/)                          | [10.3 ES](data-types-for-mariadb-enterprise-server-10-3/)                          | [10.3 CS](data-types-for-mariadb-community-server-10-3/)                          | [10.2 ES](data-types-for-mariadb-enterprise-server-10-2/)                          | [10.2 CS](data-types-for-mariadb-community-server-10-2/)                          |
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

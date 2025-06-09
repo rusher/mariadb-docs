@@ -165,3 +165,5 @@ SELECT * FROM t1;
 * [SYS\_GUID](../../sql-functions/secondary-functions/miscellaneous-functions/sys_guid.md) - UUID without the `-` character for Oracle compatibility
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

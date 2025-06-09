@@ -45,3 +45,5 @@ The rewrite is logged as `date_conds_into_sargable` transformation. Example:
 * [MDEV-8320](https://jira.mariadb.org/browse/MDEV-8320): Allow index usage for DATE(datetime\_column) = const
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

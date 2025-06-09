@@ -108,3 +108,5 @@ erase the corresponding data file and index files. Use `DELETE` or`TRUNCATE` to 
 tables](connect-table-types/inward-and-outward-tables.md#inward-tables) are erased on DROP like for other MariaDB engines.
 
 GPLv2
+
+{% @marketo/form formId="4316" %}

@@ -12,3 +12,5 @@ This article documents thread states that are related to connection threads that
 | Rebuilding the index on master dump table | After the table created by a master dump has been opened and read (the Reading master dump table data state), the index is built.                         |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

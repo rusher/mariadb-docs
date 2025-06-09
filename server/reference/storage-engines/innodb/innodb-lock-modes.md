@@ -44,3 +44,5 @@ Similar to the shared and exclusive intention locks described above, there can b
 Gap locks are disabled if the [innodb\_locks\_unsafe\_for\_binlog](innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is set (until [MariaDB 10.4](broken-reference)), or the [isolation level](../../sql-statements/transactions/set-transaction.md) is set to `READ COMMITTED`.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

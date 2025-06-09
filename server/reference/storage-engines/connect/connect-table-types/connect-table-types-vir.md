@@ -125,3 +125,5 @@ select n*10 from vir where n between 10 and 15;
 Therefore, the main difference is to be able to define the columns of VIR tables. Unfortunately, there are currently many limitations to virtual columns that hopefully should be removed in the future.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}
