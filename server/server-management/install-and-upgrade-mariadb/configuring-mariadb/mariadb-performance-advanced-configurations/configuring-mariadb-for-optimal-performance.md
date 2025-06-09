@@ -95,7 +95,7 @@ You can increase the storage for internal temporary tables by setting [max\_heap
 
 ## See Also
 
-* [MariaDB Memory Allocation](../../../../ha-and-performance/optimization-and-tuning/mariadb-memory-allocation.md)
+* [MariaDB Memory Allocation](../../../../ha-and-performance/mariadb-memory-allocation.md)
 * [Full List of MariaDB Options, System and Status Variables](../../../variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
 * [Server system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)
 * [mysqld options](../../../starting-and-stopping-mariadb/mariadbd-options.md)

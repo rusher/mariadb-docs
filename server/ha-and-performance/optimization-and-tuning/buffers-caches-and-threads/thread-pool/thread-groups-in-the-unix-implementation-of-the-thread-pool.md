@@ -6,7 +6,7 @@ On Unix, the thread pool implementation uses objects called thread groups to div
 
 When setting the `[thread_pool_size](thread-pool-system-status-variables.md#thread_pool_size)` system variable's value at system startup, the max value is `100000`. However, it is not a good idea to set it that high. When setting its value dynamically, the max value is either `128` or the value that was set at system startup--whichever value is higher. It can be changed dynamically with `[SET GLOBAL](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example:
 
-```
+```sql
 SET GLOBAL thread_pool_size=32;
 ```
 
@@ -144,7 +144,7 @@ The thread pool has a feature that allows it to detect if a client connection is
 
 This stall detection feature is implemented by creating a **timer thread** that periodically checks if any of the thread groups are stalled. There is only a single **timer thread** for the entire thread pool. The `[thread_pool_stall_limit](thread-pool-system-status-variables.md#thread_pool_stall_limit)` system variable defines the number of milliseconds between each stall check performed by the timer thread. The default value is `500`. It can be changed dynamically with `[SET GLOBAL](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example:
 
-```
+```sql
 SET GLOBAL thread_pool_stall_limit=300;
 ```
 
@@ -178,7 +178,7 @@ If the **timer thread** were to detect a stall in a thread group, then it would 
 
 You might expect that the thread pool would shutdown one of the **worker threads** when the stalled client connection finished what it was doing, so that the thread group would only have one active **worker thread** again. However, this does not always happen. Once a thread group is oversubscribed, the `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` system variable defines the upper limit for when **worker threads** start shutting down after they finish work for client connections. The default value is `3`. It can be changed dynamically with `[SET GLOBAL](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`. For example:
 
-```
+```sql
 SET GLOBAL thread_pool_oversubscribe=10;
 ```
 

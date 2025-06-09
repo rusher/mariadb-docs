@@ -1,6 +1,6 @@
 # General Thread States
 
-This article documents the major general thread states. More specific lists related to [delayed inserts](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md), [replication](broken-reference), the [query cache](../query-cache.md) and the [event scheduler](../../../../server-usage/triggers-events/event-scheduler/events.md) are listed in:
+This article documents the major general thread states. More specific lists related to [delayed inserts](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md), replication, the [query cache](../query-cache.md) and the [event scheduler](../../../../server-usage/triggers-events/event-scheduler/events.md) are listed in:
 
 * [Event Scheduler Thread States](event-scheduler-thread-states.md)
 * [Query Cache Thread States](query-cache-thread-states.md)

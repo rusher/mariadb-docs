@@ -1,3 +1,9 @@
+---
+description: >-
+  Understand MariaDB Server thread states. This section explains the different
+  states a thread can be in, helping you monitor and troubleshoot query
+  execution and server performance.
+---
+
 # Thread States
 
-Thread states can be viewed with the `STATE` values listed by the [SHOW PROCESSLIST](../../../../reference/sql-statements/administrative-sql-statements/show/show-processlist.md) statement or in the [Information Schema PROCESSLIST Table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) as well as the `PROCESSLIST_STATE` value listed in the [Performance Schema threads Table](../../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-threads-table.md). `Slave_IO_State` shown by [SHOW SLAVE STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) also shows slave-related thread states.

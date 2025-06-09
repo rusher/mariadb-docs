@@ -73,7 +73,7 @@ InnoDB transaction logs are written in a circular fashion: their size is normall
 
 #### InnoDB Buffer Pool
 
-MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../ha-and-performance/optimization-and-tuning/mariadb-memory-allocation.md).
+MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../ha-and-performance/mariadb-memory-allocation.md).
 
 MariaDB has no extension like the SQL Server buffer pool extension.
 

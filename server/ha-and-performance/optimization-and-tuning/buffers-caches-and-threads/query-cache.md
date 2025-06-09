@@ -10,7 +10,7 @@ Note that the query cache cannot be enabled in certain environments. See [Limita
 
 Unless MariaDB has been specifically built without the query cache, the query cache will always be available, although inactive. The [have\_query\_cache](../system-variables/server-system-variables.md#have_query_cache) server variable will show whether the query cache is available.
 
-```
+```sql
 SHOW VARIABLES LIKE 'have_query_cache';
 +------------------+-------+
 | Variable_name    | Value |
@@ -25,7 +25,7 @@ To see if the cache is enabled, view the [query\_cache\_type](../system-variable
 
 Although enabled in versions prior to [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes), the [query\_cache\_size](../system-variables/server-system-variables.md#query_cache_size) is by default 0KB there, which effectively disables the query cache. From 10.1.7 on the cache size defaults to 1MB. If needed set the cache to a size large enough amount, for example:
 
-```
+```sql
 SET GLOBAL query_cache_size = 1000000;
 ```
 
@@ -43,25 +43,25 @@ If the identical query is not found in the cache, the query will be processed no
 
 Queries are examined in a case-sensitive manner, so :
 
-```
+```sql
 SELECT * FROM t
 ```
 
 Is different from :
 
-```
-select * from t
+```sql
+SELECT * from t
 ```
 
 Comments are also considered and can make the queries differ, so :
 
-```
+```sql
 /* retry */SELECT * FROM t
 ```
 
 Is different from :
 
-```
+```sql
 /* retry2 */SELECT * FROM t
 ```
 
@@ -83,20 +83,20 @@ If the [query\_cache\_type](../system-variables/server-system-variables.md#query
 
 If any of the following functions are present in a query, it will not be cached. Queries with these functions are sometimes called 'non-deterministic' - don't get confused with the use of this term in other contexts.
 
-| | |
-| - | - |
-| [BENCHMARK()](../../../reference/sql-functions/secondary-functions/information-functions/benchmark.md)  | [CONNECTION\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/connection_id.md)  |
-| [CONVERT\_TZ()](../../../reference/sql-functions/date-time-functions/convert_tz.md) | [CURDATE()](../../../reference/sql-functions/date-time-functions/curdate.md)  |
-| [CURRENT\_DATE()](../../../reference/sql-functions/date-time-functions/current_date.md)  | [CURRENT\_TIME()](../../../reference/sql-functions/date-time-functions/current_time.md) |
-| [CURRENT\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/current_timestamp.md)  | [CURTIME()](../../../reference/sql-functions/date-time-functions/curtime.md)  |
-| [DATABASE()](../../../reference/sql-functions/secondary-functions/information-functions/database.md)    | [ENCRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) (one parameter) |
-| [FOUND\_ROWS()](../../../reference/sql-functions/secondary-functions/information-functions/found_rows.md)    | [GET\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)|
-| [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md)| [LOAD\_FILE()](../../../reference/sql-functions/string-functions/load_file.md)|
-| [MASTER\_POS\_WAIT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md) | [NOW()](../../../reference/sql-functions/date-time-functions/now.md)|
-| [RAND()](../../../reference/sql-functions/numeric-functions/rand.md) | [RELEASE\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/release_lock.md)  |
-| [SLEEP()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/sleep.md)   | [SYSDATE()](../../../reference/sql-functions/date-time-functions/sysdate.md)  |
-| [UNIX\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/unix_timestamp.md) (no parameters)  | [USER()](../../../reference/sql-functions/secondary-functions/information-functions/user.md) |
-| [UUID()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid.md)| [UUID\_SHORT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md) |
+|                                                                                                                        |                                                                                                                                           |
+| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| [BENCHMARK()](../../../reference/sql-functions/secondary-functions/information-functions/benchmark.md)                 | [CONNECTION\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/connection_id.md)                           |
+| [CONVERT\_TZ()](../../../reference/sql-functions/date-time-functions/convert_tz.md)                                    | [CURDATE()](../../../reference/sql-functions/date-time-functions/curdate.md)                                                              |
+| [CURRENT\_DATE()](../../../reference/sql-functions/date-time-functions/current_date.md)                                | [CURRENT\_TIME()](../../../reference/sql-functions/date-time-functions/current_time.md)                                                   |
+| [CURRENT\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/current_timestamp.md)                      | [CURTIME()](../../../reference/sql-functions/date-time-functions/curtime.md)                                                              |
+| [DATABASE()](../../../reference/sql-functions/secondary-functions/information-functions/database.md)                   | [ENCRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) (one parameter) |
+| [FOUND\_ROWS()](../../../reference/sql-functions/secondary-functions/information-functions/found_rows.md)              | [GET\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)                                   |
+| [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md)     | [LOAD\_FILE()](../../../reference/sql-functions/string-functions/load_file.md)                                                            |
+| [MASTER\_POS\_WAIT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md) | [NOW()](../../../reference/sql-functions/date-time-functions/now.md)                                                                      |
+| [RAND()](../../../reference/sql-functions/numeric-functions/rand.md)                                                   | [RELEASE\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/release_lock.md)                           |
+| [SLEEP()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/sleep.md)                       | [SYSDATE()](../../../reference/sql-functions/date-time-functions/sysdate.md)                                                              |
+| [UNIX\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/unix_timestamp.md) (no parameters)            | [USER()](../../../reference/sql-functions/secondary-functions/information-functions/user.md)                                              |
+| [UUID()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid.md)                         | [UUID\_SHORT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md)                               |
 
 A query will also not be added to the cache if:
 
@@ -132,7 +132,7 @@ The query result is stored using a minimum block size of [query\_cache\_min\_res
 
 If the [strict mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled, setting the query cache size to an invalid value will cause an error. Otherwise, it will be set to the nearest permitted value, and a warning will be triggered.
 
-```
+```sql
 SHOW VARIABLES LIKE 'query_cache_size';
 +------------------+----------+
 | Variable_name    | Value    |
@@ -157,7 +157,7 @@ The second way to limit the cache is to have a maximum size for each set of quer
 
 If you attempt to set a query cache that is too small (the amount depends on the architecture), the resizing will fail and the query cache will be set to zero, for example :
 
-```
+```sql
 SET GLOBAL query_cache_size=40000;
 Query OK, 0 rows affected, 2 warnings (0.03 sec)
 
@@ -174,7 +174,7 @@ SHOW WARNINGS;
 
 A number of status variables provide information about the query cache.
 
-```
+```sql
 SHOW STATUS LIKE 'Qcache%';
 +-------------------------+----------+
 | Variable_name           | Value    |
@@ -194,7 +194,7 @@ SHOW STATUS LIKE 'Qcache%';
 
 The above example could indicate a poorly performing cache. More queries have been added, and more queries have been dropped, than have actually been used.
 
-Note that before [MariaDB 5.5](broken-reference), queries returned from the query cache did not increment the [Com\_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com\_select](../system-variables/server-status-variables.md#com_select) to [Qcache\_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](broken-reference), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
+Note that before [MariaDB 5.5](broken-reference/), queries returned from the query cache did not increment the [Com\_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com\_select](../system-variables/server-status-variables.md#com_select) to [Qcache\_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](broken-reference/), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
 
 The [QUERY\_CACHE\_INFO plugin](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) creates the [QUERY\_CACHE\_INFO](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_cache_info-table.md) table in the [INFORMATION\_SCHEMA](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/), allowing you to examine the contents of the query cache.
 
@@ -202,13 +202,13 @@ The [QUERY\_CACHE\_INFO plugin](../../../reference/plugins/other-plugins/query-c
 
 The Query Cache uses blocks of variable length, and over time may become fragmented. A high `Qcache_free_blocks` relative to `Qcache_total_blocks` may indicate fragmentation. [FLUSH QUERY CACHE](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush-query-cache.md) will defragment the query cache without dropping any queries :
 
-```
+```sql
 FLUSH QUERY CACHE;
 ```
 
 After this, there will only be one free block :
 
-```
+```sql
 SHOW STATUS LIKE 'Qcache%';
 +-------------------------+----------+
 | Variable_name           | Value    |
@@ -240,7 +240,7 @@ Setting either [query\_cache\_type](../system-variables/server-system-variables.
 
 The query cache can be used when tables have a write lock (which may seem confusing since write locks should avoid table reads). This behaviour can be changed by setting the [query\_cache\_wlock\_invalidate](../system-variables/server-system-variables.md#query_cache_wlock_invalidate) system variable to `ON`, in which case each write lock will invalidate the table query cache. Setting to `OFF`, the default, means that cached queries can be returned even when a table lock is being held. For example:
 
-```
+```sql
 1> SELECT * FROM T1
 +---+
 | a |
@@ -275,7 +275,7 @@ Queries that change rows ([INSERT](../../../reference/sql-statements/data-manipu
 
 Examples:
 
-```
+```sql
 SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 +---+
 | a |
@@ -284,7 +284,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 +---+
 ```
 
-```
+```sql
 BEGIN;
 SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=1>
 +---+
@@ -294,7 +294,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=1>
 +---+
 ```
 
-```
+```sql
 SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=1>
 +---+
 | a |
@@ -303,11 +303,11 @@ SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=1>
 +---+
 ```
 
-```
+```sql
 INSERT INTO T1 VALUES(2);  <invalidate queries from table T1 and disable query cache to table T1>
 ```
 
-```
+```sql
 SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
 +---+
 | a |
@@ -317,7 +317,7 @@ SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
 +---+
 ```
 
-```
+```sql
 SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
 +---+
 | a |
@@ -327,11 +327,11 @@ SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
 +---+
 ```
 
-```
+```sql
 COMMIT;  <query cache is now turned on to T1 table>
 ```
 
-```
+```sql
 SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 +---+
 | a |
@@ -340,7 +340,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 +---+
 ```
 
-```
+```sql
 SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=0>
 +---+
 | a |
@@ -387,7 +387,7 @@ When searching for a query inside the query cache, a try\_lock function waits wi
 
 From the sql\_cache.cc, function "try\_lock" using TIMEOUT :
 
-```
+```c
 struct timespec waittime;
         set_timespec_nsec(waittime,(ulong)(50000000L));  /* Wait for 50 msec */
         int res= mysql_cond_timedwait(&COND_cache_status_changed,
@@ -409,13 +409,13 @@ There are two aspects to the query cache: placing a query in the cache, and retr
 
 When using SQL\_NO\_CACHE, it should be after the first SELECT hint, for example :
 
-```
+```sql
 SELECT SQL_NO_CACHE .... FROM (SELECT SQL_CACHE ...) AS temp_table
 ```
 
 instead of
 
-```
+```sql
 SELECT SQL_CACHE .... FROM (SELECT SQL_NO_CACHE ...) AS temp_table
 ```
 
