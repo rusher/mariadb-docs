@@ -83,20 +83,20 @@ If the [query\_cache\_type](../system-variables/server-system-variables.md#query
 
 If any of the following functions are present in a query, it will not be cached. Queries with these functions are sometimes called 'non-deterministic' - don't get confused with the use of this term in other contexts.
 
-|                                                                                                                        |                                                                                                                                           |
-| ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [BENCHMARK()](../../../reference/sql-functions/secondary-functions/information-functions/benchmark.md)                 | [CONNECTION\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/connection_id.md)                           |
-| [CONVERT\_TZ()](../../../reference/sql-functions/date-time-functions/convert_tz.md)                                    | [CURDATE()](../../../reference/sql-functions/date-time-functions/curdate.md)                                                              |
-| [CURRENT\_DATE()](../../../reference/sql-functions/date-time-functions/current_date.md)                                | [CURRENT\_TIME()](../../../reference/sql-functions/date-time-functions/current_time.md)                                                   |
-| [CURRENT\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/current_timestamp.md)                      | [CURTIME()](../../../reference/sql-functions/date-time-functions/curtime.md)                                                              |
-| [DATABASE()](../../../reference/sql-functions/secondary-functions/information-functions/database.md)                   | [ENCRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) (one parameter) |
-| [FOUND\_ROWS()](../../../reference/sql-functions/secondary-functions/information-functions/found_rows.md)              | [GET\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)                                   |
-| [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md)     | [LOAD\_FILE()](../../../reference/sql-functions/string-functions/load_file.md)                                                            |
-| [MASTER\_POS\_WAIT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md) | [NOW()](../../../reference/sql-functions/date-time-functions/now.md)                                                                      |
-| [RAND()](../../../reference/sql-functions/numeric-functions/rand.md)                                                   | [RELEASE\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/release_lock.md)                           |
-| [SLEEP()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/sleep.md)                       | [SYSDATE()](../../../reference/sql-functions/date-time-functions/sysdate.md)                                                              |
-| [UNIX\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/unix_timestamp.md) (no parameters)            | [USER()](../../../reference/sql-functions/secondary-functions/information-functions/user.md)                                              |
-| [UUID()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid.md)                         | [UUID\_SHORT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md)                               |
+| | |
+| - | - |
+| [BENCHMARK()](../../../reference/sql-functions/secondary-functions/information-functions/benchmark.md)  | [CONNECTION\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/connection_id.md)  |
+| [CONVERT\_TZ()](../../../reference/sql-functions/date-time-functions/convert_tz.md) | [CURDATE()](../../../reference/sql-functions/date-time-functions/curdate.md)  |
+| [CURRENT\_DATE()](../../../reference/sql-functions/date-time-functions/current_date.md)  | [CURRENT\_TIME()](../../../reference/sql-functions/date-time-functions/current_time.md) |
+| [CURRENT\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/current_timestamp.md)  | [CURTIME()](../../../reference/sql-functions/date-time-functions/curtime.md)  |
+| [DATABASE()](../../../reference/sql-functions/secondary-functions/information-functions/database.md)    | [ENCRYPT()](../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/encrypt.md) (one parameter) |
+| [FOUND\_ROWS()](../../../reference/sql-functions/secondary-functions/information-functions/found_rows.md)    | [GET\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)|
+| [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md)| [LOAD\_FILE()](../../../reference/sql-functions/string-functions/load_file.md)|
+| [MASTER\_POS\_WAIT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md) | [NOW()](../../../reference/sql-functions/date-time-functions/now.md)|
+| [RAND()](../../../reference/sql-functions/numeric-functions/rand.md) | [RELEASE\_LOCK()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/release_lock.md)  |
+| [SLEEP()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/sleep.md)   | [SYSDATE()](../../../reference/sql-functions/date-time-functions/sysdate.md)  |
+| [UNIX\_TIMESTAMP()](../../../reference/sql-functions/date-time-functions/unix_timestamp.md) (no parameters)  | [USER()](../../../reference/sql-functions/secondary-functions/information-functions/user.md) |
+| [UUID()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid.md)| [UUID\_SHORT()](../../../reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md) |
 
 A query will also not be added to the cache if:
 
