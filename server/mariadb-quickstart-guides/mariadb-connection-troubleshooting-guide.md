@@ -16,7 +16,7 @@ layout:
 
 The guide helps diagnose and resolve common issues encountered when connecting to a MariaDB server. Identify causes for errors like 'Can't connect to local server' or access denied messages, and learn steps to effectively troubleshoot these connection problems.
 
-If you are completely new to MariaDB and relational databases, you may want to start with [A MariaDB Primer](https://www.google.com/search?q=link_to_MariaDB_Primer). Also, ensure you understand the connection parameters discussed in the [Connection Parameters Guide](https://www.google.com/search?q=link_to_Connection_Parameters_Guide).
+If you are completely new to MariaDB and relational databases, you may want to start with [A MariaDB Primer](mariadb-usage-guide-1.md). Also, ensure you understand the connection parameters discussed in the [Connection Parameters Guide](mariadb-connecting-guide.md).
 
 ### Server Not Running or Incorrect Location
 
