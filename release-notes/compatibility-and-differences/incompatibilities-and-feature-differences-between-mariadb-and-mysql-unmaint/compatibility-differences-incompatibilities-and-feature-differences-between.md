@@ -130,3 +130,5 @@ When upgrading from MySQL 5.7 to [MariaDB 10.3](../../mariadb-community-server-r
 * Not all [character sets and collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) are [supported](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations) across both MySQL and MariaDB. As of 10.3.24, MariaDB supports 40 character sets and 322 collations. As of 5.7.29, MySQL supports 41 character sets (`gb18030` being the additional one) and 222 collations.
 * The MySQL binary log includes the thread\_id, while MariaDB's [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) does not. ([MDEV-7850](https://jira.mariadb.org/browse/MDEV-7850))
 * Also see [Incompatibilities between MariaDB 10.2 and MySQL 5.7](incompatibilities-and-feature-differences-between-mariadb-10-2-and-mysql-5.md) and [Incompatibilities between MariaDB 10.1 and MySQL 5.7](broken-reference).
+
+{% @marketo/form formid="4316" formId="4316" %}

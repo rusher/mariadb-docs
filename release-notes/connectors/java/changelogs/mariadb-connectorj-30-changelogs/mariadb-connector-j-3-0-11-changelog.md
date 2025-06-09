@@ -15,3 +15,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #09213248](https://github.com/mariadb-corporation/mariadb-connector-j/commit/09213248) - \[[CONJ-1089](https://jira.mariadb.org/browse/CONJ-1089)] correcting 3.0.10 incompatibility with java 8
 * [Revision #76019a20](https://github.com/mariadb-corporation/mariadb-connector-j/commit/76019a20) - \[misc] test stability improvement
 * [Revision #8c831eef](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8c831eef) - \[misc] update test to recent server
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -49,3 +49,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * MISC : Change SSLSocketFactory.createSocket to use autoClose=true - [Revision #159d791](https://github.com/mariadb-corporation/mariadb-connector-j/commit/159d791) 2015-08-01
 * MISC : Change scope of dbcp to test - [Revision #9b60ba7](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9b60ba7) 2015-08-07
 * MISC : adding automatic release deployement script - [Revision #73bd695](https://github.com/mariadb-corporation/mariadb-connector-j/commit/73bd695) 2015-09-02
+
+{% @marketo/form formid="4316" formId="4316" %}

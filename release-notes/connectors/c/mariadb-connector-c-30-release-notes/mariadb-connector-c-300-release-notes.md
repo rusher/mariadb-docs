@@ -50,3 +50,5 @@ dynamic link libraries on Windows)
 We will cover new functionality in detail with a couple of blog entries during\
 the next days. The first one "What's new in Connector/C 3.0: Part I SSL" can be\
 found [here](https://mariadb.org/whats-new-in-mariadb-connectorc-3-0-part-i-ssl/)
+
+{% @marketo/form formid="4316" formId="4316" %}

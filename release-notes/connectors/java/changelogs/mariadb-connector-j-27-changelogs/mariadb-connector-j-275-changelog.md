@@ -25,3 +25,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #06852c1e](https://github.com/mariadb-corporation/mariadb-connector-j/commit/06852c1e) - \[misc] ensuring PR test suite runs correctly
 * [Revision #e0a3fc2d](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e0a3fc2d) - include the server thread id (a.k.a connection id) in certain important log messages
 * [Revision #a6e26001](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a6e26001) - [CONJ-896](https://jira.mariadb.org/browse/CONJ-896) Force validation of the rest of the connections when another connection in the pool errors out
+
+{% @marketo/form formid="4316" formId="4316" %}

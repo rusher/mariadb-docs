@@ -70,3 +70,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #572bdb1](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/572bdb1)\
   2016-10-27 19:44:59 +0200
   * Fix and testcase for the [ODBC-57](https://jira.mariadb.org/browse/ODBC-57). The problem was in MS Access adding parenthesis around each SELECT in the UNION. And the function determining query type wasn't ready for that. Now it skips query string characters till first alpha.
+
+{% @marketo/form formid="4316" formId="4316" %}

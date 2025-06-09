@@ -37,3 +37,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #7dc1cd11](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7dc1cd11) - \[[CONJ-1129](https://jira.mariadb.org/browse/CONJ-1129)] Metadata getPrimaryKeys using like in place of strict equality
 * [Revision #7fa524e5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7fa524e5) - \[misc] remove EOL server
 * [Revision #4acb834a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4acb834a) - \[misc] set connection to autocommit if not the case and not explicitly set to false.
+
+{% @marketo/form formid="4316" formId="4316" %}

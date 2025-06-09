@@ -21,3 +21,5 @@ MariaDB Connector/Node.js 3.4.1 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-275](https://jira.mariadb.org/browse/CONJS-275): Added capability to return all Bulk insert IDs for MariaDB server 11.5.1+
 * [CONJS-304](https://jira.mariadb.org/browse/CONJS-304): Fixed bulk operations ending with "Got a packet bigger than 'max\_allowed\_packet' bytes" error
 * [CONJS-316](https://jira.mariadb.org/browse/CONJS-316): Enhanced handling of non-bulk batched operations to avoid out-of-memory errors for batches not using bulk
+
+{% @marketo/form formid="4316" formId="4316" %}

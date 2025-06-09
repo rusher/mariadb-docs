@@ -172,3 +172,5 @@ modified in that revision.
       * The proper quoting method for command line arguments used here was extracted from[everyone-quotes-arguments-the-wrong-way.aspx](https://blogs.msdn.com/b/twistylittlepassagesallalike/archive/2011/04/23/everyone-quotes-arguments-the-wrong-way.aspx)
       * Additionally, mysql\_install\_db.exe now passes root password to "`mysqld.exe --bootstrap`"
       * in hexadecimal form, to handle potential special chars inside password string literal.
+
+{% @marketo/form formid="4316" formId="4316" %}

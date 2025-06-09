@@ -28,3 +28,5 @@ MariaDB Connector/R2DBC 1.2.1 was released on 2024-06-24. This release is of GA 
 * [Source code](https://github.com/mariadb-corporation/mariadb-connector-r2dbc/)
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

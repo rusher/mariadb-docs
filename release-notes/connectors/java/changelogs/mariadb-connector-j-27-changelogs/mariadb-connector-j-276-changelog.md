@@ -17,3 +17,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #ae893de1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ae893de1) - \[misc] bump 2.7.6 SNAPSHOT version
 * [Revision #8567b163](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8567b163) - \[misc] add cipher for windows testing
 * [Revision #19748d71](https://github.com/mariadb-corporation/mariadb-connector-j/commit/19748d71) - \[[CONJ-983](https://jira.mariadb.org/browse/CONJ-983)] avoid race condition provoking locking issue
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -906,3 +906,5 @@ modified in that revision.
 * [Revision #b5d6aa5](https://github.com/MariaDB/server/commit/b5d6aa5)\
   2015-02-23 13:27:51 +0100
   * [MDEV-7310](https://jira.mariadb.org/browse/MDEV-7310): last\_commit\_pos\_offset set to wrong value after binlog rotate in group commit
+
+{% @marketo/form formid="4316" formId="4316" %}

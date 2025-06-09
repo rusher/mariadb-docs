@@ -39,3 +39,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1646a5ff](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1646a5ff) - \[misc] small simplification of MariaXaResource XID generation
 * [Revision #08779406](https://github.com/mariadb-corporation/mariadb-connector-j/commit/08779406) - set 2.7.1 SNAPSHOT version
 * [Revision #8427aed6](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8427aed6) - Merge tag '2.7.0' into develop
+
+{% @marketo/form formid="4316" formId="4316" %}

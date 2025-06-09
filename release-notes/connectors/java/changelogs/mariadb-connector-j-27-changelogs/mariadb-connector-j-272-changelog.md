@@ -49,3 +49,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1d820aa8](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1d820aa8) - \[misc] correct test since server message change
 * [Revision #9edc3b88](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9edc3b88) - \[[CONJ-847](https://jira.mariadb.org/browse/CONJ-847)] NPE at UpdatableResultSet#close
 * [Revision #b5fa2b12](https://github.com/mariadb-corporation/mariadb-connector-j/commit/b5fa2b12) - CmdInformationSingle.isDuplicateKeyUpdate() fails to detect ON DUPLICATE KEY clause if there are newlines in query. Solved by enabling DOTALL mode in regexp.
+
+{% @marketo/form formid="4316" formId="4316" %}

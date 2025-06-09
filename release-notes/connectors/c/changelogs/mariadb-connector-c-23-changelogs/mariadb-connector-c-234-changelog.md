@@ -23,3 +23,5 @@ modified in that revision.
 * [Revision #86c4488](https://github.com/mariadb-corporation/mariadb-connector-c/commit/86c4488)\
   2017-09-22 06:49:36 +0200
   * OpenSSL fixes: - When negotiating tls protocol during handshake, use server preferences instead of client preferences. This will allow to use TLSv12 (OpenSSL server) and/or TLSv1.1 (Yassl server) - Don't check server ca unless verification flag was set. This will allow Connector/C to establish a tls/ssl connection without certificates. Bumped version number to 2.3.4
+
+{% @marketo/form formid="4316" formId="4316" %}

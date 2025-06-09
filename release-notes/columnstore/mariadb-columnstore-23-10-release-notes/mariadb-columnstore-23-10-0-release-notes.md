@@ -105,3 +105,5 @@ In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.m
 * [Major Release Upgrades for MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/columnstore-release-notes/README.md)
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

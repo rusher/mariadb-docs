@@ -120,3 +120,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #998a8da4](https://github.com/mariadb-corporation/mariadb-connector-c/commit/998a8da4)\
   2024-03-12 13:18:47 +0100
   * [MDEV-33513](https://jira.mariadb.org/browse/MDEV-33513) On Windows, build auth\_gssapi\_client statically and dynamically.
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -41,3 +41,5 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * [MDEV-3918](https://jira.mariadb.org/browse/MDEV-3918): myisamchk bogus error for files larger than 4GB.
   * The failure is caused by failing stat() call . C Runtime function stat() uses old struct with 32bit st\_size member, and since Visual Studio 2010 , it returns an error on st\_size overflow (i.e on files larger than 4GB)
   * Fix replaces stat() by my\_stat(), the later is backed by 64bit-able stat64().
+
+{% @marketo/form formid="4316" formId="4316" %}

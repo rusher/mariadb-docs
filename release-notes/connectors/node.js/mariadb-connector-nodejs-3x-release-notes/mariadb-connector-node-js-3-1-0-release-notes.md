@@ -41,3 +41,5 @@ see [here](https://github.com/mariadb-corporation/mariadb-connector-nodejs/blob/
 * [CONJS-232](https://jira.mariadb.org/browse/CONJS-232) in case of a long query running, connection.destroy() will close connection, but might leave server still running query for some time
 * [CONJS-240](https://jira.mariadb.org/browse/CONJS-240) adding a Prepare result wrapper to avoid multiple close issue with cache
 * [CONJS-241](https://jira.mariadb.org/browse/CONJS-241) metaAsArray missing option in typescript description
+
+{% @marketo/form formid="4316" formId="4316" %}

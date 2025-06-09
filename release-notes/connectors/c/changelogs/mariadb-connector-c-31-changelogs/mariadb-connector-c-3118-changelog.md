@@ -80,3 +80,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #02a2be0](https://github.com/mariadb-corporation/mariadb-connector-c/commit/02a2be0)\
   2022-05-31 07:50:57 +0200
   * Fix build of static plugins
+
+{% @marketo/form formid="4316" formId="4316" %}

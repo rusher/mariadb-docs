@@ -38,3 +38,5 @@ In summary, the _keepAliveDelay_ option determines the keep-alive frequency, whi
 ## Issues Fixed
 
 [CONJS-303](https://jira.mariadb.org/browse/CONJS-303) DMLs are not returning an output while streaming
+
+{% @marketo/form formid="4316" formId="4316" %}

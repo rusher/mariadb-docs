@@ -87,3 +87,5 @@ MariaDB and MySQL have differing [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2O
 * [System Variable Differences Between MariaDB 10.2 and MySQL 5.6](../../system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-and-mysql-unmaintained-series/system-variable-differences-between-mariadb-10-2-and-mysql-5-6.md)
 * [MariaDB versus MySQL - Compatibility](broken-reference)
 * [MariaDB versus MySQL - Features](../../mariadb-vs-mysql-features.md)
+
+{% @marketo/form formid="4316" formId="4316" %}

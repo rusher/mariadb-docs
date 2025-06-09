@@ -179,3 +179,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #64c2026](https://github.com/mariadb-corporation/mariadb-connector-python/commit/64c2026)\
   2020-11-18 21:29:57 +0100
   * Revert "Set MARIADB\_PLUGIN\_DIR for travis environment"
+
+{% @marketo/form formid="4316" formId="4316" %}

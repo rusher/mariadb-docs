@@ -31,3 +31,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #1889f32](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/1889f32)\
   2016-09-27 00:15:24 +0200
   * [ODBC-56](https://jira.mariadb.org/browse/ODBC-56) Fix of wrong calculation of StLen ptr in case of columnwise binding. Change in 2 tests in relative and in dyn\_cursor to cover this case. Also similar bugs was fixed in other places, mostly affecting all sorts of position commands
+
+{% @marketo/form formid="4316" formId="4316" %}

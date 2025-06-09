@@ -222,3 +222,5 @@ modified in that revision.
 * [Revision #131](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/131)\
   Fri 2014-04-04 12:26:06 +0200
   * Fix for [CONC-86](https://jira.mariadb.org/browse/CONC-86): mysql.h doesn't include the API function mysql\_hex\_string
+
+{% @marketo/form formid="4316" formId="4316" %}

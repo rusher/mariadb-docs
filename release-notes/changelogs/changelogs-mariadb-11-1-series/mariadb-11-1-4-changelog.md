@@ -45,3 +45,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #5d3e14d780](https://github.com/MariaDB/server/commit/5d3e14d780)\
   2023-09-19 00:54:19 +0530
   * [MDEV-31599](https://jira.mariadb.org/browse/MDEV-31599): Assertion \`0' failed in Item\_param::can\_return\_value from Item::val\_json, UBSAN: member access within null pointer of type 'struct String' in sql/item\_jsonfunc.cc
+
+{% @marketo/form formid="4316" formId="4316" %}

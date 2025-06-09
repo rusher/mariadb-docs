@@ -40,3 +40,5 @@ information on each push, see the[changelog](../changelogs/mariadb-connector-j-1
 * Calling first() on "streaming" result set and using the result set afterwards generated NullPointerException ([CONJ-24](https://jira.mariadb.org/browse/CONJ-24))
   * Now a SQLException is thrown early on, in the first() call, since streaming results sets are not scrollable.
 * Connection.close() hangs if there is an open streaming result set, and next() was not called on this result set ([CONJ-25](https://jira.mariadb.org/browse/CONJ-25))
+
+{% @marketo/form formid="4316" formId="4316" %}

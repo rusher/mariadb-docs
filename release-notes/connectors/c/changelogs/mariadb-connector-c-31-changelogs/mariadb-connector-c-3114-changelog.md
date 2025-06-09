@@ -62,3 +62,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #2d5a511](https://github.com/mariadb-corporation/mariadb-connector-c/commit/2d5a511)\
   2021-05-08 20:23:50 +0200
   * Windows - fix typo, that makes clang-cl compilation fail.
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -498,3 +498,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #8881c0100e](https://github.com/MariaDB/server/commit/8881c0100e)\
   2022-05-18 23:38:56 +0900
   * [MDEV-14642](https://jira.mariadb.org/browse/MDEV-14642) Assertion 'table->s->db\_create\_options == part\_table->s->db\_create\_options' failed in compare\_table\_with\_partition
+
+{% @marketo/form formid="4316" formId="4316" %}

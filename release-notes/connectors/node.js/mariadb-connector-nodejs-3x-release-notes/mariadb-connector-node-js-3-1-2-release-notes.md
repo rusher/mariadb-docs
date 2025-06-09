@@ -18,3 +18,5 @@ MariaDB Connector/Node.js 3.1.2 is a [_**Stable**_](../../../mariadb-release-cri
 
 * [CONJS-247](https://jira.mariadb.org/browse/CONJS-247) Improve error message when having set named parameter option and executing standard question mark command
 * [CONJS-248](https://jira.mariadb.org/browse/CONJS-248) Ensuring not using importing file after pool.end() to permit Jest use
+
+{% @marketo/form formid="4316" formId="4316" %}

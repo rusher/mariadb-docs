@@ -16,3 +16,5 @@ MariaDB Connector/Node.js 3.2.2 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-269](https://jira.mariadb.org/browse/CONJS-269) avoid useless "set names utf8mb4" on connection creation if not needed
 * [CONJS-268](https://jira.mariadb.org/browse/CONJS-268) importFile method doesn't always throw error when imported commands fails #253
 * [CONJS-267](https://jira.mariadb.org/browse/CONJS-267) Ensure that option collation with id > 255 are respected
+
+{% @marketo/form formid="4316" formId="4316" %}

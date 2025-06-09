@@ -45,3 +45,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #609fe993](https://github.com/mariadb-corporation/mariadb-connector-j/commit/609fe993) - \[[CONJ-999](https://jira.mariadb.org/browse/CONJ-999)] setting createDatabaseIfNotExist option use on read-only server will refuse connection
 * [Revision #2a1f7d51](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2a1f7d51) - \[[CONJ-997](https://jira.mariadb.org/browse/CONJ-997)] test suite correction to support galera
 * [Revision #5c697f4c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/5c697f4c) - \[[CONJ-997](https://jira.mariadb.org/browse/CONJ-997)] correcting use of galeraAllowedState
+
+{% @marketo/form formid="4316" formId="4316" %}

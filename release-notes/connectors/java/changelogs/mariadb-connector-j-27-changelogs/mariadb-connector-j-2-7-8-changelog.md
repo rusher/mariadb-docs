@@ -20,3 +20,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6f56a24a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6f56a24a) - \[[CONJ-1023](https://jira.mariadb.org/browse/CONJ-1023)] Connector/J doesn't set SSL cap bit in Handshake Response Packet
 * [Revision #219757dc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/219757dc) - Repair the bug for ArrayIndexOutOfBoundsException:
 * [Revision #93240f5e](https://github.com/mariadb-corporation/mariadb-connector-j/commit/93240f5e) - bump 2.7.8-SNAPSHOT
+
+{% @marketo/form formid="4316" formId="4316" %}

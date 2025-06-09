@@ -23,3 +23,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e6a29d0b](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e6a29d0b) - \[[CONJ-976](https://jira.mariadb.org/browse/CONJ-976)] permit pipelining for batching even when `allowLocalInfile` option is enable
 * [Revision #de7ca6fa](https://github.com/mariadb-corporation/mariadb-connector-j/commit/de7ca6fa) - Merge branch 'master' into develop
 * [Revision #47d20367](https://github.com/mariadb-corporation/mariadb-connector-j/commit/47d20367) - Merge tag '3.0.5' into develop
+
+{% @marketo/form formid="4316" formId="4316" %}

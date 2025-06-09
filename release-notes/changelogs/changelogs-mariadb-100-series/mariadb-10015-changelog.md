@@ -922,3 +922,5 @@ modified in that revision.
 * [Revision #4417](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4417)\
   Thu 2014-09-25 18:16:29 +0400
   * [MDEV-6788](https://jira.mariadb.org/browse/MDEV-6788): The variable 'role' is being used without being initialized at sql\_acl.cc:8840
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -31,3 +31,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #42e861f3](https://github.com/mariadb-corporation/mariadb-connector-j/commit/42e861f3) [CONJ-873](https://jira.mariadb.org/browse/CONJ-873) - race condition correction on empty getGeneratedKeys metadata
 * [Revision #1b7bb019](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1b7bb019) bump 2.7.4-SNAPSHOT version
 * [Revision #7d72599b](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7d72599b) Avoid creating new strings when switching auto-commit.
+
+{% @marketo/form formid="4316" formId="4316" %}

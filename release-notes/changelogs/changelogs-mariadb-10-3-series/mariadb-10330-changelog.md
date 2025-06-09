@@ -70,3 +70,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #625e44a80d](https://github.com/MariaDB/server/commit/625e44a80d)\
   2021-05-05 15:46:22 +0530
   * [MDEV-25597](https://jira.mariadb.org/browse/MDEV-25597): Disable rpl\_semi\_sync\_slave\_compressed\_protocol.test
+
+{% @marketo/form formid="4316" formId="4316" %}

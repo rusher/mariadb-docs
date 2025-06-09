@@ -35,3 +35,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #7ac764a](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/7ac764a)\
   2019-07-22 10:32:28 +0200
   * MENT-27 Adding Azure CI testing
+
+{% @marketo/form formid="4316" formId="4316" %}

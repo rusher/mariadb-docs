@@ -38,3 +38,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #97dadcf](https://github.com/mariadb-corporation/mariadb-connector-j/commit/97dadcf) \[misc] test stability correction
 * [Revision #e8b4b56](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e8b4b56) \[misc] restrict capabilities to server capabilities
 * [Revision #f2fff31](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f2fff31) Merge tag '3.2.2' into develop
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -92,3 +92,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #104c400](https://github.com/mariadb-corporation/mariadb-connector-j/commit/104c400) merge 3.0.2 version
 * [Revision #6c7946c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6c7946c) \[[CONJS-226](https://jira.mariadb.org/browse/CONJS-226)] add missing metaAsArray documentation and typescript option
 * [Revision #9c4562a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9c4562a) \[[CONJS-225](https://jira.mariadb.org/browse/CONJS-225)] Make result set's meta property non-enumerable
+
+{% @marketo/form formid="4316" formId="4316" %}

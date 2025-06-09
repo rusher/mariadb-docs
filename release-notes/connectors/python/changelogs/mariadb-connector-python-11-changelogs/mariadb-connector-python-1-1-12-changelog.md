@@ -39,3 +39,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e86261c](https://github.com/mariadb-corporation/mariadb-connector-python/commit/e86261c)\
   2025-01-28 16:16:29 +0100
   * [CONPY-303](https://jira.mariadb.org/browse/CONPY-303): Documentation fix for cursor constructor
+
+{% @marketo/form formid="4316" formId="4316" %}

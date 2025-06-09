@@ -55,3 +55,5 @@ Here is a list of the important changes in this release
 * SQL Comments are not stripped anymore off PreparedStatements.
 * Fixed ArrayOutOfBounds exception when parsing JDBC ([CONJ-4](https://jira.mariadb.org/browse/CONJ-4))
 * Fixed exception in Connection.getWarnings(), which was throws is connection was closed
+
+{% @marketo/form formid="4316" formId="4316" %}

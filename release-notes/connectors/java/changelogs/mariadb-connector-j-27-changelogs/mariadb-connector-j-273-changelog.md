@@ -32,3 +32,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f9102084](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f9102084) Fixed java.lang.NoClassDefFoundError: javax/sql/rowset/serial/SerialException when using OSGi framework
 * [Revision #e8075440](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e8075440) BinaryRowProtocol: Redundant objects creation while reading data from BIGINT column
 * [Revision #d2795170](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d2795170) msic - appveyor url fix
+
+{% @marketo/form formid="4316" formId="4316" %}

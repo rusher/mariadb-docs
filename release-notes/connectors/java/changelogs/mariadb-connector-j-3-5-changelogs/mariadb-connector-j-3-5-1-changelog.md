@@ -53,3 +53,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #421a3a5c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/421a3a5c) - \[misc] changing capability name EXTENDED\_TYPE\_INFO to EXTENDED\_METADATA, in order to correspond to server and other connectors
 * [Revision #c90f656a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/c90f656a) - \[misc] remove test condition specific for ES 23.08
 * [Revision #892d1157](https://github.com/mariadb-corporation/mariadb-connector-j/commit/892d1157) - Use 32760 as the "unused" port number
+
+{% @marketo/form formid="4316" formId="4316" %}

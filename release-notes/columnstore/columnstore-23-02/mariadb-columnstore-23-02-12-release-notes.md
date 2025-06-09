@@ -50,3 +50,5 @@ In alignment with the [enterprise lifecycl](../../enterprise-server-lifecycle.md
 * [Major Release Upgrades for MariaDB Enterprise ColumnStore](../)
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

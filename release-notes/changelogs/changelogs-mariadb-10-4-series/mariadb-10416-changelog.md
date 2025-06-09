@@ -328,3 +328,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6a2ee9c8bb](https://github.com/MariaDB/server/commit/6a2ee9c8bb)\
   2020-08-03 13:56:10 +0400
   * [MDEV-23032](https://jira.mariadb.org/browse/MDEV-23032) FLOOR()/CEIL() incorrectly calculate the precision of a DECIMAL(M,D) column
+
+{% @marketo/form formid="4316" formId="4316" %}

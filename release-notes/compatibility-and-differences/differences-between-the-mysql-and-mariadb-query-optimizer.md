@@ -41,3 +41,5 @@ The MariaDB team is frequently asked if all features (or feature X) from MySQL 5
 * SHOW EXPLAIN in [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
   * [SHOW EXPLAIN in MariaDB 10.0 vs EXPLAIN FOR CONNECTION in MySQL 5.7](https://s.petrunia.net/blog/?p=89)
 * [The Optimizer Cost Model from MariaDB 11.0](broken-reference)
+
+{% @marketo/form formid="4316" formId="4316" %}

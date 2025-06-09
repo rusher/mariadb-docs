@@ -579,3 +579,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #8d5a11122c](https://github.com/MariaDB/server/commit/8d5a11122c)\
   2018-08-16 00:24:52 +0300
   * [MDEV-16188](https://jira.mariadb.org/browse/MDEV-16188): Use in-memory PK filters built from range index scans
+
+{% @marketo/form formid="4316" formId="4316" %}

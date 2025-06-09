@@ -24,3 +24,5 @@ MariaDB Connector/Node.js 3.3.1 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-286](https://jira.mariadb.org/browse/CONJS-286) When using a prepared statement and explicitly disabling prepare cache using prepareCacheLength=0, the connector might not retrieve results anymore
 * [CONJS-287](https://jira.mariadb.org/browse/CONJS-287) Typescript is missing `'QueryOption'` for the `'prepare'` command
 * [CONJS-293](https://jira.mariadb.org/browse/CONJS-293) When using batch, javascript Date values that are not in the range `1970-01-01 00:00:01 - 2038-01-19 03:14:07` are saved as null
+
+{% @marketo/form formid="4316" formId="4316" %}

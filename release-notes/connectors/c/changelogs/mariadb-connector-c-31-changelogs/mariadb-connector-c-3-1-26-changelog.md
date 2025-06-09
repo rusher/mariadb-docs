@@ -45,3 +45,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #d5394838](https://github.com/mariadb-corporation/mariadb-connector-c/commit/d5394838)\
   2024-05-13 15:57:39 +0200
   * [CONC-696](https://jira.mariadb.org/browse/CONC-696): Replace COM\_PROCESS\_KILL by KILL command
+
+{% @marketo/form formid="4316" formId="4316" %}

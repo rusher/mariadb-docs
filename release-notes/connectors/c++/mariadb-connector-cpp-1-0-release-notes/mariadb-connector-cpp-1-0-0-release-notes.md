@@ -19,3 +19,5 @@ MariaDB Connector/C++ implements the MySQL protocol using the MariaDB Connector/
 [Install MariaDB Connector/C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/install-mariadb-connector-cpp)
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

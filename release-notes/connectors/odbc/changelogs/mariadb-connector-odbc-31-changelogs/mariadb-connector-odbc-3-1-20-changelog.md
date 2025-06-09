@@ -74,3 +74,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #97b6d5e](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/97b6d5e)\
   2023-07-07 14:35:59 -0400
   * bump the VERSION
+
+{% @marketo/form formid="4316" formId="4316" %}

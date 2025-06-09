@@ -721,3 +721,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #d072a29601](https://github.com/MariaDB/server/commit/d072a29601)\
   2024-07-24 13:55:55 +0200
   * [MDEV-23983](https://jira.mariadb.org/browse/MDEV-23983): Crash caused by query containing constant having clause
+
+{% @marketo/form formid="4316" formId="4316" %}

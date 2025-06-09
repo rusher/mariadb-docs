@@ -108,3 +108,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #cd5c619](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/cd5c619)\
   2018-06-14 21:33:01 -0400
   * [ODBC-148](https://jira.mariadb.org/browse/ODBC-148) The field length is not set for DATE, TIME, or DATETIME values assigned during SQLFetch calls. Without the length set, Crystal Reports interprets all DATE, TIME, and DATETIME values as NULL. Setting \*ArdRecord->IndicatorPtr to the size of the appropriate data structure in MADB\_CopyMadbTimestamp.
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -378,3 +378,5 @@ modified in that revision.
         * Fix warning about FSP\_EXTENT\_SIZE in xtradb (32/64 bit right shift mismatch)
         * Silence warnings coming from generated code (flex/bison) in xtradb/innodb\_plugin.
         * Be nice to people without cygwin (me) and add win/configure-mariadb.bat with options suitable for quick compilation, e.g no embedded
+
+{% @marketo/form formid="4316" formId="4316" %}

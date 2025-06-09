@@ -16,3 +16,5 @@ MariaDB Connector/Node.js 3.3.2 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-302](https://jira.mariadb.org/browse/CONJS-302) TypeScript type definition file for SqlError constructor does not match actual constructor
 * [CONJS-297](https://jira.mariadb.org/browse/CONJS-297) Typescript connection option timeout in place of queryTimeout
 * [CONJS-298](https://jira.mariadb.org/browse/CONJS-298) Typescript wrong named longlong in place of bigint
+
+{% @marketo/form formid="4316" formId="4316" %}

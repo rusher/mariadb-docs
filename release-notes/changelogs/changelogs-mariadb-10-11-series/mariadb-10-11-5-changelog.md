@@ -77,3 +77,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #41dbc32665](https://github.com/MariaDB/server/commit/41dbc32665)\
   2023-04-23 10:59:32 +0200
   * [MDEV-31140](https://jira.mariadb.org/browse/MDEV-31140): FLUSH BINARY LOGS DELETE\_DOMAIN\_ID=(D) can errorneously delete active domains
+
+{% @marketo/form formid="4316" formId="4316" %}

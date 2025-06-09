@@ -127,3 +127,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e515e80773](https://github.com/MariaDB/server/commit/e515e80773)\
   2024-08-03 13:11:35 +0530
   * [MDEV-34689](https://jira.mariadb.org/browse/MDEV-34689) Redo log corruption at high load
+
+{% @marketo/form formid="4316" formId="4316" %}

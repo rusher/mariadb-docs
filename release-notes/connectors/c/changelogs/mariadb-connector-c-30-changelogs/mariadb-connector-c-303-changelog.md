@@ -222,3 +222,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #843c492](https://github.com/mariadb-corporation/mariadb-connector-c/commit/843c492)\
   2017-07-25 09:43:55 +0200
   * Fix for [CONC-271](https://jira.mariadb.org/browse/CONC-271): RPM layout now works for other 64-bit architectures than x86\_64. Thx to Michal Schorn for contributing this patch.
+
+{% @marketo/form formid="4316" formId="4316" %}

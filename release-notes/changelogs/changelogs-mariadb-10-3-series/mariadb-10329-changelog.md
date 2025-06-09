@@ -202,3 +202,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #da88e1ec12](https://github.com/MariaDB/server/commit/da88e1ec12)\
   2021-02-10 23:38:52 -0800
   * [MDEV-24840](https://jira.mariadb.org/browse/MDEV-24840) Crash caused by query with IN subquery containing union of two table value costructors
+
+{% @marketo/form formid="4316" formId="4316" %}

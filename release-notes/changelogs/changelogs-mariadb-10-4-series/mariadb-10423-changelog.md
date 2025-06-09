@@ -296,3 +296,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #fcca0c67b6](https://github.com/MariaDB/server/commit/fcca0c67b6)\
   2021-10-28 18:35:33 +0300
   * [MDEV-26929](https://jira.mariadb.org/browse/MDEV-26929): fixed opt\_trace test for --mysqld=--optimizer\_trace=enabled=on
+
+{% @marketo/form formid="4316" formId="4316" %}

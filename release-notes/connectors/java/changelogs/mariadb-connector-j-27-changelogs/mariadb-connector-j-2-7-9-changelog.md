@@ -14,3 +14,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #3021f01f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/3021f01f) bump 2.7.9
 * [Revision #99cab8c7](https://github.com/mariadb-corporation/mariadb-connector-j/commit/99cab8c7) \[[CONJ-1063](https://jira.mariadb.org/browse/CONJ-1063)] DatabaseMetaData.getTypeInfo() returns wrong value for UNSIGNED\_ATTRIBUTE
 * [Revision #e662f335](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e662f335) \[[CONJ-1062](https://jira.mariadb.org/browse/CONJ-1062)] correcting TlsSocketPlugin to use Driver classloader
+
+{% @marketo/form formid="4316" formId="4316" %}

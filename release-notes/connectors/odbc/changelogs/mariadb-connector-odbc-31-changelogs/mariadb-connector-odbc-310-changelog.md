@@ -112,3 +112,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #768b94f](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/768b94f)\
   2018-09-20 15:58:05 +0200
   * [ODBC-185](https://jira.mariadb.org/browse/ODBC-185) The fix and the testcase. Char fields type returned by SQLColums in case of the Unicode connection
+
+{% @marketo/form formid="4316" formId="4316" %}

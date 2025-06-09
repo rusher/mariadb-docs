@@ -498,3 +498,5 @@ modified in that revision.
       Item\_func\_between inherited from Item\_func\_neg\_opt. So optimizer tried\
       process NOT BETWEEN as BETWEEN.
     * The patch just switches off the optimisation for NOT BETWEEN as it was before when NOT function was really used.
+
+{% @marketo/form formid="4316" formId="4316" %}

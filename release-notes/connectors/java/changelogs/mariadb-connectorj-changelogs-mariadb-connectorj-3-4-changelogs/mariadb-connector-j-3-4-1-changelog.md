@@ -42,3 +42,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #7f2ff7eb](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7f2ff7eb) - \[misc] mysql 8.4 test correction: adding serverRsaPublicKeyFile in test
 * [Revision #907a99b1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/907a99b1) - \[misc] test addition: set allowPublicKeyRetrieval to true for mysql 8.4 by default
 * [Revision #0db5648c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0db5648c) - \[misc] test correction for mysql\_clear\_password used in non SSL connections
+
+{% @marketo/form formid="4316" formId="4316" %}

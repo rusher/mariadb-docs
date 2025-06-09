@@ -47,3 +47,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #75ab6fb1](https://github.com/mariadb-corporation/mariadb-connector-c/commit/75ab6fb1)\
   2023-11-19 16:46:36 +0100
   * Allow named pipe connection handle to be used with IO completion port
+
+{% @marketo/form formid="4316" formId="4316" %}

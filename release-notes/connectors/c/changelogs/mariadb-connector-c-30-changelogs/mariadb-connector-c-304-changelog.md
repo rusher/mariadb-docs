@@ -188,3 +188,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #adf7b56](https://github.com/mariadb-corporation/mariadb-connector-c/commit/adf7b56)\
   2018-01-16 15:24:54 +0100
   * Fix for [MDEV-10361](https://jira.mariadb.org/browse/MDEV-10361): Don't try to reconnect twice: if mysql->options.reconnect is set, ma\_simple\_command already tries to reconnect, so there is no need to reconnect in mysql\_ping again
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -23,3 +23,5 @@ modified in that revision.
 * [Revision #f6d00bd](https://github.com/mariadb-corporation/mariadb-connector-c/commit/f6d00bd)\
   2015-11-30 20:12:22 +0100
   * Fixed wrong #ifdef in vio\_fastsend so TCP\_NODELAY will be set on Windows platforms correctly
+
+{% @marketo/form formid="4316" formId="4316" %}

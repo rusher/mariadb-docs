@@ -925,3 +925,5 @@ and --plugin-load-add are mentioned in it.
   * [MDEV-3858](https://jira.mariadb.org/browse/MDEV-3858) Change JOIN\_TAB::records\_read from ha\_rows to double
   * Currently JOIN\_TAB::records\_read is of type ha\_rows. This is an integer type, which prevents proper selectivity and rows estimates.
 ```
+
+{% @marketo/form formid="4316" formId="4316" %}

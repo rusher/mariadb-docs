@@ -47,3 +47,5 @@ Starting in [MariaDB 5.3.2](mariadb-532-release-notes.md)-beta, the [Subquery ca
 The goal of the subquery cache is to optimize the evaluation of correlated subqueries by storing results together with correlation parameters in a cache and avoiding re-execution of the subquery in cases where the result is already in the cache.
 
 See the [Subquery cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/subquery-cache) page for more information.
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -18,3 +18,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #8d999d84](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8d999d84) - \[[CONJ-1023](https://jira.mariadb.org/browse/CONJ-1023)] Connector/J doesn't set SSL cap bit in Handshake Response Packet
 * [Revision #1d9bee54](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1d9bee54) - \[[CONJ-1032](https://jira.mariadb.org/browse/CONJ-1032)] option case-insensitive for compatibility with 2.x
 * [Revision #6d31ce6b](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6d31ce6b) - bump 3.0.10-SNAPSHOT version
+
+{% @marketo/form formid="4316" formId="4316" %}

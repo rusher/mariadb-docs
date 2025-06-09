@@ -578,3 +578,5 @@ in that revision.
 * [Revision #60438451c3](https://github.com/MariaDB/server/commit/60438451c3)\
   2018-03-26 21:22:40 +0300
   * [MDEV-14843](https://jira.mariadb.org/browse/MDEV-14843): Assertion \`s\_tx\_list.size() == 0' failed in myrocks::Rdb\_transaction::term\_mutex
+
+{% @marketo/form formid="4316" formId="4316" %}

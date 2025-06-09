@@ -1279,3 +1279,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #600eae9179](https://github.com/MariaDB/server/commit/600eae9179)\
   2020-02-07 13:33:51 +0200
   * [MDEV-12353](https://jira.mariadb.org/browse/MDEV-12353): Remove MTR\_LOG\_SHORT\_INSERTS
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -19,3 +19,5 @@ Reporting correction/contribution to java 7 supported version
 * [CONJ-522](https://jira.mariadb.org/browse/CONJ-522) : When using multiple pools and a pool is closed, it closes a global executor used by all pools. This occurs even if there are still other pools open.
 * [CONJ-750](https://jira.mariadb.org/browse/CONJ-750) : protocol error when not setting database, indicating null authentication plugin
 * [CONJ-639](https://jira.mariadb.org/browse/CONJ-639) : enabledSslProtocolSuites does not include TLSv1.2 by default
+
+{% @marketo/form formid="4316" formId="4316" %}

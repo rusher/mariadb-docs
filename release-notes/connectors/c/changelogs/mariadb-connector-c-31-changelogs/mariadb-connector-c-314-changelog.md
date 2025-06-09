@@ -32,3 +32,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #11a2d03](https://github.com/mariadb-corporation/mariadb-connector-c/commit/11a2d03)\
   2019-08-01 14:02:04 +0200
   * [CONC-431](https://jira.mariadb.org/browse/CONC-431): Use windows crypto libraries on Windows platforms
+
+{% @marketo/form formid="4316" formId="4316" %}

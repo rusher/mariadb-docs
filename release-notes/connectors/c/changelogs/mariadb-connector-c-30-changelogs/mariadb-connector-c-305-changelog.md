@@ -503,3 +503,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #90fd0cd](https://github.com/mariadb-corporation/mariadb-connector-c/commit/90fd0cd)\
   2017-06-25 14:14:55 +0200
   * Fix for [MDEV-12965](https://jira.mariadb.org/browse/MDEV-12965) and [MDEV-13100](https://jira.mariadb.org/browse/MDEV-13100): If no configuration file and no configuration group was specified, Connector/C ddoesn't read any configurationm files. By default the follwing groups will be read: - client - client-server - client-mariadb
+
+{% @marketo/form formid="4316" formId="4316" %}

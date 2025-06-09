@@ -27,3 +27,5 @@ in that revision.
 * [Revision #19a847d40c](https://github.com/MariaDB/server/commit/19a847d40c)\
   2020-11-05 17:37:55 +0100
   * [MDEV-19838](https://jira.mariadb.org/browse/MDEV-19838): followup to make happy following protocol implementations: - mysqlnd from PHP < 7.3 - mysql-connector-python any version - mysql-connector-java any version
+
+{% @marketo/form formid="4316" formId="4316" %}

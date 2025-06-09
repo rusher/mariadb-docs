@@ -39,3 +39,5 @@ await conn.importFile({
 * [CONJS-256](https://jira.mariadb.org/browse/CONJS-256) method changeUser can lead to error when using multi-authentication and pipelining
 * [CONJS-258](https://jira.mariadb.org/browse/CONJS-258) All eventEmitters methods are not available on connections
 * [CONJS-259](https://jira.mariadb.org/browse/CONJS-259) SqlError sqlMessage property alias for text addition
+
+{% @marketo/form formid="4316" formId="4316" %}

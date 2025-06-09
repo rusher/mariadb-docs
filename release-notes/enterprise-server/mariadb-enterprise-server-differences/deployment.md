@@ -38,3 +38,5 @@ MariaDB products can be deployed in many different topologies. The topologies on
 | • Spider Sharded Topology   | ![es-spider-sharded-mariadb-topology](https://github.com/mariadb-corporation/docs-release-notes/blob/test/.gitbook/assets/deployment/+image/es-spider-sharded-mariadb-topology.png)     | • Shard tables for horizontal scalability• Spider Node uses Spider storage engine for Sharded Spider Tables• Sharded Spider Table is a partitioned "virtual" table• Spider uses MariaDB foreign data wrapper to query Data Tables on Data Nodes for each partition• Data Node uses non-Spider storage engine for Data Tables• Supports transactions• Enterprise Server 10.3+, Enterprise Spider |
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

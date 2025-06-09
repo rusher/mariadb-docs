@@ -38,3 +38,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #2569534](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/2569534)\
   2017-08-24 22:54:07 +0200
   * [ODBC-55](https://jira.mariadb.org/browse/ODBC-55) Making possible to link C/C dynamically. Cmake option MARIADB\_LINK\_DYNAMIC tells cmake to look for and configure to link against dynamic library. Fixed all remaining uses of not exported C/C symbols.
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -188,3 +188,5 @@ MariaDB Enterprise Server 10.6.20-16 was released on 2024-12-09.
 * (MENT-2182) Cherry-pick [MDEV-35470](https://jira.mariadb.org/browse/MDEV-35470) - Internal temporary Aria tables writes blocks to disk at end of query
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

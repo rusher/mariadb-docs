@@ -66,3 +66,5 @@ address.
 Like [previous releases](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md), [MariaDB 5.2.5](mariadb-525-release-notes.md) includes several bug\
 fixes and other improvements. Specific bugs fixed in [MariaDB 5.2.5](mariadb-525-release-notes.md) are listed\
 in the [MariaDB 5.2.5 Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md) and[MariaDB 5.1.55 Changelog](broken-reference).
+
+{% @marketo/form formid="4316" formId="4316" %}

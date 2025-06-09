@@ -272,3 +272,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e58caef](https://github.com/mariadb-corporation/mariadb-connector-python/commit/e58caef)\
   2020-05-27 10:40:35 +0200
   * Fix for [CONPY-67](https://jira.mariadb.org/browse/CONPY-67): If no rows were fetched from an unbuffered cursor (resultset) rowcount now returns -1 instead of 0.
+
+{% @marketo/form formid="4316" formId="4316" %}

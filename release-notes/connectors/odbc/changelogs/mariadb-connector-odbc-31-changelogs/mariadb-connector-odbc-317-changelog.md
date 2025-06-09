@@ -26,3 +26,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #173eb79](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/173eb79)\
   2020-02-04 18:14:01 +0100
   * [ODBC-271](https://jira.mariadb.org/browse/ODBC-271) Prevent msi installation on Win7. ->3.1.7
+
+{% @marketo/form formid="4316" formId="4316" %}

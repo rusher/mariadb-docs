@@ -77,3 +77,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #802ce58](https://github.com/mariadb-corporation/mariadb-connector-c/commit/802ce58)\
   2021-06-14 22:45:19 +0200
   * [CONC-555](https://jira.mariadb.org/browse/CONC-555) appverifier error in schannel\_free\_cert\_context
+
+{% @marketo/form formid="4316" formId="4316" %}

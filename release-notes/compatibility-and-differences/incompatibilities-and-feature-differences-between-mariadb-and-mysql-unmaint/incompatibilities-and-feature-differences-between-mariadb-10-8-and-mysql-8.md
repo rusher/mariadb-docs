@@ -121,3 +121,5 @@ When moving from MySQL 8.0 to [MariaDB 10.8](../../mariadb-community-server-rele
 * [MariaDB 10.8](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108.md) does not support the RESTART statement - [MDEV-30813](https://jira.mariadb.org/browse/MDEV-30813)
 * [Compressing the binary log in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/compressing-events-to-reduce-size-of-the-binary-log) uses a different compression algorithm, and different system variables to manage.
 * [MariaDB 10.8](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108.md) does not support the SELECT FOR UPDATE and FOR SHARE locks - [MDEV-17514](https://jira.mariadb.org/browse/MDEV-17514)
+
+{% @marketo/form formid="4316" formId="4316" %}

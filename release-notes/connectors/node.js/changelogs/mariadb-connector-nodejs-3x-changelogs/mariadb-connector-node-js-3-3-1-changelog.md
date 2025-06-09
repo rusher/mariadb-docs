@@ -45,3 +45,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #78dfc92](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/78dfc92) \[misc] fix closing of prepared statements
 * [Revision #2442249](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/2442249) \[misc] check prepare cache is enabled before resetting it
 * [Revision #b65aca1](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/b65aca1) \[misc] changelog update
+
+{% @marketo/form formid="4316" formId="4316" %}

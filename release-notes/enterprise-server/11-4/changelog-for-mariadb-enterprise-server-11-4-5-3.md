@@ -232,3 +232,5 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 * ([MDEV-35910](https://jira.mariadb.org/browse/MDEV-35910)) Conditions with SP local variables are now pushed into derived table. Previous behaviour caused slow performance and table scans instead of using the pushed down condition
 * ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665)) NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures
 * ([MDEV-35363](https://jira.mariadb.org/browse/MDEV-35363)) Cloning of table statistics while saving the InnoDB table stats is now avoided
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -76,3 +76,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * \[[CONJ-250](https://jira.mariadb.org/browse/CONJ-250)] Switch internal pools to use daemon threads to solve
 * [Revision #959dcd1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/959dcd1)
   * Test correction on Date '0000-00-00' incompatible with mysql 5.7
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -20,3 +20,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #ba7f739c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ba7f739c) - \[[CONJ-1070](https://jira.mariadb.org/browse/CONJ-1070)] getBlob on TEXT columns throw Exception
 * [Revision #14483163](https://github.com/mariadb-corporation/mariadb-connector-j/commit/14483163) - \[[CONJ-1067](https://jira.mariadb.org/browse/CONJ-1067)] ResultSetMetaData.getColumnTypeName() does not return UNSIGNED for DECIMAL, DOUBLE and FLOAT columns
 * [Revision #753ac15f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/753ac15f) - bump 3.1.4-SNAPSHOT
+
+{% @marketo/form formid="4316" formId="4316" %}

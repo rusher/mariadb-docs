@@ -56,3 +56,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #8585e687](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8585e687) - \[misc] test correction when server use `pam_use_cleartext_plugin` configuration
 * [Revision #02406490](https://github.com/mariadb-corporation/mariadb-connector-j/commit/02406490) - \[[CONJ-1164](https://jira.mariadb.org/browse/CONJ-1164)] permit multi queries with LOAD DATA INFILE
 * [Revision #6585f4c3](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6585f4c3) - \[[CONJ-1161](https://jira.mariadb.org/browse/CONJ-1161)] compatible Android RegExp
+
+{% @marketo/form formid="4316" formId="4316" %}

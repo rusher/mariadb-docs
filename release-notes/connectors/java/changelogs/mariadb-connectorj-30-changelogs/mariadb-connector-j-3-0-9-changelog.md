@@ -29,3 +29,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #a268f92a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a268f92a) - \[[CONJ-1012](https://jira.mariadb.org/browse/CONJ-1012)] stored procedure register output parameter as null if set before registerOutParameter command
 * [Revision #27cb8158](https://github.com/mariadb-corporation/mariadb-connector-j/commit/27cb8158) - \[[CONJ-1016](https://jira.mariadb.org/browse/CONJ-1016)] avoid splitting BULK command into multiple commands in case of prepareStatement.setNull() use
 * [Revision #11e224ef](https://github.com/mariadb-corporation/mariadb-connector-j/commit/11e224ef) - Update CHANGELOG.md
+
+{% @marketo/form formid="4316" formId="4316" %}

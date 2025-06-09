@@ -44,3 +44,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #12cc91ab](https://github.com/mariadb-corporation/mariadb-connector-c/commit/12cc91ab)\
   2021-09-10 01:45:09 +0200
   * [MDEV-26579](https://jira.mariadb.org/browse/MDEV-26579) - support minor upgrades of the server MSI
+
+{% @marketo/form formid="4316" formId="4316" %}

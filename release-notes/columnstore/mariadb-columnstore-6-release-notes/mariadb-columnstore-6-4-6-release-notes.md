@@ -34,3 +34,5 @@ In alignment to the enterprise lifecycle, MariaDB Enterprise ColumnStore 6.4.6 i
 * Ubuntu 20.04 (x86\_64)
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}

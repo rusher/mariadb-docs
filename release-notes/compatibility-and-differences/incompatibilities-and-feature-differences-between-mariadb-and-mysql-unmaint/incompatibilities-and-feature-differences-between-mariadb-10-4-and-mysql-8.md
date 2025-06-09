@@ -118,3 +118,5 @@ When moving from MySQL 8.0 to [MariaDB 10.4](broken-reference), please take note
 * [Compressing the binary log in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/compressing-events-to-reduce-size-of-the-binary-log) uses a different compression algorithm, and different system variables to manage.
 * [MariaDB 10.4](broken-reference) does not support the SELECT FOR UPDATE and FOR SHARE locks - [MDEV-17514](https://jira.mariadb.org/browse/MDEV-17514)
 * Also see [Incompatibilities between MariaDB 10.3 and MySQL 5.7](compatibility-differences-incompatibilities-and-feature-differences-between.md) and [Incompatibilities between MariaDB 10.2 and MySQL 5.7](incompatibilities-and-feature-differences-between-mariadb-10-2-and-mysql-5.md).
+
+{% @marketo/form formid="4316" formId="4316" %}

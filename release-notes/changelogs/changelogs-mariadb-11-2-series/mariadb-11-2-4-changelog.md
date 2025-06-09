@@ -66,3 +66,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #c2e16b3ad5](https://github.com/MariaDB/server/commit/c2e16b3ad5)\
   2023-11-17 23:40:10 +0100
   * [MDEV-32803](https://jira.mariadb.org/browse/MDEV-32803) Assertion \`total == 0' failed in Event\_log::write\_cache\_raw
+
+{% @marketo/form formid="4316" formId="4316" %}

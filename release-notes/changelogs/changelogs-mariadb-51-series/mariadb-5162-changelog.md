@@ -28,3 +28,5 @@ modified in that revision.
     * Fixed [Bug #970528](https://bugs.launchpad.net/bugs/970528) "Server crashes in my\_strnncollsp\_simple on LEFT JOIN with CSV table, TEXT field"
     * The main problem was a bug in CSV where it provided wrong statistics (it claimed the table was empty when it wasn't)
     * I also fixed wrong freeing of blob's in the CSV handler. (Any call to handler::read\_first\_row() on a CSV table with blobs would fail)
+
+{% @marketo/form formid="4316" formId="4316" %}

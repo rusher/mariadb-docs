@@ -18,3 +18,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #14fd834](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/14fd834) \[misc] Revised the buffer reading methods to increment `this.pos` once per function call when possible
 * [Revision #4cc791d](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4cc791d) \[misc] Replaces repetitive `query[i]`
 * [Revision #990afe8](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/990afe8) \[[CONJS-318](https://jira.mariadb.org/browse/CONJS-318)] Repeated named placeholders causes "Placeholder is not defined" #311
+
+{% @marketo/form formid="4316" formId="4316" %}

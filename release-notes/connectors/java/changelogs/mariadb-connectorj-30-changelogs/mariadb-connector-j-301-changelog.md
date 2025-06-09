@@ -56,3 +56,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #90d6d19a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/90d6d19a) [CONJ-858](https://jira.mariadb.org/browse/CONJ-858) Properties.put with object that differ from String supported even if use is not recommended
 * [Revision #66441941](https://github.com/mariadb-corporation/mariadb-connector-j/commit/66441941) [CONJ-619](https://jira.mariadb.org/browse/CONJ-619) correcting Statement.executeBatch using LOAD DATA INFILE LOAD DATA INFILE commands cannot cannot be used when using pipelining, because of multiple exchanges. This fix the issue ensuring having no command LOAD DATA INFILE when using pipeline.
 * [Revision #1acaffc5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1acaffc5) [CONJ-864](https://jira.mariadb.org/browse/CONJ-864) - includeThreadDumpInDeadlockExceptions always includes the thread dump, even when it is not a deadlock exception
+
+{% @marketo/form formid="4316" formId="4316" %}

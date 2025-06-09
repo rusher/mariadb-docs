@@ -62,3 +62,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #017837d](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/017837d) Update MaxScale versions
 * [Revision #5b4eae7](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/5b4eae7) \[misc] bulk ending with "Got a packet bigger than 'max\_allowed\_packet' bytes" error #297
 * [Revision #4f9be98](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4f9be98) \[misc] changing capability name EXTENDED\_TYPE\_INFO to EXTENDED\_METADATA, in order to correspond to server and other connectors
+
+{% @marketo/form formid="4316" formId="4316" %}

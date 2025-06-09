@@ -293,3 +293,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #598dc3d2](https://github.com/mariadb-corporation/mariadb-connector-c/commit/598dc3d2)\
   2024-10-31 14:12:49 +0200
   * Bump minimum cmake version to 3.12.0
+
+{% @marketo/form formid="4316" formId="4316" %}

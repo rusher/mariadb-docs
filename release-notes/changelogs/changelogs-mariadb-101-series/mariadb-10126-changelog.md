@@ -82,3 +82,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #228479a28c](https://github.com/MariaDB/server/commit/228479a28c)\
   2017-05-29 11:35:36 +0300
   * [MDEV-8075](https://jira.mariadb.org/browse/MDEV-8075): DROP TEMPORARY TABLE not marked as ddl, causing optimistic parallel replication to fail
+
+{% @marketo/form formid="4316" formId="4316" %}

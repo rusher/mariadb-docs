@@ -27,3 +27,5 @@ In addition to the differences noted in previous[release notes](https://github.c
 release was on fixing bugs. No new features were added to this release of[MariaDB 5.2](changes-improvements-in-mariadb-5-2.md). The [changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-522-changelog.md) has details on the specific bugs which were fixed.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formid="4316" formId="4316" %}

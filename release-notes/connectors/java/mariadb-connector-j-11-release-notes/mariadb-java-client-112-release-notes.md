@@ -38,3 +38,5 @@ the following:
   are now correctly treated as CHAR/VARCHAR with binary collation. ([CONJ-28](https://jira.mariadb.org/browse/CONJ-28))
 * `Blob.getBinaryStream()` could return blob with incorrect size ([CONJ-31](https://jira.mariadb.org/browse/CONJ-31))
 * Fix server version string for MariaDB Server 10.0.2 ([CONJ-32](https://jira.mariadb.org/browse/CONJ-32))
+
+{% @marketo/form formid="4316" formId="4316" %}

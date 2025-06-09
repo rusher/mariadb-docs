@@ -215,3 +215,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #fcce4a8](https://github.com/mariadb-corporation/mariadb-connector-c/commit/fcce4a8)\
   2022-05-23 14:05:06 +0200
   * [CONC-592](https://jira.mariadb.org/browse/CONC-592): Register replica with host and port
+
+{% @marketo/form formid="4316" formId="4316" %}

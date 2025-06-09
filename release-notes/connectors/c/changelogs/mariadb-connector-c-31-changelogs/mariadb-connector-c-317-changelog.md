@@ -38,3 +38,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #2efc52b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/2efc52b)\
   2019-12-09 00:22:46 +0100
   * Fix clang-tidy warnings. simplify error handling in schannel\_certs.c
+
+{% @marketo/form formid="4316" formId="4316" %}

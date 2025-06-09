@@ -351,3 +351,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #066f920484](https://github.com/MariaDB/server/commit/066f920484)\
   2024-10-07 18:11:26 +0300
   * [MDEV-35110](https://jira.mariadb.org/browse/MDEV-35110) Deadlock on Replica during BACKUP STAGE BLOCK\_COMMIT on XA transactions
+
+{% @marketo/form formid="4316" formId="4316" %}

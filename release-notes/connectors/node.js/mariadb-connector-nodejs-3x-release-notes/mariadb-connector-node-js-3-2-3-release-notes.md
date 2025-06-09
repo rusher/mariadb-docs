@@ -18,3 +18,5 @@ MariaDB Connector/Node.js 3.2.3 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-272](https://jira.mariadb.org/browse/CONJS-272) Error doesn't always have parameters according to option
 * [CONJS-273](https://jira.mariadb.org/browse/CONJS-273) Bulk insert error when last bunch of parameters is reaching max\_allowed\_packet
 * [CONJS-274](https://jira.mariadb.org/browse/CONJS-274) Disabling BULK insert for one batch is not possible
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -15,3 +15,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #d1459899](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d1459899) - bump 2.7.10
 * [Revision #09d19b6e](https://github.com/mariadb-corporation/mariadb-connector-j/commit/09d19b6e) - \[[CONJ-1091](https://jira.mariadb.org/browse/CONJ-1091)] Ensure setting connectTimeout as timeout for socket timeout until connection is done. This permit to set a connectTimeout, while socketTimeout can still be set to 0
 * [Revision #bde0be78](https://github.com/mariadb-corporation/mariadb-connector-j/commit/bde0be78) - bump 2.7.10-SNAPSHOT
+
+{% @marketo/form formid="4316" formId="4316" %}

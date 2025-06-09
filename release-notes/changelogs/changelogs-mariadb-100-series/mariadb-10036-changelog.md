@@ -241,3 +241,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f47eac2882](https://github.com/MariaDB/server/commit/f47eac2882)\
   2018-01-10 20:54:09 +0530
   * Bug #25928471: ONLINE ALTER AND CONCURRENT DELETE ON TABLE WITH MANY TEXT COLUMNS CAUSES CRASH
+
+{% @marketo/form formid="4316" formId="4316" %}

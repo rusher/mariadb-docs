@@ -326,3 +326,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #3228c08fa8](https://github.com/MariaDB/server/commit/3228c08fa8)\
   2023-12-07 08:23:29 +0200
   * [MDEV-22063](https://jira.mariadb.org/browse/MDEV-22063) : Assertion \`0' failed in wsrep::transaction::before\_rollback
+
+{% @marketo/form formid="4316" formId="4316" %}

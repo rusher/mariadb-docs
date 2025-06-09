@@ -179,3 +179,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #706ed8552d](https://github.com/MariaDB/server/commit/706ed8552d)\
   2018-01-29 11:01:02 +0200
   * Revert "[MDEV-6928](https://jira.mariadb.org/browse/MDEV-6928): Add trx pointer to struct mtr\_t"
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -243,3 +243,5 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * [MDEV-4113](https://jira.mariadb.org/browse/MDEV-4113): Assertion (group->connection\_count > 0) fails with Percona server in replication test.
   * Assertion happens in replication thread during THD destruction, when thread calls my\_sync(), which in turn calls thd\_wait\_begin() callback. Connection count can be 0, because the counter was decremented before THD destructor. This assertion currently reproducible only in Percona server and not in MariaDB, due to differences in replication code.
   * Fixed by moving code to decrement connection counter after the THD destructor.
+
+{% @marketo/form formid="4316" formId="4316" %}

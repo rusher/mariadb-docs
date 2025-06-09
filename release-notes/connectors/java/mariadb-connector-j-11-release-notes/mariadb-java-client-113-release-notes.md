@@ -39,3 +39,5 @@ Some of the bugs fixed include the following:
 * Fixed `ResultSet.getDisplaySize()` for character columns - due to UTF-8 usage it was 3x more than expected (size in bytes, instead of size in chars)
 * Fix bug in prepared statement parsing code (skipping next character after backslash '')([CONJ-44](https://jira.mariadb.org/browse/CONJ-44))
 * Fix `Statement.executeBatch()` methods to throw `BatchUpdateException`, as in JDBC spec ([CONJ-47](https://jira.mariadb.org/browse/CONJ-47))
+
+{% @marketo/form formid="4316" formId="4316" %}

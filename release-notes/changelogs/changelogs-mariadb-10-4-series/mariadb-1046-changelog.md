@@ -223,3 +223,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #fae1319450](https://github.com/MariaDB/server/commit/fae1319450)\
   2019-05-20 18:50:12 +0300
   * [MDEV-19524](https://jira.mariadb.org/browse/MDEV-19524) Server crashes in Bitmap<64u>::is\_clear\_all / Field\_longstr::csinfo\_change\_allows\_instant\_alter
+
+{% @marketo/form formid="4316" formId="4316" %}

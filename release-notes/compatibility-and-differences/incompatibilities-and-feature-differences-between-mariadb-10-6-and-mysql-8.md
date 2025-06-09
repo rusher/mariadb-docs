@@ -123,3 +123,5 @@ When moving from MySQL 8.0 to [MariaDB 10.6](../mariadb-community-server-release
 * [MariaDB 10.6](../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) does not support the SELECT FOR UPDATE and FOR SHARE locks - [MDEV-17514](https://jira.mariadb.org/browse/MDEV-17514)
 
 For protocol differences, see [MariaDB protocol difference with MySQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/mariadb-protocol-differences-with-mysql).
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -74,3 +74,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #003ea7e9](https://github.com/mariadb-corporation/mariadb-connector-c/commit/003ea7e9)\
   2025-02-05 11:56:35 +0100
   * [CONC-753](https://jira.mariadb.org/browse/CONC-753): Compile error on .cfi\_escape in builds with no unwind/cfi
+
+{% @marketo/form formid="4316" formId="4316" %}

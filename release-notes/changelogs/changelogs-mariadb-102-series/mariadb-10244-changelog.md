@@ -340,3 +340,5 @@ in that revision.
 * [Revision #3b10e8f80c](https://github.com/MariaDB/server/commit/3b10e8f80c)\
   2022-02-09 16:50:28 +0300
   * [MDEV-27746](https://jira.mariadb.org/browse/MDEV-27746) Wrong comparision of BLOB's empty preffix with non-preffixed BLOB causes rows count mismatch for clustered and secondary indexes during non-locking read
+
+{% @marketo/form formid="4316" formId="4316" %}

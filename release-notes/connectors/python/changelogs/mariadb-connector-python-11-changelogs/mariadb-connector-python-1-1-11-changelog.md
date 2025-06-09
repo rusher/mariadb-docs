@@ -51,3 +51,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e705d63](https://github.com/mariadb-corporation/mariadb-connector-python/commit/e705d63)\
   2024-03-18 10:03:57 +0100
   * Fix [CONPY-283](https://jira.mariadb.org/browse/CONPY-283): Incorrect result format after cursor.scroll()
+
+{% @marketo/form formid="4316" formId="4316" %}

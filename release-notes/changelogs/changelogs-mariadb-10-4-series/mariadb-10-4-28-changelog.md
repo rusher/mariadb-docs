@@ -230,3 +230,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #ce443c8554](https://github.com/MariaDB/server/commit/ce443c8554)\
   2022-10-26 14:48:03 +0400
   * [MDEV-29495](https://jira.mariadb.org/browse/MDEV-29495) Generalize can\_convert\_xxx() hook engine API to cover any arbitrary data type
+
+{% @marketo/form formid="4316" formId="4316" %}

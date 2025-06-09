@@ -28,3 +28,5 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #fd9139d](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/fd9139d)\
   2017-04-07 13:20:13 +0200
   * Small optimization for an array fetch - bind structures are allocated only once now
+
+{% @marketo/form formid="4316" formId="4316" %}

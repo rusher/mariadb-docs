@@ -36,3 +36,5 @@ Like [previous releases](https://github.com/mariadb-corporation/docs-release-not
 * [Bug #613418](https://bugs.launchpad.net/bugs/613418) (M)aria recovery failure: ma\_key\_recover.c:981: \_ma\_apply\_redo\_index: Assertion \`check\_page\_length == page\_length' failed
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formid="4316" formId="4316" %}

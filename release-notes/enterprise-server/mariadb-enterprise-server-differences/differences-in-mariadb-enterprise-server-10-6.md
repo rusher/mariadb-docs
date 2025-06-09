@@ -48,3 +48,5 @@ Backported Features:
 * New, Detailed Replication Lag Representation
 * New Information Schema Table For Password Related Data
 * GTID binlog events now include the thread ID
+
+{% @marketo/form formid="4316" formId="4316" %}

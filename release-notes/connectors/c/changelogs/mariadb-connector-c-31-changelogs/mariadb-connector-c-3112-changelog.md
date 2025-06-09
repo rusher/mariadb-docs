@@ -68,3 +68,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e382442](https://github.com/mariadb-corporation/mariadb-connector-c/commit/e382442)\
   2020-10-30 16:22:59 +0200
   * [CONC-514](https://jira.mariadb.org/browse/CONC-514) ma\_net\_write\_buff() invokes memcpy() on null pointer
+
+{% @marketo/form formid="4316" formId="4316" %}

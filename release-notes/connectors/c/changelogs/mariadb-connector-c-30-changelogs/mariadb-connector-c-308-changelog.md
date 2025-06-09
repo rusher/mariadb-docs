@@ -69,3 +69,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #06fd8c9](https://github.com/mariadb-corporation/mariadb-connector-c/commit/06fd8c9)\
   2018-11-10 23:48:27 +0100
   * [CONC-372](https://jira.mariadb.org/browse/CONC-372) Fix str\_to\_TIME() parsing wrt performance.
+
+{% @marketo/form formid="4316" formId="4316" %}

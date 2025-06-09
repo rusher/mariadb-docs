@@ -25,3 +25,5 @@ We do our best to ensure that upgrading to a new major version of MariaDB is as 
 
 * MariaDB server will keep old startup variables around even after they are removed (deprecation has taken effect). Assigning a value to a removed variable will produce a warning in the error log.
 * Some removed features/behavior that we know is still important for some users, we still keep available behind a dedicated [old-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode) option, which will give it at least 5 more years until disappearance.
+
+{% @marketo/form formid="4316" formId="4316" %}

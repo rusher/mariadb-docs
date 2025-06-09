@@ -288,3 +288,5 @@ modified in that revision.
 * [Revision #508](https://bazaar.launchpad.net/~maria-captains/mariadb-java-client/trunk/revision/508)\
   Thu 2014-05-22 11:10:58 +0200
   * Fix for [CONJ-93](https://jira.mariadb.org/browse/CONJ-93): Connection fails if there are special chars (like '-') in the url This patch also removes extra call for setting the default database, instead default database will be selected during handshake.
+
+{% @marketo/form formid="4316" formId="4316" %}

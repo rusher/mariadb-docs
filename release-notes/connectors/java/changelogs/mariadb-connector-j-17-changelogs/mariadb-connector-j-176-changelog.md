@@ -13,3 +13,5 @@ details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #a20bf9f4](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a20bf9f4) \[misc] pom update
 * [Revision #8c49ebfe](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8c49ebfe) \[[CONJ-848](https://jira.mariadb.org/browse/CONJ-848)] report 2.x correction for java 7 connection branch
+
+{% @marketo/form formid="4316" formId="4316" %}

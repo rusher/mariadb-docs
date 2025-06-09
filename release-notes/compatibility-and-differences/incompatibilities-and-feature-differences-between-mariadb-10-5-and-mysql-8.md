@@ -123,3 +123,5 @@ When moving from MySQL 8.0 to [MariaDB 10.5](../mariadb-community-server-release
 For protocol differences, see [MariaDB protocol difference with MySQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/mariadb-protocol-differences-with-mysql).
 
 * Also see [Incompatibilities between MariaDB 10.4 and MySQL 8.0](incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-4-and-mysql-8.md) and [Incompatibilities between MariaDB 10.3 and MySQL 5.7](incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/compatibility-differences-incompatibilities-and-feature-differences-between.md).
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -89,3 +89,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f7322cc](https://github.com/mariadb-corporation/mariadb-connector-c/commit/f7322cc)\
   2019-09-04 09:04:00 +0200
   * Added -O2 option for gcc debug build
+
+{% @marketo/form formid="4316" formId="4316" %}

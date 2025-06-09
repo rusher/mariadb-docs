@@ -420,3 +420,5 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1ef22e28ad](https://github.com/MariaDB/server/commit/1ef22e28ad)\
   2023-03-16 17:24:12 +0200
   * [MDEV-26258](https://jira.mariadb.org/browse/MDEV-26258) Various crashes/asserts/corruptions when Aria encryption is enabled/used, but the encryption plugin is not loaded
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -81,3 +81,5 @@ MariaDB Enterprise Server 10.4.34-24 was released on 2024-06-11.
 * ([MDEV-33214](https://jira.mariadb.org/browse/MDEV-33214)) Table is getting rebuild with ALTER TABLE ADD COLUMN
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formid="4316" formId="4316" %}
