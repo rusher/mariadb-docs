@@ -10,7 +10,7 @@ If you can't get the S3 storage engine to work, here are some steps to help veri
 
 In most cases the problem is to correctly set the S3 connection variables.
 
-Key [S3 variables](https://mariadb.com/kb/en/3-storage-engine-system-variables) are:
+Key [S3 variables](s3-storage-engine-status-variables.md) are:
 
 * [s3\_access\_key](s3-storage-engine-system-variables.md#s3_access_key): The AWS access key to access your data
 * [s3\_secret\_key](s3-storage-engine-system-variables.md#s3_secret_key): The AWS secret key to access your data

@@ -1,6 +1,6 @@
 # Events Overview
 
-[Events](https://mariadb.com/kb/en/stored-programs-and-views-event) are named database objects containing SQL statements that are to be executed at a later stage, either once off, or at regular intervals.
+[Events](../) are named database objects containing SQL statements that are to be executed at a later stage, either once off, or at regular intervals.
 
 They function very similarly to the Windows Task Scheduler or Unix cron jobs.
 

@@ -70,11 +70,11 @@ Long term, we have the following goals for Aria:
 
 Documentation is available at [Aria](./) and related topics. The project is maintained on [GitHub](https://github.com/MariaDB/server).
 
-If you want to know what happens or be part of developing Aria, you can subscribe to the[developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/), [docs](https://lists.mariadb.org/postorius/lists/docs.lists.mariadb.org/), or [discuss](https://lists.mariadb.org/postorius/lists/discuss.lists.mariadb.org/) mailing lists.
+If you want to know what happens or be part of developing Aria, you can subscribe to the [developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/), [docs](https://lists.mariadb.org/postorius/lists/docs.lists.mariadb.org/), or [discuss](https://lists.mariadb.org/postorius/lists/discuss.lists.mariadb.org/) mailing lists.
 
 To report and check bugs in Aria, see [Reporting Bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/bug-tracking/reporting-bugs).
 
-You can usually find some of the Maria developers on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) or on the [IRC](https://mariadb.com/kb/en/irc/) channel #maria at.
+You can usually find some of the Maria developers on our Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) or on the IRC channel #maria at.
 
 ### Who develops Aria?
 

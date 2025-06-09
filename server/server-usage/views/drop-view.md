@@ -71,7 +71,7 @@ SHOW WARNINGS;
 
 * [CREATE VIEW](create-view.md)
 * [ALTER VIEW](alter-view.md)
-* [SHOW CREATE VIEWS](https://mariadb.com/kb/en/show-create-views)
+* [SHOW CREATE VIEWS](../../reference/sql-statements/administrative-sql-statements/show/show-create-view.md)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
 GPLv2 fill\_help\_tables.sql

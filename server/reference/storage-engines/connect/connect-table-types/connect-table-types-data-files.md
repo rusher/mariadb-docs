@@ -73,7 +73,7 @@ cannot randomly access tables having more than 2G records.
 
 CONNECT can make and process some tables whose data file is compressed. The\
 only supported compression format is the gzlib format. Zip and zlib formats are\
-supported differently. The table types that can be compressed are[DOS](connect-dos-and-fix-table-types.md),[FIX](https://mariadb.com/kb/en/connect-dos-and-fix-table-typess),[BIN](connect-bin-table-type.md),[CSV](connect-csv-and-fmt-table-types.md) and[FMT](connect-csv-and-fmt-table-types.md). This can save some disk space\
+supported differently. The table types that can be compressed are[DOS](connect-dos-and-fix-table-types.md),[FIX](connect-dos-and-fix-table-types.md),[BIN](connect-bin-table-type.md),[CSV](connect-csv-and-fmt-table-types.md) and[FMT](connect-csv-and-fmt-table-types.md). This can save some disk space\
 at the cost of a somewhat longer processing time.
 
 Some restrictions apply to compressed tables:
