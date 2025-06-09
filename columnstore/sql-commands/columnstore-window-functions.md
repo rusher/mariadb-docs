@@ -1,6 +1,6 @@
-# columnstore-window-functions
+# ColumnStore Window Functions
 
-## ColumnStore Window Functions
+
 
 1. [Introduction "Introduction"](columnstore-window-functions.md#introduction)
 2. [Syntax "Syntax"](columnstore-window-functions.md#syntax)

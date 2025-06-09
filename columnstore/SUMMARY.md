@@ -85,7 +85,7 @@
   * [ColumnStore User Defined Aggregate and Window Functions](sql-commands/columnstore-user-defined-aggregate-and-window-functions.md)
   * [ColumnStore User Defined Functions](sql-commands/columnstore-user-defined-functions.md)
   * [ColumnStore Utility Functions](sql-commands/columnstore-utility-functions.md)
-  * [columnstore-window-functions](sql-commands/columnstore-window-functions.md)
+  * [ColumnStore Window Functions](sql-commands/columnstore-window-functions.md)
   * [ColumnStore Data Definition Statements](sql-commands/data-definition-statements/README.md)
     * [ColumnStore Alter Table](sql-commands/data-definition-statements/columnstore-alter-table.md)
     * [ColumnStore Alter View](sql-commands/data-definition-statements/columnstore-alter-view.md)
