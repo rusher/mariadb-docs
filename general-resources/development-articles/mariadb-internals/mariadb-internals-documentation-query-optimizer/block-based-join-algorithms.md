@@ -134,3 +134,5 @@ When this flag is set to 'on' (default from [MariaDB 10.4.3](https://app.gitbook
 To use BKA/BKAH join algorithms for InnoDB/MyISAM, one must set the optimizer switch `mrr` to 'on'. When using these algorithms for InnoDB/MyISAM the overall performance of the join operations can be dramatically improved if the optimizer switch `mrr_sort_keys` is set 'on'.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

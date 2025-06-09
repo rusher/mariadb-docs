@@ -93,3 +93,5 @@ The same applies even if the entity is recursive. The person entity that has an 
 ![brother-intersection](../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/brother-intersection.png)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

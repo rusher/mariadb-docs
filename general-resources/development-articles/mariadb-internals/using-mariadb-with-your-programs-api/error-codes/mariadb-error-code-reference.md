@@ -1319,3 +1319,5 @@ New error codes are being continually being added as new features are added. For
 | [4206](mariadb-error-codes-4200-to-4299/e4206.md) |          | ER\_VEC\_DISTANCE\_TYPE              | Cannot determine distance type for VEC\_DISTANCE, index is not found                                                                   |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

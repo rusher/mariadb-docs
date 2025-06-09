@@ -65,3 +65,5 @@ SELECT a, b, MIN(c),MAX(c) FROM t1 GROUP BY a,b
 * [MySQL manual on loose index scans](https://dev.mysql.com/doc/refman/5.7/en/group-by-optimization.html)
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

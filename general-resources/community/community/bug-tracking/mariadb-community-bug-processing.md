@@ -217,3 +217,5 @@ A bug report should not be closed as "cannot reproduce" if it was once verified/
 In general, the "cannot reproduce" resolution is a last resort. Usually if we can't reproduce something, it means that either the reporter did not provide required information (and then the resolution should be "Incomplete"), or we don't know what to request from the reporter, and then we should keep thinking, rather than close it. Of course, it happens that the bug is genuinely not reproducible, but it shouldn't be decided lightly.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

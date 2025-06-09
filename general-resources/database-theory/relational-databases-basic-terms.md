@@ -21,3 +21,5 @@ The relational database model uses certain terms to describe its components:
 * Data integrity refers to the condition where data is accurate, valid, and consistent. An example of poor integrity would be if a customer telephone number is stored differently in two different locations. Another is where a course record contains a reference to a lecturer who is no longer present at the school. [Database normalization](database-normalization/) is a technique that assists you to minimize the risk of these sorts of problems.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

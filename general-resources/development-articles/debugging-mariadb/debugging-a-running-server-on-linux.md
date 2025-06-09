@@ -96,3 +96,5 @@ thread apply all backtrace full
 After the above, you have a full backtrace, including all local variables, in the `mysqld.log` file. Note that you will only get all variables if the server is not stripped.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

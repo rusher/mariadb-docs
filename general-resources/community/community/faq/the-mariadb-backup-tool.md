@@ -10,3 +10,5 @@
   A: mariadb-backup is primarily designed for, and works most effectively with, transactional storage engines such as InnoDB and XtraDB, for which it can guarantee consistency and perform online backups. While it might be able to copy data files for other storage engines like Aria or MyISAM, it cannot ensure the same level of transactional consistency or perform true online backups for them. For non-transactional engines, mariadb-dump or filesystem-level snapshots might be more appropriate choices.
 * Q: Is the mariadb-backup tool free to use?\
   A: Yes, mariadb-backup is an open-source tool that is included as a standard utility with MariaDB Community Server and is completely free to use.
+
+{% @marketo/form formId="4316" %}

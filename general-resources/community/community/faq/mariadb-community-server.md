@@ -10,3 +10,5 @@
   A: MariaDB Community Server is licensed under the GNU General Public License version 2 (GPLv2), ensuring it remains free and open source.
 * Q: Where can I download MariaDB Community Server?\
   A: You can download official MariaDB Community Server packages from the MariaDB Foundation website (mariadb.org). Additionally, it is readily available in the software repositories of most major Linux distributions for easy installation.
+
+{% @marketo/form formId="4316" %}

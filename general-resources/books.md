@@ -35,3 +35,5 @@ An introduction to [Common Table Expressions](https://mariadb.com/kb/en/common-t
 [_MariaDB : Administration et optimisation_](https://www.amazon.co.uk/MariaDB-Administration-optimisation-St%C3%A9phane-Combaudon/dp/2409008550) by Stéphane Combaudon, July 2017 (French)\
 S'adresse aux développeurs et administrateurs MySQL ou MariaDB désireux de consolider leurs connaissances sur la principale variante de MySQL.
 
+
+{% @marketo/form formId="4316" %}
