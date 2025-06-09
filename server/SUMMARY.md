@@ -840,7 +840,7 @@
       * [Using mariadb-binlog](clients-and-utilities/mariadb-binlog/using-mariadb-binlog.md)
       * [mariadb-binlog Options](clients-and-utilities/mariadb-binlog/mariadb-binlog-options.md)
       * [Annotate\_rows\_log\_event](clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md)
-    * [mariadb-dumpslow](clients-and-utilities/mariadb-dumpslow.md)
+    * [mariadb-dumpslow](clients-and-utilities/logging-tools/mariadb-dumpslow.md)
   * [mariadb Client](clients-and-utilities/mariadb-client/README.md)
     * [mariadb Command-Line Client](clients-and-utilities/mariadb-client/mariadb-command-line-client.md)
     * [mysql Command-Line Client](clients-and-utilities/mariadb-client/mysql-command-line-client.md)
