@@ -2,7 +2,7 @@
 
 The intention of this documentation is show all the steps of getting, building and testing the latest MariaDB server (10.5 at time of writing) from GitHub. Each stage links to the full documentation for that step if you need to find out more.
 
-## [Install all tools needed to build MariaDB](https://mariadb.com/kb/en/Build_Environment_Setup_for_Linux/)
+## [Install all tools needed to build MariaDB](build-environment-setup-for-linux.md)
 
 ### OpenSuse
 

@@ -392,7 +392,7 @@ sudo dpkg --install ./mariadb-server*.deb \
 
 ## After Installation
 
-After the installation is complete, you can [start MariaDB](https://mariadb.com/kb/en/).
+After the installation is complete, you can start MariaDB.
 
 If you are using [MariaDB Galera Cluster](../../../../../kb/en/galera/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 

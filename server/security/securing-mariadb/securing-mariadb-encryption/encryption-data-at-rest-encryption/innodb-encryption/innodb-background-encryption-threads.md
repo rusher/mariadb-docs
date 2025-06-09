@@ -18,7 +18,7 @@ Whenever you change the value on the [innodb\_encrypt\_tables](../../../../../re
 
 InnoDB performs the following encryption and decryption operations **without** using background encryption threads:
 
-* When a [file-per-table](https://mariadb.com/kb/en/innodb-file-per-table-tablspaces) tablespaces and using [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) to manually set the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES`, InnoDB does not use background threads to encrypt the tablespaces.
+* When a [file-per-table](../../../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) tablespaces and using [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) to manually set the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `YES`, InnoDB does not use background threads to encrypt the tablespaces.
 * Similarly, when using [file-per-table](innodb-file-per-table-tablspaces/) tablespaces and using [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) to manually set the [ENCRYPTED](../../../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option to `NO`, InnoDB does not use background threads to decrypt the tablespaces.
 
 In these cases, InnoDB performs the encryption or decryption operation using the server thread for the client\
@@ -28,7 +28,7 @@ InnoDB does not permit manual encryption changes to tables in the [system](../..
 
 ## Checking the Status of Background Operations
 
-InnoDB records the status of background encryption operations in the [INNODB\_TABLESPACES\_ENCRYPTION](https://mariadb.com/kb/en/information-schema-innodb_tablespaces_encryption) table in the [information\_schema](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
+InnoDB records the status of background encryption operations in the [INNODB\_TABLESPACES\_ENCRYPTION](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md) table in the [information\_schema](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
 
 For example, to see which InnoDB tablespaces are currently being decrypted or encrypted on by background encryption, you can check which InnoDB tablespaces have the `ROTATING_OR_FLUSHING` column set to `1`:
 

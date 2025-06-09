@@ -236,7 +236,7 @@ Likewise for ASAN, should use `ASAN` as the label with the short form of the ASA
 
 In the MSAN container there is a build version of the latest rr at the time of the container build.
 
-A recording of the execution can be make with the [mariadb-test-run.pl option --rr](https://mariadb.com/kb/en/\[mariadb-test-run-pl-options/#options-for-debugging-the-product). Or alternately you can execute:
+A recording of the execution can be make with the [mariadb-test-run.pl option --rr](../../../../clients-and-utilities/mariadb-test/mariadb-test-run-pl-options.md). Or alternately you can execute:
 
 ```
 $ rr record sql/mariadbd ......
@@ -248,7 +248,7 @@ To replay a recording adjust per the test worker and instance used in the test:
 $ rr replay mysql-test/var/log/mysqld.1.rr/mariadbd-0/
 ```
 
-Using curl in the container its possible to save up this directory for another user or developer to use with the same container. This can also be shared with our [public ftp server](https://mariadb.com/kb/en/mariadb-public-ftp-server/) for assistance diagnosing validating a bug report.
+Using curl in the container its possible to save up this directory for another user or developer to use with the same container. This can also be shared with our public ftp server for assistance diagnosing validating a bug report.
 
 ## ASAN Options
 

@@ -45,7 +45,7 @@ sudo semanage fcontext -a -t mysqld_log_t "/var/log/mysql(/.*)?"
 sudo restorecon -Rv /var/log/mysql
 ```
 
-After MariaDB is [restarted](https://mariadb.com/kb/en/), it will use the new log locations and file names.
+After MariaDB is restarted, it will use the new log locations and file names.
 
 ## Configuring Authentication for Logrotate
 

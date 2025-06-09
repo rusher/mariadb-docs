@@ -24,7 +24,7 @@ ssl_key = /etc/my.cnf.d/certificates/server-key.pem
 ssl_ca = /etc/my.cnf.d/certificates/ca.pem
 ```
 
-And then [restart the server](https://mariadb.com/kb/en/) to make the changes persistent.
+And then restart the server to make the changes persistent.
 
 At this point, you can reconfigure the replicas to use TLS to encrypt replicated data in transit. There are two methods available to do this:
 
@@ -145,7 +145,7 @@ ssl-verify-server-cert
 ```
 
 Before you restart the server, you may also want to set the [--skip-slave-start](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-skip-slave-start) option in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). This option prevents the [replica threads](../../../../ha-and-performance/standard-replication/replication-threads.md#threads-on-the-replica) from restarting automatically when the server starts. Instead, they will have to be restarted manually.\
-After these changes have been made, you can [restart the server](https://mariadb.com/kb/en/).\
+After these changes have been made, you can restart the server.\
 Once the server is back online, set the [MASTER\_SSL](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_ssl) option by executing the [CHANGE MASTER](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. This will enable TLS. For example:
 
 ```sql

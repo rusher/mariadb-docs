@@ -133,6 +133,6 @@ cp mysql.server /usr/local/etc/rc.d/mysql.server.sh
 
 As stated above, consult your distribution's documentation for more information on starting services like MariaDB at system startup.
 
-See [mariadbd startup options](https://mariadb.com/kb/en/mariadbd-startup-options) for information on configuration options for `mariadbd`.
+See [mariadbd startup options](../../server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md) for information on configuration options for `mariadbd`.
 
 GPLv2

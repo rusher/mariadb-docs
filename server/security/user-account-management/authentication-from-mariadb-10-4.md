@@ -73,7 +73,7 @@ After installing MariaDB locally you’ve also used to connect to the unprotecte
 
 If you've forgotten your root password, no problem — you can still connect using sudo and change the password. And if you've also removed unix\_socket authentication, to restore access do as follows:
 
-* restart MariaDB with [--skip-grant-tables](https://mariadb.com/kb/en/mariadb-options/#-skip-grant-tables)
+* restart MariaDB with --skip-grant-tables
 * login into the unprotected server
 * run [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) (note, before 10.4 this would’ve been the last step, not anymore). This disables `--skip-grant-tables` and allows you to change the stored authentication method
 * run [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) FOR root@localhost to change the root password.

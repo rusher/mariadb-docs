@@ -2,7 +2,7 @@
 
 The process involved in safely disabling data-at-rest encryption for your Aria tables is very similar to that of enabling encryption. To disable, you need to set the relevant system variables and then rebuild each table into an unencrypted state.
 
-Don't remove the [Encryption Key Management](https://mariadb.com/kb/en/key-management-encryption-plugins) plugin from your configuration file until you have unencrypted all tables in your database. MariaDB cannot read encrypted tables without the relevant encryption key.
+Don't remove the [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin from your configuration file until you have unencrypted all tables in your database. MariaDB cannot read encrypted tables without the relevant encryption key.
 
 ## Disabling Encryption on User-created Tables
 

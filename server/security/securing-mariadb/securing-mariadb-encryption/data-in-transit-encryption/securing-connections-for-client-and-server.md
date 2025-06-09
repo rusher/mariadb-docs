@@ -127,7 +127,7 @@ See the documentation on MariaDB Connector/C's [TLS Options](https://app.gitbook
 
 ### Enabling TLS for MariaDB Connector/ODBC Clients
 
-See the documentation on MariaDB Connector/ODBC's [TLS-Related Connection Parameters](https://mariadb.com/kb/en/about-mariadb-connector-odbc/#tls-related-connection-parameters) for information on how to enable TLS for clients that use MariaDB Connector/ODBC.
+See the documentation on MariaDB Connector/ODBC's TLS-Related Connection Parameters for information on how to enable TLS for clients that use MariaDB Connector/ODBC.
 
 ### Enabling TLS for MariaDB Connector/J Clients
 

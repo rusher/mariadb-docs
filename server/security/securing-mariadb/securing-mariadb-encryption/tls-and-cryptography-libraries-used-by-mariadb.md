@@ -113,7 +113,7 @@ MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.ope
 
 ### MariaDB Clients and Utilities
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) has been [included with MariaDB Server](https://mariadb.com/kb/en/about-mariadb-connector-c/#integration-with-mariadb-server), and the bundled and the [clients and utilities](https://mariadb.com/kb/en/clients-utilities/) are linked with it. On some platforms, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) and these [clients and utilities](../../../../en/clients-utilities/) may use a different TLS library than the one used by MariaDB Server and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html).
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) has been included with MariaDB Server, and the bundled and the clients and utilities are linked with it. On some platforms, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) and these [clients and utilities](../../../../en/clients-utilities/) may use a different TLS library than the one used by MariaDB Server and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html).
 
 #### MariaDB Clients and Utilities on Windows
 
@@ -151,7 +151,7 @@ Update the package by executing the following command:
 sudo yum update openssl
 ```
 
-And then [restart](https://mariadb.com/kb/en/) MariaDB server and any clients or applications that use the library.
+And then restart MariaDB server and any clients or applications that use the library.
 
 ### Updating Dynamically Linked OpenSSL Libraries with apt-get
 
