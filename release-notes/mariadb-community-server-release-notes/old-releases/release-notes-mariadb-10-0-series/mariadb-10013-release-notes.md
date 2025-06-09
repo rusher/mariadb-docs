@@ -1,17 +1,17 @@
 # MariaDB 10.0.13 Release Notes
 
-The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
+The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is: [**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
 [Download](https://downloads.mariadb.org/mariadb/10.0.13)[Release Notes](mariadb-10013-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10013-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 11 Aug 2014
 
-[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current stable series of MariaDB. It is an evolution of [MariaDB 5.5](broken-reference) with several entirely new features not found anywhere else and\
+[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current stable series of MariaDB. It is an evolution of [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with several entirely new features not found anywhere else and\
 with backported and reimplemented features from MySQL 5.6.
 
 [MariaDB 10.0.13](mariadb-10013-release-notes.md) is a [_**Stable**_](../../../mariadb-release-criteria.md) (_GA_) release.
 
-**For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
+**For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the** [**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
