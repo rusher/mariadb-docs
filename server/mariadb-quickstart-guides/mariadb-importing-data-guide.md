@@ -164,7 +164,7 @@ The `mariadb-import` utility (known as `mysqlimport` before MariaDB 10.5) is a c
 
 **Syntax:**
 
-```
+```bash
 mariadb-import --user='your_username' --password='your_password' \
     --fields-terminated-by='|' --lines-terminated-by='\r\n' \
     --replace --low-priority --fields-enclosed-by='"' \
@@ -187,17 +187,17 @@ Some web hosts disable `LOAD DATA INFILE` or `mariadb-import` for security reaso
 
 1. **Prepare Data Locally:** Prepare your delimited text file (e.g., `prospects.txt`).
 2. **Local Import:** If you have a local MariaDB server, import the text file into a local table (e.g., `local_db.prospect_contact`) using `LOAD DATA INFILE` as described above.
-3.  **Local Export with `mariadb-dump`:** Export the data from your local table into an SQL file containing `INSERT` statements.Bash
+3.  **Local Export with `mariadb-dump`:** Export the data from your local table into an SQL file containing `INSERT` statements.
 
-    ```
+    ```bash
     mariadb-dump --user='local_user' --password='local_pass' --no-create-info local_db prospect_contact > /tmp/prospects.sql
     ```
 
     * `--no-create-info` (or `-t`): Prevents the `CREATE TABLE` statement from being included, outputting only `INSERT` statements. This is useful if the table already exists on the remote server.
 4. **Upload SQL File:** Upload the generated `.sql` file (e.g., `prospects.sql`) to your web server (in ASCII mode).
-5.  **Remote Import of SQL File:** Log into your remote server's shell and import the SQL file using the `mariadb` client:Bash
+5.  **Remote Import of SQL File:** Log into your remote server's shell and import the SQL file using the `mariadb` client:
 
-    ```
+    ```bash
     mariadb --user='remote_user' --password='remote_pass' remote_sales_dept < /tmp/prospects.sql
     ```
 

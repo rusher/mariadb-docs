@@ -132,7 +132,7 @@ SELECT * FROM t1;
 
 Verification:
 
-```
+```sql
 SELECT (3, NULL) = (3, NULL);
 ```
 
@@ -158,8 +158,6 @@ CREATE TABLE Table_1 (
 **Trailing Pad Characters:** If a unique index is on a column where trailing pad characters are stripped or ignored (e.g., `CHAR` vs `VARCHAR` behavior), inserts where values differ only by the number of trailing pad characters can result in duplicate-key errors.
 
 **Long Keys and HASH Indexes (MariaDB 10.5+):** For engines like InnoDB, `UNIQUE` can be used with various column types and numbers. If a key's length exceeds the engine's maximum, a HASH key may be created.
-
-SQL
 
 ```sql
 -- Example table definition (simplified for brevity)
@@ -205,7 +203,7 @@ SELECT * FROM t2;
 
 ### Full-Text Indexes
 
-Full-text indexes are used for performing full-text searches on text data. For details, see the [Full-Text Indexes](https://www.google.com/search?q=../optimization-and-tuning/query-optimizations/full-text-indexes.md) documentation.
+Full-text indexes are used for performing full-text searches on text data. For details, see the [Full-Text Indexes](../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) documentation.
 
 ### Choosing Indexes
 
@@ -237,7 +235,7 @@ Remove an index if:
 
 * It is rarely or never used. Unused indexes still incur overhead during data modification operations.
 * **Identifying Unused Indexes:**
-  * If [user statistics](https://www.google.com/search?q=../server-usage/administration/server-monitoring-and-logs/statistics/user-statistics.md) are enabled, query the `information_schema.INDEX_STATISTICS` table.
-  * If the [slow query log](https://www.google.com/search?q=../server-usage/administration/server-monitoring-and-logs/slow-query-log.md) is enabled and the `log_queries_not_using_indexes` [server system variable](https://www.google.com/search?q=../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md%23log_queries_not_using_indexes) is `ON`, queries performing full table scans will be logged, which can indicate missing or ineffective indexes.
+  * If [user statistics](../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md) are enabled, query the `information_schema.INDEX_STATISTICS` table.
+  * If the [slow query log](../server-management/server-monitoring-logs/slow-query-log/) is enabled and the `log_queries_not_using_indexes` [server system variable](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) is `ON`, queries performing full table scans will be logged, which can indicate missing or ineffective indexes.
 
 CC BY-SA / Gnu FDL
