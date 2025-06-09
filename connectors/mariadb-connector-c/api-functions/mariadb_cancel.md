@@ -14,4 +14,5 @@ Immediately aborts a connection by making all subsequent read/write operations f
 
 _mariadb\_cancel()_ was added in Connector/C 3.0
 
+
 {% @marketo/form formid="4316" %}

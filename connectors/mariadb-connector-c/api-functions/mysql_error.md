@@ -17,4 +17,5 @@ Returns the last error message for the most recent function call that can succee
 * [mysql\_errno()](mysql_errno.md)
 * [mysql\_sqlstate()](mysql_sqlstate.md).
 
+
 {% @marketo/form formid="4316" %}

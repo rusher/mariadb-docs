@@ -23,4 +23,5 @@ If you want to reuse the statement handle with a different SQL command, use [mys
 * [mysql\_stmt\_init()](mysql_stmt_init.md)
 * [mysql\_stmt\_reset()](mysql_stmt_reset.md)
 
+
 {% @marketo/form formid="4316" %}

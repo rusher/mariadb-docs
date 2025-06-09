@@ -24,4 +24,5 @@ Data are transferred unbuffered without calling [mysql\_stmt\_store\_result()](m
 * [mysql\_stmt\_bind\_result()](mysql_stmt_bind_result.md)
 * [mysql\_stmt\_execute()](mysql_stmt_execute.md)
 
+
 {% @marketo/form formid="4316" %}

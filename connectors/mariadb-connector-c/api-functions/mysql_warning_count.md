@@ -20,4 +20,5 @@ For retrieving warning messages you should use the SQL command [SHOW WARNINGS](h
 
 * [mysql\_stmt\_affected\_rows()](../api-prepared-statement-functions/mysql_stmt_affected_rows.md)
 
+
 {% @marketo/form formid="4316" %}

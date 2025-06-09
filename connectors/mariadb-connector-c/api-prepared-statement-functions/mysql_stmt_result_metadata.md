@@ -23,4 +23,5 @@ This result set pointer can be passed as an argument to any of the field-based f
 * [mysql\_free\_result()](../api-functions/mysql_free_result.md)
 * [mysql\_stmt\_prepare()](mysql_stmt_prepare.md)
 
+
 {% @marketo/form formid="4316" %}

@@ -16,4 +16,5 @@ The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/ma
 MariaDB Connector/C++ is an additional connector from MariaDB Corp. for C++ applications. It enables design with an object-oriented model and efficient dynamic memory allocation/de-allocation with smart pointers. It is LGPLv2.1 licensed, is available from [mariadb.com/downloads](https://mariadb.com/downloads/connectors/connectors-data-access/cpp-connector/), and is documented at [C++ Connector](../mariadb-connector-cpp/)
 {% endhint %}
 
+
 {% @marketo/form formid="4316" %}

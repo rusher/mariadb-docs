@@ -20,4 +20,5 @@ This function is deprecated and will be discontinued. Please use [mysql\_real\_e
 
 * [mysql\_real\_escape\_string()](mysql_real_escape_string.md)
 
+
 {% @marketo/form formid="4316" %}

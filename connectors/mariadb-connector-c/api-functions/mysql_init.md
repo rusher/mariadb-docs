@@ -29,4 +29,5 @@ Memory allocated by mysql\_init() must be freed with [mysql\_close()](mysql_clos
 * [mysql\_thread\_init()](mysql_thread_init.md)
 * [mysql\_close()](mysql_close.md)
 
+
 {% @marketo/form formid="4316" %}

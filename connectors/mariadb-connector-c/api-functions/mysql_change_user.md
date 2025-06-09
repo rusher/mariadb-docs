@@ -26,4 +26,5 @@ Returns zero on success, nonzero if an error occured.
 mysql\_change\_user will always cause the current database connection to behave as if was a completely new database connection, regardless of if the operation was completed successfully. This reset includes performing a rollback on any active transactions, closing all temporary tables, and unlocking all locked tables.
 {% endhint %}
 
+
 {% @marketo/form formid="4316" %}

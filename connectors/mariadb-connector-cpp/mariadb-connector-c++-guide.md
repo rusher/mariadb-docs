@@ -24,4 +24,5 @@ Using MariaDB Connector/C++ in C++ applications enables design with an object-or
 
 Copyright © 2025 MariaDB
 
+
 {% @marketo/form formid="4316" %}

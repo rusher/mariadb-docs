@@ -18,4 +18,5 @@ The mysql\_data\_seek() function seeks to an arbitrary function result pointer s
 This function can only be used with buffered result sets obtained from the use of the [mysql\_store\_result](mysql_store_result.md) function.
 {% endhint %}
 
+
 {% @marketo/form formid="4316" %}

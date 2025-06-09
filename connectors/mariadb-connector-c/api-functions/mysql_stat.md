@@ -20,4 +20,5 @@ For a complete list of other status variables, you have to use the [SHOW STATUS]
 
 * [mysql\_get\_server\_info()](mysql_get_server_info.md)
 
+
 {% @marketo/form formid="4316" %}

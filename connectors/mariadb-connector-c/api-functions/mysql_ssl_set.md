@@ -28,4 +28,5 @@ NULL can be used for an unused parameter. Always returns zero.
 
 * [mysql\_get\_ssl\_cipher()](mysql_get_ssl_cipher.md)
 
+
 {% @marketo/form formid="4316" %}

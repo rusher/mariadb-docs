@@ -26,4 +26,5 @@ To stop a running command without killing the connection use [KILL QUERY](https:
 * [mysql\_close()](mysql_close.md)
 * [mariadb\_cancel()](mariadb_cancel.md)
 
+
 {% @marketo/form formid="4316" %}

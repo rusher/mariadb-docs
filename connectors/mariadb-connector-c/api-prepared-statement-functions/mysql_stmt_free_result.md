@@ -16,4 +16,5 @@ Frees stored result memory of a prepared statement. Returns void.
 
 * [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md)
 
+
 {% @marketo/form formid="4316" %}

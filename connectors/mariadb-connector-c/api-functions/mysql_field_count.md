@@ -21,4 +21,5 @@ The mysql\_field\_count() function should be used to determine if there is a res
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_use\_result()](mysql_use_result.md)
 
+
 {% @marketo/form formid="4316" %}

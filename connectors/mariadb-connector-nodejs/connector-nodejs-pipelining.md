@@ -36,4 +36,5 @@ Using the standard client-server protocol, the Connector communicates with the d
 
 When using Pipelining, the Connector sends commands in bulk, reducing network latency. The catch is that the process is optimistic, meaning that if an error occurs on the first or second command, the following commands have already been sent to the database.
 
+
 {% @marketo/form formid="4316" %}

@@ -12,4 +12,5 @@ const char * mysql_character_set_name(MYSQL * mysql);
 
 Returns the default client [character set](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) for the specified connection.
 
+
 {% @marketo/form formid="4316" %}

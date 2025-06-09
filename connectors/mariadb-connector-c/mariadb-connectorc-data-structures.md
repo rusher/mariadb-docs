@@ -98,4 +98,5 @@ The `MYSQL_TIME` structure is used for date and time values in prepared statemen
 | my\_bool                          | neg          | Negative value                     |
 | enum enum\_mysql\_timestamp\_type | time\_type   | Type                               |
 
+
 {% @marketo/form formid="4316" %}

@@ -23,4 +23,5 @@ You can detect whether the statement produced a result set by checking the retur
 * [mysql\_stmt\_result\_metadata()](mysql_stmt_result_metadata.md)
 * [mysql\_stmt\_fetch()](mysql_stmt_fetch.md)
 
+
 {% @marketo/form formid="4316" %}

@@ -21,4 +21,5 @@ This function can be used for buffered result sets only, which can be obtained b
 * [mysql\_stmt\_row\_seek()](mysql_stmt_row_seek.md)
 * [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md)
 
+
 {% @marketo/form formid="4316" %}

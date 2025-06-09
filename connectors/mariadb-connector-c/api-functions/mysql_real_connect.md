@@ -47,4 +47,5 @@ The connection handle can't be reused for establishing a new connection. It must
 * [mysql\_init()](mysql_init.md)
 * [protocol capabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/1-connecting/connection#capabilities)
 
+
 {% @marketo/form formid="4316" %}

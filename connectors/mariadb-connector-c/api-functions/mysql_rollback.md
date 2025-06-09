@@ -21,4 +21,5 @@ mysql\_rollback() will not work as expected if [autocommit](https://app.gitbook.
 * [mysql\_commit()](mysql_commit.md)
 * [mysql\_autocommit()](mysql_autocommit.md)
 
+
 {% @marketo/form formid="4316" %}

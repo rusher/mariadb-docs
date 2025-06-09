@@ -23,4 +23,5 @@ Memory associated to MYSQL\_ROW will be freed when calling [mysql\_free\_result(
 * [mysql\_use\_result()](mysql_use_result.md)
 * [mysql\_store\_result()](mysql_store_result.md)
 
+
 {% @marketo/form formid="4316" %}

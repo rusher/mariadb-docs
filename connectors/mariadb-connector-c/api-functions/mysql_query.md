@@ -32,4 +32,5 @@ To determine if a statement returned a result set use the function [mysql\_num\_
 * [mysql\_use\_result()](mysql_use_result.md)
 * [mysql\_store\_result()](mysql_store_result.md)
 
+
 {% @marketo/form formid="4316" %}

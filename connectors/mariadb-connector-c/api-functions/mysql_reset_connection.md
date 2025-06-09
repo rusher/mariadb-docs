@@ -32,4 +32,5 @@ Returns zero on success, non zero if an error occurred.
 
 This function was added in MariaDB Connector/C 3.0.0.
 
+
 {% @marketo/form formid="4316" %}

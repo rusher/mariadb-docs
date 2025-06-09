@@ -25,4 +25,5 @@ Any subsequent calls to any mysql\_stmt function will fail until [mysql\_stmt\_p
 * [mysql\_stmt\_close()](mysql_stmt_close.md)
 * [mysql\_stmt\_prepare()](mysql_stmt_prepare.md)
 
+
 {% @marketo/form formid="4316" %}

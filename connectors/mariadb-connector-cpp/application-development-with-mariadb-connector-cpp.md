@@ -64,4 +64,5 @@ Most C++ applications developed using MariaDB Connector/C++ will use some of the
 
 Copyright © 2025 MariaDB
 
+
 {% @marketo/form formid="4316" %}

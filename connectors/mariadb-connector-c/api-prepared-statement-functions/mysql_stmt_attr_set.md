@@ -75,4 +75,5 @@ rc= mysql_stmt_attr_set(stmt, STMT_ATTR_ROW_SIZE, &array_size);
 * [mariadb\_stmt\_execute\_direct()](mariadb_stmt_execute_direct.md)
 * [mysql\_stmt\_attr\_get()](mysql_stmt_attr_get.md)
 
+
 {% @marketo/form formid="4316" %}

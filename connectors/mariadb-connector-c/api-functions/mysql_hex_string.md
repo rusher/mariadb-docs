@@ -28,4 +28,5 @@ The encoded string does not contain a leading X'.
 
 * [mysql\_real\_escape\_string()](mysql_real_escape_string.md)
 
+
 {% @marketo/form formid="4316" %}

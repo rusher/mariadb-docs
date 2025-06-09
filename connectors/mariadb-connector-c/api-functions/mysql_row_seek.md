@@ -23,4 +23,5 @@ This function will not work if the result set was obtained by [mysql\_use\_resul
 * [mysql\_store\_result()](mysql_store_result.md)
 * [mysql\_row\_tell()](mysql_row_tell.md)
 
+
 {% @marketo/form formid="4316" %}

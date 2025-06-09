@@ -30,4 +30,5 @@ MySqlConnector is an ADO.NET data provider with support for MariaDB Server. It i
 * Support [MariaDB GSSAPI authentication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi): [#577](https://github.com/mysql-net/MySqlConnector/pull/577)
   * Available from version [0.47.0](https://github.com/mysql-net/MySqlConnector/releases/tag/0.47.0)
 
+
 {% @marketo/form formid="4316" %}

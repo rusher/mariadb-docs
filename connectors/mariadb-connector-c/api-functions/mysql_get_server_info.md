@@ -21,4 +21,5 @@ To obtain the numeric server version please use [mysql\_get\_server\_version()](
 * [mysql\_get\_server\_version()](mysql_get_server_version.md)
 * [mysql\_get\_client\_info()](mysql_get_client_info.md)
 
+
 {% @marketo/form formid="4316" %}

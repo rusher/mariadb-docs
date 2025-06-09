@@ -165,4 +165,5 @@ Each parameter corresponds to a specific use case:
 * Description: This mode supports connection failover in an Amazon Aurora cluster. This mode does support load-balancing reads on slave instances if the connection is set to read-only before executing the read. The connector performs load-balancing by randomly picking a slave instance to execute read queries for a connection
 * Introduced: 1.2.0 and not supported anymore since 3.0 version
 
+
 {% @marketo/form formid="4316" %}

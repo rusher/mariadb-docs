@@ -14,4 +14,5 @@ For more help information regarding the usage and parameters of each magic comma
 | load      | line | loads the data from a CSV file into an existing table |
 | delimiter | cell | run a SQL statement using a custom delimiter          |
 
+
 {% @marketo/form formid="4316" %}

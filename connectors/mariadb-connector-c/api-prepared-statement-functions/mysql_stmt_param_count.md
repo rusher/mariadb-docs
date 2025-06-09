@@ -21,4 +21,5 @@ This function will not deliver a valid result until [mysql\_stmt\_prepare()](htt
 * [mysql\_stmt\_prepare()](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare\(\)/README.md)
 * [mysql\_stmt\_field\_count()](mysql_stmt_field_count.md)
 
+
 {% @marketo/form formid="4316" %}

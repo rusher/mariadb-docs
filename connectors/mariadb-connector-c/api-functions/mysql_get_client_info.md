@@ -20,4 +20,5 @@ To obtain the numeric value of the client library version use [mysql\_get\_clien
 * [mysql\_get\_host\_info()](mysql_get_host_info.md)
 * [mysql\_get\_proto\_info()](mysql_get_proto_info.md)
 
+
 {% @marketo/form formid="4316" %}

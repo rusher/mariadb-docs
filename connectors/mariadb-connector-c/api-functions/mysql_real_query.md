@@ -29,4 +29,5 @@ To determine if mysql\_real\_query returns a result set use the [mysql\_num\_fie
 * [mysql\_use\_result()](mysql_use_result.md)
 * [mysql\_store\_result()](mysql_store_result.md)
 
+
 {% @marketo/form formid="4316" %}

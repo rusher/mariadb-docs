@@ -26,4 +26,5 @@ Returns zero on success, non-zero on failure.
 
 * [mysql\_real\_connect()](mysql_real_connect.md)
 
+
 {% @marketo/form formid="4316" %}

@@ -294,4 +294,5 @@ Without any query during the time defined by the validConnectionTimeout paramete
 Aurora as a specific [connection validation thread](failover-and-high-availability-with-mariadb-connector-j-for-2x-driver.md#connection-validation-thread) implementation.\
 Since the role of each instance can change over time, this will validate that connections are active AND roles have not changed.
 
+
 {% @marketo/form formid="4316" %}

@@ -23,4 +23,5 @@ If a multi query contains errors the return value of [mysql\_errno](mysql_errno.
 * [mysql\_use\_result()](mysql_use_result.md)
 * [mysql\_more\_results()](mysql_more_results.md)
 
+
 {% @marketo/form formid="4316" %}

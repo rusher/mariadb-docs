@@ -32,4 +32,5 @@ Queries which do not fall into one of the preceding formats are not supported (e
 * [mysql\_affected\_rows()](mysql_affected_rows.md)
 * [mysql\_warning\_count()](mysql_warning_count.md)
 
+
 {% @marketo/form formid="4316" %}

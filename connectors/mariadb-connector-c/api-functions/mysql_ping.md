@@ -25,4 +25,5 @@ If a reconnect occurred the `thread_id` will change. Also resources bundled to t
 * [mysql\_options()](mysql_options.md)
 * [mysql\_kill()](mysql_kill.md)
 
+
 {% @marketo/form formid="4316" %}

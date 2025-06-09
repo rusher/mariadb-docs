@@ -16,4 +16,5 @@ Describes the type of connection in use for the connection, including the server
 
 * [mysql\_get\_server\_version()](mysql_get_server_version.md)
 
+
 {% @marketo/form formid="4316" %}

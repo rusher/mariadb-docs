@@ -157,4 +157,5 @@ Internally, the Pie class receives the data of the last query from the kernel\
 as a [Pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html), it generates a plot `PNG` image, wraps the image into\
 a nice [display\_data](https://jupyter-client.readthedocs.io/en/stable/messaging.html#display-data) Jupyter message and then sends it further.
 
+
 {% @marketo/form formid="4316" %}

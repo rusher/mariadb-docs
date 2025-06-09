@@ -10,4 +10,5 @@ Here's a list of the current restrictions and limitations of the MariaDB Jupyter
 * The kernel does not officially support the [DELIMITER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/delimiters) (MariaDB specific) client command. It might work, but it shouldn't be used. Rather use the `%%delimiter` cell magic command (see `%lsmagic` for usage information).
 * Each SQL statement within a notebook cell should end with the `;` MariaDB default delimiter, except in cells using the `%%delimiter` cell magic command where it should end with the user-specified delimiter.
 
+
 {% @marketo/form formid="4316" %}
