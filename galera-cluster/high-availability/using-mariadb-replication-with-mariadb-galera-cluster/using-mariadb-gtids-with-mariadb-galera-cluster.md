@@ -56,3 +56,5 @@ In [MariaDB 10.1.30](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-comm
 In [MariaDB 10.1.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10131-release-notes) and later, the node acting as slave will include the transaction's original `Gtid_Log_Event` in the replicated write set, so all nodes should associate the write set with its original GTID. See [MDEV-13431](https://jira.mariadb.org/browse/MDEV-13431) about that.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}
