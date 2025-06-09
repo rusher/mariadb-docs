@@ -13,24 +13,11 @@ layout:
     visible: false
 ---
 
-
 # MariaDB Server 10.7.2
-
-
-
-
-
-
-
 
 {% @marketo/form formId="4279" %}
 
-
-
-
-
 ## About this Release
-
 
 * MariaDB Server 10.7.2 was released on 9 Feb 2022.
 * Please note: Newer releases exist within the MariaDB Server 10.7 release series.
@@ -39,32 +26,25 @@ layout:
 * This release is Stable (GA) maturity.
 * This release contains [security content](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1072-release-notes)
 
-
 ## About this Release Series
-
 
 * This release is part of the MariaDB Server 10.7 release series.
 * The MariaDB Server 10.7 release series will be supported until FUTURE.
 * [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/)
 
-
 ## Release History
-
 
 * The prior release in this series was MariaDB Server 10.7.1, released on 8 Nov 2021.
 * This release (MariaDB Server 10.7.2) was released on 9 Feb 2022.
 * The next release in this series is MariaDB Server 10.7.3, released on 12 Feb 2022.
 * The latest release in this series is MariaDB Server 10.7.8, released on 6 Feb 2023.
 
-
 ## Useful Resources
-
 
 * [MariaDB Server Documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/)
 * [MariaDB Connector Documentation](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/)
 * [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us/)
 * [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/)
-
 
 CC BY-SA / Gnu FDL
 
