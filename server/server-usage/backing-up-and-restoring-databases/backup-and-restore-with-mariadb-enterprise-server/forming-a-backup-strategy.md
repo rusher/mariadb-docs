@@ -4,7 +4,7 @@
 
 The strategy applied when implementing data backups depends on business needs.
 
-Data backup strategy depends on business needs. Business needs can be evaluated by performing a data inventory, determining data [recovery objectives](forming-a-backup-strategy.md#recovery-objectives), considering the [replication environment](forming-a-backup-strategy.md#replication-considerations), and considering [encryption requirements](forming-a-backup-strategy.md#encryption-considerations). Also critical is a [backup storage strategy](forming-a-backup-strategy.md#backup-storage-considerations) and [testing backup and recovery procedures](https://mariadb.com/kb/en/orming-a-backup-strategy/#backup-testing).
+Data backup strategy depends on business needs. Business needs can be evaluated by performing a data inventory, determining data [recovery objectives](forming-a-backup-strategy.md#recovery-objectives), considering the [replication environment](forming-a-backup-strategy.md#replication-considerations), and considering [encryption requirements](forming-a-backup-strategy.md#encryption-considerations). Also critical is a [backup storage strategy](forming-a-backup-strategy.md#backup-storage-considerations) and [testing backup and recovery procedures](../../../clients-and-utilities/mariadb-enterprise-operator/backup-and-restore.md).
 
 ## Data Inventory
 

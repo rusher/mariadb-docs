@@ -2,7 +2,7 @@
 
 ## Overview
 
-Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) backup and restore operations are performed using [MariaDB Enterprise Backup](../mariabackup/), an enterprise-build of [MariaDB Backup](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs).
+Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) backup and restore operations are performed using [MariaDB Enterprise Backup](../mariabackup/), an enterprise-build of [MariaDB Backup](../mariabackup/).
 
 MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server 10.2, 10.3, 10.4, 10.5, and 10.6.
 

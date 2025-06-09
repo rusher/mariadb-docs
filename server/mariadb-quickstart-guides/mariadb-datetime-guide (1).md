@@ -158,7 +158,7 @@ WHERE doctor_id='1021'
     patients.patient_id;
 ```
 
-This statement calls upon another table (`patients`) which holds patient information such as their names. It requires a connecting point between the tables (i.e., the `patient_id` from each table). If you're confused on how to form relationships between tables in a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement, you may want to go back and read the [Getting Data from MariaDB](https://mariadb.com/kb/en/getting-data-from-mariadb/) article. The SQL statement above would be used to retrieve the appointments for one doctor for one day, giving results like this:
+This statement calls upon another table (`patients`) which holds patient information such as their names. It requires a connecting point between the tables (i.e., the `patient_id` from each table). If you're confused on how to form relationships between tables in a [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement, you may want to go back and read the [Getting Data from MariaDB](mariadb-selecting-data-guide.md) article. The SQL statement above would be used to retrieve the appointments for one doctor for one day, giving results like this:
 
 ```sql
 +-------------------+------+--------+

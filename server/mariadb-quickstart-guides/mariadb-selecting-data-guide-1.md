@@ -1,6 +1,6 @@
 # Getting Data from MariaDB
 
-The simplest way to retrieve data from MariaDB is to use the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. Since the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement is an essential SQL statement, it has many options available with it. It's not necessary to know or use them all—you could execute very basic [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statements if that satisfies your needs. However, as you use MariaDB more, you may need more powerful [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statements. In this article we will go through the basics of [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) and will progress to more involved [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statements;we will move from the beginner level to the more intermediate and hopefully you will find some benefit from this article regardless of your skill level. For absolute beginners who are just starting with MariaDB, you may want to read the [MariaDB Basics article](https://mariadb.com/kb/en/mariadb-basics/).
+The simplest way to retrieve data from MariaDB is to use the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. Since the [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statement is an essential SQL statement, it has many options available with it. It's not necessary to know or use them all—you could execute very basic [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statements if that satisfies your needs. However, as you use MariaDB more, you may need more powerful [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statements. In this article we will go through the basics of [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) and will progress to more involved [SELECT](../reference/sql-statements/data-manipulation/selecting-data/select.md) statements;we will move from the beginner level to the more intermediate and hopefully you will find some benefit from this article regardless of your skill level. For absolute beginners who are just starting with MariaDB, you may want to read the [MariaDB Basics article](mariadb-advanced-usage-guide.md).
 
 #### Creating and Populating the Tables
 
@@ -36,7 +36,7 @@ INSERT INTO books (title, author_id, isbn, year_pub) VALUES
  ('Notes from Underground', 2, '067973452X', '');
 ```
 
-If you are unclear what these statements do, review the [MariaDB Primer](https://mariadb.com/kb/en/a-mariadb-primer/) and [MariaDB Basics](../../kb/en/mariadb-basics/) tutorials.
+If you are unclear what these statements do, review the [MariaDB Primer](mariadb-usage-guide-1.md) and [MariaDB Basics](../../kb/en/mariadb-basics/) tutorials.
 
 #### Basic Elements
 
