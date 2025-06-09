@@ -20,7 +20,6 @@ layout:
 
 ## About this Release
 
-
 * MariaDB Server 11.7.2 was released on 13 Feb 2025
 * [What's new in this release?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes)
 * MariaDB Server is open source software, the [source code is available](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code)
