@@ -4,7 +4,7 @@ Starting from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mari
 
 That is, an IN predicate in the form
 
-```
+```sql
 column [NOT] IN (const1, const2, .... )
 ```
 
@@ -29,7 +29,7 @@ The conversion happens if the following conditions are met:
 
 If `column` is a key-prefix, MariaDB optimizer will process the condition
 
-```
+```sql
 column [NOT] IN (const1, const2, .... )
 ```
 

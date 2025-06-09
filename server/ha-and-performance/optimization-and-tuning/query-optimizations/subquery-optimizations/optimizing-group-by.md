@@ -4,16 +4,16 @@ A DISTINCT clause and a GROUP BY without a corresponding HAVING clause have no m
 
 [MariaDB 5.3](broken-reference) and later versions automatically remove DISTINCT and GROUP BY without HAVING if these clauses appear in an IN/ALL/ANY/SOME/EXISTS subquery. For instance:
 
-```
-select * from t1
-where t1.a > ALL(select distinct b from t2 where t2.c > 100)
+```sql
+SELECT * FROM t1
+WHERE t1.a > ALL(select distinct b from t2 where t2.c > 100)
 ```
 
 is transformed to:
 
-```
-select * from t1
-where t1.a > ALL(select b from t2 where t2.c > 100)
+```sql
+SELECT * FROM t1
+WHERE t1.a > ALL(select b from t2 where t2.c > 100)
 ```
 
 Removing these unnecessary clauses allows the optimizer to find more efficient query plans because it doesn't need to take care of post-processing the subquery result to satisfy DISTINCT / GROUP BY.

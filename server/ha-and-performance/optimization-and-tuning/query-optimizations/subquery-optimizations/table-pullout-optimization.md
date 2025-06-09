@@ -6,7 +6,7 @@ Table pullout is an optimization for [Semi-join subqueries](semi-join-subquery-o
 
 Sometimes, a subquery can be re-written as a join. For example:
 
-```
+```sql
 select *
 from City 
 where City.Country in (select Country.Code
@@ -16,7 +16,7 @@ where City.Country in (select Country.Code
 
 If we know that there can be, at most, one country with a given value of `Country.Code` (we can tell that if we see that table Country has a primary key or unique index over that column), we can re-write this query as:
 
-```
+```sql
 select City.* 
 from 
   City, Country 
@@ -28,7 +28,7 @@ where
 
 If one runs [EXPLAIN](../../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for the above query in MySQL 5.1-5.6 or [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)-5.2, they'll get this plan:
 
-```
+```sql
 MySQL [world]> explain select * from City where City.Country in (select Country.Code from Country where Country.Population < 100*1000);
 +----+--------------------+---------+-----------------+--------------------+---------+---------+------+------+-------------+
 | id | select_type        | table   | type            | possible_keys      | key     | key_len | ref  | rows | Extra       |
@@ -43,7 +43,7 @@ It shows that the optimizer is going to do a full scan on table `City`, and for 
 
 If one runs the same query in [MariaDB 5.3](broken-reference), they will get this plan:
 
-```
+```sql
 MariaDB [world]> explain select * from City where City.Country in (select Country.Code from Country where Country.Population < 100*1000);
 +----+-------------+---------+-------+--------------------+------------+---------+--------------------+------+-----------------------+
 | id | select_type | table   | type  | possible_keys      | key        | key_len | ref                | rows | Extra                 |
@@ -61,7 +61,7 @@ The interesting parts are:
 
 Indeed, if one runs EXPLAIN EXTENDED; SHOW WARNINGS, they will see that the subquery is gone and it was replaced with a join:
 
-```
+```sql
 MariaDB [world]> show warnings\G
 *************************** 1. row ***************************
   Level: Note

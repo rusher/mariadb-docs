@@ -26,7 +26,7 @@ userstat = 1
 
 The value can also be changed dynamically. For example:
 
-```
+```sql
 SET GLOBAL userstat=1;
 ```
 
@@ -36,7 +36,7 @@ SET GLOBAL userstat=1;
 
 The `userstat` plugin creates the [USER\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-user_statistics-table.md), [CLIENT\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-client_statistics-table.md), the [INDEX\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-index_statistics-table.md), and the [TABLE\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_statistics-table.md) tables in the [INFORMATION\_SCHEMA](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database.
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.USER_STATISTICS\G
 *************************** 1. row ***************************
                   USER: root
@@ -64,7 +64,7 @@ CONCURRENT_CONNECTIONS: 0
          EMPTY_QUERIES: 1
 ```
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.CLIENT_STATISTICS\G
 *************************** 1. row ***************************
                 CLIENT: localhost
@@ -93,7 +93,7 @@ CONCURRENT_CONNECTIONS: 0
 1 row in set (0.00 sec)
 ```
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.INDEX_STATISTICS WHERE TABLE_NAME = "author";
 +--------------+------------+------------+-----------+
 | TABLE_SCHEMA | TABLE_NAME | INDEX_NAME | ROWS_READ |
@@ -102,7 +102,7 @@ SELECT * FROM INFORMATION_SCHEMA.INDEX_STATISTICS WHERE TABLE_NAME = "author";
 +--------------+------------+------------+-----------+
 ```
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.TABLE_STATISTICS WHERE TABLE_NAME='user';
 +--------------+------------+-----------+--------------+------------------------+
 | TABLE_SCHEMA | TABLE_NAME | ROWS_READ | ROWS_CHANGED | ROWS_CHANGED_X_INDEXES |
@@ -117,7 +117,7 @@ As an alternative to the [INFORMATION\_SCHEMA](../../../../reference/sql-stateme
 
 These commands are another way to display the information stored in the information schema tables. WHERE clauses are accepted. LIKE clauses are accepted but ignored.
 
-```
+```sql
 SHOW USER_STATISTICS
 SHOW CLIENT_STATISTICS
 SHOW INDEX_STATISTICS
@@ -128,7 +128,7 @@ SHOW TABLE_STATISTICS
 
 The `userstat` plugin also adds the [FLUSH USER\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), [FLUSH CLIENT\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), [FLUSH INDEX\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), and [FLUSH TABLE\_STATISTICS](../../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements, which discard the information stored in the specified information schema table.
 
-```
+```sql
 FLUSH USER_STATISTICS
 FLUSH CLIENT_STATISTICS
 FLUSH INDEX_STATISTICS

@@ -9,7 +9,7 @@ in the cache.
 
 The cache is on by default. One can switch it off using the [optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) `subquery_cache` setting, like so:
 
-```
+```sql
 SET optimizer_switch='subquery_cache=off';
 ```
 
@@ -28,7 +28,7 @@ for caching. It cannot grow more than the minimum of the above variables values\
 Your usage of the cache is visible in `EXTENDED EXPLAIN` output (warnings) as`"<expr_cache><//list of parameters//>(//cached expression//)"`.\
 For example:
 
-```
+```sql
 EXPLAIN EXTENDED SELECT * FROM t1 WHERE a IN (SELECT b FROM t2);
 +----+--------------------+-------+------+---------------+------+---------+------+------+----------+-------------+
 | id | select_type        | table | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra       |
@@ -85,7 +85,7 @@ scale 1 data set).
 
 Dataset from DBT-3 benchmark, a query to find customers with balance near top in their nation:
 
-```
+```sql
 select count(*) from customer 
 where 
    c_acctbal > 0.8 * (select max(c_acctbal) 
@@ -98,7 +98,7 @@ where
 
 DBT-3 benchmark, Query #17
 
-```
+```sql
 select sum(l_extendedprice) / 7.0 as avg_yearly 
 from lineitem, part 
 where 
@@ -112,7 +112,7 @@ where
 
 DBT-3 benchmark, Query #2
 
-```
+```sql
 select
         s_acctbal, s_name, n_name, p_partkey, p_mfgr, s_address, s_phone, s_comment
 from
@@ -139,7 +139,7 @@ order by
 
 DBT-3 benchmark, Query #20
 
-```
+```sql
 select
         s_name, s_address
 from

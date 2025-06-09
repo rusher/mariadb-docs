@@ -24,13 +24,13 @@ in the WHERE clause of the outer query.
 
 Query pattern:
 
-```
+```sql
 SELECT ... FROM ... WHERE (expr1, ..., exprN) [NOT] IN (SELECT ... ) OR expr;
 ```
 
 Example:
 
-```
+```sql
 SELECT Name FROM Country
 WHERE (Code IN (select Country from City where City.Population > 100000) OR
        Name LIKE 'L%') AND
@@ -43,13 +43,13 @@ The subquery predicate itself is negated.
 
 Query pattern:
 
-```
+```sql
 SELECT ... FROM ... WHERE ... (expr1, ..., exprN) NOT IN (SELECT ... ) ...;
 ```
 
 Example:
 
-```
+```sql
 SELECT Country.Name
 FROM Country, CountryLanguage 
 WHERE Code NOT IN (SELECT Country FROM CountryLanguage WHERE Language = 'English')
@@ -63,17 +63,17 @@ The subquery is located in the SELECT or HAVING clauses of the outer query.
 
 Query pattern:
 
-```
+```sql
 SELECT field1, ..., (SELECT ...)  WHERE ...;
 SELECT ...  WHERE ... HAVING (SELECT ...);
 ```
 
 Example:
 
-```
-select Name, City.id in (select capital from Country where capital is not null) as is_capital
-from City
-where City.population > 10000000;
+```sql
+SELECT Name, City.id in (select capital from Country where capital is not null) as is_capital
+FROM City
+WHERE City.population > 10000000;
 ```
 
 ### Subquery with a UNION
@@ -83,13 +83,13 @@ query where IN is allowed.
 
 Query pattern:
 
-```
+```sql
 ... [NOT] IN (SELECT ... UNION SELECT ...)
 ```
 
 Example:
 
-```
+```sql
 SELECT * from City where (Name, 91) IN
 (SELECT Name, round(Population/1000) FROM City WHERE Country = "IND" AND Population > 2500000
 UNION
@@ -140,7 +140,7 @@ of the NULL semantics in the ANSI SQL standard.
 
 Suppose an IN predicate is evaluated as
 
-```
+```sql
 NULL IN (select
 not_null_col from t1)
 ```
@@ -158,7 +158,7 @@ the following example:
 If the left argument of IN is the row: `(7, NULL, 9)`,\
 and the result of the right subquery operand of IN is the table:
 
-```
+```sql
 (7, 8, 10)
 (6, NULL, NULL)
 (7, 11, 9)
@@ -222,7 +222,7 @@ common cases to subquery materialization.
 Consider the following query over the data of the DBT3 benchmark scale 10.\
 Find customers with top balance in their nations:
 
-```
+```sql
 SELECT * FROM part
 WHERE p_partkey IN
       (SELECT l_partkey FROM lineitem
@@ -238,7 +238,7 @@ The times to run this query is as follows:
   the subquery was transformed into a correlated one, which indicates an\
   IN-TO-EXISTS transformation.
 
-```
+```sql
 +--+------------------+--------+--------------+-------------------+----+------+---------------------------+
 |id|select_type       |table   |type          |key                |ref |rows  |Extra                      |
 +--+------------------+--------+--------------+-------------------+----+------+---------------------------+
@@ -252,7 +252,7 @@ The times to run this query is as follows:
   The EXPLAIN shows that the subquery remains uncorrelated, which is an indication that\
   it is being executed via subquery materialization.
 
-```
+```sql
 +--+------------+-----------+------+------------------+----+------+-------------------------------+
 |id|select_type |table      |type  |key               |ref |rows  |Extra                          |
 +--+------------+-----------+------+------------------+----+------+-------------------------------+
@@ -277,7 +277,7 @@ c\_pref\_nationkey\_05 contains 5% NULL values.
 Consider the query "Find all customers that didn't buy from a preferred\
 country, and from a preferred brand withing some date ranges":
 
-```
+```sql
 SELECT count(*)
 FROM customer
 WHERE (c_custkey, c_pref_nationkey_05, c_pref_brand_05) NOT IN

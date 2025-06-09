@@ -59,7 +59,7 @@ Statistics for columns using the [BLOB](../../../../reference/data-types/string-
 
 ### Examples of Statistics Collection
 
-```
+```sql
 -- update all engine-independent statistics for all columns and indexes
 ANALYZE TABLE tbl PERSISTENT FOR ALL;
 

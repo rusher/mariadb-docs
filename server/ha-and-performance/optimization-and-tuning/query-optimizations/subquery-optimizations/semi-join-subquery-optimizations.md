@@ -6,7 +6,7 @@ MariaDB has a set of optimizations specifically targeted at _semi-join subquerie
 
 A semi-join subquery has a form of
 
-```
+```sql
 SELECT ... FROM outer_tables WHERE expr IN (SELECT ... FROM inner_tables ...) AND ...
 ```
 
@@ -16,13 +16,13 @@ _with semi-join subquery, we're only interested in records of outer\_tables that
 
 Let's see why this is important. Consider a semi-join subquery:
 
-```
-select * from Country 
-where 
+```sql
+SELECT * FROM Country 
+WHERE 
   Continent='Europe' and 
-  Country.Code in (select City.country 
-                   from City 
-                   where City.Population>1*1000*1000);
+  Country.Code in (SELECT City.country 
+                   FROM City 
+                   WHERE City.Population>1*1000*1000);
 ```
 
 One can execute it "naturally", by starting from countries in Europe and checking if they have populous Cities:
@@ -35,13 +35,13 @@ The semi-join property also allows "backwards" execution: we can start from big 
 
 To contrast, let's change the subquery to be non-semi-join:
 
-```
-select * from Country 
-where 
-   Country.Continent='Europe' and 
-   (Country.Code in (select City.country 
-                   from City where City.Population>1*1000*1000) 
-    or Country.SurfaceArea > 100*1000  -- Added this part
+```sql
+SELECT * FROM Country 
+WHERE 
+   Country.Continent='Europe' AND 
+   (Country.Code IN (SELECT City.country 
+                   FROM City WHERE City.Population>1*1000*1000) 
+    OR Country.SurfaceArea > 100*1000  -- Added this part
    );
 ```
 
@@ -62,7 +62,7 @@ Semi-join operations are similar to regular relational joins. There is a differe
 
 MariaDB uses semi-join optimizations to run IN subqueries.The optimizations are enabled by default. You can disable them by turning off their [optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) like so:
 
-```
+```sql
 SET optimizer_switch='semijoin=off'
 ```
 

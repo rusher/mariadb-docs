@@ -21,20 +21,20 @@ According to anchor modeling, each attribute should go into its own table:
 
 * the 'anchor' table which only has a synthetic primary key:
 
-```
+```sql
 create table  ac_anchor(AC_ID int primary key);
 ```
 
 * a table for the 'name' attribute:
 
-```
+```sql
 create table ac_name(AC_ID int, ACNAM_name char(N),
                      primary key(AC_ID));
 ```
 
 * a table for the 'birthdate' attribute:
 
-```
+```sql
 create table ac_dob(AC_ID int,
                     ACDOB_birthdate date,
                     primary key(AC_ID));
@@ -42,7 +42,7 @@ create table ac_dob(AC_ID int,
 
 * a table for the ‘rating’ attribute, which is historized:
 
-```
+```sql
 create table ac_rating(AC_ID int,
                        ACRAT_rating int,
                        ACRAT_fromdate date,
@@ -56,7 +56,7 @@ ratings one has to write outer joins:
 
 Display actors, with their names and current ratings:
 
-```
+```sql
 select
   ac_anchor.AC_ID, ACNAM_Name, ACDOB_birthdate, ACRAT_rating
 from
@@ -72,7 +72,7 @@ from
 We don't want to write the joins every time we need to access an actor's\
 properties, so we’ll create a view:
 
-```
+```sql
 create view actors as
   select  ac_anchor.AC_ID, ACNAM_Name,  ACDOB_birthdate, ACRAT_rating
   from <see the select above>
@@ -80,7 +80,7 @@ create view actors as
 
 This will allow us to access the data as if it was stored in a regular way:
 
-```
+```sql
 select ACRAT_rating from actors where ACNAM_name='Gary Oldman'
 ```
 

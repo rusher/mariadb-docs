@@ -15,14 +15,14 @@ We will now describe these two cases in detail
 
 Often, EXISTS subquery is correlated, but the correlation is trivial. The subquery has form
 
-```
+```sql
 EXISTS (SELECT ...  FROM ... WHERE outer_col= inner_col AND inner_where)
 ```
 
 and "outer\_col" is the only place where the subquery refers to outside fields.\
 In this case, the subquery can be re-written into uncorrelated IN:
 
-```
+```sql
 outer_col IN (SELECT inner_col FROM ... WHERE inner_where)
 ```
 
@@ -41,7 +41,7 @@ level of the WHERE clause.
 
 If `EXISTS` subquery is an AND-part of the `WHERE` clause:
 
-```
+```sql
 SELECT ... FROM outer_tables WHERE EXISTS (SELECT ...) AND ...
 ```
 

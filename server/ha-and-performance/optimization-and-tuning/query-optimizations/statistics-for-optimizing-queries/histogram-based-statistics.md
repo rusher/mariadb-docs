@@ -8,7 +8,7 @@ Histograms are used by default from [MariaDB 10.4.3](https://app.gitbook.com/s/a
 
 Consider this example, using the following query:
 
-```
+```sql
 SELECT * FROM t1,t2 WHERE t1.a=t2.a and t2.b BETWEEN 1 AND 3;
 ```
 
@@ -67,7 +67,7 @@ From [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 Here is an example of the dramatic impact histogram-based statistics can make. The query is based on [DBT3 Benchmark Q20](broken-reference) with 60 millions records in the `lineitem` table.
 
-```
+```sql
 select sql_calc_found_rows s_name, s_address from 
 supplier, nation where 
   s_suppkey in
@@ -87,11 +87,11 @@ supplier, nation where
 
 First,
 
-```
+```sql
 set optimizer_switch='materialization=off,semijoin=off';
 ```
 
-```
+```sql
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows | filt | Extra
 +---+-------- +----------+-------+...+------+----------+------------
@@ -108,7 +108,7 @@ set optimizer_switch='materialization=off,semijoin=off';
 
 Next, a really bad plan, yet one sometimes chosen:
 
-```
+```sql
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows | filt | Extra
 +---+-------- +----------+-------+...+------+----------+------------
@@ -125,7 +125,7 @@ Next, a really bad plan, yet one sometimes chosen:
 
 [Persistent statistics](engine-independent-table-statistics.md) don't improve matters:
 
-```
+```sql
 set use_stat_tables='preferably';
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows | filt | Extra
@@ -143,7 +143,7 @@ set use_stat_tables='preferably';
 
 The default flags for [optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) do not help much:
 
-```
+```sql
 set optimizer_switch='materialization=default,semijoin=default';
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows  | filt  | Extra
@@ -162,7 +162,7 @@ set optimizer_switch='materialization=default,semijoin=default';
 
 Using statistics doesn't help either:
 
-```
+```sql
 set optimizer_switch='materialization=default,semijoin=default';
 set optimizer_use_condition_selectivity=4;
 
@@ -183,7 +183,7 @@ set optimizer_use_condition_selectivity=4;
 
 Now, taking into account the cost of the dependent subquery:
 
-```
+```sql
 set optimizer_switch='materialization=default,semijoin=default';
 set optimizer_use_condition_selectivity=4;
 set optimizer_switch='expensive_pred_static_pushdown=on';
@@ -203,7 +203,7 @@ set optimizer_switch='expensive_pred_static_pushdown=on';
 
 Finally, using [join\_buffer](../../system-variables/server-system-variables.md#join_buffer_size) as well:
 
-```
+```sql
 set optimizer_switch= 'materialization=default,semijoin=default';
 set optimizer_use_condition_selectivity=4;
 set optimizer_switch='expensive_pred_static_pushdown=on';
