@@ -1,6 +1,6 @@
 # Fixing Connection Issues
 
-If you are completely new to MariaDB and relational databases, you may want to start with the [MariaDB Primer](../../kb/en/a-mariadb-primer/). Also, make sure you understand the connection parameters discussed in the [Connecting to MariaDB](https://mariadb.com/kb/en/connecting-to-mariadb/) article.
+If you are completely new to MariaDB and relational databases, you may want to start with the [MariaDB Primer](mariadb-usage-guide.md). Also, make sure you understand the connection parameters discussed in the [Connecting to MariaDB](mariadb-connecting-guide.md) article.
 
 There are a number of common problems that can occur when connecting to MariaDB.
 
@@ -22,7 +22,7 @@ ERROR 2003 (HY000): Can't connect to MySQL server on  'localhost'
   (111 "Connection refused")
 ```
 
-the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct [host](https://mariadb.com/kb/en/connecting-to-mariadb/#host), [port](https://mariadb.com/kb/en/connecting-to-mariadb/#port), [pipe](https://mariadb.com/kb/en/connecting-to-mariadb/#pipe), [socket](https://mariadb.com/kb/en/connecting-to-mariadb/#socket) and [protocol](https://mariadb.com/kb/en/connecting-to-mariadb/#protocol) options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../server-management/install-and-upgrade-mariadb/), [Starting and Stopping MariaDB](../server-management/starting-and-stopping-mariadb/) or [Troubleshooting Installation Issues](../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/).
+the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct host, port, pipe, socket and protocol options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../server-management/install-and-upgrade-mariadb/), [Starting and Stopping MariaDB](../server-management/starting-and-stopping-mariadb/) or [Troubleshooting Installation Issues](../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/).
 
 The socket file can be in a non-standard path. In this case, the `socket` option is probably written in the my.cnf file. Check that its value is identical in the \[mysqld] and \[client] sections; if not, the client will look for a socket in a wrong place.
 
