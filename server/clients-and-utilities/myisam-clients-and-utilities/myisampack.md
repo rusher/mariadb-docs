@@ -1,7 +1,3 @@
----
-icon: question
----
-
 # myisampack
 
 ## myisampack
@@ -38,21 +34,21 @@ been set.
 
 The following variables can be set while passed as commandline options to`myisampack`, or set with a `[myisampack]` section in your[my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) file.
 
-| Option| Description|
-| - | - |
-| -b, --backup| Make a backup of the table as table\_name.OLD. |
-| --character-sets-dir=name | Directory where character sets are.|
-| - ||
-| ## , --debug\[=name] | Output debug log. Often this is 'd:t:o,filename'. |
-| -f, --force | Force packing of table even if it gets bigger or if tempfile exists. |
-| -j, --join=name | Join all given tables into 'new\_table\_name'. All tables must have identical layouts. |
-| -?, --help | Display help and exit. |
-| -s, --silent | Only write output when an error occurs |
-| -T, --tmpdir=name | Use temporary directory to store temporary table. |
-| -t, --test | Don't pack table, only test packing it. |
-| -v, --verbose | Write info about progress and packing result. Use multiple -v flags for more verbosity. |
-| -V, --version | Output version information and exit. |
-| -w, --wait | Wait and retry if table is in use. |
+| Option                    | Description                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------- |
+| -b, --backup              | Make a backup of the table as table\_name.OLD.                                          |
+| --character-sets-dir=name | Directory where character sets are.                                                     |
+| -                         |                                                                                         |
+| ## , --debug\[=name]      | Output debug log. Often this is 'd:t:o,filename'.                                       |
+| -f, --force               | Force packing of table even if it gets bigger or if tempfile exists.                    |
+| -j, --join=name           | Join all given tables into 'new\_table\_name'. All tables must have identical layouts.  |
+| -?, --help                | Display help and exit.                                                                  |
+| -s, --silent              | Only write output when an error occurs                                                  |
+| -T, --tmpdir=name         | Use temporary directory to store temporary table.                                       |
+| -t, --test                | Don't pack table, only test packing it.                                                 |
+| -v, --verbose             | Write info about progress and packing result. Use multiple -v flags for more verbosity. |
+| -V, --version             | Output version information and exit.                                                    |
+| -w, --wait                | Wait and retry if table is in use.                                                      |
 
 ### Uncompressing
 
