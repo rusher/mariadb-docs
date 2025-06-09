@@ -50,7 +50,7 @@ By default, the entrypoint script automatically loads the timezone data needed f
 
 ### MARIADB\_AUTO\_UPGRADE / MARIADB\_DISABLE\_UPGRADE\_BACKUP
 
-Set MARIADB\_AUTO\_UPGRADE to a non-empty value to have the entrypoint check whether [mariadb-upgrade](../../../../../../clients-and-utilities/mariadb-upgrade.md) needs to run, and if so, run the upgrade before starting the MariaDB server.
+Set MARIADB\_AUTO\_UPGRADE to a non-empty value to have the entrypoint check whether [mariadb-upgrade](../../../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) needs to run, and if so, run the upgrade before starting the MariaDB server.
 
 Before the upgrade, a backup of the system database is created in the top of the datadir with the name system\_mysql\_backup\_\*.sql.zst. This backup process can be disabled with by setting MARIADB\_DISABLE\_UPGRADE\_BACKUP to a non-empty value.
 

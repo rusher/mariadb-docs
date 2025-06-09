@@ -11,7 +11,7 @@ Events are read from the primary's binary log and written to the replica's relay
 New relay log files are created by the replica at the following times:
 
 * when the IO thread starts
-* when the logs are flushed, with [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin flush-logs](../../../clients-and-utilities/mariadb-admin.md).
+* when the logs are flushed, with [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) or [mariadb-admin flush-logs](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).
 * when the maximum size, determined by the [max\_relay\_log\_size](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable, has been reached
 
 ## Relay Log Names

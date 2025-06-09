@@ -66,7 +66,7 @@ For the end user, the MariaDB server will act as a normal a standalone server, w
 
 MariaDB server will be able to run either on 'original mode', where the data layout is exactly as it was before, or on 'catalog' mode, with a new data layout:
 
-When running [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) with --use-catalogs, it will create\
+When running [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) with --use-catalogs, it will create\
 the following new data structure:
 
 * data\_directory/
@@ -137,9 +137,9 @@ Client changes:
 * Add support for looping over all existing catalogs to:
   * [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md)
   * [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/)
-  * [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md)
+  * [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md)
 
-Changes to [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md):
+Changes to [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md):
 
 * Allow one to create multiple catalogs at once: -–catalogs=”catalog1,catalog2”
 * Init MariaDB with catalog support: —use-catalogs
@@ -259,7 +259,7 @@ As shared hosting services have a naming scheme from user/schema to database nam
 
 * Use [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) to dump the original data
 * On the new server execute:
-* [mariadb-install-db –catalogs=’catalog\_name’](../../../clients-and-utilities/mariadb-install-db.md)
+* [mariadb-install-db –catalogs=’catalog\_name’](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md)
 * mariadb –catalog catalog\_name < dump\_file
 
 This is needed as InnoDB needs to know where the new files are located.

@@ -2,11 +2,11 @@
 
 ## Overview
 
-[MariaDB Enterprise Server](https://mariadb.com/kb/en/mariadb-enterprise-server/) authentication is performed by database user accounts. Database user accounts are specified by user name, the hostname from which the account is connecting, and the authentication plugins configured for the account, such as mysql\_native\_password, pam, or unix\_socket.
+MariaDB Enterprise Server authentication is performed by database user accounts. Database user accounts are specified by user name, the hostname from which the account is connecting, and the authentication plugins configured for the account, such as mysql\_native\_password, pam, or unix\_socket.
 
 ## Change Password
 
-The password for a [database user account](https://mariadb.com/kb/en/database_user_account) can be changed using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md), and [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statements.
+The password for a [database user account](../user-account-management/) can be changed using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md), and [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statements.
 
 ```sql
 With ALTER USER:
@@ -43,12 +43,12 @@ For [simple\_password\_check](../../reference/plugins/password-validation-plugin
 
 MariaDB Enterprise Server uses authentication plugins to support different authentication methods. The default authentication plugin is mysql\_native\_password.
 
-* [Authentication with ed25519](https://mariadb.com/kb/en/authentication-with-ed25519)
+* [Authentication with ed25519](../../reference/plugins/authentication-plugins/authentication-plugin-ed25519.md)
 * [Authentication with gssapi](authentication-with-gssapi.md)
-* [Authentication with mysql\_native\_password](https://mariadb.com/kb/en/authentication-with-mysql_native_password)
-* [Authentication with mysql\_old\_password](https://mariadb.com/kb/en/authentication-with-mysql_old_password)
-* [Authentication with pam](https://mariadb.com/kb/en/authentication-with-pam)
-* [Authentication with unix\_socket](https://mariadb.com/kb/en/authentication-with-unix_socket)
+* [Authentication with mysql\_native\_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md)
+* [Authentication with mysql\_old\_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)
+* [Authentication with pam](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/)
+* [Authentication with unix\_socket](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md)
 * [Authentication with PARSEC](../../reference/plugins/authentication-plugins/authentication-plugin-parsec.md)
 
 Copyright © 2025 MariaDB

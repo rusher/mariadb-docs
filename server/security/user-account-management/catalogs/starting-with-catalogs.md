@@ -6,7 +6,7 @@ Catalog support is planned for 12.0.
 
 ## Background
 
-[mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) initializes the MariaDB data directory and creates the[system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
+[mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) initializes the MariaDB data directory and creates the[system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) in the [mysql](../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
 
 When used with the `--catalog` options it will initialize MariaDB server to use catalogs.\
 The [mariadbd server](../../../server-management/starting-and-stopping-mariadb/mariadbd.md) will automatically discover if catalogs are used or not.
@@ -44,6 +44,6 @@ One benefit of using `mariadb_install_db` is that it's possible to create many c
 
 * [CREATE CATALOG](create-catalog.md)
 * [DROP CATALOG](drop-catalog.md)
-* [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md)
+* [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md)
 
 CC BY-SA / Gnu FDL

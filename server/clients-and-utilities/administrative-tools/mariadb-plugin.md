@@ -1,19 +1,19 @@
 # mariadb-plugin
 
-`mariadb-plugin` is a tool for enabling or disabling [plugins](../reference/plugins/).
+`mariadb-plugin` is a tool for enabling or disabling [plugins](../../reference/plugins/).
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_plugin`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-It is a commandline alternative to the [INSTALL PLUGIN](../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `--plugin-load option` to [mariadbd](../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
+It is a commandline alternative to the [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md) and [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) statements, and the `--plugin-load option` to [mariadbd](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md).
 
-`mariadb-plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+`mariadb-plugin` must be run while the server is offline, and works by adding or removing rows from the [mysql.plugin](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
 
 `mariadb-plugin` basically has two use cases:
 
 * adding a plugin even before the first real server startup
 * removing a plugin that crashes the server on startup
 
-For the install use case, adding a [plugin-load-add](../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-add) entry to `my.cnf` or in a separate include option file, is probably a better alternative. In case of a plugin loaded via a `mysql.plugin` crashing the server, uninstalling the plugin with the help of `mariadb-plugin` can be the only viable action though.
+For the install use case, adding a [plugin-load-add](../../reference/plugins/plugin-overview.md#installing-a-plugin-with-plugin-load-add) entry to `my.cnf` or in a separate include option file, is probably a better alternative. In case of a plugin loaded via a `mysql.plugin` crashing the server, uninstalling the plugin with the help of `mariadb-plugin` can be the only viable action though.
 
 ## Usage
 
@@ -59,12 +59,12 @@ The following options can be specified on the command line, while some can be sp
 
 ## See Also
 
-* [List of Plugins](../reference/plugins/information-on-plugins/list-of-plugins.md)
-* [Plugin Overview](../reference/plugins/plugin-overview.md)
-* [INFORMATION\_SCHEMA.PLUGINS Table](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
-* [INSTALL PLUGIN](../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)
-* [INSTALL SONAME](../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)
-* [UNINSTALL PLUGIN](../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)
-* [UNINSTALL SONAME](../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)
+* [List of Plugins](../../reference/plugins/information-on-plugins/list-of-plugins.md)
+* [Plugin Overview](../../reference/plugins/plugin-overview.md)
+* [INFORMATION\_SCHEMA.PLUGINS Table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
+* [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)
+* [INSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)
+* [UNINSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)
+* [UNINSTALL SONAME](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)
 
 CC BY-SA / Gnu FDL

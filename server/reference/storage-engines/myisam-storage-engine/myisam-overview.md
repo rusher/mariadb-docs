@@ -30,7 +30,7 @@ A MyISAM table is stored in three files on disk. There's a table definition file
 * Data values are stored with the low byte first, making it mostly machine and operating system independent. The only exceptions are if a machine doesn't use two's-complement signed integers and the IEEE floating-point format.
 * Can be copied between databases or systems with normal system tools, as long as the files are not open on either system. Use [FLUSH\_TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure files are not in use.
 * There are a number of tools for working with MyISAM tables. These include:
-  * [mariadb-check](../../../clients-and-utilities/mariadb-check.md) for checking or repairing
+  * [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md) for checking or repairing
   * [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) for checking or repairing
   * [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) for compressing
 * It is possible to build a [MERGE](../merge.md) table on the top of one or more MyISAM tables.

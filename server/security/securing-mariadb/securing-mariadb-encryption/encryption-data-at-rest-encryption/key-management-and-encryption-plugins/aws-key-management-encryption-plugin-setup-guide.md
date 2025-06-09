@@ -222,7 +222,7 @@ You can see the encrypted keys stored on-disk in the datadir:
 
 Note that those keys are not useful alone. They are encrypted. When MariaDB starts up, the AWS KMS plugin decrypts those keys by interacting with AWS KMS.
 
-For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../clients-and-utilities/mariadb-install-db.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `sudo` to run `mariadb-install-db` so that it finds your credentials file:
+For maximum security, you should start from an empty datadir and run [mariadb-install-db](../../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) after configuring encryption. Then you should re-import your data so that it is fully encrypted. Use `sudo` to run `mariadb-install-db` so that it finds your credentials file:
 
 ```bash
 # sudo -u mysql mariadb-install-db

@@ -22,7 +22,7 @@ Note that if you are using [MariaDB Galera Cluster](../../../../kb/en/galera-clu
   * Ensure that the [innodb\_fast\_shutdown](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) variable is not 2 (fast crash shutdown). The default of this variable is 1.
   * [innodb\_force\_recovery](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery) must be less than `3`.
 
-Note that rpms don't support upgrading between major versions, only minor like 10.4.1 to 10.4.2. If you are using rpms, you should de-install the old MariaDB rpms and install the new MariaDB rpms before running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md). Note that when installing the new rpms, [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) may be run automatically. There is no problem with running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) many times.
+Note that rpms don't support upgrading between major versions, only minor like 10.4.1 to 10.4.2. If you are using rpms, you should de-install the old MariaDB rpms and install the new MariaDB rpms before running [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md). Note that when installing the new rpms, [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) may be run automatically. There is no problem with running [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) many times.
 
 ## Recommended Steps
 
@@ -32,16 +32,16 @@ Note that rpms don't support upgrading between major versions, only minor like 1
 ### Step by Step Instructions for Upgrades
 
 * Upgrade MariaDB binaries and libraries, preferably without starting MariaDB.
-* If the MariaDB server process, [mariadbd](../../starting-and-stopping-mariadb/mariadbd-options.md) was not started as part of the upgrade, start it by executing `mariadbd --skip-grant-tables`. This may produce some warnings about some system tables not being up to date, but you can ignore these for now as [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) will fix that.
-* Run [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md)
+* If the MariaDB server process, [mariadbd](../../starting-and-stopping-mariadb/mariadbd-options.md) was not started as part of the upgrade, start it by executing `mariadbd --skip-grant-tables`. This may produce some warnings about some system tables not being up to date, but you can ignore these for now as [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) will fix that.
+* Run [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md)
 * Restart MariaDB server.
 
 ## Work Done by mariadb-upgrade
 
-The main work done when upgrading is done by running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md). The main things it does are:
+The main work done when upgrading is done by running [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md). The main things it does are:
 
 * Updating the system tables in the `mysql` database to the newest version. This is very quick.
-* [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) also runs [mariadb-check --check-upgrade](../../../clients-and-utilities/mariadb-check.md) to check if there have been any collation changes between the major versions. This recreates indexes in old tables that are using any of the changed collations. This can take a bit of time if there are a lot of tables or there are many tables which used the changed collation. The last time a collation changed was in MariaDB/MySQL 5.1.23.
+* [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) also runs [mariadb-check --check-upgrade](../../../clients-and-utilities/table-tools/mariadb-check.md) to check if there have been any collation changes between the major versions. This recreates indexes in old tables that are using any of the changed collations. This can take a bit of time if there are a lot of tables or there are many tables which used the changed collation. The last time a collation changed was in MariaDB/MySQL 5.1.23.
 
 ## Post Upgrade Work
 
@@ -69,7 +69,7 @@ In the unlikely event something goes wrong, you can try the following:
   * innodb\_table\_stats
   * innodb\_index\_stats
   * transaction\_registry
-* Move the `mysql` data directory to `mysql-old` and run [mariadb-install-db](../../../clients-and-utilities/mariadb-install-db.md) to generate a new one.
+* Move the `mysql` data directory to `mysql-old` and run [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) to generate a new one.
 * After the above, you have to add back your old users.
 * When done, delete the `mysql-old` data directory.
 

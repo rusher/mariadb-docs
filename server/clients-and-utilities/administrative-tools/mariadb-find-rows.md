@@ -1,6 +1,6 @@
 # mariadb-find-rows
 
-`mariadb-find-rows` reads files containing SQL statements and extracts statements that match a given regular expression or that contain [USE db\_name](../reference/sql-statements/administrative-sql-statements/use-database.md) or [SET](../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statements.
+`mariadb-find-rows` reads files containing SQL statements and extracts statements that match a given regular expression or that contain [USE db\_name](../../reference/sql-statements/administrative-sql-statements/use-database.md) or [SET](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statements.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_find_rows`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
@@ -18,14 +18,14 @@ Each file\_name argument should be the name of file containing SQL statements. I
 
 mariadb-find-rows supports the following options:
 
-| Option                | Description                                                                                                                        |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Option                | Description                                                                                                                        |
-| --help, --Information | Display help and exit.                                                                                                             |
-| --regexp=pattern      | Display queries that match the pattern.                                                                                            |
-| --rows=N              | Quit after displaying N queries.                                                                                                   |
-| --skip-use-db         | Do not include [USE db\_name](../reference/sql-statements/administrative-sql-statements/use-database.md) statements in the output. |
-| --start\_row=N        | Start output from this row (first row is 1).                                                                                       |
+| Option                | Description                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Option                | Description                                                                                                                           |
+| --help, --Information | Display help and exit.                                                                                                                |
+| --regexp=pattern      | Display queries that match the pattern.                                                                                               |
+| --rows=N              | Quit after displaying N queries.                                                                                                      |
+| --skip-use-db         | Do not include [USE db\_name](../../reference/sql-statements/administrative-sql-statements/use-database.md) statements in the output. |
+| --start\_row=N        | Start output from this row (first row is 1).                                                                                          |
 
 ## Examples
 

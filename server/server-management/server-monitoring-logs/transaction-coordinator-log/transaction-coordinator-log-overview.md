@@ -84,7 +84,7 @@ This means that the header of the memory-mapped file-based transaction coordinat
 This issue is known to occur when using docker. In that case, the problem may be caused by using a MariaDB container version with a data directory from a different MariaDB or MySQL version. Therefore, some potential fixes are:
 
 * Pinning the docker instance to a specific MariaDB version in the docker compose file, so that it consistently uses the same version.
-* Running [mariadb-upgrade](../../../clients-and-utilities/mariadb-upgrade.md) to ensure that the data directory is upgraded to match the server version.
+* Running [mariadb-upgrade](../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) to ensure that the data directory is upgraded to match the server version.
 
 See [this docker issue](https://github.com/docker-library/mariadb/issues/201) for more information.
 

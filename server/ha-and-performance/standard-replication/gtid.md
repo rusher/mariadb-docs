@@ -690,7 +690,7 @@ This variable is the GTID of the last event group written to the binary log,\
 for each replication domain.
 
 Note that when the binlog is empty (such as on a fresh install\
-with [--skip-test-db](../../clients-and-utilities/mariadb-install-db.md#not-creating-the-test-database-and-anonymous-user),\
+with [--skip-test-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md#not-creating-the-test-database-and-anonymous-user),\
 or after [RESET MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/reset-master.md)), there are no event groups written in any replication domain, so in\
 this case the value of `gtid_binlog_pos` will be the empty string.
 

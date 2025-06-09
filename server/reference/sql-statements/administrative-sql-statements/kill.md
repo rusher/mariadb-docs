@@ -65,7 +65,7 @@ application. It does not create any connection threads of its own.
 
 **Note:** You can also use`mariadb-admin kill thread_id [,thread_id...]`\
 to kill connections. To get a list of running queries,\
-use `mariadb-admin processlist`. See [mariadb-admin](../../../clients-and-utilities/mariadb-admin.md).
+use `mariadb-admin processlist`. See [mariadb-admin](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).
 
 [Percona Toolkit](https://www.percona.com/doc/percona-toolkit/) contains a program, [pt-kill](https://www.percona.com/doc/percona-toolkit/pt-kill.html) that can be used to automatically kill connections that match certain criteria. For example, it can be used to terminate idle connections, or connections that have been busy for more than 60 seconds.
 

@@ -51,7 +51,7 @@ To install with the INSTALL SONAME statement:
 INSTALL SONAME 'gssapi';
 ```
 
-To install in a configuration file with the plugin\_load\_add [option](https://mariadb.com/kb/en/option):
+To install in a configuration file with the plugin\_load\_add option:
 
 ```
 [mariadb]

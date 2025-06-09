@@ -90,7 +90,7 @@ You can also list a table's columns with:
 mariadb-show db_name tbl_name
 ```
 
-See the [mariadb-show](../../../../clients-and-utilities/mariadb-show.md) command for more details.
+See the [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md) command for more details.
 
 The [DESCRIBE](../describe.md) statement provides information similar to `SHOW COLUMNS`. The [information\_schema.COLUMNS](../system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) table provides similar, but more complete, information.
 
@@ -128,7 +128,7 @@ SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 ## See Also
 
 * [DESCRIBE](../describe.md)
-* [mariadb-show](../../../../clients-and-utilities/mariadb-show.md)
+* [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md)
 * [SHOW CREATE TABLE](show-create-table.md)
 * [SHOW TABLE STATUS](show-table-status.md)
 * [SHOW INDEX](show-index.md)

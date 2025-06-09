@@ -41,7 +41,7 @@ cmake . -DBUILD_CONFIG=mysql_release && cmake --build . --parallel=8
 mysql-test/mtr --parallel=8 --force
 ```
 
-## [Install the Default Databases](../../../../clients-and-utilities/mariadb-install-db.md)
+## [Install the Default Databases](../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md)
 
 ```
 ./scripts/mariadb-install-db --srcdir=.

@@ -22,7 +22,7 @@ It's available in both [Artifact Hub](https://artifacthub.io/packages/helm/maria
 * [Easily provision](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/mariadb_minimal.yaml) and [configure](https://github.com/mariadb-operator/mariadb-operator/blob/main/examples/manifests/mariadb_full.yaml) MariaDB servers in Kubernetes.
 * Multiple [HA modes](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HA): Galera Cluster or MariaDB Replication.
 * Automated [primary failover](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/HA) and [cluster recovery](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/GALERA#galera-cluster-recovery).
-* Advanced HA with [MaxScale](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/): a sophisticated database proxy, router, and load balancer for MariaDB.
+* Advanced HA with [MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/): a sophisticated database proxy, router, and load balancer for MariaDB.
 * Flexible [storage](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/STORAGE) configuration. [Volume expansion](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/STORAGE#volume-resize).
 * Take, restore, and schedule [backups](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP).
 * Multiple [backup storage types](https://github.com/mariadb-operator/mariadb-operator/tree/main/docs/BACKUP#storage-types): S3 compatible, PVCs, and Kubernetes volumes.

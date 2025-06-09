@@ -367,7 +367,7 @@ For distributions that use systemd, you can manage the Server process using the 
 
 MariaDB Enterprise Server ships with a utility that can be used to identify and correct compatibility issues in the new version. After you upgrade your Server and start the server process, run this utility to upgrade the data directory.
 
-The utility is called [mariadb-upgrade](../../clients-and-utilities/mariadb-upgrade.md) in MariaDB Enterprise Server 10.4 and later:
+The utility is called [mariadb-upgrade](../../clients-and-utilities/deployment-tools/mariadb-upgrade.md) in MariaDB Enterprise Server 10.4 and later:
 
 ```bash
 $ sudo mariadb-upgrade

@@ -78,7 +78,7 @@ The steps are:
    (On Linux you do it with the `useradd` command).
 2. Create the directory (we call it `mariadb-data` in the example below) or\
    add a symlink to a directory which is in some other place.
-3. Create the `mysql` permission tables with [mariadb-install-db](../../clients-and-utilities/mariadb-install-db.md)
+3. Create the `mysql` permission tables with [mariadb-install-db](../../clients-and-utilities/deployment-tools/mariadb-install-db.md)
 
 ```
 cd /usr/local/

@@ -32,7 +32,7 @@ It contains the following columns:
 | IS\_SYSTEM\_TIME\_PERIOD\_START | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes).                                                                                                                                                                                                                                                                                                                |
 | IS\_SYSTEM\_TIME\_PERIOD\_END   | From [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-1-release-notes).                                                                                                                                                                                                                                                                                                                |
 
-It provides information similar to, but more complete, than [SHOW COLUMNS](../../../show/show-columns.md) and [mariadb-show](../../../../../../clients-and-utilities/mariadb-show.md).
+It provides information similar to, but more complete, than [SHOW COLUMNS](../../../show/show-columns.md) and [mariadb-show](../../../../../../clients-and-utilities/administrative-tools/mariadb-show.md).
 
 ## Examples
 

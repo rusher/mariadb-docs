@@ -4,6 +4,6 @@ Note that many of the reasons for the existence of this script no longer apply. 
 
 From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client is called `mariadb-secure-installation`. It can still be accessed under its original `mysql_secure_installation` name via a symlink in Linux, or an alternate binary in Windows.
 
-See [mariadb-secure-installation](../mariadb-secure-installation.md) for details.
+See [mariadb-secure-installation](../deployment-tools/mariadb-secure-installation.md) for details.
 
 CC BY-SA / Gnu FDL
