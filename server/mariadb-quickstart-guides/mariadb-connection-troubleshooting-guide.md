@@ -148,7 +148,7 @@ Unexpected connection behavior or parameter usage that you didn't explicitly pro
 
 * Option files (e.g., `my.cnf`, `.my.cnf`) or environment variables (e.g., `MYSQL_HOST`) might be supplying incorrect or overriding connection parameters.
 * **Troubleshooting:**
-  * Check the values in any option files read by your client. See [MariaDB Configuration Files and Groups](../clients-and-utilities/mariadb-enterprise-operator/configuration.md) and the documentation for the specific client you are using (listed under [Clients and Utilities](../clients-and-utilities/)).
+  * Check the values in any option files read by your client. See [Configuring MariaDB with Option Files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the specific client you are using (listed under [Clients and Utilities](../clients-and-utilities/)).
   *   You can often suppress the reading of default option files by using a `--no-defaults` option (if supported by the client):Bash
 
       ```bash

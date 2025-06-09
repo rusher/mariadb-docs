@@ -143,7 +143,7 @@ Note that in some cases, the failed master can be re-used as the new slave if it
 
 Note that when one sets up a master->slave replication, all configurations are done only on the slave!
 
-* Promote slave1 as the new master3. Applications should now be moved to use master3. Note [MaxScale](../../../kb/en/maxscale/) can do this step automatically.
+* Promote slave1 as the new master3. Applications should now be moved to use master3. Note [MaxScale](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/) can do this step automatically.
 * Setup master3 as a slave of slave2.
   * The ring replication is now active (at least temporarily, until we have slave3 in place).
 * Delete the old replication setup in master3 that pointed to the deleted master1.

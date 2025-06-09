@@ -1,6 +1,6 @@
 # Installing and Using MariaDB via Docker
 
-Sometimes we want to install a specific version of MariaDB, [MariaDB ColumnStore](../../../../../../architecture/topologies/columnstore-object-storage/), or [MaxScale](../../../../../../clients-and-utilities/mariadb-enterprise-operator/maxscale-database-proxy.md) on a certain system, but no packages are available. Or maybe, we simply want to isolate MariaDB from the rest of the system, to be sure that we won't cause any damage.
+Sometimes we want to install a specific version of MariaDB, [MariaDB ColumnStore](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/), or [MaxScale](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/) on a certain system, but no packages are available. Or maybe, we simply want to isolate MariaDB from the rest of the system, to be sure that we won't cause any damage.
 
 A virtual machine would certainly serve the scope. However, this means installing a system on the top of another system. It requires a lot of resources.
 
