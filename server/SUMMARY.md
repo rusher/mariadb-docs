@@ -793,7 +793,7 @@
       * [mariadb-import-utility](clients-and-utilities/backup-restore-and-import-clients/data-import-with-mariadb-enterprise-server/mariadb-import-utility.md)
   * [Deployment Tools](clients-and-utilities/deployment-tools/README.md)
     * [mariadb-install-db](clients-and-utilities/mariadb-install-db.md)
-    * [mariadb-upgrade](clients-and-utilities/mariadb-upgrade.md)
+    * [mariadb-upgrade](clients-and-utilities/deployment-tools/mariadb-upgrade.md)
     * [mariadb-secure-installation](clients-and-utilities/mariadb-secure-installation.md)
   * [Graphical and Enhanced Clients](clients-and-utilities/graphical-and-enhanced-clients/README.md)
     * [Adminer](clients-and-utilities/graphical-and-enhanced-clients/adminer.md)
