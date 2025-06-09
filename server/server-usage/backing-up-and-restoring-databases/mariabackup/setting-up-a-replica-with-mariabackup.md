@@ -6,7 +6,7 @@ Mariabackup makes it very easy to set up a [replica](../../../ha-and-performance
 
 If you are using [MariaDB Galera Cluster](../../../../en/galera/), then you may want to try one of the following pages instead:
 
-* [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](https://mariadb.com/kb/en/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/)
+* [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](../../../ha-and-performance/standard-replication/)
 * [Configuring MariaDB Replication between Two MariaDB Galera Clusters](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters)
 
 ## Backup the Database and Prepare It

@@ -112,7 +112,7 @@ For each remaining incremental backup, repeat the last step to bring the base fu
 
 Once you've applied all incremental backups to the base, you can restore the backup using either the `[--copy-back](mariabackup-options.md#-copy-back)` or the `[--move-back](mariabackup-options.md#-move-back)` options. The `[--copy-back](mariabackup-options.md#-copy-back)` option allows you to keep the original backup files. The `[--move-back](mariabackup-options.md#-move-back)` option actually moves the backup files to the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, so the original backup files are lost.
 
-* First, [stop the MariaDB Server process](https://mariadb.com/kb/en/).
+* First, stop the MariaDB Server process.
 * Then, ensure that the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is empty.
 * Then, run Mariabackup with one of the options mentioned above:
 
@@ -129,6 +129,6 @@ When Mariabackup restores a database, it preserves the file and directory privil
 $ chown -R mysql:mysql /var/lib/mysql/
 ```
 
-* Finally, [start the MariaDB Server process](https://mariadb.com/kb/en/).
+* Finally, start the MariaDB Server process.
 
 CC BY-SA / Gnu FDL
