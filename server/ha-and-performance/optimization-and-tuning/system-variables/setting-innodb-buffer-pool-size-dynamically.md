@@ -12,7 +12,7 @@ The number of chunks as calculated by [innodb\_buffer\_pool\_size](../../../refe
 
 A background thread performs the resizing operation. The [Innodb\_buffer\_pool\_resize\_status](innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable shows the progress of the resizing operation, for example:
 
-```
+```sql
 SHOW STATUS LIKE 'Innodb_buffer_pool_resize_status';
 +----------------------------------+----------------------------------+
 | Variable_name                    | Value                            |
@@ -23,7 +23,7 @@ SHOW STATUS LIKE 'Innodb_buffer_pool_resize_status';
 
 or
 
-```
+```sql
 SHOW STATUS LIKE 'Innodb_buffer_pool_resize_status';
 +----------------------------------+----------------------------------------------------+
 | Variable_name                    | Value                                              |
