@@ -1,7 +1,3 @@
----
-icon: question
----
-
 # mariadb-check
 
 ## mariadb-check
