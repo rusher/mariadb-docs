@@ -13,7 +13,7 @@ While dates and times can be stored as character strings, using specific tempora
 * **`DATE`**: For dates only. Format: `YYYY-MM-DD`.
 * **`TIME`**: For time only. Format: `HHH:MM:SS` (hours can range beyond 24).
 * **`DATETIME`**: For combined date and time. Format: `YYYY-MM-DD HH:MM:SS`.
-* **`TIMESTAMP`**: Similar to `DATETIME`, but with a more limited range and automatic update capabilities (not covered here). Range typically from `1970-01-01 00:00:01` UTC to `2038-01-19 03:14:07` UTC. From [MariaDB 11.5](https://www.google.com/search?q=link_to_MariaDB_11_5_docs) (64-bit), this range extends to `2106-02-07`.
+* **`TIMESTAMP`**: Similar to `DATETIME`, but with a more limited range and automatic update capabilities (not covered here). Range typically from `1970-01-01 00:00:01` UTC to `2038-01-19 03:14:07` UTC. From MariaDB 11.5 (64-bit), this range extends to `2106-02-07`.
 * **`YEAR`**: For years only. Format: `YY` or `YYYY`.
 
 ### Recording Current Date and Time
@@ -271,7 +271,7 @@ LIMIT 1;
 +-------------------------------------------------+
 ```
 
-For a complete list of options, see the official [DATE\_FORMAT() documentation](https://www.google.com/search?q=link_to_DATE_FORMAT_docs).
+For a complete list of options, see the official [DATE\_FORMAT() documentation](../reference/sql-functions/date-time-functions/date_format.md).
 
 **Using `TIME_FORMAT(time_column, format_string)`:**\
 Similar to `DATE_FORMAT()`, but uses only time-related format options.
