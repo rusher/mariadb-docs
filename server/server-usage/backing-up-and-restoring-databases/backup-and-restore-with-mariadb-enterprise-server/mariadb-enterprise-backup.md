@@ -138,7 +138,7 @@ Subsequent to the above example, the backup is now available in the designated `
 
 ### Preparing a Full Backup for Recovery
 
-A raw full backup is not [point-in-time consistent](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#preparing-backups-for-recovery) and must be prepared before it can be used for a restore. The backup can be prepared any time after the backup is created and before the backup is restored. However, MariaDB recommends preparing a backup immediately after taking the backup to ensure that the backup is consistent.
+A raw full backup is not [point-in-time consistent](mariadb-enterprise-backup.md#point-in-time-recoveries) and must be prepared before it can be used for a restore. The backup can be prepared any time after the backup is created and before the backup is restored. However, MariaDB recommends preparing a backup immediately after taking the backup to ensure that the backup is consistent.
 
 The backup should be prepared with the same version of MariaDB Backup that was used to create the backup.
 
@@ -159,7 +159,7 @@ Once a full backup has been prepared to be point-in-time consistent, MariaDB Bac
 To restore from a full backup:
 
 1. Stop the MariaDB Enterprise Server
-2. [Empty](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#restore-requires-empty-data-directory) the data directory
+2. Empty the data directory
 3. Restore from the "full" directory using the `--copy-back` option:
 
 ```bash
@@ -226,7 +226,7 @@ Once the incremental backup has been applied to the full backup, the full backup
 
 ### Restoring from Incremental Backups
 
-Once you have [prepared](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#preparing-a-full-backup-for-recovery) the full backup directory with all the incremental changes you need (as described above), stop the MariaDB Community Server, [Empty](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#restore-requires-empty-data-directory) its data directory, and restore from the original full backup directory using the --copy-back option:
+Once you have prepared the full backup directory with all the incremental changes you need (as described above), stop the MariaDB Community Server, [Empty](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#restore-requires-empty-data-directory) its data directory, and restore from the original full backup directory using the --copy-back option:
 
 ```bash
 # mariabackup --copy-back --target-dir=/data/backups/full
@@ -307,9 +307,9 @@ To restore from a partial backup, you need to prepare a table on the MariaDB Com
 
 The details of the restore procedure depend on the characteristics of the table:
 
-* [Partial Restore Non-partitioned Tables](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#partial-restore-non-partitioned-tables)
-* [Partial Restore Partitioned Tables](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#partial-restore-partitioned-tables)
-* [Partial Restore of Tables with Full-Text Indexes](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#partial-restore-of-tables-with-full-text-indexes)
+* [Partial Restore Non-partitioned Tables](mariadb-enterprise-backup.md#partial-restore-non-partitioned-tables)
+* [Partial Restore Partitioned Tables](mariadb-enterprise-backup.md#partial-restore-partitioned-tables)
+* [Partial Restore of Tables with Full-Text Indexes](mariadb-enterprise-backup.md#partial-restore-of-tables-with-full-text-indexes)
 
 As partial restores are performed while the server is running, not stopped, care should be taken to prevent production workloads during restore activity.
 
@@ -517,7 +517,7 @@ Create Table: CREATE TABLE `t1` (
 
 Recovering from a backup restores the data directory at a specific point-in-time, but it does not restore the binary log. In a point-in-time recovery, you begin by restoring the data directory from a full or incremental backup, then use the mysqlbinlog utility to recover the binary log data to a specific point in time.
 
-1. First, prepare the backup as you normally would for a [full](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#preparing-a-full-backup-for-recovery) or [incremental](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#preparing-an-incremental-backup) backup:
+1. First, prepare the backup as you normally would for a [full](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#preparing-a-full-backup-for-recovery) or [incremental](../mariabackup/incremental-backup-and-restore-with-mariabackup.md) backup:
 
 ```bash
 # mariabackup --prepare --target-dir=/data/backups/full
