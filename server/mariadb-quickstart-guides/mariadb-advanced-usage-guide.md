@@ -34,7 +34,7 @@ Common options:
 
 If logged into Linux as `root`, you might only need:
 
-```
+```bash
 mariadb -p
 ```
 
@@ -78,7 +78,7 @@ To view the structure of a created table:
 DESCRIBE books;
 ```
 
-```
+```sql
 +--------------+-------------+------+-----+---------+-------+
 | Field        | Type        | Null | Key | Default | Extra |
 +--------------+-------------+------+-----+---------+-------+
@@ -91,7 +91,7 @@ DESCRIBE books;
 +--------------+-------------+------+-----+---------+-------+
 ```
 
-To modify an existing table, use the `ALTER TABLE` statement (see [ALTER TABLE documentation](https://www.google.com/search?q=link_to_ALTER_TABLE_documentation)). To delete a table and all its data (irreversibly), use `DROP TABLE table_name;` (see [DROP TABLE documentation](https://www.google.com/search?q=link_to_DROP_TABLE_documentati%3C43%3Eon)).
+To modify an existing table, use the `ALTER TABLE` statement (see [ALTER TABLE documentation](../reference/sql-statements/data-definition/alter/alter-table.md)). To delete a table and all its data (irreversibly), use `DROP TABLE table_name;` (see [DROP TABLE documentation](../reference/sql-statements/data-definition/drop/drop-table.md)).
 
 Example of another table, `authors`, using `AUTO_INCREMENT` for the primary key:
 
@@ -117,14 +117,14 @@ The `author_id` will automatically generate a unique number for each new author.
 
 ### Entering Data
 
-Use the `INSERT` statement (see [INSERT documentation](https://www.google.com/search?q=link_to_INSERT_documentation)) to add new rows to a table.
+Use the `INSERT` statement (see [INSERT documentation](../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md)) to add new rows to a table.
 
 ```sql
 INSERT INTO authors (name_last, name_first, country)
 VALUES('Kafka', 'Franz', 'Czech Republic');
 ```
 
-Since `author_id` in the `authors` table is `AUTO_INCREMENT` (see [AUTO\_INCREMENT documentation](https://www.google.com/search?q=link_to_AUTO_INCREMENT_documentation)), its value is assigned automatically. If not all columns are being supplied with data, the column names must be listed, followed by their corresponding values in the `VALUES` clause.
+Since `author_id` in the `authors` table is `AUTO_INCREMENT` (see [AUTO\_INCREMENT documentation](../reference/data-types/auto_increment.md)), its value is assigned automatically. If not all columns are being supplied with data, the column names must be listed, followed by their corresponding values in the `VALUES` clause.
 
 To insert data for a book, referencing `author_id` `1` (assuming Kafka's `author_id` became `1`):
 
@@ -152,13 +152,13 @@ To retrieve all book titles:
 SELECT title FROM books;
 ```
 
-To limit the number of rows returned (e.g., to 5) using `LIMIT` (see [LIMIT documentation](https://www.google.com/search?q=link_to_LIMIT_documentation)):
+To limit the number of rows returned (e.g., to 5) using `LIMIT` (see [LIMIT documentation](../reference/sql-statements/data-manipulation/selecting-data/limit.md)):
 
 ```sql
 SELECT title FROM books LIMIT 5;
 ```
 
-To retrieve data from multiple tables, use a `JOIN` (see [JOIN documentation](https://www.google.com/search?q=link_to_JOIN_documentation)). This example lists book titles and author last names by joining `books` and `authors` on their common `author_id` column:
+To retrieve data from multiple tables, use a `JOIN` (see [JOIN documentation](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md)). This example lists book titles and author last names by joining `books` and `authors` on their common `author_id` column:
 
 ```sql
 SELECT title, name_last
@@ -166,7 +166,7 @@ FROM books
 JOIN authors USING (author_id);
 ```
 
-To filter results, use the `WHERE` clause (see [WHERE documentation](https://www.google.com/search?q=link_to_WHERE_documentation)). This example finds books by 'Kafka' and renames the `title` column<sup>1</sup> in the output to 'Kafka Books' using `AS` (an alias):
+To filter results, use the `WHERE` clause. This example finds books by 'Kafka' and renames the `title` column<sup>1</sup> in the output to 'Kafka Books' using `AS` (an alias):
 
 ```sql
 SELECT title AS 'Kafka Books'
@@ -175,7 +175,7 @@ JOIN authors USING (author_id)
 WHERE name_last = 'Kafka';
 ```
 
-```
+```sql
 +-------------------+
 | Kafka Books       |
 +-------------------+
@@ -188,7 +188,7 @@ WHERE name_last = 'Kafka';
 
 ### Changing & Deleting Data
 
-To modify existing data, use the `UPDATE` statement (see [UPDATE documentation](https://www.google.com/search?q=link_to_UPDATE_documentation)). Always use a `WHERE` clause to specify which rows to update.
+To modify existing data, use the `UPDATE` statement (see [UPDATE documentation](../reference/sql-statements/data-manipulation/changing-deleting-data/update.md)). Always use a `WHERE` clause to specify which rows to update.
 
 ```sql
 UPDATE books
@@ -198,7 +198,7 @@ WHERE isbn = '0805210644';
 
 This changes the `title` for the book with the specified `isbn`. Multiple columns can be updated by separating `column = value` assignments with commas within the `SET` clause.
 
-To remove rows from a table, use the `DELETE` statement (see [DELETE documentation](https://www.google.com/search?q=link_to_DELETE_documentation)). Use `WHERE` to specify which rows to delete.
+To remove rows from a table, use the `DELETE` statement (see [DELETE documentation](../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md)). Use `WHERE` to specify which rows to delete.
 
 ```sql
 DELETE FROM books

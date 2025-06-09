@@ -2,7 +2,7 @@
 
 This guide details the parameters for connecting to a MariaDB server using client programs like `mariadb`. Learn about default connection behaviors and how to use various command-line options to customize your connection, including secure TLS configurations.
 
-While the examples focus on the `mariadb` command-line client, the concepts apply to other clients like graphical interfaces or backup utilities (e.g., `mariadb-dump`). If you are completely new to MariaDB, refer to [A MariaDB Primer](https://www.google.com/search?q=link_to_A_MariaDB_Primer) first.
+While the examples focus on the `mariadb` command-line client, the concepts apply to other clients like graphical interfaces or backup utilities (e.g., `mariadb-dump`). If you are completely new to MariaDB, refer to [A MariaDB Primer](mariadb-usage-guide.md) first.
 
 ### Default Connection Behavior
 
@@ -120,7 +120,7 @@ See the GRANT command for information on creating MariaDB user accounts.
 
 ### TLS Options
 
-These options control the use of TLS (Transport Layer Security) for secure connections. For comprehensive details, see [Secure Connections Overview](https://www.google.com/search?q=link_to_Secure_Connections_Overview) and [TLS System Variables](https://www.google.com/search?q=link_to_TLS_System_Variables).
+These options control the use of TLS (Transport Layer Security) for secure connections. For comprehensive details, see [Secure Connections Overview](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) and [TLS System Variables](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md).
 
 * **`--ssl`**: Enable TLS for the connection. Automatically enabled if other `--ssl-*` flags are used. Disable with `--skip-ssl`.
 * **`--ssl-ca=name`**: CA (Certificate Authority) file in PEM format. (Implies `--ssl`).
@@ -135,13 +135,3 @@ These options control the use of TLS (Transport Layer Security) for secure conne
 ### Option Files
 
 Connection parameters and other options can also be set in option files (configuration files), which most MariaDB clients read upon startup. To see which option files a client reads and the option groups it recognizes, typically run the client with the `--help` option.
-
-### See Also
-
-* [A MariaDB Primer](https://www.google.com/search?q=link_to_A_MariaDB_Primer)
-* [`mariadb` client documentation](https://www.google.com/search?q=link_to_mariadb_client_docs)
-* [Clients and Utilities overview](https://www.google.com/search?q=link_to_Clients_and_Utilities)
-* [Configuring MariaDB for Remote Client Access](https://www.google.com/search?q=link_to_Configuring_Remote_Access)
-* `--skip-grant-tables`: A server startup option (not a client connection parameter) that allows starting MariaDB without loading the grant tables. This can be useful for password recovery but should be used with extreme caution.
-
-_(Please replace `link_to_...` placeholders with the actual URLs from your documentation.)_

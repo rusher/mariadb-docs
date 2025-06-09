@@ -35,7 +35,7 @@ CREATE TABLE student_tests (
 );
 ```
 
-For more details, see the official [CREATE TABLE](https://www.google.com/search?q=link_to_CREATE_TABLE_documentation) documentation.
+For more details, see the official [CREATE TABLE](https://mariadb.net/docs/server/reference/sql-statements/data-definition/create/create-table) documentation.
 
 ### Inserting Records
 
@@ -62,7 +62,7 @@ INSERT INTO student_tests
  ('Tatiana', 'Tuning', 83, '2013-09-30');
 ```
 
-For more information, see the official [INSERT](https://www.google.com/search?q=link_to_INSERT_documentation) documentation.
+For more information, see the official INSERT documentation.
 
 ### Using AUTO\_INCREMENT
 
@@ -93,7 +93,7 @@ Verify the inserted records:
 SELECT * FROM student_details;
 ```
 
-```
+```sql
 +----+---------+---------------+
 | id | name    | date_of_birth |
 +----+---------+---------------+
@@ -104,7 +104,7 @@ SELECT * FROM student_details;
 +----+---------+---------------+
 ```
 
-For more details, see the [AUTO\_INCREMENT](https://www.google.com/search?q=link_to_AUTO_INCREMENT_documentation) documentation.
+For more details, see the [AUTO\_INCREMENT](https://mariadb.net/docs/server/reference/data-types/auto_increment) documentation.
 
 ### Querying from two tables on a common value (JOIN)
 
@@ -124,7 +124,7 @@ To find the maximum value in a column:
 SELECT MAX(a) FROM t1;
 ```
 
-```
+```sql
 +--------+
 | MAX(a) |
 +--------+
@@ -132,7 +132,7 @@ SELECT MAX(a) FROM t1;
 +--------+
 ```
 
-See the [MAX() function](https://www.google.com/search?q=link_to_MAX_function_documentation) documentation. For a grouped example, refer to _Finding the Maximum Value and Grouping the Results_ below.
+See the [MAX() function](https://mariadb.net/docs/server/reference/sql-functions/aggregate-functions/max) documentation. For a grouped example, refer to _Finding the Maximum Value and Grouping the Results_ below.
 
 ### Finding the Minimum Value
 
@@ -142,7 +142,7 @@ To find the minimum value in a column:
 SELECT MIN(a) FROM t1;
 ```
 
-```
+```sql
 +--------+
 | MIN(a) |
 +--------+
@@ -150,7 +150,7 @@ SELECT MIN(a) FROM t1;
 +--------+
 ```
 
-See the [MIN() function](https://www.google.com/search?q=link_to_MIN_function_documentation) documentation.
+See the MIN() function documentation.
 
 ### Finding the Average Value
 
@@ -168,7 +168,7 @@ SELECT AVG(a) FROM t1;
 +--------+
 ```
 
-See the [AVG() function](https://www.google.com/search?q=link_to_AVG_function_documentation) documentation.
+See the [AVG() function](https://mariadb.net/docs/server/reference/sql-functions/aggregate-functions/avg) documentation.
 
 ### Finding the Maximum Value and Grouping the Results
 
@@ -178,7 +178,7 @@ To find the maximum value within groups:
 SELECT name, MAX(score) FROM student_tests GROUP BY name;
 ```
 
-```
+```sql
 +---------+------------+
 | name    | MAX(score) |
 +---------+------------+
@@ -200,7 +200,7 @@ SELECT name, test, score FROM student_tests
  ORDER BY score DESC; -- Use ASC for ascending order
 ```
 
-```
+```sql
 +---------+--------+-------+
 | name    | test   | score |
 +---------+--------+-------+
@@ -215,7 +215,7 @@ SELECT name, test, score FROM student_tests
 +---------+--------+-------+
 ```
 
-For more options, see the [ORDER BY](https://www.google.com/search?q=link_to_ORDER_BY_documentation) documentation.
+For more options, see the [ORDER BY](https://mariadb.net/docs/server/reference/sql-statements/data-manipulation/selecting-data/order-by) documentation.
 
 ### Finding the Row with the Minimum of a Particular Column
 
@@ -226,7 +226,7 @@ SELECT name, test, score FROM student_tests
  WHERE score = (SELECT MIN(score) FROM student_tests);
 ```
 
-```
+```sql
 +-------+--------+-------+
 | name  | test   | score |
 +-------+--------+-------+
@@ -243,7 +243,7 @@ SELECT name, test, score FROM student_tests st1
  WHERE score = (SELECT MAX(st2.score) FROM student_tests st2 WHERE st1.name = st2.name);
 ```
 
-```
+```sql
 +---------+--------+-------+
 | name    | test   | score |
 +---------+--------+-------+
@@ -264,7 +264,7 @@ To see the current date (optional, for reference):
 SELECT CURDATE() AS today;
 ```
 
-```
+```sql
 +------------+
 | today      |
 +------------+
@@ -279,7 +279,7 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, '2014-08-02') AS 
   FROM student_details;
 ```
 
-```
+```sql
 +---------+---------------+------+
 | name    | date_of_birth | age  |
 +---------+---------------+------+
@@ -292,11 +292,11 @@ SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, '2014-08-02') AS 
 
 To calculate current age, replace the specific date string (e.g., '2014-08-02') with CURDATE().
 
-See the TIMESTAMPDIFF() documentation for more.
+See the [TIMESTAMPDIFF()](https://mariadb.net/docs/server/reference/sql-functions/date-time-functions/timestampdiff) documentation for more.
 
 ### Using User-defined Variables
 
-[User-defined variables](https://www.google.com/search?q=link_to_User_defined_V%3C28%3Eariables_documentation) can store values for use in subsequent queries within the same session.
+[User-defined variables ](https://mariadb.net/docs/server/reference/sql-structure/sql-language-structure/user-defined-variables)can store values for use in subsequent queries within the same session.
 
 Example: Set a variable for the average score and use it to filter results.
 
@@ -316,7 +316,7 @@ SELECT @avg_score := AVG(score) FROM student_tests;
 SELECT * FROM student_tests WHERE score > @avg_score;
 ```
 
-```
+```sql
 +---------+--------+-------+------------+
 | name    | test   | score | test_date  |
 +---------+--------+-------+------------+
@@ -338,7 +338,7 @@ SET @count = 0;
 SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details;
 ```
 
-```
+```sql
 +---------+---------+---------------+
 | counter | name    | date_of_birth |
 +---------+---------+---------------+
@@ -349,13 +349,13 @@ SELECT @count := @count + 1 AS counter, name, date_of_birth FROM student_details
 +---------+---------+---------------+
 ```
 
-See [User-defined Variables](https://www.google.com/search?q=link_to_User_defined_Variables_documentation) for more.
+See [User-defined Variables](https://mariadb.net/docs/server/reference/sql-structure/sql-language-structure/user-defined-variables) for more.
 
 ### View Tables in Order of Size
 
 To list all tables in the current database, ordered by their size (data + index) in megabytes:
 
-```
+```sql
 SELECT table_schema as `DB`, table_name AS `Table`,
   ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)`
   FROM information_schema.TABLES
@@ -363,7 +363,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
   ORDER BY (data_length + index_length) DESC;
 ```
 
-```
+```sql
 +--------------------+---------------------------------------+-----------+
 | DB                 | Table                                 | Size (MB) | -- Example Output
 +--------------------+---------------------------------------+-----------+
@@ -409,7 +409,7 @@ Verify results after deletion:
 SELECT * FROM t;
 ```
 
-```
+```sql
 +------+------+
 | id   | f1   |
 +------+------+

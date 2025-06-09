@@ -56,8 +56,6 @@ The most common way to install MariaDB on Linux is through your system's package
 
     After installation, run the security script to set a root password, remove anonymous users, and disable remote root login.
 
-    Bash
-
     ```bash
     sudo mariadb-secure-installation
     ```
@@ -67,7 +65,7 @@ The most common way to install MariaDB on Linux is through your system's package
 
     MariaDB typically starts automatically after installation. You can check its status and manually start it if needed.
 
-    *   Check status:Bash
+    *   Check status:
 
         ```bash
         sudo systemctl status mariadb
@@ -93,10 +91,10 @@ For Windows, MariaDB provides an `.msi` installer for a straightforward graphica
 
 1.  Download MariaDB:
 
-    Visit the MariaDB downloads page to get the latest .msi installer.
+    Visit the MariaDB downloads page to get the latest `.msi` installer.
 2.  Run the Installer:
 
-    Double-click the downloaded .msi file to start the installation wizard.
+    Double-click the downloaded `.msi` file to start the installation wizard.
 3.  Follow On-Screen Instructions:
 
     The installer will guide you through the process, including:

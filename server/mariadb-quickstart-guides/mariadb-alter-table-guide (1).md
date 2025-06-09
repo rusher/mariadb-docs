@@ -28,7 +28,7 @@ Suppose you have a database db1 and a table clients. Its initial structure is:
 DESCRIBE clients;
 ```
 
-```
+```sql
 +-------------+-------------+------+-----+---------+-------+
 | Field       | Type        | Null | Key | Default | Extra |
 +-------------+-------------+------+-----+---------+-------+
@@ -102,7 +102,7 @@ After additions, the table structure might look like (excluding `new_first_colum
 DESCRIBE clients;
 ```
 
-```
+```sql
 +-------------+-------------+------+-----+---------+-------+
 | Field       | Type        | Null | Key | Default | Extra |
 +-------------+-------------+------+-----+---------+-------+
@@ -231,7 +231,7 @@ SHOW INDEX FROM clients\G
 
 Example output:
 
-```
+```sql
 *************************** 1. row ***************************
            Table: clients
       Non_unique: 0
