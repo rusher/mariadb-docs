@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 
 **Release date:** 25 Nov 2014
 
-[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current stable series of MariaDB. It is an evolution of [MariaDB 5.5](broken-reference) with several entirely new features not found anywhere else and\
+[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current stable series of MariaDB. It is an evolution of [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with several entirely new features not found anywhere else and\
 with backported and reimplemented features from MySQL 5.6.
 
 [MariaDB 10.0.15](mariadb-10015-release-notes.md) is a [_**Stable**_](../../../mariadb-release-criteria.md) (_GA_) release.
