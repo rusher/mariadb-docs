@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 
 **Release date:** 16 Aug 2013
 
-[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is built on the[MariaDB 5.5 series](broken-reference) with backported and reimplemented\
+[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is built on the the [MariaDB 5.5 series](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with backported and reimplemented\
 features from MySQL 5.6 and entirely new features not found anywhere else.
 
 [MariaDB 10.0.4](mariadb-1004-release-notes.md) is an [_**Alpha**_](../../../mariadb-release-criteria.md) release.\
@@ -20,9 +20,9 @@ be pushed in future releases.**Do not use alpha releases on production systems.*
 For a list of changes made in [MariaDB 10.0.4](mariadb-1004-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1004-changelog.md).
 
-## Based on [MariaDB 5.5](broken-reference)
+## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
-The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](broken-reference) series. It also includes\
+The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series. It also includes\
 features imported from MySQL 5.6, and completely new features.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
@@ -123,12 +123,12 @@ A few bugs were fixed, in particular:
 
 ## Other Features
 
-Other features are planned for inclusion in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md). They are listed on the [What is MariaDB 10.0?](changes-improvements-in-mariadb-10-0.md) and [Plans for 10x](broken-reference) pages.
+Other features are planned for inclusion in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md). They are listed on the [What is MariaDB 10.0?](changes-improvements-in-mariadb-10-0.md) and Plans for 10x pages.
 
 Thanks, and enjoy MariaDB!
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
 page.
