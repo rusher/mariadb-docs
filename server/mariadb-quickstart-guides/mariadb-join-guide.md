@@ -26,7 +26,7 @@ Below are examples of different `JOIN` types using the tables `t1` and `t2`.
 
 An `INNER JOIN` produces a result set containing only rows that have a match in both tables for the specified join condition(s).
 
-```
+```sql
 SELECT * FROM t1 INNER JOIN t2 ON t1.a = t2.b;
 ```
 

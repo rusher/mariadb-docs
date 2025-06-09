@@ -48,13 +48,13 @@ Selecting All Columns:
 
 Use \* to select all columns from a table.
 
-```
+```sql
 SELECT * FROM books;
 ```
 
 **Output (example):**
 
-```sql
+```
 +------------+------------------------+-----------+--------------+----------+-------------+
 | isbn       | title                  | author_id | publisher_id | year_pub | description |
 +------------+------------------------+-----------+--------------+----------+-------------+
@@ -76,7 +76,7 @@ SELECT isbn, title, author_id FROM books;
 
 **Output (example):**
 
-```sql
+```
 +------------+------------------------+-----------+
 | isbn       | title                  | author_id |
 +------------+------------------------+-----------+
@@ -89,7 +89,7 @@ SELECT isbn, title, author_id FROM books;
 
 **Limiting the Number of Rows with `LIMIT`:**
 
-*   To get the first `N` rows:SQL
+*   To get the first `N` rows:
 
     ```sql
     SELECT isbn, title, author_id FROM books LIMIT 5;
@@ -97,7 +97,7 @@ SELECT isbn, title, author_id FROM books;
 
     **Output (example):**
 
-    ```sql
+    ```
     +------------+--------------------+-----------+
     | isbn       | title              | author_id |
     +------------+--------------------+-----------+
@@ -117,7 +117,7 @@ SELECT isbn, title, author_id FROM books;
 
     **Output (example, assuming only 3 more rows exist after offset 5):**
 
-    ```sql
+    ```
     +------------+------------------------+-----------+
     | isbn       | title                  | author_id |
     +------------+------------------------+-----------+
@@ -130,9 +130,9 @@ SELECT isbn, title, author_id FROM books;
 
 ### Filtering and Ordering Results
 
-Filtering with WHERE:
+Filtering with `WHERE`:
 
-Use the WHERE clause to specify conditions for row selection.
+Use the `WHERE` clause to specify conditions for row selection.
 
 ```sql
 SELECT isbn, title
@@ -143,7 +143,7 @@ LIMIT 5;
 
 **Output (example):**
 
-```sql
+```
 +------------+------------------------+
 | isbn       | title                  |
 +------------+------------------------+
@@ -156,9 +156,9 @@ LIMIT 5;
 5 rows in set (0.000 sec)
 ```
 
-Ordering with ORDER BY:
+Ordering with `ORDER BY`:
 
-Use ORDER BY column\_name \[ASC|DESC] to sort the result set.
+Use `ORDER BY column_name [ASC|DESC]` to sort the result set.
 
 ```sql
 SELECT isbn, title
@@ -170,7 +170,7 @@ LIMIT 5;
 
 **Output (example):**
 
-```sql
+```
 +------------+--------------------+
 | isbn       | title              |
 +------------+--------------------+
@@ -204,7 +204,7 @@ LIMIT 5;
 
 **Output (example):**
 
-```sql
+```
 +------------+--------------------+-------------------+
 | isbn       | title              | author            |
 +------------+--------------------+-------------------+
@@ -217,7 +217,7 @@ LIMIT 5;
 5 rows in set (0.00 sec)
 ```
 
-* Alternative `JOIN` syntax: `... JOIN authors ON books.author_id = authors.author_id ...`. For more on joins, see the [JOIN Syntax documentation](https://www.google.com/search?q=link_to_JOIN_syntax_docs) or a "Basic Joins Guide".
+* Alternative `JOIN` syntax: `... JOIN authors ON books.author_id = authors.author_id ...`. For more on joins, see the [JOIN Syntax documentation](../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) or a "Basic Joins Guide".
 * **`CONCAT(str1, str2, ...)`:** Concatenates strings.
 * **`AS alias_name`:** Assigns an alias to an output column.
 
@@ -236,7 +236,7 @@ LIMIT 5;
 
 **Output (example, same as above if only Dostoevsky matches):**
 
-```sql
+```
 +------------+--------------------+-------------------+
 | isbn       | title              | author            |
 +------------+--------------------+-------------------+
@@ -258,8 +258,6 @@ Place these modifiers immediately after the `SELECT` keyword.
     * `ALL` (default): Returns all rows that meet the criteria.
     * `DISTINCT`: Returns only unique rows for the selected columns. If multiple identical rows are found for the specified columns, only the first one is displayed.
 
-    \<!-- end list -->
-
     ```sql
     SELECT DISTINCT title
     FROM books
@@ -270,7 +268,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     **Output (example, showing one "Crime & Punishment"):**
 
-    ```sql
+    ```
     +------------------------+
     | title                  |
     +------------------------+
@@ -281,9 +279,9 @@ Place these modifiers immediately after the `SELECT` keyword.
     | Notes from Underground |
     +------------------------+
     ```
-*   HIGH\_PRIORITY:
+*   `HIGH_PRIORITY`:
 
-    Gives the SELECT statement higher priority over concurrent data modification statements (use with caution as it can impact write performance).
+    Gives the `SELECT` statement higher priority over concurrent data modification statements (use with caution as it can impact write performance).
 
     SQL
 
@@ -294,11 +292,9 @@ Place these modifiers immediately after the `SELECT` keyword.
     WHERE name_last = 'Dostoevsky'
     ORDER BY title;
     ```
-*   SQL\_CALC\_FOUND\_ROWS and FOUND\_ROWS():
+*   `SQL_CALC_FOUND_ROWS` and `FOUND_ROWS():`
 
-    To find out how many rows a query would have returned without a LIMIT clause, use SQL\_CALC\_FOUND\_ROWS in your SELECT statement, and then execute SELECT FOUND\_ROWS(); immediately after.
-
-    SQL
+    To find out how many rows a query would have returned without a `LIMIT` clause, use `SQL_CALC_FOUND_ROWS` in your `SELECT` statement, and then execute `SELECT` `FOUND_ROWS()`; immediately after.
 
     ```sql
     SELECT SQL_CALC_FOUND_ROWS isbn, title
@@ -311,7 +307,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     **Output (example for the first query):**
 
-    ```sql
+    ```
     +------------+------------------------+
     | isbn       | title                  |
     +------------+------------------------+
@@ -332,7 +328,7 @@ Place these modifiers immediately after the `SELECT` keyword.
 
     **Output (example, if 6 Dostoevsky books in total):**
 
-    ```sql
+    ```
     +--------------+
     | FOUND_ROWS() |
     +--------------+

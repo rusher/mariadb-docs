@@ -15,7 +15,7 @@ Two main configuration directives control MariaDB's network accessibility:
   * By default, for security, many MariaDB packages bind to `127.0.0.1` (localhost). This means the server will only accept connections originating from the server machine itself via the loopback interface. Remote connections will fail.
   *   If `bind-address` is set to `127.0.0.1`, attempting to connect from another host, or even from the same host using a non-loopback IP address, will result in errors like:
 
-      ```
+      ```sql
       ERROR 2002 (HY000): Can't connect to MySQL server on 'myhost' (115)
       ```
 
@@ -25,17 +25,15 @@ Two main configuration directives control MariaDB's network accessibility:
 
 Connecting via `localhost` typically works even if `bind-address` is `127.0.0.1` (using the loopback interface):
 
-Bash
-
 ```bash
 ./client/mariadb --host=localhost --protocol=tcp --port=3306 test
 ```
 
-### Locating the MariaDB Configuration File
+Locating the MariaDB Configuration File
 
 To change these network settings, you need to edit MariaDB's configuration file (often named `my.cnf` or `my.ini`).
 
-* See [Configuring MariaDB with my.cnf](https://www.google.com/search?q=link_to_configuring_with_my_cnf) for comprehensive details.
+* See [Configuring MariaDB with my.cnf](../ha-and-performance/optimization-and-tuning/system-variables/sample-mycnf-files.md) for comprehensive details.
 * **Common Locations:**
   * `/etc/my.cnf` (Unix/Linux/BSD)
   * `/etc/mysql/my.cnf` (Common on Debian/Ubuntu)
@@ -60,24 +58,22 @@ To change these network settings, you need to edit MariaDB's configuration file 
 3. **Adjust Directives:**
    *   If `skip-networking` is present and enabled (not commented out with `#`), comment it out or set it to `0`:Ini, TOML
 
-       ```
+       ```toml
        #skip-networking
        ```
 
        orIni, TOML
 
-       ```
+       ```toml
        skip-networking=0
        ```
    *   If `bind-address = 127.0.0.1` (or another loopback/specific IP that's too restrictive) is present:
 
        * To listen on all available IPv4 interfaces: Comment it out entirely (`#bind-address = 127.0.0.1`) or set `bind-address = 0.0.0.0`.
        * To listen on a specific public IP address of your server: `bind-address = <your_server_public_ip>`.
-       * Alternatively, to effectively disable binding to a specific address and listen on all, you can add `skip-bind-address`. Example changes: \<!-- end list -->
+       * Alternatively, to effectively disable binding to a specific address and listen on all, you can add `skip-bind-address`. Example changes:&#x20;
 
-       Ini, TOML
-
-       ```
+       ```toml
        [mysqld]
        ...
        #skip-networking
@@ -85,17 +81,17 @@ To change these network settings, you need to edit MariaDB's configuration file 
        ...
        ```
 
-       Or, to be explicit for listening on all interfaces if `bind-address` was previously restrictive:Ini, TOML
+       Or, to be explicit for listening on all interfaces if `bind-address` was previously restrictive:
 
-       ```
+       ```toml
        [mysqld]
        bind-address = 0.0.0.0
        ```
 4. **Save and Restart:** Save the configuration file and restart the MariaDB server service.
-   * See [Starting and Stopping MariaDB](https://www.google.com/search?q=link_to_starting_stopping_mariadb) for instructions.
-5.  **Verify Settings (Optional):** You can check the options `mariadbd` is effectively using by running:Bash
+   * See [Starting and Stopping MariaDB](../server-management/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md) for instructions.
+5.  **Verify Settings (Optional):** You can check the options `mariadbd` is effectively using by running:
 
-    ```
+    ```bash
     ./sql/mariadbd --print-defaults  # Adjust path to mariadbd if necessary
     ```
 
@@ -105,7 +101,7 @@ To change these network settings, you need to edit MariaDB's configuration file 
 
 Configuring the server to listen for remote connections is only the first step. You must also grant privileges to user accounts to connect from specific remote hosts. MariaDB user accounts are defined as `'username'@'hostname'`.
 
-1.  **Connect to MariaDB:**&#x42;ash
+1.  **Connect to MariaDB:**
 
     ```bash
     mariadb -u root -p
@@ -134,13 +130,13 @@ Configuring the server to listen for remote connections is only the first step. 
        ```
 
        This allows the `root` user to connect from any IP address in the `192.168.100.x` subnet. Replace `'my-very-strong-password'` with a strong, unique password.
-   * For creating less privileged users or more granular permissions, see the [GRANT](https://www.google.com/search?q=link_to_GRANT_page) documentation.
+   * For creating less privileged users or more granular permissions, see the [GRANT](../reference/sql-statements/account-management-sql-statements/grant.md) documentation.
 
 ### Configuring Your Firewall
 
 Even if MariaDB is configured for remote access, a firewall on the server (software or hardware) might block incoming connections on MariaDB's port (default is `3306`).
 
-*   **RHEL/CentOS 7 Example (using `firewall-cmd`):**&#x42;ash
+*   **RHEL/CentOS 7 Example (using `firewall-cmd`):**
 
     ```bash
     sudo firewall-cmd --add-port=3306/tcp --permanent
@@ -151,7 +147,7 @@ Even if MariaDB is configured for remote access, a firewall on the server (softw
 
 ### Important Considerations and Reverting Changes
 
-* **Security:** Opening MariaDB to remote connections, especially to the internet, increases security risks. Always use strong passwords, grant minimal necessary privileges, and restrict host access as much as possible. Consider using TLS/SSL for encrypted connections (see [Secure Connections Overview](https://www.google.com/search?q=link_to_Secure_Connections_Overview)).
+* **Security:** Opening MariaDB to remote connections, especially to the internet, increases security risks. Always use strong passwords, grant minimal necessary privileges, and restrict host access as much as possible. Consider using TLS/SSL for encrypted connections (see [Secure Connections Overview](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md)).
 * **Reverting:** To disable remote access and revert to a more secure local-only setup:
   1. Edit your MariaDB configuration file.
   2. Ensure `skip-networking` is not enabled (or is `0`).
