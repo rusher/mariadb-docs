@@ -31,3 +31,5 @@ For additional information, see "[MariaDB Enterprise ColumnStore Data Loading](.
 MariaDB Enterprise ColumnStore supports online schema changes, so that supported DDL operations can be performed without blocking reads. The supported DDL operations only require a write metadata lock (MDL) on the target table.
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

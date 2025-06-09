@@ -66,3 +66,5 @@ Sep 14 17:46:51 centos mysql-server_auditing: columnstore-1 centos,root,localhos
 For additional configuration and customization options see the [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) documentation.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

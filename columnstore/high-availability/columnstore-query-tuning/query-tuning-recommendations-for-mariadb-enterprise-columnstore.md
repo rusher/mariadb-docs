@@ -108,3 +108,5 @@ To support distributed execution of custom sql, MariaDB Enterprise ColumnStore s
 * These functions can also be used as Analytic (Window) functions just like any built-in aggregate function.
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

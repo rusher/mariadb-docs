@@ -269,3 +269,5 @@ where n is:
   2. auto-switch mode: ColumnStore will attempt to process the query internally, if it cannot, it will automatically switch the query to run in row-by-row mode.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

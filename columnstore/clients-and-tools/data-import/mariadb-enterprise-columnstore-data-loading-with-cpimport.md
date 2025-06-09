@@ -284,3 +284,5 @@ When this problem occurs, some solutions are:
 Additional information is available [here](../data-ingestion/columnstore-bulk-data-loading.md#cpimport-modes).
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

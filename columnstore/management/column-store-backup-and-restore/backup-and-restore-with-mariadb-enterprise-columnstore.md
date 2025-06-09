@@ -36,3 +36,5 @@ To see the procedure to perform a full backup and restore, choose the storage ty
 | [Enterprise ColumnStore with Shared Local Storage](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) | ![columnstore-topology](../../.gitbook/assets/backup-and-restore-with-mariadb-enterprise-columnstore/+image/columnstore-topology.png)       |
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

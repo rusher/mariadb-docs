@@ -9,3 +9,5 @@ MariaDB ColumnStore Utility Functions are a set of simple functions that return 
 | mcsSystemReadOnly() | Returns 1 if ColumnStore is in a write-suspended mode. That is, a user executed the SuspendDatabaseWrites.It returns 2 if in a read only state. ColumnStore puts itself into a read only state if it detects a logic error that may have corrupted data. Generally it means a ROLLBACK operation failed. Returns 0 if the system is writable. |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

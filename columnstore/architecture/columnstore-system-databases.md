@@ -10,3 +10,5 @@ When using ColumnStore, MariaDB Server creates a series of system databases used
 | columnstore\_info    | The database for stored procedures is used to retrieve information about ColumnStore usage. For more information, see the [ColumnStore Information Schema](../sql-commands/columnstore-information-schema-tables.md) tables. |
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

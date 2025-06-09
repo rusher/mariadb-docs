@@ -55,3 +55,5 @@ ColumnStore supports the following data types:
 * Timestamp und current\_timestamp still not supported. ([MCOL-3694](https://jira.mariadb.org/browse/MCOL-3694) / [MCOL-1039](https://jira.mariadb.org/browse/MCOL-1039))
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}
