@@ -8,8 +8,8 @@ The optimization appeared in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXm
 
 A basic (but slightly artificial) example:
 
-```
-create table items (
+```sql
+CREATE TABLE items (
   price  decimal(8,2),
   weight decimal(8,2),
   ...
@@ -17,16 +17,16 @@ create table items (
 );
 ```
 
-```
+```sql
 -- Find items that cost more than 1000 $currency_units per kg:
 set optimizer_switch='not_null_range_scan=on';
 explain
-select * from items where items.price > items.weight / 1000;
+SELECT * from items where items.price > items.weight / 1000;
 ```
 
 The WHERE condition in this form cannot be used for range scans. However, one can infer that it will reject rows that NULL for `weight`. That is, infer an additional condition that
 
-```
+```sql
 weight IS NOT NULL
 ```
 
@@ -42,10 +42,10 @@ and pass it to the range optimizer. The range optimizer can, in turn, evaluate w
 
 Here's another example that's more complex but is based on a real-world query. Consider a join query
 
-```
+```sql
 -- Find orders that were returned
-select * from current_orders as O, order_returns as RET
-where 
+SELECT * FROM current_orders AS O, order_returns AS RET
+WHERE 
   O.return_id= RET.id;
 ```
 
@@ -55,8 +55,8 @@ Here, the optimizer can infer the condition "return\_id IS NOT NULL". If most of
 
 The optimization is not enabled by default. One can enable it like so
 
-```
-set optimizer_switch='not_null_range_scan=on';
+```sql
+SET optimizer_switch='not_null_range_scan=on';
 ```
 
 ## Optimizer Trace

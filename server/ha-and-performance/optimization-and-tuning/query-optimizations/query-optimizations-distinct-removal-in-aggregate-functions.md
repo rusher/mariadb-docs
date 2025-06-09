@@ -4,7 +4,7 @@
 
 One can use `DISTINCT` keyword to de-duplicate the arguments of an aggregate function. For example:
 
-```
+```sql
 SELECT COUNT(DISTINCT col1) FROM tbl1;
 ```
 
@@ -17,7 +17,7 @@ cases when argument of aggregate function will not have duplicates and so de-dup
 
 A basic example: if we're doing a select from one table, then the values of `primary_key` are already distinct:
 
-```
+```sql
 SELECT aggregate_func(DISTINCT tbl.primary_key, ...) FROM tbl;
 ```
 
@@ -25,7 +25,7 @@ If the SELECT has other constant tables, that's also ok, as they will not create
 
 The next step: a part of the primary key can be "bound" by the GROUP BY clause. Consider a query:
 
-```
+```sql
 SELECT aggregate_func(DISTINCT t1.pk1, ...) FROM t1 GROUP BY t1.pk2;
 ```
 
@@ -37,7 +37,7 @@ Suppose the table has `PRIMARY KEY(pk1, pk2)`. Grouping by `pk2` fixes the value
 
 When de-duplication is necessary, it will show:
 
-```
+```json
 {
             "prepare_sum_aggregators": {
               "function": "count(distinct t1.col1)",
@@ -48,7 +48,7 @@ When de-duplication is necessary, it will show:
 
 When de-duplication is not necessary, it will show:
 
-```
+```json
 {
             "prepare_sum_aggregators": {
               "function": "count(distinct t1.pk1)",

@@ -6,7 +6,7 @@ You have a website with news articles, or a blog, or some other thing with a lis
 
 You spot [OFFSET and LIMIT](../../../reference/sql-statements/data-manipulation/selecting-data/limit.md) in MariaDB and decide that is the obvious way to do it.
 
-```
+```sql
 SELECT  *
         FROM  items
         WHERE  messy_filtering
@@ -44,10 +44,10 @@ Build another table saying where the pages start? Get real! That would be a main
 
 Bottom line: Don't use OFFSET; instead remember where you "left off".
 
-```
-First page (latest 10 items):
+```sql
+# First page (latest 10 items):
     SELECT ... WHERE ... ORDER BY id DESC LIMIT 10
-Next page (second 10):
+# Next page (second 10):
     SELECT ... WHERE ... AND id < $left_off ORDER BY id DESC LIMIT 10
 ```
 
@@ -61,7 +61,7 @@ Currently, the \[Next] button probably has a url something like ?topic=xyz\&page
 
 The new variant would be ?topic=xyz\&id=12345\&limit=10. (Note: the 12345 is not computable from 4999.) By using INDEX(topic, id) you can efficiently say
 
-```
+```sql
 WHERE topic = 'xyz'
       AND id >= 1234
     ORDER BY id
@@ -99,7 +99,7 @@ Reaching forward and backward by 5 pages is not too much work. It would take two
 
 The UI would recognize those, then generate a SELECT with something like
 
-```
+```sql
 WHERE topic = 'xyz'
     ORDER BY id ASC -- ASC for First; DESC for Last
     LIMIT 10
@@ -107,7 +107,7 @@ WHERE topic = 'xyz'
 
 The last items would be delivered in reverse order. Either deal with that in the UI, or make the SELECT more complex:
 
-```
+```sql
 ( SELECT ...
         WHERE topic = 'xyz'
         ORDER BY id DESC
@@ -123,17 +123,16 @@ Let's say you are on page 12 of lots of pages. It could show these links:
 
 where the ellipsis is really used. Some end cases:
 
-```
-Page one of three:
+<pre class="language-sql"><code class="lang-sql"># Page one of three:
     First [2] [3]
-Page one of many:
-    First [2] [3] [4] [5] ... [Last]
-Page two of many:
+<strong># Page one of many:
+</strong>    First [2] [3] [4] [5] ... [Last]
+# Page two of many:
     [First] 2 [3] [4] [5] ... [Last]
-If you jump to the Last page, you don't know what page number it is.
-So, the best you can do is perhaps:
-    [First] ... [Prev] Last
-```
+# If you jump to the Last page, you don't know what page number it is.
+# So, the best you can do is perhaps:
+#    [First] ... [Prev] Last
+</code></pre>
 
 ## Why it Works
 
@@ -149,7 +148,7 @@ For this discussion, I am assuming
 
 Very efficient -- it does all the work in the index:
 
-```
+```sql
 INDEX(topic, id)
     WHERE topic = 'xyz'
       AND id >= 876
@@ -172,7 +171,7 @@ That will hit at least 51 consecutive index entries, plus at least 51 _randomly_
 
 Efficient -- back to the previous degree of efficiency:
 
-```
+```sql
 INDEX(topic, is_deleted, id)
     WHERE topic = 'xyz'
       AND id >= 876
@@ -201,7 +200,7 @@ The background script would round the count off.
 
 The quick way to get an _estimated_ number of rows for an InnoDB table is
 
-```
+```sql
 SELECT  table_rows
         FROM  information_schema.TABLES
         WHERE  TABLE_SCHEMA = 'database_name'

@@ -1,6 +1,6 @@
 # MariaDB 5.3 Optimizer Debugging
 
-[MariaDB 5.3](broken-reference) has an optimizer debugging patch. The patch is pushed into
+MariaDB 5.3 has an optimizer debugging patch. The patch is pushed into:
 
 [lp:maria-captains/maria/5.3-optimizer-debugging](https://code.launchpad.net/~maria-captains/maria/5.3-optimizer-debugging)
 
@@ -21,8 +21,8 @@ via the server command line.
 If this variable is non-NULL, it is assumed to specify a join prefix as a\
 comma-separated list of table aliases:
 
-```
-set debug_optimizer_prefer_join_prefix='tbl1,tbl2,tbl3';
+```sql
+SET debug_optimizer_prefer_join_prefix='tbl1,tbl2,tbl3';
 ```
 
 The optimizer will try its best to build a join plan which matches the\
@@ -33,8 +33,8 @@ by a million if the plan doesn't match the prefix.
 As a result, you can more-or-less control the join order. For example, let's\
 take this query:
 
-```
-MariaDB [test]> explain select * from ten A, ten B, ten C;
+```sql
+MariaDB [test]> EXPLAIN SELECT * from ten A, ten B, ten C;
 +----+-------------+-------+------+---------------+------+---------+------+------+------------------------------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra                              |
 +----+-------------+-------+------+---------------+------+---------+------+------+------------------------------------+
@@ -47,8 +47,8 @@ MariaDB [test]> explain select * from ten A, ten B, ten C;
 
 and request a join order of C,A,B:
 
-```
-MariaDB [test]> set debug_optimizer_prefer_join_prefix='C,A,B';
+```sql
+MariaDB [test]> SET debug_optimizer_prefer_join_prefix='C,A,B';
 Query OK, 0 rows affected (0.00 sec)
 
 MariaDB [test]> explain select * from ten A, ten B, ten C;
@@ -78,8 +78,8 @@ Note that this is still a _best-effort_ approach:
 It is possible to force the join order of joins plus semi-joins. This may cause\
 a different strategy to be used:
 
-```
-MariaDB [test]> set debug_optimizer_prefer_join_prefix=NULL;
+```sql
+MariaDB [test]> SET debug_optimizer_prefer_join_prefix=NULL;
 Query OK, 0 rows affected (0.00 sec)
 
 MariaDB [test]> explain select * from ten A where a in (select B.a from ten B, ten C where C.a + A.a < 4);
@@ -115,8 +115,8 @@ not exactly what you see in the EXPLAIN output. For semi-join materialization:
 * Attempts to control the join order inside the materialization nest will be\
   unsuccessful. Example: we want A-C-B-AA:
 
-```
-MariaDB [test]> set debug_optimizer_prefer_join_prefix='A,C,B,AA';
+```sql
+MariaDB [test]> SET debug_optimizer_prefer_join_prefix='A,C,B,AA';
 Query OK, 0 rows affected (0.00 sec)
 
 MariaDB [test]> explain select * from ten A, ten AA where A.a in (select B.a from ten B, ten C);
@@ -153,8 +153,8 @@ everything else disabled but we are not there yet.)
 Since `DuplicateWeedout` cannot be disabled, there are cases where it "gets\
 in the way" by being chosen over the strategy you need. This is what`debug_optimizer_dupsweedout_penalized` is for. if you set:
 
-```
-MariaDB [test]> set debug_optimizer_dupsweedout_penalized=TRUE;
+```sql
+MariaDB [test]> SET debug_optimizer_dupsweedout_penalized=TRUE;
 ```
 
 ...the costs of query plans that use `DuplicateWeedout` will be multiplied by\
@@ -162,8 +162,8 @@ a millon. This doesn't mean that you will get rid of `DuplicateWeedout`\
 — due to [Bug #898747](https://bugs.launchpad.net/bugs/898747) it is still possible to have`DuplicateWeedout` used even if a cheaper plan exits. A partial remedy to this\
 is to run with
 
-```
-MariaDB [test]> set optimizer_prune_level=0;
+```sql
+MariaDB [test]> SET optimizer_prune_level=0;
 ```
 
 It is possible to use both `debug_optimizer_dupsweedout_penalized` and`debug_optimizer_prefer_join_prefix` at the same time. This should give you\

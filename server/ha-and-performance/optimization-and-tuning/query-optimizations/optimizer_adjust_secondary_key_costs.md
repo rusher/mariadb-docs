@@ -28,8 +28,8 @@ The value for `optimizer_adjust_secondary_key_costs` is one of more of the follo
 
 One can set all options with:
 
-```
-set @@optimizer_adjust_secondary_key_costs='all';
+```sql
+SET @@optimizer_adjust_secondary_key_costs='all';
 ```
 
 ## Explanations of the old behavior in MariaDB 10.x

@@ -4,7 +4,7 @@ This article describes the different methods MariaDB provides to limit/timeout a
 
 ## [LIMIT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit)
 
-```
+```sql
 SELECT ... LIMIT row_count
 or
 SELECT ... LIMIT offset, row_count
@@ -16,7 +16,7 @@ The [LIMIT](../../../reference/sql-statements/data-manipulation/selecting-data/s
 
 ## [LIMIT ROWS EXAMINED](limit-rows-examined.md)
 
-```
+```sql
 SELECT ... LIMIT ROWS EXAMINED rows_limit;
 ```
 
@@ -27,7 +27,7 @@ Stops the query after 'rows\_limit' number of rows have been examined.
 If the [sql\_safe\_updates](../system-variables/server-system-variables.md#sql_safe_updates) variable is set, one can't execute an [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) or [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md)\
 statement unless one specifies a key constraint in the `WHERE` clause or provide a `LIMIT` clause (or both).
 
-```
+```sql
 SET @@SQL_SAFE_UPDATES=1
 UPDATE tbl_name SET not_key_column=val;
 -> ERROR 1175 (HY000): You are using safe update mode 
@@ -38,7 +38,7 @@ UPDATE tbl_name SET not_key_column=val;
 
 [sql\_select\_limit](../system-variables/server-system-variables.md#sql_select_limit) acts as an automatic `LIMIT row_count` to any [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) query.
 
-```
+```sql
 SET @@SQL_SELECT_LIMIT=1000
 SELECT * from big_table;
 ```
@@ -54,7 +54,7 @@ SELECT * from big_table LIMIT 1000;
 If the [max\_join\_size](../system-variables/server-system-variables.md#max_join_size) variable (also called `sql_max_join_size`) is set, then it will limit\
 any SELECT statements that probably need to examine more than`MAX_JOIN_SIZE` rows.
 
-```
+```sql
 SET @@MAX_JOIN_SIZE=1000;
 SELECT count(null_column) from big_table;
 ->ERROR 1104 (42000): The SELECT would examine more than MAX_JOIN_SIZE rows; 

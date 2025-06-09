@@ -52,7 +52,7 @@ First, let me give you the solution, then I will elaborate on why it works well.
 
 Find the latest 10 articles for a topic:
 
-```
+```sql
 SELECT  a.*
     FROM  Articles a
     JOIN  Lists s ON s.article_id = a.article_id
@@ -65,7 +65,7 @@ You must _not_ have any WHERE condition touching columns in Articles.
 
 When you mark an article for deletion; you _must_ remove it from Lists:
 
-```
+```sql
 DELETE  FROM  Lists
     WHERE  article_id = ?;
 ```
