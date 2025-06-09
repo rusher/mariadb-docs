@@ -182,5 +182,5 @@ Using MariaDB involves understanding SQL syntax. It doesn't allow for typing mis
 
 ### See Also
 
-* [MariaDB Basics](https://www.google.com/search?q=link_to_MariaDB_Basics_docs)
+* [MariaDB Basics](mariadb-advanced-usage-guide.md)
 

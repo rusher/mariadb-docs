@@ -78,12 +78,8 @@ mariadb-dump --user=admin_backup --password --lock-tables --extended-insert your
     ```
 * **Practice Makes Perfect:** `mariadb-dump` is powerful but can have many options. Practice using it on a test database or server to become comfortable with its usage and to verify that your backup strategy works as expected.
 * **Test Your Backups:** Regularly test your backup files by restoring them to a non-production environment to ensure they are valid and can be used for recovery.
-* **Restoration:** To learn how to restore data from these dump files, see the "[Data Restoration Guide](https://www.google.com/search?q=link_to_Data_Restoration_Guide)".
+* **Restoration:** To learn how to restore data from these dump files, see the "[Data Restoration Guide](mariadb-restore-guide.md)".
 * **Security:** Store backup files in a secure location. If passwords are included in scripts, ensure the script files have restricted permissions.
-
-### Other References
-
-* [Devart backup tutorial](https://www.google.com/search?q=link_to_Devart_backup_tutorial) (External resource)
 
 
 

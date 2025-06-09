@@ -6,7 +6,7 @@ description: Modifying Dates and Times Guide
 
 This guide explores MariaDB functions for performing calculations and modifications on date and time values. Learn to use functions like `DATE_ADD`, `DATE_SUB`, `TIME_TO_SEC`, and `SEC_TO_TIME` to accurately add or subtract intervals and manage date/time changes that cross midnight or month/year boundaries.
 
-_(For foundational knowledge on date and time data types and basic retrieval, please refer to the "Date and Time Handling Guide".)_
+_(For foundational knowledge on date and time data types and basic retrieval, please refer to the "_[_Date and Time Handling Guide_](mariadb-datetime-guide.md)_".)_
 
 ### Calculating Time Across Midnight
 

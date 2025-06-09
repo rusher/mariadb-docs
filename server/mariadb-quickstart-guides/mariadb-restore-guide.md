@@ -63,7 +63,7 @@ If only one table has been lost or corrupted and your backup file contains an en
 
     Bash
 
-    ```sql
+    ```bash
     mariadb --user admin_restore_temp --password --force your_database_name < /path/to/your/fulldumpfile.sql
     ```
 
