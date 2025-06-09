@@ -1,0 +1,23 @@
+# MariaDB Connector/R2DBC 1.0.3 Release Notes
+
+## Overview
+
+MariaDB Connector/R2DBC is a non-blocking interface between Java applications and MariaDB Server. MariaDB Connector/R2DBC enables the development of Java 8+ applications for MariaDB database products.
+
+MariaDB Connector/R2DBC 1.0.3 was released on 2021-09-27. This release is of General Availability (GA) maturity. This release implements the [R2DBC 0.8.5.](https://r2dbc.io/spec/0.8.5.RELEASE/spec/html/) specifications.
+
+## Issues Fixed
+
+* MariadbResult.getRowsUpdated() method fails with ClassCastException for commands with result-set. ([R2DBC-26](https://jira.mariadb.org/browse/R2DBC-26))
+* Netty buffer leaks when not consuming results. ([R2DBC-40](https://jira.mariadb.org/browse/R2DBC-40))
+
+## Resources
+
+* [Download](https://mariadb.com/downloads/connectors/connectors-data-access/r2dbc-connector/)
+* [Documentation](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/java-r2dbc-connector/README.md)
+* [Install MariaDB Connector/R2DBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-r2dbc/using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/install-mariadb-connector-r2dbc)
+* [Install MariaDB Connector/R2DBC with Spring Data](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-r2dbc/using-the-spring-data-framework-with-mariadb-connector-r2dbc/install-mariadb-connector-r2dbc-spring-data)
+* [Report Issues](https://jira.mariadb.org/browse/R2DBC)
+* [Source code](https://github.com/mariadb-corporation/mariadb-connector-r2dbc/)
+
+Copyright © 2025 MariaDB

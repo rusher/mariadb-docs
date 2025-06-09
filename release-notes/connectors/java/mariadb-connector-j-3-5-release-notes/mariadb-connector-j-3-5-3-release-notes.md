@@ -1,0 +1,42 @@
+# MariaDB Connector/J 3.5.3 Release Notes
+
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](mariadb-connector-j-3-5-3-release-notes.md)[Changelog](../changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-3-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+
+**Release date:** 27 Mar 2025
+
+MariaDB Connector/J 3.5.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+
+**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+
+## Notable Changes
+
+* Resolved timestamp string representation incompatibility between versions 2.7 and 3.x ([CONJ-1232](https://jira.mariadb.org/browse/CONJ-1232))
+  * Added new option `[oldModeNoPrecisionTimestamp](https://mariadb.com/kb/en/about-mariadb-connector-j/#oldmodenoprecisiontimestamp)`
+* Modified redirection option to enable by default only when SSL is enabled ([CONJ-1235](https://jira.mariadb.org/browse/CONJ-1235))
+
+## Bugs Fixed
+
+### Date and Time Handling
+
+* Fixed issue where dates containing zero day or month resulted in a DateTimeException ([CONJ-1226](https://jira.mariadb.org/browse/CONJ-1226))
+
+### Result Set and Metadata
+
+* Fixed incorrect values returned by ResultSet.getColumnType() for unsigned values ([CONJ-1222](https://jira.mariadb.org/browse/CONJ-1222))
+* Corrected regression in 3.x affecting column metadata for unsigned types ([CONJ-1241](https://jira.mariadb.org/browse/CONJ-1241))
+* Fixed CallableStatement.getParameterMetadata() returning wrong java.sql.Type for boolean values ([CONJ-1243](https://jira.mariadb.org/browse/CONJ-1243))
+
+### Connection Management
+
+* Prevented NPE (Null Pointer Exception) after reconnection failure in high availability configurations ([CONJ-1236](https://jira.mariadb.org/browse/CONJ-1236))
+* Fixed issue with incorrect statements.isClosed value after closing connection ([CONJ-1237](https://jira.mariadb.org/browse/CONJ-1237))
+
+### Protocol and Performance
+
+* Disabled BULK operations when no parameters are present ([CONJ-1239](https://jira.mariadb.org/browse/CONJ-1239))
+* Fixed connectivity issues with databases that only accept TLSv1.3 ([CONJ-1240](https://jira.mariadb.org/browse/CONJ-1240))
+
+## Changelog
+
+For a complete list of changes made in MariaDB Connector/J 3.5.3, with links to detailed\
+information on each push, see the [changelog](../changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-3-changelog.md).

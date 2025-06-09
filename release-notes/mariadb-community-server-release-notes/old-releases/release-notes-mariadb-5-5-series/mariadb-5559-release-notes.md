@@ -1,0 +1,41 @@
+# MariaDB 5.5.59 Release Notes
+
+The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+
+[Download](https://downloads.mariadb.org/mariadb/5.5.59)[Release Notes](mariadb-5559-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5559-changelog.md)[Overview of 5.5](broken-reference)
+
+**Release date:** 19 Jan 2018
+
+This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
+
+**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
+
+In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
+interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
+
+## Notable Changes
+
+[MariaDB 5.5.59](mariadb-5559-release-notes.md) is a maintenance release. It includes bugfixes and\
+updates, including from MySQL 5.5.59.
+
+* [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to 5.5.58-38.10
+* [MDEV-14051](https://jira.mariadb.org/browse/MDEV-14051) - certain UPDATE operations no longer fail with an 'Undo log record is too big' error
+* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
+  * [CVE-2018-2562](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2562)
+  * [CVE-2018-2622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2622)
+  * [CVE-2018-2640](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2640)
+  * [CVE-2018-2665](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2665)
+  * [CVE-2018-2668](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2668)
+  * [CVE-2018-3133](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3133)
+
+## Changelog
+
+A full list of all changes is in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5559-changelog.md).
+
+Thanks, and enjoy MariaDB!
+
+Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+
+MariaDB may already be included in your favorite OS distribution. More\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+page.

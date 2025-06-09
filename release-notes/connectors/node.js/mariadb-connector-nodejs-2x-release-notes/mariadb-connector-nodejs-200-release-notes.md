@@ -1,0 +1,29 @@
+# MariaDB Connector/Node.js 2.0.0 Release Notes
+
+The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+
+[Download](https://mariadb.com/downloads/connector)[Release Notes](mariadb-connector-nodejs-200-release-notes.md)[Changelog](../changelogs/mariadb-connector-nodejs-2x-changelogs/mariadb-connector-nodejs-200-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+
+**Release date:** 25 Sep 2018
+
+MariaDB Connector/Node.js 2.0.0 is an [_**Alpha**_](../../../mariadb-release-criteria.md)\
+release.
+
+**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connectornodejs/README.md) **page**
+
+## Features
+
+* [CONJS-42](https://jira.mariadb.org/browse/CONJS-42) : check other connections in pool when an unexpected connection error occur
+* [CONJS-44](https://jira.mariadb.org/browse/CONJS-44) : Create option to permit setting Object to one prepareStatement parameter
+* [CONJS-43](https://jira.mariadb.org/browse/CONJS-43) : Callback API is missing
+* [CONJS-39](https://jira.mariadb.org/browse/CONJS-39) : support geometric GeoJSON structure format
+* [CONJS-24](https://jira.mariadb.org/browse/CONJS-24) : new option "sessionVariables" to permit setting session variable at connection
+* connection.end() immediate resolution on socket QUIT packet send.
+* improve documentation and set Promise API documentation to a dedicated page.
+* change pool implementation to permit node 6 compatibility (removal of async await)
+
+Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
+
+MariaDB may already be included in your favorite OS distribution. More\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+page.

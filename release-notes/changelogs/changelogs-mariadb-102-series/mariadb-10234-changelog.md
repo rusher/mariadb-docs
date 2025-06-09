@@ -1,0 +1,19 @@
+# MariaDB 10.2.34 Changelog
+
+The most recent release of [MariaDB 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
+
+[Download 10.2.34](https://downloads.mariadb.org/mariadb/10.2.34/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10234-release-notes.md)[Changelog](mariadb-10234-changelog.md)[Overview of 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md)
+
+**Release date:** 7 Oct 2020
+
+For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10234-release-notes.md).
+
+The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.2)\
+you can view more details of the revision and view diffs of the code modified\
+in that revision.
+
+* Includes all fixes from [MariaDB 10.1.47](../changelogs-mariadb-101-series/mariadb-10147-changelog.md)
+* Merge [Revision #a464917766](https://github.com/MariaDB/server/commit/a464917766) 2020-10-05 17:53:10 +0200 - Merge branch '10.1' into 10.2
+* [Revision #418850b2df](https://github.com/MariaDB/server/commit/418850b2df)\
+  2020-10-04 21:24:17 +0200
+  * [MDEV-23884](https://jira.mariadb.org/browse/MDEV-23884) donor uses invalid SST methods

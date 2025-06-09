@@ -1,0 +1,14 @@
+# MariaDB 5.1.44b Changelog
+
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.44b) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5144b-release-notes.md) | **Changelog** |[Overview of 5.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)
+
+**Release date:** 10 May 2010
+
+* Fix for a buffer overflow that might potentially allow an authenticated user to run arbitrary code inside the server.
+* Fix for [MySQL Bug #53371](https://bugs.mysql.com/bug.php?id=53371): "Security hole with bypassing grants using special\
+  path in db/table names."
+
+See the [MariaDB 5.1.44 Changelog](mariadb-5144-changelog.md) for a list of the\
+changes between [MariaDB 5.1.42](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5142-release-notes.md) and [MariaDB 5.1.44](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5144-release-notes.md).
+
+CC BY-SA / Gnu FDL

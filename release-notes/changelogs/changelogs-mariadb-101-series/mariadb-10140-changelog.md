@@ -1,0 +1,20 @@
+# MariaDB 10.1.40 Changelog
+
+The most recent release of [MariaDB 10.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
+
+[Download](https://downloads.mariadb.org/mariadb/10.1.40/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10140-release-notes.md)[Changelog](mariadb-10140-changelog.md)[Overview of 10.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md)
+
+**Release date:** 8 May 2019
+
+For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10140-release-notes.md).
+
+The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.1) you can view more\
+details of the revision and view diffs of the code modified in that revision.
+
+* Includes all fixes from [MariaDB 5.5.64](../changelogs-mariadb-55-series/mariadb-5564-changelog.md) and [MariaDB 10.1.39](mariadb-10139-changelog.md)
+* [Revision #f92f313368](https://github.com/MariaDB/server/commit/f92f313368)\
+  2019-05-07 16:41:07 -0400
+  * bump the VERSION
+* [Revision #101144f279](https://github.com/MariaDB/server/commit/101144f279)\
+  2019-05-06 12:12:10 +0200
+  * [MDEV-17640](https://jira.mariadb.org/browse/MDEV-17640) UMASK\_DIR configuration for mysql\_install\_db is not applied to mysql database
