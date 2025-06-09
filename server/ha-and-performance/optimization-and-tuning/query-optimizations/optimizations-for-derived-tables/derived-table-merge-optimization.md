@@ -7,7 +7,7 @@ to structure their queries. For example, if one's first thought was to select ci
 from these cities to select those that are located in Germany, one\
 could write this SQL:
 
-```
+```sql
 SELECT * 
 FROM 
   (SELECT * FROM City WHERE Population > 10*1000) AS big_city
@@ -18,7 +18,7 @@ WHERE
 For MySQL, using such syntax was taboo. If you run [EXPLAIN](../../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) for\
 this query, you can see why:
 
-```
+```sql
 mysql> EXPLAIN SELECT * FROM (SELECT * FROM City WHERE Population > 1*1000) 
   AS big_city WHERE big_city.Country='DEU' ;
 +----+-------------+------------+------+---------------+------+---------+------+------+-------------+
@@ -51,7 +51,7 @@ them back again, before finally filtering them out.
 
 If one runs this query in MariaDB/MySQL 5.6, they get this:
 
-```
+```sql
 MariaDB [world]> EXPLAIN SELECT * FROM (SELECT * FROM City WHERE Population > 1*1000) 
   AS big_city WHERE big_city.Country='DEU';
 +----+-------------+-------+------+--------------------+---------+---------+-------+------+------------------------------------+
@@ -81,7 +81,7 @@ From the above, one can see that:
 * The optimization is enabled by default. It can be disabled\
   with:
 
-```
+```sql
 set @@optimizer_switch='derived_merge=OFF'
 ```
 

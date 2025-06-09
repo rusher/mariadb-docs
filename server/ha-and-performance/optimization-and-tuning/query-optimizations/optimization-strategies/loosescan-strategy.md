@@ -6,7 +6,7 @@ LooseScan is an execution strategy for [Semi-join subqueries](../subquery-optimi
 
 We will demonstrate the `LooseScan` strategy by example. Suppose, we're looking for countries that have satellites. We can get them using the following query (for the sake of simplicity we ignore satellites that are owned by consortiums of multiple countries):
 
-```
+```sql
 select * from Country  
 where 
   Country.code in (select country_code from Satellite)
@@ -24,7 +24,7 @@ The `LooseScan` strategy doesn't really need ordering, what it needs is grouping
 
 The `EXPLAIN` output for the above query looks as follows:
 
-```
+```sql
 MariaDB [world]> explain select * from Country where Country.code in 
   (select country_code from Satellite);
 +----+-------------+-----------+--------+---------------+--------------+---------+------------------------------+------+-------------------------------------+
@@ -40,13 +40,13 @@ MariaDB [world]> explain select * from Country where Country.code in
 * LooseScan avoids the production of duplicate record combinations by putting the subquery table first and using its index to select one record from multiple duplicates
 * Hence, in order for LooseScan to be applicable, the subquery should look like:
 
-```
+```sql
 expr IN (SELECT tbl.keypart1 FROM tbl ...)
 ```
 
 or
 
-```
+```sql
 expr IN (SELECT tbl.keypart2 FROM tbl WHERE tbl.keypart1=const AND ...)
 ```
 

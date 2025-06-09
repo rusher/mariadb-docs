@@ -9,7 +9,7 @@ Semi-join Materialization is a special kind of subquery materialization used for
 
 Consider a query that finds countries in Europe which have big cities:
 
-```
+```sql
 select * from Country 
 where Country.code IN (select City.Country 
                        from City 
@@ -36,7 +36,7 @@ If you run a join from Countries to the materialized table, the cheapest way to 
 
 If we chose to look for cities with a population greater than 7 million, the optimizer will use Materialization-Scan and `EXPLAIN` will show this:
 
-```
+```sql
 MariaDB [world]> explain select * from Country where Country.code IN 
   (select City.Country from City where  City.Population > 7*1000*1000);
 +----+--------------+-------------+--------+--------------------+------------+---------+--------------------+------+-----------------------+
@@ -61,7 +61,7 @@ As for execution costs, we're going to read 15 rows from table City, write 15 ro
 
 By comparison, if you run the `EXPLAIN` with semi-join optimizations disabled, you'll get this:
 
-```
+```sql
 MariaDB [world]> explain select * from Country where Country.code IN 
   (select City.Country from City where  City.Population > 7*1000*1000);
 +----+--------------------+---------+-------+--------------------+------------+---------+------+------+------------------------------------+
@@ -78,7 +78,7 @@ MariaDB [world]> explain select * from Country where Country.code IN
 
 Let's modify the query slightly and look for countries which have cities with a population over one millon (instead of seven):
 
-```
+```sql
 MariaDB [world]> explain select * from Country where Country.code IN 
   (select City.Country from City where  City.Population > 1*1000*1000) ;
 +----+--------------+-------------+--------+--------------------+--------------+---------+------+------+-----------------------+
@@ -100,7 +100,7 @@ This means that the optimizer is planning to do index lookups into the materiali
 
 With `optimizer_switch='semijoin=off,materialization=off'`), one will get this `EXPLAIN`:
 
-```
+```sql
 MariaDB [world]> explain select * from Country where Country.code IN 
   (select City.Country from City where  City.Population > 1*1000*1000) ;
 +----+--------------------+---------+----------------+--------------------+---------+---------+------+------+-------------+
@@ -123,7 +123,7 @@ This allows for efficient execution of queries that search for the best/last ele
 
 For example, let's find cities that have the biggest population on their continent:
 
-```
+```sql
 explain 
 select * from City 
 where City.Population in (select max(City.Population) from City, Country 

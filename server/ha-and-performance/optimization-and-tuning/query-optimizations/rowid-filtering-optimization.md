@@ -14,7 +14,7 @@ In this case, it is advantageous to:
 
 Consider a query
 
-```
+```sql
 SELECT ...
 FROM orders JOIN lineitem ON o_orderkey=l_orderkey
 WHERE
@@ -26,7 +26,7 @@ Suppose the condition on `l_shipdate` is very restrictive, which means lineitem 
 
 With filtering, the query plan would be:
 
-```
+```sql
 *************************** 1. row ***************************
            id: 1
   select_type: SIMPLE
@@ -55,7 +55,7 @@ Note that table `orders` has "Using rowid filter". The `type` column has `"|filt
 
 ANALYZE FORMAT=JSON output for table orders will show
 
-```
+```json
 "table": {
       "table_name": "orders",
       "access_type": "eq_ref",

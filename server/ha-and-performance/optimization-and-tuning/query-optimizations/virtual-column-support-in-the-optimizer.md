@@ -8,7 +8,7 @@ Starting from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mari
 
 Suppose one has a table with data in JSON:
 
-```
+```sql
 create table t1 (json_data JSON);
 insert into t1 values('{"column1": 1234}'); 
 insert into t1 ...
@@ -16,7 +16,7 @@ insert into t1 ...
 
 In order to do efficient queries over data in JSON, one can add a virtual column and an index on it:
 
-```
+```sql
 alter table t1
   add column vcol1 int as (cast(json_value(json_data, '$.column1') as integer)),
   add index(vcol1);
@@ -25,7 +25,7 @@ alter table t1
 Before [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118), one had to use `vcol1` in the WHERE clause. Now, one can use the\
 virtual column expression, too:
 
-```
+```sql
 -- This will use the index before 11.8:
 explain select * from t1 where vcol1=100;
 -- Starting from 11.8, this will use the index, too:
@@ -48,7 +48,7 @@ where cast(json_value(json_data, '$.column1') as integer)=100;
 * The optimization is implemented in a similar way to MySQL: the optimizer finds potentially useful occurrences of `vcol_expr` in the WHERE clause and replaces them with `vcol_name`.
 * In the optimizer trace, the rewrites are shown like so:
 
-```
+```json
 "virtual_column_substitution": {
               "condition": "WHERE",
               "resulting_condition": "t1.vcol1 = 100"
@@ -61,12 +61,12 @@ where cast(json_value(json_data, '$.column1') as integer)=100;
 
 SQL is strongly-typed language while JSON is weakly-typed. This means one must specify the desired datatype when accessing JSON data from SQL. In the above example, we declared `vcol1` as `INT` and then used `(CAST ... AS INTEGER)` (both in the ALTER TABLE and in the `WHERE` clause in SELECT query:):
 
-```
+```sql
 alter table t1
   add column vcol1 INT as (CAST(json_value(json_data, '$.column1') AS INTEGER)) ...
 ```
 
-```
+```sql
 select ...  where ... CAST(json_value(json_data, '$.column1') AS INTEGER) ...;
 ```
 
@@ -76,7 +76,7 @@ When extracting string values, `CAST` is not necessary, as `JSON_VALUE` returns 
 
 However, one must take into account collations. If one declares the column as `JSON`:
 
-```
+```sql
 create table t1 ( 
   json_data JSON 
   ...
@@ -86,7 +86,7 @@ the collation of `json_data` will be `utf8mb4_bin`. The collation of`JSON_VALUE(
 
 Most use cases require a more commonly-used collation. It is possible to achieve that using the `COLLATE` clause:
 
-```
+```sql
 alter table t1
   add col1 varchar(100) collate utf8mb4_uca1400_ai_ci as
   (json_value(js1, '$.string_column') collate utf8mb4_uca1400_ai_ci),

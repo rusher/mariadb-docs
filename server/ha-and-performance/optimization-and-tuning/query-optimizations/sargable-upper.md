@@ -2,7 +2,7 @@
 
 Starting from [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), expressions in the form
 
-```
+```sql
 UPPER(key_col) = expr
 UPPER(key_col) IN (constant-list)
 ```
@@ -15,16 +15,16 @@ Sargable means that the optimizer is able to use such conditions to construct ac
 
 ## Example
 
-```
-create table t1 (
+```sql
+CREATE TABLE t1 (
   key1 varchar(32) collate utf8mb4_general_ci,
   ...
   key(key1)
 );
 ```
 
-```
-explain select * from t1 where UPPER(key1)='ABC'
+```sql
+EXPLAIN SELECT * from t1 where UPPER(key1)='ABC'
 +------+-------------+-------+------+---------------+------+---------+-------+------+--------------------------+
 | id   | select_type | table | type | possible_keys | key  | key_len | ref   | rows | Extra                    |
 +------+-------------+-------+------+---------------+------+---------+-------+------+--------------------------+
@@ -36,8 +36,8 @@ Note that `ref` access is used.
 
 An example with join:
 
-```
-explain select * from t0,t1 where upper(t1.key1)=t0.col;
+```sql
+EXPLAIN SELECT * from t0,t1 where upper(t1.key1)=t0.col;
 +------+-------------+-------+------+---------------+------+---------+-------------+------+-------------+
 | id   | select_type | table | type | possible_keys | key  | key_len | ref         | rows | Extra       |
 +------+-------------+-------+------+---------------+------+---------+-------------+------+-------------+
@@ -56,7 +56,7 @@ The [optimizer\_switch](optimizer-switch.md) variable has the flag `sargable_cas
 
 The optimization is implemented as a rewrite for a query's WHERE/ON conditions. It uses the `sargable_casefold_removal` object name in the trace:
 
-```
+```json
 "join_optimization": {
         "select_id": 1,
         "steps": [
