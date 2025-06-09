@@ -70,12 +70,11 @@ Thanks for using MariaDB!
 
 `mariadb-secure-installation` accepts some options:
 
-| Option                  | Description                                      |
-| ----------------------- | ------------------------------------------------ |
-| Option                  | Description                                      |
-| --basedir=dir           | Base directory.                                  |
-| --no-defaults           | Don't read default options from any option file. |
-| --defaults-file=#       | Only read default options from the given file #. |
+| Option| Description|
+| - | - |
+| --basedir=dir | Base directory. |
+| --no-defaults | Don't read default options from any option file. |
+| --defaults-file=# | Only read default options from the given file #. |
 | --defaults-extra-file=# | Read this file after the global files are read.  |
 
 Other unrecognized options will be passed on to the server.
@@ -86,24 +85,22 @@ In addition to reading options from the command-line, `mariadb-secure-installati
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
-| Option                    | Description                                                                         |
-| ------------------------- | ----------------------------------------------------------------------------------- |
-| Option                    | Description                                                                         |
-| --no-defaults             | Don't read default options from any option file.                                    |
-| --defaults-file=#         | Only read default options from the given file #.                                    |
-| --defaults-extra-file=#   | Read this file after the global files are read.                                     |
+| Option | Description |
+| - | - |
+| --no-defaults | Don't read default options from any option file. |
+| --defaults-file=# | Only read default options from the given file #. |
+| --defaults-extra-file=#   | Read this file after the global files are read. |
 | --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
 #### Option Groups
 
 `mariadb-secure-installation` reads options from the following [option groups](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group             | Description                                                                                                                                                                                                |
-| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group             | Description                                                                                                                                                                                                |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](../../kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |
-| \[client-server]  | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
-| \[client-mariadb] | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/).                                                                                                                             |
+| Group | Description |
+| - | - |
+| [client]         | Options read by all MariaDB and MySQL [client programs](../../kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump. |
+| [client-server]  | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
+| [client-mariadb] | Options read by all MariaDB [client programs](../../kb/en/clients-utilities/). |
 
 ### Use With Galera Cluster
 
