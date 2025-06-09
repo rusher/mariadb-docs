@@ -25,3 +25,5 @@ MaxScale supports different monitors for different kinds of deployments:
 | Amazon Aurora                                                                                                 | [Aurora Monitor (auroramon)](https://mariadb.com/kb/en/mariadb-maxscale-2208-aurora-monitor/)                             |
 
 Copyright © 2025 MariaDB
+
+{% @marketo/form formId="4316" %}

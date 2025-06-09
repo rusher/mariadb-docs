@@ -90,3 +90,5 @@ If MariaDB MaxScale fails to start, check the error log in `/var/log/maxscale` t
 **Note:** As the sharding solution in MaxScale is relatively simple, cross-database queries between two or more shards are not supported.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}

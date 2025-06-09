@@ -100,3 +100,5 @@ When a master or a slave server goes down, the script is executed, a mail is sen
 This is just a simple example showing what you can do with MaxScale and monitor scripts.
 
 CC BY-SA / Gnu FDL
+
+{% @marketo/form formId="4316" %}
