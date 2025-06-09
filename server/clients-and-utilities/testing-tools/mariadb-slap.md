@@ -1,6 +1,3 @@
----
-icon: question
----
 
 # mariadb-slap
 
