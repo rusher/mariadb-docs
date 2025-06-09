@@ -25,4 +25,4 @@ The number of rows can be obtained with the function [mysql\_stmt\_num\_rows()](
 * [mysql\_stmt\_num\_rows()](mysql_stmt_num_rows.md)
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

@@ -15,6 +15,3 @@ icon: nfc-symbol
 * [Python Connector](mariadb-connector-python/)
 * [Other Connectors & Methods](other/)
 
-
-
-{% @marketo/form formid="4316" formId="4316" %}

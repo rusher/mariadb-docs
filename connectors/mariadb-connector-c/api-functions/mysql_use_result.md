@@ -26,4 +26,4 @@ mysql\_use\_result() will block the current connection until all result sets are
 * [mysql\_free\_result()](mysql_free_result.md)
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

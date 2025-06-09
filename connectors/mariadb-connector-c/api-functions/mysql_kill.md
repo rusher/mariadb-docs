@@ -27,4 +27,4 @@ To stop a running command without killing the connection use [KILL QUERY](https:
 * [mariadb\_cancel()](mariadb_cancel.md)
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

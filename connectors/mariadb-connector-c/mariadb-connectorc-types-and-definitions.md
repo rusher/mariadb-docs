@@ -150,4 +150,4 @@ The server\_status can be obtained by the [mariadb\_get\_infov()](api-functions/
 | IS\_LONGDATA(column\_type) | True if the column is a blob or text field |
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

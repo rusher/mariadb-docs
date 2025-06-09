@@ -22,4 +22,4 @@ This function can be used for buffered result sets only, which can be obtained b
 * [mysql\_stmt\_store\_result()](mysql_stmt_store_result.md)
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

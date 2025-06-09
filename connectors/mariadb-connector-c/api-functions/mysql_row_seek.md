@@ -24,4 +24,4 @@ This function will not work if the result set was obtained by [mysql\_use\_resul
 * [mysql\_row\_tell()](mysql_row_tell.md)
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

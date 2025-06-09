@@ -23,4 +23,4 @@ The behavior of mysql\_num\_rows() depends on whether buffered or unbuffered res
 * [mysql\_store\_result()](mysql_store_result.md)
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

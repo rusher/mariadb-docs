@@ -71,4 +71,4 @@ Connector/C 3.0 supports the following plugins:
 | REPLICATION      | Connection     | OFF     | Replication/fail over plugin (experimental)                |
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}

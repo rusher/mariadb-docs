@@ -21,4 +21,4 @@ Returns zero on success, otherwise non-zero.
 Each successful call to`mysql_send_query()` must be followed by a call to [mysql\_read\_query\_result()](mysql_read_query_result.md). Multiple calls to `mysql_send_query()` can be made before the calls to [mysql\_read\_query\_result()](mysql_read_query_result.md) are done.
 
 
-{% @marketo/form formid="4316" %}
+{% @marketo/form formId="4316" %}
