@@ -10,3 +10,5 @@
   A: By default, the Aria storage engine is designed primarily for crash safety rather than full ACID compliance in the same way as InnoDB. However, Aria tables can be made transactional by creating them with the TRANSACTIONAL=1 table option. This makes them more ACID-compliant, but with different performance characteristics and operational considerations compared to InnoDB tables.
 * Q: Where is the Aria storage engine used by default within MariaDB Server?\
   A: MariaDB Server utilizes the Aria storage engine for its on-disk internal temporary tables. These temporary tables are often created when processing complex queries (e.g., those involving GROUP BY, ORDER BY, or UNION operations on large datasets). Using Aria for this purpose can offer performance benefits for such operations compared to using MyISAM (which was the default for this in older MySQL versions).
+
+{% @marketo/form formId="4316" %}

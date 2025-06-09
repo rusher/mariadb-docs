@@ -12,3 +12,5 @@
   A: Organizations should use MariaDB ColumnStore for business intelligence (BI) applications, building data warehouses, performing real-time analytics, and generating reports on very large datasets. It is ideal when there is a need to execute complex analytical queries rapidly and efficiently.
 * Q: Is MariaDB ColumnStore available with MariaDB Community Server?\
   A: While earlier iterations of ColumnStore had community editions, the most current, advanced, and fully supported versions—especially those designed for clustered deployments and integration with cloud object storage—are integral parts of the MariaDB Enterprise offering from MariaDB plc.
+
+{% @marketo/form formId="4316" %}

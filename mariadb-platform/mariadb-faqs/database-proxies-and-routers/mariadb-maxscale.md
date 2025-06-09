@@ -10,3 +10,5 @@
   A: MariaDB MaxScale is distributed under the Business Source License (BSL) 1.1. The BSL allows free usage of MaxScale with up to two MariaDB backend database servers. For deployments involving more than two backend servers, or for certain commercial uses restricted by the BSL, a commercial subscription from MariaDB plc is necessary. Code licensed under BSL typically converts to an open-source license (like GPL) after a defined period, usually three years.
 * Q: Can MariaDB MaxScale be used effectively with databases other than MariaDB?\
   A: While MariaDB MaxScale is primarily designed, optimized, and tested for use with MariaDB Server and its various configurations (like MariaDB Enterprise Cluster and MariaDB Xpand), its underlying architecture allows it to potentially support other databases that are compliant with the MySQL network protocol. However, its most advanced features and integrations are best leveraged when used in conjunction with MariaDB databases.
+
+{% @marketo/form formId="4316" %}

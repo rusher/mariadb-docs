@@ -15,3 +15,5 @@
   A: The MariaDB HashiCorp Vault Plugin enables MariaDB Enterprise Server to securely connect to a configured HashiCorp Vault instance. It authenticates with Vault using appropriate credentials or tokens and then retrieves the necessary encryption keys on demand when MariaDB needs to encrypt new data or decrypt existing encrypted data.
 * Q: Is the MariaDB HashiCorp Vault Plugin a commercial or open-source feature?\
   A: The MariaDB HashiCorp Vault Plugin for Data-at-Rest Encryption is a commercial, enterprise feature. It is available as part of the MariaDB Enterprise Server subscription offered by MariaDB plc.
+
+{% @marketo/form formId="4316" %}

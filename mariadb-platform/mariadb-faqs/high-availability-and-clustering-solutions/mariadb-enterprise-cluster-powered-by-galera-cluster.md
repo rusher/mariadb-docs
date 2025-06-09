@@ -10,3 +10,5 @@
   A: MariaDB Enterprise Cluster is ideal for applications that demand continuous uptime, zero tolerance for data loss, and the ability to scale out both read and write operations. Common use cases include e-commerce platforms, financial transaction systems, and any online service requiring robust, uninterrupted high availability.
 * Q: Is Galera Cluster technology exclusive to MariaDB Enterprise?\
   A: The core Galera Cluster technology is itself open source and can be utilized with MariaDB Community Server. However, MariaDB Enterprise Cluster represents an integrated solution where Galera is combined with MariaDB Enterprise Server, fully backed by MariaDB plc's professional support, and often bundled with enterprise tools like MariaDB MaxScale for optimized cluster management and performance.
+
+{% @marketo/form formId="4316" %}

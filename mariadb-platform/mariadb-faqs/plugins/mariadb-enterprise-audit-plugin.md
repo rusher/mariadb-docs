@@ -14,3 +14,5 @@
   A: While a basic audit plugin is available in MariaDB Community Server (often referred to as the "MariaDB Audit Plugin" or "server\_audit"), the MariaDB Enterprise Audit Plugin offers significantly more advanced and flexible capabilities. These include more sophisticated filtering options, the ability to define audit rules dynamically via SQL using JSON, more comprehensive event logging, and features specifically designed to meet the stringent auditing and compliance needs of enterprise organizations.
 * Q: Is the MariaDB Enterprise Audit Plugin a commercial feature?\
   A: Yes, the MariaDB Enterprise Audit Plugin, with its full suite of advanced functionalities and enterprise-grade capabilities, is a commercial feature and is part of the MariaDB Enterprise Server subscription provided by MariaDB plc.
+
+{% @marketo/form formId="4316" %}

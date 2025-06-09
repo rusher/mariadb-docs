@@ -8,3 +8,5 @@
   A: Physical backups, by copying the actual data files, are generally much faster than logical backups (which reconstruct SQL statements) for large datasets. They also tend to impose lower CPU and I/O overhead on the database server during the backup process and can often be restored more quickly. MariaDB Enterprise Backup aims to make this inherently efficient process even smoother and more reliable for critical enterprise systems.
 * Q: Is MariaDB Enterprise Backup a free tool?\
   A: No, MariaDB Enterprise Backup is a commercial feature and tool. It is available as part of a MariaDB Enterprise subscription from MariaDB plc.
+
+{% @marketo/form formId="4316" %}

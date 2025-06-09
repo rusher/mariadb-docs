@@ -10,3 +10,5 @@
   A: InnoDB employs several mechanisms for crash recovery and durability. It uses a transaction log (often called the redo log) to record changes before they are written to the main data files, and a doublewrite buffer to prevent data corruption from partial page writes during crashes. In the event of an unexpected server shutdown or crash, InnoDB can automatically use these logs to recover committed transactions and roll back any uncommitted ones, ensuring the database is restored to a consistent state.
 * Q: Is the InnoDB storage engine open source and free to use?\
   A: Yes, InnoDB is an open-source storage engine. It is included as a core and integral part of MariaDB Community Server and is free to use under the terms of its open-source license.
+
+{% @marketo/form formId="4316" %}

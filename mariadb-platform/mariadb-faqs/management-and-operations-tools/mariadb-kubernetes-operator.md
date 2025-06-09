@@ -10,3 +10,5 @@
   A: The MariaDB Kubernetes Operator is primarily designed and optimized for deploying and managing MariaDB's enterprise offerings. This includes MariaDB Enterprise Server, MariaDB Enterprise Cluster (for high availability), MariaDB Xpand (for distributed SQL), and MariaDB MaxScale (database proxy) deployments within a Kubernetes environment.
 * Q: Is the MariaDB Kubernetes Operator a commercial or open-source product?\
   A: The MariaDB Kubernetes Operator is typically a component of the MariaDB Enterprise Platform offering and is available to commercial subscribers of MariaDB plc.
+
+{% @marketo/form formId="4316" %}

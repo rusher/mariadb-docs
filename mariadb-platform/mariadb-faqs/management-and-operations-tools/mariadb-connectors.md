@@ -10,3 +10,5 @@
   A: Using the official MariaDB Connectors ensures optimal compatibility, better performance, and direct access to the latest features and functionalities specific to MariaDB Server. These connectors are developed and rigorously tested by MariaDB engineers and often provide superior support for MariaDB-specific syntax, data types, and operational characteristics compared to generic database drivers or connectors designed solely for MySQL.
 * Q: Where can developers download official MariaDB Connectors?\
   A: Official MariaDB Connectors can be downloaded directly from the MariaDB website (both mariadb.com for enterprise versions and mariadb.org for community versions). They are also frequently distributed through standard package managers and repositories specific to programming languages, such as PyPI (Python Package Index) for the Python connector and Maven Central for the Java (JDBC) connector.
+
+{% @marketo/form formId="4316" %}

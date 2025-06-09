@@ -20,3 +20,5 @@
   A: The MariaDB Enterprise Platform is designed for medium to large enterprises and organizations that operate business-critical applications requiring a highly reliable, scalable, secure, and fully supported database infrastructure. It is ideal for companies that value a cohesive set of database technologies, advanced features, and professional support from a single, dedicated vendor to minimize risk and ensure operational excellence.
 * Q: How can an organization acquire and implement the MariaDB Enterprise Platform?\
   A: The MariaDB Enterprise Platform is available through a commercial subscription directly from MariaDB plc. The specific components, features, support levels, and services included in the platform can often be tailored to meet the unique needs and workload profiles of the organization.
+
+{% @marketo/form formId="4316" %}

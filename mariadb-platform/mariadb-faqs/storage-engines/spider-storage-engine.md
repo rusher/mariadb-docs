@@ -10,3 +10,5 @@
   A: Yes, the Spider storage engine has support for XA (eXtended Architecture) transactions. This enables it to manage and coordinate distributed transactions across multiple backend MariaDB servers, which is crucial for maintaining data consistency in sharded database environments.
 * Q: Is the Spider storage engine available in MariaDB Community Server?\
   A: Yes, the Spider storage engine is available as a pluggable engine within MariaDB Community Server, allowing users to implement database sharding solutions.
+
+{% @marketo/form formId="4316" %}
