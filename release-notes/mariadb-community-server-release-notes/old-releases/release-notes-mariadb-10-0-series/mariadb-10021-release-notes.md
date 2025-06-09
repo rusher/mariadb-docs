@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 
 **Release date:** 6 Aug 2015
 
-[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current stable series of MariaDB. It is an evolution of[MariaDB 5.5](broken-reference) with several entirely new features not found anywhere else and with\
+[MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current stable series of MariaDB. It is an evolution of [MariaDB 5.5](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/311/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), with several entirely new features not found anywhere else and with\
 backported and reimplemented features from MySQL 5.6.
 
 [MariaDB 10.0.21](mariadb-10021-release-notes.md) is a [_**Stable**_](../../../mariadb-release-criteria.md) (_GA_) release.
@@ -36,5 +36,5 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
 page.
