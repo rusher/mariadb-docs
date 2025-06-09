@@ -9,7 +9,7 @@ There was a packaging issue with 10.0.5 on Debian & Ubuntu that prevented TokuDB
 **Release date:** 7 Nov 2013
 
 [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is an evolution\
-of the [MariaDB 5.5 series](broken-reference) with several entirely new\
+of [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) the MariaDB 5.5 series with several entirely new\
 features not found anywhere else and with backported and\
 reimplemented features from MySQL 5.6.
 
@@ -24,9 +24,9 @@ release. This is still a beta however, not a final, production-ready, release.
 For a list of changes made in [MariaDB 10.0.5](mariadb-1005-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md).
 
-## Based on [MariaDB 5.5](broken-reference)
+## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)&#x20;
 
-The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5](broken-reference) series. It includes\
+The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5 series.](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) It includes\
 completely new features and features imported and backported from MySQL 5.6.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
@@ -39,10 +39,10 @@ This release includes fixes for the following security vulnerabilities:
 * [CVE-2013-5807](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-5807)
 * [CVE-2013-3839](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-3839)
 
-## From [MariaDB 5.5](broken-reference)
+## From [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
-* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) from [MariaDB 5.5](broken-reference) has been merged into this version of MariaDB
-* Starting with this version, [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is now built with[jemalloc](https://www.canonware.com/jemalloc/) by default on Linux (not on\
+* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) from [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) has been merged into this version of MariaDB
+* Starting with this version, [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is now built with [jemalloc](https://www.canonware.com/jemalloc/) by default on Linux (not on\
   Solaris or Windows).
 
 ## Newly Implemented Features
@@ -79,5 +79,5 @@ Thanks, and enjoy MariaDB!
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
 page.
