@@ -8,7 +8,7 @@ The idea is to run the semi-join (a query with uses `WHERE X IN (SELECT Y FROM .
 
 Suppose, you have a query where you're looking for countries which have more than 33% percent of their population in one big city:
 
-```
+```sql
 select * 
 from Country 
 where 
@@ -34,7 +34,7 @@ Here one can see that a temporary table with a primary key was used to avoid pro
 
 The `Start temporary` and `End temporary` from the last diagram are shown in the `EXPLAIN` output:
 
-```
+```sql
 explain select * from Country where Country.code IN 
   (select City.Country from City where City.Population > 0.33 * Country.Population 
    and City.Population > 1*1000*1000)\G
@@ -67,7 +67,7 @@ This query will read 238 rows from the `City` table, and for each of them will m
 
 If we run the same query with semi-join optimizations disabled, we'll get:
 
-```
+```sql
 explain select * from Country where Country.code IN 
   (select City.Country from City where City.Population > 0.33 * Country.Population 
     and City.Population > 1*1000*1000)\G

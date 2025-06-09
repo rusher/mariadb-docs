@@ -10,7 +10,7 @@ Before [MariaDB 5.3](broken-reference)/MySQL 5.6, the temporary table would neve
 
 Consider a query: we want to find countries in Europe, that have more than one million people living in cities. This is accomplished with this query:
 
-```
+```sql
 select * 
 from
    Country, 
@@ -51,7 +51,7 @@ One can see here that
   * which happens when the derived table doesn't meet criteria for mergeable VIEW
 * The optimization is ON by default, it can be switched off like so:
 
-```
+```sql
 set optimizer_switch='derived_with_keys=off'
 ```
 

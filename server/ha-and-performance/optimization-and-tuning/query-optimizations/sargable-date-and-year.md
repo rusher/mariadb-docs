@@ -2,7 +2,7 @@
 
 Starting from [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111), conditions in the form
 
-```
+```sql
 YEAR(indexed_date_col) CMP const_value
 DATE(indexed_date_col) CMP const_value
 ```
@@ -32,7 +32,7 @@ The optimization is always ON, there is no Optimizer Switch flag to control it.
 
 The rewrite is logged as `date_conds_into_sargable` transformation. Example:
 
-```
+```json
 {
             "transformation": "date_conds_into_sargable",
             "before": "cast(t1.datetime_col as date) <= '2023-06-01'",

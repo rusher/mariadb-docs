@@ -8,7 +8,7 @@ In that case, the Condition Pushdown optimization is applicable.
 
 Consider an example
 
-```
+```sql
 create view OCT_TOTALS as
 select
   customer_id,

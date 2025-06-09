@@ -1,4 +1,20 @@
+---
+description: >-
+  Optimize derived tables in MariaDB Server queries. This section provides
+  techniques and strategies to improve the performance of subqueries and complex
+  joins, enhancing overall query efficiency.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Optimizations for Derived Tables
 
-Derived tables are subqueries in the `FROM` clause. Prior to [MariaDB 5.3](broken-reference)/MySQL 5.6, they were too slow to be usable. In [MariaDB 5.3](broken-reference)/MySQL 5.6, there are two\
-optimizations which provide adequate performance:

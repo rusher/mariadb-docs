@@ -8,7 +8,7 @@ It is very similar to how `IN/EXISTS` subqueries were executed in MySQL 5.x.
 
 Let's take the usual example of a search for countries with big cities:
 
-```
+```sql
 select * from Country 
 where Country.code IN (select City.Country 
                        from City 
@@ -30,7 +30,7 @@ Note that the short-cutting has to take place after "Using where" has been appli
 
 The `EXPLAIN` for the above query will look as follows:
 
-```
+```sql
 MariaDB [world]> explain select * from Country where Country.code IN 
   (select City.Country from City where City.Population > 1*1000*1000)
     and Country.continent='Europe';
@@ -47,7 +47,7 @@ MariaDB [world]> explain select * from Country where Country.code IN
 
 `FirstMatch`'s query plan is very similar to one you would get in MySQL:
 
-```
+```sql
 MySQL [world]> explain select * from Country  where Country.code IN 
   (select City.Country from City where City.Population > 1*1000*1000) 
    and Country.continent='Europe';

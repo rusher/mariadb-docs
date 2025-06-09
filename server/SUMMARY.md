@@ -1059,7 +1059,7 @@
       * [Defragmenting InnoDB Tablespaces](ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md)
       * [Entity-Attribute-Value Implementation](ha-and-performance/optimization-and-tuning/optimizing-tables/entity-attribute-value-implementation.md)
       * [IP Range Table Performance](ha-and-performance/optimization-and-tuning/optimizing-tables/ip-range-table-performance.md)
-    * [Query Optimizations](ha-and-performance/optimization-and-tuning/query-optimizations/README.md)
+    * [Optimizing Queries](ha-and-performance/optimization-and-tuning/query-optimizations/README.md)
       * [Aborting Statements that Exceed a Certain Time to Execute](ha-and-performance/optimization-and-tuning/query-optimizations/aborting-statements.md)
       * [Big DELETEs](ha-and-performance/optimization-and-tuning/query-optimizations/big-deletes.md)
       * [Charset Narrowing Optimization](ha-and-performance/optimization-and-tuning/query-optimizations/charset-narrowing-optimization.md)
