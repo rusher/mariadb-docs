@@ -7,7 +7,7 @@ The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10
 **Release date:** 10 Mar 2014
 
 [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is the current development version of MariaDB. It is an evolution\
-of the [MariaDB 5.5 series](broken-reference) with several entirely new\
+of the [MariaDB 5.5 series](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) with several entirely new\
 features not found anywhere else and with backported and\
 reimplemented features from MySQL 5.6.
 
@@ -33,7 +33,7 @@ Notable changes of this release include:
   * [CVE-2014-2438](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2438)
   * [CVE-2014-2432](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-2432)
 * InnoDB upgraded to version 5.6.15
-* [Extended-keys optimization](broken-reference) is now enabled by default.
+* [Extended-keys optimization ](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/extended-keys)is now enabled by default.
 * MariaDB can be compiled to use the system's [PCRE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre) library.
 * Added [MASTER\_GTID\_WAIT()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/master_gtid_wait) and [@@last\_gtid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
 * When a [TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time) value is casted to a [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime), the date part will be the [CURRENT\_DATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/current_date), not `0000-00-00`. This is compatible with the SQL standard and MySQL-5.6. One can use [@@old\_mode=ZERO\_DATE\_TIME\_CAST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode) to revert to the old behavior.
@@ -46,5 +46,5 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
 page.
