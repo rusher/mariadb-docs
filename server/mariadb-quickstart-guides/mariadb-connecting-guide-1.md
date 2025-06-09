@@ -42,7 +42,7 @@ In this case:
 -h name
 ```
 
-Connect to the MariaDB server on the given host. The default host is `localhost`. By default, MariaDB does not permit remote logins - see [Configuring MariaDB for Remote Client Access](https://mariadb.com/kb/en/configuring-mariadb-for-remote-client-access/).
+Connect to the MariaDB server on the given host. The default host is `localhost`. By default, MariaDB does not permit remote logins - see [Configuring MariaDB for Remote Client Access](mariadb-remote-connection-guide.md).
 
 ### password
 
