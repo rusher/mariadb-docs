@@ -10,12 +10,12 @@ resolveip [OPTIONS] hostname or IP-address
 
 ## Options
 
-| Option        | Description                           |
-| ------------- | ------------------------------------- |
-| Option        | Description                           |
-| -?, --help    | Display help and exit.                |
-| -I, --info    | Synonym for --help.                   |
-| -s, --silent# | Be more silent.                       |
+| Option | Description |
+| - | - |
+| Option | Description |
+| -?, --help | Display help and exit. |
+| -I, --info | Synonym for --help. |
+| -s, --silent# | Be more silent. |
 | -V, --version | Display version information and exit. |
 
 ## Examples
