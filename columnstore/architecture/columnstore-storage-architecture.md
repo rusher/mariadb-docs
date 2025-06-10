@@ -140,7 +140,7 @@ MariaDB Enterprise ColumnStore's Storage Manager enables remote S3-compatible ob
 
 Enterprise ColumnStore only uses the Storage Manager when S3-compatible storage is used for data.
 
-Storage Manager is configured using [storagemanager.cnf](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#configure-the-s3-storage-manager).
+Storage Manager is configured using [storagemanager.cnf](../clients-and-tools/storagemanager/storagemanager-sample-storagemanagercnf.md).
 
 ### Storage Manager Directory
 
