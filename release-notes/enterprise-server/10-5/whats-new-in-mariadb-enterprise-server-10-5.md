@@ -168,8 +168,8 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 ### [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
 
-| Privilege | Present in ES10.4? | Present in ES10.5.8-5? |
-| --------- | ------------------ | ---------------------- |
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
 | no | yes |
 
 **Notes:**
