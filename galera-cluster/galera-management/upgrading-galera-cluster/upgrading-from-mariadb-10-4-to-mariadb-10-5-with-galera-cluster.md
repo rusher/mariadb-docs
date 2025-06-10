@@ -28,7 +28,7 @@ Then, for each node, perform the following steps:
 * On SLES, OpenSUSE, and other similar Linux distributions, see [Updating the MariaDB ZYpp repository to a New Major Release](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/rpm/installing-mariadb-with-zypper#updating-the-mariadb-zypp-repository-to-a-new-major-release) for more information.
 
 1. If you use a load balancing proxy such as MaxScale or HAProxy, make sure to drain the server from the pool so it does not receive any new connections.
-2. [Stop MariaDB](https://mariadb.com/kb/en/).
+2. [Stop MariaDB.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)
 3. Uninstall the old version of MariaDB and the Galera wsrep provider.
 
 * On Debian, Ubuntu, and other similar Linux distributions, execute the following:`sudo apt-get remove mariadb-server galera`
@@ -43,7 +43,7 @@ Then, for each node, perform the following steps:
 
 1. Make any desired changes to configuration options in [option files](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
 2. On Linux distributions that use `systemd` you may need to increase the service startup timeout as the default timeout of 90 seconds may not be sufficient. See [Systemd: Configuring the Systemd Service Timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd#configuring-the-systemd-service-timeout) for more information.
-3. [Start MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
+3. [Start MariaDB.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb)
 4. Run `[mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-upgrade)` with the `--skip-write-binlog` option.
 
 * `mariadb-upgrade` does two things:
