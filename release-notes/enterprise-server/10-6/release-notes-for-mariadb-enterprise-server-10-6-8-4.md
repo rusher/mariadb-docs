@@ -42,7 +42,7 @@ MariaDB Enterprise Server 10.6.8-4 was released on 2022-06-13.
 
 ## Backported Features
 
-MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](https://mariadb.com/docs/server/products/mariadb-enterprise-server/lifecycle). These new features have been backported after reaching maturity in MariaDB Community Server:
+MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server:
 
 * [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) reads data as of specific timestamp from system-versioned tables. (MENT-1457)
 * Added `[JSON_EQUALS() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_equals) to check JSON equality. (MENT-1452)`
@@ -108,14 +108,14 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 
 ### Can result in unexpected behavior
 
-* When [OPTIMIZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table) is executed on a [sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sequence-storage-engine), the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](broken-reference), even if [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is set to ROW or MIXED. ([MDEV-24617](https://jira.mariadb.org/browse/MDEV-24617))
+* When [OPTIMIZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table) is executed on a [sequence](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sequence-storage-engine), the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](broken-reference/), even if [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is set to ROW or MIXED. ([MDEV-24617](https://jira.mariadb.org/browse/MDEV-24617))
   * The warning can appear in the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) as the following:
 
 ```
 [Warning] Unsafe statement written to the binary log using statement format since BINLOG_FORMAT = STATEMENT. Statement is unsafe because it uses a system function that may return a different value on the slave Statement: OPTIMIZE TABLE SEQUENCE_NAME
 ```
 
-* When an [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) statement uses an [OR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/logical-operators/or) clause, the server raises an [ER\_UPDATE\_WITHOUT\_KEY\_IN\_SAFE\_MODE error](broken-reference). ([MDEV-18304](https://jira.mariadb.org/browse/MDEV-18304))
+* When an [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) or [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) statement uses an [OR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/logical-operators/or) clause, the server raises an [ER\_UPDATE\_WITHOUT\_KEY\_IN\_SAFE\_MODE error](broken-reference/). ([MDEV-18304](https://jira.mariadb.org/browse/MDEV-18304))
   * The error can appear on the client as the following:
 
 ```
@@ -124,15 +124,15 @@ You are using safe update mode and you tried to update a table without a WHERE t
 
 * When an [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) uses a subquery inside an [IN() clause](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/comparison-operators/in), the optimizer could incorrectly choose to perform a full table scan (with `type: ALL`) when a range scan (with `type: range`) would be more efficient. ([MDEV-22377](https://jira.mariadb.org/browse/MDEV-22377))
 * When a table contains multiple [ENUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/enum) columns with identical values, the values could become corrupt if multi-byte character sets are used. ([MDEV-28078](https://jira.mariadb.org/browse/MDEV-28078))
-* When [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) columns are read from [information\_schema.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table), the server could incorrectly raise an [ER\_BAD\_DATA warning](broken-reference). ([MDEV-28131](https://jira.mariadb.org/browse/MDEV-28131))\
+* When [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) columns are read from [information\_schema.PROCESSLIST](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table), the server could incorrectly raise an [ER\_BAD\_DATA warning](broken-reference/). ([MDEV-28131](https://jira.mariadb.org/browse/MDEV-28131))\
   The warning can appear on the client as the following after executing `SHOW WARNINGS`:
 
 ```
 Encountered illegal value '' when converting to DECIMAL
 ```
 
-* With [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode), the parser allows functions to be called using `PACKAGE_NAME.FUNCTION_NAME()`, but the parser raises a [ER\_PARSE\_ERROR error](broken-reference) if the function is called using `DATABASE_NAME.PACKAGE_NAME.FUNCTION_NAME()`. ([MDEV-28166](https://jira.mariadb.org/browse/MDEV-28166))
-* When a view is used to update multiple rows of a [temporal table](https://mariadb.com/kb/en/temporal-table) in a single [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), the server incorrectly raises a [ER\_WARN\_VIEW\_WITHOUT\_KEY warning](broken-reference). ([MDEV-22973](https://jira.mariadb.org/browse/MDEV-22973))
+* With [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode), the parser allows functions to be called using `PACKAGE_NAME.FUNCTION_NAME()`, but the parser raises a [ER\_PARSE\_ERROR error](broken-reference/) if the function is called using `DATABASE_NAME.PACKAGE_NAME.FUNCTION_NAME()`. ([MDEV-28166](https://jira.mariadb.org/browse/MDEV-28166))
+* When a view is used to update multiple rows of a [temporal table](https://mariadb.com/kb/en/temporal-table) in a single [UPDATE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update), the server incorrectly raises a [ER\_WARN\_VIEW\_WITHOUT\_KEY warning](broken-reference/). ([MDEV-22973](https://jira.mariadb.org/browse/MDEV-22973))
   * The warning can appear on the client as the following after executing [SHOW WARNINGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-warnings):
 
 ```
@@ -153,9 +153,9 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * This warning can be written to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when InnoDB performs crash recovery at startup.
 * With MariaDB Enterprise Cluster, the joiner node fails to complete an SST when [innodb\_log\_group\_home\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_group_home_dir) specifies a directory different than [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir). ([MDEV-27740](https://jira.mariadb.org/browse/MDEV-27740))
 * When a non-partitioned table using the `DATA DIRECTORY` clause is converted to a partitioned table, the `DATA DIRECTORY` clause is silently ignored, and the partitioned table is moved to the default directory. ([MDEV-27065](https://jira.mariadb.org/browse/MDEV-27065))
-* Starting with this release, the server will raise the [WARN\_OPTION\_IGNORED warning](broken-reference).
+* Starting with this release, the server will raise the [WARN\_OPTION\_IGNORED warning](broken-reference/).
 * When a table contains an invisible column, [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) does not produce the correct [CREATE TABLE statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) in the backup file. ([MDEV-28253](https://jira.mariadb.org/browse/MDEV-28253))
-* When a Spider table is queried using `IF(COUNT() ..)`, the server can raise an [ER\_BAD\_FIELD\_ERROR error](broken-reference). ([MDEV-25116](https://jira.mariadb.org/browse/MDEV-25116))
+* When a Spider table is queried using `IF(COUNT() ..)`, the server can raise an [ER\_BAD\_FIELD\_ERROR error](broken-reference/). ([MDEV-25116](https://jira.mariadb.org/browse/MDEV-25116))
 * With MariaDB Enterprise Cluster, State Snapshot Transfers (SSTs) can fail on the donor node when binary logs are enabled. ([MDEV-26201](https://jira.mariadb.org/browse/MDEV-26201))
 * With MariaDB Enterprise Cluster, when [wsrep\_node\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_address) contains an IPv6 address and [wsrep\_sst\_receive\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_receive_address) is set to the default value of `AUTO`, State Snapshot Transfers (SST) can fail. ([MDEV-26171](https://jira.mariadb.org/browse/MDEV-26171))
 * With [temporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables), replication can break if a system versioned table has been created on the replica via mariadb-dump, if the original table was altered before. ([MDEV-28254](https://jira.mariadb.org/browse/MDEV-28254))
@@ -166,7 +166,7 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * Missing binlog data for [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) ([MDEV-28310](https://jira.mariadb.org/browse/MDEV-28310))
 * `mariabackup prepare` fails for incremental backups if a new schema is created after full backup. ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 * Optimizer uses all partitions during an `UPDATE` and ignores partitioning filters. ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
-* When [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) is executed and `binlog_format` is set to `MIXED`, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](broken-reference) even though the statement is written to the binary log in row-based format. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
+* When [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) is executed and `binlog_format` is set to `MIXED`, the server raises an [ER\_BINLOG\_UNSAFE\_STATEMENT warning](broken-reference/) even though the statement is written to the binary log in row-based format. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
   * The warning can appear in the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) as the following:
 
 ```
@@ -236,7 +236,7 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.8-4 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.8-4 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 9 (x86\_64, ARM64)
