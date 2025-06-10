@@ -517,7 +517,7 @@ spec:
 
 The GUI is exposed via a dedicated Kubernetes `Service` in the same port as the [MaxScale API](maxscale-database-proxy.md#maxscale-api). Once you access, you will need to enter the [MaxScale API](maxscale-database-proxy.md#maxscale-api) credentials configured by the operator in a `Secret`. See the [Authentication](maxscale-database-proxy.md#authentication) section for more details.
 
-![](../../.gitbook/assets/assets/maxscale-gui.png.png)
+![](../.gitbook/assets/5.PNG)
 
 ## MaxScale API
 
