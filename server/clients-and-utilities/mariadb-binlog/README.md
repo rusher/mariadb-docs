@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # mariadb-binlog
 
 `mariadb-binlog` is a utility included with MariaDB for processing [binary log](../../server-management/server-monitoring-logs/binary-log/) and [relay log](../../server-management/server-monitoring-logs/binary-log/relay-log.md) files.
