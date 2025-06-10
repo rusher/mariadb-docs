@@ -287,7 +287,7 @@ ER_STD_INVALID_ARGUMENT (3047): Invalid argument error: data type of first argum
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.15-10 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.15-10 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64, ARM64)
