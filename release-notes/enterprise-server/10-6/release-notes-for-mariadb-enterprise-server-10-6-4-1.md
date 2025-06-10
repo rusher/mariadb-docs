@@ -38,7 +38,7 @@ MariaDB Enterprise Server 10.6.4-1 was released on 2021-08-26.
 
 ### ColumnStore
 
-* This release incorporates [MariaDB Enterprise ColumnStore version 6.1.1](https://mariadb.com/docs/columnstore/release-notes/mariadb-enterprise-columnstore-6/6-1-1). Benefits include:
+* This release incorporates [MariaDB Enterprise ColumnStore version 6.1.1](../../columnstore/mariadb-columnstore-6-release-notes/mariadb-columnstore-6-1-1-release-notes.md). Benefits include:
   * Disk-based aggregation allows larger aggregated result sets than can fit in memory
   * Increased DECIMAL precision
   * Transactional tables can be updated with data from ColumnStore tables
@@ -543,7 +543,7 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.4-1 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.4-1 is provided for:
 
 * CentOS 7
 * Debian 9
