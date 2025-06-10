@@ -15,7 +15,7 @@ Common use cases for Galera replication include:
 
 ## See Also
 
-* [What is MariaDB Galera Cluster?](../kb/en/what-is-mariadb-galera-cluster/)
+* [What is MariaDB Galera Cluster?](galera-cluster-quickstart-guides/mariadb-galera-cluster-guide.md)
 * [About Galera Replication](galera-cluster-quickstart-guides/about-galera-replication.md)
 * [Codership: Using Galera Cluster](https://codership.com/content/using-galera-cluster)
 * [Getting Started with MariaDB/Galera Cluster](galera-management/getting-started-with-mariadb-galera-cluster.md)
