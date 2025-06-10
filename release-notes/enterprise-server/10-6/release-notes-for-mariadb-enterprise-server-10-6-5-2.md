@@ -89,12 +89,12 @@ MariaDB Enterprise Server 10.6.5-2 was released on 2021-12-13.
 
 ## Changes in Storage Engines
 
-* This release originally incorporated MariaDB [ColumnStore storage engine version 6.2.2](https://mariadb.com/docs/columnstore/release-notes/mariadb-enterprise-columnstore-6/6-2-2).
-* This release now incorporates [MariaDB ColumnStore storage engine version 6.2.3](https://mariadb.com/docs/columnstore/release-notes/mariadb-enterprise-columnstore-6/6-2-3).
+* This release originally incorporated MariaDB [ColumnStore storage engine version 6.2.2](../../columnstore/mariadb-columnstore-6-release-notes/mariadb-columnstore-6-2-2-release-notes.md).
+* This release now incorporates [MariaDB ColumnStore storage engine version 6.2.3](../../columnstore/mariadb-columnstore-6-release-notes/mariadb-columnstore-6-2-3-release-notes.md).
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.5-2 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.5-2 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 9 (x86\_64, ARM64)
