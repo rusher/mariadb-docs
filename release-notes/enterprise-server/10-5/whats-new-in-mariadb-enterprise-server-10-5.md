@@ -131,51 +131,589 @@ MariaDB Enterprise Server 10.5 contains several enhancements to the [S3 storage 
 * The S3 storage engine supports partitioning.
 * The S3 storage engine supports replication.
 
-### Privileges Comparison ES10.4 and ES10.5.8-5
+## Privileges Comparison ES10.4 and ES10.5.8-5
 
 MariaDB Enterprise Server 10.5 adds privileges that allow operations that previously required the [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super). The following table is a summary of the **changes** between MariaDB Enterprise Server 10.4 and MariaDB Enterprise Server 10.5.8-5. More specific detail is found in [MariaDB Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), and in [MariaDB Reference](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md).
 
-| Privilege | Present in ES10.4? | Present in ES10.5.8-5? | Notes |
-| --------- | ------------------ | ---------------------- | ----- |
-| [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin) | no | yes | • Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/purge-binary-logs) statements.• Allows the user to [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) the following system variables:[binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)[max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)[max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)[sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) | no | yes | • [Legacy REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) privilege is an alias for this new privilege, but the capabilities have changed.• Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5.• BINLOG MONITOR allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements.• BINLOG MONITOR allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• BINLOG MONITOR allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements.• BINLOG MONITOR allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later. |
-| [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay) | no | yes | • Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog).• Allows the user to execute [SET TIMESTAMP](https://mariadb.com/kb/en/set-timestamp) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication.• Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [CONNECTION ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#connection-admi) | no | yes | • Skips the execution of [init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect) when the user connects.• Ignores [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections) when the user connects.• Ignores [max\_user\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_user_connections) when the user connects.• Ignores [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors) when the user connects.• Allows the user to kill connections owned by other users with the [KILL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/kill) statement.• Allows the user to set system variables:[connect\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#connect_timeout)[disconnect\_on\_expired\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#disconnect_on_expired_password)[extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#extra_max_connections)[init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect)[max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections)[max\_connect\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connect_errors)[max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors)[proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks)[secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)[slow\_launch\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#slow_launch_time)[thread\_pool\_exact\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_dedicated\_listener](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_idle\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_max\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_min\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_oversubscribe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_prio\_kickup\_timer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_priority](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_stall\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables) |
-| [FEDERATED ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#federated-admin) | no | yes | • Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements.• Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements.• Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements. |
-| [READ\_ONLY ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#readonly-admin) | no | yes | • Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.• Allows the user to execute [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.• Allows the user to execute [START TRANSACTION READ WRITE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.• Allows the user to set system variables:[read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) |
-| [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor) | no | yes | • REPLICA MONITOR is a new privilege in ES10.5.8-5 and was not present in earlier releases.• REPLICA MONITOR can execute:○ [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW ALL SLAVES STATUS](https://mariadb.com/kb/en/show-all-slaves-status)○ [SHOW ALL REPLICAS STATUS](https://mariadb.com/kb/en/show-all-replicas-status)○ [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later.• REPLICA MONITOR is an alias for SLAVE MONITOR which is also new in ES10.5.8-5. |
-| [REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) | yes | no | • Replaced by [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) in 10.5. REPLICATION CLIENT can be used as an alias for BINLOG MONITOR but the capabilities for BINLOG MONITOR are different than those of legacy REPLICATION CLIENT. Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5. REPLICATION CLIENT as an alias for BINLOG MONITOR:• Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements.• Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements.• Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later. |
-| [REPLICATION MASTER ADMIN](https://mariadb.com/kb/en/replication-master-admin) | no | yes | • Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements.• Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements.• Allows the user to set system variables:[gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica) | no | yes | • Added in ES10.5 as an alias for [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave). |
-| [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave) | yes | yes | • Can be used as an alias for [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)• In ES10.5 REPLICATION SLAVE can no longer execute SHOW RELAYLOG EVENTS. In ES10.5 versions earlier than ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin). In ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor).• In ES10.5 REPLICATION SLAVE can no longer execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events). SHOW BINLOG EVENTS requires [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor).• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later. |
-| [REPLICATION REPLICA ADMIN](https://mariadb.com/kb/en/replication-replica-admin) | no | yes | • Alias for [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin)• Capabilities changed in ES10.5.8-5 with the following abilities removed from REPLICATION SLAVE ADMIN and now granted with [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor):○ [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md)○ [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md)○ [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)• Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by mariadb-binlog.• Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements.• Allows the user to execute [START ALL REPLICAS](https://mariadb.com/kb/en/start-all-replicas) statements.• Allows the user to execute [START ALL SLAVES](https://mariadb.com/kb/en/start-all-slaves) statements.• Allows the user to execute [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) statements.• Allows the user to execute [START SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) statements.• Allows the user to execute [STOP ALL REPLICAS](https://mariadb.com/kb/en/stop-all-replicas) statements.• Allows the user to execute [STOP ALL SLAVES](https://mariadb.com/kb/en/stop-all-slaves) statements.• Allows the user to execute [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements.• Allows the user to execute [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements.• Allows the user to set system variables:[gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin) | no | yes | • Alias for [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) see [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) for details. |
-| [SET USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#set-user) | no | yes | • Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events.• Allows the user to view the definer of an object, even if the user account no longer exists. |
-| [SLAVE MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#slave-monitor) | no | yes | • SLAVE MONITOR is a new privilege in ES10.5.8-5 and was not present in earlier releases.• SLAVE MONITOR can execute:○ [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md)○ [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md)○ [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the SLAVE MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later.• SLAVE MONITOR is an alias for REPLICA MONITOR which is also new in ES10.5.8-5. |
-| [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super) | yes | yes | • The SUPER privilege is present in ES10.4 and ES10.5 but the capabilities have changed. New privileges have been added in ES10.5 to provide finer grained control and reduce the need to grant SUPER privileges.• With the addition of the new privileges in ES10.5, SUPER: ○ no longer executes SHOW MASTER STATUS, SHOW BINLOG STATUS, and SHOW BINARY LOGS. Those require BINLOG MONITOR in ES10.5. ○ no longer sets the definer for views, triggers, functions, procedures, and events in ES10.5. Those capabilities require SET USER in ES10.5. ○ no longer ignores the read\_only system variable in ES10.5. That capability requires READ ONLY ADMIN in ES10.5 ○ no longer kills threads owned by other users and bypass limits on connection and authentication failures. Those capabilities require CONNECTION ADMIN in ES10.5 ○ no longer executes CREATE SERVER, ALTER SERVER, DROP SERVER in ES10.5. Those capabilities require FEDERATED ADMIN in ES10.5. ○ no longer executes PURGE BINARY LOGS in ES10.5. PURGE BINARY LOGS requires BINLOG ADMIN in ES10.5. |
+### [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin)
 
-### Privileges Comparison ES10.4 and ES10.5 before ES10.5.8-5
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/purge-binary-logs) statements
+* Allows the user to [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) the following system variables:
+  * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)
+  * [max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)
+  * [max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)
+  * [sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+
+
+### [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
+
+| Privilege | Present in ES10.4? | Present in ES10.5.8-5? |
+| --------- | ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* [Legacy REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) privilege is an alias for this new privilege, but the capabilities have changed
+* Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
+* BINLOG MONITOR allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
+* BINLOG MONITOR allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* BINLOG MONITOR allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
+* BINLOG MONITOR allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+
+### [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
+* Allows the user to execute [SET TIMESTAMP](https://mariadb.com/kb/en/set-timestamp) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication
+* Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+
+### [CONNECTION ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#connection-admi)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Skips the execution of [init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect) when the user connects
+* Ignores [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections) when the user connects
+* Ignores [max\_user\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_user_connections) when the user connects
+* Ignores [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors) when the user connects
+* Allows the user to kill connections owned by other users with the [KILL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/kill) statement
+* Allows the user to set system variables:
+  * [connect\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#connect_timeout)
+  * [disconnect\_on\_expired\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#disconnect_on_expired_password)
+  * [extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#extra_max_connections)
+  * [init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect)
+  * [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections)
+  * [max\_connect\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connect_errors)
+  * [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors)
+  * [proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks)
+  * [secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)
+  * [slow\_launch\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#slow_launch_time)
+  * [thread\_pool\_exact\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_dedicated\_listener](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_idle\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_max\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_min\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_oversubscribe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_prio\_kickup\_timer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_priority](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_stall\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+
+### [FEDERATED ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#federated-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements
+* Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements
+* Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements
+
+### [READ\_ONLY ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#readonly-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to execute [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to execute [START TRANSACTION READ WRITE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to set system variables:[read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only)
+
+### [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* REPLICA MONITOR is a new privilege in ES10.5.8-5 and was not present in earlier releases
+* REPLICA MONITOR can execute:
+  * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW ALL SLAVES STATUS](https://mariadb.com/kb/en/show-all-slaves-status)
+  * [SHOW ALL REPLICAS STATUS](https://mariadb.com/kb/en/show-all-replicas-status)
+  * [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+* REPLICA MONITOR is an alias for SLAVE MONITOR which is also new in ES10.5.8-5
+
+### [REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| yes | no |
+
+**Notes:**
+* Replaced by [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) in 10.5
+* REPLICATION CLIENT can be used as an alias for BINLOG MONITOR but the capabilities for BINLOG MONITOR are different than those of legacy REPLICATION CLIENT
+  * Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
+  * REPLICATION CLIENT as an alias for BINLOG MONITOR:
+    * Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
+    * Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+    * Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
+    * Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+
+### [REPLICATION MASTER ADMIN](https://mariadb.com/kb/en/replication-master-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
+* Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
+* Allows the user to set system variables:
+  * [gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Added in ES10.5 as an alias for [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
+
+### [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| yes | yes |
+
+**Notes:**
+* Can be used as an alias for [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
+* In ES10.5 REPLICATION SLAVE can no longer execute SHOW RELAYLOG EVENTS. In ES10.5 versions earlier than ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin). In ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor)
+* In ES10.5 REPLICATION SLAVE can no longer execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events). SHOW BINLOG EVENTS requires [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+
+### [REPLICATION REPLICA ADMIN](https://mariadb.com/kb/en/replication-replica-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Alias for [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin)
+* Capabilities changed in ES10.5.8-5 with the following abilities removed from REPLICATION SLAVE ADMIN and now granted with [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor):
+  * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md)
+  * [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md)
+  * [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by mariadb-binlog
+* Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements
+* Allows the user to execute [START ALL REPLICAS](https://mariadb.com/kb/en/start-all-replicas) statements
+* Allows the user to execute [START ALL SLAVES](https://mariadb.com/kb/en/start-all-slaves) statements
+* Allows the user to execute [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) statements
+* Allows the user to execute [START SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) statements
+* Allows the user to execute [STOP ALL REPLICAS](https://mariadb.com/kb/en/stop-all-replicas) statements
+* Allows the user to execute [STOP ALL SLAVES](https://mariadb.com/kb/en/stop-all-slaves) statements
+* Allows the user to execute [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements
+* Allows the user to execute [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements
+* Allows the user to set system variables:
+  * [gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Alias for [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) see [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) for details
+
+### [SET USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#set-user)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events
+* Allows the user to view the definer of an object, even if the user account no longer exists. |
+
+### [SLAVE MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#slave-monitor)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| no | yes |
+
+**Notes:**
+* SLAVE MONITOR is a new privilege in ES10.5.8-5 and was not present in earlier releases
+* SLAVE MONITOR can execute:
+  * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md)
+  * [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md)
+  * [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the SLAVE MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+* SLAVE MONITOR is an alias for REPLICA MONITOR which is also new in ES10.5.8-5
+
+### [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | ---------------------- |
+| yes | yes |
+
+**Notes:**
+* The SUPER privilege is present in ES10.4 and ES10.5 but the capabilities have changed. New privileges have been added in ES10.5 to provide finer grained control and reduce the need to grant SUPER privileges
+* With the addition of the new privileges in ES10.5, SUPER:
+  * no longer executes SHOW MASTER STATUS, SHOW BINLOG STATUS, and SHOW BINARY LOGS. Those require BINLOG MONITOR in ES10.5
+  * no longer sets the definer for views, triggers, functions, procedures, and events in ES10.5. Those capabilities require SET USER in ES10.5
+  * no longer ignores the read\_only system variable in ES10.5. That capability requires READ ONLY ADMIN in ES10.5
+  * no longer kills threads owned by other users and bypass limits on connection and authentication failures. Those capabilities require CONNECTION ADMIN in ES10.5
+  * no longer executes CREATE SERVER, ALTER SERVER, DROP SERVER in ES10.5. Those capabilities require FEDERATED ADMIN in ES10.5
+  * no longer executes PURGE BINARY LOGS in ES10.5. PURGE BINARY LOGS requires BINLOG ADMIN in ES10.5.
+
+## Privileges Comparison ES10.4 and ES10.5 before ES10.5.8-5
 
 MariaDB Enterprise Server 10.5 adds privileges that allow operations that previously required the [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super). The following table is a summary of the changes between MariaDB Enterprise Server 10.4 and MariaDB Enterprise Server 10.5 before MariaDB Enterprise Server 10.5.8-5. More specific detail is found in [MariaDB Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), and in [MariaDB Privileges Reference](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant).
 
-| Privilege | Present in ES10.4? | Present in ES10.5.8-5? | Notes |
-| --------- | ------------------ | -----------------------| ----- |
-| [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin) | no | yes | • Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/purge-binary-logs) statements.• Allows the user to [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) the following system variables:[binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)[max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)[max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)[sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) | no | yes | • Legacy [grant/#replication-client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) privilege is an alias for this new privilege, but the capabilities have changed.• Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5.• BINLOG MONITOR allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements.• BINLOG MONITOR allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• BINLOG MONITOR allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements.• BINLOG MONITOR allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later. |
-| [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay) | no | yes | • Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog).• Allows the user to execute [SET TIMESTAMP](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/set-timestamp/README.md) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication.• Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [CONNECTION ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#connection-admi) | no | yes | • Skips the execution of init\_connect when the user connects.• Ignores max\_connections when the user connects.• Ignores max\_user\_connections when the user connects.• Ignores max\_password\_errors when the user connects.• Allows the user to kill connections owned by other users with the KILL statement.• Allows the user to set system variables:[connect\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#connect_timeout)[disconnect\_on\_expired\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#disconnect_on_expired_password)[extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#extra_max_connections)[init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect)[max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections)[max\_connect\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connect_errors)[max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors)[proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks)[secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)[slow\_launch\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#slow_launch_time)[thread\_pool\_exact\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_dedicated\_listener](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_idle\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_max\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_min\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_oversubscribe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_prio\_kickup\_timer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_priority](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_stall\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables) |
-| [FEDERATED ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#federated-admin) | no | yes | • Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements.• Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements.• Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements. |
-| [READ\_ONLY ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#readonly-admin) | no | yes | • Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.• Allows the user to execute [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.• Allows the user to execute [START TRANSACTION READ WRITE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.• Allows the user to set system variables:[read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) |
-| [REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) | yes | no | • Replaced by [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) in 10.5. REPLICATION CLIENT can be used as an alias for BINLOG MONITOR but the capabilities for BINLOG MONITOR are different than those of legacy REPLICATION CLIENT. Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5. REPLICATION CLIENT as an alias for BINLOG MONITOR:• Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements.• Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements.• Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later. |
-| [REPLICATION MASTER ADMIN](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/replication-master-admin/README.md) | no | yes | • Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements.• Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements.• Allows the user to set system variables:[gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica) | no | yes | • Added in ES10.5 as an alias for [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave). |
-| [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave) | yes | yes | • Can be used as an alias for [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)• In ES10.5 REPLICATION SLAVE can no longer execute SHOW RELAYLOG EVENTS. In ES10.5 versions earlier than ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin). In ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor).• In ES10.5 REPLICATION SLAVE can no longer execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events). SHOW BINLOG EVENTS requires [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor).• If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required.• The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later. |
-| [REPLICATION REPLICA ADMIN](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/replication-replica-admin/README.md) | no | yes | • Alias for REPLICATION SLAVE ADMIN• Capabilities changed in ES10.5.8-5 with the following abilities removed from REPLICATION SLAVE ADMIN and now granted with [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor):○ [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)○ [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md)○ [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md)○ [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)• Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog).• Allows the user to execute CHANGE MASTER TO statements.• Allows the user to execute START ALL REPLICAS statements.• Allows the user to execute START ALL SLAVES statements.• Allows the user to execute START REPLICA statements.• Allows the user to execute START SLAVE statements.• Allows the user to execute STOP ALL REPLICAS statements.• Allows the user to execute STOP ALL SLAVES statements.• Allows the user to execute STOP REPLICA statements.• Allows the user to execute STOP SLAVE statements.• Allows the user to set system variables:[gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin) | no | yes | • Alias for [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) see [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) for details. |
-| [SET USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#set-user) | no | yes | • Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events• Allows the user to view the definer of an object, even if the user account no longer exists. |
-| [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super) | yes | yes | • The SUPER privilege is present in ES10.4 and ES10.5 but the capabilities have changed. New privileges have been added in ES10.5 to provide finer grained control and reduce the need to grant SUPER privileges.• With the addition of the new privileges in ES10.5, SUPER: ○ no longer executes SHOW MASTER STATUS, SHOW BINLOG STATUS, and SHOW BINARY LOGS. Those require BINLOG MONITOR in ES10.5. ○ no longer sets the definer for views, triggers, functions, procedures, and events in ES10.5. Those capabilities require SET USER in ES10.5. ○ no longer ignores the read\_only system variable in ES10.5. That capability requires READ ONLY ADMIN in ES10.5 ○ no longer kills threads owned by other users and bypass limits on connection and authentication failures. Those capabilities require CONNECTION ADMIN in ES10.5 ○ no longer executes CREATE SERVER, ALTER SERVER, DROP SERVER in ES10.5. Those capabilities require FEDERATED ADMIN in ES10.5. ○ no longer executes PURGE BINARY LOGS in ES10.5. PURGE BINARY LOGS requires BINLOG ADMIN in ES10.5. |
+### [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin)
 
-### MariaDB Replication
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/purge-binary-logs) statements
+* Allows the user to [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) the following system variables:
+  * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)
+  * [max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)
+  * [max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)
+  * [sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Legacy [grant/#replication-client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) privilege is an alias for this new privilege, but the capabilities have changed
+* Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
+* BINLOG MONITOR allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
+* BINLOG MONITOR allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* BINLOG MONITOR allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
+* BINLOG MONITOR allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+
+### [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
+* Allows the user to execute [SET TIMESTAMP](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/set-timestamp/README.md) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication
+* Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [CONNECTION ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#connection-admi)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Skips the execution of init\_connect when the user connects
+* Ignores max\_connections when the user connects
+* Ignores max\_user\_connections when the user connects
+* Ignores max\_password\_errors when the user connects
+* Allows the user to kill connections owned by other users with the KILL statement
+* Allows the user to set system variables:
+  * [connect\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#connect_timeout)
+  * [disconnect\_on\_expired\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#disconnect_on_expired_password)
+  * [extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#extra_max_connections)
+  * [init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect)
+  * [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections)
+  * [max\_connect\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connect_errors)
+  * [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors)
+  * [proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks)
+  * [secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)
+  * [slow\_launch\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#slow_launch_time)
+  * [thread\_pool\_exact\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_dedicated\_listener](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_idle\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_max\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_min\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_oversubscribe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_prio\_kickup\_timer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_priority](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_stall\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+
+### [FEDERATED ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#federated-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements
+* Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements
+* Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements
+
+### [READ\_ONLY ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#readonly-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to execute [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to execute [START TRANSACTION READ WRITE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to set system variables:[read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only)
+
+
+### [REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| yes | no |
+
+**Notes:**
+* Replaced by [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) in 10.5
+* REPLICATION CLIENT can be used as an alias for BINLOG MONITOR but the capabilities for BINLOG MONITOR are different than those of legacy REPLICATION CLIENT
+* Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
+* REPLICATION CLIENT as an alias for BINLOG MONITOR:
+  * Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
+  * Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+  * Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
+  * Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+  * If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+  * The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+
+### [REPLICATION MASTER ADMIN](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/replication-master-admin/README.md)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
+* Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
+* Allows the user to set system variables:
+  * [gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Added in ES10.5 as an alias for [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
+
+### [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| yes | yes |
+
+**Notes:**
+* Can be used as an alias for [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
+* In ES10.5 REPLICATION SLAVE can no longer execute SHOW RELAYLOG EVENTS. In ES10.5 versions earlier than ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin). In ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor)
+* In ES10.5 REPLICATION SLAVE can no longer execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events). SHOW BINLOG EVENTS requires [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
+* If a user upgrades from ES10.4 or earlier to ES10.5.8-5 or later, any users with REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the REPLICA MONITOR privilege. This privilege upgrade happens upon server startup, so mysql\_upgrade is not required
+* The upgrade behavior does not apply to minor release upgrades that upgrade from ES10.5.6-4 or earlier ES10.5.x to ES10.5.8-5 or later
+
+### [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Alias for REPLICATION SLAVE ADMIN
+* Capabilities changed in ES10.5.8-5 with the following abilities removed from REPLICATION SLAVE ADMIN and now granted with [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor):
+  * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
+  * [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md)
+  * [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md)
+  * [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events)
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
+* Allows the user to execute CHANGE MASTER TO statements
+* Allows the user to execute START ALL REPLICAS statements
+* Allows the user to execute START ALL SLAVES statements
+* Allows the user to execute START REPLICA statements
+* Allows the user to execute START SLAVE statements
+* Allows the user to execute STOP ALL REPLICAS statements
+* Allows the user to execute STOP ALL SLAVES statements
+* Allows the user to execute STOP REPLICA statements
+* Allows the user to execute STOP SLAVE statements
+* Allows the user to set system variables:
+  * [gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Alias for [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) see [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) for details
+
+### [SET USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#set-user)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| no | yes |
+
+**Notes:**
+* Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events
+* Allows the user to view the definer of an object, even if the user account no longer exists.
+
+### [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super)
+
+| Present in ES10.4? | Present in ES10.5.8-5? |
+| ------------------ | -----------------------|
+| yes | yes |
+
+**Notes:**
+* The SUPER privilege is present in ES10.4 and ES10.5 but the capabilities have changed. New privileges have been added in ES10.5 to provide finer grained control and reduce the need to grant SUPER privileges
+* With the addition of the new privileges in ES10.5, SUPER:
+  * no longer executes SHOW MASTER STATUS, SHOW BINLOG STATUS, and SHOW BINARY LOGS. Those require BINLOG MONITOR in ES10.5
+  * no longer sets the definer for views, triggers, functions, procedures, and events in ES10.5. Those capabilities require SET USER in ES10.5
+  * no longer ignores the read\_only system variable in ES10.5. That capability requires READ ONLY ADMIN in ES10.5
+  * no longer kills threads owned by other users and bypass limits on connection and authentication failures. Those capabilities require CONNECTION ADMIN in ES10.5
+  * no longer executes CREATE SERVER, ALTER SERVER, DROP SERVER in ES10.5. Those capabilities require FEDERATED ADMIN in ES10.5
+  * no longer executes PURGE BINARY LOGS in ES10.5. PURGE BINARY LOGS requires BINLOG ADMIN in ES10.5
+
+## MariaDB Replication
 
 MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication):
 
@@ -184,18 +722,117 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 * It renames the `REPLICATION CLIENT` privilege to `BINLOG MONITOR`, but it still supports the old name.
 * It allows replication-related operations that previously required the `SUPER` privilege to the `BINLOG MONITOR` (formerly `REPLICATION CLIENT`):
 
-| Privilege | Newly Granted Operations |
-| --------- | ------------------------ |
-| BINLOG MONITOR (formerly REPLICATION CLIENT) | ○ Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.○ Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements.○ Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements.○ Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements. |
+### BINLOG MONITOR (formerly REPLICATION CLIENT)
+
+**Newly Granted Operations:**
+* Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
+* Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
+* Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
 
 * It adds new replication-related privileges to allow operations that previously required the `SUPER` privilege:
 
-| Privilege | Granted Operations |
-| --------- | ------------------ |
-| BINLOG ADMIN | ○ Allows the user to execute PURGE BINARY LOGS statements.○ Allows the user to set system variables:[binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)[max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)[max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)[sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| BINLOG REPLAY | ○ Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog).○ Allows the user to execute [SET TIMESTAMP](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/set-timestamp/README.md) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication.○ Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| REPLICATION MASTER ADMIN | ○ Allows the user to execute SHOW REPLICA HOSTS statements.○ Allows the user to execute SHOW SLAVE HOSTS statements.○ Allows the user to set system variables:[gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| REPLICATION SLAVE ADMIN  | ○ Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog).○ Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements.○ Allows the user to execute [SHOW ALL REPLICAS STATUS](https://mariadb.com/kb/en/SHOW-ALL-REPLICAS-STATUS) statements.○ Allows the user to execute [SHOW ALL SLAVES STATUS](https://mariadb.com/kb/en/SHOW-ALL-SLAVES-STATUS) statements.○ Allows the user to execute SHOW RELAYLOG EVENTS statements.○ Allows the user to execute SHOW REPLICA STATUS statements.○ Allows the user to execute SHOW SLAVE STATUS statements.○ Allows the user to execute START ALL REPLICAS statements.○ Allows the user to execute START ALL SLAVES statements.○ Allows the user to execute START REPLICA statements.○ Allows the user to execute START SLAVE statements.○ Allows the user to execute STOP ALL REPLICAS statements.○ Allows the user to execute STOP ALL SLAVES statements.○ Allows the user to execute STOP REPLICA statements.○ Allows the user to execute STOP SLAVE statements.○ Allows the user to set system variables:[gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
+### BINLOG ADMIN
+
+** Granted Operations:**
+* Allows the user to execute PURGE BINARY LOGS statements
+* Allows the user to set system variables:
+  * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)
+  * [max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)
+  * [max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)
+  * [sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### BINLOG REPLAY
+
+**Granted Operations:**
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
+* Allows the user to execute [SET TIMESTAMP](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/set-timestamp/README.md) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication
+* Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### REPLICATION MASTER ADMIN
+
+**Granted Operations:**
+* Allows the user to execute SHOW REPLICA HOSTS statements
+* Allows the user to execute SHOW SLAVE HOSTS statements
+* Allows the user to set system variables:
+  * [gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### REPLICATION SLAVE ADMIN
+
+**Granted Operations:**
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
+* Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements
+* Allows the user to execute [SHOW ALL REPLICAS STATUS](https://mariadb.com/kb/en/SHOW-ALL-REPLICAS-STATUS) statements
+* Allows the user to execute [SHOW ALL SLAVES STATUS](https://mariadb.com/kb/en/SHOW-ALL-SLAVES-STATUS) statements
+* Allows the user to execute SHOW RELAYLOG EVENTS statements
+* Allows the user to execute SHOW REPLICA STATUS statements
+* Allows the user to execute SHOW SLAVE STATUS statements
+* Allows the user to execute START ALL REPLICAS statements
+* Allows the user to execute START ALL SLAVES statements
+* Allows the user to execute START REPLICA statements
+* Allows the user to execute START SLAVE statements
+* Allows the user to execute STOP ALL REPLICAS statements
+* Allows the user to execute STOP ALL SLAVES statements
+* Allows the user to execute STOP REPLICA statements
+* Allows the user to execute STOP SLAVE statements
+* Allows the user to set system variables:
+  * [gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+## Statement Aliases
 
 * It adds aliases for statements that contain the word `SLAVE` that also allow the word `REPLICA`:
 
@@ -212,7 +849,7 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 
 * It adds the shutdown\_wait\_for\_slaves system variable to control whether a replication-aware shutdown is the default shutdown behavior.
 
-### MariaDB Enterprise Cluster
+## MariaDB Enterprise Cluster
 
 MariaDB Enterprise Server 10.5 improves support for [Galera Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md):
 
@@ -227,14 +864,14 @@ MariaDB Enterprise Server 10.5 improves support for [Galera Cluster](https://git
 * It adds a "black box" for Galera troubleshooting. The black box holds debug log messages in memory, which can be analyzed in case of a crash.
 * The default value for `gcache.size` in [wsrep\_provider\_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_provider_options) has been changed to 1 GB.
 
-### Temporal Data
+## Temporal Data
 
 MariaDB Enterprise Server 10.5 improves support for [Temporal Data Tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables):
 
 * It allows [system-versioned tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables) that are partitioned on an interval of SYSTEM\_TIME to be configured with a specific start date and time, which can make partition management more user-friendly.
 * It allows [application-time period tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods) to be configured to prohibit overlapping time periods.
 
-### SQL Functionality
+## SQL Functionality
 
 MariaDB Enterprise Server 10.5 improves SQL functionality in several areas:
 
@@ -262,7 +899,7 @@ MariaDB Enterprise Server 10.5 improves SQL functionality in several areas:
 * It adds support for the [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) data type, which can be used to represent IPv4 and IPv6 addresses.
 * It changes the way that [TIMESTAMP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/timestamp), [DATETIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/datetime), and [TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time) columns that use the pre-[MariaDB 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) format are displayed in the output of [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) and [DESCRIBE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/describe) and in the value of the [information\_schema.COLUMNS.COLUMN\_TYPE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) column. Columns using the older format will have a comment that says `/* mariadb-5.3 */`.
 
-### Security
+## Security
 
 MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security) improvements:
 
@@ -273,24 +910,168 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 * It renames the `REPLICATION CLIENT` privilege to `BINLOG MONITOR`, but it still supports the old name.
 * It allows replication-related operations that previously required the `SUPER` privilege to the `BINLOG MONITOR` (formerly `REPLICATION CLIENT`):
 
-| Privilege | Newly Granted Operations |
-| --------- | ------------------------ |
-| BINLOG MONITOR (formerly REPLICATION CLIENT) | ○ Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements.○ Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements.○ Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements. |
+### BINLOG MONITOR (formerly REPLICATION CLIENT)
+
+**Newly Granted Operations:**
+* Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
+* Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
+* Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
 
 * It adds new privileges to allow operations that previously required the `SUPER` privilege.
 
-| Privilege | Granted Operations |
-| --------- | ------------------ |
-| [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin) | ○ Allows the user to execute [PURGE BINARY LOGS](https://mariadb.com/kb/en/purge-binary-log) statements.○ Allows the user to set system variables:[binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)[max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)[max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)[sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay) | ○ Allows the user to execute BINLOG statements, which are output by mariadb-binlog○ Allows the user to execute SET TIMESTAMP statements when secure\_timestamp is set to replication○ Allows the user to set the session values of several system variables that are usually included in BINLOG statements:[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| CONNECTION ADMIN | ○ Skips the execution of init\_connect when the user connects.○ Ignores max\_connections when the user connects.○ Ignores max\_user\_connections when the user connects.○ Ignores max\_password\_errors when the user connects.○ Allows the user to kill connections owned by other users with the KILL statement.○ Allows the user to set system variables:[connect\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#connect_timeout)[disconnect\_on\_expired\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#disconnect_on_expired_password)[extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#extra_max_connections)[init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect)[max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections)[max\_connect\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connect_errors)[max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors)[proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks)[secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)[slow\_launch\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#slow_launch_time)[thread\_pool\_exact\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_dedicated\_listener](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_idle\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_max\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_min\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_oversubscribe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_prio\_kickup\_timer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_priority](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)[thread\_pool\_stall\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables) |
-| FEDERATED ADMIN | ○ Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements.○ Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements.○ Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements. |
-| READ ONLY ADMIN | ○ Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.○ Allows the user to execute DROP TRIGGER statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.○ Allows the user to execute START TRANSACTION READ WRITE statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled.○ Allows the user to set system variables:[read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) |
-| REPLICATION MASTER ADMIN | ○ Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements.○ Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements.○ Allows the user to set system variables:[gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| REPLICATION SLAVE ADMIN | ○ Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog).○ Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements.○ Allows the user to execute [SHOW ALL REPLICAS](https://mariadb.com/kb/en/show-all-replicas) STATUS statements.○ Allows the user to execute [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md) statements.○ Allows the user to execute [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events) statements.○ Allows the user to execute [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) statements.○ Allows the user to execute [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) statements.○ Allows the user to execute [START ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-replicas/README.md) statements.○ Allows the user to execute [START ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-slaves/README.md) statements.○ Allows the user to execute [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) statements.○ Allows the user to execute START SLAVE statements.○ Allows the user to execute [STOP ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-replicas/README.md) statements.○ Allows the user to execute [STOP ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-slaves/README.md) statements.○ Alows the user to execute [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements.○ Allows the user to execute [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements.○ Allows the user to set system variables:[gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)[init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)[sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) |
-| SET USER | ○ Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events.○ Allows the user to view the definer of an object, even if the user account no longer exists. |
+### [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin)
 
-### HashiCorp Vault Encryption Plugin
+**Granted Operations:**
+* Allows the user to execute [PURGE BINARY LOGS](https://mariadb.com/kb/en/purge-binary-log) statements
+* Allows the user to set system variables:
+  * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_commit\_wait\_usec](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_direct\_non\_transactional\_updates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_file\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_image](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_row\_metadata](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [expire\_logs\_days](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_compress\_min\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [log\_bin\_trust\_function\_creators](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [max\_binlog\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_cache_size)
+  * [max\_binlog\_stmt\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_stmt_cache_size)
+  * [max\_binlog\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_binlog_size)
+  * [sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay)
+
+**Granted Operations:**
+* Allows the user to execute BINLOG statements, which are output by mariadb-binlog
+* Allows the user to execute SET TIMESTAMP statements when secure\_timestamp is set to replication
+* Allows the user to set the session values of several system variables that are usually included in BINLOG statements:
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_seq\_no](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### CONNECTION ADMIN
+
+**Granted Operations:**
+* Skips the execution of init\_connect when the user connects
+* Ignores max\_connections when the user connects
+* Ignores max\_user\_connections when the user connects
+* Ignores max\_password\_errors when the user connects
+* Allows the user to kill connections owned by other users with the KILL statement
+* Allows the user to set system variables:
+  * [connect\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#connect_timeout)
+  * [disconnect\_on\_expired\_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#disconnect_on_expired_password)
+  * [extra\_max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#extra_max_connections)
+  * [init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect)
+  * [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections)
+  * [max\_connect\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connect_errors)
+  * [max\_password\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_password_errors)
+  * [proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks)
+  * [secure\_auth](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_auth)
+  * [slow\_launch\_time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#slow_launch_time)
+  * [thread\_pool\_exact\_stats](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_dedicated\_listener](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_idle\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_max\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_min\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_oversubscribe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_prio\_kickup\_timer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_priority](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables)
+  * [thread\_pool\_stall\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables) |
+
+### FEDERATED ADMIN
+
+**Granted Operations:**
+* Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements
+* Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements
+* Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements
+
+### READ ONLY ADMIN
+
+**Granted Operations:**
+* Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to execute DROP TRIGGER statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to execute START TRANSACTION READ WRITE statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
+* Allows the user to set system variables:
+  * [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only)
+
+### REPLICATION MASTER ADMIN
+
+**Granted Operations:**
+* Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
+* Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
+* Allows the user to set system variables:
+  * [gtid\_binlog\_state](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [master\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### REPLICATION SLAVE ADMIN
+
+**Granted Operations:**
+* Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
+* Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements
+* Allows the user to execute [SHOW ALL REPLICAS](https://mariadb.com/kb/en/show-all-replicas) STATUS statements
+* Allows the user to execute [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md) statements
+* Allows the user to execute [SHOW RELAYLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-relaylog-events) statements
+* Allows the user to execute [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) statements
+* Allows the user to execute [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) statements
+* Allows the user to execute [START ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-replicas/README.md) statements
+* Allows the user to execute [START ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-slaves/README.md) statements
+* Allows the user to execute [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) statements
+* Allows the user to execute START SLAVE statements
+* Allows the user to execute [STOP ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-replicas/README.md) statements
+* Allows the user to execute [STOP ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-slaves/README.md) statements
+* Alows the user to execute [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements
+* Allows the user to execute [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) statements
+* Allows the user to set system variables:
+  * [gtid\_cleanup\_batch\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_ignore\_duplicates](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_pos\_auto\_engines](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [gtid\_strict\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid)
+  * [init\_slave](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [relay\_log\_recovery](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_events\_marked\_for\_skip](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_do\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [replicate\_wild\_ignore\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [read\_binlog\_speed\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_ddl\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_domain\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_exec\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_max\_allowed\_packet](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_net\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_max\_queued](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_parallel\_workers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_run\_triggers\_for\_rbr](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_sql\_verify\_checksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_transaction\_retry\_interval](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [slave\_type\_conversions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_master\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+  * [sync\_relay\_log\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
+
+### SET USER
+
+**Granted Operations:**
+* Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events.○ Allows the user to view the definer of an object, even if the user account no longer exists
+
+## HashiCorp Vault Encryption Plugin
 
 MariaDB Enterprise Server 10.5 introduces an encryption plugin to support for [HashiCorp Vault](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/hashicorp-vault-and-mariadb):
 
@@ -298,9 +1079,9 @@ MariaDB Enterprise Server 10.5 introduces an encryption plugin to support for [H
 * It communicates with the remote KMS using TLS.
 * It supports key rotation.
 
-### Performance Schema
+## Performance Schema
 
-MariaDB Enterprise Server 10.5 includes several \[performance-schema|Performance Schema] improvements:
+MariaDB Enterprise Server 10.5 includes several [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) improvements:
 
 * It adds support for some of the instrumentation and tables included in MySQL 5.7.
 * It adds the `CONNECTION_TYPE` column to the threads table, which can be used to determine which connections are using TLS.
@@ -347,7 +1128,7 @@ MariaDB Enterprise Server 10.5 includes several \[performance-schema|Performance
   * [user\_variables\_by\_thread](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table)
   * [variables\_by\_thread](https://mariadb.com/kb/en/performance-schema-variables_by_thread-table)
 
-### Information Schema
+## Information Schema
 
 MariaDB Enterprise Server 10.5 includes several [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) improvements:
 
@@ -360,7 +1141,7 @@ MariaDB Enterprise Server 10.5 includes several [Information Schema](https://app
 * It removes the [information\_schema.INNODB\_TABLESPACES\_SCRUBBING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_scrubbing-table) table.
 * It changes some other InnoDB-related [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) tables in minor ways.
 
-### Thread Pool
+## Thread Pool
 
 MariaDB Enterprise Server 10.5 includes several thread pool improvements:
 
@@ -372,7 +1153,7 @@ MariaDB Enterprise Server 10.5 includes several thread pool improvements:
   * [THREAD\_POOL\_STATS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_stats-table)
   * [THREAD\_POOL\_WAITS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-thread_pool_waits-table)
 
-### Protocol
+## Protocol
 
 MariaDB Enterprise Server 10.5 includes several protocol improvements:
 
@@ -380,13 +1161,13 @@ MariaDB Enterprise Server 10.5 includes several protocol improvements:
 * It adds protocol support for the [JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/json) data type.
 * It adds protocol support for the [GEOMETRY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) data type.
 
-### XA Transactions
+## XA Transactions
 
 MariaDB Enterprise Server 10.5 includes some XA transaction improvements:
 
 * It allows prepared XA transactions to be properly recovered after a client disconnects.
 
-### Internals
+## Internals
 
 MariaDB Enterprise Server 10.5 includes some internal improvements:
 
