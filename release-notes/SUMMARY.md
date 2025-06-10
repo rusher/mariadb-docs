@@ -142,7 +142,7 @@
         * [Understanding the Amazon Web Services (AWS) KMS Encryption Plugin](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins/amazon-web-services-aws-kms-understanding-the-amazon-web-services-aws-kms-e.md)
         * [Choosing an Encryption Plugin](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins/choosing-an-encryption-plugin.md)
     * [MariaDB Enterprise Server - Data-in-Transit Encryption](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-in-transit-encryption/README.md)
-      * [data-in-transit-encryption-for-mariadb-enterprise-server](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-in-transit-encryption/data-in-transit-encryption-for-mariadb-enterprise-server.md)
+      * [MariaDB 10.0.4 Release Notes](enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-in-transit-encryption/data-in-transit-encryption-for-mariadb-enterprise-server.md)
 * [MariaDB Community Server Release Notes](mariadb-community-server-release-notes/README.md)
   * [Changes and Improvements in MariaDB 12.0](mariadb-community-server-release-notes/what-is-mariadb-120.md)
   * [Release Notes - MariaDB 11.8 Series](mariadb-community-server-release-notes/mariadb-11-8-series/README.md)
