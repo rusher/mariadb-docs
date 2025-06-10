@@ -1,247 +1,4 @@
-# mariadb-maxscale-2302-mariadb-maxscale-configuration-guide
-
-## MariaDB MaxScale Configuration Guide
-
-## MariaDB MaxScale Configuration Guide
-
-* [MariaDB MaxScale Configuration Guide](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#mariadb-maxscale-configuration-guide)
-* [Introduction](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#introduction)
-* [Concepts](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#concepts)
-  * [Glossary](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#glossary)
-  * [Objects](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#objects)
-    * [Server](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#server)
-    * [Monitor](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#monitor)
-    * [Filter](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#filter)
-    * [Router](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#router)
-    * [Service](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#service)
-    * [Listener](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#listener)
-* [Administration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#administration)
-  * [Administration audit file](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#administration-audit-file)
-  * [Static Configuration Parameters](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#static-configuration-parameters)
-* [Configuration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#configuration)
-  * [Names](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#names)
-  * [Dynamic Configuration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#dynamic-configuration)
-  * [Special Parameter Types](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#special-parameter-types)
-    * [Booleans](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans)
-    * [Sizes](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sizes)
-    * [Durations](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#durations)
-    * [Regular Expressions](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
-      * [Standard regular expression settings for filters](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
-    * [Enumerations](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
-    * [Path Lists](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#path-lists)
-  * [Global Settings](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#global-settings)
-    * [core\_file](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#core_file)
-    * [auto\_tune](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#auto_tune)
-    * [threads](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#threads)
-    * [threads\_max](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#threads_max)
-    * [rebalance\_period](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#rebalance_period)
-    * [rebalance\_threshold](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#rebalance_threshold)
-    * [rebalance\_window](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#rebalance_window)
-    * [skip\_name\_resolve](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#skip_name_resolve)
-    * [auth\_connect\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#auth_connect_timeout)
-    * [auth\_read\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#auth_read_timeout)
-    * [auth\_write\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#auth_write_timeout)
-    * [query\_retries](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#query_retries)
-    * [query\_retry\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#query_retry_timeout)
-    * [passive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#passive)
-    * [ms\_timestamp](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ms_timestamp)
-    * [skip\_permission\_checks](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#skip_permission_checks)
-    * [syslog](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#syslog)
-    * [maxlog](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#maxlog)
-    * [log\_warning](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_warning)
-    * [log\_notice](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_notice)
-    * [log\_info](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_info)
-    * [log\_debug](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_debug)
-    * [log\_warn\_super\_user](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_warn_super_user)
-    * [log\_augmentation](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_augmentation)
-    * [log\_throttling](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_throttling)
-    * [logdir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#logdir)
-    * [datadir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#datadir)
-    * [secretsdir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#secretsdir)
-    * [libdir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#libdir)
-    * [sharedir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sharedir)
-    * [cachedir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#cachedir)
-    * [piddir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#piddir)
-    * [execdir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#execdir)
-    * [connector\_plugindir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connector_plugindir)
-    * [persistdir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#persistdir)
-    * [module\_configdir](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#module_configdir)
-    * [language](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#language)
-    * [query\_classifier](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#query_classifier)
-    * [query\_classifier\_cache\_size](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#query_classifier_cache_size)
-    * [query\_classifier\_args](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#query_classifier_args)
-      * [log\_unrecognized\_statements](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_unrecognized_statements)
-    * [substitute\_variables](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#substitute_variables)
-    * [sql\_mode](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sql_mode)
-    * [local\_address](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#local_address)
-    * [users\_refresh\_time](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#users_refresh_time)
-    * [users\_refresh\_interval](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#users_refresh_interval)
-    * [retain\_last\_statements](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#retain_last_statements)
-    * [dump\_last\_statements](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#dump_last_statements)
-    * [session\_trace](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#session_trace)
-    * [session\_trace\_match](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#session_trace_match)
-    * [writeq\_high\_water](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#writeq_high_water)
-    * [writeq\_low\_water](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#writeq_low_water)
-    * [persist\_runtime\_changes](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#persist_runtime_changes)
-    * [load\_persisted\_configs](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#load_persisted_configs)
-    * [max\_auth\_errors\_until\_block](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#max_auth_errors_until_block)
-    * [debug](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#debug)
-    * [REST API Configuration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#rest-api-configuration)
-    * [admin\_host](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_host)
-    * [admin\_port](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_port)
-    * [admin\_auth](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_auth)
-    * [admin\_ssl\_key](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_key)
-    * [admin\_ssl\_cert](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_cert)
-    * [admin\_ssl\_ca\_cert](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_ca_cert)
-    * [admin\_ssl\_ca](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_ca)
-    * [admin\_ssl\_version](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_version)
-    * [admin\_enabled](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_enabled)
-    * [admin\_gui](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_gui)
-    * [admin\_secure\_gui](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_secure_gui)
-    * [admin\_log\_auth\_failures](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_log_auth_failures)
-    * [admin\_pam\_readwrite\_service/admin\_pam\_readonly\_service](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_pam_readwrite_serviceadmin_pam_readonly_service)
-    * [admin\_jwt\_algorithm](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_jwt_algorithm)
-    * [admin\_jwt\_key](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_jwt_key)
-    * [admin\_jwt\_max\_age](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_jwt_max_age)
-    * [admin\_oidc\_url](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_oidc_url)
-    * [admin\_verify\_url](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_verify_url)
-    * [admin\_audit](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_audit)
-    * [admin\_audit\_file](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_audit_file)
-    * [admin\_audit\_exclude\_methods](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_audit_exclude_methods)
-    * [config\_sync\_cluster](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#config_sync_cluster)
-    * [config\_sync\_user](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#config_sync_user)
-    * [config\_sync\_password](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#config_sync_password)
-    * [config\_sync\_db](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#config_sync_db)
-    * [config\_sync\_interval](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#config_sync_interval)
-    * [config\_sync\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#config_sync_timeout)
-    * [key\_manager](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#key_manager)
-  * [Events](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#events)
-    * ['authentication\_failure'](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#authentication_failure)
-  * [Service](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#service_1)
-    * [router](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#router_1)
-    * [filters](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#filters)
-    * [targets](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#targets)
-    * [servers](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#servers)
-    * [cluster](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#cluster)
-    * [user](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#user)
-    * [password](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#password)
-    * [enable\_root\_user](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enable_root_user)
-    * [localhost\_match\_wildcard\_host](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#localhost_match_wildcard_host)
-    * [version\_string](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#version_string)
-    * [auth\_all\_servers](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#auth_all_servers)
-    * [strip\_db\_esc](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#strip_db_esc)
-    * [log\_auth\_warnings](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_auth_warnings)
-    * [log\_warning](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_warning_1)
-    * [log\_notice](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_notice_1)
-    * [log\_info](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_info_1)
-    * [log\_debug](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#log_debug_1)
-    * [connection\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_timeout)
-    * [max\_connections](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#max_connections)
-    * [session\_track\_trx\_state](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#session_track_trx_state)
-    * [retain\_last\_statements](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#retain_last_statements_1)
-    * [connection\_keepalive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_keepalive)
-    * [force\_connection\_keepalive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#force_connection_keepalive)
-    * [net\_write\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#net_write_timeout)
-    * [max\_sescmd\_history](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#max_sescmd_history)
-    * [prune\_sescmd\_history](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#prune_sescmd_history)
-    * [disable\_sescmd\_history](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#disable_sescmd_history)
-    * [user\_accounts\_file](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#user_accounts_file)
-    * [user\_accounts\_file\_usage](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#user_accounts_file_usage)
-    * [idle\_session\_pool\_time](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#idle_session_pool_time)
-      * [Details, limitations and suggestions for connection sharing](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#details-limitations-and-suggestions-for-connection-sharing)
-    * [multiplex\_timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#multiplex_timeout)
-  * [Server](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#server_1)
-    * [address](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#address)
-    * [port](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#port)
-    * [socket](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#socket)
-    * [monitoruser](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#monitoruser)
-    * [monitorpw](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#monitorpw)
-    * [extra\_port](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#extra_port)
-    * [persistpoolmax](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#persistpoolmax)
-    * [persistmaxtime](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#persistmaxtime)
-    * [max\_routing\_connections](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#max_routing_connections)
-    * [proxy\_protocol](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#proxy_protocol)
-    * [disk\_space\_threshold](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#disk_space_threshold)
-    * [rank](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#rank)
-    * [priority](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#priority)
-    * [replication\_custom\_options](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#replication_custom_options)
-  * [Monitor](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#monitor_1)
-  * [Listener](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#listener_1)
-    * [service](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#service_2)
-    * [protocol](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#protocol)
-    * [address](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#address_1)
-    * [port](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#port_1)
-    * [socket](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#socket_1)
-    * [authenticator](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#authenticator)
-    * [authenticator\_options](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#authenticator_options)
-    * [sql\_mode](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#sql_mode_1)
-    * [proxy\_protocol\_networks](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#proxy_protocol_networks)
-    * [connection\_init\_sql\_file](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_init_sql_file)
-    * [user\_mapping\_file](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#user_mapping_file)
-* [Available Protocols](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#available-protocols)
-  * [MariaDBClient](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#mariadbclient)
-  * [CDC](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#cdc)
-* [TLS/SSL encryption](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#tlsssl-encryption)
-  * [ssl](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl)
-  * [ssl\_key](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_key)
-  * [ssl\_cert](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_cert)
-  * [ssl\_ca\_cert](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_ca_cert)
-  * [ssl\_ca](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_ca)
-  * [ssl\_version](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_version)
-  * [ssl\_cipher](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_cipher)
-  * [ssl\_cert\_verify\_depth](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_cert_verify_depth)
-  * [ssl\_verify\_peer\_certificate](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_verify_peer_certificate)
-  * [ssl\_verify\_peer\_host](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_verify_peer_host)
-  * [ssl\_crl](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#ssl_crl)
-    * [Example SSL enabled server configuration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#example-ssl-enabled-server-configuration)
-    * [Example SSL enabled listener configuration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#example-ssl-enabled-listener-configuration)
-* [Module Types](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#module-types)
-  * [Routing Modules](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#routing-modules)
-  * [Monitor Modules](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#monitor-modules)
-  * [Filter Modules](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#filter-modules)
-* [Encrypting Passwords](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#encrypting-passwords)
-  * [Creating Encrypted Passwords](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#creating-encrypted-passwords)
-* [Runtime Configuration Changes](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#runtime-configuration-changes)
-  * [Configuration Synchronization](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#configuration-synchronization)
-    * [Error Handling in Configuration Synchronization](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#error-handling-in-configuration-synchronization)
-    * [Synchronization of Encrypted Passwords](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#synchronization-of-encrypted-passwords)
-    * [Managing Configuration Synchronization](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#managing-configuration-synchronization)
-    * [Limitations in Configuration Synchronization](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#limitations-in-configuration-synchronization)
-  * [Backing Up Configuration Changes](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#backing-up-configuration-changes)
-* [Encryption Key Managers](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#encryption-key-managers)
-  * [File-based Key Manager](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#file-based-key-manager)
-    * [Limitations](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#limitations)
-    * [Parameters](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#parameters)
-      * [file.keyfile](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#filekeyfile)
-  * [KMIP Key Manager](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#kmip-key-manager)
-    * [Limitations](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#limitations_1)
-    * [Parameters](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#parameters_1)
-      * [kmip.host](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#kmiphost)
-      * [kmip.port](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#kmipport)
-      * [kmip.cert](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#kmipcert)
-      * [kmip.key](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#kmipkey)
-      * [kmip.ca](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#kmipca)
-  * [HashiCorp Vault Key Manager](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#hashicorp-vault-key-manager)
-    * [Limitations](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#limitations_2)
-    * [Parameters](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#parameters_2)
-      * [vault.token](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaulttoken)
-      * [vault.host](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaulthost)
-      * [vault.port](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaultport)
-      * [vault.ca](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaultca)
-      * [vault.tls](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaulttls)
-      * [vault.mount](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaultmount)
-      * [vault.timeout](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#vaulttimeout)
-* [Threads](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#threads_1)
-* [Error Reporting](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#error-reporting)
-* [Limitations](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#limitations_3)
-* [Performance Optimization](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#performance-optimization)
-  * [MaxScale Diagnostics using MaxCtrl](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#maxscale-diagnostics-using-maxctrl)
-    * [Configuration](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#configuration_1)
-      * [threads](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#threads_2)
-      * [query\_classifier\_cache\_size](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#query_classifier_cache_size_1)
-    * [Example](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#example)
-* [Troubleshooting](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#troubleshooting)
-  * [Systemd Watchdog](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#systemd-watchdog)
+# MariaDB MaxScale Configuration Guide
 
 ## Introduction
 
@@ -254,15 +11,14 @@ plugin modules that tailor the behavior of the program.
 
 ### Glossary
 
-| Word                | Description                                                                                                                                                                                                                                                                                                                                      |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Word                | Description                                                                                                                                                                                                                                                                                                                                      |
+| Word | Description |
+| ---- | ----------- |
 | connection routing  | Connection routing is a method of handling requests in which MariaDB MaxScale will accept connections from a client and route data on that connection to a single database using a single connection. Connection based routing will not examine individual requests on a connection and it will not move that connection once it is established. |
-| statement routing   | Statement routing is a method of handling requests in which each request within a connection will be handled individually. Requests may be sent to one or more servers and connections may be dynamically added or removed from the session.                                                                                                     |
-| module              | A module is a separate code entity that may be loaded dynamically into MariaDB MaxScale to increase the available functionality. Modules are implemented as run-time loadable shared objects.                                                                                                                                                    |
-| connection failover | When a connection currently being used between MariaDB MaxScale and the database server fails a replacement will be automatically created to another server by MariaDB MaxScale without client intervention                                                                                                                                      |
-| backend database    | A term used to refer to a database that sits behind MariaDB MaxScale and is accessed by applications via MariaDB MaxScale.                                                                                                                                                                                                                       |
-| REST API            | HTTP administrative interface                                                                                                                                                                                                                                                                                                                    |
+| statement routing | Statement routing is a method of handling requests in which each request within a connection will be handled individually. Requests may be sent to one or more servers and connections may be dynamically added or removed from the session. |
+| module | A module is a separate code entity that may be loaded dynamically into MariaDB MaxScale to increase the available functionality. Modules are implemented as run-time loadable shared objects. |
+| connection failover | When a connection currently being used between MariaDB MaxScale and the database server fails a replacement will be automatically created to another server by MariaDB MaxScale without client intervention |
+| backend database | A term used to refer to a database that sits behind MariaDB MaxScale and is accessed by applications via MariaDB MaxScale. |
+| REST API | HTTP administrative interface |
 
 ### Objects
 
@@ -273,18 +29,17 @@ connected via MariaDB MaxScale. The status of a server varies during the lifetim
 of the server and typically the status is updated by some monitor. However, it\
 is also possible to update the status of a server manually.
 
-| Status                   | Description                                                                                                                                                                                                                                                                                                               |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Status                   | Description                                                                                                                                                                                                                                                                                                               |
-| Running                  | The server is running.                                                                                                                                                                                                                                                                                                    |
-| Master                   | The server is the primary.                                                                                                                                                                                                                                                                                                |
-| Slave                    | The server is a replica.                                                                                                                                                                                                                                                                                                  |
-| Draining                 | The server is being drained. Existing connections can continue to be used, but no new connections will be created to the server. Typically this status bit is turned on manually using maxctrl, but a monitor may also turn it on.                                                                                        |
-| Drained                  | The server has been drained. The server was being drained and now the number of connections to the server has dropped to 0.                                                                                                                                                                                               |
-| Auth Error               | The monitor cannot login and query the server due to insufficient privileges.                                                                                                                                                                                                                                             |
-| Maintenance              | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenace mode, no connections will be created to it and existing connections will be closed. |
-| Slave of External Master | The server is a replica of a primary that is not being monitored.                                                                                                                                                                                                                                                         |
-| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../mariadb-maxscale-21-06/) for more information.                                                                                                                                                          |
+| Status | Description |
+| ------ | ----------- |
+| Running | The server is running. |
+| Master | The server is the primary. |
+| Slave | The server is a replica. |
+| Draining | The server is being drained. Existing connections can continue to be used, but no new connections will be created to the server. Typically this status bit is turned on manually using maxctrl, but a monitor may also turn it on. |
+| Drained | The server has been drained. The server was being drained and now the number of connections to the server has dropped to 0. |
+| Auth Error | The monitor cannot login and query the server due to insufficient privileges. |
+| Maintenance | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenace mode, no connections will be created to it and existing connections will be closed. |
+| Slave of External Master | The server is a replica of a primary that is not being monitored. |
+| Master Stickiness | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../mariadb-maxscale-21-06/) for more information. |
 
 For more information on how to manually set these states via MaxCtrl, read the[Administration Tutorial](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-mariadb-maxscale-administration-tutorial.md).
 
@@ -589,7 +344,7 @@ values such as `ignorecase`, `case` and `extended`.
 
 These settings can also be defined in the pattern itself, so they can be\
 used even in modules without pattern compilation settings. The pattern\
-settings are `(?i)` for `ignorecase` and `(?x)` for `extended`. See the[PCRE2 syntax documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html#SEC16)\
+settings are `(?i)` for `ignorecase` and `(?x)` for `extended`. See the [PCRE2 syntax documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html#SEC16)\
 for more information.
 
 **Standard regular expression settings for filters**
@@ -667,11 +422,10 @@ particular server variable. With this parameter it can be specified whether`all`
 
 The current auto tunable parameters are:
 
-| MaxScale Parameter                                                                                                                                               | Server Variable Dependency                                                                                                                                                                                                    |
-| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| MaxScale Parameter                                                                                                                                               | Server Variable Dependency                                                                                                                                                                                                    |
-| [connection\_keepalive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_keepalive)                                                      | 80% of the smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
-| [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) | The smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service        |
+| MaxScale Parameter | Server Variable Dependency |
+| ------------------ | -------------------------- |
+| [connection\_keepalive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
+| [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) | The smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
 
 The values of the server variables are collected by monitors, which means that\
 if the servers of a service are not monitored by a monitor, then the parameters\
@@ -1360,14 +1114,13 @@ exactly known and over which we do not have direct control.
 Using `maxctrl show threads` it is possible to check what the actual size of\
 the cache is and to see performance statistics.
 
-| Key                | Meaning                                                                                                                 |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
-| Key                | Meaning                                                                                                                 |
-| QC cache size      | The current size of the cache (bytes).                                                                                  |
-| QC cache inserts   | How many entries have been inserted into the cache.                                                                     |
-| QC cache hits      | How many times the classification result has been found from the cache.                                                 |
-| QC cache misses    | How many times the classification result has not been found from the cache, but the classification had to be performed. |
-| QC cache evictions | How many times a cache entry has had to be removed from the cache, in order to make place for another.                  |
+| Key | Meaning |
+| --- | ------- |
+| QC cache size | The current size of the cache (bytes). |
+| QC cache inserts | How many entries have been inserted into the cache. |
+| QC cache hits | How many times the classification result has been found from the cache. |
+| QC cache misses | How many times the classification result has not been found from the cache, but the classification had to be performed. |
+| QC cache evictions | How many times a cache entry has had to be removed from the cache, in order to make place for another. |
 
 #### `query_classifier_args`
 
@@ -2963,7 +2716,7 @@ and role lists.
 
 An example users file is below.
 
-```
+```json
 {
     "user": [
         {
@@ -3773,7 +3526,7 @@ same as the one the original user used. Currently, "mysql\_native\_password" and
 
 An example mapping file is below.
 
-```
+```json
 {
     "user_map": [
         {
@@ -4737,16 +4490,15 @@ The current limitations of MaxScale are listed in the [Limitations](../mariadb-m
 From 22.08.2 onwards, `maxctrl show maxscale` shows a `System` object with\
 information about the system MaxScale is running on. The fields are:
 
-| Field                                   | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field                                   | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| machine.cores\_physical                 | The number of physical CPU cores on the machine.                                                                                                                                                                                                                                                                                                                                                                                           |
-| machine.cores\_available                | The number of CPU cores available to MaxScale. This number may be smaller than machine.cores\_physical, if CPU affinities are used and only a subset of the physical cores are available to MaxScale.                                                                                                                                                                                                                                      |
-| machine.cores\_virtual                  | The number of virtual CPU cores available to MaxScale. This number may be a decimal and smaller than machine.cores\_available, if MaxScale is running in a container whose CPU quota and period has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.cores\_available.                                                                       |
-| machine.memory\_physical                | The amount of physical memory on the machine.                                                                                                                                                                                                                                                                                                                                                                                              |
-| machine.memory\_available               | The amount of memory available to MaxScale. This number may be smaller than machine.memory\_physical, if MaxScale is running in a container whose memory has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.memory\_physical. Note also that the amount is available to all processes running in the same container, not just to MaxScale. |
-| maxscale.query\_classifier\_cache\_size | The maximum size of the MaxScale query classifier cache.                                                                                                                                                                                                                                                                                                                                                                                   |
-| maxscale.threads                        | The number of routing threads used by MaxScale.                                                                                                                                                                                                                                                                                                                                                                                            |
+| Field | Meaning |
+| ----- | ------- |
+| machine.cores\_physical | The number of physical CPU cores on the machine. |
+| machine.cores\_available | The number of CPU cores available to MaxScale. This number may be smaller than machine.cores\_physical, if CPU affinities are used and only a subset of the physical cores are available to MaxScale. |
+| machine.cores\_virtual | The number of virtual CPU cores available to MaxScale. This number may be a decimal and smaller than machine.cores\_available, if MaxScale is running in a container whose CPU quota and period has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.cores\_available. |
+| machine.memory\_physical | The amount of physical memory on the machine. |
+| machine.memory\_available | The amount of memory available to MaxScale. This number may be smaller than machine.memory\_physical, if MaxScale is running in a container whose memory has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.memory\_physical. Note also that the amount is available to all processes running in the same container, not just to MaxScale. |
+| maxscale.query\_classifier\_cache\_size | The maximum size of the MaxScale query classifier cache. |
+| maxscale.threads | The number of routing threads used by MaxScale. |
 
 In addition there is an `os` object that contains what the Linux command `uname` displays.
 
