@@ -1,5 +1,6 @@
+---
+description: Articles about joins in MariaDB.
+---
 
 # Joins
-
-Articles about joins in MariaDB.
 

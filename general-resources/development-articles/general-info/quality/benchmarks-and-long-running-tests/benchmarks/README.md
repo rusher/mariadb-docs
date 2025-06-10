@@ -1,3 +1,6 @@
+---
+description: Articles about the performance of MariaDB.
+---
+
 # Benchmarks
 
-Articles about the performance of MariaDB.

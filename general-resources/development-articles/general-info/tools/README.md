@@ -1,5 +1,6 @@
+---
+description: Tools for developing MariaDB
+---
 
 # MariaDB Development Tools
-
-Tools for developing MariaDB.
 

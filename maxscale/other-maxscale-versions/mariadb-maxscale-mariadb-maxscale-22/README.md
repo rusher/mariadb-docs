@@ -1,4 +1,3 @@
-
 # MariaDB MaxScale 2.2
 
 This page was prepared on 2022-02-03 and relates to MariaDB MaxScale 2.2.

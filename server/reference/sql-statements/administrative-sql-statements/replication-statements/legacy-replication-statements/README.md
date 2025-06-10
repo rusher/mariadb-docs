@@ -1,5 +1,6 @@
+---
+description: Category for old replication statements
+---
 
 # Legacy replication statements
-
-Category for old replication statements
 

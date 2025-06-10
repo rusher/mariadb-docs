@@ -1,3 +1,2 @@
 # Geometry Properties
 
-Geometry properties

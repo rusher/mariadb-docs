@@ -1,3 +1,6 @@
+---
+description: Changelogs for Connector/C releases
+---
+
 # MariaDB Connector/C Changelogs
 
-Changelogs for Connector/C releases.

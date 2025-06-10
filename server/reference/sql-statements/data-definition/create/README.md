@@ -1,5 +1,6 @@
+---
+description: Articles on the various CREATE statements.
+---
 
 # CREATE
-
-Articles on the various CREATE statements.
 

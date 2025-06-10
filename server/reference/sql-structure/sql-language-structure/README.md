@@ -1,5 +1,6 @@
+---
+description: SQL language structure rules
+---
 
 # SQL Language Structure
-
-SQL language structure rules.
 

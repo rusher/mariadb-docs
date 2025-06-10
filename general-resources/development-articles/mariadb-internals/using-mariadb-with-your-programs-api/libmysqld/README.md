@@ -1,3 +1,6 @@
+---
+description: Articles about libmysqld.so, the embedded MariaDB server
+---
+
 # libmysqld
 
-Articles about libmysqld.so, the embedded MariaDB server.

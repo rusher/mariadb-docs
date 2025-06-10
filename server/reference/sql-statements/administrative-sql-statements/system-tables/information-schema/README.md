@@ -1,5 +1,6 @@
+---
+description: Articles about the Information Schema
+---
 
 # Information Schema
-
-Articles about the Information Schema
 

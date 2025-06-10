@@ -1,5 +1,6 @@
+---
+description: Articles on various DROP commands
+---
 
 # DROP
-
-Articles on various DROP commands.
 

@@ -1,3 +1,6 @@
+---
+description: Changelogs for MariaDB Connector/Python releases
+---
+
 # MariaDB Connector/Python Changelogs
 
-Changelogs for MariaDB Connector/Python releases

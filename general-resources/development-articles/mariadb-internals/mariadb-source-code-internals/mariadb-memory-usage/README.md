@@ -1,3 +1,6 @@
+---
+description: How MariaDB uses memory
+---
+
 # MariaDB Memory Usage
 
-How MariaDB uses memory.

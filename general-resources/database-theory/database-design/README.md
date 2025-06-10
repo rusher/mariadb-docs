@@ -1,5 +1,6 @@
+---
+description: Articles about the database design process
+---
 
 # Database Design
-
-Articles about the database design process
 

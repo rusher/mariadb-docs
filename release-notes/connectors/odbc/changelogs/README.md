@@ -1,3 +1,6 @@
+---
+description: Changelogs for MariaDB Connector/ODBC
+---
+
 # MariaDB Connector/ODBC Changelogs
 
-Changelogs for MariaDB Connector/ODBC

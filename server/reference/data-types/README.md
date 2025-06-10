@@ -1,5 +1,6 @@
+---
+description: Data Types in MariaDB
+---
 
 # Data Types
-
-Data Types in MariaDB
 

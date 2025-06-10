@@ -1,3 +1,2 @@
 # Point Properties
 
-Point properties
