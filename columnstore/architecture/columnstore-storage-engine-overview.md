@@ -9,22 +9,22 @@ For deployment instructions and available documentation, see "[MariaDB Enterpris
 Feature Summary\
 The ColumnStore storage engine has the following features:
 
-| Feature                | Detail             | Resources                                                                                                                                                                                                                           |
-| ---------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Feature                | Detail             | Resources                                                                                                                                                                                                                           |
-| Storage Engine         | ColumnStore        |                                                                                                                                                                                                                                     |
-| Availability           | ES 10.5+, CS 10.5+ | [MariaDB Enterprise Server](../../en/mariadb-enterprise-server/)                                                                                                                                                                    |
-| Workload Optimization  | OLAP and Hybrid    | [OLAP Workloads](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#olap-workloads) [Hybrid Workloads](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#hybrid-workloads) |
-| Table Orientation      | Columnar           | [Columnar Storage Engine](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#overview)                                                                                                                  |
-| ACID-compliant         | Yes                |                                                                                                                                                                                                                                     |
-| Indexes                | Unnecessary        | [Extent Elimination](mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination)                                                                                                                                         |
-| Compression            | Yes                | [Compression](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#compression)                                                                                                                           |
-| High Availability (HA) | Yes                | [High Availability and Failover](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#high-availability-and-failover)                                                                                           |
-| Main Memory Caching    | Yes                |                                                                                                                                                                                                                                     |
-| Transaction Logging    | Yes                | [Version Buffer](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#version-buffer)                                                                                                                     |
-| Garbage Collection     | Yes                | [Version Buffer](../mariadb-enterprise-columnstore-storage-architecture/#version-buffer)                                                                                                                                            |
-| Online Schema changes  | Yes                | [Online Schema Changes](mariadb-enterprise-columnstore-locking.md#online-schema-changes)                                                                                                                                            |
-| Non-locking Reads      | Yes                | [Lockless Reads](mariadb-enterprise-columnstore-locking.md#lockless-reads)                                                                                                                                                          |
+| Feature                | Detail             | Resources                                                                                                                                     |
+| ---------------------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Feature                | Detail             | Resources                                                                                                                                     |
+| Storage Engine         | ColumnStore        |                                                                                                                                               |
+| Availability           | ES 10.5+, CS 10.5+ | [MariaDB Enterprise Server](../../en/mariadb-enterprise-server/)                                                                              |
+| Workload Optimization  | OLAP and Hybrid    | [OLAP Workloads ](columnstore-storage-architecture.md#olap-workloads)[Hybrid Workload](columnstore-storage-architecture.md#hybrid-workloads)s |
+| Table Orientation      | Columnar           | [Columnar Storage Engine](../columnstore-architecture/columnstore-architectural-overview.md#columnar-storage-engine)                          |
+| ACID-compliant         | Yes                |                                                                                                                                               |
+| Indexes                | Unnecessary        | [Extent Elimination](mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination)                                                   |
+| Compression            | Yes                | [Compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression)  |
+| High Availability (HA) | Yes                | [High Availability and Failover](../columnstore-architecture/columnstore-architectural-overview.md#high-availability-and-failover)            |
+| Main Memory Caching    | Yes                |                                                                                                                                               |
+| Transaction Logging    | Yes                | [Version Buffer](columnstore-storage-architecture.md#version-buffer)                                                                          |
+| Garbage Collection     | Yes                | [Version Buffer](../mariadb-enterprise-columnstore-storage-architecture/#version-buffer)                                                      |
+| Online Schema changes  | Yes                | [Online Schema Changes](mariadb-enterprise-columnstore-locking.md#online-schema-changes)                                                      |
+| Non-locking Reads      | Yes                | [Lockless Reads](mariadb-enterprise-columnstore-locking.md#lockless-reads)                                                                    |
 
 ## Examples
 
