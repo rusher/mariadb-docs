@@ -261,13 +261,13 @@ id FOR ORDINALITY )) AS jt;
     * `ALTER TABLE ... IMPORT TABLESPACE` can take unnecessarily long if a database uses a large number of tablespaces and and the value inndb\_open\_files is lower than the number of existing table\_spaces ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
     * Rowid Filter optimization cannot work with backward index scans. An attempt to run such a query plan will make the query perform very slowly. Fixed by disabling use of Rowid Filter if the optimizer decides to use a backward index scan. ([MDEV-33875](https://jira.mariadb.org/browse/MDEV-33875))
 
-    #### Changelog
+    **Changelog**
 
     * For the complete list of changes in this release, see the [changelog](changelog-for-mariadb-enterprise-server-10-6-19-15.md).
 
-    #### Platforms
+    **Platforms**
 
-    In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.19-15 is provided for:
+    In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.19-15 is provided for:
 
     * AlmaLinux 8 (x86\_64, ARM64)
     * AlmaLinux 9 (x86\_64, ARM64)
