@@ -1,6 +1,6 @@
 # Release Notes for Cluster Management API 1.6.2
 
-Cluster Management API (CMAPI) 1.6.2 is a maintenance release of [CMAPI](https://mariadb.com/docs/server/ref/cmapi). CMAPI is a REST API for administering [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) in multi-node topologies.
+Cluster Management API (CMAPI) 1.6.2 is a maintenance release of CMAPI. CMAPI is a REST API for administering [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) in multi-node topologies.
 
 Cluster Management API 1.6.2 was released on 2022-02-23. This release is of General Availability (GA) maturity.
 
