@@ -164,7 +164,7 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 ### Variables
 
-* For a list of all new variables, see [System Variables Added in MariaDB 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-11-8) and [Status Variables Added in MariaDB 11.8](https://mariadb.com/kb/en/status-variables-added-in-mariadb-11-8).
+* For a list of all new variables, see [System Variables Added in MariaDB 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-11-8) and [Status Variables Added in MariaDB 11.8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-11-5).
 
 ## Removed Features
 
