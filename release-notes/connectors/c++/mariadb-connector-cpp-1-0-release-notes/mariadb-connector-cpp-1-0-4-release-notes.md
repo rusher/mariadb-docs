@@ -8,9 +8,9 @@ The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ 
 
 This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of MariaDB Connector/C++.
 
-**For a description of this library see the**[**MariaDB Connector/C++**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp) **page.**
+**For a description of this library see the** [**MariaDB Connector/C++**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp) **page.**
 
-[MariaDB Connector/C++](https://mariadb.com/kb/en/c-connector-about-mariadb-connectorc/) is the interface between C++ applications and MariaDB Server. MariaDB Connector/C++ enables development of C++ applications using a JDBC-based API, which is also used by MariaDB Connector/J.
+[MariaDB Connector/C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp) is the interface between C++ applications and MariaDB Server. MariaDB Connector/C++ enables development of C++ applications using a JDBC-based API, which is also used by MariaDB Connector/J.
 
 MariaDB Connector/C++ implements the MySQL protocol using the MariaDB Connector/C API. This release depends on MariaDB Connector/C 3.3.11.
 
