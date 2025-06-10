@@ -2,7 +2,7 @@
 
 _MariaDB ColumnStore enhances MariaDB Enterprise Server with a columnar engine for OLAP and HTAP workloads, using MPP for scalability. It supports cross-engine JOINs, integrates with S3 storage, and provides high-speed bulk loading with multi-node management via REST API._
 
-MariaDB ColumnStore is a columnar storage engine designed for distributed massively parallel processing (MPP), such as for big data analysis. Deployments can be composed of several MariaDB servers or just one, each running several subprocess working together to provide linear scalability and exceptional performance with real-time response to analytical queries.&#x20;
+MariaDB ColumnStore is a columnar storage engine designed for distributed massively parallel processing (MPP), such as for big data analysis. Deployments can be composed of several MariaDB servers or just one, each running several subprocess working together to provide linear scalability and exceptional performance with real-time response to analytical queries.
 
 It provides a highly available, fault tolerant, and performant columnar storage engine for MariaDB Enterprise Server. MariaDB Enterprise ColumnStore is designed for data warehousing, decision support systems (DSS), online analytical processing (OLAP), and hybrid transactional-analytical processing (HTAP).
 
@@ -16,7 +16,7 @@ It provides a highly available, fault tolerant, and performant columnar storage 
 * Scalable query execution using massively parallel processing (MPP) strategies, parallel query execution, and distributed function evaluation
 * S3-compatible object storage can be used for highly available, low-cost, multi-regional, resilient, scalable, secure, and virtually limitless data storage
 * High availability and automatic failover by leveraging [MariaDB MaxScale](../../kb/en/maxscale/)
-* REST API for multi-node administration with the [Cluster Management API (CMAPI) server](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server)
+* REST API for multi-node administration with the Cluster Management API (CMAPI) server
 * Connectors for popular BI platforms such as Microsoft Power BI and Tableau
 * High-speed bulk data loading that bypasses the SQL layer and does not block concurrent read-only queries
 
@@ -75,14 +75,14 @@ The ColumnStore nodes:
 
 ## Software Architecture
 
-| Software Component                                                                                                                              | Role                                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Software Component                                                                                                                              | Role                                                                                               |
-| [MariaDB Enterprise ColumnStore](../../kb/en/mariadb-columnstore/)                                                                              | • Columnar storage engine • Query execution • Data storage                                         |
-| [MariaDB Enterprise Server](../../kb/en/mariadb-enterprise-server/)                                                                             | Enterprise-grade database server                                                                   |
-| [ColumnStore Storage Engine Plugin](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#columnstore-storage-engine-plugin) | • Storage engine plugin • Integrates MariaDB Enterprise ColumnStore into MariaDB Enterprise Server |
-| [Cluster Management API (CMAPI)](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server)                            | • REST API • Used for administrative tasks                                                         |
-| [MariaDB MaxScale](../../kb/en/maxscale/)                                                                                                       | • Database proxy • Accepts connections • Routes queries • Performs auto-failover                   |
+| Software Component                                                                                                   | Role                                                                                               |
+| -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Software Component                                                                                                   | Role                                                                                               |
+| [MariaDB Enterprise ColumnStore](../../kb/en/mariadb-columnstore/)                                                   | • Columnar storage engine • Query execution • Data storage                                         |
+| [MariaDB Enterprise Server](../../kb/en/mariadb-enterprise-server/)                                                  | Enterprise-grade database server                                                                   |
+| [ColumnStore Storage Engine Plugin](columnstore-architectural-overview.md#columnstore-storage-engine-plugin)         | • Storage engine plugin • Integrates MariaDB Enterprise ColumnStore into MariaDB Enterprise Server |
+| [Cluster Management API (CMAPI)](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Used for administrative tasks                                                         |
+| [MariaDB MaxScale](../../kb/en/maxscale/)                                                                            | • Database proxy • Accepts connections • Routes queries • Performs auto-failover                   |
 
 ### MariaDB Enterprise ColumnStore
 
@@ -148,7 +148,7 @@ Multi-node Enterprise ColumnStore deployments must have one or more [MaxScale](.
 
 MariaDB Enterprise ColumnStore's storage architecture provides a columnar storage engine with high availability, fault tolerance, compression, and automatic partitioning for production analytics and data warehousing.
 
-For additional information, see "[MariaDB Enterprise ColumnStore Storage Architecture](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture)".
+For additional information, see "[MariaDB Enterprise ColumnStore Storage Architecture](../architecture/columnstore-storage-architecture.md)".
 
 ### Columnar Storage Engine
 
@@ -219,7 +219,7 @@ MariaDB Enterprise ColumnStore uses extent elimination to scale query evaluation
 
 Most databases are row-based databases that use manually-created indexes to achieve high performance on large tables. This works well for transactional workloads. However, analytical queries tend to have very low selectivity, so traditional indexes are not typically effective for analytical queries.
 
-Enterprise ColumnStore uses extent elimination to achieve high performance, without requiring manually created indexes. Enterprise ColumnStore automatically partitions all data into extents. Enterprise ColumnStore stores the minimum and maximum values for each [extent](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#extents) in the extent map. Enterprise ColumnStore uses the minimum and maximum values in the [extent map](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#extent-map) to perform extent elimination.
+Enterprise ColumnStore uses extent elimination to achieve high performance, without requiring manually created indexes. Enterprise ColumnStore automatically partitions all data into extents. Enterprise ColumnStore stores the minimum and maximum values for each [extent](../architecture/columnstore-storage-architecture.md#extents) in the extent map. Enterprise ColumnStore uses the minimum and maximum values in the [extent map](../architecture/columnstore-storage-architecture.md#extent-map) to perform extent elimination.
 
 When Enterprise ColumnStore performs extent elimination, it compares the query's join conditions and filter conditions (i.e., WHERE clause) to the minimum and maximum values for each extent in the extent map. If the extent's minimum and maximum values fall outside the bounds of the query's conditions, Enterprise ColumnStore skips that extent for the query.
 
@@ -279,8 +279,8 @@ MariaDB Enterprise ColumnStore leverages common technologies to provide highly a
 | Technology                                                                                                                  | Role                                                                                                                                                                                                                                               |
 | [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage)           | • HA for data • Optional.                                                                                                                                                                                                                          |
 | [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                           | • With S3: HA for [Storage Manager directory](mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) • Without S3: HA for [DB Root directories](mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) |
-| [MariaDB Replication](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#mariadb-replication)         | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication                                                                                                                     |
-| [MaxScale](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#maxscale)                               | • Monitoring • Automatic failover • Load balancing                                                                                                                                                                                                 |
+| [MariaDB Replication](columnstore-architectural-overview.md#mariadb-replication)                                            | • Schema replication (ColumnStore tables) • Schema and data replication (non-ColumnStore tables) • Database object replication                                                                                                                     |
+| [MaxScale](columnstore-architectural-overview.md#maxscale)                                                                  | • Monitoring • Automatic failover • Load balancing                                                                                                                                                                                                 |
 | [Cluster Management API (CMAPI) Server](columnstore-architecture-from-enterprise-docs/#cluster-management-api-cmapi-server) | • REST API • Administration • Add nodes • Remove nodes                                                                                                                                                                                             |
 
 ### Shared Local Storage
@@ -394,12 +394,12 @@ When a bulk data load is running:
 
 MariaDB Enterprise ColumnStore supports backup and restore using well-known tools and methods.
 
-| Component                                                                                                                                     | Backup Methods                     |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
-| Component                                                                                                                                     | Backup Methods                     |
-| [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage)                             | • S3 snapshot                      |
-| [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                                             | • File system snapshot • File copy |
-| [Enterprise Server Data Directory](https://mariadb.com/kb/en/columnstore-architecture-from-enterprise-docs/#enterprise-server-data-directory) | • MariaDB Enterprise Backup        |
+| Component                                                                                                         | Backup Methods                     |
+| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Component                                                                                                         | Backup Methods                     |
+| [S3-compatible object storage](mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) | • S3 snapshot                      |
+| [Shared Local Storage](mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage)                 | • File system snapshot • File copy |
+| [Enterprise Server Data Directory](columnstore-architectural-overview.md#enterprise-server-data-directory)        | • MariaDB Enterprise Backup        |
 
 For additional information, see "MariaDB Enterprise ColumnStore Backup and Restore".
 
