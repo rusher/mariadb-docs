@@ -6,7 +6,7 @@ _MariaDB Galera Cluster is a Linux-exclusive, multi-primary cluster designed for
 
 ## About
 
-![galera\_small](../.gitbook/assets/about-mariadb-galera-cluster/+image/galera_small.png)
+![galera\_small](../.gitbook/assets/1.PNG)
 
 MariaDB Galera Cluster is a [virtually synchronous](about-galera-replication.md) multi-primary cluster for MariaDB. It is available on Linux only, and only supports the[InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) storage engine (although there is\
 experimental support for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria). See the[wsrep\_replicate\_myisam](../reference/galera-cluster-system-variables.md#wsrep_replicate_myisam) system variable, or, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the [wsrep\_mode](../reference/galera-cluster-system-variables.md#wsrep_mode) system variable).
