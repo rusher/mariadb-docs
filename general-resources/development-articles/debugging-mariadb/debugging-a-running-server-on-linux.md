@@ -32,7 +32,7 @@ ulimit -c unlimted
 LD_PRELOAD=/usr/lib64/libtcmalloc.so.4 HEAPPROFILE=/tmp/mysqld.prof /usr/sbin/mysqld --core-file
 ```
 
-You can of course add other [mysqld options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options) to the end of the above line.
+You can of course add other [mysqld options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) to the end of the above line.
 
 Now start your client/application that uses MariaDB. You can find where memory is allocated in the `/tmp/mysqld.prof` file. If you find any memory issues, please report this in the [MariaDB bug tracker](https://jira.mariadb.org/secure/Dashboard.jspa)!
 

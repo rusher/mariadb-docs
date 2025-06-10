@@ -2,7 +2,7 @@
 
 Instructions on how to build a mysqld that contains all the information we need to fix problems you encounter. (A more detailed explanation can be found [here](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md).)
 
-* Add the [--core-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options) option to your /.my.cnf or /etc/my.cnf file under the \[mysqld] tag.
+* Add the [--core-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) option to your /.my.cnf or /etc/my.cnf file under the \[mysqld] tag.
 * Get the latest [MariaDB code from GitHub](../../contributing-participating/contributing-code.md).
 * Compile MariaDB with the -g compiler flag (Unix).
 * Optionally: with more checking [Compile MariaDB for debugging](../../../development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md) - will cause slowdown.

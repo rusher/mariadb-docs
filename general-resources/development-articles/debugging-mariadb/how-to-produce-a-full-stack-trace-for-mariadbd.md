@@ -1,31 +1,8 @@
 # How to Produce a Full Stack Trace for mariadbd
 
-### Contents
-
-1. [Partial Stack Traces in the Error Log "Partial Stack Traces in the Error Log"](how-to-produce-a-full-stack-trace-for-mariadbd.md#partial-stack-traces-in-the-error-log)
-2. [Obtaining Debugging Symbols for Your mariadbd executable "Obtaining Debugging Symbols for Your mariadbd executable"](how-to-produce-a-full-stack-trace-for-mariadbd.md#obtaining-debugging-symbols-for-your-mariadbd-executable)
-3. [Installing Debug Info Packages on Linux "Installing Debug Info Packages on Linux"](how-to-produce-a-full-stack-trace-for-mariadbd.md#installing-debug-info-packages-on-linux)
-4. [Installing Debugging Symbols on Windows "Installing Debugging Symbols on Windows"](how-to-produce-a-full-stack-trace-for-mariadbd.md#installing-debugging-symbols-on-windows)
-5. [Containers with Debug Symbols "Containers with Debug Symbols"](how-to-produce-a-full-stack-trace-for-mariadbd.md#containers-with-debug-symbols)
-6. [Enabling Core Dumps "Enabling Core Dumps"](how-to-produce-a-full-stack-trace-for-mariadbd.md#enabling-core-dumps)
-7. [Where is the Core File on Linux? "Where is the Core File on Linux?"](how-to-produce-a-full-stack-trace-for-mariadbd.md#where-is-the-core-file-on-linux)
-8. [Extracting a core file from a container "Extracting a core file from a container"](how-to-produce-a-full-stack-trace-for-mariadbd.md#extracting-a-core-file-from-a-container)
-9. [Extracting a core file from systemd-coredump "Extracting a core file from systemd-coredump"](how-to-produce-a-full-stack-trace-for-mariadbd.md#extracting-a-core-file-from-systemd-coredump)
-10. [Extract a core file from abrt "Extract a core file from abrt"](how-to-produce-a-full-stack-trace-for-mariadbd.md#extract-a-core-file-from-abrt)
-11. [Extract a core file from apport "Extract a core file from apport"](how-to-produce-a-full-stack-trace-for-mariadbd.md#extract-a-core-file-from-apport)
-12. [Analyzing a Core File with gdb on Linux "Analyzing a Core File with gdb on Linux"](how-to-produce-a-full-stack-trace-for-mariadbd.md#analyzing-a-core-file-with-gdb-on-linux)
-13. [Getting Backtraces with gdb on Linux "Getting Backtraces with gdb on Linux"](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-backtraces-with-gdb-on-linux)
-14. [Getting Full Backtraces For All Threads From a Core File "Getting Full Backtraces For All Threads From a Core File"](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-full-backtraces-for-all-threads-from-a-core-file)
-15. [Getting Full Backtraces For All Threads From a Running mariadbd Process "Getting Full Backtraces For All Threads From a Running mariadbd Process"](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-full-backtraces-for-all-threads-from-a-running-mariadbd-process)
-16. [Getting a Full Backtrace out of a Container "Getting a Full Backtrace out of a Container"](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-a-full-backtrace-out-of-a-container)
-17. [Letting a Container coredump "Letting a Container coredump"](how-to-produce-a-full-stack-trace-for-mariadbd.md#letting-a-container-coredump)
-18. [Running a Copy of the Database Directory "Running a Copy of the Database Directory"](how-to-produce-a-full-stack-trace-for-mariadbd.md#running-a-copy-of-the-database-directory)
-19. [Disabling Stack Traces in the Error Log "Disabling Stack Traces in the Error Log"](how-to-produce-a-full-stack-trace-for-mariadbd.md#disabling-stack-traces-in-the-error-log)
-20. [Reporting the Problem "Reporting the Problem"](how-to-produce-a-full-stack-trace-for-mariadbd.md#reporting-the-problem)
-
 ## Partial Stack Traces in the Error Log
 
-When `mariadbd` crashes, it will write a stack trace in the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) by default. This is because the [stack\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/mariadbd-options#-stack-trace) option defaults to `ON`. With a normal release build, this stack trace in the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) may look something like this:
+When `mariadbd` crashes, it will write a stack trace in the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) by default. This is because the [stack\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#-stack-trace) option defaults to `ON`. With a normal release build, this stack trace in the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) may look something like this:
 
 ```
 2019-03-28 23:31:08 0x7ff4dc62d700  InnoDB: Assertion failure in file /home/buildbot/buildbot/build/mariadb-10.2.23/storage/innobase/rem/rem0rec.cc line 574
@@ -118,25 +95,25 @@ Currently, `debuginfo` packages may not allow the server to print a nice stack t
 
 The MariaDB `yum` repository contains `[debuginfo](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/intro.debuginfo.html)` packages.
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/rpm) from MariaDB's repository using `[yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
-```
+```bash
 sudo yum install MariaDB-server-debuginfo
 ```
 
-See [Installing MariaDB with yum/dnf: Installing Debug Info Packages with YUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/rpm/yum#installing-debug-info-packages-with-yum) for more information.
+See [Installing MariaDB with yum/dnf: Installing Debug Info Packages with YUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum#installing-debug-info-packages-with-yum) for more information.
 
 #### Installing Debug Info Packages with zypper
 
 The MariaDB `zypper` repository contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages.
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/rpm) from MariaDB's repository using `[zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper)`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper). For example:
 
-```
+```bash
 sudo zypper install MariaDB-server-debuginfo
 ```
 
-See [Installing MariaDB with zypper: Installing Debug Info Packages with ZYpp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/rpm/installing-mariadb-with-zypper#installing-debug-info-packages-with-zypp) for more information.
+See [Installing MariaDB with zypper: Installing Debug Info Packages with ZYpp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper#installing-debug-info-packages-with-zypp) for more information.
 
 #### Installing Debug Info Packages from MariaDB's Debian or Ubuntu repository
 
@@ -170,15 +147,15 @@ Debugging symbols are available to install on Windows.
 
 #### Installing Debugging Symbols with the MSI Installer on Windows
 
-Debugging symbols can be installed with the [MSI](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) installer. Debugging symbols are not installed by default. You must perform a custom installation and explicitly choose to install debugging symbols.
+Debugging symbols can be installed with the [MSI](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) installer. Debugging symbols are not installed by default. You must perform a custom installation and explicitly choose to install debugging symbols.
 
-The [MSI](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) installer can be downloaded from the [MariaDB downloads page](https://downloads.mariadb.org).
+The [MSI](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows) installer can be downloaded from the [MariaDB downloads page](https://downloads.mariadb.org).
 
 #### Installing Debugging Symbols with the ZIP Package on Windows
 
-MariaDB also provides a [ZIP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-windows-zip-packages) package that contains debugging symbols on Windows.
+MariaDB also provides a [ZIP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages) package that contains debugging symbols on Windows.
 
-The [ZIP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-windows-zip-packages) package that contains debugging symbol can be downloaded from the [MariaDB downloads page](https://downloads.mariadb.org).
+The [ZIP](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages) package that contains debugging symbol can be downloaded from the [MariaDB downloads page](https://mariadb.com/downloads).
 
 ### Containers with Debug Symbols
 
