@@ -1,6 +1,3 @@
----
-description: The comparison operators include: !=, <, <=, <=>, >=, >, etc...
----
-
 # Comparison Operators
 
+The comparison operators include: !=, <, <=, <=>, >=, >, etc...
