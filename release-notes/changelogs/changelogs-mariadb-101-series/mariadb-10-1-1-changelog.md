@@ -482,9 +482,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-09-13 21:32:49 +0200
   * ft-index: restore a chunk that was lost in the merge and other fixes for gcc-4.9.1 on sid
 * [Revision #50e67fe](https://github.com/MariaDB/server/commit/50e67fe)\
-  2014-09-13 17:15:11 +0400
-  *
-    * Adding big5, cp932, gbk, sjis tests covering characters that can have 0x5C as the second byte in a multi-byte character. - Adding big5 tests covering an unassigned character 0xC840 being stored into char/varchar/text/enum columns.
+  2014-09-13 17:15:11 +0400\
+  \*
+  * Adding big5, cp932, gbk, sjis tests covering characters that can have 0x5C as the second byte in a multi-byte character. - Adding big5 tests covering an unassigned character 0xC840 being stored into char/varchar/text/enum columns.
 * [Revision #77a0c9b](https://github.com/MariaDB/server/commit/77a0c9b)\
   2014-09-13 08:32:53 +0200
   * tokudb: use thd\_killed() api function, not thd->killed directly
@@ -660,9 +660,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-09-07 20:18:17 +0200
   * [MDEV-6562](https://jira.mariadb.org/browse/MDEV-6562) [MDEV-6410](https://jira.mariadb.org/browse/MDEV-6410) breaks WITHOUT\_SERVER build
 * [Revision #a1c3656](https://github.com/MariaDB/server/commit/a1c3656)\
-  2014-09-06 18:08:28 +0200
-  *
-    * Fix [MDEV-6624](https://jira.mariadb.org/browse/MDEV-6624) (indexing on void table) modified: storage/connect/ha\_connect.cc
+  2014-09-06 18:08:28 +0200\
+  \*
+  * Fix [MDEV-6624](https://jira.mariadb.org/browse/MDEV-6624) (indexing on void table) modified: storage/connect/ha\_connect.cc
 * [Revision #638075e](https://github.com/MariaDB/server/commit/638075e)\
   2014-09-06 09:59:01 +0200
   * [MDEV-6577](https://jira.mariadb.org/browse/MDEV-6577) auth\_socket.so does not build in kFreeBSD
@@ -677,18 +677,18 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-6616](https://jira.mariadb.org/browse/MDEV-6616) Server crashes in my\_hash\_first if shutdown is performed when FLUSH LOGS is running
 * [Revision #1a43425](https://github.com/MariaDB/server/commit/1a43425)\
   2014-09-05 09:49:27 -0400
-  * DB-310 run tokudb\_support\_xa.test on mysql and [mariadb 5.5](broken-reference)
+  * DB-310 run tokudb\_support\_xa.test on mysql and [mariadb 5.5](broken-reference/)
 * [Revision #4aac44d](https://github.com/MariaDB/server/commit/4aac44d)\
-  2014-09-05 14:18:31 +0200
-  *
-    * Fix [MDEV-6686](https://jira.mariadb.org/browse/MDEV-6686) (buffer overflow in MakeRecord) modified: storage/connect/ha\_connect.cc
+  2014-09-05 14:18:31 +0200\
+  \*
+  * Fix [MDEV-6686](https://jira.mariadb.org/browse/MDEV-6686) (buffer overflow in MakeRecord) modified: storage/connect/ha\_connect.cc
 * [Revision #ef579d8](https://github.com/MariaDB/server/commit/ef579d8)\
   2014-09-05 13:17:54 +0800
   * DB-310 add tokudb\_support\_xa variable this variable scope is Global, Session type is boolean and default value is TRUE
 * [Revision #9392d0e](https://github.com/MariaDB/server/commit/9392d0e)\
-  2014-09-04 21:58:48 +0400
-  *
-    * [MDEV-6695](https://jira.mariadb.org/browse/MDEV-6695) Bad column name for UCS2 string literals The Item\_string constructors called set\_name() on the source string, which was wrong because in case of UCS2/UTF16/UTF32 the source value might be a not well formed string (e.g. have incomplete leftmost character). Now set\_name() is called on str\_value after its copied (with optionally left zero padding) from the source string. - [MDEV-6694](https://jira.mariadb.org/browse/MDEV-6694) Illegal mix of collation with a PS parameter Item\_param::convert\_str\_value() did not set repertoire. Introducing a new structure MY\_STRING\_METADATA to collect character length and repertoire of a string in a single loop, to avoid two separate loops. Adding a new class Item\_basic\_value::Metadata as a convenience wrapper around MY\_STRING\_METADATA, to reuse the code between Item\_string and Item\_param.
+  2014-09-04 21:58:48 +0400\
+  \*
+  * [MDEV-6695](https://jira.mariadb.org/browse/MDEV-6695) Bad column name for UCS2 string literals The Item\_string constructors called set\_name() on the source string, which was wrong because in case of UCS2/UTF16/UTF32 the source value might be a not well formed string (e.g. have incomplete leftmost character). Now set\_name() is called on str\_value after its copied (with optionally left zero padding) from the source string. - [MDEV-6694](https://jira.mariadb.org/browse/MDEV-6694) Illegal mix of collation with a PS parameter Item\_param::convert\_str\_value() did not set repertoire. Introducing a new structure MY\_STRING\_METADATA to collect character length and repertoire of a string in a single loop, to avoid two separate loops. Adding a new class Item\_basic\_value::Metadata as a convenience wrapper around MY\_STRING\_METADATA, to reuse the code between Item\_string and Item\_param.
 * [Revision #bf4347e](https://github.com/MariaDB/server/commit/bf4347e)\
   2014-09-04 12:43:41 +0400
   * Creating a new class in\_string::Item\_string\_for\_in\_vector and moving set\_value() from Item\_string to Item\_string\_for\_in\_vector, as set\_value() updates the members incompletely (e.g. does not update max\_length), so it was dangerous to have set\_value() available in Item\_string.
@@ -768,9 +768,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-09-02 17:34:29 +0400
   * A clean-up for the previous patch
 * [Revision #7c1af79](https://github.com/MariaDB/server/commit/7c1af79)\
-  2014-09-02 01:40:15 +0200
-  *
-    * Initialise min/max buffer to 0 to avoid valgrind complaining that uninitialised characters be written in op file. modified: storage/connect/tabdos.cpp
+  2014-09-02 01:40:15 +0200\
+  \*
+  * Initialise min/max buffer to 0 to avoid valgrind complaining that uninitialised characters be written in op file. modified: storage/connect/tabdos.cpp
 * [Revision #1427e1d](https://github.com/MariaDB/server/commit/1427e1d)\
   2014-09-01 20:57:32 +0400
   * [MDEV-6661](https://jira.mariadb.org/browse/MDEV-6661) PI() does not work well in UCS2/UTF16/UTF32 context [MDEV-6666](https://jira.mariadb.org/browse/MDEV-6666) Malformed result for CONCAT(utf8\_column, binary\_string)
@@ -781,9 +781,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-30 06:35:59 -0400
   * FT-312 compile big-shutdown on osx
 * [Revision #16de351](https://github.com/MariaDB/server/commit/16de351)\
-  2014-08-29 14:22:25 +0200
-  *
-    * Avoid uninitialised warning from valgrind modified: storage/connect/tabdos.cpp
+  2014-08-29 14:22:25 +0200\
+  \*
+  * Avoid uninitialised warning from valgrind modified: storage/connect/tabdos.cpp
 * [Revision #c01c819](https://github.com/MariaDB/server/commit/c01c819)\
   2014-08-29 16:14:11 +0400
   * Backport from 10.0:
@@ -848,9 +848,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-27 10:31:45 -0400
   * DB-702 print upgrade failed clean shutdown required error message
 * [Revision #86a3343](https://github.com/MariaDB/server/commit/86a3343)\
-  2014-08-27 14:56:20 +0200
-  *
-    * Fix a bug in DOSFAM::OpenTableFile. Bin was not set to TRUE for blocked tables. This caused a CR character to be left in the line and in particular caused the updelx test to fail on Windows. modified: storage/connect/filamtxt.cpp
+  2014-08-27 14:56:20 +0200\
+  \*
+  * Fix a bug in DOSFAM::OpenTableFile. Bin was not set to TRUE for blocked tables. This caused a CR character to be left in the line and in particular caused the updelx test to fail on Windows. modified: storage/connect/filamtxt.cpp
 * [Revision #6907da2](https://github.com/MariaDB/server/commit/6907da2)\
   2014-08-27 15:35:49 +0300
   * Fix small error on LZMA compression error printout.
@@ -861,9 +861,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-27 13:15:37 +0300
   * [MDEV-6247](https://jira.mariadb.org/browse/MDEV-6247): Merge 10.0-galera to 10.1.
 * [Revision #66ffa09](https://github.com/MariaDB/server/commit/66ffa09)\
-  2014-08-27 00:49:07 +0200
-  *
-    * Fix a test failure. Due to mmap on void file being accepted on Windows while returning an error on Linux. Now accepted on linux. modified: storage/connect/maputil.cpp
+  2014-08-27 00:49:07 +0200\
+  \*
+  * Fix a test failure. Due to mmap on void file being accepted on Windows while returning an error on Linux. Now accepted on linux. modified: storage/connect/maputil.cpp
 * [Revision #8db687e](https://github.com/MariaDB/server/commit/8db687e)\
   2014-08-26 14:28:16 -0400
   * FT-590 Calculate a node's weight using a 64 bit integer to prevent overflow
@@ -886,13 +886,13 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-26 12:32:21 +0300
   * Merge lp:maria/maria-10.0-galera revisions 3867..3869 and 3871..3879.
 * [Revision #8f0e752](https://github.com/MariaDB/server/commit/8f0e752)\
-  2014-08-25 18:51:53 +0200
-  *
-    * Adding a test for indexed UPDATE/DELETE added: storage/connect/mysql-test/connect/r/updelx.result storage/connect/mysql-test/connect/t/updelx.inc storage/connect/mysql-test/connect/t/updelx.test
+  2014-08-25 18:51:53 +0200\
+  \*
+  * Adding a test for indexed UPDATE/DELETE added: storage/connect/mysql-test/connect/r/updelx.result storage/connect/mysql-test/connect/t/updelx.inc storage/connect/mysql-test/connect/t/updelx.test
 * [Revision #da69d41](https://github.com/MariaDB/server/commit/da69d41)\
-  2014-08-25 18:34:51 +0200
-  *
-    * Make storing and sorting values using less memory allocation (while doing indexed UPDATE/DELETE) modified: storage/connect/array.cpp storage/connect/filamtxt.cpp
+  2014-08-25 18:34:51 +0200\
+  \*
+  * Make storing and sorting values using less memory allocation (while doing indexed UPDATE/DELETE) modified: storage/connect/array.cpp storage/connect/filamtxt.cpp
 * [Revision #dd25e7f](https://github.com/MariaDB/server/commit/dd25e7f)\
   2014-08-25 16:58:19 +0200
   * [MDEV-6601](https://jira.mariadb.org/browse/MDEV-6601) Assertion \`!thd->in\_active\_multi\_stmt\_transa ction() || thd->in\_multi\_stmt\_transaction\_mode()' failed on executing a stored procedure with commit
@@ -906,16 +906,16 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-24 08:45:19 -0400
   * FT-312 speedup shutdown by parallelizing compression
 * [Revision #22e8ab4](https://github.com/MariaDB/server/commit/22e8ab4)\
-  2014-08-24 11:19:02 +0200
-  *
-    * Fix a compile error on Linux modified: storage/connect/tabmul.cpp
+  2014-08-24 11:19:02 +0200\
+  \*
+  * Fix a compile error on Linux modified: storage/connect/tabmul.cpp
 * [Revision #378878e](https://github.com/MariaDB/server/commit/378878e)\
   2014-08-24 12:36:51 +0400
   * [MDEV-6634](https://jira.mariadb.org/browse/MDEV-6634): Wrong estimates for ref(const) and key IS NULL predicate
 * [Revision #74a4672](https://github.com/MariaDB/server/commit/74a4672)\
-  2014-08-23 19:17:15 +0200
-  *
-    * Move DataPath from the MYCAT catalog to the ha\_connect handler. Indeed it belongs to each tables and the catalog being share between several instances of CONNECT, when a query implied several tables belonging to different databases, some where pointing on the wrong database. This fix bugs occuring in queries such as: INSERT into db1.t1 select \* from db2.t2; Where the t1 data file was made in db2. modified: storage/connect/catalog.h storage/connect/connect.cc storage/connect/filamdbf.cpp storage/connect/filamdbf.h storage/connect/ha\_connect.cc storage/connect/ha\_connect.h storage/connect/mycat.cc storage/connect/mycat.h storage/connect/plgdbsem.h storage/connect/plgdbutl.cpp storage/connect/reldef.cpp storage/connect/reldef.h storage/connect/tabfix.h storage/connect/tabfmt.cpp storage/connect/tabfmt.h storage/connect/tabmul.cpp
+  2014-08-23 19:17:15 +0200\
+  \*
+  * Move DataPath from the MYCAT catalog to the ha\_connect handler. Indeed it belongs to each tables and the catalog being share between several instances of CONNECT, when a query implied several tables belonging to different databases, some where pointing on the wrong database. This fix bugs occuring in queries such as: INSERT into db1.t1 select \* from db2.t2; Where the t1 data file was made in db2. modified: storage/connect/catalog.h storage/connect/connect.cc storage/connect/filamdbf.cpp storage/connect/filamdbf.h storage/connect/ha\_connect.cc storage/connect/ha\_connect.h storage/connect/mycat.cc storage/connect/mycat.h storage/connect/plgdbsem.h storage/connect/plgdbutl.cpp storage/connect/reldef.cpp storage/connect/reldef.h storage/connect/tabfix.h storage/connect/tabfmt.cpp storage/connect/tabfmt.h storage/connect/tabmul.cpp
 * [Revision #b5dd1e7](https://github.com/MariaDB/server/commit/b5dd1e7)\
   2014-08-23 10:58:26 -0400
   * FT-586 FT-563 change ft-verify to work with promotion
@@ -923,9 +923,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-22 21:59:56 +0300
   * Fix merge errors.
 * [Revision #f930f4e](https://github.com/MariaDB/server/commit/f930f4e)\
-  2014-08-22 17:30:22 +0200
-  *
-    * Add a new CONNECT global variable allowing to tell whether or not a temporary file should be used for UPDATE/DELETE of file tables. Also use the "sorted" argument of index\_init to help decide if sorting of positions must be done. modified: storage/connect/checklvl.h storage/connect/connect.cc storage/connect/connect.h storage/connect/filamdbf.cpp storage/connect/filamfix.cpp storage/connect/filamfix.h storage/connect/filamtxt.cpp storage/connect/ha\_connect.cc storage/connect/mysql-test/connect/r/part\_table.result storage/connect/plgdbsem.h storage/connect/plgdbutl.cpp storage/connect/reldef.cpp storage/connect/tabdos.cpp storage/connect/tabdos.h storage/connect/tabfix.cpp storage/connect/tabfmt.cpp storage/connect/tabvct.cpp storage/connect/tabvct.h storage/connect/xindex.cpp
+  2014-08-22 17:30:22 +0200\
+  \*
+  * Add a new CONNECT global variable allowing to tell whether or not a temporary file should be used for UPDATE/DELETE of file tables. Also use the "sorted" argument of index\_init to help decide if sorting of positions must be done. modified: storage/connect/checklvl.h storage/connect/connect.cc storage/connect/connect.h storage/connect/filamdbf.cpp storage/connect/filamfix.cpp storage/connect/filamfix.h storage/connect/filamtxt.cpp storage/connect/ha\_connect.cc storage/connect/mysql-test/connect/r/part\_table.result storage/connect/plgdbsem.h storage/connect/plgdbutl.cpp storage/connect/reldef.cpp storage/connect/tabdos.cpp storage/connect/tabdos.h storage/connect/tabfix.cpp storage/connect/tabfmt.cpp storage/connect/tabvct.cpp storage/connect/tabvct.h storage/connect/xindex.cpp
 * [Revision #6119509](https://github.com/MariaDB/server/commit/6119509)\
   2014-08-22 07:57:47 -0400
   * FT-584 use trylock inside of the lock tree manager get\_status function so that it is non-blocking
@@ -1038,13 +1038,13 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-15 22:54:07 +0100
   * [MDEV-6579](https://jira.mariadb.org/browse/MDEV-6579): Properly handle gen\_pfs\_lex\_token when cross-compiling
 * [Revision #8b9ed85](https://github.com/MariaDB/server/commit/8b9ed85)\
-  2014-08-15 18:05:10 +0200
-  *
-    * Remove a gcc warning modified: storage/connect/xindex.cpp
+  2014-08-15 18:05:10 +0200\
+  \*
+  * Remove a gcc warning modified: storage/connect/xindex.cpp
 * [Revision #3a69c85](https://github.com/MariaDB/server/commit/3a69c85)\
-  2014-08-16 16:46:35 +0200
-  *
-    * Modifies the way indexed UPDATE/DELETE are sorted in order to execute them sorted by file position. Firstly a new value is stored in indexes to know if they are sorted, preventing to do the sorting when it is not needed. Secondly, almost all in now done in connect instead of being done by the different file access method classes. This pepares the future use of temporary files for all table types and also fix the bug that was occuring when partially using a multi-column index because of false MRR like call of position followed by unsorted rnd\_pos no more using indexing. modified: storage/connect/connect.cc storage/connect/filamap.cpp storage/connect/filamap.h storage/connect/filamdbf.cpp storage/connect/filamdbf.h storage/connect/filamfix.cpp storage/connect/filamfix.h storage/connect/filamtxt.cpp storage/connect/filamtxt.h storage/connect/filamvct.cpp storage/connect/filamvct.h storage/connect/tabdos.cpp storage/connect/tabdos.h storage/connect/tabfix.h storage/connect/tabfmt.cpp storage/connect/tabfmt.h storage/connect/xindex.cpp storage/connect/xindex.h storage/connect/xtable.h
+  2014-08-16 16:46:35 +0200\
+  \*
+  * Modifies the way indexed UPDATE/DELETE are sorted in order to execute them sorted by file position. Firstly a new value is stored in indexes to know if they are sorted, preventing to do the sorting when it is not needed. Secondly, almost all in now done in connect instead of being done by the different file access method classes. This pepares the future use of temporary files for all table types and also fix the bug that was occuring when partially using a multi-column index because of false MRR like call of position followed by unsorted rnd\_pos no more using indexing. modified: storage/connect/connect.cc storage/connect/filamap.cpp storage/connect/filamap.h storage/connect/filamdbf.cpp storage/connect/filamdbf.h storage/connect/filamfix.cpp storage/connect/filamfix.h storage/connect/filamtxt.cpp storage/connect/filamtxt.h storage/connect/filamvct.cpp storage/connect/filamvct.h storage/connect/tabdos.cpp storage/connect/tabdos.h storage/connect/tabfix.h storage/connect/tabfmt.cpp storage/connect/tabfmt.h storage/connect/xindex.cpp storage/connect/xindex.h storage/connect/xtable.h
 * [Revision #65547f3](https://github.com/MariaDB/server/commit/65547f3)\
   2014-08-14 15:18:56 -0400
   * DB-506 add a session variable to enable/disable bulk fetch default enabled
@@ -1127,13 +1127,13 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-03 15:12:10 +0300
   * Minor cleanups, fix compiler warnings
 * [Revision #78b1bdd](https://github.com/MariaDB/server/commit/78b1bdd)\
-  2014-08-08 19:53:44 +0200
-  *
-    * Update part\_file.result to match the test change modified: storage/connect/mysql-test/connect/r/part\_file.result
+  2014-08-08 19:53:44 +0200\
+  \*
+  * Update part\_file.result to match the test change modified: storage/connect/mysql-test/connect/r/part\_file.result
 * [Revision #61c2e7b](https://github.com/MariaDB/server/commit/61c2e7b)\
-  2014-08-08 19:46:02 +0200
-  *
-    * Fix [MDEV-6502](https://jira.mariadb.org/browse/MDEV-6502) modified: storage/connect/ha\_connect.cc
+  2014-08-08 19:46:02 +0200\
+  \*
+  * Fix [MDEV-6502](https://jira.mariadb.org/browse/MDEV-6502) modified: storage/connect/ha\_connect.cc
 * [Revision #4105cbf](https://github.com/MariaDB/server/commit/4105cbf)\
   2014-08-08 17:58:45 +0200
   * after-merge fixes for 10.0-connect
@@ -1150,9 +1150,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-07 21:45:54 +0200
   * crash in main.views (and other view + PS tests)
 * [Revision #f835588](https://github.com/MariaDB/server/commit/f835588)\
-  2014-08-07 19:12:45 +0200
-  *
-    * Commiting merge files
+  2014-08-07 19:12:45 +0200\
+  \*
+  * Commiting merge files
 * [Revision #7a7e65b](https://github.com/MariaDB/server/commit/7a7e65b)\
   2014-08-07 18:08:50 +0200
   * Fix rpl.rpl\_semi\_sync\_uninstall\_plugin to work reliably
@@ -1238,9 +1238,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-08-05 18:35:20 +0200
   * change Aria engine maturity to STABLE
 * [Revision #b81b6d3](https://github.com/MariaDB/server/commit/b81b6d3)\
-  2014-08-05 17:01:41 +0200
-  *
-    * Fix failing tests. part\_file.test failure was due to a new alter flag that were not taken in acount in check\_if\_supported\_inplace\_alter. mysql.test failure is strange, the suppressed warning should not be made anyway. modified: storage/connect/ha\_connect.cc storage/connect/mysql-test/connect/r/mysql.result
+  2014-08-05 17:01:41 +0200\
+  \*
+  * Fix failing tests. part\_file.test failure was due to a new alter flag that were not taken in acount in check\_if\_supported\_inplace\_alter. mysql.test failure is strange, the suppressed warning should not be made anyway. modified: storage/connect/ha\_connect.cc storage/connect/mysql-test/connect/r/mysql.result
 * [Revision #f94e36a](https://github.com/MariaDB/server/commit/f94e36a)\
   2014-08-05 10:28:32 -0400
   * FT-309 Default padded fit alignment should be 4096
@@ -1476,9 +1476,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-07-25 14:37:10 +0300
   * Fiix random test failures on fil\_decompress\_page\_2 function.
 * [Revision #4d0587c](https://github.com/MariaDB/server/commit/4d0587c)\
-  2014-07-25 11:37:07 +0200
-  *
-    * Fix an error pointed out by Valgrind due to uninitialised Correlated variable. This variable is not to be used by CONNECT. modified: storage/connect/array.cpp storage/connect/array.h
+  2014-07-25 11:37:07 +0200\
+  \*
+  * Fix an error pointed out by Valgrind due to uninitialised Correlated variable. This variable is not to be used by CONNECT. modified: storage/connect/array.cpp storage/connect/array.h
 * [Revision #a3acd72](https://github.com/MariaDB/server/commit/a3acd72)\
   2014-07-25 10:30:16 +0300
   * Merge InnoDB fixes from 5.5 revisions 4229, 4230, 4233, 4237 and 4238 i.e.
@@ -1495,9 +1495,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-07-24 18:12:32 +0400
   * [MDEV-6483](https://jira.mariadb.org/browse/MDEV-6483) - Deadlock around rw\_lock\_debug\_mutex on PPC64
 * [Revision #de3ee46](https://github.com/MariaDB/server/commit/de3ee46)\
-  2014-07-24 15:50:29 +0200
-  *
-    * Try to fix some test failure modified: storage/connect/mysql-test/connect/t/part\_table.test
+  2014-07-24 15:50:29 +0200\
+  \*
+  * Try to fix some test failure modified: storage/connect/mysql-test/connect/t/part\_table.test
 * [Revision #44aacfc](https://github.com/MariaDB/server/commit/44aacfc)\
   2014-07-24 09:51:51 +0200
   * fix remaining warnings in manpages (for debian lint ?)
@@ -1577,9 +1577,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-07-23 12:55:26 +0400
   * [MDEV-6473](https://jira.mariadb.org/browse/MDEV-6473) - main.statistics fails on PPC64
 * [Revision #c1d1dc2](https://github.com/MariaDB/server/commit/c1d1dc2)\
-  2014-07-22 19:45:25 +0200
-  *
-    * Modif avglen calculation and add AVG\_ROW\_LENGTH option to test This is to get same test results on Linux and Windows modified: storage/connect/mysql-test/connect/r/part\_file.result storage/connect/mysql-test/connect/r/part\_table.result storage/connect/mysql-test/connect/t/part\_file.test storage/connect/mysql-test/connect/t/part\_table.test storage/connect/tabdos.cpp
+  2014-07-22 19:45:25 +0200\
+  \*
+  * Modif avglen calculation and add AVG\_ROW\_LENGTH option to test This is to get same test results on Linux and Windows modified: storage/connect/mysql-test/connect/r/part\_file.result storage/connect/mysql-test/connect/r/part\_table.result storage/connect/mysql-test/connect/t/part\_file.test storage/connect/mysql-test/connect/t/part\_table.test storage/connect/tabdos.cpp
 * [Revision #a1e41e3](https://github.com/MariaDB/server/commit/a1e41e3)\
   2014-07-22 19:31:45 +0300
   * [MDEV-6470](https://jira.mariadb.org/browse/MDEV-6470): Restrict number of error messages about persistent statictic tables not found
@@ -1593,9 +1593,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-07-22 10:17:25 -0400
   * FT-304 Fix a maybe-uninitialized warning found by gcc 4.9
 * [Revision #decc23c](https://github.com/MariaDB/server/commit/decc23c)\
-  2014-07-22 15:51:21 +0200
-  *
-    * Fix bugs in handling of remote index when updating and deleting modified: storage/connect/ha\_connect.cc storage/connect/tabdos.cpp storage/connect/tabfmt.cpp storage/connect/tabmysql.cpp
+  2014-07-22 15:51:21 +0200\
+  \*
+  * Fix bugs in handling of remote index when updating and deleting modified: storage/connect/ha\_connect.cc storage/connect/tabdos.cpp storage/connect/tabfmt.cpp storage/connect/tabmysql.cpp
 * [Revision #465cca9](https://github.com/MariaDB/server/commit/465cca9)\
   2014-07-22 09:36:36 -0400
   * FT-304 Fix a memory leak by further separating initialization paths in the block table
@@ -1642,9 +1642,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-07-21 13:16:08 +0400
   * [MDEV-6465](https://jira.mariadb.org/browse/MDEV-6465) - rpl.rpl\_gtid\_master\_promote fails on PPC64
 * [Revision #26e4b69](https://github.com/MariaDB/server/commit/26e4b69)\
-  2014-07-20 20:39:17 +0200
-  *
-    * FIX errors and some gcc warnings modified: storage/connect/array.cpp storage/connect/array.h storage/connect/blkfil.cpp storage/connect/blkfil.h storage/connect/filter.cpp storage/connect/filter.h storage/connect/ha\_connect.cc storage/connect/tabdos.cpp
+  2014-07-20 20:39:17 +0200\
+  \*
+  * FIX errors and some gcc warnings modified: storage/connect/array.cpp storage/connect/array.h storage/connect/blkfil.cpp storage/connect/blkfil.h storage/connect/filter.cpp storage/connect/filter.h storage/connect/ha\_connect.cc storage/connect/tabdos.cpp
 * [Revision #e3ac16d](https://github.com/MariaDB/server/commit/e3ac16d)\
   2014-07-20 20:55:44 +0300
   * Add executable bit to scripts that are supposed to have it. More info at: [MDEV-6153?focusedCommentId=55397\&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-55397](https://jira.mariadb.org/browse/MDEV-6153?focusedCommentId=55397\&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-55397)
@@ -1680,7 +1680,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * o
   * n
   *
-  * ##
+  * ###
   * d
   * 9
   * 4
@@ -2032,7 +2032,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * o
   * n
   *
-  * ##
+  * ###
   * 8
   * e
   * 4
