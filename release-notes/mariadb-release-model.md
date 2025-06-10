@@ -2,7 +2,7 @@
 
 ## Current MariaDB Release Model (from [MariaDB 11.3](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 
-* [MariaDB Server releases](https://mariadb.com/kb/en/mariadb-server-release-dates/) happen four times a year.
+* [MariaDB Server releases](enterprise-server/) happen four times a year.
 * There is a new innovation release with new features every time. It is an RC release.
 * Additionally, all maintained release series get a new patch version maintenance release, a release that was RC last time, becomes GA.
 * There are no patch version releases of an innovation release after GA (except for emergency releases), instead users are supposed to upgrade to the next minor innovation release. In other words, innovation releases are rolling releases, one upgrades 11.3.2→11.4.2→11.5.2→11.6.2→11.7.2
@@ -41,7 +41,7 @@ Almost the same as above, except that
 * It's maintained for five years after the first GA release
 * A release is going through conventional alpha, beta, RC maturity phases until reaching GA
 * The first GA is planned to happen in May
-  * it didn't quite work, [10.2](https://mariadb.com/kb/en/release-notes-mariadb-102-series/) and [10.3](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/) were in May, [10.4](https://mariadb.com/kb/en/release-notes-mariadb-104-series/) and [10.5](https://mariadb.com/kb/en/release-notes-mariadb-105-series/) — in June, [10.6](https://mariadb.com/kb/en/release-notes-mariadb-106-series/) — in July.
+  * it didn't quite work, [10.2](enterprise-server/10-2/) and [10.3](enterprise-server/10-3/) were in May, [10.4](enterprise-server/10-4/) and [10.5](enterprise-server/10-5/) — in June, [10.6](enterprise-server/10-6/) — in July.
 
 ### From [MariaDB 10.0](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) to [MariaDB 10.1](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md)
 
