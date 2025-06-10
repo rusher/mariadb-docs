@@ -33,7 +33,7 @@ In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.m
 
 ## Upgrade Instructions
 
-* Major Release Upgrades for MariaDB Enterprise ColumnStore.
+* [Major Release Upgrades for MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/columnstore-release-notes/README.md)
 
 Copyright © 2025 MariaDB
 
