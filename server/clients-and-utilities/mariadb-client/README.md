@@ -1,5 +1,19 @@
 ---
-description: The MariaDB command-line client. Previously, the client was called `mysql`. The client can still be accessed in this way, via a symlink in Linux, or an alternate binary in Windows.
+description: >-
+  The MariaDB command-line client. Previously, the client was called `mysql`.
+  The client can still be accessed in this way, via a symlink in Linux, or an
+  alternate binary in Windows.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # mariadb Client
