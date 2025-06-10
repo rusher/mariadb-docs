@@ -164,7 +164,7 @@ if the table includes an `AUTO_INCREMENT` column ([MDEV-32984](https://jira.mari
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.17-12 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.17-12 is provided for:
 
 * AlmaLinux 8 (x86\_64, ARM64)
 * AlmaLinux 9 (x86\_64, ARM64)
