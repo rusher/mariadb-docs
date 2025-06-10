@@ -38,4 +38,4 @@
 * [Reference](reference/README.md)
   * [Galera Cluster Status Variables](reference/galera-cluster-status-variables.md)
   * [Galera Cluster System Variables](reference/galera-cluster-system-variables.md)
-  * [wsrep\_provider\_options](reference/wsrep_provider_options.md)
+  * [wsrep\_provider\_options Variable](reference/wsrep_provider_options.md)
