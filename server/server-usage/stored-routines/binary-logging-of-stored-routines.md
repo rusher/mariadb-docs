@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # Binary Logging of Stored Routines
 
 Binary logging can be row-based, statement-based, or a mix of the two. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for more details on the formats. If logging is statement-based, it is possible that a statement will have different effects on the master and on the slave.
