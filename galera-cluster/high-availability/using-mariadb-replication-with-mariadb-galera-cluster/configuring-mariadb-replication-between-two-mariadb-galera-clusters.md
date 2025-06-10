@@ -28,7 +28,7 @@ Our process to set up replication is going to be similar to the process describe
 
 ### Start the First Cluster
 
-The very first step is to start the nodes in the first cluster. The first node will have to be [bootstrapped](../../galera-management/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster). The other nodes can be [started normally](https://mariadb.com/kb/en/).
+The very first step is to start the nodes in the first cluster. The first node will have to be [bootstrapped](../../galera-management/getting-started-with-mariadb-galera-cluster.md#bootstrapping-a-new-cluster). The other nodes can be started normally.
 
 Once the nodes are started, you need to pick a specific node that will act as the replication primary for the second cluster.
 
