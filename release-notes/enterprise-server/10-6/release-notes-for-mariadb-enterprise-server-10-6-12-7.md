@@ -1,7 +1,5 @@
 # Release Notes for MariaDB Enterprise Server 10.6.12-7
 
-
-
 MariaDB Enterprise Server 10.6.12-7 is a maintenance release of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-enterprise-server/README.md) 10.6. This release includes a variety of fixes.
 
 MariaDB Enterprise Server 10.6.12-7 was released on 2023-03-13.
@@ -10,7 +8,7 @@ Users of MariaDB Enterprise Server 10.6.12-7 are encouraged to upgrade to 10.6.1
 
 ### Backported Features
 
-MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](https://mariadb.com/docs/server/products/mariadb-enterprise-server/lifecycle). These new features have been backported after reaching maturity in MariaDB Community Server.
+MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server.
 
 * In previous releases, the number of undo logs was configurable before InnoDB was initialized. With this release, the number of undo logs can also be configured after install.
   * The number of undo logs is configured by the InnoDB system variable `--innodb-undo-tablespaces`.
@@ -110,7 +108,7 @@ FATAL ERROR: ... failed to copy datafile.
 
 ### Platforms
 
-In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/32/mariadb-enterprise-server-release-notes/enterprise-server-lifecycle), MariaDB Enterprise Server 10.6.12-7 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.12-7 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64, ARM64)
