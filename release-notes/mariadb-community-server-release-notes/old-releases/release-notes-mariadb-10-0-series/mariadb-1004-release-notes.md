@@ -44,7 +44,7 @@ This release includes fixes for the following security vulnerabilities:
 ## Newly Implemented Features
 
 * [MDEV-4438](https://jira.mariadb.org/browse/MDEV-4438) - [Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider)
-* [MDEV-4568](https://jira.mariadb.org/browse/MDEV-4568) - Port Percona [response time distribution](https://mariadb.com/kb/en/\[\[query_response_time-plugin) as audit plugin
+* [MDEV-4568](https://jira.mariadb.org/browse/MDEV-4568) - Port Percona response time distribution as audit plugin
 * [MDEV-4702](https://jira.mariadb.org/browse/MDEV-4702) - Reduce usage of LOCK\_open
 
 ## Features and Fixes Merged or Backported from MySQL 5.6.10
