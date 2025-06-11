@@ -341,7 +341,7 @@ MAX_MEMORY_USED: 392544
 * An index can now be used when comparing the return value of the [DATE() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/date) to a constant value. ([MDEV-8320](https://jira.mariadb.org/browse/MDEV-8320))
 * Single-table [UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/update) and [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) can now benefit from semi-join optimization. ([MDEV-7487](https://jira.mariadb.org/browse/MDEV-7487))
 * JSON histograms with detailed histogram collection: ([MDEV-26519](https://jira.mariadb.org/browse/MDEV-26519))
-  * Enabled when [histogram\_type=JSON\_HB](https://mariadb.com/docs/server/ref/mdb/system-variables/histogram_type) is set, which is now the default.
+  * Enabled when [histogram\_type=JSON\_HB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics#histogram_type) is set, which is now the default.
   * JSON histograms result in more precise data statistics for string data types or when columns have highly-uneven data distribution.
   * With more precise data statistics the optimizer can create better query plans, resulting in faster queries.
 
