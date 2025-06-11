@@ -1,29 +1,29 @@
 # Full List of MariaDB Options, System and Status Variables
 
-Alphabetical list of all [mariadbd Options](../server-management/starting-and-stopping-mariadb/mariadbd-options.md), [Server System Variables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) and [Server Status Variables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md). The convention used is that variable names are listed with '\_' and options with '-'.
+Alphabetical list of all [mariadbd Options](../server-management/starting-and-stopping-mariadb/mariadbd-options.md), [Server System Variables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) and [Server Status Variables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md). The convention used is that variable names are listed with '\_' and options with '-'.
 
 | Name |
 | - |
 | [-a (--ansii)](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi) |
 | [--abort-slave-event-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#abort-slave-event-count) |
-| [Aborted\_clients](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_clients) |
-| [Aborted\_connects](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects) |
-| [Aborted\_connects\_preauth](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects)|
-| [Access\_denied\_errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#access_denied_errors)|
-| [Acl\_column\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_column_grants)|
-| [Acl\_database\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_database_grants)|
-| [Acl\_function\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_function_grants)|
-| [Acl\_package\_body\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_package_body_grants) |
-| [Acl\_package\_spec\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_package_spec_grants) |
-| [Acl\_procedure\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_procedure_grants)|
-| [Acl\_proxy\_users](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_proxy_users)|
-| [Acl\_role\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_role_grants)|
-| [Acl\_roles](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_roles) |
-| [Acl\_table\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_table_grants)|
-| [Acl\_users](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_users) |
-| --[allow-suspicious-udfs](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#allow-suspicious-udfs), [allow\_suspicious\_udfs](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs)|
-| [alter\_algorithm](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) |
-| [analyze\_sample\_percentage](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)|
+| [Aborted\_clients](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_clients) |
+| [Aborted\_connects](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects) |
+| [Aborted\_connects\_preauth](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects)|
+| [Access\_denied\_errors](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#access_denied_errors)|
+| [Acl\_column\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_column_grants)|
+| [Acl\_database\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_database_grants)|
+| [Acl\_function\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_function_grants)|
+| [Acl\_package\_body\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_package_body_grants) |
+| [Acl\_package\_spec\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_package_spec_grants) |
+| [Acl\_procedure\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_procedure_grants)|
+| [Acl\_proxy\_users](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_proxy_users)|
+| [Acl\_role\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_role_grants)|
+| [Acl\_roles](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_roles) |
+| [Acl\_table\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_table_grants)|
+| [Acl\_users](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_users) |
+| --[allow-suspicious-udfs](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#allow-suspicious-udfs), [allow\_suspicious\_udfs](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs)|
+| [alter\_algorithm](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) |
+| [analyze\_sample\_percentage](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)|
 | --[ansii](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi)|
 | [aria\_block\_size](../../reference/storage-engines/aria/aria-system-variables.md) |
 | [aria\_checkpoint\_interval](../../reference/storage-engines/aria/aria-system-variables.md)|
@@ -56,10 +56,10 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [aria\_sync\_log\_dir](../../reference/storage-engines/aria/aria-system-variables.md)|
 | [Aria\_transaction\_log\_syncs](../../reference/storage-engines/aria/aria-status-variables.md) |
 | [aria\_used\_for\_temp\_tables](../../reference/storage-engines/aria/aria-system-variables.md) |
-| [autocommit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit)|
-| [auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [automatic\_sp\_privileges](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)|
+| [autocommit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit)|
+| [auto\_increment\_increment](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [auto\_increment\_offset](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [automatic\_sp\_privileges](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)|
 | [aws\_key\_management\_key\_spec](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_key_spec)|
 | [aws\_key\_management\_log\_level](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_log_level)|
 | [aws\_key\_management\_master\_key\_id](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_master_key_id) |
@@ -67,54 +67,54 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [aws\_key\_management\_region](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_region) |
 | [aws\_key\_management\_request\_timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_request_timeout)|
 | [aws\_key\_management\_rotate\_key](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_rotate_key)|
-| [back\_log](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#back_log) |
-| -b, [basedir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#basedir)|
-| [big\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#big_tables) |
-| [bind\_address](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) |
-| [binlog\_alter\_two\_phase](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) |
-| [binlog\_annotate\_row\_events](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Binlog\_bytes\_written](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Binlog\_cache\_disk\_use](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [binlog\_cache\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Binlog\_cache\_use](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [binlog\_checksum](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [binlog\_commit\_wait\_count](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [binlog\_commit\_wait\_usec](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [Binlog\_commits](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [binlog\_direct\_non\_transactional\_updates](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Binlog\_disk\_use](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use)|
-| --[binlog-do-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-do-db), [binlog\_do\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [binlog\_expire\_logs\_seconds](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [binlog\_file\_cache\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [binlog\_format](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [Binlog\_group\_commits](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Binlog\_group\_commit\_trigger\_count](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_count)|
-| [Binlog\_group\_commit\_trigger\_lock\_wait](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_lock_wait) |
-| [Binlog\_group\_commit\_trigger\_timeout](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_timeout)|
-| [binlog\_gtid\_index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Binlog\_gtid\_index\_hit](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_hit) |
-| [Binlog\_gtid\_index\_miss](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_miss) |
-| [binlog\_gtid\_index\_page\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [binlog\_gtid\_index\_span\_min](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[binlog-ignore-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbinlog-ignore-db), [binlog\_ignore\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [binlog\_large\_commit\_threshold](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold) |
-| [binlog\_legacy\_event\_pos](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_legacy_event_pos) |
-| [binlog\_optimize\_thread\_scheduling](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [binlog\_row\_image](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[binlog-row-event-max-size](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-row-event-max-size), [binlog\_row\_event\_max\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [binlog\_row\_metadata](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Binlog\_snapshot\_file](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Binlog\_snapshot\_position](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [binlog\_space\_limit](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_space_limit)|
-| [Binlog\_stmt\_cache\_disk\_use](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Binlog\_stmt\_cache\_use](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [binlog\_stmt\_cache\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [block\_encryption\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#block_encryption_mode)|
+| [back\_log](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#back_log) |
+| -b, [basedir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#basedir)|
+| [big\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#big_tables) |
+| [bind\_address](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address) |
+| [binlog\_alter\_two\_phase](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) |
+| [binlog\_annotate\_row\_events](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Binlog\_bytes\_written](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Binlog\_cache\_disk\_use](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [binlog\_cache\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Binlog\_cache\_use](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [binlog\_checksum](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [binlog\_commit\_wait\_count](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [binlog\_commit\_wait\_usec](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [Binlog\_commits](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [binlog\_direct\_non\_transactional\_updates](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Binlog\_disk\_use](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use)|
+| --[binlog-do-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-do-db), [binlog\_do\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [binlog\_expire\_logs\_seconds](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [binlog\_file\_cache\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [binlog\_format](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [Binlog\_group\_commits](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Binlog\_group\_commit\_trigger\_count](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_count)|
+| [Binlog\_group\_commit\_trigger\_lock\_wait](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_lock_wait) |
+| [Binlog\_group\_commit\_trigger\_timeout](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_timeout)|
+| [binlog\_gtid\_index](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Binlog\_gtid\_index\_hit](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_hit) |
+| [Binlog\_gtid\_index\_miss](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_miss) |
+| [binlog\_gtid\_index\_page\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [binlog\_gtid\_index\_span\_min](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[binlog-ignore-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbinlog-ignore-db), [binlog\_ignore\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [binlog\_large\_commit\_threshold](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold) |
+| [binlog\_legacy\_event\_pos](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_legacy_event_pos) |
+| [binlog\_optimize\_thread\_scheduling](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [binlog\_row\_image](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[binlog-row-event-max-size](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-row-event-max-size), [binlog\_row\_event\_max\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [binlog\_row\_metadata](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Binlog\_snapshot\_file](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Binlog\_snapshot\_position](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [binlog\_space\_limit](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_space_limit)|
+| [Binlog\_stmt\_cache\_disk\_use](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Binlog\_stmt\_cache\_use](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [binlog\_stmt\_cache\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [block\_encryption\_mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#block_encryption_mode)|
 | --[bootstrap](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbootstrap) |
-| [bulk\_insert\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bulk_insert_buffer_size) |
-| [Busy\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#busy_time) |
-| [Bytes\_received](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#bytes_received) |
-| [Bytes\_sent](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#bytes_sent) |
+| [bulk\_insert\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bulk_insert_buffer_size) |
+| [Busy\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#busy_time) |
+| [Bytes\_received](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#bytes_received) |
+| [Bytes\_sent](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#bytes_sent) |
 | [cassandra\_default\_thrift\_host](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_default_thrift_host) |
 | [cassandra\_failure\_retries](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_failure_retries)|
 | [cassandra\_insert\_batch\_size](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_insert_batch_size) |
@@ -130,213 +130,213 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Cassandra\_timeout\_exceptions](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_timeout_exceptions)|
 | [Cassandra\_unavailable\_exceptions](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-status-variables.md#cassandra_unavailable_exceptions)|
 | [cassandra\_write\_consistency](../../reference/storage-engines/legacy-storage-engines/cassandra/cassandra-system-variables.md#cassandra_write_consistency)|
-| [character\_set\_client](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client)|
+| [character\_set\_client](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client)|
 | --[character-set-client-handshake](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdcharacter-set-client-handshake) |
-| [character\_set\_collations](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations)|
-| [character\_set\_connection](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection)|
-| [character\_set\_database](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database)|
-| [character\_set\_filesystem](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem)|
-| [character\_set\_results](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results)|
-| -C, [character\_set\_server](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server)|
-| [character\_set\_system](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_system)|
-| [character\_sets\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_sets_dir)|
-| [check\_constraint\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks)|
+| [character\_set\_collations](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_collations)|
+| [character\_set\_connection](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_connection)|
+| [character\_set\_database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database)|
+| [character\_set\_filesystem](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_filesystem)|
+| [character\_set\_results](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_results)|
+| -C, [character\_set\_server](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_server)|
+| [character\_set\_system](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_system)|
+| [character\_sets\_dir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_sets_dir)|
+| [check\_constraint\_checks](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks)|
 | -r, --[chroot](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdchroot) |
-| [collation\_connection](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) |
-| [collation\_database](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_database) |
-| [collation\_server](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_server) |
-| [Column\_compressions](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compressions)|
-| [column\_compression\_threshold](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_threshold) |
-| [column\_compression\_zlib\_level](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_zlib_level)|
-| [column\_compression\_zlib\_strategy](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_zlib_strategy)|
-| [column\_compression\_zlib\_wrap](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_zlib_wrap)|
-| [Column\_decompressions](../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compressions)|
-| [Com\_admin\_commands](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_admin_commands)|
-| [Com\_alter\_db](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_db)|
-| [Com\_alter\_db\_upgrade](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_db_upgrade) |
-| [Com\_alter\_event](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_event)|
-| [Com\_alter\_function](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_function)|
-| [Com\_alter\_procedure](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_procedure)|
-| [Com\_alter\_sequence](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_sequence)|
-| [Com\_alter\_server](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_server)|
-| [Com\_alter\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_table)|
-| [Com\_alter\_tablespace](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_tablespace)|
-| [Com\_alter\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_user)|
-| [Com\_analyze](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_analyze) |
-| [Com\_assign\_to\_keycache](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_assign_to_keycache) |
-| [Com\_backup](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_backup) |
-| [Com\_backup\_lock](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_backup_lock)|
-| [Com\_backup\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_backup_table)|
-| [Com\_begin](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_begin) |
-| [Com\_binlog](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_binlog) |
-| [Com\_call\_procedure](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_call_procedure)|
-| [Com\_change\_db](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_change_db)|
-| [Com\_change\_master](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_check](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_check) |
-| [Com\_checksum](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_checksum) |
-| [Com\_commit](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_commit) |
-| [Com\_compound\_sql](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_compound_sql)|
-| [Com\_create\_db](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_db)|
-| [Com\_create\_event](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_event)|
-| [Com\_create\_function](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_function)|
-| [Com\_create\_index](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_index)|
-| [Com\_create\_package](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_package)|
-| [Com\_create\_package\_body](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_package_body) |
-| [Com\_create\_procedure](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_procedure)|
-| [Com\_create\_role](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_role)|
-| [Com\_create\_sequence](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_sequence)|
-| [Com\_create\_server](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_server)|
-| [Com\_create\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_table)|
-| [Com\_create\_temporary\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_temporary_table) |
-| [Com\_create\_trigger](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_trigger)|
-| [Com\_create\_udf](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_udf)|
-| [Com\_create\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_user)|
-| [Com\_create\_view](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_view)|
-| [Com\_dealloc\_sql](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_dealloc_sql)|
-| [Com\_delete](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_delete) |
-| [Com\_delete\_multi](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_delete_multi)|
-| [Com\_do](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_do) |
-| [Com\_drop\_db](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_db)|
-| [Com\_drop\_event](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_event)|
-| [Com\_drop\_function](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_function)|
-| [Com\_drop\_index](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_index)|
-| [Com\_drop\_package](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_package)|
-| [Com\_drop\_package\_body](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_package_body) |
-| [Com\_drop\_procedure](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_procedure)|
-| [Com\_drop\_role](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_role)|
-| [Com\_drop\_sequence](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_sequence)|
-| [Com\_drop\_server](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_server)|
-| [Com\_drop\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_table)|
-| [Com\_drop\_temporary\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_temporary_table) |
-| [Com\_drop\_trigger](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_trigger)|
-| [Com\_drop\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_user)|
-| [Com\_drop\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_user)|
-| [Com\_drop\_view](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_view)|
-| [Com\_empty\_query](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_empty_query)|
-| [Com\_execute\_immediate](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_immediate)|
-| [Com\_execute\_sql](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_sql)|
-| [Com\_flush](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_flush) |
-| [Com\_get\_diagnostics](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_get_diagnostics)|
-| [Com\_grant](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_grant) |
-| [Com\_grant\_role](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_grant_role)|
-| [Com\_ha\_close](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_ha_close)|
-| [Com\_ha\_open](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_ha_open)|
-| [Com\_ha\_read](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_ha_read)|
-| [Com\_help](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_help) |
-| [Com\_insert](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_insert) |
-| [Com\_insert\_select](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_insert_select)|
-| [Com\_install\_plugin](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_install_plugin)|
-| [Com\_kill](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_kill) |
-| [Com\_load](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_load) |
-| [Com\_load\_master\_data](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_load_master_data) |
-| [Com\_load\_master\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_load_master_table) |
-| [Com\_lock\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_lock_tables)|
-| [Com\_multi](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_multi) |
-| [Com\_optimize](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_optimize) |
-| [Com\_preload\_keys](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_preload_keys)|
-| [Com\_prepare\_sql](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_prepare_sql)|
-| [Com\_purge](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_purge) |
-| [Com\_purge\_before\_date](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_purge_before_date) |
-| [Com\_release\_savepoint](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_release_savepoint)|
-| [Com\_rename\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rename_table)|
-| [Com\_rename\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rename_user)|
-| [Com\_repair](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_repair) |
-| [Com\_replace](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_replace) |
-| [Com\_replace\_select](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_replace_select)|
-| [Com\_reset](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_reset) |
-| [Com\_resignal](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_resignal) |
-| [Com\_restore\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_restore_table)|
-| [Com\_revoke](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_revoke) |
-| [Com\_revoke\_all](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_revoke_all)|
-| [Com\_revoke\_grant](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_revoke_grant)|
-| [Com\_rollback](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rollback) |
-| [Com\_rollback\_to\_savepoint](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rollback_to_savepoint) |
-| [Com\_savepoint](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_savepoint) |
-| [Com\_select](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_select) |
-| [Com\_set\_option](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_set_option)|
-| [Com\_show\_authors](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_authors)|
-| [Com\_show\_binlog\_events](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_binlog_events) |
-| [Com\_show\_binlogs](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_binlogs)|
-| [Com\_show\_charsets](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_charsets)|
-| [Com\_show\_client\_statistics](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_client_statistics) |
-| [Com\_show\_collations](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_collations)|
-| [Com\_show\_column\_types](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_column_types) |
-| [Com\_show\_contributors](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_contributors)|
-| [Com\_show\_create\_db](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_db) |
-| [Com\_show\_create\_event](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_event) |
-| [Com\_show\_create\_func](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_func) |
-| [Com\_show\_create\_package](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_package) |
-| [Com\_show\_create\_package\_body](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_package_body)|
-| [Com\_show\_create\_proc](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_proc) |
-| [Com\_show\_create\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_table) |
-| [Com\_show\_create\_trigger](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_trigger) |
-| [Com\_show\_create\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_user) |
-| [Com\_show\_databases](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_databases)|
-| [Com\_show\_engine\_logs](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_engine_logs) |
-| [Com\_show\_engine\_mutex](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_engine_mutex) |
-| [Com\_show\_engine\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_engine_status) |
-| [Com\_show\_events](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_events)|
-| [Com\_show\_errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_errors)|
-| [Com\_show\_explain](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_explain)|
-| [Com\_show\_fields](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_fields)|
-| [Com\_show\_function\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_function_status) |
-| [Com\_show\_generic](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_generic)|
-| [Com\_show\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_grants)|
-| [Com\_show\_keys](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_keys)|
-| [Com\_show\_index\_statistics](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_index_statistics) |
-| [Com\_show\_binlog\_status](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_show\_master\_status](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_show\_new\_master](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Com\_show\_open\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_open_tables) |
-| [Com\_show\_package\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_package_status) |
-| [Com\_show\_package\_body\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_package_body_status)|
-| [Com\_show\_plugins](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_plugins)|
-| [Com\_show\_privileges](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_privileges)|
-| [Com\_show\_procedure\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_procedure_status) |
-| [Com\_show\_processlist](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_processlist)|
-| [Com\_show\_profile](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_profile)|
-| [Com\_show\_profiles](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_profiles)|
-| [Com\_show\_relaylog\_events](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_relaylog_events) |
-| [Com\_show\_slave\_hosts](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_show\_slave\_status](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Com\_show\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_status)|
-| [Com\_show\_storage\_engines](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_storage_engines) |
-| [Com\_show\_table\_statistics](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_table_statistics) |
-| [Com\_show\_table\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_table_status) |
-| [Com\_show\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_tables)|
-| [Com\_show\_triggers](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_triggers)|
-| [Com\_show\_user\_statistics](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_user_statistics) |
-| [Com\_show\_variable](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_variable)|
-| [Com\_show\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_warnings)|
-| [Com\_shutdown](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_shutdown) |
-| [Com\_signal](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_signal) |
-| [Com\_slave\_start](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_slave\_stop](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Com\_start\_all\_slaves](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_start\_slave](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Com\_stop\_all\_slaves](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Com\_stop\_slave](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [Com\_stmt\_close](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_close)|
-| [Com\_stmt\_execute](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_execute)|
-| [Com\_stmt\_fetch](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_fetch)|
-| [Com\_stmt\_prepare](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_prepare)|
-| [Com\_stmt\_reprepare](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_reprepare)|
-| [Com\_stmt\_reset](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_reset)|
-| [Com\_stmt\_send\_long\_data](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_send_long_data)|
-| [Com\_truncate](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_truncate) |
-| [Com\_uninstall\_plugin](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_uninstall_plugin)|
-| [Com\_unlock\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_unlock_tables)|
-| [Com\_update](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_update) |
-| [Com\_update\_multi](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_update_multi)|
-| [Com\_xa\_commit](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_commit)|
-| [Com\_xa\_end](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_end)|
-| [Com\_xa\_prepare](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_prepare)|
-| [Com\_xa\_recover](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_recover)|
-| [Com\_xa\_rollback](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_rollback)|
-| [Com\_xa\_start](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_start)|
-| [completion\_type](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#completion_type) |
-| [Compression](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#compression)|
-| [concurrent\_insert](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) |
+| [collation\_connection](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) |
+| [collation\_database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_database) |
+| [collation\_server](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_server) |
+| [Column\_compressions](../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compressions)|
+| [column\_compression\_threshold](../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_threshold) |
+| [column\_compression\_zlib\_level](../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_zlib_level)|
+| [column\_compression\_zlib\_strategy](../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_zlib_strategy)|
+| [column\_compression\_zlib\_wrap](../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compression_zlib_wrap)|
+| [Column\_decompressions](../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/storage-engine-independent-column-compression.md#column_compressions)|
+| [Com\_admin\_commands](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_admin_commands)|
+| [Com\_alter\_db](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_db)|
+| [Com\_alter\_db\_upgrade](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_db_upgrade) |
+| [Com\_alter\_event](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_event)|
+| [Com\_alter\_function](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_function)|
+| [Com\_alter\_procedure](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_procedure)|
+| [Com\_alter\_sequence](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_sequence)|
+| [Com\_alter\_server](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_server)|
+| [Com\_alter\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_table)|
+| [Com\_alter\_tablespace](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_tablespace)|
+| [Com\_alter\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_alter_user)|
+| [Com\_analyze](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_analyze) |
+| [Com\_assign\_to\_keycache](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_assign_to_keycache) |
+| [Com\_backup](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_backup) |
+| [Com\_backup\_lock](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_backup_lock)|
+| [Com\_backup\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_backup_table)|
+| [Com\_begin](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_begin) |
+| [Com\_binlog](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_binlog) |
+| [Com\_call\_procedure](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_call_procedure)|
+| [Com\_change\_db](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_change_db)|
+| [Com\_change\_master](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_check](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_check) |
+| [Com\_checksum](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_checksum) |
+| [Com\_commit](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_commit) |
+| [Com\_compound\_sql](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_compound_sql)|
+| [Com\_create\_db](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_db)|
+| [Com\_create\_event](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_event)|
+| [Com\_create\_function](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_function)|
+| [Com\_create\_index](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_index)|
+| [Com\_create\_package](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_package)|
+| [Com\_create\_package\_body](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_package_body) |
+| [Com\_create\_procedure](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_procedure)|
+| [Com\_create\_role](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_role)|
+| [Com\_create\_sequence](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_sequence)|
+| [Com\_create\_server](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_server)|
+| [Com\_create\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_table)|
+| [Com\_create\_temporary\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_temporary_table) |
+| [Com\_create\_trigger](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_trigger)|
+| [Com\_create\_udf](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_udf)|
+| [Com\_create\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_user)|
+| [Com\_create\_view](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_create_view)|
+| [Com\_dealloc\_sql](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_dealloc_sql)|
+| [Com\_delete](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_delete) |
+| [Com\_delete\_multi](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_delete_multi)|
+| [Com\_do](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_do) |
+| [Com\_drop\_db](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_db)|
+| [Com\_drop\_event](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_event)|
+| [Com\_drop\_function](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_function)|
+| [Com\_drop\_index](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_index)|
+| [Com\_drop\_package](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_package)|
+| [Com\_drop\_package\_body](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_package_body) |
+| [Com\_drop\_procedure](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_procedure)|
+| [Com\_drop\_role](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_role)|
+| [Com\_drop\_sequence](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_sequence)|
+| [Com\_drop\_server](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_server)|
+| [Com\_drop\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_table)|
+| [Com\_drop\_temporary\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_temporary_table) |
+| [Com\_drop\_trigger](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_trigger)|
+| [Com\_drop\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_user)|
+| [Com\_drop\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_user)|
+| [Com\_drop\_view](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_drop_view)|
+| [Com\_empty\_query](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_empty_query)|
+| [Com\_execute\_immediate](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_immediate)|
+| [Com\_execute\_sql](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_execute_sql)|
+| [Com\_flush](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_flush) |
+| [Com\_get\_diagnostics](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_get_diagnostics)|
+| [Com\_grant](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_grant) |
+| [Com\_grant\_role](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_grant_role)|
+| [Com\_ha\_close](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_ha_close)|
+| [Com\_ha\_open](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_ha_open)|
+| [Com\_ha\_read](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_ha_read)|
+| [Com\_help](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_help) |
+| [Com\_insert](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_insert) |
+| [Com\_insert\_select](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_insert_select)|
+| [Com\_install\_plugin](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_install_plugin)|
+| [Com\_kill](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_kill) |
+| [Com\_load](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_load) |
+| [Com\_load\_master\_data](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_load_master_data) |
+| [Com\_load\_master\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_load_master_table) |
+| [Com\_lock\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_lock_tables)|
+| [Com\_multi](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_multi) |
+| [Com\_optimize](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_optimize) |
+| [Com\_preload\_keys](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_preload_keys)|
+| [Com\_prepare\_sql](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_prepare_sql)|
+| [Com\_purge](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_purge) |
+| [Com\_purge\_before\_date](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_purge_before_date) |
+| [Com\_release\_savepoint](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_release_savepoint)|
+| [Com\_rename\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rename_table)|
+| [Com\_rename\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rename_user)|
+| [Com\_repair](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_repair) |
+| [Com\_replace](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_replace) |
+| [Com\_replace\_select](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_replace_select)|
+| [Com\_reset](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_reset) |
+| [Com\_resignal](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_resignal) |
+| [Com\_restore\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_restore_table)|
+| [Com\_revoke](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_revoke) |
+| [Com\_revoke\_all](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_revoke_all)|
+| [Com\_revoke\_grant](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_revoke_grant)|
+| [Com\_rollback](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rollback) |
+| [Com\_rollback\_to\_savepoint](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_rollback_to_savepoint) |
+| [Com\_savepoint](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_savepoint) |
+| [Com\_select](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_select) |
+| [Com\_set\_option](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_set_option)|
+| [Com\_show\_authors](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_authors)|
+| [Com\_show\_binlog\_events](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_binlog_events) |
+| [Com\_show\_binlogs](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_binlogs)|
+| [Com\_show\_charsets](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_charsets)|
+| [Com\_show\_client\_statistics](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_client_statistics) |
+| [Com\_show\_collations](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_collations)|
+| [Com\_show\_column\_types](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_column_types) |
+| [Com\_show\_contributors](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_contributors)|
+| [Com\_show\_create\_db](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_db) |
+| [Com\_show\_create\_event](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_event) |
+| [Com\_show\_create\_func](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_func) |
+| [Com\_show\_create\_package](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_package) |
+| [Com\_show\_create\_package\_body](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_package_body)|
+| [Com\_show\_create\_proc](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_proc) |
+| [Com\_show\_create\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_table) |
+| [Com\_show\_create\_trigger](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_trigger) |
+| [Com\_show\_create\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_create_user) |
+| [Com\_show\_databases](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_databases)|
+| [Com\_show\_engine\_logs](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_engine_logs) |
+| [Com\_show\_engine\_mutex](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_engine_mutex) |
+| [Com\_show\_engine\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_engine_status) |
+| [Com\_show\_events](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_events)|
+| [Com\_show\_errors](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_errors)|
+| [Com\_show\_explain](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_explain)|
+| [Com\_show\_fields](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_fields)|
+| [Com\_show\_function\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_function_status) |
+| [Com\_show\_generic](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_generic)|
+| [Com\_show\_grants](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_grants)|
+| [Com\_show\_keys](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_keys)|
+| [Com\_show\_index\_statistics](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_index_statistics) |
+| [Com\_show\_binlog\_status](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_show\_master\_status](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_show\_new\_master](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Com\_show\_open\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_open_tables) |
+| [Com\_show\_package\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_package_status) |
+| [Com\_show\_package\_body\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_package_body_status)|
+| [Com\_show\_plugins](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_plugins)|
+| [Com\_show\_privileges](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_privileges)|
+| [Com\_show\_procedure\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_procedure_status) |
+| [Com\_show\_processlist](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_processlist)|
+| [Com\_show\_profile](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_profile)|
+| [Com\_show\_profiles](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_profiles)|
+| [Com\_show\_relaylog\_events](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_relaylog_events) |
+| [Com\_show\_slave\_hosts](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_show\_slave\_status](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Com\_show\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_status)|
+| [Com\_show\_storage\_engines](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_storage_engines) |
+| [Com\_show\_table\_statistics](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_table_statistics) |
+| [Com\_show\_table\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_table_status) |
+| [Com\_show\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_tables)|
+| [Com\_show\_triggers](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_triggers)|
+| [Com\_show\_user\_statistics](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_user_statistics) |
+| [Com\_show\_variable](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_variable)|
+| [Com\_show\_warnings](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_show_warnings)|
+| [Com\_shutdown](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_shutdown) |
+| [Com\_signal](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_signal) |
+| [Com\_slave\_start](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_slave\_stop](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Com\_start\_all\_slaves](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_start\_slave](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Com\_stop\_all\_slaves](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Com\_stop\_slave](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [Com\_stmt\_close](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_close)|
+| [Com\_stmt\_execute](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_execute)|
+| [Com\_stmt\_fetch](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_fetch)|
+| [Com\_stmt\_prepare](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_prepare)|
+| [Com\_stmt\_reprepare](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_reprepare)|
+| [Com\_stmt\_reset](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_reset)|
+| [Com\_stmt\_send\_long\_data](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_stmt_send_long_data)|
+| [Com\_truncate](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_truncate) |
+| [Com\_uninstall\_plugin](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_uninstall_plugin)|
+| [Com\_unlock\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_unlock_tables)|
+| [Com\_update](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_update) |
+| [Com\_update\_multi](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_update_multi)|
+| [Com\_xa\_commit](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_commit)|
+| [Com\_xa\_end](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_end)|
+| [Com\_xa\_prepare](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_prepare)|
+| [Com\_xa\_recover](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_recover)|
+| [Com\_xa\_rollback](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_rollback)|
+| [Com\_xa\_start](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#com_xa_start)|
+| [completion\_type](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#completion_type) |
+| [Compression](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#compression)|
+| [concurrent\_insert](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) |
 | [connect\_class\_path](../../reference/storage-engines/connect/connect-system-variables.md#connect_class_path) |
 | [connect\_cond\_push](../../reference/storage-engines/connect/connect-system-variables.md#connect_cond_push) |
 | [connect\_conv\_size](../../reference/storage-engines/connect/connect-system-variables.md#connect_conv_size) |
@@ -351,102 +351,102 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [connect\_json\_grp\_size](../../reference/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)|
 | [connect\_json\_null](../../reference/storage-engines/connect/connect-system-variables.md#connect_json_null) |
 | [connect\_jvm\_path](../../reference/storage-engines/connect/connect-system-variables.md#connect_jvm_path) |
-| [connect\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#connect_timeout) |
+| [connect\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#connect_timeout) |
 | [connect\_type\_conv](../../reference/storage-engines/connect/connect-system-variables.md#connect_type_conv) |
 | [connect\_use\_tempfile](../../reference/storage-engines/connect/connect-system-variables.md#connect_use_tempfile) |
 | [connect\_work\_size](../../reference/storage-engines/connect/connect-system-variables.md#connect_work_size) |
 | [connect\_xtrace](../../reference/storage-engines/connect/connect-system-variables.md#connect_xtrace)|
-| [Connection\_errors\_accept](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_accept)|
-| [Connection\_errors\_internal](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_internal)|
-| [Connection\_errors\_max\_connections](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_max_connections) |
-| [Connection\_errors\_peer\_address](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_peer_address) |
-| [Connection\_errors\_select](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_select)|
-| [Connection\_errors\_tcpwrap](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_tcpwrap)|
-| [Connections](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connections)|
+| [Connection\_errors\_accept](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_accept)|
+| [Connection\_errors\_internal](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_internal)|
+| [Connection\_errors\_max\_connections](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_max_connections) |
+| [Connection\_errors\_peer\_address](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_peer_address) |
+| [Connection\_errors\_select](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_select)|
+| [Connection\_errors\_tcpwrap](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_tcpwrap)|
+| [Connections](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connections)|
 | [--console](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdconsole) |
-| [core\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#core_file) |
-| [Cpu\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#cpu_time) |
+| [core\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#core_file) |
+| [Cpu\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#cpu_time) |
 | --[cracklib-password-check](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) |
 | [cracklib\_password\_check-dictionary](../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md)|
-| [Created\_tmp\_disk\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_disk_tables) |
-| [Created\_tmp\_files](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_files)|
-| [Created\_tmp\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_tables)|
-| -h, [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)|
-| [date\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#date_format) |
-| [datetime\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format) |
+| [Created\_tmp\_disk\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_disk_tables) |
+| [Created\_tmp\_files](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_files)|
+| [Created\_tmp\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#created_tmp_tables)|
+| -h, [datadir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)|
+| [date\_format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#date_format) |
+| [datetime\_format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datetime_format) |
 | [deadlock\_search\_depth\_long](../../reference/storage-engines/aria/aria-system-variables.md) |
 | [deadlock\_search\_depth\_short](../../reference/storage-engines/aria/aria-system-variables.md)|
 | [deadlock\_timeout\_long](../../reference/storage-engines/aria/aria-system-variables.md) |
 | [deadlock\_timeout\_short](../../reference/storage-engines/aria/aria-system-variables.md)|
-| -#, [debug](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug)|
+| -#, [debug](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug)|
 | [--debug-assert-if-crashed-table](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | [--debug-binlog-fsync-sleep](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [--debug-crc-break](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | [--debug-flush](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | [--debug-no-sync](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [debug\_no\_thread\_alarm](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug_no_thread_alarm) |
-| [debug\_sync](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug_sync) |
+| [debug\_no\_thread\_alarm](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug_no_thread_alarm) |
+| [debug\_sync](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug_sync) |
 | [--debug-sync-timeout](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[default-character-set](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [default\_master\_connection](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [default\_password\_lifetime](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime)|
-| [default\_regex\_flags](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags)|
-| [default\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)|
-| [default\_table\_type](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_table_type)|
-| [default\_tmp\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) |
-| --[default-time-zone](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone)|
-| [default\_week\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format)|
+| [default\_master\_connection](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [default\_password\_lifetime](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime)|
+| [default\_regex\_flags](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags)|
+| [default\_storage\_engine](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine)|
+| [default\_table\_type](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_table_type)|
+| [default\_tmp\_storage\_engine](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_tmp_storage_engine) |
+| --[default-time-zone](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone)|
+| [default\_week\_format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format)|
 | --[defaults-extra-file](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[defaults-file](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [delay\_key\_write](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delay_key_write)|
-| [Delayed\_errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delayed_errors) |
-| [delayed\_insert\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_limit)|
-| [Delayed\_insert\_threads](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delayed_insert_threads)|
-| [delayed\_insert\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_timeout)|
-| [delayed\_queue\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_queue_size)|
-| [Delayed\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delayed_writes) |
-| [Delete\_scan](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delete_scan) |
+| [delay\_key\_write](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delay_key_write)|
+| [Delayed\_errors](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delayed_errors) |
+| [delayed\_insert\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_limit)|
+| [Delayed\_insert\_threads](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delayed_insert_threads)|
+| [delayed\_insert\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_timeout)|
+| [delayed\_queue\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_queue_size)|
+| [Delayed\_writes](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delayed_writes) |
+| [Delete\_scan](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#delete_scan) |
 | --[des-key-file](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [disconnect\_on\_expired\_password](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#disconnect_on_expired_password) |
+| [disconnect\_on\_expired\_password](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#disconnect_on_expired_password) |
 | --[disconnect-slave-event-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[disks](../../reference/plugins/other-plugins/disks-plugin.md#disks) |
-| [div\_precision\_increment](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#div_precision_increment)|
-| [Empty\_queries](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#empty_queries) |
-| [encrypt\_binlog](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_binlog) |
-| [encrypt\_tmp\_disk\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables) |
-| [encrypt\_tmp\_files](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files)|
-| [encryption\_algorithm](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encryption_algorithm) |
-| [enforce\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#enforce_storage_engine)|
-| [engine\_condition\_pushdown](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#engine_condition_pushdown)|
-| [eq\_range\_index\_dive\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#eq_range_index_dive_limit)|
-| [error\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#error_count) |
-| [event\_scheduler](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) |
-| [Executed\_events](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#executed_events) |
-| [Executed\_triggers](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#executed_triggers) |
+| [div\_precision\_increment](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#div_precision_increment)|
+| [Empty\_queries](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#empty_queries) |
+| [encrypt\_binlog](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_binlog) |
+| [encrypt\_tmp\_disk\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables) |
+| [encrypt\_tmp\_files](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_files)|
+| [encryption\_algorithm](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#encryption_algorithm) |
+| [enforce\_storage\_engine](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#enforce_storage_engine)|
+| [engine\_condition\_pushdown](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#engine_condition_pushdown)|
+| [eq\_range\_index\_dive\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#eq_range_index_dive_limit)|
+| [error\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#error_count) |
+| [event\_scheduler](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#event_scheduler) |
+| [Executed\_events](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#executed_events) |
+| [Executed\_triggers](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#executed_triggers) |
 | -T, --[exit-info](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [expensive\_subquery\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#expensive_subquery_limit)|
-| [expire\_logs\_days](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days)|
-| [explicit\_defaults\_for\_timestamp](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#explicit_defaults_for_timestamp) |
+| [expensive\_subquery\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#expensive_subquery_limit)|
+| [expire\_logs\_days](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#expire_logs_days)|
+| [explicit\_defaults\_for\_timestamp](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#explicit_defaults_for_timestamp) |
 | --[external-locking](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [external\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) |
-| [extra\_max\_connections](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [extra\_port](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [Feature\_application\_time\_periods](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_application_time_periods) |
-| [Feature\_check\_constraint](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_check_constraint)|
-| [Feature\_custom\_aggregate\_functions](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_custom_aggregate_functions) |
-| [Feature\_delay\_key\_write](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_delay_key_write) |
-| [Feature\_dynamic\_columns](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_dynamic_columns)|
-| [Feature\_fulltext](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_fulltext) |
-| [Feature\_gis](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_gis) |
-| [Feature\_insert\_returning](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_insert_returning)|
-| [Feature\_invisible\_columns](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_invisible_columns)|
-| [Feature\_json](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_json) |
-| [Feature\_locale](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_locale) |
-| [Feature\_subquery](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_subquery) |
-| [Feature\_timezone](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_timezone) |
-| [Feature\_trigger](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_trigger) |
-| [Feature\_window\_functions](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_window_functions)|
-| [Feature\_xml](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_xml) |
+| [external\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#external_user) |
+| [extra\_max\_connections](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [extra\_port](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [Feature\_application\_time\_periods](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_application_time_periods) |
+| [Feature\_check\_constraint](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_check_constraint)|
+| [Feature\_custom\_aggregate\_functions](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_custom_aggregate_functions) |
+| [Feature\_delay\_key\_write](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_delay_key_write) |
+| [Feature\_dynamic\_columns](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_dynamic_columns)|
+| [Feature\_fulltext](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_fulltext) |
+| [Feature\_gis](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_gis) |
+| [Feature\_insert\_returning](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_insert_returning)|
+| [Feature\_invisible\_columns](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_invisible_columns)|
+| [Feature\_json](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_json) |
+| [Feature\_locale](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_locale) |
+| [Feature\_subquery](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_subquery) |
+| [Feature\_timezone](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_timezone) |
+| [Feature\_trigger](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_trigger) |
+| [Feature\_window\_functions](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_window_functions)|
+| [Feature\_xml](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#feature_xml) |
 | --[feedback](../../reference/plugins/other-plugins/feedback-plugin.md#feedback)|
 | [feedback\_http\_proxy](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_http_proxy)|
 | [feedback\_send\_retry\_wait](../../reference/plugins/other-plugins/feedback-plugin.md#feedback_send_retry_wait) |
@@ -458,61 +458,61 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [file\_key\_management\_filekey](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filekey)|
 | [file\_key\_management\_filename](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filename)|
 | --[flashback](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [flush](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#flush)|
-| [Flush\_commands](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#flush_commands) |
-| [flush\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#flush_time) |
-| [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks)|
-| [ft\_boolean\_syntax](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_boolean_syntax)|
-| [ft\_max\_word\_len](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_max_word_len) |
-| [ft\_min\_word\_len](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_min_word_len) |
-| [ft\_query\_expansion\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_query_expansion_limit) |
-| [ft\_stopword\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_stopword_file)|
+| [flush](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#flush)|
+| [Flush\_commands](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#flush_commands) |
+| [flush\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#flush_time) |
+| [foreign\_key\_checks](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks)|
+| [ft\_boolean\_syntax](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_boolean_syntax)|
+| [ft\_max\_word\_len](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_max_word_len) |
+| [ft\_min\_word\_len](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_min_word_len) |
+| [ft\_query\_expansion\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_query_expansion_limit) |
+| [ft\_stopword\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ft_stopword_file)|
 | --[gdb](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [general\_log](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log) |
-| [general\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file)|
+| [general\_log](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log) |
+| [general\_log\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file)|
 | --[getopt-prefix-matching](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [group\_concat\_max\_len](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) |
+| [group\_concat\_max\_len](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) |
 | [gssapi\_keytab\_path](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_keytab_path)|
 | [gssapi\_principal\_name](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_principal_name)|
 | [gssapi\_mech\_name](../../reference/plugins/authentication-plugins/authentication-plugin-gssapi.md#gssapi_mech_name)|
-| [gtid\_binlog\_pos](../../ha-and-performance/standard-replication/gtid.md) |
-| [gtid\_binlog\_state](../../ha-and-performance/standard-replication/gtid.md) |
-| --[gtid-cleanup-batch-size](../../ha-and-performance/standard-replication/gtid.md), [gtid\_cleanup\_batch\_size](../../ha-and-performance/standard-replication/gtid.md#gtid_cleanup_batch_size)|
-| [gtid\_current\_pos](../../ha-and-performance/standard-replication/gtid.md)|
-| [gtid\_domain\_id](../../ha-and-performance/standard-replication/gtid.md)|
-| [gtid\_ignore\_duplicates](../../ha-and-performance/standard-replication/gtid.md)|
-| [gtid\_pos\_auto\_engines](../../ha-and-performance/standard-replication/gtid.md#gtid_pos_auto_engines)|
-| [gtid\_seq\_no](../../ha-and-performance/standard-replication/gtid.md) |
-| [gtid\_slave\_pos](../../ha-and-performance/standard-replication/gtid.md)|
-| [gtid\_strict\_mode](../../ha-and-performance/standard-replication/gtid.md)|
-| -h, [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)|
-| [Handler\_commit](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_commit) |
-| [Handler\_delete](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_delete) |
-| [Handler\_discover](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_discover) |
-| [Handler\_external\_lock](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_external_lock)|
-| [Handler\_icp\_attempts](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_icp_attempts)|
-| [Handler\_icp\_match](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_icp_match)|
-| [Handler\_mrr\_init](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_mrr_init)|
-| [Handler\_mrr\_key\_refills](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_mrr_key_refills) |
-| [Handler\_mrr\_rowid\_refills](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_mrr_rowid_refills) |
-| [Handler\_prepare](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_prepare) |
-| [Handler\_read\_first](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_first)|
-| [Handler\_read\_key](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_key)|
-| [Handler\_read\_last](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_last)|
-| [Handler\_read\_next](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_next)|
-| [Handler\_read\_prev](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_prev)|
-| [Handler\_read\_retry](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_retry)|
-| [Handler\_read\_rnd](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_rnd)|
-| [Handler\_read\_rnd\_deleted](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_rnd_deleted) |
-| [Handler\_read\_rnd\_next](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_rnd_next) |
-| [Handler\_rollback](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_rollback) |
-| [Handler\_savepoint](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_savepoint) |
-| [Handler\_savepoint\_rollback](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_savepoint_rollback)|
-| [Handler\_tmp\_delete](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_delete)|
-| [Handler\_tmp\_update](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_update)|
-| [Handler\_tmp\_write](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_write)|
-| [Handler\_update](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_update) |
-| [Handler\_write](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_write) |
+| [gtid\_binlog\_pos](../ha-and-performance/standard-replication/gtid.md) |
+| [gtid\_binlog\_state](../ha-and-performance/standard-replication/gtid.md) |
+| --[gtid-cleanup-batch-size](../ha-and-performance/standard-replication/gtid.md), [gtid\_cleanup\_batch\_size](../ha-and-performance/standard-replication/gtid.md#gtid_cleanup_batch_size)|
+| [gtid\_current\_pos](../ha-and-performance/standard-replication/gtid.md)|
+| [gtid\_domain\_id](../ha-and-performance/standard-replication/gtid.md)|
+| [gtid\_ignore\_duplicates](../ha-and-performance/standard-replication/gtid.md)|
+| [gtid\_pos\_auto\_engines](../ha-and-performance/standard-replication/gtid.md#gtid_pos_auto_engines)|
+| [gtid\_seq\_no](../ha-and-performance/standard-replication/gtid.md) |
+| [gtid\_slave\_pos](../ha-and-performance/standard-replication/gtid.md)|
+| [gtid\_strict\_mode](../ha-and-performance/standard-replication/gtid.md)|
+| -h, [datadir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)|
+| [Handler\_commit](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_commit) |
+| [Handler\_delete](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_delete) |
+| [Handler\_discover](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_discover) |
+| [Handler\_external\_lock](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_external_lock)|
+| [Handler\_icp\_attempts](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_icp_attempts)|
+| [Handler\_icp\_match](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_icp_match)|
+| [Handler\_mrr\_init](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_mrr_init)|
+| [Handler\_mrr\_key\_refills](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_mrr_key_refills) |
+| [Handler\_mrr\_rowid\_refills](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_mrr_rowid_refills) |
+| [Handler\_prepare](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_prepare) |
+| [Handler\_read\_first](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_first)|
+| [Handler\_read\_key](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_key)|
+| [Handler\_read\_last](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_last)|
+| [Handler\_read\_next](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_next)|
+| [Handler\_read\_prev](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_prev)|
+| [Handler\_read\_retry](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_retry)|
+| [Handler\_read\_rnd](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_rnd)|
+| [Handler\_read\_rnd\_deleted](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_rnd_deleted) |
+| [Handler\_read\_rnd\_next](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_rnd_next) |
+| [Handler\_rollback](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_rollback) |
+| [Handler\_savepoint](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_savepoint) |
+| [Handler\_savepoint\_rollback](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_savepoint_rollback)|
+| [Handler\_tmp\_delete](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_delete)|
+| [Handler\_tmp\_update](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_update)|
+| [Handler\_tmp\_write](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_tmp_write)|
+| [Handler\_update](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_update) |
+| [Handler\_write](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_write) |
 | [handlersocket\_accept\_balance](../../reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_accept_balance)|
 | [handlersocket\_address](../../reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_address) |
 | [handlersocket\_backlog](../../reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_backlog) |
@@ -539,49 +539,49 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [hashicorp-key-management-use-cache-on-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-use-cache-on-timeout) |
 | [hashicorp-key-management-vault-ca](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-vault-ca) |
 | [hashicorp-key-management-vault-url](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-vault-url) |
-| [have\_compress](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_compress) |
-| [have\_crypt](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_crypt) |
-| [have\_csv](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_csv) |
-| [have\_dynamic\_loading](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_dynamic_loading)|
-| [have\_geometry](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_geometry) |
+| [have\_compress](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_compress) |
+| [have\_crypt](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_crypt) |
+| [have\_csv](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_csv) |
+| [have\_dynamic\_loading](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_dynamic_loading)|
+| [have\_geometry](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_geometry) |
 | [have\_innodb](../../reference/storage-engines/innodb/innodb-system-variables.md#have_innodb)|
-| [have\_ndbcluster](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_ndbcluster) |
+| [have\_ndbcluster](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_ndbcluster) |
 | [have\_openssl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
-| [have\_partitioning](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_partitioning) |
-| [have\_profiling](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_profiling) |
-| [have\_query\_cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_query_cache)|
-| [have\_rtree\_keys](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_rtree_keys)|
+| [have\_partitioning](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_partitioning) |
+| [have\_profiling](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_profiling) |
+| [have\_query\_cache](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_query_cache)|
+| [have\_rtree\_keys](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_rtree_keys)|
 | [have\_ssl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
-| [have\_symlink](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_symlink) |
+| [have\_symlink](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_symlink) |
 | --[help](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [histogram\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_size) |
-| [histogram\_type](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_type) |
-| [host\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size)|
-| [hostname](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#hostname)|
-| [identity](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#identity)|
-| [idle\_readonly\_transaction\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_readonly_transaction_timeout) |
-| [idle\_transaction\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout)|
-| [idle\_write\_transaction\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) |
-| [ignore\_db\_dirs](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ignore_db_dirs)|
+| [histogram\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_size) |
+| [histogram\_type](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_type) |
+| [host\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size)|
+| [hostname](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#hostname)|
+| [identity](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#identity)|
+| [idle\_readonly\_transaction\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_readonly_transaction_timeout) |
+| [idle\_transaction\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout)|
+| [idle\_write\_transaction\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_write_transaction_timeout) |
+| [ignore\_db\_dirs](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#ignore_db_dirs)|
 | [ignore\_builtin\_innodb](../../reference/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb) |
-| [in\_predicate\_conversion\_threshold](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_predicate_conversion_threshold) |
-| [in\_transaction](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) |
-| [init\_connect](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_connect) |
-| [init\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_file) |
+| [in\_predicate\_conversion\_threshold](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_predicate_conversion_threshold) |
+| [in\_transaction](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#in_transaction) |
+| [init\_connect](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_connect) |
+| [init\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_file) |
 | --[init-rpl-role](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [init\_slave](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [init\_slave](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | --[innodb](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [innodb\_adaptive\_checkpoint](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint) |
 | [innodb\_adaptive\_flushing](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing) |
 | [innodb\_adaptive\_flushing\_lwm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)|
 | [innodb\_adaptive\_flushing\_method](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)|
-| [Innodb\_adaptive\_hash\_cells](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_cells) |
-| [Innodb\_adaptive\_hash\_hash\_searches](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_hash_searches)|
-| [Innodb\_adaptive\_hash\_heap\_buffers](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_heap_buffers)|
+| [Innodb\_adaptive\_hash\_cells](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_cells) |
+| [Innodb\_adaptive\_hash\_hash\_searches](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_hash_searches)|
+| [Innodb\_adaptive\_hash\_heap\_buffers](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_heap_buffers)|
 | [innodb\_adaptive\_hash\_index](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)|
 | [innodb\_adaptive\_hash\_index\_partitions](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions) |
 | [innodb\_adaptive\_hash\_index\_parts](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts) |
-| [Innodb\_adaptive\_hash\_non\_hash\_searches](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_non_hash_searches) |
+| [Innodb\_adaptive\_hash\_non\_hash\_searches](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_adaptive_hash_non_hash_searches) |
 | [innodb\_adaptive\_max\_sleep\_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay) |
 | [innodb\_additional\_mem\_pool\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size) |
 | [innodb\_alter\_copy\_bulk](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)|
@@ -590,78 +590,78 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [innodb\_api\_enable\_binlog](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)|
 | [innodb\_api\_enable\_mdl](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl)|
 | [innodb\_api\_trx\_level](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)|
-| [Innodb\_async\_reads\_pending](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_pending) |
-| [Innodb\_async\_reads\_queue\_size](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_queue_size)|
-| [Innodb\_async\_reads\_tasks\_running](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_tasks_running)|
-| [Innodb\_async\_reads\_total\_enqueues](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_enqueues)|
-| [Innodb\_async\_reads\_total\_count](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_count)|
-| [Innodb\_async\_reads\_wait\_slot\_sec](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_wait_slot_sec) |
-| [Innodb\_async\_writes\_pending](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_pending) |
-| [Innodb\_async\_writes\_queue\_size](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_queue_size)|
-| [Innodb\_async\_writes\_tasks\_running](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_tasks_running)|
-| [Innodb\_async\_writes\_total\_enqueues](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_enqueues)|
-| [Innodb\_async\_writes\_total\_count](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_count)|
-| [Innodb\_async\_writes\_wait\_slot\_sec](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_wait_slot_sec) |
+| [Innodb\_async\_reads\_pending](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_pending) |
+| [Innodb\_async\_reads\_queue\_size](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_queue_size)|
+| [Innodb\_async\_reads\_tasks\_running](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_tasks_running)|
+| [Innodb\_async\_reads\_total\_enqueues](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_enqueues)|
+| [Innodb\_async\_reads\_total\_count](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_count)|
+| [Innodb\_async\_reads\_wait\_slot\_sec](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_wait_slot_sec) |
+| [Innodb\_async\_writes\_pending](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_pending) |
+| [Innodb\_async\_writes\_queue\_size](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_queue_size)|
+| [Innodb\_async\_writes\_tasks\_running](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_tasks_running)|
+| [Innodb\_async\_writes\_total\_enqueues](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_enqueues)|
+| [Innodb\_async\_writes\_total\_count](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_count)|
+| [Innodb\_async\_writes\_wait\_slot\_sec](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_wait_slot_sec) |
 | [innodb-auto-lru-dump](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump) |
 | [innodb\_autoextend\_increment](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment) |
 | [innodb\_autoinc\_lock\_mode](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoinc_lock_mode)|
-| [Innodb\_available\_undo\_logs](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_available_undo_logs) |
-| [Innodb\_background\_log\_sync](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_background_log_sync) |
+| [Innodb\_available\_undo\_logs](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_available_undo_logs) |
+| [Innodb\_background\_log\_sync](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_background_log_sync) |
 | [innodb\_background\_scrub\_data\_check\_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_check_interval)|
 | [innodb\_background\_scrub\_data\_compressed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_compressed) |
 | [innodb\_background\_scrub\_data\_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_interval) |
 | [innodb\_background\_scrub\_data\_uncompressed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_background_scrub_data_uncompressed) |
 | [innodb\_blocking\_buffer\_pool\_restore](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) |
 | [innodb\_buf\_dump\_status\_frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buf_dump_status_frequency) |
-| [Innodb\_buffer\_pool\_bytes\_data](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_bytes_data)|
-| [Innodb\_buffer\_pool\_bytes\_dirty](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_bytes_dirty)|
+| [Innodb\_buffer\_pool\_bytes\_data](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_bytes_data)|
+| [Innodb\_buffer\_pool\_bytes\_dirty](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_bytes_dirty)|
 | [innodb\_buffer\_pool\_chunk\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) |
 | [innodb\_buffer\_pool\_dump\_at\_shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_at_shutdown)|
 | [innodb\_buffer\_pool\_dump\_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_now) |
 | [innodb\_buffer\_pool\_dump\_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_dump_pct) |
-| [Innodb\_buffer\_pool\_dump\_status](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_dump_status)|
+| [Innodb\_buffer\_pool\_dump\_status](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_dump_status)|
 | [innodb\_buffer\_pool\_evict](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_evict)|
 | [innodb\_buffer\_pool\_filename](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_filename)|
 | [innodb\_buffer\_pool\_instances](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances)|
 | [innodb\_buffer\_pool\_load\_abort](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_abort) |
 | [innodb\_buffer\_pool\_load\_at\_startup](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_at_startup)|
 | [innodb\_buffer\_pool\_load\_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_now) |
-| [Innodb\_buffer\_pool\_load\_incomplete](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_pagesincomplete) |
+| [Innodb\_buffer\_pool\_load\_incomplete](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_pagesincomplete) |
 | [innodb\_buffer\_pool\_load\_pages\_abort](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_load_pages_abort)|
-| [Innodb\_buffer\_pool\_load\_status](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_status)|
-| [Innodb\_buffer\_pool\_pages\_data](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_data)|
-| [Innodb\_buffer\_pool\_pages\_dirty](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_dirty)|
-| [Innodb\_buffer\_pool\_pages\_flushed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_flushed)|
-| [Innodb\_buffer\_pool\_pages\_LRU\_flushed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_flushed) |
-| [Innodb\_buffer\_pool\_pages\_LRU\_freed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed) |
-| [Innodb\_buffer\_pool\_pages\_free](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_free)|
-| [Innodb\_buffer\_pool\_pages\_made\_not\_young](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_made_not_young)|
-| [Innodb\_buffer\_pool\_pages\_made\_young](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_made_young) |
-| [Innodb\_buffer\_pool\_pages\_misc](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_misc)|
-| [Innodb\_buffer\_pool\_pages\_old](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_old)|
-| [Innodb\_buffer\_pool\_pages\_total](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_total)|
+| [Innodb\_buffer\_pool\_load\_status](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_load_status)|
+| [Innodb\_buffer\_pool\_pages\_data](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_data)|
+| [Innodb\_buffer\_pool\_pages\_dirty](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_dirty)|
+| [Innodb\_buffer\_pool\_pages\_flushed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_flushed)|
+| [Innodb\_buffer\_pool\_pages\_LRU\_flushed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_flushed) |
+| [Innodb\_buffer\_pool\_pages\_LRU\_freed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed) |
+| [Innodb\_buffer\_pool\_pages\_free](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_free)|
+| [Innodb\_buffer\_pool\_pages\_made\_not\_young](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_made_not_young)|
+| [Innodb\_buffer\_pool\_pages\_made\_young](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_made_young) |
+| [Innodb\_buffer\_pool\_pages\_misc](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_misc)|
+| [Innodb\_buffer\_pool\_pages\_old](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_old)|
+| [Innodb\_buffer\_pool\_pages\_total](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_total)|
 | [innodb\_buffer\_pool\_populate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_populate)|
-| [Innodb\_buffer\_pool\_read\_ahead](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead)|
-| [Innodb\_buffer\_pool\_read\_ahead\_evicted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead_evicted) |
-| [Innodb\_buffer\_pool\_read\_ahead\_rnd](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead_rnd) |
-| [Innodb\_buffer\_pool\_read\_requests](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_requests)|
-| [Innodb\_buffer\_pool\_reads](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_reads) |
-| [Innodb\_buffer\_pool\_resize\_status](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status)|
+| [Innodb\_buffer\_pool\_read\_ahead](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead)|
+| [Innodb\_buffer\_pool\_read\_ahead\_evicted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead_evicted) |
+| [Innodb\_buffer\_pool\_read\_ahead\_rnd](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_ahead_rnd) |
+| [Innodb\_buffer\_pool\_read\_requests](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_read_requests)|
+| [Innodb\_buffer\_pool\_reads](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_reads) |
+| [Innodb\_buffer\_pool\_resize\_status](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status)|
 | [innodb\_buffer\_pool\_restore\_at\_startup](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_restore_at_startup)|
 | [innodb\_buffer\_pool\_shm\_checksum](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_checksum) |
 | [innodb\_buffer\_pool\_shm\_key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_shm_key) |
 | [innodb\_buffer\_pool\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size)|
-| [Innodb\_buffer\_pool\_wait\_free](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_wait_free)|
-| [Innodb\_buffer\_pool\_write\_requests](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_write_requests)|
-| [Innodb\_buffered\_aio\_submitted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffered_aio_submitted) |
+| [Innodb\_buffer\_pool\_wait\_free](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_wait_free)|
+| [Innodb\_buffer\_pool\_write\_requests](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_write_requests)|
+| [Innodb\_buffered\_aio\_submitted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffered_aio_submitted) |
 | [innodb\_change\_buffer\_dump](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_dump)|
 | [innodb\_change\_buffer\_max\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size) |
 | [innodb\_change\_buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering) |
 | [innodb\_change\_buffering\_debug](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering_debug)|
-| [Innodb\_checkpoint\_age](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age)|
+| [Innodb\_checkpoint\_age](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age)|
 | --[innodb-checkpoint-age-target](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target), [innodb\_checkpoint\_age\_target](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checkpoint_age_target)|
-| [Innodb\_checkpoint\_max\_age](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_max_age) |
-| [Innodb\_checkpoint\_target\_age](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_target_age) |
+| [Innodb\_checkpoint\_max\_age](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_max_age) |
+| [Innodb\_checkpoint\_target\_age](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_target_age) |
 | --[innodb-checksum-algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm), [innodb\_checksum\_algorithm](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksum_algorithm) |
 | --[innodb-checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums), [innodb\_checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)|
 | --[innodb-cleaner-lsn-age-factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor), [innodb\_cleaner\_lsn\_age\_factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_cleaner_lsn_age_factor) |
@@ -678,38 +678,38 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[innodb-compression-pad-pct-max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max), [innodb\_compression\_pad\_pct\_max](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_compression_pad_pct_max) |
 | --[innodb-concurrency-tickets](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets), [innodb\_concurrency\_tickets](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_concurrency_tickets) |
 | --[innodb-corrupt-table-action](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action), [innodb\_corrupt\_table\_action](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action)|
-| [Innodb\_current\_row\_locks](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_current_row_locks) |
+| [Innodb\_current\_row\_locks](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_current_row_locks) |
 | --[innodb-data-file-buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering), [innodb\_data\_file\_buffering](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_buffering)|
 | --[innodb-data-file-path](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path), [innodb\_data\_file\_path](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_path)|
 | --[innodb-data-file-write\_through](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through), [innodb\_data\_file\_write\_through](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_file_write_through)|
-| [Innodb\_data\_fsyncs](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_fsyncs)|
+| [Innodb\_data\_fsyncs](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_fsyncs)|
 | --[innodb-data-home-dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir), [innodb\_data\_home\_dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_data_home_dir)|
-| [Innodb\_data\_pending\_fsyncs](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_fsyncs) |
-| [Innodb\_data\_pending\_reads](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_reads) |
-| [Innodb\_data\_pending\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_writes) |
-| [Innodb\_data\_read](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_read)|
-| [Innodb\_data\_reads](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_reads)|
-| [Innodb\_data\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_writes)|
-| [Innodb\_data\_written](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_written)|
-| [Innodb\_dblwr\_pages\_written](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dblwr_pages_written) |
-| [Innodb\_dblwr\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dblwr_writes)|
+| [Innodb\_data\_pending\_fsyncs](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_fsyncs) |
+| [Innodb\_data\_pending\_reads](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_reads) |
+| [Innodb\_data\_pending\_writes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_pending_writes) |
+| [Innodb\_data\_read](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_read)|
+| [Innodb\_data\_reads](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_reads)|
+| [Innodb\_data\_writes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_writes)|
+| [Innodb\_data\_written](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_data_written)|
+| [Innodb\_dblwr\_pages\_written](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dblwr_pages_written) |
+| [Innodb\_dblwr\_writes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dblwr_writes)|
 | --[innodb-deadlock-detect](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect), [innodb\_deadlock\_detect](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_detect) |
 | --[innodb-deadlock-report](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report), [innodb\_deadlock\_report](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_deadlock_report) |
-| [Innodb\_deadlocks](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_deadlocks) |
+| [Innodb\_deadlocks](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_deadlocks) |
 | --[innodb-default-encryption-key-id](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id), [innodb\_default\_encryption\_key\_id](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id) |
 | --[innodb-default-page-encryption-key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key), [innodb\_default\_page\_encryption\_key](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_page_encryption_key) |
 | --[innodb-default-row-format](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format), [innodb\_default\_row\_format](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_row_format)|
 | --[innodb-defragment](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment), [innodb\_defragment](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment)|
-| [Innodb\_defragment\_compression\_failures](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_compression_failures) |
-| [Innodb\_defragment\_count](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_count)|
-| [Innodb\_defragment\_failures](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_failures)|
+| [Innodb\_defragment\_compression\_failures](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_compression_failures) |
+| [Innodb\_defragment\_count](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_count)|
+| [Innodb\_defragment\_failures](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_defragment_failures)|
 | --[innodb-defragment-fill-factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor), [innodb\_defragment\_fill\_factor](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor)|
 | --[innodb-defragment-fill-factor-n-recs](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs), [innodb\_defragment\_fill\_factor\_n\_recs](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_fill_factor_n_recs)|
 | --[innodb-defragment-frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency), [innodb\_defragment\_frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_frequency) |
 | --[innodb-defragment-n-pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages), [innodb\_defragment\_n\_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)|
 | --[innodb-defragment-stats-accuracy](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy), [innodb\_defragment\_stats\_accuracy](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy)|
 | --[innodb-dict-size-limit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit), [innodb\_dict\_size\_limit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_dict_size_limit)|
-| [Innodb\_dict\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dict_tables)|
+| [Innodb\_dict\_tables](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_dict_tables)|
 | --[innodb-disable-sort-file-cache](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache), [innodb\_disable\_sort\_file\_cache](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disable_sort_file_cache) |
 | [innodb\_disallow\_writes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_disallow_writes) |
 | --[innodb-doublewrite](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite), [innodb\_doublewrite](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)|
@@ -719,20 +719,20 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[innodb-encrypt-log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log), [innodb\_encrypt\_log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) |
 | --[innodb-encrypt-tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables), [innodb\_encrypt\_tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) |
 | --[innodb-encrypt-temporary-tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables), [innodb\_encrypt\_temporary\_tables](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_temporary_tables)|
-| [Innodb\_encryption\_n\_merge\_blocks\_decrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_merge_blocks_decrypted) |
-| [Innodb\_encryption\_n\_merge\_blocks\_encrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_merge_blocks_encrypted) |
-| [Innodb\_encryption\_n\_rowlog\_blocks\_decrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_rowlog_blocks_decrypted) |
-| [Innodb\_encryption\_n\_rowlog\_blocks\_encrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_rowlog_blocks_encrypted) |
-| [Innodb\_encryption\_n\_temp\_blocks\_decrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_temp_blocks_decrypted) |
-| [Innodb\_encryption\_n\_temp\_blocks\_encrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_temp_blocks_encrypted) |
-| [Innodb\_encryption\_num\_key\_requests](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_num_key_requests)|
+| [Innodb\_encryption\_n\_merge\_blocks\_decrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_merge_blocks_decrypted) |
+| [Innodb\_encryption\_n\_merge\_blocks\_encrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_merge_blocks_encrypted) |
+| [Innodb\_encryption\_n\_rowlog\_blocks\_decrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_rowlog_blocks_decrypted) |
+| [Innodb\_encryption\_n\_rowlog\_blocks\_encrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_rowlog_blocks_encrypted) |
+| [Innodb\_encryption\_n\_temp\_blocks\_decrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_temp_blocks_decrypted) |
+| [Innodb\_encryption\_n\_temp\_blocks\_encrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_n_temp_blocks_encrypted) |
+| [Innodb\_encryption\_num\_key\_requests](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_num_key_requests)|
 | --[innodb-encryption-rotate-key-age](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age), [innodb\_encryption\_rotate\_key\_age](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotate_key_age) |
-| [Innodb\_encryption\_rotation\_estimated\_iops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_estimated_iops)|
+| [Innodb\_encryption\_rotation\_estimated\_iops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_estimated_iops)|
 | --[innodb-encryption-rotation-iops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops), [innodb\_encryption\_rotation\_iops](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_rotation_iops)|
-| [Innodb\_encryption\_rotation\_pages\_flushed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_flushed)|
-| [Innodb\_encryption\_rotation\_pages\_modified](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_modified)|
-| [Innodb\_encryption\_rotation\_pages\_read\_from\_cache](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_read_from_cache)|
-| [Innodb\_encryption\_rotation\_pages\_read\_from\_disk](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_read_from_disk)|
+| [Innodb\_encryption\_rotation\_pages\_flushed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_flushed)|
+| [Innodb\_encryption\_rotation\_pages\_modified](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_modified)|
+| [Innodb\_encryption\_rotation\_pages\_read\_from\_cache](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_read_from_cache)|
+| [Innodb\_encryption\_rotation\_pages\_read\_from\_disk](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_encryption_rotation_pages_read_from_disk)|
 | --[innodb-encryption-threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads), [innodb\_encryption\_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_encryption_threads) |
 | --[innodb-extra-rsegments](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments), [innodb\_extra\_rsegments](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments) |
 | --[innodb-extra-undoslots](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots), [innodb\_extra\_undoslots](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots) |
@@ -769,32 +769,32 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[innodb-ft-sort-pll-degree](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree), [innodb\_ft\_sort\_pll\_degree](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_sort_pll_degree) |
 | --[innodb-ft-total-cache-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size), [innodb\_ft\_total\_cache\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_total_cache_size) |
 | [innodb\_ft\_user\_stopword\_table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_user_stopword_table) |
-| [Innodb\_have\_atomic\_builtins](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_atomic_builtins) |
-| [Innodb\_have\_bzip2](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_bzip2)|
-| [Innodb\_have\_lz4](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lz4)|
-| [Innodb\_have\_lzma](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzma)|
-| [Innodb\_have\_lzo](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzo)|
-| [Innodb\_have\_punch\_hole](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_punch_hole) |
-| [Innodb\_have\_snappy](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_snappy)|
-| [Innodb\_history\_list\_length](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_history_list_length) |
+| [Innodb\_have\_atomic\_builtins](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_atomic_builtins) |
+| [Innodb\_have\_bzip2](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_bzip2)|
+| [Innodb\_have\_lz4](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lz4)|
+| [Innodb\_have\_lzma](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzma)|
+| [Innodb\_have\_lzo](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzo)|
+| [Innodb\_have\_punch\_hole](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_punch_hole) |
+| [Innodb\_have\_snappy](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_snappy)|
+| [Innodb\_history\_list\_length](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_history_list_length) |
 | --[innodb-ibuf-accel-rate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate), [innodb\_ibuf\_accel\_rate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_accel_rate)|
 | --[innodb-ibuf-active-contract](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract), [innodb\_ibuf\_active\_contract](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_active_contract)|
-| [Innodb\_ibuf\_discarded\_delete\_marks](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_delete_marks)|
-| [Innodb\_ibuf\_discarded\_deletes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_deletes) |
-| [Innodb\_ibuf\_discarded\_inserts](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_inserts) |
-| [Innodb\_ibuf\_free\_list](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_free_list) |
+| [Innodb\_ibuf\_discarded\_delete\_marks](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_delete_marks)|
+| [Innodb\_ibuf\_discarded\_deletes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_deletes) |
+| [Innodb\_ibuf\_discarded\_inserts](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_discarded_inserts) |
+| [Innodb\_ibuf\_free\_list](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_free_list) |
 | --[innodb-ibuf-max-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size), [innodb\_ibuf\_max\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ibuf_max_size)|
-| [Innodb\_ibuf\_merged\_delete\_marks](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_delete_marks)|
-| [Innodb\_ibuf\_merged\_deletes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_deletes) |
-| [Innodb\_ibuf\_merged\_inserts](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_inserts) |
-| [Innodb\_ibuf\_merges](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merges)|
-| [Innodb\_ibuf\_segment\_size](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_segment_size) |
-| [Innodb\_ibuf\_size](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_size)|
+| [Innodb\_ibuf\_merged\_delete\_marks](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_delete_marks)|
+| [Innodb\_ibuf\_merged\_deletes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_deletes) |
+| [Innodb\_ibuf\_merged\_inserts](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merged_inserts) |
+| [Innodb\_ibuf\_merges](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_merges)|
+| [Innodb\_ibuf\_segment\_size](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_segment_size) |
+| [Innodb\_ibuf\_size](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_ibuf_size)|
 | [innodb\_idle\_flush\_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_idle_flush_pct)|
 | [innodb\_immediate\_scrub\_data\_uncompressed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_immediate_scrub_data_uncompressed) |
 | [innodb\_import\_table\_from\_xtrabackup](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) |
 | --[innodb-index-stats](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [Innodb\_instant\_alter\_column](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_instant_alter_column) |
+| [Innodb\_instant\_alter\_column](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_instant_alter_column) |
 | [innodb\_instant\_alter\_column\_allowed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed) |
 | [innodb\_instrument\_semaphores](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_instrument_semaphores) |
 | [innodb\_io\_capacity](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_io_capacity) |
@@ -824,22 +824,22 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [innodb\_log\_group\_home\_dir](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_group_home_dir) |
 | [innodb\_log\_optimize\_ddl](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)|
 | [innodb\_log\_spin\_wait\_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_spin_wait_delay) |
-| [Innodb\_log\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_waits)|
+| [Innodb\_log\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_waits)|
 | [innodb\_log\_write\_ahead\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) |
-| [Innodb\_log\_write\_requests](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_write_requests) |
-| [Innodb\_log\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_writes)|
+| [Innodb\_log\_write\_requests](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_write_requests) |
+| [Innodb\_log\_writes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_log_writes)|
 | [innodb\_lru\_flush\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_flush_size)|
 | [innodb\_lru\_scan\_depth](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_lru_scan_depth)|
-| [Innodb\_lsn\_current](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_current)|
-| [Innodb\_lsn\_flushed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_flushed)|
-| [Innodb\_lsn\_last\_checkpoint](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_last_checkpoint) |
-| [Innodb\_master\_thread\_1\_second\_loops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_1_second_loops) |
-| [Innodb\_master\_thread\_10\_second\_loops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_10_second_loops) |
-| [Innodb\_master\_thread\_active\_loops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_active_loops)|
-| [Innodb\_master\_thread\_background\_loops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_background_loops)|
-| [Innodb\_master\_thread\_idle\_loops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_idle_loops)|
-| [Innodb\_master\_thread\_main\_flush\_loops](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_main_flush_loops) |
-| [Innodb\_master\_thread\_sleeps](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_sleeps) |
+| [Innodb\_lsn\_current](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_current)|
+| [Innodb\_lsn\_flushed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_flushed)|
+| [Innodb\_lsn\_last\_checkpoint](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_lsn_last_checkpoint) |
+| [Innodb\_master\_thread\_1\_second\_loops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_1_second_loops) |
+| [Innodb\_master\_thread\_10\_second\_loops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_10_second_loops) |
+| [Innodb\_master\_thread\_active\_loops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_active_loops)|
+| [Innodb\_master\_thread\_background\_loops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_background_loops)|
+| [Innodb\_master\_thread\_idle\_loops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_idle_loops)|
+| [Innodb\_master\_thread\_main\_flush\_loops](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_main_flush_loops) |
+| [Innodb\_master\_thread\_sleeps](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_master_thread_sleeps) |
 | --[innodb-max-bitmap-file-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size), [innodb\_max\_bitmap\_file\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_bitmap_file_size) |
 | --[innodb-max-changed-pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages), [innodb\_max\_changed\_pages](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_changed_pages)|
 | --[innodb-max-dirty-pages-pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct), [innodb\_max\_dirty\_pages\_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_dirty_pages_pct) |
@@ -847,11 +847,11 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[innodb-max-purge-lag](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag), [innodb\_max\_purge\_lag](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag)|
 | --[innodb-max-purge-lag-delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay), [innodb\_max\_purge\_lag\_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_delay) |
 | --[innodb-max-purge-lag-wait](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait), [innodb\_max\_purge\_lag\_wait](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_purge_lag_wait) |
-| [Innodb\_max\_trx\_id](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_max_trx_id) |
+| [Innodb\_max\_trx\_id](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_max_trx_id) |
 | --[innodb-max-undo-log-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size), [innodb\_max\_undo\_log\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_max_undo_log_size) |
-| [Innodb\_mem\_adaptive\_hash](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_adaptive_hash) |
-| [Innodb\_mem\_dictionary](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_dictionary)|
-| [Innodb\_mem\_total](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_total)|
+| [Innodb\_mem\_adaptive\_hash](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_adaptive_hash) |
+| [Innodb\_mem\_dictionary](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_dictionary)|
+| [Innodb\_mem\_total](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mem_total)|
 | --[innodb-merge-sort-block-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size), [innodb\_merge\_sort\_block\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_merge_sort_block_size) |
 | --[innodb-mirrored-log-groups](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups), [innodb\_mirrored\_log\_groups](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mirrored_log_groups)|
 | --[innodb-monitor-disable](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable), [innodb\_monitor\_disable](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_disable) |
@@ -859,96 +859,96 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[innodb-monitor-reset](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset), [innodb\_monitor\_reset](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset) |
 | --[innodb-monitor-reset-all](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all), [innodb\_monitor\_reset\_all](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_monitor_reset_all)|
 | --[innodb-mtflush-threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads), [innodb\_mtflush\_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_mtflush_threads) |
-| [Innodb\_mutex\_os\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_os_waits) |
-| [Innodb\_mutex\_spin\_rounds](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_spin_rounds) |
-| [Innodb\_mutex\_spin\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_spin_waits) |
-| [Innodb\_num\_index\_pages\_written](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_index_pages_written)|
-| [Innodb\_num\_non\_index\_pages\_written](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_non_index_pages_written) |
-| [Innodb\_num\_open\_files](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_open_files) |
-| [Innodb\_num\_page\_compressed\_trim\_op](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_page_compressed_trim_op) |
-| [Innodb\_num\_page\_compressed\_trim\_op\_saved](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_page_compressed_trim_op_saved)|
-| [Innodb\_num\_pages\_encrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_encrypted) |
-| [Innodb\_num\_pages\_page\_compressed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compressed)|
-| [Innodb\_num\_pages\_page\_compression\_error](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compression_error) |
-| [Innodb\_num\_pages\_page\_decompressed](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decompressed)|
-| [Innodb\_num\_pages\_page\_decrypted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decrypted)|
-| [Innodb\_num\_pages\_page\_encryption\_error](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_encryption_error) |
+| [Innodb\_mutex\_os\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_os_waits) |
+| [Innodb\_mutex\_spin\_rounds](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_spin_rounds) |
+| [Innodb\_mutex\_spin\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_mutex_spin_waits) |
+| [Innodb\_num\_index\_pages\_written](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_index_pages_written)|
+| [Innodb\_num\_non\_index\_pages\_written](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_non_index_pages_written) |
+| [Innodb\_num\_open\_files](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_open_files) |
+| [Innodb\_num\_page\_compressed\_trim\_op](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_page_compressed_trim_op) |
+| [Innodb\_num\_page\_compressed\_trim\_op\_saved](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_page_compressed_trim_op_saved)|
+| [Innodb\_num\_pages\_encrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_encrypted) |
+| [Innodb\_num\_pages\_page\_compressed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compressed)|
+| [Innodb\_num\_pages\_page\_compression\_error](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compression_error) |
+| [Innodb\_num\_pages\_page\_decompressed](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decompressed)|
+| [Innodb\_num\_pages\_page\_decrypted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decrypted)|
+| [Innodb\_num\_pages\_page\_encryption\_error](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_encryption_error) |
 | --[innodb-numa-interleave](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave), [innodb\_numa\_interleave](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave) |
 | --[innodb-old-blocks-pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct), [innodb\_old\_blocks\_pct](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_pct)|
 | --[innodb-old-blocks-time](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time), [innodb\_old\_blocks\_time](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_old_blocks_time)|
-| [Innodb\_oldest\_view\_low\_limit\_trx\_id](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_oldest_view_low_limit_trx_id)|
+| [Innodb\_oldest\_view\_low\_limit\_trx\_id](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_oldest_view_low_limit_trx_id)|
 | --[innodb-online-alter-log-max-size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size), [innodb\_online\_alter\_log\_max\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_online_alter_log_max_size)|
-| [Innodb\_onlineddl\_pct\_progress](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_pct_progress) |
-| [Innodb\_onlineddl\_rowlog\_pct\_used](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_rowlog_pct_used)|
-| [Innodb\_onlineddl\_rowlog\_rows](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_rowlog_rows) |
+| [Innodb\_onlineddl\_pct\_progress](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_pct_progress) |
+| [Innodb\_onlineddl\_rowlog\_pct\_used](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_rowlog_pct_used)|
+| [Innodb\_onlineddl\_rowlog\_rows](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_onlineddl_rowlog_rows) |
 | --[innodb-open-files](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_open_files), [innodb\_open\_files](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_open_files) |
 | --[innodb-optimize-fulltext-only](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only), [innodb\_optimize\_fulltext\_only](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_optimize_fulltext_only)|
-| [Innodb\_os\_log\_fsyncs](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_fsyncs) |
-| [Innodb\_os\_log\_pending\_fsyncs](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_pending_fsyncs)|
-| [Innodb\_os\_log\_pending\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_pending_writes)|
-| [Innodb\_os\_log\_written](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_written) |
+| [Innodb\_os\_log\_fsyncs](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_fsyncs) |
+| [Innodb\_os\_log\_pending\_fsyncs](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_pending_fsyncs)|
+| [Innodb\_os\_log\_pending\_writes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_pending_writes)|
+| [Innodb\_os\_log\_written](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_os_log_written) |
 | --[innodb-page-cleaners](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners), [innodb\_page\_cleaners](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_cleaners) |
-| [Innodb\_page\_compression\_saved](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_saved) |
-| [Innodb\_page\_compression\_trim\_sect512](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect512)|
-| [Innodb\_page\_compression\_trim\_sect1024](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect1024)|
-| [Innodb\_page\_compression\_trim\_sect2048](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect2048)|
-| [Innodb\_page\_compression\_trim\_sect4096](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect4096)|
-| [Innodb\_page\_compression\_trim\_sect8192](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect8192)|
-| [Innodb\_page\_compression\_trim\_sect16384](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect16384)|
-| [Innodb\_page\_compression\_trim\_sect32768](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect32768)|
+| [Innodb\_page\_compression\_saved](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_saved) |
+| [Innodb\_page\_compression\_trim\_sect512](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect512)|
+| [Innodb\_page\_compression\_trim\_sect1024](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect1024)|
+| [Innodb\_page\_compression\_trim\_sect2048](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect2048)|
+| [Innodb\_page\_compression\_trim\_sect4096](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect4096)|
+| [Innodb\_page\_compression\_trim\_sect8192](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect8192)|
+| [Innodb\_page\_compression\_trim\_sect16384](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect16384)|
+| [Innodb\_page\_compression\_trim\_sect32768](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect32768)|
 | [innodb\_page\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) |
-| [Innodb\_page\_size](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size)|
-| [Innodb\_pages\_created](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_created)|
-| [Innodb\_pages\_read](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_read)|
-| [Innodb\_pages0\_read](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages0_read)|
-| [Innodb\_pages\_written](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_written)|
+| [Innodb\_page\_size](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size)|
+| [Innodb\_pages\_created](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_created)|
+| [Innodb\_pages\_read](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_read)|
+| [Innodb\_pages0\_read](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages0_read)|
+| [Innodb\_pages\_written](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_pages_written)|
 | [innodb-pass-corrupt-table](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table) |
 | [innodb\_prefix\_index\_cluster\_optimization](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_prefix_index_cluster_optimization) |
 | [innodb\_print\_all\_deadlocks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_print_all_deadlocks)|
 | [innodb\_purge\_batch\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_batch_size)|
 | [innodb\_purge\_rseg\_truncate\_frequency](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) |
 | [innodb\_purge\_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_purge_threads) |
-| [Innodb\_purge\_trx\_id](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_purge_trx_id) |
-| [Innodb\_purge\_undo\_no](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_purge_undo_no) |
+| [Innodb\_purge\_trx\_id](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_purge_trx_id) |
+| [Innodb\_purge\_undo\_no](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_purge_undo_no) |
 | [innodb\_random\_read\_ahead](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_random_read_ahead)|
 | [innodb\_read\_ahead](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead) |
 | [innodb\_read\_ahead\_threshold](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_ahead_threshold)|
 | [innodb\_read\_io\_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_io_threads)|
 | [innodb\_read\_only](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_read_only) |
-| [Innodb\_read\_views\_memory](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_read_views_memory) |
+| [Innodb\_read\_views\_memory](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_read_views_memory) |
 | [innodb\_recovery\_stats](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_stats) |
 | [innodb-recovery-update-relay-log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_recovery_update_relay_log) |
 | [innodb\_replication\_delay](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_replication_delay) |
 | [innodb\_rollback\_on\_timeout](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_on_timeout)|
 | [innodb\_rollback\_segments](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) |
-| [Innodb\_row\_lock\_current\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_current_waits)|
-| [Innodb\_row\_lock\_numbers](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_numbers) |
-| [Innodb\_row\_lock\_time](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time) |
-| [Innodb\_row\_lock\_time\_avg](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time_avg)|
-| [Innodb\_row\_lock\_time\_max](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time_max)|
-| [Innodb\_row\_lock\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_waits) |
-| [Innodb\_rows\_deleted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_deleted)|
-| [Innodb\_rows\_inserted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_inserted)|
-| [Innodb\_rows\_read](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_read)|
-| [Innodb\_rows\_updated](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_updated)|
+| [Innodb\_row\_lock\_current\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_current_waits)|
+| [Innodb\_row\_lock\_numbers](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_numbers) |
+| [Innodb\_row\_lock\_time](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time) |
+| [Innodb\_row\_lock\_time\_avg](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time_avg)|
+| [Innodb\_row\_lock\_time\_max](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_time_max)|
+| [Innodb\_row\_lock\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_row_lock_waits) |
+| [Innodb\_rows\_deleted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_deleted)|
+| [Innodb\_rows\_inserted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_inserted)|
+| [Innodb\_rows\_read](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_read)|
+| [Innodb\_rows\_updated](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_rows_updated)|
 | --[innodb-rseg](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [Innodb\_s\_lock\_os\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_os_waits)|
-| [Innodb\_s\_lock\_spin\_rounds](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_spin_rounds)|
-| [Innodb\_s\_lock\_spin\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_spin_waits)|
+| [Innodb\_s\_lock\_os\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_os_waits)|
+| [Innodb\_s\_lock\_spin\_rounds](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_spin_rounds)|
+| [Innodb\_s\_lock\_spin\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_s_lock_spin_waits)|
 | [innodb\_safe\_truncate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) |
 | [innodb\_sched\_priority\_cleaner](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sched_priority_cleaner)|
-| [Innodb\_scrub\_background\_page\_reorganizations](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_reorganizations)|
-| [Innodb\_scrub\_background\_page\_split\_failures\_missing\_index](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_missing_index) |
-| [Innodb\_scrub\_background\_page\_split\_failures\_out\_of\_filespace](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_out_of_filespace)|
-| [Innodb\_scrub\_background\_page\_split\_failures\_underflow](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_underflow)|
-| [Innodb\_scrub\_background\_page\_split\_failures\_unknown](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_unknown)|
-| [Innodb\_scrub\_background\_page\_splits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_splits)|
+| [Innodb\_scrub\_background\_page\_reorganizations](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_reorganizations)|
+| [Innodb\_scrub\_background\_page\_split\_failures\_missing\_index](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_missing_index) |
+| [Innodb\_scrub\_background\_page\_split\_failures\_out\_of\_filespace](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_out_of_filespace)|
+| [Innodb\_scrub\_background\_page\_split\_failures\_underflow](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_underflow)|
+| [Innodb\_scrub\_background\_page\_split\_failures\_unknown](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_split_failures_unknown)|
+| [Innodb\_scrub\_background\_page\_splits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_background_page_splits)|
 | [innodb\_scrub\_log](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log) |
-| [Innodb\_scrub\_log](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_log)|
+| [Innodb\_scrub\_log](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_scrub_log)|
 | [innodb\_scrub\_log\_interval](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_interval)|
 | [innodb\_scrub\_log\_speed](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_scrub_log_speed)|
-| [Innodb\_secondary\_index\_triggered\_cluster\_reads](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_secondary_index_triggered_cluster_reads) |
-| [Innodb\_secondary\_index\_triggered\_cluster\_reads\_avoided](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_secondary_index_triggered_cluster_reads_avoided)|
+| [Innodb\_secondary\_index\_triggered\_cluster\_reads](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_secondary_index_triggered_cluster_reads) |
+| [Innodb\_secondary\_index\_triggered\_cluster\_reads\_avoided](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_secondary_index_triggered_cluster_reads_avoided)|
 | [innodb-show-locks-held](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_locks_held) |
 | [innodb\_show\_verbose\_locks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_show_verbose_locks)|
 | [innodb\_simulate\_comp\_failures](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_simulate_comp_failures)|
@@ -977,10 +977,10 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[innodb-sys-indexes](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[innodb-sys-stats](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[innodb-sys-tables](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [Innodb\_system\_rows\_deleted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_deleted) |
-| [Innodb\_system\_rows\_inserted](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_inserted) |
-| [Innodb\_system\_rows\_read](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_read) |
-| [Innodb\_system\_rows\_updated](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_updated) |
+| [Innodb\_system\_rows\_deleted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_deleted) |
+| [Innodb\_system\_rows\_inserted](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_inserted) |
+| [Innodb\_system\_rows\_read](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_read) |
+| [Innodb\_system\_rows\_updated](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_system_rows_updated) |
 | [innodb\_table\_locks](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_table_locks) |
 | --[innodb-table-stats](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [innodb\_temp\_data\_file\_path](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_temp_data_file_path) |
@@ -992,12 +992,12 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [innodb\_track\_redo\_log\_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_track_redo_log_now) |
 | --[innodb-trx](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [innodb\_truncate\_temporary\_tablespace\_now](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_truncate_temporary_tablespace_now) |
-| [Innodb\_truncated\_status\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_truncated_status_writes) |
+| [Innodb\_truncated\_status\_writes](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_truncated_status_writes) |
 | [innodb\_undo\_directory](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_directory) |
 | [innodb\_undo\_log\_truncate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_log_truncate)|
 | [innodb\_undo\_logs](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_logs) |
 | [innodb\_undo\_tablespaces](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces) |
-| [Innodb\_undo\_truncations](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_undo_truncations)|
+| [Innodb\_undo\_truncations](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_undo_truncations)|
 | [innodb\_use\_atomic\_writes](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_atomic_writes)|
 | [innodb\_use\_fallocate](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_fallocate) |
 | [innodb\_use\_global\_flush\_log\_at\_trx\_commit](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_global_flush_log_at_trx_commit)|
@@ -1010,89 +1010,89 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [innodb\_use\_trim](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_use_trim) |
 | [innodb\_version](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_version)|
 | [innodb\_write\_io\_threads](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_write_io_threads)|
-| [Innodb\_x\_lock\_os\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_os_waits)|
-| [Innodb\_x\_lock\_spin\_rounds](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_spin_rounds)|
-| [Innodb\_x\_lock\_spin\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_spin_waits)|
-| --[insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) |
+| [Innodb\_x\_lock\_os\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_os_waits)|
+| [Innodb\_x\_lock\_spin\_rounds](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_spin_rounds)|
+| [Innodb\_x\_lock\_spin\_waits](../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_x_lock_spin_waits)|
+| --[insert\_id](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) |
 | --[install](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[install-manual](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [interactive\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#interactive_timeout) |
-| [join\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)|
-| [join\_buffer\_space\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_space_limit) |
-| [join\_cache\_level](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level)|
-| [keep\_files\_on\_create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create) |
-| [Key\_blocks\_not\_flushed](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_not_flushed) |
-| [Key\_blocks\_unused](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_unused)|
-| [Key\_blocks\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_used)|
-| [Key\_blocks\_warm](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_warm)|
+| [interactive\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#interactive_timeout) |
+| [join\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)|
+| [join\_buffer\_space\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_space_limit) |
+| [join\_cache\_level](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level)|
+| [keep\_files\_on\_create](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create) |
+| [Key\_blocks\_not\_flushed](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_not_flushed) |
+| [Key\_blocks\_unused](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_unused)|
+| [Key\_blocks\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_used)|
+| [Key\_blocks\_warm](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_blocks_warm)|
 | [key\_buffer\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)|
 | [key\_cache\_age\_threshold](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold) |
 | [key\_cache\_block\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size) |
 | [key\_cache\_division\_limit](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit) |
 | [key\_cache\_file\_hash\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size)|
 | [key\_cache\_segments](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)|
-| [Key\_read\_requests](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_read_requests)|
-| [Key\_reads](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_reads) |
-| [Key\_write\_requests](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_write_requests)|
-| [Key\_writes](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_writes) |
-| -L, [language](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#language)|
-| [large\_files\_support](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_files_support)|
-| [large\_page\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_page_size)|
-| [large\_pages](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) |
-| [last\_gtid](../../ha-and-performance/standard-replication/gtid.md#last_gtid)|
-| [last\_insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#last_insert_id)|
-| [Last\_query\_cost](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#last_query_cost)|
-| [lc\_messages](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) |
-| [lc\_messages\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir)|
-| [lc\_time\_names](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names)|
-| [legacy\_xa\_rollback\_at\_disconnect](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#legacy_xa_rollback_at_disconnect)|
-| [license](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#license)|
-| [local\_infile](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) |
-| [lock\_wait\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout)|
-| [locked\_in\_memory](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#locked_in_memory)|
-| -l, [log](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log)|
+| [Key\_read\_requests](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_read_requests)|
+| [Key\_reads](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_reads) |
+| [Key\_write\_requests](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_write_requests)|
+| [Key\_writes](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#key_writes) |
+| -L, [language](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#language)|
+| [large\_files\_support](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_files_support)|
+| [large\_page\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_page_size)|
+| [large\_pages](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) |
+| [last\_gtid](../ha-and-performance/standard-replication/gtid.md#last_gtid)|
+| [last\_insert\_id](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#last_insert_id)|
+| [Last\_query\_cost](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#last_query_cost)|
+| [lc\_messages](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) |
+| [lc\_messages\_dir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir)|
+| [lc\_time\_names](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names)|
+| [legacy\_xa\_rollback\_at\_disconnect](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#legacy_xa_rollback_at_disconnect)|
+| [license](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#license)|
+| [local\_infile](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) |
+| [lock\_wait\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lock_wait_timeout)|
+| [locked\_in\_memory](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#locked_in_memory)|
+| -l, [log](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log)|
 | --[log-basename](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [log\_bin](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [log\_bin\_basename](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [log\_bin\_compress](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [log\_bin\_compress\_min\_len](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [log\_bin\_index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [log\_bin\_trust\_function\_creators](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [log\_bin](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [log\_bin\_basename](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [log\_bin\_compress](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [log\_bin\_compress\_min\_len](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [log\_bin\_index](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [log\_bin\_trust\_function\_creators](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | --[log-bin-trust-routine-creators](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[log-ddl-recovery](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [log\_disabled\_statements](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_disabled_statements)|
-| [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) |
+| [log\_disabled\_statements](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_disabled_statements)|
+| [log\_error](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) |
 | -0, --[log-long-format](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [log\_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) |
-| [log\_queries\_not\_using\_indexes](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_queries_not_using_indexes)|
+| [log\_output](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) |
+| [log\_queries\_not\_using\_indexes](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_queries_not_using_indexes)|
 | --[log-short-format](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [log\_slave\_updates](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [log\_slow\_admin\_statements](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_admin_statements) |
+| [log\_slave\_updates](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [log\_slow\_admin\_statements](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_admin_statements) |
 | [log\_slow\_always\_query\_time](../server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) |
-| [log\_slow\_disabled\_statements](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_disabled_statements) |
+| [log\_slow\_disabled\_statements](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_disabled_statements) |
 | --[log-slow-file](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [log\_slow\_filter](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_filter)|
-| [log\_slow\_min\_examined\_row\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_min_examined_row_limit) |
-| [log\_slow\_queries](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_queries)|
-| [log\_slow\_query](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query)|
-| [log\_slow\_query\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) |
-| [log\_slow\_query\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_time) |
-| [log\_slow\_rate\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_rate_limit) |
-| [log\_slow\_slave\_statements](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [log\_slow\_filter](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_filter)|
+| [log\_slow\_min\_examined\_row\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_min_examined_row_limit) |
+| [log\_slow\_queries](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_queries)|
+| [log\_slow\_query](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query)|
+| [log\_slow\_query\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) |
+| [log\_slow\_query\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_time) |
+| [log\_slow\_rate\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_rate_limit) |
+| [log\_slow\_slave\_statements](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | --[log-slow-time](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [log\_slow\_verbosity](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity)|
+| [log\_slow\_verbosity](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_verbosity)|
 | --[log-tc](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [log\_tc\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)|
-| -W, --[log-warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings), [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings)|
-| [long\_query\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#long_query_time)|
+| [log\_tc\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_tc_size)|
+| -W, --[log-warnings](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings), [log\_warnings](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings)|
+| [long\_query\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#long_query_time)|
 | --[log-isam](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [low\_priority\_updates](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#low_priority_updates)|
-| [lower\_case\_file\_system](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lower_case_file_system) |
-| [lower\_case\_table\_names](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lower_case_table_names) |
+| [low\_priority\_updates](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#low_priority_updates)|
+| [lower\_case\_file\_system](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lower_case_file_system) |
+| [lower\_case\_table\_names](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lower_case_table_names) |
 | --[master-connect-retry](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [Master\_gtid\_wait\_count](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_count) |
-| [Master\_gtid\_wait\_time](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_time) |
-| [Master\_gtid\_wait\_timeouts](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_timeouts) |
+| [Master\_gtid\_wait\_count](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_count) |
+| [Master\_gtid\_wait\_time](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_time) |
+| [Master\_gtid\_wait\_timeouts](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#master_gtid_wait_timeouts) |
 | --[master-host](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[master-info-file](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[master-password](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
@@ -1105,52 +1105,52 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[master-ssl-cipher](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[master-ssl-key](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[master-user](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [master\_verify\_checksum](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [max\_allowed\_packet](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet)|
+| [master\_verify\_checksum](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [max\_allowed\_packet](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet)|
 | --[max-binlog-dump-events](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [max\_binlog\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_binlog_cache_size) |
-| [max\_binlog\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_binlog_size)|
-| [max\_binlog\_stmt\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_binlog_stmt_cache_size)|
-| --[max-binlog-total-size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [max\_binlog\_total\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[max-connect-errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connect_errors), [max\_connect\_errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connect_errors) |
-| --[max-connections](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connections), [max\_connections](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connections)|
-| --[max-delayed-threads](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_delayed_threads), [max\_delayed\_threads](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_delayed_threads) |
-| --[max-digest-length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_digest_length), [max\_digest\_length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_digest_length) |
-| --[max-error-count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count), [max\_error\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) |
-| --[max-heap-table-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size), [max\_heap\_table\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size)|
-| [max\_insert\_delayed\_threads](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_insert_delayed_threads) |
-| [max\_join\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_join_size)|
-| [max\_length\_for\_sort\_data](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_length_for_sort_data)|
-| [max\_long\_data\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size) |
-| [max\_prepared\_stmt\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_prepared_stmt_count) |
-| [max\_password\_errors](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors)|
-| [max\_recursive\_iterations](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations)|
-| [max\_relay\_log\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [max\_rowid\_filter\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_rowid_filter_size) |
-| [max\_seeks\_for\_key](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_seeks_for_key) |
-| [max\_session\_mem\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_session_mem_used) |
-| --[max-sort-length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sort_length), [max\_sort\_length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sort_length) |
-| --[max-sp-recursion-depth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sp_recursion_depth), [max\_sp\_recursion\_depth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sp_recursion_depth)|
-| --[max-statement-time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time), [max\_statement\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) |
-| [Max\_statement\_time\_exceeded](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_statement_time_exceeded) |
+| [max\_binlog\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_binlog_cache_size) |
+| [max\_binlog\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_binlog_size)|
+| [max\_binlog\_stmt\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_binlog_stmt_cache_size)|
+| --[max-binlog-total-size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [max\_binlog\_total\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[max-connect-errors](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connect_errors), [max\_connect\_errors](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connect_errors) |
+| --[max-connections](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connections), [max\_connections](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connections)|
+| --[max-delayed-threads](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_delayed_threads), [max\_delayed\_threads](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_delayed_threads) |
+| --[max-digest-length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_digest_length), [max\_digest\_length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_digest_length) |
+| --[max-error-count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count), [max\_error\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) |
+| --[max-heap-table-size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size), [max\_heap\_table\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size)|
+| [max\_insert\_delayed\_threads](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_insert_delayed_threads) |
+| [max\_join\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_join_size)|
+| [max\_length\_for\_sort\_data](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_length_for_sort_data)|
+| [max\_long\_data\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_long_data_size) |
+| [max\_prepared\_stmt\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_prepared_stmt_count) |
+| [max\_password\_errors](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors)|
+| [max\_recursive\_iterations](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations)|
+| [max\_relay\_log\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [max\_rowid\_filter\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_rowid_filter_size) |
+| [max\_seeks\_for\_key](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_seeks_for_key) |
+| [max\_session\_mem\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_session_mem_used) |
+| --[max-sort-length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sort_length), [max\_sort\_length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sort_length) |
+| --[max-sp-recursion-depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sp_recursion_depth), [max\_sp\_recursion\_depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sp_recursion_depth)|
+| --[max-statement-time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time), [max\_statement\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) |
+| [Max\_statement\_time\_exceeded](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_statement_time_exceeded) |
 | [max\_tmp\_session\_space\_usage](../../security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable.md)|
-| [Max\_tmp\_space\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_tmp_space_used) |
-| [max\_tmp\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_tables)|
-| [max\_tmp\_total\_space\_usage](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_total_space_usage)|
-| [Max\_used\_connections\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_used_connections_time) |
-| [Max\_used\_connections](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_used_connections)|
-| [max\_user\_connections](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_user_connections)|
-| [max\_write\_lock\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_write_lock_count) |
+| [Max\_tmp\_space\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_tmp_space_used) |
+| [max\_tmp\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_tables)|
+| [max\_tmp\_total\_space\_usage](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_total_space_usage)|
+| [Max\_used\_connections\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_used_connections_time) |
+| [Max\_used\_connections](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_used_connections)|
+| [max\_user\_connections](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_user_connections)|
+| [max\_write\_lock\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_write_lock_count) |
 | --[memlock](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [Memory\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#memory_used) |
-| [Memory\_used\_initial](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#memory_used_initial)|
-| [metadata\_locks\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_cache_size) |
-| [metadata\_locks\_hash\_instances](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_hash_instances) |
+| [Memory\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#memory_used) |
+| [Memory\_used\_initial](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#memory_used_initial)|
+| [metadata\_locks\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_cache_size) |
+| [metadata\_locks\_hash\_instances](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#metadata_locks_hash_instances) |
 | [mhnsw\_default\_distance](../../reference/sql-structure/vectors/vector-system-variables.md#mhnsw_default_distance)|
 | [mhnsw\_default\_m](../../reference/sql-structure/vectors/vector-system-variables.md#mhnsw_default_m)|
 | [mhnsw\_ef\_search](../../reference/sql-structure/vectors/vector-system-variables.md#mhnsw_ef_search)|
 | [mhnsw\_max\_cache\_size](../../reference/sql-structure/vectors/vector-system-variables.md#mhnsw_max_cache_size) |
-| [min-examined-row-limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#min_examined_row_limit)|
+| [min-examined-row-limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#min_examined_row_limit)|
 | [mroonga\_action\_on\_fulltext\_query\_error](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_action_on_fulltext_query_error)|
 | [mroonga\_boolean\_mode\_syntax\_flags](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_boolean_mode_syntax_flags) |
 | [Mroonga\_count\_skip](../../reference/storage-engines/mroonga/mroonga-status-variables.md#mroonga_count_skip) |
@@ -1173,8 +1173,8 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [mroonga\_query\_log\_file](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_query_log_file)|
 | [mroonga\_vector\_column\_delimiter](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_vector_column_delimiter)|
 | [mroonga\_version](../../reference/storage-engines/mroonga/mroonga-system-variables.md#mroonga_version)|
-| --[mrr-buffer-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mrr_buffer_size), [mrr\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mrr_buffer_size) |
-| --[multi-range-count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count), [multi\_range\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count) |
+| --[mrr-buffer-size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mrr_buffer_size), [mrr\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mrr_buffer_size) |
+| --[multi-range-count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count), [multi\_range\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#multi_range_count) |
 | --[myisam-block-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam\_block\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
 | --[myisam-data-pointer-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam\_data\_pointer\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)|
 | --[myisam-max-extra-sort-file-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam\_max\_extra\_sort\_file\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)|
@@ -1185,49 +1185,49 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[myisam-sort-buffer-size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam\_sort\_buffer\_size](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)|
 | --[myisam-stats-method](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam\_stats\_method](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
 | --[myisam-use-mmap](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md), [myisam\_use\_mmap](../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md) |
-| --[mysql56-temporal-format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format), [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) |
-| --[named-pipe](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe), [named\_pipe](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe)|
+| --[mysql56-temporal-format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format), [mysql56\_temporal\_format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) |
+| --[named-pipe](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe), [named\_pipe](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe)|
 | --[ndb-use-copying-alter-table](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| --[net-buffer-length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_buffer_length), [net\_buffer\_length](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_buffer_length) |
-| --[net-read-timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_read_timeout), [net\_read\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_read_timeout) |
-| --[net-retry-count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_retry_count), [net\_retry\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_retry_count) |
-| --[net-write-timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_write_timeout), [net\_write\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_write_timeout) |
-| [Not\_flushed\_delayed\_rows](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#not_flushed_delayed_rows) |
+| --[net-buffer-length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_buffer_length), [net\_buffer\_length](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_buffer_length) |
+| --[net-read-timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_read_timeout), [net\_read\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_read_timeout) |
+| --[net-retry-count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_retry_count), [net\_retry\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_retry_count) |
+| --[net-write-timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_write_timeout), [net\_write\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#net_write_timeout) |
+| [Not\_flushed\_delayed\_rows](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#not_flushed_delayed_rows) |
 | --[new](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| --[old](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old), [old](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old) |
-| --[old-alter-table](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table), [old\_alter\_table](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) |
-| --[old-mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode), [old\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode)|
-| --[old-passwords](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords), [old\_passwords](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords)|
+| --[old](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old), [old](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old) |
+| --[old-alter-table](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table), [old\_alter\_table](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) |
+| --[old-mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode), [old\_mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_mode)|
+| --[old-passwords](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords), [old\_passwords](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_passwords)|
 | --[old-style-user-limits](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[one-thread](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [Open\_files](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_files) |
-| --[open-files-limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit), [open\_files\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) |
-| [Open\_streams](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_streams) |
-| [Open\_table\_definitions](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_table_definitions)|
-| [Open\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_tables) |
-| [Opened\_files](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_files) |
-| [Opened\_plugin\_libraries](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_plugin_libraries)|
-| [Opened\_table\_definitions](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_table_definitions)|
-| [Opened\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_tables) |
-| [Opened\_views](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_views) |
-| [optimizer\_adjust\_secondary\_key\_costs](../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer_adjust_secondary_key_costs.md) |
-| [optimizer\_extra\_pruning\_depth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_extra_pruning_depth) |
-| [optimizer\_join\_limit\_pref\_ratio](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_join_limit_pref_ratio)|
-| [optimizer\_max\_sel\_arg\_weight](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_max_sel_arg_weight)|
-| [optimizer\_max\_sel\_args](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_max_sel_args) |
-| [optimizer\_prune\_level](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_prune_level)|
-| [optimizer\_search\_depth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_search_depth)|
-| [optimizer\_selectivity\_sampling\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit) |
-| [optimizer\_switch](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) |
-| [optimizer\_trace](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace) |
-| [optimizer\_trace\_max\_mem\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace_max_mem_size)|
-| [optimizer\_use\_condition\_selectivity](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity) |
-| [oqgraph\_allow\_create\_integer\_latch](../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch)|
-| [Oqgraph\_boost\_version](../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md)|
-| [Oqgraph\_compat\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md)|
-| [Oqgraph\_verbose\_debug](../../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md)|
+| [Open\_files](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_files) |
+| --[open-files-limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit), [open\_files\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) |
+| [Open\_streams](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_streams) |
+| [Open\_table\_definitions](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_table_definitions)|
+| [Open\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#open_tables) |
+| [Opened\_files](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_files) |
+| [Opened\_plugin\_libraries](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_plugin_libraries)|
+| [Opened\_table\_definitions](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_table_definitions)|
+| [Opened\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_tables) |
+| [Opened\_views](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#opened_views) |
+| [optimizer\_adjust\_secondary\_key\_costs](../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer_adjust_secondary_key_costs.md) |
+| [optimizer\_extra\_pruning\_depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_extra_pruning_depth) |
+| [optimizer\_join\_limit\_pref\_ratio](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_join_limit_pref_ratio)|
+| [optimizer\_max\_sel\_arg\_weight](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_max_sel_arg_weight)|
+| [optimizer\_max\_sel\_args](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_max_sel_args) |
+| [optimizer\_prune\_level](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_prune_level)|
+| [optimizer\_search\_depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_search_depth)|
+| [optimizer\_selectivity\_sampling\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_selectivity_sampling_limit) |
+| [optimizer\_switch](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) |
+| [optimizer\_trace](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace) |
+| [optimizer\_trace\_max\_mem\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_trace_max_mem_size)|
+| [optimizer\_use\_condition\_selectivity](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_use_condition_selectivity) |
+| [oqgraph\_allow\_create\_integer\_latch](../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md#oqgraph_allow_create_integer_latch)|
+| [Oqgraph\_boost\_version](../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md)|
+| [Oqgraph\_compat\_mode](../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md)|
+| [Oqgraph\_verbose\_debug](../ha-and-performance/optimization-and-tuning/system-variables/oqgraph-system-and-status-variables.md)|
 | [pam\_debug](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_debug) |
-| -P, --[port](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port), [port](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port) |
+| -P, --[port](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port), [port](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port) |
 | --[pam-use-cleartext-plugin](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin), [pam\_use\_cleartext\_plugin](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin)|
 | --[pam-windbind-workaround](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround), [pam\_windbind\_workaround](../../reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround) |
 | --[password-reuse-check-interval](../../reference/plugins/password-validation-plugins/password_reuse_check_interval.md), [password\_reuse\_check\_interval](../../reference/plugins/password-validation-plugins/password_reuse_check_interval.md)|
@@ -1336,41 +1336,41 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Performance\_schema\_thread\_instances\_lost](../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_thread_instances_lost)|
 | [Performance\_schema\_schema\_users\_lost](../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_schema_users_lost)|
 | --[performance\_schema\_users\_size](../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_users_size), [performance\_schema\_users\_size](../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance-schema-users-size) |
-| --[pid-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), [pid\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file)|
+| --[pid-file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), [pid\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file)|
 | --[plugin-load](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[plugin-load-add](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| --[plugin-dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir), [plugin\_dir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)|
-| --[plugin-maturity](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity), [plugin\_maturity](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)|
-| -P, --[port](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port), [port](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port) |
+| --[plugin-dir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir), [plugin\_dir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir)|
+| --[plugin-maturity](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity), [plugin\_maturity](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_maturity)|
+| -P, --[port](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port), [port](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#port) |
 | --[port-open-timeout](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [preload\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#preload_buffer_size)|
-| [Prepared\_stmt\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#prepared_stmt_count)|
-| [profiling](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#profiling)|
-| [profiling\_history\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size)|
-| [progress\_report\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#progress_report_time)|
-| [protocol\_version](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#protocol_version) |
-| [proxy\_protocol\_networks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks)|
-| [proxy\_user](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_user) |
-| [pseudo\_slave\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pseudo_slave_mode)|
-| [pseudo\_thread\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pseudo_thread_id)|
-| [Qcache\_free\_blocks](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_free_blocks)|
-| [Qcache\_free\_memory](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_free_memory)|
-| [Qcache\_hits](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_hits) |
-| [Qcache\_inserts](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_inserts) |
-| [Qcache\_lowmem\_prunes](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_lowmem_prunes)|
-| [Qcache\_not\_cached](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_not_cached)|
-| [Qcache\_queries\_in\_cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_queries_in_cache) |
-| [Qcache\_total\_blocks](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_total_blocks)|
-| [Queries](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#queries)|
-| [query\_alloc\_block\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_alloc_block_size) |
+| [preload\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#preload_buffer_size)|
+| [Prepared\_stmt\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#prepared_stmt_count)|
+| [profiling](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#profiling)|
+| [profiling\_history\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size)|
+| [progress\_report\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#progress_report_time)|
+| [protocol\_version](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#protocol_version) |
+| [proxy\_protocol\_networks](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_protocol_networks)|
+| [proxy\_user](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#proxy_user) |
+| [pseudo\_slave\_mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pseudo_slave_mode)|
+| [pseudo\_thread\_id](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pseudo_thread_id)|
+| [Qcache\_free\_blocks](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_free_blocks)|
+| [Qcache\_free\_memory](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_free_memory)|
+| [Qcache\_hits](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_hits) |
+| [Qcache\_inserts](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_inserts) |
+| [Qcache\_lowmem\_prunes](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_lowmem_prunes)|
+| [Qcache\_not\_cached](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_not_cached)|
+| [Qcache\_queries\_in\_cache](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_queries_in_cache) |
+| [Qcache\_total\_blocks](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#qcache_total_blocks)|
+| [Queries](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#queries)|
+| [query\_alloc\_block\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_alloc_block_size) |
 | --[query-cache-info](../../reference/plugins/other-plugins/query-cache-information-plugin.md#query_cache_info) |
-| [query\_cache\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_limit)|
-| [query\_cache\_min\_res\_unit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_min_res_unit)|
-| [query\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)|
-| [query\_cache\_strip\_comments](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_strip_comments) |
-| [query\_cache\_type](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type)|
-| [query\_cache\_wlock\_invalidate](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_wlock_invalidate) |
-| [query\_prealloc\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_prealloc_size)|
+| [query\_cache\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_limit)|
+| [query\_cache\_min\_res\_unit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_min_res_unit)|
+| [query\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size)|
+| [query\_cache\_strip\_comments](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_strip_comments) |
+| [query\_cache\_type](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_type)|
+| [query\_cache\_wlock\_invalidate](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_cache_wlock_invalidate) |
+| [query\_prealloc\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#query_prealloc_size)|
 | --[query-response-time](../../reference/plugins/other-plugins/query-response-time-plugin.md#query_response_time) |
 | --[query-response-time-audit](../../reference/plugins/other-plugins/query-response-time-plugin.md#query_response_time_audit) |
 | [query\_response\_time\_flush](../../reference/plugins/other-plugins/query-response-time-plugin.md)|
@@ -1378,40 +1378,40 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [query\_response\_time\_exec\_time\_debug](../../reference/plugins/other-plugins/query-response-time-plugin.md)|
 | [query\_response\_time\_session\_stats](../../reference/plugins/other-plugins/query-response-time-plugin.md) |
 | [query\_response\_time\_stats](../../reference/plugins/other-plugins/query-response-time-plugin.md)|
-| [Questions](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#questions)|
+| [Questions](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#questions)|
 | -r, --[chroot](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [rand\_seed1](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1) |
-| [rand\_seed2](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed2) |
-| [range\_alloc\_block\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#range_alloc_block_size) |
-| [read\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size)|
-| [read\_binlog\_speed\_limit](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [read\_only](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) |
-| [read\_rnd\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_rnd_buffer_size) |
+| [rand\_seed1](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed1) |
+| [rand\_seed2](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rand_seed2) |
+| [range\_alloc\_block\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#range_alloc_block_size) |
+| [read\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_buffer_size)|
+| [read\_binlog\_speed\_limit](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [read\_only](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) |
+| [read\_rnd\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_rnd_buffer_size) |
 | --[record-buffer](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| --[redirect-url](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#redirect_url), [redirect\_url](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#redirect_url)|
-| [relay\_log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [relay\_log\_basename](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[relay-log-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[relay-log-info-file](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_info\_file](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[relay-log-purge](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_purge](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[relay-log-recovery](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_recovery](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[relay-log-space-limit](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_space\_limit](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[redirect-url](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#redirect_url), [redirect\_url](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#redirect_url)|
+| [relay\_log](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [relay\_log\_basename](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[relay-log-index](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_index](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[relay-log-info-file](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_info\_file](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[relay-log-purge](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_purge](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[relay-log-recovery](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_recovery](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[relay-log-space-limit](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay\_log\_space\_limit](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | --[remove](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[replicate-annotate-row-events](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_annotate\_row\_events](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[replicate-do-db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_do\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[replicate-do-table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_do\_table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[replicate-events-marked-for-skip](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_events\_marked\_for\_skip](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[replicate-ignore-db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_ignore\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[replicate-ignore-table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_ignore\_table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[replicate-rewrite-db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_rewrite\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[replicate-annotate-row-events](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_annotate\_row\_events](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[replicate-do-db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_do\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[replicate-do-table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_do\_table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[replicate-events-marked-for-skip](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_events\_marked\_for\_skip](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[replicate-ignore-db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_ignore\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[replicate-ignore-table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_ignore\_table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[replicate-rewrite-db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_rewrite\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | --[replicate-same-server-id](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[replicate-wild-do-table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_wild\_do\_table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[replicate-wild-ignore-table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_wild\_ignore\_table](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[report-host](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_host](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[report-password](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_password](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[report-port](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_port](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[report-user](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_user](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[require-secure-transport](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport), [require\_secure\_transport](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) |
+| --[replicate-wild-do-table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_wild\_do\_table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[replicate-wild-ignore-table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [replicate\_wild\_ignore\_table](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[report-host](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_host](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[report-password](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_password](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[report-port](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_port](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[report-user](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [report\_user](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[require-secure-transport](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport), [require\_secure\_transport](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) |
 | --[rocksdb-access-hint-on-compaction-start](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_access_hint_on_compaction_start), [rocksdb\_access\_hint\_on\_compaction\_start](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_access_hint_on_compaction_start)|
 | --[rocksdb-advise-random-on-open](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_advise_random_on_open), [rocksdb\_advise\_random\_on\_open](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_advise_random_on_open) |
 | --[rocksdb-allow-concurrent-memtable-write](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_concurrent_memtable_write), [rocksdb\_allow\_concurrent\_memtable\_write](../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_allow_concurrent_memtable_write) |
@@ -1675,38 +1675,38 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Rocksdb\_write\_self](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_self) |
 | [Rocksdb\_write\_timedout](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_timedout) |
 | [Rocksdb\_write\_wal](../../reference/storage-engines/myrocks/myrocks-status-variables.md#rocksdb_write_wal) |
-| --[rowid-merge-buff-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rowid_merge_buff_size), [rowid\_merge\_buff\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rowid_merge_buff_size)|
-| [Resultset\_metadata\_skipped](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#resultset_metadata_skipped)|
-| [Rows\_read](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#rows_read) |
-| [Rows\_sent](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#rows_sent) |
-| [Rows\_tmp\_read](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#rows_tmp_read)|
-| --[rpl-recovery-rank](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank), [rpl\_recovery\_rank](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank) |
-| [Rpl\_semi\_sync\_master\_clients](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_clients)|
-| [rpl-semi-sync-master-enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) [rpl\_semi\_sync\_master\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled)|
-| [Rpl\_semi\_sync\_master\_net\_avg\_wait\_time](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_net_avg_wait_time) |
-| [Rpl\_semi\_sync\_master\_net\_wait\_time](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_net_wait_time)|
-| [Rpl\_semi\_sync\_master\_net\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_net_waits) |
-| [Rpl\_semi\_sync\_master\_no\_times](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) |
-| [Rpl\_semi\_sync\_master\_no\_tx](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_tx) |
-| [Rpl\_semi\_sync\_master\_status](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status)|
-| [Rpl\_semi\_sync\_master\_timefunc\_failures](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_timefunc_failures) |
-| [rpl-semi-sync-master-timeout](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_timeout), [rpl\_semi\_sync\_master\_timeout](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_timeout) |
-| [rpl-semi-sync-master-trace-level](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_trace_level) , [rpl\_semi\_sync\_master\_trace\_level](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_trace_level) |
-| [Rpl\_semi\_sync\_master\_tx\_avg\_wait\_time](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_avg_wait_time) |
-| [Rpl\_semi\_sync\_master\_tx\_wait\_time](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_wait_time)|
-| [Rpl\_semi\_sync\_master\_tx\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_waits) |
-| [rpl-semi-sync-master-wait-no-slave](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_no_slave), [rpl\_semi\_sync\_master\_wait\_no\_slave](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_no_slave) |
-| [rpl-semi-sync-master-wait-point](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point), [rpl\_semi\_sync\_master\_wait\_point](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point)|
-| [Rpl\_semi\_sync\_master\_wait\_pos\_backtraverse](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_pos_backtraverse)|
-| [Rpl\_semi\_sync\_master\_wait\_sessions](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_sessions) |
-| [Rpl\_semi\_sync\_master\_yes\_tx](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_yes_tx) |
-| [rpl-semi-sync-slave-delay-master](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_delay_master), [rpl\_semi\_sync\_slave\_delay\_master](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_delay_master)|
-| [rpl-semi-sync-slave-enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled), [rpl\_semi\_sync\_slave\_enabled](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled) |
-| [rpl-semi-sync-slave-kill-conn-timeout](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_kill_conn_timeout), [rpl\_semi\_sync\_slave\_kill\_conn\_timeout](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_kill_conn_timeout) |
-| [Rpl\_semi\_sync\_slave\_status](../../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_status)|
-| [rpl-semi-sync-slave-trace-level](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_trace_level), [rpl\_semi\_sync\_slave\_trace\_level](../../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_trace_level)|
-| [Rpl\_status](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Rpl\_transactions\_multi\_engine](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#rpl_transactions_multi_engine) |
+| --[rowid-merge-buff-size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rowid_merge_buff_size), [rowid\_merge\_buff\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rowid_merge_buff_size)|
+| [Resultset\_metadata\_skipped](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#resultset_metadata_skipped)|
+| [Rows\_read](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#rows_read) |
+| [Rows\_sent](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#rows_sent) |
+| [Rows\_tmp\_read](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#rows_tmp_read)|
+| --[rpl-recovery-rank](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank), [rpl\_recovery\_rank](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank) |
+| [Rpl\_semi\_sync\_master\_clients](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_clients)|
+| [rpl-semi-sync-master-enabled](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled) [rpl\_semi\_sync\_master\_enabled](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_enabled)|
+| [Rpl\_semi\_sync\_master\_net\_avg\_wait\_time](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_net_avg_wait_time) |
+| [Rpl\_semi\_sync\_master\_net\_wait\_time](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_net_wait_time)|
+| [Rpl\_semi\_sync\_master\_net\_waits](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_net_waits) |
+| [Rpl\_semi\_sync\_master\_no\_times](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_times) |
+| [Rpl\_semi\_sync\_master\_no\_tx](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_no_tx) |
+| [Rpl\_semi\_sync\_master\_status](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_status)|
+| [Rpl\_semi\_sync\_master\_timefunc\_failures](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_timefunc_failures) |
+| [rpl-semi-sync-master-timeout](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_timeout), [rpl\_semi\_sync\_master\_timeout](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_timeout) |
+| [rpl-semi-sync-master-trace-level](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_trace_level) , [rpl\_semi\_sync\_master\_trace\_level](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_trace_level) |
+| [Rpl\_semi\_sync\_master\_tx\_avg\_wait\_time](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_avg_wait_time) |
+| [Rpl\_semi\_sync\_master\_tx\_wait\_time](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_wait_time)|
+| [Rpl\_semi\_sync\_master\_tx\_waits](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_tx_waits) |
+| [rpl-semi-sync-master-wait-no-slave](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_no_slave), [rpl\_semi\_sync\_master\_wait\_no\_slave](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_no_slave) |
+| [rpl-semi-sync-master-wait-point](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point), [rpl\_semi\_sync\_master\_wait\_point](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_master_wait_point)|
+| [Rpl\_semi\_sync\_master\_wait\_pos\_backtraverse](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_pos_backtraverse)|
+| [Rpl\_semi\_sync\_master\_wait\_sessions](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_wait_sessions) |
+| [Rpl\_semi\_sync\_master\_yes\_tx](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_master_yes_tx) |
+| [rpl-semi-sync-slave-delay-master](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_delay_master), [rpl\_semi\_sync\_slave\_delay\_master](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_delay_master)|
+| [rpl-semi-sync-slave-enabled](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled), [rpl\_semi\_sync\_slave\_enabled](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_enabled) |
+| [rpl-semi-sync-slave-kill-conn-timeout](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_kill_conn_timeout), [rpl\_semi\_sync\_slave\_kill\_conn\_timeout](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_kill_conn_timeout) |
+| [Rpl\_semi\_sync\_slave\_status](../ha-and-performance/optimization-and-tuning/system-variables/semisynchronous-replication-plugin-status-variables.md#rpl_semi_sync_slave_status)|
+| [rpl-semi-sync-slave-trace-level](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_trace_level), [rpl\_semi\_sync\_slave\_trace\_level](../ha-and-performance/standard-replication/semisynchronous-replication.md#rpl_semi_sync_slave_trace_level)|
+| [Rpl\_status](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Rpl\_transactions\_multi\_engine](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#rpl_transactions_multi_engine) |
 | -s, --[symbolic-links](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [s3\_access\_key](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_access_key) |
 | [s3\_block\_size](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_block_size) |
@@ -1728,17 +1728,17 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [s3\_ssl\_no\_verify](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_ssl_no_verify)|
 | [s3\_use\_http](../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md#s3_use_http) |
 | --[safe-mode](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [safe\_show\_database](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#safe_show_database)|
+| [safe\_show\_database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#safe_show_database)|
 | --[safe-user-create](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[safemalloc-mem-limit](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[secure-auth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_auth), [secure\_auth](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_auth)|
-| --[secure-file-priv](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv), [secure\_file\_priv](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) |
-| --[secure-timestamp](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp), [secure\_timestamp](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp)|
-| [Select\_full\_join](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_full_join)|
-| [Select\_full\_range\_join](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_full_range_join) |
-| [Select\_range](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_range) |
-| [Select\_range\_check](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_range_check)|
-| [Select\_scan](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_scan) |
+| --[secure-auth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_auth), [secure\_auth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_auth)|
+| --[secure-file-priv](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv), [secure\_file\_priv](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) |
+| --[secure-timestamp](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp), [secure\_timestamp](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp)|
+| [Select\_full\_join](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_full_join)|
+| [Select\_full\_range\_join](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_full_range_join) |
+| [Select\_range](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_range) |
+| [Select\_range\_check](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_range_check)|
+| [Select\_scan](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#select_scan) |
 | --[server-audit](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit) |
 | [Server\_audit\_active](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
 | [Server\_audit\_current\_log](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
@@ -1760,94 +1760,94 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [server\_audit\_syslog\_info](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
 | [server\_audit\_syslog\_priority](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md) |
 | [Server\_audit\_writes\_failed](../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md) |
-| [server\_id](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [server\_uid](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#server_uid) |
-| [session\_track\_schema](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_schema)|
-| [session\_track\_state\_change](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_state_change) |
-| [session\_track\_system\_variables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_system_variables) |
-| [session\_track\_transaction\_info](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_transaction_info) |
+| [server\_id](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [server\_uid](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#server_uid) |
+| [session\_track\_schema](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_schema)|
+| [session\_track\_state\_change](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_state_change) |
+| [session\_track\_system\_variables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_system_variables) |
+| [session\_track\_transaction\_info](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#session_track_transaction_info) |
 | -O, --[set-variable](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [shared\_memory](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#shared_memory) |
-| [shared\_memory\_base\_name](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#shared_memory_base_name) |
-| --[show\_old\_temporals](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#show_old_temporals), [show\_old\_temporals](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#show_old_temporals) |
+| [shared\_memory](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#shared_memory) |
+| [shared\_memory\_base\_name](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#shared_memory_base_name) |
+| --[show\_old\_temporals](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#show_old_temporals), [show\_old\_temporals](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#show_old_temporals) |
 | --[show-slave-auth-info](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[silent-startup](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [simple\_password\_check\_digits](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md) |
 | [simple\_password\_check\_letters\_same\_case](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)|
 | [simple\_password\_check\_minimal\_length](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)|
 | [simple\_password\_check\_other\_characters](../../reference/plugins/password-validation-plugins/simple-password-check-plugin.md)|
-| --[skip-automatic-sp-privileges](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) |
+| --[skip-automatic-sp-privileges](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) |
 | --[skip-bdb](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [skip\_external\_locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking)|
-| --[skip-grant-tables](../server-management/starting-and-stopping-mariadb/mariadbd-options.md), [skip\_grant\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) |
+| [skip\_external\_locking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking)|
+| --[skip-grant-tables](../server-management/starting-and-stopping-mariadb/mariadbd-options.md), [skip\_grant\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_grant_tables) |
 | --[skip-host-cache](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[skip-innodb](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[skip-innodb-checksums](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_checksums)|
 | --[skip-innodb-doublewrite](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_doublewrite)|
-| --[skip-large-pages](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) |
-| --[skip-log-error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) |
-| --[skip-name-resolve](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_name_resolve), [skip\_name\_resolve](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_name_resolve) |
+| --[skip-large-pages](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#large_pages) |
+| --[skip-log-error](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error) |
+| --[skip-name-resolve](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_name_resolve), [skip\_name\_resolve](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_name_resolve) |
 | --[skip-new](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[skip-networking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking), [skip\_networking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking)|
-| [skip\_parallel\_replication](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[skip-networking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking), [skip\_networking](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_networking)|
+| [skip\_parallel\_replication](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | --[skip-partition](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [skip\_replication](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[skip-show-database](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_show_database), [skip\_show\_database](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_show_database) |
+| [skip\_replication](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[skip-show-database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_show_database), [skip\_show\_database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_show_database) |
 | --[skip-slave-start](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[skip-ssl](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[skip-stack-trace](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[skip-symbolic-links](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[skip-symlink](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | --[skip-thread-priority](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [slave\_abort\_blocking\_timeout](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_abort_blocking_timeout) |
-| [slave\_compressed\_protocol](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_connections\_needed\_for\_purge](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [Slave\_connections](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [slave\_ddl\_exec\_mode](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [slave\_domain\_parallel\_threads](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [slave\_exec\_mode](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Slave\_heartbeat\_period](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [slave\_load\_tmpdir](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_max\_allowed\_packet](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_max\_statement\_time](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_net\_timeout](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Slave\_open\_temp\_tables](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [slave\_parallel\_max\_queued](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [slave\_parallel\_mode](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_parallel\_threads](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [slave\_parallel\_workers](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [Slave\_received\_heartbeats](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Slave\_retried\_transactions](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [slave\_run\_triggers\_for\_rbr](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [slave-run-triggers-for-rbr](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [Slave\_running](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [slave\_skip\_errors](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [Slave\_skipped\_errors](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
-| [slave\_sql\_verify\_checksum](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [slave\_transaction\_retries](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_transaction\_retry\_errors](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_transaction\_retry\_interval](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [slave\_type\_conversions](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [Slaves\_connected](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Slaves\_running](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Slow\_launch\_threads](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#slow_launch_threads)|
-| [slow\_launch\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_launch_time)|
-| [Slow\_queries](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#slow_queries) |
-| [slow\_query\_log](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log)|
-| [slow\_query\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file) |
+| [slave\_abort\_blocking\_timeout](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_abort_blocking_timeout) |
+| [slave\_compressed\_protocol](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_connections\_needed\_for\_purge](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [Slave\_connections](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [slave\_ddl\_exec\_mode](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [slave\_domain\_parallel\_threads](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [slave\_exec\_mode](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Slave\_heartbeat\_period](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [slave\_load\_tmpdir](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_max\_allowed\_packet](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_max\_statement\_time](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_net\_timeout](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Slave\_open\_temp\_tables](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [slave\_parallel\_max\_queued](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [slave\_parallel\_mode](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_parallel\_threads](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [slave\_parallel\_workers](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [Slave\_received\_heartbeats](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Slave\_retried\_transactions](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [slave\_run\_triggers\_for\_rbr](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [slave-run-triggers-for-rbr](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [Slave\_running](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [slave\_skip\_errors](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [Slave\_skipped\_errors](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
+| [slave\_sql\_verify\_checksum](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [slave\_transaction\_retries](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_transaction\_retry\_errors](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_transaction\_retry\_interval](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [slave\_type\_conversions](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [Slaves\_connected](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Slaves\_running](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Slow\_launch\_threads](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#slow_launch_threads)|
+| [slow\_launch\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_launch_time)|
+| [Slow\_queries](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#slow_queries) |
+| [slow\_query\_log](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log)|
+| [slow\_query\_log\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file) |
 | --[slow-start-timeout](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [socket](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#socket)|
-| [sort\_buffer\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sort_buffer_size)|
-| [Sort\_merge\_passes](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_merge_passes)|
-| [Sort\_priority\_queue\_sorts](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_priority_queue_sorts) |
-| [Sort\_range](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_range) |
-| [Sort\_rows](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_rows) |
-| [Sort\_scan](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_scan) |
-| [Sphinx\_error](../../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_error) |
-| [Sphinx\_time](../../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_time) |
-| [Sphinx\_total](../../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_total) |
-| [Sphinx\_total\_found](../../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_total_found)|
-| [Sphinx\_word\_count](../../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_word_count)|
-| [Sphinx\_words](../../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_words) |
+| [socket](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#socket)|
+| [sort\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sort_buffer_size)|
+| [Sort\_merge\_passes](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_merge_passes)|
+| [Sort\_priority\_queue\_sorts](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_priority_queue_sorts) |
+| [Sort\_range](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_range) |
+| [Sort\_rows](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_rows) |
+| [Sort\_scan](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#sort_scan) |
+| [Sphinx\_error](../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_error) |
+| [Sphinx\_time](../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_time) |
+| [Sphinx\_total](../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_total) |
+| [Sphinx\_total\_found](../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_total_found)|
+| [Sphinx\_word\_count](../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_word_count)|
+| [Sphinx\_words](../ha-and-performance/optimization-and-tuning/system-variables/sphinx-status-variables.md#sphinx_words) |
 | [spider\_auto\_increment\_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_bgs\_first\_read](../../reference/storage-engines/spider/spider-system-variables.md)|
 | [spider\_bgs\_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
@@ -1875,12 +1875,12 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [spider\_crd\_type](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_crd\_weight](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_delete\_all\_rows\_type](../../reference/storage-engines/spider/spider-system-variables.md) |
-| [Spider\_direct\_aggregate](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md)|
-| [Spider\_direct\_delete](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
+| [Spider\_direct\_aggregate](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md)|
+| [Spider\_direct\_delete](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
 | [spider\_direct\_dup\_insert](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_direct\_order\_limit](../../reference/storage-engines/spider/spider-system-variables.md)|
-| [Spider\_direct\_order\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
-| [Spider\_direct\_update](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
+| [Spider\_direct\_order\_limit](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
+| [Spider\_direct\_update](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
 | [spider\_dry\_access](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_error\_read\_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_error\_write\_mode](../../reference/storage-engines/spider/spider-system-variables.md)|
@@ -1908,12 +1908,12 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [spider\_low\_mem\_read](../../reference/storage-engines/spider/spider-system-variables.md)|
 | [spider\_max\_connections](../../reference/storage-engines/spider/spider-system-variables.md)|
 | [spider\_max\_order](../../reference/storage-engines/spider/spider-system-variables.md)|
-| [Spider\_mon\_table\_cache\_version](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
-| [Spider\_mon\_table\_cache\_version\_req](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md)|
+| [Spider\_mon\_table\_cache\_version](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
+| [Spider\_mon\_table\_cache\_version\_req](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md)|
 | [spider\_multi\_split\_read](../../reference/storage-engines/spider/spider-system-variables.md)|
 | [spider\_net\_read\_timeout](../../reference/storage-engines/spider/spider-system-variables.md)|
 | [spider\_net\_write\_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
-| [Spider\_parallel\_search](../../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
+| [Spider\_parallel\_search](../ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables.md) |
 | [spider\_ping\_interval\_at\_trx\_start](../../reference/storage-engines/spider/spider-system-variables.md)|
 | [spider\_quick\_mode](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_quick\_page\_byte](../../reference/storage-engines/spider/spider-system-variables.md) |
@@ -1975,139 +1975,139 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [spider\_wait\_timeout](../../reference/storage-engines/spider/spider-system-variables.md) |
 | [spider\_xa\_register\_mode](../../reference/storage-engines/spider/spider-system-variables.md)|
 | --[sporadic-binlog-dump-fail](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [sql\_auto\_is\_null](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_auto_is_null) |
-| [sql\_big\_selects](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_selects)|
-| [sql\_big\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_tables)|
-| [sql\_buffer\_result](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_buffer_result)|
+| [sql\_auto\_is\_null](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_auto_is_null) |
+| [sql\_big\_selects](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_selects)|
+| [sql\_big\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_big_tables)|
+| [sql\_buffer\_result](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_buffer_result)|
 | --[sql-bin-update-same](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| --[sql-error-log-filename](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename), [sql\_error\_log\_filename](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename)|
-| --[sql-error-log-rate](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rate), [sql\_error\_log\_rate](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rate)|
-| --[sql-error-log-rotate](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate), [sql\_error\_log\_rotate](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate)|
-| --[sql-error-log-rotations](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotations), [sql\_error\_log\_rotations](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotations)|
-| --[sql-error-log-size-limit](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_size_limit), [sql\_error\_log\_size\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_size_limit) |
-| --[sql-error-log-warnings](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings), [sql\_error\_log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings)|
-| --[sql-if-exists](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_if_exists), [sql\_if\_exists](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_if_exists) |
-| [sql\_log\_bin](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [sql\_log\_off](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off)|
-| [sql\_log\_update](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_update)|
-| [sql\_low\_priority\_updates](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_low_priority_updates) |
-| [sql\_max\_join\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_max_join_size) |
-| --[sql-mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode), [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode)|
-| [sql\_notes](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) |
-| [sql\_quote\_show\_create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) |
-| --[sql-safe-updates](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_safe_updates), [sql\_safe\_updates](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_safe_updates) |
-| [sql\_select\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_select_limit)|
-| [sql\_slave\_skip\_counter](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| [sql\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_warnings) |
+| --[sql-error-log-filename](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename), [sql\_error\_log\_filename](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_filename)|
+| --[sql-error-log-rate](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rate), [sql\_error\_log\_rate](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rate)|
+| --[sql-error-log-rotate](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate), [sql\_error\_log\_rotate](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotate)|
+| --[sql-error-log-rotations](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotations), [sql\_error\_log\_rotations](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_rotations)|
+| --[sql-error-log-size-limit](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_size_limit), [sql\_error\_log\_size\_limit](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_size_limit) |
+| --[sql-error-log-warnings](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings), [sql\_error\_log\_warnings](../ha-and-performance/optimization-and-tuning/system-variables/sql-error-log-system-variables-and-options.md#sql_error_log_warnings)|
+| --[sql-if-exists](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_if_exists), [sql\_if\_exists](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_if_exists) |
+| [sql\_log\_bin](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [sql\_log\_off](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off)|
+| [sql\_log\_update](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_update)|
+| [sql\_low\_priority\_updates](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_low_priority_updates) |
+| [sql\_max\_join\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_max_join_size) |
+| --[sql-mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode), [sql\_mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode)|
+| [sql\_notes](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) |
+| [sql\_quote\_show\_create](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) |
+| --[sql-safe-updates](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_safe_updates), [sql\_safe\_updates](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_safe_updates) |
+| [sql\_select\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_select_limit)|
+| [sql\_slave\_skip\_counter](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| [sql\_warnings](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_warnings) |
 | --[ssl](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [Ssl\_accept\_renegotiates](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_accepts](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_accept\_renegotiates](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_accepts](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
 | --[ssl-ca](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_ca](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| [Ssl\_callback\_cache\_hits](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_callback\_cache\_hits](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
 | --[ssl-capath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_capath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | --[ssl-cert](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_cert](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | --[ssl-cipher](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_cipher](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| [Ssl\_cipher](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_cipher\_list](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_client\_connects](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_connect\_renegotiates](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_cipher](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_cipher\_list](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_client\_connects](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_connect\_renegotiates](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
 | --[ssl-crl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_crl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | --[ssl-crlpath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_crlpath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| [Ssl\_ctx\_verify\_depth](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_ctx\_verify\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| [Ssl\_default\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_finished\_accepts](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| [Ssl\_finished\_connects](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_ctx\_verify\_depth](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_ctx\_verify\_mode](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_default\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_finished\_accepts](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_finished\_connects](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | --[ssl-key](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_key](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| [Ssl\_server\_not\_after](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_server\_not\_before](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| [Ssl\_session\_cache\_hits](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_session\_cache\_misses](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_session\_cache\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_session\_cache\_overflows](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| [Ssl\_session\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_session\_cache\_timeouts](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_sessions\_reused](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| [Ssl\_used\_session\_cache\_entries](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| [Ssl\_verify\_depth](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| [Ssl\_verify\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| --[standard-compliant-cte](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#standard_compliant_cte), [standard\_compliant\_cte](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#standard_compliant_cte) |
+| [Ssl\_server\_not\_after](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_server\_not\_before](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_session\_cache\_hits](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_session\_cache\_misses](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_session\_cache\_mode](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_session\_cache\_overflows](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_session\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_session\_cache\_timeouts](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_sessions\_reused](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| [Ssl\_used\_session\_cache\_entries](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_verify\_depth](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
+| [Ssl\_verify\_mode](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
+| --[standard-compliant-cte](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#standard_compliant_cte), [standard\_compliant\_cte](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#standard_compliant_cte) |
 | --[stack-trace](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[standalone](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#storage_engine) |
-| --[stored-program-cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#stored_program_cache), [stored\_program\_cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#stored_program_cache) |
-| --[strict-password-validation](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation), [strict\_password\_validation](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) |
-| [Subquery\_cache\_hit](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#subquery_cache_hit)|
-| [Subquery\_cache\_miss](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#subquery_cache_miss)|
+| [storage\_engine](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#storage_engine) |
+| --[stored-program-cache](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#stored_program_cache), [stored\_program\_cache](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#stored_program_cache) |
+| --[strict-password-validation](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation), [strict\_password\_validation](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) |
+| [Subquery\_cache\_hit](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#subquery_cache_hit)|
+| [Subquery\_cache\_miss](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#subquery_cache_miss)|
 | -s, --[symbolic-links](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [sync\_binlog](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [sync\_frm](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sync_frm) |
-| [sync\_master\_info](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [sync\_relay\_log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| [sync\_relay\_log\_info](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [sync\_binlog](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [sync\_frm](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sync_frm) |
+| [sync\_master\_info](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [sync\_relay\_log](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| [sync\_relay\_log\_info](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | --[sync-sys](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [Syncs](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#syncs)|
+| [Syncs](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#syncs)|
 | --[sysdate-is-now](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | -T, --[exit-info](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [system\_time\_zone](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone)|
+| [system\_time\_zone](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#system_time_zone)|
 | [system\_versioning\_alter\_history](../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_alter_history) |
 | [system\_versioning\_asof](../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_asof)|
 | [system\_versioning\_innodb\_algorithm\_simple](../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_innodb_algorithm_simple)|
 | [system\_versioning\_insert\_history](../../reference/sql-structure/temporal-tables/system-versioned-tables.md#system_versioning_insert_history) |
 | --[table-cache](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| [table\_definition\_cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache)|
-| [table\_lock\_wait\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_lock_wait_timeout) |
-| [Table\_locks\_immediate](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_locks_immediate)|
-| [Table\_locks\_waited](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_locks_waited)|
-| [table\_open\_cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache)|
-| [Table\_open\_cache\_active\_instances](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_active_instances)|
-| [Table\_open\_cache\_hits](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_hits) |
-| [table\_open\_cache\_instances](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache_instances) |
-| [Table\_open\_cache\_misses](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_misses) |
-| [Table\_open\_cache\_overflows](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_overflows) |
-| [table\_type](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_type) |
+| [table\_definition\_cache](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache)|
+| [table\_lock\_wait\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_lock_wait_timeout) |
+| [Table\_locks\_immediate](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_locks_immediate)|
+| [Table\_locks\_waited](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_locks_waited)|
+| [table\_open\_cache](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache)|
+| [Table\_open\_cache\_active\_instances](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_active_instances)|
+| [Table\_open\_cache\_hits](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_hits) |
+| [table\_open\_cache\_instances](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache_instances) |
+| [Table\_open\_cache\_misses](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_misses) |
+| [Table\_open\_cache\_overflows](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#table_open_cache_overflows) |
+| [table\_type](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_type) |
 | --[tc-heuristic-recover](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [Tc\_log\_max\_pages\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tc_log_max_pages_used)|
-| [Tc\_log\_page\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tc_log_page_size) |
-| [Tc\_log\_page\_waits](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tc_log_page_waits) |
-| [tcp\_keepalive\_interval](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_interval)|
-| [tcp\_keepalive\_probes](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_probes)|
-| [tcp\_keepalive\_time](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_time)|
-| --[tcp-nodelay](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_nodelay), [tcp\_nodelay](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_nodelay)|
+| [Tc\_log\_max\_pages\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tc_log_max_pages_used)|
+| [Tc\_log\_page\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tc_log_page_size) |
+| [Tc\_log\_page\_waits](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tc_log_page_waits) |
+| [tcp\_keepalive\_interval](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_interval)|
+| [tcp\_keepalive\_probes](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_probes)|
+| [tcp\_keepalive\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_keepalive_time)|
+| --[tcp-nodelay](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_nodelay), [tcp\_nodelay](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tcp_nodelay)|
 | --[temp-pool](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[test-expect-abort](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --[test-ignore-wrong-options](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | --thread-alarm |
-| [thread\_cache\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size)|
-| [thread\_concurrency](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_concurrency) |
-| [thread\_handling](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [thread\_pool\_dedicated\_listener](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [thread\_pool\_exact\_stats](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [thread\_pool\_idle\_timeout](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [thread\_pool\_max\_threads](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [thread\_pool\_min\_threads](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [thread\_pool\_oversubscribe](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [thread\_pool\_prio\_kickup\_timer](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [thread\_pool\_priority](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [thread\_pool\_size](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [thread\_pool\_stall\_limit](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
-| [Threadpool\_idle\_threads](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [Threadpool\_threads](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
-| [thread\_stack](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_stack) |
-| [Threads\_cached](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_cached) |
-| [Threads\_connected](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_connected) |
-| [Threads\_created](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_created) |
-| [Threads\_running](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_running) |
-| [timed\_mutexes](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timed_mutexes) |
-| [timestamp](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)|
-| [time-format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_format)|
-| [time\_zone](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) |
+| [thread\_cache\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size)|
+| [thread\_concurrency](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_concurrency) |
+| [thread\_handling](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [thread\_pool\_dedicated\_listener](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [thread\_pool\_exact\_stats](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [thread\_pool\_idle\_timeout](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [thread\_pool\_max\_threads](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [thread\_pool\_min\_threads](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [thread\_pool\_oversubscribe](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [thread\_pool\_prio\_kickup\_timer](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [thread\_pool\_priority](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [thread\_pool\_size](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [thread\_pool\_stall\_limit](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md) |
+| [Threadpool\_idle\_threads](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [Threadpool\_threads](../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)|
+| [thread\_stack](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#thread_stack) |
+| [Threads\_cached](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_cached) |
+| [Threads\_connected](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_connected) |
+| [Threads\_created](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_created) |
+| [Threads\_running](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#threads_running) |
+| [timed\_mutexes](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timed_mutexes) |
+| [timestamp](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)|
+| [time-format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_format)|
+| [time\_zone](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) |
 | [tls\_version](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version)|
-| [tmp\_disk\_table\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_disk_table_size) |
-| [tmp\_memory\_table\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_memory_table_size) |
-| [Tmp\_space\_used](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tmp_space_used)|
-| [tmp\_table\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_table_size)|
-| -t, [tmpdir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmpdir)|
+| [tmp\_disk\_table\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_disk_table_size) |
+| [tmp\_memory\_table\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_memory_table_size) |
+| [Tmp\_space\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tmp_space_used)|
+| [tmp\_table\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_table_size)|
+| -t, [tmpdir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmpdir)|
 | [tokudb\_alter\_print\_error](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
 | [tokudb\_analyze\_time](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
 | [Tokudb\_basement\_deserialization\_fixed\_key](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_basement_deserialization_fixed_key) |
@@ -2332,34 +2332,34 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Tokudb\_txn\_commits](../../reference/storage-engines/tokudb/tokudb-status-variables.md#tokudb_txn_commits) |
 | [tokudb\_version](../../reference/storage-engines/tokudb/tokudb-system-variables.md) |
 | [tokudb\_write\_status\_frequency](../../reference/storage-engines/tokudb/tokudb-system-variables.md)|
-| [transaction\_alloc\_block\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_alloc_block_size) |
-| [transaction\_isolation](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_isolation) |
-| [transaction\_prealloc\_size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_prealloc_size)|
-| --[transaction-read-only](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_read_only) |
-| [Transactions\_gtid\_foreign\_engine](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [Transactions\_multi\_engine](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
-| [tx\_isolation](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) |
-| [tx\_read\_only](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_read_only)|
+| [transaction\_alloc\_block\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_alloc_block_size) |
+| [transaction\_isolation](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_isolation) |
+| [transaction\_prealloc\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#transaction_prealloc_size)|
+| --[transaction-read-only](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_read_only) |
+| [Transactions\_gtid\_foreign\_engine](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [Transactions\_multi\_engine](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
+| [tx\_isolation](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_isolation) |
+| [tx\_read\_only](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tx_read_only)|
 | -u, --[user](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| [unique\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#unique_checks) |
-| --[updatable-views-with-limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit), [updatable\_views\_with\_limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit)|
-| [Update\_scan](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#update_scan) |
-| [Uptime](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#uptime)|
-| [Uptime\_since\_flush\_status](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#uptime_since_flush_status) |
+| [unique\_checks](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#unique_checks) |
+| --[updatable-views-with-limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit), [updatable\_views\_with\_limit](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#updatable_views_with_limit)|
+| [Update\_scan](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#update_scan) |
+| [Uptime](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#uptime)|
+| [Uptime\_since\_flush\_status](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#uptime_since_flush_status) |
 | -u, --[user](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
-| --[use-stat-tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables), [use\_stat\_tables](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables) |
-| --[userstat](../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md#userstat), [userstat](../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md#userstat) |
+| --[use-stat-tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables), [use\_stat\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#use_stat_tables) |
+| --[userstat](../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md#userstat), [userstat](../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/user-statistics.md#userstat) |
 | -v, --[verbose](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
-| -V, [version](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version)|
-| [version\_comment](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_comment) |
-| [version\_compile\_machine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_compile_machine)|
-| [version\_compile\_os](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_compile_os)|
-| [version\_malloc\_library](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_malloc_library)|
-| [version\_source\_revision](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_source_revision)|
+| -V, [version](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version)|
+| [version\_comment](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_comment) |
+| [version\_compile\_machine](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_compile_machine)|
+| [version\_compile\_os](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_compile_os)|
+| [version\_malloc\_library](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_malloc_library)|
+| [version\_source\_revision](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_source_revision)|
 | [version\_ssl\_library](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
-| -W, [log\_warnings](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) |
-| [wait\_timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) |
-| [warning\_count](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) |
+| -W, [log\_warnings](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) |
+| [wait\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) |
+| [warning\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) |
 | [wsrep](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)|
 | [wsrep\_allowlist](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_allowlist) |
 | [wsrep\_applier\_thread\_count](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)|
@@ -2455,7 +2455,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 
 ## See Also
 
-* [System and Status Variables Added By Major Release](../../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/)
+* [System and Status Variables Added By Major Release](../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/)
 
 CC BY-SA / Gnu FDL
 
