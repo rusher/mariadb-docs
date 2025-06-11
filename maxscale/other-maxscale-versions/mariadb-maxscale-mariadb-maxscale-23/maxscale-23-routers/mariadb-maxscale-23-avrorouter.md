@@ -1,8 +1,4 @@
-# mariadb-maxscale-23-avrorouter
-
-## Avrorouter
-
-## Avrorouter
+# Avrorouter
 
 The avrorouter is a MariaDB 10.0 binary log to Avro file converter. It consumes\
 binary logs from a local directory and transforms them into a set of Avro files.\
@@ -224,7 +220,7 @@ for more details about size type parameters and how to use them.
 
 ### Module commands
 
-Read [Module Commands](../maxscale-23-reference/mariadb-maxscale-23-module-commands.md) documentation for\
+Read [Module Commands](broken-reference) documentation for\
 details about module commands.
 
 The avrorouter supports the following module commands.
@@ -417,7 +413,7 @@ configuring the Avro C library.
 -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
 ```
 
-For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md)\
+For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](broken-reference)\
 document.
 
 CC BY-SA / Gnu FDL

@@ -1,56 +1,42 @@
-
 # MaxCtrl
 
-# MaxCtrl
-
-
-MaxCtrl is a command line administrative client for MaxScale which uses
-the MaxScale REST API for communication. It is intended to be the
+MaxCtrl is a command line administrative client for MaxScale which uses\
+the MaxScale REST API for communication. It is intended to be the\
 replacement software for the legacy MaxAdmin command line client.
 
-
-By default, the MaxScale REST API listens on port 8989 on the local host. The
-default credentials for the REST API are `admin:mariadb`. The users used by the
-REST API are the same that are used by the MaxAdmin network interface. This
-means that any users created for the MaxAdmin network interface should work with
+By default, the MaxScale REST API listens on port 8989 on the local host. The\
+default credentials for the REST API are `admin:mariadb`. The users used by the\
+REST API are the same that are used by the MaxAdmin network interface. This\
+means that any users created for the MaxAdmin network interface should work with\
 the MaxScale REST API and MaxCtrl.
 
+For more information about the MaxScale REST API, refer to the[REST API documentation](../maxscale-23-rest-api/maxscale-2-3-rest-api.md) and the[Configuration Guide](../../mariadb-maxscale-21-06/).
 
-For more information about the MaxScale REST API, refer to the
-[REST API documentation](../maxscale-23-rest-api/maxscale-2-3-rest-api.md) and the
-[Configuration Guide](../../mariadb-maxscale-21-06/README.md).
+## Commands
 
+* [list](mariadb-maxscale-23-maxctrl.md#list)
+* [show](mariadb-maxscale-23-maxctrl.md#show)
+* [set](mariadb-maxscale-23-maxctrl.md#set)
+* [clear](mariadb-maxscale-23-maxctrl.md#clear)
+* [drain](mariadb-maxscale-23-maxctrl.md#drain)
+* [enable](mariadb-maxscale-23-maxctrl.md#enable)
+* [disable](mariadb-maxscale-23-maxctrl.md#disable)
+* [create](mariadb-maxscale-23-maxctrl.md#create)
+* [destroy](mariadb-maxscale-23-maxctrl.md#destroy)
+* [link](mariadb-maxscale-23-maxctrl.md#link)
+* [unlink](mariadb-maxscale-23-maxctrl.md#unlink)
+* [start](mariadb-maxscale-23-maxctrl.md#start)
+* [stop](mariadb-maxscale-23-maxctrl.md#stop)
+* [alter](mariadb-maxscale-23-maxctrl.md#alter)
+* [rotate](mariadb-maxscale-23-maxctrl.md#rotate)
+* [call](mariadb-maxscale-23-maxctrl.md#call)
+* [cluster](mariadb-maxscale-23-maxctrl.md#cluster)
+* [api](mariadb-maxscale-23-maxctrl.md#api)
+* [classify](mariadb-maxscale-23-maxctrl.md#classify)
 
-# Commands
-
-
-* [list](#list)
-* [show](#show)
-* [set](#set)
-* [clear](#clear)
-* [drain](#drain)
-* [enable](#enable)
-* [disable](#disable)
-* [create](#create)
-* [destroy](#destroy)
-* [link](#link)
-* [unlink](#unlink)
-* [start](#start)
-* [stop](#stop)
-* [alter](#alter)
-* [rotate](#rotate)
-* [call](#call)
-* [cluster](#cluster)
-* [api](#api)
-* [classify](#classify)
-
-
-## Options
-
+### Options
 
 All command accept the following global options.
-
-
 
 ```
 -u, --user      Username to use                    [string] [default: "admin"]
@@ -81,11 +67,7 @@ If no commands are given, maxctrl is started in interactive mode. Use `exit` to
 exit the interactive mode.
 ```
 
-
-
-## list
-
-
+### list
 
 ```
 Usage: list <command>
@@ -103,193 +85,149 @@ Commands:
   commands             List module commands
 ```
 
-
-
-### list servers
-
+#### list servers
 
 `Usage: list servers`
 
-
 List all servers in MaxScale.
 
+| Field       | Description                           |
+| ----------- | ------------------------------------- |
+| Field       | Description                           |
+| Server      | Server name                           |
+| Address     | Address where the server listens      |
+| Port        | The port on which the server listens  |
+| Connections | Current connection count              |
+| State       | Server state                          |
+| GTID        | Current value of @@gtid\_current\_pos |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Server | Server name |
-| Address | Address where the server listens |
-| Port | The port on which the server listens |
-| Connections | Current connection count |
-| State | Server state |
-| GTID | Current value of @@gtid_current_pos |
-
-
-### list services
-
+#### list services
 
 `Usage: list services`
 
-
 List all services and the servers they use.
 
+| Field             | Description                   |
+| ----------------- | ----------------------------- |
+| Field             | Description                   |
+| Service           | Service name                  |
+| Router            | Router used by the service    |
+| Connections       | Current connection count      |
+| Total Connections | Total connection count        |
+| Servers           | Servers that the service uses |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Service | Service name |
-| Router | Router used by the service |
-| Connections | Current connection count |
-| Total Connections | Total connection count |
-| Servers | Servers that the service uses |
-
-
-### list listeners
-
+#### list listeners
 
 `Usage: list listeners <service>`
 
-
 List listeners for a service.
 
+| Field | Description                                      |
+| ----- | ------------------------------------------------ |
+| Field | Description                                      |
+| Name  | Listener name                                    |
+| Port  | The port where the listener listens              |
+| Host  | The address or socket where the listener listens |
+| State | Listener state                                   |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Name | Listener name |
-| Port | The port where the listener listens |
-| Host | The address or socket where the listener listens |
-| State | Listener state |
-
-
-### list monitors
-
+#### list monitors
 
 `Usage: list monitors`
 
-
 List all monitors in MaxScale.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Monitor | Monitor name |
-| State | Monitor state |
+| Field   | Description                            |
+| ------- | -------------------------------------- |
+| Field   | Description                            |
+| Monitor | Monitor name                           |
+| State   | Monitor state                          |
 | Servers | The servers that this monitor monitors |
 
-
-### list sessions
-
+#### list sessions
 
 `Usage: list sessions`
 
-
 List all client sessions.
 
+| Field     | Description                                    |
+| --------- | ---------------------------------------------- |
+| Field     | Description                                    |
+| Id        | Session ID                                     |
+| User      | Username                                       |
+| Host      | Client host address                            |
+| Connected | Time when the session started                  |
+| Idle      | How long the session has been idle, in seconds |
+| Service   | The service where the session connected        |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Id | Session ID |
-| User | Username |
-| Host | Client host address |
-| Connected | Time when the session started |
-| Idle | How long the session has been idle, in seconds |
-| Service | The service where the session connected |
-
-
-### list filters
-
+#### list filters
 
 `Usage: list filters`
 
-
 List all filters in MaxScale.
 
+| Field   | Description                     |
+| ------- | ------------------------------- |
+| Field   | Description                     |
+| Filter  | Filter name                     |
+| Service | Services that use the filter    |
+| Module  | The module that the filter uses |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Filter | Filter name |
-| Service | Services that use the filter |
-| Module | The module that the filter uses |
-
-
-### list modules
-
+#### list modules
 
 `Usage: list modules`
 
-
 List all currently loaded modules.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Module | Module name |
-| Type | Module type |
+| Field   | Description    |
+| ------- | -------------- |
+| Field   | Description    |
+| Module  | Module name    |
+| Type    | Module type    |
 | Version | Module version |
 
-
-### list threads
-
+#### list threads
 
 `Usage: list threads`
 
-
 List all worker threads.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Id | Thread ID |
+| Field       | Description                                |
+| ----------- | ------------------------------------------ |
+| Field       | Description                                |
+| Id          | Thread ID                                  |
 | Current FDs | Current number of managed file descriptors |
-| Total FDs | Total number of managed file descriptors |
-| Load (1s) | Load percentage over the last second |
-| Load (1m) | Load percentage over the last minute |
-| Load (1h) | Load percentage over the last hour |
+| Total FDs   | Total number of managed file descriptors   |
+| Load (1s)   | Load percentage over the last second       |
+| Load (1m)   | Load percentage over the last minute       |
+| Load (1h)   | Load percentage over the last hour         |
 
-
-### list users
-
+#### list users
 
 `Usage: list users`
 
-
-List network the users that can be used to connect to the MaxScale REST API as
+List network the users that can be used to connect to the MaxScale REST API as\
 well as enabled local accounts.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Name | User name |
-| Type | User type |
+| Field      | Description     |
+| ---------- | --------------- |
+| Field      | Description     |
+| Name       | User name       |
+| Type       | User type       |
 | Privileges | User privileges |
 
-
-### list commands
-
+#### list commands
 
 `Usage: list commands`
 
-
 List all available module commands.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Module | Module name |
+| Field    | Description        |
+| -------- | ------------------ |
+| Field    | Description        |
+| Module   | Module name        |
 | Commands | Available commands |
 
-
-## show
-
-
+### show
 
 ```
 Usage: show <command>
@@ -314,402 +252,329 @@ Commands:
   commands <module>  Show module commands of a module
 ```
 
-
-
-### show server
-
+#### show server
 
 `Usage: show server <server>`
 
-
 Show detailed information about a server. The `Parameters` field contains the currently configured parameters for this server. See `help alter server` for more details about altering server parameters.
 
+| Field            | Description                                 |
+| ---------------- | ------------------------------------------- |
+| Field            | Description                                 |
+| Server           | Server name                                 |
+| Address          | Address where the server listens            |
+| Port             | The port on which the server listens        |
+| State            | Server state                                |
+| Last Event       | The type of the latest event                |
+| Triggered At     | Time when the latest event was triggered at |
+| Services         | Services that use this server               |
+| Monitors         | Monitors that monitor this server           |
+| Master ID        | The server ID of the master                 |
+| Node ID          | The node ID of this server                  |
+| Slave Server IDs | List of slave server IDs                    |
+| Statistics       | Server statistics                           |
+| Parameters       | Server parameters                           |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Server | Server name |
-| Address | Address where the server listens |
-| Port | The port on which the server listens |
-| State | Server state |
-| Last Event | The type of the latest event |
-| Triggered At | Time when the latest event was triggered at |
-| Services | Services that use this server |
-| Monitors | Monitors that monitor this server |
-| Master ID | The server ID of the master |
-| Node ID | The node ID of this server |
-| Slave Server IDs | List of slave server IDs |
-| Statistics | Server statistics |
-| Parameters | Server parameters |
-
-
-### show servers
-
+#### show servers
 
 `Usage: show servers`
 
-
 Show detailed information about all servers.
 
+| Field            | Description                                 |
+| ---------------- | ------------------------------------------- |
+| Field            | Description                                 |
+| Server           | Server name                                 |
+| Address          | Address where the server listens            |
+| Port             | The port on which the server listens        |
+| State            | Server state                                |
+| Last Event       | The type of the latest event                |
+| Triggered At     | Time when the latest event was triggered at |
+| Services         | Services that use this server               |
+| Monitors         | Monitors that monitor this server           |
+| Master ID        | The server ID of the master                 |
+| Node ID          | The node ID of this server                  |
+| Slave Server IDs | List of slave server IDs                    |
+| Statistics       | Server statistics                           |
+| Parameters       | Server parameters                           |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Server | Server name |
-| Address | Address where the server listens |
-| Port | The port on which the server listens |
-| State | Server state |
-| Last Event | The type of the latest event |
-| Triggered At | Time when the latest event was triggered at |
-| Services | Services that use this server |
-| Monitors | Monitors that monitor this server |
-| Master ID | The server ID of the master |
-| Node ID | The node ID of this server |
-| Slave Server IDs | List of slave server IDs |
-| Statistics | Server statistics |
-| Parameters | Server parameters |
-
-
-### show service
-
+#### show service
 
 `Usage: show service <service>`
 
-
 Show detailed information about a service. The `Parameters` field contains the currently configured parameters for this service. See `help alter service` for more details about altering service parameters.
 
+| Field               | Description                               |
+| ------------------- | ----------------------------------------- |
+| Field               | Description                               |
+| Service             | Service name                              |
+| Router              | Router that the service uses              |
+| State               | Service state                             |
+| Started At          | When the service was started              |
+| Current Connections | Current connection count                  |
+| Total Connections   | Total connection count                    |
+| Servers             | Servers that the service uses             |
+| Parameters          | Service parameter                         |
+| Router Diagnostics  | Diagnostics provided by the router module |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Service | Service name |
-| Router | Router that the service uses |
-| State | Service state |
-| Started At | When the service was started |
-| Current Connections | Current connection count |
-| Total Connections | Total connection count |
-| Servers | Servers that the service uses |
-| Parameters | Service parameter |
-| Router Diagnostics | Diagnostics provided by the router module |
-
-
-### show services
-
+#### show services
 
 `Usage: show services`
 
-
 Show detailed information about all services.
 
+| Field               | Description                               |
+| ------------------- | ----------------------------------------- |
+| Field               | Description                               |
+| Service             | Service name                              |
+| Router              | Router that the service uses              |
+| State               | Service state                             |
+| Started At          | When the service was started              |
+| Current Connections | Current connection count                  |
+| Total Connections   | Total connection count                    |
+| Servers             | Servers that the service uses             |
+| Parameters          | Service parameter                         |
+| Router Diagnostics  | Diagnostics provided by the router module |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Service | Service name |
-| Router | Router that the service uses |
-| State | Service state |
-| Started At | When the service was started |
-| Current Connections | Current connection count |
-| Total Connections | Total connection count |
-| Servers | Servers that the service uses |
-| Parameters | Service parameter |
-| Router Diagnostics | Diagnostics provided by the router module |
-
-
-### show monitor
-
+#### show monitor
 
 `Usage: show monitor <monitor>`
 
-
 Show detailed information about a monitor. The `Parameters` field contains the currently configured parameters for this monitor. See `help alter monitor` for more details about altering monitor parameters.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Monitor | Monitor name |
-| State | Monitor state |
-| Servers | The servers that this monitor monitors |
-| Parameters | Monitor parameters |
+| Field               | Description                                |
+| ------------------- | ------------------------------------------ |
+| Field               | Description                                |
+| Monitor             | Monitor name                               |
+| State               | Monitor state                              |
+| Servers             | The servers that this monitor monitors     |
+| Parameters          | Monitor parameters                         |
 | Monitor Diagnostics | Diagnostics provided by the monitor module |
 
-
-### show monitors
-
+#### show monitors
 
 `Usage: show monitors`
 
-
 Show detailed information about all monitors.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Monitor | Monitor name |
-| State | Monitor state |
-| Servers | The servers that this monitor monitors |
-| Parameters | Monitor parameters |
+| Field               | Description                                |
+| ------------------- | ------------------------------------------ |
+| Field               | Description                                |
+| Monitor             | Monitor name                               |
+| State               | Monitor state                              |
+| Servers             | The servers that this monitor monitors     |
+| Parameters          | Monitor parameters                         |
 | Monitor Diagnostics | Diagnostics provided by the monitor module |
 
-
-### show session
-
+#### show session
 
 `Usage: show session <session>`
 
-
-Show detailed information about a single session. The list of sessions can be retrieved with the `list sessions` command. The <session> is the session ID of a particular session.
-
+Show detailed information about a single session. The list of sessions can be retrieved with the `list sessions` command. The is the session ID of a particular session.
 
 The `Connections` field lists the servers to which the session is connected and the `Connection IDs` field lists the IDs for those connections.
 
+| Field          | Description                                    |
+| -------------- | ---------------------------------------------- |
+| Field          | Description                                    |
+| Id             | Session ID                                     |
+| Service        | The service where the session connected        |
+| State          | Session state                                  |
+| User           | Username                                       |
+| Host           | Client host address                            |
+| Connected      | Time when the session started                  |
+| Idle           | How long the session has been idle, in seconds |
+| Connections    | Ordered list of backend connections            |
+| Connection IDs | Thread IDs for the backend connections         |
+| Queries        | Query history                                  |
+| Log            | Per-session log messages                       |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Id | Session ID |
-| Service | The service where the session connected |
-| State | Session state |
-| User | Username |
-| Host | Client host address |
-| Connected | Time when the session started |
-| Idle | How long the session has been idle, in seconds |
-| Connections | Ordered list of backend connections |
-| Connection IDs | Thread IDs for the backend connections |
-| Queries | Query history |
-| Log | Per-session log messages |
-
-
-### show sessions
-
+#### show sessions
 
 `Usage: show sessions`
 
-
 Show detailed information about all sessions. See `help show session` for more details.
 
+| Field          | Description                                    |
+| -------------- | ---------------------------------------------- |
+| Field          | Description                                    |
+| Id             | Session ID                                     |
+| Service        | The service where the session connected        |
+| State          | Session state                                  |
+| User           | Username                                       |
+| Host           | Client host address                            |
+| Connected      | Time when the session started                  |
+| Idle           | How long the session has been idle, in seconds |
+| Connections    | Ordered list of backend connections            |
+| Connection IDs | Thread IDs for the backend connections         |
+| Queries        | Query history                                  |
+| Log            | Per-session log messages                       |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Id | Session ID |
-| Service | The service where the session connected |
-| State | Session state |
-| User | Username |
-| Host | Client host address |
-| Connected | Time when the session started |
-| Idle | How long the session has been idle, in seconds |
-| Connections | Ordered list of backend connections |
-| Connection IDs | Thread IDs for the backend connections |
-| Queries | Query history |
-| Log | Per-session log messages |
-
-
-### show filter
-
+#### show filter
 
 `Usage: show filter <filter>`
 
-
 The list of services that use this filter is show in the `Services` field.
 
+| Field      | Description                     |
+| ---------- | ------------------------------- |
+| Field      | Description                     |
+| Filter     | Filter name                     |
+| Module     | The module that the filter uses |
+| Services   | Services that use the filter    |
+| Parameters | Filter parameters               |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Filter | Filter name |
-| Module | The module that the filter uses |
-| Services | Services that use the filter |
-| Parameters | Filter parameters |
-
-
-### show filters
-
+#### show filters
 
 `Usage: show filters`
 
-
 Show detailed information of all filters.
 
+| Field      | Description                     |
+| ---------- | ------------------------------- |
+| Field      | Description                     |
+| Filter     | Filter name                     |
+| Module     | The module that the filter uses |
+| Services   | Services that use the filter    |
+| Parameters | Filter parameters               |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Filter | Filter name |
-| Module | The module that the filter uses |
-| Services | Services that use the filter |
-| Parameters | Filter parameters |
-
-
-### show module
-
+#### show module
 
 `Usage: show module <module>`
 
-
 This command shows all available parameters as well as detailed version information of a loaded module.
 
+| Field       | Description                                |
+| ----------- | ------------------------------------------ |
+| Field       | Description                                |
+| Module      | Module name                                |
+| Type        | Module type                                |
+| Version     | Module version                             |
+| Maturity    | Module maturity                            |
+| Description | Short description about the module         |
+| Parameters  | All the parameters that the module accepts |
+| Commands    | Commands that the module provides          |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Module | Module name |
-| Type | Module type |
-| Version | Module version |
-| Maturity | Module maturity |
-| Description | Short description about the module |
-| Parameters | All the parameters that the module accepts |
-| Commands | Commands that the module provides |
-
-
-### show modules
-
+#### show modules
 
 `Usage: show modules`
 
-
 Displays detailed information about all modules.
 
+| Field       | Description                                |
+| ----------- | ------------------------------------------ |
+| Field       | Description                                |
+| Module      | Module name                                |
+| Type        | Module type                                |
+| Version     | Module version                             |
+| Maturity    | Module maturity                            |
+| Description | Short description about the module         |
+| Parameters  | All the parameters that the module accepts |
+| Commands    | Commands that the module provides          |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Module | Module name |
-| Type | Module type |
-| Version | Module version |
-| Maturity | Module maturity |
-| Description | Short description about the module |
-| Parameters | All the parameters that the module accepts |
-| Commands | Commands that the module provides |
-
-
-### show maxscale
-
+#### show maxscale
 
 `Usage: show maxscale`
 
-
 See `help alter maxscale` for more details about altering MaxScale parameters.
 
-
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Version | MaxScale version |
-| Commit | MaxScale commit ID |
-| Started At | Time when MaxScale was started |
+| Field        | Description                          |
+| ------------ | ------------------------------------ |
+| Field        | Description                          |
+| Version      | MaxScale version                     |
+| Commit       | MaxScale commit ID                   |
+| Started At   | Time when MaxScale was started       |
 | Activated At | Time when MaxScale left passive mode |
-| Uptime | Time MaxScale has been running |
-| Parameters | Global MaxScale parameters |
+| Uptime       | Time MaxScale has been running       |
+| Parameters   | Global MaxScale parameters           |
 
-
-### show thread
-
+#### show thread
 
 `Usage: show thread <thread>`
 
-
 Show detailed information about a worker thread.
 
+| Field                  | Description                                                                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| Field                  | Description                                                                                  |
+| Id                     | Thread ID                                                                                    |
+| Accepts                | Number of TCP accepts done by this thread                                                    |
+| Reads                  | Number of EPOLLIN events                                                                     |
+| Writes                 | Number of EPOLLOUT events                                                                    |
+| Hangups                | Number of EPOLLHUP and EPOLLRDUP events                                                      |
+| Errors                 | Number of EPOLLERR events                                                                    |
+| Avg event queue length | Average number of events returned by one epoll\_wait call                                    |
+| Max event queue length | Maximum number of events returned by one epoll\_wait call                                    |
+| Max exec time          | The longest time spent processing events returned by a epoll\_wait call                      |
+| Max queue time         | The longest time an event had to wait before it was processed                                |
+| Current FDs            | Current number of managed file descriptors                                                   |
+| Total FDs              | Total number of managed file descriptors                                                     |
+| Load (1s)              | Load percentage over the last second                                                         |
+| Load (1m)              | Load percentage over the last minute                                                         |
+| Load (1h)              | Load percentage over the last hour                                                           |
+| QC cache size          | Query classifier size                                                                        |
+| QC cache inserts       | Number of times a new query was added into the query classification cache                    |
+| QC cache hits          | How many times a query classification was found in the query classification cache            |
+| QC cache misses        | How many times a query classification was not found in the query classification cache        |
+| QC cache evictions     | How many times a query classification result was evicted from the query classification cache |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Id | Thread ID |
-| Accepts | Number of TCP accepts done by this thread |
-| Reads | Number of EPOLLIN events |
-| Writes | Number of EPOLLOUT events |
-| Hangups | Number of EPOLLHUP and EPOLLRDUP events |
-| Errors | Number of EPOLLERR events |
-| Avg event queue length | Average number of events returned by one epoll_wait call |
-| Max event queue length | Maximum number of events returned by one epoll_wait call |
-| Max exec time | The longest time spent processing events returned by a epoll_wait call |
-| Max queue time | The longest time an event had to wait before it was processed |
-| Current FDs | Current number of managed file descriptors |
-| Total FDs | Total number of managed file descriptors |
-| Load (1s) | Load percentage over the last second |
-| Load (1m) | Load percentage over the last minute |
-| Load (1h) | Load percentage over the last hour |
-| QC cache size | Query classifier size |
-| QC cache inserts | Number of times a new query was added into the query classification cache |
-| QC cache hits | How many times a query classification was found in the query classification cache |
-| QC cache misses | How many times a query classification was not found in the query classification cache |
-| QC cache evictions | How many times a query classification result was evicted from the query classification cache |
-
-
-### show threads
-
+#### show threads
 
 `Usage: show threads`
 
-
 Show detailed information about all worker threads.
 
+| Field                  | Description                                                                                  |
+| ---------------------- | -------------------------------------------------------------------------------------------- |
+| Field                  | Description                                                                                  |
+| Id                     | Thread ID                                                                                    |
+| Accepts                | Number of TCP accepts done by this thread                                                    |
+| Reads                  | Number of EPOLLIN events                                                                     |
+| Writes                 | Number of EPOLLOUT events                                                                    |
+| Hangups                | Number of EPOLLHUP and EPOLLRDUP events                                                      |
+| Errors                 | Number of EPOLLERR events                                                                    |
+| Avg event queue length | Average number of events returned by one epoll\_wait call                                    |
+| Max event queue length | Maximum number of events returned by one epoll\_wait call                                    |
+| Max exec time          | The longest time spent processing events returned by a epoll\_wait call                      |
+| Max queue time         | The longest time an event had to wait before it was processed                                |
+| Current FDs            | Current number of managed file descriptors                                                   |
+| Total FDs              | Total number of managed file descriptors                                                     |
+| Load (1s)              | Load percentage over the last second                                                         |
+| Load (1m)              | Load percentage over the last minute                                                         |
+| Load (1h)              | Load percentage over the last hour                                                           |
+| QC cache size          | Query classifier size                                                                        |
+| QC cache inserts       | Number of times a new query was added into the query classification cache                    |
+| QC cache hits          | How many times a query classification was found in the query classification cache            |
+| QC cache misses        | How many times a query classification was not found in the query classification cache        |
+| QC cache evictions     | How many times a query classification result was evicted from the query classification cache |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Id | Thread ID |
-| Accepts | Number of TCP accepts done by this thread |
-| Reads | Number of EPOLLIN events |
-| Writes | Number of EPOLLOUT events |
-| Hangups | Number of EPOLLHUP and EPOLLRDUP events |
-| Errors | Number of EPOLLERR events |
-| Avg event queue length | Average number of events returned by one epoll_wait call |
-| Max event queue length | Maximum number of events returned by one epoll_wait call |
-| Max exec time | The longest time spent processing events returned by a epoll_wait call |
-| Max queue time | The longest time an event had to wait before it was processed |
-| Current FDs | Current number of managed file descriptors |
-| Total FDs | Total number of managed file descriptors |
-| Load (1s) | Load percentage over the last second |
-| Load (1m) | Load percentage over the last minute |
-| Load (1h) | Load percentage over the last hour |
-| QC cache size | Query classifier size |
-| QC cache inserts | Number of times a new query was added into the query classification cache |
-| QC cache hits | How many times a query classification was found in the query classification cache |
-| QC cache misses | How many times a query classification was not found in the query classification cache |
-| QC cache evictions | How many times a query classification result was evicted from the query classification cache |
-
-
-### show logging
-
+#### show logging
 
 `Usage: show logging`
 
-
 See `help alter logging` for more details about altering logging parameters.
 
+| Field              | Description                                   |
+| ------------------ | --------------------------------------------- |
+| Field              | Description                                   |
+| Current Log File   | The current log file MaxScale is logging into |
+| Enabled Log Levels | List of log levels enabled in MaxScale        |
+| Parameters         | Logging parameters                            |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Current Log File | The current log file MaxScale is logging into |
-| Enabled Log Levels | List of log levels enabled in MaxScale |
-| Parameters | Logging parameters |
-
-
-### show commands
-
+#### show commands
 
 `Usage: show commands <module>`
 
-
 This command shows the parameters the command expects with the parameter descriptions.
 
+| Field        | Description                     |
+| ------------ | ------------------------------- |
+| Field        | Description                     |
+| Command      | Command name                    |
+| Parameters   | Parameters the command supports |
+| Descriptions | Parameter descriptions          |
 
-| Field | Description |
-| --- | --- |
-| Field | Description |
-| Command | Command name |
-| Parameters | Parameters the command supports |
-| Descriptions | Parameter descriptions |
-
-
-## set
-
-
+### set
 
 ```
 Usage: set <command>
@@ -722,24 +587,17 @@ Set options:
                                                       [boolean] [default: false]
 ```
 
-
-
-### set server
-
+#### set server
 
 `Usage: set server <server> <state>`
 
-
-If <server> is monitored by a monitor, this command should only be used to set
-the server into the `maintenance` state. Any other states will be overridden by
-the monitor on the next monitoring interval. To manually control server states,
-use the `stop monitor <name>` command to stop the monitor before setting the
+If is monitored by a monitor, this command should only be used to set\
+the server into the `maintenance` state. Any other states will be overridden by\
+the monitor on the next monitoring interval. To manually control server states,\
+use the `stop monitor <name>` command to stop the monitor before setting the\
 server states manually.
 
-
-## clear
-
-
+### clear
 
 ```
 Usage: clear <command>
@@ -748,21 +606,14 @@ Commands:
   server <server> <state>  Clear server state
 ```
 
-
-
-### clear server
-
+#### clear server
 
 `Usage: clear server <server> <state>`
 
-
-This command clears a server state set by the `set server <server> <state>`
+This command clears a server state set by the `set server <server> <state>`\
 command
 
-
-## drain
-
-
+### drain
 
 ```
 Usage: drain <command>
@@ -776,24 +627,17 @@ Drain options:
                    maintenance mode.                      [number] [default: 90]
 ```
 
-
-
-### drain server
-
+#### drain server
 
 `Usage: drain server <server>`
 
-
-This command drains the server of connections by first removing it from all
-services after which it waits until all connections are closed. When all
-connections are closed, the server is put into the `maintenance` state and added
-back to all the services where it was removed from. To take the server back into
+This command drains the server of connections by first removing it from all\
+services after which it waits until all connections are closed. When all\
+connections are closed, the server is put into the `maintenance` state and added\
+back to all the services where it was removed from. To take the server back into\
 use, execute `clear server <server> maintenance`.
 
-
-## enable
-
-
+### enable
 
 ```
 Usage: enable <command>
@@ -807,29 +651,19 @@ Enable account options:
                          [string] [choices: "admin", "basic"] [default: "basic"]
 ```
 
-
-
-### enable log-priority
-
+#### enable log-priority
 
 `Usage: enable log-priority <log>`
 
-
 The `debug` log priority is only available for debug builds of MaxScale.
 
-
-### enable account
-
+#### enable account
 
 `Usage: enable account <name>`
 
-
 The Linux user accounts are used by the MaxAdmin UNIX Domain Socket interface
 
-
-## disable
-
-
+### disable
 
 ```
 Usage: disable <command>
@@ -839,29 +673,19 @@ Commands:
   account <name>      Disable a Linux user account from administrative use
 ```
 
-
-
-### disable log-priority
-
+#### disable log-priority
 
 `Usage: disable log-priority <log>`
 
-
 The `debug` log priority is only available for debug builds of MaxScale.
 
-
-### disable account
-
+#### disable account
 
 `Usage: disable account <name>`
 
-
 The Linux user accounts are used by the MaxAdmin UNIX Domain Socket interface
 
-
-## create
-
-
+### create
 
 ```
 Usage: create <command>
@@ -905,77 +729,54 @@ Create user options:
                          [string] [choices: "admin", "basic"] [default: "basic"]
 ```
 
-
-
-### create server
-
+#### create server
 
 `Usage: create server <name> <host> <port>`
 
-
-The created server will not be used by any services or monitors unless the
---services or --monitors options are given. The list of servers a service or a
+The created server will not be used by any services or monitors unless the\
+\--services or --monitors options are given. The list of servers a service or a\
 monitor uses can be altered with the `link` and `unlink` commands.
 
-
-### create monitor
-
+#### create monitor
 
 `Usage: create monitor <name> <module> [params...]`
 
-
-The list of servers given with the --servers option should not contain any
-servers that are already monitored by another monitor. The last argument to this
+The list of servers given with the --servers option should not contain any\
+servers that are already monitored by another monitor. The last argument to this\
 command is a list of key=value parameters given as the monitor parameters.
 
-
-### create service
-
+#### create service
 
 `Usage: service <name> <router> <params...>`
 
-
-The last argument to this command is a list of key=value parameters given as the
-service parameters. If the --servers or --filters options are used, they must be
+The last argument to this command is a list of key=value parameters given as the\
+service parameters. If the --servers or --filters options are used, they must be\
 defined after the service parameters.
-
 
 Note that the `user` and `password` parameters must be defined.
 
-
-### create filter
-
+#### create filter
 
 `Usage: filter <name> <module> [params...]`
 
-
-The last argument to this command is a list of key=value parameters given as the
+The last argument to this command is a list of key=value parameters given as the\
 filter parameters.
 
-
-### create listener
-
+#### create listener
 
 `Usage: create listener <service> <name> <port>`
 
-
 The new listener will be taken into use immediately.
 
-
-### create user
-
+#### create user
 
 `Usage: create user <name> <password>`
 
-
-The created user can be used with the MaxScale REST API as well as the MaxAdmin
-network interface. By default the created user will have read-only privileges.
+The created user can be used with the MaxScale REST API as well as the MaxAdmin\
+network interface. By default the created user will have read-only privileges.\
 To make the user an administrative user, use the `--type=admin` option.
 
-
-## destroy
-
-
+### destroy
 
 ```
 Usage: destroy <command>
@@ -989,68 +790,46 @@ Commands:
   user <name>                Remove a network user
 ```
 
-
-
-### destroy server
-
+#### destroy server
 
 `Usage: destroy server <name>`
 
-
-The server must be unlinked from all services and monitor before it can be
+The server must be unlinked from all services and monitor before it can be\
 destroyed.
 
-
-### destroy monitor
-
+#### destroy monitor
 
 `Usage: destroy monitor <name>`
 
-
 The monitor must be unlinked from all servers before it can be destroyed.
 
-
-### destroy listener
-
+#### destroy listener
 
 `Usage: destroy listener <service> <name>`
 
-
 Destroying a listener closes the listening socket, opening it up for reuse.
 
-
-### destroy service
-
+#### destroy service
 
 `Usage: destroy service <name>`
 
-
-The service must be unlinked from all servers and filters. All listeners for the
+The service must be unlinked from all servers and filters. All listeners for the\
 service must be destroyed before the service itself can be destroyed.
 
-
-### destroy filter
-
+#### destroy filter
 
 `Usage: destroy filter <name>`
 
-
 The filter must not be used by any service when it is destroyed.
 
-
-### destroy user
-
+#### destroy user
 
 `Usage: destroy user <name>`
 
-
-The last remaining administrative user cannot be removed. Create a replacement
+The last remaining administrative user cannot be removed. Create a replacement\
 administrative user before attempting to remove the last administrative user.
 
-
-## link
-
-
+### link
 
 ```
 Usage: link <command>
@@ -1060,35 +839,25 @@ Commands:
   monitor <name> <server...>  Link servers to a monitor
 ```
 
-
-
-### link service
-
+#### link service
 
 `Usage: link service <name> <server...>`
 
-
-This command links servers to a service, making them available for any
-connections that use the service. Before a server is linked to a service, it
-should be linked to a monitor so that the server state is up to date. Newly
-linked server are only available to new connections, existing connections will
+This command links servers to a service, making them available for any\
+connections that use the service. Before a server is linked to a service, it\
+should be linked to a monitor so that the server state is up to date. Newly\
+linked server are only available to new connections, existing connections will\
 use the old list of servers.
 
-
-### link monitor
-
+#### link monitor
 
 `Usage: link monitor <name> <server...>`
 
-
-Linking a server to a monitor will add it to the list of servers that are
-monitored by that monitor. A server can be monitored by only one monitor at a
+Linking a server to a monitor will add it to the list of servers that are\
+monitored by that monitor. A server can be monitored by only one monitor at a\
 time.
 
-
-## unlink
-
-
+### unlink
 
 ```
 Usage: unlink <command>
@@ -1098,33 +867,23 @@ Commands:
   monitor <name> <server...>  Unlink servers from a monitor
 ```
 
-
-
-### unlink service
-
+#### unlink service
 
 `Usage: unlink service <name> <server...>`
 
-
-This command unlinks servers from a service, removing them from the list of
-available servers for that service. New connections to the service will not use
+This command unlinks servers from a service, removing them from the list of\
+available servers for that service. New connections to the service will not use\
 the unlinked servers but existing connections can still use the servers.
 
-
-### unlink monitor
-
+#### unlink monitor
 
 `Usage: unlink monitor <name> <server...>`
 
-
-This command unlinks servers from a monitor, removing them from the list of
-monitored servers. The servers will be left in their current state when they are
+This command unlinks servers from a monitor, removing them from the list of\
+monitored servers. The servers will be left in their current state when they are\
 unlinked from a monitor.
 
-
-## start
-
-
+### start
 
 ```
 Usage: start <command>
@@ -1135,39 +894,26 @@ Commands:
   services        Start all services                         [aliases: maxscale]
 ```
 
-
-
-### start service
-
+#### start service
 
 `Usage: start service <name>`
 
-
 This starts a service stopped by `stop service <name>`
 
-
-### start monitor
-
+#### start monitor
 
 `Usage: start monitor <name>`
 
-
 This starts a monitor stopped by `stop monitor <name>`
 
-
-### start services
-
+#### start services
 
 `Usage: start [services|maxscale]`
 
-
-This command will execute the `start service` command for all services in
+This command will execute the `start service` command for all services in\
 MaxScale.
 
-
-## stop
-
-
+### stop
 
 ```
 Usage: stop <command>
@@ -1178,42 +924,29 @@ Commands:
   services        Stop all services                          [aliases: maxscale]
 ```
 
-
-
-### stop service
-
+#### stop service
 
 `Usage: stop service <name>`
 
-
-Stopping a service will prevent all the listeners for that service from
-accepting new connections. Existing connections will still be handled normally
+Stopping a service will prevent all the listeners for that service from\
+accepting new connections. Existing connections will still be handled normally\
 until they are closed.
 
-
-### stop monitor
-
+#### stop monitor
 
 `Usage: stop monitor <name>`
 
-
-Stopping a monitor will pause the monitoring of the servers. This can be used to
+Stopping a monitor will pause the monitoring of the servers. This can be used to\
 manually control server states with the `set server` command.
 
-
-### stop services
-
+#### stop services
 
 `Usage: stop [services|maxscale]`
 
-
-This command will execute the `stop service` command for all services in
+This command will execute the `stop service` command for all services in\
 MaxScale.
 
-
-## alter
-
-
+### alter
 
 ```
 Usage: alter <command>
@@ -1228,120 +961,92 @@ Commands:
   user <name> <password>                  Alter admin user passwords
 ```
 
-
-
-### alter server
-
+#### alter server
 
 `Usage: alter server <server> <key> <value>`
 
-
 To display the server parameters, execute `show server <server>`
 
-
-### alter monitor
-
+#### alter monitor
 
 `Usage: alter monitor <monitor> <key> <value>`
 
-
 To display the monitor parameters, execute `show monitor <monitor>`
 
-
-### alter service
-
+#### alter service
 
 `Usage: alter service <service> <key> <value>`
 
-
-To display the service parameters, execute `show service <service>`. Some
-routers support runtime configuration changes to all parameters. Currently all
-readconnroute, readwritesplit and schemarouter parameters can be changed at
-runtime. In addition to module specific parameters, the following list of common
+To display the service parameters, execute `show service <service>`. Some\
+routers support runtime configuration changes to all parameters. Currently all\
+readconnroute, readwritesplit and schemarouter parameters can be changed at\
+runtime. In addition to module specific parameters, the following list of common\
 service parameters can be altered at runtime:
 
-
-[
- "user",
- "passwd",
- "enable_root_user",
- "max_connections",
- "connection_timeout",
- "auth_all_servers",
- "optimize_wildcard",
- "strip_db_esc",
- "localhost_match_wildcard_host",
- "max_slave_connections",
- "max_slave_replication_lag",
- "retain_last_statements"
+\[\
+"user",\
+"passwd",\
+"enable\_root\_user",\
+"max\_connections",\
+"connection\_timeout",\
+"auth\_all\_servers",\
+"optimize\_wildcard",\
+"strip\_db\_esc",\
+"localhost\_match\_wildcard\_host",\
+"max\_slave\_connections",\
+"max\_slave\_replication\_lag",\
+"retain\_last\_statements"\
 ]
 
-
-### alter service-filters
-
+#### alter service-filters
 
 `Usage: alter service-filters <service> [filters...]`
 
-
-The order of the filters given as the second parameter will also be the order in
-which queries pass through the filter chain. If no filters are given, all
+The order of the filters given as the second parameter will also be the order in\
+which queries pass through the filter chain. If no filters are given, all\
 existing filters are removed from the service.
 
-
-For example, the command `maxctrl alter service filters my-service A B C` will
-set the filter chain for the service `my-service` so that A gets the query first
-after which it is passed to B and finally to C. This behavior is the same as if
+For example, the command `maxctrl alter service filters my-service A B C` will\
+set the filter chain for the service `my-service` so that A gets the query first\
+after which it is passed to B and finally to C. This behavior is the same as if\
 the `filters=A|B|C` parameter was defined for the service.
 
-
-### alter logging
-
+#### alter logging
 
 `Usage: alter logging <key> <value>`
 
-
 To display the logging parameters, execute `show logging`
 
-
-### alter maxscale
-
+#### alter maxscale
 
 `Usage: alter maxscale <key> <value>`
 
-
-To display the MaxScale parameters, execute `show maxscale`. The following list
+To display the MaxScale parameters, execute `show maxscale`. The following list\
 of parameters can be altered at runtime:
 
-
-[
- "auth_connect_timeout",
- "auth_read_timeout",
- "auth_write_timeout",
- "admin_auth",
- "admin_log_auth_failures",
- "passive",
- "ms_timestamp",
- "skip_permission_checks",
- "query_retries",
- "query_retry_timeout",
- "retain_last_statements",
- "dump_last_statements"
+\[\
+"auth\_connect\_timeout",\
+"auth\_read\_timeout",\
+"auth\_write\_timeout",\
+"admin\_auth",\
+"admin\_log\_auth\_failures",\
+"passive",\
+"ms\_timestamp",\
+"skip\_permission\_checks",\
+"query\_retries",\
+"query\_retry\_timeout",\
+"retain\_last\_statements",\
+"dump\_last\_statements"\
 ]
 
-
-### alter user
-
+#### alter user
 
 `Usage: alter user <name> <password>`
 
-
-Changes the password for a user. To change the user type, destroy the user and
+Changes the password for a user. To change the user type, destroy the user and\
 then create it again.
 
-
-## rotate
-
-
+### rotate
 
 ```
 Usage: rotate <command>
@@ -1350,20 +1055,13 @@ Commands:
   logs  Rotate log files by closing and reopening the files
 ```
 
-
-
-### rotate logs
-
+#### rotate logs
 
 `Usage: rotate logs`
 
-
 This command is intended to be used with the `logrotate` command.
 
-
-## call
-
-
+### call
 
 ```
 Usage: call <command>
@@ -1372,20 +1070,13 @@ Commands:
   command <module> <command> [params...]  Call a module command
 ```
 
-
-
-### call command
-
+#### call command
 
 `Usage: call command <module> <command> [params...]`
 
-
 To inspect the list of module commands, execute `list commands`
 
-
-## cluster
-
-
+### cluster
 
 ```
 Usage: cluster <command>
@@ -1395,37 +1086,27 @@ Commands:
   sync <target>  Synchronize the cluster with target MaxScale server.
 ```
 
-
-
-### cluster diff
-
+#### cluster diff
 
 `Usage: cluster diff <target>`
 
-
-The list of host servers is controlled with the --hosts option. The target
-server should not be in the host list. Value of <target> must be in HOST:PORT
+The list of host servers is controlled with the --hosts option. The target\
+server should not be in the host list. Value of must be in HOST:PORT\
 format
 
-
-### cluster sync
-
+#### cluster sync
 
 `Usage: cluster sync <target>`
 
-
-This command will alter all MaxScale instances given in the --hosts option to
-represent the <target> MaxScale. If the synchronization of a MaxScale instance
-fails, it will be disabled by executing the `stop maxscale` command on that
-instance. Synchronization can be attempted again if a previous attempt failed
-due to a network failure or some other ephemeral error. Any other errors require
-manual synchronization of the MaxScale configuration files and a restart of the
+This command will alter all MaxScale instances given in the --hosts option to\
+represent the MaxScale. If the synchronization of a MaxScale instance\
+fails, it will be disabled by executing the `stop maxscale` command on that\
+instance. Synchronization can be attempted again if a previous attempt failed\
+due to a network failure or some other ephemeral error. Any other errors require\
+manual synchronization of the MaxScale configuration files and a restart of the\
 failed Maxscale.
 
-
-## api
-
-
+### api
 
 ```
 Usage: api <command>
@@ -1439,30 +1120,20 @@ API options:
                                                       [boolean] [default: false]
 ```
 
-
-
-### api get
-
+#### api get
 
 `Usage: get <resource> [path]`
 
+Perform a raw REST API call. The path definition uses JavaScript syntax to\
+extract values. For example, the following command extracts all server states as\
+an array of JSON values: maxctrl api get servers data\[].attributes.state
 
-Perform a raw REST API call. The path definition uses JavaScript syntax to
-extract values. For example, the following command extracts all server states as
-an array of JSON values: maxctrl api get servers data[].attributes.state
-
-
-## classify
-
-
+### classify
 
 ```
 Usage: classify <statement>
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

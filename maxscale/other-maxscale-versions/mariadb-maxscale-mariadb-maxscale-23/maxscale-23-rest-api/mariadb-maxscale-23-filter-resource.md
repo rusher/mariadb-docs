@@ -1,36 +1,22 @@
-
 # Filter Resource
 
-# Filter Resource
-
-
-A filter resource represents an instance of a filter inside MaxScale. Multiple
+A filter resource represents an instance of a filter inside MaxScale. Multiple\
 services can use the same filter and a single service can use multiple filters.
 
+### Resource Operations
 
-## Resource Operations
+#### Get a filter
 
-
-### Get a filter
-
-
-Get a single filter. The *:name* in the URI must be a valid filter name with all
+Get a single filter. The _:name_ in the URI must be a valid filter name with all\
 whitespace replaced with hyphens. The filter names are case-sensitive.
-
-
 
 ```
 GET /v1/filters/:name
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -59,27 +45,17 @@ GET /v1/filters/:name
 }
 ```
 
-
-
-### Get all filters
-
+#### Get all filters
 
 Get all filters.
-
-
 
 ```
 GET /v1/filters
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -110,21 +86,14 @@ GET /v1/filters
 }
 ```
 
-
-
-### Create a filter
-
-
+#### Create a filter
 
 ```
 POST /v1/filters
 ```
 
-
-
-Create a new filter. The posted object must define at
+Create a new filter. The posted object must define at\
 least the following fields.
-
 
 * `data.id`
 * Name of the filter
@@ -133,19 +102,13 @@ least the following fields.
 * `data.atttributes.module`
 * The filter module to use
 
+All of the filter parameters should be defined at creation time in the`data.atttributes.parameters` object.
 
-All of the filter parameters should be defined at creation time in the
-`data.atttributes.parameters` object.
-
-
-As the service to filter relationship is ordered (filters are applied in the
-order they are listed), filter to service relationships cannot be defined at
+As the service to filter relationship is ordered (filters are applied in the\
+order they are listed), filter to service relationships cannot be defined at\
 creation time.
 
-
 The following example defines a request body which creates a new filter.
-
-
 
 ```
 {
@@ -162,46 +125,30 @@ The following example defines a request body which creates a new filter.
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Filter is created:
 
-
 `Status: 204 No Content`
 
-
-### Destroy a filter
-
-
+#### Destroy a filter
 
 ```
 DELETE /v1/filters/:filter
 ```
 
+The _:filter_ in the URI must map to the name of the filter to be destroyed.
 
-
-The *:filter* in the URI must map to the name of the filter to be destroyed.
-
-
-A filter can only be destroyed if no service uses it. This means that the
-`data.relationships` object for the filter must be empty. Note that the service
-→ filter relationship cannot be modified from the filters resource and must be
+A filter can only be destroyed if no service uses it. This means that the`data.relationships` object for the filter must be empty. Note that the service\
+→ filter relationship cannot be modified from the filters resource and must be\
 done via the services resource.
 
-
-#### Response
-
+**Response**
 
 Filter is destroyed:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

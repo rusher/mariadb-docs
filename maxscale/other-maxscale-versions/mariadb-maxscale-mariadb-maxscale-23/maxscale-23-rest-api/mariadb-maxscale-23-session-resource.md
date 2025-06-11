@@ -1,37 +1,23 @@
-
 # Session Resource
 
-# Session Resource
-
-
-A session is an abstraction of a client connection, any number of related backend
-connections, a router module session and possibly filter module sessions. Each
+A session is an abstraction of a client connection, any number of related backend\
+connections, a router module session and possibly filter module sessions. Each\
 session is created on a service and each service can have multiple sessions.
 
+### Resource Operations
 
-## Resource Operations
-
-
-### Get a session
-
-
+#### Get a session
 
 ```
 GET /v1/sessions/:id
 ```
 
-
-
-Get a single session. *:id* must be a valid session ID. The session ID is the
+Get a single session. _:id_ must be a valid session ID. The session ID is the\
 same that is exposed to the client as the connection ID.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -68,27 +54,17 @@ same that is exposed to the client as the connection ID.
 }
 ```
 
-
-
-### Get all sessions
-
-
+#### Get all sessions
 
 ```
 GET /v1/sessions
 ```
 
-
-
 Get all sessions.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -154,9 +130,6 @@ Get all sessions.
 }
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

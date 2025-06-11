@@ -1,10 +1,4 @@
-# mariadb-maxscale-22-mariadb-maxscale-nagios-plugins-for-nagios-351
-
-## MariaDB MaxScale Nagios plugins, for Nagios 3.5.1
-
-## MariaDB MaxScale Nagios plugins, for Nagios 3.5.1
-
-## Introduction
+# MariaDB MaxScale Nagios plugins, for Nagios 3.5.1
 
 Nagios® Core™ is an Open Source system and network monitoring application.\
 It watches hosts and services that you specify, alerting you when things go bad\

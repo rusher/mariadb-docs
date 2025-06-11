@@ -1,65 +1,47 @@
+# MaxBinlogCheck, the MariaDB Binlog Check Utility
 
-# Maxbinlogcheck, the MariaDB binlog check utility
+## Overview
 
-# Maxbinlogcheck, the MariaDB binlog check utility
-
-
-# Overview
-
-
-Maxbinlogcheck is a command line utility for checking binlogfiles. The files may
-have been downloaded by the MariaDB MaxScale binlog router or they may be
-MariaDB binlog files stored in a database server acting as a master in a
-replication environment. Maxbinlogcheck checks the binlog files against any
-corruption and stored incomplete transactions and reports a transaction summary
+Maxbinlogcheck is a command line utility for checking binlogfiles. The files may\
+have been downloaded by the MariaDB MaxScale binlog router or they may be\
+MariaDB binlog files stored in a database server acting as a master in a\
+replication environment. Maxbinlogcheck checks the binlog files against any\
+corruption and stored incomplete transactions and reports a transaction summary\
 after reading all the events. It may optionally truncate the binlog file.
 
-
 Maxbinlogcheck supports:
-
 
 * MariaDB 5.5 and MySQL 5.6
 * MariaDB 10.0 and 10.1 with a command line option
 
-
-# Running maxbinlogcheck
-
-
+## Running maxbinlogcheck
 
 ```
 # /usr/local/bin/maxbinlogcheck /path_to_file/bin.000002
 ```
 
-
-
-# Command Line Switches
-
+## Command Line Switches
 
 The maxbinlogcheck command accepts a number of switches
 
+|                                                |             |                                                                          |
+| ---------------------------------------------- | ----------- | ------------------------------------------------------------------------ |
+| Switch                                         | Long Option | Description                                                              |
+| -f                                             | --fix       | If set the binlog file will be truncated at                              |
+| last safe transaction pos in case of any error |             |                                                                          |
+| -M                                             | --mariadb10 | Checks the current binlog against MariaDB 10.0.x events                  |
+| -d                                             | --debug     | Sets the debug mode. If set the FD Events, Rotate events and             |
+| opening/closing transactions are displayed.    |             |                                                                          |
+| -?                                             | --help      | Prints usage information regarding maxbinlogcheck                        |
+| -V                                             | --version   | Prints the maxbinlogcheck version information                            |
+| -K                                             | --key\_file | AES Key file for MariaDB 10.1 binlog file decryption                     |
+| -A                                             | --aes\_algo | AES Algorithm for MariaDB 10.1 binlog file decryption (default=AES\_CBC, |
+| AES\_CTR)                                      |             |                                                                          |
+| -H                                             | --header    | Prints the binlog event header                                           |
 
-|   |   |   |
-| --- | --- | --- |
-| Switch | Long Option | Description |
-| -f | --fix | If set the binlog file will be truncated at
- last safe transaction pos in case of any error |
-| -M | --mariadb10 | Checks the current binlog against MariaDB 10.0.x events |
-| -d | --debug | Sets the debug mode. If set the FD Events, Rotate events and
- opening/closing transactions are displayed. |
-| -? | --help | Prints usage information regarding maxbinlogcheck |
-| -V | --version | Prints the maxbinlogcheck version information |
-| -K | --key_file | AES Key file for MariaDB 10.1 binlog file decryption |
-| -A | --aes_algo | AES Algorithm for MariaDB 10.1 binlog file decryption (default=AES_CBC,
- AES_CTR) |
-| -H | --header | Prints the binlog event header |
+### Example without debug:
 
-
-## Example without debug:
-
-
-1) No transactions
-
-
+1. No transactions
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000002
@@ -68,11 +50,7 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:38:03   Check retcode: 0, Binlog Pos = 290
 ```
 
-
-
-2) With complete transactions
-
-
+2. With complete transactions
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000004
@@ -86,14 +64,9 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:38:36   Check retcode: 0, Binlog Pos = 38738629
 ```
 
+### Example with debug:
 
-
-## Example with debug:
-
-
-1) one complete transaction
-
-
+1. one complete transaction
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000001 -d
@@ -115,11 +88,7 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:36:49   Check retcode: 0, Binlog Pos = 590760698
 ```
 
-
-
-2) some transactions
-
-
+2. some transactions
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000004 -d
@@ -149,11 +118,7 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 10:19:51   Check retcode: 0, Binlog Pos = 38738629
 ```
 
-
-
-3) No transactions
-
-
+3. No transactions
 
 ```
 2015-09-08 09:41:02   Check retcode: 0, Binlog Pos = 290
@@ -169,14 +134,9 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:41:08   Check retcode: 0, Binlog Pos = 290
 ```
 
-
-
-## Fixing a corrupted binlog file
-
+### Fixing a corrupted binlog file
 
 This file is corrupted, as reported by the utility:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/bin.000002
@@ -187,14 +147,9 @@ This file is corrupted, as reported by the utility:
 2015-09-08 10:03:16   Check retcode: 1, Binlog Pos = 245
 ```
 
-
-
 The suggested safe pos is 245.
 
-
 Use -f option for fix with debug:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/bin.000002 -d -f
@@ -211,11 +166,7 @@ Use -f option for fix with debug:
 2015-09-08 09:56:52   Check retcode: 1, Binlog Pos = 245
 ```
 
-
-
 Check it again, last pos will be 245 and no errors will be reported:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/bin.000002 -d
@@ -229,11 +180,7 @@ Check it again, last pos will be 245 and no errors will be reported:
 2015-09-08 09:56:56   Check retcode: 0, Binlog Pos = 245
 ```
 
-
-
-## Detection of an incomplete big transaction
-
-
+### Detection of an incomplete big transaction
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003
@@ -243,11 +190,7 @@ Check it again, last pos will be 245 and no errors will be reported:
 2015-09-08 10:10:21   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
 with debug option:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -263,14 +206,9 @@ with debug option:
 2015-09-08 10:11:08   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
 Retcode is 0 as the transaction may proceed over time, example:
 
-
 Another check ...
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -285,11 +223,7 @@ Another check ...
 2015-09-08 10:17:14   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
 And finally big transaction is now done.
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -311,28 +245,18 @@ And finally big transaction is now done.
 2015-09-08 10:17:16   Check retcode: 0, Binlog Pos = 590760698
 ```
 
-
-
 **Note**
 
-
-With current maxbinlogcheck it's not possible to fix a binlog with incomplete
+With current maxbinlogcheck it's not possible to fix a binlog with incomplete\
 transaction and no other errors
 
-
 If that is really desired it will be possible with UNIX command line:
-
-
 
 ```
 # truncate /servers/binlogs/new-trx/mar-bin.000003 --size=572
 ```
 
-
-
 In case of an error and incomplete transaction, the fix will work
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d -f
@@ -349,11 +273,7 @@ In case of an error and incomplete transaction, the fix will work
 2015-09-08 10:35:57   Check retcode: 1, Binlog Pos = 572
 ```
 
-
-
 Check result:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -367,11 +287,7 @@ Check result:
 2015-09-08 10:54:17   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
-### MariaDB 10 binlog check
-
-
+#### MariaDB 10 binlog check
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck -M -d /mariadb-10.0.11/data/mysql-bin.000008
@@ -393,11 +309,7 @@ Check result:
 2015-09-08 12:49:18   Check retcode: 0, Binlog Pos = 1215327
 ```
 
-
-
-### MariaDB 10.1 encrypted binlogs
-
-
+#### MariaDB 10.1 encrypted binlogs
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck -M -d /mariadb-10.1.16/data/mysql-bin.000008 -K /var/binlogs/key_file.txt -A AES_CTR
@@ -416,26 +328,17 @@ Check result:
 2016-12-07 16:18:35   notice : Check retcode: 0, Binlog Pos = 418
 ```
 
+Key File content example: /var/binlogs/key\_file.txt
 
-
-Key File content example: /var/binlogs/key_file.txt
-
-
-First two bytes are: the encryption scheme, it must be 1, and the ';' separator.
-Following bytes are the HEX representation of the key (length must be 16, 24 or
-32). The example shows a 32 bytes key in HEX format (64 bytes):
-
-
+First two bytes are: the encryption scheme, it must be 1, and the ';' separator.\
+Following bytes are the HEX representation of the key (length must be 16, 24 or\
+32\). The example shows a 32 bytes key in HEX format (64 bytes):
 
 ```
 1;666f6f62617220676f657320746f207468652062617220666f7220636f66666565
 ```
 
-
-
-### Binlog event header
-
-
+#### Binlog event header
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck -M -d /mysql.5.6.17/data/mysql-bin.000001 -H
@@ -466,9 +369,6 @@ Following bytes are the HEX representation of the key (length must be 16, 24 or
 2016-12-07 16:23:02   notice : Check retcode: 0, Binlog Pos = 173
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

@@ -1,8 +1,4 @@
-# mariadb-maxscale-23-mariadb-maxscale-230-release-notes-2018-10-09
-
-## MariaDB MaxScale 2.3.0 Release Notes -- 2018-10-09
-
-## MariaDB MaxScale 2.3.0 Release Notes -- 2018-10-09
+# MariaDB MaxScale 2.3.0 Release Notes -- 2018-10-09
 
 Release 2.3.0 is a Beta release.
 
@@ -94,7 +90,7 @@ its slaves if the master is down.
 
 Only one server can have the _Master_ status flag at a time, even in a\
 multimaster setup. Others servers in the multimaster group are given the _Relay_\
-&#xNAN;_&#x4D;aster_ and _Slave_ status flags.
+\&#xNAN;_Master_ and _Slave_ status flags.
 
 **Switchover new master autoselection**
 
