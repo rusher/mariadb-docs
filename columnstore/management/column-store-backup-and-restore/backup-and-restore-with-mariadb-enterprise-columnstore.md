@@ -37,17 +37,17 @@ MariaDB Enterprise ColumnStore supports full backup and restore for all storage 
 
 * Enterprise ColumnStore's data and metadata
 
-**With S3: an S3 snapshot of the** [**S3-compatible object storage**](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) **and a file system snapshot or copy of the** [**Storage Manager directory**](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) Without S3: a file system snapshot or copy of the [DB Root directories](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
+With S3: an S3 snapshot of the [S3-compatible object storage](../../columnstore-architecture/columnstore-architectural-overview.md#s3-compatible-object-storage-1) and a file system snapshot or copy of the [Storage Manager directory](../../architecture/columnstore-storage-architecture.md#storage-manager-directory) Without S3: a file system snapshot or copy of the [DB Root directories](../../architecture/columnstore-storage-architecture.md#db-root-directories).
 
 * The MariaDB data directory from the primary node
 
 To see the procedure to perform a full backup and restore, choose the storage type:
 
-| Storage Type                                                                                                                                            | Diagram                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Storage Type                                                                                                                                            | Diagram                                                                                                                                     |
-| [Enterprise ColumnStore with Object Storage](mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)                                  | ![columnstore-topology-s3](../../.gitbook/assets/backup-and-restore-with-mariadb-enterprise-columnstore/+image/columnstore-topology-s3.png) |
-| [Enterprise ColumnStore with Shared Local Storage](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) | ![columnstore-topology](../../.gitbook/assets/backup-and-restore-with-mariadb-enterprise-columnstore/+image/columnstore-topology.png)       |
+| Storage Type                                                                                                                                                              | Diagram                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Storage Type                                                                                                                                                              | Diagram                                                                                                                                     |
+| [Enterprise ColumnStore with Object Storage](mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)                                                    | ![columnstore-topology-s3](../../.gitbook/assets/backup-and-restore-with-mariadb-enterprise-columnstore/+image/columnstore-topology-s3.png) |
+| [Enterprise ColumnStore with Shared Local Storage](../../columnstore-architecture/columnstore-architectural-overview.md#enterprise-columnstore-with-shared-local-storage) | ![columnstore-topology](../../.gitbook/assets/backup-and-restore-with-mariadb-enterprise-columnstore/+image/columnstore-topology.png)       |
 
 Copyright © 2025 MariaDB
 
