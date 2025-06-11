@@ -1,6 +1,6 @@
 # Enterprise Server Release Schedule
 
-[MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/) enables a predictable development and operations experience through an [enterprise lifecycle](enterprise-server-lifecycle.md). This enterprise lifecycle incorporates optimized builds, predictable release behavior, and vendor support.
+[MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) enables a predictable development and operations experience through an [enterprise lifecycle](enterprise-server-lifecycle.md). This enterprise lifecycle incorporates optimized builds, predictable release behavior, and vendor support.
 
 Minor and maintenance releases of MariaDB Enterprise Server incorporate bug fixes and security fixes. Like all releases of MariaDB Enterprise Server, minor and maintenance releases undergo extensive QA testing before release to customers.
 
