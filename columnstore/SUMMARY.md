@@ -44,7 +44,7 @@
 * [High Availability](high-availability/README.md)
   * [Analyzing Queries](high-availability/analyzing-queries-in-columnstore.md)
   * [Performance Concepts](high-availability/mariadb-columnstore-performance-concepts.md)
-  * [Performance-Related Configuration Settings](high-availability/mariadb-columnstore-performance-related-configuration-settings.md)
+  * [Performance Related Configuration Settings](high-availability/mariadb-columnstore-performance-related-configuration-settings.md)
   * [Query Tuning](high-availability/columnstore-query-tuning/README.md)
     * [Collecting Statistics with ANALYZE TABLE](high-availability/columnstore-query-tuning/collect-statistics-with-analyze-table-for-mariadb-enterprise-columnstore.md)
     * [Query Tuning Recommendations](high-availability/columnstore-query-tuning/query-tuning-recommendations-for-mariadb-enterprise-columnstore.md)
