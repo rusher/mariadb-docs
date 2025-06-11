@@ -4,7 +4,11 @@
 
 MariaDB has many system variables that can be changed to suit your needs.
 
-The full list of server variables are listed in the contents on this page, and most are described on this page, but some are described elsewhere:
+{% hint style="info" %}
+**For a full list of server variables,** [**see this page**](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).&#x20;
+{% endhint %}
+
+Most of the system variables are described on this page, but some are described elsewhere:
 
 * [Aria System Variables](../../../reference/storage-engines/aria/aria-system-variables.md)
 * [CONNECT System Variables](../../../reference/storage-engines/connect/connect-system-variables.md)
@@ -26,7 +30,7 @@ The full list of server variables are listed in the contents on this page, and m
 * [TokuDB System Variables](../../../reference/storage-engines/tokudb/tokudb-system-variables.md)
 * [Vector System Variables](../../../reference/sql-structure/vectors/vector-system-variables.md)
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 Most of these can be set with [command line options](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) and many of them can be changed at runtime.\
 Variables that can be changed at runtime (and therefore are not read-only) are described as "Dynamic" below, and elsewhere in the documentation.
