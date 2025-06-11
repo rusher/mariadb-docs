@@ -7,7 +7,7 @@ MariaDB Enterprise Server 10.3.16-1 was released on 2019-07-08.
 ## New Features
 
 * [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) with support of non-blocking Backups
-* Backup Stages for [non-blocking Backups](https://mariadb.com/docs/server/data-operations/backups/enterprise-server/mariadb-enterprise-backup/#Non-blocking_Backups)
+* Backup Stages for [non-blocking Backups](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-enterprise-backup#non-blocking-backups)
 * Maximum number of secondary indexes increased to 128 per table
 * [Tracing facility for the Optimizer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations)
 * Slow master shutdown option
