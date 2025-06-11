@@ -1,8 +1,4 @@
-# mariadb-maxscale-21-mariadb-maxscale-as-a-binlog-server
-
-## MariaDB MaxScale as a Binlog Server
-
-## MariaDB MaxScale as a Binlog Server
+# MariaDB MaxScale as a Binlog Server
 
 ## Table of Contents
 
@@ -317,7 +313,7 @@ should have the new binlog file (the next in sequence). Truncating the previous\
 MariaDB MaxScale binlog is safe as that incomplete transaction is lost. It\
 should be checked that current master or new one has the new binlog file, in\
 case of any error replication stops and errors are reported via _SHOW SLAVE_\
-_STATUS_ and in error logs.
+&#xNAN;_&#x53;TATUS_ and in error logs.
 
 ```
 MariaDB> START SLAVE;

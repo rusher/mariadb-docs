@@ -1,15 +1,11 @@
-# mariadb-maxscale-21-maxscale-21-cache
-
-## MaxScale 2.1 Cache
-
-## Cache
+# MaxScale 2.1 Cache
 
 This filter was introduced in MariaDB MaxScale 2.1.
 
 ### Overview
 
 _Note that the cache is still experimental and that non-backward compatible_\
-_changes may be made._
+&#xNAN;_&#x63;hanges may be made._
 
 The cache filter is a simple cache that is capable of caching the result of\
 SELECTs, so that subsequent identical SELECTs are served directly by MaxScale,\
@@ -696,7 +692,7 @@ is not without a cost.\
 From the [RocksDB Documentation](https://github.com/facebook/rocksdb/wiki/Statistics)
 
 _The overhead of statistics is usually small but non-negligible. We usually_\
-_observe an overhead of 5%-10%._
+&#xNAN;_&#x6F;bserve an overhead of 5%-10%._
 
 The value is a boolean and the default is `false`.
 
@@ -843,7 +839,7 @@ Note that the qps figures are only indicative.
 ### Summary
 
 For maximum performance:_Arrange the situation so that `selects=assume_cacheable` can be_\
-_configured, and use no rules._ If `selects=assume_cacheable` has been configured, use _only_\
+&#xNAN;_&#x63;onfigured, and use no rules._ If `selects=assume_cacheable` has been configured, use _only_\
 regexp based rules.
 
 * If `selects=verify_cacheable` has been configured non-regex based\

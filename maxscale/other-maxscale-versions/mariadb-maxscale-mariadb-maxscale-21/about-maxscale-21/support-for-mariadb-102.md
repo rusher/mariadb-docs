@@ -1,8 +1,4 @@
-# support-for-mariadb-102
-
-## MaxScale 2.1 Support for MariaDB 10.2
-
-## Support for MariaDB 10.2
+# MaxScale 2.1 Support for MariaDB 10.2
 
 MariaDB 10.2 introduces a fair amount of new[features](https://mariadb.com/kb/en/mariadb/what-is-mariadb-102/).
 

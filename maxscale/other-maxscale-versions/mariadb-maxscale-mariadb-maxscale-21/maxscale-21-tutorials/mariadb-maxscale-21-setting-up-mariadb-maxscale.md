@@ -1,8 +1,4 @@
-# mariadb-maxscale-21-setting-up-mariadb-maxscale
-
-## Setting up MariaDB MaxScale
-
-## Setting up MariaDB MaxScale
+# Setting up MariaDB MaxScale
 
 This document is designed as a quick introduction to setting up MariaDB MaxScale\
 in an environment in which you have either a MariaDB Master-Slave replication cluster\

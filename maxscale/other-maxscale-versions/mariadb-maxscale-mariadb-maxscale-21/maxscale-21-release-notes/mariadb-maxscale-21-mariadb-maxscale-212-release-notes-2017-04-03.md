@@ -1,42 +1,25 @@
-
 # MariaDB MaxScale 2.1.2 Release Notes -- 2017-04-03
-
-# MariaDB MaxScale 2.1.2 Release Notes -- 2017-04-03
-
 
 Release 2.1.2 is a Beta release.
 
-
-This document describes the changes in release 2.1.2, when compared to
+This document describes the changes in release 2.1.2, when compared to\
 release [2.1.1](mariadb-maxscale-21-mariadb-maxscale-211-release-notes-2017-03-14.md).
 
+If you are upgrading from release 2.0, please also read the following\
+release notes:[2.1.1](https://mariadb.com/kb/en/node:mariadb-maxscale-21-mariadb-maxscale-211-release-notes-2017-03-14)[2.1.0](mariadb-maxscale-21-mariadb-maxscale-210-release-notes-2017-02-16.md)
 
-If you are upgrading from release 2.0, please also read the following
-release notes:
-[2.1.1](https://mariadb.com/kb/en/node:mariadb-maxscale-21-mariadb-maxscale-211-release-notes-2017-03-14)
-[2.1.0](mariadb-maxscale-21-mariadb-maxscale-210-release-notes-2017-02-16.md)
-
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report at [Jira](https://jira.mariadb.org).
 
+### Changed Features
 
-## Changed Features
+#### Formatting of IP Addresses and Ports
 
+All messaging that contains both the address and the port are now printed in an\
+IPv6 compatible format. The output uses the format defined in[RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) and[STD 66](https://www.rfc-editor.org/std/std66.txt).
 
-### Formatting of IP Addresses and Ports
-
-
-All messaging that contains both the address and the port are now printed in an
-IPv6 compatible format. The output uses the format defined in
-[RFC 3986](https://www.ietf.org/rfc/rfc3986.txt) and
-[STD 66](https://www.rfc-editor.org/std/std66.txt).
-
-
-In practice this means that the address is enclosed by brackets. The port is
+In practice this means that the address is enclosed by brackets. The port is\
 separated from the address by a colon. Here is an example of the new format:
-
-
 
 ```
 [192.168.0.201]:3306
@@ -44,83 +27,58 @@ separated from the address by a colon. Here is an example of the new format:
 [localhost]:3306
 ```
 
-
-
-The first is an IPv4 address, the second an IPv6 address and the last one is a
+The first is an IPv4 address, the second an IPv6 address and the last one is a\
 hostname. All of the addresses use port 3306.
 
+#### Cache
 
-### Cache
+* The storage `storage_inmemory` is now the default, so the parameter`storage` no longer need to be set explicitly.
 
+#### Improved Wildcard Matching
 
-* The storage `storage_inmemory` is now the default, so the parameter
- `storage` no longer need to be set explicitly.
-
-
-### Improved Wildcard Matching
-
-
-The MySQLAuth module now supports all types of wildcards for both IP addresses
+The MySQLAuth module now supports all types of wildcards for both IP addresses\
 as well as hostnames.
 
+#### Configurable Connector-C Plugin Directory
 
-### Configurable Connector-C Plugin Directory
-
-
-The Connector-C used by MaxScale can now be configured to load authentication
-plugins from a specific directory with the new `connector_plugindir`
-parameter. Read the [Configuration Guide](../maxscale-21-getting-started/mariadb-maxscale-21-mariadb-maxscale-configuration-usage-scenarios.md)
+The Connector-C used by MaxScale can now be configured to load authentication\
+plugins from a specific directory with the new `connector_plugindir`\
+parameter. Read the [Configuration Guide](../maxscale-21-getting-started/mariadb-maxscale-21-mariadb-maxscale-configuration-usage-scenarios.md)\
 for more details about this new parameter.
 
+### New Features
 
-## New Features
+#### IPv6 Support
 
-
-### IPv6 Support
-
-
-MaxScale now supports IPv6 connections on both the client and backend side as
+MaxScale now supports IPv6 connections on both the client and backend side as\
 well as being able to listen on IPv6 addresses.
 
+### Bug fixes
 
-## Bug fixes
+[Here is a list of bugs fixed since the release of MaxScale 2.1.1.](https://jira.mariadb.org/issues/?jql=project%20%3D%20MXS%20AND%20issuetype%20%3D%20Bug%20AND%20resolution%20in%20\(Fixed%2C%20Done\)%20AND%20fixVersion%20%3D%202.1.2%20AND%20fixVersion%20NOT%20IN%20\(2.1.1\))
 
+* [MXS-1032](https://jira.mariadb.org/browse/MXS-1032) missing mysql\_clear\_password.so plugin
 
-[Here is a list of bugs fixed since the release of MaxScale 2.1.1.](https://jira.mariadb.org/issues/?jql=project%20%3D%20MXS%20AND%20issuetype%20%3D%20Bug%20AND%20resolution%20in%20(Fixed%2C%20Done)%20AND%20fixVersion%20%3D%202.1.2%20AND%20fixVersion%20NOT%20IN%20(2.1.1))
+### Known Issues and Limitations
 
-
-* [MXS-1032](https://jira.mariadb.org/browse/MXS-1032) missing mysql_clear_password.so plugin
-
-
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../about-maxscale-21/mariadb-maxscale-21-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
+### Packaging
 
-## Packaging
-
-
-RPM and Debian packages are provided for the Linux distributions supported
+RPM and Debian packages are provided for the Linux distributions supported\
 by MariaDB Enterprise.
-
 
 Packages can be downloaded [here](https://mariadb.com/resources/downloads).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is X.Y.Z. Further, *master* always refers to the latest released non-beta version.
-
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is X.Y.Z. Further, _master_ always refers to the latest released non-beta version.
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

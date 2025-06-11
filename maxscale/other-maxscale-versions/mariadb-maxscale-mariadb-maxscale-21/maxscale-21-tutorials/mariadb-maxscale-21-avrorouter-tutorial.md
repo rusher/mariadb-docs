@@ -1,8 +1,4 @@
-# mariadb-maxscale-21-avrorouter-tutorial
-
-## Avrorouter Tutorial
-
-## Avrorouter Tutorial
+# Avrorouter Tutorial
 
 This tutorial is a short introduction to the[Avrorouter](../maxscale-21-routers/mariadb-maxscale-21-avrorouter.md), how to set it up and how it interacts\
 with the binlogrouter.

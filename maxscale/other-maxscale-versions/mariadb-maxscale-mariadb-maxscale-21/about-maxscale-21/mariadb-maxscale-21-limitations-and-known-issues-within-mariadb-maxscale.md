@@ -1,8 +1,4 @@
-# mariadb-maxscale-21-limitations-and-known-issues-within-mariadb-maxscale
-
-## Limitations and Known Issues within MariaDB MaxScale
-
-## Limitations and Known Issues within MariaDB MaxScale
+# Limitations and Known Issues within MariaDB MaxScale
 
 This document lists known issues and limitations in MariaDB MaxScale and its\
 plugins. Since limitations are related to specific plugins, this document is\
