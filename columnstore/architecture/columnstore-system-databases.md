@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # ColumnStore System Databases
 
 When using ColumnStore, MariaDB Server creates a series of system databases used for operational purposes.
