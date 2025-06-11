@@ -611,7 +611,7 @@
       * [Transaction Coordinator Log Overview](server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md)
       * [Heuristic Recovery with the Transaction Coordinator Log](server-management/server-monitoring-logs/transaction-coordinator-log/heuristic-recovery-with-the-transaction-coordinator-log.md)
   * [Variables and Modes](server-management/variables-and-modes/README.md)
-    * [Full List of MariaDB Options, System and Status Variables](server-management/reference/full-list-of-mariadb-options-system-and-status-variables.md)
+    * [Full List of MariaDB Options, System and Status Variables](reference/full-list-of-mariadb-options-system-and-status-variables.md)
     * [SQL\_MODE](server-management/variables-and-modes/sql-mode.md)
     * [OLD\_MODE](server-management/variables-and-modes/old-mode.md)
 * [Security](security/README.md)
